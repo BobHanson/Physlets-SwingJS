@@ -213,7 +213,7 @@ public class Doppler extends SApplet implements Runnable, ActionListener {
     resize(320, 340);
     int f = 1;
     /**
-     * @j2sNative f = 10;
+     * @j2sNative f = 5;
      * 
      */
     sleepTime = 1000 / f / m_fps;  // BH

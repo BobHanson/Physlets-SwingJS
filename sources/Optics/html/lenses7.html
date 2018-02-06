@@ -1,0 +1,142 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+<title>Lenses 7</title>
+<meta content="en-us" http-equiv="Content-Language">
+<meta content="text/html; charset=windows-1252" http-equiv="Content-Type">
+<meta content="Microsoft FrontPage 5.0" name="GENERATOR">
+<meta content="FrontPage.Editor.Document" name="ProgId">
+<link rel="STYLESHEET" type="text/css" href="../styles_dancy.css">
+<script language="JavaScript"> 
+
+function ques1(){
+     document.Optics.setDefault();
+	  document.Optics.setElementSize(0.8);
+          id=document.Optics.addObject("lens"," x=2.5, f=0.7"); 
+     document.Optics.setDragable(id,false);
+     
+}
+
+function ans1(){
+     document.Optics.setDefault();
+	  document.Optics.setElementSize(0.8);
+               ido=document.Optics.addObject("source","x=0.25, y=0.7"); 
+     document.Optics.setResizable(ido,false);
+     document.Optics.setDragable(ido,true);
+          id=document.Optics.addObject("lens"," x=2.5, f=0.7"); 
+     document.Optics.setDragable(id,false);
+     
+}
+
+function ques2(){
+     document.Optics.setDefault();
+	  document.Optics.setElementSize(0.8);       
+               ido=document.Optics.addObject("source","x=0.25, y=0.7, rays=false"); 
+     document.Optics.setResizable(ido,false);
+     document.Optics.setDragable(ido,true);
+          id=document.Optics.addObject("lens"," x=2.5, f=0.7"); 
+     document.Optics.setDragable(id,false);
+     
+}
+
+function ans2(){
+     document.Optics.setDefault();
+	  document.Optics.setElementSize(0.8);
+	  	document.Optics.setRayRGB(0,250,0);
+     idt=document.Optics.addObject("source","point, x=0.25, y=0.5, inc=0.1, slope=-0.8"); 
+     document.Optics.setResizable(idt,false);
+     document.Optics.setDragable(idt,false);
+               ido=document.Optics.addObject("source","x=0.25, y=0.7, rays=false"); 
+     document.Optics.setResizable(ido,false);
+     document.Optics.setDragable(ido,true);
+     document.Optics.setAnimationSlave(ido,idt);
+          id=document.Optics.addObject("lens"," x=2.5, f=0.7"); 
+     document.Optics.setDragable(id,false);
+     
+}
+
+function ans3(){
+     document.Optics.setDefault();
+     document.Optics.setAutoRefresh(false);
+	  document.Optics.setElementSize(0.8);
+	  	document.Optics.setRayRGB(0,250,0);
+     idt=document.Optics.addObject("source","point, x=0.25, y=0.5, inc=0.1, slope=-0.8"); 
+     document.Optics.setResizable(idt,false);
+     document.Optics.setDragable(idt,false);
+      document.Optics.setRayRGB(0,0,250);
+
+     idb=document.Optics.addObject("source","point, x=0.25, y=0, inc=0.1, slope=-0.8");       
+
+     document.Optics.setResizable(idb,false);
+     document.Optics.setDragable(idb,false);
+               ido=document.Optics.addObject("source","x=0.25, y=0.7, rays=false"); 
+     document.Optics.setResizable(ido,false);
+     document.Optics.setDragable(ido,true);
+     document.Optics.setAnimationSlave(ido,idt);
+     document.Optics.setAnimationSlave(ido,idb);
+          document.Optics.setDisplayOffset(idb,0,-70);
+          id=document.Optics.addObject("lens"," x=2.5, f=0.7"); 
+     document.Optics.setDragable(id,false);
+     document.Optics.setAutoRefresh(true);
+     
+}
+
+function screen(){
+     document.Optics.setDefault();
+     document.Optics.setAutoRefresh(true);
+	  document.Optics.setElementSize(0.8);
+	  	document.Optics.setRayRGB(0,250,0);
+     idt=document.Optics.addObject("source","point, x=0.25, y=0.5, inc=0.1, slope=-0.8"); 
+     document.Optics.setResizable(idt,false);
+     document.Optics.setDragable(idt,false);
+      document.Optics.setRayRGB(0,0,250);
+
+     idb=document.Optics.addObject("source","point, x=0.25, y=0, inc=0.1, slope=-0.8"); 
+     document.Optics.setDisplayOffset(idb,0,-70);      
+     document.Optics.setResizable(idb,false);
+     document.Optics.setDragable(idb,false);
+     ido=document.Optics.addObject("source","x=0.25, y=0.7, rays=false"); 
+     document.Optics.setResizable(ido,false);
+     document.Optics.setDragable(ido,true);
+     document.Optics.setAnimationSlave(ido,idt);
+     document.Optics.setAnimationSlave(ido,idb);
+     //document.Optics.setDisplayOffset(idb,0,-70);
+     id=document.Optics.addObject("lens"," x=2.5, f=0.7"); 
+     document.Optics.setDragable(id,false);
+     document.Optics.addObject("beamstop","x=2.37, top=0, bottom=0.5");
+     document.Optics.setAutoRefresh(true);
+     
+}
+
+</script>
+</head>
+
+<body bgcolor="#ffefce">
+
+<h3 align="center">Lenses 7</h3>
+<p align="center">
+<applet align="middle" code="optics.OpticsApplet.class" codebase="../jars/" height="200" 
+id="Optics" name="Optics" width="500" archive="Optics4_.jar,STools4.jar">
+  <param name="ShowControls" value="false">
+  <param name="align" value="middle">
+</applet> </p>
+<p>a)&nbsp; <a href="javascript:ques1()">Initialize</a>.&nbsp; An object is placed in front of a 
+lens outside of the focal point.&nbsp; Draw a ray diagram to locate the image. </p>
+<p>b)&nbsp; <a href="javascript:ques2()">Initialize</a>.&nbsp; Now consider a point at the top of 
+the object.&nbsp; Light must leave this point and travel in all directions (otherwise everyone in a 
+room would not be able to view an object at the same time).&nbsp; Draw the rays that leave the top 
+of the object and travel through the lens.&nbsp; Once you have your drawing your check your answer 
+by clicking on the link below.&nbsp; Where you correct?&nbsp; If not, why?</p>
+<p>c)&nbsp; Now consider a point at the bottom of the axis.&nbsp; Draw the rays that leave the 
+bottom of the object and travel through the lens.&nbsp; </p>
+<p>d)&nbsp; Are all the rays leaving a point on the object blocked if half of the lens is cut off?&nbsp;
+<a href="javascript:screen()">Initialize Screen</a>.&nbsp; How would the image appear if the top 
+half of the lens were blocked? </p>
+<p><a href="javascript:ans1()">Check Part A</a>&nbsp;&nbsp;&nbsp; <a href="javascript:ans2()">Check 
+Part B</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="javascript:ans3()">Check Part C</a></p>
+<p><a href="../contents.html">Return to Contents</a></p>
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="../../resources/qm.css">
+<script language="JavaScript"> 
+var timerID=0;
+
+
+
+
+
+   function initApplet(){
+	timerID=0; 
+   document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+	document.reflection.setMode("QM");
+	document.reflection.setQMEnergy(10);
+	id1=document.reflection.addObject("film","n=0,w=5");
+	id2=document.reflection.addObject("film","n=5,w=5");
+	id3=document.reflection.addObject("film","n=-5,w=5");
+	id4=document.reflection.addObject("film","n=-10,w=5");
+	id5=document.reflection.addObject("film","n=0,w=5");
+	id6=document.reflection.addObject("film","n=5,w=5");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setDragable(id3,false);
+	document.reflection.setDragable(id4,false);
+	document.reflection.setDragable(id5,false);
+	document.reflection.setDragable(id6,false);
+	document.reflection.setDragEnergy(0,false);
+	document.reflection.addObject("text","text=Region I,x=1,y=-4.25");
+	document.reflection.addObject("text","text=Region II,x=6,y=-4.25");
+	document.reflection.addObject("text","text=Region III,x=11,y=-4.25");
+	document.reflection.addObject("text","text=Region IV,x=16,y=-4.25");
+	document.reflection.addObject("text","text=Region V,x=21,y=-4.25");
+	document.reflection.addObject("text","text=Region VI,x=26,y=-4.25");
+	
+	document.reflection.setRGB(id1,125,125,125);
+	document.reflection.setRGB(id2,150,150,150);
+   document.reflection.setRGB(id3,175,175,175);
+   document.reflection.setRGB(id4,200,200,200);
+   document.reflection.setRGB(id5,225,225,225);
+   document.reflection.setRGB(id6,250,250,250);
+   document.reflection.setShowValue(id1,false);
+   document.reflection.setShowValue(id2,false);
+	 document.reflection.setShowValue(id3,false);
+	 document.reflection.setShowValue(id4,false);
+	 document.reflection.setShowValue(id5,false);
+	 document.reflection.setShowValue(id6,false);  
+    document.reflection.setAutoRefresh(true);
+   	document.reflection.forward(); 
+   document.getElementById("waitmsg").style.display="none"; 
+}
+
+
+function reim(){ 
+   document.reflection.setReRGB(0,0,255);
+   document.reflection.setImRGB(219,32,139);
+   document.reflection.setShowPhaseColor(false);
+   document.reflection.setShowLWave(true,0);
+   document.reflection.setShowRWave(true,0);
+   document.reflection.setShowWave(false);
+
+}
+
+
+</script>
+<title>Physlet Quantum Physics by Belloni, Christian, and Cox:  Problem 9.4</title>
+
+</head>
+
+<body onload="initApplet()">
+
+<h2>Problem 9.4</h2>
+<form name="dataForm">
+  <div align="center">
+    <center>
+    <table border="1" bgcolor="#C0C0C0" width="545">
+      <tr>
+        <td width="535">
+          <img border="0" src="../../resources/images/color_strip2.jpg" width="599" height="37"></td>
+      </tr>
+      <tr>
+        <td width="535">
+          <applet code="reflection.ReflectionApplet.class" codebase="../../resources/"
+          archive="Physlets.jar" name="reflection" width="600" height="230" hspace="0" vspace="0" align="Middle">
+            <param name="ShowControls" value="false">
+            <param name="PPU" value="20">
+            <param name="MaxAmp" value="2">
+            <param name="Wavelength" value="10">
+            <param name="FPS" value="20">
+            <param name="WaveVelocity" value="2">
+          </applet>
+          </td>
+      </tr>
+      </table>
+    </center>
+  </div>
+
+<h4 align="center">
+<input onClick="document.reflection.forward()" type="button" value="play"><input onClick="document.reflection.pause()" type="button" value="pause"><input onClick="document.reflection.stepTimeBack();" type="button" value="&lt;&lt;step" name="stepb"><input onClick="document.reflection.stepTimeForward();" type="button" value="step&gt;&gt;" name="step"></h4>
+  <div align="center">
+    <center>
+  <table border="1" bgcolor="#C0C0C0" id="table1">
+    <tr>
+      <td align="center"><a href="JavaScript:reim()">Show Real and Imaginary Parts</a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><a href="JavaScript:document.reflection.setShowPhaseColor(true)">Show Phase as 
+Color</a></td>
+    </tr>
+  </table>
+    </center>
+  </div>
+</form>
+<p align="center"><b><font id="waitmsg" color="#FF0000"><i>Please wait for the animation to completely load.</i></font></b></p>
+
+<p align="justify">Shown is a plane wave incident on several different regions.&nbsp; Each region has a constant potential 
+energy associated with it.&nbsp;&nbsp; <b>In the animation, <i>&#295;</i> = 2<i>m</i> = 1.</b>&nbsp; You may switch between phase-as-color and 
+real and imaginary representations by selecting a link above.&nbsp; Rank the regions by:</p>
+<ol type="a">
+          <li>
+          <p align="left">the kinetic energy of the plane wave in that region </li>
+          <li>
+          <p align="left">the potential energy of the plane wave in that region </li>
+          <li>
+          <p align="left">the energy of the plane wave in that region </li>
+</ol>
+<p>Ties in ( ) please.</p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>
+<a href="../../conditions_of_use.html">
+© 2006 by Prentice-Hall, Inc. A Pearson Company</a></p>
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<html>
+
+<head>
+<title>Browian Motion</title>
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+<script language="JavaScript">
+
+function brownian(){
+    document.Molecular.setAutoRefresh(false); 
+    document.Molecular.setDefault();
+    document.Molecular.setShowControls(false);
+    document.Molecular.setPeriodicH(false);
+    document.Molecular.setPeriodicV(false);
+    document.Molecular.createParticles(20);
+    for(i=0;i<20;i++){
+       document.Molecular.setParticlePos(i,-10+20*Math.random(),-10+20*Math.random());
+       document.Molecular.setParticleVel(i,-5+10*Math.random(),-5+10*Math.random());
+    }
+    document.Molecular.setParticlePos(0,0,0);
+    document.Molecular.setParticleVel(0,0,0);
+    document.Molecular.setParticleMass(0,40);
+    document.Molecular.setParticleRGB(0,255,0,0);
+    document.Molecular.setParticleSize(0,3.0);
+    document.Molecular.setAutoRefresh(true); 
+    document.Molecular.forward();
+}
+</script>
+</head>
+
+<body onload="brownian()">
+
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+	<tr>
+		<td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+		<!-- --></a>
+		<table border="0" cellpadding="0" cellspacing="3">
+			<tr align="center" valign="top">
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../overview-summary.html"><font class="NavBarFont1">
+				<b>Overview</b></font></a> </td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+				</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<font class="NavBarFont1">&nbsp;Class </font>&nbsp;</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+				</td>
+			</tr>
+		</table>
+		</td>
+		<td align="right" valign="top" rowspan="2"><em></em></td>
+	</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+<p align="center">
+<applet codebase="../../classes/" archive="Molecular4_.jar,STools4.jar" code="molecular.MolecularApplet.class" name="Molecular" width="250" height="250" hspace="0" vspace="0" align="middle">
+	<param name="ShowControls" value="false" />
+	<param name="InitialP" value="0" />
+	<param name="Mode" value="5" />
+	<param name="FPS" value="10" />
+	<param name="dt" value="0.1" />
+	<param name="PeriodicH" value="false" />
+	<param name="PeriodicV" value="false" />
+</applet> </p>
+<form name="SpecForm">
+	<div align="center">
+		<center>
+		<p>
+		<input type="button" value="play" onclick="document.Molecular.forward()" /><input type="button" value="pause" onclick="document.Molecular.pause()" /><input type="button" value="step&gt;&gt;" onclick="document.Molecular.stepForward()" /></p>
+		</center></div>
+</form>
+<a href="JavaScript:brownian()"></a>
+<p><a href="JavaScript:brownian()">Init</a></p>
+<a href="JavaScript:brownian()"></a>
+<h3 align="left">Brownian motion</h3>
+<p align="left">Each particle has position, velocity, mass and size properties. 
+These properties can be set by calling the applet&#39;s public methods after the particles 
+have been created.&nbsp; The red particle has 40x the mass of the blue particles.</p>
+
+</body>
+
+</html>

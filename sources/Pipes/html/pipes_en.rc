@@ -1,0 +1,13 @@
+button.step Step
+button.start Run
+button.stop Stop
+button.reset Reset
+label.time Time:
+label.pressure_t P(t)=
+label.pressure_xt P(x,t)=
+label.analytic_mode Analytic Mode
+label.source_mode Source Mode
+label.drag_mode U-Drag Mode
+label.amp Amp:
+label.pos Pos:
+label.wait Please wait . . .

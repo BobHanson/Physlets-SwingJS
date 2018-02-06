@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>Physlet Physics by Christian and Belloni: Illustration 26.1</title>
+<link rel="stylesheet" type="text/css" href="../resources/physlets.css">
+<script language="JavaScript">
+
+  	
+function initApplet(){ 
+	document.jacob.loadFile('exp26/efelt3_1.ppd');
+}
+
+function config2(){
+	document.jacob.loadFile('exp26/efelt3_2.ppd');
+	}
+	
+
+	
+</script>
+</head>
+<body onload="initApplet()">
+
+<h2 align="left">Illustration 26.1: Microscopic View of a Capacitor</h2>
+<center>
+<table border="1" cellspacing="1" bgcolor="#C0C0C0">
+      <tr>
+        <td>
+<p align="center">
+<applet codebase="./" archive="Jacob.jar" code="jacob.Jacob.class" 
+id="jacob" name="jacob" width="500"
+height="420" hspace="0" vspace="0" align="middle">
+  <param name="FPS" value="10">
+  <param name="dt" value="0.1">
+  <param name="ShowControls" value="false">
+  <param name="ConfigFile" value="exp26/efelt3_1.ppd">
+</applet>
+</td>
+       </tr>
+    </table></center>
+
+
+<form name="form1">
+  <p align="center">
+  <input type="button" value="play" 
+  onclick="document.jacob.forward()"><input type="button" 
+  value="pause" onClick="document.jacob.pause()"><input type="button" 
+  value="step&gt;&gt;" onClick="document.jacob.stepForward()"><input type="button" 
+  value="reset" onClick="nulstil()"><input type="button" 
+  value="reset with dielectric" onClick="config2()">
+  </p>
+</form>
+
+
+<p align="center">
+   <strong><font color="#FF0000"><em>Please wait for the animation to 
+completely load.</em></font></strong></p>
+
+
+<p>The  animation shows a parallel-plate capacitor (at the top) connected 
+to a battery (at the bottom).&nbsp; This 
+Illustration shows you what happens when the battery 
+is connected and the blue electrons are separated from the positively charged 
+atoms.&nbsp; This animation only shows what happens for ten charge pairs.&nbsp; <a href="JavaScript:initApplet()">Restart</a>.</p>
+
+<p>As the electrons pile up on the left plate, what is the direction of the 
+  electric field between the plates?&nbsp; The electric field always points from 
+positive charges and toward negative charges; therefore, the electric field 
+points to the left.&nbsp; Charges move until the electric potential 
+  between the two plates matches the electric potential of the battery.</p>
+
+<p>Now change the configuration to <a href="JavaScript:config2()">add a thin dielectric between the capacitor</a>.&nbsp; 
+  What happens to the atoms on the dielectric material between the plates (represented by 
+  the circles)?&nbsp; Due to the electric field created by the charges on the 
+capacitor plates, the charges in the dielectric are polarized.&nbsp; Since positive 
+and negative charges experience forces in opposite directions in the same 
+electric field, the electrons move to the right and the positively charged 
+atoms move to the left.&nbsp; Note that these charges are not free to completely 
+separate and move like the charges in the plates and wires.&nbsp; They only 
+polarize.&nbsp; Because these charges are still bound together, we call them 
+bound charges.</p>
+
+<p>What is the direction of the electric field due to the 
+  separation of charge (the bound charge) in the dielectric?&nbsp; It is in the 
+opposite direction from the initial electric field.&nbsp; Thus, the overall 
+electric field between the plates (for the same number of charges) is smaller.&nbsp; 
+Since the potential across the plates matches the potential of the battery, is 
+this battery bigger or smaller than the first one?&nbsp; If the charge on the capacitor is the same in both animations, and the 
+capacitance is increased with the inclusion of the dielectric (C = k &#949;<sub>0</sub>A/d), 
+then &#916;V = Q/C shows us that the electric potential difference is reduced.&nbsp; 
+In addition, since the electric field is reduced, the electric potential is 
+similarly reduced (for a constant electric field &#916;V = -Ed).</p>
+<p>If the battery was the same in the two animations (&#916;V would be the same 
+between the plates), the set of plates 
+  with a dielectric between them would be able to hold more charge.&nbsp;  
+Using &#916;V = -Ed, the electric field between the plates would have to be the same 
+in the two animations.&nbsp; Because the bound charge of the dielectric reduces 
+the electric field between the plates, there would have to be more charge on the 
+plates with the dielectric present than without.&nbsp; This  explains why the capacitance 
+of the capacitor is greater with a dielectric.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p align="left"> Illustration authored by Anne J. Cox and Mario Belloni.<br>
+Script authored by Morten 
+Brydensholt.<br>
+Applet authored by Vojko Valencic.<br>
+<a href="../../conditions_of_use.html">© 2004 by Prentice-Hall, Inc. A Pearson Company</a></p>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

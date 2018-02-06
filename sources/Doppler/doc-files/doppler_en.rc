@@ -1,0 +1,12 @@
+label.caption Doppler
+label.classical classical
+label.speed  speed=
+label.relativistic relativistic
+label.time time:
+label.position source x:
+button.start Start
+button.stop Stop
+
+
+
+

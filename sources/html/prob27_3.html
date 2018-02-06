@@ -1,0 +1,215 @@
+<html>
+<head>
+<link rel="STYLESHEET" type="text/css" href="../../workbook.css">
+<script language="JavaScript"> 
+var timerID=0;
+var loaded=true;
+
+function initApplets(){
+	clearTimeout(timerID);
+        loaded=true;
+	timerID=setTimeout("init()",100);
+}
+  	
+function init(){ 
+      if(!loaded) return;
+       timerID=0;
+	document.EField.setAutoRefresh(false);
+	document.EField.setDefault();
+	document.EField.setTimeVisibility(false);
+	document.EField.setDrag(false);
+	document.EField.setShowFieldVectors(true);
+	document.EField.setCaption("Select an Animation to Begin");
+	document.EField.setPotential("2*x",-5,5,-5,5);
+		document.EField.setChargeLabel("+");
+		document.EField.setChargeRGB(255,0,0);
+	r1=document.EField.addObject("testcharge","x=-4,y=0,r=4,q=0,vx=0,vy=0");
+	document.EField.setRGB(r1,255,0,0);
+    document.EField.setAutoRefresh(true);
+}
+
+
+function path_a(){
+//if(!loaded) return;
+timerID=0;
+	document.EField.setDefault();
+    //document.EField.setAutoRefresh(false);
+	document.EField.setCaption("Animation 1");
+	document.EField.setTimeVisibility(true);
+	document.EField.setDrag(false);
+	document.EField.setShowFieldVectors(true);
+	document.EField.setPotential("2*x*y",-5,5,-5,5);
+	document.EField.setBz(0);
+	document.EField.setChargeLabel("+");
+    document.EField.setChargeRGB(255,0,0);
+	r1=document.EField.addObject("testcharge","x=-4,y=0,r=4,q=-1,vx=2,vy=0");
+	document.EField.setRGB(r1,255,0,0);
+    document.EField.setMaxTime(2,"End of Animation");
+    document.EField.setAutoRefresh(true);
+}
+
+function path_b(){
+if(!loaded) return;
+timerID=0;
+	document.EField.setAutoRefresh(false);
+	document.EField.setDefault();
+	document.EField.setTimeVisibility(true);
+			document.EField.setCaption("Animation 2");
+	document.EField.setDrag(false);
+	document.EField.setBz(0);
+	document.EField.setShowFieldVectors(true);
+	document.EField.setPotential("2*x",-5,5,-5,5);
+		document.EField.setChargeLabel("+");
+		document.EField.setChargeRGB(255,0,0);
+	r1=document.EField.addObject("testcharge","x=-4,y=0,r=4,q=0,vx=2,vy=0");
+	document.EField.setRGB(r1,255,0,0);
+		document.EField.setMaxTime(2,"End of Animation");
+
+		document.EField.setAutoRefresh(true);
+	//document.EField.forward();
+}
+
+function path_c(){
+if(!loaded) return;
+timerID=0;
+	document.EField.setAutoRefresh(false);
+	document.EField.setDefault();
+	document.EField.setTimeVisibility(true);
+			document.EField.setCaption("Animation 3");
+	document.EField.setDrag(false);
+		document.EField.setBz(0);
+	document.EField.setShowFieldVectors(true);
+	document.EField.setPotential("2*x",-5,5,-5,5);
+		document.EField.setChargeLabel("+");
+		document.EField.setChargeRGB(255,0,0);
+	r1=document.EField.addObject("testcharge","x=-4,y=0,r=4,q=1,vx=2,vy=0");
+	document.EField.setRGB(r1,255,0,0);
+			document.EField.setMaxTime(2,"End of Animation");
+
+		document.EField.setAutoRefresh(true);
+	//document.EField.forward();
+}
+
+
+function path_d(){
+if(!loaded) return;
+timerID=0;
+	document.EField.setAutoRefresh(false);
+	document.EField.setDefault();
+	document.EField.setTimeVisibility(true);
+			document.EField.setCaption("Animation 4");
+	document.EField.setDrag(false);
+	document.EField.setShowFieldVectors(true);
+	document.EField.setPotential("2*x",-5,5,-5,5);
+	document.EField.setBz(5);
+		document.EField.setChargeLabel("+");
+		document.EField.setChargeRGB(255,0,0);
+	r1=document.EField.addObject("testcharge","x=-4,y=0,r=4,q=.1,vx=2,vy=0");
+	document.EField.setRGB(r1,255,0,0);
+			document.EField.setMaxTime(2,"End of Animation");
+
+		document.EField.setAutoRefresh(true);
+	//document.EField.forward();
+}
+
+function path_e(){
+if(!loaded) return;
+timerID=0;
+	document.EField.setAutoRefresh(false);
+	document.EField.setDefault();
+	document.EField.setTimeVisibility(true);
+			document.EField.setCaption("Animation 5");
+	document.EField.setDrag(false);
+	document.EField.setShowFieldVectors(true);
+	document.EField.setPotential("2*x",-5,5,-5,5);
+		document.EField.setBz(-5);
+		document.EField.setChargeLabel("+");
+		document.EField.setChargeRGB(255,0,0);
+	r1=document.EField.addObject("testcharge","x=-4,y=0,r=4,q=.1,vx=2,vy=0");
+	document.EField.setRGB(r1,255,0,0);
+	document.EField.setMaxTime(2,"End of Animation");
+		document.EField.setAutoRefresh(true);
+	//document.EField.forward();
+}
+function stopApplet(){
+	window.onerror= function() { return true;}
+	clearTimeout(timerID);
+	loaded=false;
+	timerID=-1;
+}
+
+
+
+</script>
+<title>Physlet Physics by Christian and Belloni: Problem 27.3</title>
+</head>
+
+<BODY onload="initApplets()">
+
+<h2>Problem 27.3</h2>
+
+<div align="center">
+  <center>
+  <table border="1" bgcolor="#C0C0C0">
+    <tr>
+      <td>
+      <applet codebase="./" archive="Physlets.jar"
+        code="eField4.EField.class" name="EField" width="400" height="200"
+        hspace="0" vspace="0" align="middle" mayscript>
+          <param name="FPS" value="10">
+          <param name="dt" value="0.05">
+          <param name="ShowControls" value="false">
+          <param name="ShowContours" value="false">
+          <param name="ShowFieldLines" value="false">
+          <param name="ShowFieldVectors" value="false">
+          <param name="ShowLabels" value="false">
+          <param name="ShowCharge" value="true">
+          <param name="Range" value="-5,5,-5,5">
+          <param name="GridSize" value="40">
+          <param name="OnLoad" value="initApplets()">
+        <param name="AppletNames" value="EField">
+        </applet></td>
+    </tr>
+  </table>
+  </center>
+</div>
+<div align="center">
+  <center>
+  <table border="1" bgcolor="#c0c0c0">
+    <tr>
+      <td><a href="JavaScript:path_a()">Animation 1</a></td>
+      <td><a href="JavaScript:path_b()">Animation 2</a></td>
+      <td><a href="JavaScript:path_c()">Animation 3</a></td>
+      <td><a href="JavaScript:path_d()">Animation 4</a></td>
+      <td><a href="JavaScript:path_e()">Animation 5</a></td>
+    </tr>
+  </table>
+  </center>
+</div>
+<form name="form1">
+<p align="center">
+<input type="button" value="play" 
+onclick="document.EField.forward()"><input type="button" value="pause" 
+onclick="document.EField.pause()"><input type="button" value="&lt;&lt;step" 
+onclick="document.EField.stepTimeBack()"><input type="button" value="step&gt;&gt;" 
+onclick="document.EField.stepTimeForward()"><input type="button" value="reset" 
+onclick="document.EField.reset()"></p>
+</form>
+
+
+<p align="center">
+   <b><font color="#FF0000"><i>Please wait for the animation to 
+completely load.</i></font></b></p>
+
+
+<p>A positively charged particle moves through a uniform magnetic field.&nbsp; 
+The animations show the field vectors <b>(position is given in millimeters and time is given in seconds)</b>.&nbsp;
+<a href="JavaScript:init()">Restart</a>.&nbsp; Which animation is correct?&nbsp; Explain.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="left"> Problem authored by Anne J. Cox.<br>
+<a href="../../conditions_of_use.html">© 2004 by Prentice-Hall, Inc. A Pearson Company</a></p>
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+
+<head>
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+<script language="JavaScript">
+function example1()
+{       document.QTime.stop();
+        document.QTime.setXMinMax(-2*Math.PI,2*Math.PI);
+        document.QTime.setPotential("1000*step(-pi-x)+1000*step(x-pi)");
+        document.QTime.setReal("sin(2*x)*(step(x+pi)-step(x-pi))");
+        document.QTime.setImaginary("0");
+        document.QTime.reset();
+        document.QTime.start();
+}
+function example2()
+{
+        document.QTime.stop();
+        document.QTime.setXMinMax(-10,10);
+        document.QTime.setPotential("x*x");
+        document.QTime.setReal("exp(-(x+6)*(x+6))");
+        document.QTime.setImaginary("0");
+        document.QTime.reset();
+        document.QTime.start();
+}
+function example3()
+{
+        document.QTime.stop();
+        document.QTime.setXMinMax(-20,20);
+        document.QTime.setPotential("0");
+        document.QTime.setReal("exp(-x*x)");
+        document.QTime.setImaginary("0");
+        document.QTime.reset();
+        document.QTime.start();
+}
+function example4()
+{
+        document.QTime.stop();
+        document.QTime.setXMinMax(-10,10);
+        document.QTime.setPotential("0");
+        document.QTime.setReal("cos(2*pi*x)*exp(-(x+4)*(x+4))+sin(2*pi*x)*exp(-(x-4)*(x-4)) ");
+        document.QTime.setImaginary("sin(2*pi*x)*exp(-(x+4)*(x+4))+cos(2*pi*x)*exp(-(x-4)*(x-4))");
+        document.QTime.reset();
+        document.QTime.start();
+}
+function example5()
+{
+        document.QTime.stop();
+        document.QTime.setXMinMax(-10,10);
+        document.QTime.setPotential("x*x*x*x/100");
+        document.QTime.setReal("exp(-(x+6)*(x+6))");
+        document.QTime.setImaginary("0");
+        document.QTime.reset();
+        document.QTime.start();
+}
+</script>
+<title>QTime Examples</title>
+</head>
+
+<body>
+
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+	<tr>
+		<td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+		<!-- --></a>
+		<table border="0" cellpadding="0" cellspacing="3">
+			<tr align="center" valign="top">
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../overview-summary.html"><font class="NavBarFont1">
+				<b>Overview</b></font></a> </td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+				</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<font class="NavBarFont1">&nbsp;Class </font>&nbsp;</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+				</td>
+			</tr>
+		</table>
+		</td>
+		<td align="right" valign="top" rowspan="2"><em></em></td>
+	</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+<p align="center">
+<applet code="qTime.QTime.class" codebase="../../classes" archive="QTime4_.jar,STools4.jar" name="QTime" width="400" height="400">
+	<param name="potential" value="1*x*x" />
+	<param name="real" value="exp(-(x+4)*(x+4))" />
+	<param name="imaginary" value="0" />
+	<param name="numPts" value="512" />
+	<param name="minX" value="-10" />
+	<param name="maxX" value="10" />
+	<param name="dt" value="0.05" />
+	<param name="FPS" value="10" />
+	<param name="showControls" value="true" />
+</applet> </p>
+<h1 align="CENTER">Wavepacket Time Development</h1>
+<p>The QTime Physlet displays the probability density of the wavepacket along with 
+the quantum phase. The thickness of the wavepacket at any value of x is proportional 
+to the amplitude of the wavefunction.</p>
+<h4>Instructions</h4>
+<p>Click on the problem number to initialize the simulation at the top of the page. 
+You may start and stop the simulations using the buttons on the bottom of the animation. 
+Click and drag inside the animation to read the coordinates and probability. </p>
+<ul>
+	<li><a href="JavaScript:example1()">Example 1</a><br />
+	An eigenstate for a particle in a box. </li>
+	<li><a href="JavaScript:example2()">Example 2</a><br />
+	Simple Harmonic oscillator. </li>
+	<li><a href="JavaScript:example3()">Example 3</a><br />
+	Wavepacket spread. </li>
+	<li><a href="JavaScript:example4()">Example 4</a><br />
+	Packet interference. </li>
+	<li><a href="JavaScript:example5()">Example 5</a><br />
+	Anharmonic oscillator. </li>
+</ul>
+
+</body>
+
+</html>

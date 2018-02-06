@@ -1,0 +1,163 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0" />
+<meta name="ProgId" content="FrontPage.Editor.Document" />
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+<title>AddObject Method</title>
+</head>
+
+<body>
+
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+	<tr>
+		<td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+		<!-- --></a>
+		<table border="0" cellpadding="0" cellspacing="3">
+			<tr align="center" valign="top">
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../overview-summary.html"><font class="NavBarFont1">
+				<b>Overview</b></font></a> </td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+				</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<font class="NavBarFont1">&nbsp;Class </font> &nbsp;</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+				</td>
+			</tr>
+		</table>
+		</td>
+		<td align="right" valign="top" rowspan="2"><em></em></td>
+	</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+<h3 align="center"><img border="0" src="faraday.jpg"></h3>
+<h3>Faraday <a name="_Toc485180349">Embedding</a></h3>
+<p>Faraday models the induced current in wires as they are moved through an external magnetic field.&nbsp; Wires are in 
+the x-y plane.&nbsp; The external magnetic field is in the z direction.</p>
+<p>Faraday is embedded using the following html tag:</p>
+<pre>&lt;applet
+  codebase=&quot;../classes/&quot;
+  archive=&quot;Faraday4_.jar,STools4.jar&quot;
+  code=&quot;faraday.Faraday.class&quot;
+  name=&quot;Faraday&quot;
+  width=&quot;450&quot; 
+  height=&quot;300&quot;&gt;
+
+&lt;param name=&quot;PixPerUnit&quot; value=&quot;10&quot; /&gt;
+&lt;param name=&quot;SchematicWidth&quot; value=&quot;200&quot; /&gt;
+&lt;param name=&quot;MaxTime&quot; value=&quot;20&quot; /&gt;
+&lt;param name=&quot;FPS&quot; value=&quot;10&quot; /&gt;
+&lt;param name=&quot;ShowControls&quot; value=&quot;true&quot; /&gt;
+&lt;param name=&quot;FieldFunction&quot; value=&quot;x/5&quot; /&gt;
+&lt;param name=&quot;PositionFunction&quot; value=&quot;4-4*cos(t)&quot; /&gt;
+&lt;param name=&quot;ShowGraph&quot; value=&quot;true&quot; /&gt;
+&lt;param name=&quot;DragMode&quot; value=&quot;false&quot; /&gt;
+&lt;param name=&quot;ShowGrid&quot; value=&quot;true&quot; /&gt;
+&lt;param name=&quot;ShowColor&quot; value=&quot;true&quot; /&gt;
+&lt;param name=&quot;ShowCurrentArrow&quot; value=&quot;true&quot; /&gt;
+&lt;param name=&quot;ShowSchematic&quot; value=&quot;true&quot; /&gt;
+&lt;/applet&gt;</pre>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%" id="table2">
+	<tr>
+		<td colspan="3">
+		<p align="center"><font color="#800000"><b>Faraday</b></font><b><font color="#800000"> 
+		Parameters</font></b></td>
+	</tr>
+	<tr>
+		<td width="15%"><b>ShowControls</b></td>
+		<td width="15%">&nbsp;boolean</td>
+		<td>&nbsp;True to show simple user interface.</td>
+	</tr>
+	<tr>
+		<td width="15%" height="22"><b>FPS</b></td>
+		<td width="15%" height="22">&nbsp;int</td>
+		<td height="22">&nbsp;Animation frames per second.</td>
+	</tr>
+	<tr>
+		<td width="15%"><b>MaxTime</b></td>
+		<td width="15%">&nbsp;double</td>
+		<td>&nbsp;Cycle time on the graph.</td>
+	</tr>
+	<tr>
+		<td width="15%"><b>PixPerUnit</b></td>
+		<td width="15%">&nbsp;int</td>
+		<td>&nbsp;The scale on the schematic diagram.</td>
+	</tr>
+	<tr>
+		<td width="15%"><b>FieldFunction</b></td>
+		<td width="15%">&nbsp;string</td>
+		<td>&nbsp;The magnetic field, B(x,t).</td>
+	</tr>
+	<tr>
+		<td width="15%"><b>PositionFunction</b></td>
+		<td width="15%">&nbsp;string</td>
+		<td>&nbsp;Position function, x(t), of the U wire in the default configuration.</td>
+	</tr>
+	<tr>
+		<td width="15%"><b>SchematicWidth</b></td>
+		<td width="15%">&nbsp;int</td>
+		<td>&nbsp;Width of schematic in pixel units.&nbsp; Graph will occupy the remaining space.</td>
+	</tr>
+	<tr>
+		<td width="15%"><b>ShowColor</b></td>
+		<td width="15%">&nbsp;boolean</td>
+		<td>&nbsp;True to use red/blue to show field strength.</td>
+	</tr>
+    <tr>
+		<td width="15%"><b>ShowGrid</b></td>
+		<td width="15%">&nbsp;boolean</td>
+		<td>&nbsp;True to show the tick marks for field direction.</td>
+	</tr>
+    <tr>
+		<td width="15%"><b>ShowGraph</b></td>
+		<td width="15%">&nbsp;boolean</td>
+		<td>&nbsp;True to show the voltage graph.</td>
+	</tr>
+    <tr>
+		<td width="15%"><b>ShowCurrentArrow</b></td>
+		<td width="15%">&nbsp;boolean</td>
+		<td>&nbsp;True to show the current arrow.</td>
+	</tr>
+	<tr>
+		<td width="15%"><b>ShowSchematic</b></td>
+		<td width="15%">&nbsp;boolean</td>
+		<td>&nbsp;True to show the schematic.</td>
+	</tr>
+	<tr>
+		<td colspan="3">
+		<p align="center"><b><font color="#800000">STools Parameters</font></b></td>
+	</tr>
+	<tr>
+		<td width="15%" height="22"><b>AppletNames</b></td>
+		<td width="15%" height="22">&nbsp;string</td>
+		<td height="22">&nbsp;A comma delimited list of applet names occurring within 
+		this html page. (See OnLoad.)</td>
+	</tr>
+	<tr>
+		<td width="15%"><b>Debug</b></td>
+		<td width="15%">&nbsp;int</td>
+		<td>&nbsp;Enables debugging messages in Java console; 0 = no 
+		messages, 255 = verbose messages.</td>
+	</tr>
+	<tr>
+		<td width="15%"><b>OnLoad</b></td>
+		<td width="15%">&nbsp;string</td>
+		<td>&nbsp;A JavaScript function that will be invoked using LiveConnect after all applets have been loaded.&nbsp; (See AppletNames.)</td>
+	</tr>
+	<tr>
+		<td width="15%"><b>Resources</b></td>
+		<td width="15%">&nbsp;string</td>
+		<td>&nbsp;A file containing translations of internal text such as 
+		buttons and labels.</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<html>
+<head>
+<title>Physlet Physics by Christian and Belloni: Illustration 26.4</title>
+<link rel="STYLESHEET" type="text/css" href="../../workbook.css">
+<script language="JavaScript">
+
+var timerID=0;
+var loaded=false;
+  	
+function parallel_battery(){ 
+       timerID=0;
+	document.jacob.loadFile('exp/efelt3_3.ppd');
+	}
+
+function series_battery(){
+	document.jacob.loadFile('exp/efelt3_6a.ppd');
+}
+
+	
+function series_charge(){
+	document.jacob.loadFile('exp/efelt3_7.ppd');
+
+	}
+
+function parallel_charge(){
+	document.jacob.loadFile('exp/efelt3_5.ppd');
+	
+	}
+	
+function stopApplet(){
+	window.onerror= function() { return true;}
+	clearTimeout(timerID);
+	loaded=false;
+	timerID=-1;
+}
+
+</script>
+</head>
+<BODY onunload="stopApplet()">
+<h2 align="left">Illustration 26.4: Microscopic View of Capacitors in Series and Parallel</h2>
+<center>
+<table border="1" bgcolor="#C0C0C0">
+      <tr>
+        <td>
+<p align="center">
+<applet codebase="./" archive="Jacob.jar" code="jacob.Jacob.class" 
+   name="jacob" width="500"
+height="420" hspace="0" vspace="0" align="middle" mayscript>
+  <param name="FPS" value="10">
+  <param name="dt" value="0.1">
+  <param name="ShowControls" value="false">
+  <param name="ConfigFile" value="exp/efelt3_3.ppd">
+</applet>
+</td>
+       </tr>
+    </table></center>
+    
+    <div align="center">
+      <center>
+      <div align="center">
+        <center>
+        <table border="1" bgcolor="#c0c0c0">
+          <tr>
+            <td>connected to battery in:</td>
+            <td><a href="JavaScript:parallel_battery()">Parallel</a></td>
+            <td><a href="JavaScript:series_battery()">Series</a></td>
+          </tr>
+          <tr>
+            <td>connected to charge reservoir in:&nbsp;&nbsp;&nbsp; </td>
+            <td><a href="JavaScript:parallel_charge()">Parallel</a></td>
+            <td><a href="JavaScript:series_charge()">Series</a></td>
+          </tr>
+        </table>
+        </center>
+      </div>
+      </center>
+</div>
+    
+<body onunload="stopApplet()">
+
+<p><form name="form1"> </p>
+  <p align="center">
+  
+  <input type="button" value="play" 
+  onclick="document.jacob.forward()"><input type="button" 
+  value="pause" onclick="document.jacob.pause()"><input type="button" 
+  value="step&gt;&gt;" onclick="document.jacob.stepForward()">
+
+  </p>
+</form>
+
+
+<p align="center">
+   <b><font color="#FF0000"><i>Please wait for the animation to 
+completely load.</i></font></b></p>
+
+
+<p>These animations model the 
+charging of parallel-plate capacitors in different configurations as the blue electrons are 
+separated from the positively charged atoms  due to the electric potential 
+difference.&nbsp; <a href="JavaScript:parallel_battery()">Restart</a>. </p>
+
+<p><a href="JavaScript:parallel_battery()">Consider two capacitors in parallel 
+connected to a battery</a>.&nbsp; When you push the 
+  &quot;play&quot; button, the battery is connected to the capacitors and the electrons 
+  slowly begin to leave the vicinity of the positive charges.&nbsp; The charge pairs separate.&nbsp; Charges pile up until the 
+electric potential 
+  between the two plates of the capacitor matches the electric potential of the battery.&nbsp; Note that the number of 
+  charges on the top plates of the two capacitors is essentially the same.&nbsp; 
+They may 
+  differ by a few charges.&nbsp; This is because the two capacitors are 
+identical and therefore have the same capacitance.&nbsp; Since they are in 
+parallel, they have the same electric potential difference between their plates.&nbsp; 
+Therefore, the number of positive and negative charges on each of the pairs of 
+plates must be the same because capacitance is defined as C = Q/&Delta;V.&nbsp; Note that, if the capacitors were not identical, they would still have the 
+same electric potential difference across their plates, but their charges would 
+be different.</p>
+
+<p>Contrast this with <a href="JavaScript:series_battery()">two capacitors in 
+series connected to a battery</a>.&nbsp; 
+  Again, push the start button to connect the battery to the capacitors.&nbsp; 
+Notice that the negative charges that end up on the left capacitor come from the 
+right capacitor.&nbsp; Also note that the negative charges that end up on the 
+right capacitor come from the left capacitor. &nbsp;Therefore, the charge on one 
+pair of capacitor plates is the same as on the other pair of capacitor 
+plates.&nbsp; In this case, for a series configuration, 
+  the sum of the electric potential differences across each of the individual 
+capacitors equals the electric potential difference of the 
+  battery. </p>
+<p>Instead of connecting to a battery, now let's assume that there is a reservoir of excess 
+  positive charge on one end of the configuration and a connection to ground (a reservoir of negative 
+  charges) at the other end of the configuration of capacitors.&nbsp; Consider <a href="JavaScript:parallel_charge()">
+two capacitors of different capacitance in parallel</a>.&nbsp;What happens?&nbsp; Which 
+capacitor 
+  holds more charge?&nbsp; Why?&nbsp; Since the capacitors are in parallel, the 
+electric potential difference across each of the capacitors must be the same.&nbsp; 
+As a consequence, since the capacitance must be different for each capacitor, the 
+amount of charge on each capacitor must be different.&nbsp; The capacitor on the 
+right has the larger capacitance (C = &epsilon;<sub>0</sub>A/d) and therefore has the larger 
+charge.</p>
+<p>Finally, consider <a href="JavaScript:series_charge()">two different 
+capacitors connected in series</a>.&nbsp; As in the series case with the battery,&nbsp;both 
+capacitors contain the same charge.&nbsp; Which one has the greater potential 
+difference across it?&nbsp; Since&nbsp;&#916;V = Q/C, the capacitor on the left 
+(with the larger capacitance) has the larger electric potential difference 
+across it.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="left"> Illustration authored by Anne J. Cox and Mario Belloni.<br>
+Script authored by Morten 
+Brydensholt.<br>
+Applet authored by Vojko Valencic.<br>
+<a href="../../conditions_of_use.html">© 2004 by Prentice-Hall, Inc. A Pearson Company</a></p>
+
+</body>
+
+</html>

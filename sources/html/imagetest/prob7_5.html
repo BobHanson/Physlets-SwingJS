@@ -1,0 +1,280 @@
+<html>
+
+<head>
+<link rel="STYLESHEET" type="text/css" href="../../workbook.css">
+<script language="JavaScript"> 
+var timerID=0;
+var loaded=false;
+
+function initApplets(){
+	clearTimeout(timerID);
+        loaded=true;
+	timerID=setTimeout("mjb4_60()",100);
+}
+  	
+function mjb4_60(){ 
+      if(!loaded) return;
+       timerID=0;
+   document.Animator.setAutoRefresh(false); 
+   document.Animator.setDefault(); 
+   document.Animator.setTimeDisplay(false);
+   document.Animator.setGridUnit(1);
+   document.Animator.addObject("caption","text=Select an Animation");
+   document.Animator.setAutoRefresh(true); 
+}
+
+
+function mjb4_6a() {  
+   if(!loaded) return;
+   document.Animator.setAutoRefresh(false); 
+   document.Animator.setDefault(); 
+   document.Animator.setGridUnit(1);
+   document.Animator.addObject("caption","text=Animation 1");
+   document.Animator.shiftPixOrigin(0,-75);
+   rid=document.Animator.addObject("image","file=images/dpull.gif,x=-5.5,y=2*t+5.9");
+   document.Animator.addLine("0","2*t*(-1)-14.5","1","19.5");
+   document.Animator.addLine("0","2*t-14.5","-5","19.5");
+   document.Animator.setShapeRGB(0,255,0);
+   document.Animator.addObject("circle","r=30,x=-2,y=19.5");
+   document.Animator.setShapeRGB(0,0,0);
+   rid=document.Animator.addObject("rectangle","w=30,h=30,x=1,y=-2*t+4.9");
+   document.Animator.setRGB(rid,0,0,0);
+   tid=document.Animator.addObject("text","text=v =,calc=vy");
+   document.Animator.setAnimationSlave(rid,tid);
+   document.Animator.setDisplayOffset(tid,18,-5);
+   
+   document.Animator.setOneShot(0,1,"End of Animation");
+   document.Animator.setAutoRefresh(true); 
+}
+function mjb4_6b() {  
+   if(!loaded) return;
+   document.Animator.setAutoRefresh(false); 
+   document.Animator.setDefault(); 
+   document.Animator.setGridUnit(1);
+   document.Animator.addObject("caption","text=Animation 2");
+   document.Animator.shiftPixOrigin(0,-75);
+      rid=document.Animator.addObject("image","file=images/dpull.gif,x=-5.5,y=-2*t+5.9");
+   document.Animator.addLine("0","-2*t*(-1)-14.5","1","19.5");
+   document.Animator.addLine("0","-2*t-14.5","-5","19.5");
+   document.Animator.setShapeRGB(0,255,0);
+   document.Animator.addObject("circle","r=30,x=-2,y=19.5");
+   document.Animator.setShapeRGB(0,0,0);
+   rid=document.Animator.addObject("rectangle","w=30,h=30,x=1,y=2*t+4.9");
+   document.Animator.setRGB(rid,0,0,0);
+   tid=document.Animator.addObject("text","text=v =,calc=vy");
+   document.Animator.setAnimationSlave(rid,tid);
+   document.Animator.setDisplayOffset(tid,18,-5);
+   
+   document.Animator.setOneShot(0,1,"End of Animation");
+   document.Animator.setAutoRefresh(true); 
+}
+
+function mjb4_6c() {  
+   if(!loaded) return;
+   document.Animator.setAutoRefresh(false); 
+   document.Animator.setDefault(); 
+   document.Animator.setGridUnit(1);
+   document.Animator.addObject("caption","text=Animation 3");
+   document.Animator.shiftPixOrigin(0,-75);
+   rid=document.Animator.addObject("image","file=images/dpull.gif,x=-5.5,y=2*t*t+5.9");
+   document.Animator.addLine("0","2*t*t*(-1)-14.5","1","19.5");
+   document.Animator.addLine("0","2*t*t-14.5","-5","19.5");
+   document.Animator.setShapeRGB(0,255,0);
+   document.Animator.addObject("circle","r=30,x=-2,y=19.5");
+   document.Animator.setShapeRGB(0,0,0);
+   rid=document.Animator.addObject("rectangle","w=30,h=30,x=1,y=-2*t*t+4.9");
+   document.Animator.setRGB(rid,0,0,0);
+   tid=document.Animator.addObject("text","text=v =,calc=vy");
+   document.Animator.setAnimationSlave(rid,tid);
+   document.Animator.setDisplayOffset(tid,18,-5);
+   
+   document.Animator.setOneShot(0,1,"End of Animation");
+   document.Animator.setAutoRefresh(true); 
+}
+
+function mjb4_6d() {  
+   if(!loaded) return;
+   document.Animator.setAutoRefresh(false); 
+   document.Animator.setDefault(); 
+   document.Animator.setGridUnit(1);
+   document.Animator.addObject("caption","text=Animation 4");
+   document.Animator.shiftPixOrigin(0,-75);
+      rid=document.Animator.addObject("image","file=images/dpull.gif,x=-5.5,y=-2*t*t+5.9");
+   document.Animator.addLine("0","2*t*t*(1)-14.5","1","19.5");
+   document.Animator.addLine("0","-2*t*t-14.5","-5","19.5");
+   document.Animator.setShapeRGB(0,255,0);
+   document.Animator.addObject("circle","r=30,x=-2,y=19.5");
+   document.Animator.setShapeRGB(0,0,0);
+   rid=document.Animator.addObject("rectangle","w=30,h=30,x=1,y=2*t*t+4.9");
+   document.Animator.setRGB(rid,0,0,0);
+   tid=document.Animator.addObject("text","text=v =,calc=vy");
+   document.Animator.setAnimationSlave(rid,tid);
+   document.Animator.setDisplayOffset(tid,18,-5);
+   document.Animator.setOneShot(0,1,"End of Animation");
+   document.Animator.setAutoRefresh(true);  
+}
+
+function mjb4_6e() {  
+   if(!loaded) return;
+   document.Animator.setAutoRefresh(false); 
+   document.Animator.setDefault(); 
+   document.Animator.setGridUnit(1);
+   document.Animator.addObject("caption","text=Animation 5");
+   document.Animator.shiftPixOrigin(0,-75);
+      rid=document.Animator.addObject("image","file=images/dpull.gif,x=-5.5,y=5.9");
+   document.Animator.addLine("0","-14.5","1","19.5");
+   document.Animator.addLine("0","-14.5","-5","19.5");
+   document.Animator.setShapeRGB(0,255,0);
+   document.Animator.addObject("circle","r=30,x=-2,y=19.5");
+   document.Animator.setShapeRGB(0,0,0);
+   rid=document.Animator.addObject("rectangle","w=30,h=30,x=1,y=+4.9");
+   document.Animator.setRGB(rid,0,0,0);
+   tid=document.Animator.addObject("text","text=v =,calc=vy");
+   document.Animator.setAnimationSlave(rid,tid);
+   document.Animator.setDisplayOffset(tid,18,-5);
+   document.Animator.setOneShot(0,1,"End of Animation");
+   document.Animator.setAutoRefresh(true); 
+}
+
+function mjb4_6f() {  
+   if(!loaded) return;
+   document.Animator.setAutoRefresh(false); 
+   document.Animator.setDefault(); 
+   document.Animator.setGridUnit(1);
+   document.Animator.addObject("caption","text=Animation 6");
+   document.Animator.shiftPixOrigin(0,-75);
+      rid=document.Animator.addObject("image","file=images/dpull.gif,x=-5.5,y=5.9");
+   document.Animator.addLine("0","-13","1","19.5");
+   document.Animator.addLine("0","-14.5","-5","19.5");
+   document.Animator.setShapeRGB(0,255,0);
+   document.Animator.addObject("circle","r=30,x=-2,y=19.5");
+   document.Animator.setShapeRGB(0,0,0);
+   rid=document.Animator.addObject("rectangle","w=30,h=30,x=1,y=-4.9*t*t+4.9");
+   document.Animator.setRGB(rid,0,0,0);
+   tid=document.Animator.addObject("text","text=v =,calc=vy");
+   document.Animator.setAnimationSlave(rid,tid);
+   document.Animator.setDisplayOffset(tid,18,-5);
+   document.Animator.setOneShot(0,1,"End of Animation");
+   document.Animator.setAutoRefresh(true); 
+}
+
+
+function killmenow(){
+	window.onerror= function() { return true;}
+	clearTimeout(timerID);
+	loaded=false;
+	timerID=-1;
+}
+</script>
+
+<title>Physlet Physics by Christian and Belloni: Problem 7.5</title>
+
+</head>
+
+
+
+<body onunload="killmenow()">
+
+<h2>Problem 7.5</h2>
+
+<div align="center">
+  <center>
+
+<table border="1" bgcolor="#C0C0C0">
+  <tr>
+    <td>
+<applet code="animator4.Animator.class" archive="Physlets.jar, Physlets_images.jar" 
+codebase="./" align="baseline"
+width="175" height="380" name="Animator" mayscript>
+  <param name="FPS" value="10">
+  <param name="dt" value="0.05">
+  <param name="showControls" value="false">
+        <param name="OnLoad" value="initApplets()">
+        <param name="AppletNames" value="Animator">
+        </applet></td>
+  </tr>
+</table>
+
+    </center>
+</div>
+
+    <form>
+      <div align="center"><center><p><input type="button" value="play"
+      onclick="document.Animator.forward()"><input type="button" value="pause"
+      onclick="document.Animator.pause()"><input type="button" value="&lt;&lt;step"
+      onclick="document.Animator.stepBack()"><input type="button" value="step&gt;&gt;"
+      onclick="document.Animator.stepForward()"><input type="button" value="reset"
+      onclick="document.Animator.reset()"> </p>
+      </center></div>
+    </form>
+
+<div align="center">
+  <center>
+<table  bgcolor="#C0C0C0" border="1">
+  <tr>
+    <td  align="center">
+      <p><a href="JavaScript:mjb4_6a()">Animation 1</a></p>
+    </td>
+    <td  align="center">
+      <p><a href="JavaScript:mjb4_6b()">Animation 2</a></p>
+    </td>
+    <td  align="center">
+      <p><a href="JavaScript:mjb4_6c()">Animation 3</a></p>
+    </td>
+    <td align="center">
+      <p><a href="JavaScript:mjb4_6d()">Animation 4</a></p>
+    </td>
+    <td  align="center">
+      <p><a href="JavaScript:mjb4_6e()">Animation 5</a></p>
+    </td>
+    <td  align="center">
+      <p><a href="JavaScript:mjb4_6f()">Animation 6</a></p>
+    </td>
+  </tr>
+</table>
+
+  </center>
+</div>
+
+<p align="center"><b><font color="#FF0000"><i>Please wait for the animation to completely load.</i></font></b></p>
+
+<p>A 10-kg mass is attached via a massless string over a massless pulley to a 
+hand <b>(position is given in meters and time is given in seconds)</b>. The masses in each animation are identical.<font color="#FF0000">&nbsp; </font>
+<a href="JavaScript:mjb4_60()">Restart</a>.<br>
+</p>
+
+<ol type="a">
+  <li>Rank the animations according to the change in gravitational potential 
+  energy of the mass, from 
+  greatest to least. </li>
+  <li>Rank the animations according to the work done on the mass by the tension 
+  in the string, from 
+  greatest to least.</li>
+  <li>Rank the animations according to the change in kinetic energy of the mass, from 
+  greatest to least. </li>
+</ol>
+
+
+<p><i>Indicate ties by placing the animation numbers in () please.&nbsp; For example, 
+a suitable response could be: 1,2,(3,4),5,6.</i></p>
+
+
+<ol type="a" start="4">
+  <li>Calculate the  change in gravitational potential energy of the mass during each of the 
+  animations.</li>
+  <li>Calculate the  work done on the mass by the tension in the string 
+  during each of the animations.</li>
+  <li>Calculate the change in kinetic energy of the mass during each of the 
+  animations. </li>
+</ol>
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>
+<a href="../../conditions_of_use.html">© 2004 by Prentice-Hall, Inc. A Pearson 
+Company</a></p>
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+button.start Run
+button.stop Stop
+button.reset Reset
+button.forward Step
+button.add Add/Change
+label.number #:
+label.refraction n =
+label.left_wave Left Wave
+label.right_wave Right Wave
+label.sum Sum
+label.energy Energy =
+label.time Time:
+label.phase Phase =
+label.no_phase Phase not available.
+
+
+
+
+

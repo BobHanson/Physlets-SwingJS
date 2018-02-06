@@ -1,0 +1,64 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0" />
+<meta name="ProgId" content="FrontPage.Editor.Document" />
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+<title>EMWave Physlet</title>
+<script language="JavaScript">
+function linearWave() {
+         document.EMWave.deleteAll();
+		  document.EMWave.setWaveLineDensity(2); 
+         document.EMWave.setPixPerUnit(8);
+         document.EMWave.setRGB(22,50,134);
+         document.EMWave.createFilledSquare(-20,20);
+         document.EMWave.setRGB(222,223,27);
+         document.EMWave.createAxes(0,0,-20,10);
+         document.EMWave.setRGB(135,52,55);
+         document.EMWave.createLinear(-20,20,10,0,0);
+}
+</script>
+</head>
+
+<body onload="linearWave()">
+
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+  <tr>
+    <td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+    <!-- --></a>
+    <table border="0" cellpadding="0" cellspacing="3">
+      <tr align="center" valign="top">
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><a href="../../overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>
+        </td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1">&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+        </td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><font class="NavBarFont1">&nbsp;Class </font>&nbsp;</td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+        </td>
+      </tr>
+    </table>
+    </td>
+    <td align="right" valign="top" rowspan="2">&nbsp;</td>
+  </tr>
+</table>
+<p align="center">
+<!-- =========== END OF NAVBAR =========== -->
+<applet codebase="../../classes" archive="EMWave4_.jar,STools4.jar" code="emwave4.EMWave.class" name="EMWave" width="275" 
+height="450" hspace="0" vspace="0" align="Middle">
+  <param name="showControls" value="true" />
+  <param name="animate" value="true" />
+  <param name="orientation" value="0" />
+  <param name="framesPerSec" value="10" />
+  <param name="translation" value=".4" />
+</applet> </p>
+<p><b>EMWave</b> allows users to show the relationship between electric and magnetic fields in a traveling E&amp;M wave.</p>
+<hr />
+<h2>Limitations</h2>
+<p>EMWave does not model the physics of waves such as phase relationships or reflection from a surface.&nbsp; It is a visualization 
+tool that must be scripted with the correct physics.</p>
+
+</body>
+
+</html>

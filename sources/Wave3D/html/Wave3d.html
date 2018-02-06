@@ -1,0 +1,66 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Electromagnetic Wave</title>
+<script language="JavaScript">
+function linear()  {
+         document.wave3d.setDefault();
+         document.wave3d.setWaveLineDensity(6);
+         document.wave3d.setPixPerUnit(8);
+         document.wave3d.setRGB(22,50,134);
+         document.wave3d.addFilledSquare(-20,20);
+         document.wave3d.setRGB(222,223,27);
+         document.wave3d.addAxes(0,0,-20,10);
+         document.wave3d.setRGB(135,52,55);
+         document.wave3d.addLinear(-20,20,10,0,0);
+         document.wave3d.setRGB(52,135,55);
+         document.wave3d.addLinear(-20,20,10,0,1.57);
+}
+function polarizedLinear() {
+         document.wave3d.addPolLinear(150,3.14,3.14);
+}
+function circular() {
+         document.wave3d.addCircular(150,3.14);
+}
+function polarizedCircular() {
+         document.wave3d.addPolCircular(150,3.14,3.14);
+}
+function plate(){
+         document.wave3d.addPlate(.75);
+}
+</script>
+</head>
+
+<body>
+
+<p>EMWave will appear below in a Java enabled browser.<br>
+<applet CODEBASE="../../jars" archive="Wave3d4_.jar,STools4.jar" CODE="wave3d.Wave3d.class" 
+NAME="wave3d" WIDTH="300" HEIGHT="300" HSPACE="0" VSPACE="0" ALIGN="Middle">
+  <param NAME="showControls" VALUE="true">
+  <param NAME="animate" VALUE="true">
+  <param NAME="orientation" VALUE="0">
+  <param NAME="framesPerSec" VALUE="10">
+  <param NAME="translation" VALUE=".4">
+</applet> </p>
+<ul>
+  <li><a href="JavaScript:linear()">Linear EM wave</a><br>
+  </li>
+</ul>
+<ul>
+  <li><a href="JavaScript:polarizedLinear()">Linear EM wave with polarizer</a></li>
+</ul>
+<ul>
+  <li><a href="JavaScript:circular()">Circular EM wave</a></li>
+</ul>
+<ul>
+  <li><a href="JavaScript:polarizedCircular()">Circular EM wave with polarizer</a></li>
+</ul>
+<ul>
+  <li><a href="JavaScript:plate()">Polarizer Plate</a></li>
+</ul>
+
+</body>
+
+</html>

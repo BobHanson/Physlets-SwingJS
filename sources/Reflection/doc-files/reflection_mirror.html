@@ -1,0 +1,269 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0" />
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+<meta name="ProgId" content="FrontPage.Editor.Document" />
+<title>Reflective Coatings</title>
+<script language="JavaScript">
+lastID=0;
+firstID=0;
+function setDefault(){
+	document.reflection2.setDefault();
+	document.reflection2.setWavelength(56);
+	id1=document.reflection2.addObject("film","n=1,w=10");
+	id2=document.reflection2.addObject("film","n=1,w=17");
+	firstID=id1;
+	lastID=id2;
+	document.DataTable2.setDefault();
+   document.DataTable2.setSeriesLabel(1,"Eo");
+   document.DataTable2.setSeriesLabel(2,"E refl");
+   document.DataTable2.setSeriesLabel(3,"E trans");  
+   document.DataTable2.setSeriesLabel(4,"Wavelength");
+   tid=document.DataTable2.getTableID();
+   document.reflection2.deleteDataConnections(); 
+   cid=document.reflection2.makeDataConnection(firstID,tid,1,"magRight","0"); 
+   document.reflection2.makeDataConnection(firstID,tid,2,"magLeft","0");  
+   document.reflection2.makeDataConnection(lastID,tid,3,"magRight","0");
+	document.reflection2.makeDataConnection(firstID,tid,4,"wavelength","0"); 
+	document.reflection2.forward();
+}
+
+function multiLayer6(){
+	document.reflection2.setAutoRefresh(false);	
+	document.reflection2.setDefault();
+	document.reflection2.setWavelength(56);
+	nh=2.3;
+	nl=1.35;
+	lamh=14/nh;
+	laml=14/nl;
+	lstr="n="+nl+",w="+laml;
+	hstr="n="+nh+",w="+lamh;
+
+	id1 = document.reflection2.addObject("film","n=1,w=10");
+	firstID=id1;
+	id2 = document.reflection2.addObject("film",hstr);
+	id3 = document.reflection2.addObject("film",lstr);
+	id4 = document.reflection2.addObject("film",hstr);
+	id5 = document.reflection2.addObject("film",lstr);
+	id6 = document.reflection2.addObject("film",hstr);
+	id7 = document.reflection2.addObject("film",lstr);
+	id8 = document.reflection2.addObject("film","n=1,w=17");
+	lastID=id8;
+	document.reflection2.setShowValue(id2,false);
+	document.reflection2.setShowValue(id3,false);
+	document.reflection2.setShowValue(id4,false);
+	document.reflection2.setShowValue(id5,false);
+	document.reflection2.setShowValue(id6,false);
+	document.reflection2.setShowValue(id7,false);	
+	document.reflection2.setRGB(id2,200,200,255);
+	document.reflection2.setRGB(id3,200,255,200);
+	document.reflection2.setRGB(id4,200,200,255);
+	document.reflection2.setRGB(id5,200,255,200);
+	document.reflection2.setRGB(id6,200,200,255);
+	document.reflection2.setRGB(id7,200,255,200);
+	document.reflection2.setAutoRefresh(true);
+	document.DataTable2.setDefault();
+   document.DataTable2.setSeriesLabel(1,"Eo");
+   document.DataTable2.setSeriesLabel(2,"E refl");
+   document.DataTable2.setSeriesLabel(3,"E trans");  
+   document.DataTable2.setSeriesLabel(4,"Wavelength");
+   tid=document.DataTable2.getTableID();
+   document.reflection2.deleteDataConnections(); 
+   cid=document.reflection2.makeDataConnection(firstID,tid,1,"magRight","0"); 
+   document.reflection2.makeDataConnection(firstID,tid,2,"magLeft","0");  
+   document.reflection2.makeDataConnection(lastID,tid,3,"magRight","0");
+	document.reflection2.makeDataConnection(firstID,tid,4,"wavelength","0"); 
+   document.reflection2.setAutoRefresh(true);
+   document.reflection2.forward();
+
+}
+
+function addLayer(){
+        isRunning=document.reflection2.isClockRunning();
+        document.reflection2.pause();
+		document.reflection2.setAutoRefresh(false);	
+		document.reflection2.setWavelength(56);	
+        nh=2.3;
+		nl=1.35;
+		lamh=14/nh;
+		laml=14/nl;
+		lstr="n="+nl+",w="+laml;
+	    hstr="n="+nh+",w="+lamh;
+	    if(lastID!=firstID){
+	       document.reflection2.removeObject(lastID);
+	    }
+	    idN2 = document.reflection2.addObject("film",hstr);
+		idN1=document.reflection2.addObject("film",lstr);
+		lastID=document.reflection2.addObject("film","n=1,w=17");
+		document.reflection2.setShowValue(idN1,false);
+		document.reflection2.setShowValue(idN2,false);      
+		document.reflection2.setRGB(idN1,200,200,255);
+	   document.reflection2.setRGB(idN2,200,255,200);
+		tid=document.DataTable2.getTableID(); 
+ 		document.reflection2.setAutoRefresh(true);
+ 		document.reflection2.deleteDataConnections(); 
+       cid=document.reflection2.makeDataConnection(firstID,tid,1,"magRight","0"); 
+       document.reflection2.makeDataConnection(firstID,tid,2,"magLeft","0");  
+       document.reflection2.makeDataConnection(lastID,tid,3,"magRight","0");
+	    document.reflection2.makeDataConnection(firstID,tid,4,"wavelength","0"); 
+ 		if(isRunning)document.reflection2.forward();
+ 		
+}
+
+function multiLayer12(){
+	document.reflection2.setAutoRefresh(false);	
+	document.reflection2.setDefault();
+	document.reflection2.setWavelength(56);
+	nh=2.3;
+	nl=1.35;
+	lamh=14/nh;
+	laml=14/nl;
+   lstr="n="+nl+",w="+laml;
+	hstr="n="+nh+",w="+lamh;
+	id1 = document.reflection2.addObject("film","n=1,w=10");
+	firstID=id1;
+	id2 = document.reflection2.addObject("film",hstr);
+	id3 = document.reflection2.addObject("film",lstr);
+	id4 = document.reflection2.addObject("film",hstr);
+	id5 = document.reflection2.addObject("film",lstr);
+	id6 = document.reflection2.addObject("film",hstr);
+	id7 = document.reflection2.addObject("film",lstr);
+	id8 = document.reflection2.addObject("film",hstr);
+	id9 = document.reflection2.addObject("film",lstr);
+	id10 = document.reflection2.addObject("film",hstr);
+	id11 = document.reflection2.addObject("film",lstr);
+	id12 = document.reflection2.addObject("film",hstr);
+	id13 = document.reflection2.addObject("film",lstr);
+	id14 = document.reflection2.addObject("film","n=1,r=15");
+	lastID=id14;
+	document.reflection2.setShowValue(id2,false);
+	document.reflection2.setShowValue(id3,false);
+	document.reflection2.setShowValue(id4,false);
+	document.reflection2.setShowValue(id5,false);
+	document.reflection2.setShowValue(id6,false);
+	document.reflection2.setShowValue(id7,false);
+	document.reflection2.setShowValue(id8,false);
+	document.reflection2.setShowValue(id9,false);
+	document.reflection2.setShowValue(id10,false);
+	document.reflection2.setShowValue(id11,false);
+	document.reflection2.setShowValue(id12,false);
+	document.reflection2.setShowValue(id13,false);
+	document.reflection2.setRGB(id2,200,200,255);
+	document.reflection2.setRGB(id3,200,255,200);
+	document.reflection2.setRGB(id4,200,200,255);
+	document.reflection2.setRGB(id5,200,255,200);
+	document.reflection2.setRGB(id6,200,200,255);
+	document.reflection2.setRGB(id7,200,255,200);
+	document.reflection2.setRGB(id8,200,200,255);
+	document.reflection2.setRGB(id9,200,255,200);
+	document.reflection2.setRGB(id10,200,200,255);
+	document.reflection2.setRGB(id11,200,255,200);
+	document.reflection2.setRGB(id12,200,200,255);
+	document.reflection2.setRGB(id13,200,255,200);
+	document.reflection2.setAutoRefresh(true);
+	document.DataTable2.setDefault();
+   document.DataTable2.setSeriesLabel(1,"E");
+   document.DataTable2.setSeriesLabel(2,"E ref");  
+   document.DataTable2.setSeriesLabel(3,"E trans");
+   document.DataTable2.setSeriesLabel(4,"Wavelength");
+   document.DataTable2.sizeToFit(true);
+   tid=document.DataTable2.getTableID();
+   document.reflection2.setAutoRefresh(true);
+   document.reflection2.deleteDataConnections(); 
+   cid=document.reflection2.makeDataConnection(firstID,tid,1,"magRight","0"); 
+   document.reflection2.makeDataConnection(firstID,tid,2,"magLeft","0");  
+   document.reflection2.makeDataConnection(lastID,tid,3,"magRight","0");
+	document.reflection2.makeDataConnection(firstID,tid,4,"wavelength","0"); 
+   document.reflection2.forward();
+
+}
+</script>
+</head>
+
+<body onload="multiLayer6();">
+
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+	<tr>
+		<td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+		<!-- --></a>
+		<table border="0" cellpadding="0" cellspacing="3">
+			<tr align="center" valign="top">
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../overview-summary.html"><font class="NavBarFont1">
+				<b>Overview</b></font></a> </td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+				</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<font class="NavBarFont1">&nbsp;Class </font>&nbsp;</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+				</td>
+			</tr>
+		</table>
+		</td>
+		<td align="right" valign="top" rowspan="2"><em></em></td>
+	</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== --><center>
+<table border="0">
+	<tr>
+		<td>
+		<p align="center">
+		<input type="button" name="clearBtn" value="    Clear     " onclick="setDefault()" /></p>
+		<p align="center">
+		<input type="button" name="addBtn" value=" Add Film " onclick="addLayer()" /></p>
+		<p align="center">
+		<input type="button" name="sixLayerBtn" value=" 6-Layers " onclick="multiLayer6()" /></p>
+		<p align="center">
+		<input type="button" name="twelveLayerBtn" value="12-Layers" onclick="multiLayer12()" /></p>
+		</td>
+		<td>
+		<p align="center">
+		<applet code="dataTable.DataTable.class" codebase="../../classes" align="middle" width="350" height="45" archive="DataTable4_.jar,DataGraph4_.jar,Reflection4_.jar,STools4.jar" name="DataTable2" id="DataTable2">
+			<param name="ShowScrollBars" value="false" />
+			<param name="SizeToFit" value="true" />
+			<param name="LastOnTop" value="true" />
+			<param name="CellWidth" value="87" />
+			<param name="NumRows" value="1" />
+			<param name="NumCols" value="4" />
+			<param name="ShowControls" value="false" />
+			<param name="ShowRowHeader" value="false" />
+			<param name="ShowColHeader" value="true" />
+		</applet> </p>
+		<p align="center"><br />
+		<applet code="reflection.ReflectionApplet.class" codebase="../../classes" align="middle" width="500" height="170" archive="DataTable4_.jar,DataGraph4_.jar,Reflection4_.jar,STools4.jar" name="reflection2" id="reflection2">
+			<param name="ShowControls" value="false" />
+			<param name="PPU" value="4" />
+			<param name="MaxAmp" value="8" />
+			<param name="Wavelength" value="5" />
+			<param name="WaveVelocity" value="2" />
+			<param name="FPS" value="15" />
+		</applet> </p>
+		<form>
+			<p align="center">&nbsp;<input type="BUTTON" value="play" onclick="document.reflection2.forward()" /><input type="BUTTON" value="pause" onclick="document.reflection2.pause()" /><input type="BUTTON" value="step&gt;&gt;" onclick="document.reflection2.stepTimeForward()" /><input type="BUTTON" value="reset" onclick="document.reflection2.reset();" /></p>
+		</form>
+		</td>
+	</tr>
+</table>
+</center>
+<h3>Dielectric Mirror</h3>
+<p align="left">For applications that require mirrors with very high reflectance 
+(such as a laser mirror), several dielectric layers are used to build a mirror. 
+A typical mirror uses alternating indices of refraction to increase the reflectance 
+to more than 98%. In the following example, the mirror is made of alternating layers 
+of zinc sulfide (n=2.3) and magnesium fluoride (n=1.35) film (For a discussion of 
+these and other coating methods see Fowles p 100). Add layers and observe how the 
+reflectance changes.</p>
+<p align="left"><i><b>Note: </b></i>The table shows the electric field.&nbsp; The 
+intensity of the wave is n*E*E.</p>
+<h4>References:</h4>
+<p>Fowles, Grant R. <u>Introduction to Modern Optics</u>. 2nd ed. New York: Dover 
+Publications, 1975.</p>
+
+</body>
+
+</html>

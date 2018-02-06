@@ -1,0 +1,373 @@
+<html>
+
+<head>
+<script language="JavaScript"> 
+var id=0;
+var vectors=0;
+var v=0;
+var alpha=0;
+var x0=0;
+var y0=0;
+var vx=0;
+var vy=0;
+var ax=0;
+var ay=0;
+var Fx=0;
+var Fy=0;
+
+function initApplet(){
+			with (Math) {
+			v=5;
+			alpha=10;
+			x0=4.82;
+			y0=-0.22;
+			vx=-v*cos(alpha*PI/180);
+			vy=v*sin(alpha*PI/180);
+			ax=9.8*sin(alpha*PI/180)*cos(alpha*PI/180);
+			ay=-9.8*sin(alpha*PI/180)*sin(alpha*PI/180);
+		}
+		
+		Fx="(m*"+ax+")";
+		Fy="(m*"+ay+")";
+		
+		document.Animator.setAutoRefresh(false);
+		document.Animator.setDefault();
+		//all=document.Animator.getEnsembleID();
+        //document.Animator.setShowCoordinates(all,false);
+        document.DataGraph1.setAutoRefresh(false);
+		document.DataGraph1.setDefault();
+		document.DataGraph1.deleteAllSeries();
+		document.Animator.shiftPixOrigin(20,-20);
+		document.Animator.setPixPerUnit(50);
+		document.Animator.setGridUnit(0);
+        document.Animator.setTimeDisplay(false);
+		background2=document.Animator.addObject("rectangle","x=0,y=-1,w=1000,h=450");
+		document.Animator.setRGB(background2,0,200,0);
+		background=document.Animator.addObject("relshape","x=-5.5,y=-1.5,n=5,h=0/500/100/0/-600,v=150/-88/0/-62/0");
+		document.Animator.setRGB(background,0,150,0);
+		document.Animator.addObject("circle","r=10,x=-3.8,y=1.2");
+		hole=document.Animator.addObject("circle","r=9,x=-3.8,y=1.2");
+		document.Animator.setRGB(hole,150,150,150);				
+		xaxis2=document.Animator.addObject("arrow","v=-2*sin(10*pi/180),h=2*cos(10*pi/180),y=0.1,x=-0.8");
+		document.Animator.setRGB(xaxis2,255,255,255);
+		xtext2=document.Animator.addObject("text","x=0.2,y=-0.5,text=+x");
+		document.Animator.setRGB(xtext2,255,255,255);
+
+		    document.DataTable.setDefault();
+		    document.DataTable.setSeriesLabel(1,"x (m)");
+		    document.DataTable.setSeriesLabel(2,"vx (m/s)");
+		    document.DataTable.setSeriesLabel(3,"t (s)");  
+		    document.DataTable.sizeToFit(true); 
+
+			document.DataGraph1.setAutoscaleX(false);
+			document.DataGraph1.setAutoscaleY(false);
+			document.DataGraph1.setMinMaxX(0,6);
+			document.DataGraph1.setMinMaxY(-8,8);
+			document.DataGraph1.clearSeries(1);
+			document.DataGraph1.setSeriesStyle(1,true,3);  
+            document.DataGraph1.setMarkerSize(1,0.6);
+			document.DataGraph1.setLabelY("v_{x} (m/s)"); 
+			document.DataGraph1.setLabelX("t (s)"); 
+			document.DataGraph1.setTitle("Click an Animation to Begin"); 
+			document.DataGraph1.setLastPointMarker(1,true); 
+			document.DataGraph1.setAutoRefresh(true);
+			document.Animator.setAutoRefresh(true);
+	}
+
+
+   
+function startProb(whichAnim){
+		if (whichAnim==1){vectors=0;}
+		if (whichAnim==2){vectors=1;}	
+		if (whichAnim==3){vectors=2;}	
+		with (Math) {
+			v=5;
+			alpha=10;
+			x0=4.82;
+			y0=-0.22;
+			vx=-v*cos(alpha*PI/180);
+			vy=v*sin(alpha*PI/180);
+			ax=9.8*sin(alpha*PI/180)*cos(alpha*PI/180);
+			ay=-9.8*sin(alpha*PI/180)*sin(alpha*PI/180);
+		}
+		
+		Fx="(m*"+ax+")";
+		Fy="(m*"+ay+")";
+		
+		document.Animator.setAutoRefresh(false);
+		document.Animator.setDefault();
+		all=document.Animator.getEnsembleID();
+        document.Animator.setShowCoordinates(all,false);
+        document.DataGraph1.setAutoRefresh(false);
+		document.DataGraph1.setDefault();
+		document.DataGraph1.deleteAllSeries();
+		document.Animator.shiftPixOrigin(20,-20);
+		document.Animator.setPixPerUnit(50);
+		document.Animator.setGridUnit(0);
+
+		background2=document.Animator.addObject("rectangle","x=0,y=-1,w=1000,h=450");
+		document.Animator.setRGB(background2,0,200,0);
+		background=document.Animator.addObject("relshape","x=-5.5,y=-1.5,n=5,h=0/500/100/0/-600,v=150/-88/0/-62/0");
+		document.Animator.setRGB(background,0,150,0);
+
+		
+		document.Animator.addObject("circle","r=10,x=-3.8,y=1.2");
+		hole=document.Animator.addObject("circle","r=9,x=-3.8,y=1.2");
+		document.Animator.setRGB(hole,150,150,150);
+		
+	        id2=document.Animator.addObject("circle","r=6,m=0.050");
+		document.Animator.setForce(id2,Fx,Fy,x0,y0,vx,vy);
+		document.Animator.setRGB(id2,0,0,0);
+               id=document.Animator.addObject("circle","r=5,m=0.050");
+		document.Animator.setForce(id,Fx,Fy,x0,y0,vx,vy);
+		document.Animator.setRGB(id,255,255,255);		
+		
+		xaxis2=document.Animator.addObject("arrow","v=-2*sin(10*pi/180),h=2*cos(10*pi/180),y=0.1,x=-0.8");
+		document.Animator.setRGB(xaxis2,255,255,255);
+		xtext2=document.Animator.addObject("text","x=0.2,y=-0.5,text=+x");
+		document.Animator.setRGB(xtext2,255,255,255);
+		
+		if(vectors==1) {
+				v1=document.Animator.addObject("arrow2","thickness=5,x=3.8,y=0,h=-2.2945,v=0.4045");
+				document.Animator.setRGB(v1,0,0,0);
+				document.Animator.setDragable(v1,true);
+				document.Animator.setResizable(v1,false);
+				v1Label=document.Animator.addObject("image","file=images2/vector_vi.gif");
+				document.Animator.setAnimationSlave(v1,v1Label);
+				document.Animator.setDisplayOffset(v1Label,-20,40);
+				
+                mv1=document.Animator.addObject("arrow2","thickness=5,x=3.8,y=0,h=2.2945,v=-0.4045");
+				document.Animator.setRGB(mv1,255,0,0);
+				document.Animator.setDragable(mv1,true);
+				document.Animator.setResizable(mv1,false);
+				mv1Label=document.Animator.addObject("image","file=images2/minus_vector_vi.gif");
+				document.Animator.setAnimationSlave(mv1,mv1Label);
+				document.Animator.setDisplayOffset(mv1Label,-20,-5);
+
+                v2=document.Animator.addObject("arrow2","thickness=5,x=0.72,y=0.52,h=-1.62,v=0.2865");
+				document.Animator.setDragable(v2,true);
+				document.Animator.setResizable(v2,false);
+				document.Animator.setRGB(v2,0,0,0);
+				v2Label=document.Animator.addObject("image","file=images2/vector_vf.gif");
+				document.Animator.setAnimationSlave(v2,v2Label);
+				document.Animator.setDisplayOffset(v2Label,-20,40);
+			}
+		
+		if(vectors==2) {
+				v1=document.Animator.addObject("arrow2","thickness=5,x=0.12,y=0.62,h=-1.4575,v=0.257");
+				document.Animator.setDragable(v1,true);
+				document.Animator.setResizable(v1,false);
+				document.Animator.setRGB(v1,0,0,0);
+				v1Label=document.Animator.addObject("image","file=images2/vector_vi.gif");
+				document.Animator.setAnimationSlave(v1,v1Label);
+				document.Animator.setDisplayOffset(v1Label,-20,40);				
+				
+				mv1=document.Animator.addObject("arrow2","thickness=5,x=0.12,y=0.62,h=1.4575,v=-0.257");
+				document.Animator.setDragable(mv1,true);
+				document.Animator.setResizable(mv1,false);
+				document.Animator.setRGB(mv1,255,0,0);
+				mv1Label=document.Animator.addObject("image","file=images2/minus_vector_vi.gif");
+				document.Animator.setAnimationSlave(mv1,mv1Label);
+				document.Animator.setDisplayOffset(mv1Label,-20,-5);
+				v2=document.Animator.addObject("arrow2","thickness=5,x=-1.68,y=0.94,h=-0.78878,v=0.1389");
+				document.Animator.setDragable(v2,true);
+				document.Animator.setResizable(v2,false);
+				document.Animator.setRGB(v2,0,0,0);
+				v2Label=document.Animator.addObject("image","file=images2/vector_vf.gif");
+				document.Animator.setAnimationSlave(v2,v2Label);
+				document.Animator.setDisplayOffset(v2Label,-20,40);
+}
+
+
+		document.Animator.setOneShot(0,6,"End of Animation");
+		    document.DataTable.setDefault();
+		    document.DataTable.setSeriesLabel(1,"x (m)");
+		    document.DataTable.setSeriesLabel(2,"vx (m/s)");
+		    document.DataTable.setSeriesLabel(3,"t (s)");  
+		    document.DataTable.sizeToFit(true);
+		    table=document.DataTable.getTableID();  
+		    document.Animator.makeDataConnection(id,table,1,"x","0"); 
+		    document.Animator.makeDataConnection(id,table,2,"sqrt(vx*vx+vy*vy)*vx/abs(vx)","0"); 
+		    document.Animator.makeDataConnection(id,table,3,"t","0"); 
+			document.DataGraph1.setAutoscaleX(false);
+			document.DataGraph1.setAutoscaleY(false);
+			document.DataGraph1.setMinMaxX(0,6);
+			document.DataGraph1.setMinMaxY(-8,8);
+			document.DataGraph1.clearSeries(1);
+			document.DataGraph1.setSeriesStyle(1,true,3);  
+                        document.DataGraph1.setMarkerSize(1,0.6);
+			document.DataGraph1.setLabelY("v_{x} (m/s)"); 
+			document.DataGraph1.setLabelX("t (s)"); 
+			document.DataGraph1.setTitle("Animation "+whichAnim+": v_{x} vs. t"); 
+			document.DataGraph1.setLastPointMarker(1,true); 
+			graph1=document.DataGraph1.getGraphID();
+			document.Animator.makeDataConnection(id,graph1,1,"t","sqrt(vx*vx+vy*vy)*vx/abs(vx)");
+			document.Animator.updateDataConnections();
+			document.DataGraph1.setAutoRefresh(true);  	
+
+		document.Animator.setAutoRefresh(true);
+	}
+
+	
+	function resetToZero() {
+		if (vectors==1){
+			startProb(1);
+			document.Animator.pause();
+}
+		if (vectors==2){
+			startProb(2);
+			document.Animator.pause();
+}
+
+
+		else {document.Animator.reset();
+}
+}
+	
+
+
+</script>
+
+<title>Physlet Physics by Christian and Belloni: Illustration 2.5</title>
+<link rel="stylesheet" type="text/css" href="../resources/physlets.css">
+</head>
+
+<body onload="initApplet()">
+
+<h2 align="left">Illustration 2.5: Motion on a Hill or Ramp</h2>
+<div align="center"><center>
+
+<table border="1" bgcolor="#C0C0C0">
+        <tr> 
+            <td>
+         <applet width="500" height="200" code="dataGraph.DataGraph.class" 
+         codebase="../resources/" 
+         archive="Physlets.jar" 
+         align="baseline" name="DataGraph1" >
+              <param name="showControls" value="false">
+            </applet></td>
+	<tr>
+	<td>
+	          <applet width="500" height="150" code="animator4.Animator.class" 
+	          codebase="../resources/" archive="Physlets.jar" 
+	          align="baseline" name="Animator" >
+                  <param name="FPS" value="10">
+                  <param name="dt" value="0.1">
+                  <param name="showControls" value="false">
+                </applet></td>
+        </tr>
+	<tr>
+	<td>
+	<p align="center">
+            <applet codebase="../resources/"
+		archive="Physlets.jar"
+		code="dataTable.DataTable.class" name="DataTable" width="252" height="45"
+		hspace="0" vspace="0" align="middle" >
+		  <param name="ShowScrollBars" value="false">
+		  <param name="LastOnTop" value="true">
+		  <param name="CellWidth" value="40">
+		  <param name="NumRows" value="1">
+		  <param name="NumCols" value="3">
+		  <param name="ShowControls" value="false">
+		  <param name="ShowRowHeader" value="false">
+		  <param name="ShowColHeader" value="true">
+		  <param name="SizeToFit" value="true">
+		</applet></td>
+        </tr>
+</table>
+</center></div>
+
+<form>
+  <div align="center"><center><p><input type="button" value="play"
+  onclick="document.Animator.forward()"><input type="button" value="pause"
+  onclick="document.Animator.pause()"><input type="button" value="step&gt;&gt;"
+  onclick="document.Animator.stepForward()"><input type="button" value="reset"
+  onclick="document.Animator.reset()"></p>
+  </center></div>
+</form>
+
+<div align="center">
+  <center>
+  <table  border="1" bgcolor="#C0C0C0">
+    <tr>
+      <td> <a href="JavaScript:startProb(1)">Animation 1</a></td>
+      <td> <a href="JavaScript:startProb(2)">Animation 2</a></td>
+      <td> <a href="JavaScript:startProb(3)">Animation 3</a></td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p align="center"><strong><font color="#FF0000"><em>Please wait for the animation to completely load.</em></font></strong></p>
+
+<p align="left">A putted golf ball travels up a hill and then down again 
+<strong>(position is given in meters and time is given in seconds)</strong>.&nbsp; <a href="JavaScript:initApplet()">Restart</a>.&nbsp; When an object (like a 
+golf ball) travels up or down an inclined ramp or hill, 
+its motion is often characterized by constant, nonzero acceleration.&nbsp; If the incline of the hill 
+is constant, then the motion of the object can also be considered straight-line 
+motion (or one-dimensional motion).&nbsp; It is convenient to analyze the motion 
+of the golf ball by defining the +x axis to be parallel to the hill and directed 
+either upward or downward along the hill&nbsp;as shown in <a href="JavaScript:startProb(1)">Animation 1</a>.
+</p>
+
+<p align="left">Here are some characteristics of the motion that you should 
+convince yourself are true:</p>
+
+<ul>
+<li>In  <a href="JavaScript:startProb(1)">Animation 1</a> the +x direction is defined to be down the hill.&nbsp; Therefore, when the ball moves down the hill, it is
+moving in the +x direction and thus v<sub>x</sub> is positive.&nbsp; When the ball moves up the hill, it is moving
+in the -x direction and thus v<sub>x</sub> is negative. <br>
+&nbsp;<li>As the golf ball is traveling up/down the hill,  is it slowing down or speeding 
+up?&nbsp; Well, the answer to this question depends on what you mean by slowing down and speeding up.&nbsp; As the ball rolls up the hill its velocity is negative 
+(because of how the x axis is defined) and decreasing in 
+magnitude (a smaller negative number).&nbsp; At the top of the hill, its velocity
+is zero, and as it travels down the hill, the ball is speeding up.  Therefore, its speed decreases, reaches zero, and
+then increases.&nbsp; How can this be if v<sub>x</sub> is always increasing?&nbsp; Speed is the magnitude of
+velocity (and is always a positive number).&nbsp;&nbsp; As the ball travels up the hill, v<sub>x</sub> <em>
+increases</em> from -5 m/s to zero; yet its speed
+<em>decreases</em> from 5 m/s to zero. Note that the phrases &quot;speeding up&quot; and 
+&quot;slowing down&quot; refer to how the speed changes, not necessarily to how the velocity 
+changes.<br>
+&nbsp;<li>Is the acceleration
+of the golf ball increasing, decreasing, or constant?&nbsp; To answer this, look at the slope 
+of the graph at every instant of time.&nbsp; The slope of the velocity vs. time 
+graph (velocity in the x direction) is equal to the acceleration (in the x 
+direction).&nbsp; Does it change or is it the same?&nbsp; Notice that it is constant at all times and is in the positive x direction (as defined by 
+the coordinates). <br>
+&nbsp;<li>Besides using the graph to calculate acceleration, you can also use 
+the velocity data from the data table.&nbsp; Since
+average acceleration is the change in velocity divided by the time interval, choose any time interval, measure v<sub>xi</sub> and v<sub>xf</sub>, and calculate the 
+average acceleration a<sub>x avg</sub>.&nbsp; Since the acceleration is 
+constant, the average and instantaneous accelerations are identical.<br>
+&nbsp;<li>The direction of acceleration can also be found by subtracting 
+velocity vectors pictorially.&nbsp;&nbsp; <a href="JavaScript:startProb(2)">Animation 2</a> shows the 
+black velocity vectors  at t = 0.2 s and t = 1.0 s.&nbsp;&nbsp; To subtract vectors, 
+drag v<sub>i</sub> <span style="font-size: 9.0pt; font-family: Arial">away from 
+its original position</span> (you can drag the little circle on the arrow's tail) and then drag the red vector&nbsp;-v<sub>i</sub> into place and use the 
+tip-to-tail method.&nbsp; The direction of the acceleration is in the same direction as
+the change-in-velocity vector.&nbsp; Now, try <a href="JavaScript:startProb(3)">Animation 3</a>, 
+which shows the velocity vectors at
+t = 1.2 s and t = 2.0 s.&nbsp; Compare
+the change-in-velocity vector for each of the two time intervals.  You will find that 
+they are
+the same.&nbsp; Since the acceleration is constant, the change in velocity is constant for any
+given time interval. <br>
+&nbsp;<li>The area under a v<sub>x</sub> vs. time graph is always the displacement, &Delta;x.&nbsp; 
+You can use the graph
+to find &Delta;x from t = 0 to t = 3 s.&nbsp; Use the data table to check your answer 
+by determining the displacement from x - x<sub>0</sub>.&nbsp; What is the 
+displacement from t = 0 to t = 6 s?&nbsp; If you answer anything other than 0 m, 
+you should revisit the definition of displacement.</ul>
+
+<p align="left">See <a href="../two_d_kinematics/illustration3_2.html">
+Illustration 3.2</a> for more details on what happens to the acceleration when 
+the angle of the hill is varied.</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">
+Illustration authored by Aaron Titus. <br>
+Script authored by Aaron Titus and Mario Belloni.<br>
+<a href="../../conditions_of_use.html">© 2004 by Prentice-Hall, Inc. A Pearson Company</a></p>
+
+</body>
+</html>

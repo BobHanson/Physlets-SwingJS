@@ -1,0 +1,624 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="../../resources/qm.css">
+<script language="JavaScript">
+var sum=false;
+var mode=false;
+var timerID=0;
+
+
+
+
+
+   function initApplet(){
+	timerID=0;
+     document.appletform.reset();
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+
+	//document.reflection.setXOffset(-30);	
+        
+if(mode){
+	document.reflection.setMode("QM");
+	document.reflection.setQMEnergy(6);
+	    id1=document.reflection.addObject("film","n=1,w=30");
+	id2=document.reflection.addObject("film","n=1,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id2,235,235,240);
+
+
+}
+	
+else{
+	document.reflection.setMode("EM");
+	id1=document.reflection.addObject("film","n=1,w=30");
+	id2=document.reflection.addObject("film","n=1,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id2,235,235,240);
+if(sum){
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(true); 
+}
+   
+else{
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(false); 
+}
+}
+
+        document.reflection.addObject("text","text=Region I,x=12,y=-12.5");
+	document.reflection.addObject("text","text=Region II,x=41.5,y=-12.5");
+	document.reflection.setAutoRefresh(true);
+	document.reflection.forward(); 
+   document.getElementById("waitmsg").style.display="none"; 
+ 
+}
+
+   function mjb35_3a(){
+	timerID=0;
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+
+	//document.reflection.setXOffset(-30);	
+        
+if(mode){
+	document.reflection.setMode("QM");
+	document.reflection.setQMEnergy(6);
+	    id1=document.reflection.addObject("film","n=1,w=30");
+	id2=document.reflection.addObject("film","n=1,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id2,235,235,240);
+
+
+}
+	
+else{
+	document.reflection.setMode("EM");
+	id1=document.reflection.addObject("film","n=1,w=30");
+	id2=document.reflection.addObject("film","n=1,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id2,235,235,240);
+if(sum){
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(true); 
+}
+   
+else{
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(false); 
+}
+}
+
+        document.reflection.addObject("text","text=Region I,x=12,y=-12.5");
+	document.reflection.addObject("text","text=Region II,x=41.5,y=-12.5");
+	document.reflection.setAutoRefresh(true);
+	document.reflection.forward(); 
+ 
+}
+
+function mjb35_3b(){ 
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+     //   document.reflection.setXOffset(-30);
+	
+if(mode){
+	document.reflection.setMode("QM");
+	document.reflection.setQMEnergy(6);
+	    id1=document.reflection.addObject("film","n=1,w=30");
+	id2=document.reflection.addObject("film","n=2,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id2,235,235,240);
+}
+	
+else{
+	document.reflection.setMode("EM");
+	id1=document.reflection.addObject("film","n=1,w=30");
+	id2=document.reflection.addObject("film","n=2,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id2,235,235,240);
+if(sum){
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(true); 
+}
+   
+else{
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(false); 
+}
+}
+
+        document.reflection.addObject("text","text=Region I,x=12,y=-12.5");
+	document.reflection.addObject("text","text=Region II,x=41.5,y=-12.5");
+	document.reflection.setAutoRefresh(true);
+	document.reflection.forward();  
+}
+
+function mjb35_3c(){ 
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+       // document.reflection.setXOffset(-30);
+
+	
+if(mode){
+	document.reflection.setMode("QM");
+	document.reflection.setQMEnergy(6);
+	    id1=document.reflection.addObject("film","n=1,w=30");
+	id2=document.reflection.addObject("film","n=3,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id2,235,235,240);
+}
+	
+else{
+	document.reflection.setMode("EM");
+	id1=document.reflection.addObject("film","n=1,w=30");
+	id2=document.reflection.addObject("film","n=3,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id2,235,235,240);
+if(sum){
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(true); 
+}
+   
+else{
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(false); 
+}
+}
+
+        document.reflection.addObject("text","text=Region I,x=12,y=-12.5");
+	document.reflection.addObject("text","text=Region II,x=41.5,y=-12.5");
+	document.reflection.setAutoRefresh(true);
+	document.reflection.forward();  
+}
+
+function mjb35_3d(){ 
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+      //  document.reflection.setXOffset(-30);
+
+	
+if(mode){
+	document.reflection.setMode("QM");
+	document.reflection.setQMEnergy(6);
+	    id1=document.reflection.addObject("film","n=1,w=30");
+	id2=document.reflection.addObject("film","n=4,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id2,235,235,240);
+}
+	
+else{
+	document.reflection.setMode("EM");
+	id1=document.reflection.addObject("film","n=1,w=30");
+	id2=document.reflection.addObject("film","n=4,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id2,235,235,240);
+if(sum){
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(true); 
+}
+   
+else{
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(false); 
+}
+}
+
+        document.reflection.addObject("text","text=Region I,x=12,y=-12.5");
+	document.reflection.addObject("text","text=Region II,x=41.5,y=-12.5");
+	document.reflection.setAutoRefresh(true);
+	document.reflection.forward();  
+}
+
+function mjb35_3e(){ 
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+      //  document.reflection.setXOffset(-30);
+	
+if(mode){
+	document.reflection.setMode("QM");
+	document.reflection.setQMEnergy(6);
+        
+	    id1=document.reflection.addObject("film","n=1,w=30");
+	id2=document.reflection.addObject("film","n=5,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id2,235,235,240);
+}
+	
+else{
+	document.reflection.setMode("EM");
+	id1=document.reflection.addObject("film","n=1,w=30");
+	id2=document.reflection.addObject("film","n=5,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id2,235,235,240);
+if(sum){
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(true); 
+}
+   
+else{
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(false); 
+}
+}
+
+        document.reflection.addObject("text","text=Region I,x=12,y=-12.5");
+	document.reflection.addObject("text","text=Region II,x=41.5,y=-12.5");
+	document.reflection.setAutoRefresh(true);
+	document.reflection.forward();  
+}
+
+
+
+   function mjb35_4a(){
+	timerID=0;
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+       // document.reflection.setXOffset(-30);
+	
+if(mode){
+	document.reflection.setMode("QM");
+	document.reflection.setQMEnergy(6);
+	    id1=document.reflection.addObject("film","n=1,w=30");
+	id2=document.reflection.addObject("film","n=1,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id2,235,235,240);
+
+}
+	
+else{
+	document.reflection.setMode("EM");
+	id1=document.reflection.addObject("film","n=1,w=30");
+	id2=document.reflection.addObject("film","n=1,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id2,235,235,240);
+if(sum){
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(true); 
+}
+   
+else{
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(false); 
+}
+}
+
+        document.reflection.addObject("text","text=Region I,x=12,y=-12.5");
+	document.reflection.addObject("text","text=Region II,x=41.5,y=-12.5");
+	document.reflection.setAutoRefresh(true);
+	document.reflection.forward(); 
+   document.getElementById("waitmsg").style.display="none"; 
+ 
+}
+
+function mjb35_4b(){ 
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+     //   document.reflection.setXOffset(-30);
+	
+if(mode){
+	document.reflection.setMode("QM");
+	document.reflection.setQMEnergy(6);
+	    id1=document.reflection.addObject("film","n=2,w=30");
+	id2=document.reflection.addObject("film","n=1,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id1,235,235,240);
+}
+	
+else{
+	document.reflection.setMode("EM");
+	id1=document.reflection.addObject("film","n=2,w=30");
+	id2=document.reflection.addObject("film","n=1,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id1,235,235,240);
+if(sum){
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(true); 
+}
+   
+else{
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(false); 
+}
+}
+
+        document.reflection.addObject("text","text=Region I,x=12,y=-12.5");
+	document.reflection.addObject("text","text=Region II,x=41.5,y=-12.5");
+	document.reflection.setAutoRefresh(true);
+	document.reflection.forward();  
+}
+
+function mjb35_4c(){ 
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+      //  document.reflection.setXOffset(-30);
+
+	
+if(mode){
+	document.reflection.setMode("QM");
+	document.reflection.setQMEnergy(6);
+	    id1=document.reflection.addObject("film","n=3,w=30");
+	id2=document.reflection.addObject("film","n=1,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id1,235,235,240);
+}
+	
+else{
+	document.reflection.setMode("EM");
+	id1=document.reflection.addObject("film","n=3,w=30");
+	id2=document.reflection.addObject("film","n=1,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id1,235,235,240);
+if(sum){
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(true); 
+}
+   
+else{
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(false); 
+}
+}
+
+        document.reflection.addObject("text","text=Region I,x=12,y=-12.5");
+	document.reflection.addObject("text","text=Region II,x=41.5,y=-12.5");
+	document.reflection.setAutoRefresh(true);
+	document.reflection.forward();  
+}
+
+function mjb35_4d(){ 
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+      //  document.reflection.setXOffset(-30);
+
+	
+if(mode){
+	document.reflection.setMode("QM");
+	document.reflection.setQMEnergy(6);
+	    id1=document.reflection.addObject("film","n=4,w=30");
+	id2=document.reflection.addObject("film","n=1,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id1,235,235,240);
+}
+	
+else{
+	document.reflection.setMode("EM");
+	id1=document.reflection.addObject("film","n=4,w=30");
+	id2=document.reflection.addObject("film","n=1,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id1,235,235,240);
+if(sum){
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(true); 
+}
+   
+else{
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(false); 
+}
+}
+
+        document.reflection.addObject("text","text=Region I,x=12,y=-12.5");
+	document.reflection.addObject("text","text=Region II,x=41.5,y=-12.5");
+	document.reflection.setAutoRefresh(true);
+	document.reflection.forward();  
+}
+
+function mjb35_4e(){ 
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+      //  document.reflection.setXOffset(-30);
+	
+if(mode){
+	document.reflection.setMode("QM");
+	document.reflection.setQMEnergy(6);
+        
+	    id1=document.reflection.addObject("film","n=5,w=30");
+	id2=document.reflection.addObject("film","n=1,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id1,235,235,240);
+}
+	
+else{
+	document.reflection.setMode("EM");
+	id1=document.reflection.addObject("film","n=5,w=30");
+	id2=document.reflection.addObject("film","n=1,w=30");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setRGB(id1,235,235,240);
+if(sum){
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(true); 
+}
+   
+else{
+    document.reflection.setShowWave(true);
+	document.reflection.setShowLWave(true,65);
+	document.reflection.setShowRWave(true,-65);
+	document.reflection.setShowWave(false); 
+}
+}
+
+        document.reflection.addObject("text","text=Region I,x=12,y=-12.5");
+	document.reflection.addObject("text","text=Region II,x=41.5,y=-12.5");
+	document.reflection.setAutoRefresh(true);
+	document.reflection.forward();  
+}
+
+</script>
+
+<title>Physlet Quantum Physics by Belloni, Christian, and Cox: Section 9.2</title>
+
+</head>
+
+<body onload="initApplet()">
+
+<h2>Section 9.2: Exploring Classical and Quantum Scattering</h2>
+<div align="center">
+  <center>
+  <table border="1" bgcolor="#C0C0C0">
+    <tr>
+      <td>
+<applet code="reflection.ReflectionApplet.class" codebase="../../resources/"
+archive="Physlets.jar" name="reflection" width="600" height="350"
+hspace="0" vspace="0" align="Middle">
+  <param name="ShowControls" value="false">
+  <param name="PPU" value="10">
+  <param name="MaxAmp" value="3">
+  <param name="Wavelength" value="8">
+  <param name="FPS" value="20">
+  <param name="WaveVelocity" value="3">
+</applet>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+    <form name="appletform">
+      
+<div align="center"><center><p><input type="button" value="play"
+      onclick="document.reflection.forward()"><input type="button" value="pause"
+      onclick="document.reflection.pause()"><input type="button" value="&lt;&lt;step" name="stepb" onClick="document.reflection.stepTimeBack();"><input type="button" value="step&gt;&gt;" name="step" onClick="document.reflection.stepTimeForward();">
+      </p>
+      </center></div>
+<div align="center"><center><p>
+  <input type="radio" value="V1" name="options" onClick="javascript:mode = false; sum = false;" checked><b>select,&nbsp;then click a link below to see the classical electromagnetic 
+  wave.</b></p>
+      </center></div>
+<div align="center"><center>
+          <p>
+  <input type="radio" value="V2" name="options" onClick="javascript:sum = true; mode = false;"><b>select,&nbsp; then click a link below to see the sum of the classical 
+  electromagnetic waves.</b></p>
+      </center></div>
+<div align="center"><center>
+          <p>
+  <input type="radio" value="V3" name="options" onClick="javascript:sum = false; mode = true;"><b>select,&nbsp;then click a link below to see quantum-mechanical 
+  plane wave.</b></p>
+      </center></div>
+      <center>
+  <table border="1" bgcolor="#C0C0C0">
+    <tr>
+      <td><b>n1 = V1= 1</b></td>
+      <td><a href="JavaScript:mjb35_3a()">n2 or V2 = 1</a></td>
+      <td><a href="JavaScript:mjb35_3b()"> n2 or V2 = 2</a></td>
+      <td><a href="JavaScript:mjb35_3c()"> n2 or V2 = 3</a></td>
+      <td><a href="JavaScript:mjb35_3d()"> n2 or V2 = 4</a></td>
+      <td><a href="JavaScript:mjb35_3e()"> n2 or V2 = 5</a></td>
+    </tr>
+    <tr>
+      <td><b>n2 = V2 = 1</b></td>
+      <td><a href="JavaScript:mjb35_4a()"> n1 or V1 = 1</a></td>
+      <td><a href="JavaScript:mjb35_4b()"> n1 or V1 = 2</a></td>
+      <td><a href="JavaScript:mjb35_4c()"> n1 or V1 = 3</a></td>
+      <td><a href="JavaScript:mjb35_4d()"> n1 or V1 = 4</a></td>
+      <td><a href="JavaScript:mjb35_4e()"> n1 or V1 = 5</a></td>
+    </tr>
+  </table>
+  </center>
+    </form>
+<div align="center">
+
+</div>
+
+<p align="center"><b><font id="waitmsg" color="#FF0000"><i>Please wait for the animation to completely load.</i></font></b></p>
+
+<p align="justify">This Exploration stresses the similarities and differences between a classical electromagnetic wave incident on a 
+change (an increase or decrease) of index of refraction and a quantum-mechanical plane wave incident on a change (an increase 
+or decrease) in 
+potential energy. Use the check boxes to switch between classical and quantum-mechanical waves to see the result of the 
+sum of the incident and reflected electromagnetic waves in Region I.&nbsp; <a href="JavaScript:initApplet()">Restart</a>.</p>
+
+<p align="justify">Answer the following questions for both the case of&nbsp; <i>n</i><sub>1
+</sub>&lt; <i>n</i><sub>2</sub> and <i>n</i><sub>1 </sub>&gt; <i>n</i><sub>2</sub>&nbsp; and 
+<i>V</i><sub>1 </sub>
+&lt; <i>V</i><sub>2</sub> and <i>V</i><sub>1 </sub>&gt; <i>V</i><sub>2</sub>.</p>
+<ol type="a">
+          <li>What is the phase of the reflected wave relative to the incident wave in 
+          the classical and quantum-mechanical cases? 
+          </li>
+          <li>What happens to 
+          the amplitude of the wave in Region II for the classical and 
+          quantum-mechanical cases? 
+          </li>
+          <li>As <i>n</i><sub>2 </sub>&gt;&gt; <i>n</i><sub>1</sub> and as <i>V</i><sub>2 </sub>
+          &gt;&gt; <i>V</i><sub>1</sub>, what does the superposition of the incident 
+          and reflected waves look like in the classical and quantum-mechanical cases? 
+          </li>
+          <li>What happens to the wavelength and speed of the electromagnetic wave in Region II as compared to Region I?&nbsp; What happens to the <i>curviness</i> and the momentum of the quantum-mechanical plane wave in Region II as 
+          compared to Region I? </li>
+</ol>
+<p>Note that the quantum-mechanical case is considered in detail beginning in
+<a href="section9_4.html">Section 
+9.4</a>. </p>
+
+<p>&nbsp;</p>
+<p>
+<a href="../../conditions_of_use.html">
+© 2006 by Prentice-Hall, Inc. A Pearson Company</a></p>
+
+</body>
+
+</html>

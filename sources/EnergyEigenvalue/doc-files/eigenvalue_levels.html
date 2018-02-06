@@ -1,0 +1,138 @@
+<html>
+
+<head>
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+<script language="JavaScript"> 
+gid=0;
+funcStr=" ";
+function initApplet(){
+   funcStr=" ";
+   document.datagraph.setDefault();  
+   document.datagraph.setAutoscaleX(false);
+   document.datagraph.setAutoscaleY(false);
+   document.datagraph.setMinMaxX(-3,3);
+   document.datagraph.setMinMaxY(0,3);
+   document.datagraph.setLabelY("Psi^2"); 
+   document.datagraph.setLabelX("x"); 
+   document.datagraph.setTitle("Psi^2");
+   document.datagraph.setSeriesStyle(100,true,0);
+   document.datagraph.setAutoReplaceData(100,true);
+   document.datagraph.setSeriesRGB(100,64,0,0); 
+   gid=document.datagraph.getGraphID(); 
+
+   
+}
+function resetApplet(){
+   document.eigenvalue.deleteDataConnections();
+   document.datagraph.clearAllSeries();
+   funcStr=" ";
+}
+
+function plotFunction(n){
+   qn=eval(n);
+   document.datagraph.setAutoRefresh(false);
+   r=255*Math.random();
+   g=255*Math.random();
+   b=255*Math.random();
+   document.datagraph.setSeriesStyle(qn,true,0);
+   document.datagraph.setAutoReplaceData(qn,true);
+   document.datagraph.setSeriesRGB(qn,r,g,b);
+   pid=document.eigenvalue.getWavefunctionID(qn);
+   
+   document.eigenvalue.makeDataConnection(pid,gid,qn,"x","psi*psi");         
+   
+   document.eigenvalue.makeDataConnection(pid,gid,100,"x","p");           
+   document.eigenvalue.updateDataConnections();
+   document.datagraph.setAutoRefresh(true);
+}
+
+</script>
+
+<applet codebase="../../classes/" archive="DataGraph4_.jar,EnergyEigenvalue4_.jar,STools4.jar"
+code="energyEigenvalue.EnergyEigenvalue.class" name="eigenvalue" width="0" height="0" hspace="0"
+vspace="0" align="middle">
+  <param name="Energy" value="0.5">
+  <param name="XMin" value="-3">
+  <param name="XMax" value="3">
+  <param name="YMin" value="-25">
+  <param name="YMax" value="25">
+  <param name="AutoScaleY" value="true">
+  <param name="Potential" value="x*x">
+  <param name="ShowControls" value="false">
+  <param name="HBarTwoM" value="1">
+  <param name="Lowest" value="1">
+  <param name="Highest" value="6">
+  <param name="NumPts" value="1000">
+  <param name="ShowSpectrum" value="true">
+  <param name="ShowPotential" value="true">
+  <param name="ShowFunctions" value="false">
+  <param name="Tolerance" value="1e-15">
+  <param name="MaxIterations" value="400">
+  <param name="BreakValue" value="1e20">
+  <param name="ScaleToArea" value="true">
+</applet>
+<title>Eigenvalue Example 5</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body onload="initApplet()">
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+  <tr>
+    <td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+    <!-- --></a>
+    <table border="0" cellpadding="0" cellspacing="3">
+      <tr align="center" valign="top">
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><a href="../../overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>
+        </td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1">&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+        </td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><font class="NavBarFont1">&nbsp;Class </font>&nbsp;</td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+        </td>
+      </tr>
+    </table>
+    </td>
+    <td align="right" valign="top" rowspan="2">&nbsp;</td>
+  </tr>
+</table>
+<p align="center">
+<!-- =========== END OF NAVBAR =========== -->
+
+<div align="center">
+  <center>
+  <table border="1">
+    <tr>
+      <td>
+        <applet codebase="../../classes/" archive="DataGraph4_.jar,EnergyEigenvalue4_.jar,STools4.jar"
+        code="dataGraph.DataGraph.class" name="datagraph" width="400" height="300" hspace="0"
+        vspace="0" align="middle">
+          <param name="Function">
+          <param name="XMin" value="-1">
+          <param name="XMax" value="1">
+          <param name="YMin" value="-1">
+          <param name="YMax" value="1">
+          <param name="DataFile">
+          <param name="AutoScaleX" value="false">
+          <param name="AutoScaleY" value="true">
+          <param name="ShowControls" value="false">
+        </applet>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<form name="parameterForm">
+  <p align="center">&nbsp;<input type="button" value="Reset" onclick="resetApplet()"></p>
+  <strong>
+  <p><input type="button" value="Show Level"
+  onclick="plotFunction(document.parameterForm.level.value)"> Level=</strong><input type="text"
+  name="level" size="3" value="1"></p>
+</form>
+<h3>Show Eigenstate</h3>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+  <TITLE>RCL Circuit</TITLE>
+  <SCRIPT LANGUAGE="JavaScript">
+function prob1()
+{       document.Impedance.setNetwork("(R(1E2)+C(1E-6))");
+}
+
+function prob2()
+{       document.Impedance.setNetwork("(R(1E2)//C(1E-6))");
+}
+
+function prob3()
+{       document.Impedance.setNetwork("(R(1E2)+C(1E-6))+L(3E-2)");
+}
+
+function rlc(form)
+{
+strR='R(' + form.R.value + ')';
+strL='L(' + form.L.value + ')';
+strC='C(' + form.C.value + ')';
+strZ=strR+'+'+ strL+'+'+strC;
+document.Impedance.setNetwork(strZ);
+}
+
+</Script>
+</HEAD>
+<BODY>
+<H2>
+  RLC Circuit.
+</H2>
+<P ALIGN=Center>
+<APPLET CODE="impedance.ImpAppl.class" Codebase="."
+ NAME="Impedance"
+ WIDTH="350" HEIGHT="350">
+<PARAM NAME="noText" value=true>
+<PARAM NAME="network" value="(R(1E2)+C(1E-6))+L(3E-2)">
+<param name="Resources" value="impedance_paco.rc">
+<STRONG>Sorry
+if you see this... your brouwser isn't capable of running Java
+applets!</STRONG>
+</APPLET>
+<h2>Impedance Calculator</h2>
+<p>
+Enter value for R, L, and C.  Do not use decimal points.  Write 2.7K as 27E2.
+</p>
+<FORM name=rlcForm>
+R:<INPUT Type=text name="R" Value="1E2">
+L:<INPUT Type=text name="L" Value="3E-2">
+C:<INPUT Type=text name="C" Value="1E-6">
+<INPUT Type=button name="Plot" Value="Plot" onClick="rlc(this.form)">
+</FORM>
+
+<UL>
+<LI><A HREF="JavaScript:prob1()">RC Series</A></LI>
+<LI><A HREF="JavaScript:prob2()">RC Parallel</A></LI>
+<LI><A HREF="JavaScript:prob3()">RLC</A></LI>
+</UL>
+
+</BODY></HTML>

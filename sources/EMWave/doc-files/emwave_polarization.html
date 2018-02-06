@@ -1,0 +1,174 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0" />
+<meta name="ProgId" content="FrontPage.Editor.Document" />
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+<title>Electromagnetic Wave</title>
+<script language="JavaScript">
+function linearWave() {
+         document.EMWave.deleteAll();
+		  document.EMWave.setWaveLineDensity(2); 
+         document.EMWave.setPixPerUnit(8);
+         document.EMWave.setRGB(22,50,134);
+         document.EMWave.createFilledSquare(-20,20);
+         document.EMWave.setRGB(222,223,27);
+         document.EMWave.createAxes(0,0,-20,10);
+         document.EMWave.setRGB(135,52,55);
+         document.EMWave.createLinear(-20,20,10,0,0);
+}
+function linearEMWave() {
+         document.EMWave.deleteAll();
+		  document.EMWave.setWaveLineDensity(6);
+         document.EMWave.setPixPerUnit(8);
+         document.EMWave.setRGB(22,50,134);
+         document.EMWave.createFilledSquare(-20,20);
+         document.EMWave.setRGB(222,223,27);
+         document.EMWave.createAxes(0,0,-20,10);
+         document.EMWave.setRGB(135,52,55);
+         document.EMWave.createLinear(-20,20,10,0,0);
+         document.EMWave.setRGB(52,135,55);
+         document.EMWave.createLinear(-20,20,10,0,1.57);
+}
+function polarizedLinearWave(){
+         document.EMWave.deleteAll();
+		  document.EMWave.setWaveLineDensity(2); 
+         document.EMWave.setPixPerUnit(8);
+         document.EMWave.setRGB(122,100,134);
+         document.EMWave.createFilledSquare(-20,20);
+         document.EMWave.setRGB(122,123,227);
+         document.EMWave.createAxes(0,0,-20,10);
+         document.EMWave.setRGB(235,222,55);
+         document.EMWave.createLinear(-20,0,10,0,.59);
+         document.EMWave.setRGB(244,99,200);
+         document.EMWave.createPlane(0,20,20,1.579);         
+         document.EMWave.setRGB(235,92,55);
+         document.EMWave.createLinear(0,20,7,0,0);
+}
+function circularWave() {
+         document.EMWave.deleteAll();
+		  document.EMWave.setWaveLineDensity(2); 
+         document.EMWave.setPixPerUnit(8);
+         document.EMWave.setRGB(22,100,234);
+         document.EMWave.createFilledSquare(-20,20);
+         document.EMWave.setRGB(222,23,27);
+         document.EMWave.createAxes(0,0,-20,10);
+         document.EMWave.setRGB(245,222,55);
+         document.EMWave.createCircularRight(-20,20,10,0);
+
+}
+function polarizedCircularWave(){
+         document.EMWave.deleteAll();
+		  document.EMWave.setWaveLineDensity(2); 			
+         document.EMWave.setPixPerUnit(8);
+         document.EMWave.setRGB(122,100,134);
+         document.EMWave.createFilledSquare(-20,20);
+         document.EMWave.setRGB(22,23,127);
+         document.EMWave.createAxes(0,0,-20,10);
+         document.EMWave.setRGB(88,157,55);
+         document.EMWave.createCircularRight(-20,0,10,0);
+         document.EMWave.setRGB(244,249,100);
+         document.EMWave.createPlane(0,20,20,1.579);         
+         document.EMWave.setRGB(125,122,155);
+         document.EMWave.createLinear(0,20,10,1.579,0);         
+}
+
+function parsedWave(){
+         document.EMWave.deleteAll();
+		  document.EMWave.setWaveLineDensity(2); 	
+         document.EMWave.setPixPerUnit(10);
+         document.EMWave.setRGB(122,100,234);
+         document.EMWave.createFilledSquare(-20,20);
+         document.EMWave.setRGB(122,23,127);
+         document.EMWave.createAxes(0,0,-20,10);
+         document.EMWave.setRGB(188,157,55);
+         document.EMWave.setWaveLineDensity(5);
+         document.EMWave.createParsed("10*exp(-(z+30)*(z+30)/100)", -20, 20, 0);
+}
+
+function beatsWave(){
+         document.EMWave.deleteAll();
+		  document.EMWave.setWaveLineDensity(2); 	
+         document.EMWave.setPixPerUnit(10);
+         document.EMWave.setRGB(122,100,234);
+         document.EMWave.createFilledSquare(-20,20);
+         document.EMWave.setRGB(122,23,127);
+         document.EMWave.createAxes(0,0,-20,10);
+         document.EMWave.setRGB(188,157,55);
+         document.EMWave.setWaveLineDensity(2);
+         document.EMWave.createParsed("5.0*sin(1.0*z)+5*sin(1.2*z)", -20, 20, 0);
+}
+</script>
+</head>
+
+<body onload="linearEMWave()">
+
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+  <tr>
+    <td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+    <!-- --></a>
+    <table border="0" cellpadding="0" cellspacing="3">
+      <tr align="center" valign="top">
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><a href="../../overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>
+        </td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1">&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+        </td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><font class="NavBarFont1">&nbsp;Class </font>&nbsp;</td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+        </td>
+      </tr>
+    </table>
+    </td>
+    <td align="right" valign="top" rowspan="2"></td>
+  </tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+<table>
+  <tr>
+    <td>
+    <applet codebase="../../classes" archive="EMWave4_.jar,STools4.jar" code="emwave4.EMWave.class" name="EMWave" 
+    width="300" height="500" hspace="0" vspace="0" align="left">
+      <param name="ShowControls" value="false" />
+      <param name="Animate" value="true" />
+      <param name="Orientation" value="0" />
+      <param name="orientation" value="0" />
+      <param name="framesPerSec" value="10" />
+      <param name="translation" value=".4" />
+    </applet> </td>
+    <td>
+    <ul>
+      <li><a href="JavaScript:linearWave()">Linear wave</a></li>
+    </ul>
+    <ul>
+      <li><a href="JavaScript:polarizedLinearWave()">Linear wave with polarizer</a></li>
+    </ul>
+    <ul>
+      <li><a href="JavaScript:circularWave()">Circular wave</a></li>
+    </ul>
+    <ul>
+      <li><a href="JavaScript:polarizedCircularWave()">Circular wave with polarizer</a></li>
+    </ul>
+    <ul>
+      <li><a href="JavaScript:linearEMWave()">Linear E&amp;M wave</a></li>
+    </ul>
+    <ul>
+      <li><a href="JavaScript:parsedWave()">Gaussian</a></li>
+    </ul>
+    <ul>
+      <li><a href="JavaScript:beatsWave()">Beats</a></li>
+    </ul>
+    <p>Click-drag to the right or left to rotate about the z axis.</p>
+    <p>Click-drag up or down to rotate in the xy plane.
+    <script language="JavaScript">
+    </script>
+    </p>
+    <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

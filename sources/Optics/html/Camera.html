@@ -1,0 +1,170 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html>
+
+<head>
+<title>Camera</title>
+<meta content="en-us" http-equiv="Content-Language">
+<meta content="text/html; charset=windows-1252" http-equiv="Content-Type">
+<meta content="Microsoft FrontPage 5.0" name="GENERATOR">
+<meta content="FrontPage.Editor.Document" name="ProgId">
+<link rel="STYLESHEET" type="text/css" href="../styles_dancy.css">
+<script language="JavaScript"> 
+
+
+var idfs=0;
+var idns=0;
+var idob=0;
+
+
+function Normal(){
+	document.Optics.clearAll();
+	document.Optics.setDefault();
+     document.Optics.setSize(0.5);
+     idb=document.Optics.addObject("rectangle","x=6.47, y=0, w=6, h=130");
+     document.Optics.setRGB(idb,220,0,250);
+	  id=document.Optics.addObject("lens","x=5.7,f=0.7");
+	  document.Optics.setDragable(id,true);
+	  cid=document.Optics.addObject("constraint"," xmin=5.05,xmax=6.3"); 
+     document.Optics.setConstraint(id,cid); 	  
+     idt=document.Optics.addObject("text","x=6.1, y=0.7, text=Film");
+    	  document.Optics.setRGB(idt,220,0,250);
+	  document.Optics.addObject("aperture","x=6.45, opening=0");
+	  document.Optics.addObject("aperture","x=5.0, opening=1.3");
+
+}
+  
+function Telephoto(){
+	document.Optics.clearAll();
+	document.Optics.setDefault();
+     document.Optics.setSize(0.5);
+     idb=document.Optics.addObject("rectangle","x=6.47, y=0, w=6, h=130");
+     document.Optics.setRGB(idb,220,0,250);
+	  id=document.Optics.addObject("lens","x=5.6,f=0.9");
+	  document.Optics.setDragable(id,true);
+	  cid=document.Optics.addObject("constraint"," xmin=5.05,xmax=6.3"); 
+     document.Optics.setConstraint(id,cid); 	  
+     idt=document.Optics.addObject("text","x=6.1, y=0.7, text=Film");
+	  document.Optics.setRGB(idt,220,0,250);
+	  document.Optics.addObject("aperture","x=6.45, opening=0");
+	  document.Optics.addObject("aperture","x=5.0, opening=1.3");
+
+}
+
+function Wideangle(){
+	document.Optics.clearAll();
+	document.Optics.setDefault();
+     document.Optics.setSize(0.5);
+     idb=document.Optics.addObject("rectangle","x=6.47, y=0, w=6, h=130");
+     document.Optics.setRGB(idb,220,0,250);
+	  id=document.Optics.addObject("lens","x=5.7,f=0.5");
+	  document.Optics.setDragable(id,true);
+	  cid=document.Optics.addObject("constraint"," xmin=5.05,xmax=6.3"); 
+     document.Optics.setConstraint(id,cid); 	  
+     idt=document.Optics.addObject("text","x=6.1, y=0.7, text=Film");
+	  document.Optics.setRGB(idt,220,0,250);
+	  document.Optics.addObject("aperture","x=6.45, opening=0");
+	  document.Optics.addObject("aperture","x=5.0, opening=1.3");
+
+
+}
+	
+function farsource(){
+  document.Optics.setAutoRefresh(false);
+  	if (idfs!=0){ 
+  	  document.Optics.deleteObject(idfs);
+  	  idfs=0;
+  	}else {
+  		document.Optics.setRayRGB(250,0,0);
+  		idfs=document.Optics.addObject("source","infinite,x=0,y=0,s=100,slope=0");
+  	}
+	
+	  document.Optics.setAutoRefresh(true);
+
+	}
+	
+function nearsource(){
+document.Optics.setAutoRefresh(false);
+  	if (idns!=0){ 
+  	  document.Optics.deleteObject(idns);
+  	  idns=0;
+  	}else {
+	document.Optics.setRayRGB(0,0,250);
+	idns=document.Optics.addObject("source","point,x=0.15,y=0,s=50,slope=0.3,inc=0.05");
+		document.Optics.setDragable(idns,true);
+	document.Optics.setResizable(idns,true);
+	}
+		  cnid=document.Optics.addObject("constraint","xmax=4.8, ymin=-1.3, ymax=1.3"); 
+		  	  document.Optics.setRGB(cnid,0,0,0);
+		  document.Optics.setConstraint(idns,cnid); 
+		  document.Optics.setAutoRefresh(true);
+	
+	}
+	
+	function Objectsource(){
+document.Optics.setAutoRefresh(false);
+  	if (idob!=0){ 
+  	  document.Optics.deleteObject(idob);
+  	  idob=0;
+  	}else {
+	document.Optics.setRayRGB(0,250,0);
+	idob=document.Optics.addObject("source","x=2.3,y=1.2");
+		document.Optics.setDragable(idob,true);
+	document.Optics.setResizable(idob,true);
+	}
+	coid=document.Optics.addObject("constraint","xmax=4.8, ymin=-1.3, ymax=1.3"); 
+		  	  document.Optics.setRGB(coid,0,0,0);
+		  document.Optics.setConstraint(idob,coid);
+		  document.Optics.setAutoRefresh(true);
+	
+	}
+
+
+</script>
+</head>
+
+<body bgcolor="#ffefce">
+
+<h3 align="center">Camera</h3>
+<p align="center"><b><font color="#003300">Add/Remove:</font></b><font 
+color="#993399">&nbsp;</font>&nbsp;&nbsp; <a href="javascript:farsource()">Far Source</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="javascript:nearsource()">Near Point Source</a>&nbsp;&nbsp;<a 
+href="javascript:Objectsource()">Object Source</a> </p>
+<blockquote>
+  <p align="center">
+  <applet code="optics.OpticsApplet.class" codebase="../jars/" height="250" 
+  id="Optics" name="Optics" width="650" archive="Optics4_.jar,STools4.jar">
+    <param name="ShowControls" value="false">
+    <param name="align" value="middle">
+  </applet>&nbsp; </p>
+</blockquote>
+<p align="center"><a href="javascript:Normal()">Normal Lens</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="javascript:Telephoto()">Telephoto Lens</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="javascript:Wideangle()">Wide-Angle Lens</a></p>
+<p align="left">The applet can be used to demonstrate the basic operation of a 
+camera.&nbsp; Various lenses and light sources can be added by clicking on the 
+appropriate links.&nbsp; The camera is &quot;focused&quot; by dragging the lens to change 
+the lens to film distance.</p>
+<p align="left">a) For a normal lens, what is the closest an object could be and 
+still be focused on the film?&nbsp; <font color="#FF0000">located at x = 3.6</font></p>
+<p align="left">b) When an object source is created it is at x=2.3 and has a 
+height of 1.2 (top of the arrow is at y=1.2).&nbsp; Where must a normal lens be 
+placed to focus this object?&nbsp; Where must a telephoto lens be placed?&nbsp; 
+Where must a wide-angle lens be placed?&nbsp; <font color="#FF0000">normal at 
+x=5.5, telephoto at x=5.15, wide-angle at x=5.85</font></p>
+<p align="left">c) For an object at x=2.3 with height 1.2, rank the height of 
+the image, from smallest to largest, when focused on the film by each of the 
+lenses.&nbsp;&nbsp; <font color="#FF0000">Wide-Angle, Normal, Telephoto</font></p>
+<p align="left">d) Based on your answer for , which lens would you use if you 
+wanted to take a picture if which the object took up most of the photographed 
+area (zoom in)?&nbsp; Explain.&nbsp; <font color="#FF0000">Telephoto</font></p>
+<p align="left">e) Based on your answer for part c, which lens would you use if 
+you wanted to take a picture of the object and much of its surroundings (zoom 
+out)?&nbsp; Explain.&nbsp; <font color="#FF0000">Wide-Angle Lens</font></p>
+<p align="left">f) Rank, from smallest to largest, the focal lengths of the 
+three lenses.&nbsp; <font color="#FF0000">Wide-Angle, Normal, Telephoto</font></p>
+<p><a href="../intro.html">Return to Optics Contents</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

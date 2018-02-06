@@ -1,0 +1,21 @@
+[PropertyInfo]
+axisPos,int,false,false, , ,true,<default>
+dataMax,double,false,false, , ,true,<default>
+dataMin,double,false,false, , ,true,<default>
+exponentColor,Color,false,false, , ,true,<default>
+exponentFont,Font,false,false, , ,true,<default>
+labelColor,Color,false,false, , ,true,<default>
+labelFont,Font,false,false, , ,true,<default>
+manualRange,boolean,false,false, , ,true,<default>
+position,int,false,false, , ,true,<default>
+titleBackground,Color,false,false, , ,true,<default>
+titleColor,Color,false,false, , ,true,<default>
+titleFont,Font,false,false, , ,true,<default>
+titleRotation,int,false,false, , ,true,<default>
+titleText,String,false,false, , ,true,<default>
+vertical,boolean,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

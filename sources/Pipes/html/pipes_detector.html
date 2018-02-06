@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<TITLE>
+Pressure Simulator
+</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function makeDetector() {var dhash = document.Pipe.addDetector();}
+function setMode(m,s) {document.Pipe.setMode(m,s);}
+</SCRIPT>
+</HEAD>
+<BODY>
+pipes.PipeApplet will appear below in a Java enabled browser.<BR>
+
+<APPLET
+  CODEBASE = "./classes"
+  CODE     = "pipes.PipeApplet.class"
+  NAME     = "Pipe"
+  WIDTH    = 400
+  HEIGHT   = 300
+  HSPACE   = 0
+  VSPACE   = 0
+  ALIGN    = middle
+>
+  <param name="Speed" value="10">
+  <param name="InitialString" value="sin(25*t+pi/2)">
+  <param name="ShowControls" value="true">
+  <param name="Mode" value="u">
+  <param name="Pixper" value="15">
+  <param name="FPS" value="10">
+  <param name="Dt" value="0.025">
+  <param name="ShowLegend" value="true">
+  <param name="WallW" value="4">
+</applet>
+
+<Input TYPE="button"  VALUE="Make Detector" ONCLICK="makeDetector"></BODY>
+</HTML>

@@ -1,0 +1,50 @@
+<html>
+
+<head>
+<script LANGUAGE="JavaScript">
+function demo(){
+   document.Animator.setAutoRefresh(false);          
+   document.Animator.setDefault();
+   document.Animator.setTimeInterval(0,1.74);  
+   document.Animator.setPixPerUnit(75);
+   document.Animator.setGridUnit(0.1);
+   document.Animator.shiftPixOrigin(-75,-75);
+   id=document.Animator.addObject("circle","r=10");
+   document.Animator.setTrajectory(id,"1.5*t","2-2*t*t");
+   document.Animator.setTrail(id,300);
+   document.Animator.setCaption("Trajectory");
+   document.Animator.setAutoRefresh(true);   
+   document.Animator.forward();
+}
+
+</script>
+<title>Set Trajectory</title>
+</head>
+
+<body onload="demo()">
+
+<h3 align="left">Trajectory</h3>
+<p align="center">
+<applet code="animator4.Animator.class" codebase="./" 
+archive="Physlets.jar" name="Animator" width="250" height="250" 
+hspace="0" vspace="0" align="Middle">
+  <param name="FPS" value="10">
+  <param name="ShowControls" value="false">
+  <param name="dt" value="0.01">
+  <param name="PixPerUnit" value="10">
+  <param name="GridUnit" value="1.0">
+</applet> </p>
+<form>
+  <p align="center">&nbsp;<input type="BUTTON" value="play" 
+  onclick="document.Animator.forward()"><input type="BUTTON" value="pause" 
+  onclick="document.Animator.pause()"><input type="BUTTON" value="step&gt;&gt;" 
+  onclick="document.Animator.stepForward()"><input type="BUTTON" value="reset" 
+  onclick="document.Animator.reset()"></p>
+</form>
+<p align="left"><a href="JavaScript:demo()">Init</a></p>
+<p align="left">This example shows how Animator can be used to script a 
+trajectory.</p>
+
+</body>
+
+</html>

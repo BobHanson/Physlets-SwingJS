@@ -1,0 +1,14 @@
+button.reset Reset
+button.start Forward
+button.reverse Reverse
+button.stop Stop
+button.forward Step>>
+button.back <<Step
+label.time Time:
+
+
+
+
+
+
+

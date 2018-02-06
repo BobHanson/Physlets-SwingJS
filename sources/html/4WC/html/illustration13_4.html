@@ -1,0 +1,327 @@
+<html>
+
+<head>
+<script language="JavaScript">
+var pixPerUnit=80;
+var ramp=0;
+var dxRamp=6;
+var dyRamp=0.2;
+var dxRampPix=dxRamp*pixPerUnit; //width of ramp in pixels
+var dyRampPix=dyRamp*pixPerUnit; //height of ramp in pixels
+var ready=false;
+var load=0;
+
+
+function initApplet(){
+		document.Animator.setAutoRefresh(false);
+		document.Animator.setDefault();
+		id=document.Animator.getEnsembleID();
+   		document.Animator.setShowCoordinates(id,false);
+		document.Animator.setTimeDisplay(false);
+		document.Animator.shiftPixOrigin(0,-30);
+		document.Animator.setPixPerUnit(pixPerUnit);
+		document.Animator.setGridUnit(0);
+		document.Animator.setTimeVisibility(false);
+		document.Animator.setCaption("Select an Animation to Begin");
+		ramp0=document.Animator.addObject("rectangle","x=0,y=0,w=481,h=18");
+        ramp=document.Animator.addObject("rectangle","x=0,y=0,w=479,h=16");
+        document.Animator.setRGB(ramp,200,200,200);	
+		fulcrum0=document.Animator.addObject("rectangle","x=-2.7,y=-0.3,w=22,h=32");
+		fulcrum=document.Animator.addObject("rectangle","x=-2.7,y=-0.3,w=20,h=30");
+		document.Animator.setRGB(fulcrum,175,100,0);
+		fulcrum20=document.Animator.addObject("rectangle","x=2.7,y=-0.3,w=22,h=32");
+		fulcrum2=document.Animator.addObject("rectangle","x=2.7,y=-0.3,w=20,h=30");
+		document.Animator.setRGB(fulcrum2,175,100,0);
+		axle=document.Animator.addObject("circle","r=4,x=-0.01,y=0");
+		ground=document.Animator.addObject("rectangle","x=0,y=-1,w=800,h=80");
+		document.Animator.setRGB(ground,0,150,0);
+		document.Animator.setAutoRefresh(true);
+		document.DataTable.setSeriesLabel(1,"x1 (m)");
+        document.DataTable.setSeriesLabel(2,"F1 (N)");  
+     	document.DataTable.setSeriesLabel(3,"F2 (N)");
+        document.DataTable.setSeriesLabel(4,"F_board (N)");  
+        document.DataTable.setSeriesLabel(5,"F_block (N)"); 
+     
+     document.DataTable.sizeToFit(true);
+	  tid=document.DataTable.getTableID();   
+     document.DataTable.setAutoRefresh(true);
+           
+}
+function initAppletA(){
+   		
+   		timerID=0;
+		document.Animator.setAutoRefresh(false);
+		document.Animator.setDefault();
+		id=document.Animator.getEnsembleID();
+   		document.Animator.setShowCoordinates(id,false);
+		document.Animator.setTimeDisplay(false);
+		document.Animator.shiftPixOrigin(0,-30);
+		document.Animator.setPixPerUnit(pixPerUnit);
+		document.Animator.setGridUnit(0);
+		document.Animator.setTimeVisibility(false);
+		document.Animator.setCaption("Animation 1");
+		load0=document.Animator.addObject("rectangle","x=2.7,y=0.5,w=50,h=70");
+		load=document.Animator.addObject("rectangle","x=2.7,y=0.5,w=48,h=68");
+		document.Animator.setAnimationSlave(load,load0);
+        document.Animator.setRGB(load,255,0,0);
+		ramp0=document.Animator.addObject("rectangle","x=0,y=0,w=481,h=18");
+        ramp=document.Animator.addObject("rectangle","x=0,y=0,w=479,h=16");
+        document.Animator.setRGB(ramp,200,200,200);	
+		bearing1a=document.Animator.addObject("circle","r=6,x=0,y=0");
+		bearing2a=document.Animator.addObject("circle","r=6,x=0,y=0");
+		bearing1=document.Animator.addObject("circle","r=5,x=0,y=0");
+		bearing2=document.Animator.addObject("circle","r=5,x=0,y=0");
+		document.Animator.setRGB(bearing1,177,177,177);
+		document.Animator.setRGB(bearing2,177,177,177);
+		fulcrum0=document.Animator.addObject("rectangle","x=-2.7,y=-0.3,w=22,h=32");
+		fulcrum=document.Animator.addObject("rectangle","x=-2.7,y=-0.3,w=20,h=30");
+		document.Animator.setRGB(fulcrum,175,100,0);
+		fulcrum20=document.Animator.addObject("rectangle","x=2.7,y=-0.3,w=22,h=19");
+		fulcrum2=document.Animator.addObject("rectangle","x=2.7,y=-0.3,w=20,h=17");
+		document.Animator.setAnimationSlave(fulcrum2,fulcrum20);
+		document.Animator.setRGB(fulcrum2,175,100,0);
+		document.Animator.setConstrainY(fulcrum2,-0.3,-2.0,2.7);
+		document.Animator.setShowConstraintPath(fulcrum2,true);
+		document.Animator.setDragable(fulcrum2,true);
+		document.Animator.setAnimationSlave(fulcrum2,bearing1a);
+		document.Animator.setAnimationSlave(fulcrum2,bearing2a);
+		document.Animator.setDisplayOffset(bearing1a,0,10);
+		document.Animator.setDisplayOffset(bearing2a,0,-10);
+		document.Animator.setAnimationSlave(fulcrum2,bearing1);
+		document.Animator.setAnimationSlave(fulcrum2,bearing2);
+		document.Animator.setDisplayOffset(bearing1,0,10);
+		document.Animator.setDisplayOffset(bearing2,0,-10);
+		axle=document.Animator.addObject("circle","r=4,x=-0.01,y=0");
+		ground=document.Animator.addObject("rectangle","x=0,y=-1,w=800,h=80");
+		document.Animator.setRGB(ground,0,150,0);
+		f0=document.Animator.addObject("arrow2","x=2.7,y=0,v=-0.2,h=0,thickness=2");
+		f1=document.Animator.addObject("arrow2","x=-2.7,y=0,v=1.0,h=0,thickness=2");
+		f2=document.Animator.addObject("arrow2","x=2.7,y=0,v=1.0,h=0,thickness=2");
+		
+		document.DataTable.setSeriesLabel(1,"d (m)");
+        document.DataTable.setSeriesLabel(2,"F1 (N)");  
+     	document.DataTable.setSeriesLabel(3,"F2 (N)");
+        document.DataTable.setSeriesLabel(4,"F_board (N)");  
+        document.DataTable.setSeriesLabel(5,"F_block (N)"); 
+     	document.DataTable.sizeToFit(true);
+	  	tid=document.DataTable.getTableID();   
+  
+		document.Animator.makeDataConnection(fulcrum2,tid,1,"x+2.7","0");    
+        document.Animator.makeDataConnection(fulcrum2,tid,2,"9.8*(2-(10.8)/(2.7+x))","0");  
+        document.Animator.makeDataConnection(fulcrum2,tid,3,"9.8*(10.8)/(2.7+x)","0"); 
+        document.Animator.makeDataConnection(fulcrum2,tid,4,"0","0"); 
+        document.Animator.makeDataConnection(fulcrum2,tid,5,"-19.6","0");    
+        
+		document.Animator.makeDataConnection(fulcrum2,f2,2,"0","0.1*(10.8)/(2.7+x)");  
+		document.Animator.makeDataConnection(fulcrum2,f2,1,"x","0"); 
+		document.Animator.makeDataConnection(fulcrum2,f1,2,"0","0.1*(2-(10.8)/(2.7+x))"); 
+		document.DataTable.setAutoRefresh(true);
+		document.Animator.updateDataConnections();  
+		document.Animator.setAutoRefresh(true);
+		           
+}
+	
+
+function addWeightToBoard(){
+		document.Animator.setAutoRefresh(false);
+		document.Animator.setDefault();
+		id=document.Animator.getEnsembleID();
+   		document.Animator.setShowCoordinates(id,false);
+		document.Animator.setTimeDisplay(false);
+	   	document.Animator.shiftPixOrigin(0,-30);
+		document.Animator.setPixPerUnit(pixPerUnit);
+		document.Animator.setGridUnit(0);
+		document.Animator.setTimeVisibility(false);
+		document.Animator.setCaption("Animation 2");
+		load0=document.Animator.addObject("rectangle","x=2.7,y=0.5,w=50,h=70");
+		load=document.Animator.addObject("rectangle","x=2.7,y=0.5,w=48,h=68");
+		document.Animator.setAnimationSlave(load,load0);
+        document.Animator.setRGB(load,255,0,0);
+		ramp0=document.Animator.addObject("rectangle","x=0,y=0,w=481,h=18");
+        ramp=document.Animator.addObject("rectangle","x=0,y=0,w=479,h=16");
+        document.Animator.setRGB(ramp,255,150,0);
+		bearing1a=document.Animator.addObject("circle","r=6,x=0,y=0");
+		bearing2a=document.Animator.addObject("circle","r=6,x=0,y=0");
+		bearing1=document.Animator.addObject("circle","r=5,x=0,y=0");
+		bearing2=document.Animator.addObject("circle","r=5,x=0,y=0");
+		document.Animator.setRGB(bearing1,177,177,177);
+		document.Animator.setRGB(bearing2,177,177,177);
+		fulcrum0=document.Animator.addObject("rectangle","x=-2.7,y=-0.3,w=22,h=32");
+		fulcrum=document.Animator.addObject("rectangle","x=-2.7,y=-0.3,w=20,h=30");
+		document.Animator.setRGB(fulcrum,175,100,0);
+		fulcrum20=document.Animator.addObject("rectangle","x=2.7,y=-0.3,w=22,h=19");
+		fulcrum2=document.Animator.addObject("rectangle","x=2.7,y=-0.3,w=20,h=17");
+		document.Animator.setAnimationSlave(fulcrum2,fulcrum20);
+        document.Animator.setAnimationSlave(fulcrum2,fulcrum20);
+        document.Animator.setRGB(fulcrum2,175,100,0);
+		document.Animator.setConstrainY(fulcrum2,-0.3,-1,2.7);
+
+		document.Animator.setAnimationSlave(fulcrum2,bearing1a);
+		document.Animator.setAnimationSlave(fulcrum2,bearing2a);
+		document.Animator.setDisplayOffset(bearing1a,0,10);
+		document.Animator.setDisplayOffset(bearing2a,0,-10);
+	    document.Animator.setAnimationSlave(fulcrum2,bearing1);
+		document.Animator.setAnimationSlave(fulcrum2,bearing2);
+		document.Animator.setDisplayOffset(bearing1,0,10);
+		document.Animator.setDisplayOffset(bearing2,0,-10);
+		
+		document.Animator.setShowConstraintPath(fulcrum2,true);
+		document.Animator.setDragable(fulcrum2,true);
+        axle=document.Animator.addObject("circle","r=4,x=-0.01,y=0");
+		ground=document.Animator.addObject("rectangle","x=0,y=-1,w=800,h=80");
+		document.Animator.setRGB(ground,0,150,0);
+		f0=document.Animator.addObject("arrow2","x=2.7,y=0,v=-0.2,h=0,thickness=2");
+		f00=document.Animator.addObject("arrow2","x=0,y=0,v=-1,h=0,thickness=2");
+		
+		f1=document.Animator.addObject("arrow2","x=-2.7,y=0,v=1.0,h=0,thickness=2");
+		f2=document.Animator.addObject("arrow2","x=2.7,y=0,v=1.0,h=0,thickness=2");
+		
+		
+		document.DataTable.setSeriesLabel(1,"d (m)");
+        document.DataTable.setSeriesLabel(2,"F1 (N)");  
+     	document.DataTable.setSeriesLabel(3,"F2 (N)");
+        document.DataTable.setSeriesLabel(4,"F_board (N)");  
+        document.DataTable.setSeriesLabel(5,"F_block (N)"); 
+     
+     	document.DataTable.sizeToFit(true);
+	  	tid=document.DataTable.getTableID();   
+		
+		document.Animator.makeDataConnection(fulcrum2,tid,1,"x+2.7","0");    
+        document.Animator.makeDataConnection(fulcrum2,tid,2,"9.8*(12-(37.8)/(2.7+x))","0");  
+        document.Animator.makeDataConnection(fulcrum2,tid,3,"9.8*(37.8)/(2.7+x)","0"); 
+        document.Animator.makeDataConnection(fulcrum2,tid,4,"-98.0","0"); 
+        document.Animator.makeDataConnection(fulcrum2,tid,5,"-19.6","0"); 
+        
+		document.Animator.makeDataConnection(fulcrum2,f2,2,"0","0.1*(37.8)/(2.7+x)");  
+		document.Animator.makeDataConnection(fulcrum2,f2,1,"x","0"); 
+		document.Animator.makeDataConnection(fulcrum2,f1,2,"0","0.1*(12-(37.8)/(2.7+x))");  				
+		document.Animator.updateDataConnections();
+		document.Animator.setAutoRefresh(true);
+		document.DataTable.setAutoRefresh(true);
+		
+        
+}
+
+
+
+
+
+
+</script>
+
+<title>Physlet Physics by Christian and Belloni: Illustration 13.4</title>
+<link rel="stylesheet" type="text/css" href="../resources/physlets.css">
+</head>
+<body onload="initApplet()">
+<h2 align="left">Illustration 13.4: The Diving Board Problem</h2>
+<div align="center">
+  <center>
+  <table bgColor="#C0C0C0" border="1">
+    <tr>
+      <td>
+    <applet codebase="../resources/"
+    archive="Physlets.jar"
+    code="animator4.Animator.class" name="Animator" width="600" height="300"
+    hspace="0" vspace="0" align="Middle">
+      <param name="FPS" value="20">
+      <param name="ShowControls" value="false">
+      <param name="dt" value="0.1">
+        </applet></td>
+    </tr>
+    <tr>
+      <td>
+    <p align="center">
+       <applet codebase="../resources/"
+        archive="Physlets.jar"
+        code="dataTable.DataTable.class" name="DataTable" width="477" height="45"
+        hspace="0" align="middle">
+          <param name="ShowScrollBars" value="false">
+          <param name="LastOnTop" value="true">
+          <param name="CellWidth" value="100">
+          <param name="NumRows" value="1">
+          <param name="NumCols" value="5">
+          <param name="ShowControls" value="false">
+          <param name="ShowRowHeader" value="false">
+          <param name="ShowColHeader" value="true">
+          <param name="SizeToFit" value="true">
+        </applet></td>
+    </tr>
+  </table>
+  </center>
+</div>
+<div align="center">
+  <center>
+<table bgColor="#c0c0c0" border="1">
+  <tr>
+    <td align="middle"><a href="javascript:onclick=initAppletA()">Animation 1</a></td>
+    <td align="middle"> 
+    <a href="javascript:onclick=addWeightToBoard()">Animation 2</a></td>
+  </tr>
+</table>
+  </center>
+</div>
+
+
+<p align="center"><strong><font color="#FF0000"><em>Please wait for the animation to completely load.</em></font></strong></p>
+
+
+<p align="left">A 2-kg box sits 0.3 m from the right end of a board of negligible weight 
+in <a href="javascript:onclick=initAppletA()">Animation 1</a> and a board of weight  10 kg in
+<a href="javascript:onclick=addWeightToBoard()">Animation 2</a>.&nbsp; Two supports 
+(support 1 and support 2) exert forces
+on the left and right ends of the board, as indicated by the two force vectors <strong> (position is given in meters)</strong>.&nbsp; The arrows represent the relative sizes 
+of the force vectors, but their length does not represent their actual magnitudes 
+(the actual value of the forces, as well as the separation between the supports, 
+is shown in the table).  The board is 6 m long and support 1 is 0.3 m in from the left edge. <strong>&nbsp;</strong>
+<a href="javascript:onclick=initApplet()">Restart</a>.
+</p>
+
+<p align="left">Consider the situation in <a href="javascript:onclick=initAppletA()">
+Animation 1</a> in which the board has a negligible weight.&nbsp; How does the force of each support on the board 
+(F1 corresponds to the right support and F2 corresponds to the left support) depend on where the box is located?&nbsp; You can drag the 
+second support from  left to right to view the forces of the supports on the board.&nbsp; 
+When the board is of a negligible mass, there are three forces that act on the 
+board: the weight of the box, and the forces of the supports.&nbsp; As you move 
+support 2 around, what do you notice?&nbsp; When the movable 
+support is as far right as it can go, the force of the first support is zero and the force of the second support cancels the force of the box.&nbsp; This 
+seems logical, but why this force?&nbsp; An F1 = 10 N and an F2 = 9.6 N, would 
+work too, right?&nbsp; Well, yes and no.&nbsp; It would certainly make the sum 
+of the forces on the board equal to zero, but what about the sum of the torques? 
+This sum would not be equal to zero no matter where you measured the torques from.&nbsp; 
+Only an equal and opposite force acting at the same position as the weight of 
+the box will keep the board in equilibrium.&nbsp; As you move the second support 
+to the left note that both  forces exerted by the supports  get bigger, and 
+that the force that the first support exerts is negative.&nbsp; We can 
+understand this effect by measuring the torque on the board from the first 
+support.&nbsp; Since the force is in the y direction and the radius arm is in 
+the x direction, the magnitude of the torque is rF.&nbsp; The radius arm for the 
+weight of the box is always 5.4 m.&nbsp; The radius arm for the second support 
+changes as you drag it to the left.&nbsp; Therefore, as you drag it to the left 
+the force the support exerts must increase in order to keep rF the same 
+magnitude as (and in the opposite direction of) that of the box.&nbsp; Once the 
+right force is determined from the torque, the force due to the first support 
+can be determined by requiring the sum of the forces on the board to be zero.</p>
+
+
+<p align="left">Now, consider the situation in
+<a href="javascript:onclick=addWeightToBoard()">Animation 2</a> in which the board 
+has a weight of 10 kg.&nbsp; How does the 
+force of each support on the board depend on where the box is located?&nbsp; You 
+can drag the second support from  left to right to view the forces of the supports on the board.&nbsp; When the board has a mass, there are four forces that act on the board: the 
+weight of the box, the weight of the board, and the forces of the supports.&nbsp; 
+Much of the same analysis described above still is valid here; you just need to 
+factor in one more force and therefore one more torque.&nbsp; Again drag the 
+support around and pay close attention to the forces.&nbsp; What happens to the 
+forces when the separation between the supports is 3.15 m?&nbsp; How about 2.7 
+m?</p>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">Illustratron authored by Aaron Titus. <br>
+<a href="../../conditions_of_use.html">© 2004 by Prentice-Hall, Inc. A Pearson 
+Company</a></p>
+
+
+</body>
+</html>

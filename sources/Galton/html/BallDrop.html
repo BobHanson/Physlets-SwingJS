@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<title>The Normal Distribution</title>
+<!-- Changed by: David Krider, 29-Jun-1996 -->
+</HEAD>
+<BODY>
+
+<!--  Define the table for the heading -->
+
+<TABLE>
+  <TR>
+    <TH>
+      <IMG SRC="bd.gif">
+    </TH>
+    <TH>
+      <H2>The Normal Distribution</H2>
+      <H3>An Illustration of Basic Probability</H3>
+    </TH>
+  </TR>
+</TABLE>
+
+<HR>
+
+The normal (or Gaussian) distribution is one of the most commonly observed
+and is the starting point for modeling many natural processes.  It usually
+is found in events that are the aggregation of many smaller, but
+unobservable events.  A good example is the motion of small particles
+of dust in water.  When viewed in a microscope they perpetually move back
+and forth from the random impacts of water molecules.  If one were
+to plot the distance traveled by dust particles over a given time interval
+and repeat the measurement several times, the resulting distribution
+would be normal.  The path followed by the dust particles is referred
+to as Brownian motion.  In this case, the movement of the dust is the
+aggregation of several random shocks from the water molecules.<P>
+The exhibit below illustrates a more simple process that gives rise
+to the familiar "bell curve" of the normal distribution.  In this case
+balls are dropped from the top and pass through a series of pins
+until they hit the bottom.  Once at the bottom, they stack up to record
+the number that have hit that point.  At first there does not seem to be any
+pattern but after a few minutes the stacks conform to the superimposed
+curve.<P>
+
+<P ALIGN=CENTER>
+<applet code="galton.BallDrop.class" width=300 height=300>
+<PARAM NAME="BallImage" VALUE="smallball.gif">
+<PARAM NAME="PinImage" VALUE="smallpin.gif">
+<PARAM NAME="NumRows" VALUE="8">
+<PARAM NAME="NumColumns" VALUE="20">
+<PARAM NAME="NumBalls" VALUE="5">
+<PARAM NAME="Delay" VALUE="10">
+<PARAM NAME="TopSpace" VALUE="30">
+<PARAM NAME="SideSpace" VALUE="20">
+A Java-compatible browser is required to view this.
+</applet>
+<P>
+This Applet may be imbedded within your own web page with the
+following HTML:
+<PRE>
+&lt;applet code="BallDrop.class" width=300 height=300&gt;
+&lt;PARAM NAME="BallImage" VALUE="smallball.gif"&gt;
+&lt;PARAM NAME="PinImage" VALUE="smallpin.gif"&gt;
+&lt;PARAM NAME="NumRows" VALUE="8"&gt;
+&lt;PARAM NAME="NumColumns" VALUE="20"&gt;
+&lt;PARAM NAME="NumBalls" VALUE="5"&gt;
+&lt;PARAM NAME="Delay" VALUE="10"&gt;
+&lt;PARAM NAME="TopSpace" VALUE="30"&gt;
+&lt;PARAM NAME="SideSpace" VALUE="20"&gt;
+&lt;/APPLET&gt;
+</PRE>
+<P>
+The source code for this applet may be found <A HREF="BallDrop.java">
+here.</A>
+<BR>
+<HR>
+<FONT SIZE=-2>
+This page is Copyright &copy; 1995 <A HREF="mailto:krider@hss.caltech.edu">David Krider</A>, all rights reserved.
+</FONT>
+</P>
+<!--
+Copyright (c) 1995 David Krider, all rights reserved.
+This document may not be reproduced in part or whole without express
+written permission of the author.
+-->
+
+</BODY>
+</HTML>
+

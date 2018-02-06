@@ -1,0 +1,84 @@
+<html>
+
+<head>
+<title>Membrane</title>
+</head>
+
+<body onload="document.Membrane.forward();" bgcolor="#FFEFCE">
+
+<h1 align="center">Membrane</h1>
+
+<p align="center">
+<applet CODEBASE="../classes/" ARCHIVE="Molecular_.jar,STools.jar,SGraphics.jar"
+CODE="molecular.MolecularMembrane.class" NAME="Membrane" ID="Membrane" WIDTH="400"
+HEIGHT="300" HSPACE="0" VSPACE="0" ALIGN="middle">
+  <param name="ShowControls" value="true">
+  <param name="InitialP" value="10">
+  <param name="FPS" value="50">
+  <param name="dt" value="0.05">
+  <param name="PeriodicV" value="false">
+  <param name="PeriodicH" value="false">
+  <param name="PixPerUnit" value="10">
+  <param name="MaxParticles" value="80">
+  <param name="Probability" value="0.1">
+</applet>
+</p>
+
+<p align="left">&nbsp;</p>
+
+<p>The MolecularMembrane Physlet is an extension of the MolecularApplet Physlet.&nbsp; It
+is part of the molecular dynamics package and is downloaded whenever the Molecular.jar
+file is specified in the archive tag.&nbsp; The two ensembles in this applet are connected
+by a semi-permeable membrane.</p>
+
+<p>The MolecularMembrane Physlet is embedded using the following syntax. The [location]
+parameter should be the URL of the directory that contains the jar file and the [name]
+should be a unique variable name by which JavaScript can refer to this applet.s</p>
+<code>
+
+<p>&lt;applet<br>
+&nbsp;&nbsp;&nbsp; CODEBASE=[location]<br>
+&nbsp;&nbsp;&nbsp; CODE=&quot;molecular.MolecularMembrane.class&quot;<br>
+&nbsp;&nbsp;&nbsp; ARCHIVE=&quot;Molecular.jar&quot;<br>
+&nbsp;&nbsp;&nbsp; NAME=[script_name]<br>
+&nbsp;&nbsp;&nbsp; ID=[script_name]&gt;</code></p>
+
+<p><code>&lt;param name=[par_name] value=[par_Value]&gt;<br>
+.<br>
+.<br>
+&lt;/applet&gt;</code></p>
+
+<p>The applet that you see on this page was embedded as follows. Notice the probability
+parameter.&nbsp; This parameter string represents a function of mass, p(m), that
+determines the probability of a particle passing through the membrane.&nbsp; The
+probability is a constant 10% for all particles in this simulation.&nbsp; Another
+simulation shows a <a href="Osmosis.html">mass dependent probability.</a></p>
+<code>
+
+<p>&lt;applet<br>
+&nbsp;&nbsp;&nbsp; CODEBASE=&quot;../classes/&quot; <br>
+&nbsp;&nbsp;&nbsp; ARCHIVE=&quot;Molecular.jar&quot;<br>
+&nbsp;&nbsp;&nbsp; CODE=&quot;molecular.MolecularMembrane.class&quot;<br>
+&nbsp;&nbsp;&nbsp; NAME=&quot;Molecular&quot; ID=&quot;Molecular&quot;<br>
+&nbsp;&nbsp;&nbsp; WIDTH=&quot;300&quot;<br>
+&nbsp;&nbsp;&nbsp; HEIGHT=&quot;300&quot;<br>
+&nbsp;&nbsp;&nbsp; HSPACE=&quot;0&quot;<br>
+&nbsp;&nbsp;&nbsp; VSPACE=&quot;0&quot;<br>
+&nbsp;&nbsp;&nbsp; ALIGN=&quot;middle&quot;&gt;<br>
+<br>
+&lt;param name=&quot;ShowControls&quot; value=&quot;true&quot;&gt;<br>
+&lt;param name=&quot;InitialP&quot; value=&quot;10&quot;&gt;<br>
+&lt;param name=&quot;FPS&quot; value=&quot;50&quot;&gt;<br>
+&lt;param name=&quot;dt&quot; value=&quot;0.05&quot;&gt;<br>
+&lt;param name=&quot;PeriodicV&quot; value=&quot;true&quot;&gt;<br>
+&lt;param name=&quot;PixPerUnit&quot; value=&quot;10&quot;&gt;<br>
+&lt;param name=&quot;PistonMass&quot; value=&quot;10&quot;&gt;<br>
+&lt;param name=&quot;MaxParticles&quot; value=&quot;80&quot;&gt;<br>
+&lt;param name=&quot;Probability&quot; value=&quot;0.1&quot;&gt;</p>
+
+<p><br>
+&lt;/applet&gt;</p>
+<\code>
+</code>
+</body>
+</html>

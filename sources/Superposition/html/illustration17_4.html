@@ -1,0 +1,171 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Physlet Physics by Christian and Belloni: Illustration 17.4</title>
+<link rel="STYLESHEET" type="text/css" href="../../workbook.css">
+<script language="JavaScript">
+var timerID=0;
+var loaded=false;
+
+
+function initApplets(){
+	clearTimeout(timerID);
+	loaded=true;
+	timerID=setTimeout("graf0()",100);
+}
+
+
+function graf0(){
+	if(!loaded) return;
+	timerID=0;
+	document.Superposition.reset();
+	document.Superposition.setCaption(1,"Select an Animation to Begin");
+	document.Superposition.setFunc1("0");
+	document.Superposition.setRGB(1,0,0,255);
+	document.Superposition.pause();
+}
+function graf1(){
+	if(!loaded) return;
+	document.Superposition.reset();
+	document.Superposition.setCaption(1,"Animation 1");
+	document.Superposition.setFunc1("2*sin(2*pi/4*(x-2*t))*step(-x-16.0+2*t)+2*sin(2*pi/4*(x+2*t))*step(x-16.0+2*t)");
+	document.Superposition.setRGB(1,0,0,255);
+	document.Superposition.pause();
+}
+
+
+function graf2(){
+	if(!loaded) return;
+	document.Superposition.reset();
+	document.Superposition.setCaption(1,"Animation 2");
+	document.Superposition.setFunc1("-2*sin(2*pi/4*(x-2*t))*step(-x-16.0+2*t)+2*sin(2*pi/4*(x+2*t))*step(x-16.0+2*t)");
+	document.Superposition.pause();
+}
+
+
+function graf3(){
+	if(!loaded) return;
+	document.Superposition.reset();
+	document.Superposition.setCaption(1,"Animation 3");
+	document.Superposition.setFunc1("2*sin(2*pi/4*(x-2*t))*step(-x-0.0+2*t)-2*sin(2*pi/4*(x+2*t))*step(x-15.0-15.0+2*t)");
+	document.Superposition.pause();
+}
+
+function killmenow(){
+	clearTimeout(timerID);
+	loaded=false;
+	timerID=-1;
+}
+</script>
+</head>
+
+<body onunload="killmenow()">
+
+<h2>Illustration 17.4: Superposition of Traveling Waves</h2>
+<div align="center">
+  <center>
+  <table border="1" bgcolor="#C0C0C0">
+    <tr>
+      <td align="center">
+      <applet code="superposition.Superposition.class" archive="Superposition4_.jar,STools4.jar" 
+      codebase="../../jars" name="Superposition" align="baseline" width="606" height="200" 
+      mayscript>
+        <param name="numPoints" value="200">
+        <param name="numGraphs" value="1">
+        <param name="pixPerX" value="20">
+        <param name="pixPerY" value="20">
+        <param name="gridX" value="1">
+        <param name="gridY" value="1">
+        <param name="showControls" value="false">
+        <param name="FPS" value="10">
+        <param name="dt" value="0.1">
+        <param name="func1" value="0">
+        <param name="OnLoad" value="initApplets()">
+        <param name="AppletNames" value="Superposition">
+      </applet></td>
+    </tr>
+  </table>
+  </center>
+</div>
+</center>
+</div>
+<div align="center">
+  <form>
+   <div align="center">
+     <center>
+     <p><input type="button" value="play" onclick="document.Superposition.forward()"><input 
+     type="button" value="pause" onclick="document.Superposition.pause()"><input type="button" 
+     value="&lt;&lt;step" onclick="document.Superposition.stepBack()"><input type="button" 
+     value="step&gt;&gt;" onclick="document.Superposition.stepForward()"><input type="button" 
+     value="reset" onclick="document.Superposition.reset()"> </p>
+     </center>
+   </div>
+  </form>
+</div>
+</center>
+<div align="center">
+  <center>
+  <table>
+    <tr>
+      <td>
+      <div align="center">
+        <center>
+        <table border="1" bgcolor="#C0C0C0">
+          <tr>
+            <td><a href="javascript:graf1()">Animation 1</a>&nbsp;</td>
+            <td><a href="javascript:graf2()">Animation 2</a>&nbsp;</td>
+            <td><a href="javascript:graf3()">Animation 3</a>&nbsp;</td>
+          </tr>
+        </table>
+        </center>
+      </div>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p align="center"><b><font color="#FF0000"><i>Please wait for the animation to completely load.</i></font></b></p>
+<p align="left">In <a href="illustration17_3.html">Illustration 17.3</a>&nbsp; we considered the 
+superposition of two traveling pulses.&nbsp; In this Illustration we consider a superposition of 2 
+traveling sinusoidal waves. (In <a href="../periodic_motion/illustration16_5.html">Illustration 16.5</a> 
+and <a href="../periodic_motion/illustration16_6.html">Illustration 16.6</a> we consider the 
+addition of multiple periodic functions in a Fourier series).&nbsp; <a href="javascript:graf0()">
+Restart</a>.</p>
+<p align="left">Let's begin by considering <a href="JavaScript:func1()">Animation 1</a> which 
+represents two waves traveling on a string <b>(position is given in meters and time is given in 
+seconds)</b>.&nbsp; As you play the animation focus on x = 0 m.&nbsp; Until each wave arrives at x = 
+0 m, the amplitude there is zero.&nbsp; Watch what happens during the time that the two waves 
+overlap, t &#8805; 8 s.&nbsp; They add together in the way you would expect.&nbsp; Given that the two 
+waves always have the opposite amplitude at x = 0 m, the superposition of the two traveling waves at 
+x = 0 m will always be zero.&nbsp; This point that never moves is called a node.&nbsp; The resulting 
+wave is called a standing wave.&nbsp; It is created when we have two identical waves, traveling in 
+opposite directions in a particular medium (here the medium is a string, but we can set up standing 
+waves in air as well).</p>
+<p align="left">What does the superposition in <a href="JavaScript:func2()">Animation 2</a> look 
+like at t&nbsp;&#8805; 8 s?&nbsp; The two waves add together and exactly cancel at x = 0 m.&nbsp; As time goes 
+on, the waves &quot;reappear&quot; (they were always there) and move along the string as if they had not &quot;run 
+into&quot; each other.&nbsp; Given that the two waves always have the same amplitude at x = 0 m, the 
+superposition of the two traveling waves at x = 0 m will always be changing.&nbsp; This point is 
+called an anti-node.&nbsp; The resulting wave is still a standing wave.&nbsp; Note that it is 
+shifted in comparison to <a href="JavaScript:func1()">Animation 1</a>.</p>
+<p>In <a href="javascript:graf3()">Animation 3</a>, we have a traveling wave that is incident on a 
+wall located at x = 15 m.&nbsp; The wave travels and is then reflected by the wall. By reflected we 
+mean that the direction of propagation of the wave changes (the right-moving wave is now a 
+left-moving wave) and its amplitude is now the negative of what is was before.&nbsp; So we now have 
+a right-moving wave and a left-moving wave that resemble the superposition shown in
+<a href="JavaScript:func1()">Animation 1</a>.&nbsp; In that animation, the node was at x = 0 m; here 
+in <a href="javascript:graf3()">Animation 3</a> the node is at x = 15 m.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Illustration by Mario Belloni<br>
+Script by Morten Brydensholt, Wolfgang Christian, and Mario Belloni<br>
+<a href="../../conditions_of_use.html">© 2003 by Prentice-Hall, Inc. A Pearson Company</a></p>
+
+</body>
+
+</html>

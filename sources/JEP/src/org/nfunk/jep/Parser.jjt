@@ -1,0 +1,661 @@
+/***************************************************************
+
+JEP - Java Expression Parser
+    JEP is a Java package for parsing and evaluating mathematical
+	expressions. It currently supports user defined variables,
+	constant, and functions. A number of common mathematical
+	functions and constants are included.
+
+Author: Nathan Funk
+Copyright (C) 2001 Nathan Funk
+
+    JEP is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    JEP is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with JEP; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+
+This file contains the grammar from which the parser is
+generated. The parser generation tools being used are JavaCC
+and its component JJTree. JJTree processes the .jjt file and
+generates the .jj file. This file is then used be JavaCC to
+generate the final java classes.
+
+Knowledge of parser generation is definetly beneficial if you
+are planning to make changes to this file. Although many parts
+are self explanitory, it is helpful to know how the grammar is
+handled by JJTree and JavaCC.
+
+You can follow the structure of the grammar by starting in the
+line which reads "ASTStart Start() #Start : {}". From there you
+will be able to trace the same path the parser follows when
+parsing an expression.
+
+The concept of precedence is very important. Since this is a
+recursive descent parser, it is easy to see which operators have
+higher order of precedence. The following table outlines the
+order incorporated in this grammar.
+
+Order of precedence (from highest to lowest):
+   ^
+   %
+   /
+   *
+   +,-
+   <, >, <=, >=
+   ==, !=
+   !
+   ||, &&
+
+
+***************************************************************/
+
+
+
+/***************************************************************
+OPTIONS
+***************************************************************/
+options {
+  MULTI=true;
+  VISITOR=true;
+  NODE_DEFAULT_VOID=true;
+  STATIC=false;
+}
+
+
+/***************************************************************
+PARSER BEGIN
+***************************************************************/
+
+PARSER_BEGIN(Parser)
+package org.nfunk.jep;
+
+import org.nfunk.jep.function.*;
+
+class Parser {
+
+  static SymbolTable symTab;
+  static FunctionTable funTab;
+
+  public static void main(String args[]) {
+
+    System.out.println("Reading from standard input...");
+    Parser t = new Parser(System.in);
+
+    try {
+      ASTStart n = t.Start();
+      ParserVisitor v = new ParserDumpVisitor();
+      n.jjtAccept(v, null);
+      System.out.println("Thank you.");
+    } catch (Exception e) {
+      System.out.println("Oops.");
+      System.out.println(e.getMessage());
+      e.printStackTrace();
+    }
+  }
+
+	public Node parseStream(java.io.Reader stream, SymbolTable symTab_in, FunctionTable funTab_in, boolean traverse) throws ParseException
+	{
+		Parser t = new Parser(stream);
+		symTab = symTab_in;
+		funTab = funTab_in;
+
+		ASTStart n = t.Start();
+
+		if (traverse)
+		{
+			ParserVisitor v = new ParserDumpVisitor();
+			n.jjtAccept(v, null);
+			System.out.println("Thank you.");
+		}
+
+		return n.jjtGetChild(0);
+	}
+
+
+	private double parseIntToDouble(String buf)
+	{
+		double number = 0;
+		int iLook = 0;
+
+		for (iLook = 0; iLook < buf.length(); iLook++)
+			number = 10*number + Character.digit(buf.charAt(iLook),10);
+
+		return number;
+	}
+}
+
+PARSER_END(Parser)
+
+
+/***************************************************************
+SKIP
+***************************************************************/
+
+SKIP :
+{
+  " "
+//| "\t"
+//| "\n"
+//| "\r"
+//| <"//" (~["\n","\r"])* ("\n"|"\r"|"\r\n")>
+//| <"/*" (~["*"])* "*" (~["/"] (~["*"])* "*")* "/">
+}
+
+
+/***************************************************************
+TOKENS
+***************************************************************/
+
+TOKEN : /* LITERALS */
+{
+  < INTEGER_LITERAL:
+        <DECIMAL_LITERAL>
+  >
+|
+  < #DECIMAL_LITERAL: ["0"-"9"] (["0"-"9"])* >
+|
+  < FLOATING_POINT_LITERAL:
+        (["0"-"9"])+ "." (["0"-"9"])* (<EXPONENT>)?
+      | "." (["0"-"9"])+ (<EXPONENT>)?
+      | (["0"-"9"])+ <EXPONENT>
+  >
+|
+  < #EXPONENT: ["e","E"] (["+","-"])? (["0"-"9"])+ >
+|
+  < STRING_LITERAL:
+  	"\""
+      (   (~["\"","\\","\n","\r"])
+        | ("\\"
+            ( ["n","t","b","r","f","\\","'","\""]
+            | ["0"-"7"] ( ["0"-"7"] )?
+            | ["0"-"3"] ["0"-"7"] ["0"-"7"]
+            )
+          )
+      )*
+	"\""
+  >
+}
+
+TOKEN : /* IDENTIFIERS */
+{
+  < IDENTIFIER: <LETTER> (<LETTER>|<DIGIT>)* >
+|
+  < #LETTER: ["_","a"-"z","A"-"Z"] >
+|
+  < #DIGIT: ["0"-"9"] >
+}
+
+
+/***************************************************************
+GRAMMAR START
+***************************************************************/
+
+ASTStart Start() #Start : {}
+{
+    Expression() <EOF> { return jjtThis; }
+  |  <EOF> { throw new ParseException(token, "No expression entered"); return null; }
+}
+
+
+
+void Expression() : {}
+{
+	LogicalExpression()
+}
+
+
+
+void LogicalExpression() :
+{
+}
+{
+	NotExpression()
+	(
+	  ( "&&" NotExpression()
+	    {
+			jjtThis.setFunction(new Logical(0));
+	    }
+	  ) #FunNode(2)
+	|
+	  ( "||" NotExpression()
+	    {
+	    	jjtThis.setFunction(new Logical(1));
+	    }
+	  ) #FunNode(2)
+	)*
+}
+
+
+
+void NotExpression() :
+{}
+{
+  RelationalExpression()
+  |
+  ( "!" RelationalExpression()
+    {
+	  jjtThis.setFunction(new Not());
+    }
+  ) #FunNode(1)
+}
+
+
+
+void RelationalExpression() : {}
+{
+  OrEqualExpression()
+  (
+    ( "<" OrEqualExpression()
+      {
+	    jjtThis.setFunction(new Comparative(0));
+      }
+	) #FunNode(2)
+	|
+    ( ">" OrEqualExpression()
+      {
+        jjtThis.setFunction(new Comparative(1));
+      }
+    ) #FunNode(2)
+  )*
+}
+
+
+
+void OrEqualExpression() : {}
+{
+  EqualExpression()
+  (
+    ( "<=" EqualExpression()
+      {
+	    jjtThis.setFunction(new Comparative(2));
+      }
+	) #FunNode(2)
+	|
+    ( ">=" EqualExpression()
+      {
+        jjtThis.setFunction(new Comparative(3));
+      }
+    ) #FunNode(2)
+  )*
+}
+
+
+
+void EqualExpression() :
+{
+}
+{
+	AdditiveExpression()
+	(
+	  ( "!=" AdditiveExpression()
+	    {
+	    jjtThis.setFunction(new Comparative(4));
+	    }
+	  ) #FunNode(2)
+	|
+	  ( "==" AdditiveExpression()
+	    {
+	      jjtThis.setFunction(new Comparative(5));
+	    }
+	  ) #FunNode(2)
+	)*
+}
+
+
+
+void AdditiveExpression() : {}
+{
+  MultiplicativeExpression()
+  (
+    ( "+" MultiplicativeExpression()
+      {
+        jjtThis.setFunction(new Add());
+      }
+    ) #FunNode(2)
+    |
+    ( "-" MultiplicativeExpression()
+      {
+        jjtThis.setFunction(new Subtract());
+      }
+    ) #FunNode(2)
+  )*
+}
+
+
+
+
+void MultiplicativeExpression() : {}
+{
+  DivisionExpression()
+  (
+    ( "*" DivisionExpression()
+      {
+        jjtThis.setFunction(new Multiply());
+      }
+    ) #FunNode(2)
+  )*
+}
+
+
+
+void DivisionExpression() :
+{
+}
+{
+  ModulusExpression()
+  (
+    ( "/" ModulusExpression()
+      {
+        jjtThis.setFunction(new Divide());
+      }
+    ) #FunNode(2)
+  )*
+}
+
+
+
+void ModulusExpression() :
+{
+}
+{
+  PowerExpression()
+  (
+    ( "%" PowerExpression()
+      {
+        jjtThis.setFunction(new Modulus());
+      }
+    ) #FunNode(2)
+  )*
+}
+
+
+
+void PowerExpression() : {}
+{
+  UnaryExpression()
+  (
+    ( "^" UnaryExpression()
+      {
+        jjtThis.setFunction(new Power());
+      }
+    ) #FunNode(2)
+  )*
+}
+
+
+
+void UnaryExpression() :
+{}
+{
+  ( "+" UnaryExpression())
+|
+  ( "-" UnaryExpression()
+    {
+	  jjtThis.setFunction(new UMinus());
+    }
+  ) #FunNode(1)
+|
+  UnaryExpressionNotPlusMinus()
+}
+
+
+
+void UnaryExpressionNotPlusMinus() :
+{
+  int reqArguments=1;
+  boolean isSymbol = false;
+  boolean isFunction = false;
+  String identString = "";
+}
+{
+  AnyConstant()
+|
+  "(" Expression() ")"
+|
+  ( LOOKAHEAD(2)
+    (identString = Identifier()
+      {
+        if (funTab.containsKey(identString))
+        {
+          //Set number of required arguments
+          reqArguments = ((PostfixMathCommand)funTab.get(identString)).getNumberOfParameters();
+          jjtThis.setFunction((PostfixMathCommandI)funTab.get(identString));
+        }
+        else
+        {
+          throw new ParseException(token, "Unrecognized function \"" + identString + "\"");
+        }
+      }
+      ArgumentList(reqArguments)
+      {
+
+      }
+    ) #FunNode
+    |
+    (identString = Identifier()
+      {
+        if (symTab.containsKey(identString))
+        {
+          jjtThis.setName(identString);
+		  jjtThis.setSymbolTable(symTab);
+        }
+        else
+        {
+          throw new ParseException(token, "Unrecognized symbol \"" + identString +"\"");
+        }
+      }
+    ) #VarNode
+  )
+}
+
+
+
+void ArgumentList(int reqArguments) :
+{
+  int count = 0;
+}
+{
+  "("
+	[ Expression() {count = 1;} ]
+  ( "," Expression() {count++;} )*
+    {
+      if (reqArguments != count)
+      {
+        throw new ParseException(token, "Expecting " + reqArguments + " parameter(s)");
+      }
+    }
+  ")"
+}
+
+
+String Identifier() :
+{
+  Token t;
+}
+{
+  t=<IDENTIFIER>
+  {
+    return t.image;
+  }
+}
+
+
+void AnyConstant() #Constant:
+{
+	Token t;
+	double value;
+}
+{
+	t=<STRING_LITERAL>
+	{
+		String temp = (t.image).substring(1,t.image.length()-1);
+		
+		jjtThis.setValue(temp);
+	}
+	|
+	value = RealConstant()
+	{
+		jjtThis.setValue(new Double(value));
+	}
+}
+
+
+double RealConstant() :
+{
+  Token t;
+  double value;
+}
+{
+  t=<INTEGER_LITERAL>
+  {
+  	try
+  	{
+	  value = parseIntToDouble(t.image);
+  	} catch (Exception e)
+  	{
+      throw new ParseException(token, "Can't parse \"" + t.image + "\"");
+  	}
+	
+	return value;
+  }
+  |
+  t=<FLOATING_POINT_LITERAL>
+  {
+  	try
+  	{
+	  Double number = new Double(t.image);
+	  value = number.doubleValue();
+  	} catch (Exception e)
+  	{
+	  throw new ParseException(token, "Can't parse \"" + t.image + "\"");
+  	}
+	
+	return value;
+
+/*	//	Origional code for parsing a floating point number
+    //  Replaced by Double constructor
+  	String buf = t.image;
+	double number;
+	int iLook = 0;
+  	int startPos = 0; //set starting position of number
+  	int pointPos = 0;
+  	boolean pointFound=false;
+
+	while ((iLook < buf.length()) &&
+		((Character.isDigit(buf.charAt(iLook))) || (buf.charAt(iLook)=='.')))
+	{//go through numbers and only accept one '.'
+		if (buf.charAt(iLook)=='.')
+		{
+			if (!pointFound)
+			{// swallow one point
+				pointFound = true;
+				pointPos = iLook;
+			}
+			else
+			{// point already found - now found again so stop
+				break;
+			}
+		}
+		++iLook;
+	}
+
+	if (pointFound)
+	{// double number
+		double n1, n2;
+		if (pointPos-startPos > 0)
+		{//pre . does exsist
+			char chars1[] = new char[pointPos-startPos]; //up to '.'
+			buf.getChars(startPos, pointPos, chars1, 0);
+			String prePoint = new String(chars1);
+			n1 = parseIntToDouble(prePoint);
+		}
+		else
+		{//nothing before . so n1=0
+			n1=0;
+		}
+
+		if (iLook-(pointPos+1) > 0)
+		{
+			char chars2[] = new char[iLook-(pointPos+1)]; //skip '.' and take rest
+			buf.getChars((pointPos+1), iLook, chars2, 0);
+			String postPoint = new String(chars2);
+			n2 = parseIntToDouble(postPoint);
+		}
+		else
+		{//nothing before . so n2=0
+			n2=0;
+		}
+
+		number = n1 + n2 / Math.pow(10, iLook-(pointPos+1));
+	}
+	else
+	{// plain integer without '.'
+		char chars[] = new char[iLook-startPos];
+		buf.getChars(startPos, iLook, chars, 0);
+		String temp = new String(chars);
+		number = parseIntToDouble(temp);
+	}
+
+	//look for e indicating exponential notation
+	if ((iLook<buf.length()) && ((buf.charAt(iLook) == 'e') || (buf.charAt(iLook) == 'E')))
+	{
+		if ((iLook+1 < buf.length()) && ((Character.isDigit(buf.charAt(iLook+1)))
+		|| ((iLook+2 < buf.length()) && (buf.charAt(iLook+1) == '-') && (Character.isDigit(buf.charAt(iLook+2))))
+		|| ((iLook+2 < buf.length()) && (buf.charAt(iLook+1) == '+') && (Character.isDigit(buf.charAt(iLook+2))))))
+		{// e is followed by a integer number, minus, or plus
+			boolean negativeSign = false;
+
+			if (buf.charAt(iLook+1) == '-')
+			{
+				iLook = iLook+2; //skip over negative sign
+				negativeSign = true;
+			}
+			else if (buf.charAt(iLook+1) == '+')
+			{
+				iLook = iLook+2; //skip over positive sign
+				negativeSign = false;
+			}
+			else
+			{
+				iLook++; //advance to first number (skip over e)
+			}
+			startPos = iLook; //set starting point of int
+
+			//go through all
+			while ((iLook < buf.length()) && (Character.isDigit(buf.charAt(iLook))))
+				iLook++;
+
+			//get the int string and parse it
+			char expChars[] = new char[iLook-startPos];
+			buf.getChars(startPos, iLook, expChars, 0);
+			String expString = new String(expChars);
+			double exponent = parseIntToDouble(expString);
+
+			//make the exponent negative
+			if (negativeSign)
+			{
+				exponent = -exponent;
+			}
+
+			//multiply the origional number with 10^exponent
+			number = number * Math.pow(10, exponent);
+		}
+		else
+		{// e is not followed by a number
+	    	throw new ParseException(token, "e not followed by a number");
+		}
+  	}
+    jjtThis.setValue(number);
+*/
+  }
+}

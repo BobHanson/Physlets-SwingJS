@@ -1,0 +1,209 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0" />
+<meta name="ProgId" content="FrontPage.Editor.Document" />
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+<title>AddObject Method</title>
+</head>
+
+<body>
+
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+	<tr>
+		<td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+		<!-- --></a>
+		<table border="0" cellpadding="0" cellspacing="3">
+			<tr align="center" valign="top">
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../overview-summary.html"><font class="NavBarFont1">
+				<b>Overview</b></font></a> </td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+				</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<font class="NavBarFont1">&nbsp;Class </font> &nbsp;</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+				</td>
+			</tr>
+		</table>
+		</td>
+		<td align="right" valign="top" rowspan="2"><em></em></td>
+	</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+<h3>Ripple <a name="_Toc485180348">AddObject Method</a></h3>
+<p class="paragraph">Ripple allows the creation of ripple tank sources as well as geometric shapes such as circles and 
+rectangles using the addObject method.</p>
+<p class="CODE">addObject(<i>String name, String attributes</i>)</p>
+<p class="paragraph">Objects usually, but not always, have an on-screen representation.&nbsp; 
+The first argument is the name of the object to be added, and the second is a comma-delimited 
+list of parameters.&nbsp; A circle can now be added to either applet using the following 
+JavaScript statement:<o:p>
+</o:p>
+</p>
+<p class="CODE">document.<i>physletname</i>.addObject(&quot;circle&quot;, &quot;x=0,y=-1.0,r=10&quot;);.</p>
+<p class="paragraph" style="text-indent:0in;">The addObject method is very forgiving 
+since not all parameters need to be specified.&nbsp; Default values are overridden 
+only if the parameter appears in the list.&nbsp; Incorrect and unsupported parameters 
+do not affect the applet and are ignored.</p>
+<p class="paragraph">The table below lists the name and the associated parameters 
+for version 4 of the <i>Ripple</i> Physlet.&nbsp;&nbsp; Consult the online documentation 
+for information about other Physlets.&nbsp; <i>OpticsBench</i>, for example, supports 
+the addObject method for lenses, mirrors, and light sources.</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%" id="table1">
+	<tr>
+		<td align="center" width="30%"><b>Name</b></td>
+		<td align="center"><b>&nbsp;Attributes</b></td>
+	</tr>
+	<tr>
+		<td width="30%"><b>arrow</b><p>Arrows are often animation slaves of other 
+		objects.&nbsp; They can represent almost any vector since the h and v components 
+		can be functions of the variables.</p>
+		</td>
+		<td>
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> position 
+		of the base in world units<br />
+		<b>y- double </b>position of the base in world units.<br />
+		<b>h- string</b> horizontal component<br />
+		<b>v- string </b>vertical component<br />
+		<b>s -int</b> size of arrowhead</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="30%"><b>box</b><p>A hollow rectangle.</p>
+		<p>&nbsp;</p>
+		</td>
+		<td>
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> position 
+		of the base in world units<br />
+		<b>y- double </b>position of the base in world units.<br />
+		<b>h- int</b> height in pixels<br />
+		<b>w- int</b> width in pixels</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="30%"><b>caption</b><p>Text.</p>
+		</td>
+		<td>
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> position 
+		of the base in world units<br />
+		<b>y- double </b>position of the base in world units.<br />
+		<b>txt- string</b> text</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="30%"><b>constraint</b><p>A constraint on dragged objects.</p>
+		<p>&nbsp;</p>
+		</td>
+		<td>
+		<p class="MsoNormal" style="margin-left:.25in"><b>xmin- double</b> minimum 
+		x<br />
+		<b>xmax- double</b> maximum x<br />
+		<b>ymin- double </b>minimum y<br />
+		<b>ymax- double </b>maximum y</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="30%"><b>circle</b><p>A filled circle.</p>
+		</td>
+		<td>
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> position 
+		of the base in world units<br />
+		<b>y- double </b>position of the base in world units.<br />
+		<b>r- int</b> radius in pixels<br>
+        <b>label- string</b> a text label</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="30%"><b>cursor</b><p>A circle with crosshairs</p>
+		</td>
+		<td>
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> position 
+		of the base in world units<br />
+		<b>y- double </b>position of the base in world units.<br />
+		<b>r- int</b> radius in pixels</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="30%"><b>image</b><p>A gif image.</p>
+		</td>
+		<td>
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> position 
+		of the base in world units<br />
+		<b>y- double </b>position of the base in world units.<br />
+		<b>file- string</b> image file relative to code base</p>
+		</td>
+	</tr>
+	<tr>
+    <td width="167" valign="top" 
+    style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:125.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+    <b>protractor<br>
+    </b>a protractor for measuring angles</td>
+    <td width="317" valign="top" style="width:237.9pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+    <p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position of the vertex in world units<b><br>
+    y- double </b>y position of the vertex in world units.<br>
+    <b>s- int </b>base size in pixel<br>
+    <b>theta- double </b>v<o:p>ertex interior angle<b> <br>
+    </b>
+      </o:p><b>theta0- double </b>vertex base angle<b><br>
+    fixedbase- </b>fixes the base angle<b><br>
+    fixedsize- </b>fixes the length of the arm</p>
+    </td>
+    </tr>
+	<tr>
+		<td width="30%"><b>rectangle</b><p>A filled rectangle.</p>
+		</td>
+		<td>
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> position 
+		of the base in world units<br />
+		<b>y- double </b>position of the base in world units.<br />
+		<b>h- int</b> height in pixels<br />
+		<b>w- int</b> width in pixels<br>
+        <b>label- string</b> a text label</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="30%"><b>shell</b><p>A hollow circle.</p>
+		</td>
+		<td>
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> position 
+		of the base in world units<br />
+		<b>y- double </b>position of the base in world units.<br />
+		<b>r- int</b> radius in pixels</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="30%"><b>source</b><p>A wave source.</p>
+		</td>
+		<td>
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> position 
+		of the base in world units<br />
+		<b>y- double </b>position of the base in world units.<br />
+		<b>amp- double</b> amplitude<br>
+        <b>phase- double</b> phase<br>
+        <b>label- string</b> a text label</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="30%"><b>text</b><p>A text message with an optional calculation.</p>
+		</td>
+		<td>
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> position 
+		of the base in world units<br />
+		<b>y- double </b>position of the base in world units.<br />
+		<b>txt- string</b> message</p>
+		</td>
+	</tr>
+	</table>
+<p class="paragraph" style="text-indent:0in">&nbsp;</p>
+
+</body>
+
+</html>

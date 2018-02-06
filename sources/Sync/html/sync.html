@@ -1,0 +1,94 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>EM waves</title>
+<link rel="STYLESHEET" type="text/css" href="../../workbook.css">
+<script language="JavaScript">
+var timerID=0;
+
+function start() {
+  timerID=setTimeout("initApplet(0)",500);
+}
+
+function initApplet(mode){
+  clearTimeout(timerID);
+  n=document.oscharge.getAppletCount();
+  if(n==-1){ // error condition
+    alert("Internal Java error.  Quit browser and restart.");
+    return;  
+  }
+  if(document.applets.length!=n ){
+     // applets have not yet loaded
+	 timerID=setTimeout("initApplet(0)",500);
+	 return;
+   }
+   timerID=0;
+   document.oscharge.setDefault();
+   if(eval(mode)==1){
+     document.oscharge.setDynamics("SHO");
+     document.oscharge.setCaption("Oscillation");
+   } else{
+     document.oscharge.setDynamics("Inertial");
+     document.oscharge.setCaption("Translation");
+    }
+   document.oscharge.setSpeed(0);
+   //document.oscharge.forward();
+}
+
+function stopApplet(){
+	clearTimeout(timerID);
+	timerID=-1;
+}
+
+</script>
+</head>
+
+<body onload="start()" onunload="stopApplet()">
+
+<div align="center">
+  <center>
+  <table border="1" bgcolor="#C0C0C0">
+    <tr>
+      <td>
+      <applet code="sync.Sync.class" align="baseline" width="450" height="300" id="oscharge" 
+      mayscript name="oscharge">
+        <param name="FPS" value="10">
+        <param name="Dynamics" value="SHO">
+        <param name="Resolution" value="1">
+        <param name="ShowControls" value="true">
+        <param name="NumSteps" value="1000">
+        <param name="SliderMax" value="0.5">
+      </applet></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+  </center>
+</div>
+<div align="center">
+  <form>
+   <div align="center">
+     <center>
+     <p><input type="button" value="play" onclick="document.oscharge.forward()"><input 
+     type="button" value="pause" onclick="document.oscharge.pause()"></p>
+     </center>
+   </div>
+  </form>
+</div>
+<div align="center">
+  <center>
+  <table border="1" bgcolor="#C0C0C0">
+    <tr>
+      <td width="100" align="center"><a href="JavaScript:initApplet(0)">Translation</a></td>
+      <td width="100" align="center"><a href="JavaScript:initApplet(1)">Oscillation</a></td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+button.oval Add Oval
+button.rect Add Rect
+button.reset Clear
+label.rhov rho|V
+label.contours Contours
+label.vectors Field Vectors
+label.grid Grid
+label.rho rho=
+label.v V=
+label.e |E|=
+label.calculating Calculating.
+label.not_converge Did not converge.
+
+
+
+
+
+

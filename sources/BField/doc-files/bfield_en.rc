@@ -1,0 +1,15 @@
+button.reset Clear
+button.currentin Current In
+button.currentout Current Out
+label.newfield New Field: Bx By
+label.coil Coil
+label.vectors Vectors
+label.doubleclick Double Click
+label.force_undefined F=Undefined
+label.field_undefined B=Undefined inside wire.
+
+
+
+
+
+

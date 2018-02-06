@@ -1,0 +1,238 @@
+<html>
+
+<head>
+<link rel="STYLESHEET" type="text/css" href="../../workbook.css">
+<title>Physlet Physics by Christian and Belloni: Exploration 6.4</title>
+<script LANGUAGE="Javascript" SRC="./javascript/tools.js">
+</script> 
+<script language="JavaScript">
+var timerID=0;
+var loaded=false;
+
+function initApplets(){
+	clearTimeout(timerID);
+        loaded=true;
+	timerID=setTimeout("initApplet()",100);
+}
+  	
+function initApplet(){ 
+      if(!loaded) return;
+       timerID=0;
+     document.selection.reset();
+    pi=Math.PI;
+   m=20;
+   f=eval(document.selection.force.value);
+   theta=eval(document.selection.angle.value);
+   theta=theta*pi/180;
+   a=f*Math.cos(theta)/m;
+   
+   document.Animator.setAutoRefresh(false);
+   document.Animator.setDefault();
+   document.Animator.setPixPerUnit(10);
+   document.Animator.shiftPixOrigin(0,-20);
+   document.Animator.addObject("rectangle","x=0,y=0,h=4,w=500");
+   idr=document.Animator.addObject("rectangle","x=0,y=0,h=2,w=500");
+   document.Animator.setRGB(idr,150,100,100);
+   id1=document.Animator.addObject("circle","x=0,y=0,r=10,m=20");
+   document.Animator.setRGB(id1,0,0,0);
+   document.Animator.setDragable(id1,false);
+   fxstr=f*Math.cos(theta);
+   
+   	document.DataGraph1.setAutoscaleX(false);
+	document.DataGraph1.setAutoscaleY(false);
+	document.DataGraph1.setMinMaxX(-40,40);
+	document.DataGraph1.setMinMaxY(0,280);
+	document.DataGraph1.clearSeries(1);
+	document.DataGraph1.setSeriesStyle(1,true,3);  
+    document.DataGraph1.setMarkerSize(1,0.6);  
+	document.DataGraph1.setLabelY("KE (J)"); 
+	document.DataGraph1.setLabelX("x (m)"); 
+	document.DataGraph1.setTitle("KE vs. Position for the Ball"); 
+	document.DataGraph1.setLastPointMarker(1,true); 
+	graph1=document.DataGraph1.getGraphID();
+	document.Animator.makeDataConnection(id1,graph1,1,"t","0.5*vx*vx");  
+			
+	document.Animator.setForce(id1,fxstr,"0",0,0,0,0);
+   id2=document.Animator.addObject("text","text=velocity =,calc=vx");
+   document.Animator.setFormat(id2,"%3.2f"); 
+   document.Animator.setDisplayOffset(id2,-120,-25);
+   document.Animator.setAnimationSlave(id1,id2);
+   fx=f*Math.cos(theta);
+   fy=f*Math.sin(theta);
+   id3=document.Animator.addObject("arrow2","filled,thickness=3,h="+fx+",v="+fy);
+   document.Animator.setRGB(id3,255,0,0);
+   document.Animator.setAnimationSlave(id1,id3);
+   id7=document.Animator.addObject("caption","text=Acceleration =,calc=fx/m");
+   document.Animator.setAnimationSlave(id1,id7);
+   document.Animator.setVisibility(id7,false); 
+   document.Animator.setAutoRefresh(true);
+}
+
+function runme() { 
+	if(!loaded) return;
+	timerID=0;  
+     newforce=document.selection.force.value;
+     if( !checkRange(newforce,0,7)){
+     alert("The magnitude of the force must be between 0 N and 7 N. Your value is "+newforce+" N.");
+     return;
+} 
+	 newangle=document.selection.angle.value;
+    if( !checkRange(newangle,10,170)){
+    alert("The angle must be between 10 and 170 degrees. Your value is "+newangle+" degrees.");
+    return;
+}
+  
+   pi=Math.PI;
+   m=20;
+   f=eval(document.selection.force.value);
+   theta=eval(document.selection.angle.value);
+   theta=theta*pi/180;
+   a=f*Math.cos(theta)/m;
+   
+   document.Animator.setAutoRefresh(false);
+   document.Animator.setDefault();
+   document.Animator.setPixPerUnit(10);
+   document.Animator.shiftPixOrigin(0,-20);
+   document.Animator.addObject("rectangle","x=0,y=0,h=4,w=500");
+   idr=document.Animator.addObject("rectangle","x=0,y=0,h=2,w=500");
+   document.Animator.setRGB(idr,150,100,100);
+   id1=document.Animator.addObject("circle","x=0,y=0,r=10,m=20");
+   document.Animator.setRGB(id1,0,0,0);
+   document.Animator.setDragable(id1,false);
+   fxstr=f*Math.cos(theta);
+   document.Animator.setForce(id1,fxstr,"0",0,0,0,0);
+   id2=document.Animator.addObject("text","text=velocity =,calc=vx");
+   document.Animator.setFormat(id2,"%3.2f"); 
+   document.Animator.setDisplayOffset(id2,-120,-25);
+   document.Animator.setAnimationSlave(id1,id2);
+   fx=f*Math.cos(theta);
+   fy=f*Math.sin(theta);
+    document.DataGraph1.setAutoscaleX(false);
+	document.DataGraph1.setAutoscaleY(false);
+	document.DataGraph1.setMinMaxX(-40,40);
+	document.DataGraph1.setMinMaxY(0,280);
+	document.DataGraph1.clearSeries(1);
+	document.DataGraph1.setSeriesStyle(1,true,3);  
+    document.DataGraph1.setMarkerSize(1,0.6);  
+	document.DataGraph1.setLabelY("KE (J)"); 
+	document.DataGraph1.setLabelX("x (m)"); 
+	document.DataGraph1.setTitle("KE vs. Position for the Ball"); 
+	document.DataGraph1.setLastPointMarker(1,true); 
+	graph1=document.DataGraph1.getGraphID();
+	document.Animator.makeDataConnection(id1,graph1,1,"x","20*0.5*vx*vx"); 
+	
+	id3=document.Animator.addObject("arrow2","filled,thickness=3,h="+fx+",v="+fy);
+   document.Animator.setRGB(id3,255,0,0);
+   document.Animator.setAnimationSlave(id1,id3);
+   id7=document.Animator.addObject("caption","text=Acceleration =,calc=fx/m");
+   document.Animator.setAnimationSlave(id1,id7);
+   document.Animator.setVisibility(id7,false); 
+   document.Animator.setAutoRefresh(true);
+   document.Animator.setOneShot(0,15,"End of Animation");
+   document.Animator.forward();
+}
+
+
+function chop(val,n){
+     if(n<0) return eval(val);
+     val=eval(val);
+     for(i=0;i<n;i++) val=val*10;
+     val=Math.round(val);
+     for(i=0;i<n;i++) val=val/10;
+     return val;    
+} 
+
+
+
+function killmenow(){
+	window.onerror= function() { return true;}
+	clearTimeout(timerID);
+	loaded=false;
+	timerID=-1;
+}
+</script> 
+</head>
+
+<body onunload="killmenow()">
+
+<h2> <span lang="en-us">Exploration </span>6.4: Change the Direction of the Force Applied</h2>
+<div align="center">
+  <center>
+  <table border="1" bgcolor="#C0C0C0">
+    <tr>
+      <td>
+            <applet width="500" height="181" code="dataGraph.DataGraph.class" 
+            codebase="./" archive="Physlets.jar"
+            align="baseline" name="DataGraph1" mayscript>
+              <param name="showControls" value="false">
+            </applet></td>
+    </tr>
+    <tr>
+      <td>
+      <applet code="animator4.Animator.class" codebase="./"
+      archive="Physlets.jar" name="Animator" width="500"
+      height="100" hspace="0" vspace="0" align="Middle" mayscript>
+        <param name="FPS" value="10">
+        <param name="ShowControls" value="false">
+        <param name="dt" value="0.1">
+        <param name="PixPerUnit" value="10">
+        <param name="GridUnit" value="0">
+              <param name="OnLoad" value="initApplets()">
+        <param name="AppletNames" value="Animator,DataGraph1">
+        </applet></td>
+    </tr>
+  </table>
+  </center>
+</div>
+      <form name="selection">
+    <div align="center">
+      <center>
+      <input onclick="JavaScript:runme()" type="button" value="set values and play"> 
+      <input onclick="document.Animator.forward()" type="button" value="resume"><input onclick="document.Animator.pause()" type="button" value="pause"><input onclick="document.Animator.stepBack()" type="button" value="&lt;&lt;step"><input onclick="document.Animator.stepForward()" type="button" value="step&gt;&gt;"><input onclick="document.Animator.reset()" type="button" value="reset"></center></div> 
+    <div align="center">
+      <center>
+      <div align="center">
+        <center>
+        <table border="1" bgcolor="#C0C0C0">
+          <tr>
+            <td><b>
+    | F | = <input type="text" name="force" size="3" value="3">
+            <span lang="en-us">&nbsp;</span>newtons&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b>&#952;<b>
+    = <input type="text" name="angle" size="3" value="45"> </b>° </td>
+          </tr>
+        </table>
+        </center>
+      </div>
+      </center></div> 
+            </form>
+
+<p align="center"><b><font color="#FF0000"><i>Please wait for the animation to completely load.</i></font></b></p>
+
+<p>A 20-kg ball has a hole with a rod passing through. The rod exerts a force as 
+needed that constrains the ball to move along the rod. An applied force is now 
+added (the “pulling&quot; force) so the ball is pulled as shown <b>(position is given 
+in meters and time is given in seconds)</b>. The pulling force vector is shown 
+as a red arrow, and  makes an angle &#952; with the horizontal. The velocity is 
+given in meters/second. You may adjust the angle 
+and/or the magnitude of the pulling force (F &lt; 7 N).&nbsp; <a href="JavaScript:initApplet()">Restart</a>.</p>
+
+<ol type="a">
+        <li>How does the work done by the pulling force change as you vary the pulling force for a constant angle?</li>
+        <li>How does the work done by the pulling force change as you vary the angle for a constant pulling force?</li>
+        <li>Combine your answers above to obtain a general mathematical formula for the 
+        work done on the ball due to an arbitrary pulling force.</li>
+        <li>Determine the general mathematical formula for the 
+        work done by the  force the rod exerts on the ball when an arbitrary force is 
+        applied to the ball.</li>
+</ol>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+<p>
+<a href="../../conditions_of_use.html">© 2004 by Prentice-Hall, Inc. A Pearson 
+Company</a></p>
+
+</body>
+
+</html>

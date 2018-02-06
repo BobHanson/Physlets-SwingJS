@@ -1,0 +1,86 @@
+<html>
+
+<head>
+<title>Drag the Wire</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0" />
+<meta name="ProgId" content="FrontPage.Editor.Document" />
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+<script language="JavaScript"> 
+function prob(){
+     document.Faraday.setDefault();
+     id=document.Faraday.addObject("UWire","x=0");
+     document.Faraday.setDragable(id,true);
+     document.Faraday.setFieldFunction("sin(0.5*x)");
+	  document.Faraday.setPosFunction("10");
+	  document.Faraday.setTimeCycle(10);
+     document.Faraday.forward();
+}
+
+function ans(){
+	  document.Faraday.setShowColor(true);
+	  document.Faraday.setShowGrid(true);
+	  document.Faraday.setShowBOnDrag(true);
+     document.Faraday.forward();
+}
+
+function hide(){
+	  document.Faraday.setShowColor(false);
+	  document.Faraday.setShowGrid(false);
+	  document.Faraday.setShowBOnDrag(false);
+     document.Faraday.forward();
+}
+</script>
+</head>
+
+<body onload="prob()">
+
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+  <tr>
+    <td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+    <!-- --></a>
+    <table border="0" cellpadding="0" cellspacing="3">
+      <tr align="center" valign="top">
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><a href="../../overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>
+        </td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1">&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+        </td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><font class="NavBarFont1">&nbsp;Class </font>&nbsp;</td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+        </td>
+      </tr>
+    </table>
+    </td>
+    <td align="right" valign="top" rowspan="2"><em></em></td>
+  </tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+<h3 align="left">Drag the wire.</h3>
+<p align="center">
+<applet codebase="../../classes/" code="faraday.Faraday.class" name="Faraday" id="Faraday" width="350" 
+archive="Faraday4_.jar,STools4.jar" height="300" hspace="0" vspace="0" align="middle">
+  <param name="PixPerUnit" value="10" />
+  <param name="SchematicWidth" value="250" />
+  <param name="MaxTime" value="10" />
+  <param name="FPS" value="10" />
+  <param name="ShowControls" value="false" />
+  <param name="FieldFunction" value="1" />
+  <param name="PositionFunction" value="25" />
+  <param name="ShowGraph" value="false" />
+  <param name="DragMode" value="true" />
+  <param name="ShowGrid" value="false" />
+  <param name="ShowColor" value="false" />
+  <param name="ShowCurrentArrow" value="true" />
+  <param name="ShowSchematic" value="false" />
+</applet> </p>
+<p>The animation shows a top view of four wires in a conducting loop and a galvanometer.&nbsp; Determine the direction of 
+the magnetic field,<strong>&nbsp; Bz</strong>(x), passing through the wires at various postions by click-dragging the black 
+wire back and forth and observing the galvanometer reading.&nbsp; Current flowing into the + terminal, i.e., counterclockwise 
+in the loop, will deflect the meter to the right.&nbsp;&nbsp; <a href="JavaScript:prob()">Start.</a></p>
+<p><a href="JavaScript:ans()">Show Answer.</a></p>
+<p><a href="JavaScript:hide()">Hide Answer.</a></p>
+
+</body>
+
+</html>

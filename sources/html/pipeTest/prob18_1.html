@@ -1,0 +1,88 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="resources/physlets.css">
+<script language="JavaScript"> 
+
+function initApplet(){
+   id=0;
+   bid=0;
+   conid=0;
+    document.pipes.setDefault();
+    id=document.pipes.addDetector(8.2,0);
+    document.bar.setNumericFormat("%3.0i"); 
+    bid=document.bar.getID(); 
+    document.pipes.deleteDataConnections(); 
+    cid=document.pipes.makeDataConnection(id,bid,1,"p","p");
+    document.pipes.setClockOneShot(0,0.1);
+}
+
+
+
+
+
+</script>
+
+<title>Physlet Physics by Christian and Belloni: Problem 18.1</title>
+</head>
+
+<body onload="initApplet()">
+
+<h2 align="left">Problem 18.1 </h2>
+<div align="center"><center>
+<table border="1" bgcolor="#C0C0C0">
+  <tr>
+    <td align="center">
+    <applet codebase="resources/"
+    archive="Physlets.jar"
+    code="pipes.PipeApplet.class" name="pipes" width="400"
+    height="120" hspace="0" vspace="0" align="middle" >
+      <param name="Speed" value="3500">
+      <param name="InitialString" value="sin(200*pi*t)">
+      <param name="ShowControls" value="false">
+      <param name="ShowLegend" value="false">
+      <param name="Mode" value="s">
+      <param name="WallW" value="4">
+      <param name="Pixper" value="10">
+      <param name="FPS" value="10">
+      <param name="dt" value="0.001">
+    </applet>
+    </td>
+    <td align="center">
+    <applet codebase="resources/"
+    archive="Physlets.jar"
+    code="dataGraph.Bar.class"  name="bar" width="20" height="110" >
+      <param name="Min" value="-1">
+      <param name="Max" value="1">
+      <param name="Vertical" value="true">
+      <param name="ShowControls" value="false">
+    </applet>
+    </td>
+  </tr>
+</table>
+</center></div>
+    <form>
+      <div align="center"><center><p><input type="button" value="play"
+      onclick="document.pipes.forward()"><input type="button" value="pause"
+      onclick="document.pipes.pause()"><input type="button" value="step&gt;&gt;"
+      onclick="document.pipes.stepForward()"><input type="button" value="reset"
+      onclick="mjb16_1()"> </p>
+      </center></div>
+    </form>
+
+<p align="center"><strong><font color="#FF0000"><em>Please wait for the animation to completely load.</em></font></strong></p>
+
+<p align="left">The animation is a slow-motion representation of a cross section of a sound wave propagating in
+Lucite.&nbsp; A detector, the orange square, is placed in the pipe and properly measures
+the pressure <strong>(position is given in meters and
+time is given in seconds)</strong>. What is the speed of
+the sound wave? Note: The animation runs for&nbsp;0.1 s. Press &quot;reset&quot; to
+reload the animation.&nbsp; <a href="JavaScript:initApplet()">Restart</a>.</p>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">
+<a href="../../conditions_of_use.html">© 2004 by Prentice-Hall, Inc. A Pearson Company</a></p>
+
+</body>
+</html>

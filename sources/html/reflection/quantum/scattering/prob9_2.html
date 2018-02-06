@@ -1,0 +1,907 @@
+<html>
+
+<head>
+<script language="JavaScript">
+var timerID=0;
+
+var do_move=false;
+
+
+
+   function initApplet(){
+	timerID=0; 
+do_move=false;
+document.slider1.setValue(5);
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+       document.reflection.setTitle("Animation 1"); 
+	document.reflection.setMode("QM");
+	en=eval(document.slider1.getValue());
+	document.reflection.setQMEnergy(en);
+	id1=document.reflection.addObject("film","n=0,w=10");
+	id2=document.reflection.addObject("film","n=10,w=10");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setDragEnergy(0,false);
+	
+	document.reflection.setRGB(id1,255,255,255);
+	document.reflection.setRGB(id2,255,255,255);
+		document.reflection.setShowValue(id1,false);
+   document.reflection.setShowValue(id2,false);
+	   
+   document.datatable.setAutoRefresh(false);
+   document.datatable.setDefault();
+   document.datatable.setNumericFormat(1,"%8.2G");
+   document.datatable.setSeriesLabel(1,"Jinc"); 
+   document.datatable.setNumericFormat(2,"%8.2G");
+   document.datatable.setSeriesLabel(2,"Jrefl"); 
+   document.datatable.setNumericFormat(3,"%8.2G");
+   document.datatable.setSeriesLabel(3,"Jtrans"); 
+   document.datatable.setNumericFormat(4,"%8.2G");
+   document.datatable.setSeriesLabel(4,"R");
+   document.datatable.setNumericFormat(5,"%8.2G");
+   document.datatable.setSeriesLabel(5,"T");
+   document.datatable.setAutoRefresh(true);
+   
+   tid=document.datatable.getTableID();
+   document.reflection.deleteDataConnections();   
+   document.reflection.setAutoRefresh(true);
+document.reflection.forward();
+	   	document.slider1.setJSFunction("slider1Moved()"); 
+   document.getElementById("waitmsg").style.display="none"; 
+   
+}
+
+ function barrier1(){
+	timerID=0; 
+do_move=false;
+document.slider1.setValue(5);
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+        document.reflection.setTitle("Animation 1"); 
+	document.reflection.setMode("QM");
+	en=eval(document.slider1.getValue());
+	document.reflection.setQMEnergy(en);
+	id1=document.reflection.addObject("film","n=0,w=10");
+	id2=document.reflection.addObject("film","n=10,w=10");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setDragEnergy(0,false);
+	
+	document.reflection.setRGB(id1,255,255,255);
+	document.reflection.setRGB(id2,255,255,255);
+		document.reflection.setShowValue(id1,false);
+   document.reflection.setShowValue(id2,false);
+	   
+   document.datatable.setAutoRefresh(false);
+   document.datatable.setDefault();
+   document.datatable.setNumericFormat(1,"%8.2G");
+   document.datatable.setSeriesLabel(1,"Jinc"); 
+   document.datatable.setNumericFormat(2,"%8.2G");
+   document.datatable.setSeriesLabel(2,"Jrefl"); 
+   document.datatable.setNumericFormat(3,"%8.2G");
+   document.datatable.setSeriesLabel(3,"Jtrans"); 
+   document.datatable.setNumericFormat(4,"%8.2G");
+   document.datatable.setSeriesLabel(4,"R");
+   document.datatable.setNumericFormat(5,"%8.2G");
+   document.datatable.setSeriesLabel(5,"T");
+   document.datatable.setAutoRefresh(true);
+   
+   tid=document.datatable.getTableID();
+   document.reflection.deleteDataConnections();   
+   document.reflection.setAutoRefresh(true);
+document.reflection.forward();
+	   	document.slider1.setJSFunction("slider1Moved()"); 
+   
+}
+
+function slider1Moved(){
+     if(timerID==0) {
+       do_move=false;
+       timerID=setTimeout("slider11Moved()",100);
+     } else{
+       do_move=true;
+     }
+}
+
+
+function slider11Moved(){ 
+      timerID=-1;
+      energy1=eval(document.slider1.getValue());
+   	
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+	document.reflection.setMode("QM");
+	document.reflection.setTitle("Animation 1");
+        document.reflection.setQMEnergy(energy1);
+	id1=document.reflection.addObject("film","n=0,w=10");
+	id2=document.reflection.addObject("film","n=10,w=10");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setDragEnergy(0,false);
+	
+	document.reflection.setRGB(id1,255,255,255);
+	document.reflection.setRGB(id2,255,255,255);
+		document.reflection.setShowValue(id1,false);
+   document.reflection.setShowValue(id2,false);
+	   
+   document.datatable.setAutoRefresh(false);
+   document.datatable.setDefault();
+   document.datatable.setNumericFormat(1,"%8.2G");
+   document.datatable.setSeriesLabel(1,"Jinc"); 
+   document.datatable.setNumericFormat(2,"%8.2G");
+   document.datatable.setSeriesLabel(2,"Jrefl"); 
+   document.datatable.setNumericFormat(3,"%8.2G");
+   document.datatable.setSeriesLabel(3,"Jtrans"); 
+   document.datatable.setNumericFormat(4,"%8.2G");
+   document.datatable.setSeriesLabel(4,"R");
+   document.datatable.setNumericFormat(5,"%8.2G");
+   document.datatable.setSeriesLabel(5,"T");
+   
+   
+   tid=document.datatable.getTableID();
+
+   document.reflection.deleteDataConnections();     
+    
+    document.reflection.makeDataConnection(id1,tid,1,"4*(energy)^0.5","0"); 
+    document.reflection.makeDataConnection(id1,tid,2,"-(re*re+im*im-4)*(energy)^0.5","0");  
+    document.reflection.makeDataConnection(id2,tid,3,"(re*re+im*im)*((energy-10))^0.5","0");
+	 document.reflection.makeDataConnection(id1,tid,4,"(4*(energy)^0.5)^(-1)*(re*re+im*im-4)*(energy)^0.5","0"); 
+	 document.reflection.makeDataConnection(id2,tid,5,"(4*(energy)^0.5)^(-1)*(re*re+im*im)*((energy-10))^0.5","0");
+    document.datatable.setAutoRefresh(true);
+	document.reflection.setAutoRefresh(true);
+if(do_move){
+	  do_move=false;
+	  timerID=setTimeout("slider11Moved()",10);
+    } else{
+      timerID=0;
+    }
+document.reflection.forward(); 
+}
+
+
+function barrier2(){ 
+do_move=false;
+document.slider1.setValue(5);
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+	document.reflection.setMode("QM");
+	document.reflection.setTitle("Animation 2");
+        en=eval(document.slider1.getValue());
+	document.reflection.setQMEnergy(en);
+	id1=document.reflection.addObject("film","n=0,w=10");
+	id2=document.reflection.addObject("film","n=-10,w=10");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setDragEnergy(0,false);
+	
+	document.reflection.setRGB(id1,255,255,255);
+	document.reflection.setRGB(id2,255,255,255);
+		document.reflection.setShowValue(id1,false);
+   document.reflection.setShowValue(id2,false);
+	   
+   document.datatable.setAutoRefresh(false);
+   document.datatable.setDefault();
+   document.datatable.setNumericFormat(1,"%8.2G");
+   document.datatable.setSeriesLabel(1,"Jinc"); 
+   document.datatable.setNumericFormat(2,"%8.2G");
+   document.datatable.setSeriesLabel(2,"Jrefl"); 
+   document.datatable.setNumericFormat(3,"%8.2G");
+   document.datatable.setSeriesLabel(3,"Jtrans"); 
+   document.datatable.setNumericFormat(4,"%8.2G");
+   document.datatable.setSeriesLabel(4,"R");
+   document.datatable.setNumericFormat(5,"%8.2G");
+   document.datatable.setSeriesLabel(5,"T");
+   document.datatable.setAutoRefresh(true);
+   
+   tid=document.datatable.getTableID();
+   document.reflection.deleteDataConnections();   
+    document.reflection.setAutoRefresh(true);
+	   	document.slider1.setJSFunction("slider2Moved()");    
+document.reflection.forward(); 
+}
+
+
+function slider2Moved(){
+     if(timerID==0) {
+       do_move=false;
+       timerID=setTimeout("slider22Moved()",100);
+     } else{
+       do_move=true;
+     }
+}
+
+
+function slider22Moved(){ 
+     timerID=-1;
+      energy1=eval(document.slider1.getValue());
+   	
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+	document.reflection.setTitle("Animation 2");
+        document.reflection.setMode("QM");
+	document.reflection.setQMEnergy(energy1);
+	id1=document.reflection.addObject("film","n=0,w=10");
+	id2=document.reflection.addObject("film","n=-10,w=10");
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setDragEnergy(0,false);
+	
+	document.reflection.setRGB(id1,255,255,255);
+	document.reflection.setRGB(id2,255,255,255);
+		document.reflection.setShowValue(id1,false);
+   document.reflection.setShowValue(id2,false);
+	   
+   document.datatable.setAutoRefresh(false);
+   document.datatable.setDefault();
+   document.datatable.setNumericFormat(1,"%8.2G");
+   document.datatable.setSeriesLabel(1,"Jinc"); 
+   document.datatable.setNumericFormat(2,"%8.2G");
+   document.datatable.setSeriesLabel(2,"Jrefl"); 
+   document.datatable.setNumericFormat(3,"%8.2G");
+   document.datatable.setSeriesLabel(3,"Jtrans"); 
+   document.datatable.setNumericFormat(4,"%8.2G");
+   document.datatable.setSeriesLabel(4,"R");
+   document.datatable.setNumericFormat(5,"%8.2G");
+   document.datatable.setSeriesLabel(5,"T");
+   
+   
+   tid=document.datatable.getTableID();
+      
+   document.reflection.deleteDataConnections();     
+    
+    document.reflection.makeDataConnection(id1,tid,1,"4*(energy)^0.5","0"); 
+    document.reflection.makeDataConnection(id1,tid,2,"-(re*re+im*im-4)*(energy)^0.5","0");  
+    document.reflection.makeDataConnection(id2,tid,3,"(re*re+im*im)*((energy+10))^0.5","0");
+	 document.reflection.makeDataConnection(id1,tid,4,"(4*(energy)^0.5)^(-1)*(re*re+im*im-4)*(energy)^0.5","0"); 
+	 document.reflection.makeDataConnection(id2,tid,5,"(4*(energy)^0.5)^(-1)*(re*re+im*im)*((energy+10))^0.5","0");
+      document.datatable.setAutoRefresh(true);
+	document.reflection.setAutoRefresh(true);
+if(do_move){
+	  do_move=false;
+	  timerID=setTimeout("slider22Moved()",100);
+    } else{
+      timerID=0;
+    }
+document.reflection.forward(); 
+}
+
+
+function barrier3(){ 
+do_move=false;
+document.slider1.setValue(5);
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+	document.reflection.setMode("QM");
+	document.reflection.setTitle("Animation 3");
+        en=eval(document.slider1.getValue());
+	document.reflection.setQMEnergy(en);
+		id1=document.reflection.addObject("film","n=0,w=6.66");
+	id2=document.reflection.addObject("film","n=10,w=6.66");
+	id3=document.reflection.addObject("film","n=0,w=6.67");
+
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setDragable(id3,false);
+	document.reflection.setDragEnergy(0,false);
+	
+	document.reflection.setRGB(id1,255,255,255);
+	document.reflection.setRGB(id2,255,255,255);
+	document.reflection.setRGB(id3,255,255,255);
+		document.reflection.setShowValue(id1,false);
+   document.reflection.setShowValue(id2,false);
+    document.reflection.setShowValue(id3,false);
+		   
+   document.datatable.setAutoRefresh(false);
+   document.datatable.setDefault();
+   document.datatable.setNumericFormat(1,"%8.2G");
+   document.datatable.setSeriesLabel(1,"Jinc"); 
+   document.datatable.setNumericFormat(2,"%8.2G");
+   document.datatable.setSeriesLabel(2,"Jrefl"); 
+   document.datatable.setNumericFormat(3,"%8.2G");
+   document.datatable.setSeriesLabel(3,"Jtrans"); 
+   document.datatable.setNumericFormat(4,"%8.2G");
+   document.datatable.setSeriesLabel(4,"R");
+   document.datatable.setNumericFormat(5,"%8.2G");
+   document.datatable.setSeriesLabel(5,"T");
+   document.datatable.setAutoRefresh(true);
+   
+   tid=document.datatable.getTableID();
+   document.reflection.deleteDataConnections();   
+   document.reflection.setAutoRefresh(true);
+	   	document.slider1.setJSFunction("slider3Moved()");   
+document.reflection.forward();  
+}
+
+
+
+
+function slider3Moved(){
+     if(timerID==0) {
+       do_move=false;
+       timerID=setTimeout("slider33Moved()",100);
+     } else{
+       do_move=true;
+     }
+}
+
+
+function slider33Moved(){ 
+      timerID=-1;
+      energy1=eval(document.slider1.getValue());
+   	
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+	document.reflection.setMode("QM");
+	document.reflection.setTitle("Animation 3");
+        document.reflection.setQMEnergy(energy1);
+    id1=document.reflection.addObject("film","n=0,w=6.66");
+	id2=document.reflection.addObject("film","n=10,w=6.66");
+	id3=document.reflection.addObject("film","n=0,w=6.67");
+
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setDragable(id3,false);
+	document.reflection.setDragEnergy(0,false);
+	
+	document.reflection.setRGB(id1,255,255,255);
+	document.reflection.setRGB(id2,255,255,255);
+	document.reflection.setRGB(id3,255,255,255); 
+			document.reflection.setShowValue(id1,false);
+   document.reflection.setShowValue(id2,false);
+    document.reflection.setShowValue(id3,false);
+	   
+   document.datatable.setAutoRefresh(false);
+   document.datatable.setDefault();
+   document.datatable.setNumericFormat(1,"%8.2G");
+   document.datatable.setSeriesLabel(1,"Jinc"); 
+   document.datatable.setNumericFormat(2,"%8.2G");
+   document.datatable.setSeriesLabel(2,"Jrefl"); 
+   document.datatable.setNumericFormat(3,"%8.2G");
+   document.datatable.setSeriesLabel(3,"Jtrans"); 
+   document.datatable.setNumericFormat(4,"%8.2G");
+   document.datatable.setSeriesLabel(4,"R");
+   document.datatable.setNumericFormat(5,"%8.2G");
+   document.datatable.setSeriesLabel(5,"T");
+   
+   
+   tid=document.datatable.getTableID(); 
+   document.reflection.deleteDataConnections();     
+    
+    document.reflection.makeDataConnection(id1,tid,1,"4*(energy)^0.5","0"); 
+    document.reflection.makeDataConnection(id1,tid,2,"-(re*re+im*im-4)*(energy)^0.5","0");  
+    document.reflection.makeDataConnection(id3,tid,3,"(re*re+im*im)*((energy))^0.5","0");
+	 document.reflection.makeDataConnection(id1,tid,4,"(4*(energy)^0.5)^(-1)*(re*re+im*im-4)*(energy)^0.5","0"); 
+	 document.reflection.makeDataConnection(id3,tid,5,"(4*(energy)^0.5)^(-1)*(re*re+im*im)*((energy))^0.5","0");
+       document.datatable.setAutoRefresh(true);
+	document.reflection.setAutoRefresh(true);
+if(do_move){
+	  do_move=false;
+	  timerID=setTimeout("slider33Moved()",100);
+    } else{
+      timerID=0;
+    }
+document.reflection.forward(); 
+}
+
+
+
+
+function barrier4(){ 
+do_move=false;
+document.slider1.setValue(5);
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+	document.reflection.setMode("QM");
+	document.reflection.setTitle("Animation 4");
+        en=eval(document.slider1.getValue());
+	document.reflection.setQMEnergy(en);
+		id1=document.reflection.addObject("film","n=0,w=6.66");
+	id2=document.reflection.addObject("film","n=-10,w=6.66");
+	id3=document.reflection.addObject("film","n=0,w=6.67");
+
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setDragable(id3,false);
+	document.reflection.setDragEnergy(0,false);
+	
+	document.reflection.setRGB(id1,255,255,255);
+	document.reflection.setRGB(id2,255,255,255);
+	document.reflection.setRGB(id3,255,255,255);
+			document.reflection.setShowValue(id1,false);
+   document.reflection.setShowValue(id2,false);
+    document.reflection.setShowValue(id3,false); 
+		   
+   document.datatable.setAutoRefresh(false);
+   document.datatable.setDefault();
+   document.datatable.setNumericFormat(1,"%8.2G");
+   document.datatable.setSeriesLabel(1,"Jinc"); 
+   document.datatable.setNumericFormat(2,"%8.2G");
+   document.datatable.setSeriesLabel(2,"Jrefl"); 
+   document.datatable.setNumericFormat(3,"%8.2G");
+   document.datatable.setSeriesLabel(3,"Jtrans"); 
+   document.datatable.setNumericFormat(4,"%8.2G");
+   document.datatable.setSeriesLabel(4,"R");
+   document.datatable.setNumericFormat(5,"%8.2G");
+   document.datatable.setSeriesLabel(5,"T");
+   document.datatable.setAutoRefresh(true);
+   
+   tid=document.datatable.getTableID();
+   document.reflection.deleteDataConnections();   
+    document.reflection.setAutoRefresh(true);
+	   	document.slider1.setJSFunction("slider4Moved()");    
+document.reflection.forward(); 
+}
+
+
+
+
+function slider4Moved(){
+     if(timerID==0) {
+       do_move=false;
+       timerID=setTimeout("slider44Moved()",100);
+     } else{
+       do_move=true;
+     }
+}
+
+
+function slider44Moved(){ 
+      timerID=-1;
+      energy1=eval(document.slider1.getValue());
+   	
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+	document.reflection.setMode("QM");
+	document.reflection.setTitle("Animation 4");
+        document.reflection.setQMEnergy(energy1);
+    id1=document.reflection.addObject("film","n=0,w=6.66");
+	id2=document.reflection.addObject("film","n=-10,w=6.66");
+	id3=document.reflection.addObject("film","n=0,w=6.67");
+
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2,false);
+	document.reflection.setDragable(id3,false);
+	document.reflection.setDragEnergy(0,false);
+	
+	document.reflection.setRGB(id1,255,255,255);
+	document.reflection.setRGB(id2,255,255,255);
+	document.reflection.setRGB(id3,255,255,255); 
+			document.reflection.setShowValue(id1,false);
+   document.reflection.setShowValue(id2,false);
+    document.reflection.setShowValue(id3,false);
+	   
+   document.datatable.setAutoRefresh(false);
+   document.datatable.setDefault();
+   document.datatable.setNumericFormat(1,"%8.2G");
+   document.datatable.setSeriesLabel(1,"Jinc"); 
+   document.datatable.setNumericFormat(2,"%8.2G");
+   document.datatable.setSeriesLabel(2,"Jrefl"); 
+   document.datatable.setNumericFormat(3,"%8.2G");
+   document.datatable.setSeriesLabel(3,"Jtrans"); 
+   document.datatable.setNumericFormat(4,"%8.2G");
+   document.datatable.setSeriesLabel(4,"R");
+   document.datatable.setNumericFormat(5,"%8.2G");
+   document.datatable.setSeriesLabel(5,"T");
+   
+   
+   tid=document.datatable.getTableID();   
+   document.reflection.deleteDataConnections();     
+    
+    document.reflection.makeDataConnection(id1,tid,1,"4*(energy)^0.5","0"); 
+    document.reflection.makeDataConnection(id1,tid,2,"-(re*re+im*im-4)*(energy)^0.5","0");  
+    document.reflection.makeDataConnection(id3,tid,3,"(re*re+im*im)*((energy))^0.5","0");
+	 document.reflection.makeDataConnection(id1,tid,4,"(4*(energy)^0.5)^(-1)*(re*re+im*im-4)*(energy)^0.5","0"); 
+	 document.reflection.makeDataConnection(id3,tid,5,"(4*(energy)^0.5)^(-1)*(re*re+im*im)*((energy))^0.5","0");
+       document.datatable.setAutoRefresh(true);
+	document.reflection.setAutoRefresh(true);
+if(do_move){
+	  do_move=false;
+	  timerID=setTimeout("slider44Moved()",100);
+    } else{
+      timerID=0;
+    }
+document.reflection.forward(); 
+}
+
+
+
+
+function barrier5(){ 
+
+do_move=false;
+document.slider1.setValue(5);
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+	document.reflection.setMode("QM");
+	document.reflection.setTitle("Animation 5");
+        en=eval(document.slider1.getValue());
+	document.reflection.setQMEnergy(en);
+	id1=document.reflection.addObject("film","n=0,w=4");
+	id2a=document.reflection.addObject("film","n=-10,w=4");
+	id2b=document.reflection.addObject("film","n=0,w=4");
+	id2c=document.reflection.addObject("film","n=-10,w=4");
+	id3=document.reflection.addObject("film","n=0,w=4");
+
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2a,false);
+	document.reflection.setDragable(id2b,false);
+	document.reflection.setDragable(id2c,false);
+	document.reflection.setDragable(id3,false);
+	document.reflection.setDragEnergy(0,false);
+	
+	document.reflection.setRGB(id1,255,255,255);
+	document.reflection.setRGB(id2a,255,255,255);
+	document.reflection.setRGB(id2b,255,255,255);
+	document.reflection.setRGB(id2c,255,255,255);
+	document.reflection.setRGB(id3,255,255,255);
+			document.reflection.setShowValue(id1,false);
+   document.reflection.setShowValue(id2a,false);
+    document.reflection.setShowValue(id2b,false);
+    document.reflection.setShowValue(id2c,false);
+    document.reflection.setShowValue(id3,false);
+	   
+   document.datatable.setAutoRefresh(false);
+   document.datatable.setDefault();
+   document.datatable.setNumericFormat(1,"%8.2G");
+   document.datatable.setSeriesLabel(1,"Jinc"); 
+   document.datatable.setNumericFormat(2,"%8.2G");
+   document.datatable.setSeriesLabel(2,"Jrefl"); 
+   document.datatable.setNumericFormat(3,"%8.2G");
+   document.datatable.setSeriesLabel(3,"Jtrans"); 
+   document.datatable.setNumericFormat(4,"%8.2G");
+   document.datatable.setSeriesLabel(4,"R");
+   document.datatable.setNumericFormat(5,"%8.2G");
+   document.datatable.setSeriesLabel(5,"T");
+   document.datatable.setAutoRefresh(true);
+   
+   tid=document.datatable.getTableID();
+   document.reflection.deleteDataConnections();   
+ document.reflection.setAutoRefresh(true);
+	   	document.slider1.setJSFunction("slider5Moved()");  
+document.reflection.forward();    
+}
+
+
+function slider5Moved(){
+     if(timerID==0) {
+       do_move=false;
+       timerID=setTimeout("slider55Moved()",100);
+     } else{
+       do_move=true;
+     }
+}
+
+
+function slider55Moved(){ 
+      timerID=-1;
+      energy1=eval(document.slider1.getValue());
+   	
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+	document.reflection.setMode("QM");
+	document.reflection.setTitle("Animation 5");
+        document.reflection.setQMEnergy(energy1);
+	id1=document.reflection.addObject("film","n=0,w=4");
+	id2a=document.reflection.addObject("film","n=-10,w=4");
+	id2b=document.reflection.addObject("film","n=0,w=4");
+	id2c=document.reflection.addObject("film","n=-10,w=4");
+	id3=document.reflection.addObject("film","n=0,w=4");
+
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2a,false);
+	document.reflection.setDragable(id2b,false);
+	document.reflection.setDragable(id2c,false);
+	document.reflection.setDragable(id3,false);
+	document.reflection.setDragEnergy(0,false);
+	
+	document.reflection.setRGB(id1,255,255,255);
+	document.reflection.setRGB(id2a,255,255,255);
+	document.reflection.setRGB(id2b,255,255,255);
+	document.reflection.setRGB(id2c,255,255,255);
+	document.reflection.setRGB(id3,255,255,255);
+				document.reflection.setShowValue(id1,false);
+   document.reflection.setShowValue(id2a,false);
+    document.reflection.setShowValue(id2b,false);
+    document.reflection.setShowValue(id2c,false);
+    document.reflection.setShowValue(id3,false);
+	   
+   document.datatable.setAutoRefresh(false);
+   document.datatable.setDefault();
+   document.datatable.setNumericFormat(1,"%8.2G");
+   document.datatable.setSeriesLabel(1,"Jinc"); 
+   document.datatable.setNumericFormat(2,"%8.2G");
+   document.datatable.setSeriesLabel(2,"Jrefl"); 
+   document.datatable.setNumericFormat(3,"%8.2G");
+   document.datatable.setSeriesLabel(3,"Jtrans"); 
+   document.datatable.setNumericFormat(4,"%8.2G");
+   document.datatable.setSeriesLabel(4,"R");
+   document.datatable.setNumericFormat(5,"%8.2G");
+   document.datatable.setSeriesLabel(5,"T");
+   
+   
+   tid=document.datatable.getTableID();
+
+   document.reflection.deleteDataConnections();     
+    
+ document.reflection.makeDataConnection(id1,tid,1,"4*(energy)^0.5","0"); 
+    document.reflection.makeDataConnection(id1,tid,2,"-(re*re+im*im-4)*(energy)^0.5","0");  
+    document.reflection.makeDataConnection(id3,tid,3,"(re*re+im*im)*((energy))^0.5","0");
+	 document.reflection.makeDataConnection(id1,tid,4,"(4*(energy)^0.5)^(-1)*(re*re+im*im-4)*(energy)^0.5","0"); 
+	 document.reflection.makeDataConnection(id3,tid,5,"(4*(energy)^0.5)^(-1)*(re*re+im*im)*((energy))^0.5","0");
+     document.datatable.setAutoRefresh(true);
+	document.reflection.setAutoRefresh(true);
+if(do_move){
+	  do_move=false;
+	  timerID=setTimeout("slider55Moved()",100);
+    } else{
+      timerID=0;
+    }
+document.reflection.forward(); 
+}
+
+
+
+function barrier6(){ 
+  do_move=false;
+  document.slider1.setValue(5);
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+	document.reflection.setMode("QM");
+	document.reflection.setTitle("Animation 6"); 
+	en=eval(document.slider1.getValue());
+	document.reflection.setQMEnergy(en);
+	id1=document.reflection.addObject("film","n=0,w=4");
+	id2a=document.reflection.addObject("film","n=10,w=4");
+	id2b=document.reflection.addObject("film","n=0,w=4");
+	id2c=document.reflection.addObject("film","n=10,w=4");
+	id3=document.reflection.addObject("film","n=0,w=4");
+
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2a,false);
+	document.reflection.setDragable(id2b,false);
+	document.reflection.setDragable(id2c,false);
+	document.reflection.setDragable(id3,false);
+	document.reflection.setDragEnergy(0,false);
+	
+	document.reflection.setRGB(id1,255,255,255);
+	document.reflection.setRGB(id2a,255,255,255);
+	document.reflection.setRGB(id2b,255,255,255);
+	document.reflection.setRGB(id2c,255,255,255);
+	document.reflection.setRGB(id3,255,255,255);
+				document.reflection.setShowValue(id1,false);
+   document.reflection.setShowValue(id2a,false);
+    document.reflection.setShowValue(id2b,false);
+    document.reflection.setShowValue(id2c,false);
+    document.reflection.setShowValue(id3,false);
+	   
+   document.datatable.setAutoRefresh(false);
+   document.datatable.setDefault();
+   document.datatable.setNumericFormat(1,"%8.2G");
+   document.datatable.setSeriesLabel(1,"Jinc"); 
+   document.datatable.setNumericFormat(2,"%8.2G");
+   document.datatable.setSeriesLabel(2,"Jrefl"); 
+   document.datatable.setNumericFormat(3,"%8.2G");
+   document.datatable.setSeriesLabel(3,"Jtrans"); 
+   document.datatable.setNumericFormat(4,"%8.2G");
+   document.datatable.setSeriesLabel(4,"R");
+   document.datatable.setNumericFormat(5,"%8.2G");
+   document.datatable.setSeriesLabel(5,"T");
+   document.datatable.setAutoRefresh(true);
+   
+   tid=document.datatable.getTableID();
+   document.reflection.deleteDataConnections();   
+  document.reflection.setAutoRefresh(true);
+	 	document.slider1.setJSFunction("slider6Moved()");    
+document.reflection.forward();
+}
+
+
+function slider6Moved(){
+     if(timerID==0) {
+       do_move=false;
+       timerID=setTimeout("slider66Moved()",100);
+     } else{
+       do_move=true;
+     }
+}
+
+
+function slider66Moved(){ 
+   timerID=-1;
+   energy1=eval(document.slider1.getValue());
+   	
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+	document.reflection.setMode("QM");
+	document.reflection.setTitle("Animation 6"); 
+	document.reflection.setQMEnergy(energy1);
+	id1=document.reflection.addObject("film","n=0,w=4");
+	id2a=document.reflection.addObject("film","n=10,w=4");
+	id2b=document.reflection.addObject("film","n=0,w=4");
+	id2c=document.reflection.addObject("film","n=10,w=4");
+	id3=document.reflection.addObject("film","n=0,w=4");
+
+	document.reflection.setDragable(id1,false);
+	document.reflection.setDragable(id2a,false);
+	document.reflection.setDragable(id2b,false);
+	document.reflection.setDragable(id2c,false);
+	document.reflection.setDragable(id3,false);
+	document.reflection.setDragEnergy(0,false);
+	
+	document.reflection.setRGB(id1,255,255,255);
+	document.reflection.setRGB(id2a,255,255,255);
+	document.reflection.setRGB(id2b,255,255,255);
+	document.reflection.setRGB(id2c,255,255,255);
+	document.reflection.setRGB(id3,255,255,255);
+				document.reflection.setShowValue(id1,false);
+   document.reflection.setShowValue(id2a,false);
+    document.reflection.setShowValue(id2b,false);
+    document.reflection.setShowValue(id2c,false);
+    document.reflection.setShowValue(id3,false);
+	   
+   document.datatable.setAutoRefresh(false);
+   document.datatable.setDefault();
+   document.datatable.setNumericFormat(1,"%8.2G");
+   document.datatable.setSeriesLabel(1,"Jinc"); 
+   document.datatable.setNumericFormat(2,"%8.2G");
+   document.datatable.setSeriesLabel(2,"Jrefl"); 
+   document.datatable.setNumericFormat(3,"%8.2G");
+   document.datatable.setSeriesLabel(3,"Jtrans"); 
+   document.datatable.setNumericFormat(4,"%8.2G");
+   document.datatable.setSeriesLabel(4,"R");
+   document.datatable.setNumericFormat(5,"%8.2G");
+   document.datatable.setSeriesLabel(5,"T");
+   
+   
+   tid=document.datatable.getTableID();
+      
+   document.reflection.deleteDataConnections();     
+    
+ document.reflection.makeDataConnection(id1,tid,1,"4*(energy)^0.5","0"); 
+    document.reflection.makeDataConnection(id1,tid,2,"-(re*re+im*im-4)*(energy)^0.5","0");  
+    document.reflection.makeDataConnection(id3,tid,3,"(re*re+im*im)*((energy))^0.5","0");
+	 document.reflection.makeDataConnection(id1,tid,4,"(4*(energy)^0.5)^(-1)*(re*re+im*im-4)*(energy)^0.5","0"); 
+	 document.reflection.makeDataConnection(id3,tid,5,"(4*(energy)^0.5)^(-1)*(re*re+im*im)*((energy))^0.5","0");
+     document.datatable.setAutoRefresh(true);
+	document.reflection.setAutoRefresh(true);
+if(do_move){
+	  do_move=false;
+	  timerID=setTimeout("slider66Moved()",100);
+    } else{
+      timerID=0;
+    }
+document.reflection.forward(); 
+}
+  
+
+
+function reim(){ 
+   document.reflection.setReRGB(0,0,255);
+   document.reflection.setImRGB(219,32,139);
+   document.reflection.setShowPhaseColor(false);
+   document.reflection.setShowLWave(true,0);
+   document.reflection.setShowRWave(true,0);
+   document.reflection.setShowWave(false);
+}
+
+
+
+</script>
+
+<title>Physlet Quantum Physics by Belloni, Christian, and Cox:  Problem 9.2</title>
+<link rel="stylesheet" type="text/css" href="../../resources/qm.css">
+</head>
+
+<body onload="initApplet()">
+
+<h2> Problem 9.2</h2>
+
+
+<div align="center">
+  <center>
+  <table border="1"  bgcolor="#C0C0C0">
+    <tr>
+      <td>
+        <applet code="reflection.ReflectionApplet.class" codebase="../../resources/"
+archive="Physlets.jar" 
+name="reflection"  width="400" height="200"
+hspace="0" vspace="0" align="Middle">
+  <param name="ShowControls" value="false">
+  <param name="PPU" value="20">
+  <param name="MaxAmp" value="2">
+  <param name="Wavelength" value="10">
+  <param name="FPS" value="20">
+  <param name="WaveVelocity" value="2">
+</applet>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <applet codebase="../../resources/"
+        archive="Physlets.jar"
+        code="dataTable.DataTable.class" name="datatable"  width="400" height="45" hspace="0"
+        vspace="0" align="middle">
+          <param name="ShowScrollBars" value="false">
+          <param name="LastOnTop" value="true">
+          <param name="CellWidth" value="120">
+          <param name="NumRows" value="1">
+          <param name="NumCols" value="5">
+          <param name="ShowControls" value="false">
+          <param name="ShowRowHeader" value="false">
+          <param name="ShowColHeader" value="true">
+          <param name="SizeToFit" value="true">
+        </applet>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align="center">
+<applet codebase="../../resources/" 
+     archive="Physlets.jar" 
+align="middle" code="slider.SliderApplet.class" height="20"  name="slider1" 
+width="400" >
+  <param name="min" value="5">
+  <param name="max" value="15">
+  <param name="value" value="10">
+  <param name="ShowControls" value="true">
+  <param name="label" value="  Energy">
+  <param name="align" value="middle">
+  </applet>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<form>
+  <p align="center"><input type="button" value="play"
+      onclick="document.reflection.forward()"><input type="button" value="pause"
+      onclick="document.reflection.pause()"><input type="button" value="&lt;&lt;step" name="stepb" onClick="document.reflection.stepTimeBack();"><input type="button" value="step&gt;&gt;" name="step" onClick="document.reflection.stepTimeForward();"> </p>
+  <div align="center">
+    <center>
+  <table border="1" bgcolor="#C0C0C0" id="table1">
+    <tr>
+      <td align="center"><a href="JavaScript:reim()">Show Real and Imaginary Parts</a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><a href="JavaScript:document.reflection.setShowPhaseColor(true)">Show Phase as 
+Color</a></td>
+    </tr>
+  </table>
+    </center>
+  </div>
+</form>
+<p align="center"><b><font id="waitmsg" color="#FF0000"><i>Please wait for the animation to completely load.</i></font></b></p>
+
+
+<div align="center">
+  <center>
+  <table border="1"  bgcolor="#C0C0C0">
+    <tr>
+      <td><a href="JavaScript:barrier1()">Start Animation 1</a></td>
+      <td><a href="JavaScript:barrier2()">Start Animation 2</a></td>
+      <td><a href="JavaScript:barrier3()">Start Animation 3</a></td>
+      <td><a href="JavaScript:barrier4()">Start Animation 4</a></td>
+      <td><a href="JavaScript:barrier5()">Start Animation 5</a></td>
+      <td><a href="JavaScript:barrier6()">Start Animation 6</a></td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+
+<p align="left">Drag the slider to change the energy of the incident particle and have the table fill with values.&nbsp; 
+Press the play button to evolve the wave function in time.&nbsp; <b>In the animations, <i>&#295;</i> = 2<i>m</i> = 1.</b></p>
+<p>Watch all six animations.&nbsp; Describe each of the potential energy functions that the incident plane wave is 
+experiencing.</p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>
+<a href="../../conditions_of_use.html">
+© 2006 by Prentice-Hall, Inc. A Pearson Company</a></p>
+
+</body>
+
+</html>

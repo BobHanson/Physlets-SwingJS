@@ -1,0 +1,20 @@
+button.start Forward
+button.stop Stop
+button.forward Step>>
+button.back <<Step
+button.edit Edit
+button.cancel Cancel
+button.calculate Calculate
+button.add Add
+button.delete Delete
+label.stopped Stopped
+label.drag Click-Drag any source.
+label.wait Please Wait...
+label.wavelength Wavelength=
+label.nosource No Sources.
+label.running running
+label.frame frame:
+label.clickdrag Click and Drag.
+
+
+

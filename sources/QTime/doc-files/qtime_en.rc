@@ -1,0 +1,24 @@
+button.start Run
+button.stop Stop
+button.reset Reset
+button.submit Submit Functions
+
+label.qtime QTime
+label.qm QM
+label.help Help
+label.wavefunction Wavefunction
+label.time Time:
+label.energy Energy
+label.real Real
+label.imaginary Imaginary
+label.potential Potential
+label.new New System
+label.magnitude |Psi|
+label.phase alpha:
+
+
+
+
+
+
+

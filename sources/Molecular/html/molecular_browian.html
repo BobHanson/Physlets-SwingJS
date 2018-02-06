@@ -1,0 +1,92 @@
+<html>
+
+<head>
+<title>Browian Motion</title>
+<script language="JavaScript">
+
+function brownian(){
+    document.Molecular.setAutoRefresh(false); 
+    document.Molecular.setDefault();
+    document.Molecular.setShowControls(false);
+    document.Molecular.setPeriodicH(false);
+    document.Molecular.setPeriodicV(false);
+    document.Molecular.createParticles(20);
+    for(i=0;i<20;i++){
+       document.Molecular.setParticlePos(i,-10+20*Math.random(),-10+20*Math.random());
+       document.Molecular.setParticleVel(i,-5+10*Math.random(),-5+10*Math.random());
+    }
+    document.Molecular.setParticlePos(0,0,0);
+    document.Molecular.setParticleVel(0,0,0);
+    document.Molecular.setParticleMass(0,40);
+    document.Molecular.setParticleRGB(0,255,0,0);
+    document.Molecular.setParticleSize(0,3.0);
+    document.Molecular.setAutoRefresh(true); 
+    document.Molecular.forward();
+}
+</script>
+</head>
+
+<body onload="brownian()" bgcolor="#FFEFCE">
+
+<h1 align="center">Brownian Motion</h1>
+
+<p align="center">
+<applet CODEBASE="../classes/" ARCHIVE="Molecular4_.jar,STools4.jar"
+CODE="molecular.MolecularApplet.class" NAME="Molecular" ID="Molecular" WIDTH="250"
+HEIGHT="250" HSPACE="0" VSPACE="0" ALIGN="middle">
+  <param name="ShowControls" value="false">
+  <param name="InitialP" value="0">
+  <param name="Mode" value="5">
+  <param name="FPS" value="10">
+  <param name="dt" value="0.1">
+  <param name="PeriodicH" value="false">
+  <param name="PeriodicV" value="false">
+</applet>
+</p>
+
+<form name="SpecForm">
+  <div align="center"><center><p><input type="button" value="play"
+  onclick="document.Molecular.forward()"><input type="button" value="pause"
+  onclick="document.Molecular.pause()"><input type="button" value="step&gt;&gt;"
+  onclick="document.Molecular.stepForward()"></p>
+  </center></div>
+</form>
+<a href="JavaScript:brownian()">
+
+<p>Init</p>
+</a>
+
+<h3 align="left">Setting Particle Properties</h3>
+
+<p align="left">Each particle has position, velocity, mass and size properties. These
+properties can be set by calling the applet's public methods after the particles have been
+created.&nbsp; The red particle has 40x the mass of the blue particles.</p>
+
+<hr>
+
+<h3>Script Example</h3>
+
+<pre>&lt;script language=&quot;JavaScript&quot;&gt;
+
+function brownian(){
+    document.Molecular.setAutoRefresh(false); 
+    document.Molecular.setDefault();
+    document.Molecular.setShowControls(false);
+    document.Molecular.setPeriodicH(false);
+    document.Molecular.setPeriodicV(false);
+    document.Molecular.createParticles(20);
+    for(i=0;i&lt;20;i++){
+       document.Molecular.setParticlePos(i,-10+20*Math.random(),-10+20*Math.random());
+       document.Molecular.setParticleVel(i,-5+10*Math.random(),-5+10*Math.random());
+    }
+    document.Molecular.setParticlePos(0,0,0);
+    document.Molecular.setParticleVel(0,0,0);
+    document.Molecular.setParticleMass(0,40);
+    document.Molecular.setParticleRGB(0,255,0,0);
+    document.Molecular.setParticleSize(0,3.0);
+    document.Molecular.setAutoRefresh(true); 
+    document.Molecular.forward();
+}
+&lt;/script&gt;</pre>
+</body>
+</html>

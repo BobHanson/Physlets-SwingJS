@@ -1,0 +1,126 @@
+<!doctype HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0" />
+<meta name="ProgId" content="FrontPage.Editor.Document" />
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+<title>Superposition Template</title>
+<script language="JavaScript">
+function LinearDisperse()
+{       var f1 = "2.5*sin(8.4*(x-1.0*t))";
+        var f2 = "2.5*sin(8.0*(x-1.0*t))";
+        document.Superposition.setFunc1(f1);
+        document.Superposition.setFunc2(f2);
+        document.Superposition.setRGB(3,255,0,0);
+	document.SetF1.textBox.value=f1;
+	document.SetF2.textBox.value=f2;
+        document.Superposition.start();
+}
+function NonLinearDisperse()
+{       var f1 = "2.5*sin(8.4*(x-1.2*t))";
+        var f2 = "2.5*sin(8.0*(x-1.0*t))";
+        document.Superposition.setFunc1(f1);
+        document.Superposition.setFunc2(f2);
+        document.Superposition.setRGB(3,255,0,0);
+	document.SetF1.textBox.value=f1;
+	document.SetF2.textBox.value=f2;
+        document.Superposition.start();
+}
+function IllegalDisperse()
+{       var f1 = "2.5*sin(8.4*(x-1.0*t))";
+        var f2 = "2.5*sin(8.0*(x-1.2*t))";
+        document.Superposition.setFunc1(f1);
+        document.Superposition.setFunc2(f2);
+        document.Superposition.setRGB(3,255,0,0);
+	document.SetF1.textBox.value=f1;
+	document.SetF2.textBox.value=f2;
+        document.Superposition.start();
+}
+
+</script>
+</head>
+
+<body>
+
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+	<tr>
+		<td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+		<!-- --></a>
+		<table border="0" cellpadding="0" cellspacing="3">
+			<tr align="center" valign="top">
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../overview-summary.html"><font class="NavBarFont1">
+				<b>Overview</b></font></a> </td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+				</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<font class="NavBarFont1">&nbsp;Class </font>&nbsp;</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+				</td>
+			</tr>
+		</table>
+		</td>
+		<td align="right" valign="top" rowspan="2"><em></em></td>
+	</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+<h2 align="left">Superposition Template 5</h2>
+<div align="center">
+	<center>
+	<table border="1" bordercolor="#000000">
+		<tr>
+			<th>Superposition of Waves</th>
+		</tr>
+		<tr>
+			<td valign="CENTER">
+			<applet code="superposition.Superposition.class" archive="Superposition4_.jar,STools4.jar" codebase="../../classes" id="Superposition" name="Superposition" width="600" height="400">
+				<param name="dt" value="0.1" />
+				<param name="FPS" value="20" />
+				<param name="numPoints" value="200" />
+				<param name="numGraphs" value="3" />
+				<param name="pixPerX" value="20" />
+				<param name="pixPerY" value="10" />
+				<param name="gridX" value="1" />
+				<param name="gridY" value="1" />
+				<param name="showControls" value="true" />
+				<param name="func1" value="2.5*sin(8.0*(x-1.0*t))" />
+				<param name="func2" value="2.5*sin(8.0*(x-1.0*t))" />
+			</applet> </td>
+		</tr>
+		<tr>
+			<td>
+			<form name="SetF1">
+				<p>
+				<input type="button" value="Change" onclick="document.Superposition.setFunc1(document.SetF1.textBox.value)" />f(x,t) 
+				=
+				<input type="text" name="textBox" size="50" value="2.5*sin(8.0*(x-1.0*t))" /></p>
+			</form>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<form name="SetF2">
+				<p>
+				<input type="button" value="Change" onclick="document.Superposition.setFunc2(document.SetF2.textBox.value)" /> 
+				g(x,t) =
+				<input type="text" name="textBox" size="50" value="2.5*sin(8.0*(x-1.0*t))" /></p>
+			</form>
+			</td>
+		</tr>
+	</table>
+	</center></div>
+<p><a href="JavaScript:LinearDisperse()">Linear Dispersion - Beats<br />
+</a></p>
+<p><a href="JavaScript:NonLinearDisperse()">Nonlinear Dispersion<br />
+</a></p>
+<p><a href="JavaScript:IllegalDisperse()">Anomalous Dispersion<br />
+</a></p>
+
+</body>
+
+</html>

@@ -1,0 +1,361 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0" />
+<meta name="ProgId" content="FrontPage.Editor.Document" />
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+<title>AddObject Method</title>
+</head>
+
+<body>
+
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+	<tr>
+		<td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+		<!-- --></a>
+		<table border="0" cellpadding="0" cellspacing="3">
+			<tr align="center" valign="top">
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../overview-summary.html"><font class="NavBarFont1">
+				<b>Overview</b></font></a> </td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+				</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<font class="NavBarFont1">&nbsp;Class </font>&nbsp;</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+				</td>
+			</tr>
+		</table>
+		</td>
+		<td align="right" valign="top" rowspan="2"></td>
+	</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+<h3>Efield <a name="_Toc485180348">addObject Method</a></h3>
+<p class="paragraph">EField allows the creation of point charges as well as geometric 
+shapes using the add object method:</p>
+<p class="CODE">addObject(<i>String name, String attributes</i>)</p>
+<p class="paragraph">The first argument is the name of the object to be added, and 
+the second is a comma-delimited list of parameters.&nbsp; A circle can be added 
+to either applet using the following JavaScript statement:<o:p>
+</o:p>
+</p>
+<p class="CODE">id=document.physletname.addObject(&quot;circle&quot;, &quot;x=0,y=-1.0,r=10&quot;);.</p>
+<p class="paragraph" style="text-indent:0in;">The addObject method is very forgiving 
+since not all parameters need to be specified.&nbsp; Default values are overridden 
+only if the parameter appears in the list.&nbsp; Incorrect and unsupported parameters 
+do not affect the applet and are ignored.</p>
+<p class="paragraph">The table below lists the name and the associated parameters 
+for the <i>EField</i> Physlet.&nbsp; Consult the online documentation for information 
+about other Physlets.&nbsp; <i>DataGraph</i>, for example supports the addObject 
+method for geometric shapes such as circles, boxes, and shells.&nbsp; <i>OpticsBench</i> 
+supports the addObject method for lenses, mirrors, and light sources.</p>
+<p class="paragraph" style="text-indent:0in">&nbsp;<o:p>
+</o:p>
+</p>
+<table border="1" cellspacing="0" cellpadding="0" width="98%" style="border-collapse:collapse;border:medium none;" id="table1">
+	<!-- MSTableType="nolayout" -->
+	<thead>
+		<tr>
+			<td width="167" valign="top" style="width:125.6pt;border:solid windowtext .5pt;
+   padding:0in 5.75pt 0in 5.75pt">
+			<p class="MsoNormal" align="center" style="text-align:center"><b>Name<o:p>
+        </o:p>
+        	</b></p>
+			</td>
+			<td width="317" valign="top" style="border-right:.5pt solid windowtext; border-top:.5pt solid windowtext; width:237.9pt;border-left:medium none;border-bottom-color:windowtext; padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+			<p class="MsoNormal" align="center" style="margin-left:.25in;text-align:center;
+   "><b>Attributes<o:p>
+        </o:p>
+        	</b></p>
+			</td>
+		</tr>
+	</thead>
+	<tr>
+		<td width="167" valign="top" style="border-left:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:125.6pt;border-top:medium none;border-right-color:windowtext; padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>arrow<o:p>
+      <br />
+      </o:p>
+      	</b><o:p>
+      	A</o:p>rrows are often animation slaves of other objects.&nbsp; They can 
+		represent almost any vector since the h and v components can be functions 
+		of the variables.</p>
+		</td>
+		<td width="317" valign="top" style="width:237.9pt;border-top:1px solid;border-left:
+  1px solid;border-bottom:1px solid windowtext;border-right:1px solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p style="margin-left:.25in" align="left"><b>x- double</b> x position of 
+		the base in world units<b><br />
+		y- double </b>y position of the base in world units.<br />
+		<b>h- string</b> horizontal component as a function of t, x, y, vx, vy, 
+		ax, and ay.<br />
+		<b>v- string</b> vertical component as a function of t, x, y, vx, vy, ax, 
+		and ay.<br />
+		<b>s- int</b> the size of the head in pixels</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="167" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:125.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>box<o:p>
+      <br />
+      </o:p>
+      	</b>a box is a hollow rectangle.</p>
+		</td>
+		<td width="317" valign="top" style="width:237.9pt;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  border-top-color:inherit; padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units<br />
+		<b>y- double </b>y position of the center in world units<br />
+		<b>h- int </b>height in pixels<br />
+		<b>w- int </b>width in pixels<br />
+		<b>m-double </b>the mass</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="167" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:125.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>caption<o:p>
+      <br />
+      </o:p>
+      	</b>text that is centered near the top of the screen.</p>
+		</td>
+		<td width="317" valign="top" style="width:237.9pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units<br />
+		<b>y- double </b>y position of the center in world units.<b><br />
+		text- string</b> text of the caption<b><o:p>
+      <br />
+      </o:p>calc- string</b> A function of t to be evaluated at every time step.&nbsp; 
+		The value of the function is displayed to the right of the text.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="167" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:125.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>charge<o:p>
+      </o:p>
+      	</b></p>
+		</td>
+		<td width="317" valign="top" style="width:237.9pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units<br />
+		<b>y- double </b>y position of the center in world units.<br />
+		<b>q- double </b>object&#39;s charge.<br />
+		<b>r- int </b>radius in pixels<b><br />
+		m-double </b>the mass</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="167" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:125.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>circle<o:p>
+      </o:p>
+      	</b></p>
+		</td>
+		<td width="317" valign="top" style="width:237.9pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units<br />
+		<b>y- double </b>y position of the center in world units.<br />
+		<b>r- int </b>radius in pixels<br />
+		<b>m-double </b>the mass</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="167" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:125.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>connectorline<br />
+		</b>a straight line connection two objects.</p>
+		</td>
+		<td width="317" valign="top" style="width:237.9pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>id1- int</b> first object 
+		identifier.<b><br />
+		id2- int </b>second object identifier.<br />
+		See also: addConnectorSpring(int,int) in the online documentation.&nbsp; 
+		This method is easier to use if the ids are stored as integers.</p>
+		</td>
+	</tr>
+	<tr style="height:22.0pt">
+		<td width="167" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:125.6pt;border-top:medium none;height:22.0pt; padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>connectorspring<br />
+		</b>a spring connection two objects.</p>
+		</td>
+		<td width="317" valign="top" style="width:237.9pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  height:22.0pt; padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>id1- int</b> first object 
+		identifier.<b><br />
+		id2- int </b>second object identifier.<br />
+		See also: addConnectorLine(int,int) in the online documentation.&nbsp; This 
+		method is easier to use if the ids are stored as integers.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="167" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:125.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>cursor<o:p>
+      <br />
+      </o:p>
+      	</b>a circle with cross hairs.</p>
+		</td>
+		<td width="317" valign="top" style="width:237.9pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units<br />
+		<b>y- double </b>y position of the center in world units<br />
+		<b>r- int </b>radius in pixels</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="167" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:125.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>image<o:p>
+      <br />
+      </o:p>
+      	</b>a gif image.&nbsp; The coordinates are the coordinates of the upper 
+		left hand corner.</p>
+		</td>
+		<td width="317" valign="top" style="width:237.9pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the left side in world units<br />
+		<b>y- double </b>y position of the top in world units<br />
+		<b>file- string</b> name of the gif file.&nbsp; The image should be in located 
+		in the same directory as the jar file for the applet.<br />
+		<b>m-double </b>the mass</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="167" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:125.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>line<o:p>
+      </o:p>
+      	</b></p>
+		<p class="MsoNormal">&nbsp;<o:p>
+      </o:p>
+      	</p>
+		<p class="MsoNormal" align="center" style="text-align:center">&nbsp;<o:p>
+      </o:p>
+      	</p>
+		</td>
+		<td width="317" valign="top" style="width:237.9pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the base in world units<br />
+		<b>y- double </b>y position of the base in world units.<br />
+		<b>h- string</b> horizontal component as a function of t, x, y, vx, vy, 
+		ax, and ay.<br />
+		<b>v- string</b> vertical component as a function of t, x, y, vx, vy, ax, 
+		and ay.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="167" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:125.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>rectangle<o:p>
+      </o:p>
+      	</b></p>
+		</td>
+		<td width="317" valign="top" style="width:237.9pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units<br />
+		<b>y- double </b>y position of the center in world units.<br />
+		<b>h- int </b>height in pixels.<b><o:p>
+      <br />
+      </o:p>w- int </b>width in pixels.<br />
+		<b>m-double </b>the mass<b><o:p>
+      </o:p>
+      	</b></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="167" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:125.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>relshape<br />
+		</b>draws an arbitrary shape by connect-the-dots.&nbsp; The shape is specified 
+		by passing the relative pixel positions of the dots starting at x and y.</p>
+		</td>
+		<td width="317" valign="top" style="width:237.9pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units<br />
+		<b>y- double </b>y position of the center in world units.<b><o:p>
+      </o:p>n- int </b>number of vertices in the polygon.<b><o:p>
+      <br />
+      </o:p>hStr- string </b>A comma separated list of the x postions of the relative 
+		vertices in pixel units.<b><o:p>
+      </o:p>vStr- string </b>A comma separated list of the y postions of the relative 
+		vertices in pixel units.<br />
+		<b>m-double </b>the mass<b><o:p>
+      </o:p>
+      	</b></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="167" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:125.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>shell<br />
+		</b>a circle with a hollow center</p>
+		</td>
+		<td width="317" valign="top" style="width:237.9pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units<br />
+		<b>y- double </b>y position of the center in world units<b><br />
+		r- int </b>radius in pixels<br />
+		<b>m-double </b>the mass</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="167" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:125.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>testcharge<br />
+		</b>a charge that is free to move under the action of fixed charges and 
+		an external potential.</p>
+		</td>
+		<td width="317" valign="top" style="width:237.9pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units<b><br />
+		y- double </b>y position of the center in world units<br />
+		<b>vx- double</b> x velocity in world units<br />
+		<b>vy- double </b>y velocity in world units<br />
+		<b>q- double </b>object&#39;s charge<br />
+		<b>r- int </b>radius in pixels<br />
+		<b>m-double </b>the mass</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="167" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:125.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>text</b><br />
+		a fixed text string followed by an optional calculation.</p>
+		</td>
+		<td width="317" valign="top" style="width:237.9pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the left side of the text in world units<b><br />
+		y- double </b>y position of the top of the text in world units<br />
+		<b>text- string</b> static text.<br />
+		<b>calc- string</b> A function of t, x, y, vx, vy, ax, and ay that is evaluated 
+		at every time step.&nbsp; The value of the function is displayed to the 
+		right of the static text.]<br />
+		Note:&nbsp; Use the setFormat method<!--[if gte mso 9]><xml>
+   <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003400370037003100350032003200350034000000</w:data>
+  </xml><![endif]--> to change the decimal format used to output the calculation.</p>
+		</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

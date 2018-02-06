@@ -1,0 +1,140 @@
+<html>
+
+<head>
+<title>Test Page</title>
+<script LANGUAGE="JavaScript">
+function assorted(){
+       document.Molecular.setAutoRefresh(false);
+        document.Molecular.pause();
+        document.Molecular.setPeriodicH(false);
+        document.Molecular.setPeriodicV(false);
+        document.Molecular.setDefaultMass(1);
+        document.Molecular.setDefaultColor(50,0,170);
+        document.Molecular.createParticles(5);
+        document.Molecular.setDefaultMass(2);
+        document.Molecular.setDefaultSize(2);
+        document.Molecular.setDefaultColor(250,0,0);
+        document.Molecular.createParticles(5);
+        document.Molecular.setAutoRefresh(true);
+        document.Molecular.forward();}
+
+function addPart(){
+        document.Molecular.setAutoRefresh(false);
+        document.Molecular.pause();
+        pid=document.Molecular.addParticle(7,7,0,0,1.5);
+        document.Molecular.setAutoRefresh(true);
+        document.Molecular.forward();
+}
+
+function assorted2(){
+       document.Molecular.setAutoRefresh(false);
+        document.Molecular.pause();
+        document.Molecular.setPeriodicH(true);
+        document.Molecular.setPeriodicV(false);
+        document.Molecular.setDefault();
+        document.Molecular.addParticle(5,5,3,2,0.5);
+        document.Molecular.addParticle(10,-10,-3,1,1);
+        document.Molecular.addParticle(12,12,4,-3,1.5);
+        document.Molecular.addParticle(5,5,3,-2,2);
+        document.Molecular.addParticle(10,10,-3,2,2.5);
+        document.Molecular.addParticle(-10,-10,4,2,3);
+        document.Molecular.setParticleMass(0,1);
+        document.Molecular.setParticleMass(1,2);
+        document.Molecular.setParticleMass(2,3);
+        document.Molecular.setParticleMass(3,4);
+        document.Molecular.setParticleMass(4,5);
+        document.Molecular.setParticleMass(5,6);
+        document.Molecular.setParticleRGB(1,255,0,0);
+        document.Molecular.setParticleRGB(2,200,0,200);
+        document.Molecular.setParticleRGB(3,150,150,150);
+        document.Molecular.setParticleRGB(4,0,150,0);
+        document.Molecular.setParticleRGB(5,200,150,0);
+        document.Molecular.setAutoRefresh(true);
+        document.Molecular.forward();}
+
+        </script>
+</head>
+
+<body bgcolor="#FFEFCE">
+
+<h1 align="center">Molecular Dynamics Physlet<br>
+TEST PAGE</h1>
+
+<table width="100%" height="288">
+  <tr>
+    <td width="32%" height="282">
+    <applet CODEBASE="../classes/" ARCHIVE="Molecular4_.jar,STools4.jar"
+    CODE="molecular.MolecularApplet.class" NAME="Molecular" ID="Molecular" WIDTH="300"
+    HEIGHT="300" HSPACE="0" VSPACE="0" ALIGN="middle">
+      <param name="ShowControls" value="true">
+      <param name="InitialP" value="20">
+      <param name="FPS" value="50">
+      <param name="dt" value="0.05">
+      <param name="PeriodicH" value="false">
+      <param name="PeriodicV" value="false">
+      <param name="PixPerUnit" value="10">
+      <param name="Border" value="3">
+    </applet>
+    </td>
+    <td width="68%" height="282"><ul>
+      <li><a href="JavaScript:assorted()">Add Particles</a>: Scripts in a few particles with solid
+        boundaries. Particles have different masses.</li>
+      <li><a href="JavaScript:addPart()">One Particle</a>: Add a particle to the simulation. </li>
+      <li><a href="JavaScript:assorted2()">Assorted Particles</a>&nbsp; Periodic boundaries in the
+        x direction.</li>
+    </ul>
+    </td>
+  </tr>
+</table>
+
+<p>Scripts on this page demonstrate the basic functionality of the basic hard-sphere
+ensemble from which other, more specialized ensembles, are derived.&nbsp; The
+MolecularApplet Physlet seen on this page&nbsp;is a simple container applet&nbsp;for this
+ensemble that allows the class to be scripted.&nbsp; It is possible to create overlapping
+particles but this is non-physical since hard spheres cannot penetrate. We have chosen to
+ignore interactions between overlapping particles.</p>
+
+<p>The MolecularApplet Physlet is embedded using the following syntax. The [location]
+parameter should be the URL of the directory that contains the jar file and the
+[script_name] should be a unique variable name by which JavaScript can refer to this
+applet.</p>
+<code>
+
+<p>&lt;applet<br>
+&nbsp;&nbsp;&nbsp; CODEBASE=[location]<br>
+&nbsp;&nbsp;&nbsp; CODE=&quot;molecular.MolecularApplet.class&quot;<br>
+&nbsp;&nbsp;&nbsp; ARCHIVE=&quot;Molecular.jar&quot;<br>
+&nbsp;&nbsp;&nbsp; NAME=[script_name]<br>
+&nbsp;&nbsp;&nbsp; ID=[script_name]&gt;</code></p>
+
+<p><code>&lt;param name=[par_name] value=[par_Value]&gt;<br>
+.<br>
+.<br>
+&lt;/applet&gt;</code></p>
+
+<p>The applet that you see on this page was embedded as follows.</p>
+<code>
+
+<p>&lt;applet<br>
+&nbsp;&nbsp;&nbsp; CODEBASE=&quot;../classes/&quot; <br>
+&nbsp;&nbsp;&nbsp; ARCHIVE=&quot;Molecular.jar&quot;<br>
+&nbsp;&nbsp;&nbsp; CODE=&quot;molecular.MolecularApplet.class&quot;<br>
+&nbsp;&nbsp;&nbsp; NAME=&quot;Molecular&quot; ID=&quot;Molecular&quot;<br>
+&nbsp;&nbsp;&nbsp; WIDTH=&quot;300&quot;<br>
+&nbsp;&nbsp;&nbsp; HEIGHT=&quot;300&quot;<br>
+&nbsp;&nbsp;&nbsp; HSPACE=&quot;0&quot;<br>
+&nbsp;&nbsp;&nbsp; VSPACE=&quot;0&quot;<br>
+&nbsp;&nbsp;&nbsp; ALIGN=&quot;middle&quot;&gt;<br>
+<br>
+&lt;param name=&quot;ShowControls&quot; value=&quot;true&quot;&gt;<br>
+&lt;param name=&quot;InitialP&quot; value=&quot;20&quot;&gt;<br>
+&lt;param name=&quot;FPS&quot; value=&quot;50&quot;&gt;<br>
+&lt;param name=&quot;dt&quot; value=&quot;0.05&quot;&gt;<br>
+&lt;param name=&quot;PeriodicH&quot; value=&quot;false&quot;&gt;<br>
+&lt;param name=&quot;PeriodicV&quot; value=&quot;false&quot;&gt;<br>
+&lt;param name=&quot;PixPerUnit&quot; value=&quot;10&quot;&gt;<br>
+&lt;param name = &quot;Border&quot; VALUE = &quot;3&quot;&gt;<br>
+&lt;/applet&gt;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+</code>
+</body>
+</html>

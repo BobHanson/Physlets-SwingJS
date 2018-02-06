@@ -1,0 +1,72 @@
+<html>
+
+<head>
+<script language="JavaScript"> 
+function initApplet(){
+     document.Faraday.setDefault();
+     id=document.Faraday.addObject("UWire","x=3");
+     document.Faraday.setDragable(id,true);
+     document.Faraday.setFieldFunction("step(10-t)*min(0.2*t,2-0.2*t)");
+	  document.Faraday.setPosFunction("25");
+     document.Faraday.setTimeCycle(11);
+     document.Faraday.forward();
+}
+</script>
+<title>B(t)</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0" />
+<meta name="ProgId" content="FrontPage.Editor.Document" />
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+</head>
+
+<body onload="initApplet()">
+
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+  <tr>
+    <td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+    <!-- --></a>
+    <table border="0" cellpadding="0" cellspacing="3">
+      <tr align="center" valign="top">
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><a href="../../overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>
+        </td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1">&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+        </td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><font class="NavBarFont1">&nbsp;Class </font>&nbsp;</td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+        </td>
+      </tr>
+    </table>
+    </td>
+    <td align="right" valign="top" rowspan="2"><em></em></td>
+  </tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+<h3 align="left">Changing Field</h3>
+<p align="center">
+<applet codebase="../../classes/" code="faraday.Faraday.class" name="Faraday" id="Faraday" width="350" 
+archive="Faraday4_.jar,STools4.jar" height="300" hspace="0" vspace="0" align="middle">
+  <param name="PixPerUnit" value="10" />
+  <param name="SchematicWidth" value="250" />
+  <param name="MaxTime" value="10" />
+  <param name="FPS" value="10" />
+  <param name="ShowControls" value="false" />
+  <param name="FieldFunction" value="step(t-1)*step(5-t)*(0.2-0.2*t)+step(t-5)*step(9-t)*(-1.8+0.2*t)" />
+  <param name="PositionFunction" value="25" />
+  <param name="ShowField" value="true" />
+  <param name="ShowGraph" value="false" />
+  <param name="DragMode" value="false" />
+  <param name="ShowGrid" value="true" />
+  <param name="ShowColor" value="true" />
+  <param name="ShowCurrentArrow" value="true" />
+  <param name="ShowSchematic" value="false" />
+</applet> </p>
+<p>The animation shows the top view of a four wire conducing loop and a galvanometer.&nbsp; Current flowing into the + terminal, 
+i.e., counterclockwise in the loop, will deflect the meter to the right.&nbsp;&nbsp; Plot the magnetic field passing through 
+the loop during the time interval t=0 to t=10.&nbsp; Assume the field is zero at t=0.&nbsp;&nbsp;&nbsp;
+<a href="JavaScript:initApplet()">Start.</a></p>
+<p>Drag the wire on the right hand side to a new position.&nbsp; How does this change the galvanometer reading?</p>
+
+</body>
+
+</html>

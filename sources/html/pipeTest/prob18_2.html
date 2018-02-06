@@ -1,0 +1,335 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="resources/physlets.css">
+<script language="JavaScript"> 
+var id1=0;
+var id2=0;
+var conid1=0;
+var conid2=0; 
+var gid1=0;
+var gid2=0;
+
+
+
+
+function initApplet(){
+    document.datagraph1.setAutoRefresh(false);
+    document.datagraph2.setAutoRefresh(false);
+    document.pipes.setDefault();    
+    document.datagraph1.setAutoscaleX(false);
+    document.datagraph1.setAutoscaleY(false);
+    document.datagraph1.setMinMaxX(0.1,10);
+    document.datagraph1.setMinMaxY(0.95,1.05);
+    document.datagraph1.deleteSeries(1);
+    document.datagraph1.setSeriesStyle(1,true,3);
+    document.datagraph1.setMarkerSize(1,0.6);
+    document.datagraph1.setSeriesRGB(1,255,0,0);
+    document.datagraph1.setLastPointMarker(1,true); 
+    document.datagraph1.setLabelX("Time (ms)");  
+    document.datagraph1.setLabelY("Pressure (atm)");   
+    document.datagraph1.setTitle("Select an Animation to Begin");  
+    gid1=document.datagraph1.getGraphID();
+    document.datagraph2.setAutoscaleX(false);
+    document.datagraph2.setAutoscaleY(false);
+    document.datagraph2.setMinMaxX(0.01,10);
+    document.datagraph2.setMinMaxY(-1.2,1.2);
+    document.datagraph2.deleteSeries(1);
+    document.datagraph2.setSeriesStyle(1,true,3);
+    document.datagraph2.setMarkerSize(1,0.6);
+    document.datagraph2.setSeriesRGB(1,0,0,255);
+    document.datagraph2.setLastPointMarker(1,true); 
+    document.datagraph2.setLabelX("Time (ms)");  
+    document.datagraph2.setLabelY("Displacement (micrometers)");    
+    gid2=document.datagraph2.getGraphID();
+    document.pipes.setTimeDisplay(false);
+    document.datagraph1.setAutoRefresh(true);
+    document.datagraph2.setAutoRefresh(true);      
+}
+
+
+function mjb16_2_1() {
+    document.datagraph1.setAutoRefresh(false);
+    document.datagraph2.setAutoRefresh(false);
+    document.pipes.setDefault();
+    document.pipes.setMode("a","sin(5*(x-4)-800*pi*t/1000+pi)");    
+    id1=document.pipes.addDetector(4,0); 
+    document.pipes.setDragable(id1,false);
+    
+    document.datagraph1.setAutoscaleX(false);
+    document.datagraph1.setAutoscaleY(false);
+    document.datagraph1.setMinMaxX(0.1,10);
+    document.datagraph1.setMinMaxY(0.95,1.05);
+    document.datagraph1.deleteSeries(1);
+    document.datagraph1.setSeriesStyle(1,true,3);
+    document.datagraph1.setMarkerSize(1,0.6);
+    document.datagraph1.setSeriesRGB(1,255,0,0);
+    document.datagraph1.setLastPointMarker(1,true); 
+    document.datagraph1.setLabelX("Time (ms)");  
+    document.datagraph1.setLabelY("Pressure (atm)");   
+    document.datagraph1.setTitle("Animation 1: P vs. t");  
+    gid1=document.datagraph1.getGraphID();
+
+    
+    document.datagraph2.setAutoscaleX(false);
+    document.datagraph2.setAutoscaleY(false);
+    document.datagraph2.setMinMaxX(0.01,10);
+    document.datagraph2.setMinMaxY(-1.2,1.2);
+    document.datagraph2.deleteSeries(1);
+    document.datagraph2.setSeriesStyle(1,true,3);
+    document.datagraph2.setMarkerSize(1,0.6);
+    document.datagraph2.setSeriesRGB(1,0,0,255);
+    document.datagraph2.setLastPointMarker(1,true); 
+    document.datagraph2.setLabelX("Time (ms)");  
+    document.datagraph2.setLabelY("Displacement (micrometers)");   
+    document.datagraph2.setTitle("Displacement vs. Time");  
+    gid2=document.datagraph2.getGraphID();
+
+    document.pipes.deleteDataConnections(); 
+    conid1=document.pipes.makeDataConnection(id1,gid1,1,"t","1+p/100");	
+    conid2=document.pipes.makeDataConnection(id1,gid2,1,"t","sin(800*pi*t/1000)");
+    document.pipes.updateDataConnections(); 
+    document.pipes.setClockOneShot(0,10); 
+    document.pipes.setTimeDisplay(false);
+    document.datagraph1.setAutoRefresh(true);
+    document.datagraph2.setAutoRefresh(true);      
+}
+
+
+function mjb16_2_2() {
+   id1=0;
+   id2=0;
+   conid1=0;
+   conid2=0; 
+   gid1=0;
+   gid2=0;   
+    document.datagraph1.setAutoRefresh(false);
+    document.datagraph2.setAutoRefresh(false);
+    document.pipes.setDefault();
+    document.pipes.setMode("a","sin(5*(x-4)-800*pi*t/1000+pi)");
+    id1=document.pipes.addDetector(4,0); 
+   document.pipes.setDragable(id1,false);
+
+    document.datagraph1.setAutoscaleX(false);
+    document.datagraph1.setAutoscaleY(false);
+    document.datagraph1.setMinMaxX(0.1,10);
+    document.datagraph1.setMinMaxY(0.95,1.05);
+    document.datagraph1.deleteSeries(1);
+    document.datagraph1.setSeriesStyle(1,true,3);
+    document.datagraph1.setMarkerSize(1,0.6);
+    document.datagraph1.setSeriesRGB(1,255,0,0);
+    document.datagraph1.setLastPointMarker(1,true); 
+    document.datagraph1.setLabelX("Time (ms)");  
+    document.datagraph1.setLabelY("Pressure (atm)");   
+    document.datagraph1.setTitle("Animation 2: P vs. t");  
+    gid1=document.datagraph1.getGraphID();
+
+    document.datagraph2.setAutoscaleX(false);
+    document.datagraph2.setAutoscaleY(false);
+    document.datagraph2.setMinMaxX(0.1,10);
+    document.datagraph2.setMinMaxY(-1.2,1.2);
+    document.datagraph2.deleteSeries(1);
+    document.datagraph2.setSeriesStyle(1,true,3);
+    document.datagraph2.setMarkerSize(1,0.6);
+    document.datagraph2.setSeriesRGB(1,0,0,255);
+    document.datagraph2.setLastPointMarker(1,true); 
+    document.datagraph2.setLabelX("Time (ms)");  
+    document.datagraph2.setLabelY("Displacement (micrometers)");  
+    document.datagraph2.setTitle("Displacement vs. Time");  
+    gid2=document.datagraph2.getGraphID();
+
+    document.pipes.deleteDataConnections(); 
+    conid1=document.pipes.makeDataConnection(id1,gid1,1,"t","1+p/100");	
+    conid2=document.pipes.makeDataConnection(id1,gid2,1,"t","cos(800*pi*t/1000)");
+    document.pipes.updateDataConnections(); 
+    document.pipes.setTimeDisplay(false);
+    document.pipes.setClockOneShot(0,10);
+    document.datagraph1.setAutoRefresh(true);
+    document.datagraph2.setAutoRefresh(true);    
+}
+
+
+function mjb16_2_3() {
+   id1=0;
+   id2=0;
+   conid1=0;
+   conid2=0; 
+   gid1=0;
+   gid2=0;   
+    document.datagraph1.setAutoRefresh(false);
+    document.datagraph2.setAutoRefresh(false);
+    document.pipes.setDefault();
+    document.pipes.setMode("a","sin(5*(x-4)-800*pi*t/1000+pi)"); 
+    id1=document.pipes.addDetector(4,0);
+   document.pipes.setDragable(id1,false);
+
+    document.datagraph1.setAutoscaleX(false);
+    document.datagraph1.setAutoscaleY(false);
+    document.datagraph1.setMinMaxX(0.1,10);
+    document.datagraph1.setMinMaxY(0.95,1.05);
+    document.datagraph1.deleteSeries(1);
+    document.datagraph1.setSeriesStyle(1,true,3);
+    document.datagraph1.setMarkerSize(1,0.6);
+    document.datagraph1.setSeriesRGB(1,255,0,0);
+    document.datagraph1.setLastPointMarker(1,true); 
+    document.datagraph1.setLabelX("Time (ms)");  
+    document.datagraph1.setLabelY("Pressure (atm)");   
+    document.datagraph1.setTitle("Animation 3: P vs. t");  
+    gid1=document.datagraph1.getGraphID();
+
+    document.datagraph2.setAutoscaleX(false);
+    document.datagraph2.setAutoscaleY(false);
+    document.datagraph2.setMinMaxX(0.1,10);
+    document.datagraph2.setMinMaxY(-1.2,1.2);
+    document.datagraph2.deleteSeries(1);
+    document.datagraph2.setSeriesStyle(1,true,3);
+    document.datagraph2.setMarkerSize(1,0.6);
+    document.datagraph2.setSeriesRGB(1,0,0,255);
+    document.datagraph2.setLastPointMarker(1,true); 
+    document.datagraph2.setLabelX("Time (ms)");  
+    document.datagraph2.setLabelY("Displacement (micrometers)");  
+    document.datagraph2.setTitle("Displacement vs. Time");    
+    gid2=document.datagraph2.getGraphID();
+
+    document.pipes.deleteDataConnections(); 
+    conid1=document.pipes.makeDataConnection(id1,gid1,1,"t","1+p/100");	
+    conid2=document.pipes.makeDataConnection(id1,gid2,1,"t","-sin(800*pi*t/1000)");
+    document.pipes.updateDataConnections(); 
+    document.pipes.setTimeDisplay(false);
+    document.pipes.setClockOneShot(0,10);
+    document.datagraph1.setAutoRefresh(true);
+    document.datagraph2.setAutoRefresh(true);  
+}
+
+
+function mjb16_2_4() {
+   id1=0;
+   id2=0;
+   conid1=0;
+   conid2=0; 
+   gid1=0;
+   gid2=0;   
+    document.datagraph1.setAutoRefresh(false);
+    document.datagraph2.setAutoRefresh(false);
+    document.pipes.setDefault();
+    document.pipes.setMode("a","sin(5*(x-4)-800*pi*t/1000+pi)"); 
+    id1=document.pipes.addDetector(4,0);
+   document.pipes.setDragable(id1,false);
+
+    document.datagraph1.setAutoscaleX(false);
+    document.datagraph1.setAutoscaleY(false);
+    document.datagraph1.setMinMaxX(0.1,10);
+    document.datagraph1.setMinMaxY(0.95,1.05);
+    document.datagraph1.deleteSeries(1);
+    document.datagraph1.setSeriesStyle(1,true,3);
+    document.datagraph1.setMarkerSize(1,0.6);
+    document.datagraph1.setSeriesRGB(1,255,0,0);
+    document.datagraph1.setLastPointMarker(1,true); 
+    document.datagraph1.setLabelX("Time (ms)");  
+    document.datagraph1.setLabelY("Pressure (atm)");   
+    document.datagraph1.setTitle("Animation 4: P vs. t");  
+    gid1=document.datagraph1.getGraphID();
+
+    document.datagraph2.setAutoscaleX(false);
+    document.datagraph2.setAutoscaleY(false);
+    document.datagraph2.setMinMaxX(0.1,10);
+    document.datagraph2.setMinMaxY(-1.2,1.2);
+    document.datagraph2.deleteSeries(1);
+    document.datagraph2.setSeriesStyle(1,true,3);
+    document.datagraph2.setMarkerSize(1,0.6);
+    document.datagraph2.setSeriesRGB(1,0,0,255);
+    document.datagraph2.setLastPointMarker(1,true); 
+    document.datagraph2.setLabelX("Time (ms)");  
+    document.datagraph2.setLabelY("Displacement (micrometers)");   
+    document.datagraph2.setTitle("Displacement vs. Time");   
+    gid2=document.datagraph2.getGraphID();
+
+    document.pipes.deleteDataConnections(); 
+    conid1=document.pipes.makeDataConnection(id1,gid1,1,"t","1+p/100");	
+    conid2=document.pipes.makeDataConnection(id1,gid2,1,"t","-cos(800*pi*t/1000)");
+    document.pipes.updateDataConnections(); 
+    document.pipes.setTimeDisplay(false);
+    document.pipes.setClockOneShot(0,10);
+    document.datagraph1.setAutoRefresh(true);
+    document.datagraph2.setAutoRefresh(true); 
+}
+
+
+
+
+
+</script>
+
+<title>Physlet Physics by Christian and Belloni: Problem 18.2</title>
+</head>
+<body onload="initApplet()">
+<h2 align="left">Problem 18.2</h2>
+<div align="center"><center>
+<table border="1" bgcolor="#C0C0C0">
+  <tr>
+    <td align="center" colspan="2">
+    <applet codebase="resources/"
+archive="Physlets.jar"
+code="pipes.PipeApplet.class" name="pipes"  width="523"
+height="46" hspace="0" vspace="0" align="middle" >
+  <param name="Speed" value="343">
+  <param name="ShowControls" value="false">
+  <param name="Pixper" value="25">
+  <param name="FPS" value="10">
+  <param name="Dt" value="0.1">
+  <param name="ShowLegend" value="false">
+  <param name="WallW" value="4">
+</applet></td>
+  </tr>
+  <tr>
+    <td align="center">
+    <applet codebase="resources/"
+    archive="Physlets.jar"
+    code="dataGraph.DataGraph.class" name="datagraph1" width="260"
+    height="170" >
+      <param name="ShowControls" value="false">
+    </applet></td>
+    <td align="center">
+    <applet codebase="resources/"
+    archive="Physlets.jar"
+    code="dataGraph.DataGraph.class"  name="datagraph2" width="260"
+    height="170" >
+      <param name="ShowControls" value="false">
+    </applet></td>
+  </tr>
+</table>
+</center></div>
+
+<form>
+  <div align="center"><center><p><input type="button" value="play"
+  onclick="document.pipes.forward()"><input type="button" value="pause"
+  onclick="document.pipes.pause()"><input type="button" value="step&gt;&gt;"
+  onclick="document.pipes.stepForward()"></p>
+  </center></div>
+</form>
+
+<div align="center"><center>
+
+<table border="1" bgcolor="#C0C0C0">
+  <tr>
+    <td><a href="JavaScript:mjb16_2_1()">Animation 1</a>&nbsp;</td>
+    <td><a href="JavaScript:mjb16_2_2()">Animation 2</a>&nbsp;</td>
+    <td><a href="JavaScript:mjb16_2_3()">Animation 3</a>&nbsp;</td>
+    <td><a href="JavaScript:mjb16_2_4()">Animation 4</a>&nbsp;</td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center"><strong><font color="#FF0000"><em>Please wait for the animation to completely load.</em></font></strong></p>
+
+<p align="left">The animation represents a cross section of a sound wave 
+propagating in a very long pipe.&nbsp; <a href="JavaScript:initApplet()">Restart</a>.&nbsp; A detector, the orange square, is placed in the pipe and properly measures the
+pressure <strong>(position is given in meters and time is given in milliseconds)</strong>.&nbsp; Which of the graphs properly represents the displacement of the air molecules in the pipe?</p>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">
+<a href="../../conditions_of_use.html">© 2004 by Prentice-Hall, Inc. A Pearson Company</a></p>
+
+</body>
+</html>

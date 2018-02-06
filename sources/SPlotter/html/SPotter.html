@@ -1,0 +1,46 @@
+<html>
+
+<head>
+<script LANGUAGE="JavaScript">
+function threed(){ 
+    document.splotter.set(0,"type","threed");  
+    document.splotter.set(0,"style","xyticks=true,zticks=true"); 
+    document.splotter.set(0,"font","size=10");       
+}
+function contour(){ 
+    document.splotter.set(0,"type","contour");        
+}
+function density(){ 
+    document.splotter.set(0,"type","density");        
+}
+
+</script>
+
+<title>SPlotter Introduction</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body bgcolor="#FFEFCE">
+
+<p align="center">
+<applet codebase="." code="splotter.SPlotter.class"
+name="splotter" width="400" height="430" hspace="0" vspace="0" align="middle">
+  <param name="Scale" value="xmin=-2,xmax=2,ymin=-2,ymax=2,zmin=-2,zmax=2">
+  <param name="Function" value="x*y*cos(0.5*t)">
+  <param name="Function2" value="x*x+y*y">
+  <param name="GridPts" value="32">
+  <param name="Levels" value="10">
+  <param name="ScaleFactor" value="10">
+  <param name="Type" value="threed">
+  <param name="ShowControls" value="true">
+  <param name="FPS" value="10">
+  <param name="dt" value="0.5">
+</applet>
+</p>
+<p align="center">Change Plot Modes:&nbsp; <a href="JavaScript:threed()">ThreeD</a> | <a
+href="JavaScript:contour()">Contour</a> | <a href="JavaScript:density()">Density</a></p>
+
+</body>
+
+</html>

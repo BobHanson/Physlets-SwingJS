@@ -1,0 +1,107 @@
+<html>
+
+<head>
+<script language="JavaScript"> 
+var current=0.05;
+var pi=Math.PI;
+var halt=false;
+
+function init(){
+   document.BField3.setDefault();
+   document.BField3.setShowBOnDrag(true);
+   document.BField3.setShowFieldLineOnDoubleClick(false);
+   document.BField3.setShowFieldVectors(true); 
+}
+
+function coax(){
+   init()
+   for( i=0; i<200; i++){
+       document.BField3.setAutoRefresh(false);
+       x1=3*Math.cos(i*pi/100);
+       y1=3*Math.sin(i*pi/100);  
+       c1=document.BField3.addWire(x1,y1,current);
+       document.BField3.setDragable(c1,false);
+       document.BField3.setOptionDrag(c1,false); 
+       document.BField3.setShowFVector(c1,false);
+       document.BField3.setAutoRefresh(true);
+       if(halt)return;
+   }
+
+   for( i=0; i<40; i++){
+       document.BField3.setAutoRefresh(false);
+       x1=0.5*Math.cos(i*pi/20);
+       y1=0.5*Math.sin(i*pi/20);  
+       c1=document.BField3.addWire(x1,y1,-5*current);
+       document.BField3.setDragable(c1,false);
+       document.BField3.setOptionDrag(c1,false); 
+       document.BField3.setShowFVector(c1,false);
+       document.BField3.setAutoRefresh(true);
+       if(halt)return;
+   }
+}
+
+function coax(){
+  halt=true;
+}
+</script>
+<title>Coaxial cable</title>
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+</head>
+
+<body onload="haltScript()" >
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+	<tr>
+		<td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+		<!-- --></a>
+		<table border="0" cellpadding="0" cellspacing="3">
+			<tr align="center" valign="top">
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../overview-summary.html"><font class="NavBarFont1">
+				<b>Overview</b></font></a> </td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+				</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<font class="NavBarFont1">&nbsp;Class </font> &nbsp;</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+				</td>
+			</tr>
+		</table>
+		</td>
+		<td align="right" valign="top" rowspan="2"><em></em></td>
+	</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<form>
+  <h3>Coaxial Cable</h3>
+  <div align="center">
+    <center>
+    <p>
+    <applet codebase="../../classes/" archive="BField4_.jar,STools4.jar" code="bfield.BField.class" name="BField3" id="BField3" width="350" height="300" hspace="0" vspace="0" align="middle">
+      <param name="ShowControls" value="false" />
+      <param name="ShowFieldVectors" value="true" />
+      <param name="BxFunction" value="0" />
+      <param name="ByFunction" value="0" />
+      <param name="Range" value="-5,5,-5,5" />
+      <param name="GridSize" value="24" />
+    </applet> </p>
+    </center>
+  </div>
+  <p><input type="button" value="Make Cable" onclick="coax();" /><input type="button" value="Reset" name="resetBtn1" onclick="init()" /></p>
+  <p>A coaxial cable consists of an outer conductor and an inner conductor separated by an insulating plastic filler.&nbsp; 
+  These two conductors usually carry equal currents in opposite directions.&nbsp; You may have seen this type of configuration 
+  on&nbsp; cable TV hookups as well as certain types of computer networks.&nbsp; The above simulation shows the progression 
+  of the magnetic fields as many small wires are added to produce a coaxial configuration.</p>
+  <ol>
+    <li>Watch the magnetic fields change as the simulation first build the outer conductor followed by the inner conductor.</li>
+    <li>Click drag to measure the field at any point.&nbsp; Find the current passing through the inner conductor.</li>
+  </ol>
+</form>
+
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0" />
+<meta name="ProgId" content="FrontPage.Editor.Document" />
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+<title>AddObject Method</title>
+</head>
+
+<body>
+
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+	<tr>
+		<td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+		<!-- --></a>
+		<table border="0" cellpadding="0" cellspacing="3">
+			<tr align="center" valign="top">
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../overview-summary.html"><font class="NavBarFont1">
+				<b>Overview</b></font></a> </td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+				</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<font class="NavBarFont1">&nbsp;Class </font> &nbsp;</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+				</td>
+			</tr>
+		</table>
+		</td>
+		<td align="right" valign="top" rowspan="2"><em></em></td>
+	</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+<h3 align="center"><img border="0" src="poisson.jpg"></h3>
+<h3>Poisson <a name="_Toc485180349">Embedding</a></h3>
+<p>Poisson solves the boundary value problem for conductors and simple charge-density 
+          distributions using the relaxation method. Contour and field plot 
+visualizations are available.</p>
+<p>Poisson calculates electrostatic potentials by numerically solving Poisson's equation in the presence of spherical 
+and rectangular conductors, charge densities, and dielectrics. The gradient of this potential is then calculated in 
+order to display the electric field and the divergence is calculated to display the induced charge. Although Poisson may 
+be used in interactive mode using a click and drag metaphor, it is designed to be scripted. Many options, such as 
+dielectrics, are only available through script.</p>
+<p>Poisson is embedded using the following html tag:</p>
+<pre>&lt;applet
+  codebase=&quot;../classes&quot;
+  archive=&quot;Poisson4_.jar,STools4.jar&quot;
+  code=&quot;poisson.Poisson.class&quot;
+  name=&quot;Poisson&quot;
+  width=&quot;400&quot;
+  height=&quot;300&quot;&gt;
+
+&lt;param name=&quot;ShowControls&quot; value=&quot;true&quot; /&gt;
+&lt;param name=&quot;Range&quot; value=&quot;-5,5,-5,5&quot; /&gt;
+&lt;param name=&quot;ShowContours&quot; value=&quot;false&quot; /&gt;
+&lt;param name=&quot;ShowGrid&quot; value=&quot;true&quot; /&gt;
+&lt;param name=&quot;ShowFieldVectors&quot; value=&quot;true&quot; /&gt;
+&lt;param name=&quot;GridSize&quot; value=&quot;48&quot; /&gt;
+&lt;param name=&quot;Gutter&quot; value=&quot;0&quot; /&gt;
+&lt;/applet&gt;</pre>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%" id="table2">
+	<tr>
+		<td colspan="3">
+		<p align="center"><font color="#800000"><b>Poisson</b></font><b><font color="#800000"> 
+		Parameters</font></b></td>
+	</tr>
+	<tr>
+		<td width="15%" height="22"><b>Gutter</b></td>
+		<td width="15%" height="22">&nbsp;int</td>
+		<td height="22">&nbsp;<span style="font-size: 12.0pt; font-family: Times New Roman">The number of extra grid 
+        points outside the viewing area.</span></td>
+	</tr>
+	<tr>
+		<td width="15%"><b>GridSize</b></td>
+		<td width="15%">&nbsp;int</td>
+		<td>&nbsp;<span style="font-size: 12.0pt; font-family: Times New Roman">The number of grid points in the 
+        horizontal or vertical direction.&nbsp; The voltage is evaluated at these grid points.</span></td>
+	</tr>
+	<tr>
+		<td width="15%"><b>Range</b></td>
+		<td width="15%">&nbsp;string</td>
+		<td>&nbsp;<span style="font-size: 12.0pt; font-family: Times New Roman">The approximate range for the x and y 
+        dimensions.</span></td>
+	</tr>
+	<tr>
+		<td width="15%"><b>ShowFieldVectors</b></td>
+		<td width="15%">&nbsp;boolean</td>
+		<td>&nbsp;<span style="font-size: 12.0pt; font-family: Times New Roman">Show the electric field.</span></td>
+	</tr>
+	<tr>
+		<td width="15%" height="22"><b>ShowContours</b></td>
+		<td width="15%" height="22">&nbsp;boolean</td>
+		<td height="22">&nbsp;<span style="font-size: 12.0pt; font-family: Times New Roman">Show the equipotential 
+        contours.</span></td>
+	</tr>
+	<tr>
+		<td width="15%"><b>ShowControls</b></td>
+		<td width="15%">&nbsp;boolean</td>
+		<td>&nbsp;True to show simple user interface.</td>
+	</tr>
+	<tr>
+		<td colspan="3">
+		<p align="center"><b><font color="#800000">STools Parameters</font></b></td>
+	</tr>
+	<tr>
+		<td width="15%" height="22"><b>AppletNames</b></td>
+		<td width="15%" height="22">&nbsp;string</td>
+		<td height="22">&nbsp;A comma delimited list of applet names occurring within 
+		this html page. (See OnLoad.)</td>
+	</tr>
+	<tr>
+		<td width="15%"><b>Debug</b></td>
+		<td width="15%">&nbsp;int</td>
+		<td>&nbsp;Enables debugging messages in Java console; 0 = no 
+		messages, 255 = verbose messages.</td>
+	</tr>
+	<tr>
+		<td width="15%"><b>OnLoad</b></td>
+		<td width="15%">&nbsp;string</td>
+		<td>&nbsp;A JavaScript function that will be invoked using LiveConnect after all applets have been loaded.&nbsp; (See AppletNames.)</td>
+	</tr>
+	<tr>
+		<td width="15%"><b>Resources</b></td>
+		<td width="15%">&nbsp;string</td>
+		<td>&nbsp;A file containing translations of internal text such as 
+		buttons and labels.</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

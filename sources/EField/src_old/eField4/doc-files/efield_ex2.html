@@ -1,0 +1,78 @@
+<!doctype HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0" />
+<meta name="ProgId" content="FrontPage.Editor.Document" />
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+<title>EField Template</title>
+<script language="JavaScript"> 
+function demo(){
+     document.EField.setAutoRefresh(false); 
+     document.EField.setDefault();
+     document.EField.setShowTime(false);
+	  document.EField.setDrag(false);
+	  document.EField.setChargeRGB(0,0,0);
+	  document.EField.setChargeLabel("+");
+     document.EField.addCharge(-2,0,3);
+     document.EField.setChargeLabel("");
+	  document.EField.addCharge(2,0,2);
+	  document.EField.setDrag(true);
+     document.EField.setShowForce(true);
+	  document.EField.setChargeRGB(0,255,0);
+     document.EField.addTestCharge(0,0.5,0,0);
+     document.EField.setAutoRefresh(true); 
+}
+</script>
+</head>
+
+<body>
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+	<tr>
+		<td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+		<!-- --></a>
+		<table border="0" cellpadding="0" cellspacing="3">
+			<tr align="center" valign="top">
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../overview-summary.html"><font class="NavBarFont1">
+				<b>Overview</b></font></a> </td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+				</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<font class="NavBarFont1">&nbsp;Class </font>&nbsp;</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+				</td>
+			</tr>
+		</table>
+		</td>
+		<td align="right" valign="top" rowspan="2"></td>
+	</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<h2 align="left">EField Template 2</h2>
+<p align="center">
+<applet codebase="../../classes/" archive="EField4_.jar,STools4.jar" code="eField4.EField.class" name="EField"
+width="500" height="200" hspace="0" align="middle">
+  <param name="FPS" value="10" />
+  <param name="dt" value="0.02" />
+  <param name="ShowControls" value="false" />
+  <param name="ShowContours" value="false" />
+  <param name="ShowFieldLines" value="false" />
+  <param name="ShowFieldVectors" value="false" />
+  <param name="ShowLabels" value="false" />
+  <param name="ShowCharge" value="true" />
+  <param name="Potential" value="0" />
+  <param name="Range" value="-5,5,-1,1" />
+  <param name="GridSize" value="64" />
+</applet></p>
+<p align="left"><a href="JavaScript:demo()">Script</a></p>
+<p align="left">Add narrative here.</p>
+
+</body>
+
+</html>

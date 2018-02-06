@@ -1,0 +1,92 @@
+<html>
+
+<head>
+<script LANGUAGE="JavaScript">
+function stepUp(){ 
+   	document.reflection.setAutoRefresh(false);       
+	document.reflection.setDefault();
+	document.reflection.setMode("QM");
+	document.reflection.setQMEnergy(6);
+	id1=document.reflection.addObject("film","n=0,w=8");
+	id2=document.reflection.addObject("film","n=5,w=8");
+	id3=document.reflection.addObject("film","n=0,w=8");
+
+	document.reflection.setDragable(id1,true);
+	document.reflection.setDragable(id2,true);
+	document.reflection.setDragEnergy(0,true);
+	
+	document.reflection.setRGB(id1,255,255,255);
+	document.reflection.setRGB(id2,200,200,255);
+	document.reflection.setAutoRefresh(true);
+	document.reflection.forward();      
+}
+
+function reim(){ 
+   document.reflection.setShowPhaseColor(false);
+   document.reflection.setShowLWave(true,0);
+   document.reflection.setShowRWave(true,0);
+   document.reflection.setShowWave(false);
+}
+</script>
+
+<title>QM Barrier</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+</head>
+
+<body onload="stepUp()">
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+	<tr>
+		<td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+		<!-- --></a>
+		<table border="0" cellpadding="0" cellspacing="3">
+			<tr align="center" valign="top">
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../overview-summary.html"><font class="NavBarFont1">
+				<b>Overview</b></font></a> </td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+				</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<font class="NavBarFont1">&nbsp;Class </font>&nbsp;</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+				</td>
+			</tr>
+		</table>
+		</td>
+		<td align="right" valign="top" rowspan="2"><em></em></td>
+	</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<h2 align="left">&nbsp;</h2>
+<p align="center">
+<applet code="reflection.ReflectionApplet.class" codebase="../../classes"
+archive="Reflection4_.jar,STools4.jar" name="reflection" id="reflection" width="480" height="300"
+hspace="0" vspace="0" align="Middle">
+  <param name="ShowControls" value="false">
+  <param name="PPU" value="20">
+  <param name="MaxAmp" value="3">
+  <param name="Wavelength" value="10">
+  <param name="FPS" value="20">
+  <param name="WaveVelocity" value="2">
+</applet>
+</p>
+<form>
+  <p align="center"><input type="button" name="Run" value="Run"
+  onclick="document.reflection.forward()"> <input type="button" name="Pause" value="Pause"
+  onclick="document.reflection.pause()"></p>
+</form>
+<p align="center"><a href="JavaScript:document.reflection.setShowPhaseColor(true)">Show Color Phase</a></p>
+<p align="center"><a href="JavaScript:reim()">Show Re Im</a></p>
+<p align="left">A free particle wave function encounters a potential barrier. </p>
+
+<p align="left">You may also grab the edge of the the barrier and drag it.</p>
+<p align="left">Click-Drag the mouse inside the Physlet to change the energy of the incident wave.&nbsp;</p>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<html>
+
+<head>
+
+<title>Pre-class Exercise #9</title>
+</head>
+<body onload="mjb31_8()">
+
+<p align="center">
+  <applet CODEBASE="./" CODE="circuit.RCApplet.class" NAME="Circuit31_8"
+ID="Circuit31_8" WIDTH="500" ARCHIVE="Physlets.jar" HEIGHT="300" HSPACE="0" VSPACE="0"
+ALIGN="middle">
+  <param name="Resistor" value="50">
+  <param name="Capacitor" value="10">
+  <param name="Fmin" value="10">
+  <param name="FMax" value="1000">
+  <param name="ShowControls" value="true">
+  <param name="ShowCheckBox" value="false">
+  <param name="ImpedanceGraphType" value="true">
+  <param name="ShowGraph" value="false">
+  <param name="PixPerCell" value="80">
+  <param name="DefaultCircuit" value="true">
+</applet>
+</p>
+<p align="center">&nbsp;&nbsp; <a href="JavaScript:mjb31_8()">Start</a></p>
+<p align="center">&nbsp;&nbsp; <a href="JavaScript:help31_8()">Help</a></p>
+<script language="JavaScript"> 
+function mjb31_8(){
+ 	 //alert("hi, bye");
+     //document.Circuit31_8.setAutoRefresh(false);
+ 	 //alert("hi");
+     document.Circuit31_8.setDefault();
+ 	 //alert("hi mom");
+     document.Circuit31_8.setShowGraph(true);
+     document.Circuit31_8.setImpedanceGraphType(false);
+     document.Circuit31_8.setAutoRefresh(true);
+
+}
+function help31_8(){
+     document.Circuit31_8.setAutoRefresh(false);
+     document.Circuit31_8.setDefault();
+     document.Circuit31_8.setShowGraph(true);
+     document.Circuit31_8.setImpedanceGraphType(true);
+     document.Circuit31_8.setAutoRefresh(true);
+}
+</script>
+</body>
+</html>

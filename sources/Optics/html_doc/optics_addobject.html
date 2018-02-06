@@ -1,0 +1,436 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0" />
+<meta name="ProgId" content="FrontPage.Editor.Document" />
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+<title>AddObject Method</title>
+</head>
+
+<body>
+
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+	<tr>
+		<td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+		<!-- --></a>
+		<table border="0" cellpadding="0" cellspacing="3">
+			<tr align="center" valign="top">
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../overview-summary.html"><font class="NavBarFont1">
+				<b>Overview</b></font></a> </td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+				</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<font class="NavBarFont1">&nbsp;Class </font>&nbsp;</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+				</td>
+			</tr>
+		</table>
+		</td>
+		<td align="right" valign="top" rowspan="2"></td>
+	</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+<h3>OpticsApplet <a name="_Toc485180348">addObject Method</a></h3>
+<p class="paragraph">OpticsApplet supports the addObject method 
+with the following signature<o:p>
+</o:p>
+</p>
+<p class="CODE">addObject(<i>String name, String attributes</i>)</p>
+<p class="paragraph">The first argument is the name of the object to be added, and the second is a comma-delimited 
+list of parameters.&nbsp; A lens can be added using the following JavaScript statement:<o:p>
+</o:p>
+</p>
+<p class="CODE">id=document.physletname.addObject(&quot;lens&quot;, &quot;x=1,f=-2&quot;);.</p>
+<p class="paragraph" style="text-indent:0in;">The addObject method is very forgiving 
+since not all parameters need to be specified.&nbsp; Default values are overridden 
+only if the parameter appears in the list.&nbsp; Incorrect and unsupported parameters 
+do not affect the applet and are ignored.<o:p>
+</o:p>
+</p>
+<table border="1" cellspacing="0" cellpadding="0" width="93%" style="width:93.72%;
+ border-collapse:collapse;border:medium none;">
+	<thead>
+		<tr>
+			<td width="191" valign="top" style="width:143.6pt;border:solid windowtext .5pt;
+   padding:0in 5.75pt 0in 5.75pt">
+			<p class="MsoNormal" align="center" style="text-align:center"><b>Name<o:p>
+        </o:p>
+        	</b></p>
+			</td>
+			<td width="363" valign="top" style="border-right:.5pt solid windowtext; border-top:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:272.05pt;border-left:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+			<p class="MsoNormal" align="center" style="margin-left:.25in;text-align:center;
+   "><b>Attributes<o:p>
+        </o:p>
+        	</b></p>
+			</td>
+		</tr>
+	</thead>
+	<tr>
+		<td width="191" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:143.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>aperture<o:p>
+      <br>
+      </o:p>
+      	</b>restricts the propagation of light rays</p>
+		</td>
+		<td width="363" valign="top" style="width:272.05pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units<br>
+		<b>opening- double</b> the 
+		opening size as a fraction from 0 to 1.0.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="191" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:143.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>b<o:p>eamstop <br>
+      </o:p></b>restricts the propagation of light rays</p>
+		</td>
+		<td width="363" valign="top" style="width:272.05pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units<br>
+		<b>bottom- double</b> position of bottom as a fraction from 0 to 1.0.<br>
+        <b>top- double</b> position of top as a fraction from 0 to 1.0.</p>
+		</td>
+	</tr>
+	<tr>
+    <td width="191" valign="top" style="width:143.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt">
+      <p class="MsoNormal"><b>bench<br>
+      </b>a placeholder for the optic elements</p>
+    </td>
+    <td width="363" valign="top" style="width:272.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt">
+      <p class="MsoNormal" style="margin-left:.25in">No attributes.&nbsp; Use this parameter to determine the drawing 
+      order for the optic elements relative to the geometric objects.</p>
+    </td>
+    </tr>
+	<tr>
+		<td width="191" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:143.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>box<o:p>
+      </o:p>
+      	</b></p>
+		<p class="MsoNormal">A hollow rectangle.</p>
+		</td>
+		<td width="363" valign="top" style="width:272.05pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units<b><br>
+		y- double </b>y position 
+		of the center in world units<br>
+		<b>h- int </b>height in pixels<br>
+		<b>w- int </b>width in pixels<br>
+		<b>s-int </b>thickness of 
+		the box</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="191" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:143.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>circle<o:p>
+      </o:p>
+      	</b></p>
+		</td>
+		<td width="363" valign="top" style="width:272.05pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units<br>
+		<b>y- double </b>y position 
+		of the center in world units.<br>
+		<b>r- int </b>radius in pixels</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="191" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:143.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>constraint<o:p>
+      </o:p>
+      	</b></p>
+		</td>
+		<td width="363" valign="top" style="width:272.05pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>xmin- double</b> The minimum 
+		x value.<br>
+		<b>xmax- double</b> The maximum 
+		x value.<br>
+		<b>ymin- double</b> The minimum 
+		y value.<b><o:p>
+      <br>
+      </o:p>ymax- double</b> The maximum 
+		y value.<o:p>
+      </o:p>
+      	</p>
+		<p class="MsoNormal" style="margin-left:.25in">A constraint, by itself, 
+		will have no effect.&nbsp; It must be attached to a dragable object using 
+		the setConstriant method.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="191" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:143.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>dielectric<o:p>
+      </o:p>
+      	</b></p>
+		</td>
+		<td width="363" valign="top" style="width:272.05pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units.<br>
+		<b>dn- double</b> the change 
+		in index of refraction.<br>
+		<b>r- double </b>radius or 
+		curvature of the index change</p>
+		<p class="MsoNormal" style="margin-left:.25in">Models and change in index 
+		of refraction using Snell&#39;s law.&nbsp; Aberrations are observed. See also refraction.</p>
+		</td>
+	</tr>
+	<tr>
+    <td width="191" valign="top" style="width:143.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt">
+      <p class="MsoNormal"><b>image&nbsp;<br>
+      </b>a gif image<b></o:p>
+      </b></p>
+    </td>
+    <td width="363" valign="top" style="width:272.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt">
+      <p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position
+      of the center in world units<br>
+      <b>y- double </b>y position
+      of the center in world units.<br>
+      <b>gif- string </b>a gif image<br>
+      <b>file- string </b>same as gif</p>
+      <p class="MsoNormal" style="margin-left:.25in">OpticsApplet will search for
+      images in the code-base directory.&nbsp; This is the directory containing the jar files.<br>
+      You may use subdirectories relative to the code-base to organize images.<br>
+      Example:
+      addObject(&quot;image&quot;,&quot;file=optics/eye.gif&quot;);<br>
+      </p>
+    </td>
+    </tr>
+	<tr>
+		<td width="191" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:143.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>lens<o:p>
+      </o:p>
+      	</b></p>
+		</td>
+		<td width="363" valign="top" style="width:272.05pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units.<br>
+		<b>f- double</b> the focal 
+		length <o:p>
+      &nbsp;<br>
+		</o:p>Example:&nbsp; addObject(&quot;lens&quot;,&quot;x=1, f=-2&quot;);</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="191" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:143.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>m<o:p>atrix<br>
+        </b>transformation functions<b> </b>
+      </o:p>
+      	</p>
+		</td>
+		<td width="363" valign="top" style="width:272.05pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		in world units.<b><br>
+		height- double</b> the height transformation:&nbsp; H(h,a)<br>
+        <b>angle- double</b> the angle transformation: A(h,a)<br>
+        Transformation functions are analytic functions of height and angle, h and a, respectively.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="191" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:143.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>mirror<o:p>
+      </o:p>
+      	</b></p>
+		</td>
+		<td width="363" valign="top" style="width:272.05pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units.<b><br>
+		f- double</b> the focal 
+		length<br>
+		<b>spherical</b>&nbsp; include 
+		spherical aberrations<o:p>
+      <br>
+      </o:p>Example: addObject(&quot;mirror&quot;,&quot;x=1, 
+		f=-2, spherical&quot;);</p>
+		</td>
+	</tr>
+	<tr>
+    <td width="167" valign="top" 
+      style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:125.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+    <b>protractor<br>
+    </b>a protractor for measuring angles</td>
+    <td width="317" valign="top" style="width:237.9pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+    <p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position of the vertex in world units<b><br>
+    y- double </b>y position of the vertex in world units.<br>
+    <b>s- int </b>base size in pixel<br>
+    <b>theta- double </b>v<o:p>ertex interior angle<b> <br>
+    </b>
+      </o:p><b>theta0- double </b>vertex base angle<b><br>
+    fixedbase- </b>fixes the base angle<b><br>
+    fixedsize- </b>fixes the length of the arm</p>
+    </td>
+    </tr>
+	<tr>
+		<td width="191" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:143.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>rectangle<o:p>
+      </o:p>
+      	</b></p>
+		<p class="MsoNormal">&nbsp;<o:p>
+      </o:p>
+      	</p>
+		</td>
+		<td width="363" valign="top" style="width:272.05pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units<b><br>
+		y- double </b>y position 
+		of the center in world units<b><br>
+		h- int </b>height in pixels<b><br>
+		w- int </b>width in pixels</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="191" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:143.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>refraction<o:p>
+      </o:p>
+      	</b></p>
+		</td>
+		<td width="363" valign="top" style="width:272.05pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units.<br>
+		<b>dn- double</b> the change 
+		in index of refraction.<b><br>
+		r- double </b>radius or 
+		curvature of the index change<o:p>
+      </o:p>
+      	</p>
+		<p class="MsoNormal" style="margin-left:.25in">Models and change in index 
+		of refraction using the small angle approximation.<o:p>
+      </o:p>See also dielectric.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="191" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:143.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>screen<o:p>
+      </o:p>
+      	</b></p>
+		</td>
+		<td width="363" valign="top" style="width:272.05pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="191" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:143.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>shell<o:p>
+      </o:p>
+      	</b></p>
+		</td>
+		<td width="363" valign="top" style="width:272.05pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the center in world units<b><br>
+		y- double </b>y position 
+		of the center in world units<br>
+		<b>r- int </b>radius in pixels</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="191" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:143.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>source<o:p>
+      </o:p>
+      	</b></p>
+		</td>
+		<td width="363" valign="top" style="width:272.05pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x 
+		position of the center in world units.<o:p>
+      <br>
+      </o:p><b>y- double</b> y 
+		position of the center in world units.<o:p>
+      <br>
+        <br>
+      </o:p>Choose either infinite or point selectors.&nbsp; The three principle rays will be drawn if neither 
+		selector is specified. <br>
+        <br>
+		<o:p>
+      &nbsp;</o:p><b>infinite</b>&nbsp; a beam of parallel light rays<o:p><br>
+&nbsp;&nbsp;&nbsp;
+      </o:p>
+		<b>s- int</b> the size of the beam in pixels.<o:p><br>
+&nbsp;&nbsp;&nbsp;
+      </o:p>
+        <o:p>
+        <b>nrays</b></o:p><b>- int</b> the number of rays<o:p><br>
+        <br>
+      </o:p><b>point</b>&nbsp; a beam of parallel light rays<br>
+&nbsp;&nbsp;&nbsp; <b>slope- double</b> the slope of the rays.&nbsp; -1&lt;angle&lt;1<br>
+		<b>&nbsp;&nbsp;&nbsp; inc- double</b> the slope increment between rays.<br>
+        <br>
+        Examples:<br>
+		addObject(&quot;source&quot;,&quot;x=1, point, inc=0.1, slope=1.0&quot;:<br>
+		addObject(&quot;source&quot;,&quot;x=1, infinite, s=30, nrays=20&quot;);</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="191" valign="top" style="border-left:.5pt solid windowtext; border-right:.5pt solid windowtext; border-bottom:.5pt solid windowtext; width:143.6pt;border-top:medium none;padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal"><b>text<o:p>
+      </o:p>
+      	</b></p>
+		<p class="MsoNormal">A fixed text string followed by an optional calculation.</p>
+		</td>
+		<td width="363" valign="top" style="width:272.05pt;border-top:medium none;border-left:
+  medium none;border-bottom:.5pt solid windowtext;border-right:.5pt solid windowtext;
+  padding-left:5.75pt; padding-right:5.75pt; padding-top:0in; padding-bottom:0in">
+		<p class="MsoNormal" style="margin-left:.25in"><b>x- double</b> x position 
+		of the left side of the text in world units<br>
+		<b>y- double </b>y position 
+		of the top of the text in world units<b><br>
+		text- string</b> static 
+		text.<br>
+		<b>calc- string</b> An analytic 
+		function to be evaluated.&nbsp; The calculation is displayed to the right 
+		of the static text.<o:p>
+      </o:p>
+      	</p>
+		<p class="MsoNormal" style="margin-left:.25in">Text objects are often slaved 
+		to other objects.&nbsp; If a text object is slaved to a wire, it takes on 
+		the properties of that wire and can evaluate a function of t, x, y, flux, 
+		and v.<o:p>
+      </o:p>Note:&nbsp; Use the setFormat method described to change the decimal format used to output the calculation.</p>
+		</td>
+	</tr>
+</table>
+<p class="paragraph" style="text-indent:0in;">&nbsp;</p>
+
+</body>
+
+</html>

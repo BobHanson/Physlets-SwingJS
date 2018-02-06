@@ -1,0 +1,17 @@
+button.reset Clear
+button.start Run
+button.stop Stop
+button.forward >>
+label.udrag U Drag
+label.yaxis Voltage (mV)
+label.xaxis Time(s)
+label.bxt B(x,t)
+label.xt x(t)
+label.time Time:
+label.current Current
+
+
+
+
+
+

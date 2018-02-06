@@ -1,0 +1,25 @@
+button.lens Lens
+button.source Source
+button.clear Clear All
+button.object Object
+button.active Clear Active
+button.mirror Mirror
+button.aperture Aperture
+button.beam Beam
+label.angle Angle:
+label.spacing spacing =
+label.spread spread =
+label.anglevalue angle =
+label.rayinc rayIncrement =
+label.rayslope raySlope =
+label.opening opening =
+label.top top =
+label.bottom bottom =
+label.index_error ERROR: n2<1.0
+label.focal_length fl =
+
+
+
+
+
+

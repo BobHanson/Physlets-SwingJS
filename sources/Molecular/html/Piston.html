@@ -1,0 +1,120 @@
+<html>
+
+<head>
+<title>Piston</title>
+<script language="JavaScript">
+
+function piston(){
+         document.Molecular.setAutoRefresh(false);
+         document.Molecular.setDefault();
+         //document.Molecular.setInitialPistonPos(10.0);
+         document.Molecular.setPeriodicH(false);
+         document.Molecular.setBackgroundRGB(196,196,196);
+         document.Molecular.createParticles(20);
+         document.Molecular.setAutoRefresh(true);
+         document.Molecular.forward();
+}
+</script>
+</head>
+
+<body onload="piston()" bgcolor="#FFEFCE">
+
+<h1 align="center">Piston<br>
+TEST PAGE</h1>
+<div align="center"><center>
+
+<table border="1">
+  <tr>
+    <td>
+    <applet CODEBASE="../classes/" ARCHIVE="Molecular4_.jar,STools4.jar"
+    CODE="molecular.MolecularPiston.class" NAME="Molecular" ID="Molecular" WIDTH="250"
+    HEIGHT="500" HSPACE="0" VSPACE="0" ALIGN="middle">
+      <param name="ShowControls" value="true">
+      <param name="InitialP" value="25">
+      <param name="FPS" value="10">
+      <param name="dt" value="0.05">
+      <param name="PeriodicH" value="false">
+      <param name="PistonMass" value="300">
+      <param name="Gravity" value="-2.0">
+      <param name="InitialPistonPos" value="10.0">
+      <param name="ParseMode" value="false">
+      <param name="ParseString" value="10-(+20*t)">
+      <param name="Orientation" value="vertical">
+      <param name="InitialPistonPos" value="15">
+    </applet>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<form name="SpecForm">
+  <div align="center"><center><p><input type="button" value="play"
+  onclick="document.Molecular.forward()"><input type="button" value="pause"
+  onclick="document.Molecular.pause()"><input type="button" value="step&gt;&gt;"
+  onclick="document.Molecular.stepForward()"></p>
+  </center></div>
+</form>
+<a href="JavaScript:piston()">
+
+<p align="left">Init piston.</a> </p>
+
+<h3 align="left">Piston Test Page</h3>
+
+<p>The Piston Physlet is an extension of the MolecularPiston Physlet.&nbsp; It is part of
+the molecular dynamics package and is downloaded whenever the Molecular.jar file is
+specified in the archive tag.&nbsp; </p>
+
+<p>The movable piston in the above simulation acts upon an ensemble in one of two ways.
+&nbsp; In &quot;parse mode&quot; the piston is scripted to follow a fixed path, h(t).
+&nbsp; If &quot;parse mode&quot; is set to false, the piston is a freely falling object
+that is acted on by a constant downward force.&nbsp; Both the piston mass and the force
+can be set when the applet is embedded.</p>
+
+<p>The MolecularPiston Physlet is embedded using the following syntax. The [location]
+parameter should be the URL of the directory that contains the jar file and the [name]
+should be a unique variable name by which JavaScript can refer to this applet.</p>
+<code>
+
+<p>&lt;applet<br>
+&nbsp;&nbsp;&nbsp; CODEBASE=[location]<br>
+&nbsp;&nbsp;&nbsp; CODE=&quot;molecular.MolecularPiston.class&quot;<br>
+&nbsp;&nbsp;&nbsp; ARCHIVE=&quot;Molecular.jar&quot;<br>
+&nbsp;&nbsp;&nbsp; NAME=[script_name]<br>
+&nbsp;&nbsp;&nbsp; ID=[script_name]&gt;</code></p>
+
+<p><code>&lt;param name=[par_name] value=[par_Value]&gt;<br>
+.<br>
+.<br>
+&lt;/applet&gt;</code></p>
+
+<p>The applet that you see on this page was embedded as follows.</p>
+<code>
+
+<p>&lt;applet<br>
+&nbsp;&nbsp;&nbsp; CODEBASE=&quot;../classes/&quot; <br>
+&nbsp;&nbsp;&nbsp; ARCHIVE=&quot;Molecular.jar&quot;<br>
+&nbsp;&nbsp;&nbsp; CODE=&quot;molecular.MolecularPiston.class&quot;<br>
+&nbsp;&nbsp;&nbsp; NAME=&quot;Molecular&quot; ID=&quot;Molecular&quot;<br>
+&nbsp;&nbsp;&nbsp; WIDTH=&quot;300&quot;<br>
+&nbsp;&nbsp;&nbsp; HEIGHT=&quot;300&quot;<br>
+&nbsp;&nbsp;&nbsp; HSPACE=&quot;0&quot;<br>
+&nbsp;&nbsp;&nbsp; VSPACE=&quot;0&quot;<br>
+&nbsp;&nbsp;&nbsp; ALIGN=&quot;middle&quot;&gt;</p>
+
+<pre>&lt;param name=&quot;ShowControls&quot; value=&quot;false&quot;&gt;
+&lt;param name=&quot;InitialP&quot; value=&quot;25&quot;&gt;
+&lt;param name=&quot;FPS&quot; value=&quot;10&quot;&gt;
+&lt;param name=&quot;dt&quot; value=&quot;0.05&quot;&gt;
+&lt;param name=&quot;PeriodicH&quot; value=&quot;false&quot;&gt;
+&lt;param name=&quot;PistonMass&quot; value=&quot;300&quot;&gt;
+&lt;param name=&quot;Gravity&quot; value=&quot;-2.0&quot;&gt;
+&lt;param name=&quot;InitialPistonPos&quot; value=&quot;10.0&quot;&gt;
+&lt;param name=&quot;ParseMode&quot; value=&quot;false&quot;&gt;
+&lt;param name=&quot;ParseString&quot; value=&quot;10-(+20*t)&quot;&gt;
+&lt;param name=&quot;Orientation&quot; value=&quot;vertical&quot;&gt;
+&lt;param name=&quot;InitialPistonPos&quot; value=&quot;15&quot;&gt;
+&lt;/applet&gt;</pre>
+<\code>
+</code>
+</body>
+</html>

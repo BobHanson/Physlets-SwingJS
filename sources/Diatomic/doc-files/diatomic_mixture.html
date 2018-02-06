@@ -1,0 +1,194 @@
+<html>
+
+<head>
+<title>Energy Transport</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css" />
+<script LANGUAGE="JavaScript">
+
+timerID=0;
+
+function initApplet(){
+	clearTimeout(timerID);
+	timerID=setTimeout("initApplet2()",500);
+}
+
+function initApplet2(){
+	n=eval(document.diatomic.getAppletCount());
+	if(n==-1){
+	alert("Internal Java error. Quit the browser and restart.");
+	return;
+	}
+
+	if(document.applets.length!=n){
+	timerID=setTimeout("initApplet()",500);
+	return;
+	}
+	timerID=setTimeout("start()",250);
+}
+
+
+function start(){  
+
+    document.diatomic.setAutoRefresh(false); 
+    document.diatomic.setDefault();
+
+    document.diatomic.addObject("atom","n=25");
+    document.diatomic.addObject("molecule","n=25");
+    for(i=0; i<25; i++){
+        x=(2+Math.floor(i*0.2) )*2.0;
+        y=10+2*(i%5);
+        index=i+1;
+        parStr="i="+index;
+        parStr += ",x="+x;
+        parStr += ",y="+y;     
+        document.diatomic.set(0,"atom",parStr);
+    }
+    for(i=0; i<25; i++){
+        x=(10+Math.floor(i*0.2) )*2.0;
+        y=6+4*(i%5);
+        index=i+1;
+        parStr="i="+index;
+        parStr += ",x="+x;
+        parStr += ",y="+y;
+        parStr += ",theta="+Math.PI/2.0; 
+        parStr += ",vx="+0;     
+        parStr += ",vy="+0;  
+        parStr += ",w="+0;       
+        document.diatomic.set(0,"diatomic",parStr);
+    }
+    document.diatomic.setRGB(0,224,224,255);  
+    document.diatomic.setAutoRefresh(true); 
+    
+    
+
+   document.datagraph.setAutoscaleX(true);
+   document.datagraph.setAutoscaleY(true);
+   document.datagraph.setMinMaxX(0,1);
+   document.datagraph.setMinMaxY(0,100);
+   document.datagraph.clearSeries(1);
+   document.datagraph.setSeriesStyle(1,true,0);
+   document.datagraph.setSeriesRGB(1,255,0,0);
+   document.datagraph.setStripChart(1,100, true);
+   document.datagraph.setSeriesLegend(1, 300, 50, "Atoms");
+   document.datagraph.clearSeries(2);
+   document.datagraph.setSeriesStyle(2,true,0);
+   document.datagraph.setStripChart(2,100, true);
+   document.datagraph.setSeriesRGB(2,0,128,0);
+   document.datagraph.setSeriesLegend(2, 300, 65, "Molecules");
+   document.datagraph.setLabelY("Energy"); 
+   document.datagraph.setLabelX("Time"); 
+   document.datagraph.setTitle("Kinetic Energy"); 
+   gid=document.datagraph.getGraphID();
+   
+   document.datatable.setDefault();
+   document.datatable.setSeriesLabel(1,"Total E");
+   document.datatable.setSeriesLabel(2,"Atoms");
+   document.datatable.setSeriesLabel(3,"Molecules");
+   document.datatable.sizeToFit(true);
+   tid=document.datatable.getTableID();
+   
+   eid=document.diatomic.getEnsembleID();
+   document.diatomic.makeDataConnection(eid,tid,1,"ke","0"); 
+   document.diatomic.makeDataConnection(eid,tid,2,"ke_atom","0"); 
+   document.diatomic.makeDataConnection(eid,tid,3,"ke_mol","0"); 
+   document.diatomic.makeDataConnection(eid,gid,1,"t","ke_atom"); 
+   document.diatomic.makeDataConnection(eid,gid,2,"t","ke_mol");   
+   document.diatomic.updateDataConnections();  
+   
+
+}
+</script>
+</head>
+
+<body onload="initApplet()">
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+  <tr>
+    <td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+    <!-- --></a>
+    <table border="0" cellpadding="0" cellspacing="3">
+      <tr align="center" valign="top">
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><a href="../../overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>
+        </td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1">&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+        </td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><font class="NavBarFont1">&nbsp;Class </font>&nbsp;</td>
+        <td bgcolor="#EEEEFF" class="NavBarCell1"><a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+        </td>
+      </tr>
+    </table>
+    </td>
+    <td align="right" valign="top" rowspan="2"><em></em></td>
+  </tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<h3 align="left">Equipartition of Energy</h3>
+<div align="center">
+  <center>
+  <table border="2" bgcolor="#C0C0C0">
+    <tr>
+      <td>
+      <applet code="diatomic.Diatomic.class" codebase="../../classes" 
+      archive="Diatomic4_.jar,DataGraph4_.jar,DataTable4_.jar,STools4.jar" 
+      name="diatomic" width="300" height="300" hspace="0" vspace="0" 
+      align="Middle">
+        <param name="FPS" value="10">
+        <param name="ShowControls" value="false">
+        <param name="Dt" value="0.1">
+        <param name="NumAtom" value="0">
+        <param name="NumMol" value="0">
+      </applet> </td>
+      <td>
+      <applet codebase="../../classes" 
+      archive="Diatomic4_.jar,DataGraph4_.jar,DataTable4_.jar,STools4.jar" 
+      code="dataGraph.DataGraph.class" name="datagraph" width="400" 
+      height="300" hspace="0" vspace="0" align="middle">
+        <param name="Function">
+        <param name="XMin" value="-1">
+        <param name="XMax" value="1">
+        <param name="YMin" value="-1">
+        <param name="YMax" value="1">
+        <param name="DataFile">
+        <param name="AutoScaleX" value="false">
+        <param name="AutoScaleY" value="true">
+        <param name="ShowControls" value="false">
+      </applet> </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<form name="controlForm">
+  <p align="center"><input type="button" value="run" name="runBtn" 
+  onclick="document.diatomic.forward()" tabindex="2"><input type="button" 
+  value="pause" name="pauseBtn" onclick="document.diatomic.pause()" 
+  tabindex="2"><input type="button" value="step" name="stepBtn" 
+  onclick="document.diatomic.stepTimeForward()" tabindex="2"><input 
+  type="button" value="reset" name="resetBtn" onclick="initApplet()" 
+  tabindex="2"></p>
+  <p align="center">
+  <applet codebase="../../classes" 
+  archive="Diatomic4_.jar,DataGraph4_.jar,DataTable4_.jar,STools4.jar" 
+  code="dataTable.DataTable.class" name="datatable" width="330" height="45" 
+  hspace="0" vspace="0" align="middle">
+    <param name="ShowScrollBars" value="false">
+    <param name="LastOnTop" value="true">
+    <param name="CellWidth" value="40">
+    <param name="NumRows" value="1">
+    <param name="NumCols" value="3">
+    <param name="ShowControls" value="false">
+    <param name="ShowRowHeader" value="false">
+    <param name="ShowColHeader" value="true">
+    <param name="SizeToFit" value="true">
+  </applet> </p>
+</form>
+<p>This script demonstrates how to track the total kinetic energy of the atoms 
+and molecules.</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

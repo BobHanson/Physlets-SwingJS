@@ -1,0 +1,185 @@
+<html>
+
+<head>
+<script language="Javascript" src="../../javascript/tools.js">
+</script> 
+<SCRIPT language="JavaScript">
+var timerID=0;
+var loaded=false;
+
+function initApplets(){
+	clearTimeout(timerID);
+        loaded=true;
+	timerID=setTimeout("otto()",100);
+}
+  	
+function otto(){ 
+      if(!loaded) return;
+       timerID=0;
+
+   	document.Engine.reset();       
+   	id=document.Engine.getGasID(); 
+	document.Engine.setTimeOneShot(36,"End of Animation");     
+	
+    document.DataTable1.setDefault();
+    document.DataTable2.setDefault();
+	document.DataTable1.setSeriesLabel(1,"P");
+    document.DataTable1.setSeriesLabel(2,"V");  
+    document.DataTable1.setSeriesLabel(3,"Work Expansion");
+    document.DataTable2.setSeriesLabel(1,"N");
+    document.DataTable2.setSeriesLabel(2,"T");
+    document.DataTable2.setSeriesLabel(3,"Work Compression");
+	document.DataTable2.setNumericFormat(3,"%+i");
+	document.DataTable1.setNumericFormat(3,"%+i");
+    document.DataTable1.sizeToFit(true);
+    tid1=document.DataTable1.getTableID();
+    document.DataTable2.sizeToFit(true);
+    tid2=document.DataTable2.getTableID();
+
+    document.DataGraph.setAutoscaleX(false);
+    document.DataGraph.setAutoscaleY(false);
+    document.DataGraph.setMinMaxX(0,120);
+    document.DataGraph.setMinMaxY(0,25);
+    document.DataGraph.setDrawGrid(false);
+    document.DataGraph.clearSeries(1);
+    document.DataGraph.setSeriesRGB(1,255,0,0);
+
+	document.DataGraph.setSeriesStyle(1,true,3);  
+    document.DataGraph.setMarkerSize(1,0.6);     
+    document.DataGraph.setLabelY("Pressure"); 
+    document.DataGraph.setLabelX("Volume"); 
+    document.DataGraph.setTitle("PV Diagram"); 
+    document.DataGraph.setLastPointMarker(1, true);
+    document.DataGraph.setAddRepeatedDatum(1,false);
+    gid=document.DataGraph.getGraphID();
+    
+     
+    document.Engine.deleteDataConnections(); 
+   	document.Engine.makeDataConnection(id,gid,1,"v*100","p");
+   	document.Engine.makeDataConnection(id,tid1,1,"p","0"); 
+   	document.Engine.makeDataConnection(id,tid1,2,"v*100","0"); 
+	document.Engine.makeDataConnection(id,tid2,2,"t*100","0");
+	document.Engine.makeDataConnection(id,tid2,1,"p*v/t","0");
+	document.Engine.makeDataConnection(id,tid2,3,"((p*v-1)*100/(-.4))*step(time-27)*step(35.9-time)+((1.813-1)*100/(-.4))*step(time-35.9)","0");
+	document.Engine.makeDataConnection(id,tid1,3,"((p*v-5.44)*100/(-.4))*step(8.9-time)+((3-5.44)*100/(-.4))*step(time-8.9)","0");   
+      document.Engine.updateDataConnections();
+}
+
+function killmenow(){
+	window.onerror= function() { return true;}
+	clearTimeout(timerID);
+	loaded=false;
+	timerID=-1;
+}
+</SCRIPT>
+<title>Physlet Physics by Christian and Belloni: Exploration 21.2</title>
+<link rel="STYLESHEET" type="text/css" href="../../workbook.css">
+</head>
+<BODY onunload="killmenow()">
+<h2 align="left">Exploration 21.2: Internal Combustion Engine</h2>
+<div align="center"><center>
+<table bgcolor="#C0C0C0" border="1">
+  <TBODY>
+  <TR>
+    <TD rowspan="3">
+    <applet  codeBase="./" 
+     ARCHIVE="Physlets.jar"
+      code="engine.Engine.class" name="Engine"  width="320" height="403" align="Middle" mayscript>
+      <param name="Resources" value="engine_en.rc">
+      </applet> 
+    </TD>
+    <TD >
+    <APPLET name="DataGraph" codeBase="./" 
+      code="dataGraph.DataGraph.class" align="middle" width="308" height="291" 
+      ARCHIVE="Physlets.jar" mayscript>
+      <PARAM NAME="Function" VALUE="">
+      <PARAM NAME="XMin" VALUE="-1">
+      <PARAM NAME="XMax" VALUE="1">
+      <PARAM NAME="YMin" VALUE="-1">
+      <PARAM NAME="YMax" VALUE="1">
+      <PARAM NAME="DataFile" VALUE="">
+      <PARAM NAME="AutoScaleX" VALUE="false">
+      <PARAM NAME="AutoScaleY" VALUE="false">
+      <PARAM NAME="ShowControls" VALUE="false">
+      <param name="OnLoad" value="initApplets()">
+      <param name="AppletNames" value="Engine,DataGraph,DataTable1,DataTable2">
+      </APPLET> 
+      </TD>
+    </TR>
+  <TR>
+    <TD > 
+    <APPLET name="DataTable1" codeBase="./" 
+	code="dataTable.DataTable.class" align="middle" width="308" height="50" 
+	ARCHIVE="Physlets.jar" mayscript>
+	<PARAM NAME="ShowScrollBars" VALUE="false">
+	<PARAM NAME="LastOnTop" VALUE="true">
+	<PARAM NAME="NumRows" VALUE="1">
+	<PARAM NAME="NumCols" VALUE="3">
+	<PARAM NAME="ShowControls" VALUE="false">
+	<PARAM NAME="ShowRowHeader" VALUE="false">
+	<PARAM NAME="ShowColHeader" VALUE="true">
+	</APPLET></TD>
+    </TR>
+  <TR>
+    <TD > 
+	<APPLET name="DataTable2" codeBase="./" 
+	code="dataTable.DataTable.class" align="middle" width="307" height="50" 
+	ARCHIVE="Physlets.jar" mayscript>
+	<PARAM NAME="ShowScrollBars" VALUE="false">
+	<PARAM NAME="LastOnTop" VALUE="true">
+	<PARAM NAME="NumRows" VALUE="1">
+	<PARAM NAME="NumCols" VALUE="3">
+	<PARAM NAME="ShowControls" VALUE="false">
+	<PARAM NAME="ShowRowHeader" VALUE="false">
+	<PARAM NAME="ShowColHeader" VALUE="true">
+</APPLET></TD>
+    </TR></TBODY>  </table>
+  </center>
+  
+</div>
+<form>
+      <p align="center">&nbsp;<input type="BUTTON" value="play" onclick="document.Engine.forward()"><input type="BUTTON" value="pause" onclick="document.Engine.pause()"><input type="BUTTON" value="step&gt;&gt;" onclick="document.Engine.stepTimeForward()"><input type="BUTTON" value="reset" onclick="document.Engine.reset();document.DataGraph.clearSeries(1);"></p>
+       </form>
+   <p align="center">
+   <b><font color="#FF0000"><i>Please wait for the animation to 
+completely load.</i></font></b></p>
+<p><b>In this animation N = nR</b> (i.e., k<sub>B</sub> = 1). This, then, gives 
+the ideal gas law as PV = NT.&nbsp; We will assume an ideal gas in the engine.&nbsp; <a href="Javascript:otto()">
+Restart</a>.&nbsp; </p>
+<p>The Otto engine cycle is close to the cycle of an internal combustion engine 
+(and closer to a real engine than the Carnot engine).&nbsp; This cycle 
+consists of adiabatic and isochoric processes plus a cycle of exhausting smoke 
+and taking in new gas. Identify which parts of the 
+engine cycle correspond to which process.&nbsp; No net work is done in the 
+complete process of exhausting smoke and taking in gas.&nbsp; Explain why.&nbsp; 
+Notice that during this part of the cycle, the number of particles changes 
+because the red valves at the top open and close to let gas in and out.&nbsp; 
+Thus, in the 
+release of high temperature particles and intake of low temperature particles, 
+heat is exchanged (released to the environment).</p>
+<ol type="a">
+  <li>For the adiabatic expansion, what are the initial pressure and volume? 
+  What are the final pressure and volume? (Remember you can click on the graph to read 
+  points from it.)&nbsp; From these values, find the adiabatic constant, &gamma; (since PV<sup>&gamma; </sup>= constant for an adiabatic expansion).&nbsp; </li>
+  <li>Is the gas monatomic (&#947; = 1.67), diatomic (&#947; = 1.4), or polyatomic (&#947; = 1.33)?</li>
+  <li>What is the net work done during the cycle (the work out)?</li>
+  <li>Neglecting the gas exhaust and intake parts of the cycle, in which part of the cycle is heat absorbed?&nbsp; 
+  In which part of the cycle is heat released?&nbsp; 
+   
+  </li>
+  <li>Calculate the heat absorbed.&nbsp; Remember that Q = &Delta;U + W and 
+  that &Delta;U = f/2N&Delta;T, where f = 3 for monatomic gases, 5 for diatomic gases, 
+  and 6 for polyatomic gases.</li>
+  <li>What is the efficiency of this engine?&nbsp; The efficiency of an engine 
+  is &epsilon; = (work out)/(heat in) = |W|/|Q<sub>H</sub>|.</li>
+  <li>Check that your answer is equal to 1 - (V<sub>min</sub>/V<sub>max</sub>)<sup>1-&gamma;</sup> and is 
+  therefore dependent on the ratio of the maximum and minimum volume (called the 
+  compression ratio).</li>
+</ol>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">Exploration authored by Anne J. Cox.<br>
+Script authored by Anne J. Cox and Wolfgang Christian.<br>
+Applet authored by CoLoS and modified by Wolfgang Christian.<br>
+<a href="../../conditions_of_use.html">© 2004 by Prentice-Hall, Inc. A Pearson Company</a></p>
+</BODY></HTML>

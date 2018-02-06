@@ -1,0 +1,80 @@
+<html>
+
+<head>
+<script LANGUAGE="JavaScript">
+function demo(){
+   document.Animator.setAutoRefresh(false);          
+   document.Animator.setDefault();
+   document.Animator.setTimeInterval(0,1.74);  
+   document.Animator.setPixPerUnit(75);
+   document.Animator.setGridUnit(0.1);
+   document.Animator.shiftPixOrigin(-75,-75);
+   id=document.Animator.addObject("circle","r=10");
+   document.Animator.setTrajectory(id,"1.5*t","2-2*t*t");
+   document.Animator.setTrail(id,300);
+   document.Animator.setCaption("Trajectory");
+   document.Animator.setAutoRefresh(true);   
+   document.Animator.forward();
+}
+
+</script>
+<title>Set Trajectory</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" type="text/css" href="../../stylesheet.css">
+</head>
+
+<body onload="demo()">
+<!-- ========== START OF NAVBAR ========== --><a name="navbar_top">
+<!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+	<tr>
+		<td bgcolor="#EEEEFF" class="NavBarCell1"><a name="navbar_top_firstrow">
+		<!-- --></a>
+		<table border="0" cellpadding="0" cellspacing="3">
+			<tr align="center" valign="top">
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../overview-summary.html"><font class="NavBarFont1">
+				<b>Overview</b></font></a> </td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				&nbsp;<a href="../package-summary.html"><font class="NavBarFont1"><b>Package</b></font></a>
+				</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<font class="NavBarFont1">&nbsp;Class </font> &nbsp;</td>
+				<td bgcolor="#EEEEFF" class="NavBarCell1">
+				<a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>
+				</td>
+			</tr>
+		</table>
+		</td>
+		<td align="right" valign="top" rowspan="2"><em></em></td>
+	</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<h2 align="left">Animator: Script&nbsp; Example 1</h2>
+<h3 align="left">Trajectory</h3>
+<p align="center">
+<applet code="animator4.Animator.class" codebase="./" 
+archive="Physlets.jar" name="Animator" width="250" height="250" 
+hspace="0" vspace="0" align="Middle">
+  <param name="FPS" value="10">
+  <param name="ShowControls" value="false">
+  <param name="dt" value="0.01">
+  <param name="PixPerUnit" value="10">
+  <param name="GridUnit" value="1.0">
+</applet> </p>
+<form>
+  <p align="center">&nbsp;<input type="BUTTON" value="play" 
+  onclick="document.Animator.forward()"><input type="BUTTON" value="pause" 
+  onclick="document.Animator.pause()"><input type="BUTTON" value="step&gt;&gt;" 
+  onclick="document.Animator.stepForward()"><input type="BUTTON" value="reset" 
+  onclick="document.Animator.reset()"></p>
+</form>
+<p align="left"><a href="JavaScript:demo()">Init</a></p>
+<p align="left">This example shows how Animator can be used to script a 
+trajectory.</p>
+
+</body>
+
+</html>

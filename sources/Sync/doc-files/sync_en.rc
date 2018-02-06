@@ -1,0 +1,12 @@
+button.stop Stop
+button.start Run
+label.speed v=
+label.running Running
+label.wiggler Wiggler
+label.sho SHO
+label.sync Sync
+label.inertial Inertial
+label.caption Electric Fields
+
+
+

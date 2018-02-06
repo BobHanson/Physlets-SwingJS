@@ -1,0 +1,210 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="STYLESHEET" type="text/css" href="../../workbook.css">
+<script language="JavaScript">
+var id=new Array();
+var timerID=0;
+var loaded=false;
+var hasMoved=false;
+
+function initApplets(){
+	clearTimeout(timerID);
+	loaded=true;
+	timerID=setTimeout("build1()",100);
+}
+
+
+function build1(){
+    if(!loaded) return;
+    timerID=0;
+    id[1]=0;
+    id[2]=0;
+    id[3]=0;
+    id[4]=0;
+	document.slider.setDefault();
+	document.slider.setValue(80);
+	document.circuit.setDefault();
+	document.circuit.reset(); 
+	document.circuit.setGrid("rows=3,cols=3");
+	id[1]=document.circuit.addObject("battery","row=0,col=0,to=v,label=,d=-1,v=12.0,r=1.0E-9");
+	id[3]=document.circuit.addObject("resistor","row=0,col=1,to=v,label=,r=100.0");
+	id[4]=document.circuit.addObject("resistor","row=1,col=1,to=v,label=RA,r=80");
+	id[2]=document.circuit.addObject("vmeter","row=1,col=2,to=v,label=,d=-1,r=1.0E8");
+	document.circuit.addObject("wire","row=1,col=1,to=h,label=");
+	document.circuit.addObject("wire","row=2,col=1,to=h,label=");
+	document.circuit.addObject("wire","row=0,col=0,to=h,label=");
+	document.circuit.addObject("wire","row=1,col=0,to=v,label=");
+	document.circuit.addObject("wire","row=2,col=0,to=h,label=");
+    document.circuit.parse();
+    document.circuit.reset();
+    document.circuit.forward();
+    
+    document.datatable.setDefault();
+    document.datatable.setSeriesLabel(1,"Battery (Amps)");
+    document.datatable.setSeriesLabel(2,"Voltmeter (V)");
+    document.datatable.sizeToFit(true);
+    tid=document.datatable.getTableID();
+   
+    document.circuit.deleteDataConnections();
+    document.circuit.makeDataConnection(id[1],tid,1,"i","0"); 
+    document.circuit.makeDataConnection(id[2],tid,2,"-v","0");
+    document.circuit.updateDataConnections();
+	document.slider.setJSFunction("sliderMoved()");
+}
+
+function build2(){
+    if(!loaded) return;
+    timerID=0;
+    id[1]=0;
+    id[2]=0;
+    id[3]=0;
+    id[4]=0;
+	document.slider.setDefault();
+	document.slider.setValue(80);
+		document.circuit.setDefault();
+	document.circuit.reset(); 
+	document.circuit.setGrid("rows=3,cols=3");
+	id[1]=document.circuit.addObject("battery","row=0,col=0,to=v,label=,d=-1,v=12.0,r=1.0E-9");
+	document.circuit.addObject("resistor","row=0,col=1,to=v,label=,r=100.0");
+	id[4]=document.circuit.addObject("resistor","row=0,col=2,to=v,label=RA,r=80");
+	document.circuit.addObject("wire","row=1,col=1,to=v,label=");
+	id[2]=document.circuit.addObject("ameter","row=1,col=2,to=v,label=,d=-1,r=1.0E-9");
+	document.circuit.addObject("wire","row=0,col=0,to=h,label=");
+	document.circuit.addObject("wire","row=0,col=1,to=h,label=");
+	document.circuit.addObject("wire","row=1,col=0,to=v,label=");
+	document.circuit.addObject("wire","row=2,col=0,to=h,label=");
+	document.circuit.addObject("wire","row=2,col=1,to=h,label=");	
+    document.circuit.parse();
+    document.circuit.reset();
+    document.circuit.forward();
+
+    document.datatable.setDefault();
+    document.datatable.setSeriesLabel(1,"Battery (Amps)");
+    document.datatable.setSeriesLabel(2,"Ammeter (Amps)");
+    document.datatable.sizeToFit(true);
+    tid=document.datatable.getTableID();
+   
+    document.circuit.deleteDataConnections();
+    document.circuit.makeDataConnection(id[1],tid,1,"i","0"); 
+    document.circuit.makeDataConnection(id[2],tid,2,"i","0");
+    document.circuit.updateDataConnections();
+	document.slider.setJSFunction("sliderMoved()");
+}
+
+function sliderMoved(){
+     if(!loaded) return;
+	 if(timerID==0){
+	   hasMoved=false;
+	   timerID=setTimeout("sliderMoved2()",10);
+	  } else{
+	    hasMoved=true;
+	  }
+}
+
+function sliderMoved2(){
+    if(!loaded) return;
+	raVal=eval(document.slider.getValue());
+	document.circuit.setValue(id[4],raVal); 
+	document.circuit.updateDataConnections();
+	timerID=0;
+}
+
+function killmenow(){
+	window.onerror= function() { return true;}
+	loaded=false;
+	clearTimeout(timerID);
+	timerID=-1;
+}
+</script>
+<title>Physlet Physics by Christian and Belloni: Illustration 30.3</title>
+</head>
+
+<body onunload="killmenow()">
+
+<h2>Illustration 30.3: Current and Voltage Dividers</h2>
+<div align="center">
+  <center>
+  <table border="1" bgcolor="#C0C0C0">
+    <tr>
+      <td>&nbsp;<font size="2"><applet codebase="./" 
+      archive="Physlets.jar"  code="circuitsimulator.Circuit.class" width="250" height="200" name="circuit" 
+      mayscript>
+        <param name="numberofdt" value="10">
+        <param name="dt" value="0.05">
+        <param name="fps" value="10">
+        <param name="noc" value="10">
+        <param name="imagedir" value="circuitimages">
+        <param name="OnLoad" value="initApplets()">
+        <param name="AppletNames" value="datatable,circuit,slider">
+      </applet></font></td>
+    </tr>
+    <tr>
+      <td>
+      <applet codebase="./" code="slider.SliderApplet.class" 
+      archive="Physlets.jar" name="slider" 
+      width="250" height="25" hspace="0" vspace="0" align="middle" mayscript>
+        <param name="min" value="40">
+        <param name="max" value="240">
+        <param name="value" value="80">
+        <param name="label" value="R (Ohms)">
+      </applet></td>
+    </tr>
+    <tr>
+      <td>
+      <p align="center">
+      <applet codebase="./" 
+      archive="Physlets.jar" 
+      code="dataTable.DataTable.class" name="datatable" width="253" height="45" hspace="0" 
+      vspace="0" align="middle" mayscript>
+        <param name="ShowScrollBars" value="false">
+        <param name="LastOnTop" value="true">
+        <param name="NumRows" value="1">
+        <param name="NumCols" value="2">
+        <param name="ShowControls" value="false">
+        <param name="ShowRowHeader" value="false">
+        <param name="ShowColHeader" value="true">
+        <param name="SizeToFit" value="true">
+      </applet> </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p align="center"><b><font color="#FF0000"><i>Please wait for the animation to completely load.</i></font></b></p>
+<p>This Illustration shows two different configurations of resistors connected to a battery<b> 
+(voltage is given in volts,&nbsp;current is given in amperes, and resistance is 
+given&nbsp;in ohms)</b>.<b>&nbsp;</b> <a href="JavaScript:build1()">Restart</a>.</p>
+<p>Start with the <a href="JavaScript:build1()">voltage divider animation.</a>&nbsp; The circuit 
+shows an ideal battery&nbsp;supplying current to a 100-&#937; resistor in series with a variable 
+resistor, R<sub>A</sub>.&nbsp;&nbsp; When the resistance of&nbsp;R<sub>A</sub> is equal to 100 &#937; 
+(the value of the top resistor), the voltage is equally divided across the two resistors.&nbsp; As 
+you increase R<sub>A</sub>, what happens?&nbsp; What happens as you decrease&nbsp;R<sub>A</sub>?&nbsp; The current from the 
+battery also changes in this process; however, notice that the current through the top resistor and R<sub>A</sub> 
+are always equal.&nbsp; This is because&nbsp; the current through 
+the top resistor must also go through&nbsp;R<sub>A</sub>.</p>
+<p>Now try the <a href="JavaScript:build2()">current divider animation.</a>&nbsp; The 100-&#937; resistor 
+is now in parallel with R<sub>A</sub>.&nbsp; When the resistance of R<sub>A</sub> is equal to 100 &#937; 
+(the value of the fixed resistor), the current is equally divided between the two branches of the 
+circuit.&nbsp; As you increase&nbsp;R<sub>A</sub>, what happens? What happens as 
+you decrease&nbsp;R<sub>A</sub>?&nbsp; 
+The current from the battery also changes in this process, but the voltage across&nbsp;the two resistors 
+is the same because we have assumed that the battery is capable of supplying a large amount of 
+current and because the wires are assumed to have negligible resistance.&nbsp; If you added a third 
+resistor in parallel with the other two, the current from the battery would increase since the 
+battery needs to supply current to that resistor (with the same voltage drop) as well.</p>
+<p>Many students think that if you add additional resistors to circuits such as 
+the ones just seen, the current from the battery must decrease (for the voltage 
+to stay the same). Notice, however, that resistors added in parallel increase 
+the total current from the battery, while resistors added in series reduce the 
+total current from the battery.&nbsp;&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="left">Illustration authored by Anne J. Cox.<br>
+<a href="../../conditions_of_use.html">© 2004 by Prentice-Hall, Inc. A Pearson Company</a></p>
+
+</body>
+
+</html>

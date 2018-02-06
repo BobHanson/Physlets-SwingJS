@@ -1,0 +1,26 @@
+button.start Play
+button.stop Pause
+button.reset Reset
+button.forward Step>>
+button.back <<Step
+button.reverse Reverse
+button.test Test
+button.clear Clear
+button.potential U ( x, y )
+label.charge Charge
+label.labels Labels
+label.vectors Field Vec.
+label.contours Contours
+label.time Time:
+label.volt V=
+label.volt_undefined V=Undefined
+label.field |E|=
+label.field_undefined E=Undefined
+label.force |F|=
+label.force_undefined F=Undefined
+label.calculating Calculating. Please wait.
+
+
+
+
+

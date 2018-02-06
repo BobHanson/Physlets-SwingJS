@@ -391,6 +391,7 @@ public class Doppler extends SApplet implements Runnable, ActionListener {
    *    @see #forward
    *    @see #step
    *    @y.exclude
+   *    @deprecated // BH
    */
   public void run() {
     boolean keepRunning = true;
@@ -590,6 +591,7 @@ public class Doppler extends SApplet implements Runnable, ActionListener {
 final class DopplerCanvas extends Canvas {
 
   Doppler applet = null;
+private long lastTime;
 
   /**
    * Constructor DopplerCanvas
@@ -702,9 +704,13 @@ final class DopplerCanvas extends Canvas {
       }
       genVec.addElement(new DopplerWaveCrest(labTime, (int) xs, (int) ys, vxs, vxs));
     }
-    Graphics g = getGraphics();
-    paint(g);
-    g.dispose();
+    long thisTime = System.currentTimeMillis();
+    System.out.println("Doppler time = " + (thisTime - lastTime));
+    lastTime = thisTime;
+    repaint(); // BH paint(g) should not be called directly
+//    Graphics g = getGraphics();
+//    paint(g);
+//    g.dispose();
   }
 
   private void calcBuffImage() {
@@ -769,6 +775,8 @@ final class DopplerCanvas extends Canvas {
           g.drawString(applet.label_position + pStr, 10, buff_height - 15);
         }
       }
+      if (showCoord)
+    	  paintCoords(g);
     } catch(Exception ex) {
       buff_image = null;
     }
@@ -794,17 +802,17 @@ final class DopplerCanvas extends Canvas {
     applet.stop();
     xCoord = x;
     yCoord = y;
-    Graphics g = getGraphics();
-    paint(g);  // draw the image onto the visible graph
-    g.clearRect(8, buff_height - 30, 150, 20);
-    g.drawString("X: " + pixToX(xCoord) + "  Y: " + pixToY(yCoord), 10, buff_height - 15);
-    g.setColor(Color.red);
-    g.drawLine(xCoord - 10, yCoord, xCoord + 10, yCoord);
-    g.drawLine(xCoord, yCoord - 10, xCoord, yCoord + 10);
-    g.dispose();
     showCoord = true;
+    repaint();
   }
 
+  private void paintCoords(Graphics g) {
+  g.clearRect(8, buff_height - 30, 150, 20);
+  g.drawString("X: " + pixToX(xCoord) + "  Y: " + pixToY(yCoord), 10, buff_height - 15);
+  g.setColor(Color.red);
+  g.drawLine(xCoord - 10, yCoord, xCoord + 10, yCoord);
+  g.drawLine(xCoord, yCoord - 10, xCoord, yCoord + 10);
+  }
   /**
    * Method endDrawCoord
    *

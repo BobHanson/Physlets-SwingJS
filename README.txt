@@ -2,6 +2,26 @@ Bob Hanson, St. Olaf College, hansonr@stolaf.edu
 
 2018.02.06
 
+only Doppler and Optics have been converted (required 5 hr total)
+
+See "BH" for notes in code
+
+ - temporarily removed new SClock in SApplet, as it is unnecessary and blocks with while(true) { ... wait() ... }
+ - temporarily removed HintThread for HintPanel
+
+Doppler
+
+ - converted m_doppler thread to javax.swing.Timer
+ - fixed problem in a2s.Scrollbar not setting adjustment callback
+ - decreased sleepTime from 50 to 5 ms
+ 
+Optics
+
+ - changed Border.border() to Border.myBorder(), as the former conflicts with javax.swing.JPanel
+ 
+
+2018.02.06
+
 Just a very preliminary assessment of the issues that might arise 
 if we wanted to convert Physlets to JavaScript.
 

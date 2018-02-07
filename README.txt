@@ -110,28 +110,7 @@ In PhET I see the code was changed as follows:
                 return image;
             }
 
-But I should probably implement MediaTracker to do exactly that anyway.
-
-This motif is not possible in HTML5, because there is only one thread, and it cannot wait:
-
-    public void run() {
-      while (appletRunning  && shouldRun) {
-        synchronized (lock) {
-          if (!newdata)
-            try {
-              lock.wait();
-            }catch (InterruptedException ie) {}
-            newdata = false;
-        }
-        if(debugLevel >0)System.out.println("evaluating");
-        if(appletRunning && shouldRun) jso.eval(jsFunction);
-        try{Thread.sleep(20);} catch(InterruptedException ex){}
-      }
-    }
-
-
-
-
+But I should probably implement MediaTracker to do exactly that anyway. [I have done that now; untested.]
 
 
 MORE DIFFICULT:
@@ -139,10 +118,10 @@ MORE DIFFICULT:
 CircuitSimulator needs to be rewritten using javax.swing classes.
 Right now it uses symantec.itools, which are not open source.
 
-UNKNOWN:
+IGNORED:
 
-Jacob/src contains references to org.mozilla. Is it possible that
-the Jacob project is unnecessary?
+Jacob/src contains references to org.mozilla and does not directly 
+relate to Physlets. I suggest ignoring it.
 
 
 
@@ -170,6 +149,80 @@ FIXES
 - Had to bypass new SClock() as it fired thread.wait()
 
 - java.awt.Panel-->a2s.Panel  required renaming Border.border() Border.myBorder()
+
+
+THREAD ISSUES:
+
+This motif is not possible in HTML5, because there is only one thread, and it cannot wait:
+
+    public void run() {
+      while (appletRunning  && shouldRun) {
+        synchronized (lock) {
+          if (!newdata)
+            try {
+              lock.wait();
+            }catch (InterruptedException ie) {}
+            newdata = false;
+        }
+        if(debugLevel >0)System.out.println("evaluating");
+        if(appletRunning && shouldRun) jso.eval(jsFunction);
+        try{Thread.sleep(20);} catch(InterruptedException ex){}
+      }
+    }
+
+The following 11 uses of wait/notify are in the code:
+
+blackbody.BlackBody: paintThread waiting for new data to graph.paintImage()
+   (private use only)
+   
+efield4.OdeCanvas: delayThread waiting for new data to paint()
+   (private use only)
+
+mathapps.FFT2DTransformer: waiting to doTransform()
+   (private use only)
+
+script.ScriptLister: waiting to JavaScript window.eval()
+   (private use only)
+
+slider.SliderApplet: waiting to run window.eval() whenever data changes in the data source
+   (private use only)
+
+edu.davidson.surfaceplotter.DataGenerator: waiting for new data to doCalc()  
+   (private use only)
+
+edu.davidson.surfaceplotter.SurfaceCanvas: waiting to doCalc()
+   (private use only)
+
+edu.davidson.display.SGraph: waiting for new data to paintOffScreen();
+   (private use only)
+
+edu.davidson.graphics.ThreadButton: waiting for dispatchEvent(evt)
+  (notify was not implemented; evt is never defined)
+
+edu.davidson.tools.BusyFlag: sets/clears a busy flag indicating that something is happening somewhere
+  (Used in bfield, efield4, and faraday; most likely can be ignored in JavaScript)
+
+edu.davidson.tools.SClock: waiting until set to run, then delivers an event to listeners based on a preset delay
+  (Used only by page JavaScript?)
+  
+  
+Ideas:
+
+The wait/notify mechanism allows a simple Object to be passed as a token that can be used
+to start up waiting processes. 
+
+An alternative might be to implement object.wait() as the addition of a class to a 
+"wait list". Then object.notify() would simply run object.waitList.get(i).runNotify(), 
+where we define runNotify to be the general action of the loop.
+
+This would then work in both JavaScript and Java. But we sould still have to make 
+sure the while loop is not run in JavaScript, or it will lock the browser.  
+
+
+
+
+  
+
 
 
 

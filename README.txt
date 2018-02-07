@@ -152,14 +152,25 @@ Classes I needed to add to SwingJS:
 
   - sun.audio.ContinuousAudioDataStream
   - java.awt.SystemColor
-  
+
+In addition, the transpiler now allows for unqualified methods such as "setValue" instead of "setvalue$I"
+specifically for extensions of JApplet and Applet. This should make interfacing with JavaScript
+easier using a "LiveConnect"-like interface.
+
+Note that any method that is declared in an interface that is in a package such as "api.js"
+that is declared in .j2s as a nonqualified class will simply not be qualified. For example:
+
+j2s.compiler.nonqualified.classes=org.jmol.api.js;jspecview.api.js
+
+The intent is to allow for certain Applet methods that are ONLY called by JavaScript, never Java.   
+
 
 FIXES
 
-Had to bypass new SClock() as it fired thread.wait()
+- Had to bypass new SClock() as it fired thread.wait()
 
-java.awt.Panel-->a2s.Panel  required renaming Border.border() Border.myBorder()
-  
+- java.awt.Panel-->a2s.Panel  required renaming Border.border() Border.myBorder()
+
 
 
 

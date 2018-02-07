@@ -3,8 +3,12 @@
 //      Wolfgang Christian
 package edu.davidson.tools;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Enumeration;
 import java.util.Vector;
+
+import javax.swing.Timer;
 
 /**
  * A runnable class designed to provide animation for Physlets.  Objects wishing
@@ -19,7 +23,7 @@ import java.util.Vector;
  */
 public final class SClock extends Object implements Runnable, SDataSource {
 
-  Vector             clockListeners = new Vector();      // The list of all SStepable objects.
+  Vector<SStepable> clockListeners = new Vector<SStepable>();      // The list of all SStepable objects.
   private String[]   varStrings     = new String[]{"t"};
   private double[][] ds             = new double[1][1];  // the datasource state variable t
   private Thread     thread         = null;
@@ -36,23 +40,19 @@ public final class SClock extends Object implements Runnable, SDataSource {
   boolean            oneShot        = false;
   boolean            cycle          = false;
   SApplet            owner          = null;
+private Timer swingTimer;
 
   /**
    * Create a new SClock.  A clock thread is created but it immediately
    * enters a wait state.  A clock will update its clock listeners
    * after the startClock method has been called.
    */
-  public SClock() {
-    shouldRun = true;
-    running   = false;  // start the thread in a wait state.
-    
-    // BH ! NO 
-    
-    
-    
-    //thread    = new Thread(this);
-    //thread.setDaemon(true);
-    //thread.start();
+  public SClock() {  
+	  
+	  // BH: I would recommend removing this constructor or making it private.
+	  //     Otherwise owner could be null in methods below
+	  
+	newThread(true);
     try {
       SApplet.addDataSource(this);
     } catch(Exception e) {
@@ -73,33 +73,43 @@ public final class SClock extends Object implements Runnable, SDataSource {
    */
   public SClock(SApplet owner) {
     this();
-    this.owner = owner;
+    // BH if you get rid of this(), you can move this line up so that owner is defined prior to starting the thread.
+    this.owner = owner;  
+    
   }
 
-  /**
-   *       Add an object to the list of objects that will be stepped at every clock tick.
-   * A clock listener can only be added once.
-   *
-   *       @param              cl the clock listener
-   *
-   */
-  public synchronized void addClockListener(SStepable cl) {
-    if(thread == null) {    // start the clock in order to be ready to go.  We'll call start clock later.
-      synchronized(runLock) {
-        shouldRun = true;
-        running   = false;  // force a wait state right after we start this thread.
-        thread    = new Thread(this);
-        thread.start();
-      }
-    }
-    if(clockListeners.contains(cl)) {
-      return;
-    } else {
-      clockListeners.addElement(cl);
-    }
-  }
+	/**
+	 * Add an object to the list of objects that will be stepped at every clock
+	 * tick. A clock listener can only be added once.
+	 *
+	 * @param cl
+	 *            the clock listener
+	 *
+	 */
+	public synchronized void addClockListener(SStepable cl) {
+		if (thread == null) { // start the clock in order to be ready to go.
+								// We'll call start clock later.
+			synchronized (runLock) {
+				newThread(true);
+			}
+		}
+		if (clockListeners.contains(cl)) {
+			return;
+		} else {
+			clockListeners.addElement(cl);
+		}
+	}
 
-  /**
+	private void newThread(boolean startWaiting) {
+		shouldRun = true;
+		if (startWaiting)
+			running = false; // start the thread in a wait state.
+		thread = new Thread(this);
+		thread.setDaemon(true);
+		thread.start();
+	}
+
+/**
    *       Remove an object from the list of objects that will be stepped at every clock tick.
    *
    *       @param              cl the clock listener
@@ -153,8 +163,8 @@ public final class SClock extends Object implements Runnable, SDataSource {
       time     = maxTime;
       didCycle = true;
     }
-    for(Enumeration e = clockListeners.elements(); e.hasMoreElements(); ) {
-      SStepable clockListener = (SStepable) e.nextElement();
+    for(Enumeration<SStepable> e = clockListeners.elements(); e.hasMoreElements(); ) {
+      SStepable clockListener = e.nextElement();
       if(shouldRun) {
         clockListener.step(dt, time);
       }
@@ -169,43 +179,47 @@ public final class SClock extends Object implements Runnable, SDataSource {
     time += dt;
   }
 
-  /**
-   * Do one time step and update all clock listeners.
-   * This private method should only be called by the clock thread.
-   *
-   */
-  private void runningStep() {
-    //System.out.println("step clock.");
-    boolean didCycle = false;
-    if(cycle && (time + 0.49 * dt >= maxTime) && (dt > 0)) {  // check to see if we are past the maximum time.
-      time     = minTime;
-      didCycle = true;
-    }
-    SStepable clockListener;
-    for(Enumeration e = clockListeners.elements(); e.hasMoreElements(); ) {
-      clockListener = (SStepable) e.nextElement();
-      if(shouldRun) {
-        clockListener.step(dt, time);
-      }
-    }
-    if((owner != null) && shouldRun) {
-      if(owner.destroyed) return;
-      owner.updateDataConnection(hashCode());  // see if someone is listening to this clock using a data connection.
-    }
-    time += dt;
-    if((owner != null) && (SApplet.runningID != null) && (owner != SApplet.runningID)) {  // stop running if another SApplet starts running.
-      running = false;
-      owner.pausingClock();
-    }
-    if((cycle && (dt < 0) && (time + 0.49 * dt < minTime)) || (oneShot && (dt < 0) && (time + 0.49 * dt <= minTime))
-        || (oneShot && (dt > 0) && (time + 0.49 * dt >= maxTime))) {
-      running = false;  // pause the thread if another applet is running or we are past.
-      owner.stoppingClock();
-    }
-    if((owner != null) && didCycle) {
-      owner.cyclingClock();
-    }
-  }
+	/**
+	 * Do one time step and update all clock listeners. This private method
+	 * should only be called by the clock thread.
+	 *
+	 */
+	private void runningStep() {
+		// System.out.println("step clock.");
+		boolean didCycle = false;
+		if (cycle && (time + 0.49 * dt >= maxTime) && (dt > 0)) {
+			// check to see if we are past the maximum time.
+			time = minTime;
+			didCycle = true;
+		}
+		if (shouldRun) // BH simplified
+			for (Enumeration<SStepable> e = clockListeners.elements(); e.hasMoreElements();) {
+				e.nextElement().step(dt, time);
+			}
+		if ((owner != null) && shouldRun) {
+			if (owner.destroyed)
+				return;
+			owner.updateDataConnection(hashCode()); // see if someone is
+													// listening to this clock
+													// using a data connection.
+		}
+		time += dt;
+		if ((owner != null) && (SApplet.runningID != null) && (owner != SApplet.runningID)) {
+			// stop running if another SApplet starts running.
+			running = false;
+			owner.pausingClock();
+		}
+		if ((cycle && (dt < 0) && (time + 0.49 * dt < minTime))
+				|| (oneShot && (dt < 0) && (time + 0.49 * dt <= minTime))
+				|| (oneShot && (dt > 0) && (time + 0.49 * dt >= maxTime))) {
+			running = false; // pause the thread if another applet is running or
+								// we are past.
+			owner.stoppingClock();
+		}
+		if ((owner != null) && didCycle) {
+			owner.cyclingClock();
+		}
+	}
 
   /**
    * Returns the animation time.
@@ -244,9 +258,8 @@ public final class SClock extends Object implements Runnable, SDataSource {
     running = false;
     synchronized(runLock) {  // make sure we are in a wait state.
       time = t;
-      for(Enumeration e = clockListeners.elements(); e.hasMoreElements(); ) {
-        SStepable clockListener = (SStepable) e.nextElement();
-          clockListener.step(0, time);
+      for(Enumeration<SStepable> e = clockListeners.elements(); e.hasMoreElements(); ) {
+    	  e.nextElement().step(0, time); // BH simplified
       }
     }
     if(oldRunning) {
@@ -392,9 +405,7 @@ public final class SClock extends Object implements Runnable, SDataSource {
       return;
     }
     if(thread == null) {
-      shouldRun = true;
-      thread    = new Thread(this);
-      thread.start();
+    	newThread(false);
     } else {
       synchronized(runLock) {
         running = true;
@@ -429,21 +440,25 @@ public final class SClock extends Object implements Runnable, SDataSource {
     thread = null;
   }
 
-  /**
-   *       Notify the thread to stop running.  All SStepable objects must complete
-   * their last step before the clock can stop.
-   *
-   * @see                SClock#startClock()
-   */
-  public void stopClock() {
-    if(!running) {
-      return;  // we are not running so return.
-    }
-    running = false;
-    synchronized(runLock) {
-      ;
-    }  // make sure we are in a wait state before we return.
-  }
+	/**
+	 * Notify the thread to stop running. All SStepable objects must complete
+	 * their last step before the clock can stop.
+	 *
+	 * @see SClock#startClock()
+	 */
+	public void stopClock() {
+		if (swingTimer != null)
+			swingTimer.stop();
+		swingTimer = null;
+		if (!running) {
+			return; // we are not running so return.
+		}
+		running = false;
+		synchronized (runLock) {
+			// make sure we are in a wait state before we return.
+			;
+		}
+	}
 
   /**
    *       Estimate the frames per second, FPS, for the animation. The frames per second
@@ -506,36 +521,85 @@ public final class SClock extends Object implements Runnable, SDataSource {
     return running;
   }
 
-  /**
-   *       The run method passed to the thread.  DO NOT access this method.
-   */
-  public void run() {
-    while(shouldRun) {
-      synchronized(runLock) {
-        while(running == false) {
-          try {
-            runLock.wait();
-          } catch(InterruptedException ie) {
-            return;
-          }
-        }
-        if(shouldRun) {
-          runningStep();
-        }
-      }
-      if(shouldRun) {
-        try {
-          Thread.sleep(delay);
-        } catch(InterruptedException ie) {
-          return;
-        }
-      }
-    }
-  }
+	/**
+	 * The run method passed to the thread. DO NOT access this method.
+	 */
+	public void run() {
+		while (shouldRun) {
+			synchronized (runLock) {
+				while (running == false) {
+					/**
+					 * @j2sNative
+					 * 
+					 * 			return;
+					 */
+					{
+						try {
+							runLock.wait();
+						} catch (InterruptedException ie) {
+							return;
+						}
+					}
+				}
+				// BH running is true and we have been notified
+				notified(false);
+			}
+			if (!doDelay())
+				return;
+		}
+	}
 
-  // SDataSource Methods
 
-  /**
+	// BH: for JavasScript and Java:
+  
+	private void notified(boolean andDelay) {
+		if (shouldRun) {
+			runningStep();
+		}
+		if (andDelay)
+			doDelay();
+	}
+
+	/**
+	 * 
+	 * @return true to continue
+	 */
+	@SuppressWarnings("unused")
+	private boolean doDelay() {
+		if (!shouldRun)
+			return true;
+		/**
+		 * @j2sNative
+		 * 
+		 */
+		{
+			// Java only
+			try {
+				Thread.sleep(delay);
+				if (true) 
+					return true;
+			} catch (InterruptedException ie) {
+				return false;
+			}
+		}
+		// JavaScript only
+		swingTimer = new Timer(delay, new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				swingTimer = null;
+			   if (shouldRun)run();				
+			}
+			
+		});
+		swingTimer.setRepeats(false);
+		swingTimer.start();
+		return true;
+	}
+
+	// SDataSource Methods
+
+/**
    *       Get the variables for use by a data connection.  SClock has a single variable, t.
    *
    *       @return            the variables.

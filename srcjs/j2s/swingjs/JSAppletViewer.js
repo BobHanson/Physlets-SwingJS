@@ -99,7 +99,7 @@ Clazz.newMeth(C$, 'appletResize$I$I', function (width, height) {
 var currentSize = Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[this.currentAppletSize.width, this.currentAppletSize.height]);
 this.currentAppletSize.width = width;
 this.currentAppletSize.height = height;
-this.japplet.setBounds$I$I$I$I(0, 0, this.getWidth(), this.getHeight());
+this.japplet.setBounds$I$I$I$I(0, 0, width, height);
 this.japplet.getRootPane().setBounds$I$I$I$I(0, 0, this.getWidth(), this.getHeight());
 this.japplet.getContentPane().setBounds$I$I$I$I(0, 0, this.getWidth(), this.getHeight());
 (this.japplet.getContentPane()).revalidate();
@@ -396,4 +396,4 @@ return (I$[20]||$incl$(20)).getAudioClip$java_net_URL(url);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-02-06 09:00:27
+//Created 2018-02-06 20:01:53

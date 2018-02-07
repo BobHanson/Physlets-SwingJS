@@ -253,7 +253,8 @@ public class Doppler extends SApplet implements Runnable, ActionListener {
     add("Center", dc);
     dc.setSpeed(m_speed, 0);
     dc.setRelativistic(m_relativistic);
-  }
+    invalidate();
+ }
 
   protected void setResources(){
      label_caption=localProperties.getProperty("label.caption",label_caption);
@@ -705,9 +706,11 @@ private long lastTime;
       genVec.addElement(new DopplerWaveCrest(labTime, (int) xs, (int) ys, vxs, vxs));
     }
     long thisTime = System.currentTimeMillis();
-    System.out.println("Doppler time = " + (thisTime - lastTime));
+    //System.out.println("Doppler time = " + (thisTime - lastTime));
     lastTime = thisTime;
-    repaint(); // BH paint(g) should not be called directly
+    repaint(); 
+    
+// BH paint(g) should not be called directly
 //    Graphics g = getGraphics();
 //    paint(g);
 //    g.dispose();

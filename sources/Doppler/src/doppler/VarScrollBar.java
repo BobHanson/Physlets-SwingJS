@@ -33,7 +33,11 @@ public final class VarScrollBar extends Panel
 		scrollBar=new Scrollbar(Scrollbar.HORIZONTAL,(int)(100*(value-min)/(max-min)),4,0,100);
 		add("West",captionLbl=new Label(caption_,Label.LEFT));
 		add("Center",scrollBar);
-		add("East",valFld=new TextField(""+value_));
+		
+		valFld=new TextField();
+		valFld.setPreferredSize(new Dimension(40,20));
+		valFld.setText(""+value_);
+		add("East",valFld);
 	}
 
 

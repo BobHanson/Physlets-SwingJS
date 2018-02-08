@@ -42,23 +42,36 @@ public final class SClock extends Object implements Runnable, SDataSource {
   SApplet            owner          = null;
 private Timer swingTimer;
 
-  /**
-   * Create a new SClock.  A clock thread is created but it immediately
-   * enters a wait state.  A clock will update its clock listeners
-   * after the startClock method has been called.
-   */
-  public SClock() {  
-	  
-	  // BH: I would recommend removing this constructor or making it private.
-	  //     Otherwise owner could be null in methods below
-	  
-	newThread(true);
-    try {
-      SApplet.addDataSource(this);
-    } catch(Exception e) {
-      e.printStackTrace();
-    }
-  }
+	/**
+	 * Create a new SClock. A clock thread is created but it immediately enters
+	 * a wait state. A clock will update its clock listeners after the
+	 * startClock method has been called.
+	 */
+	@SuppressWarnings("unused")
+	public SClock() {
+
+		// BH: I would recommend removing this constructor or making it private.
+		// Otherwise owner could be null in methods below
+
+		newThread(true, true);
+		try {
+			SApplet.addDataSource(this);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		/**
+		 * @j2sNative
+		 * 
+		 */
+		{
+			if (true)
+				return;
+		}
+		// JavaScript only -- preload needed classes
+		// so that there is no delay for the first tick
+		new ActionEvent(null, 0, null);
+		createSwingTimer();
+	}
 
   /**
    *       Create a new SClock to animate the given SApplet. The normal behavior is for
@@ -90,7 +103,7 @@ private Timer swingTimer;
 		if (thread == null) { // start the clock in order to be ready to go.
 								// We'll call start clock later.
 			synchronized (runLock) {
-				newThread(true);
+				newThread(false, true);
 			}
 		}
 		if (clockListeners.contains(cl)) {
@@ -100,12 +113,18 @@ private Timer swingTimer;
 		}
 	}
 
-	private void newThread(boolean startWaiting) {
+	/**
+	 * collected resource
+	 * 
+	 * @param startWaiting
+	 */
+	private void newThread(boolean asDaemon, boolean startWaiting) {
 		shouldRun = true;
 		if (startWaiting)
 			running = false; // start the thread in a wait state.
 		thread = new Thread(this);
-		thread.setDaemon(true);
+		if (asDaemon)
+			thread.setDaemon(true);
 		thread.start();
 	}
 
@@ -405,7 +424,7 @@ private Timer swingTimer;
       return;
     }
     if(thread == null) {
-    	newThread(false);
+    	newThread(false, false);
     } else {
       synchronized(runLock) {
         running = true;
@@ -546,6 +565,11 @@ private Timer swingTimer;
 			}
 			if (!doDelay())
 				return;
+			/**
+			 * @j2sNative
+			 * 
+			 * break;
+			 */
 		}
 	}
 
@@ -583,18 +607,26 @@ private Timer swingTimer;
 			}
 		}
 		// JavaScript only
+		createSwingTimer();
+		swingTimer.start();
+		return true;
+	}
+
+	/**
+	 * Pre-create the timer so there is no file loading before the first tick
+	 */
+	private void createSwingTimer() {
 		swingTimer = new Timer(delay, new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				swingTimer = null;
-			   if (shouldRun)run();				
+				if (shouldRun)
+					run();
 			}
-			
+
 		});
 		swingTimer.setRepeats(false);
-		swingTimer.start();
-		return true;
 	}
 
 	// SDataSource Methods
@@ -644,4 +676,46 @@ private Timer swingTimer;
   public SApplet getOwner() {
     return owner;
   }
+
+  class Tester implements SStepable {
+
+	@Override
+	public void step(double dt, double time) {
+		System.out.println("SClock.Tester.step(" + dt + "," + time + ")");
+		if (time >= 5) {
+			System.out.println("done");
+			System.out.flush();
+			System.exit(0);
+		}
+	}
+	  
+  }
+  
+  public static void main(String[] args) {
+	SClock sc = new SClock();
+	Tester tester = sc.new Tester();
+	sc.addClockListener(tester);
+	sc.setContinuous();
+	sc.setDt(0.5);
+	sc.startClock();
+	// Because the Java clock thread is a daemon, and there are no other threads in this
+	// thread group, exiting of the thread running main() closes the timer as well.  
+	// So in Java we must sleep. 
+	//
+	// It's a SwingJS bug to ignore the distinction between user and daemon threads
+	/**
+	 * @j2sNative
+	 * 
+	 *  
+	 */ 
+	{
+		 try {
+			Thread.sleep(1200);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	 }
+  }
+  
 }

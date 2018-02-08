@@ -26,7 +26,6 @@ public final class SClock extends Object implements Runnable, SDataSource {
   Vector<SStepable> clockListeners = new Vector<SStepable>();      // The list of all SStepable objects.
   private String[]   varStrings     = new String[]{"t"};
   private double[][] ds             = new double[1][1];  // the datasource state variable t
-  private Thread     thread         = null;
   private Object     runLock        = new Object();
   private boolean    shouldRun      = true;              // boolean to to keep the while loop in the run method going.
   private boolean    running        = false;             // signal the thread to go into a wait state.
@@ -40,7 +39,9 @@ public final class SClock extends Object implements Runnable, SDataSource {
   boolean            oneShot        = false;
   boolean            cycle          = false;
   SApplet            owner          = null;
-private Timer swingTimer;
+  
+protected Timer      swingTimer;
+protected Thread     thread         = null;
 
 	/**
 	 * Create a new SClock. A clock thread is created but it immediately enters
@@ -116,12 +117,17 @@ private Timer swingTimer;
 	/**
 	 * collected resource
 	 * 
-	 * @param startWaiting
+	 * @param startWaiting   start the thread in a wait state
 	 */
 	private void newThread(boolean asDaemon, boolean startWaiting) {
 		shouldRun = true;
-		if (startWaiting)
-			running = false; // start the thread in a wait state.
+		running = !startWaiting;
+		/**
+		 * @j2sNative
+		 * 
+		 * 			return this.run();
+		 * 
+		 */
 		thread = new Thread(this);
 		if (asDaemon)
 			thread.setDaemon(true);
@@ -423,6 +429,14 @@ private Timer swingTimer;
       owner.stoppingClock();
       return;
     }
+    if (thread != null) {
+			/**
+			 * @j2sNative
+			 * 
+			 * 			this.thread.stop(); this.thread = null;
+			 * 
+			 */
+    }
     if(thread == null) {
     	newThread(false, false);
     } else {
@@ -443,9 +457,17 @@ private Timer swingTimer;
   public synchronized void panicStopClock() {
     //clockListeners.removeAllElements();  // testing to see if this fixes jsript bug.
     shouldRun = false;
-    if(thread == null) {
-      return;
-    }
+    
+    if (swingTimer == null && thread == null)
+    	return;
+    /**
+     * @j2sNative
+     * 
+     * this.swingTimer.stop();
+     * return;
+     * 
+     */
+    
     startClock();
     Thread tempThread = thread;
     if(tempThread != null) {
@@ -561,7 +583,7 @@ private Timer swingTimer;
 					}
 				}
 				// BH running is true and we have been notified
-				notified(false);
+				notified();
 			}
 			if (!doDelay())
 				return;
@@ -576,12 +598,12 @@ private Timer swingTimer;
 
 	// BH: for JavasScript and Java:
   
-	private void notified(boolean andDelay) {
+	private void notified() {
 		if (shouldRun) {
+			//long t0 = System.currentTimeMillis();
 			runningStep();
+			//System.out.println("creaetime " + (System.currentTimeMillis() - t0) + " " + delay);
 		}
-		if (andDelay)
-			doDelay();
 	}
 
 	/**
@@ -621,6 +643,9 @@ private Timer swingTimer;
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				swingTimer = null;
+				if  (thread != null)
+					thread.stop();
+				thread = null;
 				if (shouldRun)
 					run();
 			}

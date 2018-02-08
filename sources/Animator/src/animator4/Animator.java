@@ -152,7 +152,13 @@ public class Animator extends SApplet {
     public void init () {
         initResources(null);
         try {
-            fps = Integer.parseInt(this.getParameter("FPS", "10"));
+        	String defFPS = "10";
+        	/**
+        	 * @j2sNative
+        	 * 
+        	 * defFPS = '20';
+        	 */
+            fps = Integer.parseInt(this.getParameter("FPS", defFPS));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -2940,46 +2946,7 @@ public class Animator extends SApplet {
         return  pinfo;
     }
 
-    /**
-     * Exclude the javadoc because this method should not be scripted.
-     * @y.exclude
-     *
-     * @param args
-     */
-    public static void main (String[] args) {
-        Animator applet = new Animator();
-        applet.isStandalone = true;
-        SFrame frame = new SFrame("Animator Physlet");
-        frame.setTitle("Applet Frame");
-        // SwingJS cannot load an applet into a frame. 
-        frame.add(applet, BorderLayout.CENTER);
-        applet.init();
-        applet.start();
-        frame.setSize(400, 320);
-        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        frame.setLocation((d.width - frame.getSize().width)/2, (d.height -
-                frame.getSize().height)/2);
-        frame.setVisible(true);
-        
-       // from https://www.compadre.org/Physlets/mechanics/ex3_1.cfm 
-		applet.setAutoRefresh(false);
-		applet.setDefault();
-		applet.shiftPixOrigin(20,0);
-		applet.setPixPerUnit(10);
-		applet.setGridUnit(0);
-		int id=applet.addObject("circle","r=12");
-		applet.setTrajectory(id,"step(8-t)*(-22+5*t)+step(t-8)*(-22+5*8-2*(t-8))","step(8-t)*(-12+2*t)+step(t-8)*(-12+2*8+1*(t-8))");
-		applet.setRGB(id,0,0,0);
-		id=applet.addObject("circle","r=11");
-		applet.setTrajectory(id,"step(8-t)*(-22+5*t)+step(t-8)*(-22+5*8-2*(t-8))","step(8-t)*(-12+2*t)+step(t-8)*(-12+2*8+1*(t-8))");
-		applet.setRGB(id,255,0,0);
-		applet.setAutoRefresh(true);
-		applet.setOneShot(0,16,"End of Animation");
-		applet.updateDataConnections();
-
-    }
-
-    /**
+     /**
      * Method playBtn_actionPerformed
      *
      * @param e
@@ -3023,4 +2990,50 @@ public class Animator extends SApplet {
     void resetBtn_actionPerformed (ActionEvent e) {
         setAnimationTime(0);
     }
+    
+    /**
+     * Exclude the javadoc because this method should not be scripted.
+     * @y.exclude
+     *
+     * @param args
+     */
+    public static void main (String[] args) {
+        Animator applet = new Animator();
+        applet.isStandalone = true;
+        SFrame frame = new SFrame("Animator Physlet");
+        frame.setTitle("Applet Frame");
+        frame.add(applet, BorderLayout.CENTER);
+        applet.init();
+        applet.start();
+        applet.setSize(400, 320);
+        frame.setSize(400, 320);
+        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        frame.setLocation((d.width - frame.getSize().width)/2, (d.height -
+                frame.getSize().height)/2);
+        frame.setVisible(true);
+        
+        applet.test();
+    }
+
+	public void test() {
+        
+       // from https://www.compadre.org/Physlets/mechanics/ex3_1.cfm 
+		setAutoRefresh(false);
+		setDefault();
+		shiftPixOrigin(20,0);
+		setPixPerUnit(10);
+		setGridUnit(0);
+		int id=addObject("circle","r=12");
+		setTrajectory(id,"step(8-t)*(-22+5*t)+step(t-8)*(-22+5*8-2*(t-8))","step(8-t)*(-12+2*t)+step(t-8)*(-12+2*8+1*(t-8))");
+		setRGB(id,0,0,0);
+		id=addObject("circle","r=11");
+		setTrajectory(id,"step(8-t)*(-22+5*t)+step(t-8)*(-22+5*8-2*(t-8))","step(8-t)*(-12+2*t)+step(t-8)*(-12+2*8+1*(t-8))");
+		setRGB(id,255,0,0);
+		setAutoRefresh(true);
+		setOneShot(0,16,"End of Animation");
+		updateDataConnections();
+		setAnimationTime(0);
+	}
+
+
 }

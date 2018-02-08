@@ -1032,10 +1032,13 @@ public final class AnimatorCanvas extends Canvas
 
         int w = 15 + fm.stringWidth(tempMsg);
 
-        osg.fillRect(iwidth - w - 5, iheight - 15, w, 15);
+        int h = fm.getHeight();
+        int off = -5;
+        
+        osg.fillRect(iwidth - w - 5, iheight - h + off, w, h);
         osg.setColor(Color.black);
-        osg.drawString(tempMsg, iwidth - w + 2, iheight - 3);
-        osg.drawRect(iwidth - w - 5, iheight - 15, w, 15);
+        osg.drawString(tempMsg, iwidth - w + 2, iheight - 3 + off);
+        osg.drawRect(iwidth - w - 5, iheight - h + off, w, h);
     }
 
     void paintCoords(int xPix, int yPix) {

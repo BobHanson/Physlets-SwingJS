@@ -127,23 +127,23 @@ Clazz_newMeth(C$, 'stop', function () {
 Clazz_newMeth(C$, 'destroy', function () {
 });
 })();
-//Created 2018-02-06 08:58:05
+//Created 2018-02-08 10:01:45
 (function(){var P$=Clazz_newPackage("java.applet"),I$=[];
 var C$=Clazz_newInterface(P$, "AppletContext");
 })();
-//Created 2018-02-06 08:58:05
+//Created 2018-02-08 10:01:45
 (function(){var P$=Clazz_newPackage("java.applet"),I$=[];
 var C$=Clazz_newInterface(P$, "AppletStub");
 })();
-//Created 2018-02-06 08:58:05
+//Created 2018-02-08 10:01:45
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "ActiveEvent");
 })();
-//Created 2018-02-06 08:58:07
+//Created 2018-02-08 10:01:46
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "Adjustable");
 })();
-//Created 2018-02-06 08:58:07
+//Created 2018-02-08 10:01:46
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newClass(P$, "AWTEvent", null, 'java.util.EventObject');
 C$.idnum = 0;
@@ -256,7 +256,7 @@ that.bdata = this.bdata;
 Clazz_newMeth(C$, 'dispatched', function () {
 });
 })();
-//Created 2018-02-06 08:58:06
+//Created 2018-02-08 10:01:45
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newClass(P$, "AWTEventMulticaster", null, null, ['java.awt.event.ComponentListener', 'java.awt.event.ContainerListener', 'java.awt.event.FocusListener', 'java.awt.event.KeyListener', 'java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'java.awt.event.WindowListener', 'java.awt.event.WindowFocusListener', 'java.awt.event.WindowStateListener', 'java.awt.event.ActionListener', 'java.awt.event.ItemListener', 'java.awt.event.AdjustmentListener', 'java.awt.event.TextListener', 'java.awt.event.InputMethodListener', 'java.awt.event.HierarchyListener', 'java.awt.event.HierarchyBoundsListener', 'java.awt.event.MouseWheelListener']);
 var p$=C$.prototype;
@@ -661,7 +661,7 @@ return result;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:06
+//Created 2018-02-08 10:01:45
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.util.Arrays']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "BasicStroke", null, null, ['java.awt.Stroke', 'Cloneable']);
 
@@ -799,7 +799,7 @@ Clazz_newMeth(C$, 'clone', function () {
 return Clazz_new_(C$.c$$F$I$I$F$FA$F,[this.width, this.cap, this.join, this.miterlimit, this.dash, this.dash_phase]);
 });
 })();
-//Created 2018-02-06 08:58:07
+//Created 2018-02-08 10:01:46
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Dimension']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "BorderLayout", null, null, ['java.awt.LayoutManager2', 'java.io.Serializable']);
 var p$=C$.prototype;
@@ -1111,7 +1111,7 @@ Clazz_newMeth(C$, 'toString', function () {
 return this.getClass().getName() + "[hgap=" + this.hgap + ",vgap=" + this.vgap + "]" ;
 });
 })();
-//Created 2018-02-06 08:58:07
+//Created 2018-02-08 10:01:46
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.ColorPaintContext']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Color", null, null, 'java.awt.Paint');
 C$.white = null;
@@ -1468,7 +1468,7 @@ return 2;
 return 3;
 }});
 })();
-//Created 2018-02-06 08:58:07
+//Created 2018-02-08 10:01:46
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.util.HashMap','java.awt.ComponentOrientation','sun.awt.AppContext','swingjs.JSToolkit','java.awt.Toolkit','java.awt.Point','java.awt.event.ComponentEvent','java.util.Locale','java.awt.Dimension','java.awt.Rectangle',['java.awt.Component','.BaselineResizeBehavior'],'java.awt.Cursor','java.awt.event.PaintEvent','java.awt.EventQueue','java.awt.event.MouseWheelEvent','java.awt.AWTEventMulticaster','java.awt.event.ComponentListener','java.awt.event.FocusListener','java.awt.event.HierarchyListener','java.awt.event.HierarchyEvent','java.awt.event.HierarchyBoundsListener','java.awt.event.KeyListener','java.awt.event.MouseListener','java.awt.event.MouseMotionListener','java.awt.event.MouseWheelListener','java.awt.event.InputMethodListener','java.beans.PropertyChangeListener','Boolean','java.beans.PropertyChangeSupport','sun.awt.SunToolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Component", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -3603,7 +3603,7 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-02-06 08:58:08
+//Created 2018-02-08 10:01:46
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.util.Locale']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "ComponentOrientation");
 C$.LEFT_TO_RIGHT = null;
@@ -3665,7 +3665,7 @@ this.orientation = value;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:08
+//Created 2018-02-08 10:01:46
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Component','java.awt.Insets','javajs.util.Lst','java.awt.Toolkit','java.awt.event.ContainerEvent','java.awt.Dimension',['java.awt.GraphicsCallback','.PaintCallback'],['java.awt.GraphicsCallback','.PaintAllCallback'],['java.awt.GraphicsCallback','.PaintHeavyweightComponentsCallback'],'java.awt.AWTEventMulticaster','java.awt.event.ContainerListener',['java.awt.Container','.MouseEventTargetFilter'],'java.awt.LightweightDispatcher','java.awt.event.MouseEvent','java.awt.event.MouseWheelEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Container", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -4623,7 +4623,7 @@ return (comp.eventMask & 32) != 0 || (comp.eventMask & 16) != 0  || (comp.eventM
 });
 })()
 })();
-//Created 2018-02-06 08:58:08
+//Created 2018-02-08 10:01:47
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newClass(P$, "Dimension", null, 'java.awt.geom.Dimension2D');
 
@@ -4696,28 +4696,28 @@ Clazz_newMeth(C$, 'toString', function () {
 return this.getClass().getName() + "[width=" + this.width + ",height=" + this.height + "]" ;
 });
 })();
-//Created 2018-02-06 08:58:09
+//Created 2018-02-08 10:01:47
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "ActionListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:18
+//Created 2018-02-08 10:01:55
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "AdjustmentListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:18
+//Created 2018-02-08 10:01:55
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "AWTEventListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:18
+//Created 2018-02-08 10:01:54
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newClass(P$, "ComponentEvent", null, 'java.awt.AWTEvent');
 
@@ -4763,42 +4763,42 @@ typeStr = "unknown type";
 return typeStr;
 });
 })();
-//Created 2018-02-06 08:58:18
+//Created 2018-02-08 10:01:55
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "ComponentListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:18
+//Created 2018-02-08 10:01:55
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "ContainerListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:18
+//Created 2018-02-08 10:01:55
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "FocusListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:18
+//Created 2018-02-08 10:01:55
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "HierarchyBoundsListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:18
+//Created 2018-02-08 10:01:55
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "HierarchyListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:18
+//Created 2018-02-08 10:01:55
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[['java.lang.StringBuilder','java.awt.Toolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "InputEvent", null, 'java.awt.event.ComponentEvent');
 
@@ -4904,14 +4904,14 @@ buf.setLength$I(buf.length$() - 1);
 }return buf.toString();
 }, 1);
 })();
-//Created 2018-02-06 08:58:18
+//Created 2018-02-08 10:01:55
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "InputMethodListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:18
+//Created 2018-02-08 10:01:55
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newClass(P$, "InvocationEvent", null, 'java.awt.AWTEvent', 'java.awt.ActiveEvent');
 
@@ -4992,21 +4992,21 @@ return typeStr + ",runnable=" + this.runnable + ",notifier=" + this.notifier + "
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:18
+//Created 2018-02-08 10:01:55
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "ItemListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:18
+//Created 2018-02-08 10:01:55
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "KeyListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:19
+//Created 2018-02-08 10:01:55
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[['java.awt.Point','java.lang.StringBuilder','java.awt.Toolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "MouseEvent", null, 'java.awt.event.InputEvent');
 var p$=C$.prototype;
@@ -5251,56 +5251,56 @@ this.modifiers = this.modifiers|(32);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:19
+//Created 2018-02-08 10:01:56
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "MouseListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:19
+//Created 2018-02-08 10:01:56
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "MouseMotionListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:19
+//Created 2018-02-08 10:01:56
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "MouseWheelListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:19
+//Created 2018-02-08 10:01:56
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "TextListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:19
+//Created 2018-02-08 10:01:56
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "WindowFocusListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:19
+//Created 2018-02-08 10:01:56
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "WindowListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:19
+//Created 2018-02-08 10:01:56
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "WindowStateListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:19
+//Created 2018-02-08 10:01:56
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Component',['java.awt.EventFilter','.FilterAction'],'sun.awt.SunToolkit','javajs.util.Lst','java.awt.EventDispatchThread$1','swingjs.JSToolkit',['java.awt.EventDispatchThread','.StopDispatchEvent'],'Thread',['java.awt.EventDispatchThread','.HierarchyEventFilter'],'sun.awt.AWTAutoShutdown']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "EventDispatchThread", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -5619,7 +5619,7 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-08 00:34:41
+//Created 2018-02-08 10:01:48
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "EventFilter");
 ;
@@ -5640,7 +5640,7 @@ var $vals=[];
 Clazz_newMeth(C$, 'values', function() { return $vals }, 1);
 })()
 })();
-//Created 2018-02-08 00:34:39
+//Created 2018-02-08 10:01:48
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Queue','Thread','sun.awt.SunToolkit','sun.awt.AWTAutoShutdown','java.awt.EventQueueItem','swingjs.JSToolkit','java.awt.Toolkit','sun.awt.AppContext','java.awt.EventDispatchThread','java.awt.event.InvocationEvent','java.lang.Error']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "EventQueue");
 C$.threadInitNumber = 0;
@@ -6115,7 +6115,7 @@ throw e;
 this.initDispatchThread();
 }}});
 })();
-//Created 2018-02-08 00:34:36
+//Created 2018-02-08 10:01:48
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newClass(P$, "EventQueueItem");
 
@@ -6137,7 +6137,7 @@ this.id = evt.getID();
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-08 00:34:36
+//Created 2018-02-08 10:01:48
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Dimension']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "FlowLayout", null, null, ['java.awt.LayoutManager', 'java.io.Serializable']);
 var p$=C$.prototype;
@@ -6400,7 +6400,7 @@ break;
 return this.getClass().getName() + "[hgap=" + this.hgap + ",vgap=" + this.vgap + str + "]" ;
 });
 })();
-//Created 2018-02-06 08:58:10
+//Created 2018-02-08 10:01:48
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['swingjs.JSFontMetrics','java.awt.geom.AffineTransform','swingjs.JSToolkit',['java.text.AttributedCharacterIterator','.Attribute'],'java.awt.font.TextAttribute','javajs.util.SB',['java.awt.geom.Rectangle2D','.Float']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Font");
 
@@ -6653,7 +6653,7 @@ Clazz_newMeth(C$, 'finalize', function () {
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:10
+//Created 2018-02-08 10:01:48
 (function(){var P$=Clazz_newPackage("java.awt.font"),I$=[['java.awt.geom.AffineTransform','java.awt.RenderingHints']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "FontRenderContext");
 
@@ -6770,7 +6770,7 @@ hash = hash+(this.fmHintValue.hashCode());
 }return hash;
 });
 })();
-//Created 2018-02-06 08:58:19
+//Created 2018-02-08 10:01:56
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.font.FontRenderContext']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "FontMetrics");
 C$.DEFAULT_FRC = null;
@@ -6851,7 +6851,7 @@ return this.getClass().getName() + "[font=" + this.getFont() + "ascent=" + this.
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:10
+//Created 2018-02-08 10:01:48
 (function(){var P$=Clazz_newPackage("java.awt.geom"),I$=[['java.lang.InternalError',['java.awt.geom.Point2D','.Double'],['java.awt.geom.Point2D','.Float'],'javajs.util.AU',['java.awt.geom.Path2D','.Double']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AffineTransform", null, null, ['Cloneable', 'java.io.Serializable']);
 var p$=C$.prototype;
@@ -8961,7 +8961,7 @@ return false;
 return ((this.m00 == a.m00 ) && (this.m01 == a.m01 ) && (this.m02 == a.m02 ) && (this.m10 == a.m10 ) && (this.m11 == a.m11 ) && (this.m12 == a.m12 )  );
 });
 })();
-//Created 2018-02-06 08:58:20
+//Created 2018-02-08 10:01:57
 (function(){var P$=Clazz_newPackage("java.awt.geom"),I$=[['java.lang.InternalError']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Dimension2D", null, null, 'Cloneable');
 
@@ -8991,7 +8991,7 @@ throw e;
 }
 });
 })();
-//Created 2018-02-06 08:58:20
+//Created 2018-02-08 10:01:58
 (function(){var P$=Clazz_newPackage("java.awt.geom"),I$=[[['java.awt.geom.Rectangle2D','.Double'],'java.awt.geom.Rectangle2D','java.awt.geom.RectIterator']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Rectangle2D", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -9348,7 +9348,7 @@ return this.getClass().getName() + "[x=" + new Double(this.x).toString() + ",y="
 });
 })()
 })();
-//Created 2018-02-06 08:58:21
+//Created 2018-02-08 10:01:59
 (function(){var P$=Clazz_newPackage("java.awt.geom"),I$=[[['java.awt.geom.Rectangle2D','.Double'],'java.awt.Rectangle','java.awt.geom.FlatteningPathIterator','java.lang.InternalError']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "RectangularShape", null, null, ['java.awt.Shape', 'Cloneable']);
 
@@ -9466,7 +9466,7 @@ throw e;
 }
 });
 })();
-//Created 2018-02-06 08:58:21
+//Created 2018-02-08 10:01:59
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['swingjs.api.Interface','java.awt.image.ColorModel','java.awt.image.WritableRaster','java.lang.Boolean','java.util.Hashtable']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "GraphicsConfiguration");
 
@@ -9531,7 +9531,7 @@ return false;
 });
 C$.$_ASSERT_ENABLED_ = ClassLoader.$getClassAssertionStatus(C$);
 })();
-//Created 2018-02-06 08:58:11
+//Created 2018-02-08 10:01:49
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.DisplayMode',['java.awt.GraphicsDevice','.WindowTranslucency']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "GraphicsDevice");
 
@@ -9639,7 +9639,7 @@ var $vals=[];
 Clazz_newMeth(C$, 'values', function() { return $vals }, 1);
 })()
 })();
-//Created 2018-02-06 08:58:11
+//Created 2018-02-08 10:01:49
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['swingjs.JSUtil']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "GraphicsEnvironment");
 C$.localEnv = null;
@@ -9687,11 +9687,11 @@ Clazz_newMeth(C$, 'getCenterPoint', function () {
 return null;
 });
 })();
-//Created 2018-02-06 08:58:11
+//Created 2018-02-08 10:01:49
 (function(){var P$=Clazz_newPackage("java.awt.image"),I$=[];
 var C$=Clazz_newInterface(P$, "ImageObserver");
 })();
-//Created 2018-02-06 08:58:23
+//Created 2018-02-08 10:02:00
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.lang.InternalError']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Insets", null, null, ['Cloneable', 'java.io.Serializable']);
 
@@ -9758,11 +9758,11 @@ throw e;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:12
+//Created 2018-02-08 10:01:50
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "ItemSelectable");
 })();
-//Created 2018-02-06 08:58:12
+//Created 2018-02-08 10:01:50
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['Thread','swingjs.JSFrameViewer','java.lang.Boolean','javax.swing.UIManager']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSComponent", null, 'java.awt.Component');
 C$.incr = 0;
@@ -9772,6 +9772,7 @@ C$.$clinit$ = function() {Clazz_load(C$, 1);
 
 Clazz_newMeth(C$, '$init0$', function () {
 var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
+this.isFramedApplet = false;
 this.htmlName = null;
 this.num = 0;
 this.isRootPane = false;
@@ -9887,18 +9888,18 @@ Clazz_newMeth(C$, 'isBackgroundSet', function () {
 return this.background != null ;
 });
 })();
-//Created 2018-02-08 00:34:42
+//Created 2018-02-08 11:13:18
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "LayoutManager");
 })();
-//Created 2018-02-06 08:58:12
+//Created 2018-02-08 10:01:50
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "LayoutManager2", null, null, 'java.awt.LayoutManager');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:12
+//Created 2018-02-08 10:01:50
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Component','java.awt.Insets','javajs.util.Lst','java.awt.Toolkit','java.awt.event.ContainerEvent','java.awt.Dimension',['java.awt.GraphicsCallback','.PaintCallback'],['java.awt.GraphicsCallback','.PaintAllCallback'],['java.awt.GraphicsCallback','.PaintHeavyweightComponentsCallback'],'java.awt.AWTEventMulticaster','java.awt.event.ContainerListener',['java.awt.Container','.MouseEventTargetFilter'],'java.awt.LightweightDispatcher','java.awt.event.MouseEvent','java.awt.event.MouseWheelEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "LightweightDispatcher", null, null, 'java.awt.event.AWTEventListener');
 var p$=C$.prototype;
@@ -10084,14 +10085,14 @@ target.dispatchEvent$java_awt_AWTEvent(retargeted);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:08
+//Created 2018-02-08 10:01:47
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "Paint", null, null, 'java.awt.Transparency');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:13
+//Created 2018-02-08 10:01:51
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.FlowLayout']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Panel", null, 'java.awt.Container');
 C$.nameCounter = 0;
@@ -10131,25 +10132,25 @@ Clazz_newMeth(C$, 'getOrCreatePeer', function () {
 return (this.ui == null  ? null : this.peer == null  ? (this.peer = this.getToolkit().createPanel$java_awt_Panel(this)) : this.peer);
 });
 })();
-//Created 2018-02-06 08:58:13
+//Created 2018-02-08 10:01:51
 (function(){var P$=Clazz_newPackage("java.awt.peer"),I$=[];
 var C$=Clazz_newInterface(P$, "ComponentPeer");
 })();
-//Created 2018-02-06 08:58:25
+//Created 2018-02-08 10:02:02
 (function(){var P$=Clazz_newPackage("java.awt.peer"),I$=[];
 var C$=Clazz_newInterface(P$, "ContainerPeer", null, null, 'java.awt.peer.ComponentPeer');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:26
+//Created 2018-02-08 10:02:02
 (function(){var P$=Clazz_newPackage("java.awt.peer"),I$=[];
 var C$=Clazz_newInterface(P$, "LightweightPeer", null, null, 'java.awt.peer.ContainerPeer');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:26
+//Created 2018-02-08 10:02:02
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newClass(P$, "Queue");
 
@@ -10164,7 +10165,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-08 00:34:36
+//Created 2018-02-08 10:01:48
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Point','java.awt.Dimension',['java.awt.geom.Rectangle2D','.Double'],'java.awt.geom.Rectangle2D']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Rectangle", null, 'java.awt.geom.Rectangle2D', 'java.awt.Shape');
 var p$=C$.prototype;
@@ -10608,7 +10609,7 @@ Clazz_newMeth(C$, 'toString', function () {
 return this.getClass().getName() + "[x=" + this.x + ",y=" + this.y + ",width=" + this.width + ",height=" + this.height + "]" ;
 });
 })();
-//Created 2018-02-06 08:58:13
+//Created 2018-02-08 10:01:51
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.util.HashMap','java.lang.InternalError',['java.awt.RenderingHints','.SunKey'],['java.awt.RenderingHints','.Value'],['java.awt.RenderingHints','.LCDContrastKey'],'java.util.Collections']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "RenderingHints", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -10997,15 +10998,15 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:13
+//Created 2018-02-08 10:01:51
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "Shape");
 })();
-//Created 2018-02-06 08:58:14
+//Created 2018-02-08 10:01:52
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "Stroke");
 })();
-//Created 2018-02-06 08:58:14
+//Created 2018-02-08 10:01:52
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.util.HashMap','sun.awt.NullComponentPeer','java.awt.Insets','swingjs.JSToolkit','java.awt.GraphicsEnvironment','java.awt.Cursor',['java.awt.Toolkit','.SelectiveAWTEventListener'],['java.awt.Toolkit','.ToolkitEventMulticaster'],'java.awt.AWTEventMulticaster','java.awt.event.AWTEventListener','java.awt.event.AWTEventListenerProxy','java.util.ArrayList','java.beans.PropertyChangeSupport']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Toolkit", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -11383,11 +11384,11 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:14
+//Created 2018-02-08 10:01:52
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "Transparency");
 })();
-//Created 2018-02-06 08:58:14
+//Created 2018-02-08 10:01:52
 (function(){var P$=Clazz_newPackage("java.beans"),I$=[['java.util.HashMap','java.util.ArrayList','java.util.Collections']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "ChangeListenerMap");
 
@@ -11494,7 +11495,7 @@ return listener;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:27
+//Created 2018-02-08 10:02:02
 (function(){var P$=Clazz_newPackage("java.beans"),I$=[];
 var C$=Clazz_newClass(P$, "PropertyChangeEvent", null, 'java.util.EventObject');
 
@@ -11542,14 +11543,14 @@ return this.propagationId;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:27
+//Created 2018-02-08 10:02:03
 (function(){var P$=Clazz_newPackage("java.beans"),I$=[];
 var C$=Clazz_newInterface(P$, "PropertyChangeListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:27
+//Created 2018-02-08 10:02:03
 (function(){var P$=Clazz_newPackage("java.beans"),I$=[['java.beans.PropertyChangeListener','java.beans.PropertyChangeListenerProxy',['java.beans.PropertyChangeSupport','.PropertyChangeListenerMap'],'java.beans.PropertyChangeEvent','Boolean','java.beans.IndexedPropertyChangeEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "PropertyChangeSupport", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -11699,7 +11700,7 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:27
+//Created 2018-02-08 10:02:03
 (function(){var P$=java.lang,I$=[['org.apache.harmony.luni.util.Msg']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(java.lang, "AbstractStringBuilder");
 var p$=C$.prototype;
@@ -12141,7 +12142,7 @@ Clazz_newMeth(C$, 'offsetByCodePoints$I$I', function (index, codePointOffset) {
 return Character.offsetByCodePoints(this.value, 0, this.count, index, codePointOffset);
 });
 })();
-//Created 2018-02-06 08:58:33
+//Created 2018-02-08 10:02:05
 (function(){var P$=java.lang,I$=[['java.lang.reflect.Method','java.util.Arrays','java.lang.reflect.TypeVariable','java.lang.Boolean','java.lang.Void','java.lang.Enum','java.util.HashMap']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(java.lang, "Class", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -12685,7 +12686,7 @@ return this.methods;
 });
 })()
 })();
-//Created 2018-02-06 08:58:35
+//Created 2018-02-08 10:02:06
 (function(){var P$=java.lang,I$=[['java.lang.Enum']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(java.lang, "Enum", null, null, ['Comparable', 'java.io.Serializable']);
 
@@ -12759,7 +12760,7 @@ Clazz_newMeth(C$, 'finalize', function () {
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:36
+//Created 2018-02-08 10:02:06
 (function(){var P$=java.lang,I$=[];
 var C$=Clazz_newClass(java.lang, "StringBuffer", null, 'AbstractStringBuilder', ['Appendable', 'java.io.Serializable', 'CharSequence']);
 var p$=C$.prototype;
@@ -13017,7 +13018,7 @@ var value = fields.get$S$O("value", null);
 this.set$CA$I(value, count);
 });
 })();
-//Created 2018-02-06 08:58:38
+//Created 2018-02-08 10:02:07
 (function(){var P$=java.lang,I$=[['java.lang.ThreadGroup','swingjs.JSToolkit','java.lang.ThreadDeath','java.lang.NoSuchMethodError','swingjs.JSUtil','java.util.HashMap',['java.lang.Thread','.State']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(java.lang, "Thread", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -13449,7 +13450,7 @@ Clazz_newMeth(C$, 'values', function() { return $vals }, 1);
 });
 })()
 })();
-//Created 2018-02-08 00:34:43
+//Created 2018-02-08 10:02:07
 (function(){var P$=java.lang,I$=[['Thread','java.util.Arrays','java.lang.ThreadGroup','java.lang.Thread']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(java.lang, "ThreadGroup", null, null, [['Thread','Thread.UncaughtExceptionHandler']]);
 var p$=C$.prototype;
@@ -13828,7 +13829,7 @@ return this.getClass().getName() + "[name=" + this.getName() + ",maxpri=" + this
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-08 00:34:41
+//Created 2018-02-08 10:02:07
 (function(){var P$=Clazz_newPackage("java.net"),I$=[['java.util.Hashtable','java.net.Parts','javajs.util.AjaxURLConnection','java.lang.Error']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "URL");
 var p$=C$.prototype;
@@ -14129,11 +14130,11 @@ handler = C$.factory.createURLStreamHandler$S(protocol);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:42
+//Created 2018-02-08 10:02:09
 (function(){var P$=Clazz_newPackage("java.net"),I$=[];
 var C$=Clazz_newInterface(P$, "URLStreamHandlerFactory");
 })();
-//Created 2018-02-06 08:58:42
+//Created 2018-02-08 10:02:09
 (function(){var P$=java.util,I$=[['java.lang.reflect.Array','java.lang.StringBuilder']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AbstractCollection", null, null, 'java.util.Collection');
 
@@ -14280,7 +14281,7 @@ buffer.append$C("]");
 return buffer.toString();
 });
 })();
-//Created 2018-02-06 08:58:45
+//Created 2018-02-08 10:02:11
 (function(){var P$=java.util,I$=[[['java.util.AbstractList','.SubAbstractList','.SubAbstractListIterator'],['java.util.AbstractList','.SimpleListIterator'],['java.util.AbstractList','.FullListIterator'],['java.util.AbstractList','.SubAbstractListRandomAccess'],['java.util.AbstractList','.SubAbstractList']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AbstractList", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -14788,7 +14789,7 @@ Clazz_newMeth(C$);
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-02-06 08:58:46
+//Created 2018-02-08 10:02:11
 (function(){var P$=java.util,I$=[['java.util.AbstractMap$1$1','java.util.AbstractSet','java.util.AbstractMap$2$1','java.util.AbstractCollection','java.lang.StringBuilder']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AbstractMap", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -15209,7 +15210,7 @@ return this.key + "=" + this.value ;
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-02-06 08:58:46
+//Created 2018-02-08 10:02:11
 (function(){var P$=java.util,I$=[];
 var C$=Clazz_newClass(P$, "AbstractSet", null, 'java.util.AbstractCollection', 'java.util.Set');
 
@@ -15260,7 +15261,7 @@ result = this.remove$O(it.next()) || result ;
 }return result;
 });
 })();
-//Created 2018-02-06 08:58:46
+//Created 2018-02-08 10:02:11
 (function(){var P$=java.util,I$=[['java.util.Arrays','java.lang.reflect.Array']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "ArrayList", null, 'java.util.AbstractList', ['java.util.List', 'Cloneable', 'java.io.Serializable', 'java.util.RandomAccess']);
 var p$=C$.prototype;
@@ -15650,7 +15651,7 @@ this.array[i] = stream.readObject();
 }
 });
 })();
-//Created 2018-02-06 08:58:46
+//Created 2018-02-08 10:02:11
 (function(){var P$=java.util,I$=[['java.util.Arrays','java.lang.reflect.Array',['java.util.Arrays','.ArrayList'],'java.lang.StringBuilder','java.util.HashSet']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Arrays", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -17155,7 +17156,7 @@ return this.indexOf$O(o) != -1;
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-02-06 08:58:47
+//Created 2018-02-08 10:02:11
 (function(){var P$=java.util,I$=[['java.util.Collections','java.util.Collections$EmptySet$1','java.util.Collections$SingletonSet$1','java.util.Collections$SingletonMap$1$1$1','java.util.Collections$SingletonMap$1$1','java.util.AbstractSet',['java.util.Collections','.SynchronizedList'],['java.util.Collections','.SynchronizedRandomAccessList'],['java.util.Collections','.SynchronizedSet'],['java.util.Collections','.SynchronizedCollection'],'java.util.Collections$UnmodifiableCollection$1','java.util.Collections$UnmodifiableList$1',['java.util.Collections','.UnmodifiableRandomAccessList'],['java.util.Collections','.UnmodifiableList'],['java.util.Collections','.UnmodifiableMap','.UnmodifiableEntrySet','.UnmodifiableMapEntry'],'java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet$1','java.lang.reflect.Array',['java.util.Collections','.UnmodifiableMap','.UnmodifiableEntrySet'],['java.util.Collections','.UnmodifiableSet'],['java.util.Collections','.UnmodifiableCollection'],['java.util.Collections','.CheckedListIterator'],'java.util.Arrays',['java.util.Collections','.CheckedMap','.CheckedEntry'],['java.util.Collections','.CheckedMap','.CheckedEntrySet','.CheckedEntryIterator'],['java.util.Map','.Entry'],['java.util.Collections','.CheckedMap','.CheckedEntrySet'],['java.util.Collections','.EmptyList'],['java.util.Collections','.EmptySet'],['java.util.Collections','.EmptyMap'],'java.util.Collections$1',['java.util.Collections','.CopiesList'],['java.util.Collections','.ReverseComparator'],['java.util.Collections','.ReverseComparatorWithComparator'],'java.util.Random',['java.util.Collections','.SingletonSet'],['java.util.Collections','.SingletonList'],['java.util.Collections','.SingletonMap'],'java.util.ArrayList',['java.util.Collections','.SynchronizedMap'],['java.util.Collections','.SynchronizedSortedMap'],['java.util.Collections','.SynchronizedSortedSet'],['java.util.Collections','.UnmodifiableMap'],['java.util.Collections','.UnmodifiableSortedMap'],['java.util.Collections','.UnmodifiableSortedSet'],['java.util.Collections','.CheckedCollection'],['java.util.Collections','.CheckedMap'],['java.util.Collections','.CheckedRandomAccessList'],['java.util.Collections','.CheckedList'],['java.util.Collections','.CheckedSet'],['java.util.Collections','.CheckedSortedMap'],['java.util.Collections','.CheckedSortedSet']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Collections", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -19926,7 +19927,7 @@ return this.sm.lastKey();
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-02-06 08:58:47
+//Created 2018-02-08 10:02:12
 (function(){var P$=java.util,I$=[];
 var C$=Clazz_newClass(P$, "Dictionary");
 
@@ -19937,11 +19938,11 @@ Clazz_newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
 }, 1);
 })();
-//Created 2018-02-06 08:58:47
+//Created 2018-02-08 10:02:12
 (function(){var P$=java.util,I$=[];
 var C$=Clazz_newInterface(P$, "EventListener");
 })();
-//Created 2018-02-06 08:58:48
+//Created 2018-02-08 10:02:12
 (function(){var P$=java.util,I$=[];
 var C$=Clazz_newClass(P$, "EventObject", null, null, 'java.io.Serializable');
 
@@ -19969,7 +19970,7 @@ Clazz_newMeth(C$, 'toString', function () {
 return this.getClass().getName() + "[source=" + String.valueOf(this.source) + ']' ;
 });
 })();
-//Created 2018-02-06 08:58:48
+//Created 2018-02-08 10:02:12
 (function(){var P$=java.util,I$=[[['java.util.HashMap','.Entry'],['java.util.HashMap','.KeyIterator'],['java.util.HashMap','.ValueIterator'],['java.util.HashMap','.EntryIterator'],['java.util.HashMap','.KeySet'],['java.util.HashMap','.Values'],['java.util.HashMap','.EntrySet']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "HashMap", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -20607,7 +20608,7 @@ this.b$['java.util.HashMap'].clear();
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-02-06 08:58:49
+//Created 2018-02-08 10:02:13
 (function(){var P$=java.util,I$=[['java.util.HashMap','java.util.LinkedHashMap','java.lang.InternalError']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "HashSet", null, 'java.util.AbstractSet', ['java.util.Set', 'Cloneable', 'java.io.Serializable']);
 C$.PRESENT = null;
@@ -20714,7 +20715,7 @@ this.map.put$TK$TV(e, C$.PRESENT);
 }
 });
 })();
-//Created 2018-02-06 08:58:50
+//Created 2018-02-08 10:02:13
 (function(){var P$=java.util,I$=[['java.util.Hashtable$1',['java.util.Hashtable','.Entry'],'java.util.Arrays',['java.util.Hashtable','.HashEnumerator'],['java.util.Collections','.SynchronizedSet'],['java.util.Hashtable','.HashIterator'],'java.util.Hashtable$2$1','java.util.AbstractSet','java.util.Hashtable$3$1','java.lang.StringBuilder',['java.util.Collections','.SynchronizedCollection'],'java.util.Hashtable$4$1','java.util.AbstractCollection']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Hashtable", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -21391,7 +21392,7 @@ return result;
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-02-06 08:58:50
+//Created 2018-02-08 10:02:13
 (function(){var P$=java.util,I$=[[['java.util.IdentityHashMap','.KeyIterator'],['java.util.IdentityHashMap','.ValueIterator'],['java.util.IdentityHashMap','.EntryIterator'],['java.util.AbstractMap','.SimpleEntry'],'java.lang.reflect.Array','java.lang.InternalError',['java.util.IdentityHashMap','.KeySet'],['java.util.IdentityHashMap','.Values'],['java.util.IdentityHashMap','.EntrySet']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "IdentityHashMap", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -22065,7 +22066,7 @@ return a;
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-02-06 08:58:50
+//Created 2018-02-08 10:02:13
 (function(){var P$=java.util,I$=[['java.util.HashMap','java.lang.StringBuilder','java.lang.InternalError']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Locale", null, null, ['Cloneable', 'java.io.Serializable']);
 C$.cache = null;
@@ -22244,7 +22245,7 @@ return this.language == other.language && this.country == other.country  && this
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:52
+//Created 2018-02-08 10:02:14
 (function(){var P$=java.util,I$=[];
 var C$=Clazz_newClass(P$, "MapEntry", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -22322,11 +22323,11 @@ return this.key + "=" + this.value ;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:52
+//Created 2018-02-08 10:02:14
 (function(){var P$=Clazz_newPackage("javajs.api"),I$=[];
 var C$=Clazz_newInterface(P$, "JSFunction");
 })();
-//Created 2018-02-06 08:58:59
+//Created 2018-02-08 10:02:17
 (function(){var P$=Clazz_newPackage("javajs.util"),I$=[['java.util.Hashtable','javajs.util.AjaxURLStreamHandler']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AjaxURLStreamHandlerFactory", null, null, 'java.net.URLStreamHandlerFactory');
 
@@ -22352,7 +22353,7 @@ if (fac == null ) this.htFactories.put$TK$TV(protocol, fac = Clazz_new_((I$[2]||
 return (fac.protocol == null  ? null : fac);
 });
 })();
-//Created 2018-02-06 08:59:02
+//Created 2018-02-08 10:02:18
 (function(){var P$=Clazz_newPackage("javajs.util"),I$=[['java.lang.reflect.Array','javajs.util.T3','java.util.Arrays','javajs.util.Lst','java.util.Hashtable']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AU");
 var p$=C$.prototype;
@@ -22711,7 +22712,7 @@ for (var i = b.length; --i >= 0;) { var j = b[i] & 0xFF; if (j >= 0x80) j -= 0x1
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:01
+//Created 2018-02-08 10:02:18
 (function(){var P$=Clazz_newPackage("javajs.util"),I$=[['javajs.util.JSThread$1']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSThread", null, 'Thread', 'javajs.api.JSFunction');
 C$.threadCount = 0;
@@ -22813,7 +22814,7 @@ setTimeout( function() {java.awt.Toolkit.getDefaultToolkit().getSystemEventQueue
 return true;
 });
 })();
-//Created 2018-02-08 00:34:35
+//Created 2018-02-08 10:02:19
 (function(){var P$=Clazz_newPackage("javajs.util"),I$=[];
 var C$=Clazz_newClass(P$, "Lst", null, 'java.util.ArrayList');
 
@@ -22840,7 +22841,7 @@ Clazz_newMeth(C$, 'removeObj$O', function (v) {
 return C$.superclazz.prototype.remove$O.apply(this, [v]);
 });
 })();
-//Created 2018-02-06 08:59:05
+//Created 2018-02-08 10:02:19
 (function(){var P$=Clazz_newPackage("javajs.util"),I$=[['javajs.util.DF','javajs.util.SB','javajs.util.AU','java.lang.reflect.Array']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "PT");
 C$.tensScale = null;
@@ -23789,7 +23790,7 @@ return (pt < 0 ? C$.parseFloat$S(s) : C$.parseFloat$S(s.substring(0, pt)) / C$.p
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:06
+//Created 2018-02-08 10:02:20
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.AbstractAction','javax.swing.UIManager','java.awt.event.ActionListener',['javax.swing.AbstractButton','.ButtonActionPropertyChangeListener'],'javax.swing.SwingUtilities','javax.swing.OverlayLayout','javax.swing.event.ChangeListener','javax.swing.event.ChangeEvent','java.awt.event.ActionEvent','java.awt.event.ItemListener','java.awt.event.ItemEvent',['javax.swing.AbstractButton','.Handler']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AbstractButton", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -24732,7 +24733,7 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:16
+//Created 2018-02-08 10:02:23
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.ArrayTable','java.util.HashMap']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "ActionMap");
 
@@ -24825,7 +24826,7 @@ keyMap.put$TK$TV(pKeys[counter], pKeys[counter]);
 return keyMap.keySet().toArray();
 });
 })();
-//Created 2018-02-06 08:59:17
+//Created 2018-02-08 10:02:24
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.util.Hashtable']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "ArrayTable", null, null, 'Cloneable');
 var p$=C$.prototype;
@@ -25009,7 +25010,7 @@ j = j+(2);
 this.table = array;
 });
 })();
-//Created 2018-02-06 08:59:17
+//Created 2018-02-08 10:02:24
 (function(){var P$=Clazz_newPackage("javax.swing.border"),I$=[['java.awt.Insets','java.awt.Rectangle',['java.awt.Component','.BaselineResizeBehavior']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AbstractBorder", null, null, 'javax.swing.border.Border');
 
@@ -25064,7 +25065,7 @@ return c.getComponentOrientation().isLeftToRight();
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:45
+//Created 2018-02-08 10:02:44
 (function(){var P$=Clazz_newPackage("javax.swing.border"),I$=[['java.awt.Insets']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "BevelBorder", null, 'javax.swing.border.AbstractBorder');
 
@@ -25204,11 +25205,11 @@ g.setColor$java_awt_Color(oldColor);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:45
+//Created 2018-02-08 10:02:44
 (function(){var P$=Clazz_newPackage("javax.swing.border"),I$=[];
 var C$=Clazz_newInterface(P$, "Border");
 })();
-//Created 2018-02-06 08:59:45
+//Created 2018-02-08 10:02:44
 (function(){var P$=Clazz_newPackage("javax.swing.border"),I$=[['java.awt.Insets']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "EmptyBorder", null, 'javax.swing.border.AbstractBorder');
 
@@ -25267,7 +25268,7 @@ return false;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:45
+//Created 2018-02-08 10:02:45
 (function(){var P$=Clazz_newPackage("javax.swing.border"),I$=[['java.awt.Insets']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "EtchedBorder", null, 'javax.swing.border.AbstractBorder');
 
@@ -25350,7 +25351,7 @@ Clazz_newMeth(C$, 'getShadowColor', function () {
 return this.shadow;
 });
 })();
-//Created 2018-02-06 08:59:45
+//Created 2018-02-08 10:02:45
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.border.BevelBorder','javax.swing.border.EtchedBorder','javax.swing.border.EmptyBorder','javax.swing.border.LineBorder','javax.swing.border.TitledBorder','javax.swing.border.CompoundBorder','javax.swing.border.MatteBorder']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "BorderFactory");
 var p$=C$.prototype;
@@ -25489,18 +25490,18 @@ Clazz_newMeth(C$, 'createMatteBorder$I$I$I$I$javax_swing_Icon', function (top, l
 return Clazz_new_((I$[7]||$incl$(7)).c$$I$I$I$I$javax_swing_Icon,[top, left, bottom, right, tileIcon]);
 }, 1);
 })();
-//Created 2018-02-06 08:59:18
+//Created 2018-02-08 10:02:24
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "BoundedRangeModel");
 })();
-//Created 2018-02-06 08:59:18
+//Created 2018-02-08 10:02:24
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "ButtonModel", null, null, 'java.awt.ItemSelectable');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:59:18
+//Created 2018-02-08 10:02:25
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.event.EventListenerList','javax.swing.event.ChangeListener','javax.swing.event.ChangeEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "DefaultBoundedRangeModel", null, null, 'javax.swing.BoundedRangeModel');
 
@@ -25648,7 +25649,7 @@ Clazz_newMeth(C$, 'getListeners$Class', function (listenerType) {
 return this.listenerList.getListeners$Class(listenerType);
 });
 })();
-//Created 2018-02-06 08:59:19
+//Created 2018-02-08 10:02:25
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.event.EventListenerList','javax.swing.UIManager','java.awt.event.ItemEvent','java.awt.EventQueue','java.awt.event.ActionEvent','javax.swing.event.ChangeListener','javax.swing.event.ChangeEvent','java.awt.event.ActionListener','java.awt.event.ItemListener']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "DefaultButtonModel", null, null, 'javax.swing.ButtonModel');
 
@@ -25869,21 +25870,21 @@ Clazz_newMeth(C$, 'setMenuItem$Z', function (menuItem) {
 this.menuItem = menuItem;
 });
 })();
-//Created 2018-02-06 08:59:19
+//Created 2018-02-08 10:02:25
 (function(){var P$=Clazz_newPackage("javax.swing.event"),I$=[];
 var C$=Clazz_newInterface(P$, "AncestorListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:59:47
+//Created 2018-02-08 10:02:47
 (function(){var P$=Clazz_newPackage("javax.swing.event"),I$=[];
 var C$=Clazz_newInterface(P$, "ChangeListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:59:48
+//Created 2018-02-08 10:02:47
 (function(){var P$=Clazz_newPackage("javax.swing.event"),I$=[];
 var C$=Clazz_newClass(P$, "EventListenerList");
 C$.NULL_ARRAY = null;
@@ -25978,7 +25979,7 @@ return s;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:48
+//Created 2018-02-08 10:02:47
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.awt.Color','javax.swing.JComponent','java.awt.BorderLayout','javax.swing.JRootPane','javax.swing.SwingUtilities','javax.swing.RepaintManager']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JApplet", null, 'java.applet.Applet', 'javax.swing.RootPaneContainer');
 var p$=C$.prototype;
@@ -26000,7 +26001,9 @@ this.rootPaneCheckingEnabled = false;
 Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
 this.setFrameViewer$swingjs_JSFrameViewer(this.appletViewer);
+this.uiClassID = "AppletUI";
 p$.setJApplet.apply(this, []);
+this.updateUI();
 }, 1);
 
 Clazz_newMeth(C$, 'setJApplet', function () {
@@ -26141,8 +26144,13 @@ var rootPaneString = (this.rootPane != null  ? this.rootPane.toString() : "");
 var rootPaneCheckingEnabledString = (this.rootPaneCheckingEnabled ? "true" : "false");
 return C$.superclazz.prototype.paramString.apply(this, []) + ",rootPane=" + rootPaneString + ",rootPaneCheckingEnabled=" + rootPaneCheckingEnabledString ;
 });
+
+Clazz_newMeth(C$, 'addNotify', function () {
+C$.superclazz.prototype.addNotify.apply(this, []);
+this.getLayeredPane().isFramedApplet = true;
+});
 })();
-//Created 2018-02-06 08:59:23
+//Created 2018-02-08 10:03:50
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.DefaultButtonModel','javax.swing.SwingUtilities']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JButton", null, 'javax.swing.AbstractButton');
 
@@ -26205,7 +26213,7 @@ var defaultCapableString = (this.defaultCapable ? "true" : "false");
 return C$.superclazz.prototype.paramString.apply(this, []) + ",defaultCapable=" + defaultCapableString ;
 });
 })();
-//Created 2018-02-06 08:59:23
+//Created 2018-02-08 10:02:27
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.SwingUtilities',['javax.swing.JComponent','.IntVector'],'javajs.util.Lst','javax.swing.JComponent','javax.swing.JComponent$1','javax.swing.event.EventListenerList','java.util.HashSet','javax.swing.KeyStroke','java.awt.Rectangle','javax.swing.RepaintManager','sun.font.FontDesignMetrics','java.awt.Insets','javax.swing.ClientPropertyKey',['javax.swing.JComponent','.ActionStandin'],'java.util.Hashtable','javax.swing.KeyboardManager','javax.swing.InputMap','javax.swing.ComponentInputMap','javax.swing.ActionMap',['java.awt.Component','.BaselineResizeBehavior'],'java.util.Locale',['javax.swing.JComponent','.KeyboardState'],'javax.swing.Popup','javax.swing.JToolTip','javax.swing.Autoscroller','javax.swing.ArrayTable','swingjs.JSToolkit','swingjs.JSUtil','javax.swing.AncestorNotifier','javax.swing.event.AncestorListener','java.beans.PropertyChangeListener','javax.swing.JComponent$2','java.util.ArrayList']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JComponent", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -27905,7 +27913,7 @@ return false;
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-02-06 08:59:26
+//Created 2018-02-08 10:02:28
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.SwingUtilities','javax.swing.UIManager']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JLabel", null, 'javax.swing.JComponent', 'javax.swing.SwingConstants');
 
@@ -28213,7 +28221,7 @@ if (Clazz_instanceOf(oldC, "javax.swing.JComponent")) {
 (c).putClientProperty$O$O("labeledBy", this);
 }});
 })();
-//Created 2018-02-06 08:59:29
+//Created 2018-02-08 10:02:31
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.awt.Component','java.awt.Color','java.util.Hashtable','java.util.ArrayList']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JLayeredPane", null, 'javax.swing.JComponent');
 C$.DEFAULT_LAYER = null;
@@ -28521,7 +28529,7 @@ var optimizedDrawingPossibleString = (this.optimizedDrawingPossible ? "true" : "
 return C$.superclazz.prototype.paramString.apply(this, []) + ",optimizedDrawingPossible=" + optimizedDrawingPossibleString ;
 });
 })();
-//Created 2018-02-06 08:59:30
+//Created 2018-02-08 10:02:31
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.lang.Boolean','java.awt.FlowLayout']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JPanel", null, 'javax.swing.JComponent');
 
@@ -28551,7 +28559,7 @@ Clazz_newMeth(C$, 'c$', function () {
 C$.c$$Z.apply(this, [true]);
 }, 1);
 })();
-//Created 2018-02-06 08:59:31
+//Created 2018-02-08 10:02:33
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.SwingUtilities','java.awt.Dimension','sun.awt.AppContext','javax.swing.JLayeredPane','javax.swing.JPanel','java.awt.BorderLayout',['javax.swing.JRootPane','.RootLayout']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JRootPane", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -28908,7 +28916,7 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:33
+//Created 2018-02-08 11:13:19
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.DefaultBoundedRangeModel',['javax.swing.JScrollBar','.ModelListener'],'java.awt.event.AdjustmentListener','java.awt.event.AdjustmentEvent','java.awt.Dimension']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JScrollBar", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -29151,7 +29159,7 @@ this.this$0.fireAdjustmentValueChanged$I$I$I$Z.apply(this.this$0, [id, type, val
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-02-06 08:59:33
+//Created 2018-02-08 10:02:34
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.UIManager','swingjs.JSUtil','javax.swing.plaf.InputMapUIResource','javax.swing.plaf.ComponentInputMapUIResource','javax.swing.KeyStroke','sun.swing.DefaultLayoutStyle']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "LookAndFeel");
 
@@ -29264,7 +29272,7 @@ return "[" + this.getDescription() + " - " + this.getClass().getName() + "]" ;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:39
+//Created 2018-02-08 10:02:40
 (function(){var P$=Clazz_newPackage("javax.swing.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "ActionMapUIResource", null, 'javax.swing.ActionMap', 'javax.swing.plaf.UIResource');
 
@@ -29278,7 +29286,7 @@ Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
 }, 1);
 })();
-//Created 2018-02-06 08:59:49
+//Created 2018-02-08 10:02:48
 (function(){var P$=Clazz_newPackage("javax.swing.plaf"),I$=[[['javax.swing.plaf.BorderUIResource','.EtchedBorderUIResource'],['javax.swing.plaf.BorderUIResource','.BevelBorderUIResource'],['javax.swing.plaf.BorderUIResource','.LineBorderUIResource'],'java.awt.Color']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "BorderUIResource", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -29538,7 +29546,7 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:49
+//Created 2018-02-08 10:02:48
 (function(){var P$=Clazz_newPackage("javax.swing.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "ColorUIResource", null, 'java.awt.Color', 'javax.swing.plaf.UIResource');
 
@@ -29573,7 +29581,7 @@ C$.superclazz.c$$I$Z.apply(this, [c.getRGB(), (c.getRGB() & -16777216) != -16777
 C$.$init$.apply(this);
 }, 1);
 })();
-//Created 2018-02-06 08:59:49
+//Created 2018-02-08 10:02:48
 (function(){var P$=Clazz_newPackage("javax.swing.plaf"),I$=[['java.lang.Error',['java.awt.Component','.BaselineResizeBehavior']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "ComponentUI", null, null, 'java.awt.peer.ComponentPeer');
 
@@ -29633,7 +29641,7 @@ Clazz_newMeth(C$, 'getBaselineResizeBehavior$javax_swing_JComponent', function (
 return (I$[2]||$incl$(2)).OTHER;
 });
 })();
-//Created 2018-02-06 08:59:50
+//Created 2018-02-08 10:02:49
 (function(){var P$=Clazz_newPackage("javax.swing.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "DimensionUIResource", null, 'java.awt.Dimension', 'javax.swing.plaf.UIResource');
 
@@ -29650,7 +29658,7 @@ C$.$init$.apply(this);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:50
+//Created 2018-02-08 10:02:49
 (function(){var P$=Clazz_newPackage("javax.swing.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "FontUIResource", null, 'java.awt.Font', 'javax.swing.plaf.UIResource');
 
@@ -29672,7 +29680,7 @@ C$.$init$.apply(this);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:50
+//Created 2018-02-08 10:02:49
 (function(){var P$=Clazz_newPackage("javax.swing.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "InsetsUIResource", null, 'java.awt.Insets', 'javax.swing.plaf.UIResource');
 
@@ -29689,11 +29697,11 @@ C$.$init$.apply(this);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:50
+//Created 2018-02-08 10:02:49
 (function(){var P$=Clazz_newPackage("javax.swing.plaf"),I$=[];
 var C$=Clazz_newInterface(P$, "UIResource");
 })();
-//Created 2018-02-06 08:59:53
+//Created 2018-02-08 10:02:52
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.util.HashMap','java.awt.Rectangle','sun.awt.AppContext','javax.swing.SwingUtilities',['javax.swing.RepaintManager','.ProcessingRunnable'],'java.util.IdentityHashMap','javajs.util.Lst','java.awt.Toolkit','java.util.HashSet','sun.awt.AWTAccessor','java.lang.StringBuffer','Thread','sun.awt.SunToolkit','java.awt.event.InvocationEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "RepaintManager", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -30193,15 +30201,15 @@ this.this$0.prePaintDirtyRegions();
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-02-08 00:34:39
+//Created 2018-02-08 10:02:41
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "RootPaneContainer");
 })();
-//Created 2018-02-06 08:59:41
+//Created 2018-02-08 10:02:41
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "SwingConstants");
 })();
-//Created 2018-02-06 08:59:42
+//Created 2018-02-08 10:02:42
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newClass(P$, "SwingPaintEventDispatcher", null, 'sun.awt.PaintEventDispatcher');
 C$.ERASE_BACKGROUND = false;
@@ -30233,7 +30241,7 @@ return true;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:43
+//Created 2018-02-08 10:02:43
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.awt.Rectangle','java.awt.Point','java.lang.Error','java.awt.event.MouseWheelEvent','javax.swing.event.MenuDragMouseEvent','java.awt.event.MouseEvent','swingjs.api.Interface','java.awt.EventQueue','javax.swing.JComponent','java.awt.event.ActionEvent','swingjs.JSUtil',['javax.swing.SwingUtilities','.SharedOwnerFrame'],'sun.awt.AppContext','Thread']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "SwingUtilities", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -30974,7 +30982,7 @@ Clazz_newMeth(C$, 'dispose', function () {
 });
 })()
 })();
-//Created 2018-02-08 00:34:36
+//Created 2018-02-08 10:02:43
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.LookAndFeel','java.util.Locale','java.util.HashMap','javax.swing.SwingUtilities','java.lang.Error','swingjs.JSToolkit','javax.swing.event.SwingPropertyChangeSupport','java.beans.PropertyChangeListener','java.util.Vector']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "UIDefaults", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -31299,7 +31307,7 @@ return km;
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-02-06 08:59:45
+//Created 2018-02-08 10:02:44
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.util.ArrayList',['javax.swing.UIManager','.LookAndFeelInfo'],'swingjs.JSUtil','javax.swing.SwingUtilities','java.util.Locale','java.beans.PropertyChangeListener','swingjs.JSToolkit','javax.swing.RepaintManager','sun.awt.PaintEventDispatcher','javax.swing.SwingPaintEventDispatcher']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "UIManager", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -31519,7 +31527,7 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:45
+//Created 2018-02-08 10:02:44
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[['java.lang.StringBuffer','java.util.Collections','java.util.IdentityHashMap','java.util.HashMap','java.util.HashSet','Thread','sun.awt.SunToolkit','sun.awt.MostRecentThreadAppContext','sun.awt.MostRecentKeyValue','java.beans.PropertyChangeListener','java.beans.PropertyChangeSupport']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AppContext");
 C$.EVENT_QUEUE_KEY = null;
@@ -31667,7 +31675,7 @@ return Clazz_array((I$[10]||$incl$(10)), [0]);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-08 00:34:42
+//Created 2018-02-08 10:03:08
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[['java.util.HashSet','java.util.IdentityHashMap','java.awt.AWTEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AWTAutoShutdown", null, null, 'Runnable');
 C$.theInstance = null;
@@ -31771,11 +31779,11 @@ aLog.fine$S(key + "->" + this.peerMap.get$O(key) );
 }
 });
 })();
-//Created 2018-02-08 00:34:40
+//Created 2018-02-08 10:03:07
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "ComponentFactory");
 })();
-//Created 2018-02-06 09:00:12
+//Created 2018-02-08 10:03:08
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[];
 var C$=Clazz_newClass(P$, "MostRecentKeyValue");
 
@@ -31801,7 +31809,7 @@ this.value = v;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-08 00:34:42
+//Created 2018-02-08 10:03:08
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[];
 var C$=Clazz_newClass(P$, "MostRecentThreadAppContext");
 
@@ -31822,7 +31830,7 @@ this.appContext = value;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-08 00:34:42
+//Created 2018-02-08 10:03:08
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[['java.awt.event.PaintEvent','java.awt.Rectangle']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "PaintEventDispatcher");
 C$.dispatcher = null;
@@ -31856,7 +31864,7 @@ return false;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:13
+//Created 2018-02-08 10:03:08
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[['swingjs.JSUtil','sun.awt.EventQueueItem','sun.awt.SunToolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "PostEventQueue");
 
@@ -31907,11 +31915,11 @@ this.queueTail = item;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:13
+//Created 2018-02-08 10:03:08
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "RequestFocusController");
 })();
-//Created 2018-02-06 09:00:13
+//Created 2018-02-08 10:03:08
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[['java.util.HashMap','java.awt.EventQueue','sun.awt.AppContext','sun.awt.PostEventQueue','Thread','sun.awt.AWTAutoShutdown','sun.awt.AWTAccessor','sun.awt.PeerEvent','java.awt.Toolkit','sun.awt.SunToolkit$1','java.awt.Dimension','sun.font.FontDesignMetrics']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "SunToolkit", null, 'java.awt.Toolkit', ['sun.awt.WindowClosingSupport', 'sun.awt.WindowClosingListener', 'sun.awt.ComponentFactory']);
 C$.appContextMap = null;
@@ -32308,15 +32316,15 @@ Clazz_newMeth(C$, 'needUpdateWindow', function () {
 return false;
 });
 })();
-//Created 2018-02-08 00:34:38
+//Created 2018-02-08 10:03:09
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "WindowClosingListener");
 })();
-//Created 2018-02-06 09:00:14
+//Created 2018-02-08 10:03:09
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "WindowClosingSupport");
 })();
-//Created 2018-02-06 09:00:14
+//Created 2018-02-08 10:03:09
 (function(){var P$=Clazz_newPackage("sun.swing"),I$=[['java.lang.Boolean','java.awt.Color']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "SwingLazyValue", null, null, [['javax.swing.UIDefaults','javax.swing.UIDefaults.LazyValue']]);
 var p$=C$.prototype;
@@ -32393,7 +32401,7 @@ types[i] = args[i].getClass();
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:23
+//Created 2018-02-08 10:03:13
 (function(){var P$=Clazz_newPackage("swingjs.api"),I$=[];
 var C$=Clazz_newClass(P$, "Interface");
 C$.instances = null;
@@ -32444,7 +32452,7 @@ return x;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:32
+//Created 2018-02-08 10:03:19
 (function(){var P$=Clazz_newPackage("swingjs.api.js"),I$=[['swingjs.JSUtil']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "DOMNode");
 
@@ -32605,7 +32613,7 @@ C$.setStyles(node, ["display", visible ? "block" : "none"]);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:33
+//Created 2018-02-08 10:03:19
 (function(){var P$=Clazz_newPackage("swingjs.api.js"),I$=[];
 var C$=Clazz_newClass(P$, "HTML5CanvasContext2D");
 
@@ -32682,11 +32690,11 @@ ctx.fillStyle = s;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:33
+//Created 2018-02-08 10:03:19
 (function(){var P$=Clazz_newPackage("swingjs.api.js"),I$=[];
 var C$=Clazz_newInterface(P$, "JSInterface");
 })();
-//Created 2018-02-06 09:00:33
+//Created 2018-02-08 10:03:19
 (function(){var P$=Clazz_newPackage("swingjs.jquery"),I$=[];
 var C$=Clazz_newClass(P$, "JQueryUI");
 
@@ -32701,7 +32709,9 @@ if (!jQuery.ui) try{ (function(e,t){function i(t,n){var r,i,o,u=t.nodeName.toLow
 }catch (e) { System.out.println("coremenu failed to load jQuery.ui.mouse -- jQuery version conflict?");
 } if (!jQuery.ui.position) try{ (function(e,t){function h(e,t,n){return[parseInt(e[0],10)*(l.test(e[0])?t/100:1),parseInt(e[1],10)*(l.test(e[1])?n/100:1)]}function p(t,n){return parseInt(e.css(t,n),10)||0}e.ui=e.ui||{};var n,r=Math.max,i=Math.abs,s=Math.round,o=/left|center|right/,u=/top|center|bottom/,a=/[\+\-]\d+%?/,f=/^\w+/,l=/%$/,c=e.fn.position;e.position={scrollbarWidth:function(){if(n!==t)return n;var r,i,s=e("<div style='display:block;width:50px;height:50px;overflow:hidden;'><div style='height:100px;width:auto;'></div></div>"),o=s.children()[0];return e("body").append(s),r=o.offsetWidth,s.css("overflow","scroll"),i=o.offsetWidth,r===i&&(i=s[0].clientWidth),s.remove(),n=r-i},getScrollInfo:function(t){var n=t.isWindow?"":t.element.css("overflow-x"),r=t.isWindow?"":t.element.css("overflow-y"),i=n==="scroll"||n==="auto"&&t.width<t.element[0].scrollWidth,s=r==="scroll"||r==="auto"&&t.height<t.element[0].scrollHeight;return{width:i?e.position.scrollbarWidth():0,height:s?e.position.scrollbarWidth():0}},getWithinInfo:function(t){var n=e(t||window),r=e.isWindow(n[0]);return{element:n,isWindow:r,offset:n.offset()||{left:0,top:0},scrollLeft:n.scrollLeft(),scrollTop:n.scrollTop(),width:r?n.width():n.outerWidth(),height:r?n.height():n.outerHeight()}}},e.fn.position=function(t){if(!t||!t.of)return c.apply(this,arguments);t=e.extend({},t);var n,l,d,v,m,g=e(t.of),y=e.position.getWithinInfo(t.within),b=e.position.getScrollInfo(y),w=g[0],E=(t.collision||"flip").split(" "),S={};return w.nodeType===9?(l=g.width(),d=g.height(),v={top:0,left:0}):e.isWindow(w)?(l=g.width(),d=g.height(),v={top:g.scrollTop(),left:g.scrollLeft()}):w.preventDefault?(t.at="left top",l=d=0,v={top:w.pageY,left:w.pageX}):(l=g.outerWidth(),d=g.outerHeight(),v=g.offset()),m=e.extend({},v),e.each(["my","at"],function(){var e=(t[this]||"").split(" "),n,r;e.length===1&&(e=o.test(e[0])?e.concat(["center"]):u.test(e[0])?["center"].concat(e):["center","center"]),e[0]=o.test(e[0])?e[0]:"center",e[1]=u.test(e[1])?e[1]:"center",n=a.exec(e[0]),r=a.exec(e[1]),S[this]=[n?n[0]:0,r?r[0]:0],t[this]=[f.exec(e[0])[0],f.exec(e[1])[0]]}),E.length===1&&(E[1]=E[0]),t.at[0]==="right"?m.left+=l:t.at[0]==="center"&&(m.left+=l/2),t.at[1]==="bottom"?m.top+=d:t.at[1]==="center"&&(m.top+=d/2),n=h(S.at,l,d),m.left+=n[0],m.top+=n[1],this.each(function(){var o,u,a=e(this),f=a.outerWidth(),c=a.outerHeight(),w=p(this,"marginLeft"),x=p(this,"marginTop"),T=f+w+p(this,"marginRight")+b.width,N=c+x+p(this,"marginBottom")+b.height,C=e.extend({},m),k=h(S.my,a.outerWidth(),a.outerHeight());t.my[0]==="right"?C.left-=f:t.my[0]==="center"&&(C.left-=f/2),t.my[1]==="bottom"?C.top-=c:t.my[1]==="center"&&(C.top-=c/2),C.left+=k[0],C.top+=k[1],e.support.offsetFractions||(C.left=s(C.left),C.top=s(C.top)),o={marginLeft:w,marginTop:x},e.each(["left","top"],function(r,i){e.ui.position[E[r]]&&e.ui.position[E[r]][i](C,{targetWidth:l,targetHeight:d,elemWidth:f,elemHeight:c,collisionPosition:o,collisionWidth:T,collisionHeight:N,offset:[n[0]+k[0],n[1]+k[1]],my:t.my,at:t.at,within:y,elem:a})}),e.fn.bgiframe&&a.bgiframe(),t.using&&(u=function(e){var n=v.left-C.left,s=n+l-f,o=v.top-C.top,u=o+d-c,h={target:{element:g,left:v.left,top:v.top,width:l,height:d},element:{element:a,left:C.left,top:C.top,width:f,height:c},horizontal:s<0?"left":n>0?"right":"center",vertical:u<0?"top":o>0?"bottom":"middle"};l<f&&i(n+s)<l&&(h.horizontal="center"),d<c&&i(o+u)<d&&(h.vertical="middle"),r(i(n),i(s))>r(i(o),i(u))?h.important="horizontal":h.important="vertical",t.using.call(this,e,h)}),a.offset(e.extend(C,{using:u}))})},e.ui.position={fit:{left:function(e,t){var n=t.within,i=n.isWindow?n.scrollLeft:n.offset.left,s=n.width,o=e.left-t.collisionPosition.marginLeft,u=i-o,a=o+t.collisionWidth-s-i,f;t.collisionWidth>s?u>0&&a<=0?(f=e.left+u+t.collisionWidth-s-i,e.left+=u-f):a>0&&u<=0?e.left=i:u>a?e.left=i+s-t.collisionWidth:e.left=i:u>0?e.left+=u:a>0?e.left-=a:e.left=r(e.left-o,e.left)},top:function(e,t){var n=t.within,i=n.isWindow?n.scrollTop:n.offset.top,s=t.within.height,o=e.top-t.collisionPosition.marginTop,u=i-o,a=o+t.collisionHeight-s-i,f;t.collisionHeight>s?u>0&&a<=0?(f=e.top+u+t.collisionHeight-s-i,e.top+=u-f):a>0&&u<=0?e.top=i:u>a?e.top=i+s-t.collisionHeight:e.top=i:u>0?e.top+=u:a>0?e.top-=a:e.top=r(e.top-o,e.top)}},flip:{left:function(e,t){var n=t.within,r=n.offset.left+n.scrollLeft,s=n.width,o=n.isWindow?n.scrollLeft:n.offset.left,u=e.left-t.collisionPosition.marginLeft,a=u-o,f=u+t.collisionWidth-s-o,l=t.my[0]==="left"?-t.elemWidth:t.my[0]==="right"?t.elemWidth:0,c=t.at[0]==="left"?t.targetWidth:t.at[0]==="right"?-t.targetWidth:0,h=-2*t.offset[0],p,d;if(a<0){p=e.left+l+c+h+t.collisionWidth-s-r;if(p<0||p<i(a))e.left+=l+c+h}else if(f>0){d=e.left-t.collisionPosition.marginLeft+l+c+h-o;if(d>0||i(d)<f)e.left+=l+c+h}},top:function(e,t){var n=t.within,r=n.offset.top+n.scrollTop,s=n.height,o=n.isWindow?n.scrollTop:n.offset.top,u=e.top-t.collisionPosition.marginTop,a=u-o,f=u+t.collisionHeight-s-o,l=t.my[1]==="top",c=l?-t.elemHeight:t.my[1]==="bottom"?t.elemHeight:0,h=t.at[1]==="top"?t.targetHeight:t.at[1]==="bottom"?-t.targetHeight:0,p=-2*t.offset[1],d,v;a<0?(v=e.top+c+h+p+t.collisionHeight-s-r,e.top+c+h+p>a&&(v<0||v<i(a))&&(e.top+=c+h+p)):f>0&&(d=e.top-t.collisionPosition.marginTop+c+h+p-o,e.top+c+h+p>f&&(d>0||i(d)<f)&&(e.top+=c+h+p))}},flipfit:{left:function(){e.ui.position.flip.left.apply(this,arguments),e.ui.position.fit.left.apply(this,arguments)},top:function(){e.ui.position.flip.top.apply(this,arguments),e.ui.position.fit.top.apply(this,arguments)}}},function(){var t,n,r,i,s,o=document.getElementsByTagName("body")[0],u=document.createElement("div");t=document.createElement(o?"div":"body"),r={visibility:"hidden",width:0,height:0,border:0,margin:0,background:"none"},o&&e.extend(r,{position:"absolute",left:"-1000px",top:"-1000px"});for(s in r)t.style[s]=r[s];t.appendChild(u),n=o||document.documentElement,n.insertBefore(t,n.firstChild),u.style.cssText="position: absolute; left: 10.7432222px;",i=e(u).offset().left,e.support.offsetFractions=i>10&&i<11,t.innerHTML="",n.removeChild(t)}(),e.uiBackCompat!==!1&&function(e){var n=e.fn.position;e.fn.position=function(r){if(!r||!r.offset)return n.call(this,r);var i=r.offset.split(" "),s=r.at.split(" ");return i.length===1&&(i[1]=i[0]),/^\d/.test(i[0])&&(i[0]="+"+i[0]),/^\d/.test(i[1])&&(i[1]="+"+i[1]),s.length===1&&(/left|center|right/.test(s[0])?s[1]="center":(s[1]=s[0],s[0]="center")),n.call(this,e.extend(r,{at:s[0]+i[0]+" "+s[1]+i[1],offset:t}))}}(jQuery) })(jQuery);
 }catch (e) { System.out.println("coremenu failed to load jQuery.ui.position -- jQuery version conflict?");
-} }}
+}
+}
+}
 ;
 }
 
@@ -32712,7 +32722,7 @@ Clazz_newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
 }, 1);
 })();
-//Created 2017-12-22 10:46:43
+//Created 2018-02-08 10:03:19
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['swingjs.JSUtil','java.util.Locale']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSApp");
 var p$=C$.prototype;
@@ -32791,7 +32801,7 @@ return string.split(key)[0];
 return null;
 });
 })();
-//Created 2018-02-06 09:00:27
+//Created 2018-02-08 10:03:15
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['swingjs.JSUtil']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSApplet", null, 'javax.swing.JApplet');
 
@@ -32801,7 +32811,7 @@ C$.$clinit$ = function() {Clazz_load(C$, 1);
 Clazz_newMeth(C$, '$init$', function () {
 }, 1);
 
-Clazz_newMeth(C$, 'runMain$S$SA', function (className, args) {
+Clazz_newMeth(C$, ['runMain$S$SA','runMain'], function (className, args) {
 var theClass = null;
 try {
 theClass = Clazz_forName(className);
@@ -32824,7 +32834,7 @@ return theClass;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:27
+//Created 2018-02-08 10:03:15
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['javax.swing.SwingUtilities','swingjs.JSAppletThread$1']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSAppletThread", null, 'javajs.util.JSThread');
 
@@ -32895,7 +32905,7 @@ Clazz_newMeth(C$, 'doFinally', function () {
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-08 00:34:35
+//Created 2018-02-08 10:03:15
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['java.net.URL','swingjs.api.Interface','java.awt.Dimension','javajs.util.Lst','java.awt.Insets','swingjs.JSThreadGroup','swingjs.JSAppletThread','java.lang.Thread','sun.awt.SunToolkit','java.awt.Toolkit','swingjs.JSGraphicsConfiguration','sun.applet.AppletEventMulticaster','sun.applet.AppletEvent','javax.swing.JFrame','javax.imageio.ImageIO','swingjs.JSUtil','java.awt.Font','javajs.util.PT','swingjs.JSFrameViewer','java.util.ArrayList','swingjs.JSToolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSAppletViewer", null, 'swingjs.JSFrameViewer', ['java.applet.AppletStub', 'java.applet.AppletContext']);
 var p$=C$.prototype;
@@ -33298,7 +33308,7 @@ return (I$[21]||$incl$(21)).getAudioClip$java_net_URL(url);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-08 00:34:39
+//Created 2018-02-08 11:13:19
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['swingjs.JSToolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSFontMetrics", null, 'java.awt.FontMetrics');
 
@@ -33371,7 +33381,7 @@ this.fwidths[ch] = (I$[1]||$incl$(1)).getStringWidth$swingjs_api_js_HTML5CanvasC
 return this.fwidths;
 });
 })();
-//Created 2018-02-06 09:00:29
+//Created 2018-02-08 10:03:16
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['java.awt.Insets','swingjs.JSMouse','swingjs.JSGraphics2D','swingjs.api.js.DOMNode','swingjs.plaf.Resizer']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSFrameViewer", null, 'swingjs.JSApp', 'swingjs.api.js.JSInterface');
 var p$=C$.prototype;
@@ -33394,6 +33404,7 @@ this.mouse = null;
 this.canvas = null;
 this.frameID = null;
 this.canvasId = null;
+this.topApp = null;
 this.resizable = false;
 }, 1);
 
@@ -33485,8 +33496,9 @@ Clazz_newMeth(C$, 'startHoverWatcher$Z', function (enable) {
 
 Clazz_newMeth(C$, 'getGraphics$I$I', function (wNew, hNew) {
 if (wNew == 0 && this.top != null  ) {
-wNew = Math.max(0, (this.top).getContentPane().getWidth());
-hNew = Math.max(0, (this.top).getContentPane().getHeight());
+if (this.topApp == null ) this.topApp = this.top;
+wNew = Math.max(0, (this.topApp).getContentPane().getWidth());
+hNew = Math.max(0, (this.topApp).getContentPane().getHeight());
 }var wOld = 0;
 var hOld = 0;
 {
@@ -33499,15 +33511,31 @@ this.jsgraphics = Clazz_new_((I$[3]||$incl$(3)).c$$O,[this.canvas = this.newCanv
 
 Clazz_newMeth(C$, 'newCanvas$I$I', function (width, height) {
 if (this.isApplet) {
-this.canvas = this.html5Applet._getHtml5Canvas();
-return this.canvas;
-}var root = (this.top.getComponentCount() > 0 ? this.top.getComponent$I(0) : null);
-var parent = (root == null  ? null : (root.getUI()).domNode);
+var c = this.html5Applet._getHtml5Canvas();
+if (c != null ) {
+return this.canvas = c;
+}}if (this.topApp == null ) this.topApp = this.top;
+var root = (this.topApp.getComponentCount() > 0 ? this.topApp.getComponent$I(0) : null);
+var userFramedApplet = null;
+var app = null;
+if (root != null  && root.getContentPane().getComponentCount() > 0 ) {
+var appletInFrame = false;
+app = root.getContentPane().getComponent$I(0);
+
+appletInFrame = (app.uiClassID == "AppletUI");
+if (appletInFrame) {
+userFramedApplet = app;
+root = userFramedApplet.getComponent$I(0);
+}}var parent = (root == null  ? null : (root.getUI()).domNode);
 if (parent != null ) (I$[4]||$incl$(4)).remove(this.canvas);
 this.display = this.canvasId = this.appletViewer.appletName + "_canvas" + ++C$.canvasCount ;
 System.out.println$S("JSFrameViewer creating new canvas " + this.canvasId + ": " + width + "  " + height );
 this.canvas = (I$[4]||$incl$(4)).createElement("canvas", this.canvasId);
-var iTop = (root == null  ? 0 : root.getContentPane().getY());
+if (userFramedApplet != null ) {
+var appViewer = userFramedApplet.getFrameViewer();
+appViewer.setDisplay$swingjs_api_js_HTML5Canvas(this.canvas);
+appViewer.topApp = app;
+}var iTop = (root == null  ? 0 : root.getContentPane().getY());
 (I$[4]||$incl$(4)).setPositionAbsolute(this.canvas, iTop, 0);
 (I$[4]||$incl$(4)).setStyles(this.canvas, ["width", width + "px", "height", height + "px"]);
 if (this.resizer != null ) this.resizer.setPosition$I$I(0, 0);
@@ -33550,7 +33578,7 @@ Clazz_newMeth(C$, 'paint$java_awt_Graphics', function (g) {
 this.top.paint$java_awt_Graphics(this.setGraphics$java_awt_Graphics$I$I(g, 0, 0));
 });
 })();
-//Created 2018-02-06 09:00:29
+//Created 2018-02-08 11:39:18
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['java.awt.RenderingHints','java.util.Hashtable','java.awt.geom.AffineTransform','java.awt.BasicStroke','swingjs.api.js.HTML5CanvasContext2D','swingjs.JSToolkit','swingjs.api.js.DOMNode','swingjs.JSUtil','java.awt.Font','java.awt.Toolkit','java.awt.Rectangle','java.awt.Color','java.lang.Boolean']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSGraphics2D", null, null, 'Cloneable');
 var p$=C$.prototype;
@@ -34280,7 +34308,7 @@ this.reset$I(this.initialState);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:29
+//Created 2018-02-08 10:03:16
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['java.awt.GraphicsEnvironment','swingjs.api.Interface','java.awt.image.ColorModel','java.awt.image.WritableRaster','java.lang.Boolean','java.util.Hashtable','swingjs.JSUtil','java.awt.Rectangle']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSGraphicsConfiguration", null, 'java.awt.GraphicsConfiguration');
 
@@ -34334,7 +34362,7 @@ var d = (I$[7]||$incl$(7)).getJQuery().$(doc);
 return Clazz_new_((I$[8]||$incl$(8)).c$$I$I,[d.width(), d.height()]);
 });
 })();
-//Created 2018-02-06 09:00:30
+//Created 2018-02-08 10:03:16
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['java.awt.Font','java.awt.Toolkit','swingjs.JSUtil','java.awt.Point','java.awt.GraphicsDevice']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSGraphicsEnvironment", null, 'java.awt.GraphicsEnvironment');
 C$.device = null;
@@ -34388,7 +34416,7 @@ Clazz_newMeth(C$, 'getScreenDevices', function () {
 return Clazz_array((I$[5]||$incl$(5)), -1, [this.getDefaultScreenDevice()]);
 });
 })();
-//Created 2018-02-06 09:00:30
+//Created 2018-02-08 10:03:17
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['swingjs.JSUtil','swingjs.JSToolkit','java.awt.event.MouseWheelEvent','java.awt.event.MouseEvent','java.awt.Toolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSMouse");
 var p$=C$.prototype;
@@ -34607,7 +34635,7 @@ return ret;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:30
+//Created 2018-02-08 11:13:19
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[];
 var C$=Clazz_newClass(P$, "JSNullComponentPeer", null, null, 'java.awt.peer.LightweightPeer');
 
@@ -34779,7 +34807,7 @@ Clazz_newMeth(C$, 'endLayout', function () {
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:31
+//Created 2018-02-08 10:03:17
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['java.awt.GraphicsConfiguration','swingjs.JSToolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSScreenDevice", null, 'java.awt.GraphicsDevice');
 
@@ -34810,7 +34838,7 @@ Clazz_newMeth(C$, 'getDefaultConfiguration', function () {
 return (I$[2]||$incl$(2)).getGraphicsConfiguration();
 });
 })();
-//Created 2018-02-06 09:00:32
+//Created 2018-02-08 10:03:18
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[];
 var C$=Clazz_newClass(P$, "JSThreadGroup", null, 'ThreadGroup');
 
@@ -34842,7 +34870,7 @@ return this.html5Applet;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-08 00:34:40
+//Created 2018-02-08 10:03:18
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['sun.awt.AppContext','swingjs.JSUtil','java.awt.image.ColorModel','javax.swing.UIManager','swingjs.api.Interface','Thread','javajs.util.PT','swingjs.JSNullComponentPeer','java.io.BufferedInputStream','java.io.ByteArrayInputStream','swingjs.JSToolkit$1','swingjs.api.js.DOMNode']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSToolkit", null, 'sun.awt.SunToolkit');
 C$.isMac = false;
@@ -35103,7 +35131,7 @@ ui = c.getUI && c.getUI();
 }
 if (ui == null ) {
 var s = c.getClass().getName();
-if (!(I$[7]||$incl$(7)).isOneOf$S$S(s, ";javax.swing.Box.Filler;swingjs.JSApplet;")) System.out.println$S("[JSToolkit] Component " + s + " has no corresponding JSComponentUI." );
+if (!(I$[7]||$incl$(7)).isOneOf$S$S(s, ";javax.swing.Box.Filler;")) System.out.println$S("[JSToolkit] Component " + s + " has no corresponding JSComponentUI, class " + c.getClass().getName() );
 ui = Clazz_new_((I$[8]||$incl$(8)).c$$java_awt_Component,[c]);
 }return ui;
 }, 1);
@@ -35349,7 +35377,7 @@ job.setAttributes$S$java_awt_JobAttributes$java_awt_PageAttributes(jobtitle, job
 return job;
 });
 })();
-//Created 2018-02-08 00:34:41
+//Created 2018-02-08 10:03:18
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['java.util.Hashtable','javajs.util.Rdr','java.net.URL','javajs.util.AU','java.io.BufferedInputStream','swingjs.api.Interface','javajs.util.PT','java.lang.Boolean','Thread','java.util.Locale','javajs.util.AjaxURLConnection']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSUtil");
 C$.debugging = false;
@@ -35669,7 +35697,7 @@ return prompt(msg, defaultRet);
 }
 }, 1);
 })();
-//Created 2018-02-08 00:34:35
+//Created 2018-02-08 10:03:18
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[[['swingjs.plaf.ButtonListener','.Actions'],'swingjs.plaf.LazyActionMap','javax.swing.SwingUtilities','javax.swing.plaf.ComponentInputMapUIResource','javax.swing.KeyStroke']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "ButtonListener", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -35853,7 +35881,7 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:36
+//Created 2018-02-08 10:03:20
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['javax.swing.UIDefaults','java.awt.Color','javax.swing.plaf.ColorUIResource','javax.swing.plaf.FontUIResource','javax.swing.plaf.InsetsUIResource',['javax.swing.plaf.BorderUIResource','.EtchedBorderUIResource'],'sun.swing.SwingLazyValue','javax.swing.BorderFactory',['javax.swing.DefaultListCellRenderer','.UIResource'],'swingjs.plaf.HTML5LookAndFeel$1','javax.swing.plaf.DimensionUIResource',['javax.swing.plaf.BorderUIResource','.EmptyBorderUIResource'],'java.awt.Dimension','java.lang.Boolean',['javax.swing.UIDefaults','.LazyInputMap']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "HTML5LookAndFeel", null, 'javax.swing.LookAndFeel');
 var p$=C$.prototype;
@@ -35999,7 +36027,7 @@ Clazz_newMeth(C$, 'isSupportedLookAndFeel', function () {
 return true;
 });
 })();
-//Created 2018-02-06 12:37:17
+//Created 2018-02-08 10:03:21
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','javax.swing.BorderFactory','swingjs.plaf.JSComponentUI','swingjs.plaf.ButtonListener','javax.swing.UIManager','javax.swing.LookAndFeel','java.awt.Dimension']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSButtonUI", null, 'swingjs.plaf.JSLightweightUI');
 
@@ -36160,7 +36188,7 @@ if (this.isSimpleButton && (this.imageNode == null  || this.button.getText() == 
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:37
+//Created 2018-02-08 10:03:21
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['java.awt.Color','swingjs.JSUtil','swingjs.api.js.DOMNode','swingjs.JSToolkit','javajs.util.PT','java.awt.Dimension',['java.awt.Component','.BaselineResizeBehavior'],'javax.swing.UIManager','java.awt.Point','java.awt.Toolkit','java.awt.event.FocusEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSComponentUI", null, 'javax.swing.plaf.ComponentUI', ['java.awt.peer.ContainerPeer', 'swingjs.plaf.JSEventHandler', 'java.beans.PropertyChangeListener', 'javax.swing.event.ChangeListener']);
 C$.rootPaneColor = null;
@@ -36625,7 +36653,8 @@ var h = this.getContainerHeight();
 if (this.isContentPane) (I$[3]||$incl$(3)).setStyles(this.outerNode, ["overflow", "hidden"]);
 }if (this.isRootPane) {
 if (this.jc.getFrameViewer().isApplet) {
-(I$[4]||$incl$(4)).getHTML5Applet$java_awt_Component(this.jc)._getContentLayer().appendChild(this.outerNode);
+var cdiv = (I$[4]||$incl$(4)).getHTML5Applet$java_awt_Component(this.jc)._getContentLayer();
+if (cdiv != null ) cdiv.appendChild(this.outerNode);
 }(I$[3]||$incl$(3)).setStyles(this.outerNode, ["overflow", "hidden"]);
 }this.addChildrenToDOM$java_awt_ComponentA(children);
 if (this.isWindow) {
@@ -37240,11 +37269,11 @@ var node;
 if (this.dropTarget !== this  && ((node = this.outerNode) != null  || (node = this.domNode) != null  ) ) (I$[3]||$incl$(3)).setAttr(node, "data-dropComponent", this.jc);
 });
 })();
-//Created 2018-02-06 09:00:38
+//Created 2018-02-08 11:13:17
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newInterface(P$, "JSEventHandler");
 })();
-//Created 2018-02-06 09:00:39
+//Created 2018-02-08 10:03:23
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','javax.swing.LookAndFeel']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSLabelUI", null, 'swingjs.plaf.JSLightweightUI');
 
@@ -37295,7 +37324,7 @@ this.label = jc;
 Clazz_newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (jc) {
 });
 })();
-//Created 2018-02-06 09:00:39
+//Created 2018-02-08 10:03:24
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "JSLayeredPaneUI", null, 'swingjs.plaf.JSLightweightUI');
 
@@ -37322,7 +37351,7 @@ Clazz_newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
 Clazz_newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (jc) {
 });
 })();
-//Created 2018-02-06 09:00:40
+//Created 2018-02-08 10:03:24
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "JSLightweightUI", null, 'swingjs.plaf.JSComponentUI', 'java.awt.peer.LightweightPeer');
 
@@ -37334,7 +37363,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:40
+//Created 2018-02-08 10:03:24
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','java.awt.Dimension','javax.swing.LookAndFeel']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSPanelUI", null, 'swingjs.plaf.JSLightweightUI');
 
@@ -37380,7 +37409,7 @@ Clazz_newMeth(C$, 'getPreferredSize', function () {
 return null;
 });
 })();
-//Created 2018-02-06 09:00:50
+//Created 2018-02-08 10:03:25
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "JSRootPaneUI", null, 'swingjs.plaf.JSLightweightUI');
 
@@ -37426,7 +37455,7 @@ var resizer = this.jc.getFrameViewer().getResizer();
 if (resizer != null ) resizer.setPosition$I$I(0, 0);
 });
 })();
-//Created 2018-02-06 09:00:52
+//Created 2018-02-08 11:13:18
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.plaf.JSComponentUI','java.awt.Dimension','swingjs.api.js.DOMNode']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSScrollBarUI", null, 'swingjs.plaf.JSSliderUI');
 
@@ -37470,7 +37499,7 @@ b = (b&!this.isInvisible);
 (I$[3]||$incl$(3)).setVisible(this.jqSlider, b);
 });
 })();
-//Created 2018-02-06 09:00:52
+//Created 2018-02-08 10:03:26
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.jquery.JQueryUI','swingjs.JSUtil','swingjs.api.js.DOMNode','java.awt.Dimension','sun.swing.DefaultLookup']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSSliderUI", null, 'swingjs.plaf.JSLightweightUI', ['java.beans.PropertyChangeListener', 'javax.swing.event.ChangeListener']);
 var p$=C$.prototype;
@@ -37743,7 +37772,7 @@ vertDim = Clazz_new_((I$[4]||$incl$(4)).c$$I$I,[21, 200]);
 }return vertDim;
 });
 })();
-//Created 2018-02-06 09:00:54
+//Created 2018-02-08 10:03:27
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['javax.swing.UIManager','javax.swing.SwingUtilities']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "LazyActionMap", null, 'javax.swing.plaf.ActionMapUIResource');
 var p$=C$.prototype;
@@ -37835,7 +37864,7 @@ loader.$clazz$.loadActionMap$swingjs_plaf_LazyActionMap(this);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:59
+//Created 2018-02-08 10:03:30
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','swingjs.JSUtil','javajs.api.JSFunction','java.awt.Rectangle','java.awt.Color','java.awt.Dimension']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Resizer");
 var p$=C$.prototype;
@@ -37975,7 +38004,7 @@ Clazz_newMeth(C$, 'setEnabled$Z', function (b) {
 this.enabled = b;
 });
 })();
-//Created 2018-02-06 09:00:59
+//Created 2018-02-08 11:13:18
 (function(){var P$=Clazz_newPackage("java.awt.color"),I$=[];
 var C$=Clazz_newClass(P$, "ColorSpace");
 C$.sRGBspace = null;
@@ -38092,7 +38121,7 @@ throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["Compone
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:15
+//Created 2018-02-08 10:01:52
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newClass(P$, "Cursor");
 C$.predefined = null;
@@ -38162,7 +38191,7 @@ return this.getClass().getName() + "[" + this.getName() + "]" ;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:08
+//Created 2018-02-08 10:01:47
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.util.ArrayList',['java.awt.Dialog','.ModalityType'],'java.awt.Toolkit','java.awt.Window','java.awt.event.ComponentEvent',['java.awt.Dialog','.ModalExclusionType']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Dialog", null, 'java.awt.Window');
 C$.modalDialogs = null;
@@ -38583,7 +38612,7 @@ Clazz_newMeth(C$, 'values', function() { return $vals }, 1);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:09
+//Created 2018-02-08 10:01:47
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newClass(P$, "AdjustmentEvent", null, 'java.awt.AWTEvent');
 
@@ -38664,7 +38693,7 @@ return typeStr + ",adjType=" + adjTypeStr + ",value=" + this.value + ",isAdjusti
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:18
+//Created 2018-02-08 10:01:55
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[['sun.awt.SunToolkit','sun.awt.AppContext']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "FocusEvent", null, 'java.awt.event.ComponentEvent');
 
@@ -38722,7 +38751,7 @@ return typeStr + (this.temporary ? ",temporary" : ",permanent") + ",opposite=" +
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:18
+//Created 2018-02-08 10:01:55
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newClass(P$, "ItemEvent", null, 'java.awt.AWTEvent');
 
@@ -38782,7 +38811,7 @@ return typeStr + ",item=" + this.item + ",stateChange=" + stateStr ;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:18
+//Created 2018-02-08 10:01:55
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newClass(P$, "WindowAdapter", null, null, ['java.awt.event.WindowListener', 'java.awt.event.WindowStateListener', 'java.awt.event.WindowFocusListener']);
 
@@ -38824,7 +38853,7 @@ Clazz_newMeth(C$, 'windowLostFocus$java_awt_event_WindowEvent', function (e) {
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:19
+//Created 2018-02-08 10:01:56
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[['sun.awt.SunToolkit','sun.awt.AppContext']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "WindowEvent", null, 'java.awt.event.ComponentEvent');
 
@@ -38921,7 +38950,7 @@ return typeStr;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:19
+//Created 2018-02-08 10:01:56
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Cursor','java.awt.Window']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Frame", null, 'java.awt.Window');
 C$.$nameCounter = 0;
@@ -39136,7 +39165,7 @@ frames[c++] = w;
 return frames;
 }, 1);
 })();
-//Created 2018-02-06 08:58:10
+//Created 2018-02-08 10:01:48
 (function(){var P$=Clazz_newPackage("java.awt.geom"),I$=[['java.lang.InternalError']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Point2D", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -39303,7 +39332,7 @@ return "Point2D.Double[" + new Double(this.x).toString() + ", " + new Double(thi
 });
 })()
 })();
-//Created 2018-02-06 08:58:21
+//Created 2018-02-08 10:01:59
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newClass(P$, "GraphicsCallback", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -39398,21 +39427,21 @@ return C$.instance;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:11
+//Created 2018-02-08 10:01:49
 (function(){var P$=Clazz_newPackage("java.awt.peer"),I$=[];
 var C$=Clazz_newInterface(P$, "FramePeer", null, null, 'java.awt.peer.WindowPeer');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:26
+//Created 2018-02-08 10:02:02
 (function(){var P$=Clazz_newPackage("java.awt.peer"),I$=[];
 var C$=Clazz_newInterface(P$, "WindowPeer", null, null, 'java.awt.peer.ContainerPeer');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:58:26
+//Created 2018-02-08 10:02:02
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newClass(P$, "Point", null, 'java.awt.geom.Point2D');
 
@@ -39488,7 +39517,7 @@ Clazz_newMeth(C$, 'toString', function () {
 return this.getClass().getName() + "[x=" + this.x + ",y=" + this.y + "]" ;
 });
 })();
-//Created 2018-02-06 08:58:13
+//Created 2018-02-08 10:01:51
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Color','java.util.Vector','java.awt.Cursor','java.awt.BorderLayout',['java.awt.Dialog','.ModalExclusionType'],'java.util.ArrayList','swingjs.JSUtil','java.awt.Toolkit','java.awt.event.WindowEvent','java.awt.Window$1','java.util.Locale','java.util.Arrays','sun.awt.AppContext','java.awt.AWTEventMulticaster','java.awt.event.WindowListener','java.awt.event.WindowFocusListener','java.awt.event.WindowStateListener','swingjs.JSToolkit','java.awt.ComponentOrientation','java.util.ResourceBundle','java.awt.GraphicsEnvironment','java.awt.Point']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Window", null, 'java.awt.Container');
 C$.systemSyncLWRequests = false;
@@ -40403,7 +40432,7 @@ Clazz_newMeth(C$, 'getLocationOnWindow', function () {
 return Clazz_new_((I$[22]||$incl$(22)).c$$I$I,[0, 0]);
 });
 })();
-//Created 2018-02-06 08:58:15
+//Created 2018-02-08 10:01:52
 (function(){var P$=java.util,I$=[];
 var C$=Clazz_newClass(P$, "Random", null, null, 'java.io.Serializable');
 
@@ -40505,7 +40534,7 @@ this.seed = (seed ^ 25214903917) & 281474976710655;
 this.haveNextNextGaussian = false;
 });
 })();
-//Created 2018-02-06 08:58:53
+//Created 2018-02-08 10:02:14
 (function(){var P$=java.util,I$=[['java.util.Vector$1','java.util.Arrays',['java.util.Collections','.SynchronizedRandomAccessList'],'java.lang.reflect.Array','java.lang.StringBuffer']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Vector", null, 'java.util.AbstractList', ['java.util.List', 'java.util.RandomAccess', 'Cloneable', 'java.io.Serializable']);
 var p$=C$.prototype;
@@ -40964,7 +40993,7 @@ stream.defaultWriteObject();
 });
 C$.$_ASSERT_ENABLED_ = ClassLoader.$getClassAssertionStatus(C$);
 })();
-//Created 2018-02-06 08:58:55
+//Created 2018-02-08 10:02:15
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.event.EventListenerList','javax.swing.event.ListDataListener','javax.swing.event.ListDataEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AbstractListModel", null, null, 'javax.swing.ListModel');
 
@@ -41031,7 +41060,7 @@ return this.listenerList.getListeners$Class(listenerType);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:16
+//Created 2018-02-08 10:02:23
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.event.EventListenerList','javax.swing.event.AncestorListener','javax.swing.event.AncestorEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AncestorNotifier", null, null, ['java.awt.event.ComponentListener', 'java.beans.PropertyChangeListener']);
 
@@ -41172,7 +41201,7 @@ this.fireAncestorRemoved$javax_swing_JComponent$I$java_awt_Container$java_awt_Co
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:17
+//Created 2018-02-08 10:02:24
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.awt.AWTError','java.awt.Dimension','javax.swing.SizeRequirements']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "BoxLayout", null, null, 'java.awt.LayoutManager2');
 var p$=C$.prototype;
@@ -41349,7 +41378,7 @@ absoluteAxis = axis;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:18
+//Created 2018-02-08 10:02:24
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.util.Vector']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "ButtonGroup");
 
@@ -41424,7 +41453,7 @@ return 0;
 return this.buttons.size();
 }});
 })();
-//Created 2018-02-06 08:59:18
+//Created 2018-02-08 10:02:24
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newClass(P$, "ClientPropertyKey", null, 'Enum');
 var p$=C$.prototype;
@@ -41450,14 +41479,14 @@ C$.$init$.apply(this);
 var $vals=[];
 Clazz_newMeth(C$, 'values', function() { return $vals }, 1);
 })();
-//Created 2018-02-06 08:59:19
+//Created 2018-02-08 10:02:25
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "ComboBoxModel", null, null, 'javax.swing.ListModel');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:59:19
+//Created 2018-02-08 10:02:25
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.util.Vector']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "DefaultComboBoxModel", null, 'javax.swing.AbstractListModel', 'javax.swing.MutableComboBoxModel');
 
@@ -41559,7 +41588,7 @@ this.fireIntervalRemoved$O$I$I(this, firstIndex, lastIndex);
 this.selectedObject = null;
 }});
 })();
-//Created 2018-02-06 08:59:20
+//Created 2018-02-08 10:02:25
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.event.EventListenerList','javax.swing.event.ChangeListener','javax.swing.event.ChangeEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "DefaultSingleSelectionModel", null, null, 'javax.swing.SingleSelectionModel');
 
@@ -41627,7 +41656,7 @@ return this.listenerList.getListeners$Class(listenerType);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:22
+//Created 2018-02-08 10:02:26
 (function(){var P$=Clazz_newPackage("javax.swing.event"),I$=[];
 var C$=Clazz_newClass(P$, "AncestorEvent", null, 'java.awt.AWTEvent');
 
@@ -41664,7 +41693,7 @@ return this.getSource();
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:47
+//Created 2018-02-08 10:02:47
 (function(){var P$=Clazz_newPackage("javax.swing.event"),I$=[];
 var C$=Clazz_newClass(P$, "ChangeEvent", null, 'java.util.EventObject');
 
@@ -41681,7 +41710,7 @@ C$.$init$.apply(this);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:48
+//Created 2018-02-08 10:02:47
 (function(){var P$=Clazz_newPackage("javax.swing.event"),I$=[];
 var C$=Clazz_newClass(P$, "ListDataEvent", null, 'java.util.EventObject');
 
@@ -41724,14 +41753,14 @@ return this.getClass().getName() + "[type=" + this.type + ",index0=" + this.inde
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:48
+//Created 2018-02-08 10:02:47
 (function(){var P$=Clazz_newPackage("javax.swing.event"),I$=[];
 var C$=Clazz_newInterface(P$, "ListDataListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:59:48
+//Created 2018-02-08 10:02:47
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.lang.Boolean']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JCheckBox", null, 'javax.swing.JToggleButton');
 
@@ -41803,7 +41832,7 @@ Clazz_newMeth(C$, 'paramString', function () {
 return C$.superclazz.prototype.paramString.apply(this, []);
 });
 })();
-//Created 2018-02-06 08:59:24
+//Created 2018-02-08 10:02:27
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[[['javax.swing.JToggleButton','.ToggleButtonModel']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JCheckBoxMenuItem", null, 'javax.swing.JMenuItem', 'javax.swing.SwingConstants');
 
@@ -41869,7 +41898,7 @@ Clazz_newMeth(C$, 'shouldUpdateSelectedStateFromAction', function () {
 return true;
 });
 })();
-//Created 2018-02-06 08:59:24
+//Created 2018-02-08 10:02:27
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.AbstractAction','javax.swing.JPopupMenu','javax.swing.DefaultComboBoxModel','javax.swing.JComboBox$1','javax.swing.SwingUtilities','java.awt.event.ItemListener','java.awt.event.ActionListener','javax.swing.event.PopupMenuListener','javax.swing.event.PopupMenuEvent',['javax.swing.JComboBox','.ComboBoxActionPropertyChangeListener'],'java.awt.EventQueue','java.awt.event.ActionEvent','java.awt.event.ItemEvent',['javax.swing.JComboBox','.DefaultKeySelectionManager']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JComboBox", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -42495,7 +42524,7 @@ return -1;
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-02-06 08:59:25
+//Created 2018-02-08 10:02:28
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.JComponent','javax.swing.UIManager','javax.swing.JRootPane','javax.swing.SwingUtilities','javax.swing.RepaintManager','java.lang.Boolean']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JFrame", null, 'java.awt.Frame', ['javax.swing.WindowConstants', 'javax.swing.RootPaneContainer']);
 C$.defaultLookAndFeelDecoratedKey = null;
@@ -42737,7 +42766,7 @@ var rootPaneCheckingEnabledString = (this.rootPaneCheckingEnabled ? "true" : "fa
 return C$.superclazz.prototype.paramString.apply(this, []) + ",defaultCloseOperation=" + defaultCloseOperationString + ",rootPane=" + rootPaneString + ",rootPaneCheckingEnabled=" + rootPaneCheckingEnabledString ;
 });
 })();
-//Created 2018-02-06 08:59:29
+//Created 2018-02-08 11:13:19
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.UIManager','java.awt.Toolkit','java.awt.Rectangle','javax.swing.SwingUtilities','java.awt.Point','javax.swing.JPopupMenu','javax.swing.JMenuItem',['javax.swing.JPopupMenu','.Separator'],'java.lang.Error','java.awt.Component','javax.swing.event.MenuListener','javax.swing.event.MenuEvent',['javax.swing.JMenu','.MenuChangeListener'],['javax.swing.JMenu','.WinListener'],'javax.swing.MenuElement','javax.swing.MenuSelectionManager','java.util.Vector']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JMenu", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -43278,7 +43307,7 @@ this.this$0.setSelected$Z(false);
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-02-06 08:59:30
+//Created 2018-02-08 10:02:32
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.DefaultSingleSelectionModel','java.lang.Error','java.awt.Insets','java.util.Vector','javax.swing.MenuElement','javax.swing.KeyboardManager']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JMenuBar", null, 'javax.swing.JComponent', 'javax.swing.MenuElement');
 
@@ -43467,7 +43496,7 @@ C$.superclazz.prototype.removeNotify.apply(this, []);
 (I$[6]||$incl$(6)).getCurrentManager().unregisterMenuBar$javax_swing_JMenuBar(this);
 });
 })();
-//Created 2018-02-06 08:59:30
+//Created 2018-02-08 10:02:32
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.DefaultButtonModel',['javax.swing.JMenuItem','.MenuItemFocusListener'],'java.lang.Boolean','javax.swing.UIManager','javax.swing.event.MenuDragMouseEvent','javax.swing.event.MenuKeyEvent','javax.swing.event.MenuDragMouseListener','javax.swing.event.MenuKeyListener','javax.swing.MenuElement']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JMenuItem", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -43789,7 +43818,7 @@ mi.repaint();
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-02-06 08:59:31
+//Created 2018-02-08 10:02:32
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.SwingUtilities','Boolean','java.lang.Boolean','javax.swing.DefaultSingleSelectionModel','javax.swing.MenuSelectionManager','javax.swing.JMenuItem','java.awt.Point','java.awt.GraphicsEnvironment',['javax.swing.JPopupMenu','.Separator'],'java.util.Vector','javax.swing.event.PopupMenuListener','javax.swing.event.MenuKeyListener','javax.swing.event.PopupMenuEvent','javax.swing.PopupFactory','java.awt.Dimension','java.awt.Insets','javax.swing.event.MenuKeyEvent','javax.swing.MenuElement']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JPopupMenu", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -44294,7 +44323,7 @@ C$.$init$.apply(this);
 }, 1);
 })()
 })();
-//Created 2018-02-06 08:59:32
+//Created 2018-02-08 10:02:33
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[[['javax.swing.JToggleButton','.ToggleButtonModel']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JRadioButtonMenuItem", null, 'javax.swing.JMenuItem');
 
@@ -44346,7 +44375,7 @@ Clazz_newMeth(C$, 'shouldUpdateSelectedStateFromAction', function () {
 return true;
 });
 })();
-//Created 2018-02-06 08:59:32
+//Created 2018-02-08 10:02:34
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newClass(P$, "JSeparator", null, 'javax.swing.JComponent', 'javax.swing.SwingConstants');
 var p$=C$.prototype;
@@ -44410,7 +44439,7 @@ var orientationString = (this.orientation == 0 ? "HORIZONTAL" : "VERTICAL");
 return C$.superclazz.prototype.paramString.apply(this, []) + ",orientation=" + orientationString ;
 });
 })();
-//Created 2018-02-06 08:59:33
+//Created 2018-02-08 10:02:35
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.awt.event.ItemEvent','java.awt.EventQueue','java.awt.event.ActionEvent',['javax.swing.JToggleButton','.ToggleButtonModel']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JToggleButton", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -44525,7 +44554,7 @@ modifiers = (currentEvent).getModifiers();
 }});
 })()
 })();
-//Created 2018-02-06 08:59:37
+//Created 2018-02-08 10:02:38
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.util.Hashtable','java.util.Vector','Thread',['javax.swing.KeyboardManager','.ComponentKeyStrokePair'],'javax.swing.KeyStroke','javax.swing.JMenuBar']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "KeyboardManager", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -44735,26 +44764,26 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-08 00:34:37
+//Created 2018-02-08 10:02:39
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "ListModel");
 })();
-//Created 2018-02-06 08:59:39
+//Created 2018-02-08 10:02:39
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "MenuElement");
 })();
-//Created 2018-02-06 08:59:39
+//Created 2018-02-08 10:02:40
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "MutableComboBoxModel", null, null, 'javax.swing.ComboBoxModel');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-02-06 08:59:40
+//Created 2018-02-08 10:02:40
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "SingleSelectionModel");
 })();
-//Created 2018-02-06 08:59:41
+//Created 2018-02-08 10:02:42
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newClass(P$, "SizeRequirements");
 var p$=C$.prototype;
@@ -44928,11 +44957,11 @@ Clazz_newMeth(C$, 'adjustSizes$I$javax_swing_SizeRequirementsA', function (delta
 return Clazz_array(Integer.TYPE, [0]);
 }, 1);
 })();
-//Created 2018-02-06 08:59:41
+//Created 2018-02-08 10:02:42
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "WindowConstants");
 })();
-//Created 2018-02-06 08:59:45
+//Created 2018-02-08 10:02:44
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['java.awt.Dimension']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "DefaultMenuLayout", null, 'javax.swing.BoxLayout', 'javax.swing.plaf.UIResource');
 
@@ -44958,7 +44987,7 @@ return C$.superclazz.prototype.preferredLayoutSize$java_awt_Container.apply(this
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:36
+//Created 2018-02-08 10:03:21
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "JSCheckBoxMenuItemUI", null, 'swingjs.plaf.JSCheckBoxUI');
 
@@ -44983,7 +45012,7 @@ this.menuItem = jc;
 C$.superclazz.prototype.installUI$javax_swing_JComponent.apply(this, [jc]);
 });
 })();
-//Created 2018-02-06 09:00:37
+//Created 2018-02-08 10:03:22
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "JSCheckBoxUI", null, 'swingjs.plaf.JSRadioButtonUI');
 
@@ -45003,7 +45032,7 @@ return "CheckBox.";
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:37
+//Created 2018-02-08 10:03:22
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','javajs.util.PT','swingjs.plaf.JSComponentUI','javax.swing.LookAndFeel','javax.swing.UIManager']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSComboBoxUI", null, 'swingjs.plaf.JSLightweightUI', ['java.beans.PropertyChangeListener', 'java.awt.event.ItemListener', 'javax.swing.event.ListDataListener']);
 var p$=C$.prototype;
@@ -45123,7 +45152,7 @@ this.revalidate();
 Clazz_newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (e) {
 });
 })();
-//Created 2018-02-06 09:00:38
+//Created 2018-02-08 10:03:22
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.plaf.JSComponentUI','swingjs.api.js.DOMNode','java.awt.Toolkit','java.awt.Color','swingjs.JSUtil','java.awt.event.ComponentEvent','java.awt.event.WindowEvent','javax.swing.LookAndFeel','java.awt.Rectangle']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSFrameUI", null, 'swingjs.plaf.JSWindowUI', 'java.awt.peer.FramePeer');
 
@@ -45312,7 +45341,7 @@ var z = this.getZIndex$S(null) - 1;
 }(I$[2]||$incl$(2)).setVisible(this.modalNode, b);
 }});
 })();
-//Created 2018-02-06 09:00:39
+//Created 2018-02-08 11:13:20
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','swingjs.plaf.DefaultMenuLayout','javax.swing.LookAndFeel','java.awt.Dimension']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSMenuBarUI", null, 'swingjs.plaf.JSPanelUI');
 
@@ -45359,7 +45388,7 @@ var d = Clazz_new_((I$[4]||$incl$(4)).c$$I$I,[0, 25]);
 return d;
 });
 })();
-//Created 2018-02-06 09:00:45
+//Created 2018-02-08 10:03:25
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','java.awt.Dimension','javax.swing.LookAndFeel']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSMenuItemUI", null, 'swingjs.plaf.JSButtonUI');
 
@@ -45397,7 +45426,7 @@ C$.superclazz.prototype.installUI$javax_swing_JComponent.apply(this, [jc]);
 (I$[3]||$incl$(3)).installColorsAndFont$javax_swing_JComponent$S$S$S(jc, "MenuItem.background", "MenuItem.foreground", "MenuItem.font");
 });
 })();
-//Created 2018-02-06 09:00:45
+//Created 2018-02-08 10:03:25
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','java.awt.Component']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSMenuUI", null, 'swingjs.plaf.JSMenuItemUI');
 
@@ -45443,7 +45472,7 @@ Clazz_newMeth(C$, 'getMaximumSize', function () {
 return this.getPreferredSize();
 });
 })();
-//Created 2018-02-06 09:00:46
+//Created 2018-02-08 10:03:25
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "JSPopupMenuSeparatorUI", null, 'swingjs.plaf.JSSeparatorUI');
 
@@ -45460,7 +45489,7 @@ this.isMenuItem = true;
 this.allowPaintedBackground = false;
 }, 1);
 })();
-//Created 2018-02-06 09:00:50
+//Created 2018-02-08 10:03:26
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.jquery.JQueryUI','swingjs.JSUtil','javax.swing.LookAndFeel','swingjs.api.js.DOMNode']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSPopupMenuUI", null, 'swingjs.plaf.JSPanelUI');
 C$.j2sSwingMenu = null;
@@ -45535,7 +45564,7 @@ Clazz_newMeth(C$, 'getPreferredSize', function () {
 return null;
 });
 })();
-//Created 2018-02-06 09:00:51
+//Created 2018-02-08 10:03:26
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "JSRadioButtonMenuItemUI", null, 'swingjs.plaf.JSRadioButtonUI');
 
@@ -45561,7 +45590,7 @@ this.menuItem = jc;
 C$.superclazz.prototype.installUI$javax_swing_JComponent.apply(this, [jc]);
 });
 })();
-//Created 2018-02-06 09:00:51
+//Created 2018-02-08 10:03:26
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','java.awt.Dimension']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSRadioButtonUI", null, 'swingjs.plaf.JSButtonUI');
 
@@ -45659,7 +45688,7 @@ return 4;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:51
+//Created 2018-02-08 10:03:26
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "JSSeparatorUI", null, 'swingjs.plaf.JSLightweightUI');
 
@@ -45677,7 +45706,7 @@ this.domNode = this.newDOMObject$S$S$SA("label", this.id, []);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:54
+//Created 2018-02-08 10:03:27
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.JSUtil','swingjs.api.js.DOMNode','java.awt.Toolkit','swingjs.plaf.JSComponentUI','java.awt.Insets']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSWindowUI", null, 'swingjs.plaf.JSComponentUI', 'java.awt.peer.WindowPeer');
 
@@ -45794,5 +45823,5 @@ return Clazz_new_((I$[5]||$incl$(5)).c$$I$I$I$I,[0, 0, 0, 0]);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:59
+//Created 2018-02-08 11:13:18
 })(Clazz,Clazz.array,Clazz.assert,Clazz.clone,Clazz.exceptionOf,Clazz.forName,Clazz.getClass,Clazz.instanceOf,Clazz.load,Clazz.new_,Clazz.newClass,Clazz.newEnumConst,Clazz.newInstance,Clazz.newInterface,Clazz.newMeth,Clazz.newPackage,Clazz.super_);

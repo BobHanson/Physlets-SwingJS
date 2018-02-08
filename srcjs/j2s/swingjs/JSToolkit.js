@@ -39,6 +39,8 @@ return (isPost ? (I$[1]||$incl$(1)).getAppContext().get$O("PostEventQueue") : (I
 }, 1);
 
 Clazz.newMeth(C$, 'exit', function () {
+
+Thread.thisThread.group.systemExited = true;
 (I$[2]||$incl$(2)).getAppletViewer().exit();
 }, 1);
 
@@ -163,11 +165,7 @@ Clazz.newMeth(C$, 'dispatchEvent$java_awt_AWTEvent$O$Z', function (event, src, a
 var f = null;
 var id = ++C$.dispatchID;
 {
-f = function() { 
-if (src == null) 
-event.dispatch(); 
-else 
-src.dispatchEvent$java_awt_AWTEvent(event);
+f = function() { if (src == null) event.dispatch(); else src.dispatchEvent$java_awt_AWTEvent(event);
 };
 }
 if (andWait) C$.invokeAndWait$javajs_api_JSFunction$I(f, id);
@@ -176,7 +174,8 @@ if (andWait) C$.invokeAndWait$javajs_api_JSFunction$I(f, id);
 
 Clazz.newMeth(C$, 'dispatch$O$I$I', function (f, msDelay, id) {
 {
-var thread = java.lang.Thread.thisThread;
+var thread = Thread.thisThread;
+if (thread.group.systemExited) return;
 var thread0 = thread;
 var id0 = SwingJS.eventID || 0;
 var ff = function(_JSToolkit_setTimeout) { SwingJS.eventID = id;
@@ -185,8 +184,9 @@ try { if (f.run) f.run();
 else f();
 } catch (e) { var s = "JSToolkit.dispatch(" + id +"): " + e + "\n" + (e.getStackTrace ? e.getStackTrace() + "\n" : "") + (!!e.stack ? e.stack : "");
 System.out.println(s);
-alert(s)} SwingJS.eventID = id0;
-java.lang.Thread.thisThread = thread0;
+alert(s);
+} SwingJS.eventID = id0;
+Thread.thisThread = thread0;
 };
 return (msDelay == -1 ? ff() : setTimeout(ff, msDelay));
 }
@@ -194,7 +194,8 @@ return (msDelay == -1 ? ff() : setTimeout(ff, msDelay));
 
 Clazz.newMeth(C$, 'invokeAndWait$javajs_api_JSFunction$I', function (f, id) {
 {
-var thread = java.lang.Thread.thisThread;
+var thread = Thread.thisThread;
+if (thread.group.systemExited) return;
 var thread0 = thread;
 (function(_JSToolkit_setTimeout) { var id0 = SwingJS.eventID || 0;
 SwingJS.eventID = id;
@@ -202,7 +203,7 @@ java.lang.Thread.thisThread = thread;
 if (f.run) f.run();
 else f();
 SwingJS.eventID = id0;
-java.lang.Thread.thisThread = thread0;
+Thread.thisThread = thread0;
 })();
 }
 }, 1);
@@ -503,4 +504,4 @@ job.setAttributes$S$java_awt_JobAttributes$java_awt_PageAttributes(jobtitle, job
 return job;
 });
 })();
-//Created 2018-02-06 09:00:32
+//Created 2018-02-08 00:31:02

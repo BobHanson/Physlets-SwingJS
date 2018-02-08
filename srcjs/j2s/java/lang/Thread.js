@@ -46,7 +46,7 @@ return ++Thread.threadSeqNumber;
 
 Clazz.newMeth(C$, 'currentThread', function () {
 {
-if (java.lang.Thread.thisThread == "working") return null;
+if (java.lang.Thread.thisThread === "working") return null;
 }
 if (Thread.thisThread == null ) {
 {
@@ -62,7 +62,6 @@ Clazz.newMeth(C$, 'yield', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'sleep$J', function (millis) {
-debugger
 }, 1);
 
 Clazz.newMeth(C$, 'sleep$J$I', function (millis, nanos) {
@@ -430,4 +429,4 @@ Clazz.newMeth(C$, 'values', function() { return $vals }, 1);
 });
 })()
 })();
-//Created 2018-02-06 08:58:38
+//Created 2018-02-08 00:34:43

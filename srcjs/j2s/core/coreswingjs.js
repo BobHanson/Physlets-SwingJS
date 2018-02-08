@@ -5619,7 +5619,7 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:09
+//Created 2018-02-08 00:34:41
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "EventFilter");
 ;
@@ -5640,7 +5640,7 @@ var $vals=[];
 Clazz_newMeth(C$, 'values', function() { return $vals }, 1);
 })()
 })();
-//Created 2018-02-06 08:58:10
+//Created 2018-02-08 00:34:39
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Queue','Thread','sun.awt.SunToolkit','sun.awt.AWTAutoShutdown','java.awt.EventQueueItem','swingjs.JSToolkit','java.awt.Toolkit','sun.awt.AppContext','java.awt.EventDispatchThread','java.awt.event.InvocationEvent','java.lang.Error']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "EventQueue");
 C$.threadInitNumber = 0;
@@ -6115,7 +6115,7 @@ throw e;
 this.initDispatchThread();
 }}});
 })();
-//Created 2018-02-06 08:58:10
+//Created 2018-02-08 00:34:36
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newClass(P$, "EventQueueItem");
 
@@ -6137,7 +6137,7 @@ this.id = evt.getID();
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:10
+//Created 2018-02-08 00:34:36
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Dimension']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "FlowLayout", null, null, ['java.awt.LayoutManager', 'java.io.Serializable']);
 var p$=C$.prototype;
@@ -9887,7 +9887,7 @@ Clazz_newMeth(C$, 'isBackgroundSet', function () {
 return this.background != null ;
 });
 })();
-//Created 2018-02-06 08:58:12
+//Created 2018-02-08 00:34:42
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "LayoutManager");
 })();
@@ -10164,7 +10164,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:10
+//Created 2018-02-08 00:34:36
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Point','java.awt.Dimension',['java.awt.geom.Rectangle2D','.Double'],'java.awt.geom.Rectangle2D']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Rectangle", null, 'java.awt.geom.Rectangle2D', 'java.awt.Shape');
 var p$=C$.prototype;
@@ -13066,7 +13066,7 @@ return ++Thread.threadSeqNumber;
 
 Clazz_newMeth(C$, 'currentThread', function () {
 {
-if (java.lang.Thread.thisThread == "working") return null;
+if (java.lang.Thread.thisThread === "working") return null;
 }
 if (Thread.thisThread == null ) {
 {
@@ -13449,7 +13449,7 @@ Clazz_newMeth(C$, 'values', function() { return $vals }, 1);
 });
 })()
 })();
-//Created 2018-02-06 08:58:38
+//Created 2018-02-08 00:34:43
 (function(){var P$=java.lang,I$=[['Thread','java.util.Arrays','java.lang.ThreadGroup','java.lang.Thread']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(java.lang, "ThreadGroup", null, null, [['Thread','Thread.UncaughtExceptionHandler']]);
 var p$=C$.prototype;
@@ -13828,7 +13828,7 @@ return this.getClass().getName() + "[name=" + this.getName() + ",maxpri=" + this
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:58:38
+//Created 2018-02-08 00:34:41
 (function(){var P$=Clazz_newPackage("java.net"),I$=[['java.util.Hashtable','java.net.Parts','javajs.util.AjaxURLConnection','java.lang.Error']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "URL");
 var p$=C$.prototype;
@@ -22813,7 +22813,7 @@ setTimeout( function() {java.awt.Toolkit.getDefaultToolkit().getSystemEventQueue
 return true;
 });
 })();
-//Created 2018-02-06 08:59:04
+//Created 2018-02-08 00:34:35
 (function(){var P$=Clazz_newPackage("javajs.util"),I$=[];
 var C$=Clazz_newClass(P$, "Lst", null, 'java.util.ArrayList');
 
@@ -30193,7 +30193,7 @@ this.this$0.prePaintDirtyRegions();
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-02-06 08:59:41
+//Created 2018-02-08 00:34:39
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "RootPaneContainer");
 })();
@@ -30974,7 +30974,7 @@ Clazz_newMeth(C$, 'dispose', function () {
 });
 })()
 })();
-//Created 2018-02-06 08:59:43
+//Created 2018-02-08 00:34:36
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.LookAndFeel','java.util.Locale','java.util.HashMap','javax.swing.SwingUtilities','java.lang.Error','swingjs.JSToolkit','javax.swing.event.SwingPropertyChangeSupport','java.beans.PropertyChangeListener','java.util.Vector']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "UIDefaults", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -31667,7 +31667,7 @@ return Clazz_array((I$[10]||$incl$(10)), [0]);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:12
+//Created 2018-02-08 00:34:42
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[['java.util.HashSet','java.util.IdentityHashMap','java.awt.AWTEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AWTAutoShutdown", null, null, 'Runnable');
 C$.theInstance = null;
@@ -31771,7 +31771,7 @@ aLog.fine$S(key + "->" + this.peerMap.get$O(key) );
 }
 });
 })();
-//Created 2018-02-06 09:00:12
+//Created 2018-02-08 00:34:40
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "ComponentFactory");
 })();
@@ -31801,7 +31801,7 @@ this.value = v;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:12
+//Created 2018-02-08 00:34:42
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[];
 var C$=Clazz_newClass(P$, "MostRecentThreadAppContext");
 
@@ -31822,7 +31822,7 @@ this.appContext = value;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:12
+//Created 2018-02-08 00:34:42
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[['java.awt.event.PaintEvent','java.awt.Rectangle']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "PaintEventDispatcher");
 C$.dispatcher = null;
@@ -32308,7 +32308,7 @@ Clazz_newMeth(C$, 'needUpdateWindow', function () {
 return false;
 });
 })();
-//Created 2018-02-06 09:00:14
+//Created 2018-02-08 00:34:38
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "WindowClosingListener");
 })();
@@ -32895,8 +32895,8 @@ Clazz_newMeth(C$, 'doFinally', function () {
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:27
-(function(){var P$=Clazz_newPackage("swingjs"),I$=[['java.net.URL','swingjs.api.Interface','java.awt.Dimension','javajs.util.Lst','java.awt.Insets','swingjs.JSThreadGroup','swingjs.JSAppletThread','java.lang.Thread','sun.awt.SunToolkit','java.awt.Toolkit','swingjs.JSGraphicsConfiguration','sun.applet.AppletEventMulticaster','sun.applet.AppletEvent','javax.swing.JFrame','swingjs.JSUtil','java.awt.Font','javajs.util.PT','swingjs.JSFrameViewer','java.util.ArrayList','swingjs.JSToolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
+//Created 2018-02-08 00:34:35
+(function(){var P$=Clazz_newPackage("swingjs"),I$=[['java.net.URL','swingjs.api.Interface','java.awt.Dimension','javajs.util.Lst','java.awt.Insets','swingjs.JSThreadGroup','swingjs.JSAppletThread','java.lang.Thread','sun.awt.SunToolkit','java.awt.Toolkit','swingjs.JSGraphicsConfiguration','sun.applet.AppletEventMulticaster','sun.applet.AppletEvent','javax.swing.JFrame','javax.imageio.ImageIO','swingjs.JSUtil','java.awt.Font','javajs.util.PT','swingjs.JSFrameViewer','java.util.ArrayList','swingjs.JSToolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSAppletViewer", null, 'swingjs.JSFrameViewer', ['java.applet.AppletStub', 'java.applet.AppletContext']);
 var p$=C$.prototype;
 
@@ -33061,7 +33061,11 @@ this.currentAppletSize.height = height;
 });
 
 Clazz_newMeth(C$, 'getImage$java_net_URL', function (url) {
+try {
+return (I$[15]||$incl$(15)).read$java_net_URL(url);
+} catch (t) {
 return null;
+}
 });
 
 Clazz_newMeth(C$, 'getApplet$S', function (name) {
@@ -33077,15 +33081,15 @@ return null;
 });
 
 Clazz_newMeth(C$, 'showDocument$java_net_URL', function (url) {
-(I$[15]||$incl$(15)).showWebPage$java_net_URL$O(url, null);
+(I$[16]||$incl$(16)).showWebPage$java_net_URL$O(url, null);
 });
 
 Clazz_newMeth(C$, 'showDocument$java_net_URL$S', function (url, target) {
-(I$[15]||$incl$(15)).showWebPage$java_net_URL$O(url, target);
+(I$[16]||$incl$(16)).showWebPage$java_net_URL$O(url, target);
 });
 
 Clazz_newMeth(C$, 'showStatus$S', function (status) {
-(I$[15]||$incl$(15)).log$S(status);
+(I$[16]||$incl$(16)).log$S(status);
 {
 Clazz._LoaderProgressMonitor.showStatus(status, true);
 }
@@ -33130,7 +33134,7 @@ if (this.status != 1 && this.status != 5 ) {
 p$.showAppletStatus$S.apply(this, ["notloaded"]);
 break;
 }System.out.println$S("JSAppletViewer init");
-this.japplet.setFont$java_awt_Font(Clazz_new_((I$[16]||$incl$(16)).c$$S$I$I,["Dialog", 0, 12]));
+this.japplet.setFont$java_awt_Font(Clazz_new_((I$[17]||$incl$(17)).c$$S$I$I,["Dialog", 0, 12]));
 this.japplet.resize$java_awt_Dimension(this.defaultAppletSize);
 this.japplet.init();
 this.japplet.validate();
@@ -33158,9 +33162,9 @@ this.japplet.getContentPane().setBounds$java_awt_Rectangle(this.japplet.getBound
 this.japplet.setVisible$Z(true);
 this.japplet.validate();
 p$.showAppletStatus$S.apply(this, ["ready"]);
-(I$[15]||$incl$(15)).readyCallback$S$S$java_awt_Container$swingjs_JSAppletViewer(this.appletName, this.fullName, this.applet, this);
+(I$[16]||$incl$(16)).readyCallback$S$S$java_awt_Container$swingjs_JSAppletViewer(this.appletName, this.fullName, this.applet, this);
 if (this.$isResizable && !this.addFrame ) {
-this.resizer = ((I$[15]||$incl$(15)).getInstance$S("swingjs.plaf.Resizer")).set$swingjs_JSFrameViewer(this);
+this.resizer = ((I$[16]||$incl$(16)).getInstance$S("swingjs.plaf.Resizer")).set$swingjs_JSFrameViewer(this);
 if (this.resizer != null ) this.resizer.show();
 }this.japplet.repaint();
 break;
@@ -33195,9 +33199,9 @@ p$.showAppletStatus$S.apply(this, ["disposed"]);
 case 76:
 p$.showAppletStatus$S.apply(this, ["running " + this.main]);
 var args = this.params.get$O("args");
-if (Clazz_instanceOf(args, "java.lang.String")) args = (I$[17]||$incl$(17)).split$S$S(args, " ");
+if (Clazz_instanceOf(args, "java.lang.String")) args = (I$[18]||$incl$(18)).split$S$S(args, " ");
 (this.applet).runMain$S$SA(this.main, args);
-(I$[15]||$incl$(15)).readyCallback$S$S$java_awt_Container$swingjs_JSAppletViewer(this.appletName, this.fullName, this.applet, this);
+(I$[16]||$incl$(16)).readyCallback$S$S$java_awt_Container$swingjs_JSAppletViewer(this.appletName, this.fullName, this.applet, this);
 break;
 case 6:
 break;
@@ -33223,12 +33227,12 @@ if (code == null  && this.main == null  ) {
 System.err.println$S("runloader.err-- \"code\" or \"main\" must be specified.");
 throw Clazz_new_(Clazz_load('java.lang.InstantiationException').c$$S,["\"code\" or \"main\" must be specified."]);
 }if (code == null ) code = "swingjs.JSApplet";
-this.top = this.applet = this.japplet = (I$[15]||$incl$(15)).getInstance$S(code);
+this.top = this.applet = this.japplet = (I$[16]||$incl$(16)).getInstance$S(code);
 if (this.applet == null ) {
 System.out.println$S(code + " could not be launched");
 this.status = 7;
 } else if (!(Clazz_instanceOf(this.applet, "javax.swing.JApplet"))) {
-(I$[15]||$incl$(15)).alert$O(code + " is not a JApplet!?");
+(I$[16]||$incl$(16)).alert$O(code + " is not a JApplet!?");
 this.status = 7;
 }} catch (e$$) {
 if (Clazz_exceptionOf(e$$, "java.lang.InstantiationException")){
@@ -33273,11 +33277,11 @@ p$.showAppletStatus$S.apply(this, ["loaded"]);
 }});
 
 Clazz_newMeth(C$, 'newFrameViewer$Z', function (forceNew) {
-return (this.haveFrames || forceNew  ? Clazz_new_((I$[18]||$incl$(18))) : null);
+return (this.haveFrames || forceNew  ? Clazz_new_((I$[19]||$incl$(19))) : null);
 });
 
 Clazz_newMeth(C$, 'getTimerQueue', function () {
-return (this.timerQueue == null  ? (this.timerQueue = Clazz_new_((I$[19]||$incl$(19)))) : this.timerQueue);
+return (this.timerQueue == null  ? (this.timerQueue = Clazz_new_((I$[20]||$incl$(20)))) : this.timerQueue);
 });
 
 Clazz_newMeth(C$, 'exit', function () {
@@ -33289,12 +33293,12 @@ this.allWindows.get$I(i).dispose();
 });
 
 Clazz_newMeth(C$, 'getAudioClip$java_net_URL', function (url) {
-return (I$[20]||$incl$(20)).getAudioClip$java_net_URL(url);
+return (I$[21]||$incl$(21)).getAudioClip$java_net_URL(url);
 });
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 20:01:53
+//Created 2018-02-08 00:34:39
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['swingjs.JSToolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSFontMetrics", null, 'java.awt.FontMetrics');
 
@@ -34838,7 +34842,7 @@ return this.html5Applet;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 09:00:32
+//Created 2018-02-08 00:34:40
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['sun.awt.AppContext','swingjs.JSUtil','java.awt.image.ColorModel','javax.swing.UIManager','swingjs.api.Interface','Thread','javajs.util.PT','swingjs.JSNullComponentPeer','java.io.BufferedInputStream','java.io.ByteArrayInputStream','swingjs.JSToolkit$1','swingjs.api.js.DOMNode']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSToolkit", null, 'sun.awt.SunToolkit');
 C$.isMac = false;
@@ -34880,6 +34884,8 @@ return (isPost ? (I$[1]||$incl$(1)).getAppContext().get$O("PostEventQueue") : (I
 }, 1);
 
 Clazz_newMeth(C$, 'exit', function () {
+
+Thread.thisThread.group.systemExited = true;
 (I$[2]||$incl$(2)).getAppletViewer().exit();
 }, 1);
 
@@ -35013,7 +35019,8 @@ if (andWait) C$.invokeAndWait$javajs_api_JSFunction$I(f, id);
 
 Clazz_newMeth(C$, 'dispatch$O$I$I', function (f, msDelay, id) {
 {
-var thread = java.lang.Thread.thisThread;
+var thread = Thread.thisThread;
+if (thread.group.systemExited) return;
 var thread0 = thread;
 var id0 = SwingJS.eventID || 0;
 var ff = function(_JSToolkit_setTimeout) { SwingJS.eventID = id;
@@ -35022,8 +35029,9 @@ try { if (f.run) f.run();
 else f();
 } catch (e) { var s = "JSToolkit.dispatch(" + id +"): " + e + "\n" + (e.getStackTrace ? e.getStackTrace() + "\n" : "") + (!!e.stack ? e.stack : "");
 System.out.println(s);
-alert(s)} SwingJS.eventID = id0;
-java.lang.Thread.thisThread = thread0;
+alert(s);
+} SwingJS.eventID = id0;
+Thread.thisThread = thread0;
 };
 return (msDelay == -1 ? ff() : setTimeout(ff, msDelay));
 }
@@ -35031,7 +35039,8 @@ return (msDelay == -1 ? ff() : setTimeout(ff, msDelay));
 
 Clazz_newMeth(C$, 'invokeAndWait$javajs_api_JSFunction$I', function (f, id) {
 {
-var thread = java.lang.Thread.thisThread;
+var thread = Thread.thisThread;
+if (thread.group.systemExited) return;
 var thread0 = thread;
 (function(_JSToolkit_setTimeout) { var id0 = SwingJS.eventID || 0;
 SwingJS.eventID = id;
@@ -35039,7 +35048,7 @@ java.lang.Thread.thisThread = thread;
 if (f.run) f.run();
 else f();
 SwingJS.eventID = id0;
-java.lang.Thread.thisThread = thread0;
+Thread.thisThread = thread0;
 })();
 }
 }, 1);
@@ -35340,7 +35349,7 @@ job.setAttributes$S$java_awt_JobAttributes$java_awt_PageAttributes(jobtitle, job
 return job;
 });
 })();
-//Created 2018-02-06 09:00:32
+//Created 2018-02-08 00:34:41
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['java.util.Hashtable','javajs.util.Rdr','java.net.URL','javajs.util.AU','java.io.BufferedInputStream','swingjs.api.Interface','javajs.util.PT','java.lang.Boolean','Thread','java.util.Locale','javajs.util.AjaxURLConnection']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSUtil");
 C$.debugging = false;
@@ -35660,7 +35669,7 @@ return prompt(msg, defaultRet);
 }
 }, 1);
 })();
-//Created 2018-02-06 09:00:32
+//Created 2018-02-08 00:34:35
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[[['swingjs.plaf.ButtonListener','.Actions'],'swingjs.plaf.LazyActionMap','javax.swing.SwingUtilities','javax.swing.plaf.ComponentInputMapUIResource','javax.swing.KeyStroke']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "ButtonListener", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -44726,7 +44735,7 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-02-06 08:59:39
+//Created 2018-02-08 00:34:37
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "ListModel");
 })();

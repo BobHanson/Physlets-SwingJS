@@ -1,14 +1,28 @@
 package animator4;
 
-import java.awt.*;
-import java.awt.event.*;
-
-import java.util.Vector;
+import a2s.Canvas;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.MediaTracker;
+import java.awt.Toolkit;
+import java.awt.event.InputEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.util.Enumeration;
+import java.util.Vector;
 
-import edu.davidson.tools.*;
-import edu.davidson.numerics.*;
 import edu.davidson.display.Format;
+import edu.davidson.numerics.SDifferentiable;
+import edu.davidson.numerics.SRK45;
+import edu.davidson.tools.SApplet;
+import edu.davidson.tools.SDataSource;
+import edu.davidson.tools.SStepable;
+import edu.davidson.tools.SUtil;
 
 
 public final class AnimatorCanvas extends Canvas

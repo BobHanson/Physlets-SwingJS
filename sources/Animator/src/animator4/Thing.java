@@ -1,12 +1,20 @@
 package animator4;
 
-import java.awt.*;
-import java.util.Vector;
+import a2s.Canvas;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Polygon;
 import java.util.Enumeration;
+import java.util.Vector;
 
-import edu.davidson.numerics.Parser;
-import edu.davidson.tools.*;
 import edu.davidson.display.Format;
+import edu.davidson.numerics.Parser;
+import edu.davidson.tools.SApplet;
+import edu.davidson.tools.SDataListener;
+import edu.davidson.tools.SDataSource;
+import edu.davidson.tools.SUtil;
 
 public class Thing extends Object implements SDataSource, SDataListener    {
   static Color      darkGreen=new Color(0,128,0);

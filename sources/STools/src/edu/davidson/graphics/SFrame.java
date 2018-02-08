@@ -1,7 +1,9 @@
 package edu.davidson.graphics;
 
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.BorderLayout;
+import a2s.Frame;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class SFrame extends Frame
 {

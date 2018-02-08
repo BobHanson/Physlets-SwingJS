@@ -1,11 +1,20 @@
 package  animator4;
 
-import  java.awt.*;
-import  java.awt.event.*;
-import  java.util.StringTokenizer;
-import  edu.davidson.graphics.*;
-import  edu.davidson.tools.*;
-import  edu.davidson.display.Format;
+import java.awt.BorderLayout;
+import a2s.Button;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.util.StringTokenizer;
+
+import edu.davidson.display.Format;
+import edu.davidson.graphics.SFrame;
+import edu.davidson.tools.SApplet;
+import edu.davidson.tools.SUtil;
 
 
 /**
@@ -2942,6 +2951,7 @@ public class Animator extends SApplet {
         applet.isStandalone = true;
         SFrame frame = new SFrame("Animator Physlet");
         frame.setTitle("Applet Frame");
+        // SwingJS cannot load an applet into a frame. 
         frame.add(applet, BorderLayout.CENTER);
         applet.init();
         applet.start();
@@ -2950,6 +2960,23 @@ public class Animator extends SApplet {
         frame.setLocation((d.width - frame.getSize().width)/2, (d.height -
                 frame.getSize().height)/2);
         frame.setVisible(true);
+        
+       // from https://www.compadre.org/Physlets/mechanics/ex3_1.cfm 
+		applet.setAutoRefresh(false);
+		applet.setDefault();
+		applet.shiftPixOrigin(20,0);
+		applet.setPixPerUnit(10);
+		applet.setGridUnit(0);
+		int id=applet.addObject("circle","r=12");
+		applet.setTrajectory(id,"step(8-t)*(-22+5*t)+step(t-8)*(-22+5*8-2*(t-8))","step(8-t)*(-12+2*t)+step(t-8)*(-12+2*8+1*(t-8))");
+		applet.setRGB(id,0,0,0);
+		id=applet.addObject("circle","r=11");
+		applet.setTrajectory(id,"step(8-t)*(-22+5*t)+step(t-8)*(-22+5*8-2*(t-8))","step(8-t)*(-12+2*t)+step(t-8)*(-12+2*8+1*(t-8))");
+		applet.setRGB(id,255,0,0);
+		applet.setAutoRefresh(true);
+		applet.setOneShot(0,16,"End of Animation");
+		applet.updateDataConnections();
+
     }
 
     /**

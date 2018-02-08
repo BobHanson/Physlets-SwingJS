@@ -1,5 +1,12 @@
 Bob Hanson, St. Olaf College, hansonr@stolaf.edu
 
+2018.02.07
+
+Animator  testing
+
+
+SClock working
+
 2018.02.06
 
 only Doppler and Optics have been converted (required 5 hr total)

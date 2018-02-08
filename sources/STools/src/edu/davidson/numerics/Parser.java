@@ -126,8 +126,8 @@ public final class Parser {
 
   // references - version 3.0
 
-  private  Hashtable references = null;
-  private  Vector    refnames = null;
+  private  Hashtable<String, int[]> references = null;
+  private  Vector<String>    refnames = null;
 
   // error codes
 
@@ -217,30 +217,31 @@ public final class Parser {
   private  static final int  EXT_FUNC_OFFSET     = FUNC_OFFSET + NO_FUNCS;
   private  static final int  VAR_OFFSET          = 2000;
   private  static final int  REF_OFFSET          = 3000;
-  private  static final char PI_CODE             = (char)253;
-  private  static final char E_CODE              = (char)254;
-  private  static final char NUMERIC             = (char)255;
+  private  static final int  PI_CODE             = 253;
+  private  static final int  E_CODE              = 254;
+  private  static final int NUMERIC              = 255;
 
   // Jump, followed by n : Displacement
-  private  static final char JUMP_CODE           = (char)1;
+  private  static final int JUMP_CODE           = 1;
 
   // Relation less than (<)
-  private  static final char LESS_THAN           = (char)2;
+  private  static final int LESS_THAN           = 2;
 
   // Relation greater than (>)
-  private  static final char GREATER_THAN        = (char)3;
+  private  static final int GREATER_THAN        = 3;
 
   // Relation less than or equal (<=)
-  private  static final char LESS_EQUAL          = (char)4;
+  private  static final int LESS_EQUAL          = 4;
 
   // Relation greater than or equal (>=)
-  private  static final char GREATER_EQUAL       = (char)5;
+  private  static final int GREATER_EQUAL       = 5;
+  
 
   // Relation not equal (<>)
-  private  static final char NOT_EQUAL           = (char)6;
+  private  static final int NOT_EQUAL           = 6;
 
   // Relation equal (=)
-  private  static final char EQUAL               = (char)7;
+  private  static final int EQUAL               = 7;
 
   // Conditional statement IF, followed by a conditional block :
   //   * Displacement (Used to jump to condition FALSE code)
@@ -248,12 +249,12 @@ public final class Parser {
   //   * Jump to next code outside conditional block
   //   * Condition FALSE code
   //   * ENDIF
-  private  static final char IF_CODE             = (char)8;
-  private  static final char ENDIF               = (char)9;
+  private  static final int IF_CODE             = 8;
+  private  static final int ENDIF               = 9;
 
-  private  static final char AND_CODE            = (char)10;    // Boolean AND
-  private  static final char OR_CODE             = (char)11;    // Boolean OR
-  private  static final char NOT_CODE            = (char)12;    // Boolean NOT
+  private  static final int AND_CODE            = 10;    // Boolean AND
+  private  static final int OR_CODE             = 11;    // Boolean OR
+  private  static final int NOT_CODE            = 12;    // Boolean NOT
 
   // built in functions
 
@@ -267,6 +268,7 @@ public final class Parser {
   // extended functions
 
   private String extfunc[]  = { "min",   "max",   "mod",   "atan2" };
+private int[] postfix_code_ints;
 
   /**
    * The constructor of <code>Parser</code>.
@@ -276,8 +278,8 @@ public final class Parser {
 
   public Parser(int variablecount) {
     var_count = variablecount;
-    references = new Hashtable();
-    refnames = new Vector();
+    references = new Hashtable<String, int[]>();
+    refnames = new Vector<String>();
     radian = true;
 
     // arrays are much faster than vectors (IMHO)
@@ -450,66 +452,73 @@ public final class Parser {
     valid = false;
   }
 
-  /**
-   * Parses defined function.
-   */
+	/**
+	 * Parses defined function.
+	 */
 
-  public void parse() {
-    String allFunction = new String(function);
-    String orgFunction = new String(function);
-    int index;
+	public void parse() {
+		String allFunction = new String(function);
+		String orgFunction = new String(function);
+		int index;
 
-    if (valid) return;
-    num = 0; error = NO_ERROR;
-    references.clear();
-    refnames.removeAllElements();
+		if (valid)
+			return;
+		num = 0;
+		error = NO_ERROR;
+		references.clear();
+		refnames.removeAllElements();
 
-    while ((index = allFunction.lastIndexOf(";")) != -1) {
-      function = allFunction.substring(index+1) + ')';
-      allFunction = allFunction.substring(0,index++);
+		while ((index = allFunction.lastIndexOf(";")) != -1) {
+			function = allFunction.substring(index + 1) + ')';
+			allFunction = allFunction.substring(0, index++);
 
-      // references are of form:   refname1:reffunc1;refname2:reffunc2;...
+			// references are of form: refname1:reffunc1;refname2:reffunc2;...
 
-      String refname = null;
-      int separator = function.indexOf(":");
-      if (separator == -1) {
-        error = NO_FUNC_DEFINITION;
-        for (position = 0; position < function.length(); position++)
-          if (function.charAt(position) != ' ') break;
-        position++;
-      }
-      else {
-        refname = function.substring(0,separator);
-        function = function.substring(separator+1);
-        refname = refname.trim();
-        if (refname.equals("")) {
-          error = REF_NAME_EXPECTED;
-          position = 1;
-        }
-        else {
-          index += ++separator;
-          parseSubFunction();
-        }
-      }
-      if (error != NO_ERROR) {
-        position += index;
-        break;
-      }
-      else {
-        references.put(refname,postfix_code);
-        refnames.addElement(refname);
-      }
-    }
-    if (error == NO_ERROR) {
-      function = allFunction + ')';
-      parseSubFunction();
-    }
-    function = orgFunction;
-    valid = (error == NO_ERROR);
-  }
+			String refname = null;
+			int separator = function.indexOf(":");
+			if (separator == -1) {
+				error = NO_FUNC_DEFINITION;
+				for (position = 0; position < function.length(); position++)
+					if (function.charAt(position) != ' ')
+						break;
+				position++;
+			} else {
+				refname = function.substring(0, separator);
+				function = function.substring(separator + 1);
+				refname = refname.trim();
+				if (refname.equals("")) {
+					error = REF_NAME_EXPECTED;
+					position = 1;
+				} else {
+					index += ++separator;
+					parseSubFunction();
+				}
+			}
+			if (error != NO_ERROR) {
+				position += index;
+				break;
+			}
+			references.put(refname, getints(postfix_code));
+			refnames.addElement(refname);
+		}
+		if (error == NO_ERROR) {
+			function = allFunction + ')';
+			parseSubFunction();
+		    postfix_code_ints = getints(postfix_code);
+		}
+		function = orgFunction;
+		valid = (error == NO_ERROR);
+	}
 
 
-  public double evaluate(double x, double y)
+  private int[] getints(String postfix_code) {
+	  int[] a = new int[postfix_code.length()];
+	  for (int i = a.length; --i >= 0;)
+		  a[i] = postfix_code.codePointAt(i);
+	return a;
+}
+
+public double evaluate(double x, double y)
   // added by Wolfgang Christian to make it easier to call parser.
   {
     if (var_count!=2) return 0;
@@ -561,21 +570,21 @@ public final class Parser {
     error = NO_ERROR; numberindex = 0;
 
     if (size != 0) {
-      String orgPFC = postfix_code;
+      int[] orgPFC = postfix_code_ints;
       refvalue = new double[size];
 
-      for (int i=0; i < refnames.size(); i++) {
+      for (int i=0; i < size; i++) {
         String name = (String)refnames.elementAt(i);
-        postfix_code = (String)references.get(name);
+        postfix_code_ints = references.get(name);
         result = evaluateSubFunction();
         if (error != NO_ERROR) {
-          postfix_code = orgPFC;
+          postfix_code_ints = orgPFC;
           refvalue = null;
           return result;
         }
         refvalue[i] = result;
       }
-      postfix_code = orgPFC;
+      postfix_code_ints = orgPFC;
     }
     result = evaluateSubFunction();
     refvalue = null;
@@ -698,8 +707,8 @@ public final class Parser {
    * @param code the postfix code to append
    */
 
-  private void addCode(char code) {
-    postfix_code += code;
+  private void addCode(int code) {
+    postfix_code += (char) code;
   }
 
   /**
@@ -741,7 +750,7 @@ public final class Parser {
       position = start;
       throw new ParserException(SYNTAX_ERROR);
     }
-    number[num++] = value; addCode(NUMERIC);
+    number[num++] = value; addCode((char)NUMERIC);
   }
 
   /**
@@ -772,11 +781,11 @@ public final class Parser {
               (character == '&') || (character == '|')
               ));
     if (stream.equals("pi")) {
-      addCode(PI_CODE); return;
+      addCode((char)PI_CODE); return;
     }
     else
     if (stream.equals("e")) {
-      addCode(E_CODE); return;
+      addCode((char)E_CODE); return;
     }
 
     // if
@@ -788,13 +797,13 @@ public final class Parser {
       scanAndParse();
       if (character != ',')
         throw new ParserException(COMMA_EXPECTED);
-      addCode(IF_CODE);
+      addCode((char)IF_CODE);
       String savecode = new String(postfix_code);
       postfix_code = "";
       scanAndParse();
       if (character != ',')
         throw new ParserException(COMMA_EXPECTED);
-      addCode(JUMP_CODE);
+      addCode((char)JUMP_CODE);
       savecode += (char)(postfix_code.length()+2);
       savecode += postfix_code;
       postfix_code = "";
@@ -886,7 +895,7 @@ public final class Parser {
         throw new ParserException(PAREN_EXPECTED);
       if (!ISBOOLEAN)
         throw new ParserException(INVALID_OPERAND);
-      addCode(NOT_CODE);
+      addCode((char)NOT_CODE);
       getNextCharacter();
       return;
     }
@@ -916,7 +925,7 @@ public final class Parser {
    */
 
   private void arithmeticLevel3() throws ParserException {
-    byte repcount = 0;
+    int repcount = 0;
 
     if (ISBOOLEAN)
       throw new ParserException(INVALID_OPERAND);
@@ -1017,8 +1026,8 @@ public final class Parser {
     if (!ISBOOLEAN)
       throw new ParserException(INVALID_OPERAND);
     switch (operator) {
-      case '&': addCode(AND_CODE); break;
-      case '|': addCode(OR_CODE); break;
+      case '&': addCode((char)AND_CODE); break;
+      case '|': addCode((char)OR_CODE); break;
     }
   }
 
@@ -1057,6 +1066,7 @@ public final class Parser {
   private void parseSubFunction() {
     position = 0;
     postfix_code = "";
+    postfix_code_ints = new int[0];
     INRELATION = false; ISBOOLEAN = false;
     try {
       scanAndParse();
@@ -1173,14 +1183,14 @@ public final class Parser {
     int    stack_pointer = -1;
     int    code_pointer = 0;
     int    destination;
-    char   code;
+    int   code;
 
     //stack = new double[STACK_SIZE];  moved by W. Christian
-      int codeLength=postfix_code.length();  // added bt W. Christian to check the length.
+      int codeLength=postfix_code_ints.length;  // added bt W. Christian to check the length.
       while (true) {
       try {
         if(code_pointer==codeLength) return stack[0]; //added by W. Christian.  No use doing an expection!
-        code = postfix_code.charAt(code_pointer++);
+        code = postfix_code_ints[code_pointer++];
       }
       catch (StringIndexOutOfBoundsException e) {
         return stack[0];
@@ -1203,10 +1213,10 @@ public final class Parser {
           case '_': stack[stack_pointer] = -stack[stack_pointer]; break;
 
           case JUMP_CODE     : destination = code_pointer +
-                               (int)postfix_code.charAt(code_pointer++);
+                               postfix_code_ints[code_pointer++];
                                while (code_pointer < destination) {
-                                 if (postfix_code.charAt(
-                                     code_pointer++) == NUMERIC) numberindex++;
+                                 if (postfix_code_ints[
+                                     code_pointer++] == NUMERIC) numberindex++;
                                }
                                break;
           case LESS_THAN     : stack_pointer--;
@@ -1241,10 +1251,10 @@ public final class Parser {
                                break;
           case IF_CODE       : if (stack[stack_pointer--] == 0.0) {
                                  destination = code_pointer +
-                                 (int)postfix_code.charAt(code_pointer++);
+                                 postfix_code_ints[code_pointer++];
                                  while (code_pointer < destination) {
-                                   if (postfix_code.charAt(
-                                       code_pointer++) == NUMERIC) numberindex++;
+                                   if (postfix_code_ints[
+                                       code_pointer++] == NUMERIC) numberindex++;
                                  }
                                }
                                else code_pointer++;

@@ -37,7 +37,7 @@ import edu.davidson.tools.SApplet;
  * @author   Wolfgang Christian
  */
 public class Doppler extends SApplet implements Runnable, ActionListener {
-  private String label_speed="speed= ";
+  private String label_speed="speed = ";
   private String label_classical="classical";
   private String label_relativistic="relativistic";
   String label_time="time: ";

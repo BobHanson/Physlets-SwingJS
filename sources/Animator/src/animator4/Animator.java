@@ -153,12 +153,13 @@ public class Animator extends SApplet {
         initResources(null);
         try {
         	String defFPS = "10";
+            fps = Integer.parseInt(this.getParameter("FPS", defFPS));
         	/**
         	 * @j2sNative
         	 * 
-        	 * defFPS = '20';
+        	 * fps *= 2;
         	 */
-            fps = Integer.parseInt(this.getParameter("FPS", defFPS));
+
         } catch (Exception e) {
             e.printStackTrace();
         }

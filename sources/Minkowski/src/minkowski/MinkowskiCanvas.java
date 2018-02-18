@@ -1,11 +1,20 @@
 package minkowski;
 
-import java.awt.*;
-import java.util.Vector;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.event.MouseEvent;
 import java.util.Enumeration;
-import java.awt.event.*;
-import edu.davidson.tools.*;
-import edu.davidson.display.*;
+import java.util.Vector;
+
+//import java.awt.*;
+import a2s.Canvas;
+import edu.davidson.display.Format;
+import edu.davidson.tools.SApplet;
+import edu.davidson.tools.SDataSource;
 
 
 

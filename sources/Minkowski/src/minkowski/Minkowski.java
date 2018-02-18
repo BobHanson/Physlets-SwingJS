@@ -1,7 +1,14 @@
 package minkowski;
 
-import java.awt.*;
+import a2s.Button;
+import a2s.Label;
+import a2s.Panel;
+import java.awt.SystemColor;
+import java.awt.Dimension;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.event.*;
+
 import edu.davidson.graphics.*;
 import edu.davidson.display.*;
 import edu.davidson.tools.*;
@@ -15,7 +22,7 @@ import edu.davidson.tools.*;
  *
  * class Minkowski extends SApplet
  *
- * Minkowski shows the geometric represenation of Rotation, Galilean, and Lorentz coordinate transformations.
+ * Minkowski shows the geometric representation of Rotation, Galilean, and Lorentz coordinate transformations.
  *
  *
  */
@@ -42,17 +49,17 @@ public class Minkowski extends SApplet {
   Button             clearMovingBtn      = new Button();
   Panel              panel8              = new Panel();
   Label              yPrimeLabel         = new Label();
-  SNumber            yPrimeField         = new SNumber();
+  SNumber            yPrimeField         = new SNumber(0,"%-+0.3g");
   EtchedBorder       etchedBorder2       = new EtchedBorder();
   Label              label1              = new Label();
-  SNumber            xPrimeField         = new SNumber();
+  SNumber            xPrimeField         = new SNumber(0,"%-+0.3g");
   EtchedBorder       etchedBorder3       = new EtchedBorder();
   Label              label5              = new Label();
   Label              yLabel              = new Label();
   Button             addLabBtn           = new Button();
   Button             clearLabBtn         = new Button();
-  SNumber            yField              = new SNumber();
-  SNumber            xField              = new SNumber();
+  SNumber            yField              = new SNumber(0,"%-+0.3g");
+  SNumber            xField              = new SNumber(0,"%-+0.3g");
   VerticalFlowLayout verticalFlowLayout4 = new VerticalFlowLayout();
   EtchedBorder       box4                = new EtchedBorder();
   Panel              panel10             = new Panel();
@@ -67,7 +74,7 @@ public class Minkowski extends SApplet {
   SSlider            speedSlider         = new SSlider();
   BorderLayout       borderLayout3       = new BorderLayout();
   Label              speedLabel          = new Label();
-  SNumber            speedField          = new SNumber();
+  SNumber            speedField          = new SNumber(0,"%-+0.3g");
   GridLayout         gridLayout1         = new GridLayout();
   //Construct the applet
 
@@ -117,7 +124,9 @@ public class Minkowski extends SApplet {
     } else {
       minkowskiCanvas.setType('L');
     }
-    speedField.addPropertyChangeListener(speedSlider);
+// BH problem here is that Swing scroll bars fire their model's document change, 
+// so every press of a key in the speedField runs a new graph
+//    speedField.addPropertyChangeListener(speedSlider);
     speedSlider.addPropertyChangeListener(speedField);
     this.coordPanel.setVisible(showControls);
     sliderPanel.setVisible(showControls);
@@ -313,8 +322,15 @@ public class Minkowski extends SApplet {
    * @param e
    */
   void speedField_actionPerformed(ActionEvent e) {
-    minkowskiCanvas.setSpeed(speedField.getValue());
-    speedField.setValue(minkowskiCanvas.getSpeed());
+	speedField.updateValueFromText();
+	double speed = speedField.getValue();
+    minkowskiCanvas.setSpeed(speed);
+    speed = minkowskiCanvas.getSpeed();
+    // BH  we need to drive the slider only upon pressing return, or the graph will change as we type
+//    speedField.setValue(speed);
+    speedSlider.setDValue(speed);
+//    speedSlider.propertyChange(new PropertyChangeEvent(speedField, "DValue" , null, Double.valueOf(speed)));
+    speedField.setValue(speed);
   }
 
   private void setLabels() {

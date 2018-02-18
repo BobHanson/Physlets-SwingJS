@@ -7,7 +7,8 @@
 
 package edu.davidson.display;
 import java.awt.AWTEvent;
-import java.awt.Scrollbar;
+
+import a2s.Scrollbar;
 import java.awt.event.AdjustmentEvent;
 //import borland.jbcl.util.BlackBox;
 import java.beans.PropertyChangeEvent;
@@ -64,8 +65,9 @@ public class SSlider extends Scrollbar implements PropertyChangeListener {
           double ival=this.getMinimum()+(this.getMaximum()-this.getMinimum()-this.getVisibleAmount())*(dValue-dMin)/(dMax-dMin);
           this.setValue((int)ival); // set the slider position
           if(oldVal!=dValue) boundSupport.firePropertyChange("DValue",new Double(oldVal),new Double(dValue));
-    }
-    public double getDValue(){return dValue;}
+	}
+
+	public double getDValue(){return dValue;}
 
     public void setDMinMax(double dmin, double dmax){
           dMax=dmax;
@@ -92,16 +94,21 @@ public class SSlider extends Scrollbar implements PropertyChangeListener {
     }
     public double getDMax(){return dMax;}
 
-    void this_adjustmentValueChanged(AdjustmentEvent e) {
-      double oldVal=dValue;
-      int val=this.getValue();
-      dValue=dMin+(dMax-dMin)*(val-this.getMinimum())/(this.getMaximum()-this.getMinimum()-this.getVisibleAmount());
-      boundSupport.firePropertyChange("DValue",new Double(oldVal),new Double(dValue));
-    }
+// BH not used
+//    void this_adjustmentValueChanged(AdjustmentEvent e) {
+//      double oldVal=dValue;
+//      int val=this.getValue();
+//      dValue=dMin+(dMax-dMin)*(val-this.getMinimum())/(this.getMaximum()-this.getMinimum()-this.getVisibleAmount());
+//      boundSupport.firePropertyChange("DValue",new Double(oldVal),new Double(dValue));
+//    }
 
     public void addPropertyChangeListener(PropertyChangeListener l){
       //use the support class
-        boundSupport.addPropertyChangeListener(l);
+    	// BH this is fired in Swing from TextFieldUI prior to completion of the super() call.
+    	if (boundSupport == null)
+    		super.addPropertyChangeListener(l);
+    	else
+    		boundSupport.addPropertyChangeListener(l);
     }
     public void removePropertyChangeListener(PropertyChangeListener l){
         boundSupport.removePropertyChangeListener(l);
@@ -110,12 +117,11 @@ public class SSlider extends Scrollbar implements PropertyChangeListener {
     public void propertyChange(PropertyChangeEvent evt){
       //make changes to this object if it is bound to another object
       if(evt.getPropertyName().equals("DValue")){
-          Double dval=(Double)evt.getNewValue();
-          double d=dval.doubleValue();
+    	  // BH must set dValue here, before trigging events with setValue()
+          dValue = (Double)evt.getNewValue();
           try{
-                  double val=(this.getMaximum()-this.getMinimum()-this.getVisibleAmount())*(d-dMin)/(dMax-dMin);
+                  double val=(this.getMaximum()-this.getMinimum()-this.getVisibleAmount())*(dValue-dMin)/(dMax-dMin);
                   this.setValue((int)val);
-                  //setDValue(val.doubleValue());
           }
           catch(Exception e){}
       }

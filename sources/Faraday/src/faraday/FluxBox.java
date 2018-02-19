@@ -1,8 +1,11 @@
 package faraday;
 
-import java.awt.*;
+//import java.awt.*;
 import edu.davidson.display.BoxThing;
 import edu.davidson.tools.*;
+
+import java.awt.Graphics;
+
 
 public class FluxBox extends BoxThing implements Fluxable{
   Schematic schematic;

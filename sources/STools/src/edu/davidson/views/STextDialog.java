@@ -9,16 +9,19 @@
  */
 package edu.davidson.views;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+//import java.awt.*;
 import java.awt.event.*;
+import a2s.*;
 
 
-public class STextDialog extends Dialog {
+public class STextDialog extends a2s.Dialog {
     BorderLayout borderLayout1 = new BorderLayout();
     STextArea textArea = new STextArea();
 
     public STextDialog(Frame frame, String title){
-        super(frame);
+        super(frame, "", false);
         try  {
             jbInit();
         }

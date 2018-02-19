@@ -1,6 +1,9 @@
 package eField4;
 
-import java.awt.*;
+import java.awt.Graphics;
+import java.awt.Polygon;
+
+//import java.awt.*;
 import edu.davidson.graph.DataSet;
 
 public class TrailThing extends Thing{

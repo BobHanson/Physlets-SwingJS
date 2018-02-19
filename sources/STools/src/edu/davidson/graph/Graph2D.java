@@ -4,8 +4,15 @@ package edu.davidson.graph;
 import java.io.*;
 import java.net.*;
 import java.util.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.FontMetrics;
+//import java.awt.*;
+import java.awt.Graphics;
+import java.awt.Rectangle;
 
-import java.awt.*;
+import a2s.*;
 
 /*
 **************************************************************************

@@ -1,6 +1,11 @@
 package lorentz;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Event;
+import java.awt.Insets;
+
+//import java.awt.*;
+import a2s.*;
 
 public class SizedButton extends Panel
 {

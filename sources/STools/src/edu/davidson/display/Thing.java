@@ -1,7 +1,12 @@
 package edu.davidson.display;
 
-import java.awt.*;
+//import java.awt.*;
+import a2s.*;
 import java.util.Vector;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Polygon;
 import java.util.Enumeration;
 import edu.davidson.tools.*;
 

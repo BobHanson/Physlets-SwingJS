@@ -1,6 +1,9 @@
 package poisson;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+
+//import java.awt.*;
 
 public final  class BoxObject extends PotentialObject {
   public BoxObject(PoissonPanel p,double x, double y, double volt) {

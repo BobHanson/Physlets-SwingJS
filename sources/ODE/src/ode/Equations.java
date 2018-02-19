@@ -1,12 +1,17 @@
 
 package ode;
 
-import java.awt.TextArea;
-import java.awt.*;
+//import java.awt.TextArea;
+//import java.awt.*;
+
+import a2s.*;
 
 import edu.davidson.tools.*;
 import edu.davidson.numerics.*;
+import edu.davidson.views.STextArea;
 import edu.davidson.views.STextDialog;
+
+import java.awt.Component;
 /**
  * The class <code>Equations</code> object keeps track of the differential
  * equations and the state variables.
@@ -74,7 +79,7 @@ public class Equations implements SDataSource, SDifferentiable,SStepable{
           else return;
       }
       //if(textFrame==null)textFrame=new STextDialog("ODE");
-      TextArea textArea=textFrame.getTextArea();
+      STextArea textArea=textFrame.getTextArea();
       textArea.setText("");
       textArea.append("<odephyslet>"+"\n");
       textArea.append(indent+"<mathmethod name=\""+odeSolver.getClass().getName()+"\">"+"\n");

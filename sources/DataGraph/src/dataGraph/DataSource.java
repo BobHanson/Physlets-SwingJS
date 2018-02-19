@@ -1,6 +1,11 @@
 package dataGraph;
 
-import java.awt.*;
+//import java.awt.*;
+import a2s.*;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.event.*;
 import edu.davidson.tools.*;
 

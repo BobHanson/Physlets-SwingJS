@@ -1,6 +1,10 @@
 package eField4;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+
+//import java.awt.*;
 
 public final class VectorField {
   static int halfWidth= 175;

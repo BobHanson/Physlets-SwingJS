@@ -1,6 +1,6 @@
 package edu.davidson.display;
 
-import java.awt.*;
+import java.awt.Graphics;
 import edu.davidson.tools.SApplet;
 
 public class ArrowThing extends Thing {

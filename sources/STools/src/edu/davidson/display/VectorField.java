@@ -1,6 +1,11 @@
 package edu.davidson.display;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+
+//import java.awt.*;
+
 public final class VectorField {
   static int halfWidth= 175;
   static int[] saturation=new int[halfWidth*2];

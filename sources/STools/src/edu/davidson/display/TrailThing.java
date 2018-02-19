@@ -1,7 +1,11 @@
 package edu.davidson.display;
 
-import java.awt.*;
+//import java.awt.*;
 import edu.davidson.tools.SApplet;
+
+import java.awt.Graphics;
+import java.awt.Polygon;
+
 import edu.davidson.graph.DataSet;
 
 public class TrailThing extends Thing{

@@ -1,5 +1,12 @@
 package edu.davidson.graphics;
-import java.awt.*;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Insets;
+import java.awt.LayoutManager;
+
+//import java.awt.*;
+import a2s.*;
 
 public class RowLayout implements LayoutManager {
     static private int _defaultGap = 5;

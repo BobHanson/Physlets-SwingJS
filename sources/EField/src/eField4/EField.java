@@ -13,7 +13,15 @@
 
 package eField4;
 
-import java.awt.*;
+//import java.awt.*;
+import a2s.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.*;
 import java.util.*;
 

@@ -1,6 +1,9 @@
 package eField4;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+
+//import java.awt.*;
 import edu.davidson.tools.SUtil;
 
 public class CursorThing extends Thing {

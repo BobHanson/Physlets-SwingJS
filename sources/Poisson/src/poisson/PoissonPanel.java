@@ -1,10 +1,19 @@
 package poisson;
 
-import java.awt.*;
+//import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import edu.davidson.tools.*;
 import edu.davidson.display.*;
+
+import a2s.*;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+import java.awt.Image;
 
 public final class PoissonPanel extends Panel implements Runnable, SScalable, SDataSource{
   private boolean  hasFieldThing=false;   // flag to indicate that the vector field should be treated like a drawing thing.

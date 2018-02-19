@@ -1,7 +1,9 @@
 package poisson;
 
-import java.awt.*;
-
+//import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Rectangle;
 
 public final class VectorField {
   static int halfWidth= 175;

@@ -1,8 +1,13 @@
 package eField4;
 
 
-import java.awt.*;
+//import java.awt.*;
 import java.util.Vector;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Polygon;
+import java.awt.Rectangle;
 import java.util.Enumeration;
 import edu.davidson.numerics.Parser;
 import edu.davidson.tools.SApplet;

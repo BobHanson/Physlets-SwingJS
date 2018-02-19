@@ -1,6 +1,8 @@
 package eField4;
 
-import java.awt.*;
+import java.awt.Graphics;
+
+//import java.awt.*;
 
 public class ConnectorLine extends Connector {
 

@@ -5,9 +5,16 @@
 package sync;
 
 //import java.applet.*;
-import java.awt.*;
+//import java.awt.*;
 //import java.awt.event.*;
 //import java.awt.*;
+import a2s.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Event;
+import java.awt.Graphics;
+import java.awt.GridLayout;
 import java.util.*;
 import edu.davidson.graphics.*;
 import edu.davidson.tools.*;

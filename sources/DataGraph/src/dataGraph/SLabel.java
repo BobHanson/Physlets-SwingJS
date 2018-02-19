@@ -1,6 +1,12 @@
 package dataGraph;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+
+//import java.awt.*;
+import a2s.*;
 import edu.davidson.display.Format;
 
 

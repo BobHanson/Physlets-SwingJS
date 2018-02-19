@@ -1,6 +1,9 @@
 package pipes;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+
+//import java.awt.*;
 import edu.davidson.tools.*;
 
 public class Thing implements SDataSource{

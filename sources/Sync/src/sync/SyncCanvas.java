@@ -1,6 +1,13 @@
 package sync;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+//import java.awt.*;
 import java.util.*;
+
+import a2s.Canvas;
 import edu.davidson.tools.SApplet;
 
 //Drawing methods

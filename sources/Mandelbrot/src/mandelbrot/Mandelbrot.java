@@ -1,8 +1,14 @@
 package mandelbrot;
 
-import java.awt.*;
+//import java.awt.*;
+import a2s.*;
+
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.*;
-import java.applet.*;
 import edu.davidson.display.SNumber;
 
 public class Mandelbrot extends Applet {

@@ -1,7 +1,8 @@
 package eField4;
 
+import java.awt.Graphics;
 
-import java.awt.*;
+//import java.awt.*;
 
 
 public class ShapeThing extends Thing {

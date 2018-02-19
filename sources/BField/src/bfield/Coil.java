@@ -1,5 +1,10 @@
 package bfield;
-import java.awt.*;
+//import java.awt.*;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+
 
 public final class Coil extends Wire {
     static int n=6;    // number of segments on 1/2 circle

@@ -1,6 +1,8 @@
 package poisson;
 
-import java.awt.*;
+//import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
 
 public final  class RectObject extends PotentialObject {
   public RectObject(PoissonPanel p,double xe, double ye, double ve) {

@@ -1,6 +1,10 @@
 package eField4;
 
-import java.awt.*;
+//import java.awt.*;
+import java.awt.Color;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Font;
 
 public class CaptionThing extends TextThing {
 

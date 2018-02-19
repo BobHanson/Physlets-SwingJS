@@ -1,11 +1,20 @@
 package eField4;
 
-import java.awt.*;
+//import java.awt.*;
+import a2s.*;
+
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.MediaTracker;
+import java.awt.Rectangle;
 import java.awt.event.*;
 import java.util.Vector;
 import java.util.StringTokenizer;
 import java.util.Enumeration;
-import java.applet.Applet;
 import edu.davidson.display.*;
 import edu.davidson.tools.*;
 import edu.davidson.numerics.*;
@@ -453,7 +462,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
    * @return  int the id of the mouse data source
    */
   public int setSketchMode(boolean sm) {
-    Applet applet = edu.davidson.graphics.Util.getApplet(this);
+    a2s.Applet applet = edu.davidson.graphics.Util.getApplet(this);
     sketchImage = edu.davidson.graphics.Util.getImage("pencil.gif", applet);
    // int xoff = 0;
     // int yoff = 29;
@@ -1244,7 +1253,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(contour != null) {
       return contour.getDataBackground();
     } else {
-      return getBackground();
+      return Color.DARK_GRAY;
     }
   }
 

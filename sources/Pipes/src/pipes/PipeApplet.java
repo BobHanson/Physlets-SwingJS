@@ -12,7 +12,13 @@
 *************************************************************************/
 package pipes;
 
-import java.awt.*;
+//import java.awt.*;
+import a2s.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.event.*;
 import edu.davidson.tools.*;
 import edu.davidson.graphics.*;
@@ -364,7 +370,7 @@ String label_wait = "Please wait . . .";
     if (mode.equals("a")) astring=stringfield.getText();
     pause();
     startbtn.setLabel(button_start);
-    String mstring = modeMenu.getSelectedItem();
+    String mstring = modeMenu.getSelectedItem().toString();  
     if (mstring.equals(label_analytic_mode)){
       setMode("a",astring);
 

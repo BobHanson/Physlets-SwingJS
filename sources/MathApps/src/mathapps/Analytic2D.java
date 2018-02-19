@@ -1,6 +1,14 @@
 package mathapps;
 
-import java.awt.*;
+//import java.awt.*;
+import a2s.*;
+
+import java.awt.AWTEvent;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Toolkit;
 import java.awt.event.*;
 import edu.davidson.tools.*;
 import edu.davidson.numerics.Parser;

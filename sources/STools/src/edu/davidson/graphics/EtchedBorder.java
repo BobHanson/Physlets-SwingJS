@@ -1,6 +1,9 @@
 package edu.davidson.graphics;
 
-import java.awt.*;
+import java.awt.Component;
+
+//import java.awt.*;
+import a2s.*;
 
 /**
  * An extension of Border that draws an etched border.

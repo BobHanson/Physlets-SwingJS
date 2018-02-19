@@ -1,7 +1,7 @@
 package edu.davidson.graphics;
 
 import java.awt.BorderLayout;
-import a2s.Frame;
+import a2s.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 

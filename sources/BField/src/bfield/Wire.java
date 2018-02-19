@@ -1,7 +1,12 @@
 package bfield;
-import java.awt.*;
+//import java.awt.*;
 import edu.davidson.tools.*;
 import edu.davidson.display.Thing;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+
 
 public class Wire extends Thing{
   //String label=null;

@@ -1,6 +1,10 @@
 package edu.davidson.display;
 
-import java.awt.*;
+import java.awt.Color;
+//import java.awt.*;
+import java.awt.Font;
+import java.awt.Graphics;
+
 import edu.davidson.tools.SApplet;
 import edu.davidson.numerics.Parser;
 

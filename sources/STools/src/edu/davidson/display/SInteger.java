@@ -5,7 +5,9 @@
 
 package edu.davidson.display;
 
-import java.awt.*;
+import java.awt.Color;
+//import java.awt.*;
+import a2s.*;
 import java.awt.event.*;
 
 public class SInteger extends TextField implements TextListener

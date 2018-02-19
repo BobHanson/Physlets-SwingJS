@@ -6,8 +6,7 @@ import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import a2s.Label;
-import a2s.Panel;
+import a2s.*;
 
 /**
  * A Panel containing a single component; an etched rectangle is 

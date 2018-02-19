@@ -2,7 +2,10 @@
 
 package pipes;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+
+//import java.awt.*;
 
 public class Source extends Thing{
   double value;

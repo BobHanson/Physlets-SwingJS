@@ -1,6 +1,14 @@
 package jep;
 
-import java.awt.*;
+//import java.awt.*;
+import a2s.*;
+
+import java.awt.AWTEvent;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Toolkit;
 import java.awt.event.*;
 import edu.davidson.tools.*;
 import edu.davidson.graphics.*;
@@ -11,7 +19,7 @@ import edu.davidson.display.VerticalFlowLayout;
 /**
  * The Analytic Physlet evaluates a function at a predetermined number of points.
  *
- * The range or the indexpendent variable can be set using the Min and Max embedding
+ * The range or the independent variable can be set using the Min and Max embedding
  * parameters.  The number of points can be set with the NumPts embedding parameter.
  *
  * @author             Wolfgang Christian

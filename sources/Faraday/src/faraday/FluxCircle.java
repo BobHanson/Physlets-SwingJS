@@ -1,8 +1,11 @@
 package faraday;
 
-import java.awt.*;
+//import java.awt.*;
 import edu.davidson.tools.*;
 import edu.davidson.display.*;
+
+import java.awt.Graphics;
+
 
 public class FluxCircle extends CircleThing implements Fluxable{
   Schematic schematic;

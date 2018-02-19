@@ -5,7 +5,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Insets;
-import a2s.Panel;
+import a2s.*;
 import java.awt.Point;
 import java.awt.Rectangle;
 

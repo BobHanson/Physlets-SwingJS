@@ -1,11 +1,21 @@
 package edu.davidson.display;
 
-import java.applet.*;
+//import java.applet.*;
 import java.io.*;
 import java.net.*;
 import java.util.*;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.Shape;
+import java.awt.Toolkit;
 
-import java.awt.*;
+import a2s.*;
+//import java.awt.*;
 import java.awt.event.*;
 
 import edu.davidson.graph.*;
@@ -155,6 +165,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
     if (aFont==null) return;
     super.setFont (aFont);
     Font derivedFont = new Font (aFont.getFamily(),Font.BOLD,aFont.getSize()+2);
+    if (title==null) return;
     title.setFont (derivedFont);
     xaxis.setTitleFont(aFont);
     yaxis.setTitleFont(aFont);
@@ -171,6 +182,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
   public void setForeground (Color c) { // Francisco Esquembre (March 2000)
     if (c==null) return;
     super.setForeground (c);
+    if(xaxis==null) return;
     xaxis.setTitleColor(c);
     xaxis.setLabelColor(c);
     yaxis.setTitleColor(c);
@@ -1710,7 +1722,8 @@ public synchronized Series createSeries(int sid ){
     }
 
     public void repaint(){
-        synchronized(delayLock){newData=true; delayLock.notify(); }
+    	if(delayLock==null) {newData=true; return;}
+    synchronized(delayLock){newData=true; delayLock.notify(); }
     }
 
 /**

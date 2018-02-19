@@ -1,12 +1,16 @@
 package faraday;
 
 
-import java.awt.*;
+//import java.awt.*;
 import edu.davidson.numerics.Parser;
 //import edu.davidson.display.Format;
 import edu.davidson.tools.SUtil;
 import edu.davidson.display.Thing;
 import edu.davidson.tools.SApplet;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 
 
 public class CalcThing extends edu.davidson.display.Thing {

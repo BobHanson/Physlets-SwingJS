@@ -1,6 +1,11 @@
 package edu.davidson.graphics;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+
+//import java.awt.*;
+import a2s.*;
 
 /**
  * A DrawnRectangle which draws in 3D.<p>

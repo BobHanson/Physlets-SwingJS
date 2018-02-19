@@ -8,7 +8,7 @@
 package edu.davidson.display;
 import java.awt.AWTEvent;
 
-import a2s.Scrollbar;
+import a2s.*;
 import java.awt.event.AdjustmentEvent;
 //import borland.jbcl.util.BlackBox;
 import java.beans.PropertyChangeEvent;

@@ -1,6 +1,9 @@
 package poisson;
 
-import java.awt.*;
+//import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+
 
 public class PotentialObject extends edu.davidson.display.Thing{
   static final int CONDUCTOR_TYPE=0;

@@ -1,6 +1,13 @@
 package edu.davidson.graphics;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+import java.awt.SystemColor;
+
+//import java.awt.*;
+import a2s.*;
 
 /**
  * A Rectangle which draws itself inside of a Component.<p>

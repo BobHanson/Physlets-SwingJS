@@ -1,7 +1,10 @@
 package edu.davidson.graphics;
 
-import java.awt.*;
+import java.awt.Color;
+//import java.awt.*;
 import java.awt.event.*;
+
+import a2s.*;
 
 public class ThreadButton extends Button implements Runnable{
     ActionEvent evt=new ActionEvent(this, ActionEvent.ACTION_PERFORMED,"THREAD");

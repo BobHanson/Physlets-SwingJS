@@ -1,9 +1,14 @@
 package randomwalk;
 
-import java.awt.*;
+//import java.awt.*;
 import java.util.Random;
 import edu.davidson.tools.*;
 import edu.davidson.display.*;
+import a2s.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
 
 /**
  * Drawing shows how to draw a grid on the screen for the "Game of Life."

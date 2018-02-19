@@ -1,9 +1,15 @@
 package randomwalk;
 
-import java.awt.*;
+//import java.awt.*;
+import a2s.*;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.event.*;
-import edu.davidson.display.*;
+
+import edu.davidson.display.SGraph;
 import edu.davidson.tools.*;
+
 
 
 public class Diffusion extends SApplet{

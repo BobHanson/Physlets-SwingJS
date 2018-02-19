@@ -1,6 +1,8 @@
 package eField4;
 
-import java.awt.*;
+//import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
 
 public class Box extends Thing {
 

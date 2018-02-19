@@ -3,7 +3,7 @@ package edu.davidson.graphics;
 import java.awt.Color;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
-import a2s.Panel;
+import a2s.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 

@@ -1,6 +1,12 @@
 package edu.davidson.graphics;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+
+//import java.awt.*;
+
+import a2s.*;
 
 /**
  * A DrawnRectangle that draws an etched border.<p>

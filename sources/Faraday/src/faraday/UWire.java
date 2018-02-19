@@ -1,8 +1,14 @@
 package faraday;
 
-import java.awt.*;
+//import java.awt.*;
 import edu.davidson.tools.*;
 import edu.davidson.display.*;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+
 
 public class UWire extends Thing implements Fluxable{
   Schematic schematic;

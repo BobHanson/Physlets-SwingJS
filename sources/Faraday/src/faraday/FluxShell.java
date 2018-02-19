@@ -1,7 +1,10 @@
 package faraday;
-import java.awt.*;
+//import java.awt.*;
 import edu.davidson.tools.*;
 import edu.davidson.display.*;
+
+import java.awt.Graphics;
+
 
 public class FluxShell extends ShellThing implements Fluxable{
   Schematic schematic;

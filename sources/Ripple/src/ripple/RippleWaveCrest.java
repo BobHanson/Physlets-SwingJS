@@ -1,7 +1,8 @@
 package ripple;
 
+import java.awt.Graphics;
 import java.lang.Object;
-import java.awt.*;
+//import java.awt.*;
 
 
 /*

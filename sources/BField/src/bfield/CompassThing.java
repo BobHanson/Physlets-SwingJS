@@ -1,6 +1,9 @@
 package bfield;
-import java.awt.*;
+//import java.awt.*;
 import edu.davidson.tools.SApplet;
+import java.awt.Color;
+import java.awt.Graphics;
+
 
 public class CompassThing extends FieldShell {
      int x1, y1, x2, y2;

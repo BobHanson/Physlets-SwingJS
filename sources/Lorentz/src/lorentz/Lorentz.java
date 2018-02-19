@@ -1,6 +1,17 @@
 package lorentz;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Event;
+import java.awt.FlowLayout;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.GridLayout;
+import java.awt.Image;
+
+//import java.awt.*;
+import a2s.*;
 import edu.davidson.graphics.*;
 import edu.davidson.tools.*;
 

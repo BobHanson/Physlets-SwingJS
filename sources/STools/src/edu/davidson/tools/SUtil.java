@@ -1,5 +1,7 @@
 package edu.davidson.tools;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+//import java.awt.*;
 import java.util.StringTokenizer;
 import edu.davidson.display.Format;
 import edu.davidson.numerics.Parser;

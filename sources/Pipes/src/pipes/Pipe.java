@@ -14,7 +14,12 @@
 package pipes;
 
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+//import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import edu.davidson.tools.*;

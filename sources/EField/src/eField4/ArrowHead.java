@@ -1,5 +1,9 @@
 package eField4;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+
+//import java.awt.*;
 import edu.davidson.tools.*;
 
 public class ArrowHead {

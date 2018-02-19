@@ -18,9 +18,16 @@
 
 package ising;
 
-import java.awt.*;
+//import java.awt.*;
+import a2s.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.*;
-import java.applet.*;
 
 public class IsingApplet extends Applet {
     private IsingModel experiment;

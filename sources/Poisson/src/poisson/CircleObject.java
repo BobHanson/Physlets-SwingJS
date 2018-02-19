@@ -1,6 +1,9 @@
 package poisson;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+
+//import java.awt.*;
 
 
 public final class CircleObject extends PotentialObject {

@@ -1,7 +1,8 @@
 package poisson;
 
-import java.awt.*;
-
+//import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
 
 public final class RingObject extends PotentialObject {
  // double size=1;

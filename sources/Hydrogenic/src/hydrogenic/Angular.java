@@ -12,11 +12,19 @@
  */
 package hydrogenic;
 
-import java.awt.*;
+
+//import java.awt.*;
 import java.awt.event.*;
 import edu.davidson.graphics.*;
 import edu.davidson.tools.*;
 import edu.davidson.display.*;
+import a2s.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.SystemColor;
 
 /**
  *  Angular Class plots the angular probability

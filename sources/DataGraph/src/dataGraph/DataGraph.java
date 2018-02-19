@@ -12,7 +12,15 @@
 *************************************************************************/
 
 package dataGraph;
-import java.awt.*;
+//import java.awt.*;
+import a2s.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.MediaTracker;
 import java.awt.event.*;
 import java.lang.Double;
 
@@ -23,7 +31,7 @@ import edu.davidson.display.*;
 /**
  * This applet plots data sets and functions.  Each data set is a "series"
  * of of coordinate pairs, (x,y).  A series is identified by a series
- * numeber.
+ * number.
  * Each series a unique color and style.
  * Whenever data is added, the appropriate series number must be specified.
  * <p>The following embedding parameters are defined:</p>

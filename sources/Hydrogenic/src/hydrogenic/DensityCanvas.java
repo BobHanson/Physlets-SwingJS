@@ -1,9 +1,17 @@
 package hydrogenic;
-import java.awt.*;
+//import java.awt.*;
 import java.awt.image.MemoryImageSource;
 import java.awt.image.ColorModel;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.event.*;
 import edu.davidson.display.Format;
+
+import a2s.*;
 
 public final class DensityCanvas extends Canvas implements Runnable{
   Image img=null;
@@ -44,7 +52,7 @@ public final class DensityCanvas extends Canvas implements Runnable{
 
   public void update(Graphics g){
     paint(g);
-    }
+  }
 
   /**
   * This method overrides the AWT paint method and paints an image

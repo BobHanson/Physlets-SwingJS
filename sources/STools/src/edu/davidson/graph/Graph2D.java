@@ -574,6 +574,7 @@ System.out.println("Mouse Released.");
       Rectangle r = getBounds();
       paint(g,r);
     }
+    
     public void paint(Graphics g,Rectangle r ) {
         adjustScale();   // added by W. Christian
         int i;
@@ -717,7 +718,7 @@ System.out.println("Mouse Released.");
 /**
  *  Calling this method pauses the plot and displays a flashing
  *  message on the screen. Mainly used when data is being loaded across the
- *  net. Everytime this routine is called a counter is incremented
+ *  net. Every time this routine is called a counter is incremented
  *  the method Graph2D.finishedloading() decrements the counter. When the
  *  counter is back to zero the plotting resumes.
  *  @see Graph2D#finishedloading()

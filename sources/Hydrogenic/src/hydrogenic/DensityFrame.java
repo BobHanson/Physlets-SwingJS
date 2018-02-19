@@ -5,11 +5,19 @@
 //Author:       Cabell Fisher and Dr. Wolfgang Christian
 
 package hydrogenic;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+//import java.awt.*;
 import java.awt.event.*;
 
+import javax.swing.JFrame;
 
-public class DensityFrame extends Frame {
+import a2s.*;
+
+
+public class DensityFrame extends JFrame {
     Image img=null;
   
   public DensityFrame(Image i) {
@@ -17,8 +25,9 @@ public class DensityFrame extends Frame {
   img=i;
   setSize(i.getWidth(this),i.getHeight(this));
   setLocation((int)(300*Math.random()),(int)(300*Math.random()) );
-  addWindowListener(new WindowAdapter() { public void
-  windowClosing(WindowEvent e) { dispose();} } );
+
+  addWindowListener(new WindowAdapter() { 
+	  public void windowClosing(WindowEvent e) { dispose();} } );
   setTitle(getClass().getName());
   }
 

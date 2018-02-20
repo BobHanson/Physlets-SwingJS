@@ -1765,7 +1765,15 @@ public synchronized Series createSeries(int sid ){
               newData=false;
               if(!interrupted)paintOffScreen();
           }
-          if(!interrupted)try{Thread.sleep(50);}catch (InterruptedException ie){return;}
+      	/**
+      	 * @j2sNative
+      	 * 
+      	 *  return 
+      	 *  
+      	 */ 
+      	 {
+            if(!interrupted)try{Thread.sleep(50);}catch (InterruptedException ie){return;}
+      	 }
         }
         //System.out.println("Paintthread stop");
     }

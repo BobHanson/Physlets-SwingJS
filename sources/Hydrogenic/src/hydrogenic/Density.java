@@ -14,6 +14,9 @@ package hydrogenic;
 
 //import java.awt.*;
 import java.awt.event.*;
+
+import javax.swing.SwingUtilities;
+
 import edu.davidson.graphics.*;
 import edu.davidson.tools.*;
 import edu.davidson.display.*;
@@ -55,9 +58,27 @@ public class Density extends SApplet {
   Label         label4         = new Label();
   Panel         panel2         = new Panel();
   FlowLayout    flowLayout3    = new FlowLayout();
-  SInteger      nValue         = new SInteger();
-  SInteger      mValue         = new SInteger();
-  SInteger      lValue         = new SInteger();
+  SInteger      nValue         = new SInteger() {
+	  public void checkValue() {
+		  super.checkValue();
+		  if (checkNLM())
+			  setBackground(Color.yellow);
+	  }
+  }; 
+  SInteger      mValue         = new SInteger() {
+	  public void checkValue() {
+		  super.checkValue();
+		  if (checkNLM())
+			  setBackground(Color.yellow);
+	  }
+  };
+  SInteger      lValue         = new SInteger() {
+	  public void checkValue() {
+		  super.checkValue();
+		  if (checkNLM())
+			  setBackground(Color.yellow);
+	  }
+  };
   Label         label1         = new Label();
   Label         label2         = new Label();
   Label         label3         = new Label();
@@ -117,6 +138,7 @@ public Density(){
     mValue.setValue(m);
     nValue.setValue(n);
     lValue.setValue(l);
+    checkNLM();
     yphase.setState(ph);
     nphase.setState(!ph);
     densityCanvas.setM(mValue.getValue());
@@ -243,30 +265,58 @@ public Density(){
     densityCanvas.setM(mValue.getValue());
     densityCanvas.setN(nValue.getValue());
     densityCanvas.setL(lValue.getValue());
+	if (!checkNLM())
+		return;
     recalculate();
   }
 
-  /**
-   * Method plotBtn_actionPerformed
-   *
-   * @param e
-   */
-  void plotBtn_actionPerformed(ActionEvent e) {
-    n = nValue.getValue();
-    l = lValue.getValue();
-    m = mValue.getValue();
-    if(n>50) {
-      nValue.setBackground(Color.red);
-    } else if(l>(n-1)|l<0) {
-      lValue.setBackground(Color.red);
-    } else if(Math.abs(m)>l) {
-      mValue.setBackground(Color.red);
-    } else {
-      densityCanvas.setM(mValue.getValue());
-      densityCanvas.setN(nValue.getValue());
-      densityCanvas.setL(lValue.getValue());
-      densityCanvas.setPhase(yphase.getState());
-      recalculate();
-    }
-  }
+	/**
+	 * Method plotBtn_actionPerformed
+	 *
+	 * @param e
+	 */
+	void plotBtn_actionPerformed(ActionEvent e) {
+		n = nValue.getValue();
+		l = lValue.getValue();
+		m = mValue.getValue();
+		if (!checkNLM())
+			return;
+		densityCanvas.setM(mValue.getValue());
+		densityCanvas.setN(nValue.getValue());
+		densityCanvas.setL(lValue.getValue());
+		densityCanvas.setPhase(yphase.getState());
+		recalculate();
+	}
+
+
+	/**
+	 * Added by Bob Hanson -- allows setting color red immediately
+	 * 
+	 * @return true if n, l, m are OK
+	 */
+	protected boolean checkNLM() {
+		int n = nValue.getVal();
+		int l = lValue.getVal();
+		int m = mValue.getVal();
+		if (nValue.getBackground().equals(Color.red))
+			nValue.setBackground(Color.white);
+		if (lValue.getBackground().equals(Color.red))
+			lValue.setBackground(Color.white);
+		if (mValue.getBackground().equals(Color.red))
+			mValue.setBackground(Color.white);
+		boolean isOK = true;
+		if (n < 1 || n > 50) { // BH fix
+			nValue.setBackground(Color.red);
+			isOK = false;
+		}
+		if (l > (n - 1) | l < 0) {
+			lValue.setBackground(Color.red);
+			isOK = false;
+		}
+		if (Math.abs(m) > l) {
+			mValue.setBackground(Color.red);
+			isOK = false;
+		}
+		return isOK;
+	}
 }

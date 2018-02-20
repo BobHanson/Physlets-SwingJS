@@ -48,7 +48,7 @@ public class SInteger extends TextField implements TextListener
        checkValue();
    }
 
-   private void checkValue()
+   public void checkValue() // BH made public
    {  try
       {  Integer.parseInt(getText().trim() + "0");
          lastValue = getText();
@@ -69,17 +69,22 @@ public class SInteger extends TextField implements TextListener
 
    public int getValue()
    {  checkValue();
-      try{
-          val=Integer.parseInt(getText().trim());
-          if(isEditable() && !noColor)setBackground(Color.white);
-          return val;
-      }
-      catch(NumberFormatException e){
-         if(!noColor)setBackground(Color.red);
-         return 0;
-      }
+   	  return getVal();
    }
-   /**
+   
+   public int getVal() {
+	      try{
+	          val=Integer.parseInt(getText().trim());
+	          if(isEditable() && !noColor)setBackground(Color.white);
+	          return val;
+	      }
+	      catch(NumberFormatException e){
+	         if(!noColor)setBackground(Color.red);
+	         return 0;
+	      }
+   }
+
+/**
    * Set the integer data value
    * @param v is the new integer value.
    */
@@ -93,7 +98,7 @@ public class SInteger extends TextField implements TextListener
    public void setNoColor(boolean nc){noColor=nc;}
 
    private String lastValue;
-   protected int lastCaretPosition;
-   protected boolean noColor=false;
+   private int lastCaretPosition;
+   private boolean noColor=false;
    private int val=0;
 }

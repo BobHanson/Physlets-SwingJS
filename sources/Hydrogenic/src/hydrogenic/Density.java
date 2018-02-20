@@ -223,8 +223,9 @@ public Density(){
    * It kills the current thread and starts a new one
    */
   public void recalculate() {
-    densityCanvas.stop();  //this will stop calculation in progress if button is pressed while calculations are still going
-    densityCanvas.start();
+	densityCanvas.run();
+//    densityCanvas.stop();  //this will stop calculation in progress if button is pressed while calculations are still going
+//    densityCanvas.start();
   }
 
   /**

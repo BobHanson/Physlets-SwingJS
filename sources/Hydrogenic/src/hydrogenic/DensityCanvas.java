@@ -16,7 +16,7 @@ import a2s.*;
 public final class DensityCanvas extends Canvas implements Runnable{
   Image img=null;
   static String calcString = "Please Wait...";
-  private Thread calcThread;
+//  private Thread calcThread;
   int red[]=new int[256];
   int green[]=new int[256];
   int blue[]=new int[256];
@@ -66,7 +66,7 @@ public final class DensityCanvas extends Canvas implements Runnable{
       int position=(max-min)/2;
 
       if (img == null) {
-          super.paint(g);
+          //super.paint(g);
           g.setColor(Color.black);
           FontMetrics fm = g.getFontMetrics();
           int x = (w - fm.stringWidth(calcString))/2;
@@ -83,23 +83,25 @@ public final class DensityCanvas extends Canvas implements Runnable{
       }
     }
 
-  /**
-  * This method ensures that a thread is completely terminated
-  */
-  synchronized public void stop() {
-        if(calcThread==null) return;
-        calcThread.stop();
-        try{ calcThread.join();} catch (InterruptedException e){}
-        calcThread=null;
-    }
+//  /**
+//  * This method ensures that a thread is completely terminated
+//  */
+//  synchronized public void stop() {
+//        if(calcThread==null) return;
+//        try{ 
+//            calcThread.stop();
+//            calcThread.join();
+//        } catch (InterruptedException e){}
+//        calcThread=null;
+//    }
 
-  /**
-  * This method starts a new thread making sure the old one is dead first
-  */
-  public void start(){
-  if (calcThread==null){calcThread=new Thread(this);}
-  calcThread.start();
-  }
+//  /**
+//  * This method starts a new thread making sure the old one is dead first
+//  */
+//  public void start(){
+//  if (calcThread==null){calcThread=new Thread(this);}
+//  calcThread.start();
+//  }
 
   /**
   * This method carries out the calculations of the wave functions using a thread
@@ -140,7 +142,7 @@ public final class DensityCanvas extends Canvas implements Runnable{
 
         newImage(width, height, pixels);
         repaint();
-        stop();  // make sure the thread is dead and set to null before we go on.
+//        stop();  // make sure the thread is dead and set to null before we go on.
     }
 
     synchronized void newImage(int width, int height,int pixels[]) {

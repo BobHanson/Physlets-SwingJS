@@ -15,7 +15,10 @@
  * Yanto Suryono <d0771@cranesv.egg.kushiro-ct.ac.jp>                                     *
  *----------------------------------------------------------------------------------------*/
 package edu.davidson.surfaceplotter;
-import java.awt.*;
+
+import java.awt.Point;
+
+//import java.awt.*;
 
 /**
  * The class <code>SurfaceVertex</code> represents a vertex in 3D space.

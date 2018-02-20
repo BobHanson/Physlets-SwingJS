@@ -12,7 +12,11 @@
  * Yanto Suryono <d0771@cranesv.egg.kushiro-ct.ac.jp>                                     *
  *----------------------------------------------------------------------------------------*/
 package edu.davidson.surfaceplotter;
-import java.awt.*;
+import java.awt.Point;
+import java.awt.Rectangle;
+
+//import java.awt.*;
+import a2s.*;
 
 /**
  * The class <code>Projector</code> projects points in 3D space to 2D space.

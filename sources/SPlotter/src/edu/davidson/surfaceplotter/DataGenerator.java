@@ -65,7 +65,15 @@ public class DataGenerator implements Runnable {
                       ////  wait for the drawing
               }
           }
-          try{Thread.sleep(20);}catch (Exception e){}
+          /**
+        	 * @j2sNative
+        	 * 
+        	 *  
+        	 *  
+        	 */ 
+        	 {
+             try{Thread.sleep(20);}catch (Exception e){}
+        	 }
         }
         //calcThread.stop();
         calcThread=null;

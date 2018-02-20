@@ -1,8 +1,10 @@
 package edu.davidson.views;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+//import java.awt.*;
 import java.awt.event.*;
 import edu.davidson.display.SGraph;
+import a2s.*;
 
 
 public class SGraphFrame extends Frame {

@@ -1,5 +1,7 @@
 package edu.davidson.views;
 
+import java.awt.BorderLayout;
+
 /**
  * Title:        DataTable
  * Description:
@@ -8,14 +10,16 @@ package edu.davidson.views;
  * @author Wolfgang Christian
  * @version 1.0
  */
-import java.awt.*;
+
+//import java.awt.*;
 import java.awt.event.*;
+import a2s.*;
 
 
 public class SGridFrame extends Frame {
     SGrid sgrid;
     BorderLayout borderLayout1 = new BorderLayout();
-    ScrollPane scrollPane = new ScrollPane(ScrollPane.SCROLLBARS_AS_NEEDED);
+    ScrollPane scrollPane = new ScrollPane();
 
     public SGridFrame() {
        this(50,3);

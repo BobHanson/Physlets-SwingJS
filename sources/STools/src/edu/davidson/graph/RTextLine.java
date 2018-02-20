@@ -1,14 +1,18 @@
 package edu.davidson.graph;
 
-//import java.awt.*;
-import java.util.*;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 //import java.lang.*;
-import java.awt.image.*;
+import java.awt.image.ColorModel;
+import java.awt.image.FilteredImageSource;
+import java.awt.image.ImageConsumer;
+import java.awt.image.ImageFilter;
+import java.awt.image.ImageProducer;
+//import java.awt.*;
+import java.util.Hashtable;
 
 /*
 **************************************************************************

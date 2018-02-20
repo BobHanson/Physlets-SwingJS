@@ -6,9 +6,13 @@
 package edu.davidson.display;
 
 import java.awt.Color;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.TextEvent;
+import java.awt.event.TextListener;
+
 //import java.awt.*;
-import a2s.*;
-import java.awt.event.*;
+import a2s.TextField;
 
 public class SInteger extends TextField implements TextListener
 { /**
@@ -89,7 +93,7 @@ public class SInteger extends TextField implements TextListener
    public void setNoColor(boolean nc){noColor=nc;}
 
    private String lastValue;
-   private int lastCaretPosition;
-   private boolean noColor=false;
+   protected int lastCaretPosition;
+   protected boolean noColor=false;
    private int val=0;
 }

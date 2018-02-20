@@ -129,6 +129,16 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
       parentSApplet=applet;
   }
 
+  
+	protected void repaintDelayed() {
+		// BH put in one spot for testing.
+
+		synchronized (delayLock) {
+			newData = true;
+			delayLock.notify();
+		}
+	}
+  
   public void step(double dt,double time){
     Thing t=null;
     for( Enumeration e=things.elements(); e.hasMoreElements();){
@@ -138,7 +148,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
     if(autoRefresh && parentSApplet!=null){
       if(parentSApplet.destroyed) return;
       parentSApplet.updateDataConnections();
-      synchronized(delayLock){newData=true; delayLock.notify(); }
+      repaintDelayed();
     }
   }
 
@@ -232,7 +242,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
       if(sd)makeSampleData(100);
         else deleteAllSeries();
       //if(autoRefresh) repaint();
-      if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(autoRefresh) repaintDelayed();
   }
 /**
  *    Will the graph show sample data when it is initialized?
@@ -250,7 +260,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
       if(dg==drawgrid) return;
       drawgrid=dg;
       //if(autoRefresh)repaint();
-      if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(autoRefresh) repaintDelayed();
   }
 /**
  *    Will the graph have a grid?
@@ -272,7 +282,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
          //Graphics g=getGraphics();
         // paintOffScreen(g);
         //g.dispose();
-        synchronized(delayLock){newData=true; delayLock.notify(); }
+        repaintDelayed();
       }
   }
   public boolean isAutoRefresh(){return autoRefresh;}
@@ -287,7 +297,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
       if(!as==xaxis.isManualRange() ) return;
       xaxis.setManualRange(!as);
       //if(autoRefresh)repaint();
-      if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(autoRefresh) repaintDelayed();
   }
 
   public boolean isAutoscaleX(){return !xaxis.isManualRange() ;}
@@ -301,7 +311,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
       if(!as==yaxis.isManualRange() ) return;
       yaxis.setManualRange(!as);
       //if(autoRefresh)repaint();
-      if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(autoRefresh) repaintDelayed();
   }
   public boolean isAutoscaleY(){return !yaxis.isManualRange();}
 
@@ -314,7 +324,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
       if(dz==drawzero) return;
       drawzero=dz;
       //if(autoRefresh)repaint();
-      if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(autoRefresh) repaintDelayed();
   }
   public boolean isDrawZero(){return drawzero;}
 
@@ -338,7 +348,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
       data.legend(xpix,ypix,legend);
       if(c!=null)data.legendColor(c);
       //if(autoRefresh)repaint();
-      if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(autoRefresh) repaintDelayed();
   }
 
   public synchronized void setSeriesLegend(int sid,int xpix, int ypix, String legend ){
@@ -352,7 +362,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
       Series series=createSeries(sid);
       series.data.legendColor(c);
       //if(autoRefresh) repaint();
-      if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(autoRefresh) repaintDelayed();
   }
 
    static private Color colorOf (String c) { // Francisco Esquembre (March 2000)
@@ -425,7 +435,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
       data.markercolor = c;
       data.linecolor = c;
       //if(autoRefresh) repaint();
-      if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(autoRefresh) repaintDelayed();
   }
 
 /**
@@ -451,7 +461,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
       data.markercolor = c;
       data.linecolor = c;
       //if(autoRefresh) repaint();
-      if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(autoRefresh) repaintDelayed();
   }
 
   public synchronized void setSeriesStyle(int sid, boolean conPts, int m ){
@@ -466,7 +476,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
       series.data.markercolor = c;
       series.data.linecolor = c;
       //if(autoRefresh) repaint();
-      if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(autoRefresh) repaintDelayed();
   }
 
   public synchronized void setSeriesSorted(int sid, boolean sorted){
@@ -555,7 +565,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
   public synchronized void setShowAxes(boolean sa){
       setShowAxis(sa);
       //if(autoRefresh) repaint();
-      if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(autoRefresh) repaintDelayed();
 
   }
 
@@ -1252,7 +1262,7 @@ size.
       }
       //if(parentSApplet!=null) parentSApplet.cleanupDataConnections();
       //if(autoRefresh) repaint();
-      synchronized(delayLock){newData=true; delayLock.notify(); }
+      repaintDelayed();
   }
 
 /**
@@ -1278,7 +1288,7 @@ size.
          if(t instanceof SStepable)parentSApplet.clock.removeClockListener((SStepable)t);
          parentSApplet.cleanupDataConnections();
      }
-     if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+     if(autoRefresh) repaintDelayed();
      return true;
   }
 
@@ -1315,7 +1325,7 @@ size.
           }
       }}
 
-      if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(autoRefresh) repaintDelayed();
       return functionFound;
   }
 
@@ -1337,7 +1347,7 @@ size.
       if(!xaxis.isManualRange()) setMinMaxX(0,1);
       if(!yaxis.isManualRange()) setMinMaxY(0,1);
       //if(autoRefresh) repaint();
-      if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(autoRefresh) repaintDelayed();
   }
 
 /**   Remove any Data that is not part of a series. Used to get grid of field lines, contour lines, etc
@@ -1404,7 +1414,7 @@ size.
         parentSApplet.updateDataConnection(f.hashCode() );
       }
       //if(parentSApplet!=null)parentSApplet.updateDataConnections();
-      synchronized(delayLock){newData=true; delayLock.notify(); }
+      repaintDelayed();
   }
 
   public void setFunctionClip(int id, double min, double max){
@@ -1420,7 +1430,7 @@ size.
         parentSApplet.updateDataConnection(f.hashCode() );
       }
       //if(parentSApplet!=null)parentSApplet.updateDataConnections();
-      synchronized(delayLock){newData=true; delayLock.notify(); }
+      repaintDelayed();
   }
 
   public void setYScaleFromFunction(int id){
@@ -1437,7 +1447,7 @@ size.
           }
       }
 
-      synchronized(delayLock){newData=true; delayLock.notify(); }
+      repaintDelayed();
   }
 
 
@@ -1456,7 +1466,7 @@ size.
        parentSApplet.updateDataConnection(fun.hashCode());
      }
      //if(parentSApplet!=null)parentSApplet.updateDataConnections();
-     synchronized(delayLock){newData=true; delayLock.notify(); }
+     repaintDelayed();
      return true;
   }
 
@@ -1475,7 +1485,7 @@ size.
        if(parentSApplet.destroyed) return false;
        parentSApplet.updateDataConnection(fun.hashCode());
      }
-     synchronized(delayLock){newData=true; delayLock.notify(); }
+     repaintDelayed();
      return true;
   }
 
@@ -1537,7 +1547,7 @@ size.
        parentSApplet.updateDataConnection(fun.hashCode());
      }
      //if(parentSApplet!=null)parentSApplet.updateDataConnections();
-     synchronized(delayLock){newData=true; delayLock.notify(); }
+     repaintDelayed();
      return true;
   }
 
@@ -1621,7 +1631,7 @@ public synchronized Series createSeries(int sid ){
       }
       //makeDefaultData();
       //if(autoRefresh) repaint();
-      if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(autoRefresh) repaintDelayed();
   }
 
 /**
@@ -1643,7 +1653,7 @@ public synchronized Series createSeries(int sid ){
           series.data.deleteData();  // data object still exists
           series.setOwner(parentSApplet);
       }
-      if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(autoRefresh) repaintDelayed();
     }
 
 /**
@@ -1662,7 +1672,7 @@ public synchronized Series createSeries(int sid ){
               series.data.deleteData();  // data object still exists
               series.setOwner(parentSApplet);
               //if(autoRefresh) repaint();
-              if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+              if(autoRefresh) repaintDelayed();
               break;
           }
       }
@@ -1723,7 +1733,7 @@ public synchronized Series createSeries(int sid ){
 
     public void repaint(){
     	if(delayLock==null) {newData=true; return;}
-    synchronized(delayLock){newData=true; delayLock.notify(); }
+    repaintDelayed();
     }
 
 /**
@@ -1744,7 +1754,7 @@ public synchronized Series createSeries(int sid ){
     public void destroy(){
       interrupted=true;
       if(delayThread==null)return;
-      synchronized(delayLock){newData=true; delayLock.notify(); }
+      repaintDelayed();
       Thread temp=delayThread;
       if(temp!=null)try{
         temp.interrupt();
@@ -1974,7 +1984,7 @@ public synchronized Series createSeries(int sid ){
           }
       }
       if(!autoRefresh) return;
-      synchronized(delayLock){newData=true; delayLock.notify(); }
+      repaintDelayed();
   }
 
 
@@ -2114,7 +2124,7 @@ public void clearAllThings(){
               System.out.println("Error appending Data!");
           }
       }
-    if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+    if(autoRefresh) repaintDelayed();
     return;
   }
   public synchronized void addData(int sid, double[] x, double[] y, int num ){
@@ -2139,7 +2149,7 @@ public void clearAllThings(){
                   //series.data.deleteData();
                   //series.data.append(points,np);
                   series.data.replace(points,np);
-                  synchronized(delayLock){newData=true; delayLock.notify(); }
+                  repaintDelayed();
                   return;
               }else series.data.append(points,np);
           }catch (Exception e){
@@ -2147,7 +2157,7 @@ public void clearAllThings(){
           }
       }
     //if(autoRefresh) repaint();
-    if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+    if(autoRefresh) repaintDelayed();
     return;
   }
 
@@ -2174,7 +2184,7 @@ public void clearAllThings(){
        }
      }
      //if(autoRefresh) repaint();
-     if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+     if(autoRefresh) repaintDelayed();
      return func.hashCode();
   }
 
@@ -2187,7 +2197,7 @@ public void clearAllThings(){
      VectorFieldThing field=new VectorFieldThing(strFx, strFy, gridSize);
      things.addElement(field);
      //if(autoRefresh)repaint();
-     synchronized(delayLock){newData=true; delayLock.notify(); }
+     repaintDelayed();
      return field.hashCode();
   }
 
@@ -2213,7 +2223,7 @@ public void clearAllThings(){
        }
      }
      //if(autoRefresh) repaint();
-     if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+     if(autoRefresh) repaintDelayed();
      return func.hashCode();
   }
 
@@ -2246,7 +2256,7 @@ public void clearAllThings(){
             return;
         }
         autoRefresh=temp;
-        if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+        if(autoRefresh) repaintDelayed();
   }
   void readFile(int series, InputStream is) throws IOException {
         double x;
@@ -2490,7 +2500,7 @@ public void clearAllThings(){
       if(dragThing==null)repaint(0,r.height-20,boxWidth,20);
       else{
           //paintOffScreen();
-          synchronized(delayLock){newData=true; delayLock.notify(); }
+          repaintDelayed();
       }
       dragThing=null;
       boxWidth=0;  // reset the yellow message box.
@@ -2498,7 +2508,7 @@ public void clearAllThings(){
         attachDataSet( trailThing.dataset);
         xaxis.attachDataSet(trailThing.dataset);
         yaxis.attachDataSet(trailThing.dataset);
-        synchronized(delayLock){newData=true; delayLock.notify(); }
+        repaintDelayed();
       }
       sGraph_mouseMoved( e);
   }
@@ -2851,7 +2861,7 @@ public void clearAllThings(){
       owner.clearData(this.hashCode());
       if(parentSApplet!=null && parentSApplet.destroyed) return;
       owner.updateDataConnection(this.hashCode());
-      if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(autoRefresh) repaintDelayed();
     }
 
     public boolean setString(String str){
@@ -3125,7 +3135,7 @@ public void clearAllThings(){
       if(parentSApplet!=null && parentSApplet.destroyed) return;
       owner.clearData(this.hashCode());
       owner.updateDataConnection(this.hashCode());
-      if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(autoRefresh) repaintDelayed();
     }
 
     public boolean setStringIm(String strIm){
@@ -3340,7 +3350,7 @@ public void clearAllThings(){
 
     public void step(double dt,double time){
       this.time=time+dt;
-      if(explicitTime && autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      if(explicitTime && autoRefresh) repaintDelayed();
     }
 
     boolean checkFunctionForTime(String fieldStr){

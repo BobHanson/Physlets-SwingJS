@@ -1,0 +1,16 @@
+<project name="zip" default="toJs" basedir=".">
+ 
+   <property name="site.path" value="site/swingjs" />
+
+   <target name="toJs" id="toJs">
+  			
+   	
+   	<echo>creating Physlets_site.zip </echo>
+   	<zip destfile="Physlets_site.zip" basedir="site" />
+   	
+  </target>
+
+
+		
+	
+</project>

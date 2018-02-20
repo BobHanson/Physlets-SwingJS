@@ -125,7 +125,7 @@ public class SNumber extends TextField implements PropertyChangeListener {
 	}
 
 	/**
-	 * called from 
+	 * called from Minkowski text input action event
 	 */
 	public void updateValueFromText() {
 		double oldValue = value;

@@ -13,7 +13,8 @@
  * Yanto Suryono <d0771@cranesv.egg.kushiro-ct.ac.jp>                                     *
  *----------------------------------------------------------------------------------------*/
 package edu.davidson.surfaceplotter;
-import java.awt.*;
+import java.awt.Graphics;
+//import java.awt.*;
 import java.util.*;
 
 /**

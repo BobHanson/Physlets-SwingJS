@@ -1,6 +1,9 @@
 package edu.davidson.views;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+//import java.awt.*;
 import java.awt.event.*;
 import java.applet.Applet;
 
@@ -12,6 +15,8 @@ import java.net.*;
 
 import edu.davidson.graphics.*;
 import edu.davidson.tools.*;
+
+import a2s.*;
 
 public class SGridPanel extends edu.davidson.graphics.EtchedBorder implements SDataListener{
     boolean showScrollBars=true;
@@ -43,7 +48,7 @@ public class SGridPanel extends edu.davidson.graphics.EtchedBorder implements SD
 
     public SGridPanel(SApplet o, boolean sb){
         showScrollBars=sb;
-        if(showScrollBars) scrollPane = new ScrollPane(ScrollPane.SCROLLBARS_AS_NEEDED);
+        if(showScrollBars) scrollPane = new ScrollPane();
             else scrollPane = new Panel();
         try {
             setLayout(new BorderLayout());  // added by W. Christian

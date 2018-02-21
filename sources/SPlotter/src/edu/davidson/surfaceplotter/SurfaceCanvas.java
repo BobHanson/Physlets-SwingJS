@@ -15,7 +15,19 @@
  * Yanto Suryono <d0771@cranesv.egg.kushiro-ct.ac.jp>                                     *
  *----------------------------------------------------------------------------------------*/
 package edu.davidson.surfaceplotter;
-import java.awt.*;
+//import java.awt.*;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Event;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Rectangle;
+
+import a2s.*;
 
 /**
  * The class <code>SurfaceCanvas</code> is responsible
@@ -99,7 +111,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
   private  float xmin,xmax,ymin;
   private  float ymax,zmin,zmax;
 
-  // vertix is not static so we need to make sure that it gets values from this surface canvas.
+  // vertex is not static so we need to make sure that it gets values from this surface canvas.
   // the following variables replace variables in SurfaceVertex.
 
   float zminV, zmaxV, zfactorV;
@@ -469,7 +481,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
     importVariables();
 
     //printing = SurfaceFrame.newJVM && (g instanceof PrintGraphics);
-
+    /**
     if (printing) {
 
       // modifies variables
@@ -505,6 +517,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
       }
       return;
     } // end of printing
+    **/
 
     if (image_drawn && (Buffer != null)) {
       if(g==null) return;
@@ -542,6 +555,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 
   public void setFont(Font df){
     defaultFont=df;
+    if(projector==null) return;
     int fontsize = (int)(Math.round(projector.get2DScaling() * 0.5));
     fontsize=Math.max(fontsize,10);
     if(defaultFont==null) BufferGC.setFont(new Font("Helvetica",Font.PLAIN,fontsize));
@@ -563,7 +577,16 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
               //System.out.println("run");
               if(shouldRun)running=doCalc();  // force a wait state  at the end of the calculation unless rotating
           }
-          try{Thread.sleep(20);}catch (Exception e){}
+        	/**
+        	 * @j2sNative
+        	 * 
+        	 *  
+        	 *  
+        	 */ 
+        	 {
+            try{Thread.sleep(20);}catch (Exception e){}
+        	 }
+
         }
         //paintThread.stop(); // this fixes a bug in some browsers to force this thread to stop.
         paintThread=null;
@@ -594,7 +617,14 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
       //repeat = rotate;
       if (rotate) {
         // automatically rotates surface
-         try{Thread.sleep(30);}catch (InterruptedException e){}
+        	/**
+        	 * @j2sNative
+        	 *  
+        	 *  
+        	 */ 
+        	 {
+                 try{Thread.sleep(30);}catch (InterruptedException e){}
+        	 }
         float newrot = projector.getRotationAngle() + 5;
         while (newrot > 360) newrot -= 360;
         while (newrot < 0) newrot += 360;

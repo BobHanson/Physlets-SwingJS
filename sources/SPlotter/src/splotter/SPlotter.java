@@ -1,12 +1,17 @@
 package splotter;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Font;
+import java.awt.SystemColor;
+//import java.awt.*;
 import java.awt.event.*;
 //import com.borland.jbcl.layout.*;
 //import com.borland.jbcl.control.*;
 import edu.davidson.graphics.*;
 import edu.davidson.tools.*;
 import edu.davidson.surfaceplotter.SurfacePanel;
+
+import a2s.*;
 
 public class SPlotter extends SApplet implements SStepable  {
   boolean isStandalone = false;

@@ -1,6 +1,7 @@
 package edu.davidson.views;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 //import java.awt.*;
 import java.awt.event.*;

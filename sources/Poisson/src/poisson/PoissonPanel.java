@@ -1,19 +1,30 @@
 package poisson;
 
-//import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
-import edu.davidson.tools.*;
-import edu.davidson.display.*;
-
-import a2s.*;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
-import java.awt.Rectangle;
 import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+//import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.util.Enumeration;
+import java.util.StringTokenizer;
+import java.util.Vector;
+
+import javax.swing.Timer;
+
+import a2s.Panel;
+import edu.davidson.display.Format;
+import edu.davidson.display.SContour;
+import edu.davidson.display.SNumber;
+import edu.davidson.display.SScalable;
+import edu.davidson.display.Thing;
+import edu.davidson.tools.SApplet;
+import edu.davidson.tools.SDataSource;
 
 public final class PoissonPanel extends Panel implements Runnable, SScalable, SDataSource{
   private boolean  hasFieldThing=false;   // flag to indicate that the vector field should be treated like a drawing thing.
@@ -857,54 +868,110 @@ public final class PoissonPanel extends Panel implements Runnable, SScalable, SD
     contour.destroy();
   }
 
-  public void run(){
-      double err=10*tolerance;
-      int counter=0;
-      setMessage(null);
-      while (keepRunning && runThread==Thread.currentThread() && counter<maxInterations ){
-          try{
-              for(int i=0; i<10; i++){
-                  if(keepRunning)err=step();
-                  if (err< tolerance) keepRunning=false;
-                  counter++;
-              }
-              if( keepRunning )Thread.sleep(sleepTime);
-          }catch (InterruptedException e){ keepRunning=false;}
-      }
-      keepRunning=false;
-      if( (err >tolerance ) && (counter>=maxInterations) ){
-          setMessage(owner.label_not_converge);
-        }else setMessage(null);
-      invalidPotential=true;
-      copyToDisplayMatrix();
-      owner.updateDataConnections();
-      runThread = null;
-      repaint();
-  }
+  
+  private final static int STATE_INIT = 0;
+  private final static int STATE_LOOP = 1;
+  private final static int STATE_STOP = 2;
+  
+  
+  private int state = STATE_INIT;
+  private int counter = 0;
+  private double err = 0;
+  private Timer timer;
+  
+	@SuppressWarnings("unused")
+	public void run() {
+		while (true) {
+			switch (state) {
+			case STATE_INIT:
+				keepRunning = true;
+				err = 10 * tolerance;
+				counter = 0;
+				setMessage(null);
+				state = STATE_LOOP;
+				continue;
+			case STATE_LOOP:
+				if (keepRunning && 
+						( /** @j2sNative true || */ runThread == Thread.currentThread()) 
+						&& counter < maxInterations) {
+					try {
+						for (int i = 0; i < 10; i++) {
+							if (keepRunning)
+								err = step();
+							if (err < tolerance)
+								keepRunning = false;
+							counter++;
+						}
+						if (keepRunning) {
+							if (/** @j2sNative true || */ false) {
+								timer = new Timer(sleepTime, new ActionListener() {
+									@Override
+									public void actionPerformed(ActionEvent e) {
+										run();
+									}									
+								});
+								timer.setRepeats(false);
+								timer.start();
+							} else {
+								Thread.sleep(sleepTime);
+							}
+						}
+					} catch (InterruptedException e) {
+						keepRunning = false;
+					}
+				}
+				state = STATE_STOP;
+				continue;
+			case STATE_STOP:
+				keepRunning = false;
+				
+				if ((err > tolerance) && (counter >= maxInterations)) {
+					setMessage(owner.label_not_converge);
+				} else
+					setMessage(null);
+				invalidPotential = true;
+				copyToDisplayMatrix();
+				owner.updateDataConnections();
+				runThread = null;
+				repaint();
+				return;
+			}
+		}
+
+	}
 
   //Start the Poisson calculation
   public synchronized void startThread() {
       if (runThread == null){
           runThread = new Thread(this);
           keepRunning=true;
+          state = STATE_INIT;
           runThread.start();
       }
   }
 
 
-  public synchronized void stopThread(){
-      Thread currentThread=runThread;
-      keepRunning=false;
-      if (currentThread!=null){
-          try{
-            currentThread.interrupt();
-            currentThread.join();
-          } catch( InterruptedException e){
-            currentThread.stop();
-            runThread=null;
-          }
-      }
-  }
+	public synchronized void stopThread() {
+		Thread currentThread = runThread;
+		keepRunning = false;
+		/**
+		 * 
+		 * @j2sNative
+		 * 
+		 * 			this.runThread=null;
+		 */
+		{
+			if (currentThread != null) {
+				try {
+					currentThread.interrupt();
+					currentThread.join();
+				} catch (InterruptedException e) {
+					currentThread.stop();
+					runThread = null;
+				}
+			}
+		}
+	}
 
   public double step(){
      double err=0, vNew=0, vOld=0, dV=0, w;

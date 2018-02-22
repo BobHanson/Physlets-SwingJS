@@ -83,6 +83,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
 
   Vector things= new Vector();
   Image offScreenImage=null;
+private Color graphBackground;
 
   // Constructors
   public SGraph() {
@@ -90,7 +91,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
       title.setFontStyle(Font.BOLD);
       title.setFontSize(16);
       setDataBackground(Color.white);
-      //setGraphBackground(Color.white);
+      setGraphBackground(Color.white);
       buildMarkers(4);
       drawzero = false;
       drawgrid = false;
@@ -210,7 +211,8 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
         if(c == null) return;
         if (xaxis!=null) xaxis.setTitleBackground(c);
         if (yaxis!=null) yaxis.setTitleBackground(c);
-        setBackground(c);
+        graphBackground = c;
+        //setBackground(c);  // BH set using paintFirst(g,r)
     }
 
 /**
@@ -1820,7 +1822,9 @@ public synchronized Series createSeries(int sid ){
     }
     
     public void paintFirst( Graphics g, Rectangle r) {
-    	g.setColor(Color.white);
+    	// BH replaces setBackgroundColor(Color.white)
+    	if (graphBackground != null)
+    		g.setColor(graphBackground);
     	g.fillRect(0,  0,  getWidth(), getHeight());
     	
     }

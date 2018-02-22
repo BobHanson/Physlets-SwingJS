@@ -90,7 +90,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
       title.setFontStyle(Font.BOLD);
       title.setFontSize(16);
       setDataBackground(Color.white);
-      setGraphBackground(Color.white);
+      //setGraphBackground(Color.white);
       buildMarkers(4);
       drawzero = false;
       drawgrid = false;
@@ -129,15 +129,6 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
       parentSApplet=applet;
   }
 
-  
-	protected void repaintDelayed() {
-		// BH put in one spot for testing.
-
-		synchronized (delayLock) {
-			newData = true;
-			delayLock.notify();
-		}
-	}
   
   public void step(double dt,double time){
     Thing t=null;
@@ -1764,6 +1755,18 @@ public synchronized Series createSeries(int sid ){
       delayThread=null;
     }
 
+
+    
+	protected void repaintDelayed() {
+		// BH put in one spot for testing.
+		paintOffScreen();
+//		synchronized (delayLock) {
+//			newData = true;
+//			delayLock.notify();
+//		}
+	}
+  
+
     // this method will paint the screen but not too fast.
     public void run(){
         //System.out.println("Paintthread start");
@@ -1815,8 +1818,17 @@ public synchronized Series createSeries(int sid ){
           tk.sync();
         }
     }
+    
+    public void paintFirst( Graphics g, Rectangle r) {
+    	g.setColor(Color.white);
+    	g.fillRect(0,  0,  getWidth(), getHeight());
+    	
+    }
+
     public void paintOffScreen(){
         Graphics g=getGraphics();
+        if (g == null)
+        	return;
         if(g==null) {repaint(); return;}
         paintOffScreen(g);
         g.dispose();

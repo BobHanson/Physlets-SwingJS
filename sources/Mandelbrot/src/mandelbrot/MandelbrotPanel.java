@@ -7,6 +7,9 @@ import java.awt.Graphics;
 import java.awt.Image;
 //import java.awt.*;
 import java.awt.event.*;
+
+import javax.swing.Timer;
+
 import edu.davidson.display.Format;
 
 public class MandelbrotPanel extends Panel implements Runnable {
@@ -71,15 +74,33 @@ public class MandelbrotPanel extends Panel implements Runnable {
      thread=null;
   }
 
-  public void run(){
-    while(thread!=null){
-      try{
-          if(row<iheight)nextRow(); else thread=null;
-          paint();
-          Thread.sleep(20);
-      } catch (InterruptedException e){}
-    }
-  }
+	public void run() {
+		while (thread != null) {
+			try {
+				if (row < iheight)
+					nextRow();
+				else
+					thread = null;
+				paint(); // BH really should not call paint()
+				boolean isJS = /** @j2sNative true || */
+						false;
+				if (isJS) {
+					Timer t = new Timer(1, new ActionListener() {
+
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							run();
+						}
+					});
+					t.setRepeats(false);
+					t.start();
+					return;
+				}
+				Thread.sleep(20);
+			} catch (InterruptedException e) {
+			}
+		}
+	}
 
     int interation(double re,double im){
       // algorithm  Take z, square it, add the number passes as a parameter.

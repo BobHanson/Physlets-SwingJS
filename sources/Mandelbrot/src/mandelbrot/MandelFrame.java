@@ -9,11 +9,12 @@
  */
 package mandelbrot;
 
-//import java.awt.*;
-import a2s.*;
-
 import java.awt.BorderLayout;
-import java.awt.event.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+//import java.awt.*;
+import a2s.Frame;
 
 
 public class MandelFrame extends Frame {

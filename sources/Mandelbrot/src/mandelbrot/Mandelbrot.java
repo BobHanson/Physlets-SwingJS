@@ -30,8 +30,8 @@ public class Mandelbrot extends Applet {
 
 	// Initialize the applet
 	public void init() {
-		mbObject = new MandelbrotObject();
 		setLayout(new BorderLayout());
+		mbObject = new MandelbrotObject();
 		add(mbObject.jbInit());
 	}
 

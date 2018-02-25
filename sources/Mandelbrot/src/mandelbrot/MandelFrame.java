@@ -21,7 +21,7 @@ public class MandelFrame extends Frame {
     public MandelFrame(MandelbrotObject mb) {
         super();
         setLayout(new BorderLayout());
-        add(mb.jbInit(), BorderLayout.CENTER);
+        add(mb.jbInit());
         setLocation((int)(300*Math.random()),(int)(300*Math.random()) );
         addWindowListener(new WindowAdapter() { public void
             windowClosing(WindowEvent e) {

@@ -16,22 +16,16 @@ import java.awt.event.WindowEvent;
 //import java.awt.*;
 import a2s.Frame;
 
-
 public class MandelFrame extends Frame {
-    BorderLayout borderLayout1 = new BorderLayout();
-    Mandelbrot mandelbrot = null;
 
-
-    public MandelFrame(Mandelbrot mb) {
+    public MandelFrame(MandelbrotObject mb) {
         super();
-        mandelbrot=mb;
-        setLayout(borderLayout1);
-        add(mandelbrot, BorderLayout.CENTER);
-        setSize(300,200);
+        setLayout(new BorderLayout());
+        add(mb.jbInit(), BorderLayout.CENTER);
         setLocation((int)(300*Math.random()),(int)(300*Math.random()) );
         addWindowListener(new WindowAdapter() { public void
             windowClosing(WindowEvent e) {
-            mandelbrot.destroy();
+            mb.destroy();
             setVisible(false); dispose();
             } }
         );

@@ -1,15 +1,17 @@
 package mandelbrot;
 
-import a2s.*;
 import java.awt.Color;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
 //import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 
 import javax.swing.Timer;
 
+import a2s.Panel;
 import edu.davidson.display.Format;
 
 public class MandelbrotPanel extends Panel implements Runnable {
@@ -35,7 +37,7 @@ public class MandelbrotPanel extends Panel implements Runnable {
 
   Color[] color=new Color[maxCount];
   Thread thread=null;
-  mandelbrot.Mandelbrot owner=null;
+  MandelbrotObject owner=null;
 
   public MandelbrotPanel(){
     for(int i=0; i<maxCount; i++){
@@ -53,7 +55,7 @@ public class MandelbrotPanel extends Panel implements Runnable {
     }
   }
 
-  public void setOwner(Mandelbrot mb){
+  public void setOwner(MandelbrotObject mb){
     owner=mb;
   }
 

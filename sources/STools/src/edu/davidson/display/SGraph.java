@@ -1,9 +1,5 @@
 package edu.davidson.display;
 
-//import java.applet.*;
-import java.io.*;
-import java.net.*;
-import java.util.*;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
@@ -13,14 +9,33 @@ import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.Toolkit;
-
-import a2s.*;
 //import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.InputEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
+//import java.applet.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.StreamTokenizer;
+import java.net.URL;
+import java.util.Enumeration;
+import java.util.StringTokenizer;
+import java.util.Vector;
 
-import edu.davidson.graph.*;
-import edu.davidson.numerics.*;
-import edu.davidson.tools.*;
+import a2s.Applet;
+import edu.davidson.graph.Axis;
+import edu.davidson.graph.DataSet;
+import edu.davidson.graph.Graph2D;
+import edu.davidson.graph.Markers;
+import edu.davidson.graph.TextLine;
+import edu.davidson.graphics.Util;
+import edu.davidson.numerics.Parser;
+import edu.davidson.tools.SApplet;
+import edu.davidson.tools.SDataListener;
+import edu.davidson.tools.SDataSource;
+import edu.davidson.tools.SStepable;
+import edu.davidson.tools.SUtil;
 
 /**
  * A plotting bean based on the graph package by Leigh Brookshaw.
@@ -31,7 +46,7 @@ import edu.davidson.tools.*;
  * @author   Wolfgang Christian
 */
 
-public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Cloneable, SDataListener,Runnable, SScalable{ // implements BlackBox{
+public class SGraph extends Graph2D implements SStepable,Cloneable, SDataListener,Runnable, SScalable{ // implements BlackBox{
   public String label_time = "Time: ";
  // variables for the delayed drawing.
   private static Color[] colors=new Color[91];
@@ -84,6 +99,7 @@ public class SGraph extends edu.davidson.graph.Graph2D implements SStepable,Clon
   Vector things= new Vector();
   Image offScreenImage=null;
 private Color graphBackground;
+private Color backgroundColor;
 
   // Constructors
   public SGraph() {
@@ -517,8 +533,8 @@ private Color graphBackground;
  *    @param sm       set sketch mode if true
 */
   public int setSketchMode(boolean sm){
-      Applet applet=edu.davidson.graphics.Util.getApplet(this);
-      sketchImage=edu.davidson.graphics.Util.getImage("pencil.gif",applet);
+      Applet applet=Util.getApplet(this);
+      sketchImage=Util.getImage("pencil.gif",applet);
       sketchMode=sm;
       if(!sm){
           trailThing=null;
@@ -529,7 +545,7 @@ private Color graphBackground;
 
       // custom cursors don't work yet so set this to zero.
       /*
-      if(edu.davidson.graphics.Util.isMicrosoft()){
+      if(Util.isMicrosoft()){
         return trailThing.hashCode();
       }
       try{
@@ -1821,6 +1837,10 @@ public synchronized Series createSeries(int sid ){
         }
     }
     
+    public void setBackground(Color c) {
+    	backgroundColor = c;
+    }
+    
     public void paintFirst( Graphics g, Rectangle r) {
     	// BH replaces setBackgroundColor(Color.white)
     	if (graphBackground != null)
@@ -2248,7 +2268,7 @@ public void clearAllThings(){
   public void loadFile(int series, String file) {
         boolean error=false;
         Applet applet=parentSApplet;
-        if(applet==null) applet=edu.davidson.graphics.Util.getApplet(this);
+        if(applet==null) applet=Util.getApplet(this);
         if(applet==null){
             System.out.println("File load failed. Applet not found.");
             return;
@@ -2639,7 +2659,7 @@ public void clearAllThings(){
   }
 
     // inner class used for data connection to table.
-  public class RegressionDataSource extends Object   implements edu.davidson.tools.SDataSource{  // inner class to access the particles as SDataSources.
+  public class RegressionDataSource extends Object   implements SDataSource{  // inner class to access the particles as SDataSources.
     String[] regStrings= new String[]{"m","b","dm","db"};
     double[][] ds=new double[1][4];  // the datasource state variables x, dx;
     Series series=null;

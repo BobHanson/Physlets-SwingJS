@@ -13,21 +13,23 @@
 
 package eField4;
 
-//import java.awt.*;
-import a2s.*;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Image;
-import java.awt.event.*;
-import java.util.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ItemEvent;
+import java.util.StringTokenizer;
 
-
-import edu.davidson.display.*;
-import edu.davidson.tools.*;
+//import java.awt.*;
+import a2s.Button;
+import a2s.Checkbox;
+import a2s.TextField;
+import edu.davidson.display.Format;
+import edu.davidson.tools.SApplet;
+import edu.davidson.tools.SUtil;
 
 
 /**

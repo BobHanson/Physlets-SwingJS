@@ -13,6 +13,9 @@ import java.awt.MediaTracker;
 import java.awt.Rectangle;
 import java.awt.event.*;
 import java.util.Vector;
+
+import javax.swing.Timer;
+
 import java.util.StringTokenizer;
 import java.util.Enumeration;
 import edu.davidson.display.*;
@@ -193,7 +196,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(autoRefresh) {
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
   }
@@ -209,7 +212,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
       setFields();
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
   }
@@ -236,7 +239,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(autoRefresh) {
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
   }
@@ -272,7 +275,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(autoRefresh) {
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
   }
@@ -308,7 +311,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(autoRefresh) {
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
   }
@@ -395,7 +398,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(autoRefresh) {
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
   }
@@ -413,7 +416,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(autoRefresh) {
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
   }
@@ -431,7 +434,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(autoRefresh) {
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
   }
@@ -449,7 +452,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(autoRefresh) {
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
   }
@@ -554,7 +557,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
         if(autoRefresh) {
           synchronized(delayLock) {
             newData = true;
-            delayLock.notify();
+            delayLockNotify();
           }
         }
         return true;
@@ -568,7 +571,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
         if(autoRefresh) {
           synchronized(delayLock) {
             newData = true;
-            delayLock.notify();
+            delayLockNotify();
           }
         }
         return true;
@@ -615,7 +618,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
         if(autoRefresh) {
           synchronized(delayLock) {
             newData = true;
-            delayLock.notify();
+            delayLockNotify();
           }
         }
         return true;
@@ -629,7 +632,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
         if(autoRefresh) {
           synchronized(delayLock) {
             newData = true;
-            delayLock.notify();
+            delayLockNotify();
           }
         }
         return true;
@@ -656,7 +659,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
         if(autoRefresh) {
           synchronized(delayLock) {
             newData = true;
-            delayLock.notify();
+            delayLockNotify();
           }
         }
         return true;
@@ -670,7 +673,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
         if(autoRefresh) {
           synchronized(delayLock) {
             newData = true;
-            delayLock.notify();
+            delayLockNotify();
           }
         }
         return true;
@@ -697,7 +700,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
         if(autoRefresh) {
           synchronized(delayLock) {
             newData = true;
-            delayLock.notify();
+            delayLockNotify();
           }
         }
         return true;
@@ -724,7 +727,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
         if(autoRefresh) {
           synchronized(delayLock) {
             newData = true;
-            delayLock.notify();
+            delayLockNotify();
           }
         }
         return true;
@@ -738,7 +741,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
         if(autoRefresh) {
           synchronized(delayLock) {
             newData = true;
-            delayLock.notify();
+            delayLockNotify();
           }
         }
         return true;
@@ -855,7 +858,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(autoRefresh) {
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
   }
@@ -876,7 +879,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
       if(autoRefresh) {
         synchronized(delayLock) {
           newData = true;
-          delayLock.notify();
+          delayLockNotify();
         }
       }
       return true;
@@ -897,7 +900,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
       if(autoRefresh) {
         synchronized(delayLock) {
           newData = true;
-          delayLock.notify();
+          delayLockNotify();
         }
       }
       return true;
@@ -940,7 +943,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(autoRefresh) {
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
     if(parentSApplet != null) {
@@ -981,7 +984,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(autoRefresh) {
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
     return true;
@@ -1075,7 +1078,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(autoRefresh) {
       repaint();
     }
-    // bug??? if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+    // bug??? if(autoRefresh) synchronized(delayLock){newData=true; delayLockNotify(); }
   }
 
   /**
@@ -1117,15 +1120,24 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     drawThings.addElement(t);
     // if(autoRefresh)repaint();
     if(autoRefresh) {
-      synchronized(delayLock) {
-        newData = true;
-        delayLock.notify();
-      }
+		synchronized (delayLock) {
+			newData = true;
+			delayLockNotify();
+		}
     }
     return t.hashCode();
   }
 
-  /**
+	@SuppressWarnings("unused")
+	private void delayLockNotify() {
+		if (/** @j2sNative true || */ false) {
+		    state = STATE_PAINTING;			
+		} else {
+			delayLock.notify();
+		}
+	}
+
+/**
    * Method addPolyShape
    *
    * @param n
@@ -1143,7 +1155,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(autoRefresh) {
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
     return t.hashCode();
@@ -1181,10 +1193,10 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     testCharges.addElement(c);
     //if(autoRefresh)repaint();
     if(autoRefresh) {
-      synchronized(delayLock) {
-        newData = true;
-        delayLock.notify();
-      }
+		synchronized (delayLock) {
+			newData = true;
+			delayLockNotify();
+		}
     }
     return c;
   }
@@ -1222,7 +1234,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(autoRefresh) {
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
     return p;
@@ -1238,7 +1250,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(autoRefresh) {
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
   }
@@ -1349,7 +1361,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(parentSApplet.destroyed) return;
     synchronized(delayLock) {
       newData = true;
-      delayLock.notify();
+      delayLockNotify();
     }
   }
 
@@ -1908,36 +1920,86 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
 
   // this method will paint the screen but not too fast.
 
-  /**
-   * Method run
-   *
-   */
-  public void run() {
-    while(delayThread != null) {
-      synchronized(delayLock) {
-        if(!newData && (delayThread != null)) {
-          try {
-            delayLock.wait();
-          } catch(InterruptedException ie) {return;}
-        }
-        newData = false;
-        if(delayThread != null) {
-          //parentSApplet.lock.getBusyFlag();
-          paint();
-          if(isDrag) {
-            paintCoordinates(mouseX, mouseY);
-          }
-          //parentSApplet.lock.freeBusyFlag();
-        }
-      }
-      if(delayThread != null) {
-        try {
-          Thread.sleep(50);
-        } catch(InterruptedException ie) {return;}
-      }
-    }
-    delayThread = null;
-  }
+  
+  
+  private final static int STATE_INIT = 0;
+  private final static int STATE_PAINTING = 1;
+  private final static int STATE_SLEEPING = 2;
+  
+  protected int state = STATE_INIT;
+  
+  private Timer timer;
+  
+	/**
+	 * Method run
+	 *
+	 */
+	public void run() {
+
+		boolean isJS = /** @j2sNative true || */
+				false;
+
+		while (delayThread != null) {
+			synchronized (delayLock) {
+				switch (state) {
+				case STATE_INIT:
+					if (!newData && (delayThread != null)) {
+						try {
+							if (isJS) {
+								state = STATE_SLEEPING;
+							    continue;	
+							} else {
+								delayLock.wait();
+							}
+						} catch (InterruptedException ie) {
+							return;
+						}
+					}
+					state = STATE_PAINTING;
+					continue;
+				case STATE_PAINTING:
+					newData = false;
+					if (delayThread != null) {
+						// parentSApplet.lock.getBusyFlag();
+						paint();
+						if (isDrag) {
+							paintCoordinates(mouseX, mouseY);
+						}
+						// parentSApplet.lock.freeBusyFlag();
+					}
+					state = STATE_SLEEPING;
+					continue;
+				case STATE_SLEEPING:
+					if (delayThread != null) {
+						try {
+							if (isJS) {
+								timer = new Timer(50, new ActionListener() {
+
+									@Override
+									public void actionPerformed(ActionEvent e) {
+										state = STATE_INIT;
+										run();
+									}
+
+								});
+								timer.setRepeats(false);
+								timer.start();
+								return;
+							} else {
+								Thread.sleep(50);
+								state = STATE_INIT;
+								continue;
+							}
+						} catch (InterruptedException ie) {
+							return;
+						}
+					}
+					break;
+				}
+			}
+		}
+		delayThread = null;
+	}
 
   /**
    * Method step
@@ -2010,7 +2072,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     if(autoRefresh) {
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
     if(collision) {
@@ -2022,7 +2084,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
   private void stopDrawingThread() {
     //keepDrawing=false;
     synchronized(delayLock) {
-      delayLock.notify();
+      delayLockNotify();
     }  // make sure the thread is running so that it can stop.
     try {
       delayThread.interrupt();
@@ -2134,7 +2196,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
       //repaint();
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
   }
@@ -2154,7 +2216,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
       //repaint();
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
   }
@@ -2771,7 +2833,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
       contour.yaxis.attachDataSet(trailThing.dataset);
       synchronized(delayLock) {
         newData = true;
-        delayLock.notify();
+        delayLockNotify();
       }
     }
   }
@@ -3044,7 +3106,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
       if(autoRefresh) {
         paint();
       }
-      //if(autoRefresh) synchronized(delayLock){newData=true; delayLock.notify(); }
+      //if(autoRefresh) synchronized(delayLock){newData=true; delayLockNotify(); }
     } else {
       paintCoordinates(x, y);
       if(sketchMode && (trailThing != null)) {

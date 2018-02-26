@@ -8,6 +8,7 @@
 package edu.davidson.display;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.SystemColor;
 import a2s.*;
 import java.awt.event.TextEvent;
@@ -33,6 +34,7 @@ public class SNumber extends TextField implements PropertyChangeListener {
 		boundSupport = new PropertyChangeSupport(this);
 		value = 0;
 		setText(valFormat.form(value));
+		setPreferredSize(new Dimension(50, 25));
 		this.addTextListener(new SNumber_this_textAdapter(this));
 	}
 	/*

@@ -1,9 +1,17 @@
 package qTime;
 
-import java.awt.*;
+//import java.awt.*;
 import edu.davidson.numerics.Parser;
 import edu.davidson.graph.*;
 import edu.davidson.display.Format;
+import java.awt.Color;
+import java.awt.Event;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Polygon;
+
 
 /**
  * Class QTimeGraph

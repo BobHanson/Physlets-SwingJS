@@ -1,8 +1,17 @@
 package qTime;
 
-import java.awt.*;
+//import java.awt.*;
 import edu.davidson.graphics.*;
 import edu.davidson.tools.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Event;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.LayoutManager;
+
+import a2s.*;
+
 
 /**
  * Class QTime

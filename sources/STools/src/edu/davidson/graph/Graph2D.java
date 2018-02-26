@@ -321,6 +321,10 @@ System.out.println("Mouse Released.");
        return d;
     }
 
+    public void setBackground(Color c) { // BH
+        graphBackground = c;
+    }
+    
 /**
  *   Attach a DataSet to the graph. By attaching the data set the class
  *   can draw the data through its paint method.
@@ -640,6 +644,8 @@ System.out.println("Mouse Released.");
 
     }
 
+    private Color graphBackground;
+
 /**
  *  A hook into the Graph2D.paint method. This is called before
  *  anything is plotted. The rectangle passed is the dimension of
@@ -648,7 +654,13 @@ System.out.println("Mouse Released.");
  *  @params r Rectangle containing the graph
  */
     public void paintFirst( Graphics g, Rectangle r) {
+    	// BH replaces setBackgroundColor(Color.white)
+    	if (graphBackground != null)
+    		g.setColor(graphBackground);
+    	g.fillRect(0,  0,  getWidth(), getHeight());
+    	
     }
+
 
 /**
  *  A hook into the Graph2D.paint method. This is called before

@@ -98,9 +98,7 @@ public class SGraph extends Graph2D implements SStepable,Cloneable, SDataListene
 
   Vector things= new Vector();
   Image offScreenImage=null;
-private Color graphBackground;
-private Color backgroundColor;
-
+  
   // Constructors
   public SGraph() {
       initColors();
@@ -227,8 +225,7 @@ private Color backgroundColor;
         if(c == null) return;
         if (xaxis!=null) xaxis.setTitleBackground(c);
         if (yaxis!=null) yaxis.setTitleBackground(c);
-        graphBackground = c;
-        //setBackground(c);  // BH set using paintFirst(g,r)
+        setBackground(c);  // BH set using paintFirst(g,r)
     }
 
 /**
@@ -1837,18 +1834,6 @@ public synchronized Series createSeries(int sid ){
         }
     }
     
-    public void setBackground(Color c) {
-    	backgroundColor = c;
-    }
-    
-    public void paintFirst( Graphics g, Rectangle r) {
-    	// BH replaces setBackgroundColor(Color.white)
-    	if (graphBackground != null)
-    		g.setColor(graphBackground);
-    	g.fillRect(0,  0,  getWidth(), getHeight());
-    	
-    }
-
     public void paintOffScreen(){
         Graphics g=getGraphics();
         if (g == null)

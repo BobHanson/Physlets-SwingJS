@@ -217,7 +217,7 @@ public class SContour extends SGraph {
            logLevels   = false;
            gridLimits  = true;   //changed from false by wc
            autoLabels  = true;
-           labelfont   = new Font("Helvetica",Font.PLAIN,12);
+           labelfont   = new Font("Helvetica",Font.BOLD,12); // BH BOLD not PLAION
            labelcolor  = Color.blue;
            labelLevels = 1;
            labelStyle       = TextLine.ALGEBRAIC;
@@ -714,6 +714,8 @@ public class SContour extends SGraph {
              labels[i] = new TextLine();
              labels[i].parseDouble(levels[i],
                       labelSignificant,labelPrecision,labelStyle);
+             //System.out.println("SContour " + labels[i].getText() + " " + levels[i]);
+
         }
      }
 

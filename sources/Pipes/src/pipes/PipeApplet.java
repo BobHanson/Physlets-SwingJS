@@ -137,7 +137,9 @@ String label_wait = "Please wait . . .";
         this_componentResized(e);
       }
     });
-    this.setSize(new Dimension(406, 323));
+    /** @j2sNative */{
+      this.setSize(new Dimension(406, 323));
+    }
     controlPanel.setBackground(Color.lightGray);
     pipescale.setThickness(10);
     panel2.setLayout(borderLayout1);

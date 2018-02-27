@@ -82,7 +82,9 @@ public class SPlotter extends SApplet implements SStepable  {
 
   //Component initialization
   private void jbInit() throws Exception {
-    resize(350,400);
+	  /** @j2sNative */{
+		  resize(350,400);
+	  }
     this.setLayout(borderLayout1);
     plotBtn.setLabel("Plot");
     plotBtn.addActionListener(new java.awt.event.ActionListener() {

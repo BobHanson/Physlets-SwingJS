@@ -37,7 +37,9 @@ public class QMframe extends Frame {
 
   private void jbInit() throws Exception {
     this.setLayout(flowLayout1);
-    this.setSize(new Dimension(220, 92));
+    /** @j2sNative */{
+    	  this.setSize(new Dimension(220, 92));
+    }
     this.setTitle("Error");
     label1.setAlignment(1);
     label1.setText("Warning:  Your l value is out of range!");

@@ -24,7 +24,9 @@ class ImpCalcFrame extends Frame {
 		add("Center", graf);
 		status=new Status(netwerk.toString());
 		add("South", status);
-		resize(600, 600+tf.size().height+status.size().height);
+		/** @j2sNative */{
+		  resize(600, 600+tf.size().height+status.size().height);
+		}
 		setBackground(Color.white);
 	}
 	public boolean handleEvent(Event e) {

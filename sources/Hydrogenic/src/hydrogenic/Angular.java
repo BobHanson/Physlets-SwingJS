@@ -122,7 +122,8 @@ public Angular(){
     comparebox.setState(multi);
     setLM(l, m);
     graph.setEnableMouse(true);
-    graph.setGraphBackground(SystemColor.control);
+    //graph.setGraphBackground(SystemColor.control);
+    graph.setBackground(gobtn.getBackground());
     graph.setAutoscaleX(false);
     graph.setAutoscaleY(false);
     graph.setMinMaxX(-1, 1);
@@ -130,7 +131,9 @@ public Angular(){
   }
 
   private void jbInit() throws Exception {
-    this.setSize(new Dimension(257, 264));
+	/** @j2sNative */{
+		this.setSize(new Dimension(257, 264));
+	}
     this.setLayout(borderLayout5);
     graph.setBackground(SystemColor.control);
     graph.setMarkers(null);
@@ -146,7 +149,8 @@ public Angular(){
     clearbtn.setLabel(button_clear);
     gobtn.setLabel(button_go);
     etchedBorder4.setLayout(borderLayout1);
-    comparebox.setBackground(SystemColor.control);
+    //comparebox.setBackground(SystemColor.control);
+    comparebox.setBackground(gobtn.getBackground());
     comparebox.setLabel(label_multiple);
     etchedBorder5.setLayout(flowLayout2);
     lfield.setText("0");

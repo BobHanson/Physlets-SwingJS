@@ -143,7 +143,9 @@ public class OpticsApplet extends SApplet {
    */
   public void jbInit() throws Exception{
     bevelPanel1.setLayout(flowLayout2);
-    this.setSize(new Dimension(437, 426));
+	/** @j2sNative */{
+	    this.setSize(new Dimension(437, 426));
+	}
     bevelPanel1.addMouseListener(new OpticsApplet_bevelPanel1_mouseAdapter(this));
     lensBtn.setLabel(button_lens);
     lensBtn.addActionListener(new OpticsApplet_lensBtn_actionAdapter(this));
@@ -762,7 +764,9 @@ public class OpticsApplet extends SApplet {
       System.out.println("Alternate method: setElementSize.");
       System.out.println("");
     }
-    super.setSize(d);
+    /** @j2sNative return */{
+      super.setSize(d);
+    }
   }
 
   public void setSize(int w, int h){
@@ -775,7 +779,10 @@ public class OpticsApplet extends SApplet {
       System.out.println("Alternate method: setElementSize.");
       System.out.println("");
     }
-    super.setSize(w,h);
+    /** @j2sNative return */{
+        super.setSize(w,h);
+      }
+
   }
 
 

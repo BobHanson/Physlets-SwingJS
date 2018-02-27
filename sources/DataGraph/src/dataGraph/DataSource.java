@@ -68,9 +68,11 @@ public class DataSource extends SApplet implements edu.davidson.tools.SDataSourc
     
     private void jbInit() throws Exception {
         etchedBorder1.setLayout(flowLayout1);
-        this.setSize(new Dimension(401, 102));
-    addBtn.setLabel("Add");
-    yField.setText("0    ");
+        /** @j2sNative */{
+        	  this.setSize(new Dimension(401, 102));
+        }
+        addBtn.setLabel("Add");
+        yField.setText("0    ");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 addBtn_actionPerformed(e);

@@ -1,7 +1,14 @@
 package impedance;
 
-import java.awt.*;
+//import java.awt.*;
 import edu.davidson.tools.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Event;
+import java.awt.Graphics;
+
+import a2s.*;
 
 /**
  * Class Grafiek

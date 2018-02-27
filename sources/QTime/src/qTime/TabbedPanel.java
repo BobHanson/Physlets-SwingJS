@@ -3,8 +3,21 @@
 // component to display is chosen by a row of tab buttons.
 package qTime;
 
-import java.awt.*;
+//import java.awt.*;
 import java.util.Vector;
+
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Event;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Insets;
+
+import a2s.*;
+
 
 public class TabbedPanel extends Panel
 {

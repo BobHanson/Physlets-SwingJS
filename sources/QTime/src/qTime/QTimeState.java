@@ -1,8 +1,14 @@
 package qTime;
 //import graph.*;
-import java.awt.*;
+//import java.awt.*;
 import edu.davidson.numerics.Parser;
 import edu.davidson.tools.*;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Polygon;
+
+
 
 
 public final class QTimeState implements  edu.davidson.tools.SDataSource{

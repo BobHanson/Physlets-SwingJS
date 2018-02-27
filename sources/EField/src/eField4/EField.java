@@ -354,9 +354,9 @@ private String button_start="Play";
     resetBtn.setLabel(button_reset);
    // bevelPanel4.setBevelOuter(edu.davidson.graphics.EtchedBorder.RAISED);
     bevelPanel2.setLayout(borderLayout2);
-    bevelPanel2.setBackground(Color.lightGray);
+    //bevelPanel2.setBackground(Color.lightGray);
     bevelPanel4.setLayout(flowLayout3);
-    bevelPanel4.setBackground(Color.lightGray);
+    //bevelPanel4.setBackground(Color.lightGray);
     newBtn.setLabel(button_test);
     newBtn.addActionListener(new EField_newBtn_actionAdapter(this));
     clearBtn.setLabel(button_clear);
@@ -394,7 +394,7 @@ private String button_start="Play";
     bevelPanel1.add(stepBackBtn, null);
     bevelPanel1.add(stepForwardBtn, null);
     bevelPanel1.add(resetBtn, null);
-    bevelPanel1.setBackground(Color.lightGray);
+    bevelPanel1.setBackground(playBtn.getBackground());
     if(showControls)
         this.add(bevelPanel2, BorderLayout.NORTH);
     bevelPanel2.add(bevelPanel4, BorderLayout.EAST);
@@ -402,15 +402,20 @@ private String button_start="Play";
     bevelPanel4.add(negBtn, null);
     bevelPanel4.add(newBtn, null);
     bevelPanel4.add(clearBtn, null);
+    bevelPanel4.setBackground(newBtn.getBackground());
+
     bevelPanel2.add(bevelPanel5, BorderLayout.CENTER);
     bevelPanel5.add(funcField, BorderLayout.CENTER);
     bevelPanel5.add(potBtn, BorderLayout.WEST);
+    bevelPanel5.setBackground(potBtn.getBackground());
+
     bevelPanel2.add(bevelPanel3, BorderLayout.SOUTH);
     bevelPanel3.add(contoursBox, null);
     bevelPanel3.add(fieldVectorsBox, null);
     bevelPanel3.add(chargeBox, null);
     bevelPanel3.add(labelBox, null);
-    bevelPanel3.setBackground(Color.lightGray);
+    //bevelPanel3.setBackground(Color.lightGray);
+    bevelPanel3.setBackground(chargeBox.getBackground());
   }
 /**
    * Called when the clock stops in one-shot mode.    DO NOT SCRIPT.

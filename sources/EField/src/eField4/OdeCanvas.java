@@ -86,7 +86,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
   Thing                  dragShape                      = null;
   SContour               contour                        = new SContour();
   VectorField            field                          = new VectorField(4, 4);
-  private Image          osi                            = null;
+  protected Image        osi                            = null;
   private Image          osi2                           = null;            // use this image while dragging.
   private boolean        osiInvalid                     = true;
   private int            iwidth                         = 0;
@@ -98,7 +98,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
   private boolean        isDrag                         = false;
   private boolean        dragV                          = false;
   //private int            groupIndex                     = 0;
-  private EField         parentSApplet                  = null;
+  protected EField       parentSApplet                  = null;
   private double         mouseX, mouseY;
   private int            gridSize          = 64;
   private int            skip              = 2;
@@ -119,11 +119,12 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     parentSApplet = applet;
     contour.setShowAxis(false);
     contour.setDataBackground(Color.white);
-    contour.setLabelColor(Color.green);
+    contour.setLabelColor(Color.black);//BH -- could not read Color.green);
     addMouseMotionListener(new OdeCanvas_mouseMotionAdapter(this));
     addMouseListener(new OdeCanvas_mouseAdapter(this));
     contour.setOwner(applet);
     delayThread = new Thread(this);
+    state = STATE_INIT;
     delayThread.start();
     //double[] levels={-1.0,-0.8,-0.6,-0.4,-0.2,0,0.2,0.4,0.6,0.8,1.0};
     //contour.setLevels(levels);
@@ -3323,6 +3324,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
       odeSolver.setTol(tolerance);
       if(fieldThread == null) {
         fieldThread = new Thread(this);
+        fieldState = FIELD_STATE_INIT;
         fieldThread.start();
       }
       message = parentSApplet.label_calculating;
@@ -3471,65 +3473,130 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
       }
     }
 
-    /**
-     * Method run
-     *
-     */
-    public void run() {
-      int count = 0;
-      keepRunning = true;
-      while(keepRunning) {
-        try {
-          while(osi == null) {
-            Thread.sleep(50);
-          }
-          stepField();
-          Thread.sleep(20);
-          count++;
-          if((count >= maxPts) || endOfFieldLine() || interrupted) {
-            keepRunning = false;
-          }
-        } catch(InterruptedException e) {return;}
-      }
-      fieldThread = null;
-      fieldSolvers.removeElement(this);
-      if(interrupted) {  // all field solvever have been told to stop.
-        points = null;   // help the system to garbage collect
-        return;
-      }
-      parentSApplet.lock.getBusyFlag();
-      data           = contour.addDataSet(points, count);  // this constructs dataset
-      data.linecolor = fieldColor;
-      fieldLines.addElement(data);
-      parentSApplet.lock.freeBusyFlag();
-      int index = 0;
-      if(count > 150) {
-        index = 10;
-      } else if(count > 8) {
-        index = count / 2;
-      }
-      if(index > 0) {
-        double x  = points[index * 2];
-        double y  = points[index * 2 + 1];
-        double fx = -dudx(x, y) + getPoleFx(x, y, null);
-        double fy = -dudy(x, y) + getPoleFy(x, y, null);
-        double f  = Math.sqrt(fx * fx + fy * fy);
-        if((x > xmin) && (x < xmax) && (y > ymin) && (y < ymax)) {
-          arrowHeads.addElement(new ArrowHead(OdeCanvas.this, x, y, fx / f, fy / f, fieldColor));
-        }
-      }
-      //System.out.println("registered:"+ count+ "size:"+fieldSolvers.size());
-      //points=null;  // help the system to garbage collect
-      //osiInvalid=true;
-      //repaint();
-      if(fieldSolvers.size() == 0) {
-        calculatingFieldLines = false;
-        message               = null;
-        osiInvalid            = true;  // repaint everything if this is the last field solver
-        repaint();
-      }
-    }
-  }
+    final private static int FIELD_STATE_INIT = 0;
+    final private static int FIELD_STATE_SLEEP1 = 1;
+    final private static int FIELD_STATE_STEPFIELD = 2;
+    final private static int FIELD_STATE_SLEEP2 = 3;
+    final private static int FIELD_STATE_COUNTING = 4;
+    final private static int FIELD_STATE_DONE = 5;
+
+    protected int fieldState = FIELD_STATE_INIT;
+    private int count = 0;
+	private Timer fieldTimer;
+
+		/**
+		 * Method run
+		 *
+		 */
+		public void run() {
+			boolean isJS = /** @j2sNative true || */ false;
+			while (keepRunning || fieldState == FIELD_STATE_INIT) {
+				try {
+					switch (fieldState) {
+					case FIELD_STATE_INIT:
+						count = 0;
+						keepRunning = true;
+						fieldState = FIELD_STATE_SLEEP1;
+						continue;
+					case FIELD_STATE_SLEEP1:
+						if (osi == null) {
+							if (isJS) {
+								fieldTimer = new Timer(50, new ActionListener() {
+
+									@Override
+									public void actionPerformed(ActionEvent e) {
+										run();
+									}
+									
+								});
+								fieldTimer.setRepeats(false);
+								fieldTimer.start();
+								return;
+							} else {
+								Thread.sleep(50);
+							}
+							continue;
+						}
+						fieldState = FIELD_STATE_STEPFIELD;
+						continue;
+					case FIELD_STATE_STEPFIELD:
+						stepField();
+						fieldState = FIELD_STATE_SLEEP2;
+						continue;
+					case FIELD_STATE_SLEEP2:
+							if (isJS) {
+								fieldTimer = new Timer(20, new ActionListener() {
+									@Override
+									public void actionPerformed(ActionEvent e) {
+										fieldState = FIELD_STATE_COUNTING;
+										run();
+									}
+									
+								});
+								fieldTimer.setRepeats(false);
+								fieldTimer.start();
+								return;
+							} 
+							Thread.sleep(20);
+							fieldState = FIELD_STATE_COUNTING;
+							continue;
+					case FIELD_STATE_COUNTING:
+						count++;
+						if ((count >= maxPts) || endOfFieldLine() || interrupted) {
+							keepRunning = false;
+							fieldState = FIELD_STATE_DONE;
+							continue;
+						}
+						fieldState = FIELD_STATE_SLEEP1;
+						continue;
+					}
+				} catch (InterruptedException e) {
+					return;
+				}
+			}
+			// FIELD_STATE_DONE:
+			fieldThread = null;
+			fieldSolvers.removeElement(this);
+			if (interrupted) { // all field solvever have been told to stop.
+				points = null; // help the system to garbage collect
+				return;
+			}
+			parentSApplet.lock.getBusyFlag();
+			data = contour.addDataSet(points, count); // this constructs
+														// dataset
+			data.linecolor = fieldColor;
+			fieldLines.addElement(data);
+			parentSApplet.lock.freeBusyFlag();
+			int index = 0;
+			if (count > 150) {
+				index = 10;
+			} else if (count > 8) {
+				index = count / 2;
+			}
+			if (index > 0) {
+				double x = points[index * 2];
+				double y = points[index * 2 + 1];
+				double fx = -dudx(x, y) + getPoleFx(x, y, null);
+				double fy = -dudy(x, y) + getPoleFy(x, y, null);
+				double f = Math.sqrt(fx * fx + fy * fy);
+				if ((x > xmin) && (x < xmax) && (y > ymin) && (y < ymax)) {
+					arrowHeads.addElement(new ArrowHead(OdeCanvas.this, x, y, fx / f, fy / f, fieldColor));
+				}
+			}
+			// System.out.println("registered:"+ count+
+			// "size:"+fieldSolvers.size());
+			// points=null; // help the system to garbage collect
+			// osiInvalid=true;
+			// repaint();
+			if (fieldSolvers.size() == 0) {
+				calculatingFieldLines = false;
+				message = null;
+				osiInvalid = true; // repaint everything if this is the last
+									// field solver
+				repaint();
+			}
+		}
+		}
 }
 
 /**

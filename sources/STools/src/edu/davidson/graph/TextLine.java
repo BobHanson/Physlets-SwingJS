@@ -819,6 +819,10 @@ public class TextLine extends Object {
              for(i=0; i<power; i++) { x /= 10.0; }
          }
 
+         // BH fix for "0.4-5"
+         double ten_p = Math.pow(10, p);
+         x = Math.round(x * ten_p) / ten_p + 0.000000001;// BH
+         
          //System.out.println("parseDouble: adjusted value = "+x);
 
          left = (int)x;
@@ -829,12 +833,12 @@ public class TextLine extends Object {
          if( p > 0 ) {
            s.append('.');
            right = x-left;
-           for(i=0; i<p; i++) {
+           for(i=0; i<p;i++) {
                  right *= 10;
                 // if(i==p-1) right += 0.5;
                 // s.append((int)(right));
                  // right -= (int)right;
-                 int digit=(int)Math.round(right);
+                 int digit=(int) right;
                  s.append(digit);
                  right -= digit;
            }

@@ -213,7 +213,9 @@ public class Sync extends SApplet implements SStepable {
     } catch(Exception e) {
       e.printStackTrace();
     }
-    resize(320, 360);
+    /** @j2sNative */{
+    	  resize(320, 360);
+    }
     //sleepTime = (int)Math.round(1000/m_FPS);
     setLayout(new BorderLayout());
     Panel p = new Panel();

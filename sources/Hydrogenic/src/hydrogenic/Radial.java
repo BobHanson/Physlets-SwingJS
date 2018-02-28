@@ -116,13 +116,16 @@ public class Radial extends SApplet {
     angqnnb.setValue(l);   //angular quantum number the user inputs when scripting
     prinqnnb.setValue(n);  //principle quantum number the user inputs when scripting
     multiplecb.setState(multi);
-    radialgr.setGraphBackground(SystemColor.control);
+    //radialgr.setGraphBackground(SystemColor.control);
+    radialgr.setGraphBackground(resetbtn.getBackground());
   }
 
   private void jbInit() throws Exception {
     optionpnl.setLayout(flowLayout2);
     this.setBackground(Color.white);
-    this.setSize(new Dimension(371, 333));
+    /** @j2sNative */{
+      this.setSize(new Dimension(371, 333));
+    }
     optionpnl.setBackground(SystemColor.control);
     radialgr.setLabelY("[Rnl(r)*r]^2");
     radialgr.setEnableMouse(true);

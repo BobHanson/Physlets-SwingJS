@@ -235,7 +235,9 @@ public class Lorentz extends SApplet implements SStepable {
     } catch(Exception e) {
       e.printStackTrace();
     }
-    resize(400, 300);
+    /** @j2sNative */{
+    	  resize(400, 300);
+    }
     setLayout(new BorderLayout());  //layout for the applet
     setBackground(Color.lightGray);
     Panel p1 = new Panel();  //panel for the scroll and checkboxes
@@ -257,6 +259,7 @@ public class Lorentz extends SApplet implements SStepable {
       add("South", p1);
     }
     Panel p4 = new Panel();
+    p4.setBackground(Color.lightGray);
     p4.setLayout(new GridLayout(1, 2));
     cXY = new XYCanvas(this);
     cXY.setBackground(Color.white);

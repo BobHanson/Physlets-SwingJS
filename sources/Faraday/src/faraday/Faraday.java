@@ -269,7 +269,9 @@ public class Faraday
 
   //Component initialization
   private void jbInit() throws Exception {
-    this.setSize(new Dimension(669, 401));
+	  /** @j2sNative */{
+		  this.setSize(new Dimension(669, 401));
+	  }
     runBtn.setLabel(button_start);
     runBtn.addActionListener(new Faraday_runBtn_actionAdapter(this));
     resetBtn.setLabel(button_reset);

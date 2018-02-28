@@ -116,7 +116,9 @@ public class Wave3d extends SApplet implements SStepable {
    */
   private void jbInit() throws Exception {
     this.setBackground(Color.white);
-    this.setSize(new Dimension(600, 650));
+    /** @j2sNative */{
+    	  this.setSize(new Dimension(600, 650));
+    }
     this.addComponentListener(new Wave3d_this_componentAdapter(this));
     this.setLayout(borderLayout1);
     sliderPanel.setLayout(verticalFlowLayout1);

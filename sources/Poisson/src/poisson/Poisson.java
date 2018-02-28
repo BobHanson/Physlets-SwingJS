@@ -146,7 +146,9 @@ public class Poisson extends SApplet {
 
   //Component initialization
   private void jbInit() throws Exception {
-    this.setSize(new Dimension(400, 500));
+	/** @j2sNative */{
+      this.setSize(new Dimension(400, 500));
+	}
     //this.addMouseListener(new Poisson_this_mouseAdapter(this));
     addCircleBtn.setActionCommand("addCircleBtn");
     addCircleBtn.setLabel(button_oval);

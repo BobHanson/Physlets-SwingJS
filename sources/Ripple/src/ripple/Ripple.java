@@ -18,6 +18,8 @@ import edu.davidson.tools.*;
 import edu.davidson.display.*;
 import java.util.Vector;
 
+import javax.swing.JFrame;
+
 /**
  * Class Ripple
  */
@@ -186,8 +188,8 @@ public class Ripple extends SApplet implements Runnable {
   public static void main(String[] args) {
     Ripple applet = new Ripple();
     applet.m_fStandAlone = true;
-    Frame frame;
-    frame = new Frame() {
+    JFrame frame;
+    frame = new JFrame() {
 
       /**
        * put your documentation comment here
@@ -213,10 +215,12 @@ public class Ripple extends SApplet implements Runnable {
     frame.add(applet, BorderLayout.CENTER);
     applet.init();
     applet.start();
-    frame.setSize(400, 320);
-    Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-    frame.setLocation((d.width-frame.getSize().width)/2, (d.height-frame.getSize().height)/2);
-    frame.setVisible(true);
+    /** @j2sNative */{
+      frame.setSize(400, 320);
+      Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+      frame.setLocation((d.width-frame.getSize().width)/2, (d.height-frame.getSize().height)/2);
+      frame.setVisible(true);
+    }
   }
 
   /**
@@ -274,7 +278,9 @@ public class Ripple extends SApplet implements Runnable {
       GetParameters(null);
     }
     pixPerWave = (int) (m_pixPerUnit*m_wavelength);
-    resize(320, 370);
+    /** @j2sNative */{
+    	  resize(320, 370);
+    }
     generatePallete();
     setLayout(new BorderLayout());
     setBackground(Color.lightGray);
@@ -544,7 +550,9 @@ public class Ripple extends SApplet implements Runnable {
         //myThread.stop();
         calcThread = null;
         try {
+        	/** @j2sNative */{
           myThread.join();
+        	}
         } catch(InterruptedException e) {}
         //calcThread=null;
         startBtn.setLabel(button_calculate);

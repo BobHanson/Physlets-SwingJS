@@ -9,7 +9,9 @@ import a2s.*;
 
 public class Status extends Canvas {
 	Status(String s) {
-		resize(100,20);
+		/** @j2sNative */{
+			resize(100,20);
+		}
 		setBackground(Color.white);
 		str=s;
 	}

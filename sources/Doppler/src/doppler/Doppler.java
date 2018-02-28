@@ -210,7 +210,9 @@ public class Doppler extends SApplet implements Runnable, ActionListener {
     if(!m_fStandAlone) {
       GetParameters(null);
     }
-    resize(320, 340);
+    /** @j2sNative */{
+    	  resize(320, 340);
+    }
     int f = 1;
     /**
      * @j2sNative f = 5;

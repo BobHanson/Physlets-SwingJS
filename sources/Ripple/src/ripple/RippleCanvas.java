@@ -118,7 +118,9 @@ class RippleCanvas extends Canvas implements Runnable, SScalable {
                 current++;
                 if (movieThread != null) {
 					Thread.currentThread();
-					Thread.sleep(sleepTime);
+					/** @j2sNative */{
+						Thread.sleep(sleepTime);
+					}
 				}
             } catch (InterruptedException e) {}
         }

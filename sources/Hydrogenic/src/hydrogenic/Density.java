@@ -160,7 +160,9 @@ public Density(){
   }
 
   private void jbInit() throws Exception {
-    this.setSize(new Dimension(359, 343));
+	  /** @j2sNative */{
+		  this.setSize(new Dimension(359, 343));
+	  }
     flowLayout2.setVgap(2);
     flowLayout2.setHgap(2);
     plotBtn.setLabel("Plot");

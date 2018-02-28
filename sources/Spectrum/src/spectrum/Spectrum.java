@@ -66,7 +66,9 @@ public class Spectrum extends SApplet {
 
   private void jbInit() throws Exception {
     this.setEnabled(true);
-    this.setSize(new Dimension(310, 158));
+    /** @j2sNative */{
+    	  this.setSize(new Dimension(310, 158));
+    }
     controlPanel.setLayout(flowLayout1);
     goBtn.setLabel("Run");
     goBtn.addActionListener(new java.awt.event.ActionListener() {

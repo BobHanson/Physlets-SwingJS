@@ -196,7 +196,9 @@ final public class IZApplet extends SApplet implements SStepable {
   //Component initialization
   private void jbInit() throws Exception{
     this.setBackground(Color.lightGray);
-    this.setSize(new Dimension(740, 390));
+    /** @j2sNative */{
+    	  this.setSize(new Dimension(740, 390));
+    }
     fSlider.setDMax(10.0);
     fNumber.addActionListener(new IZApplet_fNumber_actionAdapter(this));
     fSlider.addAdjustmentListener(new IZApplet_fSlider_adjustmentAdapter(this));

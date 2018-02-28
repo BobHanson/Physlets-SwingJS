@@ -204,7 +204,9 @@ public class Superposition extends SApplet implements Runnable {
     if(m_numGraphs>3) {
       m_numGraphs = 3;
     }
-    resize(400, 400);
+    /** @j2sNative */{
+    	  resize(400, 400);
+    }
     setLayout(new BorderLayout());
     Panel p = new Panel();  // South will be buttons.  Center will be graphs.
     p.setLayout(new BorderLayout());

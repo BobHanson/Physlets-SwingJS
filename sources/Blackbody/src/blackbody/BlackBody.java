@@ -187,7 +187,9 @@ private String label_wavelength = "Wavelength [m]";
    */
   public void jbInit() throws Exception {
     this.setBackground(Color.white);
-    this.setSize(new Dimension(445, 378));
+    /** @j2sNative */{
+    	  this.setSize(new Dimension(445, 378));
+    }
     graph.setBorders("20,20,50,20");
     graph.setLabelY(label_energydensity);
     graph.addMouseMotionListener(new BlackBody_graph_mouseMotionAdapter(this));

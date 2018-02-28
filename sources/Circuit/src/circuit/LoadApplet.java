@@ -143,7 +143,9 @@ public class LoadApplet extends SApplet {
   //Component initialization
   private void jbInit() throws Exception{
     this.setBackground(Color.lightGray);
-    this.setSize(new Dimension(740, 390));
+    /** @j2sNative */{
+    	  this.setSize(new Dimension(740, 390));
+    }
     rSlider.setDMax(200.0);
     rNumber.addActionListener(new LoadApplet_rNumber_actionAdapter(this));
     rSlider.addAdjustmentListener(new LoadApplet_rSlider_adjustmentAdapter(this));

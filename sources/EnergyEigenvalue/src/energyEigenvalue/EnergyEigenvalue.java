@@ -198,7 +198,7 @@ public class EnergyEigenvalue extends SApplet {
     potentialpanel.setLayout(borderLayout1);
     energyGraph.setLabelY(label_energy);
     energyGraph.setEnableMouse(false);
-    /** @j2sNative */{
+    /** j2sNative */{
     	  this.setSize(new Dimension(387, 342));
     }
     etchedBorder2.setLayout(borderLayout5);

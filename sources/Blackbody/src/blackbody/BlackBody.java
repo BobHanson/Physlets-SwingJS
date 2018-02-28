@@ -187,7 +187,7 @@ private String label_wavelength = "Wavelength [m]";
    */
   public void jbInit() throws Exception {
     this.setBackground(Color.white);
-    /** @j2sNative */{
+    /** j2sNative */{
     	  this.setSize(new Dimension(445, 378));
     }
     graph.setBorders("20,20,50,20");

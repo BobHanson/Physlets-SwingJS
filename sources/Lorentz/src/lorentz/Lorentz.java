@@ -235,7 +235,7 @@ public class Lorentz extends SApplet implements SStepable {
     } catch(Exception e) {
       e.printStackTrace();
     }
-    /** @j2sNative */{
+    /** j2sNative */{
     	  resize(400, 300);
     }
     setLayout(new BorderLayout());  //layout for the applet

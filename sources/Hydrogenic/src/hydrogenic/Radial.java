@@ -123,7 +123,7 @@ public class Radial extends SApplet {
   private void jbInit() throws Exception {
     optionpnl.setLayout(flowLayout2);
     this.setBackground(Color.white);
-    /** @j2sNative */{
+    /** j2sNative */{
       this.setSize(new Dimension(371, 333));
     }
     optionpnl.setBackground(SystemColor.control);

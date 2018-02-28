@@ -204,7 +204,7 @@ public class Superposition extends SApplet implements Runnable {
     if(m_numGraphs>3) {
       m_numGraphs = 3;
     }
-    /** @j2sNative */{
+    /** j2sNative */{
     	  resize(400, 400);
     }
     setLayout(new BorderLayout());

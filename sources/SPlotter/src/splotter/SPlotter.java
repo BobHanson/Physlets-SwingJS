@@ -82,7 +82,7 @@ public class SPlotter extends SApplet implements SStepable  {
 
   //Component initialization
   private void jbInit() throws Exception {
-	  /** @j2sNative */{
+	  /** j2sNative */{
 		  resize(350,400);
 	  }
     this.setLayout(borderLayout1);

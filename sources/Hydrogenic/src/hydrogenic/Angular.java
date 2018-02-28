@@ -131,7 +131,7 @@ public Angular(){
   }
 
   private void jbInit() throws Exception {
-	/** @j2sNative */{
+	/** j2sNative */{
 		this.setSize(new Dimension(257, 264));
 	}
     this.setLayout(borderLayout5);

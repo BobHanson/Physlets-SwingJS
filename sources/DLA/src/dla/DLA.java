@@ -230,7 +230,7 @@ public class DLA extends SApplet {
 public void initFrame() {
    graph.setAutoReplaceData(1,true);
    drawingPanel.setGraph(graph);  //set the SGraph in our model, to the new SGraph (with a new drawing thread)
-   /** @j2sNative */{
+   /** j2sNative */{
      graphFrame.setSize(250,300);
    }
    //graph.setLabelX("Log_{10} of Distance");

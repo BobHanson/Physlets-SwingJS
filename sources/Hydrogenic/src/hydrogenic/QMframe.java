@@ -37,7 +37,7 @@ public class QMframe extends Frame {
 
   private void jbInit() throws Exception {
     this.setLayout(flowLayout1);
-    /** @j2sNative */{
+    /** j2sNative */{
     	  this.setSize(new Dimension(220, 92));
     }
     this.setTitle("Error");

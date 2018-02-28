@@ -146,7 +146,7 @@ public class Poisson extends SApplet {
 
   //Component initialization
   private void jbInit() throws Exception {
-	/** @j2sNative */{
+	/** j2sNative */{
       this.setSize(new Dimension(400, 500));
 	}
     //this.addMouseListener(new Poisson_this_mouseAdapter(this));

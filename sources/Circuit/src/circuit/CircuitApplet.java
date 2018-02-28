@@ -61,7 +61,7 @@ final public class CircuitApplet extends SApplet {
 
   //Component initialization
   private void jbInit() throws Exception{
-	  /** @j2sNative */{
+	  /** j2sNative */{
 		  this.setSize(new Dimension(293, 262));
 	  }
     this.setLayout(borderLayout1);

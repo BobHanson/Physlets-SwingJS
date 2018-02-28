@@ -158,7 +158,7 @@ public class EMWave extends SApplet implements SStepable {
    */
   public void jbInit() throws Exception {
     this.setBackground(Color.white);
-    /** @j2sNative */{
+    /** j2sNative */{
     	  this.setSize(new Dimension(600, 650));
     }
     this.addComponentListener(new EMWave_this_componentAdapter(this));

@@ -66,7 +66,7 @@ public class Spectrum extends SApplet {
 
   private void jbInit() throws Exception {
     this.setEnabled(true);
-    /** @j2sNative */{
+    /** j2sNative */{
     	  this.setSize(new Dimension(310, 158));
     }
     controlPanel.setLayout(flowLayout1);

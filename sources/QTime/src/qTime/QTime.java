@@ -216,7 +216,7 @@ public class QTime extends SApplet implements SStepable {
       GetParameters(null);
     }
     //sleepTime=(int)Math.round(1000/m_FPS);
-    /** @j2sNative */{
+    /** j2sNative */{
     	  resize(400, 400);
     }
     setLayout(new BorderLayout());

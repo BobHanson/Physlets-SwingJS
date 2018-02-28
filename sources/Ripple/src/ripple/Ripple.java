@@ -215,7 +215,7 @@ public class Ripple extends SApplet implements Runnable {
     frame.add(applet, BorderLayout.CENTER);
     applet.init();
     applet.start();
-    /** @j2sNative */{
+    /** j2sNative */{
       frame.setSize(400, 320);
       Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
       frame.setLocation((d.width-frame.getSize().width)/2, (d.height-frame.getSize().height)/2);
@@ -278,7 +278,7 @@ public class Ripple extends SApplet implements Runnable {
       GetParameters(null);
     }
     pixPerWave = (int) (m_pixPerUnit*m_wavelength);
-    /** @j2sNative */{
+    /** j2sNative */{
     	  resize(320, 370);
     }
     generatePallete();
@@ -550,7 +550,7 @@ public class Ripple extends SApplet implements Runnable {
         //myThread.stop();
         calcThread = null;
         try {
-        	/** @j2sNative */{
+        	/** j2sNative */{
           myThread.join();
         	}
         } catch(InterruptedException e) {}

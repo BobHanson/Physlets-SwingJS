@@ -143,7 +143,7 @@ final public class LRCApplet extends SApplet implements SStepable {
   //Component initialization
   private void jbInit() throws Exception{
     this.setBackground(Color.lightGray);
-    /** @j2sNative */{
+    /** j2sNative */{
     	  this.setSize(new Dimension(740, 390));
     }
     fSlider.setDMax(200.0);

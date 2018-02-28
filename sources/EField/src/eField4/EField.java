@@ -341,7 +341,7 @@ private String button_start="Play";
    */
   public void jbInit() throws Exception{
     bevelPanel1.setLayout(flowLayout1);
-    /** @j2sNative */{
+    /** j2sNative */{
     	  this.setSize(new Dimension(488, 491));
     }
     playBtn.setLabel(button_start);

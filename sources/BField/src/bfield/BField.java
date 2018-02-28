@@ -168,7 +168,7 @@ String       button_reset          = "Clear";
 
   private void jbInit() throws Exception {
     etchedBorder2.setLayout(borderLayout4);
-    /** @j2sNative */{
+    /** j2sNative */{
       this.setSize(new Dimension(505, 457));
     }
     updateBtn.setActionCommand("newB");

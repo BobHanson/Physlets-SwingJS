@@ -1,5 +1,8 @@
 package wave3d;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+
 public class Figure {
 
        public int numLines=0;

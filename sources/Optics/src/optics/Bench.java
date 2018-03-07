@@ -727,7 +727,8 @@ public final class Bench extends Panel implements SScalable {
       OpticElement e = (OpticElement)v.elementAt(i);
       if ((!e.isNoDrag() ||e.isResizable())&&(e.isInside(mouseX,mouseY,r)==1 || e.isInside(mouseX,mouseY,r)==2 || e.isInside(mouseX,mouseY,r)==3)){
         activeElement = e;
-        //System.out.println("hi, i'm element number "+i+", a "+e.getType());
+        //System.out.println("hi I, i'm element number "+i+", a "+e.getType());
+        //System.out.println("Active Element ="+e);
         break;
       }
       else activeElement = null;
@@ -737,7 +738,7 @@ public final class Bench extends Panel implements SScalable {
         OpticElement e = (OpticElement)sv.elementAt(i);
         if ((!e.isNoDrag() ||e.isResizable() )&&(e.isInside(mouseX,mouseY,r)==1 || e.isInside(mouseX,mouseY,r)==2)){
           activeElement = e;
-         // System.out.println("hi, i'm element number "+i+", a "+e.getType());
+        // System.out.println("hi II, i'm element number "+i+", a "+e.getType());
           break;
         }
         else activeElement = null;
@@ -748,12 +749,13 @@ public final class Bench extends Panel implements SScalable {
         Thing e = (Thing)things.elementAt(i);
         if ((!e.isNoDrag() ||e.isResizable() )&& e.isInsideThing(mouseX,mouseY)){
           dragThing = e;
-         // System.out.println("hi, i'm element number "+i+", a "+e.getType());
+         // System.out.println("hi III, i'm element number "+i);
           break;
         }
         else dragThing = null;
       }
     }
+    isMouseInside( mouseX,  mouseY);
   }
 
   public void mouseReleased(int mouseX, int mouseY){
@@ -764,6 +766,7 @@ public final class Bench extends Panel implements SScalable {
 
  public void mouseDragged(int mouseX, int mouseY){
   Rectangle r = getBounds();
+  //System.out.println("Moving Active Element ="+activeElement);
   if (activeElement!=null){
    if (activeElement.getDrag() || activeElement.isResizable()){
      if (isInsideOpticElement == 1 && !isControlDown &&
@@ -874,34 +877,38 @@ public final class Bench extends Panel implements SScalable {
   owner.updateDataConnections();
   //if(owner!=null &&activeElement!=null )owner.updateDataConnection(activeElement.getID() );
  }
+ 
+ void isMouseInside(int mouseX, int mouseY) {
+	    Rectangle r = getBounds();
+	    setCursor(Cursor.getPredefinedCursor(java.awt.Cursor.CROSSHAIR_CURSOR));
+	    isInsideOpticElement = 0;
+	    for (int i=0;i<v.size();i++){  // check optic elements
+	      OpticElement e = (OpticElement)v.elementAt(i);
+	      if (e.isInside(mouseX,mouseY,r)==1 || e.isInside(mouseX,mouseY,r)==2 || e.isInside(mouseX,mouseY,r)==3){
+	        setCursor(Cursor.getPredefinedCursor(java.awt.Cursor.HAND_CURSOR));
+	        isInsideOpticElement = e.isInside(mouseX,mouseY,r);
+	        break;
+	      }
+	    }
+	    for (int i=0;i<sv.size();i++){  // check sources elements
+	        OpticElement e = (OpticElement)sv.elementAt(i);
+	        if (e.isInside(mouseX,mouseY,r)==1 || e.isInside(mouseX,mouseY,r)==2){
+	          setCursor(Cursor.getPredefinedCursor(java.awt.Cursor.HAND_CURSOR));
+	          isInsideOpticElement = e.isInside(mouseX,mouseY,r);
+	          break;
+	        }
+	    }
+	    for (int i=0;i<things.size();i++){ // check things
+	          Thing t = (Thing)things.elementAt(i);
+	          if ((!t.isNoDrag() || t.isResizable() )&& t.isInsideThing(mouseX,mouseY)){
+	            setCursor(Cursor.getPredefinedCursor(java.awt.Cursor.HAND_CURSOR));
+	            break;
+	          }
+	    } 
+ }
 
   public void mouseMoved(int mouseX, int mouseY){
-    Rectangle r = getBounds();
-    setCursor(Cursor.getPredefinedCursor(java.awt.Cursor.CROSSHAIR_CURSOR));
-    isInsideOpticElement = 0;
-    for (int i=0;i<v.size();i++){  // check optic elements
-      OpticElement e = (OpticElement)v.elementAt(i);
-      if (e.isInside(mouseX,mouseY,r)==1 || e.isInside(mouseX,mouseY,r)==2 || e.isInside(mouseX,mouseY,r)==3){
-        setCursor(Cursor.getPredefinedCursor(java.awt.Cursor.HAND_CURSOR));
-        isInsideOpticElement = e.isInside(mouseX,mouseY,r);
-        break;
-      }
-    }
-    for (int i=0;i<sv.size();i++){  // check sources elements
-        OpticElement e = (OpticElement)sv.elementAt(i);
-        if (e.isInside(mouseX,mouseY,r)==1 || e.isInside(mouseX,mouseY,r)==2){
-          setCursor(Cursor.getPredefinedCursor(java.awt.Cursor.HAND_CURSOR));
-          isInsideOpticElement = e.isInside(mouseX,mouseY,r);
-          break;
-        }
-    }
-    for (int i=0;i<things.size();i++){ // check things
-          Thing t = (Thing)things.elementAt(i);
-          if ((!t.isNoDrag() || t.isResizable() )&& t.isInsideThing(mouseX,mouseY)){
-            setCursor(Cursor.getPredefinedCursor(java.awt.Cursor.HAND_CURSOR));
-            break;
-          }
-    }
+	  isMouseInside( mouseX, mouseY);
       //******draw the coordinates in the bottom left corner.
     Graphics g = getGraphics();
     drawCoords(g,mouseX,mouseY);

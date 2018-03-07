@@ -3,7 +3,7 @@ package edu.davidson.tools;
 /**
  * The SDataListener interface enables inter-applet communcation between SApplets.
  *
- * Limited inter-applet commucation is possible between objects in one applet and objects
+ * Limited inter-applet communication is possible between objects in one applet and objects
  * in another applet if the first object implements the SDataSource interface and the second
  * object implements the SDataListener interface.
  *

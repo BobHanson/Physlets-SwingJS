@@ -161,7 +161,7 @@ public final class Lens extends OpticElement {
     int hot=(int)focalLength;
     if(Math.abs(focalLength)<2) hot=20;
     if (resizable &&
-        mouseX>(xPosition+hot)-5 && mouseX<(xPosition+hot)+5 &&
+        mouseX>(xPosition+hot)-10 && mouseX<(xPosition+hot)+10 &&
         mouseY<(r.height/2+15) && mouseY>(r.height/2-15)
         ) return 2;               //positive fl
     if (resizable &&

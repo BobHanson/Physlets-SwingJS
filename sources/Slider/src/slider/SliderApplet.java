@@ -1,9 +1,9 @@
 package slider;
+import a2s.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Label;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
@@ -105,7 +105,9 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	// Component initialization
 	private void jbInit() throws Exception {
 		this.setBackground(Color.lightGray);
-		this.setSize(new Dimension(399, 41));
+		 /** @j2sNative */{	 
+			 this.setSize(new Dimension(399, 41));
+		 }
 		label.setText(text);
 		this.setLayout(borderLayout1);
 		this.add(slider, BorderLayout.CENTER);
@@ -306,24 +308,25 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 		this.updateDataConnections();
 		synchronized (lock) {
 			newdata = true;
-			lock.notify();
+			lock.notify();  
 		}
 	}
 
 	/**
-	 * Change the javascript function that should be called whenerver data
+	 * Change the JavaScript function that should be called whenever data
 	 * changes in a data source.
 	 *
 	 * @param str
 	 *            The javascript function
 	 */
 	public void setJSFunction(String str) {
+		str=null;
 		Create temp = createThread;
 		Dispatcher temp2 = dispatcherThread;
-		if (temp != null) { // stop the old threads if they exisit
+		if (temp != null) { // stop the old threads if they exist
 			temp.shouldRun = false;
 		}
-		if (temp2 != null) { // stop the old threads if they exisit
+		if (temp2 != null) { // stop the old threads if they exist
 			temp2.shouldRun = false;
 		}
 		if (appletRunning)
@@ -396,7 +399,7 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 						} catch (InterruptedException ie) {
 						}
 					newdata = false;
-				}
+				} 
 				if (debugLevel > 0)
 					System.out.println("evaluating");
 				if (appletRunning && shouldRun)

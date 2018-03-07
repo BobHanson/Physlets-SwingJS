@@ -15,8 +15,9 @@ public class Source extends OpticElement {
 
   public int isInside(int mouseX,int mouseY,Rectangle r){
     if ((!noDrag || resizable) &&(mouseX>xPosition-10 && mouseX<xPosition+10 && mouseY>yPosition-10 && mouseY<yPosition+10)) return 1;
+    
     if (resizable && mouseX>(xPosition+(direction*40)-5) && mouseX<(xPosition+(direction*40)+5) &&
-        mouseY>(yPosition+raySlope*(direction*40))-5 && mouseY<(yPosition+raySlope*(direction*40))+5)
+        mouseY>(yPosition+raySlope*(direction*40))-10 && mouseY<(yPosition+raySlope*(direction*40))+10)
         return 2; //inside angle adjustment oval
     return 0;
   }

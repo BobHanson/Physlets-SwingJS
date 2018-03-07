@@ -2,7 +2,10 @@
 
 package wave3d;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Polygon;
+
 
 public final class FilledRectangle extends Figure {
 

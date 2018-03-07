@@ -1,7 +1,9 @@
 
 package wave3d;
 
-import java.awt.*;
+import java.awt.Color;
+
+
 
 public class Wave extends Figure {
         double h;

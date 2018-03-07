@@ -1,8 +1,15 @@
 
 
 package wave3d;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Rectangle;
 
-import java.awt.*;
+import a2s.*;
+
 import java.util.*;
 
 

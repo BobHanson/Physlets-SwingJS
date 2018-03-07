@@ -36,8 +36,6 @@ public class SSlider extends Scrollbar implements PropertyChangeListener {
     }
 
     protected void processAdjustmentEvent(AdjustmentEvent evt){
-      ///  System.out.println("Adjustment Event." + evt.getID() );
-      //  System.out.println("Adjustment type." + evt.getAdjustmentType() );
         double oldVal=dValue;
         int val=evt.getValue();
         dValue=dMin+(dMax-dMin)*(val-this.getMinimum())/(this.getMaximum()-this.getMinimum()-this.getVisibleAmount());
@@ -46,6 +44,7 @@ public class SSlider extends Scrollbar implements PropertyChangeListener {
         boundSupport.firePropertyChange("DValue",new Double(oldVal),new Double(dValue));
         super.processAdjustmentEvent(evt);
     }
+    
     public void setDValue(double d) {
         if(dValue==d) return;
         double oldVal=dValue;

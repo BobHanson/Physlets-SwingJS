@@ -1,6 +1,13 @@
 package wave3d;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+
+import a2s.*;
+
+
 import java.awt.event.*;
 import edu.davidson.tools.*;
 import edu.davidson.graphics.*;
@@ -116,7 +123,7 @@ public class Wave3d extends SApplet implements SStepable {
    */
   private void jbInit() throws Exception {
     this.setBackground(Color.white);
-    /** j2sNative */{
+    /** @j2sNative */{
     	  this.setSize(new Dimension(600, 650));
     }
     this.addComponentListener(new Wave3d_this_componentAdapter(this));
@@ -279,7 +286,7 @@ public int getAppletCount() {
 */
 
 
-  /*
+/*
     setDefault();
     setPixPerUnit(8);
     int id = addFilledSquare(-20, 20);
@@ -294,7 +301,7 @@ public int getAppletCount() {
     id = addGrid(20, 20, 30, 1.57);
     setRGB(id, 22, 50, 134);
     forward();
-    */
+ */   
   }
 
   /**

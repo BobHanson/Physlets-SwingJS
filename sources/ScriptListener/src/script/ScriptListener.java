@@ -92,10 +92,10 @@ public class ScriptListener extends SApplet implements SDataListener {
     public void setJSFunction(String str) {
       Create temp = createThread;
       Dispatcher temp2 = dispatcherThread;
-      if (temp != null) { // stop the old threads if they exisit
+      if (temp != null) { // stop the old threads if they exist
         temp.shouldRun = false;
       }
-      if (temp2 != null) { // stop the old threads if they exisit
+      if (temp2 != null) { // stop the old threads if they exist
         temp2.shouldRun = false;
       }
       if (appletRunning)

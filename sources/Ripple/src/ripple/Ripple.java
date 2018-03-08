@@ -87,6 +87,7 @@ public class Ripple extends SApplet implements Runnable {
   int                  c[]       = new int[4];
   int                  numPix    = 4;
   int                  pixels[]  = new int[numPix];
+  int				  nimages=12;  //number of images in movie
 
   /**
    * Method GetParameter
@@ -187,6 +188,7 @@ public class Ripple extends SApplet implements Runnable {
    */
   public static void main(String[] args) {
     Ripple applet = new Ripple();
+    applet.isStandalone = true;
     applet.m_fStandAlone = true;
     JFrame frame;
     frame = new JFrame() {
@@ -469,8 +471,8 @@ public class Ripple extends SApplet implements Runnable {
   public synchronized void startAnimate() {
     setRunningID(this);
     m_animate = true;
-    if(calcThread!=null) {
-      return;  // calculation is running. Images will animate when calculation is done;
+    if(calcThread!=null || rc.isRunning() ) {
+      return;  // Calculation or movie is running. Images will animate when calculation is done;
     }
     if(rc.getImage()==null)  //no image and no calcthread
     {
@@ -482,7 +484,7 @@ public class Ripple extends SApplet implements Runnable {
       stepBBtn.setLabel("--");
       return;
     }
-    if(rc.getImageNumber()<8) {
+    if(rc.getImageNumber()<nimages) {
       start();     // finish old calculations
       startBtn.setLabel(button_cancel);
       stepFBtn.setLabel("--");
@@ -525,7 +527,7 @@ public class Ripple extends SApplet implements Runnable {
     super.start();
     if(firstTime) {
       firstTime = false;
-    } else if((rc.getImage()!=null)&&(calcThread==null)&&(rc.getImageNumber()==8)) {
+    } else if((rc.getImage()!=null)&&(calcThread==null)&&(rc.getImageNumber()==nimages)) {
       // we already have a movie so don't calculate!
       rc.start();
       return;
@@ -642,11 +644,12 @@ public class Ripple extends SApplet implements Runnable {
    * @y.exclude
    */
   public void run() {
+    boolean isJS = /** @j2sNative true || */ false;
+	System.out.println("run");
     Thread me = Thread.currentThread();
-    if(calcThread!=me) {
-      return;
+    if(calcThread!=me && !isJS) {
+      //return;
     }  // check to make sure this is the right thread.
-    //System.out.println("Ripple.run");
     rc.stop();
     int    width;
     int    height;
@@ -681,15 +684,16 @@ public class Ripple extends SApplet implements Runnable {
     //rc.msgStr = "Please Wait...";
     count = rc.getImageNumber();
     calculate:  // label the calculate while statement
-    while((count<8)&&(calcThread!=null)) {
+    while((count<nimages)&&(calcThread!=null)) {
+    	 //System.out.println("image ="+count);
       pixels = new int[width*height];             // try a new array for every frame on the Mac.
       numPix = width*height;
       Vector sources = (Vector) rc.sources.clone();
-      if(rc.isImageLoaded()||(sleepCounter>100))  // somtimes imageLoaded doesn't work.
+      if(rc.isImageLoaded()||(sleepCounter>100))  // sometimes imageLoaded doesn't work.
       {
         int index = 0;
         sleepCounter = 0;
-        timePhase    = count*100.0/8.0;
+        timePhase    = count*100.0/nimages;
         for(int j = 0; j<height; j++) {
           for(int i = 0; i<width; i++) {
             if(calcThread==null) {
@@ -703,13 +707,14 @@ public class Ripple extends SApplet implements Runnable {
         }
         //System.out.println("Ripple.run: "+count+" w: "+width+" h: "+height);
         if(rc.addImage(width, height, pixels, 0, width, count)) {
+        	  //System.out.println("image ="+count);
           count++;
         }
       }
       //System.out.println("Ripple.run: sleep ");
       sleepCounter++;
       try {
-        Thread.sleep(20);
+        if(!isJS) Thread.sleep(20);
       } catch(InterruptedException e) {}
     }
     calcThread = null;
@@ -768,7 +773,7 @@ public class Ripple extends SApplet implements Runnable {
       return true;
     } else if(ev.target.equals(stepFBtn)) {
       if(startBtn.getLabel().equals(button_calculate)) {
-        addSource();
+        appendSource();
         return true;
       }
       m_animate = false;
@@ -899,7 +904,7 @@ public class Ripple extends SApplet implements Runnable {
    *
    * @return the id
    */
-  public int addSource() {
+  public int appendSource() {
     stopAnimate();
     int id = 0;
     if(rc.sources.size()>0) {

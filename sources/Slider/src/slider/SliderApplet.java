@@ -320,7 +320,6 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	 *            The javascript function
 	 */
 	public void setJSFunction(String str) {
-		str=null;
 		Create temp = createThread;
 		Dispatcher temp2 = dispatcherThread;
 		if (temp != null) { // stop the old threads if they exist

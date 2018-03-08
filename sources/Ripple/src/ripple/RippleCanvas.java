@@ -17,6 +17,9 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.*;
 import  java.util.Vector;
+
+import javax.swing.Timer;
+
 import  java.util.Enumeration;
 import  java.awt.image.MemoryImageSource;
 import  edu.davidson.display.SScalable;
@@ -33,7 +36,7 @@ class RippleCanvas extends Canvas implements Runnable, SScalable {
     Format    format= new Format("%-+8.4g");
     int pixPerUnit = 10;
     double gridUnit = 1;
-    int sleepTime = 100;
+    int sleepTime = 50;
     Vector sources = new Vector();
     Vector things = new Vector();
     public String msgStr = "";
@@ -57,7 +60,7 @@ class RippleCanvas extends Canvas implements Runnable, SScalable {
 
 
     /**
-     * put your documentation comment here
+     * Stops the movie thread.
      */
     public synchronized void stop () {
         Thread myThread = movieThread;
@@ -67,7 +70,7 @@ class RippleCanvas extends Canvas implements Runnable, SScalable {
             //myThread.stop();
             movieThread = null;                 // no need to call stop.  This should kill the thread.
             try {
-                myThread.join();
+            	/** @j2sNative */ {myThread.join();}
             } catch (InterruptedException e) {}
         }
         movieThread = null;
@@ -93,43 +96,53 @@ class RippleCanvas extends Canvas implements Runnable, SScalable {
         }
         imageLoaded = true;
     }
-
+    
+    private Timer timer;  
+    
     /**
-     * put your documentation comment here
+     * Runs the movie thread.
      */
-    public void run () {
-        Graphics g = getGraphics();
-        if (g == null) {
-            movieThread = null;
-            return;
-        }
-        //System.out.println("RippleCanvas.run");
-        while ((movieThread != null) && (sources.size() > 0) && (frames.size() > 1)
-                && owner.getRunningID() == owner) {
-            try {
-                if (current >= frames.size())
-                    current = 0;
-                if (frames.size() > 0)
-                    img = (Image)frames.elementAt(current);
-                if (movieThread != null){
-                    paint(g);
-                    if(mousePressed) paintCoordinates(g,mouseX,mouseY);
-                }
-                current++;
-                if (movieThread != null) {
-					Thread.currentThread();
-					/** @j2sNative */{
-						Thread.sleep(sleepTime);
+	public void run() {
+		boolean isJS = /** @j2sNative true || */ false;
+		Graphics g = getGraphics();
+		if (g == null) {
+			movieThread = null;
+			return;
+		}
+		while ((movieThread != null) && (sources.size() > 0) && (frames.size() > 1) && owner.getRunningID() == owner) {
+				try {
+					if (current >= frames.size())
+						current = 0;
+					if (frames.size() > 0)
+						img = (Image) frames.elementAt(current);
+					if (movieThread != null) {
+						paint(g);
+						if (mousePressed)
+							paintCoordinates(g, mouseX, mouseY);
 					}
-				}
-            } catch (InterruptedException e) {}
-        }
-        movieThread = null;
-        //running=false;
-        g.dispose();
-        imageLoaded = true;
-        repaint();
-    }
+					current++;
+					if(isJS) {
+						timer = new Timer(sleepTime, new ActionListener() {
+
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								run();
+							}
+
+						});
+						timer.setRepeats(false);
+						timer.start();
+						return;
+					} else if (movieThread != null) {
+						Thread.currentThread();
+							Thread.sleep(sleepTime);
+					}
+				} catch (InterruptedException e) { }
+		}
+		g.dispose();
+		imageLoaded = true;
+		repaint();
+	}
 
     /**
      * put your documentation comment here
@@ -330,9 +343,8 @@ class RippleCanvas extends Canvas implements Runnable, SScalable {
         MemoryImageSource imagesource = new MemoryImageSource(width, height, pixels, 0, scan);
         Image newImage = createImage(imagesource);
         img = newImage;
-        //System.out.println("Image width: "+width+"  Image height: "+height);
         //showImageSize();
-        if (count < 8) {
+        if (count < owner.nimages) {
             frames.addElement(newImage);
             current = count;
         }
@@ -542,7 +554,7 @@ class RippleCanvas extends Canvas implements Runnable, SScalable {
 
 
 /**
- * Construnctor
+ * Constructor
  * @param     SApplet the applet that created this canvas
  */
     public RippleCanvas (Ripple o) {

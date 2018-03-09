@@ -1,5 +1,6 @@
 package reflection;
 
+import a2s.*;
 import edu.davidson.display.ArrowThing;
 import edu.davidson.display.BoxThing;
 import edu.davidson.display.CaptionThing;
@@ -14,13 +15,10 @@ import edu.davidson.graphics.SPanel;
 import edu.davidson.tools.SApplet;
 import edu.davidson.tools.SUtil;
 import java.awt.BorderLayout;
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.Label;
-import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

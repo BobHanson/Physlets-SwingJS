@@ -33,8 +33,7 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	boolean appletRunning = true;
 	// data source variables
 	protected String[] varStrings = new String[] { "t", "value", };
-	protected double[][] ds = new double[1][2]; // the datasource state
-												// variables x,y;
+	protected double[][] ds = new double[1][2]; // the datasource state variables x,y;
 
 	/**
 	 * Constructor SliderApplet

@@ -1,5 +1,6 @@
 package reflection;
 
+import a2s.*;
 import edu.davidson.display.Format;
 import edu.davidson.display.SScalable;
 import edu.davidson.display.Thing;
@@ -10,16 +11,12 @@ import edu.davidson.tools.SDataSource;
 import edu.davidson.tools.SStepable;
 import edu.davidson.tools.SUtil;
 import java.awt.Color;
-//import java.awt.Component;
 import java.awt.Cursor;
-//import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.Panel;
 import java.awt.Rectangle;
-import java.awt.Window;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 //import java.awt.event.InputEvent;
@@ -614,7 +611,7 @@ public class WavePanel extends Panel
   {
     Graphics localGraphics = null;
     try
-    {
+    {  if( /** @j2sNative true ||*/ false){  osi=null;}
       if ((this.osi == null) || (this.currentw != getSize().width) || (this.currenth != getSize().height))
         setArrayBounds();
       if (this.osi == null)
@@ -866,8 +863,10 @@ public class WavePanel extends Panel
       this.fixedPts = false;
     if (this.fixedPts)
       return;
-    this.currentw = getBounds().width;
-    this.currenth = getBounds().height;
+    //this.currentw = getBounds().width;
+    //this.currenth = getBounds().height;
+    this.currentw = this.getWidth();
+    this.currenth = this.getHeight();
     if ((this.currentw <= 4) || (this.currenth <= 4))
       return;
     this.leftWave = new double[this.currentw];
@@ -1178,7 +1177,7 @@ public class WavePanel extends Panel
       if (this.osi == null)
         return;
       localObject = new WaveFrame(this.osi);
-      ((Window)localObject).show();
+      ((a2s.Frame)localObject).show();
     }
     else
     {

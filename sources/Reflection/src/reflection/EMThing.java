@@ -15,8 +15,12 @@
 
 package reflection;
 
-import java.awt.*;
-import edu.davidson.tools.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+
+import edu.davidson.tools.SUtil;
 
 
 

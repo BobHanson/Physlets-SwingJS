@@ -236,7 +236,7 @@ public class ReflectionApplet extends SApplet
       setAutoRefresh(false);
       double d2 = 40.0D / this.ppu;
       if (i == 1)
-        d2 = 60.0D;
+        d2 = 60.0;
       int j = addMedium(d1, d2);
       setDragable(j, true);
       setRGB(j, (int)(255.0D * Math.random()), 255, (int)(255.0D * Math.random()));
@@ -380,6 +380,7 @@ public class ReflectionApplet extends SApplet
     {
       localException9.printStackTrace();
     }
+    
   }
 
   void initBtn_actionPerformed(ActionEvent paramActionEvent)

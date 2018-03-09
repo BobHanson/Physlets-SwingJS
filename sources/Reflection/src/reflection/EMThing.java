@@ -118,6 +118,7 @@ public class EMThing extends ReflectionThing{
      double amp=owner.ampScale;
      magRight=amp;
      magLeft=0;
+     
      if(rightThing==null){
          magRight=amp*Math.sqrt(rightE[0]*rightE[0]+rightE[1]*rightE[1]);
          for (int i = 0; i<pwidth; i++){
@@ -135,7 +136,6 @@ public class EMThing extends ReflectionThing{
      double rightPhase=Math.atan2(rightE[1],rightE[0]);
      magLeft=amp*Math.sqrt(leftE[0]*leftE[0]+leftE[1]*leftE[1]);
      double leftPhase=Math.atan2(leftE[1],leftE[0]);
-
      for (int i = 0; i<pwidth; i++){
             x = (i)/(double)(ppu);
             rightW[i]= magRight*Math.cos(wavenumber*x-owner.timePhase + rightPhase );
@@ -313,7 +313,7 @@ public class EMThing extends ReflectionThing{
 
    /**
    *
-   * Method paints value of indexN or potential in bottem center of screen
+   * Method paints value of indexN or potential in bottom center of screen
    *
    * @param g Graphics
    */

@@ -251,6 +251,7 @@ public class ReflectionApplet extends SApplet
 
   public void forward()
   {
+    if(this.clock.isRunning()) return;  //don't start a second JS thread.
     this.clock.setDt(this.clock.getDt());
     recalculate();
     this.clock.startClock();

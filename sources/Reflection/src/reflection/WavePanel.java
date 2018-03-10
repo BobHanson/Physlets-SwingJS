@@ -206,7 +206,6 @@ public class WavePanel extends Panel
     double d7 = d1 * paramDouble1 + d4 * paramDouble2;
     double d8 = d2 * paramDouble2 * paramDouble1 + d3;
     double d9 = (d5 * d5 + d6 * d6) / (d7 * d7 + d8 * d8);
-    System.out.println("r =" + d9);
     return d9;
   }
 
@@ -221,7 +220,6 @@ public class WavePanel extends Panel
     double d7 = d1 * paramDouble1 + d4 * paramDouble2;
     double d8 = d2 * paramDouble2 * paramDouble1 + d3;
     double d9 = (d5 * d5 + d6 * d6) / (d7 * d7 + d8 * d8);
-    System.out.println("t =" + d9);
     return d9;
   }
 
@@ -876,8 +874,6 @@ public class WavePanel extends Panel
     }
     if(this.osi==null || this.osi.getWidth(null)!=this.currentw || this.osi.getHeight(null)!=this.currenth) {
       this.osi = createImage(this.currentw, this.currenth);
-      arrangeMedia();
-      //System.out.println("end setArrayBounds obj="+rightWave);
     }
   }
 
@@ -1119,7 +1115,6 @@ public class WavePanel extends Panel
     int i = this.mousey - paramMouseEvent.getY();
     if ((this.insideThing != null) && (this.insideThing.dragPotential))
     {
-    	  System.out.println("Drag thing");
       this.insideThing.setPotential(this.insideThing.potential + i / 100.0);
       recalc();
     }
@@ -1142,7 +1137,6 @@ public class WavePanel extends Panel
     this.mousey = paramMouseEvent.getY();
     if (this.dragThing != null)
     {
-     System.out.println("Drag set media width");
       setMediaWidth(this.dragThing.hashCode(), (paramMouseEvent.getX() - this.dragThing.left) / this.ppu);
       this.owner.updateDataConnections();
     }

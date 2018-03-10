@@ -400,9 +400,9 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 				} 
 				if (debugLevel > 0)
 					System.out.println("evaluating");
-				if (appletRunning && shouldRun)
+				if (appletRunning && shouldRun) {
 					jso.eval(jsFunction);
-				try {
+				}try {
 					Thread.sleep(20);
 				} catch (InterruptedException ex) {
 				}

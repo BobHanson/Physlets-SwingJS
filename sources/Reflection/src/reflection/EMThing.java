@@ -63,11 +63,12 @@ public class EMThing extends ReflectionThing{
 
       pwidth = right-left;
       //pwidth=owner.getWidth();
-      leftW = new double[pwidth];
-      //leftW2 = new double[pwidth];
-      rightW = new double[pwidth];
-      xpoints = new int [pwidth];
-      ypoints = new int [pwidth];
+      if(leftW==null || leftW.length!= pwidth){
+	      leftW = new double[pwidth];
+	      rightW = new double[pwidth];
+	      xpoints = new int [pwidth];
+	      ypoints = new int [pwidth];
+      }
       originY = (int)(0.5*owner.currenth);
       for (int i = 0; i< pwidth; i++){
           leftW[i]=0;

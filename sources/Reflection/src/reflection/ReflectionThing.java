@@ -54,7 +54,7 @@ public class ReflectionThing implements SDataSource{
   double[] rightW = null; //amplitude values for right traveling wave
   int[] xpoints = null;   //x values of (x,y) pairs for drawPolyline in painting methods
   int[] ypoints = null;    //x values of (x,y) pairs for drawPolyline in painting methods
-  double pos;     //left bound of wave in world units. Equal to the pos+width of the left neihboring Thing of this
+  double pos;     //left bound of wave in world units. Equal to the pos+width of the left neighboring Thing of this
   double width;  //width of medium in world units
   int pwidth;   //pixelwidth of medium
   Color color = Color.white; //background color
@@ -120,10 +120,12 @@ public class ReflectionThing implements SDataSource{
       left = leftPix;
       right = (int)((pos+width)*owner.ppu);
       pwidth = right-left;
-      leftW = new double[pwidth];
-      rightW = new double[pwidth];
-      xpoints = new int [pwidth];
-      ypoints = new int [pwidth];
+      if(leftW==null || leftW.length!= pwidth){
+	      leftW = new double[pwidth];
+	      rightW = new double[pwidth];
+	      xpoints = new int [pwidth];
+	      ypoints = new int [pwidth];
+      }
       originY = (int)(0.5*owner.currenth);
       for (int i = 0; i< pwidth; i++){
           leftW[i]=0;

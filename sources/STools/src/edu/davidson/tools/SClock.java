@@ -122,13 +122,13 @@ protected Thread     thread         = null;
 	private void newThread(boolean asDaemon, boolean startWaiting) {
 		shouldRun = true;
 		running = !startWaiting;
+		thread = new Thread(this);
 		/**
 		 * @j2sNative
 		 * 
 		 * 			return this.run();
 		 * 
 		 */
-		thread = new Thread(this);
 		if (asDaemon)
 			thread.setDaemon(true);
 		thread.start();
@@ -464,6 +464,7 @@ protected Thread     thread         = null;
      * @j2sNative
      * 
      * this.swingTimer.stop();
+     * this.thread = null;
      * return;
      * 
      */
@@ -638,6 +639,8 @@ protected Thread     thread         = null;
 	 * Pre-create the timer so there is no file loading before the first tick
 	 */
 	private void createSwingTimer() {
+		if (thread == null)
+			thread = new Thread(this);
 		swingTimer = new Timer(delay, new ActionListener() {
 
 			@Override

@@ -1,9 +1,9 @@
 package slider;
+import a2s.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Label;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
@@ -33,8 +33,7 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	boolean appletRunning = true;
 	// data source variables
 	protected String[] varStrings = new String[] { "t", "value", };
-	protected double[][] ds = new double[1][2]; // the datasource state
-												// variables x,y;
+	protected double[][] ds = new double[1][2]; // the datasource state variables x,y;
 
 	/**
 	 * Constructor SliderApplet
@@ -81,15 +80,18 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		number.addPropertyChangeListener(slider);
-		slider.addPropertyChangeListener(number);
-		slider.addPropertyChangeListener(this);
-		number.addPropertyChangeListener(this);
 		slider.setDMax(max);
 		slider.setDMin(min);
 		slider.setDValue(value);
+		number.setValue(value);
 		number.setNoColor(true);
 		number.setVisible(sc);
+		
+		slider.addPropertyChangeListener(this);
+		number.addPropertyChangeListener(this);
+		slider.addPropertyChangeListener(number);
+		number.addPropertyChangeListener(slider);
+		
 		if (text.equals("")) {
 			label.setVisible(false);
 		} else {
@@ -105,7 +107,9 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	// Component initialization
 	private void jbInit() throws Exception {
 		this.setBackground(Color.lightGray);
-		this.setSize(new Dimension(399, 41));
+		 /** @j2sNative */{	 
+			 this.setSize(new Dimension(399, 41));
+		 }
 		label.setText(text);
 		this.setLayout(borderLayout1);
 		this.add(slider, BorderLayout.CENTER);
@@ -166,6 +170,8 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	 * @param v
 	 */
 	public void setValue(double v) {
+		v=Math.min(max, v);
+		v=Math.max(min, v);
 		slider.setDValue(v);
 		number.setValue(v);
 		value = slider.getDValue();
@@ -300,18 +306,18 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	public void propertyChange(PropertyChangeEvent evt) {
 		if (evt.getSource() instanceof SSlider) {
 			value = slider.getDValue();
-		} else {
+		} else if (evt.getSource() instanceof SNumber) {
 			value = number.getValue();
 		}
 		this.updateDataConnections();
 		synchronized (lock) {
 			newdata = true;
-			lock.notify();
+			lock.notify();  
 		}
 	}
 
 	/**
-	 * Change the javascript function that should be called whenerver data
+	 * Change the JavaScript function that should be called whenever data
 	 * changes in a data source.
 	 *
 	 * @param str
@@ -320,10 +326,10 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	public void setJSFunction(String str) {
 		Create temp = createThread;
 		Dispatcher temp2 = dispatcherThread;
-		if (temp != null) { // stop the old threads if they exisit
+		if (temp != null) { // stop the old threads if they exist
 			temp.shouldRun = false;
 		}
-		if (temp2 != null) { // stop the old threads if they exisit
+		if (temp2 != null) { // stop the old threads if they exist
 			temp2.shouldRun = false;
 		}
 		if (appletRunning)
@@ -396,12 +402,12 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 						} catch (InterruptedException ie) {
 						}
 					newdata = false;
-				}
+				} 
 				if (debugLevel > 0)
 					System.out.println("evaluating");
-				if (appletRunning && shouldRun)
+				if (appletRunning && shouldRun) {
 					jso.eval(jsFunction);
-				try {
+				}try {
 					Thread.sleep(20);
 				} catch (InterruptedException ex) {
 				}

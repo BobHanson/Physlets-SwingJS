@@ -747,7 +747,7 @@ public class SApplet extends Applet {
   }
 
   /**
-   *   Repaint whenevers the system parameters are changed.
+   *   Repaint whenever the system parameters are changed.
    *
    *
    * @param ar

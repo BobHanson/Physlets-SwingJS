@@ -213,7 +213,7 @@ public class Sync extends SApplet implements SStepable {
     } catch(Exception e) {
       e.printStackTrace();
     }
-    /** j2sNative */{
+    /** @j2sNative */{
     	  resize(320, 360);
     }
     //sleepTime = (int)Math.round(1000/m_FPS);

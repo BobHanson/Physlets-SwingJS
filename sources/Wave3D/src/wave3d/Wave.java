@@ -1,7 +1,9 @@
 
 package wave3d;
 
-import java.awt.*;
+import java.awt.Color;
+
+
 
 public class Wave extends Figure {
         double h;
@@ -28,7 +30,11 @@ public class Wave extends Figure {
 
   public void setWavelength(double len){
     wavelength=len;
+    double oldh=h;
     h=length*2*Math.PI/wavelength/(numLines-1);
+    if(oldh!=h) {
+    	  recompute(threeDPanel);
+    }
   }
 
 public void setSpeed(double s){

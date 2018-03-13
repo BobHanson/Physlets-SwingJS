@@ -1,5 +1,6 @@
 package reflection;
 
+import a2s.*;
 import edu.davidson.display.Format;
 import edu.davidson.display.SScalable;
 import edu.davidson.display.Thing;
@@ -10,16 +11,12 @@ import edu.davidson.tools.SDataSource;
 import edu.davidson.tools.SStepable;
 import edu.davidson.tools.SUtil;
 import java.awt.Color;
-//import java.awt.Component;
 import java.awt.Cursor;
-//import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.Panel;
 import java.awt.Rectangle;
-import java.awt.Window;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 //import java.awt.event.InputEvent;
@@ -99,11 +96,11 @@ public class WavePanel extends Panel
 
   public WavePanel(ReflectionApplet paramReflectionApplet)
   {
-    this();
+	createWavePanel();
     this.owner = paramReflectionApplet;
   }
 
-  public WavePanel()
+  public void createWavePanel()
   {
     try
     {
@@ -209,7 +206,6 @@ public class WavePanel extends Panel
     double d7 = d1 * paramDouble1 + d4 * paramDouble2;
     double d8 = d2 * paramDouble2 * paramDouble1 + d3;
     double d9 = (d5 * d5 + d6 * d6) / (d7 * d7 + d8 * d8);
-    System.out.println("r =" + d9);
     return d9;
   }
 
@@ -224,7 +220,6 @@ public class WavePanel extends Panel
     double d7 = d1 * paramDouble1 + d4 * paramDouble2;
     double d8 = d2 * paramDouble2 * paramDouble1 + d3;
     double d9 = (d5 * d5 + d6 * d6) / (d7 * d7 + d8 * d8);
-    System.out.println("t =" + d9);
     return d9;
   }
 
@@ -470,7 +465,7 @@ public class WavePanel extends Panel
       if (this.mode == EM_MODE)
         this.timePhase = (paramDouble * this.waveVel);
       else
-        this.timePhase = (paramDouble * this.qmEnergy / 5.0D);
+        this.timePhase = (paramDouble * this.qmEnergy / 5.0);
       i = localReflectionThing1.calcField(localReflectionThing2, i);
       localReflectionThing2 = localReflectionThing1;
       localReflectionThing1 = getLeftNeighbor(localReflectionThing1);
@@ -614,7 +609,7 @@ public class WavePanel extends Panel
   {
     Graphics localGraphics = null;
     try
-    {
+    { if( /** @j2sNative true ||*/ false){  osi=null;}
       if ((this.osi == null) || (this.currentw != getSize().width) || (this.currenth != getSize().height))
         setArrayBounds();
       if (this.osi == null)
@@ -743,8 +738,7 @@ public class WavePanel extends Panel
     }
   }
 
-  void paintWave_function(Graphics paramGraphics)
-  {
+  void paintWave_function(Graphics paramGraphics){
     if ((!this.showWave) || (this.leftWave.length < 2))
       return;
     for (int i = 0; i < this.leftWave.length; i++)
@@ -756,7 +750,7 @@ public class WavePanel extends Panel
         this.ypoints[i] = ((int)((this.leftWave[i] + this.rightWave[i]) * this.ppu) + this.currenth / 2);
     }
     this.ypoints[(this.leftWave.length - 1)] = this.ypoints[(this.leftWave.length - 2)];
-    paramGraphics.setColor(this.waveColor);
+	paramGraphics.setColor(this.waveColor);
     paramGraphics.drawPolyline(this.xpoints, this.ypoints, this.leftWave.length);
   }
 
@@ -866,16 +860,21 @@ public class WavePanel extends Panel
       this.fixedPts = false;
     if (this.fixedPts)
       return;
-    this.currentw = getBounds().width;
-    this.currenth = getBounds().height;
-    if ((this.currentw <= 4) || (this.currenth <= 4))
+    //this.currentw = getBounds().width;
+    //this.currenth = getBounds().height;
+    this.currentw = this.getWidth();
+    this.currenth = this.getHeight();
+    if ((this.currentw <= 4) || (this.currenth <= 4 ))
       return;
-    this.leftWave = new double[this.currentw];
-    this.rightWave = new double[this.currentw];
-    this.xpoints = new int[this.currentw];
-    this.ypoints = new int[this.currentw];
-    this.osi = createImage(this.currentw, this.currenth);
-    arrangeMedia();
+    if(this.leftWave==null || this.leftWave.length!= this.currentw){
+	    this.leftWave = new double[this.currentw];
+	    this.rightWave = new double[this.currentw];
+	    this.xpoints = new int[this.currentw];
+	    this.ypoints = new int[this.currentw];
+    }
+    if(this.osi==null || this.osi.getWidth(null)!=this.currentw || this.osi.getHeight(null)!=this.currenth) {
+      this.osi = createImage(this.currentw, this.currenth);
+    }
   }
 
   public void setAutoRefresh(boolean paramBoolean)
@@ -1116,7 +1115,7 @@ public class WavePanel extends Panel
     int i = this.mousey - paramMouseEvent.getY();
     if ((this.insideThing != null) && (this.insideThing.dragPotential))
     {
-      this.insideThing.setPotential(this.insideThing.potential + i / 100.0D);
+      this.insideThing.setPotential(this.insideThing.potential + i / 100.0);
       recalc();
     }
     else if ((this.dragThing == null) && (this.dragEnergy))
@@ -1178,7 +1177,7 @@ public class WavePanel extends Panel
       if (this.osi == null)
         return;
       localObject = new WaveFrame(this.osi);
-      ((Window)localObject).show();
+      ((a2s.Frame)localObject).show();
     }
     else
     {
@@ -1227,13 +1226,13 @@ public class WavePanel extends Panel
 
   public double xFromPix(int paramInt)
   {
-    return paramInt / (1.0D * this.ppu);
+    return paramInt / (1.0 * this.ppu);
   }
 
   public double yFromPix(int paramInt)
   {
     int i = this.currenth / 2;
-    return (i - paramInt) / (1.0D * this.ppu);
+    return (i - paramInt) / (1.0 * this.ppu);
   }
 
   public class WaveDataSource

@@ -15,8 +15,12 @@
 
 package reflection;
 
-import java.awt.*;
-import edu.davidson.tools.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+
+import edu.davidson.tools.SUtil;
 
 
 
@@ -59,15 +63,15 @@ public class EMThing extends ReflectionThing{
 
       pwidth = right-left;
       //pwidth=owner.getWidth();
-      leftW = new double[pwidth];
-      //leftW2 = new double[pwidth];
-      rightW = new double[pwidth];
-      xpoints = new int [pwidth];
-      ypoints = new int [pwidth];
+      if(leftW==null || leftW.length!= pwidth){
+	      leftW = new double[pwidth];
+	      rightW = new double[pwidth];
+	      xpoints = new int [pwidth];
+	      ypoints = new int [pwidth];
+      }
       originY = (int)(0.5*owner.currenth);
       for (int i = 0; i< pwidth; i++){
           leftW[i]=0;
-          //leftW2[i]=0;
           rightW[i]=0;
           xpoints[i]=0;
           ypoints[i]=0;
@@ -114,6 +118,7 @@ public class EMThing extends ReflectionThing{
      double amp=owner.ampScale;
      magRight=amp;
      magLeft=0;
+     
      if(rightThing==null){
          magRight=amp*Math.sqrt(rightE[0]*rightE[0]+rightE[1]*rightE[1]);
          for (int i = 0; i<pwidth; i++){
@@ -131,7 +136,6 @@ public class EMThing extends ReflectionThing{
      double rightPhase=Math.atan2(rightE[1],rightE[0]);
      magLeft=amp*Math.sqrt(leftE[0]*leftE[0]+leftE[1]*leftE[1]);
      double leftPhase=Math.atan2(leftE[1],leftE[0]);
-
      for (int i = 0; i<pwidth; i++){
             x = (i)/(double)(ppu);
             rightW[i]= magRight*Math.cos(wavenumber*x-owner.timePhase + rightPhase );
@@ -309,7 +313,7 @@ public class EMThing extends ReflectionThing{
 
    /**
    *
-   * Method paints value of indexN or potential in bottem center of screen
+   * Method paints value of indexN or potential in bottom center of screen
    *
    * @param g Graphics
    */

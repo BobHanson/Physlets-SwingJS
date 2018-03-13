@@ -1,6 +1,6 @@
 package wave3d;
 
-import java.awt.*;
+import java.awt.Color;
 
 
 public class LinearWave extends Wave {
@@ -30,6 +30,23 @@ public class LinearWave extends Wave {
            pts[i][2]=j*panel.lineDensity+zPropagate;
 
         }
+  }
+  
+  void recompute(ThreeDPanel panel) {
+      for (int i=1,j=0;i<2*numLines;i+=2,j++) {
+          pts[i][0]=Math.cos(polarization)*amplitude*Math.sin(j*h+phase);  //x component
+          pts[i][1]=Math.sin(polarization)*amplitude*Math.sin(j*h+phase);  //y component
+          pts[i][2]=j*panel.lineDensity+zPropagate;
+       }
+
+       for (int i=0,j=0;i<2*numLines; i+=2,j++) {
+
+          pts[i][0]=0;
+          pts[i][1]=0;
+          pts[i][2]=j*panel.lineDensity+zPropagate;
+
+       } 
+       panel.repaint();
   }
 
   public void setFirstStick(int incrementer,int offset){

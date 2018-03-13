@@ -1,6 +1,9 @@
 package wave3d;
 
-import java.awt.*;
+//import java.awt.*;
+
+import java.awt.Color;
+
 
 public class Grid extends Figure {
   double length;

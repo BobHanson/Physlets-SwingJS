@@ -14,7 +14,10 @@
 
 package reflection;
 
-import java.awt.*;
+import a2s.*;
+
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.*;
 
 

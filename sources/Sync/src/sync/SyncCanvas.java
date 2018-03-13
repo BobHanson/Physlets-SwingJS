@@ -6,8 +6,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 //import java.awt.*;
 import java.util.*;
-
-import a2s.Canvas;
+import a2s.*;
 import edu.davidson.tools.SApplet;
 
 //Drawing methods

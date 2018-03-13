@@ -1,7 +1,7 @@
 
 package wave3d;
 
-import java.awt.*;
+import java.awt.Color;
 import edu.davidson.numerics.Parser;
 
 public class Wavefunction extends Wave {

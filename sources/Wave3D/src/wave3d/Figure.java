@@ -1,5 +1,8 @@
 package wave3d;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+
 public class Figure {
 
        public int numLines=0;
@@ -34,6 +37,10 @@ public class Figure {
   public int getNumLines() {return numLines; }
   public void setZ(double z){}
   public void setPolarization(double angle){polarization=angle;}
+  
+  void recompute(ThreeDPanel panel) {
+	  
+  }
 
   public void drawFigure(Graphics g,double[][] trans) {
           g.setColor(color);

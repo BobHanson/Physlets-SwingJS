@@ -2,7 +2,7 @@
 
 package wave3d;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class Axis3D extends Figure {
 

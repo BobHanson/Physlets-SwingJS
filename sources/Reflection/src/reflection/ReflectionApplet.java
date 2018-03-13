@@ -1,5 +1,6 @@
 package reflection;
 
+import a2s.*;
 import edu.davidson.display.ArrowThing;
 import edu.davidson.display.BoxThing;
 import edu.davidson.display.CaptionThing;
@@ -14,13 +15,10 @@ import edu.davidson.graphics.SPanel;
 import edu.davidson.tools.SApplet;
 import edu.davidson.tools.SUtil;
 import java.awt.BorderLayout;
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.Label;
-import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -238,7 +236,7 @@ public class ReflectionApplet extends SApplet
       setAutoRefresh(false);
       double d2 = 40.0D / this.ppu;
       if (i == 1)
-        d2 = 60.0D;
+        d2 = 60.0;
       int j = addMedium(d1, d2);
       setDragable(j, true);
       setRGB(j, (int)(255.0D * Math.random()), 255, (int)(255.0D * Math.random()));
@@ -253,6 +251,7 @@ public class ReflectionApplet extends SApplet
 
   public void forward()
   {
+    if(this.clock.isRunning()) return;  //don't start a second JS thread.
     this.clock.setDt(this.clock.getDt());
     recalculate();
     this.clock.startClock();
@@ -382,6 +381,7 @@ public class ReflectionApplet extends SApplet
     {
       localException9.printStackTrace();
     }
+    
   }
 
   void initBtn_actionPerformed(ActionEvent paramActionEvent)

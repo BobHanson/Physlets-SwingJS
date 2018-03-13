@@ -2,7 +2,8 @@
 
 package wave3d;
 
-import java.awt.*;
+//import java.awt.*;
+import java.awt.Color;
 
 public class CircularWaveLeft extends Wave{
 
@@ -31,6 +32,23 @@ public class CircularWaveLeft extends Wave{
              pts[i][2]=j*panel.lineDensity+zPropagate;
 
          }
+  }
+  
+  void recompute(ThreeDPanel panel) {
+      for (int i=1,j=0;i<2*numLines;i+=2,j++) {
+
+          pts[i][0]=Math.cos(-j*h+phase)*amplitude;
+          pts[i][1]=Math.sin(-j*h+phase)*amplitude;
+          pts[i][2]=j*panel.lineDensity+zPropagate;
+      }
+
+      for (int i=0,j=0;i<2*numLines; i+=2,j++) {
+
+          pts[i][0]=0;
+          pts[i][1]=0;
+          pts[i][2]=j*panel.lineDensity+zPropagate;
+
+      }
   }
 
     public void setFirstStick(int incrementer,int offset){

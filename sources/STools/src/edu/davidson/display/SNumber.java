@@ -68,7 +68,7 @@ public class SNumber extends TextField implements PropertyChangeListener {
   public String getFormat(){return formStr;}
 
 	public void setValue(double d) {
-		validData = true;
+	  validData = true;
       if (d==value){return;}
 		double oldVal = value;
 		value = d;
@@ -127,17 +127,16 @@ public class SNumber extends TextField implements PropertyChangeListener {
 	}
 
 	/**
-	 * called from Minkowski text input action event
+	 * called from4 text input action event
 	 */
 	public void updateValueFromText() {
 		double oldValue = value;
 		String str = this.getText().trim();
-     // System.out.println("TextValueChanged getText:"+this.getText()+ " oldValue:"+value );
+        //System.out.println("TextValueChanged getText:"+this.getText()+ " oldValue:"+value );
 		try {
 			validData = true; // assume the string will give us valid data.
 			if (str != null && str != "") {
 				value = Double.valueOf(str).doubleValue();
-				// System.out.println("new value:"+value);
               if(!noColor) this.setBackground(Color.yellow);// number seems to be OK
               if (value==oldValue) return;
 				boundSupport.firePropertyChange("DValue", new Double(oldValue), new Double(value));

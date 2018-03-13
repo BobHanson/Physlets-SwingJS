@@ -309,6 +309,7 @@ public int getAppletCount() {
    *
    */
   public void forward() {
+	if(clock.isRunning()) return; // do not start a clock if it is already running
     threeDView.paint();
     oneShotMsg = "";
     clock.startClock();
@@ -414,6 +415,7 @@ public int getAppletCount() {
       return false;
     }
     fig.setWavelength(wavelength * pixPerUnit);
+    if(!clock.isRunning()) fig.recompute(threeDView);
     if(autoRefresh) {
       threeDView.repaint();
     }

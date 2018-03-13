@@ -72,7 +72,6 @@ public class EMThing extends ReflectionThing{
       originY = (int)(0.5*owner.currenth);
       for (int i = 0; i< pwidth; i++){
           leftW[i]=0;
-          //leftW2[i]=0;
           rightW[i]=0;
           xpoints[i]=0;
           ypoints[i]=0;

@@ -80,15 +80,18 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		number.addPropertyChangeListener(slider);
-		slider.addPropertyChangeListener(number);
-		slider.addPropertyChangeListener(this);
-		number.addPropertyChangeListener(this);
 		slider.setDMax(max);
 		slider.setDMin(min);
 		slider.setDValue(value);
+		number.setValue(value);
 		number.setNoColor(true);
 		number.setVisible(sc);
+		
+		slider.addPropertyChangeListener(this);
+		number.addPropertyChangeListener(this);
+		slider.addPropertyChangeListener(number);
+		number.addPropertyChangeListener(slider);
+		
 		if (text.equals("")) {
 			label.setVisible(false);
 		} else {
@@ -167,6 +170,8 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	 * @param v
 	 */
 	public void setValue(double v) {
+		v=Math.min(max, v);
+		v=Math.max(min, v);
 		slider.setDValue(v);
 		number.setValue(v);
 		value = slider.getDValue();
@@ -301,7 +306,7 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	public void propertyChange(PropertyChangeEvent evt) {
 		if (evt.getSource() instanceof SSlider) {
 			value = slider.getDValue();
-		} else {
+		} else if (evt.getSource() instanceof SNumber) {
 			value = number.getValue();
 		}
 		this.updateDataConnections();

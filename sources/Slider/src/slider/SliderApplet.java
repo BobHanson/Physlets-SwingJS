@@ -153,6 +153,13 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 			// createThread = new Create();
 		}
 	}
+	
+	
+	public void setEnabled(boolean b){
+		slider.setEnabled(b);
+		number.setEditable(b);
+		number.setEnabled(b);
+	}
 
 	/**
 	 * Gets the slider value.
@@ -277,6 +284,7 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 		}
 		deleteDataConnections(); // we are going to delete all the things so we
 									// might as well kill the conections too.
+		setEnabled(true);
 	}
 
 	/**

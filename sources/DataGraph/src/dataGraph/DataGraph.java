@@ -160,10 +160,11 @@ public class DataGraph extends SApplet {
     edu.davidson.graphics.EtchedBorder etchedBorder3 = new edu.davidson.graphics.EtchedBorder();
     Button addDatumBtn = new Button();
     Button addFuncBtn = new Button();
-    Button clearFuncBtn = new Button();
+    Button clearFuncBtn = new Button();   
     TextField funcField = new TextField();
-    edu.davidson.display.SNumber yField = new edu.davidson.display.SNumber();
-    edu.davidson.display.SNumber xField = new edu.davidson.display.SNumber();
+    
+    SNumber yField = new SNumber();
+    SNumber xField = new SNumber();
     BorderLayout borderLayout2 = new BorderLayout();
     Label label1 = new Label();
     Panel border1 = new Panel();
@@ -187,6 +188,24 @@ public class DataGraph extends SApplet {
      * @y.exclude
      */
     public DataGraph() {
+    	funcField.addKeyListener(new KeyListener(){
+
+			@Override
+			public void keyTyped(KeyEvent e) {
+				System.out.println(e.getKeyCode() + " " + (0 + e.getKeyChar()) + " typed");
+			}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				System.out.println(e.getKeyCode() + " " + (0 + e.getKeyChar()) + " pressed");
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				System.out.println(e.getKeyCode() + " " + (0 + e.getKeyChar()) + " released");
+			}
+    		
+    	});
     }
 
     protected void setResources(){

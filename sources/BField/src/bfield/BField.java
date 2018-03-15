@@ -157,13 +157,6 @@ String       button_reset          = "Clear";
     if(showControls) {
       fieldPanel.setShowBOnDrag(true);
     }
-    // test of JSObject
-    /*
-     *    JSObject win=null;
-     *    try {win=JSObject.getWindow(this);}
-     *    catch (Exception e){win=null;}
-     *    if (win!=null) win.eval("doneInit()");
-     */
   }
 
   private void jbInit() throws Exception {

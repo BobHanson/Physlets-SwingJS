@@ -1,0 +1,195 @@
+<project name="JSmol" default="toJs" basedir=".">
+ 
+   <property name="site.path" value="site/swingjs" />
+
+   <target name="toJs" id="toJs">
+  			
+  	<!-- create a NON svn local directory only containing JS files
+  	
+  	<echo>Deleting the site directory.</echo>
+   	 	<delete quiet="true" dir="site" />
+    -->
+   	
+   	<!-- make core files -->
+ 
+   	<echo>creating and compressing core files - warnings are OK; "does not exist" is trouble</echo>
+
+   	<!-- note: any changes in these next sections must be reflected also
+   	             in package.js -->
+   	
+    <property name="javaCoreAppletFiles" value="
+a2s/A2SContainer.js
+a2s/A2SEvent.js
+a2s/A2SListener.js
+a2s/Applet.js
+a2s/Button.js
+a2s/Canvas.js
+a2s/Label.js
+a2s/Panel.js
+a2s/TextField.js
+animator4/Animator.js
+animator4/AnimatorCanvas.js
+animator4/Animator_mouseAdapter.js
+animator4/Animator_mouseMotionAdapter.js
+animator4/ArrowStatic.js
+animator4/CaptionThing.js
+animator4/Circle.js
+animator4/ImageThing.js
+animator4/TextThing.js
+animator4/Thing.js
+dataGraph/DataGraph.js
+edu/davidson/display/Format.js
+edu/davidson/display/SGraph.js
+edu/davidson/display/SGraph_mouseAdapter.js
+edu/davidson/display/SGraph_mouseMotionAdapter.js
+edu/davidson/display/SNumber.js
+edu/davidson/display/SNumber_this_textAdapter.js
+edu/davidson/display/SScalable.js
+edu/davidson/graph/Axis.js
+edu/davidson/graph/DataSet.js
+edu/davidson/graph/Graph2D.js
+edu/davidson/graph/MarkerStyle.js
+edu/davidson/graph/MarkerVertex.js
+edu/davidson/graph/Markers.js
+edu/davidson/graph/RTextLine.js
+edu/davidson/graph/RotateTextFilter.js
+edu/davidson/graph/SpecialFunction.js
+edu/davidson/graph/TextLine.js
+edu/davidson/graph/TextState.js
+edu/davidson/graphics/Assert.js
+edu/davidson/graphics/Border.js
+edu/davidson/graphics/DrawnRectangle.js
+edu/davidson/graphics/EtchedBorder.js
+edu/davidson/graphics/EtchedRectangle.js
+edu/davidson/graphics/Etching.js
+edu/davidson/graphics/HintPanel.js
+edu/davidson/numerics/Parser.js
+edu/davidson/numerics/SDifferentiable.js
+edu/davidson/numerics/SODE.js
+edu/davidson/numerics/SRK45.js
+edu/davidson/tools/BusyFlag.js
+edu/davidson/tools/Crypt.js
+edu/davidson/tools/SApplet.js
+edu/davidson/tools/SClock.js
+edu/davidson/tools/SDataConnection.js
+edu/davidson/tools/SDataListener.js
+edu/davidson/tools/SDataSource.js
+edu/davidson/tools/SStepable.js
+edu/davidson/tools/SUtil.js
+java/awt/Event.js
+java/awt/GridLayout.js
+java/awt/Image.js
+java/awt/ImageMediaEntry.js
+java/awt/MediaEntry.js
+java/awt/MediaTracker.js
+java/awt/Polygon.js
+java/awt/SystemColor.js
+java/awt/event/ActionEvent.js
+java/awt/event/ComponentAdapter.js
+java/awt/event/MouseAdapter.js
+java/awt/event/MouseMotionAdapter.js
+java/awt/image/BufferedImage.js
+java/awt/image/ColorModel.js
+java/awt/image/DataBuffer.js
+java/awt/image/DataBufferInt.js
+java/awt/image/DirectColorModel.js
+java/awt/image/FilteredImageSource.js
+java/awt/image/ImageConsumer.js
+java/awt/image/ImageFilter.js
+java/awt/image/ImageProducer.js
+java/awt/image/PackedColorModel.js
+java/awt/image/Raster.js
+java/awt/image/RenderedImage.js
+java/awt/image/SampleModel.js
+java/awt/image/SinglePixelPackedSampleModel.js
+java/awt/image/WritableRaster.js
+java/io/BufferedInputStream.js
+java/io/ByteArrayInputStream.js
+java/io/FilterInputStream.js
+java/io/InputStream.js
+java/net/URLConnection.js
+java/net/URLStreamHandler.js
+java/util/Properties.js
+java/util/Stack.js
+java/util/StringTokenizer.js
+java/util/concurrent/atomic/AtomicBoolean.js
+javajs/api/GenericLineReader.js
+javajs/util/AjaxURLConnection.js
+javajs/util/AjaxURLStreamHandler.js
+javajs/util/Base64.js
+javajs/util/Rdr.js
+javajs/util/SB.js
+javax/imageio/ImageIO.js
+javax/swing/AbstractAction.js
+javax/swing/Action.js
+javax/swing/DropMode.js
+javax/swing/InputMap.js
+javax/swing/JTextField.js
+javax/swing/Scrollable.js
+javax/swing/Timer.js
+javax/swing/event/CaretEvent.js
+javax/swing/event/DocumentEvent.js
+javax/swing/event/DocumentListener.js
+javax/swing/plaf/InputMapUIResource.js
+javax/swing/text/Caret.js
+javax/swing/text/DefaultEditorKit.js
+javax/swing/text/Document.js
+javax/swing/text/EditorKit.js
+javax/swing/text/Element.js
+javax/swing/text/JTextComponent.js
+javax/swing/text/TextAction.js
+sun/awt/image/DataStealer.js
+sun/awt/image/IntegerComponentRaster.js
+sun/awt/image/IntegerInterleavedRaster.js
+sun/awt/image/OffScreenImageSource.js
+sun/awt/image/SunWritableRaster.js
+sun/java2d/StateTrackable.js
+sun/java2d/StateTrackableDelegate.js
+swingjs/JSAbstractDocument.js
+swingjs/JSDocumentEvent.js
+swingjs/JSImage.js
+swingjs/JSImagekit.js
+swingjs/JSPlainDocument.js
+swingjs/api/JSMinimalAbstractDocument.js
+swingjs/plaf/JSAppletUI.js
+swingjs/plaf/JSCaret.js
+swingjs/plaf/JSTextFieldUI.js
+swingjs/plaf/JSTextUI.js
+swingjs/plaf/TextListener.js
+    	" />
+
+   	
+    <antcall target="call-core">
+        <param name="call-core.name" value="_physlets_39.1" />
+        <param name="call-core.list" value="
+         	${javaCoreAppletFiles}
+        	" />
+    </antcall>
+  </target>
+
+
+	  <target name="call-core" id="call-core">
+	   	<echo>......Creating core${call-core.name}.js</echo>
+	   	<concat destfile="${site.path}/js/core/tmp.js">
+	   		<filelist dir="${site.path}/j2s" files="${call-core.list}" />
+	   	</concat> 
+
+	  	<replace dir="${site.path}/js/core" includes="tmp.js" token="Clazz." value="Clazz_"/>
+	  	<replace dir="${site.path}/js/core" includes="tmp.js" token="Clazz__" value="Clazz._"/>
+	   	<echo>......Generating ${site.path}/j2s/core/core${call-core.name}.js</echo> 	
+	   	<concat destfile="${site.path}/j2s/core/core${call-core.name}.js"><filelist dir="${site.path}/js" files="
+	   		core/coretop2.js
+	   		core/tmp.js
+	   		core/corebottom2.js
+	   		" />
+	   	</concat>
+	   	<echo>......Generating ${site.path}/j2s/core/core${call-core.name}.z.js</echo> 	
+	   	<java jar="jars/closure_compiler.jar" fork="true" dir="${site.path}/j2s/core" failonerror="false">
+	   		<arg line="--js core${call-core.name}.js --js_output_file core${call-core.name}.z.js" />
+	    </java>
+	 	<delete quiet="true" file="${site.path}/js/core/tmp.js" />
+	  </target>
+
+		
+	
+</project>

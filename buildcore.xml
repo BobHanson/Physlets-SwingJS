@@ -160,8 +160,9 @@ swingjs/plaf/TextListener.js
 
    	
     <antcall target="call-core">
-        <param name="call-core.name" value="_physlets_39.1" />
+        <param name="call-core.name" value="_physlets_39_1" />
         <param name="call-core.list" value="
+			core/coreswingjs.js
          	${javaCoreAppletFiles}
         	" />
     </antcall>

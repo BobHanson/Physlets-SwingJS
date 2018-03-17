@@ -188,24 +188,24 @@ public class DataGraph extends SApplet {
      * @y.exclude
      */
     public DataGraph() {
-    	funcField.addKeyListener(new KeyListener(){
-
-			@Override
-			public void keyTyped(KeyEvent e) {
-				System.out.println(e.getKeyCode() + " " + (0 + e.getKeyChar()) + " typed");
-			}
-
-			@Override
-			public void keyPressed(KeyEvent e) {
-				System.out.println(e.getKeyCode() + " " + (0 + e.getKeyChar()) + " pressed");
-			}
-
-			@Override
-			public void keyReleased(KeyEvent e) {
-				System.out.println(e.getKeyCode() + " " + (0 + e.getKeyChar()) + " released");
-			}
-    		
-    	});
+//    	funcField.addKeyListener(new KeyListener(){
+//
+//			@Override
+//			public void keyTyped(KeyEvent e) {
+//				System.out.println(e.getKeyCode() + " " + (0 + e.getKeyChar()) + " typed");
+//			}
+//
+//			@Override
+//			public void keyPressed(KeyEvent e) {
+//				System.out.println(e.getKeyCode() + " " + (0 + e.getKeyChar()) + " pressed");
+//			}
+//
+//			@Override
+//			public void keyReleased(KeyEvent e) {
+//				System.out.println(e.getKeyCode() + " " + (0 + e.getKeyChar()) + " released");
+//			}
+//    		
+//    	});
     }
 
     protected void setResources(){

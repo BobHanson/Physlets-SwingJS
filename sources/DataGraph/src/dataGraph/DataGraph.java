@@ -1129,7 +1129,7 @@ public class DataGraph extends SApplet {
    */
   public double  getX(int id){
       Thing t=graph.getThing(id);
-      if(t==null){
+      if (t==null) {
          System.out.println("Object not found in getX method.");
          return 0;
       }

@@ -32,7 +32,7 @@ public class DataGenerator implements Runnable {
     calcThread = new Thread(this);
     //calcThread.setPriority(Thread.currentThread().getPriority()-1);
     //calcThread.setDaemon(true);
-    calcThread.start();  // thread will enter a wait state after it starts.
+    if(!surfaceCanvas.isJS) calcThread.start();  // thread will enter a wait state after it starts.
   }
 
   boolean isExternalData(){
@@ -65,15 +65,7 @@ public class DataGenerator implements Runnable {
                       ////  wait for the drawing
               }
           }
-          /**
-        	 * @j2sNative
-        	 * 
-        	 *  
-        	 *  
-        	 */ 
-        	 {
-             try{Thread.sleep(20);}catch (Exception e){}
-        	 }
+        	  try{Thread.sleep(20);}catch (Exception e){}
         }
         //calcThread.stop();
         calcThread=null;
@@ -81,7 +73,7 @@ public class DataGenerator implements Runnable {
   /**
    * Parses defined functions and calculates surface vertices
    */
-  private void doCalc() {
+   void doCalc() {
     float   stepx, stepy, x, y, v;
     float   xi,xx,yi,yx;
     float   min, max;

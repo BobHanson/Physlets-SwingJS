@@ -26,6 +26,10 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.Timer;
 
 import a2s.*;
 
@@ -78,11 +82,11 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
   private  Image Buffer;                    // the backing buffer
   private  Graphics BufferGC;               // the graphics context of backing buffer
   private  boolean image_drawn;             // image drawn flag
-  //private  Thread thread;                   // current thread
-  private  Thread paintThread;                   // current thread
+  private  Thread paintThread;              // current thread when in Java
+  private  Timer timer;					   // Swing timer when in JavaScript
   private  SurfaceVertex[][] vertex;        // vertices array
   private  SurfaceVertex[][] vertex_new=null;        // vertices array
-  private boolean shouldRun=true;           // keeps the thread running.
+  boolean shouldRun=true;           // keeps the thread running.
   private boolean running=false;            // Controls wait state. Thread will enter a wait state after it starts since this is false.
   //private boolean abort=false;            // Controls wait state. Thread will enter a wait state after it starts since this is false.
   private Object runLock=new Object();      // the dummy object to lock for the running thread.
@@ -97,9 +101,10 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
   private  float color;                     // color of surface
   private  SurfaceVertex cop;               // center of projection
 
+  boolean isJS;                    // boolean to signal JavaScript mode
   boolean contour;                 // contour flag
   boolean density;                 // density flag
-  boolean noDrawing=false;         // draw a gray rectatangle
+  boolean noDrawing=false;         // draw a gray rectangle
   Projector projector;             // the projector
 
   // setting variables
@@ -116,6 +121,12 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 
   float zminV, zmaxV, zfactorV;
   int   master_project_indexV = 0;     // over 4 billion times to reset
+  
+  private final static int STATE_WAITING = 0;
+  private final static int STATE_PAINTING = 1;
+  private final static int STATE_GENERATING = 2;
+  
+  protected int state = STATE_PAINTING;
 
   /**
    * The constructor of <code>SurfaceCanvas</code>
@@ -127,6 +138,8 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 
   public SurfaceCanvas() {
     super();
+    isJS = /** @j2sNative true || */
+			false;
     Buffer = null;
     BufferGC = null;
     image_drawn = interrupted = false;
@@ -144,14 +157,16 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
     //SurfaceVertex.setProjector(projector);
     vertex = new SurfaceVertex[2][];
     paintThread = new Thread(this);
+    
     //paintThread.setDaemon(true);
     paintThread.start();     // thread will start but enter a wait state.
   }
+  
 
   /**
    * Destroys the thread and clean up resources.
    *
-   * Call when the appelt is unloaded from memeory and the object is no longer needed.
+   * Call when the applet is unloaded from memory and the object is no longer needed.
    *
    */
   public void destroyThread() {
@@ -562,35 +577,65 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
     else BufferGC.setFont(defaultFont);
 
   }
+  
+	public void runTimer() {
+		switch (state) {
+			case STATE_WAITING:
+				break;
+			case STATE_PAINTING:
+				timer = new Timer(50, new ActionListener() {
+	
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						if(shouldRun)running=doCalc();
+					}
+	
+				});
+				timer.setRepeats(false);
+				timer.start();
+				break;
+			case STATE_GENERATING:
+				timer = new Timer(50, new ActionListener() {
+	
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						if(shouldRun)dataGenerator.doCalc();
+					}
+	
+				});
+				state = STATE_PAINTING;   // paint after new data is generated
+				timer.setRepeats(false);
+				timer.start();
+				break;
+		}	
+}
 
-  /**
-   * The implementation of <code>Runnable</code> interface.
-   * Performs surface plotting as a background process at a separate thread.
-   */
-  public void run(){
-        while (shouldRun){
-          synchronized(runLock){
-              while(!running) try{ // wait if not running
-                 // System.out.println("wait");
-                  runLock.wait();    // let others get the lock.
-              }catch(Exception ie){}
-              //System.out.println("run");
-              if(shouldRun)running=doCalc();  // force a wait state  at the end of the calculation unless rotating
-          }
-        	/**
-        	 * @j2sNative
-        	 * 
-        	 *  
-        	 *  
-        	 */ 
-        	 {
-            try{Thread.sleep(20);}catch (Exception e){}
-        	 }
-
-        }
-        //paintThread.stop(); // this fixes a bug in some browsers to force this thread to stop.
-        paintThread=null;
-  }
+	/**
+	 * The implementation of <code>Runnable</code> interface. Performs surface
+	 * plotting as a background process at a separate thread.
+	 */
+	public void run() {
+		while (shouldRun) {
+			if (isJS) {
+				runTimer();
+			} else {
+				synchronized (runLock) {
+					while (!running)
+						try { // wait if not running
+							runLock.wait(); // let others get the lock.
+						} catch (Exception ie) {}
+					if (shouldRun)
+						running = doCalc(); // force a wait state at the end of the calculation unless rotating
+				}
+				try {
+					Thread.sleep(20);
+				} catch (Exception e) {}
+			}
+		}
+		// paintThread.stop(); // this fixes a bug in some browsers to force this thread
+		// to stop.
+		paintThread = null;
+	}
 
   private boolean doCalc(){    // return false if we should stop running
       //SurfaceVertex.invalidate();
@@ -617,14 +662,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
       //repeat = rotate;
       if (rotate) {
         // automatically rotates surface
-        	/**
-        	 * @j2sNative
-        	 *  
-        	 *  
-        	 */ 
-        	 {
-                 try{Thread.sleep(30);}catch (InterruptedException e){}
-        	 }
+    	    if(!isJS) try{Thread.sleep(30);}catch (InterruptedException e){}
         float newrot = projector.getRotationAngle() + 5;
         while (newrot > 360) newrot -= 360;
         while (newrot < 0) newrot += 360;
@@ -2364,7 +2402,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
         //frame.setMessage("regenerating ...");
         setMessage("regenerating ...");
     }
-
+    if(BufferGC==null) return;
     if (!printing) {
       BufferGC.setColor(Color.lightGray);
       BufferGC.fillRect(0,0,getBounds().width,getBounds().height);

@@ -40,6 +40,7 @@ public class SurfacePanel extends Panel implements SDataListener{
       surfaceCanvas.dataGenerator.setDataArray(null);
       surfaceCanvas.controller.setFunction1(funcStr);
       surfaceCanvas.dataGenerator.createData();
+      surfaceCanvas.startPlot();
       return true;
   }
 
@@ -50,6 +51,7 @@ public class SurfacePanel extends Panel implements SDataListener{
       }
       surfaceCanvas.controller.setFunction2(funcStr);
       surfaceCanvas.dataGenerator.createData();
+      surfaceCanvas.startPlot();
       return true;
   }
 
@@ -100,7 +102,6 @@ public class SurfacePanel extends Panel implements SDataListener{
   public void addData(SDataSource s, int id, double x[], double y[] ){
        String[] varStrings;
        double[][] dataArray=null;
-       //System.out.println("Adding Data Series="+id);
        varStrings=s.getVarStrings();
        if(varStrings==null || varStrings[0]==null || varStrings[0].equals("surfacedata")){
          dataArray=s.getVariables();
@@ -112,6 +113,7 @@ public class SurfacePanel extends Panel implements SDataListener{
        surfaceCanvas.dataGenerator.setDataArray(dataArray);
        surfaceCanvas.dataGenerator.createData();
        }
+       surfaceCanvas.startPlot();
        //setAutoRefresh(autoRefresh);
   }
 
@@ -128,18 +130,16 @@ public class SurfacePanel extends Panel implements SDataListener{
        surfaceCanvas.dataGenerator.setDataArray(dataArray);
        //surfaceCanvas.dataGenerator.externalData=dataArray;
        surfaceCanvas.dataGenerator.createData();
+       surfaceCanvas.startPlot();
   }
 
   public void deleteSeries(int id){
         stop();
         surfaceCanvas.dataGenerator.setDataArray(null);
-       //System.out.println("Delete Series="+id);
-
   }
   public void clearSeries(int id){
         stop();
         surfaceCanvas.dataGenerator.setDataArray(null);
-        //System.out.println("Clear Series="+id);
   }
 
   /**
@@ -190,7 +190,7 @@ public class SurfacePanel extends Panel implements SDataListener{
       surfaceCanvas.controller.zmin=(float) val;
   }
   public void setTime(double t){
-          surfaceCanvas.dataGenerator.setTime(t);
+          surfaceCanvas.setTime(t);
   }
   public void setMaxZ(double val){
       surfaceCanvas.controller.zmax=(float) val;
@@ -230,7 +230,7 @@ public class SurfacePanel extends Panel implements SDataListener{
   }
 
   public void setThreeD(){
-      if(!surfaceCanvas.contour && !surfaceCanvas.density && !surfaceCanvas.noDrawing) return;  // threed already set
+      if(!surfaceCanvas.contour && !surfaceCanvas.density && !surfaceCanvas.noDrawing) return;  // thread already set
       //stop();
       surfaceCanvas.setContour(false);
       surfaceCanvas.setDensity(false);
@@ -287,7 +287,7 @@ public class SurfacePanel extends Panel implements SDataListener{
 
  /**
  *  Check to see if the the vertex array is the correct size.
- *  All threads are stopped and memeory is allocated if the size is not correct.
+ *  All threads are stopped and memory is allocated if the size is not correct.
  *  The vertex array will be (pts+1)*(pts+1) in size.
  *
  *  @param pts the size

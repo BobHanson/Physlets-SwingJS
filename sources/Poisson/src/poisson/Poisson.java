@@ -969,7 +969,7 @@ public class Poisson extends SApplet {
   }
 
   /**
-   *    Sets the default values: grid=false, fild vectors=false,contours=true,
+   *    Sets the default values: grid=false, field vectors=false,contours=true,
    *    drag=false, no E and no V on mouse drag.
    */
   public void setDefault() {

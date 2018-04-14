@@ -46,7 +46,9 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 
    int gutter=0;
 
-// added by W. Christisn
+// added by W. Christian
+   boolean isJS = /** @j2sNative true || */ false;
+   //boolean isJS = true;  // for debugging
    public Controller controller=new Controller();
    public DataGenerator dataGenerator=new DataGenerator(this);
    String message=null;
@@ -56,7 +58,6 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
    boolean forceNewImage=true;
 
    public void setMessage(String msg){
-      //System.out.println("msg="+msg);
       if(msg==null || msg.trim().equals("")) message =null;
       else message=msg;
       //if(autoRefresh)repaint();
@@ -82,11 +83,11 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
   private  Image Buffer;                    // the backing buffer
   private  Graphics BufferGC;               // the graphics context of backing buffer
   private  boolean image_drawn;             // image drawn flag
-  private  Thread paintThread;              // current thread when in Java
-  private  Timer timer;					   // Swing timer when in JavaScript
+  //private  Thread thread;                   // current thread
+  private  Thread paintThread;                   // current thread
   private  SurfaceVertex[][] vertex;        // vertices array
   private  SurfaceVertex[][] vertex_new=null;        // vertices array
-  boolean shouldRun=true;           // keeps the thread running.
+  private boolean shouldRun=true;           // keeps the thread running.
   private boolean running=false;            // Controls wait state. Thread will enter a wait state after it starts since this is false.
   //private boolean abort=false;            // Controls wait state. Thread will enter a wait state after it starts since this is false.
   private Object runLock=new Object();      // the dummy object to lock for the running thread.
@@ -101,10 +102,9 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
   private  float color;                     // color of surface
   private  SurfaceVertex cop;               // center of projection
 
-  boolean isJS;                    // boolean to signal JavaScript mode
   boolean contour;                 // contour flag
   boolean density;                 // density flag
-  boolean noDrawing=false;         // draw a gray rectangle
+  boolean noDrawing=false;         // draw a gray rectatangle
   Projector projector;             // the projector
 
   // setting variables
@@ -122,11 +122,12 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
   float zminV, zmaxV, zfactorV;
   int   master_project_indexV = 0;     // over 4 billion times to reset
   
+  private  Timer timer;					   // Swing timer when in JavaScript
   private final static int STATE_WAITING = 0;
-  private final static int STATE_PAINTING = 1;
-  private final static int STATE_GENERATING = 2;
+  private final static int STATE_ROTATING = 1;
+  public final static int STATE_GENERATING = 2;
   
-  protected int state = STATE_PAINTING;
+  public int state = STATE_GENERATING;
 
   /**
    * The constructor of <code>SurfaceCanvas</code>
@@ -138,8 +139,6 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 
   public SurfaceCanvas() {
     super();
-    isJS = /** @j2sNative true || */
-			false;
     Buffer = null;
     BufferGC = null;
     image_drawn = interrupted = false;
@@ -157,11 +156,9 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
     //SurfaceVertex.setProjector(projector);
     vertex = new SurfaceVertex[2][];
     paintThread = new Thread(this);
-    
     //paintThread.setDaemon(true);
     paintThread.start();     // thread will start but enter a wait state.
   }
-  
 
   /**
    * Destroys the thread and clean up resources.
@@ -281,7 +278,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
   /**
    * Sets the data availability flag. If this flag is <code>false</code>,
    * <code>SurfaceCanvas</code> will not generate any surface image, even
-   * if the data is available. But it is the programmer's responsiblity
+   * if the data is available. But it is the programmer's responsibility
    * to set this flag to <code>false</code> when data is not available.
    *
    * @param avail the availability flag
@@ -408,7 +405,6 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 
   public boolean mouseDrag(Event e, int x, int y) {
     float new_value = 0.0f;
-
     if (rotate || contour || density) return true;
     //if (!thread.isAlive() || !data_available) {
     if (!running || !data_available) {
@@ -466,7 +462,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
    * @see   #setDataAvailability
    */
 
-  public void paint(Graphics g) {
+  public void paintMe(Graphics g) {
     if ((getBounds().width <= 0) || (getBounds().height <= 0)) return;
 
     // backing buffer creation
@@ -476,63 +472,25 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
        g.fillRect(0,0,getBounds().width,getBounds().height);
        return;
     }
-    //System.out.println("repaint" );
     if ( (getBounds().width != prevwidth) ||
         (getBounds().height != prevheight) ||
         (BufferGC == null)) {
-      //System.out.println("New image size: " + getBounds().width + "x" + getBounds().height);
-      setMessage("New image size: " + getBounds().width + "x" + getBounds().height);
-      projector.setProjectionArea(new Rectangle(0,0,getBounds().width, getBounds().height));
-      image_drawn = false;
-      if (Buffer != null) Buffer.flush();
-      Buffer = createImage(getBounds().width, getBounds().height);
-      if (BufferGC != null) BufferGC.dispose();
-      BufferGC = Buffer.getGraphics();
-      setFont( defaultFont);
-      prevwidth = getBounds().width;
-      prevheight = getBounds().height;
+	      //System.out.println("New image size: " + getBounds().width + "x" + getBounds().height);
+	      setMessage("New image size: " + getBounds().width + "x" + getBounds().height);
+	      projector.setProjectionArea(new Rectangle(0,0,getBounds().width, getBounds().height));
+	      image_drawn = false;
+	      if (Buffer != null) Buffer.flush();
+	      Buffer = createImage(getBounds().width, getBounds().height);
+	      if (BufferGC != null) BufferGC.dispose();
+	      BufferGC = Buffer.getGraphics();
+	      setFont( defaultFont);
+	      prevwidth = getBounds().width;
+	      prevheight = getBounds().height;
     }
-
+    if(BufferGC==null) {
+    	return;
+    }
     importVariables();
-
-    //printing = SurfaceFrame.newJVM && (g instanceof PrintGraphics);
-    /**
-    if (printing) {
-
-      // modifies variables
-
-      Graphics savedgc = BufferGC;
-      BufferGC = g;
-
-      Dimension pagedimension = ((PrintGraphics)g).getPrintJob().getPageDimension();
-
-      printwidth = pagedimension.width;
-      printheight = prevheight * printwidth / prevwidth;
-
-      if (printheight > pagedimension.height) {
-        printheight = pagedimension.height;
-        printwidth = prevwidth * printheight / prevheight;
-      }
-
-      float savedscalingfactor = projector.get2DScaling();
-
-      // stop drawing thread while printing
-      rotate = false;
-      running=false;
-      synchronized (runLock) {   // wait for the calculation to finish and the thread to go into a wait state.
-          projector.setProjectionArea(new Rectangle(0,0,printwidth,printheight));
-          projector.set2DScaling(savedscalingfactor * printwidth / prevwidth);
-          BufferGC.clipRect(0,0,printwidth,printheight);
-          if (!data_available) drawBoxGridsTicksLabels(BufferGC,true);
-          BufferGC.drawRect(0,0,printwidth-1,printheight-1);
-          // restores variables
-          projector.set2DScaling(savedscalingfactor);
-          projector.setProjectionArea(new Rectangle(0,0,getBounds().width, getBounds().height));
-          BufferGC = savedgc;
-      }
-      return;
-    } // end of printing
-    **/
 
     if (image_drawn && (Buffer != null)) {
       if(g==null) return;
@@ -558,14 +516,14 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 
   /**
    * Updates image. Just call the <code>paint</code> method to
-   * avoid flickers.
+   * avoid flicker.
    *
    * @param g the graphics context to update
    * @see   #paint
    */
 
   public void update(Graphics g) {
-    paint(g);                        // do not erase, just paint
+    paintMe(g);                        // do not erase, just paint
   }
 
   public void setFont(Font df){
@@ -573,21 +531,57 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
     if(projector==null) return;
     int fontsize = (int)(Math.round(projector.get2DScaling() * 0.5));
     fontsize=Math.max(fontsize,10);
+    if(BufferGC==null) {
+      	return;
+      } 
     if(defaultFont==null) BufferGC.setFont(new Font("Helvetica",Font.PLAIN,fontsize));
     else BufferGC.setFont(defaultFont);
 
   }
   
+  public void setTime(double t){
+	  if(isJS) {
+		  if(dataGenerator.time!=t) {
+			  dataGenerator.time=t;
+			  state=SurfaceCanvas.STATE_GENERATING;
+		  }
+	  }else dataGenerator.setTime(t);
+  }
+  
+  public void startPlot() {
+	  state=SurfaceCanvas.STATE_GENERATING;
+	  //runTimer();
+  }
+  
 	public void runTimer() {
 		switch (state) {
 			case STATE_WAITING:
+				timer = new Timer(100, new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						if(shouldRun) {
+							//System.out.println("Waiting");
+							runTimer();
+						}
+					}
+	
+				});
+				timer.setRepeats(false);
+				timer.start();
 				break;
-			case STATE_PAINTING:
-				timer = new Timer(50, new ActionListener() {
+			case STATE_ROTATING:
+				timer = new Timer(100, new ActionListener() {
 	
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						if(shouldRun)running=doCalc();
+						if(shouldRun) {
+							//System.out.println("Run rotate");
+							running=doCalc();
+							state=STATE_WAITING;
+							runTimer();
+						}
+						
 					}
 	
 				});
@@ -599,49 +593,58 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 	
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						if(shouldRun)dataGenerator.doCalc();
+						if(shouldRun) {
+							//System.out.println("Run generate");
+							dataGenerator.doCalc();
+							running=doCalc();
+							state=rotate?STATE_ROTATING:STATE_WAITING;
+							runTimer();
+						}
 					}
 	
 				});
-				state = STATE_PAINTING;   // paint after new data is generated
 				timer.setRepeats(false);
 				timer.start();
 				break;
 		}	
-}
+	}
 
-	/**
-	 * The implementation of <code>Runnable</code> interface. Performs surface
-	 * plotting as a background process at a separate thread.
-	 */
-	public void run() {
-		while (shouldRun) {
+  /**
+   * The implementation of <code>Runnable</code> interface.
+   * Performs surface plotting as a background process at a separate thread.
+   */
+  public void run(){
+        while (shouldRun){
 			if (isJS) {
 				runTimer();
-			} else {
-				synchronized (runLock) {
-					while (!running)
-						try { // wait if not running
-							runLock.wait(); // let others get the lock.
-						} catch (Exception ie) {}
-					if (shouldRun)
-						running = doCalc(); // force a wait state at the end of the calculation unless rotating
-				}
-				try {
-					Thread.sleep(20);
-				} catch (Exception e) {}
+				return;
 			}
-		}
-		// paintThread.stop(); // this fixes a bug in some browsers to force this thread
-		// to stop.
-		paintThread = null;
-	}
+          synchronized(runLock){
+              while(!running) try{ // wait if not running
+                  runLock.wait();    // let others get the lock.
+              }catch(Exception ie){}
+              if(shouldRun)running=doCalc();  // force a wait state  at the end of the calculation unless rotating
+          }
+        	/**
+        	 * @j2sNative
+        	 * 
+        	 *  
+        	 *  
+        	 */ 
+        	 {
+            try{Thread.sleep(20);}catch (Exception e){}
+        	 }
+
+        }
+        //paintThread.stop(); // this fixes a bug in some browsers to force this thread to stop.
+        paintThread=null;
+  }
 
   private boolean doCalc(){    // return false if we should stop running
       //SurfaceVertex.invalidate();
       syncNewData();
       master_project_indexV++;
-
+      
       // contour plot
       if (contour) plotContour();
         else if (density) plotDensity();
@@ -652,22 +655,34 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 
       cleanUpMemory();
       if (printing) return false;   //stop painting since we are printing
-
+      
+      /**
       // force repaint NOW
       Graphics g = getGraphics();
       if(g==null) return false;   //stop painting since we don't have a graphics context
       paint(g);
       g.dispose();
+      **/
+  
 
       //repeat = rotate;
       if (rotate) {
         // automatically rotates surface
-    	    if(!isJS) try{Thread.sleep(30);}catch (InterruptedException e){}
+        	/**
+        	 * @j2sNative
+        	 *  
+        	 *  
+        	 */ 
+        	 {
+                 try{Thread.sleep(30);}catch (InterruptedException e){}
+        	 }
         float newrot = projector.getRotationAngle() + 5;
         while (newrot > 360) newrot -= 360;
         while (newrot < 0) newrot += 360;
         projector.setRotationAngle(newrot);
       }
+      
+      repaint();
       return rotate;  // repeat the calculation if we are rotating the image.
   }
 
@@ -685,6 +700,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
         //repaint();
         controller.rotationStarts();
     }
+  	state=SurfaceCanvas.STATE_ROTATING;
     repaint();
   }
 
@@ -699,6 +715,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
     synchronized (runLock) {   // wait for the calculation to finish and the thread to go into a wait state.
         controller.rotationStops();
     }
+    state=SurfaceCanvas.STATE_WAITING;
   }
 
   /**
@@ -745,6 +762,9 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
   private final void drawBoundingBox() {
     Point startingpoint, projection;
 
+    if(BufferGC==null) {
+      	return;
+      }    
     startingpoint = projector.project(factor_x*10,factor_y*10,10);
     BufferGC.setColor(Color.black);
     projection =  projector.project(-factor_x*10,factor_y*10,10);
@@ -1158,6 +1178,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 
   private final void outFloat(Graphics g, int x, int y,
                               float f, int x_align, int y_align) {
+	f = (float)(Math.round(f*100000)/100000.0);  // max of 6 decimal places
     String s = Float.toString(f);
     outString(g,x,y,s,x_align,y_align);
   }
@@ -1228,6 +1249,9 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
       if (++index == verticescount) index = 0;
       valid1 = valid2; low1 = low2;
     }
+    if(BufferGC==null) {
+      	return;
+    } 
     if (count > 0) {
       switch (plot_mode) {
         case NORENDER:    BufferGC.setColor(Color.lightGray);
@@ -1632,7 +1656,9 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
     }
     color_factor = 0.8f / (zmax-zmin);
     if (plot_mode == DUALSHADE) color_factor *= 0.6f/0.8f;
-
+    if(BufferGC==null) {
+      	return;
+      } 
     if (!printing) {
       BufferGC.setColor(Color.lightGray);
       BufferGC.fillRect(0,0,getBounds().width,getBounds().height);
@@ -1776,6 +1802,9 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
    */
 
   private final void drawBoundingRect() {
+	  if(BufferGC==null) {
+	    	return;
+	   } 
     BufferGC.setColor(Color.black);
     int x1 = contourConvertX(-10);
     int y1 = contourConvertY(+10);
@@ -1912,6 +1941,9 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
     if (width < height) fontsize = (int)(width / 48);
                    else fontsize = (int)(height / 48);
     fontsize=Math.max(fontsize,10);
+    if(BufferGC==null) {
+    	return;
+    }
     if(defaultFont==null) BufferGC.setFont(new Font("Helvetica",Font.PLAIN,fontsize));
     else BufferGC.setFont(defaultFont);    // default font  added by W. Christian
 
@@ -1938,9 +1970,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 
       for (int i=-10; i < 10; i++) {
         if (i % t_y == 0) {
-          ylabels[index] =
-          new String(Float.toString(
-                    (float)((double)(i+10)/20*(ymax-ymin)+ymin)));
+          ylabels[index] = new String(Float.toString( (float)((double)(i+10)/20*(ymax-ymin)+ymin)));
           int strwidth = fm.stringWidth(ylabels[index++]);
           if (strwidth > maxwidth) maxwidth = strwidth;
         }
@@ -2158,6 +2188,11 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
           contour_n++;
         }
       }
+      
+      if(BufferGC==null) {
+      	return;
+      }   
+      
       if ((plot_mode != WIREFRAME) &&
           (plot_mode != NORENDER)) {
         if (counter > contour_lines) {
@@ -2226,7 +2261,9 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 
     //frame.setMessage("regenerating ...");
     setMessage("regenerating ...");
-
+    if(BufferGC==null) {
+      	return;
+      } 
     if (!printing) {
       BufferGC.setColor(Color.lightGray);
       BufferGC.fillRect(0,0,getBounds().width,getBounds().height);
@@ -2296,7 +2333,9 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 
     color_factor = 0.8f / (zx-zi);
     if (plot_mode == DUALSHADE) color_factor *= 0.6f/0.8f;
-
+    if(BufferGC==null) {
+      	return;
+      } 
     if (!printing) {
       BufferGC.setColor(Color.lightGray);
       BufferGC.fillRect(0,0,getBounds().width,getBounds().height);
@@ -2402,7 +2441,9 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
         //frame.setMessage("regenerating ...");
         setMessage("regenerating ...");
     }
-    if(BufferGC==null) return;
+    if(BufferGC==null) {
+      	return;
+      } 
     if (!printing) {
       BufferGC.setColor(Color.lightGray);
       BufferGC.fillRect(0,0,getBounds().width,getBounds().height);

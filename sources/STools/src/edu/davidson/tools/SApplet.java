@@ -62,7 +62,7 @@ public class SApplet extends Applet {
   /** Field debugLevel
    * @y.exclude
    */
-  public int              debugLevel       = 0;                  // a flag to turn debugging on and off.
+  public int              debugLevel       = 0;				  // a flag to turn debugging on and off; default = 0
   protected String        formatString     = "%-+6.2g";
   protected Format        formatD          = new Format(formatString);
   protected Format        formatI          = new Format("%-+6d");

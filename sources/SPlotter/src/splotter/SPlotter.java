@@ -19,7 +19,7 @@ public class SPlotter extends SApplet implements SStepable  {
   String funcStr;
   String func2Str;
   String scaleStr;
-  String typeStr;   // type fo plot, such as threed or contour.
+  String typeStr;   // type of plot, such as 3D or contour.
   int gridPts;
   int numLevels;
   int scaleFactor=10;  // scale for box on screen.
@@ -78,6 +78,8 @@ public class SPlotter extends SApplet implements SStepable  {
     //setFunction2(func2Str);
     // debug
     //clock.startClock();
+    // debug 
+    funcStr="x";
   }
 
   //Component initialization
@@ -211,7 +213,7 @@ public class SPlotter extends SApplet implements SStepable  {
   }
 
   /**
-   * Repaint whenevers the system parameters are changed.
+   * Repaint when the system parameters are changed.
    *
    * @param              autoRefresh Automatic repaint?
    */
@@ -221,7 +223,7 @@ public class SPlotter extends SApplet implements SStepable  {
   }
 
     /**
-   * Change the properies of an object.
+   * Change the properties of an object.
    * The first argument is the object identifier.
    * The second argument is the name of the property and the third is a
    * comma-delimited list of parameters.  For example, the scale can be added a follows:
@@ -381,7 +383,7 @@ public class SPlotter extends SApplet implements SStepable  {
    * Set default values and deletes all data connections.
    */
   public void setDefault(){
-      deleteDataConnections(); // we are going to delete all the things so we might as well kill the conections too.
+      deleteDataConnections(); // we are going to delete all the things so we might as well kill the connections.
       surfacePanel.setDefault();   // This will repaint if necessary.
 	}
 
@@ -446,7 +448,6 @@ public class SPlotter extends SApplet implements SStepable  {
            rotateBtn.setLabel("Rotate");
            surfacePanel.stopRotate();
        }
-
   }
 
   public void step(double dt, double t){
@@ -461,6 +462,7 @@ public class SPlotter extends SApplet implements SStepable  {
            runBtn.setLabel("Run");
            clock.stopClock();
        }
+      surfacePanel.surfaceCanvas.startPlot();
   }
 
   void plotBtn_actionPerformed(ActionEvent e) {
@@ -474,6 +476,7 @@ public class SPlotter extends SApplet implements SStepable  {
     if(runBtn.getLabel().equals("Stop")){
            clock.startClock();
     }
+    surfacePanel.surfaceCanvas.startPlot();
   }
 
 }

@@ -57,8 +57,6 @@ public class SDataConnection{ // class to let a source communicate with a listen
             setYStr(yStr);
           }
           dl.clearSeries(series);
-         // System.out.println("DataConnection made.");
-
       }
 
     /**
@@ -183,7 +181,6 @@ public class SDataConnection{ // class to let a source communicate with a listen
           if(ds.getVarStrings()[0].equals("surfacedata") && v.length>1){ // special case for contour plots.
             dl.addData(ds,series,null,null);
           }
-         // System.out.println("connection ds="+ds.getID()+" dl="+dl.getID());
           int numPts= v.length;
           if(numPts==1){ // we only have one datum
               if (xparser!=null) lastX=xparser.evaluate(v[0]);

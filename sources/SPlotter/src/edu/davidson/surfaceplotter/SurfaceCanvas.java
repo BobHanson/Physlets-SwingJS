@@ -28,6 +28,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 
 import javax.swing.Timer;
 
@@ -47,8 +48,8 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
    int gutter=0;
 
 // added by W. Christian
-   boolean isJS = /** @j2sNative true || */ false;
-   //boolean isJS = true;  // for debugging
+   //boolean isJS = /** @j2sNative true || */ false;
+   boolean isJS = true;  // for debugging
    public Controller controller=new Controller();
    public DataGenerator dataGenerator=new DataGenerator(this);
    String message=null;
@@ -361,7 +362,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
    * @param y the y coordinate of cursor
    */
 
-  public boolean mouseDown(Event e, int x, int y) {
+  public boolean myMouseDown(MouseEvent e, int x, int y) {
     click_x = x;
     click_y = y;
     mouseDown=true;
@@ -377,7 +378,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
    * @param y the y coordinate of cursor
    */
 
-  public boolean mouseUp(Event e, int x, int y) {
+  public boolean myMouseUp(MouseEvent e, int x, int y) {
     //if (rotate || contour || density) return true;    // always repaint
     //if (controller.isExpectDelay() && dragged) {      // always repaint
       destroyImage();
@@ -389,7 +390,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
     return true;
   }
 
-  public boolean mouseEnter(Event e, int x, int y) {
+  public boolean myMouseEnter(MouseEvent e, int x, int y) {
     repaint();
     return true;
   }
@@ -403,19 +404,19 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
    * @param y the y coordinate of cursor
    */
 
-  public boolean mouseDrag(Event e, int x, int y) {
+  public boolean myMouseDrag(MouseEvent e, int x, int y) {
     float new_value = 0.0f;
     if (rotate || contour || density) return true;
     //if (!thread.isAlive() || !data_available) {
     if (!running || !data_available) {
-      if (e!=null && e.controlDown()) {
+      if (e!=null && e.isControlDown()) {
         projector.set2D_xTranslation(
         projector.get2D_xTranslation() + (x - click_x));
         projector.set2D_yTranslation(
         projector.get2D_yTranslation() + (y - click_y));
       }
       else
-      if (e!=null && e.shiftDown()) {
+      if (e!=null && e.isShiftDown()) {
         new_value = projector.get2DScaling() + (y - click_y) * 0.5f;
         if (new_value > 60.0f) new_value = 60.0f;
         if (new_value < 2.0f) new_value = 2.0f;
@@ -434,7 +435,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
       }
       image_drawn = false;
       if (!controller.isExpectDelay()) {
-        repaint();
+    	  if(!isJS) repaint();
       }
       else {
         if (!dragged) {
@@ -442,7 +443,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
           dragged = true;
         }
         data_available = false;
-        repaint();
+        if(!isJS) repaint();
       }
     }
     click_x = x;

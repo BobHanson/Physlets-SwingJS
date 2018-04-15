@@ -78,8 +78,6 @@ public class SPlotter extends SApplet implements SStepable  {
     //setFunction2(func2Str);
     // debug
     //clock.startClock();
-    // debug 
-    funcStr="x";
   }
 
   //Component initialization

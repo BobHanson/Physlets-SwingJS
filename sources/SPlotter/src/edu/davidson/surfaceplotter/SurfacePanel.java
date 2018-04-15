@@ -4,6 +4,7 @@ import edu.davidson.tools.*;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.event.MouseEvent;
 
 import a2s.*;
 
@@ -25,8 +26,45 @@ public class SurfacePanel extends Panel implements SDataListener{
       e.printStackTrace();
     }
     sapplet=sa;
-    SApplet.addDataListener(this);
+    SApplet.addDataListener(this); 
+    addMouseMotionListener(new PoissonPanel_mouseMotionAdapter(surfaceCanvas));
+    addMouseListener(new SurfacePanel_mouseAdapter(surfaceCanvas));
   }
+  
+  class SurfacePanel_mouseAdapter extends java.awt.event.MouseAdapter {
+	  SurfaceCanvas adaptee;
+
+	  SurfacePanel_mouseAdapter(SurfaceCanvas adaptee) {
+	    this.adaptee = adaptee;
+	  }
+	  
+	  
+      public void mousePressed(MouseEvent e) { 
+          adaptee.myMouseDown( e, e.getX(), e.getY());
+      } 
+      public void mouseDragged(MouseEvent e) { 
+          adaptee.myMouseDrag( e, e.getX(), e.getY());
+      }
+      public void mouseEntered(MouseEvent e) { 
+          adaptee.myMouseEnter( e, e.getX(), e.getY());
+      } 
+      public void mouseReleased(MouseEvent e) { 
+          adaptee.myMouseUp( e, e.getX(), e.getY());
+          adaptee.startPlot();
+      } 
+	}
+  
+  class PoissonPanel_mouseMotionAdapter extends java.awt.event.MouseMotionAdapter {
+	  SurfaceCanvas adaptee;
+
+	  PoissonPanel_mouseMotionAdapter(SurfaceCanvas adaptee) {
+	    this.adaptee = adaptee;
+	  }
+      public void mouseDragged(MouseEvent e) { 
+          adaptee.myMouseDrag( e, e.getX(), e.getY());
+          adaptee.startPlot();
+      }
+	}
 
   private void jbInit() throws Exception {
     this.setLayout(borderLayout1);

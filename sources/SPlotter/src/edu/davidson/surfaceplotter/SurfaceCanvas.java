@@ -48,8 +48,8 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
    int gutter=0;
 
 // added by W. Christian
-   //boolean isJS = /** @j2sNative true || */ false;
-   boolean isJS = true;  // for debugging
+   boolean isJS = /** @j2sNative true || */ false;
+   //boolean isJS = true;  // for debugging
    public Controller controller=new Controller();
    public DataGenerator dataGenerator=new DataGenerator(this);
    String message=null;

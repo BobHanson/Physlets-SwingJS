@@ -1,10 +1,24 @@
 package script;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.Timer;
+
 import edu.davidson.tools.*;
 import netscape.javascript.JSObject;
 
 
 public class ScriptListener extends SApplet implements SDataListener {
+	boolean isJS = /** @j2sNative true || */ false;
+	//boolean isJS = true;  // for debugging
+	private  Timer timer;					   // Swing timer when in JavaScript
+	private final static int STATE_WAITING = 0;
+	private final static int STATE_EXECUTE = 1;
+	public int state = STATE_WAITING;
+	JSObject jso = null;
+	String jsFunction;
+	
     boolean respondToAddData=true;
     boolean respondToAddDatum=true;
     boolean respondToDeleteSeries=true;
@@ -29,6 +43,42 @@ public class ScriptListener extends SApplet implements SDataListener {
         }
     }
 
+    
+	public void runTimer() {
+		switch (state) {
+			case STATE_WAITING:
+				timer = new Timer(50, new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						    //System.out.println("Timer waiting");
+							runTimer();
+					}
+	
+				});
+				timer.setRepeats(false);
+				timer.start();
+				break;
+			case STATE_EXECUTE:
+				timer = new Timer(05, new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						String myFunction =jsFunction;
+					    //System.out.println("STATE_EXECUTE function="+myFunction);
+					    /** @j2sNative  
+					     *  
+					     *  x= eval(myFunction);
+					     */
+					    state=STATE_WAITING;
+						runTimer();
+					}
+			
+				});
+				timer.setRepeats(false);
+				timer.start();
+				break;
+			}	
+	}
 
   /**
    * Counts the number of applets on a page.
@@ -78,10 +128,10 @@ public class ScriptListener extends SApplet implements SDataListener {
       if (temp != null) { // stop the old threads if they exisit
         temp.shouldRun = false;
       }
-      if (temp2 != null) { // stop the old threads if they exisit
+      if (temp2 != null) { // stop the old threads if they exists
         temp2.shouldRun = false;
       }
-      deleteDataConnections(); // we are going to delete all the things so we might as well kill the conections too.
+      deleteDataConnections(); // we are going to delete all the things so we might as well kill the connections too.
     }
 
     /**
@@ -99,7 +149,14 @@ public class ScriptListener extends SApplet implements SDataListener {
         temp2.shouldRun = false;
       }
       if (appletRunning)
-        createThread = new Create(str);
+        if(isJS) {
+            jsFunction=str;
+            if(jsFunction==null || jsFunction.trim().equals("")) return;
+            jso = JSObject.getWindow(ScriptListener.this);
+        	runTimer();
+        }else {
+        	createThread = new Create(str);
+        }
     }
 
   /**
@@ -141,13 +198,13 @@ public class ScriptListener extends SApplet implements SDataListener {
   // data listener methods
 
   /**
-   * Set the object's ownner.  This method has been disabled since an applet cannot have an owner.
+   * Set the object's owner.  This method has been disabled since an applet cannot have an owner.
    *
    */
   public void setOwner(SApplet o){;}
 
   /**
-   * Get the object's ownner.
+   * Get the object's owner.
    *
    * This method is used by to establish a data connection and should not be called by javascript.
    *
@@ -161,6 +218,7 @@ public class ScriptListener extends SApplet implements SDataListener {
         newdata = true;
         lock.notify();
       }
+      state=STATE_EXECUTE;
     }
     catch (Exception ex) {}
   }

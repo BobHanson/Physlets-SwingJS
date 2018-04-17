@@ -507,11 +507,8 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
     if (data_available && !interrupted) {
       synchronized (runLock) { // resume the paused thread.
           running=true;
-          if (isJS) {
-        	  //BH testing only  doCalc();
-          } else {
+          if (!isJS)
         	  runLock.notify();
-          }
       }
     }
     else {

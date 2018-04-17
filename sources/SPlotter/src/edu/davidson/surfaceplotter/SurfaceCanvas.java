@@ -435,15 +435,21 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
       }
       image_drawn = false;
       if (!controller.isExpectDelay()) {
-    	  if(!isJS) repaint();
+    	  if (isJS) {
+    		  // BH  must process this new perspective
+    		  doCalc();
+    	  } else {
+    		  repaint();
+    	  }
       }
       else {
+    	  // BH: never true?
         if (!dragged) {
           is_data_available = data_available;
           dragged = true;
         }
         data_available = false;
-        if(!isJS) repaint();
+        repaint();
       }
     }
     click_x = x;
@@ -501,7 +507,11 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
     if (data_available && !interrupted) {
       synchronized (runLock) { // resume the paused thread.
           running=true;
-          runLock.notify();
+          if (isJS) {
+        	  //BH testing only  doCalc();
+          } else {
+        	  runLock.notify();
+          }
       }
     }
     else {
@@ -572,17 +582,19 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 				timer.start();
 				break;
 			case STATE_ROTATING:
-				timer = new Timer(100, new ActionListener() {
+				// BH shorter time here; was 100 ms
+				timer = new Timer(10, new ActionListener() {
 	
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						if(shouldRun) {
 							//System.out.println("Run rotate");
 							running=doCalc();
-							state=STATE_WAITING;
+							// BH: why set to wait if calc returns true?
+							if (!running)
+								state=STATE_WAITING;
 							runTimer();
 						}
-						
 					}
 	
 				});
@@ -610,7 +622,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 		}	
 	}
 
-  /**
+ /**
    * The implementation of <code>Runnable</code> interface.
    * Performs surface plotting as a background process at a separate thread.
    */

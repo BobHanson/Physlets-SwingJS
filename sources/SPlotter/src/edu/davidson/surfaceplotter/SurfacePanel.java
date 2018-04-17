@@ -62,7 +62,8 @@ public class SurfacePanel extends Panel implements SDataListener{
 	  }
       public void mouseDragged(MouseEvent e) { 
           adaptee.myMouseDrag( e, e.getX(), e.getY());
-          adaptee.startPlot();
+          // BH: why this? adaptee.startPlot();
+          // let adaptee do that itself if needed
       }
 	}
 

@@ -4,8 +4,12 @@ import a2s.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+
+import javax.swing.Timer;
 
 import edu.davidson.display.SNumber;
 import edu.davidson.display.SSlider;
@@ -17,6 +21,14 @@ import netscape.javascript.JSObject;
  * Class SliderApplet
  */
 public class SliderApplet extends SApplet implements SDataSource, PropertyChangeListener {
+
+	boolean isJS = /** @j2sNative true || */ false;
+	//boolean isJS = true;  // for debugging
+	private  Timer timer;					   // Swing timer when in JavaScript
+	private final static int STATE_WAITING = 0;
+	private final static int STATE_EXECUTE = 1;
+	public int state = STATE_WAITING;
+	String jsFunction;
 
 	double min;
 	double max;
@@ -274,6 +286,7 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	 * Sets default values and deletes all data connections.
 	 */
 	public void setDefault() {
+		state = STATE_WAITING;
 		Create temp = createThread;
 		Dispatcher temp2 = dispatcherThread;
 		if (temp != null) { // stop the old threads if they exisit
@@ -293,6 +306,7 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	 * @y.exclude
 	 */
 	public void destroy() {
+		state = STATE_WAITING;
 		appletRunning = false;
 		Create temp = createThread;
 		Dispatcher temp2 = dispatcherThread;
@@ -320,8 +334,35 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 		this.updateDataConnections();
 		synchronized (lock) {
 			newdata = true;
-			lock.notify();  
+			if(!isJS)lock.notify();  
 		}
+		state=STATE_EXECUTE;
+		if(isJS)runTimer();
+	}
+	
+	public void runTimer() {
+		switch (state) {
+			case STATE_WAITING:
+				// timer will start when slider moves
+				break;
+			case STATE_EXECUTE:
+				timer = new Timer(5, new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						String myFunction =jsFunction;
+					    //System.out.println("STATE_EXECUTE function="+myFunction);
+					    /** @j2sNative  
+					     *  
+					     *  eval(myFunction);
+					     */
+					    state=STATE_WAITING;
+					}
+			
+				});
+				timer.setRepeats(false);
+				timer.start();
+				break;
+			}	
 	}
 
 	/**
@@ -329,7 +370,7 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	 * changes in a data source.
 	 *
 	 * @param str
-	 *            The javascript function
+	 *            The JavaScript function
 	 */
 	public void setJSFunction(String str) {
 		Create temp = createThread;
@@ -340,8 +381,14 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 		if (temp2 != null) { // stop the old threads if they exist
 			temp2.shouldRun = false;
 		}
-		if (appletRunning)
-			createThread = new Create(str);
+        if (appletRunning)
+          if(isJS) {
+        	  state = STATE_WAITING;
+              jsFunction=str;
+              if(jsFunction==null || jsFunction.trim().equals("")) return;
+          }else {
+          	createThread = new Create(str);
+          }
 	}
 
 	/**

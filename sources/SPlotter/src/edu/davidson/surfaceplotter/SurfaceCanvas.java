@@ -158,7 +158,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
     vertex = new SurfaceVertex[2][];
     paintThread = new Thread(this);
     //paintThread.setDaemon(true);
-    paintThread.start();     // thread will start but enter a wait state.
+    if(!isJS) paintThread.start();     // is thread when in Java
   }
 
   /**
@@ -168,13 +168,17 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
    *
    */
   public void destroyThread() {
+	   if(isJS) {
+		   state=STATE_WAITING;
+		   if(timer!=null) timer.stop();
+	   }
        paintThread.stop();  // this is the only way to kill the thread
        shouldRun=false;
        rotate = false;
        paintThread.interrupt();
        //synchronized (runLock) { // resume the paused thread.
           running=true;
-          runLock.notify();
+          if(!isJS)runLock.notify();
       //}
   }
 
@@ -507,8 +511,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
     if (data_available && !interrupted) {
       synchronized (runLock) { // resume the paused thread.
           running=true;
-          if (!isJS)
-        	  runLock.notify();
+          if (!isJS)runLock.notify();
       }
     }
     else {
@@ -547,50 +550,41 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 
   }
   
+  public void resetTime(){
+	  if(isJS) {
+		dataGenerator.time=0;
+	    state=STATE_WAITING;
+	  }else dataGenerator.setTime(0);
+  }
+  
   public void setTime(double t){
 	  if(isJS) {
 		  if(dataGenerator.time!=t) {
 			  dataGenerator.time=t;
 			  state=SurfaceCanvas.STATE_GENERATING;
+			  runTimer();
 		  }
 	  }else dataGenerator.setTime(t);
   }
   
   public void startPlot() {
 	  state=SurfaceCanvas.STATE_GENERATING;
-	  //runTimer();
+	  runTimer();
   }
   
 	public void runTimer() {
 		switch (state) {
 			case STATE_WAITING:
-				timer = new Timer(100, new ActionListener() {
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						if(shouldRun) {
-							//System.out.println("Waiting");
-							runTimer();
-						}
-					}
-	
-				});
-				timer.setRepeats(false);
-				timer.start();
+				// 
 				break;
 			case STATE_ROTATING:
-				// BH shorter time here; was 100 ms
-				timer = new Timer(10, new ActionListener() {
+				timer = new Timer(50, new ActionListener() {
 	
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						if(shouldRun) {
 							//System.out.println("Run rotate");
-							running=doCalc();
-							// BH: why set to wait if calc returns true?
-							if (!running)
-								state=STATE_WAITING;
-							runTimer();
+							if(doCalc())runTimer();  // continue rotation
 						}
 					}
 	
@@ -599,7 +593,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 				timer.start();
 				break;
 			case STATE_GENERATING:
-				timer = new Timer(50, new ActionListener() {
+				timer = new Timer(10, new ActionListener() {
 	
 					@Override
 					public void actionPerformed(ActionEvent e) {
@@ -607,8 +601,6 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
 							//System.out.println("Run generate");
 							dataGenerator.doCalc();
 							running=doCalc();
-							state=rotate?STATE_ROTATING:STATE_WAITING;
-							runTimer();
 						}
 					}
 	
@@ -625,10 +617,6 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
    */
   public void run(){
         while (shouldRun){
-			if (isJS) {
-				runTimer();
-				return;
-			}
           synchronized(runLock){
               while(!running) try{ // wait if not running
                   runLock.wait();    // let others get the lock.
@@ -711,6 +699,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
         controller.rotationStarts();
     }
   	state=SurfaceCanvas.STATE_ROTATING;
+  	runTimer();
     repaint();
   }
 
@@ -725,7 +714,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
     synchronized (runLock) {   // wait for the calculation to finish and the thread to go into a wait state.
         controller.rotationStops();
     }
-    state=SurfaceCanvas.STATE_WAITING;
+    state=STATE_WAITING;
   }
 
   /**
@@ -1566,7 +1555,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
   private final void plotArea(int start_lx, int start_ly,
                                int end_lx, int end_ly,
                                int sx, int sy) {
-
+    if(vertex[0]==null) return;
     start_lx *= calc_divisions + 1;
     sx *= calc_divisions + 1;
     end_lx *= calc_divisions + 1;

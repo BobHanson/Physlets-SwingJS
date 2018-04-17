@@ -236,6 +236,7 @@ poisson/Poisson_voltageNumber_actionAdapter.js
 poisson/PotentialObject.js
 poisson/RectObject.js
 poisson/VectorField.js
+script/ScriptListener.js
 splotter/SPlotter.js
 sun/awt/image/DataStealer.js
 sun/awt/image/IntegerComponentRaster.js

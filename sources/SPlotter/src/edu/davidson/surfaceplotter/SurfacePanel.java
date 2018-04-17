@@ -231,6 +231,9 @@ public class SurfacePanel extends Panel implements SDataListener{
   public void setTime(double t){
           surfaceCanvas.setTime(t);
   }
+  public void resetTime(){
+      surfaceCanvas.resetTime();
+  }
   public void setMaxZ(double val){
       surfaceCanvas.controller.zmax=(float) val;
   }

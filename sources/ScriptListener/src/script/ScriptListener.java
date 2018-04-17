@@ -16,7 +16,6 @@ public class ScriptListener extends SApplet implements SDataListener {
 	private final static int STATE_WAITING = 0;
 	private final static int STATE_EXECUTE = 1;
 	public int state = STATE_WAITING;
-	JSObject jso = null;
 	String jsFunction;
 	
     boolean respondToAddData=true;
@@ -47,30 +46,19 @@ public class ScriptListener extends SApplet implements SDataListener {
 	public void runTimer() {
 		switch (state) {
 			case STATE_WAITING:
-				timer = new Timer(50, new ActionListener() {
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						    //System.out.println("Timer waiting");
-							runTimer();
-					}
-	
-				});
-				timer.setRepeats(false);
-				timer.start();
+				// timer will start when new data is available
 				break;
 			case STATE_EXECUTE:
-				timer = new Timer(05, new ActionListener() {
+				timer = new Timer(5, new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						String myFunction =jsFunction;
 					    //System.out.println("STATE_EXECUTE function="+myFunction);
 					    /** @j2sNative  
 					     *  
-					     *  x= eval(myFunction);
+					     *  eval(myFunction);
 					     */
 					    state=STATE_WAITING;
-						runTimer();
 					}
 			
 				});
@@ -98,6 +86,7 @@ public class ScriptListener extends SApplet implements SDataListener {
      * Destroy all threads and cleanup the applet.
      */
     public void destroy(){
+      state=STATE_WAITING;
       appletRunning = false;
       appletRunning = false;
       createThread=null;
@@ -123,6 +112,7 @@ public class ScriptListener extends SApplet implements SDataListener {
      */
 
     public void setDefault() {
+      state=STATE_WAITING;
       Create temp = createThread;
       Dispatcher temp2 = dispatcherThread;
       if (temp != null) { // stop the old threads if they exisit
@@ -150,10 +140,9 @@ public class ScriptListener extends SApplet implements SDataListener {
       }
       if (appletRunning)
         if(isJS) {
+        	state = STATE_WAITING;
             jsFunction=str;
             if(jsFunction==null || jsFunction.trim().equals("")) return;
-            jso = JSObject.getWindow(ScriptListener.this);
-        	runTimer();
         }else {
         	createThread = new Create(str);
         }
@@ -216,9 +205,10 @@ public class ScriptListener extends SApplet implements SDataListener {
     try {
       synchronized (lock) {
         newdata = true;
-        lock.notify();
+        if(!isJS)lock.notify();
       }
       state=STATE_EXECUTE;
+      if(isJS)runTimer();
     }
     catch (Exception ex) {}
   }
@@ -227,16 +217,18 @@ public class ScriptListener extends SApplet implements SDataListener {
       try{
         synchronized (lock) {
           newdata = true;
-          lock.notify();
+          if(!isJS)lock.notify();
         }
       }catch(Exception ex){}
+      state=STATE_EXECUTE;
+      if(isJS)runTimer();
   }
 
   public void deleteSeries(int id){
       try{
         synchronized (lock) {
           newdata = true;
-          lock.notify();
+          if(!isJS)lock.notify();
         }
       }catch(Exception ex){}
   }
@@ -245,7 +237,7 @@ public class ScriptListener extends SApplet implements SDataListener {
       try{
         synchronized (lock) {
           newdata = true;
-          lock.notify();
+          if(!isJS)lock.notify();
         }
       }catch(Exception ex){}
   }

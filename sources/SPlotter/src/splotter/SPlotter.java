@@ -459,6 +459,8 @@ public class SPlotter extends SApplet implements SStepable  {
        }else{
            runBtn.setLabel("Run");
            clock.stopClock();
+           rotateBtn.setLabel("Rotate");
+           surfacePanel.stopRotate();
        }
       surfacePanel.surfaceCanvas.startPlot();
   }
@@ -467,7 +469,7 @@ public class SPlotter extends SApplet implements SStepable  {
     clock.stopClock();
     clock.setTime(0);
     surfacePanel.setFunction1(funcField.getText());  // this will stop the paint threads.
-    surfacePanel.setTime(0);
+    surfacePanel.resetTime();
     if(rotateBtn.getLabel().equals("Static")){
            surfacePanel.startRotate();
     }

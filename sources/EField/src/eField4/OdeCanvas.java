@@ -1036,6 +1036,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     }
     for(Enumeration e = v.elements(); e.hasMoreElements(); ) {
       Charge c = (Charge) e.nextElement();
+      if(c==null) continue;
       if(drawThings.contains(c)) {
         drawThings.removeElement(c);
       }

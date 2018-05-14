@@ -1342,6 +1342,7 @@ size.
       clearAllThings();
       for(Enumeration e=dataSetSeries.elements() ; e.hasMoreElements(); ){
           Series s=(Series)e.nextElement();
+          if(s==null) continue;
           if(s.regression!=null)SApplet.dataSources.remove(Integer.toString(s.regression.hashCode()));
           SApplet.dataSources.remove(Integer.toString(s.hashCode()));
        }
@@ -2026,6 +2027,7 @@ public void clearAllThings(){
     Thing t;
     for( Enumeration e=v.elements(); e.hasMoreElements();){
          t= (Thing) e.nextElement();
+         if(t==null) continue;
          parentSApplet.removeDataListener(t.hashCode() );
          parentSApplet.removeDataSource(t.hashCode() );
          if(t instanceof SStepable)parentSApplet.clock.removeClockListener((SStepable)t);

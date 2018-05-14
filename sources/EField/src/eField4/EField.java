@@ -1122,7 +1122,7 @@ private String button_start="Play";
    */
   public void setDefault(){
       pause();
-      deleteDataConnections(); // we are going to delete all the charges so we might as well kill the conections too.
+      deleteDataConnections(); // we are going to delete all the charges so we might as well kill the connections too.
       clock.setContinuous();
       clock.setTime(0);
       setShowFieldLines(false);

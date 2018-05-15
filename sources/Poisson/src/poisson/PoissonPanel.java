@@ -1,5 +1,5 @@
 package poisson;
-
+import a2s.*;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
@@ -16,8 +16,6 @@ import java.util.StringTokenizer;
 import java.util.Vector;
 
 import javax.swing.Timer;
-
-import a2s.Panel;
 import edu.davidson.display.Format;
 import edu.davidson.display.SContour;
 import edu.davidson.display.SNumber;

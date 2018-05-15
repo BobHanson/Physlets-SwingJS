@@ -1,0 +1,195 @@
+(function(){var P$=Clazz.newPackage("sun.awt.image"),I$=[['java.awt.Image','Thread','java.util.Hashtable','sun.awt.image.ImageRepresentation','java.awt.image.ColorModel']],$incl$=function(i){return I$[i]=Clazz.load(I$[0][i-1])};
+var C$=Clazz.newClass(P$, "ToolkitImage", null, 'java.awt.Image');
+var p$=C$.prototype;
+
+C$.$clinit$ = function() {Clazz.load(C$, 1);
+}
+
+Clazz.newMeth(C$, '$init0$', function () {
+var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
+this.source = null;
+this.src = null;
+this.imagerep = null;
+this.width = 0;
+this.height = 0;
+this.properties = null;
+this.availinfo = 0;
+}, 1);
+
+Clazz.newMeth(C$, '$init$', function () {
+this.width = -1;
+this.height = -1;
+}, 1);
+
+Clazz.newMeth(C$, 'c$', function () {
+Clazz.super_(C$, this,1);
+}, 1);
+
+Clazz.newMeth(C$, 'c$$java_awt_image_ImageProducer', function (is) {
+Clazz.super_(C$, this,1);
+this.source = is;
+if (Clazz.instanceOf(is, "sun.awt.image.InputStreamImageSource")) {
+this.src = is;
+}}, 1);
+
+Clazz.newMeth(C$, 'getSource', function () {
+return this.source;
+});
+
+Clazz.newMeth(C$, 'getWidth', function () {
+if ((this.availinfo & 1) == 0) {
+p$.reconstruct$I.apply(this, [1]);
+}return this.width;
+});
+
+Clazz.newMeth(C$, 'getWidth$java_awt_image_ImageObserver', function (iw) {
+if ((this.availinfo & 1) == 0) {
+p$.addWatcher$java_awt_image_ImageObserver$Z.apply(this, [iw, true]);
+if ((this.availinfo & 1) == 0) {
+return -1;
+}}return this.width;
+});
+
+Clazz.newMeth(C$, 'getHeight', function () {
+if ((this.availinfo & 2) == 0) {
+p$.reconstruct$I.apply(this, [2]);
+}return this.height;
+});
+
+Clazz.newMeth(C$, 'getHeight$java_awt_image_ImageObserver', function (iw) {
+if ((this.availinfo & 2) == 0) {
+p$.addWatcher$java_awt_image_ImageObserver$Z.apply(this, [iw, true]);
+if ((this.availinfo & 2) == 0) {
+return -1;
+}}return this.height;
+});
+
+Clazz.newMeth(C$, 'getProperty$S$java_awt_image_ImageObserver', function (name, observer) {
+if (name == null ) {
+throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["null property name is not allowed"]);
+}if (this.properties == null ) {
+p$.addWatcher$java_awt_image_ImageObserver$Z.apply(this, [observer, true]);
+if (this.properties == null ) {
+return null;
+}}var o = this.properties.get$O(name);
+if (o == null ) {
+o = (I$[1]||$incl$(1)).UndefinedProperty;
+}return o;
+});
+
+Clazz.newMeth(C$, 'hasError', function () {
+return (this.availinfo & 64) != 0;
+});
+
+Clazz.newMeth(C$, 'check$java_awt_image_ImageObserver', function (iw) {
+if ((this.availinfo & 64) == 0 && ((~this.availinfo) & 7) != 0 ) {
+p$.addWatcher$java_awt_image_ImageObserver$Z.apply(this, [iw, false]);
+}return this.availinfo;
+});
+
+Clazz.newMeth(C$, 'preload$java_awt_image_ImageObserver', function (iw) {
+if ((this.availinfo & 32) == 0) {
+p$.addWatcher$java_awt_image_ImageObserver$Z.apply(this, [iw, true]);
+}});
+
+Clazz.newMeth(C$, 'addWatcher$java_awt_image_ImageObserver$Z', function (iw, load) {
+if ((this.availinfo & 64) != 0) {
+if (iw != null ) {
+iw.imageUpdate$java_awt_Image$I$I$I$I$I(this, 192, -1, -1, -1, -1);
+}return;
+}var ir = this.getImageRep();
+ir.addWatcher$java_awt_image_ImageObserver(iw);
+if (load) {
+ir.startProduction();
+}});
+
+Clazz.newMeth(C$, 'reconstruct$I', function (flags) {
+if ((flags & ~this.availinfo) != 0) {
+if ((this.availinfo & 64) != 0) {
+return;
+}var ir = this.getImageRep();
+ir.startProduction();
+while ((flags & ~this.availinfo) != 0){
+try {
+this.wait();
+} catch (e) {
+if (Clazz.exceptionOf(e, "java.lang.InterruptedException")){
+(I$[2]||$incl$(2)).currentThread().interrupt();
+return;
+} else {
+throw e;
+}
+}
+if ((this.availinfo & 64) != 0) {
+return;
+}}
+}});
+
+Clazz.newMeth(C$, 'addInfo$I', function (newinfo) {
+this.availinfo = this.availinfo|(newinfo);
+this.notifyAll();
+});
+
+Clazz.newMeth(C$, 'setDimensions$I$I', function (w, h) {
+this.width = w;
+this.height = h;
+this.addInfo$I(3);
+});
+
+Clazz.newMeth(C$, 'setProperties$java_util_Hashtable', function (props) {
+if (props == null ) {
+props = Clazz.new_((I$[3]||$incl$(3)));
+}this.properties = props;
+this.addInfo$I(4);
+});
+
+Clazz.newMeth(C$, 'infoDone$I', function (status) {
+if (status == 1 || ((~this.availinfo) & 3) != 0 ) {
+this.addInfo$I(64);
+} else if ((this.availinfo & 4) == 0) {
+this.setProperties$java_util_Hashtable(null);
+}});
+
+Clazz.newMeth(C$, 'flush', function () {
+var ir;
+{
+this.availinfo = this.availinfo&(-65);
+ir = this.imagerep;
+this.imagerep = null;
+}if (ir != null ) {
+ir.abort();
+}if (this.src != null ) {
+this.src.flush();
+}});
+
+Clazz.newMeth(C$, 'makeImageRep', function () {
+return Clazz.new_((I$[4]||$incl$(4)).c$$sun_awt_image_ToolkitImage$java_awt_image_ColorModel$Z,[this, (I$[5]||$incl$(5)).getRGBdefault(), false]);
+});
+
+Clazz.newMeth(C$, 'getImageRep', function () {
+if (this.imagerep == null ) {
+this.imagerep = this.makeImageRep();
+}return this.imagerep;
+});
+
+Clazz.newMeth(C$, 'getGraphics', function () {
+throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException').c$$S,["getGraphics() not valid for images created with createImage(producer)"]);
+});
+
+Clazz.newMeth(C$, 'getColorModel', function () {
+var imageRep = this.getImageRep();
+return imageRep.getColorModel();
+});
+
+Clazz.newMeth(C$, 'getBufferedImage', function () {
+var imageRep = this.getImageRep();
+return imageRep.getBufferedImage();
+});
+
+Clazz.newMeth(C$, 'setAccelerationPriority$F', function (priority) {
+C$.superclazz.prototype.setAccelerationPriority$F.apply(this, [priority]);
+var imageRep = this.getImageRep();
+imageRep.setAccelerationPriority$F(this.accelerationPriority);
+});
+})();
+//Created 2018-05-15 01:03:09

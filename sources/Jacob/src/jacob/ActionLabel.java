@@ -18,7 +18,7 @@ public class ActionLabel extends Label
     super(paramString);
     this.out = paramBoolean;
     setForeground(PPD.ACTIONLABEL_FOREGROUND);
-    //setBackground(PPD.ACTIONLABEL_BACKGROUND);
+    setBackground(PPD.ACTIONLABEL_BACKGROUND);
   }
   
   public void paint(Graphics paramGraphics)

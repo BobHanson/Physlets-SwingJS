@@ -85,7 +85,7 @@ class PPDControls2
     localLabel = new Label(PPD.CONTROLS_SUSC);
     localGridBagLayout.setConstraints(localLabel, localGridBagConstraints);
     add(localLabel);
-    //setBackground(PPD.CONTROLS_BACKGROUND);
+    setBackground(PPD.CONTROLS_BACKGROUND);
     updateControls();
   }
   

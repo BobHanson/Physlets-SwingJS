@@ -45,7 +45,6 @@ eField4/TestCharge.js
 eField4/TextThing.js
 eField4/Thing.js
 eField4/VectorField.js
-edu/clarku/tools/DataTable.js
 edu/clarku/tools/InvalidTableIndex.js
 edu/clarku/tools/MalformedVariableList.js
 edu/clarku/tools/NotInCyclicMode.js
@@ -66,7 +65,6 @@ edu/davidson/display/MarkerThing.js
 edu/davidson/display/PhaseThing.js
 edu/davidson/display/ProtractorThing.js
 edu/davidson/display/RectangleThing.js
-edu/davidson/display/SContour.js
 edu/davidson/display/SContour_this_mouseAdapter.js
 edu/davidson/display/SContour_this_mouseMotionAdapter.js
 edu/davidson/display/SGraph.js
@@ -124,7 +122,6 @@ edu/davidson/graphics/TreadButton.js
 edu/davidson/graphics/Util.js
 edu/davidson/numerics/Euler.js
 edu/davidson/numerics/ModEuler.js
-edu/davidson/numerics/Parser.js
 edu/davidson/numerics/ParserException.js
 edu/davidson/numerics/SDifferentiable.js
 edu/davidson/numerics/SODE.js
@@ -152,13 +149,11 @@ edu/davidson/physlets/emwave4/Plane.js
 edu/davidson/physlets/emwave4/Rect3D.js
 edu/davidson/physlets/emwave4/Square.js
 edu/davidson/physlets/emwave4/ThreeDPanel.js
-edu/davidson/physlets/emwave4/Wave.js
 edu/davidson/surfaceplotter/Controller.js
 edu/davidson/surfaceplotter/DataGenerator.js
 edu/davidson/surfaceplotter/LineAccumulator.js
 edu/davidson/surfaceplotter/LineRecord.js
 edu/davidson/surfaceplotter/Projector.js
-edu/davidson/surfaceplotter/SurfaceCanvas.js
 edu/davidson/surfaceplotter/SurfacePanel.js
 edu/davidson/surfaceplotter/SurfaceVertex.js
 edu/davidson/tools/BusyFlag.js
@@ -247,7 +242,6 @@ javax/swing/text/JTextComponent.js
 javax/swing/text/TextAction.js
 poisson/CalcThing.js
 poisson/Poisson.js
-poisson/PoissonPanel.js
 poisson/PoissonPanel_mouseAdapter.js
 poisson/PoissonPanel_mouseMotionAdapter.js
 poisson/Poisson_addCircleBtn_actionAdapter.js

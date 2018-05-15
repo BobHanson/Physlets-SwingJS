@@ -18,7 +18,7 @@ class PPDControls
     setLayout(new FlowLayout(0));
     add(this.start_stop = new Button(PPD.CONTROLS_START));
     this.field = new Button(PPD.CONTROLS_FIELD);
-    //setBackground(PPD.CONTROLS_BACKGROUND);
+    setBackground(PPD.CONTROLS_BACKGROUND);
   }
   
   public boolean handleEvent(Event paramEvent)

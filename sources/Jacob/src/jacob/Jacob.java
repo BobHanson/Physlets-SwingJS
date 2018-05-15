@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.FileDialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -40,7 +41,7 @@ public class Jacob extends Applet {
 		super.start();
 		if (this.firstTime) {
 			PPD.nullElement = new ERectangle(0, 0, this.ppdCanvas.size().width, this.ppdCanvas.size().height);
-			// setBackground(PPD.CANVAS_BACKGROUND);
+			setBackground(PPD.CANVAS_BACKGROUND);
 			if ((this.configFile != null) && (!this.configFile.equals(""))) {
 				loadFile(this.configFile);
 			}
@@ -86,11 +87,17 @@ public class Jacob extends Applet {
 		}
 		String str = "Resources not loaded: file=" + this.rc;
 		InputStream localInputStream = null;
-		try {
+		if (this.ppdCanvas.isJS) { // convert string to stream.
+			String defaultConfig = DefaultRC.getDefault();
+			localInputStream = new ByteArrayInputStream(defaultConfig.getBytes());
+		}
+		if (localInputStream == null) {
+			try {
 			URL localURL = exp.Data.class.getResource(this.rc);
 			localInputStream = localURL.openStream();
-		} catch (Exception localException7) {
-			str = localException7.getMessage();
+			} catch (Exception localException7) {
+				str = localException7.getMessage();
+			}
 		}
 		if (localInputStream == null) {
 			try {

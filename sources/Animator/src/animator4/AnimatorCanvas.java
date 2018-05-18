@@ -31,6 +31,7 @@ public final class AnimatorCanvas extends Canvas
     /**
 	 * 
 	 */
+	boolean isJS = /** @j2sNative true || */ false;
 	private static final long serialVersionUID = 1L;
 	private MouseMotionAdapter mouseMotionAdapter;
     private MouseAdapter       mouseAdapter;
@@ -1107,7 +1108,7 @@ public final class AnimatorCanvas extends Canvas
         dragThing       = null;
         collisionDataSource=null;
 
-        this.setBackground(Color.white);
+        if(!isJS)this.setBackground(Color.white);
 
         this.xOffset = 0;
         this.yOffset = 0;

@@ -116,8 +116,8 @@ public final class PoissonPanel extends Panel implements Runnable, SScalable, SD
       contour.setOwner(owner);
       try{SApplet.addDataSource(this); }catch (Exception e){e.printStackTrace();}
   }
-  public PoissonPanel(Poisson o){this(o,50,50);}
-
+  
+  //public PoissonPanel(Poisson owner){ this(owner,50,50);}
 
   //Data source methods.
   public void setOwner(SApplet o){owner=(Poisson)o;}

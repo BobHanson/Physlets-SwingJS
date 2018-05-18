@@ -15,8 +15,8 @@ import java.net.URL;
 import javax.swing.Timer;
 
 class PPDCanvas extends Canvas implements Runnable {
-	// boolean isJS = /** @j2sNative true || */ false;
-	boolean isJS = true; // for debugging
+	boolean isJS = /** @j2sNative true || */ false;
+	//boolean isJS = true; // for debugging
 	private Timer timer; // Swing timer when in JavaScript
 	private boolean shouldRun = false; // keeps the timer running.
 	Thread anim = null;
@@ -475,7 +475,7 @@ class PPDCanvas extends Canvas implements Runnable {
 	}
 
 	public void runTimer() {
-		timer = new Timer(20, new ActionListener() {
+		timer = new Timer(50, new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {

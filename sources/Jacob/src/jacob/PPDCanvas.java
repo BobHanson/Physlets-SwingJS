@@ -15,8 +15,8 @@ import java.net.URL;
 import javax.swing.Timer;
 
 class PPDCanvas extends Canvas implements Runnable {
-	// boolean isJS = /** @j2sNative true || */ false;
-	boolean isJS = true; // for debugging
+	boolean isJS = /** @j2sNative true || */ false;
+	//boolean isJS = true; // for debugging
 	private Timer timer; // Swing timer when in JavaScript
 	private boolean shouldRun = false; // keeps the timer running.
 	Thread anim = null;
@@ -43,7 +43,7 @@ class PPDCanvas extends Canvas implements Runnable {
 
 	PPDCanvas() {
 		PPD.nullElement = new ERectangle(0, 0, size().width, size().height);
-		// setBackground(PPD.CANVAS_BACKGROUND);
+		setBackground(PPD.CANVAS_BACKGROUND);
 	}
 
 	public void start() {
@@ -354,7 +354,6 @@ class PPDCanvas extends Canvas implements Runnable {
 	}
 
 	public void update(Graphics paramGraphics) {
-		System.out.println("Update canvas");
 		Rectangle localRectangle = paramGraphics.getClipBounds();
 		this.update_hack = false;
 		if ((PPD.CANVAS_DOUBLEBUFFER) && (!PPD.draw_field)) {
@@ -383,7 +382,6 @@ class PPDCanvas extends Canvas implements Runnable {
 	}
 
 	public void paintMe(Graphics paramGraphics) {
-		System.out.println("PaintMe");
 		if (this.update_hack) {
 			repaint();
 			return;
@@ -407,7 +405,6 @@ class PPDCanvas extends Canvas implements Runnable {
 			if (isJS) { // convert string to stream.
 				String jsConfig = JacobConfigurations.getConiguration(paramString);
 				localInputStream = new ByteArrayInputStream(jsConfig.getBytes());
-				System.out.println("String converted to Stream: " + paramString);
 			} else {
 				localInputStream = new URL(Common.getDocumentBase(), paramString).openStream();
 			}
@@ -478,7 +475,7 @@ class PPDCanvas extends Canvas implements Runnable {
 	}
 
 	public void runTimer() {
-		timer = new Timer(20, new ActionListener() {
+		timer = new Timer(50, new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {

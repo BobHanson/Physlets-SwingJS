@@ -199,6 +199,7 @@ public class JacobConfigurations {
 	  		"ec 410 120 10 0.0 0.0 false false false false false\n" + 
 	  		"pn 410 120 1\n" + 
 	  		"pp 410 124 1\n" + 
+	  		"\n" + 
 	  		"ec 150 200 40 0.0 0.0 true false true false false\n" + 
 	  		"pn 130 200 1\n" + 
 	  		"pn 170 200 1\n" + 

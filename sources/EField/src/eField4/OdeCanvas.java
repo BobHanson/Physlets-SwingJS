@@ -31,11 +31,9 @@ import edu.davidson.graph.*;
  */
 public final class OdeCanvas extends Canvas implements SStepable, Runnable {
 
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-// variables for the delayed drawing.
+  boolean isJS = /** @j2sNative true || */ false;
+  private static final long serialVersionUID = 1L;
+  // variables for the delayed drawing.
   private CollisionThing collisionDataSource;
   private boolean        newData                        = false;
   Object                 delayLock                      = new Object();
@@ -1937,10 +1935,6 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
 	 *
 	 */
 	public void run() {
-
-		boolean isJS = /** @j2sNative true || */
-				false;
-
 		while (delayThread != null) {
 			synchronized (delayLock) {
 				switch (state) {
@@ -2128,6 +2122,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     FieldSolver fs;
     for(Enumeration e = v.elements(); e.hasMoreElements(); ) {
       fs = (FieldSolver) e.nextElement();
+      if(fs==null) continue;
       fs.interrupt();
       fieldSolvers.removeElement(fs);
     }
@@ -3490,7 +3485,6 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
 		 *
 		 */
 		public void run() {
-			boolean isJS = /** @j2sNative true || */ false;
 			while (keepRunning || fieldState == FIELD_STATE_INIT) {
 				try {
 					switch (fieldState) {
@@ -3537,8 +3531,9 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
 								fieldTimer.setRepeats(false);
 								fieldTimer.start();
 								return;
-							} 
-							Thread.sleep(20);
+							} else{
+								Thread.sleep(20);
+							}
 							fieldState = FIELD_STATE_COUNTING;
 							continue;
 					case FIELD_STATE_COUNTING:

@@ -48,7 +48,7 @@ public class Poisson extends SApplet {
   Button                             addRectBtn        = new Button();
   Button                             clearBtn          = new Button();
   BorderLayout                       borderLayout1     = new BorderLayout();
-  PoissonPanel                       poissonPanel      = new PoissonPanel(this);
+  PoissonPanel                       poissonPanel      = new PoissonPanel(this,50,50);
   //Panel poissonPanel = new Panel();
   SNumber                            voltageNumber     = new SNumber();
   edu.davidson.graphics.EtchedBorder bevelPanel2       = new EtchedBorder();

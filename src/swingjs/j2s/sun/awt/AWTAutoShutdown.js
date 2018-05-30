@@ -24,7 +24,7 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getInstance', function () {
-return (C$.theInstance == null  ? (C$.theInstance = Clazz.new_(C$)) : C$.theInstance);
+return (C$.theInstance == null  ? (C$.theInstance=Clazz.new_(C$)) : C$.theInstance);
 }, 1);
 
 Clazz.newMeth(C$, 'notifyToolkitThreadBusy', function () {
@@ -56,9 +56,9 @@ Clazz.newMeth(C$, 'setToolkitBusy$Z', function (busy) {
 if (busy != this.toolkitThreadBusy ) {
 if (busy != this.toolkitThreadBusy ) {
 if (busy) {
-this.toolkitThreadBusy = busy;
+this.toolkitThreadBusy=busy;
 } else {
-this.toolkitThreadBusy = busy;
+this.toolkitThreadBusy=busy;
 }}}});
 
 Clazz.newMeth(C$, 'run', function () {
@@ -101,4 +101,4 @@ aLog.fine$S(key + "->" + this.peerMap.get$O(key) );
 }
 });
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:21

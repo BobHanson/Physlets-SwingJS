@@ -30,34 +30,34 @@ C$.c$$java_awt_image_ImageProducer$I$I$I$I$IA$I$I.apply(this, [img.getSource(), 
 
 Clazz.newMeth(C$, 'c$$java_awt_image_ImageProducer$I$I$I$I$IA$I$I', function (ip, x, y, w, h, pix, off, scansize) {
 C$.$init$.apply(this);
-this.producer = ip;
-this.dstX = x;
-this.dstY = y;
-this.dstW = w;
-this.dstH = h;
-this.dstOff = off;
-this.dstScan = scansize;
-this.intPixels = pix;
-this.imageModel = (I$[1]||$incl$(1)).getRGBdefault();
+this.producer=ip;
+this.dstX=x;
+this.dstY=y;
+this.dstW=w;
+this.dstH=h;
+this.dstOff=off;
+this.dstScan=scansize;
+this.intPixels=pix;
+this.imageModel=(I$[1]||$incl$(1)).getRGBdefault();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Image$I$I$I$I$Z', function (img, x, y, w, h, forceRGB) {
 C$.$init$.apply(this);
-this.producer = img.getSource();
-this.dstX = x;
-this.dstY = y;
-this.dstW = w;
-this.dstH = h;
+this.producer=img.getSource();
+this.dstX=x;
+this.dstY=y;
+this.dstW=w;
+this.dstH=h;
 if (forceRGB) {
-this.imageModel = (I$[1]||$incl$(1)).getRGBdefault();
+this.imageModel=(I$[1]||$incl$(1)).getRGBdefault();
 }}, 1);
 
 Clazz.newMeth(C$, 'startGrabbing', function () {
 if ((this.flags & 112) != 0) {
 return;
 }if (!this.grabbing) {
-this.grabbing = true;
-this.flags = this.flags&(-129);
+this.grabbing=true;
+this.flags&=-129;
 this.producer.startProduction$java_awt_image_ImageConsumer(this);
 }});
 
@@ -74,15 +74,15 @@ if ((this.flags & 112) != 0) {
 return (this.flags & 48) != 0;
 }var end = ms + System.currentTimeMillis();
 if (!this.grabbing) {
-this.grabbing = true;
-this.flags = this.flags&(-129);
+this.grabbing=true;
+this.flags&=-129;
 this.producer.startProduction$java_awt_image_ImageConsumer(this);
 }while (this.grabbing){
 var timeout;
 if (ms == 0) {
-timeout = 0;
+timeout=0;
 } else {
-timeout = end - System.currentTimeMillis();
+timeout=end - System.currentTimeMillis();
 if (timeout <= 0) {
 break;
 }}(I$[2]||$incl$(2)).warn$S("wait in PixelGrabber.grabPixels");
@@ -113,16 +113,16 @@ return this.imageModel;
 
 Clazz.newMeth(C$, 'setDimensions$I$I', function (width, height) {
 if (this.dstW < 0) {
-this.dstW = width - this.dstX;
+this.dstW=width - this.dstX;
 }if (this.dstH < 0) {
-this.dstH = height - this.dstY;
+this.dstH=height - this.dstY;
 }if (this.dstW <= 0 || this.dstH <= 0 ) {
 this.imageComplete$I(3);
 } else if (this.intPixels == null  && this.imageModel === (I$[1]||$incl$(1)).getRGBdefault()  ) {
-this.intPixels = Clazz.array(Integer.TYPE, [this.dstW * this.dstH]);
-this.dstScan = this.dstW;
-this.dstOff = 0;
-}this.flags = this.flags|(3);
+this.intPixels=Clazz.array(Integer.TYPE, [this.dstW * this.dstH]);
+this.dstScan=this.dstW;
+this.dstOff=0;
+}this.flags|=3;
 });
 
 Clazz.newMeth(C$, 'setHints$I', function (hints) {
@@ -142,17 +142,17 @@ var size = this.dstW * this.dstH;
 var newpixels = Clazz.array(Integer.TYPE, [size]);
 if (this.bytePixels != null ) {
 for (var i = 0; i < size; i++) {
-newpixels[i] = this.imageModel.getRGB$I(this.bytePixels[i] & 255);
+newpixels[i]=this.imageModel.getRGB$I(this.bytePixels[i] & 255);
 }
 } else if (this.intPixels != null ) {
 for (var i = 0; i < size; i++) {
-newpixels[i] = this.imageModel.getRGB$I(this.intPixels[i]);
+newpixels[i]=this.imageModel.getRGB$I(this.intPixels[i]);
 }
-}this.bytePixels = null;
-this.intPixels = newpixels;
-this.dstScan = this.dstW;
-this.dstOff = 0;
-this.imageModel = (I$[1]||$incl$(1)).getRGBdefault();
+}this.bytePixels=null;
+this.intPixels=newpixels;
+this.dstScan=this.dstW;
+this.dstOff=0;
+this.imageModel=(I$[1]||$incl$(1)).getRGBdefault();
 });
 
 Clazz.newMeth(C$, 'setPixels$I$I$I$I$java_awt_image_ColorModel$BA$I$I', function (srcX, srcY, srcW, srcH, model, pixels, srcOff, srcScan) {
@@ -160,50 +160,50 @@ if (srcY < this.dstY) {
 var diff = this.dstY - srcY;
 if (diff >= srcH) {
 return;
-}srcOff = srcOff+(srcScan * diff);
-srcY = srcY+(diff);
-srcH = srcH-(diff);
+}srcOff+=srcScan * diff;
+srcY+=diff;
+srcH-=diff;
 }if (srcY + srcH > this.dstY + this.dstH) {
-srcH = (this.dstY + this.dstH) - srcY;
+srcH=(this.dstY + this.dstH) - srcY;
 if (srcH <= 0) {
 return;
 }}if (srcX < this.dstX) {
 var diff = this.dstX - srcX;
 if (diff >= srcW) {
 return;
-}srcOff = srcOff+(diff);
-srcX = srcX+(diff);
-srcW = srcW-(diff);
+}srcOff+=diff;
+srcX+=diff;
+srcW-=diff;
 }if (srcX + srcW > this.dstX + this.dstW) {
-srcW = (this.dstX + this.dstW) - srcX;
+srcW=(this.dstX + this.dstW) - srcX;
 if (srcW <= 0) {
 return;
 }}var dstPtr = this.dstOff + (srcY - this.dstY) * this.dstScan + (srcX - this.dstX);
 if (this.intPixels == null ) {
 if (this.bytePixels == null ) {
-this.bytePixels = Clazz.array(Byte.TYPE, [this.dstW * this.dstH]);
-this.dstScan = this.dstW;
-this.dstOff = 0;
-this.imageModel = model;
+this.bytePixels=Clazz.array(Byte.TYPE, [this.dstW * this.dstH]);
+this.dstScan=this.dstW;
+this.dstOff=0;
+this.imageModel=model;
 } else if (this.imageModel !== model ) {
 p$.convertToRGB.apply(this, []);
 }if (this.bytePixels != null ) {
 for (var h = srcH; h > 0; h--) {
 System.arraycopy(pixels, srcOff, this.bytePixels, dstPtr, srcW);
-srcOff = srcOff+(srcScan);
-dstPtr = dstPtr+(this.dstScan);
+srcOff+=srcScan;
+dstPtr+=this.dstScan;
 }
 }}if (this.intPixels != null ) {
 var dstRem = this.dstScan - srcW;
 var srcRem = srcScan - srcW;
 for (var h = srcH; h > 0; h--) {
 for (var w = srcW; w > 0; w--) {
-this.intPixels[dstPtr++] = model.getRGB$I(pixels[srcOff++] & 255);
+this.intPixels[dstPtr++]=model.getRGB$I(pixels[srcOff++] & 255);
 }
-srcOff = srcOff+(srcRem);
-dstPtr = dstPtr+(dstRem);
+srcOff+=srcRem;
+dstPtr+=dstRem;
 }
-}this.flags = this.flags|(8);
+}this.flags|=8;
 });
 
 Clazz.newMeth(C$, 'setPixels$I$I$I$I$java_awt_image_ColorModel$IA$I$I', function (srcX, srcY, srcW, srcH, model, pixels, srcOff, srcScan) {
@@ -211,38 +211,38 @@ if (srcY < this.dstY) {
 var diff = this.dstY - srcY;
 if (diff >= srcH) {
 return;
-}srcOff = srcOff+(srcScan * diff);
-srcY = srcY+(diff);
-srcH = srcH-(diff);
+}srcOff+=srcScan * diff;
+srcY+=diff;
+srcH-=diff;
 }if (srcY + srcH > this.dstY + this.dstH) {
-srcH = (this.dstY + this.dstH) - srcY;
+srcH=(this.dstY + this.dstH) - srcY;
 if (srcH <= 0) {
 return;
 }}if (srcX < this.dstX) {
 var diff = this.dstX - srcX;
 if (diff >= srcW) {
 return;
-}srcOff = srcOff+(diff);
-srcX = srcX+(diff);
-srcW = srcW-(diff);
+}srcOff+=diff;
+srcX+=diff;
+srcW-=diff;
 }if (srcX + srcW > this.dstX + this.dstW) {
-srcW = (this.dstX + this.dstW) - srcX;
+srcW=(this.dstX + this.dstW) - srcX;
 if (srcW <= 0) {
 return;
 }}if (this.intPixels == null ) {
 if (this.bytePixels == null ) {
-this.intPixels = Clazz.array(Integer.TYPE, [this.dstW * this.dstH]);
-this.dstScan = this.dstW;
-this.dstOff = 0;
-this.imageModel = model;
+this.intPixels=Clazz.array(Integer.TYPE, [this.dstW * this.dstH]);
+this.dstScan=this.dstW;
+this.dstOff=0;
+this.imageModel=model;
 } else {
 p$.convertToRGB.apply(this, []);
 }}var dstPtr = this.dstOff + (srcY - this.dstY) * this.dstScan + (srcX - this.dstX);
 if (this.imageModel === model ) {
 for (var h = srcH; h > 0; h--) {
 System.arraycopy(pixels, srcOff, this.intPixels, dstPtr, srcW);
-srcOff = srcOff+(srcScan);
-dstPtr = dstPtr+(this.dstScan);
+srcOff+=srcScan;
+dstPtr+=this.dstScan;
 }
 } else {
 if (this.imageModel !== (I$[1]||$incl$(1)).getRGBdefault() ) {
@@ -251,29 +251,29 @@ p$.convertToRGB.apply(this, []);
 var srcRem = srcScan - srcW;
 for (var h = srcH; h > 0; h--) {
 for (var w = srcW; w > 0; w--) {
-this.intPixels[dstPtr++] = model.getRGB$I(pixels[srcOff++]);
+this.intPixels[dstPtr++]=model.getRGB$I(pixels[srcOff++]);
 }
-srcOff = srcOff+(srcRem);
-dstPtr = dstPtr+(dstRem);
+srcOff+=srcRem;
+dstPtr+=dstRem;
 }
-}this.flags = this.flags|(8);
+}this.flags|=8;
 });
 
 Clazz.newMeth(C$, 'imageComplete$I', function (status) {
-this.grabbing = false;
+this.grabbing=false;
 switch (status) {
 default:
 case 1:
-this.flags = this.flags|(192);
+this.flags|=192;
 break;
 case 4:
-this.flags = this.flags|(128);
+this.flags|=128;
 break;
 case 3:
-this.flags = this.flags|(32);
+this.flags|=32;
 break;
 case 2:
-this.flags = this.flags|(16);
+this.flags|=16;
 break;
 }
 this.producer.removeConsumer$java_awt_image_ImageConsumer(this);
@@ -285,4 +285,4 @@ return this.flags;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:02
+//Created 2018-05-24 08:45:27

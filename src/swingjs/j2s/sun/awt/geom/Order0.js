@@ -16,8 +16,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$D$D', function (x, y) {
 C$.superclazz.c$$I.apply(this, [1]);
 C$.$init$.apply(this);
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 }, 1);
 
 Clazz.newMeth(C$, 'getOrder', function () {
@@ -113,11 +113,11 @@ return this;
 });
 
 Clazz.newMeth(C$, 'getSegment$DA', function (coords) {
-coords[0] = this.x;
-coords[1] = this.y;
+coords[0]=this.x;
+coords[1]=this.y;
 return 0;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:07
+//Created 2018-05-24 08:47:25

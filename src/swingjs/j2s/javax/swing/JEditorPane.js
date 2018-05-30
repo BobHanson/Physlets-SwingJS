@@ -66,7 +66,7 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[13]||$incl$(13)),
 
 Clazz.newMeth(C$, 'fireHyperlinkUpdate$javax_swing_event_HyperlinkEvent', function (e) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[13]||$incl$(13)),['hyperlinkUpdate$javax_swing_event_HyperlinkEvent']) ) {
 (listeners[i + 1]).hyperlinkUpdate$javax_swing_event_HyperlinkEvent(e);
 }}
@@ -89,18 +89,18 @@ var doc = this.initializeModel$javax_swing_text_EditorKit$java_net_URL(this.kit,
 {
 if (this.loading != null ) {
 this.loading.cancel();
-this.loading = null;
-}}p = p$.getAsynchronousLoadPriority$javax_swing_text_Document.apply(this, [doc]);
+this.loading=null;
+}}p=p$.getAsynchronousLoadPriority$javax_swing_text_Document.apply(this, [doc]);
 if (p >= 0) {
 this.setDocument$javax_swing_text_Document(doc);
 {
-this.loading = Clazz.new_((I$[2]||$incl$(2)).c$$java_io_InputStream,[$in]);
+this.loading=Clazz.new_((I$[2]||$incl$(2)).c$$java_io_InputStream,[$in]);
 var pl = Clazz.new_((I$[15]||$incl$(15)).c$$javax_swing_text_Document$java_io_InputStream$I$java_net_URL$java_net_URL, [this, null, doc, this.loading, p, loaded, page]);
 pl.start();
 }return;
 }this.read$java_io_InputStream$javax_swing_text_Document($in, doc);
 this.setDocument$javax_swing_text_Document(doc);
-reloaded = true;
+reloaded=true;
 }} else {
 var pl = Clazz.new_((I$[15]||$incl$(15)).c$$javax_swing_text_Document$java_io_InputStream$I$java_net_URL$java_net_URL, [this, null, null, null, p, loaded, page]);
 pl.start();
@@ -154,7 +154,7 @@ C$.superclazz.prototype.read$java_io_Reader$O.apply(this, [r, desc]);
 Clazz.newMeth(C$, 'read$java_io_InputStream$javax_swing_text_Document', function ($in, doc) {
 if (!(I$[18]||$incl$(18)).TRUE.equals(doc.getProperty$O("IgnoreCharsetDirective"))) {
 var READ_LIMIT = 10240;
-$in = Clazz.new_((I$[19]||$incl$(19)).c$$java_io_InputStream$I,[$in, 10240]);
+$in=Clazz.new_((I$[19]||$incl$(19)).c$$java_io_InputStream$I,[$in, 10240]);
 $in.mark$I(10240);
 }try {
 var charset = this.getClientProperty$O("charset");
@@ -182,7 +182,7 @@ $in.close();
 var url = doc.getProperty$O("stream");
 if (url != null ) {
 var conn = url.openConnection();
-$in = conn.getInputStream();
+$in=conn.getInputStream();
 } else {
 throw changedCharSetException;
 }} else {
@@ -246,7 +246,7 @@ throw e$$;
 
 Clazz.newMeth(C$, 'handleConnectionProperties$java_net_URLConnection', function (conn) {
 if (this.pageProperties == null ) {
-this.pageProperties = Clazz.new_((I$[22]||$incl$(22)));
+this.pageProperties=Clazz.new_((I$[22]||$incl$(22)));
 }});
 
 Clazz.newMeth(C$, 'getPostData', function () {
@@ -273,8 +273,8 @@ return Clazz.new_((I$[24]||$incl$(24)));
 
 Clazz.newMeth(C$, 'getEditorKit', function () {
 if (this.kit == null ) {
-this.kit = this.createDefaultEditorKit();
-this.isUserSetEditorKit = false;
+this.kit=this.createDefaultEditorKit();
+this.isUserSetEditorKit=false;
 }return this.kit;
 });
 
@@ -286,14 +286,14 @@ Clazz.newMeth(C$, 'setContentType$S', function (type) {
 var parm = type.indexOf(";");
 if (parm > -1) {
 var paramList = type.substring(parm);
-type = type.substring(0, parm).trim();
+type=type.substring(0, parm).trim();
 if (type.toLowerCase().startsWith$S("text/")) {
 p$.setCharsetFromContentTypeParameters$S.apply(this, [paramList]);
 }}if ((this.kit == null ) || (!type.equals$O(this.kit.getContentType())) || !this.isUserSetEditorKit  ) {
 var k = this.getEditorKitForContentType$S(type);
 if (k != null  && k !== this.kit  ) {
 this.setEditorKit$javax_swing_text_EditorKit(k);
-this.isUserSetEditorKit = false;
+this.isUserSetEditorKit=false;
 }}});
 
 Clazz.newMeth(C$, 'setCharsetFromContentTypeParameters$S', function (paramlist) {
@@ -301,10 +301,10 @@ var charset = null;
 try {
 var semi = paramlist.indexOf(";");
 if (semi > -1 && semi < paramlist.length$() - 1 ) {
-paramlist = paramlist.substring(semi + 1);
+paramlist=paramlist.substring(semi + 1);
 }if (paramlist.length$() > 0) {
 var hdrParser = Clazz.new_((I$[25]||$incl$(25)).c$$S,[paramlist]);
-charset = hdrParser.findValue$S("charset");
+charset=hdrParser.findValue$S("charset");
 if (charset != null ) {
 this.putClientProperty$O$O("charset", charset);
 }}} catch (e$$) {
@@ -330,10 +330,10 @@ throw e$$;
 
 Clazz.newMeth(C$, 'setEditorKit$javax_swing_text_EditorKit', function (kit) {
 var old = this.kit;
-this.isUserSetEditorKit = true;
+this.isUserSetEditorKit=true;
 if (old != null ) {
 old.deinstall$javax_swing_JEditorPane(this);
-}this.kit = kit;
+}this.kit=kit;
 if (this.kit != null ) {
 this.kit.install$javax_swing_JEditorPane(this);
 this.setDocument$javax_swing_text_Document(this.kit.createDefaultDocument());
@@ -342,20 +342,20 @@ this.setDocument$javax_swing_text_Document(this.kit.createDefaultDocument());
 
 Clazz.newMeth(C$, 'getEditorKitForContentType$S', function (type) {
 if (this.typeHandlers == null ) {
-this.typeHandlers = Clazz.new_((I$[22]||$incl$(22)).c$$I,[3]);
+this.typeHandlers=Clazz.new_((I$[22]||$incl$(22)).c$$I,[3]);
 }var k = this.typeHandlers.get$O(type);
 if (k == null ) {
-k = C$.createEditorKitForContentType$S(type);
+k=C$.createEditorKitForContentType$S(type);
 if (k != null ) {
 this.setEditorKitForContentType$S$javax_swing_text_EditorKit(type, k);
 }}if (k == null ) {
-k = this.createDefaultEditorKit();
+k=this.createDefaultEditorKit();
 }return k;
 });
 
 Clazz.newMeth(C$, 'setEditorKitForContentType$S$javax_swing_text_EditorKit', function (type, k) {
 if (this.typeHandlers == null ) {
-this.typeHandlers = Clazz.new_((I$[22]||$incl$(22)).c$$I,[3]);
+this.typeHandlers=Clazz.new_((I$[22]||$incl$(22)).c$$I,[3]);
 }this.typeHandlers.put$TK$TV(type, k);
 });
 
@@ -391,14 +391,14 @@ C$.superclazz.prototype.replaceSelection$S.apply(this, [content]);
 Clazz.newMeth(C$, 'createEditorKitForContentType$S', function (type) {
 var k = null;
 var kitRegistry = C$.getKitRegisty();
-k = kitRegistry.get$O(type);
+k=kitRegistry.get$O(type);
 if (k == null ) {
 var classname = C$.getKitTypeRegistry().get$O(type);
 try {
-k = (I$[26]||$incl$(26)).getInstance$S$Z(classname, false);
+k=(I$[26]||$incl$(26)).getInstance$S$Z(classname, false);
 kitRegistry.put$TK$TV(type, k);
 } catch (e) {
-k = null;
+k=null;
 }
 }if (k != null ) {
 return k.clone();
@@ -426,7 +426,7 @@ return (I$[3]||$incl$(3)).appContextGet$O(C$.kitTypeRegistryKey);
 Clazz.newMeth(C$, 'getKitRegisty', function () {
 var ht = (I$[3]||$incl$(3)).appContextGet$O(C$.kitRegistryKey);
 if (ht == null ) {
-ht = Clazz.new_((I$[22]||$incl$(22)).c$$I,[3]);
+ht=Clazz.new_((I$[22]||$incl$(22)).c$$I,[3]);
 (I$[3]||$incl$(3)).appContextPut$O$O(C$.kitRegistryKey, ht);
 }return ht;
 }, 1);
@@ -439,7 +439,7 @@ C$.defaultEditorKitMap.put$TK$TV("text/plain", "javax.swing.JEditorPane$PlainEdi
 C$.defaultEditorKitMap.put$TK$TV("text/html", "javax.swing.JEditorPane$PlainEditorKit");
 }}var ht = Clazz.new_((I$[22]||$incl$(22)));
 (I$[3]||$incl$(3)).appContextPut$O$O(C$.kitTypeRegistryKey, ht);
-ht = Clazz.new_((I$[22]||$incl$(22)));
+ht=Clazz.new_((I$[22]||$incl$(22)));
 (I$[3]||$incl$(3)).appContextPut$O$O(C$.kitLoaderRegistryKey, ht);
 for (var key, $key = C$.defaultEditorKitMap.keySet().iterator(); $key.hasNext()&&((key=$key.next()),1);) {
 C$.registerEditorKitForContentType$S$S(key, C$.defaultEditorKitMap.get$O(key));
@@ -457,14 +457,14 @@ if (!this.getScrollableTracksViewportWidth()) {
 var w = port.getWidth();
 var min = ui.getMinimumSize();
 if (w != 0 && w < min.width ) {
-prefWidth = min.width;
+prefWidth=min.width;
 }}if (!this.getScrollableTracksViewportHeight()) {
 var h = port.getHeight();
 var min = ui.getMinimumSize();
 if (h != 0 && h < min.height ) {
-prefHeight = min.height;
+prefHeight=min.height;
 }}if (prefWidth != d.width || prefHeight != d.height ) {
-d = Clazz.new_((I$[27]||$incl$(27)).c$$I$I,[prefWidth, prefHeight]);
+d=Clazz.new_((I$[27]||$incl$(27)).c$$I$I,[prefWidth, prefHeight]);
 }}return d;
 });
 
@@ -561,21 +561,21 @@ this.pageLoaded = false;
 Clazz.newMeth(C$, 'c$$javax_swing_text_Document$java_io_InputStream$I$java_net_URL$java_net_URL', function (doc, $in, priority, old, page) {
 Clazz.super_(C$, this,1);
 this.setPriority$I(priority);
-this.$in = $in;
-this.old = old;
-this.page = page;
-this.doc = doc;
+this.$in=$in;
+this.old=old;
+this.page=page;
+this.doc=doc;
 }, 1);
 
 Clazz.newMeth(C$, 'run', function () {
 try {
 if (this.$in == null ) {
-this.$in = this.this$0.getStream$java_net_URL(this.page);
+this.$in=this.this$0.getStream$java_net_URL(this.page);
 if (this.this$0.kit == null ) {
 (I$[1]||$incl$(1)).getLookAndFeel().provideErrorFeedback$java_awt_Component(this.this$0);
 return;
 }{
-this.$in = this.this$0.loading = Clazz.new_((I$[2]||$incl$(2)).c$$java_io_InputStream,[this.$in]);
+this.$in=this.this$0.loading=Clazz.new_((I$[2]||$incl$(2)).c$$java_io_InputStream,[this.$in]);
 }}if (this.doc == null ) {
 try {
 (I$[3]||$incl$(3)).invokeAndWait$Runnable(((
@@ -588,7 +588,7 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'run', function () {
-this.b$['javax.swing.JEditorPane.PageLoader'].doc = this.b$['javax.swing.JEditorPane'].initializeModel$javax_swing_text_EditorKit$java_net_URL(this.b$['javax.swing.JEditorPane'].kit, this.b$['javax.swing.JEditorPane.PageLoader'].page);
+this.b$['javax.swing.JEditorPane.PageLoader'].doc=this.b$['javax.swing.JEditorPane'].initializeModel$javax_swing_text_EditorKit$java_net_URL(this.b$['javax.swing.JEditorPane'].kit, this.b$['javax.swing.JEditorPane.PageLoader'].page);
 this.b$['javax.swing.JEditorPane'].setDocument$javax_swing_text_Document(this.b$['javax.swing.JEditorPane.PageLoader'].doc);
 });
 })()
@@ -631,7 +631,7 @@ this.b$['javax.swing.JEditorPane'].scrollToReference$S(ref);
 })()
 ), Clazz.new_((I$[5]||$incl$(5)).$init$, [this, null]));
 (I$[3]||$incl$(3)).invokeLater$Runnable(callScrollToReference);
-}this.pageLoaded = true;
+}this.pageLoaded=true;
 } catch (ioe) {
 if (Clazz.exceptionOf(ioe, "java.io.IOException")){
 (I$[1]||$incl$(1)).getLookAndFeel().provideErrorFeedback$java_awt_Component(this.this$0);
@@ -640,7 +640,7 @@ throw ioe;
 }
 } finally {
 {
-this.this$0.loading = null;
+this.this$0.loading=null;
 }(I$[3]||$incl$(3)).invokeLater$Runnable(((
 (function(){var C$=Clazz.newClass(P$, "JEditorPane$PageLoader$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
@@ -680,11 +680,11 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_io_InputStream', function (i) {
 C$.superclazz.c$$java_io_InputStream.apply(this, [i]);
 C$.$init$.apply(this);
-this.canceled = false;
+this.canceled=false;
 }, 1);
 
 Clazz.newMeth(C$, 'cancel', function () {
-this.canceled = true;
+this.canceled=true;
 });
 
 Clazz.newMeth(C$, 'checkCanceled', function () {
@@ -756,7 +756,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
 C$.superclazz.c$$javax_swing_text_Element.apply(this, [elem]);
 C$.$init$.apply(this);
-this.layoutPool = Clazz.new_((I$[8]||$incl$(8)).c$$javax_swing_text_Element,[elem]);
+this.layoutPool=Clazz.new_((I$[8]||$incl$(8)).c$$javax_swing_text_Element,[elem]);
 this.layoutPool.setParent$javax_swing_text_View(this);
 }, 1);
 
@@ -783,7 +783,7 @@ var c = this.getContainer();
 if (Clazz.instanceOf(c, "javax.swing.JTextArea")) {
 var area = c;
 if (!area.getLineWrap()) {
-req.minimum = req.preferred;
+req.minimum=req.preferred;
 }}return req;
 });
 ;
@@ -870,14 +870,14 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S', function (raw) {
 C$.$init$.apply(this);
-this.raw = raw;
-this.tab = Clazz.array(java.lang.String, [10, 2]);
+this.raw=raw;
+this.tab=Clazz.array(java.lang.String, [10, 2]);
 p$.parse.apply(this, []);
 }, 1);
 
 Clazz.newMeth(C$, 'parse', function () {
 if (this.raw != null ) {
-this.raw = this.raw.trim();
+this.raw=this.raw.trim();
 var ca = this.raw.toCharArray();
 var beg = 0;
 var end = 0;
@@ -888,55 +888,55 @@ var len = ca.length;
 while (end < len){
 var c = ca[end];
 if (c == "=") {
-this.tab[i][0] =  String.instantialize(ca, beg, end - beg).toLowerCase();
-inKey = false;
+this.tab[i][0]= String.instantialize(ca, beg, end - beg).toLowerCase();
+inKey=false;
 end++;
-beg = end;
+beg=end;
 } else if (c == "\"") {
 if (inQuote) {
-this.tab[i++][1] =  String.instantialize(ca, beg, end - beg);
-inQuote = false;
+this.tab[i++][1]= String.instantialize(ca, beg, end - beg);
+inQuote=false;
 do {
 end++;
 } while (end < len && (ca[end] == " " || ca[end] == "," ) );
-inKey = true;
-beg = end;
+inKey=true;
+beg=end;
 } else {
-inQuote = true;
+inQuote=true;
 end++;
-beg = end;
+beg=end;
 }} else if (c == " " || c == "," ) {
 if (inQuote) {
 end++;
 continue;
 } else if (inKey) {
-this.tab[i++][0] = ( String.instantialize(ca, beg, end - beg)).toLowerCase();
+this.tab[i++][0]=( String.instantialize(ca, beg, end - beg)).toLowerCase();
 } else {
-this.tab[i++][1] = ( String.instantialize(ca, beg, end - beg));
+this.tab[i++][1]=( String.instantialize(ca, beg, end - beg));
 }while (end < len && (ca[end] == " " || ca[end] == "," ) ){
 end++;
 }
-inKey = true;
-beg = end;
+inKey=true;
+beg=end;
 } else {
 end++;
 }}
 if (--end > beg) {
 if (!inKey) {
 if (ca[end] == "\"") {
-this.tab[i++][1] = ( String.instantialize(ca, beg, end - beg));
+this.tab[i++][1]=( String.instantialize(ca, beg, end - beg));
 } else {
-this.tab[i++][1] = ( String.instantialize(ca, beg, end - beg + 1));
+this.tab[i++][1]=( String.instantialize(ca, beg, end - beg + 1));
 }} else {
-this.tab[i][0] = ( String.instantialize(ca, beg, end - beg + 1)).toLowerCase();
+this.tab[i][0]=( String.instantialize(ca, beg, end - beg + 1)).toLowerCase();
 }} else if (end == beg) {
 if (!inKey) {
 if (ca[end] == "\"") {
-this.tab[i++][1] = String.valueOf(ca[end - 1]);
+this.tab[i++][1]=String.valueOf(ca[end - 1]);
 } else {
-this.tab[i++][1] = String.valueOf(ca[end]);
+this.tab[i++][1]=String.valueOf(ca[end]);
 }} else {
-this.tab[i][0] = String.valueOf(ca[end]).toLowerCase();
+this.tab[i][0]=String.valueOf(ca[end]).toLowerCase();
 }}}});
 
 Clazz.newMeth(C$, 'findKey$I', function (i) {
@@ -955,7 +955,7 @@ return this.findValue$S$S(key, null);
 
 Clazz.newMeth(C$, 'findValue$S$S', function (k, Default) {
 if (k == null ) return Default;
-k = k.toLowerCase();
+k=k.toLowerCase();
 for (var i = 0; i < 10; ++i) {
 if (this.tab[i][0] == null ) {
 return Default;
@@ -976,4 +976,4 @@ return Default;
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:28
+//Created 2018-05-24 08:46:16

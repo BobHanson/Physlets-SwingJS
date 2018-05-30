@@ -48,8 +48,8 @@ if (alpha < 0.0  || alpha > 1.0  ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["alpha value out of range"]);
 }if (rule < 1 || rule > 12 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["unknown composite rule"]);
-}this.rule = rule;
-this.extraAlpha = alpha;
+}this.rule=rule;
+this.extraAlpha=alpha;
 }, 1);
 
 Clazz.newMeth(C$, 'getInstance$I', function (rule) {
@@ -126,4 +126,4 @@ return false;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:48
+//Created 2018-05-24 08:45:05

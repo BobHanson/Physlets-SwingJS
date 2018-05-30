@@ -80,13 +80,13 @@ Clazz.newMeth(C$, 'setSelected$Z', function (b) {
 var group = this.getGroup();
 if (group != null ) {
 group.setSelected$javax_swing_ButtonModel$Z(this, b);
-b = group.isSelected$javax_swing_ButtonModel(this);
+b=group.isSelected$javax_swing_ButtonModel(this);
 }if (this.isSelected() == b ) {
 return;
 }if (b) {
-this.stateMask = this.stateMask|(2);
+this.stateMask|=2;
 } else {
-this.stateMask = this.stateMask&(-3);
+this.stateMask&=-3;
 }this.fireStateChanged();
 this.fireItemStateChanged$java_awt_event_ItemEvent(Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_ItemSelectable$I$O$I,[this, 701, this, this.isSelected() ? 1 : 2]));
 });
@@ -97,19 +97,19 @@ return;
 }if (b == false  && this.isArmed() ) {
 this.setSelected$Z(!this.isSelected());
 }if (b) {
-this.stateMask = this.stateMask|(4);
+this.stateMask|=4;
 } else {
-this.stateMask = this.stateMask&(-5);
+this.stateMask&=-5;
 }this.fireStateChanged();
 if (!this.isPressed() && this.isArmed() ) {
 var modifiers = 0;
 var currentEvent = (I$[2]||$incl$(2)).getCurrentEvent();
 if (Clazz.instanceOf(currentEvent, "java.awt.event.InputEvent")) {
-modifiers = (currentEvent).getModifiers();
+modifiers=(currentEvent).getModifiers();
 } else if (Clazz.instanceOf(currentEvent, "java.awt.event.ActionEvent")) {
-modifiers = (currentEvent).getModifiers();
+modifiers=(currentEvent).getModifiers();
 }this.fireActionPerformed$java_awt_event_ActionEvent(Clazz.new_((I$[3]||$incl$(3)).c$$O$I$S$J$I,[this, 1001, this.getActionCommand(), (I$[2]||$incl$(2)).getMostRecentEventTime(), modifiers]));
 }});
 })()
 })();
-//Created 2018-05-15 01:02:35
+//Created 2018-05-24 08:46:28

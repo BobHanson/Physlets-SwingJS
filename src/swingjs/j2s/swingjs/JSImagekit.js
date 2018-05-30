@@ -33,7 +33,7 @@ return C$.createImageFromBytesStatic$BA$I$I$S(data, imageoffset, imagelength, na
 });
 
 Clazz.newMeth(C$, 'imageComplete$I', function (status) {
-this.jsimage = Clazz.new_((I$[1]||$incl$(1)).c$$IA$I$I$S,[this.pixels, this.width, this.height, null]);
+this.jsimage=Clazz.new_((I$[1]||$incl$(1)).c$$IA$I$I$S,[this.pixels, this.width, this.height, null]);
 });
 
 Clazz.newMeth(C$, 'getCreatedImage', function () {
@@ -41,43 +41,43 @@ return this.jsimage;
 });
 
 Clazz.newMeth(C$, 'setDimensions$I$I', function (width, height) {
-this.width = width;
-this.height = height;
+this.width=width;
+this.height=height;
 });
 
 Clazz.newMeth(C$, 'setProperties$java_util_Hashtable', function (props) {
-this.props = props;
+this.props=props;
 });
 
 Clazz.newMeth(C$, 'setColorModel$java_awt_image_ColorModel', function (model) {
-this.colorModel = model;
+this.colorModel=model;
 });
 
 Clazz.newMeth(C$, 'setHints$I', function (hintflags) {
-this.hints = hintflags;
+this.hints=hintflags;
 });
 
 Clazz.newMeth(C$, 'setPixels$I$I$I$I$java_awt_image_ColorModel$IA$I$I', function (x, y, w, h, model, pixels, off, scansize) {
 if (this.pixels == null ) {
-this.colorModel = model;
-this.pixels = Clazz.array(Integer.TYPE, [this.width * this.height]);
+this.colorModel=model;
+this.pixels=Clazz.array(Integer.TYPE, [this.width * this.height]);
 }for (var n = 0, j = y; n < h; n++, j++) {
 for (var m = 0, i = x; m < w; m++, i++) {
 var k = i + j * this.width;
-this.pixels[k] = pixels[(j - y) * scansize + (i - x) + off];
+this.pixels[k]=pixels[(j - y) * scansize + (i - x) + off];
 }
 }
 });
 
 Clazz.newMeth(C$, 'setPixels$I$I$I$I$java_awt_image_ColorModel$BA$I$I', function (x, y, w, h, model, pixels, off, scansize) {
-this.colorModel = model;
-this.width = w;
-this.height = h;
-this.x = x;
-this.y = y;
-this.off = off;
-this.scansize = scansize;
-this.pixelBytes = pixels;
+this.colorModel=model;
+this.width=w;
+this.height=h;
+this.x=x;
+this.y=y;
+this.off=off;
+this.scansize=scansize;
+this.pixelBytes=pixels;
 (I$[2]||$incl$(2)).notImplemented$S("byte-based image pixels");
 });
 
@@ -88,21 +88,21 @@ var argb = null;
 var b = null;
 var type = null;
 if (data == null ) {
-w = imageoffset;
-h = imagelength;
+w=imageoffset;
+h=imagelength;
 } else {
-if (imagelength < 0) imagelength = data.length;
+if (imagelength < 0) imagelength=data.length;
 var n = imagelength - imageoffset;
-System.arraycopy(data, imageoffset, b = Clazz.array(Byte.TYPE, [n]), 0, n);
+System.arraycopy(data, imageoffset, b=Clazz.array(Byte.TYPE, [n]), 0, n);
 if (b.length < 54) return null;
 switch (C$.getSourceType$BA(b)) {
 case 3:
 var ie = (I$[3]||$incl$(3)).getInstance$S$Z("javajs.img.BMPDecoder", true);
 var o = ie.decodeWindowsBMP$BA(b);
 if (o == null  || o[0] == null  ) return null;
-w = (o[1]).intValue();
-h = (o[2]).intValue();
-argb = o[0];
+w=(o[1]).intValue();
+h=(o[2]).intValue();
+argb=o[0];
 break;
 case 1:
 var pt = 2;
@@ -110,29 +110,29 @@ while (true){
 switch (C$.getInt$BA$I(b, pt)) {
 case 49407:
 case 49919:
-h = C$.getIntRev$BA$I(b, pt + 5);
-w = C$.getIntRev$BA$I(b, pt + 7);
-pt = 0;
+h=C$.getIntRev$BA$I(b, pt + 5);
+w=C$.getIntRev$BA$I(b, pt + 7);
+pt=0;
 break;
 }
 if (pt == 0) break;
-pt = pt+(2 + C$.getIntRev$BA$I(b, pt + 2));
+pt+=2 + C$.getIntRev$BA$I(b, pt + 2);
 }
-type = "jpeg";
+type="jpeg";
 break;
 case 0:
-w = C$.getLong$BA$I(b, 16);
-h = C$.getLong$BA$I(b, 20);
-type = "png";
+w=C$.getLong$BA$I(b, 16);
+h=C$.getLong$BA$I(b, 20);
+type="png";
 break;
 case 2:
-w = C$.getInt$BA$I(b, 6);
-h = C$.getInt$BA$I(b, 8);
-type = "gif";
+w=C$.getInt$BA$I(b, 6);
+h=C$.getInt$BA$I(b, 8);
+type="gif";
 break;
 case -1:
 System.out.println$S("JSImagekit: Unknown image type: " + b[0] + " " + b[1] + " " + b[2] + " " + b[3] );
-data = null;
+data=null;
 break;
 }
 }if (w == 0 || h == 0 ) return null;
@@ -157,4 +157,4 @@ Clazz.newMeth(C$, 'getSourceType$BA', function (b) {
 return (b == null  ? -1 : (b[0] & 255) == 137 && b[1] == 80   && b[2] == 78   && b[3] == 71   ? 0 : (b[0] & 255) == 255 && (b[1] & 255) == 216  ? 1 : b[0] == 71  && b[1] == 73   && b[2] == 70   ? 2 : b[0] == 66  && b[1] == 77   ? 3 : -1);
 }, 1);
 })();
-//Created 2018-05-15 01:03:15
+//Created 2018-05-24 08:47:44

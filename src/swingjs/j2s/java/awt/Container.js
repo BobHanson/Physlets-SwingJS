@@ -38,7 +38,7 @@ this.numOfLWComponents = 0;
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.children = Clazz.new_((I$[3]||$incl$(3)));
+this.children=Clazz.new_((I$[3]||$incl$(3)));
 }, 1);
 
 Clazz.newMeth(C$, 'initializeFocusTraversalKeys', function () {
@@ -89,7 +89,7 @@ return this.addImpl$java_awt_Component$O$I(comp, null, index);
 
 Clazz.newMeth(C$, 'checkAddToSelf$java_awt_Component', function (comp) {
 if (Clazz.instanceOf(comp, "java.awt.Container")) {
-for (var cn = this; cn != null ; cn = cn.parent) {
+for (var cn = this; cn != null ; cn=cn.parent) {
 if (cn === comp ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["adding container\'s parent to itself"]);
 }}
@@ -111,7 +111,7 @@ this.layoutMgr.removeLayoutComponent$java_awt_Component(comp);
 }this.adjustListeningChildren$J$I(32768, -comp.numListening$J(32768));
 this.adjustListeningChildren$J$I(65536, -comp.numListening$J(65536));
 this.adjustDescendants$I(-(comp.countHierarchyMembers()));
-comp.parent = null;
+comp.parent=null;
 this.children.removeItemAt$I(index);
 this.invalidateIfValid();
 } else {
@@ -196,7 +196,7 @@ if (index == -1) {
 this.children.add$TE(comp);
 } else {
 this.children.add$I$TE(index, comp);
-}comp.parent = this;
+}comp.parent=this;
 this.adjustListeningChildren$J$I(32768, comp.numListening$J(32768));
 this.adjustListeningChildren$J$I(65536, comp.numListening$J(65536));
 this.adjustDescendants$I(comp.countHierarchyMembers());
@@ -268,7 +268,7 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["illegal
 this.children.add$TE(comp);
 } else {
 this.children.add$I$TE(index, comp);
-}comp.parent = this;
+}comp.parent=this;
 this.adjustListeningChildren$J$I(32768, comp.numListening$J(32768));
 this.adjustListeningChildren$J$I(65536, comp.numListening$J(65536));
 this.adjustDescendants$I(comp.countHierarchyMembers());
@@ -304,7 +304,7 @@ this.layoutMgr.removeLayoutComponent$java_awt_Component(comp);
 }this.adjustListeningChildren$J$I(32768, -comp.numListening$J(32768));
 this.adjustListeningChildren$J$I(65536, -comp.numListening$J(65536));
 this.adjustDescendants$I(-(comp.countHierarchyMembers()));
-comp.parent = null;
+comp.parent=null;
 this.children.removeItemAt$I(index);
 this.invalidateIfValid();
 if (this.containerListener != null  || (this.eventMask & 2) != 0  || (I$[4]||$incl$(4)).enabledOnToolkit$J(2) ) {
@@ -334,7 +334,7 @@ if (this.peer != null ) {
 comp.removeNotify();
 }if (this.layoutMgr != null ) {
 this.layoutMgr.removeLayoutComponent$java_awt_Component(comp);
-}comp.parent = null;
+}comp.parent=null;
 if (this.containerListener != null  || (this.eventMask & 2) != 0  || (I$[4]||$incl$(4)).enabledOnToolkit$J(2) ) {
 var e = Clazz.new_((I$[5]||$incl$(5)).c$$java_awt_Component$I$java_awt_Component,[this, 301, comp]);
 this.dispatchEvent$java_awt_AWTEvent(e);
@@ -358,15 +358,15 @@ return superListening;
 Clazz.newMeth(C$, 'adjustListeningChildren$J$I', function (mask, num) {
 if (num == 0) return;
 if ((mask & 32768) != 0) {
-this.listeningChildren = this.listeningChildren+(num);
+this.listeningChildren+=num;
 }if ((mask & 65536) != 0) {
-this.listeningBoundsChildren = this.listeningBoundsChildren+(num);
+this.listeningBoundsChildren+=num;
 }this.adjustListeningChildrenOnParent$J$I(mask, num);
 });
 
 Clazz.newMeth(C$, 'adjustDescendants$I', function (num) {
 if (num == 0) return;
-this.descendantsCount = this.descendantsCount+(num);
+this.descendantsCount+=num;
 this.adjustDecendantsOnParent$I(num);
 });
 
@@ -396,7 +396,7 @@ return 0;
 Clazz.newMeth(C$, 'createHierarchyEvents$I$java_awt_Component$java_awt_Container$J$Z', function (id, changed, changedParent, changeFlags, enabledOnToolkit) {
 var listeners = p$.getListenersCount$I$Z.apply(this, [id, enabledOnToolkit]);
 for (var count = listeners, i = 0; count > 0; i++) {
-count = count-(this.children.get$I(i).createHierarchyEvents$I$java_awt_Component$java_awt_Container$J$Z(id, changed, changedParent, changeFlags, enabledOnToolkit));
+count-=this.children.get$I(i).createHierarchyEvents$I$java_awt_Component$java_awt_Container$J$Z(id, changed, changedParent, changeFlags, enabledOnToolkit);
 }
 return listeners + this.createHierEventsComp$I$java_awt_Component$java_awt_Container$J$Z(id, changed, changedParent, changeFlags, enabledOnToolkit);
 });
@@ -406,7 +406,7 @@ if (this.children.isEmpty()) {
 return;
 }var listeners = p$.getListenersCount$I$Z.apply(this, [id, enabledOnToolkit]);
 for (var count = listeners, i = 0; count > 0; i++) {
-count = count-(this.children.get$I(i).createHierarchyEvents$I$java_awt_Component$java_awt_Container$J$Z(id, this, this.parent, changeFlags, enabledOnToolkit));
+count-=this.children.get$I(i).createHierarchyEvents$I$java_awt_Component$java_awt_Container$J$Z(id, this, this.parent, changeFlags, enabledOnToolkit);
 }
 });
 
@@ -415,7 +415,7 @@ return this.layoutMgr;
 });
 
 Clazz.newMeth(C$, 'setLayout$java_awt_LayoutManager', function (mgr) {
-this.layoutMgr = mgr;
+this.layoutMgr=mgr;
 this.invalidateIfValid();
 });
 
@@ -439,11 +439,11 @@ lm.invalidateLayout$java_awt_Container(this);
 Clazz.newMeth(C$, 'validate', function () {
 if (!this.isValid()) {
 {
-if (this.peer == null ) this.peer = this.getToolkit().createComponent$java_awt_Component(this);
+if (this.peer == null ) this.peer=this.getToolkit().createComponent$java_awt_Component(this);
 var n = this.children.size();
 if (!this.isValid() && this.peer != null   && n > 0 ) {
 var p = null;
-if (Clazz.instanceOf(this.peer, "java.awt.peer.ContainerPeer")) p = this.peer;
+if (Clazz.instanceOf(this.peer, "java.awt.peer.ContainerPeer")) p=this.peer;
 if (p != null ) p.beginValidate();
 this.validateTree();
 if (p != null ) {
@@ -509,8 +509,8 @@ Clazz.newMeth(C$, 'preferredSize', function () {
 var dim = this.prefSize;
 if (dim == null  || !(this.isPreferredSizeSet() || this.isValid() ) ) {
 {
-this.prefSize = (this.layoutMgr != null ) ? this.layoutMgr.preferredLayoutSize$java_awt_Container(this) : this.prefSizeComp();
-dim = this.prefSize;
+this.prefSize=(this.layoutMgr != null ) ? this.layoutMgr.preferredLayoutSize$java_awt_Container(this) : this.prefSizeComp();
+dim=this.prefSize;
 }}return (dim == null  ? null : Clazz.new_((I$[6]||$incl$(6)).c$$java_awt_Dimension,[dim]));
 });
 
@@ -518,8 +518,8 @@ Clazz.newMeth(C$, 'getMinimumSize', function () {
 var dim = this.minSize;
 if (dim == null  || !(this.isMinimumSizeSet() || this.isValid() ) ) {
 {
-this.minSize = (this.layoutMgr != null ) ? this.layoutMgr.minimumLayoutSize$java_awt_Container(this) : this.minimumSize();
-dim = this.minSize;
+this.minSize=(this.layoutMgr != null ) ? this.layoutMgr.minimumLayoutSize$java_awt_Container(this) : this.minimumSize();
+dim=this.minSize;
 }}if (dim != null ) {
 return Clazz.new_((I$[6]||$incl$(6)).c$$java_awt_Dimension,[dim]);
 } else {
@@ -532,10 +532,10 @@ if (dim == null  || !(this.isMaximumSizeSet() || this.isValid() ) ) {
 {
 if (Clazz.instanceOf(this.layoutMgr, "java.awt.LayoutManager2")) {
 var lm = this.layoutMgr;
-this.maxSize = lm.maximumLayoutSize$java_awt_Container(this);
+this.maxSize=lm.maximumLayoutSize$java_awt_Container(this);
 } else {
-this.maxSize = this.getMaxSizeComp();
-}dim = this.maxSize;
+this.maxSize=this.getMaxSizeComp();
+}dim=this.maxSize;
 }}if (dim != null ) {
 return Clazz.new_((I$[6]||$incl$(6)).c$$java_awt_Dimension,[dim]);
 } else {
@@ -547,9 +547,9 @@ var xAlign;
 if (Clazz.instanceOf(this.layoutMgr, "java.awt.LayoutManager2")) {
 {
 var lm = this.layoutMgr;
-xAlign = lm.getLayoutAlignmentX$java_awt_Container(this);
+xAlign=lm.getLayoutAlignmentX$java_awt_Container(this);
 }} else {
-xAlign = this.getAlignmentXComp();
+xAlign=this.getAlignmentXComp();
 }return xAlign;
 });
 
@@ -558,9 +558,9 @@ var yAlign;
 if (Clazz.instanceOf(this.layoutMgr, "java.awt.LayoutManager2")) {
 {
 var lm = this.layoutMgr;
-yAlign = lm.getLayoutAlignmentY$java_awt_Container(this);
+yAlign=lm.getLayoutAlignmentY$java_awt_Container(this);
 }} else {
-yAlign = this.getAlignmentYComp();
+yAlign=this.getAlignmentYComp();
 }return yAlign;
 });
 
@@ -592,14 +592,14 @@ if (this.isShowing()) {
 Clazz.newMeth(C$, 'addContainerListener$java_awt_event_ContainerListener', function (l) {
 if (l == null ) {
 return;
-}this.containerListener = (I$[10]||$incl$(10)).add$java_awt_event_ContainerListener$java_awt_event_ContainerListener(this.containerListener, l);
-this.newEventsOnly = true;
+}this.containerListener=(I$[10]||$incl$(10)).add$java_awt_event_ContainerListener$java_awt_event_ContainerListener(this.containerListener, l);
+this.newEventsOnly=true;
 });
 
 Clazz.newMeth(C$, 'removeContainerListener$java_awt_event_ContainerListener', function (l) {
 if (l == null ) {
 return;
-}this.containerListener = (I$[10]||$incl$(10)).remove$java_awt_event_ContainerListener$java_awt_event_ContainerListener(this.containerListener, l);
+}this.containerListener=(I$[10]||$incl$(10)).remove$java_awt_event_ContainerListener$java_awt_event_ContainerListener(this.containerListener, l);
 });
 
 Clazz.newMeth(C$, 'getContainerListeners', function () {
@@ -609,7 +609,7 @@ return (this.getListeners$Class(Clazz.getClass((I$[11]||$incl$(11)),['componentA
 Clazz.newMeth(C$, 'getListeners$Class', function (listenerType) {
 var l = null;
 if (listenerType === Clazz.getClass((I$[11]||$incl$(11)),['componentAdded$java_awt_event_ContainerEvent','componentRemoved$java_awt_event_ContainerEvent']) ) {
-l = this.containerListener;
+l=this.containerListener;
 } else {
 return this.getListenersComp$Class(listenerType);
 }return (I$[10]||$incl$(10)).getListeners$java_util_EventListener$Class(l, listenerType);
@@ -677,7 +677,7 @@ return p$.getMouseEventTarget$I$I$Z$java_awt_Container_EventTargetFilter$Z.apply
 Clazz.newMeth(C$, 'getMouseEventTarget$I$I$Z$java_awt_Container_EventTargetFilter$Z', function (x, y, includeSelf, filter, searchHeavyweights) {
 var comp = null;
 if (comp == null  || comp === this  ) {
-comp = p$.getMouseEventTargetImpl$I$I$Z$java_awt_Container_EventTargetFilter$Z$Z.apply(this, [x, y, includeSelf, filter, false, searchHeavyweights]);
+comp=p$.getMouseEventTargetImpl$I$I$Z$java_awt_Container_EventTargetFilter$Z$Z.apply(this, [x, y, includeSelf, filter, false, searchHeavyweights]);
 }return comp;
 });
 
@@ -697,8 +697,8 @@ return comp;
 }}}}
 var isPeerOK;
 var isMouseOverMe;
-isPeerOK = includeSelf;
-isMouseOverMe = this.contains$I$I(x, y);
+isPeerOK=includeSelf;
+isMouseOverMe=this.contains$I$I(x, y);
 if (isMouseOverMe && isPeerOK && filter.accept$java_awt_Component(this)  ) {
 return this;
 }return null;
@@ -764,7 +764,7 @@ this.children.get$I(i).addNotify();
 }});
 
 Clazz.newMeth(C$, 'setDispatcher', function () {
-this.dispatcher = Clazz.new_((I$[13]||$incl$(13)).c$$java_awt_Container,[this]);
+this.dispatcher=Clazz.new_((I$[13]||$incl$(13)).c$$java_awt_Container,[this]);
 });
 
 Clazz.newMeth(C$, 'removeNotify', function () {
@@ -777,18 +777,18 @@ comp.setAutoFocusTransferOnDisposal$Z(true);
 }}
 if (this.dispatcher != null ) {
 this.dispatcher.dispose();
-this.dispatcher = null;
+this.dispatcher=null;
 }this.removeNotifyComp();
 });
 
 Clazz.newMeth(C$, 'isAncestorOf$java_awt_Component', function (c) {
 var p;
-if (c == null  || ((p = c.getParent()) == null ) ) {
+if (c == null  || ((p=c.getParent()) == null ) ) {
 return false;
 }while (p != null ){
 if (p === this ) {
 return true;
-}p = p.getParent();
+}p=p.getParent();
 }
 return false;
 });
@@ -826,7 +826,7 @@ return false;
 Clazz.newMeth(C$, 'isParentOf$java_awt_Component', function (comp) {
 {
 while (comp != null  && comp !== this   && !(Clazz.instanceOf(comp, "java.awt.Window")) ){
-comp = comp.getParent();
+comp=comp.getParent();
 }
 return (comp === this );
 }});
@@ -848,8 +848,8 @@ return this.focusCycleRoot;
 Clazz.newMeth(C$, 'setFocusTraversalPolicyProvider$Z', function (provider) {
 var oldProvider;
 {
-oldProvider = this.focusTraversalPolicyProvider;
-this.focusTraversalPolicyProvider = provider;
+oldProvider=this.focusTraversalPolicyProvider;
+this.focusTraversalPolicyProvider=provider;
 }this.firePropertyChange$S$Z$Z("focusTraversalPolicyProvider", oldProvider, provider);
 });
 
@@ -899,15 +899,15 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["Peer does 
 }var addHW = 0;
 var addLW = 0;
 if (Clazz.instanceOf(c, "java.awt.Container")) {
-addLW = (c).numOfLWComponents;
-addHW = (c).numOfHWComponents;
+addLW=(c).numOfLWComponents;
+addHW=(c).numOfHWComponents;
 }if (c.isLightweight()) {
 addLW++;
 } else {
 addHW++;
-}for (var cont = this; cont != null ; cont = cont.getContainer()) {
-cont.numOfLWComponents = cont.numOfLWComponents+(addLW);
-cont.numOfHWComponents = cont.numOfHWComponents+(addHW);
+}for (var cont = this; cont != null ; cont=cont.getContainer()) {
+cont.numOfLWComponents+=addLW;
+cont.numOfHWComponents+=addHW;
 }
 });
 
@@ -917,15 +917,15 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["Peer does 
 }var subHW = 0;
 var subLW = 0;
 if (Clazz.instanceOf(c, "java.awt.Container")) {
-subLW = (c).numOfLWComponents;
-subHW = (c).numOfHWComponents;
+subLW=(c).numOfLWComponents;
+subHW=(c).numOfHWComponents;
 }if (c.isLightweight()) {
 subLW++;
 } else {
 subHW++;
-}for (var cont = this; cont != null ; cont = cont.getContainer()) {
-cont.numOfLWComponents = cont.numOfLWComponents-(subLW);
-cont.numOfHWComponents = cont.numOfHWComponents-(subHW);
+}for (var cont = this; cont != null ; cont=cont.getContainer()) {
+cont.numOfLWComponents-=subLW;
+cont.numOfHWComponents-=subHW;
 }
 });
 ;
@@ -955,4 +955,4 @@ return (comp.eventMask & 32) != 0 || (comp.eventMask & 16) != 0  || (comp.eventM
 });
 })()
 })();
-//Created 2018-05-15 01:01:49
+//Created 2018-05-24 08:45:07

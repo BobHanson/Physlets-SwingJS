@@ -18,58 +18,58 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$I$F', function (initialCapacity, loadFactor) {
 C$.superclazz.c$$I$F.apply(this, [initialCapacity, loadFactor]);
 C$.$init$.apply(this);
-this.accessOrder = false;
+this.accessOrder=false;
 this.init();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (initialCapacity) {
 C$.superclazz.c$$I.apply(this, [initialCapacity]);
 C$.$init$.apply(this);
-this.accessOrder = false;
+this.accessOrder=false;
 this.init();
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.accessOrder = false;
+this.accessOrder=false;
 this.init();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Map', function (m) {
 C$.superclazz.c$$java_util_Map.apply(this, [m]);
 C$.$init$.apply(this);
-this.accessOrder = false;
+this.accessOrder=false;
 this.init();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$F$Z', function (initialCapacity, loadFactor, accessOrder) {
 C$.superclazz.c$$I$F.apply(this, [initialCapacity, loadFactor]);
 C$.$init$.apply(this);
-this.accessOrder = accessOrder;
+this.accessOrder=accessOrder;
 this.init();
 }, 1);
 
 Clazz.newMeth(C$, 'init', function () {
-this.header = Clazz.new_((I$[1]||$incl$(1)).c$$I$TK$TV$java_util_HashMap_Entry,[-1, null, null, null]);
-this.header.before = this.header.after = this.header;
+this.header=Clazz.new_((I$[1]||$incl$(1)).c$$I$TK$TV$java_util_HashMap_Entry,[-1, null, null, null]);
+this.header.before=this.header.after=this.header;
 });
 
 Clazz.newMeth(C$, 'transfer$java_util_HashMap_EntryA', function (newTable) {
 var newCapacity = newTable.length;
-for (var e = this.header.after; e !== this.header ; e = e.after) {
+for (var e = this.header.after; e !== this.header ; e=e.after) {
 var index = P$.HashMap.indexFor$I$I(e.hash, newCapacity);
-e.next = newTable[index];
-newTable[index] = e;
+e.next=newTable[index];
+newTable[index]=e;
 }
 });
 
 Clazz.newMeth(C$, 'containsValue$O', function (value) {
 if (value == null ) {
-for (var e = this.header.after; e !== this.header ; e = e.after) if (e.value == null ) return true;
+for (var e = this.header.after; e !== this.header ; e=e.after) if (e.value == null ) return true;
 
 } else {
-for (var e = this.header.after; e !== this.header ; e = e.after) if (value.equals$O(e.value)) return true;
+for (var e = this.header.after; e !== this.header ; e=e.after) if (value.equals$O(e.value)) return true;
 
 }return false;
 });
@@ -83,7 +83,7 @@ return e.value;
 
 Clazz.newMeth(C$, 'clear', function () {
 C$.superclazz.prototype.clear.apply(this, []);
-this.header.before = this.header.after = this.header;
+this.header.before=this.header.after=this.header;
 });
 
 Clazz.newMeth(C$, 'newKeyIterator', function () {
@@ -110,7 +110,7 @@ if (this.$size >= this.threshold) this.resize$I(2 * this.table.length);
 Clazz.newMeth(C$, ['createEntry$I$TK$TV$I'], function (hash, key, value, bucketIndex) {
 var old = this.table[bucketIndex];
 var e = Clazz.new_((I$[1]||$incl$(1)).c$$I$TK$TV$java_util_HashMap_Entry,[hash, key, value, old]);
-this.table[bucketIndex] = e;
+this.table[bucketIndex]=e;
 e.addBefore$java_util_LinkedHashMap_Entry(this.header);
 this.$size++;
 });
@@ -142,15 +142,15 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'remove', function () {
-this.before.after = this.after;
-this.after.before = this.before;
+this.before.after=this.after;
+this.after.before=this.before;
 });
 
 Clazz.newMeth(C$, ['addBefore$java_util_LinkedHashMap_Entry'], function (existingEntry) {
-this.after = existingEntry;
-this.before = existingEntry.before;
-this.before.after = this;
-this.after.before = this;
+this.after=existingEntry;
+this.before=existingEntry.before;
+this.before.after=this;
+this.after.before=this;
 });
 
 Clazz.newMeth(C$, ['recordAccess$java_util_HashMap'], function (m) {
@@ -196,15 +196,15 @@ Clazz.newMeth(C$, 'remove', function () {
 if (this.lastReturned == null ) throw Clazz.new_(Clazz.load('java.lang.IllegalStateException'));
 if (this.this$0.modCount != this.expectedModCount) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
 this.b$['java.util.LinkedHashMap'].remove$O(this.lastReturned.key);
-this.lastReturned = null;
-this.expectedModCount = this.this$0.modCount;
+this.lastReturned=null;
+this.expectedModCount=this.this$0.modCount;
 });
 
 Clazz.newMeth(C$, 'nextEntry', function () {
 if (this.this$0.modCount != this.expectedModCount) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
 if (this.$nextEntry === this.this$0.header ) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
-var e = this.lastReturned = this.$nextEntry;
-this.$nextEntry = e.after;
+var e = this.lastReturned=this.$nextEntry;
+this.$nextEntry=e.after;
 return e;
 });
 
@@ -262,4 +262,4 @@ return this.nextEntry();
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:13
+//Created 2018-05-24 08:45:47

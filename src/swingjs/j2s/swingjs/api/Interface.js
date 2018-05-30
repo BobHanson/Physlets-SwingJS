@@ -32,7 +32,7 @@ if (!isQuiet && C$.instances.indexOf(name + ";") <= 0 ) {
 System.out.println$S("swingjs.api.Interface creating instance of " + name);
 C$.instances += name + ";";
 }var y = Clazz.forName(name);
-if (y != null ) x = y.newInstance();
+if (y != null ) x=y.newInstance();
 } catch (e) {
 System.out.println$S("Swingjs.api.Interface Error creating instance for " + name + ": \n" + e );
 {
@@ -48,4 +48,4 @@ return x;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:17
+//Created 2018-05-24 08:47:47

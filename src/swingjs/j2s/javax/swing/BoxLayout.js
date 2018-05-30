@@ -22,8 +22,8 @@ Clazz.newMeth(C$, 'c$$java_awt_Container$I', function (target, axis) {
 C$.$init$.apply(this);
 if (axis != 0 && axis != 1  && axis != 2  && axis != 3 ) {
 throw Clazz.new_((I$[1]||$incl$(1)).c$$S,["Invalid axis"]);
-}this.axis = axis;
-this.target = target;
+}this.axis=axis;
+this.target=target;
 }, 1);
 
 Clazz.newMeth(C$, 'getTarget', function () {
@@ -36,10 +36,10 @@ return this.axis;
 
 Clazz.newMeth(C$, 'invalidateLayout$java_awt_Container', function (target) {
 this.checkContainer$java_awt_Container(target);
-this.xChildren = null;
-this.yChildren = null;
-this.xTotal = null;
-this.yTotal = null;
+this.xChildren=null;
+this.yChildren=null;
+this.xTotal=null;
+this.yTotal=null;
 });
 
 Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (name, comp) {
@@ -59,10 +59,10 @@ var size;
 {
 this.checkContainer$java_awt_Container(target);
 this.checkRequests();
-size = Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[this.xTotal.preferred, this.yTotal.preferred]);
+size=Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[this.xTotal.preferred, this.yTotal.preferred]);
 }var insets = target.getInsets();
-size.width = (Math.min(size.width + insets.left + insets.right , 2147483647)|0);
-size.height = (Math.min(size.height + insets.top + insets.bottom , 2147483647)|0);
+size.width=(Math.min(size.width + insets.left + insets.right , 2147483647)|0);
+size.height=(Math.min(size.height + insets.top + insets.bottom , 2147483647)|0);
 return size;
 });
 
@@ -71,10 +71,10 @@ var size;
 {
 this.checkContainer$java_awt_Container(target);
 this.checkRequests();
-size = Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[this.xTotal.minimum, this.yTotal.minimum]);
+size=Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[this.xTotal.minimum, this.yTotal.minimum]);
 }var insets = target.getInsets();
-size.width = (Math.min(size.width + insets.left + insets.right , 2147483647)|0);
-size.height = (Math.min(size.height + insets.top + insets.bottom , 2147483647)|0);
+size.width=(Math.min(size.width + insets.left + insets.right , 2147483647)|0);
+size.height=(Math.min(size.height + insets.top + insets.bottom , 2147483647)|0);
 return size;
 });
 
@@ -83,10 +83,10 @@ var size;
 {
 this.checkContainer$java_awt_Container(target);
 this.checkRequests();
-size = Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[this.xTotal.maximum, this.yTotal.maximum]);
+size=Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[this.xTotal.maximum, this.yTotal.maximum]);
 }var insets = target.getInsets();
-size.width = (Math.min(size.width + insets.left + insets.right , 2147483647)|0);
-size.height = (Math.min(size.height + insets.top + insets.bottom , 2147483647)|0);
+size.width=(Math.min(size.width + insets.left + insets.right , 2147483647)|0);
+size.height=(Math.min(size.height + insets.top + insets.bottom , 2147483647)|0);
 return size;
 });
 
@@ -111,8 +111,8 @@ var yOffsets = Clazz.array(Integer.TYPE, [nChildren]);
 var ySpans = Clazz.array(Integer.TYPE, [nChildren]);
 var alloc = target.getSize();
 var $in = target.getInsets();
-alloc.width = alloc.width-($in.left + $in.right);
-alloc.height = alloc.height-($in.top + $in.bottom);
+alloc.width-=$in.left + $in.right;
+alloc.height-=$in.top + $in.bottom;
 var o = target.getComponentOrientation();
 var absoluteAxis = p$.resolveAxis$I$java_awt_ComponentOrientation.apply(this, [this.axis, o]);
 var ltr = (absoluteAxis != this.axis) ? o.isLeftToRight() : true;
@@ -138,40 +138,40 @@ throw Clazz.new_((I$[1]||$incl$(1)).c$$S,["BoxLayout can\'t be shared"]);
 Clazz.newMeth(C$, 'checkRequests', function () {
 if (this.xChildren == null  || this.yChildren == null  ) {
 var n = this.target.getComponentCount();
-this.xChildren = Clazz.array((I$[3]||$incl$(3)), [n]);
-this.yChildren = Clazz.array((I$[3]||$incl$(3)), [n]);
+this.xChildren=Clazz.array((I$[3]||$incl$(3)), [n]);
+this.yChildren=Clazz.array((I$[3]||$incl$(3)), [n]);
 for (var i = 0; i < n; i++) {
 var c = this.target.getComponent$I(i);
 if (!c.isVisible()) {
-this.xChildren[i] = Clazz.new_((I$[3]||$incl$(3)).c$$I$I$I$F,[0, 0, 0, c.getAlignmentX()]);
-this.yChildren[i] = Clazz.new_((I$[3]||$incl$(3)).c$$I$I$I$F,[0, 0, 0, c.getAlignmentY()]);
+this.xChildren[i]=Clazz.new_((I$[3]||$incl$(3)).c$$I$I$I$F,[0, 0, 0, c.getAlignmentX()]);
+this.yChildren[i]=Clazz.new_((I$[3]||$incl$(3)).c$$I$I$I$F,[0, 0, 0, c.getAlignmentY()]);
 continue;
 }var min = c.getMinimumSize();
 var typ = c.getPreferredSize();
 var max = c.getMaximumSize();
-this.xChildren[i] = Clazz.new_((I$[3]||$incl$(3)).c$$I$I$I$F,[min.width, typ.width, max.width, c.getAlignmentX()]);
-this.yChildren[i] = Clazz.new_((I$[3]||$incl$(3)).c$$I$I$I$F,[min.height, typ.height, max.height, c.getAlignmentY()]);
+this.xChildren[i]=Clazz.new_((I$[3]||$incl$(3)).c$$I$I$I$F,[min.width, typ.width, max.width, c.getAlignmentX()]);
+this.yChildren[i]=Clazz.new_((I$[3]||$incl$(3)).c$$I$I$I$F,[min.height, typ.height, max.height, c.getAlignmentY()]);
 }
 var absoluteAxis = p$.resolveAxis$I$java_awt_ComponentOrientation.apply(this, [this.axis, this.target.getComponentOrientation()]);
 if (absoluteAxis == 0) {
-this.xTotal = (I$[3]||$incl$(3)).getTiledSizeRequirements$javax_swing_SizeRequirementsA(this.xChildren);
-this.yTotal = (I$[3]||$incl$(3)).getAlignedSizeRequirements$javax_swing_SizeRequirementsA(this.yChildren);
+this.xTotal=(I$[3]||$incl$(3)).getTiledSizeRequirements$javax_swing_SizeRequirementsA(this.xChildren);
+this.yTotal=(I$[3]||$incl$(3)).getAlignedSizeRequirements$javax_swing_SizeRequirementsA(this.yChildren);
 } else {
-this.xTotal = (I$[3]||$incl$(3)).getAlignedSizeRequirements$javax_swing_SizeRequirementsA(this.xChildren);
-this.yTotal = (I$[3]||$incl$(3)).getTiledSizeRequirements$javax_swing_SizeRequirementsA(this.yChildren);
+this.xTotal=(I$[3]||$incl$(3)).getAlignedSizeRequirements$javax_swing_SizeRequirementsA(this.xChildren);
+this.yTotal=(I$[3]||$incl$(3)).getTiledSizeRequirements$javax_swing_SizeRequirementsA(this.yChildren);
 }}});
 
 Clazz.newMeth(C$, 'resolveAxis$I$java_awt_ComponentOrientation', function (axis, o) {
 var absoluteAxis;
 if (axis == 2) {
-absoluteAxis = o.isHorizontal() ? 0 : 1;
+absoluteAxis=o.isHorizontal() ? 0 : 1;
 } else if (axis == 3) {
-absoluteAxis = o.isHorizontal() ? 1 : 0;
+absoluteAxis=o.isHorizontal() ? 1 : 0;
 } else {
-absoluteAxis = axis;
+absoluteAxis=axis;
 }return absoluteAxis;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:23
+//Created 2018-05-24 08:46:07

@@ -19,7 +19,7 @@ this.rootPaneCheckingEnabled = false;
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
 this.setFrameViewer$swingjs_JSFrameViewer(this.appletViewer);
-this.uiClassID = "AppletUI";
+this.uiClassID="AppletUI";
 p$.setJApplet.apply(this, []);
 this.updateUI();
 }, 1);
@@ -44,7 +44,7 @@ return rp;
 
 Clazz.newMeth(C$, 'setTransferHandler$javax_swing_TransferHandler', function (newHandler) {
 var oldHandler = this.transferHandler;
-this.transferHandler = newHandler;
+this.transferHandler=newHandler;
 (I$[5]||$incl$(5)).installSwingDropTargetAsNecessary$java_awt_Component$javax_swing_TransferHandler(this, this.transferHandler);
 this.firePropertyChange$S$O$O("transferHandler", oldHandler, newHandler);
 });
@@ -76,7 +76,7 @@ return this.rootPaneCheckingEnabled;
 });
 
 Clazz.newMeth(C$, 'setRootPaneCheckingEnabled$Z', function (enabled) {
-this.rootPaneCheckingEnabled = enabled;
+this.rootPaneCheckingEnabled=enabled;
 });
 
 Clazz.newMeth(C$, 'addImpl$java_awt_Component$O$I', function (comp, constraints, index) {
@@ -106,7 +106,7 @@ return this.rootPane;
 Clazz.newMeth(C$, 'setRootPane$javax_swing_JRootPane', function (root) {
 if (this.rootPane != null ) {
 this.remove$java_awt_Component(this.rootPane);
-}this.rootPane = root;
+}this.rootPane=root;
 if (this.rootPane != null ) {
 var checkingEnabled = this.isRootPaneCheckingEnabled();
 try {
@@ -163,4 +163,4 @@ var rootPaneCheckingEnabledString = (this.rootPaneCheckingEnabled ? "true" : "fa
 return C$.superclazz.prototype.paramString.apply(this, []) + ",rootPane=" + rootPaneString + ",rootPaneCheckingEnabled=" + rootPaneCheckingEnabledString ;
 });
 })();
-//Created 2018-05-15 01:02:25
+//Created 2018-05-24 08:46:11

@@ -23,11 +23,11 @@ this.numBanks = 1;
 Clazz.newMeth(C$, 'c$$I$I$I$I$I$IA', function (dataType, w, h, pixelStride, scanlineStride, bandOffsets) {
 C$.superclazz.c$$I$I$I$I.apply(this, [dataType, w, h, bandOffsets.length]);
 C$.$init$.apply(this);
-this.dataType = dataType;
-this.pixelStride = pixelStride;
-this.scanlineStride = scanlineStride;
-this.bandOffsets = bandOffsets.clone();
-this.$numBands = bandOffsets.length;
+this.dataType=dataType;
+this.pixelStride=pixelStride;
+this.scanlineStride=scanlineStride;
+this.bandOffsets=bandOffsets.clone();
+this.$numBands=bandOffsets.length;
 if (pixelStride < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Pixel stride must be >= 0"]);
 }if (scanlineStride < 0) {
@@ -36,20 +36,20 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Scanlin
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Must have at least one band."]);
 }if ((dataType < 0)) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Unsupported dataType."]);
-}this.bankIndices = Clazz.array(Integer.TYPE, [this.$numBands]);
+}this.bankIndices=Clazz.array(Integer.TYPE, [this.$numBands]);
 for (var i = 0; i < this.$numBands; i++) {
-this.bankIndices[i] = 0;
+this.bankIndices[i]=0;
 }
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I$I$IA$IA', function (dataType, w, h, pixelStride, scanlineStride, bankIndices, bandOffsets) {
 C$.superclazz.c$$I$I$I$I.apply(this, [dataType, w, h, bandOffsets.length]);
 C$.$init$.apply(this);
-this.dataType = dataType;
-this.pixelStride = pixelStride;
-this.scanlineStride = scanlineStride;
-this.bandOffsets = bandOffsets.clone();
-this.bankIndices = bankIndices.clone();
+this.dataType=dataType;
+this.pixelStride=pixelStride;
+this.scanlineStride=scanlineStride;
+this.bandOffsets=bandOffsets.clone();
+this.bankIndices=bankIndices.clone();
 if (pixelStride < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Pixel stride must be >= 0"]);
 }if (scanlineStride < 0) {
@@ -61,40 +61,40 @@ if (maxBank < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Index of bank 0 is less than 0 (" + maxBank + ")" ]);
 }for (var i = 1; i < bankIndices.length; i++) {
 if (bankIndices[i] > maxBank) {
-maxBank = bankIndices[i];
+maxBank=bankIndices[i];
 } else if (bankIndices[i] < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Index of bank " + i + " is less than 0 (" + maxBank + ")" ]);
 }}
-this.numBanks = maxBank + 1;
-this.$numBands = bandOffsets.length;
+this.numBanks=maxBank + 1;
+this.$numBands=bandOffsets.length;
 if (bandOffsets.length != bankIndices.length) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Length of bandOffsets must equal length of bankIndices."]);
 }}, 1);
 
 Clazz.newMeth(C$, 'getBufferSize', function () {
 var maxBandOff = this.bandOffsets[0];
-for (var i = 1; i < this.bandOffsets.length; i++) maxBandOff = Math.max(maxBandOff, this.bandOffsets[i]);
+for (var i = 1; i < this.bandOffsets.length; i++) maxBandOff=Math.max(maxBandOff, this.bandOffsets[i]);
 
 var size = 0;
-if (maxBandOff >= 0) size = size+(maxBandOff + 1);
-if (this.pixelStride > 0) size = size+(this.pixelStride * (this.width - 1));
-if (this.scanlineStride > 0) size = size+(this.scanlineStride * (this.height - 1));
+if (maxBandOff >= 0) size+=maxBandOff + 1;
+if (this.pixelStride > 0) size+=this.pixelStride * (this.width - 1);
+if (this.scanlineStride > 0) size+=this.scanlineStride * (this.height - 1);
 return size;
 });
 
 Clazz.newMeth(C$, 'orderBands$IA$I', function (orig, step) {
 var map = Clazz.array(Integer.TYPE, [orig.length]);
 var ret = Clazz.array(Integer.TYPE, [orig.length]);
-for (var i = 0; i < map.length; i++) map[i] = i;
+for (var i = 0; i < map.length; i++) map[i]=i;
 
 for (var i = 0; i < ret.length; i++) {
 var index = i;
 for (var j = i + 1; j < ret.length; j++) {
 if (orig[map[index]] > orig[map[j]]) {
-index = j;
+index=j;
 }}
-ret[map[index]] = i * step;
-map[index] = map[i];
+ret[map[index]]=i * step;
+map[index]=map[i];
 }
 return ret;
 });
@@ -103,10 +103,10 @@ Clazz.newMeth(C$, 'createCompatibleSampleModel$I$I', function (w, h) {
 var minBandOff = this.bandOffsets[0];
 var maxBandOff = this.bandOffsets[0];
 for (var i = 1; i < this.bandOffsets.length; i++) {
-minBandOff = Math.min(minBandOff, this.bandOffsets[i]);
-maxBandOff = Math.max(maxBandOff, this.bandOffsets[i]);
+minBandOff=Math.min(minBandOff, this.bandOffsets[i]);
+maxBandOff=Math.max(maxBandOff, this.bandOffsets[i]);
 }
-maxBandOff = maxBandOff-(minBandOff);
+maxBandOff-=minBandOff;
 var bands = this.bandOffsets.length;
 var bandOff;
 var pStride = Math.abs(this.pixelStride);
@@ -115,39 +115,39 @@ var bStride = Math.abs(maxBandOff);
 if (pStride > lStride) {
 if (pStride > bStride) {
 if (lStride > bStride) {
-bandOff = Clazz.array(Integer.TYPE, [this.bandOffsets.length]);
-for (var i = 0; i < bands; i++) bandOff[i] = this.bandOffsets[i] - minBandOff;
+bandOff=Clazz.array(Integer.TYPE, [this.bandOffsets.length]);
+for (var i = 0; i < bands; i++) bandOff[i]=this.bandOffsets[i] - minBandOff;
 
-lStride = bStride + 1;
-pStride = lStride * h;
+lStride=bStride + 1;
+pStride=lStride * h;
 } else {
-bandOff = this.orderBands$IA$I(this.bandOffsets, lStride * h);
-pStride = bands * lStride * h ;
+bandOff=this.orderBands$IA$I(this.bandOffsets, lStride * h);
+pStride=bands * lStride * h ;
 }} else {
-pStride = lStride * h;
-bandOff = this.orderBands$IA$I(this.bandOffsets, pStride * w);
+pStride=lStride * h;
+bandOff=this.orderBands$IA$I(this.bandOffsets, pStride * w);
 }} else {
 if (pStride > bStride) {
-bandOff = Clazz.array(Integer.TYPE, [this.bandOffsets.length]);
-for (var i = 0; i < bands; i++) bandOff[i] = this.bandOffsets[i] - minBandOff;
+bandOff=Clazz.array(Integer.TYPE, [this.bandOffsets.length]);
+for (var i = 0; i < bands; i++) bandOff[i]=this.bandOffsets[i] - minBandOff;
 
-pStride = bStride + 1;
-lStride = pStride * w;
+pStride=bStride + 1;
+lStride=pStride * w;
 } else {
 if (lStride > bStride) {
-bandOff = this.orderBands$IA$I(this.bandOffsets, pStride * w);
-lStride = bands * pStride * w ;
+bandOff=this.orderBands$IA$I(this.bandOffsets, pStride * w);
+lStride=bands * pStride * w ;
 } else {
-lStride = pStride * w;
-bandOff = this.orderBands$IA$I(this.bandOffsets, lStride * h);
+lStride=pStride * w;
+bandOff=this.orderBands$IA$I(this.bandOffsets, lStride * h);
 }}}var base = 0;
 if (this.scanlineStride < 0) {
-base = base+(lStride * h);
-lStride = lStride*(-1);
+base+=lStride * h;
+lStride*=-1;
 }if (this.pixelStride < 0) {
-base = base+(pStride * w);
-pStride = pStride*(-1);
-}for (var i = 0; i < bands; i++) bandOff[i] = bandOff[i]+(base);
+base+=pStride * w;
+pStride*=-1;
+}for (var i = 0; i < bands; i++) bandOff[i]+=base;
 
 return Clazz.new_(C$.c$$I$I$I$I$I$IA$IA,[this.dataType, w, h, pStride, lStride, this.bankIndices, bandOff]);
 });
@@ -157,8 +157,8 @@ if (bands.length > this.bankIndices.length) throw Clazz.new_(Clazz.load('java.aw
 var newBankIndices = Clazz.array(Integer.TYPE, [bands.length]);
 var newBandOffsets = Clazz.array(Integer.TYPE, [bands.length]);
 for (var i = 0; i < bands.length; i++) {
-newBankIndices[i] = this.bankIndices[bands[i]];
-newBandOffsets[i] = this.bandOffsets[bands[i]];
+newBankIndices[i]=this.bankIndices[bands[i]];
+newBandOffsets[i]=this.bandOffsets[bands[i]];
 }
 return Clazz.new_(C$.c$$I$I$I$I$I$IA$IA,[this.dataType, this.width, this.height, this.pixelStride, this.scanlineStride, newBankIndices, newBandOffsets]);
 });
@@ -168,16 +168,16 @@ var dataBuffer = null;
 var size = (p$.getBufferSize.apply(this, [])|0);
 switch (this.dataType) {
 case 0:
-dataBuffer = Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[size, this.numBanks]);
+dataBuffer=Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[size, this.numBanks]);
 break;
 case 1:
-dataBuffer = Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[size, this.numBanks]);
+dataBuffer=Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[size, this.numBanks]);
 break;
 case 2:
-dataBuffer = Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[size, this.numBanks]);
+dataBuffer=Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[size, this.numBanks]);
 break;
 case 3:
-dataBuffer = Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[size, this.numBanks]);
+dataBuffer=Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[size, this.numBanks]);
 break;
 }
 return dataBuffer;
@@ -196,7 +196,7 @@ return offset;
 Clazz.newMeth(C$, 'getSampleSize', function () {
 var sampleSize = Clazz.array(Integer.TYPE, [this.$numBands]);
 var sizeInBits = this.getSampleSize$I(0);
-for (var i = 0; i < this.$numBands; i++) sampleSize[i] = sizeInBits;
+for (var i = 0; i < this.$numBands; i++) sampleSize[i]=sizeInBits;
 
 return sampleSize;
 });
@@ -234,31 +234,31 @@ var pixelOffset = y * this.scanlineStride + x * this.pixelStride;
 switch (type) {
 case 0:
 var bdata;
-if (obj == null ) bdata = Clazz.array(Byte.TYPE, [numDataElems]);
- else bdata = obj;
+if (obj == null ) bdata=Clazz.array(Byte.TYPE, [numDataElems]);
+ else bdata=obj;
 for (var i = 0; i < numDataElems; i++) {
-bdata[i] = ((data.getElem$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i])|0)|0);
+bdata[i]=((data.getElem$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i])|0)|0);
 }
-obj = bdata;
+obj=bdata;
 break;
 case 1:
 case 2:
 var sdata;
-if (obj == null ) sdata = Clazz.array(Short.TYPE, [numDataElems]);
- else sdata = obj;
+if (obj == null ) sdata=Clazz.array(Short.TYPE, [numDataElems]);
+ else sdata=obj;
 for (var i = 0; i < numDataElems; i++) {
-sdata[i] = (data.getElem$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i])|0);
+sdata[i]=(data.getElem$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i])|0);
 }
-obj = sdata;
+obj=sdata;
 break;
 case 3:
 var idata;
-if (obj == null ) idata = Clazz.array(Integer.TYPE, [numDataElems]);
- else idata = obj;
+if (obj == null ) idata=Clazz.array(Integer.TYPE, [numDataElems]);
+ else idata=obj;
 for (var i = 0; i < numDataElems; i++) {
-idata[i] = data.getElem$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i]);
+idata[i]=data.getElem$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i]);
 }
-obj = idata;
+obj=idata;
 break;
 }
 return obj;
@@ -269,12 +269,12 @@ if ((x < 0) || (y < 0) || (x >= this.width) || (y >= this.height)  ) {
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var pixels;
 if (iArray != null ) {
-pixels = iArray;
+pixels=iArray;
 } else {
-pixels = Clazz.array(Integer.TYPE, [this.$numBands]);
+pixels=Clazz.array(Integer.TYPE, [this.$numBands]);
 }var pixelOffset = y * this.scanlineStride + x * this.pixelStride;
 for (var i = 0; i < this.$numBands; i++) {
-pixels[i] = data.getElem$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i]);
+pixels[i]=data.getElem$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i]);
 }
 return pixels;
 });
@@ -284,20 +284,20 @@ if ((x < 0) || (y < 0) || (x + w > this.width) || (y + h > this.height)  ) {
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var pixels;
 if (iArray != null ) {
-pixels = iArray;
+pixels=iArray;
 } else {
-pixels = Clazz.array(Integer.TYPE, [w * h * this.$numBands ]);
+pixels=Clazz.array(Integer.TYPE, [w * h * this.$numBands ]);
 }var lineOffset = y * this.scanlineStride + x * this.pixelStride;
 var srcOffset = 0;
 for (var i = 0; i < h; i++) {
 var pixelOffset = lineOffset;
 for (var j = 0; j < w; j++) {
 for (var k = 0; k < this.$numBands; k++) {
-pixels[srcOffset++] = data.getElem$I$I(this.bankIndices[k], pixelOffset + this.bandOffsets[k]);
+pixels[srcOffset++]=data.getElem$I$I(this.bankIndices[k], pixelOffset + this.bandOffsets[k]);
 }
-pixelOffset = pixelOffset+(this.pixelStride);
+pixelOffset+=this.pixelStride;
 }
-lineOffset = lineOffset+(this.scanlineStride);
+lineOffset+=this.scanlineStride;
 }
 return pixels;
 });
@@ -328,18 +328,18 @@ if ((x < 0) || (y < 0) || (x + w > this.width) || (y + h > this.height)  ) {
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var samples;
 if (iArray != null ) {
-samples = iArray;
+samples=iArray;
 } else {
-samples = Clazz.array(Integer.TYPE, [w * h]);
+samples=Clazz.array(Integer.TYPE, [w * h]);
 }var lineOffset = y * this.scanlineStride + x * this.pixelStride + this.bandOffsets[b];
 var srcOffset = 0;
 for (var i = 0; i < h; i++) {
 var sampleOffset = lineOffset;
 for (var j = 0; j < w; j++) {
-samples[srcOffset++] = data.getElem$I$I(this.bankIndices[b], sampleOffset);
-sampleOffset = sampleOffset+(this.pixelStride);
+samples[srcOffset++]=data.getElem$I$I(this.bankIndices[b], sampleOffset);
+sampleOffset+=this.pixelStride;
 }
-lineOffset = lineOffset+(this.scanlineStride);
+lineOffset+=this.scanlineStride;
 }
 return samples;
 });
@@ -393,9 +393,9 @@ for (var j = 0; j < w; j++) {
 for (var k = 0; k < this.$numBands; k++) {
 data.setElem$I$I$I(this.bankIndices[k], pixelOffset + this.bandOffsets[k], iArray[srcOffset++]);
 }
-pixelOffset = pixelOffset+(this.pixelStride);
+pixelOffset+=this.pixelStride;
 }
-lineOffset = lineOffset+(this.scanlineStride);
+lineOffset+=this.scanlineStride;
 }
 });
 
@@ -426,9 +426,9 @@ for (var i = 0; i < h; i++) {
 var sampleOffset = lineOffset;
 for (var j = 0; j < w; j++) {
 data.setElem$I$I$I(this.bankIndices[b], sampleOffset, iArray[srcOffset++]);
-sampleOffset = sampleOffset+(this.pixelStride);
+sampleOffset+=this.pixelStride;
 }
-lineOffset = lineOffset+(this.scanlineStride);
+lineOffset+=this.scanlineStride;
 }
 });
 
@@ -441,32 +441,32 @@ return this.width == that.width && this.height == that.height  && this.$numBands
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var hash = 0;
-hash = this.width;
-hash = hash<<(8);
-hash = hash^(this.height);
-hash = hash<<(8);
-hash = hash^(this.$numBands);
-hash = hash<<(8);
-hash = hash^(this.dataType);
-hash = hash<<(8);
+hash=this.width;
+hash<<=8;
+hash^=this.height;
+hash<<=8;
+hash^=this.$numBands;
+hash<<=8;
+hash^=this.dataType;
+hash<<=8;
 for (var i = 0; i < this.bandOffsets.length; i++) {
-hash = hash^(this.bandOffsets[i]);
-hash = hash<<(8);
+hash^=this.bandOffsets[i];
+hash<<=8;
 }
 for (var i = 0; i < this.bankIndices.length; i++) {
-hash = hash^(this.bankIndices[i]);
-hash = hash<<(8);
+hash^=this.bankIndices[i];
+hash<<=8;
 }
-hash = hash^(this.$numBands);
-hash = hash<<(8);
-hash = hash^(this.numBanks);
-hash = hash<<(8);
-hash = hash^(this.scanlineStride);
-hash = hash<<(8);
-hash = hash^(this.pixelStride);
+hash^=this.$numBands;
+hash<<=8;
+hash^=this.numBanks;
+hash<<=8;
+hash^=this.scanlineStride;
+hash<<=8;
+hash^=this.pixelStride;
 return hash;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:01
+//Created 2018-05-24 08:45:25

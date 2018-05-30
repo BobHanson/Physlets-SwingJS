@@ -17,9 +17,9 @@ C$.c$$I.apply(this, [10]);
 
 Clazz.newMeth(C$, 'c$$I', function (initialLength) {
 C$.$init$.apply(this);
-this.array = this.allocateArray$I(initialLength);
-this.g0 = 0;
-this.g1 = initialLength;
+this.array=this.allocateArray$I(initialLength);
+this.g0=0;
+this.g1=initialLength;
 }, 1);
 
 Clazz.newMeth(C$, 'getArray', function () {
@@ -45,7 +45,7 @@ this.close$I$I(position + addSize, rmSize - addSize);
 var endSize = addSize - rmSize;
 var end = this.open$I$I(position + rmSize, endSize);
 System.arraycopy(addItems, rmSize, this.array, end, endSize);
-addSize = rmSize;
+addSize=rmSize;
 }System.arraycopy(addItems, addOffset, this.array, position, addSize);
 });
 
@@ -69,20 +69,20 @@ this.shiftGapEndUp$I(this.g0 + new_gs);
 Clazz.newMeth(C$, 'open$I$I', function (position, nItems) {
 var gapSize = this.g1 - this.g0;
 if (nItems == 0) {
-if (position > this.g0) position = position+(gapSize);
+if (position > this.g0) position+=gapSize;
 return position;
 }this.shiftGap$I(position);
 if (nItems >= gapSize) {
 this.shiftEnd$I(this.getArrayLength() - gapSize + nItems);
-gapSize = this.g1 - this.g0;
-}this.g0 = this.g0 + nItems;
+gapSize=this.g1 - this.g0;
+}this.g0=this.g0 + nItems;
 return position;
 });
 
 Clazz.newMeth(C$, 'resize$I', function (nsize) {
 var narray = this.allocateArray$I(nsize);
 System.arraycopy(this.array, 0, narray, 0, Math.min(nsize, this.getArrayLength()));
-this.array = narray;
+this.array=narray;
 });
 
 Clazz.newMeth(C$, 'shiftEnd$I', function (newSize) {
@@ -92,7 +92,7 @@ var upperSize = oldSize - oldGapEnd;
 var arrayLength = this.getNewArraySize$I(newSize);
 var newGapEnd = arrayLength - upperSize;
 this.resize$I(arrayLength);
-this.g1 = newGapEnd;
+this.g1=newGapEnd;
 if (upperSize != 0) {
 System.arraycopy(this.array, oldGapEnd, this.array, newGapEnd, upperSize);
 }});
@@ -108,8 +108,8 @@ return;
 var dg = newGapStart - oldGapStart;
 var oldGapEnd = this.g1;
 var newGapEnd = oldGapEnd + dg;
-this.g0 = newGapStart;
-this.g1 = newGapEnd;
+this.g0=newGapStart;
+this.g1=newGapEnd;
 if (dg > 0) {
 System.arraycopy(this.array, oldGapEnd, this.array, oldGapStart, dg);
 } else if (dg < 0) {
@@ -117,11 +117,11 @@ System.arraycopy(this.array, newGapStart, this.array, newGapEnd, -dg);
 }});
 
 Clazz.newMeth(C$, 'shiftGapStartDown$I', function (newGapStart) {
-this.g0 = newGapStart;
+this.g0=newGapStart;
 });
 
 Clazz.newMeth(C$, 'shiftGapEndUp$I', function (newGapEnd) {
-this.g1 = newGapEnd;
+this.g1=newGapEnd;
 });
 })();
-//Created 2018-05-15 01:02:55
+//Created 2018-05-24 08:47:04

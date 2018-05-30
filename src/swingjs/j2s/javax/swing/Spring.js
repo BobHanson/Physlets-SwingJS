@@ -102,11 +102,11 @@ this.setNonClearValue$I(size);
 }});
 
 Clazz.newMeth(C$, 'clear', function () {
-this.size = -2147483648;
+this.size=-2147483648;
 });
 
 Clazz.newMeth(C$, 'setNonClearValue$I', function (size) {
-this.size = size;
+this.size=size;
 });
 
 Clazz.newMeth(C$);
@@ -135,9 +135,9 @@ C$.c$$I$I$I.apply(this, [pref, pref, pref]);
 
 Clazz.newMeth(C$, 'c$$I$I$I', function (min, pref, max) {
 Clazz.super_(C$, this,1);
-this.min = min;
-this.pref = pref;
-this.$max = max;
+this.min=min;
+this.pref=pref;
+this.$max=max;
 }, 1);
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -176,7 +176,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_Spring', function (s) {
 Clazz.super_(C$, this,1);
-this.s = s;
+this.s=s;
 }, 1);
 
 Clazz.newMeth(C$, 'getMinimumValue', function () {
@@ -225,8 +225,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_Spring$F', function (s, factor) {
 Clazz.super_(C$, this,1);
-this.s = s;
-this.factor = factor;
+this.s=s;
+this.factor=factor;
 }, 1);
 
 Clazz.newMeth(C$, 'getMinimumValue', function () {
@@ -276,7 +276,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_Component', function (c) {
 Clazz.super_(C$, this,1);
-this.c = c;
+this.c=c;
 }, 1);
 
 Clazz.newMeth(C$, 'getMinimumValue', function () {
@@ -311,7 +311,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_Component', function (c) {
 Clazz.super_(C$, this,1);
-this.c = c;
+this.c=c;
 }, 1);
 
 Clazz.newMeth(C$, 'getMinimumValue', function () {
@@ -346,7 +346,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_Spring', function (s) {
 Clazz.super_(C$, this,1);
-this.s = s;
+this.s=s;
 }, 1);
 
 Clazz.newMeth(C$, 'getMinimumValue', function () {
@@ -398,8 +398,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$javax_swing_Spring$javax_swing_Spring', function (s1, s2) {
 C$.superclazz.c$$I.apply(this, [-2147483648]);
 C$.$init$.apply(this);
-this.s1 = s1;
-this.s2 = s2;
+this.s1=s1;
+this.s2=s2;
 }, 1);
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -408,32 +408,32 @@ return "CompoundSpring of " + this.s1 + " and " + this.s2 ;
 
 Clazz.newMeth(C$, 'clear', function () {
 C$.superclazz.prototype.clear.apply(this, []);
-this.min = this.pref = this.$max = -2147483648;
+this.min=this.pref=this.$max=-2147483648;
 this.s1.setValue$I(-2147483648);
 this.s2.setValue$I(-2147483648);
 });
 
 Clazz.newMeth(C$, 'getMinimumValue', function () {
 if (this.min == -2147483648) {
-this.min = this.op$I$I(this.s1.getMinimumValue(), this.s2.getMinimumValue());
+this.min=this.op$I$I(this.s1.getMinimumValue(), this.s2.getMinimumValue());
 }return this.min;
 });
 
 Clazz.newMeth(C$, 'getPreferredValue', function () {
 if (this.pref == -2147483648) {
-this.pref = this.op$I$I(this.s1.getPreferredValue(), this.s2.getPreferredValue());
+this.pref=this.op$I$I(this.s1.getPreferredValue(), this.s2.getPreferredValue());
 }return this.pref;
 });
 
 Clazz.newMeth(C$, 'getMaximumValue', function () {
 if (this.$max == -2147483648) {
-this.$max = this.op$I$I(this.s1.getMaximumValue(), this.s2.getMaximumValue());
+this.$max=this.op$I$I(this.s1.getMaximumValue(), this.s2.getMaximumValue());
 }return this.$max;
 });
 
 Clazz.newMeth(C$, 'getValue', function () {
 if (this.size == -2147483648) {
-this.size = this.op$I$I(this.s1.getValue(), this.s2.getValue());
+this.size=this.op$I$I(this.s1.getValue(), this.s2.getValue());
 }return this.size;
 });
 
@@ -500,4 +500,4 @@ this.s2.setValue$I(size);
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:40
+//Created 2018-05-24 08:46:40

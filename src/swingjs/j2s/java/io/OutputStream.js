@@ -28,4 +28,4 @@ for (var i = offset; i < offset + count; i++) this.write$I(buffer[i]);
 } else throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException').c$$S,[(I$[1]||$incl$(1)).getString$S("K002f")]);
 });
 })();
-//Created 2018-05-15 01:02:05
+//Created 2018-05-24 08:45:34

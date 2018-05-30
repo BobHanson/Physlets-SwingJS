@@ -31,19 +31,19 @@ C$.c$$I.apply(this, [0]);
 
 Clazz.newMeth(C$, 'c$$I', function (pagemode) {
 C$.$init$.apply(this);
-this.objser = 1;
-this.objects = Clazz.new_((I$[1]||$incl$(1)));
-this.fonts = Clazz.new_((I$[1]||$incl$(1)));
-this.add$gnu_jpdf_PDFObject(this.pdfPageList = Clazz.new_((I$[2]||$incl$(2))));
-this.add$gnu_jpdf_PDFObject(this.catalog = Clazz.new_((I$[3]||$incl$(3)).c$$gnu_jpdf_PDFPageList$I,[this.pdfPageList, pagemode]));
-this.add$gnu_jpdf_PDFObject(this.info = Clazz.new_((I$[4]||$incl$(4))));
+this.objser=1;
+this.objects=Clazz.new_((I$[1]||$incl$(1)));
+this.fonts=Clazz.new_((I$[1]||$incl$(1)));
+this.add$gnu_jpdf_PDFObject(this.pdfPageList=Clazz.new_((I$[2]||$incl$(2))));
+this.add$gnu_jpdf_PDFObject(this.catalog=Clazz.new_((I$[3]||$incl$(3)).c$$gnu_jpdf_PDFPageList$I,[this.pdfPageList, pagemode]));
+this.add$gnu_jpdf_PDFObject(this.info=Clazz.new_((I$[4]||$incl$(4))));
 this.add$gnu_jpdf_PDFObject(this.getOutline());
 }, 1);
 
 Clazz.newMeth(C$, 'add$gnu_jpdf_PDFObject', function (obj) {
 this.objects.addElement$TE(obj);
-obj.objser = this.objser++;
-obj.pdfDocument = this;
+obj.objser=this.objser++;
+obj.pdfDocument=this;
 if (Clazz.instanceOf(obj, "gnu.jpdf.PDFPage")) this.pdfPageList.add$gnu_jpdf_PDFPage(obj);
 return obj.objser;
 });
@@ -54,7 +54,7 @@ return this.pdfPageList.getPage$I(page);
 
 Clazz.newMeth(C$, 'getOutline', function () {
 if (this.outline == null ) {
-this.outline = Clazz.new_((I$[5]||$incl$(5)));
+this.outline=Clazz.new_((I$[5]||$incl$(5)));
 this.catalog.setOutline$gnu_jpdf_PDFOutline(this.outline);
 }return this.outline;
 });
@@ -77,7 +77,7 @@ return img.getName();
 });
 
 Clazz.newMeth(C$, 'setPDFInfo$gnu_jpdf_PDFInfo', function (info) {
-this.info = info;
+this.info=info;
 });
 
 Clazz.newMeth(C$, 'getPDFInfo', function () {
@@ -93,4 +93,4 @@ pos.close();
 os.flush();
 });
 })();
-//Created 2018-05-15 01:01:46
+//Created 2018-05-24 08:45:02

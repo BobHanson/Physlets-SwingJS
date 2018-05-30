@@ -17,9 +17,9 @@ C$.c$$F$I$I.apply(this, [pos, 0, 0]);
 
 Clazz.newMeth(C$, 'c$$F$I$I', function (pos, align, leader) {
 C$.$init$.apply(this);
-this.alignment = align;
-this.leader = leader;
-this.position = pos;
+this.alignment=align;
+this.leader=leader;
+this.position=pos;
 }, 1);
 
 Clazz.newMeth(C$, 'getPosition', function () {
@@ -52,26 +52,26 @@ var buf;
 switch (this.alignment) {
 default:
 case 0:
-buf = "";
+buf="";
 break;
 case 1:
-buf = "right ";
+buf="right ";
 break;
 case 2:
-buf = "center ";
+buf="center ";
 break;
 case 4:
-buf = "decimal ";
+buf="decimal ";
 break;
 case 5:
-buf = "bar ";
+buf="bar ";
 break;
 }
-buf = buf + "tab @" + String.valueOf(this.position) ;
-if (this.leader != 0) buf = buf + " (w/leaders)";
+buf=buf + "tab @" + String.valueOf(this.position) ;
+if (this.leader != 0) buf=buf + " (w/leaders)";
 return buf;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:58
+//Created 2018-05-24 08:47:09

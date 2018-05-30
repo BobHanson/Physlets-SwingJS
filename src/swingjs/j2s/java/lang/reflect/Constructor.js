@@ -17,10 +17,10 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$Class$ClassA$ClassA$I', function (declaringClass, parameterTypes, checkedExceptions, modifiers) {
 Clazz.super_(C$, this,1);
-this.clazz = declaringClass;
-this.parameterTypes = parameterTypes;
-this.exceptionTypes = checkedExceptions;
-this.modifiers = modifiers;
+this.clazz=declaringClass;
+this.parameterTypes=parameterTypes;
+this.exceptionTypes=checkedExceptions;
+this.modifiers=modifiers;
 }, 1);
 
 Clazz.newMeth(C$, 'getTypeParameters', function () {
@@ -97,4 +97,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return null;
 });
 })();
-//Created 2018-05-15 01:02:09
+//Created 2018-05-24 08:45:40

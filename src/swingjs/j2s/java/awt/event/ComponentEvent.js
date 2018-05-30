@@ -26,21 +26,21 @@ var typeStr;
 var b = (this.source != null  ? (this.source).getBounds() : null);
 switch (this.id) {
 case 102:
-typeStr = "COMPONENT_SHOWN";
+typeStr="COMPONENT_SHOWN";
 break;
 case 103:
-typeStr = "COMPONENT_HIDDEN";
+typeStr="COMPONENT_HIDDEN";
 break;
 case 100:
-typeStr = "COMPONENT_MOVED (" + b.x + "," + b.y + " " + b.width + "x" + b.height + ")" ;
+typeStr="COMPONENT_MOVED (" + b.x + "," + b.y + " " + b.width + "x" + b.height + ")" ;
 break;
 case 101:
-typeStr = "COMPONENT_RESIZED (" + b.x + "," + b.y + " " + b.width + "x" + b.height + ")" ;
+typeStr="COMPONENT_RESIZED (" + b.x + "," + b.y + " " + b.width + "x" + b.height + ")" ;
 break;
 default:
-typeStr = "unknown type";
+typeStr="unknown type";
 }
 return typeStr;
 });
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:17

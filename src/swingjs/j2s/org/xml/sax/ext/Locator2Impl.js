@@ -22,8 +22,8 @@ C$.superclazz.c$$org_xml_sax_Locator.apply(this, [locator]);
 C$.$init$.apply(this);
 if (Clazz.instanceOf(locator, "org.xml.sax.ext.Locator2")) {
 var l2 = locator;
-this.version = l2.getXMLVersion();
-this.encoding = l2.getEncoding();
+this.version=l2.getXMLVersion();
+this.encoding=l2.getEncoding();
 }}, 1);
 
 Clazz.newMeth(C$, 'getXMLVersion', function () {
@@ -35,11 +35,11 @@ return this.encoding;
 });
 
 Clazz.newMeth(C$, 'setXMLVersion$S', function (version) {
-this.version = version;
+this.version=version;
 });
 
 Clazz.newMeth(C$, 'setEncoding$S', function (encoding) {
-this.encoding = encoding;
+this.encoding=encoding;
 });
 })();
-//Created 2018-05-15 01:03:04
+//Created 2018-05-24 08:47:18

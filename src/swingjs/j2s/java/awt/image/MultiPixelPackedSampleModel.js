@@ -28,15 +28,15 @@ C$.superclazz.c$$I$I$I$I.apply(this, [dataType, w, h, 1]);
 C$.$init$.apply(this);
 if (dataType != 0 && dataType != 3 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Unsupported data type " + dataType]);
-}this.dataType = dataType;
-this.pixelBitStride = numberOfBits;
-this.scanlineStride = scanlineStride;
-this.dataBitOffset = dataBitOffset;
-this.dataElementSize = (I$[1]||$incl$(1)).getDataTypeSize$I(dataType);
-this.pixelsPerDataElement = (this.dataElementSize/numberOfBits|0);
+}this.dataType=dataType;
+this.pixelBitStride=numberOfBits;
+this.scanlineStride=scanlineStride;
+this.dataBitOffset=dataBitOffset;
+this.dataElementSize=(I$[1]||$incl$(1)).getDataTypeSize$I(dataType);
+this.pixelsPerDataElement=(this.dataElementSize/numberOfBits|0);
 if (this.pixelsPerDataElement * numberOfBits != this.dataElementSize) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["MultiPixelPackedSampleModel does not allow pixels to span data element boundaries"]);
-}this.bitMask = (1 << numberOfBits) - 1;
+}this.bitMask=(1 << numberOfBits) - 1;
 }, 1);
 
 Clazz.newMeth(C$, 'createCompatibleSampleModel$I$I', function (w, h) {
@@ -49,10 +49,10 @@ var dataBuffer = null;
 var size = this.scanlineStride * this.height;
 switch (this.dataType) {
 case 0:
-dataBuffer = Clazz.new_((I$[2]||$incl$(2)).c$$I,[size + ((this.dataBitOffset + 7)/8|0)]);
+dataBuffer=Clazz.new_((I$[2]||$incl$(2)).c$$I,[size + ((this.dataBitOffset + 7)/8|0)]);
 break;
 case 3:
-dataBuffer = Clazz.new_((I$[3]||$incl$(3)).c$$I,[size + ((this.dataBitOffset + 31)/32|0)]);
+dataBuffer=Clazz.new_((I$[3]||$incl$(3)).c$$I,[size + ((this.dataBitOffset + 31)/32|0)]);
 break;
 }
 return dataBuffer;
@@ -73,7 +73,7 @@ return this.pixelBitStride;
 
 Clazz.newMeth(C$, 'getOffset$I$I', function (x, y) {
 var offset = y * this.scanlineStride;
-offset = offset+(((x * this.pixelBitStride + this.dataBitOffset)/this.dataElementSize|0));
+offset+=((x * this.pixelBitStride + this.dataBitOffset)/this.dataElementSize|0);
 return offset;
 });
 
@@ -120,8 +120,8 @@ throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["C
 var index = y * this.scanlineStride + ((bitnum/this.dataElementSize|0));
 var shift = this.dataElementSize - (bitnum & (this.dataElementSize - 1)) - this.pixelBitStride ;
 var element = data.getElem$I(index);
-element = element&(~(this.bitMask << shift));
-element = element|((s & this.bitMask) << shift);
+element&=~(this.bitMask << shift);
+element|=(s & this.bitMask) << shift;
 data.setElem$I$I(index, element);
 });
 
@@ -135,19 +135,19 @@ var element = 0;
 switch (type) {
 case 0:
 var bdata;
-if (obj == null ) bdata = Clazz.array(Byte.TYPE, [1]);
- else bdata = obj;
-element = data.getElem$I(y * this.scanlineStride + (bitnum/this.dataElementSize|0));
-bdata[0] = ((((element >> shift) & this.bitMask)|0)|0);
-obj = bdata;
+if (obj == null ) bdata=Clazz.array(Byte.TYPE, [1]);
+ else bdata=obj;
+element=data.getElem$I(y * this.scanlineStride + (bitnum/this.dataElementSize|0));
+bdata[0]=((((element >> shift) & this.bitMask)|0)|0);
+obj=bdata;
 break;
 case 3:
 var idata;
-if (obj == null ) idata = Clazz.array(Integer.TYPE, [1]);
- else idata = obj;
-element = data.getElem$I(y * this.scanlineStride + (bitnum/this.dataElementSize|0));
-idata[0] = (element >> shift) & this.bitMask;
-obj = idata;
+if (obj == null ) idata=Clazz.array(Integer.TYPE, [1]);
+ else idata=obj;
+element=data.getElem$I(y * this.scanlineStride + (bitnum/this.dataElementSize|0));
+idata[0]=(element >> shift) & this.bitMask;
+obj=idata;
 break;
 }
 return obj;
@@ -158,13 +158,13 @@ if ((x < 0) || (y < 0) || (x >= this.width) || (y >= this.height)  ) {
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var pixels;
 if (iArray != null ) {
-pixels = iArray;
+pixels=iArray;
 } else {
-pixels = Clazz.array(Integer.TYPE, [this.numBands]);
+pixels=Clazz.array(Integer.TYPE, [this.numBands]);
 }var bitnum = this.dataBitOffset + x * this.pixelBitStride;
 var element = data.getElem$I(y * this.scanlineStride + (bitnum/this.dataElementSize|0));
 var shift = this.dataElementSize - (bitnum & (this.dataElementSize - 1)) - this.pixelBitStride ;
-pixels[0] = (element >> shift) & this.bitMask;
+pixels[0]=(element >> shift) & this.bitMask;
 return pixels;
 });
 
@@ -176,16 +176,16 @@ var bitnum = this.dataBitOffset + x * this.pixelBitStride;
 var index = y * this.scanlineStride + ((bitnum/this.dataElementSize|0));
 var shift = this.dataElementSize - (bitnum & (this.dataElementSize - 1)) - this.pixelBitStride ;
 var element = data.getElem$I(index);
-element = element&(~(this.bitMask << shift));
+element&=~(this.bitMask << shift);
 switch (type) {
 case 0:
 var barray = obj;
-element = element|(((((barray[0])|0) & 255) & this.bitMask) << shift);
+element|=((((barray[0])|0) & 255) & this.bitMask) << shift;
 data.setElem$I$I(index, element);
 break;
 case 3:
 var iarray = obj;
-element = element|((iarray[0] & this.bitMask) << shift);
+element|=(iarray[0] & this.bitMask) << shift;
 data.setElem$I$I(index, element);
 break;
 }
@@ -198,8 +198,8 @@ throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["C
 var index = y * this.scanlineStride + ((bitnum/this.dataElementSize|0));
 var shift = this.dataElementSize - (bitnum & (this.dataElementSize - 1)) - this.pixelBitStride ;
 var element = data.getElem$I(index);
-element = element&(~(this.bitMask << shift));
-element = element|((iArray[0] & this.bitMask) << shift);
+element&=~(this.bitMask << shift);
+element|=(iArray[0] & this.bitMask) << shift;
 data.setElem$I$I(index, element);
 });
 
@@ -212,28 +212,28 @@ return this.width == that.width && this.height == that.height  && this.numBands 
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var hash = 0;
-hash = this.width;
-hash = hash<<(8);
-hash = hash^(this.height);
-hash = hash<<(8);
-hash = hash^(this.numBands);
-hash = hash<<(8);
-hash = hash^(this.dataType);
-hash = hash<<(8);
-hash = hash^(this.pixelBitStride);
-hash = hash<<(8);
-hash = hash^(this.bitMask);
-hash = hash<<(8);
-hash = hash^(this.pixelsPerDataElement);
-hash = hash<<(8);
-hash = hash^(this.dataElementSize);
-hash = hash<<(8);
-hash = hash^(this.dataBitOffset);
-hash = hash<<(8);
-hash = hash^(this.scanlineStride);
+hash=this.width;
+hash<<=8;
+hash^=this.height;
+hash<<=8;
+hash^=this.numBands;
+hash<<=8;
+hash^=this.dataType;
+hash<<=8;
+hash^=this.pixelBitStride;
+hash<<=8;
+hash^=this.bitMask;
+hash<<=8;
+hash^=this.pixelsPerDataElement;
+hash<<=8;
+hash^=this.dataElementSize;
+hash<<=8;
+hash^=this.dataBitOffset;
+hash<<=8;
+hash^=this.scanlineStride;
 return hash;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:01
+//Created 2018-05-24 08:45:26

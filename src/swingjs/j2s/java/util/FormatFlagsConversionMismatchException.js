@@ -17,8 +17,8 @@ Clazz.newMeth(C$, 'c$$S$C', function (f, c) {
 Clazz.super_(C$, this,1);
 if (null == f ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.f = f;
-this.c = c;
+}this.f=f;
+this.c=c;
 }, 1);
 
 Clazz.newMeth(C$, 'getFlags', function () {
@@ -35,4 +35,4 @@ return "Mismatched Convertor =" + this.c + ", Flags= " + this.f ;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:12
+//Created 2018-05-24 08:45:45

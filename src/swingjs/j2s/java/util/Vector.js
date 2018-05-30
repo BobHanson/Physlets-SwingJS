@@ -25,9 +25,9 @@ C$.c$$I$I.apply(this, [capacity, 0]);
 
 Clazz.newMeth(C$, 'c$$I$I', function (capacity, capacityIncrement) {
 Clazz.super_(C$, this,1);
-this.elementCount = 0;
+this.elementCount=0;
 try {
-this.elementData = p$.newElementArray$I.apply(this, [capacity]);
+this.elementData=p$.newElementArray$I.apply(this, [capacity]);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.NegativeArraySizeException")){
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
@@ -35,14 +35,14 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
 throw e;
 }
 }
-this.capacityIncrement = capacityIncrement;
+this.capacityIncrement=capacityIncrement;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Collection', function (collection) {
 C$.c$$I$I.apply(this, [collection.size(), 0]);
 var it = collection.iterator();
 while (it.hasNext()){
-this.elementData[this.elementCount++] = it.next();
+this.elementData[this.elementCount++]=it.next();
 }
 }, 1);
 
@@ -72,9 +72,9 @@ if (count > 0) {
 System.arraycopy(this.elementData, location, this.elementData, location + size, count);
 }var it = collection.iterator();
 while (it.hasNext()){
-this.elementData[location++] = it.next();
+this.elementData[location++]=it.next();
 }
-this.elementCount = this.elementCount+(size);
+this.elementCount+=size;
 this.modCount++;
 return true;
 }throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$I,[location]);
@@ -87,7 +87,7 @@ return this.addAll$I$java_util_Collection(this.elementCount, collection);
 Clazz.newMeth(C$, ['addElement$TE'], function (object) {
 if (this.elementCount == this.elementData.length) {
 p$.growByOne.apply(this, []);
-}this.elementData[this.elementCount++] = object;
+}this.elementData[this.elementCount++]=object;
 this.modCount++;
 });
 
@@ -102,7 +102,7 @@ this.removeAllElements();
 Clazz.newMeth(C$, 'clone', function () {
 try {
 var vector = Clazz.clone(this);
-vector.elementData = this.elementData.clone();
+vector.elementData=this.elementData.clone();
 return vector;
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.CloneNotSupportedException")){
@@ -200,42 +200,42 @@ Clazz.newMeth(C$, 'grow$I', function (newCapacity) {
 var newData = p$.newElementArray$I.apply(this, [newCapacity]);
 Clazz.assert(C$, this, function(){return this.elementCount <= newCapacity});
 System.arraycopy(this.elementData, 0, newData, 0, this.elementCount);
-this.elementData = newData;
+this.elementData=newData;
 });
 
 Clazz.newMeth(C$, 'growByOne', function () {
 var adding = 0;
 if (this.capacityIncrement <= 0) {
-if ((adding = this.elementData.length) == 0) {
-adding = 1;
+if ((adding=this.elementData.length) == 0) {
+adding=1;
 }} else {
-adding = this.capacityIncrement;
+adding=this.capacityIncrement;
 }var newData = p$.newElementArray$I.apply(this, [this.elementData.length + adding]);
 System.arraycopy(this.elementData, 0, newData, 0, this.elementCount);
-this.elementData = newData;
+this.elementData=newData;
 });
 
 Clazz.newMeth(C$, 'growBy$I', function (required) {
 var adding = 0;
 if (this.capacityIncrement <= 0) {
-if ((adding = this.elementData.length) == 0) {
-adding = required;
+if ((adding=this.elementData.length) == 0) {
+adding=required;
 }while (adding < required){
-adding = adding+(adding);
+adding+=adding;
 }
 } else {
-adding = ((required/this.capacityIncrement|0)) * this.capacityIncrement;
+adding=((required/this.capacityIncrement|0)) * this.capacityIncrement;
 if (adding < required) {
-adding = adding+(this.capacityIncrement);
+adding+=this.capacityIncrement;
 }}var newData = p$.newElementArray$I.apply(this, [this.elementData.length + adding]);
 System.arraycopy(this.elementData, 0, newData, 0, this.elementCount);
-this.elementData = newData;
+this.elementData=newData;
 });
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var result = 1;
 for (var i = 0; i < this.elementCount; i++) {
-result = (31 * result) + (this.elementData[i] == null  ? 0 : this.elementData[i].hashCode());
+result=(31 * result) + (this.elementData[i] == null  ? 0 : this.elementData[i].hashCode());
 }
 return result;
 });
@@ -265,7 +265,7 @@ p$.growByOne.apply(this, []);
 }var count = this.elementCount - location;
 if (count > 0) {
 System.arraycopy(this.elementData, location, this.elementData, location + 1, count);
-}this.elementData[location] = object;
+}this.elementData[location]=object;
 this.elementCount++;
 this.modCount++;
 } else {
@@ -315,7 +315,7 @@ this.elementCount--;
 var size = this.elementCount - location;
 if (size > 0) {
 System.arraycopy(this.elementData, location + 1, this.elementData, location, size);
-}this.elementData[this.elementCount] = null;
+}this.elementData[this.elementCount]=null;
 this.modCount++;
 return result;
 }throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$I,[location]);
@@ -332,12 +332,12 @@ return C$.superclazz.prototype.removeAll$java_util_Collection.apply(this, [colle
 Clazz.newMeth(C$, 'removeAllElements', function () {
 (I$[2]||$incl$(2)).fill$OA$I$I$O(this.elementData, 0, this.elementCount, null);
 this.modCount++;
-this.elementCount = 0;
+this.elementCount=0;
 });
 
 Clazz.newMeth(C$, 'removeElement$O', function (object) {
 var index;
-if ((index = this.indexOf$O$I(object, 0)) == -1) {
+if ((index=this.indexOf$O$I(object, 0)) == -1) {
 return false;
 }this.removeElementAt$I(index);
 return true;
@@ -349,7 +349,7 @@ this.elementCount--;
 var size = this.elementCount - location;
 if (size > 0) {
 System.arraycopy(this.elementData, location + 1, this.elementData, location, size);
-}this.elementData[this.elementCount] = null;
+}this.elementData[this.elementCount]=null;
 this.modCount++;
 } else {
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$I,[location]);
@@ -363,10 +363,10 @@ return;
 System.arraycopy(this.elementData, end, this.elementData, start, this.elementCount - end);
 var newCount = this.elementCount - (end - start);
 (I$[2]||$incl$(2)).fill$OA$I$I$O(this.elementData, newCount, this.elementCount, null);
-this.elementCount = newCount;
+this.elementCount=newCount;
 } else {
 (I$[2]||$incl$(2)).fill$OA$I$I$O(this.elementData, start, this.elementCount, null);
-this.elementCount = start;
+this.elementCount=start;
 }this.modCount++;
 } else {
 throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException'));
@@ -379,14 +379,14 @@ return C$.superclazz.prototype.retainAll$java_util_Collection.apply(this, [colle
 Clazz.newMeth(C$, 'set$I$TE', function (location, object) {
 if (location < this.elementCount) {
 var result = this.elementData[location];
-this.elementData[location] = object;
+this.elementData[location]=object;
 return result;
 }throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$I,[location]);
 });
 
 Clazz.newMeth(C$, ['setElementAt$TE$I'], function (object, location) {
 if (location < this.elementCount) {
-this.elementData[location] = object;
+this.elementData[location]=object;
 } else {
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$I,[location]);
 }});
@@ -397,7 +397,7 @@ return;
 }this.ensureCapacity$I(length);
 if (this.elementCount > length) {
 (I$[2]||$incl$(2)).fill$OA$I$I$O(this.elementData, length, this.elementCount, null);
-}this.elementCount = length;
+}this.elementCount=length;
 this.modCount++;
 });
 
@@ -418,10 +418,10 @@ return result;
 Clazz.newMeth(C$, 'toArray$TTA', function (contents) {
 if (this.elementCount > contents.length) {
 var ct = contents.getClass().getComponentType();
-contents = Clazz.array(ct, this.elementCount);
+contents=Clazz.array(ct, this.elementCount);
 }System.arraycopy(this.elementData, 0, contents, 0, this.elementCount);
 if (this.elementCount < contents.length) {
-contents[this.elementCount] = null;
+contents[this.elementCount]=null;
 }return contents;
 });
 
@@ -456,4 +456,4 @@ stream.defaultWriteObject();
 });
 C$.$_ASSERT_ENABLED_ = ClassLoader.$getClassAssertionStatus(C$);
 })();
-//Created 2018-05-15 01:02:15
+//Created 2018-05-24 08:45:50

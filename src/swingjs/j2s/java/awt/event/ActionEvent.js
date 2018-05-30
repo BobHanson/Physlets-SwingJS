@@ -25,9 +25,9 @@ C$.c$$O$I$S$J$I.apply(this, [source, id, command, 0, modifiers]);
 Clazz.newMeth(C$, 'c$$O$I$S$J$I', function (source, id, command, when, modifiers) {
 C$.superclazz.c$$O$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.actionCommand = command;
-this.when = when;
-this.modifiers = modifiers;
+this.actionCommand=command;
+this.when=when;
+this.modifiers=modifiers;
 }, 1);
 
 Clazz.newMeth(C$, 'getActionCommand', function () {
@@ -46,14 +46,14 @@ Clazz.newMeth(C$, 'paramString', function () {
 var typeStr;
 switch (this.id) {
 case 1001:
-typeStr = "ACTION_PERFORMED";
+typeStr="ACTION_PERFORMED";
 break;
 default:
-typeStr = "unknown type";
+typeStr="unknown type";
 }
 return typeStr + ",cmd=" + this.actionCommand + ",when=" + this.when + ",modifiers=" + (I$[1]||$incl$(1)).getKeyModifiersText$I(this.modifiers) ;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:56
+//Created 2018-05-24 08:45:17

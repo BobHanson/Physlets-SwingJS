@@ -39,10 +39,10 @@ if (this.out != null ) this.out.closeChannel();
 });
 
 Clazz.newMeth(C$, 'setStream$java_io_BufferedInputStream$Z', function (bis, isBigEndian) {
-this.bis = bis;
+this.bis=bis;
 if (bis != null ) {
-this.stream = Clazz.new_((I$[1]||$incl$(1)).c$$java_io_InputStream,[bis]);
-}this.isBigEndian = isBigEndian;
+this.stream=Clazz.new_((I$[1]||$incl$(1)).c$$java_io_InputStream,[bis]);
+}this.isBigEndian=isBigEndian;
 return this;
 });
 
@@ -51,16 +51,16 @@ return this.bis;
 });
 
 Clazz.newMeth(C$, 'setStreamData$java_io_DataInputStream$Z', function (stream, isBigEndian) {
-if (stream != null ) this.stream = stream;
-this.isBigEndian = isBigEndian;
+if (stream != null ) this.stream=stream;
+this.isBigEndian=isBigEndian;
 });
 
 Clazz.newMeth(C$, 'setOutputChannel$javajs_api_GenericOutputChannel', function (out) {
-this.out = out;
+this.out=out;
 });
 
 Clazz.newMeth(C$, 'setRandom$Z', function (TF) {
-this.isRandom = TF;
+this.isRandom=TF;
 });
 
 Clazz.newMeth(C$, 'readByte', function () {
@@ -89,7 +89,7 @@ return b;
 
 Clazz.newMeth(C$, 'readByteArray$BA$I$I', function (b, off, len) {
 var n = p$.ioRead$BA$I$I.apply(this, [b, off, len]);
-this.nBytes = this.nBytes+(n);
+this.nBytes+=n;
 return n;
 });
 
@@ -97,11 +97,11 @@ Clazz.newMeth(C$, 'ioRead$BA$I$I', function (b, off, len) {
 var m = 0;
 while (len > 0){
 var n = this.stream.read$BA$I$I(b, off, len);
-m = m+(n);
+m+=n;
 if (n > 0 && this.out != null  ) this.out.write$BA$I$I(b, off, n);
 if (n >= len) break;
-off = off+(n);
-len = len-(n);
+off+=n;
+len-=n;
 }
 return m;
 });
@@ -113,7 +113,7 @@ return  String.instantialize(temp, 0, n, "UTF-8");
 });
 
 Clazz.newMeth(C$, 'readShort', function () {
-this.nBytes = this.nBytes+(2);
+this.nBytes+=2;
 var n = (this.isBigEndian ? p$.ioReadShort.apply(this, []) : ($s$[0] = ((p$.ioReadByte.apply(this, []) & 255) | (p$.ioReadByte.apply(this, []) & 255) << 8), $s$[0]));
 {
 return (n > 0x7FFF ? n - 0x10000 : n);
@@ -127,12 +127,12 @@ return b;
 });
 
 Clazz.newMeth(C$, 'readIntLE', function () {
-this.nBytes = this.nBytes+(4);
+this.nBytes+=4;
 return p$.readLEInt.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'readInt', function () {
-this.nBytes = this.nBytes+(4);
+this.nBytes+=4;
 return (this.isBigEndian ? p$.ioReadInt.apply(this, []) : p$.readLEInt.apply(this, []));
 });
 
@@ -151,14 +151,14 @@ return ($s$[0] = ((((n >> 8) & 255) | (n & 255) << 8)), $s$[0]);
 });
 
 Clazz.newMeth(C$, 'readUnsignedShort', function () {
-this.nBytes = this.nBytes+(2);
+this.nBytes+=2;
 var a = (p$.ioReadByte.apply(this, []) & 255);
 var b = (p$.ioReadByte.apply(this, []) & 255);
 return (this.isBigEndian ? (a << 8) + b : (b << 8) + a);
 });
 
 Clazz.newMeth(C$, 'readLong', function () {
-this.nBytes = this.nBytes+(8);
+this.nBytes+=8;
 return (this.isBigEndian ? p$.ioReadLong.apply(this, []) : (((p$.ioReadByte.apply(this, [])) & 255) | ((p$.ioReadByte.apply(this, [])) & 255) << 8 | ((p$.ioReadByte.apply(this, [])) & 255) << 16 | ((p$.ioReadByte.apply(this, [])) & 255) << 24 | ((p$.ioReadByte.apply(this, [])) & 255) << 32 | ((p$.ioReadByte.apply(this, [])) & 255) << 40 | ((p$.ioReadByte.apply(this, [])) & 255) << 48 | ((p$.ioReadByte.apply(this, [])) & 255) << 54));
 });
 
@@ -201,14 +201,14 @@ if (offset == this.nBytes) return;
 if (offset < this.nBytes) {
 this.stream.reset();
 if (this.out != null  && this.nBytes != 0 ) this.out.reset();
-this.nBytes = 0;
+this.nBytes=0;
 } else {
-offset = offset-(this.nBytes);
+offset-=this.nBytes;
 }if (this.out == null ) {
 this.stream.skipBytes$I((offset|0));
 } else {
 this.readByteArray$BA$I$I(Clazz.array(Byte.TYPE, [(offset|0)]), 0, (offset|0));
-}this.nBytes = this.nBytes+(offset);
+}this.nBytes+=offset;
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.io.IOException")){
 System.out.println$S(e.toString());
@@ -231,4 +231,4 @@ Clazz.newMeth(C$, 'getAllDataMapped$S$S$java_util_Map', function (replace, strin
 var $b$ = new Int8Array(1);
 var $s$ = new Int16Array(1);
 })();
-//Created 2018-05-15 01:02:18
+//Created 2018-05-24 08:45:55

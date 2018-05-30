@@ -20,17 +20,17 @@ this.markedPos = -1;
 Clazz.newMeth(C$, 'c$$CA', function (buf) {
 C$.superclazz.c$$O.apply(this, [buf]);
 C$.$init$.apply(this);
-this.buf = buf;
-this.count = buf.length;
+this.buf=buf;
+this.count=buf.length;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$CA$I$I', function (buf, offset, length) {
 C$.superclazz.c$$O.apply(this, [buf]);
 C$.$init$.apply(this);
 if (0 <= offset && offset <= buf.length  && length >= 0 ) {
-this.buf = buf;
-this.pos = offset;
-this.count = this.pos + length < buf.length ? length : buf.length;
+this.buf=buf;
+this.pos=offset;
+this.count=this.pos + length < buf.length ? length : buf.length;
 } else {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
 }}, 1);
@@ -38,7 +38,7 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
 Clazz.newMeth(C$, 'close', function () {
 {
 if (p$.isOpen.apply(this, [])) {
-this.buf = null;
+this.buf=null;
 }}});
 
 Clazz.newMeth(C$, 'isOpen', function () {
@@ -48,7 +48,7 @@ return this.buf != null ;
 Clazz.newMeth(C$, 'mark$I', function (readLimit) {
 {
 if (p$.isOpen.apply(this, [])) {
-this.markedPos = this.pos;
+this.markedPos=this.pos;
 } else {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[(I$[1]||$incl$(1)).getString$S("K0060")]);
 }}});
@@ -73,7 +73,7 @@ if (p$.isOpen.apply(this, [])) {
 if (this.pos < this.count) {
 var bytesRead = this.pos + len > this.count ? this.count - this.pos : len;
 System.arraycopy(this.buf, this.pos, buffer, offset, bytesRead);
-this.pos = this.pos+(bytesRead);
+this.pos+=bytesRead;
 return bytesRead;
 }return -1;
 }throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[(I$[1]||$incl$(1)).getString$S("K0060")]);
@@ -90,7 +90,7 @@ return this.pos != this.count;
 Clazz.newMeth(C$, 'reset', function () {
 {
 if (p$.isOpen.apply(this, [])) {
-this.pos = this.markedPos != -1 ? this.markedPos : 0;
+this.pos=this.markedPos != -1 ? this.markedPos : 0;
 } else {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[(I$[1]||$incl$(1)).getString$S("K0060")]);
 }}});
@@ -102,15 +102,15 @@ if (n <= 0) {
 return 0;
 }var skipped = 0;
 if (n < this.count - this.pos) {
-this.pos = this.pos + (n|0);
-skipped = n;
+this.pos=this.pos + (n|0);
+skipped=n;
 } else {
-skipped = this.count - this.pos;
-this.pos = this.count;
+skipped=this.count - this.pos;
+this.pos=this.count;
 }return skipped;
 }throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[(I$[1]||$incl$(1)).getString$S("K0060")]);
 }});
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:04
+//Created 2018-05-24 08:45:32

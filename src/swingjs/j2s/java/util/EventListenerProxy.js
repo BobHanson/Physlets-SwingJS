@@ -14,11 +14,11 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function (listener) {
 C$.$init$.apply(this);
-this.listener = listener;
+this.listener=listener;
 }, 1);
 
 Clazz.newMeth(C$, 'getListener', function () {
 return this.listener;
 });
 })();
-//Created 2018-05-15 01:02:12
+//Created 2018-05-24 08:45:45

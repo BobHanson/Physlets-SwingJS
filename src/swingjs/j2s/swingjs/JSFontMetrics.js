@@ -21,7 +21,7 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setFont$java_awt_Font', function (f) {
-this.font = f;
+this.font=f;
 });
 
 Clazz.newMeth(C$, 'getLeading', function () {
@@ -53,21 +53,21 @@ return ((I$[1]||$incl$(1)).getStringWidth$swingjs_api_js_HTML5CanvasContext2D$ja
 
 Clazz.newMeth(C$, 'getWidths', function () {
 if (this.iwidths != null ) return this.iwidths;
-this.iwidths = Clazz.array(Integer.TYPE, [256]);
+this.iwidths=Clazz.array(Integer.TYPE, [256]);
 this.getWidthsFloat();
 for (var ch = this.FIRST_PRINTABLE; ch < 256; ch++) {
-this.iwidths[ch] = (this.fwidths[ch]|0);
+this.iwidths[ch]=(this.fwidths[ch]|0);
 }
 return this.iwidths;
 });
 
 Clazz.newMeth(C$, 'getWidthsFloat', function () {
 if (this.fwidths != null ) return this.fwidths;
-this.fwidths = Clazz.array(Float.TYPE, [256]);
+this.fwidths=Clazz.array(Float.TYPE, [256]);
 for (var ch = this.FIRST_PRINTABLE; ch < 256; ch++) {
-this.fwidths[ch] = (I$[1]||$incl$(1)).getStringWidth$swingjs_api_js_HTML5CanvasContext2D$java_awt_Font$S(null, this.font, "" + String.fromCharCode(ch));
+this.fwidths[ch]=(I$[1]||$incl$(1)).getStringWidth$swingjs_api_js_HTML5CanvasContext2D$java_awt_Font$S(null, this.font, "" + String.fromCharCode(ch));
 }
 return this.fwidths;
 });
 })();
-//Created 2018-05-15 01:03:14
+//Created 2018-05-24 08:47:43

@@ -15,9 +15,9 @@ Clazz.newMeth(C$, 'c$$javax_swing_text_TabStopA', function (tabs) {
 C$.$init$.apply(this);
 if (tabs != null ) {
 var tabCount = tabs.length;
-this.tabs = Clazz.array((I$[1]||$incl$(1)), [tabCount]);
+this.tabs=Clazz.array((I$[1]||$incl$(1)), [tabCount]);
 System.arraycopy(tabs, 0, this.tabs, 0, tabCount);
-} else this.tabs = null;
+} else this.tabs=null;
 }, 1);
 
 Clazz.newMeth(C$, 'getTabCount', function () {
@@ -45,16 +45,16 @@ Clazz.newMeth(C$, 'getTabIndexAfter$F', function (location) {
 var current;
 var min;
 var max;
-min = 0;
-max = this.getTabCount();
+min=0;
+max=this.getTabCount();
 while (min != max){
-current = ((max - min)/2|0) + min;
+current=((max - min)/2|0) + min;
 if (location > this.tabs[current].getPosition() ) {
-if (min == current) min = max;
- else min = current;
+if (min == current) min=max;
+ else min=current;
 } else {
 if (current == 0 || location > this.tabs[current - 1].getPosition()  ) return current;
-max = current;
+max=current;
 }}
 return -1;
 });
@@ -79,14 +79,14 @@ return true;
 
 Clazz.newMeth(C$, 'hashCode', function () {
 if (this.$hashCode == 2147483647) {
-this.$hashCode = 0;
+this.$hashCode=0;
 var len = this.getTabCount();
 for (var i = 0; i < len; i++) {
 var ts = this.getTab$I(i);
-this.$hashCode = this.$hashCode^(ts != null  ? this.getTab$I(i).hashCode() : 0);
+this.$hashCode^=ts != null  ? this.getTab$I(i).hashCode() : 0;
 }
 if (this.$hashCode == 2147483647) {
-this.$hashCode = this.$hashCode-(1);
+this.$hashCode-=1;
 }}return this.$hashCode;
 });
 
@@ -103,4 +103,4 @@ return buffer.toString();
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:58
+//Created 2018-05-24 08:47:09

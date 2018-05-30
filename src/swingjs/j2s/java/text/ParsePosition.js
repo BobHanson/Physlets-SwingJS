@@ -17,16 +17,16 @@ return this.index;
 });
 
 Clazz.newMeth(C$, 'setIndex$I', function (index) {
-this.index = index;
+this.index=index;
 });
 
 Clazz.newMeth(C$, 'c$$I', function (index) {
 C$.$init$.apply(this);
-this.index = index;
+this.index=index;
 }, 1);
 
 Clazz.newMeth(C$, 'setErrorIndex$I', function (ei) {
-this.errorIndex = ei;
+this.errorIndex=ei;
 });
 
 Clazz.newMeth(C$, 'getErrorIndex', function () {
@@ -50,4 +50,4 @@ return this.getClass().getName() + "[index=" + this.index + ",errorIndex=" + thi
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:44

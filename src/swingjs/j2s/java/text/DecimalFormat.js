@@ -64,21 +64,21 @@ var pattern = C$.$cachedLocaleData.get$O(def);
 if (pattern == null ) {
 var rb = (I$[5]||$incl$(5)).getNumberFormatData$java_util_Locale(def);
 var all = rb.getStringArray$S("NumberPatterns");
-pattern = all[0];
+pattern=all[0];
 C$.$cachedLocaleData.put$TK$TV(def, pattern);
-}this.symbols = Clazz.new_((I$[6]||$incl$(6)).c$$java_util_Locale,[def]);
+}this.symbols=Clazz.new_((I$[6]||$incl$(6)).c$$java_util_Locale,[def]);
 p$.applyPattern$S$Z.apply(this, [pattern, false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (pattern) {
 Clazz.super_(C$, this,1);
-this.symbols = Clazz.new_((I$[6]||$incl$(6)).c$$java_util_Locale,[(I$[4]||$incl$(4)).getDefault()]);
+this.symbols=Clazz.new_((I$[6]||$incl$(6)).c$$java_util_Locale,[(I$[4]||$incl$(4)).getDefault()]);
 p$.applyPattern$S$Z.apply(this, [pattern, false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$java_text_DecimalFormatSymbols', function (pattern, symbols) {
 Clazz.super_(C$, this,1);
-this.symbols = symbols.clone();
+this.symbols=symbols.clone();
 p$.applyPattern$S$Z.apply(this, [pattern, false]);
 }, 1);
 
@@ -122,7 +122,7 @@ p$.append$StringBuffer$S$java_text_Format_FieldDelegate$java_text_FieldPositionA
 p$.append$StringBuffer$S$java_text_Format_FieldDelegate$java_text_FieldPositionA$java_text_Format_Field.apply(this, [result, this.positiveSuffix, delegate, p$.getPositiveSuffixFieldPositions.apply(this, []), (I$[7]||$incl$(7)).SIGN]);
 }return result;
 }if (isNegative) {
-number = -number;
+number=-number;
 }Clazz.assert(C$, this, function(){return (number >= 0  && !Double.isInfinite(number) )});
 {
 var maxIntDigits = C$.superclazz.prototype.getMaximumIntegerDigits.apply(this, []);
@@ -142,19 +142,19 @@ return p$.formatLong$J$StringBuffer$java_text_Format_FieldDelegate.apply(this, [
 Clazz.newMeth(C$, 'formatLong$J$StringBuffer$java_text_Format_FieldDelegate', function (number, result, delegate) {
 var isNegative = (number < 0);
 if (isNegative) {
-number = -number;
+number=-number;
 }if (number < 0) {
 } else if (this.multiplier != 1 && this.multiplier != 0 ) {
 var cutoff = (9223372036854775807/this.multiplier|0);
 if (cutoff < 0) {
-cutoff = -cutoff;
-}}number = number*(this.multiplier);
+cutoff=-cutoff;
+}}number*=this.multiplier;
 if (number == 0) {
-isNegative = false;
+isNegative=false;
 } else {
 if (this.multiplier < 0) {
-number = -number;
-isNegative = !isNegative;
+number=-number;
+isNegative=!isNegative;
 }}{
 var maxIntDigits = C$.superclazz.prototype.getMaximumIntegerDigits.apply(this, []);
 var minIntDigits = C$.superclazz.prototype.getMinimumIntegerDigits.apply(this, []);
@@ -184,7 +184,7 @@ var zeroDelta = zero.$c() - 48;
 var grouping = this.symbols.getGroupingSeparator();
 var decimal = this.isCurrencyFormat ? this.symbols.getMonetaryDecimalSeparator() : this.symbols.getDecimalSeparator();
 if (this.digitList.isZero()) {
-this.digitList.decimalAt = 0;
+this.digitList.decimalAt=0;
 }if (isNegative) {
 p$.append$StringBuffer$S$java_text_Format_FieldDelegate$java_text_FieldPositionA$java_text_Format_Field.apply(this, [result, this.negativePrefix, delegate, p$.getNegativePrefixFieldPositions.apply(this, []), (I$[7]||$incl$(7)).SIGN]);
 } else {
@@ -198,52 +198,52 @@ var repeat = maxIntDigits;
 var minimumIntegerDigits = minIntDigits;
 if (repeat > 1 && repeat > minIntDigits ) {
 if (exponent >= 1) {
-exponent = (((exponent - 1)/repeat|0)) * repeat;
+exponent=(((exponent - 1)/repeat|0)) * repeat;
 } else {
-exponent = (((exponent - repeat)/repeat|0)) * repeat;
-}minimumIntegerDigits = 1;
+exponent=(((exponent - repeat)/repeat|0)) * repeat;
+}minimumIntegerDigits=1;
 } else {
-exponent = exponent-(minimumIntegerDigits);
+exponent-=minimumIntegerDigits;
 }var minimumDigits = minIntDigits + minFraDigits;
 if (minimumDigits < 0) {
-minimumDigits = 2147483647;
+minimumDigits=2147483647;
 }var integerDigits = this.digitList.isZero() ? minimumIntegerDigits : this.digitList.decimalAt - exponent;
 if (minimumDigits < integerDigits) {
-minimumDigits = integerDigits;
+minimumDigits=integerDigits;
 }var totalDigits = this.digitList.count;
 if (minimumDigits > totalDigits) {
-totalDigits = minimumDigits;
+totalDigits=minimumDigits;
 }var addedDecimalSeparator = false;
 for (var i = 0; i < totalDigits; ++i) {
 if (i == integerDigits) {
-iFieldEnd = result.length$();
+iFieldEnd=result.length$();
 result.append$C(decimal);
-addedDecimalSeparator = true;
-fFieldStart = result.length$();
+addedDecimalSeparator=true;
+fFieldStart=result.length$();
 }result.append$C((i < this.digitList.count) ? String.fromCharCode(((this.digitList.digits[i]).$c() + zeroDelta)) : zero);
 }
 if (this.decimalSeparatorAlwaysShown && totalDigits == integerDigits ) {
-iFieldEnd = result.length$();
+iFieldEnd=result.length$();
 result.append$C(decimal);
-addedDecimalSeparator = true;
-fFieldStart = result.length$();
+addedDecimalSeparator=true;
+fFieldStart=result.length$();
 }if (iFieldEnd == -1) {
-iFieldEnd = result.length$();
+iFieldEnd=result.length$();
 }delegate.formatted$I$java_text_Format_Field$O$I$I$StringBuffer(0, (I$[7]||$incl$(7)).INTEGER, (I$[7]||$incl$(7)).INTEGER, iFieldStart, iFieldEnd, result);
 if (addedDecimalSeparator) {
 delegate.formatted$java_text_Format_Field$O$I$I$StringBuffer((I$[7]||$incl$(7)).DECIMAL_SEPARATOR, (I$[7]||$incl$(7)).DECIMAL_SEPARATOR, iFieldEnd, fFieldStart, result);
 }if (fFieldStart == -1) {
-fFieldStart = result.length$();
+fFieldStart=result.length$();
 }delegate.formatted$I$java_text_Format_Field$O$I$I$StringBuffer(1, (I$[7]||$incl$(7)).FRACTION, (I$[7]||$incl$(7)).FRACTION, fFieldStart, result.length$(), result);
 var fieldStart = result.length$();
 result.append$S(this.symbols.getExponentSeparator());
 delegate.formatted$java_text_Format_Field$O$I$I$StringBuffer((I$[7]||$incl$(7)).EXPONENT_SYMBOL, (I$[7]||$incl$(7)).EXPONENT_SYMBOL, fieldStart, result.length$(), result);
 if (this.digitList.isZero()) {
-exponent = 0;
+exponent=0;
 }var negativeExponent = exponent < 0;
 if (negativeExponent) {
-exponent = -exponent;
-fieldStart = result.length$();
+exponent=-exponent;
+fieldStart=result.length$();
 result.append$C(this.symbols.getMinusSign());
 delegate.formatted$java_text_Format_Field$O$I$I$StringBuffer((I$[7]||$incl$(7)).EXPONENT_SIGN, (I$[7]||$incl$(7)).EXPONENT_SIGN, fieldStart, result.length$(), result);
 }this.digitList.setExp$Z$J(negativeExponent, exponent);
@@ -260,10 +260,10 @@ var iFieldStart = result.length$();
 var count = minIntDigits;
 var digitIndex = 0;
 if (this.digitList.decimalAt > 0 && count < this.digitList.decimalAt ) {
-count = this.digitList.decimalAt;
+count=this.digitList.decimalAt;
 }if (count > maxIntDigits) {
-count = maxIntDigits;
-digitIndex = this.digitList.decimalAt - count;
+count=maxIntDigits;
+digitIndex=this.digitList.decimalAt - count;
 }var sizeBeforeIntegerPart = result.length$();
 for (var i = count - 1; i >= 0; --i) {
 if (i < this.digitList.decimalAt && digitIndex < this.digitList.count ) {
@@ -312,14 +312,14 @@ for (var counter = 0, max = positions.length; counter < max; counter++) {
 var fp = positions[counter];
 var attribute = fp.getFieldAttribute();
 if (attribute === (I$[7]||$incl$(7)).SIGN ) {
-attribute = signAttribute;
+attribute=signAttribute;
 }delegate.formatted$java_text_Format_Field$O$I$I$StringBuffer(attribute, attribute, start + fp.getBeginIndex(), start + fp.getEndIndex(), result);
 }
 }});
 
 Clazz.newMeth(C$, 'parse$S$java_text_ParsePosition', function (text, pos) {
 if (text.regionMatches$I$S$I$I(pos.index, this.symbols.getNaN(), 0, this.symbols.getNaN().length$())) {
-pos.index = pos.index + this.symbols.getNaN().length$();
+pos.index=pos.index + this.symbols.getNaN().length$();
 return  new Double(NaN);
 }var status = Clazz.array(Boolean.TYPE, [2]);
 if (!p$.subparse$S$java_text_ParsePosition$S$S$java_text_DigitList$Z$ZA.apply(this, [text, pos, this.positivePrefix, this.negativePrefix, this.digitList, false, status])) {
@@ -341,27 +341,27 @@ var gotLongMinimum = false;
 var doubleResult = 0.0;
 var longResult = 0;
 if (this.digitList.fitsIntoLong$Z$Z(status[1], this.isParseIntegerOnly())) {
-gotDouble = false;
-longResult = this.digitList.getLong();
+gotDouble=false;
+longResult=this.digitList.getLong();
 if (longResult < 0) {
-gotLongMinimum = true;
+gotLongMinimum=true;
 }} else {
-doubleResult = this.digitList.getDouble();
+doubleResult=this.digitList.getDouble();
 }if (this.multiplier != 1) {
 if (gotDouble) {
 doubleResult /= this.multiplier;
 } else {
 if (longResult % this.multiplier == 0) {
-longResult = (longResult/this.multiplier|0);
+longResult=(longResult/this.multiplier|0);
 } else {
-doubleResult = (longResult) / this.multiplier;
-gotDouble = true;
+doubleResult=(longResult) / this.multiplier;
+gotDouble=true;
 }}}if (!status[1] && !gotLongMinimum ) {
-doubleResult = -doubleResult;
-longResult = -longResult;
+doubleResult=-doubleResult;
+longResult=-longResult;
 }if (this.multiplier != 1 && gotDouble ) {
-longResult = (doubleResult|0);
-gotDouble = ((doubleResult != longResult ) || (doubleResult == 0.0  && 1 / doubleResult < 0.0  ) ) && !this.isParseIntegerOnly() ;
+longResult=(doubleResult|0);
+gotDouble=((doubleResult != longResult ) || (doubleResult == 0.0  && 1 / doubleResult < 0.0  ) ) && !this.isParseIntegerOnly() ;
 }return gotDouble ?  new Double(doubleResult) :  new Long(longResult);
 });
 
@@ -371,26 +371,26 @@ var oldStart = parsePosition.index;
 var backup;
 var gotPositive;
 var gotNegative;
-gotPositive = text.regionMatches$I$S$I$I(position, positivePrefix, 0, positivePrefix.length$());
-gotNegative = text.regionMatches$I$S$I$I(position, negativePrefix, 0, negativePrefix.length$());
+gotPositive=text.regionMatches$I$S$I$I(position, positivePrefix, 0, positivePrefix.length$());
+gotNegative=text.regionMatches$I$S$I$I(position, negativePrefix, 0, negativePrefix.length$());
 if (gotPositive && gotNegative ) {
 if (positivePrefix.length$() > negativePrefix.length$()) {
-gotNegative = false;
+gotNegative=false;
 } else if (positivePrefix.length$() < negativePrefix.length$()) {
-gotPositive = false;
+gotPositive=false;
 }}if (gotPositive) {
-position = position+(positivePrefix.length$());
+position+=positivePrefix.length$();
 } else if (gotNegative) {
-position = position+(negativePrefix.length$());
+position+=negativePrefix.length$();
 } else {
-parsePosition.errorIndex = position;
+parsePosition.errorIndex=position;
 return false;
-}status[0] = false;
+}status[0]=false;
 if (!isExponent && text.regionMatches$I$S$I$I(position, this.symbols.getInfinity(), 0, this.symbols.getInfinity().length$()) ) {
-position = position+(this.symbols.getInfinity().length$());
-status[0] = true;
+position+=this.symbols.getInfinity().length$();
+status[0]=true;
 } else {
-digits.decimalAt = digits.count = 0;
+digits.decimalAt=digits.count=0;
 var zero = this.symbols.getZeroDigit();
 var decimal = this.isCurrencyFormat ? this.symbols.getMonetaryDecimalSeparator() : this.symbols.getDecimalSeparator();
 var grouping = this.symbols.getGroupingSeparator();
@@ -400,15 +400,15 @@ var sawExponent = false;
 var sawDigit = false;
 var exponent = 0;
 var digitCount = 0;
-backup = -1;
+backup=-1;
 for (; position < text.length$(); ++position) {
 var ch = text.charAt(position);
 var digit = ch.$c() - zero.$c();
 if (digit < 0 || digit > 9 ) {
-digit = Character.digit(ch, 10);
+digit=Character.digit(ch, 10);
 }if (digit == 0) {
-backup = -1;
-sawDigit = true;
+backup=-1;
+sawDigit=true;
 if (digits.count == 0) {
 if (!sawDecimal) {
 continue;
@@ -417,61 +417,61 @@ continue;
 ++digitCount;
 digits.append$C(String.fromCharCode((digit + 48)));
 }} else if (digit > 0 && digit <= 9 ) {
-sawDigit = true;
+sawDigit=true;
 ++digitCount;
 digits.append$C(String.fromCharCode((digit + 48)));
-backup = -1;
+backup=-1;
 } else if (!isExponent && ch == decimal ) {
 if (this.isParseIntegerOnly() || sawDecimal ) {
 break;
-}digits.decimalAt = digitCount;
-sawDecimal = true;
+}digits.decimalAt=digitCount;
+sawDecimal=true;
 } else if (!isExponent && ch == grouping  && this.isGroupingUsed() ) {
 if (sawDecimal) {
 break;
-}backup = position;
+}backup=position;
 } else if (!isExponent && text.regionMatches$I$S$I$I(position, exponentString, 0, exponentString.length$()) && !sawExponent  ) {
 var pos = Clazz.new_((I$[10]||$incl$(10)).c$$I,[position + exponentString.length$()]);
 var stat = Clazz.array(Boolean.TYPE, [2]);
 var exponentDigits = Clazz.new_((I$[3]||$incl$(3)));
 if (p$.subparse$S$java_text_ParsePosition$S$S$java_text_DigitList$Z$ZA.apply(this, [text, pos, "", Character.toString(this.symbols.getMinusSign()), exponentDigits, true, stat]) && exponentDigits.fitsIntoLong$Z$Z(stat[1], true) ) {
-position = pos.index;
-exponent = (exponentDigits.getLong()|0);
+position=pos.index;
+exponent=(exponentDigits.getLong()|0);
 if (!stat[1]) {
-exponent = -exponent;
-}sawExponent = true;
+exponent=-exponent;
+}sawExponent=true;
 }break;
 } else {
 break;
 }}
 if (backup != -1) {
-position = backup;
+position=backup;
 }if (!sawDecimal) {
-digits.decimalAt = digitCount;
-}digits.decimalAt = digits.decimalAt+(exponent);
+digits.decimalAt=digitCount;
+}digits.decimalAt+=exponent;
 if (!sawDigit && digitCount == 0 ) {
-parsePosition.index = oldStart;
-parsePosition.errorIndex = oldStart;
+parsePosition.index=oldStart;
+parsePosition.errorIndex=oldStart;
 return false;
 }}if (!isExponent) {
 if (gotPositive) {
-gotPositive = text.regionMatches$I$S$I$I(position, this.positiveSuffix, 0, this.positiveSuffix.length$());
+gotPositive=text.regionMatches$I$S$I$I(position, this.positiveSuffix, 0, this.positiveSuffix.length$());
 }if (gotNegative) {
-gotNegative = text.regionMatches$I$S$I$I(position, this.negativeSuffix, 0, this.negativeSuffix.length$());
+gotNegative=text.regionMatches$I$S$I$I(position, this.negativeSuffix, 0, this.negativeSuffix.length$());
 }if (gotPositive && gotNegative ) {
 if (this.positiveSuffix.length$() > this.negativeSuffix.length$()) {
-gotNegative = false;
+gotNegative=false;
 } else if (this.positiveSuffix.length$() < this.negativeSuffix.length$()) {
-gotPositive = false;
+gotPositive=false;
 }}if (gotPositive == gotNegative ) {
-parsePosition.errorIndex = position;
+parsePosition.errorIndex=position;
 return false;
-}parsePosition.index = position + (gotPositive ? this.positiveSuffix.length$() : this.negativeSuffix.length$());
+}parsePosition.index=position + (gotPositive ? this.positiveSuffix.length$() : this.negativeSuffix.length$());
 } else {
-parsePosition.index = position;
-}status[1] = gotPositive;
+parsePosition.index=position;
+}status[1]=gotPositive;
 if (parsePosition.index == oldStart) {
-parsePosition.errorIndex = position;
+parsePosition.errorIndex=position;
 return false;
 }return true;
 });
@@ -490,7 +490,7 @@ throw foo;
 
 Clazz.newMeth(C$, 'setDecimalFormatSymbols$java_text_DecimalFormatSymbols', function (newSymbols) {
 try {
-this.symbols = newSymbols.clone();
+this.symbols=newSymbols.clone();
 p$.expandAffixes.apply(this, []);
 } catch (foo) {
 if (Clazz.exceptionOf(foo, "java.lang.Exception")){
@@ -505,17 +505,17 @@ return this.positivePrefix;
 });
 
 Clazz.newMeth(C$, 'setPositivePrefix$S', function (newValue) {
-this.positivePrefix = newValue;
-this.posPrefixPattern = null;
-this.positivePrefixFieldPositions = null;
+this.positivePrefix=newValue;
+this.posPrefixPattern=null;
+this.positivePrefixFieldPositions=null;
 });
 
 Clazz.newMeth(C$, 'getPositivePrefixFieldPositions', function () {
 if (this.positivePrefixFieldPositions == null ) {
 if (this.posPrefixPattern != null ) {
-this.positivePrefixFieldPositions = p$.expandAffix$S.apply(this, [this.posPrefixPattern]);
+this.positivePrefixFieldPositions=p$.expandAffix$S.apply(this, [this.posPrefixPattern]);
 } else {
-this.positivePrefixFieldPositions = C$.EmptyFieldPositionArray;
+this.positivePrefixFieldPositions=C$.EmptyFieldPositionArray;
 }}return this.positivePrefixFieldPositions;
 });
 
@@ -524,16 +524,16 @@ return this.negativePrefix;
 });
 
 Clazz.newMeth(C$, 'setNegativePrefix$S', function (newValue) {
-this.negativePrefix = newValue;
-this.negPrefixPattern = null;
+this.negativePrefix=newValue;
+this.negPrefixPattern=null;
 });
 
 Clazz.newMeth(C$, 'getNegativePrefixFieldPositions', function () {
 if (this.negativePrefixFieldPositions == null ) {
 if (this.negPrefixPattern != null ) {
-this.negativePrefixFieldPositions = p$.expandAffix$S.apply(this, [this.negPrefixPattern]);
+this.negativePrefixFieldPositions=p$.expandAffix$S.apply(this, [this.negPrefixPattern]);
 } else {
-this.negativePrefixFieldPositions = C$.EmptyFieldPositionArray;
+this.negativePrefixFieldPositions=C$.EmptyFieldPositionArray;
 }}return this.negativePrefixFieldPositions;
 });
 
@@ -542,16 +542,16 @@ return this.positiveSuffix;
 });
 
 Clazz.newMeth(C$, 'setPositiveSuffix$S', function (newValue) {
-this.positiveSuffix = newValue;
-this.posSuffixPattern = null;
+this.positiveSuffix=newValue;
+this.posSuffixPattern=null;
 });
 
 Clazz.newMeth(C$, 'getPositiveSuffixFieldPositions', function () {
 if (this.positiveSuffixFieldPositions == null ) {
 if (this.posSuffixPattern != null ) {
-this.positiveSuffixFieldPositions = p$.expandAffix$S.apply(this, [this.posSuffixPattern]);
+this.positiveSuffixFieldPositions=p$.expandAffix$S.apply(this, [this.posSuffixPattern]);
 } else {
-this.positiveSuffixFieldPositions = C$.EmptyFieldPositionArray;
+this.positiveSuffixFieldPositions=C$.EmptyFieldPositionArray;
 }}return this.positiveSuffixFieldPositions;
 });
 
@@ -560,16 +560,16 @@ return this.negativeSuffix;
 });
 
 Clazz.newMeth(C$, 'setNegativeSuffix$S', function (newValue) {
-this.negativeSuffix = newValue;
-this.negSuffixPattern = null;
+this.negativeSuffix=newValue;
+this.negSuffixPattern=null;
 });
 
 Clazz.newMeth(C$, 'getNegativeSuffixFieldPositions', function () {
 if (this.negativeSuffixFieldPositions == null ) {
 if (this.negSuffixPattern != null ) {
-this.negativeSuffixFieldPositions = p$.expandAffix$S.apply(this, [this.negSuffixPattern]);
+this.negativeSuffixFieldPositions=p$.expandAffix$S.apply(this, [this.negSuffixPattern]);
 } else {
-this.negativeSuffixFieldPositions = C$.EmptyFieldPositionArray;
+this.negativeSuffixFieldPositions=C$.EmptyFieldPositionArray;
 }}return this.negativeSuffixFieldPositions;
 });
 
@@ -578,7 +578,7 @@ return this.multiplier;
 });
 
 Clazz.newMeth(C$, 'setMultiplier$I', function (newValue) {
-this.multiplier = newValue;
+this.multiplier=newValue;
 });
 
 Clazz.newMeth(C$, 'getGroupingSize', function () {
@@ -586,7 +586,7 @@ return this.groupingSize;
 });
 
 Clazz.newMeth(C$, 'setGroupingSize$I', function (newValue) {
-this.groupingSize = ($b$[0] = (newValue|0), $b$[0]);
+this.groupingSize=($b$[0] = (newValue|0), $b$[0]);
 });
 
 Clazz.newMeth(C$, 'isDecimalSeparatorAlwaysShown', function () {
@@ -594,7 +594,7 @@ return this.decimalSeparatorAlwaysShown;
 });
 
 Clazz.newMeth(C$, 'setDecimalSeparatorAlwaysShown$Z', function (newValue) {
-this.decimalSeparatorAlwaysShown = newValue;
+this.decimalSeparatorAlwaysShown=newValue;
 });
 
 Clazz.newMeth(C$, 'isParseBigDecimal', function () {
@@ -602,14 +602,14 @@ return this.parseBigDecimal;
 });
 
 Clazz.newMeth(C$, 'setParseBigDecimal$Z', function (newValue) {
-this.parseBigDecimal = newValue;
+this.parseBigDecimal=newValue;
 });
 
 Clazz.newMeth(C$, 'clone', function () {
 try {
 var other = C$.superclazz.prototype.clone.apply(this, []);
-other.symbols = this.symbols.clone();
-other.digitList = this.digitList.clone();
+other.symbols=this.symbols.clone();
+other.digitList=this.digitList.clone();
 return other;
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
@@ -642,17 +642,17 @@ return p$.toPattern$Z.apply(this, [true]);
 Clazz.newMeth(C$, 'expandAffixes', function () {
 var buffer = Clazz.new_((I$[9]||$incl$(9)));
 if (this.posPrefixPattern != null ) {
-this.positivePrefix = p$.expandAffix$S$StringBuffer.apply(this, [this.posPrefixPattern, buffer]);
-this.positivePrefixFieldPositions = null;
+this.positivePrefix=p$.expandAffix$S$StringBuffer.apply(this, [this.posPrefixPattern, buffer]);
+this.positivePrefixFieldPositions=null;
 }if (this.posSuffixPattern != null ) {
-this.positiveSuffix = p$.expandAffix$S$StringBuffer.apply(this, [this.posSuffixPattern, buffer]);
-this.positiveSuffixFieldPositions = null;
+this.positiveSuffix=p$.expandAffix$S$StringBuffer.apply(this, [this.posSuffixPattern, buffer]);
+this.positiveSuffixFieldPositions=null;
 }if (this.negPrefixPattern != null ) {
-this.negativePrefix = p$.expandAffix$S$StringBuffer.apply(this, [this.negPrefixPattern, buffer]);
-this.negativePrefixFieldPositions = null;
+this.negativePrefix=p$.expandAffix$S$StringBuffer.apply(this, [this.negPrefixPattern, buffer]);
+this.negativePrefixFieldPositions=null;
 }if (this.negSuffixPattern != null ) {
-this.negativeSuffix = p$.expandAffix$S$StringBuffer.apply(this, [this.negSuffixPattern, buffer]);
-this.negativeSuffixFieldPositions = null;
+this.negativeSuffix=p$.expandAffix$S$StringBuffer.apply(this, [this.negSuffixPattern, buffer]);
+this.negativeSuffixFieldPositions=null;
 }});
 
 Clazz.newMeth(C$, 'expandAffix$S$StringBuffer', function (pattern, buffer) {
@@ -660,7 +660,7 @@ buffer.setLength$I(0);
 for (var i = 0; i < pattern.length$(); ) {
 var c = pattern.charAt(i++);
 if (c == "\'") {
-c = pattern.charAt(i++);
+c=pattern.charAt(i++);
 switch (c.$c()) {
 case "\u00a4".$c():
 if (i < pattern.length$() && pattern.charAt(i) == "\u00a4" ) {
@@ -670,13 +670,13 @@ buffer.append$S(this.symbols.getInternationalCurrencySymbol());
 buffer.append$S(this.symbols.getCurrencySymbol());
 }continue;
 case "%".$c():
-c = this.symbols.getPercent();
+c=this.symbols.getPercent();
 break;
 case "\u2030".$c():
-c = this.symbols.getPerMill();
+c=this.symbols.getPerMill();
 break;
 case "-".$c():
-c = this.symbols.getMinusSign();
+c=this.symbols.getMinusSign();
 break;
 }
 }buffer.append$C(c);
@@ -692,43 +692,43 @@ var c = pattern.charAt(i++);
 if (c == "\'") {
 var field = -1;
 var fieldID = null;
-c = pattern.charAt(i++);
+c=pattern.charAt(i++);
 switch (c.$c()) {
 case "\u00a4".$c():
 var string;
 if (i < pattern.length$() && pattern.charAt(i) == "\u00a4" ) {
 ++i;
-string = this.symbols.getInternationalCurrencySymbol();
+string=this.symbols.getInternationalCurrencySymbol();
 } else {
-string = this.symbols.getCurrencySymbol();
+string=this.symbols.getCurrencySymbol();
 }if (string.length$() > 0) {
 if (positions == null ) {
-positions = Clazz.new_((I$[12]||$incl$(12)).c$$I,[2]);
+positions=Clazz.new_((I$[12]||$incl$(12)).c$$I,[2]);
 }var fp = Clazz.new_((I$[1]||$incl$(1)).c$$java_text_Format_Field,[(I$[7]||$incl$(7)).CURRENCY]);
 fp.setBeginIndex$I(stringIndex);
 fp.setEndIndex$I(stringIndex + string.length$());
 positions.add$TE(fp);
-stringIndex = stringIndex+(string.length$());
+stringIndex+=string.length$();
 }continue;
 case "%".$c():
-c = this.symbols.getPercent();
-field = -1;
-fieldID = (I$[7]||$incl$(7)).PERCENT;
+c=this.symbols.getPercent();
+field=-1;
+fieldID=(I$[7]||$incl$(7)).PERCENT;
 break;
 case "\u2030".$c():
-c = this.symbols.getPerMill();
-field = -1;
-fieldID = (I$[7]||$incl$(7)).PERMILLE;
+c=this.symbols.getPerMill();
+field=-1;
+fieldID=(I$[7]||$incl$(7)).PERMILLE;
 break;
 case "-".$c():
-c = this.symbols.getMinusSign();
-field = -1;
-fieldID = (I$[7]||$incl$(7)).SIGN;
+c=this.symbols.getMinusSign();
+field=-1;
+fieldID=(I$[7]||$incl$(7)).SIGN;
 break;
 }
 if (fieldID != null ) {
 if (positions == null ) {
-positions = Clazz.new_((I$[12]||$incl$(12)).c$$I,[2]);
+positions=Clazz.new_((I$[12]||$incl$(12)).c$$I,[2]);
 }var fp = Clazz.new_((I$[1]||$incl$(1)).c$$java_text_Format_Field$I,[fieldID, field]);
 fp.setBeginIndex$I(stringIndex);
 fp.setEndIndex$I(stringIndex + 1);
@@ -745,8 +745,8 @@ if (affixPattern == null ) {
 p$.appendAffix$StringBuffer$S$Z.apply(this, [buffer, expAffix, localized]);
 } else {
 var i;
-for (var pos = 0; pos < affixPattern.length$(); pos = i) {
-i = affixPattern.indexOf("\'", pos);
+for (var pos = 0; pos < affixPattern.length$(); pos=i) {
+i=affixPattern.indexOf("\'", pos);
 if (i < 0) {
 p$.appendAffix$StringBuffer$S$Z.apply(this, [buffer, affixPattern.substring(pos), localized]);
 break;
@@ -762,13 +762,13 @@ buffer.append$C(c);
 } else if (localized) {
 switch (c.$c()) {
 case "%".$c():
-c = this.symbols.getPercent();
+c=this.symbols.getPercent();
 break;
 case "\u2030".$c():
-c = this.symbols.getPerMill();
+c=this.symbols.getPerMill();
 break;
 case "-".$c():
-c = this.symbols.getMinusSign();
+c=this.symbols.getMinusSign();
 break;
 }
 }buffer.append$C(c);
@@ -778,9 +778,9 @@ break;
 Clazz.newMeth(C$, 'appendAffix$StringBuffer$S$Z', function (buffer, affix, localized) {
 var needQuote;
 if (localized) {
-needQuote = affix.indexOf(this.symbols.getZeroDigit()) >= 0 || affix.indexOf(this.symbols.getGroupingSeparator()) >= 0  || affix.indexOf(this.symbols.getDecimalSeparator()) >= 0  || affix.indexOf(this.symbols.getPercent()) >= 0  || affix.indexOf(this.symbols.getPerMill()) >= 0  || affix.indexOf(this.symbols.getDigit()) >= 0  || affix.indexOf(this.symbols.getPatternSeparator()) >= 0  || affix.indexOf(this.symbols.getMinusSign()) >= 0  || affix.indexOf("\u00a4") >= 0 ;
+needQuote=affix.indexOf(this.symbols.getZeroDigit()) >= 0 || affix.indexOf(this.symbols.getGroupingSeparator()) >= 0  || affix.indexOf(this.symbols.getDecimalSeparator()) >= 0  || affix.indexOf(this.symbols.getPercent()) >= 0  || affix.indexOf(this.symbols.getPerMill()) >= 0  || affix.indexOf(this.symbols.getDigit()) >= 0  || affix.indexOf(this.symbols.getPatternSeparator()) >= 0  || affix.indexOf(this.symbols.getMinusSign()) >= 0  || affix.indexOf("\u00a4") >= 0 ;
 } else {
-needQuote = affix.indexOf("0") >= 0 || affix.indexOf(",") >= 0  || affix.indexOf(".") >= 0  || affix.indexOf("%") >= 0  || affix.indexOf("\u2030") >= 0  || affix.indexOf("#") >= 0  || affix.indexOf(";") >= 0  || affix.indexOf("-") >= 0  || affix.indexOf("\u00a4") >= 0 ;
+needQuote=affix.indexOf("0") >= 0 || affix.indexOf(",") >= 0  || affix.indexOf(".") >= 0  || affix.indexOf("%") >= 0  || affix.indexOf("\u2030") >= 0  || affix.indexOf("#") >= 0  || affix.indexOf(";") >= 0  || affix.indexOf("-") >= 0  || affix.indexOf("\u00a4") >= 0 ;
 }if (needQuote) buffer.append$C("\'");
 if (affix.indexOf("\'") < 0) buffer.append$S(affix);
  else {
@@ -799,13 +799,13 @@ if (j == 1) p$.appendAffix$StringBuffer$S$S$Z.apply(this, [result, this.posPrefi
  else p$.appendAffix$StringBuffer$S$S$Z.apply(this, [result, this.negPrefixPattern, this.negativePrefix, localized]);
 var i;
 var digitCount = this.useExponentialNotation ? this.getMaximumIntegerDigits() : Math.max(this.groupingSize, this.getMinimumIntegerDigits()) + 1;
-for (i = digitCount; i > 0; --i) {
+for (i=digitCount; i > 0; --i) {
 if (i != digitCount && this.isGroupingUsed()  && this.groupingSize != 0  && i % this.groupingSize == 0 ) {
 result.append$C(localized ? this.symbols.getGroupingSeparator() : ",");
 }result.append$C(i <= this.getMinimumIntegerDigits() ? (localized ? this.symbols.getZeroDigit() : "0") : (localized ? this.symbols.getDigit() : "#"));
 }
 if (this.getMaximumFractionDigits() > 0 || this.decimalSeparatorAlwaysShown ) result.append$C(localized ? this.symbols.getDecimalSeparator() : ".");
-for (i = 0; i < this.getMaximumFractionDigits(); ++i) {
+for (i=0; i < this.getMaximumFractionDigits(); ++i) {
 if (i < this.getMinimumFractionDigits()) {
 result.append$C(localized ? this.symbols.getZeroDigit() : "0");
 } else {
@@ -813,7 +813,7 @@ result.append$C(localized ? this.symbols.getDigit() : "#");
 }}
 if (this.useExponentialNotation) {
 result.append$S(localized ? this.symbols.getExponentSeparator() : "E");
-for (i = 0; i < this.minExponentDigits; ++i) result.append$C(localized ? this.symbols.getZeroDigit() : "0");
+for (i=0; i < this.minExponentDigits; ++i) result.append$C(localized ? this.symbols.getZeroDigit() : "0");
 
 }if (j == 1) {
 p$.appendAffix$StringBuffer$S$S$Z.apply(this, [result, this.posSuffixPattern, this.positiveSuffix, localized]);
@@ -844,19 +844,19 @@ var separator = ";";
 var exponent = "E";
 var minus = "-";
 if (localized) {
-zeroDigit = this.symbols.getZeroDigit();
-groupingSeparator = this.symbols.getGroupingSeparator();
-decimalSeparator = this.symbols.getDecimalSeparator();
-percent = this.symbols.getPercent();
-perMill = this.symbols.getPerMill();
-digit = this.symbols.getDigit();
-separator = this.symbols.getPatternSeparator();
-exponent = this.symbols.getExponentSeparator();
-minus = this.symbols.getMinusSign();
+zeroDigit=this.symbols.getZeroDigit();
+groupingSeparator=this.symbols.getGroupingSeparator();
+decimalSeparator=this.symbols.getDecimalSeparator();
+percent=this.symbols.getPercent();
+perMill=this.symbols.getPerMill();
+digit=this.symbols.getDigit();
+separator=this.symbols.getPatternSeparator();
+exponent=this.symbols.getExponentSeparator();
+minus=this.symbols.getMinusSign();
 }var gotNegative = false;
-this.decimalSeparatorAlwaysShown = false;
-this.isCurrencyFormat = false;
-this.useExponentialNotation = false;
+this.decimalSeparatorAlwaysShown=false;
+this.isCurrencyFormat=false;
+this.useExponentialNotation=false;
 var phaseOneLength = 0;
 var start = 0;
 for (var j = 1; j >= 0 && start < pattern.length$() ; --j) {
@@ -882,18 +882,18 @@ if ((pos + 1) < pattern.length$() && pattern.charAt(pos + 1) == "\'" ) {
 ++pos;
 affix.append$S("\'\'");
 } else {
-inQuote = false;
+inQuote=false;
 }continue;
 }} else {
 if (ch == digit || ch == zeroDigit  || ch == groupingSeparator  || ch == decimalSeparator ) {
-phase = 1;
+phase=1;
 --pos;
 continue;
 } else if (ch == "\u00a4") {
 var doubled = (pos + 1) < pattern.length$() && pattern.charAt(pos + 1) == "\u00a4" ;
 if (doubled) {
 ++pos;
-}this.isCurrencyFormat = true;
+}this.isCurrencyFormat=true;
 affix.append$S(doubled ? "\'\u00a4\u00a4" : "\'\u00a4");
 continue;
 } else if (ch == "\'") {
@@ -902,24 +902,24 @@ if ((pos + 1) < pattern.length$() && pattern.charAt(pos + 1) == "\'" ) {
 ++pos;
 affix.append$S("\'\'");
 } else {
-inQuote = true;
+inQuote=true;
 }continue;
 }} else if (ch == separator) {
 if (phase == 0 || j == 0 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Unquoted special character '" + ch + "' in pattern \"" + pattern + '"' ]);
-}start = pos + 1;
-pos = pattern.length$();
+}start=pos + 1;
+pos=pattern.length$();
 continue;
 } else if (ch == percent) {
 if (multiplier != 1) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Too many percent/per mille characters in pattern \"" + pattern + '"' ]);
-}multiplier = 100;
+}multiplier=100;
 affix.append$S("\'%");
 continue;
 } else if (ch == perMill) {
 if (multiplier != 1) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Too many percent/per mille characters in pattern \"" + pattern + '"' ]);
-}multiplier = 1000;
+}multiplier=1000;
 affix.append$S("\'\u2030");
 continue;
 } else if (ch == minus) {
@@ -932,8 +932,8 @@ if (j == 1) {
 ++phaseOneLength;
 } else {
 if (--phaseOneLength == 0) {
-phase = 2;
-affix = suffix;
+phase=2;
+affix=suffix;
 }continue;
 }if (ch == digit) {
 if (zeroDigitCount > 0) {
@@ -941,39 +941,39 @@ if (zeroDigitCount > 0) {
 } else {
 ++digitLeftCount;
 }if (groupingCount >= 0 && decimalPos < 0 ) {
-++groupingCount;
+(($b$[0]=++groupingCount,groupingCount=$b$[0],$b$[0]));
 }} else if (ch == zeroDigit) {
 if (digitRightCount > 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Unexpected '0' in pattern \"" + pattern + '"' ]);
 }++zeroDigitCount;
 if (groupingCount >= 0 && decimalPos < 0 ) {
-++groupingCount;
+(($b$[0]=++groupingCount,groupingCount=$b$[0],$b$[0]));
 }} else if (ch == groupingSeparator) {
-groupingCount = ($b$[0] = 0, $b$[0]);
+groupingCount=($b$[0] = 0, $b$[0]);
 } else if (ch == decimalSeparator) {
 if (decimalPos >= 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Multiple decimal separators in pattern \"" + pattern + '"' ]);
-}decimalPos = digitLeftCount + zeroDigitCount + digitRightCount ;
+}decimalPos=digitLeftCount + zeroDigitCount + digitRightCount ;
 } else if (pattern.regionMatches$I$S$I$I(pos, exponent, 0, exponent.length$())) {
 if (this.useExponentialNotation) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Multiple exponential symbols in pattern \"" + pattern + '"' ]);
-}this.useExponentialNotation = true;
-this.minExponentDigits = ($b$[0] = 0, $b$[0]);
-pos = pos + exponent.length$();
+}this.useExponentialNotation=true;
+this.minExponentDigits=($b$[0] = 0, $b$[0]);
+pos=pos + exponent.length$();
 while (pos < pattern.length$() && pattern.charAt(pos) == zeroDigit ){
-++this.minExponentDigits;
+(($b$[0]=++this.minExponentDigits,this.minExponentDigits=$b$[0],$b$[0]));
 ++phaseOneLength;
 ++pos;
 }
 if ((digitLeftCount + zeroDigitCount) < 1 || this.minExponentDigits < 1 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Malformed exponential pattern \"" + pattern + '"' ]);
-}phase = 2;
-affix = suffix;
+}phase=2;
+affix=suffix;
 --pos;
 continue;
 } else {
-phase = 2;
-affix = suffix;
+phase=2;
+affix=suffix;
 --pos;
 --phaseOneLength;
 continue;
@@ -984,16 +984,16 @@ if (zeroDigitCount == 0 && digitLeftCount > 0  && decimalPos >= 0 ) {
 var n = decimalPos;
 if (n == 0) {
 ++n;
-}digitRightCount = digitLeftCount - n;
-digitLeftCount = n - 1;
-zeroDigitCount = 1;
+}digitRightCount=digitLeftCount - n;
+digitLeftCount=n - 1;
+zeroDigitCount=1;
 }if ((decimalPos < 0 && digitRightCount > 0 ) || (decimalPos >= 0 && (decimalPos < digitLeftCount || decimalPos > (digitLeftCount + zeroDigitCount) ) ) || groupingCount == 0   || inQuote ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Malformed pattern \"" + pattern + '"' ]);
 }if (j == 1) {
-this.posPrefixPattern = prefix.toString();
-this.posSuffixPattern = suffix.toString();
-this.negPrefixPattern = this.posPrefixPattern;
-this.negSuffixPattern = this.posSuffixPattern;
+this.posPrefixPattern=prefix.toString();
+this.posSuffixPattern=suffix.toString();
+this.negPrefixPattern=this.posPrefixPattern;
+this.negSuffixPattern=this.posSuffixPattern;
 var digitTotalCount = digitLeftCount + zeroDigitCount + digitRightCount ;
 var effectiveDecimalPos = decimalPos >= 0 ? decimalPos : digitTotalCount;
 this.setMinimumIntegerDigits$I(effectiveDecimalPos - digitLeftCount);
@@ -1001,55 +1001,55 @@ this.setMaximumIntegerDigits$I(this.useExponentialNotation ? digitLeftCount + th
 this.setMaximumFractionDigits$I(decimalPos >= 0 ? (digitTotalCount - decimalPos) : 0);
 this.setMinimumFractionDigits$I(decimalPos >= 0 ? (digitLeftCount + zeroDigitCount - decimalPos) : 0);
 this.setGroupingUsed$Z(groupingCount > 0);
-this.groupingSize = ($b$[0] = (groupingCount > 0) ? (groupingCount|0) : (0|0), $b$[0]);
-this.multiplier = multiplier;
+this.groupingSize=($b$[0] = (groupingCount > 0) ? (groupingCount|0) : (0|0), $b$[0]);
+this.multiplier=multiplier;
 this.setDecimalSeparatorAlwaysShown$Z(decimalPos == 0 || decimalPos == digitTotalCount );
 } else {
-this.negPrefixPattern = prefix.toString();
-this.negSuffixPattern = suffix.toString();
-gotNegative = true;
+this.negPrefixPattern=prefix.toString();
+this.negSuffixPattern=suffix.toString();
+gotNegative=true;
 }}
 if (pattern.length$() == 0) {
-this.posPrefixPattern = this.posSuffixPattern = "";
+this.posPrefixPattern=this.posSuffixPattern="";
 this.setMinimumIntegerDigits$I(0);
 this.setMaximumIntegerDigits$I(2147483647);
 this.setMinimumFractionDigits$I(0);
 this.setMaximumFractionDigits$I(2147483647);
 }if (!gotNegative || (this.negPrefixPattern.equals$O(this.posPrefixPattern) && this.negSuffixPattern.equals$O(this.posSuffixPattern) ) ) {
-this.negSuffixPattern = this.posSuffixPattern;
-this.negPrefixPattern = "'-" + this.posPrefixPattern;
+this.negSuffixPattern=this.posSuffixPattern;
+this.negPrefixPattern="'-" + this.posPrefixPattern;
 }p$.expandAffixes.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'setMaximumIntegerDigits$I', function (newValue) {
-this.$maximumIntegerDigits = Math.min(Math.max(0, newValue), 2147483647);
+this.$maximumIntegerDigits=Math.min(Math.max(0, newValue), 2147483647);
 C$.superclazz.prototype.setMaximumIntegerDigits$I.apply(this, [(this.$maximumIntegerDigits > 309) ? 309 : this.$maximumIntegerDigits]);
 if (this.$minimumIntegerDigits > this.$maximumIntegerDigits) {
-this.$minimumIntegerDigits = this.$maximumIntegerDigits;
+this.$minimumIntegerDigits=this.$maximumIntegerDigits;
 C$.superclazz.prototype.setMinimumIntegerDigits$I.apply(this, [(this.$minimumIntegerDigits > 309) ? 309 : this.$minimumIntegerDigits]);
 }});
 
 Clazz.newMeth(C$, 'setMinimumIntegerDigits$I', function (newValue) {
-this.$minimumIntegerDigits = Math.min(Math.max(0, newValue), 2147483647);
+this.$minimumIntegerDigits=Math.min(Math.max(0, newValue), 2147483647);
 C$.superclazz.prototype.setMinimumIntegerDigits$I.apply(this, [(this.$minimumIntegerDigits > 309) ? 309 : this.$minimumIntegerDigits]);
 if (this.$minimumIntegerDigits > this.$maximumIntegerDigits) {
-this.$maximumIntegerDigits = this.$minimumIntegerDigits;
+this.$maximumIntegerDigits=this.$minimumIntegerDigits;
 C$.superclazz.prototype.setMaximumIntegerDigits$I.apply(this, [(this.$maximumIntegerDigits > 309) ? 309 : this.$maximumIntegerDigits]);
 }});
 
 Clazz.newMeth(C$, 'setMaximumFractionDigits$I', function (newValue) {
-this.$maximumFractionDigits = Math.min(Math.max(0, newValue), 2147483647);
+this.$maximumFractionDigits=Math.min(Math.max(0, newValue), 2147483647);
 C$.superclazz.prototype.setMaximumFractionDigits$I.apply(this, [(this.$maximumFractionDigits > 340) ? 340 : this.$maximumFractionDigits]);
 if (this.$minimumFractionDigits > this.$maximumFractionDigits) {
-this.$minimumFractionDigits = this.$maximumFractionDigits;
+this.$minimumFractionDigits=this.$maximumFractionDigits;
 C$.superclazz.prototype.setMinimumFractionDigits$I.apply(this, [(this.$minimumFractionDigits > 340) ? 340 : this.$minimumFractionDigits]);
 }});
 
 Clazz.newMeth(C$, 'setMinimumFractionDigits$I', function (newValue) {
-this.$minimumFractionDigits = Math.min(Math.max(0, newValue), 2147483647);
+this.$minimumFractionDigits=Math.min(Math.max(0, newValue), 2147483647);
 C$.superclazz.prototype.setMinimumFractionDigits$I.apply(this, [(this.$minimumFractionDigits > 340) ? 340 : this.$minimumFractionDigits]);
 if (this.$minimumFractionDigits > this.$maximumFractionDigits) {
-this.$maximumFractionDigits = this.$minimumFractionDigits;
+this.$maximumFractionDigits=this.$minimumFractionDigits;
 C$.superclazz.prototype.setMaximumFractionDigits$I.apply(this, [(this.$maximumFractionDigits > 340) ? 340 : this.$maximumFractionDigits]);
 }});
 
@@ -1076,7 +1076,7 @@ return this.roundingMode;
 Clazz.newMeth(C$, 'setRoundingMode$java_math_RoundingMode', function (roundingMode) {
 if (roundingMode == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.roundingMode = roundingMode;
+}this.roundingMode=roundingMode;
 this.digitList.setRoundingMode$java_math_RoundingMode(roundingMode);
 });
 
@@ -1093,4 +1093,4 @@ this.setMaximumFractionDigits$I(digits);
 C$.$_ASSERT_ENABLED_ = ClassLoader.$getClassAssertionStatus(C$);
 var $b$ = new Int8Array(1);
 })();
-//Created 2018-05-15 01:02:10
+//Created 2018-05-24 08:45:43

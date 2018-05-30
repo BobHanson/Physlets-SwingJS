@@ -17,9 +17,9 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$Class', function (lineClass) {
 C$.$init$.apply(this);
 if (lineClass == null ) {
-this.lineClass = Clazz.getClass((I$[1]||$incl$(1)),['addLineListener$javax_sound_sampled_LineListener','close','getControl$javax_sound_sampled_Control_Type','getControls','getLineInfo','isControlSupported$javax_sound_sampled_Control_Type','isOpen','open','removeLineListener$javax_sound_sampled_LineListener']);
+this.lineClass=Clazz.getClass((I$[1]||$incl$(1)),['addLineListener$javax_sound_sampled_LineListener','close','getControl$javax_sound_sampled_Control_Type','getControls','getLineInfo','isControlSupported$javax_sound_sampled_Control_Type','isOpen','open','removeLineListener$javax_sound_sampled_LineListener']);
 } else {
-this.lineClass = lineClass;
+this.lineClass=lineClass;
 }}, 1);
 
 Clazz.newMeth(C$, 'getLineClass', function () {
@@ -40,13 +40,13 @@ var initialString =  String.instantialize(this.getLineClass().toString());
 var finalString;
 var index = initialString.indexOf(fullPackagePath);
 if (index != -1) {
-finalString = initialString.substring(0, index) + initialString.substring((index + fullPackagePath.length$()), initialString.length$());
+finalString=initialString.substring(0, index) + initialString.substring((index + fullPackagePath.length$()), initialString.length$());
 } else {
-finalString = initialString;
+finalString=initialString;
 }return finalString;
 });
 
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:21
+//Created 2018-05-24 08:46:02

@@ -25,10 +25,10 @@ Clazz.newMeth(C$, 'c$$I', function (initialLength) {
 C$.superclazz.c$$I.apply(this, [Math.max(initialLength, 2)]);
 C$.$init$.apply(this);
 var implied = Clazz.array(Character.TYPE, [1]);
-implied[0] = "\u000a";
+implied[0]="\u000a";
 this.replace$I$I$O$I(0, 0, implied, implied.length);
-this.marks = Clazz.new_((I$[2]||$incl$(2)));
-this.search = Clazz.new_((I$[1]||$incl$(1)).c$$I, [this, null, 0]);
+this.marks=Clazz.new_((I$[2]||$incl$(2)));
+this.search=Clazz.new_((I$[1]||$incl$(1)).c$$I, [this, null, 0]);
 }, 1);
 
 Clazz.newMeth(C$, 'allocateArray$I', function (len) {
@@ -78,37 +78,37 @@ throw Clazz.new_(Clazz.load('javax.swing.text.BadLocationException').c$$S$I,["In
 var g1 = this.getGapEnd();
 var array = this.getArray();
 if ((where + len) <= g0) {
-chars.array = array;
-chars.offset = where;
+chars.array=array;
+chars.offset=where;
 } else if (where >= g0) {
-chars.array = array;
-chars.offset = g1 + where - g0;
+chars.array=array;
+chars.offset=g1 + where - g0;
 } else {
 var before = g0 - where;
 if (chars.isPartialReturn()) {
-chars.array = array;
-chars.offset = where;
-chars.count = before;
+chars.array=array;
+chars.offset=where;
+chars.count=before;
 return;
-}chars.array = Clazz.array(Character.TYPE, [len]);
-chars.offset = 0;
+}chars.array=Clazz.array(Character.TYPE, [len]);
+chars.offset=0;
 System.arraycopy(array, where, chars.array, 0, before);
 System.arraycopy(array, g1, chars.array, before, len - before);
-}chars.count = len;
+}chars.count=len;
 });
 
 Clazz.newMeth(C$, 'createPosition$I', function (offset) {
 var g0 = this.getGapStart();
 var g1 = this.getGapEnd();
 var index = (offset < g0) ? offset : offset + (g1 - g0);
-this.search.index = index;
+this.search.index=index;
 var sortIndex = this.findSortIndex$javax_swing_text_GapContent_MarkData(this.search);
 var m;
 var position;
-if (sortIndex < this.marks.size() && (m = this.marks.elementAt$I(sortIndex)).index == index  && (position = m.getPosition()) != null  ) {
+if (sortIndex < this.marks.size() && (m=this.marks.elementAt$I(sortIndex)).index == index  && (position=m.getPosition()) != null  ) {
 } else {
-position = Clazz.new_((I$[6]||$incl$(6)), [this, null]);
-m = Clazz.new_((I$[1]||$incl$(1)).c$$I$javax_swing_text_GapContent_StickyPosition, [this, null, index, position]);
+position=Clazz.new_((I$[6]||$incl$(6)), [this, null]);
+m=Clazz.new_((I$[1]||$incl$(1)).c$$I$javax_swing_text_GapContent_StickyPosition, [this, null, index, position]);
 position.setMark$javax_swing_text_GapContent_MarkData(m);
 this.marks.insertElementAt$javax_swing_text_GapContent_MarkData$I(m, sortIndex);
 }return position;
@@ -122,7 +122,7 @@ var adjustIndex = this.findMarkAdjustIndex$I(oldGapEnd);
 var n = this.marks.size();
 for (var i = adjustIndex; i < n; i++) {
 var mark = this.marks.elementAt$I(i);
-mark.index = mark.index+(dg);
+mark.index+=dg;
 }
 });
 
@@ -147,7 +147,7 @@ for (var i = adjustIndex; i < n; i++) {
 var mark = this.marks.elementAt$I(i);
 if (mark.index >= newGapEnd) {
 break;
-}mark.index = mark.index-(gapSize);
+}mark.index-=gapSize;
 }
 } else if (dg < 0) {
 var adjustIndex = this.findMarkAdjustIndex$I(newGapStart);
@@ -156,7 +156,7 @@ for (var i = adjustIndex; i < n; i++) {
 var mark = this.marks.elementAt$I(i);
 if (mark.index >= oldGapEnd) {
 break;
-}mark.index = mark.index+(gapSize);
+}mark.index+=gapSize;
 }
 }this.resetMarksAtZero();
 });
@@ -167,7 +167,7 @@ var g1 = this.getGapEnd();
 for (var counter = 0, maxCounter = this.marks.size(); counter < maxCounter; counter++) {
 var mark = this.marks.elementAt$I(counter);
 if (mark.index <= g1) {
-mark.index = 0;
+mark.index=0;
 } else {
 break;
 }}
@@ -182,7 +182,7 @@ for (var i = adjustIndex; i < n; i++) {
 var mark = this.marks.elementAt$I(i);
 if (mark.index > g0) {
 break;
-}mark.index = g1;
+}mark.index=g1;
 }
 C$.superclazz.prototype.shiftGapStartDown$I.apply(this, [newGapStart]);
 this.resetMarksAtZero();
@@ -195,7 +195,7 @@ for (var i = adjustIndex; i < n; i++) {
 var mark = this.marks.elementAt$I(i);
 if (mark.index >= newGapEnd) {
 break;
-}mark.index = newGapEnd;
+}mark.index=newGapEnd;
 }
 C$.superclazz.prototype.shiftGapEndUp$I.apply(this, [newGapEnd]);
 this.resetMarksAtZero();
@@ -211,13 +211,13 @@ return 0;
 }});
 
 Clazz.newMeth(C$, 'findMarkAdjustIndex$I', function (searchIndex) {
-this.search.index = Math.max(searchIndex, 1);
+this.search.index=Math.max(searchIndex, 1);
 var index = this.findSortIndex$javax_swing_text_GapContent_MarkData(this.search);
 for (var i = index - 1; i >= 0; i--) {
 var d = this.marks.elementAt$I(i);
 if (d.index != this.search.index) {
 break;
-}index = index-(1);
+}index-=1;
 }
 return index;
 });
@@ -230,18 +230,18 @@ if (upper == -1) {
 return 0;
 }var cmp = 0;
 var last = this.marks.elementAt$I(upper);
-cmp = this.compare$javax_swing_text_GapContent_MarkData$javax_swing_text_GapContent_MarkData(o, last);
+cmp=this.compare$javax_swing_text_GapContent_MarkData$javax_swing_text_GapContent_MarkData(o, last);
 if (cmp > 0) return upper + 1;
 while (lower <= upper){
-mid = lower + (((upper - lower)/2|0));
+mid=lower + (((upper - lower)/2|0));
 var entry = this.marks.elementAt$I(mid);
-cmp = this.compare$javax_swing_text_GapContent_MarkData$javax_swing_text_GapContent_MarkData(o, entry);
+cmp=this.compare$javax_swing_text_GapContent_MarkData$javax_swing_text_GapContent_MarkData(o, entry);
 if (cmp == 0) {
 return mid;
 } else if (cmp < 0) {
-upper = mid - 1;
+upper=mid - 1;
 } else {
-lower = mid + 1;
+lower=mid + 1;
 }}
 return (cmp < 0) ? mid : mid + 1;
 });
@@ -254,7 +254,7 @@ var mark = this.marks.elementAt$I(i);
 if (mark != null ) {
 cleaned.addElement$javax_swing_text_GapContent_MarkData(mark);
 }}
-this.marks = cleaned;
+this.marks=cleaned;
 });
 
 Clazz.newMeth(C$, 'getPositionsInRange$java_util_Vector$I$I', function (v, offset, length) {
@@ -265,16 +265,16 @@ var g0 = this.getGapStart();
 var g1 = this.getGapEnd();
 if (offset < g0) {
 if (offset == 0) {
-startIndex = 0;
+startIndex=0;
 } else {
-startIndex = this.findMarkAdjustIndex$I(offset);
+startIndex=this.findMarkAdjustIndex$I(offset);
 }if (endOffset >= g0) {
-endIndex = this.findMarkAdjustIndex$I(endOffset + (g1 - g0) + 1 );
+endIndex=this.findMarkAdjustIndex$I(endOffset + (g1 - g0) + 1 );
 } else {
-endIndex = this.findMarkAdjustIndex$I(endOffset + 1);
+endIndex=this.findMarkAdjustIndex$I(endOffset + 1);
 }} else {
-startIndex = this.findMarkAdjustIndex$I(offset + (g1 - g0));
-endIndex = this.findMarkAdjustIndex$I(endOffset + (g1 - g0) + 1 );
+startIndex=this.findMarkAdjustIndex$I(offset + (g1 - g0));
+endIndex=this.findMarkAdjustIndex$I(endOffset + (g1 - g0) + 1 );
 }var placeIn = (v == null ) ? Clazz.new_((I$[7]||$incl$(7)).c$$I,[Math.max(1, endIndex - startIndex)]) : v;
 for (var counter = startIndex; counter < endIndex; counter++) {
 placeIn.addElement$TE(Clazz.new_((I$[8]||$incl$(8)).c$$javax_swing_text_GapContent_MarkData, [this, null, this.marks.elementAt$I(counter)]));
@@ -288,9 +288,9 @@ var g1 = this.getGapEnd();
 var startIndex;
 var endIndex = this.findMarkAdjustIndex$I(g1 + 1);
 if (offset != 0) {
-startIndex = this.findMarkAdjustIndex$I(g1);
+startIndex=this.findMarkAdjustIndex$I(g1);
 } else {
-startIndex = 0;
+startIndex=0;
 }for (var counter = positions.size() - 1; counter >= 0; counter--) {
 var ref = positions.elementAt$I(counter);
 ref.resetLocation$I$I(endOffset, g1);
@@ -300,26 +300,26 @@ var sorted = Clazz.array(java.lang.Object, [endIndex - startIndex]);
 var addIndex = 0;
 var counter;
 if (offset == 0) {
-for (counter = startIndex; counter < endIndex; counter++) {
+for (counter=startIndex; counter < endIndex; counter++) {
 var mark = this.marks.elementAt$I(counter);
 if (mark.index == 0) {
-sorted[addIndex++] = mark;
+sorted[addIndex++]=mark;
 }}
-for (counter = startIndex; counter < endIndex; counter++) {
+for (counter=startIndex; counter < endIndex; counter++) {
 var mark = this.marks.elementAt$I(counter);
 if (mark.index != 0) {
-sorted[addIndex++] = mark;
+sorted[addIndex++]=mark;
 }}
 } else {
-for (counter = startIndex; counter < endIndex; counter++) {
+for (counter=startIndex; counter < endIndex; counter++) {
 var mark = this.marks.elementAt$I(counter);
 if (mark.index != g1) {
-sorted[addIndex++] = mark;
+sorted[addIndex++]=mark;
 }}
-for (counter = startIndex; counter < endIndex; counter++) {
+for (counter=startIndex; counter < endIndex; counter++) {
 var mark = this.marks.elementAt$I(counter);
 if (mark.index == g1) {
-sorted[addIndex++] = mark;
+sorted[addIndex++]=mark;
 }}
 }this.marks.replaceRange$I$I$OA(startIndex, endIndex, sorted);
 }});
@@ -339,13 +339,13 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I', function (index) {
 C$.$init$.apply(this);
-this.index = index;
+this.index=index;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$javax_swing_text_GapContent_StickyPosition', function (index, position) {
 C$.$init$.apply(this);
-this.ref = position;
-this.index = index;
+this.ref=position;
+this.index=index;
 }, 1);
 
 Clazz.newMeth(C$, 'getOffset', function () {
@@ -382,7 +382,7 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setMark$javax_swing_text_GapContent_MarkData', function (mark) {
-this.mark = mark;
+this.mark=mark;
 });
 
 Clazz.newMeth(C$, 'getOffset', function () {
@@ -435,7 +435,7 @@ return len;
 });
 
 Clazz.newMeth(C$, 'insertElementAt$javax_swing_text_GapContent_MarkData$I', function (m, index) {
-this.oneMark[0] = m;
+this.oneMark[0]=m;
 this.replace$I$I$O$I(index, 0, this.oneMark, 1);
 });
 
@@ -450,7 +450,7 @@ var array = this.getArray();
 if (index < g0) {
 return array[index];
 } else {
-index = index+(g1 - g0);
+index+=g1 - g0;
 return array[index];
 }});
 
@@ -461,20 +461,20 @@ var index = start;
 var newIndex = 0;
 var array = this.getArray();
 if (start >= g0) {
-index = index+((g1 - g0));
-end = end+((g1 - g0));
+index+=(g1 - g0);
+end+=(g1 - g0);
 } else if (end >= g0) {
-end = end+((g1 - g0));
+end+=(g1 - g0);
 while (index < g0){
-array[index++] = marks[newIndex++];
+array[index++]=marks[newIndex++];
 }
-index = g1;
+index=g1;
 } else {
 while (index < end){
-array[index++] = marks[newIndex++];
+array[index++]=marks[newIndex++];
 }
 }while (index < end){
-array[index++] = marks[newIndex++];
+array[index++]=marks[newIndex++];
 }
 });
 })()
@@ -494,15 +494,15 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_GapContent_MarkData', function (rec) {
 C$.$init$.apply(this);
-this.rec = rec;
-this.undoLocation = rec.getOffset();
+this.rec=rec;
+this.undoLocation=rec.getOffset();
 }, 1);
 
 Clazz.newMeth(C$, 'resetLocation$I$I', function (endOffset, g1) {
 if (this.undoLocation != endOffset) {
-this.rec.index = this.undoLocation;
+this.rec.index=this.undoLocation;
 } else {
-this.rec.index = g1;
+this.rec.index=g1;
 }});
 
 Clazz.newMeth(C$);
@@ -529,15 +529,15 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$I$I', function (offset, length) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.offset = offset;
-this.length = length;
+this.offset=offset;
+this.length=length;
 }, 1);
 
 Clazz.newMeth(C$, 'undo', function () {
 C$.superclazz.prototype.undo.apply(this, []);
 try {
-this.posRefs = this.this$0.getPositionsInRange$java_util_Vector$I$I(null, this.offset, this.length);
-this.string = this.this$0.getString$I$I(this.offset, this.length);
+this.posRefs=this.this$0.getPositionsInRange$java_util_Vector$I$I(null, this.offset, this.length);
+this.string=this.this$0.getString$I$I(this.offset, this.length);
 this.this$0.remove$I$I(this.offset, this.length);
 } catch (bl) {
 if (Clazz.exceptionOf(bl, "javax.swing.text.BadLocationException")){
@@ -552,10 +552,10 @@ Clazz.newMeth(C$, 'redo', function () {
 C$.superclazz.prototype.redo.apply(this, []);
 try {
 this.this$0.insertString$I$S(this.offset, this.string);
-this.string = null;
+this.string=null;
 if (this.posRefs != null ) {
 this.this$0.updateUndoPositions$java_util_Vector$I$I(this.posRefs, this.offset, this.length);
-this.posRefs = null;
+this.posRefs=null;
 }} catch (bl) {
 if (Clazz.exceptionOf(bl, "javax.swing.text.BadLocationException")){
 throw Clazz.new_(Clazz.load('javax.swing.undo.CannotRedoException'));
@@ -589,10 +589,10 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$I$S', function (offset, string) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.offset = offset;
-this.string = string;
-this.length = string.length$();
-this.posRefs = this.this$0.getPositionsInRange$java_util_Vector$I$I(null, offset, this.length);
+this.offset=offset;
+this.string=string;
+this.length=string.length$();
+this.posRefs=this.this$0.getPositionsInRange$java_util_Vector$I$I(null, offset, this.length);
 }, 1);
 
 Clazz.newMeth(C$, 'undo', function () {
@@ -601,8 +601,8 @@ try {
 this.this$0.insertString$I$S(this.offset, this.string);
 if (this.posRefs != null ) {
 this.this$0.updateUndoPositions$java_util_Vector$I$I(this.posRefs, this.offset, this.length);
-this.posRefs = null;
-}this.string = null;
+this.posRefs=null;
+}this.string=null;
 } catch (bl) {
 if (Clazz.exceptionOf(bl, "javax.swing.text.BadLocationException")){
 throw Clazz.new_(Clazz.load('javax.swing.undo.CannotUndoException'));
@@ -615,8 +615,8 @@ throw bl;
 Clazz.newMeth(C$, 'redo', function () {
 C$.superclazz.prototype.redo.apply(this, []);
 try {
-this.string = this.this$0.getString$I$I(this.offset, this.length);
-this.posRefs = this.this$0.getPositionsInRange$java_util_Vector$I$I(null, this.offset, this.length);
+this.string=this.this$0.getString$I$I(this.offset, this.length);
+this.posRefs=this.this$0.getPositionsInRange$java_util_Vector$I$I(null, this.offset, this.length);
 this.this$0.remove$I$I(this.offset, this.length);
 } catch (bl) {
 if (Clazz.exceptionOf(bl, "javax.swing.text.BadLocationException")){
@@ -630,4 +630,4 @@ throw bl;
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:54
+//Created 2018-05-24 08:47:04

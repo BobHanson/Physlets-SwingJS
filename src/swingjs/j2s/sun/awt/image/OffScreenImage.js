@@ -29,8 +29,8 @@ return env.createGraphics$java_awt_image_BufferedImage(this);
 }var font = this.c.getFont();
 if (font == null ) {
 if (this.defaultFont == null ) {
-this.defaultFont = Clazz.new_((I$[2]||$incl$(2)).c$$S$I$I,["Dialog", 0, 12]);
-}font = this.defaultFont;
+this.defaultFont=Clazz.new_((I$[2]||$incl$(2)).c$$S$I$I,["Dialog", 0, 12]);
+}font=this.defaultFont;
 }return null;
 });
 
@@ -40,4 +40,4 @@ return null;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:09
+//Created 2018-05-24 08:47:28

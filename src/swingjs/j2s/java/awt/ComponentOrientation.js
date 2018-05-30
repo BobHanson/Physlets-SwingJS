@@ -38,7 +38,7 @@ return C$.LEFT_TO_RIGHT;
 Clazz.newMeth(C$, 'getOrientation$java_util_ResourceBundle', function (bdl) {
 var result = null;
 try {
-result = bdl.getObject$S("Orientation");
+result=bdl.getObject$S("Orientation");
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
 } else {
@@ -46,17 +46,17 @@ throw e;
 }
 }
 if (result == null ) {
-result = C$.getOrientation$java_util_Locale(bdl.getLocale());
+result=C$.getOrientation$java_util_Locale(bdl.getLocale());
 }if (result == null ) {
-result = C$.getOrientation$java_util_Locale((I$[1]||$incl$(1)).getDefault());
+result=C$.getOrientation$java_util_Locale((I$[1]||$incl$(1)).getDefault());
 }return result;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (value) {
 C$.$init$.apply(this);
-this.orientation = value;
+this.orientation=value;
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:49
+//Created 2018-05-24 08:45:07

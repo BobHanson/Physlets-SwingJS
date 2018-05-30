@@ -43,23 +43,23 @@ C$.c$$I$Z$java_awt_Component$java_awt_Component.apply(this, [newOrientation, fal
 Clazz.newMeth(C$, 'c$$I$Z$java_awt_Component$java_awt_Component', function (newOrientation, newContinuousLayout, newLeftComponent, newRightComponent) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.dividerLocation = -1;
+this.dividerLocation=-1;
 this.setLayout$java_awt_LayoutManager(null);
 this.setUIProperty$S$O("opaque", (I$[3]||$incl$(3)).TRUE);
-this.orientation = newOrientation;
+this.orientation=newOrientation;
 if (this.orientation != 1 && this.orientation != 0 ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["cannot create JSplitPane, orientation must be one of JSplitPane.HORIZONTAL_SPLIT or JSplitPane.VERTICAL_SPLIT"]);
-this.continuousLayout = newContinuousLayout;
+this.continuousLayout=newContinuousLayout;
 if (newLeftComponent != null ) this.setLeftComponent$java_awt_Component(newLeftComponent);
 if (newRightComponent != null ) this.setRightComponent$java_awt_Component(newRightComponent);
-this.uiClassID = "SplitPaneUI";
+this.uiClassID="SplitPaneUI";
 this.updateUI();
 }, 1);
 
 Clazz.newMeth(C$, 'setDividerSize$I', function (newSize) {
 var oldSize = this.dividerSize;
-this.dividerSizeSet = true;
+this.dividerSizeSet=true;
 if (oldSize != newSize) {
-this.dividerSize = newSize;
+this.dividerSize=newSize;
 this.firePropertyChange$S$I$I("dividerSize", oldSize, newSize);
 }});
 
@@ -71,7 +71,7 @@ Clazz.newMeth(C$, 'setLeftComponent$java_awt_Component', function (comp) {
 if (comp == null ) {
 if (this.leftComponent != null ) {
 this.remove$java_awt_Component(this.leftComponent);
-this.leftComponent = null;
+this.leftComponent=null;
 }} else {
 this.add$java_awt_Component$O(comp, "left");
 }});
@@ -92,7 +92,7 @@ Clazz.newMeth(C$, 'setRightComponent$java_awt_Component', function (comp) {
 if (comp == null ) {
 if (this.rightComponent != null ) {
 this.remove$java_awt_Component(this.rightComponent);
-this.rightComponent = null;
+this.rightComponent=null;
 }} else {
 this.add$java_awt_Component$O(comp, "right");
 }});
@@ -111,8 +111,8 @@ return this.rightComponent;
 
 Clazz.newMeth(C$, 'setOneTouchExpandable$Z', function (newValue) {
 var oldValue = this.oneTouchExpandable;
-this.oneTouchExpandable = newValue;
-this.oneTouchExpandableSet = true;
+this.oneTouchExpandable=newValue;
+this.oneTouchExpandableSet=true;
 this.firePropertyChange$S$Z$Z("oneTouchExpandable", oldValue, newValue);
 this.repaint();
 });
@@ -123,7 +123,7 @@ return this.oneTouchExpandable;
 
 Clazz.newMeth(C$, 'setLastDividerLocation$I', function (newLastLocation) {
 var oldLocation = this.lastDividerLocation;
-this.lastDividerLocation = newLastLocation;
+this.lastDividerLocation=newLastLocation;
 this.firePropertyChange$S$I$I("lastDividerLocation", oldLocation, newLastLocation);
 });
 
@@ -135,7 +135,7 @@ Clazz.newMeth(C$, 'setOrientation$I', function (orientation) {
 if ((orientation != 0) && (orientation != 1) ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["JSplitPane: orientation must be one of JSplitPane.VERTICAL_SPLIT or JSplitPane.HORIZONTAL_SPLIT"]);
 }var oldOrientation = this.orientation;
-this.orientation = orientation;
+this.orientation=orientation;
 this.firePropertyChange$S$I$I("orientation", oldOrientation, orientation);
 });
 
@@ -145,7 +145,7 @@ return this.orientation;
 
 Clazz.newMeth(C$, 'setContinuousLayout$Z', function (newContinuousLayout) {
 var oldCD = this.continuousLayout;
-this.continuousLayout = newContinuousLayout;
+this.continuousLayout=newContinuousLayout;
 this.firePropertyChange$S$Z$Z("continuousLayout", oldCD, newContinuousLayout);
 });
 
@@ -157,7 +157,7 @@ Clazz.newMeth(C$, 'setResizeWeight$D', function (value) {
 if (value < 0  || value > 1  ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["JSplitPane weight must be between 0 and 1"]);
 }var oldWeight = this.resizeWeight;
-this.resizeWeight = value;
+this.resizeWeight=value;
 this.firePropertyChange$S$D$D("resizeWeight", oldWeight, value);
 });
 
@@ -178,12 +178,12 @@ if (proportionalLocation < 0.0  || proportionalLocation > 1.0  && !isInt  ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["proportional location must be between 0.0 and 1.0."]);
 }if (!isInt) {
 var wh = (this.getOrientation() == 0 ? this.getHeight() : this.getWidth());
-intLocation = (((wh - this.getDividerSize()) * proportionalLocation)|0);
+intLocation=(((wh - this.getDividerSize()) * proportionalLocation)|0);
 }this.setDividerLocationInt$I(intLocation);
 });
 
 Clazz.newMeth(C$, 'setDividerLocationInt$I', function (location) {
-this.dividerLocationSetByUser = true;
+this.dividerLocationSetByUser=true;
 this.setDividerLocationIntImpl$I(location);
 });
 
@@ -193,7 +193,7 @@ return this.dividerLocationSetByUser;
 
 Clazz.newMeth(C$, 'setDividerLocationIntImpl$I', function (location) {
 var oldValue = this.dividerLocation;
-this.dividerLocation = location;
+this.dividerLocation=location;
 var ui = this.getUI();
 if (ui != null ) {
 ui.setDividerLocation$javax_swing_JSplitPane$I(this, location);
@@ -221,9 +221,9 @@ return ui.getMaximumDividerLocation$javax_swing_JSplitPane(this);
 
 Clazz.newMeth(C$, 'remove$java_awt_Component', function (component) {
 if (component === this.leftComponent ) {
-this.leftComponent = null;
+this.leftComponent=null;
 } else if (component === this.rightComponent ) {
-this.rightComponent = null;
+this.rightComponent=null;
 }C$.superclazz.prototype.remove$java_awt_Component.apply(this, [component]);
 this.revalidate();
 this.repaint();
@@ -232,16 +232,16 @@ this.repaint();
 Clazz.newMeth(C$, 'remove$I', function (index) {
 var comp = this.getComponent$I(index);
 if (comp === this.leftComponent ) {
-this.leftComponent = null;
+this.leftComponent=null;
 } else if (comp === this.rightComponent ) {
-this.rightComponent = null;
+this.rightComponent=null;
 }C$.superclazz.prototype.remove$I.apply(this, [index]);
 this.revalidate();
 this.repaint();
 });
 
 Clazz.newMeth(C$, 'removeAll', function () {
-this.leftComponent = this.rightComponent = null;
+this.leftComponent=this.rightComponent=null;
 C$.superclazz.prototype.removeAll.apply(this, []);
 this.revalidate();
 this.repaint();
@@ -257,23 +257,23 @@ if (constraints != null  && !(Clazz.instanceOf(constraints, "java.lang.String"))
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["cannot add to layout: constraint must be a string (or null)"]);
 }if (constraints == null ) {
 if (this.getLeftComponent() == null ) {
-constraints = "left";
+constraints="left";
 } else if (this.getRightComponent() == null ) {
-constraints = "right";
+constraints="right";
 }}if (constraints != null  && (constraints.equals$O("left") || constraints.equals$O("top") ) ) {
-toRemove = this.getLeftComponent();
+toRemove=this.getLeftComponent();
 if (toRemove != null ) {
 this.remove$java_awt_Component(toRemove);
-}this.leftComponent = comp;
-index = -1;
+}this.leftComponent=comp;
+index=-1;
 } else if (constraints != null  && (constraints.equals$O("right") || constraints.equals$O("bottom") ) ) {
-toRemove = this.getRightComponent();
+toRemove=this.getRightComponent();
 if (toRemove != null ) {
 this.remove$java_awt_Component(toRemove);
-}this.rightComponent = comp;
-index = -1;
+}this.rightComponent=comp;
+index=-1;
 } else if (constraints != null  && constraints.equals$O("divider") ) {
-index = -1;
+index=-1;
 }this.addImplCont$java_awt_Component$O$I(comp, constraints, index);
 this.revalidate();
 this.repaint();
@@ -293,11 +293,11 @@ Clazz.newMeth(C$, 'setUIProperty$S$O', function (propertyName, value) {
 if (propertyName == "dividerSize") {
 if (!this.dividerSizeSet) {
 this.setDividerSize$I((value).intValue());
-this.dividerSizeSet = false;
+this.dividerSizeSet=false;
 }} else if (propertyName == "oneTouchExpandable") {
 if (!this.oneTouchExpandableSet) {
 this.setOneTouchExpandable$Z((value).booleanValue());
-this.oneTouchExpandableSet = false;
+this.oneTouchExpandableSet=false;
 }} else {
 C$.superclazz.prototype.setUIProperty$S$O.apply(this, [propertyName, value]);
 }});
@@ -309,4 +309,4 @@ var oneTouchExpandableString = (this.oneTouchExpandable ? "true" : "false");
 return C$.superclazz.prototype.paramString.apply(this, []) + ",continuousLayout=" + continuousLayoutString + ",dividerSize=" + this.dividerSize + ",lastDividerLocation=" + this.lastDividerLocation + ",oneTouchExpandable=" + oneTouchExpandableString + ",orientation=" + orientationString ;
 });
 })();
-//Created 2018-05-15 01:02:34
+//Created 2018-05-24 08:46:24

@@ -20,12 +20,12 @@ Clazz.super_(C$, this,1);
 }, 1);
 
 Clazz.newMeth(C$, 'setParams$java_util_Map', function (params) {
-this.isLandscape = (this.quality > 1);
-this.comment = "Jmol " + params.get$O("comment");
+this.isLandscape=(this.quality > 1);
+this.comment="Jmol " + params.get$O("comment");
 });
 
 Clazz.newMeth(C$, 'generate', function () {
-this.pdf = Clazz.new_((I$[1]||$incl$(1)));
+this.pdf=Clazz.new_((I$[1]||$incl$(1)));
 var pageWidth = 576;
 var pageHeight = 792;
 this.pdf.setOutputStream$java_io_OutputStream(this.out);
@@ -46,22 +46,22 @@ var h = (this.isLandscape ? pageWidth : pageHeight);
 var iw = this.width;
 var ih = this.height;
 if (iw > 0.9 * w ) {
-ih = ((ih * 0.9 * w  / iw)|0);
-iw = ((w * 0.9)|0);
+ih=((ih * 0.9 * w  / iw)|0);
+iw=((w * 0.9)|0);
 }if (ih > 0.9 * h ) {
-iw = ((iw * 0.9 * h  / ih)|0);
-ih = ((h * 0.9)|0);
+iw=((iw * 0.9 * h  / ih)|0);
+ih=((h * 0.9)|0);
 }var x = 0;
 var y = 0;
 var x1 = iw;
 var y1 = ih;
 if (w > iw) {
-x = ((w - iw)/2|0);
-x1 = iw + x;
+x=((w - iw)/2|0);
+x1=iw + x;
 }if (h > ih) {
-y = ((h - ih)/2|0);
-y1 = ih + y;
+y=((h - ih)/2|0);
+y1=ih + y;
 }this.pdf.drawImage$O$I$I$I$I$I$I$I$I("img1", x, y, x1, y1, 0, 0, this.width, this.height);
 });
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:54

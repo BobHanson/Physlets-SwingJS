@@ -18,7 +18,7 @@ this.update$java_awt_Graphics(g);
 
 Clazz.newMeth(C$, 'update$java_awt_Graphics', function (g) {
 if (!this.notified) System.out.println$S("neither paint(g) nor update(g) is implemented for " + this);
-this.notified = true;
+this.notified=true;
 {
 this.paintComponent$java_awt_Graphics && this.paintComponent$java_awt_Graphics(g);
 }
@@ -26,4 +26,4 @@ this.paintComponent$java_awt_Graphics && this.paintComponent$java_awt_Graphics(g
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:42
+//Created 2018-05-24 08:44:58

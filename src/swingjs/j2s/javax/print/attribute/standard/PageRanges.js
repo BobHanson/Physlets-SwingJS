@@ -30,7 +30,7 @@ var n = myMembers.length;
 if (n == 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["members is zero-length"]);
 }var i;
-for (i = 0; i < n; ++i) {
+for (i=0; i < n; ++i) {
 if (myMembers[i][0] < 1) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Page value < 1 specified"]);
 }}
@@ -66,4 +66,4 @@ return "page-ranges";
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:21
+//Created 2018-05-24 08:46:01

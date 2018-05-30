@@ -22,7 +22,7 @@ Clazz.newMeth(C$, 'c$$I', function (size) {
 Clazz.super_(C$, this,1);
 if (size < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Negative initial size: " + size]);
-}this.buf = Clazz.array(Byte.TYPE, [size]);
+}this.buf=Clazz.array(Byte.TYPE, [size]);
 }, 1);
 
 Clazz.newMeth(C$, 'ensureCapacity$I', function (minCapacity) {
@@ -32,11 +32,11 @@ if (minCapacity - this.buf.length > 0) p$.grow$I.apply(this, [minCapacity]);
 Clazz.newMeth(C$, 'grow$I', function (minCapacity) {
 var oldCapacity = this.buf.length;
 var newCapacity = oldCapacity << 1;
-if (newCapacity - minCapacity < 0) newCapacity = minCapacity;
+if (newCapacity - minCapacity < 0) newCapacity=minCapacity;
 if (newCapacity < 0) {
 if (minCapacity < 0) throw Clazz.new_((I$[1]||$incl$(1)));
-newCapacity = minCapacity;
-}this.buf = C$.arrayCopyByte$BA$I(this.buf, newCapacity);
+newCapacity=minCapacity;
+}this.buf=C$.arrayCopyByte$BA$I(this.buf, newCapacity);
 });
 
 Clazz.newMeth(C$, 'arrayCopyByte$BA$I', function (array, newLength) {
@@ -47,8 +47,8 @@ return t;
 
 Clazz.newMeth(C$, 'write$I', function (b) {
 p$.ensureCapacity$I.apply(this, [this.count + 1]);
-this.buf[this.count] = ((b|0)|0);
-this.count = this.count+(1);
+this.buf[this.count]=((b|0)|0);
+this.count+=1;
 });
 
 Clazz.newMeth(C$, 'write$BA$I$I', function (b, off, len) {
@@ -56,7 +56,7 @@ if ((off < 0) || (off > b.length) || (len < 0) || ((off + len) - b.length > 0)  
 throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException'));
 }p$.ensureCapacity$I.apply(this, [this.count + len]);
 System.arraycopy(b, off, this.buf, this.count, len);
-this.count = this.count+(len);
+this.count+=len;
 });
 
 Clazz.newMeth(C$, 'writeTo$java_io_OutputStream', function (out) {
@@ -64,7 +64,7 @@ out.write$BA$I$I(this.buf, 0, this.count);
 });
 
 Clazz.newMeth(C$, 'reset', function () {
-this.count = 0;
+this.count=0;
 });
 
 Clazz.newMeth(C$, 'toByteArray', function () {
@@ -82,4 +82,4 @@ return  String.instantialize(this.buf, 0, this.count);
 Clazz.newMeth(C$, 'close', function () {
 });
 })();
-//Created 2018-05-15 01:02:04
+//Created 2018-05-24 08:45:32

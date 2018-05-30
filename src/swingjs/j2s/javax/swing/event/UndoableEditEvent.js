@@ -15,7 +15,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$O$javax_swing_undo_UndoableEdit', function (source, edit) {
 C$.superclazz.c$.apply(this, [source]);
 C$.$init$.apply(this);
-this.myEdit = edit;
+this.myEdit=edit;
 }, 1);
 
 Clazz.newMeth(C$, 'getEdit', function () {
@@ -24,4 +24,4 @@ return this.myEdit;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:46
+//Created 2018-05-24 08:46:50

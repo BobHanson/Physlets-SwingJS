@@ -4,4 +4,4 @@ var C$=Clazz.newInterface(P$, "JSMinimalAbstractDocument", null, null, 'javax.sw
 C$.$clinit$ = function() {Clazz.load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:03:17
+//Created 2018-05-24 08:47:47

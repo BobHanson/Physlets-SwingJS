@@ -51,7 +51,7 @@ this.setHorizontalAlignment$I(10);
 
 Clazz.newMeth(C$, 'setBorderPaintedFlat$Z', function (b) {
 var oldValue = this.flat;
-this.flat = b;
+this.flat=b;
 this.firePropertyChange$S$Z$Z("borderPaintedFlat", oldValue, this.flat);
 if (b != oldValue ) {
 this.revalidate();
@@ -69,4 +69,4 @@ Clazz.newMeth(C$, 'paramString', function () {
 return C$.superclazz.prototype.paramString.apply(this, []);
 });
 })();
-//Created 2018-05-15 01:02:26
+//Created 2018-05-24 08:46:12

@@ -391,8 +391,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.code2name = Clazz.new_((I$[2]||$incl$(2)));
-this.name2code = Clazz.new_((I$[2]||$incl$(2)));
+this.code2name=Clazz.new_((I$[2]||$incl$(2)));
+this.name2code=Clazz.new_((I$[2]||$incl$(2)));
 
 for (var k in C$) if (k.indexOf("VK_") == 0) { try { this.put$S$Integer(k, Integer.$valueOf(C$[k]));
 } catch (e) {} }
@@ -411,4 +411,4 @@ Clazz.newMeth(C$, 'findName$Integer', function (code) {
 return this.code2name.get$O(code);
 });
 })();
-//Created 2018-05-15 01:01:48
+//Created 2018-05-24 08:45:05

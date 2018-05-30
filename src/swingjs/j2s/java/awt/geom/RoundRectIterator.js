@@ -35,15 +35,15 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_RoundRectangle2D$java_awt_geom_AffineTransform', function (rr, at) {
 C$.$init$.apply(this);
-this.x = rr.getX();
-this.y = rr.getY();
-this.w = rr.getWidth();
-this.h = rr.getHeight();
-this.aw = Math.min(this.w, Math.abs(rr.getArcWidth()));
-this.ah = Math.min(this.h, Math.abs(rr.getArcHeight()));
-this.affine = at;
+this.x=rr.getX();
+this.y=rr.getY();
+this.w=rr.getWidth();
+this.h=rr.getHeight();
+this.aw=Math.min(this.w, Math.abs(rr.getArcWidth()));
+this.ah=Math.min(this.h, Math.abs(rr.getArcHeight()));
+this.affine=at;
 if (this.aw < 0  || this.ah < 0  ) {
-this.index = C$.ctrlpts.length;
+this.index=C$.ctrlpts.length;
 }}, 1);
 
 Clazz.newMeth(C$, 'getWindingRule', function () {
@@ -63,9 +63,9 @@ if (this.isDone()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["roundrect iterator out of bounds"]);
 }var ctrls = C$.ctrlpts[this.index];
 var nc = 0;
-for (var i = 0; i < ctrls.length; i = i+(4)) {
-coords[nc++] = (this.x + ctrls[i + 0] * this.w + ctrls[i + 1] * this.aw);
-coords[nc++] = (this.y + ctrls[i + 2] * this.h + ctrls[i + 3] * this.ah);
+for (var i = 0; i < ctrls.length; i+=4) {
+coords[nc++]=(this.x + ctrls[i + 0] * this.w + ctrls[i + 1] * this.aw);
+coords[nc++]=(this.y + ctrls[i + 2] * this.h + ctrls[i + 3] * this.ah);
 }
 if (this.affine != null ) {
 this.affine.transform$FA$I$FA$I$I(coords, 0, coords, 0, (nc/2|0));
@@ -77,9 +77,9 @@ if (this.isDone()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["roundrect iterator out of bounds"]);
 }var ctrls = C$.ctrlpts[this.index];
 var nc = 0;
-for (var i = 0; i < ctrls.length; i = i+(4)) {
-coords[nc++] = (this.x + ctrls[i + 0] * this.w + ctrls[i + 1] * this.aw);
-coords[nc++] = (this.y + ctrls[i + 2] * this.h + ctrls[i + 3] * this.ah);
+for (var i = 0; i < ctrls.length; i+=4) {
+coords[nc++]=(this.x + ctrls[i + 0] * this.w + ctrls[i + 1] * this.aw);
+coords[nc++]=(this.y + ctrls[i + 2] * this.h + ctrls[i + 3] * this.ah);
 }
 if (this.affine != null ) {
 this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, (nc/2|0));
@@ -88,4 +88,4 @@ this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, (nc/2|0));
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:00
+//Created 2018-05-24 08:45:22

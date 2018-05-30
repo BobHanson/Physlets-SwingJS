@@ -13,7 +13,7 @@ Clazz.newMeth(C$, 'c$$I', function (alignment) {
 C$.$init$.apply(this);
 if (alignment < -2 || alignment > 2 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["bad alignment"]);
-}this.fAlignment = alignment;
+}this.fAlignment=alignment;
 }, 1);
 
 Clazz.newMeth(C$, 'getBounds', function () {
@@ -27,4 +27,4 @@ return this.fAlignment;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:19

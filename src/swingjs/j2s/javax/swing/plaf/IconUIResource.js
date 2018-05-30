@@ -16,7 +16,7 @@ Clazz.newMeth(C$, 'c$$javax_swing_Icon', function (delegate) {
 C$.$init$.apply(this);
 if (delegate == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["null delegate icon argument"]);
-}this.delegate = delegate;
+}this.delegate=delegate;
 }, 1);
 
 Clazz.newMeth(C$, 'paintIcon$java_awt_Component$java_awt_Graphics$I$I', function (c, g, x, y) {
@@ -33,4 +33,4 @@ return this.delegate.getIconHeight();
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:48
+//Created 2018-05-24 08:46:53

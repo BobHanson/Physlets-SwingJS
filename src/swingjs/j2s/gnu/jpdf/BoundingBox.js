@@ -26,8 +26,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_Point$java_awt_Dimension', function (p, d) {
 C$.superclazz.c$$java_awt_Point$java_awt_Dimension.apply(this, [p, d]);
 C$.$init$.apply(this);
-this.drawingPoint = this.getLocation();
-this.absoluteLocation = this.getLocation();
+this.drawingPoint=this.getLocation();
+this.absoluteLocation=this.getLocation();
 }, 1);
 
 Clazz.newMeth(C$, 'hasParent', function () {
@@ -45,18 +45,18 @@ child.setParent$gnu_jpdf_BoundingBox(this);
 Clazz.newMeth(C$, 'setParent$gnu_jpdf_BoundingBox', function (parent) {
 if (this === parent ) {
 return;
-}this.parent = parent;
+}this.parent=parent;
 if (this.getLocation().equals$O(this.getAbsoluteLocation())) {
 var ancestorTranslateX = 0;
 var ancestorTranslateY = 0;
 var ancestor = this;
 while (ancestor.hasParent()){
 var oldRef = ancestor;
-ancestor = ancestor.getParent();
+ancestor=ancestor.getParent();
 if (ancestor === oldRef ) {
 break;
-}ancestorTranslateX = ancestorTranslateX+((ancestor.getLocation().getX()|0));
-ancestorTranslateY = ancestorTranslateY+((ancestor.getLocation().getY()|0));
+}ancestorTranslateX+=(ancestor.getLocation().getX()|0);
+ancestorTranslateY+=(ancestor.getLocation().getY()|0);
 }
 this.getAbsoluteLocation().translate$I$I(ancestorTranslateX, ancestorTranslateY);
 }});
@@ -66,11 +66,11 @@ return this.stringArray;
 });
 
 Clazz.newMeth(C$, 'setStringArray$SA', function (strArray) {
-this.stringArray = strArray;
+this.stringArray=strArray;
 });
 
 Clazz.newMeth(C$, 'setAbsoluteLocation$java_awt_Point', function (point) {
-this.absoluteLocation = point;
+this.absoluteLocation=point;
 });
 
 Clazz.newMeth(C$, 'boxExists', function () {
@@ -86,7 +86,7 @@ return this.fullString;
 });
 
 Clazz.newMeth(C$, 'setFullString$S', function (string) {
-this.fullString = string;
+this.fullString=string;
 });
 
 Clazz.newMeth(C$, 'getStringBounds$S$I$I$java_awt_FontMetrics$I$Z', function (string, hAlign, vAlign, fm, padding, enforce) {
@@ -112,41 +112,41 @@ var cx;
 var cy;
 var px;
 var py;
-sa = fm.getMaxAscent();
-sw = fm.stringWidth$S(string);
-sh = sa + fm.getMaxDescent();
-pw = (parentSize.getWidth()|0);
-ph = (parentSize.getHeight()|0);
+sa=fm.getMaxAscent();
+sw=fm.stringWidth$S(string);
+sh=sa + fm.getMaxDescent();
+pw=(parentSize.getWidth()|0);
+ph=(parentSize.getHeight()|0);
 if (pw < 0) {
 throw Clazz.new_(Clazz.load('gnu.jpdf.StringTooLongException').c$$S,["The parent box has a negative width  (" + pw + ")" ]);
 }if (ph < 0) {
 throw Clazz.new_(Clazz.load('gnu.jpdf.StringTooLongException').c$$S,["The parent box has a negative height (" + ph + ")" ]);
-}cw = sw + padding * 2;
-ch = sh + padding * 2;
-px = (this.getX()|0);
-py = (this.getY()|0);
+}cw=sw + padding * 2;
+ch=sh + padding * 2;
+px=(this.getX()|0);
+py=(this.getY()|0);
 var childStrArray = null;
 if ((cw > pw) || (string.indexOf("\u000a") != -1) ) {
-cw = pw - (padding * 2);
-childStrArray = p$.createStringArray$S$java_awt_FontMetrics$I$I.apply(this, [string, fm, padding, pw]);
-ch = p$.getWrappedHeight$SA$java_awt_FontMetrics$I.apply(this, [childStrArray, fm, padding]);
+cw=pw - (padding * 2);
+childStrArray=p$.createStringArray$S$java_awt_FontMetrics$I$I.apply(this, [string, fm, padding, pw]);
+ch=p$.getWrappedHeight$SA$java_awt_FontMetrics$I.apply(this, [childStrArray, fm, padding]);
 if (ch > ph) {
 if (enforce) {
 throw Clazz.new_(Clazz.load('gnu.jpdf.StringTooLongException').c$$S,["The wrapped strings do not fit into the parent box, pw=" + pw + ", ph=" + ph + ", ch=" + ch + ", cw=" + cw + ", string: " + string ]);
 }}}if (vAlign == 1) {
-cy = 0;
+cy=0;
 } else if (vAlign == 0) {
-cy = ((ph/2|0)) - ((ch/2|0));
+cy=((ph/2|0)) - ((ch/2|0));
 } else {
-cy = ph - ch;
+cy=ph - ch;
 }if (hAlign == 4) {
-cx = 0;
+cx=0;
 } else if (hAlign == 3) {
-cx = ((pw/2|0)) - ((cw/2|0));
+cx=((pw/2|0)) - ((cw/2|0));
 } else {
-cx = pw - cw;
-}childLocation = Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[cx, cy]);
-childSize = Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[cw, ch]);
+cx=pw - cw;
+}childLocation=Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[cx, cy]);
+childSize=Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[cw, ch]);
 var dpx;
 var dpy;
 var abx;
@@ -156,16 +156,16 @@ var ancestorTranslateY = 0;
 var ancestor = this;
 while (ancestor.hasParent()){
 var oldRef = ancestor;
-ancestor = ancestor.getParent();
+ancestor=ancestor.getParent();
 if (ancestor === oldRef ) {
 break;
-}ancestorTranslateX = ancestorTranslateX+((ancestor.getLocation().getX()|0));
-ancestorTranslateY = ancestorTranslateY+((ancestor.getLocation().getY()|0));
+}ancestorTranslateX+=(ancestor.getLocation().getX()|0);
+ancestorTranslateY+=(ancestor.getLocation().getY()|0);
 }
-abx = px + cx + ancestorTranslateX ;
-aby = py + cy + ancestorTranslateY ;
-dpx = abx + padding;
-dpy = aby + padding + sa ;
+abx=px + cx + ancestorTranslateX ;
+aby=py + cy + ancestorTranslateY ;
+dpx=abx + padding;
+dpy=aby + padding + sa ;
 var drawingPoint = Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[dpx, dpy]);
 var returnChild = Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension$java_awt_Point$java_awt_Point,[childLocation, childSize, drawingPoint, Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[abx, aby])]);
 this.add$gnu_jpdf_BoundingBox(returnChild);
@@ -188,13 +188,13 @@ g.drawString$S$I$I(this.getFullString(), xx, yy);
 var len = this.stringArray.length;
 for (var i = 0; i < len; i++) {
 var wrappedBox = null;
-wrappedBox = this.getStringBounds$S$I$I$java_awt_FontMetrics$I(this.stringArray[i], hAlign, 1, fm, 0);
+wrappedBox=this.getStringBounds$S$I$I$java_awt_FontMetrics$I(this.stringArray[i], hAlign, 1, fm, 0);
 var pp = wrappedBox.getDrawingPoint();
 var xx = (pp.getX()|0);
 if (hAlign == 5) {
-xx = xx-(padding);
+xx-=padding;
 }if (hAlign == 4) {
-xx = xx+(padding);
+xx+=padding;
 }var yy = (pp.getY()|0) + padding;
 g.drawString$S$I$I(this.stringArray[i], xx, yy);
 this.subtract$gnu_jpdf_BoundingBox$I(wrappedBox, 7);
@@ -216,8 +216,8 @@ var len = this.stringArray.length;
 for (var i = 0; i < len; i++) {
 var wrappedBox = null;
 try {
-wrappedBox = this.getStringBounds$S$I$I$java_awt_FontMetrics$I$Z(this.stringArray[i], hAlign, 1, fm, 0, false);
-totalHeight = totalHeight+((wrappedBox.getHeight()|0));
+wrappedBox=this.getStringBounds$S$I$I$java_awt_FontMetrics$I$Z(this.stringArray[i], hAlign, 1, fm, 0, false);
+totalHeight+=(wrappedBox.getHeight()|0);
 if (this.getParent() != null ) {
 if (totalHeight > ((this.getParent().getHeight())|0)) {
 return;
@@ -237,12 +237,12 @@ this.subtract$gnu_jpdf_BoundingBox$I(wrappedBox, 7);
 Clazz.newMeth(C$, 'drawChoppedString$java_awt_Graphics$java_awt_FontMetrics$I$I', function (g, fm, padding, hAlign) {
 var string = "";
 if (this.getStringArray() != null ) {
-string =  String.instantialize(this.getStringArray()[0]);
+string= String.instantialize(this.getStringArray()[0]);
 } else {
-string =  String.instantialize(this.getFullString());
+string= String.instantialize(this.getFullString());
 }var choppedBox = null;
 try {
-choppedBox = this.getStringBounds$S$I$I$java_awt_FontMetrics$I(string, hAlign, 1, fm, padding);
+choppedBox=this.getStringBounds$S$I$I$java_awt_FontMetrics$I(string, hAlign, 1, fm, padding);
 var p = choppedBox.getDrawingPoint();
 var x = (p.getX()|0);
 var y = (p.getY()|0);
@@ -258,7 +258,7 @@ while ((fm.stringWidth$S(buf.toString()) > (this.getWidth()|0)) && (buf.length$(
 buf.deleteCharAt$I(buf.length$() - 1);
 }
 try {
-choppedBox = this.getStringBounds$S$I$I$java_awt_FontMetrics$I(buf.toString(), hAlign, 1, fm, padding);
+choppedBox=this.getStringBounds$S$I$I$java_awt_FontMetrics$I(buf.toString(), hAlign, 1, fm, padding);
 var pp = choppedBox.getDrawingPoint();
 var xx = (pp.getX()|0);
 var yy = (pp.getY()|0);
@@ -281,7 +281,7 @@ var ma = fm.getMaxAscent();
 var md = fm.getMaxDescent();
 var sh = ma + md;
 var hPad = (sh/20|0);
-sh = sh+(hPad);
+sh+=hPad;
 var total = sh * strings.length;
 return total + (padding * 2);
 });
@@ -316,7 +316,7 @@ var len = returnVector.size();
 var childStrArray = Clazz.array(java.lang.String, [len]);
 for (var i = 0; i < len; i++) {
 var curStr = returnVector.get$I(i);
-childStrArray[i] = curStr;
+childStrArray[i]=curStr;
 }
 return childStrArray;
 });
@@ -332,7 +332,7 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Boundin
 var valid = false;
 for (var i = 0; i < len; i++) {
 if (subtractFrom == C$.SUBTRACTS[i]) {
-valid = true;
+valid=true;
 }}
 if (!valid) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["BoundingBox.subtract, " + "subtractFrom invalid: " + subtractFrom ]);
@@ -347,23 +347,23 @@ var pw = (this.getSize().getWidth()|0);
 var ph = (this.getSize().getHeight()|0);
 switch (subtractFrom) {
 case 8:
-pw = cx;
+pw=cx;
 this.setSize$java_awt_Dimension(Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[pw, ph]));
 return this;
 case 9:
-px = px + cw + cx ;
-pw = pw - cw - cx ;
+px=px + cw + cx ;
+pw=pw - cw - cx ;
 this.setLocation$java_awt_Point(Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[px, py]));
 this.setSize$java_awt_Dimension(Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[pw, ph]));
 return this;
 case 7:
-py = py + ch + cy ;
-ph = ph - ch - cy ;
+py=py + ch + cy ;
+ph=ph - ch - cy ;
 this.setLocation$java_awt_Point(Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[px, py]));
 this.setSize$java_awt_Dimension(Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[pw, ph]));
 return this;
 case 6:
-ph = cy;
+ph=cy;
 this.setSize$java_awt_Dimension(Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[pw, ph]));
 return this;
 default:
@@ -393,33 +393,33 @@ var fm = graphics.getFontMetrics$java_awt_Font(font);
 var child = parent.getStringBounds$S$I$I$java_awt_FontMetrics$I(string, 4, 1, fm, 5);
 System.out.println$S("Drawing Point: " + child.getDrawingPoint().toString());
 System.out.println$S("Now testing subtract() method...");
-parent = Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[10, 10]), Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[300, 300])]);
+parent=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[10, 10]), Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[300, 300])]);
 System.out.println$S("parent: " + parent.toString());
-child = Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[90, 110]), Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[100, 100])]);
+child=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[90, 110]), Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[100, 100])]);
 parent.add$gnu_jpdf_BoundingBox(child);
 System.out.println$S("child: " + child.toString());
 System.out.println();
 System.out.println$S("subtracting the child from the parent");
 System.out.println$S("SUBTRACT_FROM_TOP: ");
-parent = parent.subtract$gnu_jpdf_BoundingBox$I(child, 6);
+parent=parent.subtract$gnu_jpdf_BoundingBox$I(child, 6);
 System.out.println$S("new parent: " + parent.toString());
 System.out.println();
 System.out.println$S("Resetting parent");
-parent = Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[10, 10]), Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[300, 300])]);
+parent=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[10, 10]), Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[300, 300])]);
 parent.add$gnu_jpdf_BoundingBox(child);
 System.out.println$S("SUBTRACT_FROM_BOTTOM");
 parent.subtract$gnu_jpdf_BoundingBox$I(child, 7);
 System.out.println$S("new parent: " + parent.toString());
 System.out.println();
 System.out.println$S("Resetting parent");
-parent = Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[10, 10]), Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[300, 300])]);
+parent=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[10, 10]), Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[300, 300])]);
 parent.add$gnu_jpdf_BoundingBox(child);
 System.out.println$S("SUBTRACT_FROM_LEFT");
 parent.subtract$gnu_jpdf_BoundingBox$I(child, 8);
 System.out.println$S("new parent: " + parent.toString());
 System.out.println();
 System.out.println$S("Resetting parent");
-parent = Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[10, 10]), Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[300, 300])]);
+parent=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[10, 10]), Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[300, 300])]);
 parent.add$gnu_jpdf_BoundingBox(child);
 System.out.println$S("SUBTRACT_FROM_RIGHT");
 parent.subtract$gnu_jpdf_BoundingBox$I(child, 9);
@@ -439,8 +439,8 @@ throw e;
 Clazz.newMeth(C$, 'c$$java_awt_Point$java_awt_Dimension$java_awt_Point$java_awt_Point', function (p, d, drawingPoint, absolute) {
 C$.superclazz.c$$java_awt_Point$java_awt_Dimension.apply(this, [p, d]);
 C$.$init$.apply(this);
-this.drawingPoint = drawingPoint;
-this.absoluteLocation = absolute;
+this.drawingPoint=drawingPoint;
+this.absoluteLocation=absolute;
 }, 1);
 
 Clazz.newMeth(C$, 'checkHAlign$I', function (hAlign) {
@@ -463,4 +463,4 @@ return false;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:46
+//Created 2018-05-24 08:45:02

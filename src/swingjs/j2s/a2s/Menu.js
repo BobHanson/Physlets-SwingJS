@@ -10,7 +10,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S', function (title) {
 C$.superclazz.c$$S.apply(this, [title]);
 C$.$init$.apply(this);
-title = null;
+title=null;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
@@ -23,4 +23,4 @@ Clazz.newMeth(C$, 'countItems', function () {
 return C$.superclazz.prototype.getComponentCount.apply(this, []);
 });
 })();
-//Created 2018-05-15 01:01:44
+//Created 2018-05-24 08:45:00

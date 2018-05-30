@@ -16,8 +16,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.indexOfNextAdd = 0;
-this.limit = 100;
+this.indexOfNextAdd=0;
+this.limit=100;
 this.edits.ensureCapacity$I(this.limit);
 }, 1);
 
@@ -31,8 +31,8 @@ while (cursor.hasMoreElements()){
 var e = cursor.nextElement();
 e.die();
 }
-this.edits = Clazz.new_((I$[1]||$incl$(1)));
-this.indexOfNextAdd = 0;
+this.edits=Clazz.new_((I$[1]||$incl$(1)));
+this.indexOfNextAdd=0;
 });
 
 Clazz.newMeth(C$, 'trimForLimit', function () {
@@ -45,12 +45,12 @@ var keepTo = this.indexOfNextAdd - 1 + halfLimit;
 if (keepTo - keepFrom + 1 > this.limit) {
 keepFrom++;
 }if (keepFrom < 0) {
-keepTo = keepTo-(keepFrom);
-keepFrom = 0;
+keepTo-=keepFrom;
+keepFrom=0;
 }if (keepTo >= size) {
 var delta = size - keepTo - 1 ;
-keepTo = keepTo+(delta);
-keepFrom = keepFrom+(delta);
+keepTo+=delta;
+keepFrom+=delta;
 }this.trimEdits$I$I(keepTo + 1, size - 1);
 this.trimEdits$I$I(0, keepFrom - 1);
 }}});
@@ -63,14 +63,14 @@ e.die();
 this.edits.removeElementAt$I(i);
 }
 if (this.indexOfNextAdd > to) {
-this.indexOfNextAdd = this.indexOfNextAdd-(to - from + 1);
+this.indexOfNextAdd-=to - from + 1;
 } else if (this.indexOfNextAdd >= from) {
-this.indexOfNextAdd = from;
+this.indexOfNextAdd=from;
 }}});
 
 Clazz.newMeth(C$, 'setLimit$I', function (l) {
 if (!this.inProgress) throw Clazz.new_(Clazz.load('java.lang.RuntimeException').c$$S,["Attempt to call UndoManager.setLimit() after UndoManager.end() has been called"]);
-this.limit = l;
+this.limit=l;
 this.trimForLimit();
 });
 
@@ -100,7 +100,7 @@ var done = false;
 while (!done){
 var next = this.edits.elementAt$I(--this.indexOfNextAdd);
 next.undo();
-done = next === edit ;
+done=next === edit ;
 }
 });
 
@@ -109,7 +109,7 @@ var done = false;
 while (!done){
 var next = this.edits.elementAt$I(this.indexOfNextAdd++);
 next.redo();
-done = next === edit ;
+done=next === edit ;
 }
 });
 
@@ -166,10 +166,10 @@ return C$.superclazz.prototype.canRedo.apply(this, []);
 Clazz.newMeth(C$, 'addEdit$javax_swing_undo_UndoableEdit', function (anEdit) {
 var retVal;
 this.trimEdits$I$I(this.indexOfNextAdd, this.edits.size() - 1);
-retVal = C$.superclazz.prototype.addEdit$javax_swing_undo_UndoableEdit.apply(this, [anEdit]);
+retVal=C$.superclazz.prototype.addEdit$javax_swing_undo_UndoableEdit.apply(this, [anEdit]);
 if (this.inProgress) {
-retVal = true;
-}this.indexOfNextAdd = this.edits.size();
+retVal=true;
+}this.indexOfNextAdd=this.edits.size();
 this.trimForLimit();
 return retVal;
 });
@@ -214,4 +214,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return C$.superclazz.prototype.toString.apply(this, []) + " limit: " + this.limit + " indexOfNextAdd: " + this.indexOfNextAdd ;
 });
 })();
-//Created 2018-05-15 01:03:00
+//Created 2018-05-24 08:47:11

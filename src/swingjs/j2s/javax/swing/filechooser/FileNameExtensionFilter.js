@@ -19,14 +19,14 @@ C$.superclazz.c$$SA.apply(this, [extensions]);
 C$.$init$.apply(this);
 if (extensions == null  || extensions.length == 0 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Extensions must be non-null and not empty"]);
-}this.description = description;
-this.extensions = Clazz.array(java.lang.String, [extensions.length]);
-this.lowerCaseExtensions = Clazz.array(java.lang.String, [extensions.length]);
+}this.description=description;
+this.extensions=Clazz.array(java.lang.String, [extensions.length]);
+this.lowerCaseExtensions=Clazz.array(java.lang.String, [extensions.length]);
 for (var i = 0; i < extensions.length; i++) {
 if (extensions[i] == null  || extensions[i].length$() == 0 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Each extension must be non-null and not empty"]);
-}this.extensions[i] = extensions[i];
-this.lowerCaseExtensions[i] = extensions[i].toLowerCase();
+}this.extensions[i]=extensions[i];
+this.lowerCaseExtensions[i]=extensions[i].toLowerCase();
 }
 }, 1);
 
@@ -61,4 +61,4 @@ return C$.superclazz.prototype.toString.apply(this, []) + "[description=" + this
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:46
+//Created 2018-05-24 08:46:50

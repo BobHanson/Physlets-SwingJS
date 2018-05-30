@@ -81,7 +81,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$sun_java2d_loops_SurfaceType$sun_java2d_loops_CompositeType$sun_java2d_loops_SurfaceType', function (srctype, comptype, dsttype) {
 C$.superclazz.c$$sun_java2d_loops_SurfaceType$sun_java2d_loops_CompositeType$sun_java2d_loops_SurfaceType.apply(this, [srctype, comptype, dsttype]);
 C$.$init$.apply(this);
-this.$compositeType = comptype;
+this.$compositeType=comptype;
 }, 1);
 
 Clazz.newMeth(C$, 'BlitBg$sun_java2d_SurfaceData$sun_java2d_SurfaceData$java_awt_Composite$sun_java2d_pipe_Region$java_awt_Color$I$I$I$I$I$I', function (srcData, dstData, comp, clip, bgColor, srcx, srcy, dstx, dsty, width, height) {
@@ -108,7 +108,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$sun_java2d_loops_BlitBg', function (target) {
 C$.superclazz.c$$sun_java2d_loops_SurfaceType$sun_java2d_loops_CompositeType$sun_java2d_loops_SurfaceType.apply(this, [target.getSourceType(), target.getCompositeType(), target.getDestType()]);
 C$.$init$.apply(this);
-this.target = target;
+this.target=target;
 }, 1);
 
 Clazz.newMeth(C$, 'traceWrap', function () {
@@ -125,4 +125,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:10
+//Created 2018-05-24 08:47:32

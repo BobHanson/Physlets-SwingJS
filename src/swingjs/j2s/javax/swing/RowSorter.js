@@ -34,7 +34,7 @@ this.fireRowSorterChanged$javax_swing_event_RowSorterEvent(Clazz.new_((I$[3]||$i
 
 Clazz.newMeth(C$, 'fireRowSorterChanged$javax_swing_event_RowSorterEvent', function (event) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[2]||$incl$(2)),['sorterChanged$javax_swing_event_RowSorterEvent']) ) {
 (listeners[i + 1]).sorterChanged$javax_swing_event_RowSorterEvent(event);
 }}
@@ -57,8 +57,8 @@ Clazz.newMeth(C$, 'c$$I$javax_swing_SortOrder', function (column, sortOrder) {
 C$.$init$.apply(this);
 if (sortOrder == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["sort order must be non-null"]);
-}this.column = column;
-this.sortOrder = sortOrder;
+}this.column=column;
+this.sortOrder=sortOrder;
 }, 1);
 
 Clazz.newMeth(C$, 'getColumn', function () {
@@ -71,8 +71,8 @@ return this.sortOrder;
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var result = 17;
-result = 37 * result + this.column;
-result = 37 * result + this.sortOrder.hashCode();
+result=37 * result + this.column;
+result=37 * result + this.sortOrder.hashCode();
 return result;
 });
 
@@ -87,4 +87,4 @@ return ((o).column == this.column && (o).sortOrder === this.sortOrder  );
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:39
+//Created 2018-05-24 08:46:39

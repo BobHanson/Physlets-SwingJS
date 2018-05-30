@@ -47,15 +47,15 @@ p$.set$javax_swing_JFormattedTextField_AbstractFormatter$javax_swing_JFormattedT
 }, 1);
 
 Clazz.newMeth(C$, 'set$javax_swing_JFormattedTextField_AbstractFormatter$javax_swing_JFormattedTextField_AbstractFormatter$javax_swing_JFormattedTextField_AbstractFormatter$javax_swing_JFormattedTextField_AbstractFormatter', function (defaultFormat, displayFormat, editFormat, nullFormat) {
-this.defaultFormat = defaultFormat;
-this.displayFormat = displayFormat;
-this.editFormat = editFormat;
-this.nullFormat = nullFormat;
+this.defaultFormat=defaultFormat;
+this.displayFormat=displayFormat;
+this.editFormat=editFormat;
+this.nullFormat=nullFormat;
 return this;
 });
 
 Clazz.newMeth(C$, 'setDefaultFormatter$javax_swing_JFormattedTextField_AbstractFormatter', function (atf) {
-this.defaultFormat = atf;
+this.defaultFormat=atf;
 });
 
 Clazz.newMeth(C$, 'getDefaultFormatter', function () {
@@ -63,7 +63,7 @@ return this.defaultFormat;
 });
 
 Clazz.newMeth(C$, 'setDisplayFormatter$javax_swing_JFormattedTextField_AbstractFormatter', function (atf) {
-this.displayFormat = atf;
+this.displayFormat=atf;
 });
 
 Clazz.newMeth(C$, 'getDisplayFormatter', function () {
@@ -71,7 +71,7 @@ return this.displayFormat;
 });
 
 Clazz.newMeth(C$, 'setEditFormatter$javax_swing_JFormattedTextField_AbstractFormatter', function (atf) {
-this.editFormat = atf;
+this.editFormat=atf;
 });
 
 Clazz.newMeth(C$, 'getEditFormatter', function () {
@@ -79,7 +79,7 @@ return this.editFormat;
 });
 
 Clazz.newMeth(C$, 'setNullFormatter$javax_swing_JFormattedTextField_AbstractFormatter', function (atf) {
-this.nullFormat = atf;
+this.nullFormat=atf;
 });
 
 Clazz.newMeth(C$, 'getNullFormatter', function () {
@@ -92,15 +92,15 @@ if (source == null ) {
 return null;
 }var value = source.getValue();
 if (value == null ) {
-format = this.getNullFormatter();
+format=this.getNullFormatter();
 }if (format == null ) {
 if (source.hasFocus()) {
-format = this.getEditFormatter();
+format=this.getEditFormatter();
 } else {
-format = this.getDisplayFormatter();
+format=this.getDisplayFormatter();
 }if (format == null ) {
-format = this.getDefaultFormatter();
+format=this.getDefaultFormatter();
 }}return format;
 });
 })();
-//Created 2018-05-15 01:02:54
+//Created 2018-05-24 08:47:03

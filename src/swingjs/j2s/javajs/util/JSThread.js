@@ -47,14 +47,14 @@ while (!Thread.interrupted()){
 switch (state) {
 case 0:
 if (!this.myInit()) return;
-state = 1;
+state=1;
 continue;
 case 1:
 if (!this.isLooping()) {
-state = 2;
+state=2;
 continue;
 }if (this.myLoop() && this.sleepAndReturn$I$I(this.getDelayMillis(), state) ) {
-executeFinally = false;
+executeFinally=false;
 return;
 }continue;
 case 2:
@@ -65,7 +65,7 @@ return;
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
 this.onException$Exception(e);
-state = 2;
+state=2;
 } else {
 throw e;
 }
@@ -99,4 +99,4 @@ setTimeout( function() { java.awt.Toolkit.getDefaultToolkit().getSystemEventQueu
 return true;
 });
 })();
-//Created 2018-05-15 01:02:18
+//Created 2018-05-24 08:45:56

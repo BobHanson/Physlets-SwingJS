@@ -28,9 +28,9 @@ C$.c$$I$java_awt_Color$java_awt_Color.apply(this, [1, highlight, shadow]);
 
 Clazz.newMeth(C$, 'c$$I$java_awt_Color$java_awt_Color', function (etchType, highlight, shadow) {
 Clazz.super_(C$, this,1);
-this.etchType = etchType;
-this.highlight = highlight;
-this.shadow = shadow;
+this.etchType=etchType;
+this.highlight=highlight;
+this.shadow=shadow;
 }, 1);
 
 Clazz.newMeth(C$, 'paintBorder$java_awt_Component$java_awt_Graphics$I$I$I$I', function (c, g, x, y, width, height) {
@@ -52,7 +52,7 @@ return Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I,[2, 2, 2, 2]);
 });
 
 Clazz.newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
-insets.left = insets.top = insets.right = insets.bottom = 2;
+insets.left=insets.top=insets.right=insets.bottom=2;
 return insets;
 });
 
@@ -80,4 +80,4 @@ Clazz.newMeth(C$, 'getShadowColor', function () {
 return this.shadow;
 });
 })();
-//Created 2018-05-15 01:02:43
+//Created 2018-05-24 08:46:45

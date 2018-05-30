@@ -23,11 +23,11 @@ Clazz.newMeth(C$, 'toRGBHexString$javajs_api_GenericColor', function (c) {
 var rgb = c.getRGB();
 if (rgb == 0) return "000000";
 var r = "00" + Integer.toHexString((rgb >> 16) & 255);
-r = r.substring(r.length$() - 2);
+r=r.substring(r.length$() - 2);
 var g = "00" + Integer.toHexString((rgb >> 8) & 255);
-g = g.substring(g.length$() - 2);
+g=g.substring(g.length$() - 2);
 var b = "00" + Integer.toHexString(rgb & 255);
-b = b.substring(b.length$() - 2);
+b=b.substring(b.length$() - 2);
 return r + g + b ;
 }, 1);
 
@@ -40,8 +40,8 @@ return "rgba(" + ((rgb >> 16) & 255) + "," + ((rgb >> 8) & 255) + "," + (rgb & 2
 
 Clazz.newMeth(C$, 'getArgbFromString$S', function (strColor) {
 var len = 0;
-if (strColor == null  || (len = strColor.length$()) == 0 ) return 0;
-strColor = strColor.toLowerCase();
+if (strColor == null  || (len=strColor.length$()) == 0 ) return 0;
+strColor=strColor.toLowerCase();
 if (strColor.charAt(0) == "[" && strColor.charAt(len - 1) == "]" ) {
 var check;
 if (strColor.indexOf(",") >= 0) {
@@ -53,17 +53,17 @@ var blu = (I$[2]||$incl$(2)).parseFloat$S(tokens[2]);
 return C$.colorTriadToFFRGB$F$F$F(red, grn, blu);
 }switch (len) {
 case 9:
-check = "x";
+check="x";
 break;
 case 10:
-check = "0x";
+check="0x";
 break;
 default:
 return 0;
 }
 if (strColor.indexOf(check) != 1) return 0;
-strColor = "#" + strColor.substring(len - 7, len - 1);
-len = 7;
+strColor="#" + strColor.substring(len - 7, len - 1);
+len=7;
 }if (len == 7 && strColor.charAt(0) == "#" ) {
 try {
 return (I$[2]||$incl$(2)).parseIntRadix$S$I(strColor.substring(1, 7), 16) | -16777216;
@@ -80,9 +80,9 @@ return (boxedArgb == null  ? 0 : boxedArgb.intValue());
 
 Clazz.newMeth(C$, 'colorTriadToFFRGB$F$F$F', function (x, y, z) {
 if (x <= 1  && y <= 1   && z <= 1  ) {
-if (x > 0 ) x = x * 256 - 1;
-if (y > 0 ) y = y * 256 - 1;
-if (z > 0 ) z = z * 256 - 1;
+if (x > 0 ) x=x * 256 - 1;
+if (y > 0 ) y=y * 256 - 1;
+if (z > 0 ) z=z * 256 - 1;
 }return C$.rgb$I$I$I((x|0), (y|0), (z|0));
 }, 1);
 
@@ -95,7 +95,7 @@ return C$.colorPtFromInt$I$javajs_util_P3(C$.getArgbFromString$S(colorName), nul
 }, 1);
 
 Clazz.newMeth(C$, 'colorPtFromInt$I$javajs_util_P3', function (color, pt) {
-if (pt == null ) pt = Clazz.new_((I$[3]||$incl$(3)));
+if (pt == null ) pt=Clazz.new_((I$[3]||$incl$(3)));
 pt.set$F$F$F((color >> 16) & 255, (color >> 8) & 255, color & 255);
 return pt;
 }, 1);
@@ -105,9 +105,9 @@ return C$.colorTriadToFFRGB$F$F$F(pt.x, pt.y, pt.z);
 }, 1);
 
 Clazz.newMeth(C$, 'toRGB3f$I$FA', function (c, f) {
-f[0] = ((c >> 16) & 255) / 255.0;
-f[1] = ((c >> 8) & 255) / 255.0;
-f[2] = (c & 255) / 255.0;
+f[0]=((c >> 16) & 255) / 255.0;
+f[1]=((c >> 8) & 255) / 255.0;
+f[2]=(c & 255) / 255.0;
 }, 1);
 
 Clazz.newMeth(C$, 'toFFGGGfromRGB$I', function (rgb) {
@@ -141,9 +141,9 @@ return (I$[3]||$incl$(3)).new3$F$F$F(Math.round(r * 255), Math.round(g * 255), M
 }, 1);
 
 Clazz.newMeth(C$, 'toRGB$F$F$F', function (p, q, h) {
-return ((h = (h + (h < 0  ? 6 : h > 6  ? -6 : 0))) < 1  ? p + q * h : h < 3  ? p + q : h < 4  ? p + q * (4 - h) : p);
+return ((h=(h + (h < 0  ? 6 : h > 6  ? -6 : 0))) < 1  ? p + q * h : h < 3  ? p + q : h < 4  ? p + q * (4 - h) : p);
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:18
+//Created 2018-05-24 08:45:55

@@ -30,7 +30,7 @@ this.MSAT0 = Clazz.array(Integer.TYPE, [109]);
 
 Clazz.newMeth(C$, 'c$$javajs_util_CompoundDocument', function (compoundDocument) {
 C$.$init$.apply(this);
-this.cd = compoundDocument;
+this.cd=compoundDocument;
 }, 1);
 
 Clazz.newMeth(C$, 'readData', function () {
@@ -38,25 +38,25 @@ try {
 this.cd.readByteArray$BA$I$I(this.magicNumbers, 0, 8);
 if ((this.magicNumbers[0] & 255) != 208 || (this.magicNumbers[1] & 255) != 207  || (this.magicNumbers[2] & 255) != 17  || (this.magicNumbers[3] & 255) != 224  || (this.magicNumbers[4] & 255) != 161  || (this.magicNumbers[5] & 255) != 177  || (this.magicNumbers[6] & 255) != 26  || (this.magicNumbers[7] & 255) != 225 ) return false;
 this.cd.readByteArray$BA$I$I(this.uniqueID16, 0, 16);
-this.revNumber = ($b$[0] = this.cd.readByte(), $b$[0]);
+this.revNumber=($b$[0] = this.cd.readByte(), $b$[0]);
 this.cd.readByte();
-this.verNumber = ($b$[0] = this.cd.readByte(), $b$[0]);
+this.verNumber=($b$[0] = this.cd.readByte(), $b$[0]);
 this.cd.readByte();
 var b1 = ($b$[0] = this.cd.readByte(), $b$[0]);
 var b2 = ($b$[0] = this.cd.readByte(), $b$[0]);
-this.cd.isBigEndian = (b1 == -1 && b2 == -2 );
-this.sectorPower = this.cd.readShort();
-this.shortSectorPower = this.cd.readShort();
+this.cd.isBigEndian=(b1 == -1 && b2 == -2 );
+this.sectorPower=this.cd.readShort();
+this.shortSectorPower=this.cd.readShort();
 this.cd.readByteArray$BA$I$I(this.unused, 0, 10);
-this.nSATsectors = this.cd.readInt();
-this.SID_DIR_start = this.cd.readInt();
+this.nSATsectors=this.cd.readInt();
+this.SID_DIR_start=this.cd.readInt();
 this.cd.readByteArray$BA$I$I(this.unused, 0, 4);
-this.minBytesStandardStream = this.cd.readInt();
-this.SID_SSAT_start = this.cd.readInt();
-this.nSSATsectors = this.cd.readInt();
-this.SID_MSAT_next = this.cd.readInt();
-this.nAdditionalMATsectors = this.cd.readInt();
-for (var i = 0; i < 109; i++) this.MSAT0[i] = this.cd.readInt();
+this.minBytesStandardStream=this.cd.readInt();
+this.SID_SSAT_start=this.cd.readInt();
+this.nSSATsectors=this.cd.readInt();
+this.SID_MSAT_next=this.cd.readInt();
+this.nAdditionalMATsectors=this.cd.readInt();
+for (var i = 0; i < 109; i++) this.MSAT0[i]=this.cd.readInt();
 
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
@@ -72,4 +72,4 @@ var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:18
+//Created 2018-05-24 08:45:55

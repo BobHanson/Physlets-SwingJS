@@ -5,7 +5,7 @@ C$.ERASE_BACKGROUND = false;
 C$.$clinit$ = function() {Clazz.load(C$, 1);
 C$.ERASE_BACKGROUND = false;
 {
-C$.ERASE_BACKGROUND = true;
+C$.ERASE_BACKGROUND=true;
 }
 ;
 }
@@ -29,4 +29,4 @@ return true;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:41
+//Created 2018-05-24 08:46:41

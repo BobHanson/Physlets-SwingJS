@@ -18,7 +18,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I', function (bevelType) {
 Clazz.super_(C$, this,1);
-this.bevelType = bevelType;
+this.bevelType=bevelType;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$java_awt_Color$java_awt_Color', function (bevelType, highlight, shadow) {
@@ -27,10 +27,10 @@ C$.c$$I$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color.apply(this, 
 
 Clazz.newMeth(C$, 'c$$I$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color', function (bevelType, highlightOuterColor, highlightInnerColor, shadowOuterColor, shadowInnerColor) {
 C$.c$$I.apply(this, [bevelType]);
-this.highlightOuter = highlightOuterColor;
-this.highlightInner = highlightInnerColor;
-this.shadowOuter = shadowOuterColor;
-this.shadowInner = shadowInnerColor;
+this.highlightOuter=highlightOuterColor;
+this.highlightInner=highlightInnerColor;
+this.shadowOuter=shadowOuterColor;
+this.shadowInner=shadowInnerColor;
 }, 1);
 
 Clazz.newMeth(C$, 'paintBorder$java_awt_Component$java_awt_Graphics$I$I$I$I', function (c, g, x, y, width, height) {
@@ -45,7 +45,7 @@ return Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I,[2, 2, 2, 2]);
 });
 
 Clazz.newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
-insets.left = insets.top = insets.right = insets.bottom = 2;
+insets.left=insets.top=insets.right=insets.bottom=2;
 return insets;
 });
 
@@ -137,4 +137,4 @@ g.setColor$java_awt_Color(oldColor);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:42
+//Created 2018-05-24 08:46:45

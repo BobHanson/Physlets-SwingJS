@@ -31,17 +31,17 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setParams$java_util_Map', function (params) {
-if (this.quality < 0) this.quality = (params.containsKey$O("qualityPNG") ? (params.get$O("qualityPNG")).intValue() : 2);
-if (this.quality > 9) this.quality = 9;
-this.encodeAlpha = false;
-this.filter = 0;
-this.compressionLevel = this.quality;
-this.transparentColor = params.get$O("transparentColor");
-this.comment = params.get$O("comment");
-this.type = (params.get$O("type") + "0000").substring(0, 4);
-this.bytes = params.get$O("pngImgData");
-this.appData = params.get$O("pngAppData");
-this.appPrefix = params.get$O("pngAppPrefix");
+if (this.quality < 0) this.quality=(params.containsKey$O("qualityPNG") ? (params.get$O("qualityPNG")).intValue() : 2);
+if (this.quality > 9) this.quality=9;
+this.encodeAlpha=false;
+this.filter=0;
+this.compressionLevel=this.quality;
+this.transparentColor=params.get$O("transparentColor");
+this.comment=params.get$O("comment");
+this.type=(params.get$O("type") + "0000").substring(0, 4);
+this.bytes=params.get$O("pngImgData");
+this.appData=params.get$O("pngAppData");
+this.appPrefix=params.get$O("pngAppPrefix");
 });
 
 Clazz.newMeth(C$, 'generate', function () {
@@ -49,14 +49,14 @@ if (this.bytes == null ) {
 if (!p$.pngEncode.apply(this, [])) {
 this.out.cancel();
 return;
-}this.bytes = this.getBytes();
+}this.bytes=this.getBytes();
 } else {
-this.dataLen = this.bytes.length;
+this.dataLen=this.bytes.length;
 }var len = this.dataLen;
 if (this.appData != null ) {
 C$.setJmolTypeText$S$BA$I$I$S(this.appPrefix, this.bytes, len, this.appData.length, this.type);
 this.out.write$BA$I$I(this.bytes, 0, len);
-len = (this.bytes = this.appData).length;
+len=(this.bytes=this.appData).length;
 }this.out.write$BA$I$I(this.bytes, 0, len);
 });
 
@@ -86,18 +86,18 @@ encoder.writeCRC();
 
 Clazz.newMeth(C$, 'getApplicationText$S$S$I$I', function (prefix, type, nPNG, nData) {
 var sPNG = "000000000" + nPNG;
-sPNG = sPNG.substring(sPNG.length$() - 9);
+sPNG=sPNG.substring(sPNG.length$() - 9);
 var sData = "000000000" + nData;
-sData = sData.substring(sData.length$() - 9);
-if (prefix == null ) prefix = "#SwingJS.";
-if (prefix.length$() < 9) prefix = (prefix + ".........");
-if (prefix.length$() > 9) prefix = prefix.substring(0, 9);
+sData=sData.substring(sData.length$() - 9);
+if (prefix == null ) prefix="#SwingJS.";
+if (prefix.length$() < 9) prefix=(prefix + ".........");
+if (prefix.length$() > 9) prefix=prefix.substring(0, 9);
 return prefix + "\0" + type + sPNG + "+" + sData ;
 }, 1);
 
 Clazz.newMeth(C$, 'writeHeader', function () {
 this.writeInt4$I(13);
-this.startPos = this.bytePos;
+this.startPos=this.bytePos;
 this.writeString$S("IHDR");
 this.writeInt4$I(this.width);
 this.writeInt4$I(this.height);
@@ -111,14 +111,14 @@ this.writeCRC();
 
 Clazz.newMeth(C$, 'writeText$S', function (msg) {
 this.writeInt4$I(msg.length$());
-this.startPos = this.bytePos;
+this.startPos=this.bytePos;
 this.writeString$S("tEXt" + msg);
 this.writeCRC();
 });
 
 Clazz.newMeth(C$, 'writeTransparentColor$I', function (icolor) {
 this.writeInt4$I(6);
-this.startPos = this.bytePos;
+this.startPos=this.bytePos;
 this.writeString$S("tRNS");
 this.writeInt2$I((icolor >> 16) & 255);
 this.writeInt2$I((icolor >> 8) & 255);
@@ -127,8 +127,8 @@ this.writeCRC();
 });
 
 Clazz.newMeth(C$, 'writeImageData', function () {
-this.bytesPerPixel = (this.encodeAlpha ? 4 : 3);
-this.byteWidth = this.width * this.bytesPerPixel;
+this.bytesPerPixel=(this.encodeAlpha ? 4 : 3);
+this.byteWidth=this.width * this.bytesPerPixel;
 var scanWidth = this.byteWidth + 1;
 var rowsLeft = this.height;
 var nRows;
@@ -139,26 +139,26 @@ var compBytes = Clazz.new_((I$[3]||$incl$(3)).c$$java_io_ByteArrayOutputStream$j
 var pt = 0;
 try {
 while (rowsLeft > 0){
-nRows = Math.max(1, Math.min((32767/scanWidth|0), rowsLeft));
-this.scanLines = Clazz.array(Byte.TYPE, [scanWidth * nRows]);
+nRows=Math.max(1, Math.min((32767/scanWidth|0), rowsLeft));
+this.scanLines=Clazz.array(Byte.TYPE, [scanWidth * nRows]);
 var nPixels = this.width * nRows;
-scanPos = 0;
+scanPos=0;
 for (var i = 0; i < nPixels; i++, pt++) {
 if (i % this.width == 0) {
-this.scanLines[scanPos++] = ((this.filter|0)|0);
-}this.scanLines[scanPos++] = ((((this.pixels[pt] >> 16) & 255)|0)|0);
-this.scanLines[scanPos++] = ((((this.pixels[pt] >> 8) & 255)|0)|0);
-this.scanLines[scanPos++] = ((((this.pixels[pt]) & 255)|0)|0);
+this.scanLines[scanPos++]=((this.filter|0)|0);
+}this.scanLines[scanPos++]=((((this.pixels[pt] >> 16) & 255)|0)|0);
+this.scanLines[scanPos++]=((((this.pixels[pt] >> 8) & 255)|0)|0);
+this.scanLines[scanPos++]=((((this.pixels[pt]) & 255)|0)|0);
 if (this.encodeAlpha) {
-this.scanLines[scanPos++] = ((((this.pixels[pt] >> 24) & 255)|0)|0);
+this.scanLines[scanPos++]=((((this.pixels[pt] >> 24) & 255)|0)|0);
 }}
 compBytes.write$BA$I$I(this.scanLines, 0, scanPos);
-rowsLeft = rowsLeft-(nRows);
+rowsLeft-=nRows;
 }
 compBytes.close();
 var compressedLines = outBytes.toByteArray();
 this.writeInt4$I(compressedLines.length);
-this.startPos = this.bytePos;
+this.startPos=this.bytePos;
 this.writeString$S("IDAT");
 this.writeBytes$BA(compressedLines);
 this.writeCRC();
@@ -177,9 +177,9 @@ throw e;
 
 Clazz.newMeth(C$, 'writeEnd', function () {
 this.writeInt4$I(0);
-this.startPos = this.bytePos;
+this.startPos=this.bytePos;
 this.writeString$S("IEND");
 this.writeCRC();
 });
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:54

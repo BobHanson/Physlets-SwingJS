@@ -17,9 +17,9 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_Window$I$java_awt_Window$I$I', function (source, id, opposite, oldState, newState) {
 C$.superclazz.c$$java_awt_Component$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.opposite = opposite;
-this.oldState = oldState;
-this.newState = newState;
+this.opposite=opposite;
+this.oldState=oldState;
+this.newState=newState;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Window$I$java_awt_Window', function (source, id, opposite) {
@@ -56,37 +56,37 @@ Clazz.newMeth(C$, 'paramString', function () {
 var typeStr;
 switch (this.id) {
 case 200:
-typeStr = "WINDOW_OPENED";
+typeStr="WINDOW_OPENED";
 break;
 case 201:
-typeStr = "WINDOW_CLOSING";
+typeStr="WINDOW_CLOSING";
 break;
 case 202:
-typeStr = "WINDOW_CLOSED";
+typeStr="WINDOW_CLOSED";
 break;
 case 203:
-typeStr = "WINDOW_ICONIFIED";
+typeStr="WINDOW_ICONIFIED";
 break;
 case 204:
-typeStr = "WINDOW_DEICONIFIED";
+typeStr="WINDOW_DEICONIFIED";
 break;
 case 205:
-typeStr = "WINDOW_ACTIVATED";
+typeStr="WINDOW_ACTIVATED";
 break;
 case 206:
-typeStr = "WINDOW_DEACTIVATED";
+typeStr="WINDOW_DEACTIVATED";
 break;
 case 207:
-typeStr = "WINDOW_GAINED_FOCUS";
+typeStr="WINDOW_GAINED_FOCUS";
 break;
 case 208:
-typeStr = "WINDOW_LOST_FOCUS";
+typeStr="WINDOW_LOST_FOCUS";
 break;
 case 209:
-typeStr = "WINDOW_STATE_CHANGED";
+typeStr="WINDOW_STATE_CHANGED";
 break;
 default:
-typeStr = "unknown type";
+typeStr="unknown type";
 }
 typeStr += ",opposite=" + this.getOppositeWindow() + ",oldState=" + this.oldState + ",newState=" + this.newState ;
 return typeStr;
@@ -94,4 +94,4 @@ return typeStr;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:19

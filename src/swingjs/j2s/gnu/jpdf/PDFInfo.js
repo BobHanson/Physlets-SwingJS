@@ -23,7 +23,7 @@ C$.$init$.apply(this);
 
 Clazz.newMeth(C$, 'c$$S', function (title) {
 C$.c$.apply(this, []);
-this.title = title;
+this.title=title;
 }, 1);
 
 Clazz.newMeth(C$, 'getAuthor', function () {
@@ -31,7 +31,7 @@ return this.author;
 });
 
 Clazz.newMeth(C$, 'setAuthor$S', function (v) {
-this.author = v;
+this.author=v;
 });
 
 Clazz.newMeth(C$, 'getCreator', function () {
@@ -39,7 +39,7 @@ return this.creator;
 });
 
 Clazz.newMeth(C$, 'setCreator$S', function (v) {
-this.creator = v;
+this.creator=v;
 });
 
 Clazz.newMeth(C$, 'getTitle', function () {
@@ -47,7 +47,7 @@ return this.title;
 });
 
 Clazz.newMeth(C$, 'setTitle$S', function (v) {
-this.title = v;
+this.title=v;
 });
 
 Clazz.newMeth(C$, 'getSubject', function () {
@@ -55,7 +55,7 @@ return this.subject;
 });
 
 Clazz.newMeth(C$, 'setSubject$S', function (v) {
-this.subject = v;
+this.subject=v;
 });
 
 Clazz.newMeth(C$, 'getKeywords', function () {
@@ -63,7 +63,7 @@ return this.keywords;
 });
 
 Clazz.newMeth(C$, 'setKeywords$S', function (v) {
-this.keywords = v;
+this.keywords=v;
 });
 
 Clazz.newMeth(C$, 'write$java_io_OutputStream', function (os) {
@@ -94,4 +94,4 @@ if (this.title != null ) {
 }this.writeEnd$java_io_OutputStream(os);
 });
 })();
-//Created 2018-05-15 01:01:46
+//Created 2018-05-24 08:45:03

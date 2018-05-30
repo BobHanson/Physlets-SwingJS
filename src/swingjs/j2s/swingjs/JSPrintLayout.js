@@ -27,7 +27,7 @@ this.asPDF = true;
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.asPDF = true;
+this.asPDF=true;
 }, 1);
 })();
-//Created 2018-05-15 01:03:16
+//Created 2018-05-24 08:47:46

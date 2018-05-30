@@ -19,13 +19,13 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_image_BufferedImage$java_util_Hashtable', function (image, properties) {
 C$.$init$.apply(this);
-this.image = image;
+this.image=image;
 if (properties != null ) {
-this.properties = properties;
+this.properties=properties;
 } else {
-this.properties = Clazz.new_((I$[1]||$incl$(1)));
-}this.width = image.getWidth();
-this.height = image.getHeight();
+this.properties=Clazz.new_((I$[1]||$incl$(1)));
+}this.width=image.getWidth();
+this.height=image.getHeight();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_image_BufferedImage', function (image) {
@@ -33,7 +33,7 @@ C$.c$$java_awt_image_BufferedImage$java_util_Hashtable.apply(this, [image, null]
 }, 1);
 
 Clazz.newMeth(C$, 'addConsumer$java_awt_image_ImageConsumer', function (ic) {
-this.theConsumer = ic;
+this.theConsumer=ic;
 p$.produce.apply(this, []);
 });
 
@@ -43,7 +43,7 @@ return (ic === this.theConsumer );
 
 Clazz.newMeth(C$, 'removeConsumer$java_awt_image_ImageConsumer', function (ic) {
 if (this.theConsumer === ic ) {
-this.theConsumer = null;
+this.theConsumer=null;
 }});
 
 Clazz.newMeth(C$, 'startProduction$java_awt_image_ImageConsumer', function (ic) {
@@ -65,29 +65,29 @@ if (Clazz.instanceOf(cm, "java.awt.image.IndexColorModel")) {
 var pixels = Clazz.array(Byte.TYPE, [this.width]);
 this.theConsumer.setColorModel$java_awt_image_ColorModel(cm);
 if (Clazz.instanceOf(raster, "sun.awt.image.ByteComponentRaster")) {
-needToCvt = false;
+needToCvt=false;
 for (var y = 0; y < this.height; y++) {
 raster.getDataElements$I$I$I$I$O(0, y, this.width, 1, pixels);
 this.theConsumer.setPixels$I$I$I$I$java_awt_image_ColorModel$BA$I$I(0, y, this.width, 1, cm, pixels, 0, this.width);
 }
 } else if (Clazz.instanceOf(raster, "sun.awt.image.BytePackedRaster")) {
-needToCvt = false;
+needToCvt=false;
 for (var y = 0; y < this.height; y++) {
 raster.getPixels$I$I$I$I$IA(0, y, this.width, 1, scanline);
 for (var x = 0; x < this.width; x++) {
-pixels[x] = ((scanline[x]|0)|0);
+pixels[x]=((scanline[x]|0)|0);
 }
 this.theConsumer.setPixels$I$I$I$I$java_awt_image_ColorModel$BA$I$I(0, y, this.width, 1, cm, pixels, 0, this.width);
 }
 } else if (dataType == 2 || dataType == 3 ) {
-needToCvt = false;
+needToCvt=false;
 for (var y = 0; y < this.height; y++) {
 raster.getPixels$I$I$I$I$IA(0, y, this.width, 1, scanline);
 this.theConsumer.setPixels$I$I$I$I$java_awt_image_ColorModel$IA$I$I(0, y, this.width, 1, cm, scanline, 0, this.width);
 }
 }} else if (Clazz.instanceOf(cm, "java.awt.image.DirectColorModel")) {
 this.theConsumer.setColorModel$java_awt_image_ColorModel(cm);
-needToCvt = false;
+needToCvt=false;
 switch (dataType) {
 case 3:
 for (var y = 0; y < this.height; y++) {
@@ -100,7 +100,7 @@ var bscanline = Clazz.array(Byte.TYPE, [this.width]);
 for (var y = 0; y < this.height; y++) {
 raster.getDataElements$I$I$I$I$O(0, y, this.width, 1, bscanline);
 for (var x = 0; x < this.width; x++) {
-scanline[x] = bscanline[x] & 255;
+scanline[x]=bscanline[x] & 255;
 }
 this.theConsumer.setPixels$I$I$I$I$java_awt_image_ColorModel$IA$I$I(0, y, this.width, 1, cm, scanline, 0, this.width);
 }
@@ -110,20 +110,20 @@ var sscanline = Clazz.array(Short.TYPE, [this.width]);
 for (var y = 0; y < this.height; y++) {
 raster.getDataElements$I$I$I$I$O(0, y, this.width, 1, sscanline);
 for (var x = 0; x < this.width; x++) {
-scanline[x] = sscanline[x] & 65535;
+scanline[x]=sscanline[x] & 65535;
 }
 this.theConsumer.setPixels$I$I$I$I$java_awt_image_ColorModel$IA$I$I(0, y, this.width, 1, cm, scanline, 0, this.width);
 }
 break;
 default:
-needToCvt = true;
+needToCvt=true;
 }
 }if (needToCvt) {
 var newcm = (I$[2]||$incl$(2)).getRGBdefault();
 this.theConsumer.setColorModel$java_awt_image_ColorModel(newcm);
 for (var y = 0; y < this.height; y++) {
 for (var x = 0; x < this.width; x++) {
-scanline[x] = this.image.getRGB$I$I(x, y);
+scanline[x]=this.image.getRGB$I$I(x, y);
 }
 this.theConsumer.setPixels$I$I$I$I$java_awt_image_ColorModel$IA$I$I(0, y, this.width, 1, newcm, scanline, 0, this.width);
 }
@@ -147,4 +147,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:09
+//Created 2018-05-24 08:47:28

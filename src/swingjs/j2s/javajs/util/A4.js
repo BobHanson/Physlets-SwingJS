@@ -18,7 +18,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.z = 1.0;
+this.z=1.0;
 }, 1);
 
 Clazz.newMeth(C$, 'new4$F$F$F$F', function (x, y, z, angle) {
@@ -40,24 +40,24 @@ return a;
 }, 1);
 
 Clazz.newMeth(C$, 'setVA$javajs_util_V3$F', function (axis, angle) {
-this.x = axis.x;
-this.y = axis.y;
-this.z = axis.z;
-this.angle = angle;
+this.x=axis.x;
+this.y=axis.y;
+this.z=axis.z;
+this.angle=angle;
 });
 
 Clazz.newMeth(C$, 'set4$F$F$F$F', function (x, y, z, angle) {
-this.x = x;
-this.y = y;
-this.z = z;
-this.angle = angle;
+this.x=x;
+this.y=y;
+this.z=z;
+this.angle=angle;
 });
 
 Clazz.newMeth(C$, 'setAA$javajs_util_A4', function (a) {
-this.x = a.x;
-this.y = a.y;
-this.z = a.z;
-this.angle = a.angle;
+this.x=a.x;
+this.y=a.y;
+this.z=a.z;
+this.angle=a.angle;
 });
 
 Clazz.newMeth(C$, 'setM$javajs_util_M3', function (m1) {
@@ -66,16 +66,16 @@ p$.setFromMat$D$D$D$D$D$D$D$D$D.apply(this, [m1.m00, m1.m01, m1.m02, m1.m10, m1.
 
 Clazz.newMeth(C$, 'setFromMat$D$D$D$D$D$D$D$D$D', function (m00, m01, m02, m10, m11, m12, m20, m21, m22) {
 var cos = (m00 + m11 + m22  - 1.0) * 0.5;
-this.x = (m21 - m12);
-this.y = (m02 - m20);
-this.z = (m10 - m01);
+this.x=(m21 - m12);
+this.y=(m02 - m20);
+this.z=(m10 - m01);
 var sin = 0.5 * Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
 if (sin == 0  && cos == 1  ) {
-this.x = this.y = 0;
-this.z = 1;
-this.angle = 0;
+this.x=this.y=0;
+this.z=1;
+this.angle=0;
 } else {
-this.angle = Math.atan2(sin, cos);
+this.angle=Math.atan2(sin, cos);
 }});
 
 Clazz.newMeth(C$, 'hashCode', function () {
@@ -96,4 +96,4 @@ Clazz.newMeth(C$, 'toJSON', function () {
 return "[" + new Float(this.x).toString() + "," + new Float(this.y).toString() + "," + new Float(this.z).toString() + "," + new Float((this.angle * 180.0 / 3.141592653589793)).toString() + "]" ;
 });
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:54

@@ -12,7 +12,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'cachedInputStream', function () {
 if (this.cis == null ) {
-this.cis = this.getInputStream();
+this.cis=this.getInputStream();
 }return this.cis;
 });
 
@@ -23,36 +23,36 @@ var isInterrupted = (I$[1]||$incl$(1)).interrupted();
 var len;
 for (; ; ) {
 try {
-len = this.getContentLength();
+len=this.getContentLength();
 break;
 } catch (iioe) {
 if (Clazz.exceptionOf(iioe, "java.io.InterruptedIOException")){
 (I$[1]||$incl$(1)).interrupted();
-isInterrupted = true;
+isInterrupted=true;
 } else {
 throw iioe;
 }
 }
 }
 try {
-b = Clazz.array(Byte.TYPE, [0]);
-if (len == -1) len = 2147483647;
+b=Clazz.array(Byte.TYPE, [0]);
+if (len == -1) len=2147483647;
 var pos = 0;
 while (pos < len){
 var bytesToRead;
 if (pos >= b.length) {
-bytesToRead = Math.min(len - pos, b.length + 1024);
+bytesToRead=Math.min(len - pos, b.length + 1024);
 if (b.length < pos + bytesToRead) {
-b = (I$[2]||$incl$(2)).copyOf$BA$I(b, pos + bytesToRead);
+b=(I$[2]||$incl$(2)).copyOf$BA$I(b, pos + bytesToRead);
 }} else {
-bytesToRead = b.length - pos;
+bytesToRead=b.length - pos;
 }var cc = 0;
 try {
-cc = $in.read$BA$I$I(b, pos, bytesToRead);
+cc=$in.read$BA$I$I(b, pos, bytesToRead);
 } catch (iioe) {
 if (Clazz.exceptionOf(iioe, "java.io.InterruptedIOException")){
 (I$[1]||$incl$(1)).interrupted();
-isInterrupted = true;
+isInterrupted=true;
 } else {
 throw iioe;
 }
@@ -62,9 +62,9 @@ if (len != 2147483647) {
 throw Clazz.new_(Clazz.load('java.io.EOFException').c$$S,["Detect premature EOF"]);
 } else {
 if (b.length != pos) {
-b = (I$[2]||$incl$(2)).copyOf$BA$I(b, pos);
+b=(I$[2]||$incl$(2)).copyOf$BA$I(b, pos);
 }break;
-}}pos = pos+(cc);
+}}pos+=cc;
 }
 } finally {
 try {
@@ -73,7 +73,7 @@ $in.close();
 if (Clazz.exceptionOf(e$$, "java.io.InterruptedIOException")){
 var iioe = e$$;
 {
-isInterrupted = true;
+isInterrupted=true;
 }
 } else if (Clazz.exceptionOf(e$$, "java.io.IOException")){
 var ignore = e$$;
@@ -91,4 +91,4 @@ return b;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:10
+//Created 2018-05-24 08:47:33

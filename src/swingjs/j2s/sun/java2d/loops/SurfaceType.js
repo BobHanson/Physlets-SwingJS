@@ -122,18 +122,18 @@ return Clazz.new_(C$.c$$sun_java2d_loops_SurfaceType$S$sun_awt_image_PixelConver
 
 Clazz.newMeth(C$, 'c$$sun_java2d_loops_SurfaceType$S$sun_awt_image_PixelConverter', function (parent, desc, pixelConverter) {
 C$.$init$.apply(this);
-this.next = parent;
-this.desc = desc;
-this.uniqueID = C$.makeUniqueID$S(desc);
-this.pixelConverter = pixelConverter;
+this.next=parent;
+this.desc=desc;
+this.uniqueID=C$.makeUniqueID$S(desc);
+this.pixelConverter=pixelConverter;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$sun_java2d_loops_SurfaceType$S', function (parent, desc) {
 C$.$init$.apply(this);
-this.next = parent;
-this.desc = desc;
-this.uniqueID = C$.makeUniqueID$S(desc);
-this.pixelConverter = parent.pixelConverter;
+this.next=parent;
+this.desc=desc;
+this.uniqueID=C$.makeUniqueID$S(desc);
+this.pixelConverter=parent.pixelConverter;
 }, 1);
 
 Clazz.newMeth(C$, 'makeUniqueID$S', function (desc) {
@@ -141,7 +141,7 @@ var i = C$.surfaceUIDMap.get$O(desc);
 if (i == null ) {
 if (C$.unusedUID > 255) {
 throw Clazz.new_((I$[18]||$incl$(18)).c$$S,["surface type id overflow"]);
-}i =  new Integer(C$.unusedUID++);
+}i= new Integer(C$.unusedUID++);
 C$.surfaceUIDMap.put$TK$TV(desc, i);
 }return i.intValue();
 }, 1);
@@ -190,4 +190,4 @@ return this.desc;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:10
+//Created 2018-05-24 08:47:32

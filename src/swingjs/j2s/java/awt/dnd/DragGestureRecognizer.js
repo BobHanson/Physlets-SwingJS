@@ -20,9 +20,9 @@ this.events = Clazz.new_((I$[1]||$incl$(1)).c$$I,[1]);
 Clazz.newMeth(C$, 'c$$java_awt_dnd_DragSource$java_awt_Component$I$java_awt_dnd_DragGestureListener', function (ds, c, sa, dgl) {
 C$.$init$.apply(this);
 if (ds == null ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["null DragSource"]);
-this.dragSource = ds;
-this.component = c;
-this.sourceActions = sa & 1073741827;
+this.dragSource=ds;
+this.component=c;
+this.sourceActions=sa & 1073741827;
 try {
 if (dgl != null ) this.addDragGestureListener$java_awt_dnd_DragGestureListener(dgl);
 } catch (tmle) {
@@ -55,7 +55,7 @@ return this.component;
 
 Clazz.newMeth(C$, 'setComponent$java_awt_Component', function (c) {
 if (this.component != null  && this.dragGestureListener != null  ) this.unregisterListeners();
-this.component = c;
+this.component=c;
 if (this.component != null  && this.dragGestureListener != null  ) this.registerListeners();
 });
 
@@ -64,7 +64,7 @@ return this.sourceActions;
 });
 
 Clazz.newMeth(C$, 'setSourceActions$I', function (actions) {
-this.sourceActions = actions & 1073741827;
+this.sourceActions=actions & 1073741827;
 });
 
 Clazz.newMeth(C$, 'getTriggerEvent', function () {
@@ -78,14 +78,14 @@ this.events.clear();
 Clazz.newMeth(C$, 'addDragGestureListener$java_awt_dnd_DragGestureListener', function (dgl) {
 if (this.dragGestureListener != null ) throw Clazz.new_(Clazz.load('java.util.TooManyListenersException'));
  else {
-this.dragGestureListener = dgl;
+this.dragGestureListener=dgl;
 if (this.component != null ) this.registerListeners();
 }});
 
 Clazz.newMeth(C$, 'removeDragGestureListener$java_awt_dnd_DragGestureListener', function (dgl) {
 if (this.dragGestureListener == null  || !this.dragGestureListener.equals$O(dgl) ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
  else {
-this.dragGestureListener = null;
+this.dragGestureListener=null;
 if (this.component != null ) this.unregisterListeners();
 }});
 
@@ -104,4 +104,4 @@ this.events.add$TE(awtie);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:55
+//Created 2018-05-24 08:45:15

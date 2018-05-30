@@ -56,8 +56,8 @@ return (v != null ) ? v : Clazz.new_((I$[1]||$incl$(1)));
 }, 1);
 
 Clazz.newMeth(C$, 'setDataVector$java_util_Vector$java_util_Vector', function (dataVector, columnIdentifiers) {
-this.dataVector = C$.nonNullVector$java_util_Vector(dataVector);
-this.columnIdentifiers = C$.nonNullVector$java_util_Vector(columnIdentifiers);
+this.dataVector=C$.nonNullVector$java_util_Vector(dataVector);
+this.columnIdentifiers=C$.nonNullVector$java_util_Vector(columnIdentifiers);
 p$.justifyRows$I$I.apply(this, [0, this.getRowCount()]);
 this.fireTableStructureChanged();
 });
@@ -133,9 +133,9 @@ var g = C$.gcd$I$I(size, r);
 for (var i = 0; i < g; i++) {
 var to = i;
 var tmp = v.elementAt$I(a + to);
-for (var from = (to + r) % size; from != i; from = (to + r) % size) {
+for (var from = (to + r) % size; from != i; from=(to + r) % size) {
 v.setElementAt$TE$I(v.elementAt$I(a + from), a + to);
-to = from;
+to=from;
 }
 v.setElementAt$TE$I(tmp, a + to);
 }
@@ -146,11 +146,11 @@ var shift = to - start;
 var first;
 var last;
 if (shift < 0) {
-first = to;
-last = end;
+first=to;
+last=end;
 } else {
-first = start;
-last = to + end - start;
+first=start;
+last=to + end - start;
 }C$.rotate$java_util_Vector$I$I$I(this.dataVector, first, last + 1, shift);
 this.fireTableRowsUpdated$I$I(first, last);
 });
@@ -210,7 +210,7 @@ return this.columnIdentifiers.size();
 Clazz.newMeth(C$, 'getColumnName$I', function (column) {
 var id = null;
 if (column < this.columnIdentifiers.size() && (column >= 0) ) {
-id = this.columnIdentifiers.elementAt$I(column);
+id=this.columnIdentifiers.elementAt$I(column);
 }return (id == null ) ? C$.superclazz.prototype.getColumnName$I.apply(this, [column]) : id.toString();
 });
 
@@ -249,4 +249,4 @@ v.addElement$TE(C$.convertToVector$OA(anArray[i]));
 return v;
 }, 1);
 })();
-//Created 2018-05-15 01:02:51
+//Created 2018-05-24 08:46:59

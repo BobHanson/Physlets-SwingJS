@@ -56,31 +56,31 @@ this.rolloverTable = Clazz.new_((I$[9]||$incl$(9)));
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.isContainer = true;
+this.isContainer=true;
 this.setDoc();
 }, 1);
 
 Clazz.newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.containerNode = this.domNode = this.newDOMObject$S$S$SA("div", this.id, []);
+this.containerNode=this.domNode=this.newDOMObject$S$S$SA("div", this.id, []);
 (I$[10]||$incl$(10)).setPositionAbsolute(this.domNode, 0, 0);
 }return this.domNode;
 });
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (c) {
-this.toolBar = this.jc;
+this.toolBar=this.jc;
 this.installDefaults();
 this.installComponents();
 this.installListeners();
 this.installKeyboardActions();
-this.dockingSensitivity = 0;
-this.floating = false;
-this.floatingX = this.floatingY = 0;
-this.floatingToolBar = null;
+this.dockingSensitivity=0;
+this.floating=false;
+this.floatingX=this.floatingY=0;
+this.floatingToolBar=null;
 this.setOrientation$I(this.toolBar.getOrientation());
 (I$[11]||$incl$(11)).installProperty$javax_swing_JComponent$S$O(c, "opaque", (I$[12]||$incl$(12)).TRUE);
 if (c.getClientProperty$O(C$.FOCUSED_COMP_INDEX) != null ) {
-this.focusedCompIndex = ((c.getClientProperty$O(C$.FOCUSED_COMP_INDEX))).intValue();
+this.focusedCompIndex=((c.getClientProperty$O(C$.FOCUSED_COMP_INDEX))).intValue();
 }});
 
 Clazz.newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (c) {
@@ -89,43 +89,43 @@ this.uninstallComponents();
 this.uninstallListeners();
 this.uninstallKeyboardActions();
 if (this.isFloating() == true ) this.setFloating$Z$java_awt_Point(false, null);
-this.floatingToolBar = null;
-this.dragWindow = null;
-this.dockingSource = null;
+this.floatingToolBar=null;
+this.dragWindow=null;
+this.dockingSource=null;
 c.putClientProperty$O$O(C$.FOCUSED_COMP_INDEX,  new Integer(this.focusedCompIndex));
 });
 
 Clazz.newMeth(C$, 'installDefaults', function () {
 (I$[11]||$incl$(11)).installBorder$javax_swing_JComponent$S(this.toolBar, "ToolBar.border");
 (I$[11]||$incl$(11)).installColorsAndFont$javax_swing_JComponent$S$S$S(this.toolBar, "ToolBar.background", "ToolBar.foreground", "ToolBar.font");
-if (this.dockingColor == null  || Clazz.instanceOf(this.dockingColor, "javax.swing.plaf.UIResource") ) this.dockingColor = (I$[3]||$incl$(3)).getColor$O("ToolBar.dockingBackground");
-if (this.floatingColor == null  || Clazz.instanceOf(this.floatingColor, "javax.swing.plaf.UIResource") ) this.floatingColor = (I$[3]||$incl$(3)).getColor$O("ToolBar.floatingBackground");
-if (this.dockingBorderColor == null  || Clazz.instanceOf(this.dockingBorderColor, "javax.swing.plaf.UIResource") ) this.dockingBorderColor = (I$[3]||$incl$(3)).getColor$O("ToolBar.dockingForeground");
-if (this.floatingBorderColor == null  || Clazz.instanceOf(this.floatingBorderColor, "javax.swing.plaf.UIResource") ) this.floatingBorderColor = (I$[3]||$incl$(3)).getColor$O("ToolBar.floatingForeground");
+if (this.dockingColor == null  || Clazz.instanceOf(this.dockingColor, "javax.swing.plaf.UIResource") ) this.dockingColor=(I$[3]||$incl$(3)).getColor$O("ToolBar.dockingBackground");
+if (this.floatingColor == null  || Clazz.instanceOf(this.floatingColor, "javax.swing.plaf.UIResource") ) this.floatingColor=(I$[3]||$incl$(3)).getColor$O("ToolBar.floatingBackground");
+if (this.dockingBorderColor == null  || Clazz.instanceOf(this.dockingBorderColor, "javax.swing.plaf.UIResource") ) this.dockingBorderColor=(I$[3]||$incl$(3)).getColor$O("ToolBar.dockingForeground");
+if (this.floatingBorderColor == null  || Clazz.instanceOf(this.floatingBorderColor, "javax.swing.plaf.UIResource") ) this.floatingBorderColor=(I$[3]||$incl$(3)).getColor$O("ToolBar.floatingForeground");
 var rolloverProp = this.toolBar.getClientProperty$O(C$.IS_ROLLOVER);
 if (rolloverProp == null ) {
-rolloverProp = (I$[3]||$incl$(3)).get$O("ToolBar.isRollover");
+rolloverProp=(I$[3]||$incl$(3)).get$O("ToolBar.isRollover");
 }if (rolloverProp != null ) {
-this.rolloverBorders = (rolloverProp).booleanValue();
+this.rolloverBorders=(rolloverProp).booleanValue();
 }if (C$.rolloverBorder == null ) {
-C$.rolloverBorder = this.createRolloverBorder();
+C$.rolloverBorder=this.createRolloverBorder();
 }if (C$.nonRolloverBorder == null ) {
-C$.nonRolloverBorder = this.createNonRolloverBorder();
+C$.nonRolloverBorder=this.createNonRolloverBorder();
 }if (C$.nonRolloverToggleBorder == null ) {
-C$.nonRolloverToggleBorder = p$.createNonRolloverToggleBorder.apply(this, []);
+C$.nonRolloverToggleBorder=p$.createNonRolloverToggleBorder.apply(this, []);
 }this.setRolloverBorders$Z(this.isRolloverBorders());
 });
 
 Clazz.newMeth(C$, 'uninstallDefaults', function () {
 (I$[11]||$incl$(11)).uninstallBorder$javax_swing_JComponent(this.toolBar);
-this.dockingColor = null;
-this.floatingColor = null;
-this.dockingBorderColor = null;
-this.floatingBorderColor = null;
+this.dockingColor=null;
+this.floatingColor=null;
+this.dockingBorderColor=null;
+this.floatingBorderColor=null;
 this.installNormalBorders$javax_swing_JComponent(this.toolBar);
-C$.rolloverBorder = null;
-C$.nonRolloverBorder = null;
-C$.nonRolloverToggleBorder = null;
+C$.rolloverBorder=null;
+C$.nonRolloverBorder=null;
+C$.nonRolloverToggleBorder=null;
 });
 
 Clazz.newMeth(C$, 'installComponents', function () {
@@ -135,17 +135,17 @@ Clazz.newMeth(C$, 'uninstallComponents', function () {
 });
 
 Clazz.newMeth(C$, 'installListeners', function () {
-this.dockingListener = this.createDockingListener();
+this.dockingListener=this.createDockingListener();
 if (this.dockingListener != null ) {
 this.toolBar.addMouseMotionListener$java_awt_event_MouseMotionListener(this.dockingListener);
 this.toolBar.addMouseListener$java_awt_event_MouseListener(this.dockingListener);
-}this.propertyListener = this.createPropertyListener();
+}this.propertyListener=this.createPropertyListener();
 if (this.propertyListener != null ) {
 this.toolBar.addPropertyChangeListener$java_beans_PropertyChangeListener(this.propertyListener);
-}this.toolBarContListener = this.createToolBarContListener();
+}this.toolBarContListener=this.createToolBarContListener();
 if (this.toolBarContListener != null ) {
 this.toolBar.addContainerListener$java_awt_event_ContainerListener(this.toolBarContListener);
-}this.toolBarFocusListener = this.createToolBarFocusListener();
+}this.toolBarFocusListener=this.createToolBarFocusListener();
 if (this.toolBarFocusListener != null ) {
 var components = this.toolBar.getComponents();
 for (var i = 0; i < components.length; ++i) {
@@ -157,20 +157,20 @@ Clazz.newMeth(C$, 'uninstallListeners', function () {
 if (this.dockingListener != null ) {
 this.toolBar.removeMouseMotionListener$java_awt_event_MouseMotionListener(this.dockingListener);
 this.toolBar.removeMouseListener$java_awt_event_MouseListener(this.dockingListener);
-this.dockingListener = null;
+this.dockingListener=null;
 }if (this.propertyListener != null ) {
 this.toolBar.removePropertyChangeListener$java_beans_PropertyChangeListener(this.propertyListener);
-this.propertyListener = null;
+this.propertyListener=null;
 }if (this.toolBarContListener != null ) {
 this.toolBar.removeContainerListener$java_awt_event_ContainerListener(this.toolBarContListener);
-this.toolBarContListener = null;
+this.toolBarContListener=null;
 }if (this.toolBarFocusListener != null ) {
 var components = this.toolBar.getComponents();
 for (var i = 0; i < components.length; ++i) {
 components[i].removeFocusListener$java_awt_event_FocusListener(this.toolBarFocusListener);
 }
-this.toolBarFocusListener = null;
-}this.handler = null;
+this.toolBarFocusListener=null;
+}this.handler=null;
 });
 
 Clazz.newMeth(C$, 'installKeyboardActions', function () {
@@ -204,9 +204,9 @@ switch (direction) {
 case 3:
 case 5:
 if (this.focusedCompIndex < 0 || this.focusedCompIndex >= nComp ) break;
-j = this.focusedCompIndex + 1;
+j=this.focusedCompIndex + 1;
 while (j != this.focusedCompIndex){
-if (j >= nComp) j = 0;
+if (j >= nComp) j=0;
 var comp = this.toolBar.getComponentAtIndex$I(j++);
 if (comp != null  && comp.isFocusTraversable()  && comp.isEnabled() ) {
 comp.requestFocus();
@@ -216,9 +216,9 @@ break;
 case 7:
 case 1:
 if (this.focusedCompIndex < 0 || this.focusedCompIndex >= nComp ) break;
-j = this.focusedCompIndex - 1;
+j=this.focusedCompIndex - 1;
 while (j != this.focusedCompIndex){
-if (j < 0) j = nComp - 1;
+if (j < 0) j=nComp - 1;
 var comp = this.toolBar.getComponentAtIndex$I(j--);
 if (comp != null  && comp.isFocusTraversable()  && comp.isEnabled() ) {
 comp.requestFocus();
@@ -281,9 +281,9 @@ this.packing = false;
 Clazz.newMeth(C$, 'validate', function () {
 C$.superclazz.prototype.validate.apply(this, []);
 if (!this.packing) {
-this.packing = true;
+this.packing=true;
 this.b$['swingjs.plaf.JSToolBarUI$1'].pack();
-this.packing = false;
+this.packing=false;
 }});
 })()
 ), Clazz.new_((I$[22]||$incl$(22)).c$$S$Z, [this, null, this.b$['swingjs.plaf.JSToolBarUI'].id + (++(I$[2]||$incl$(2)).toolbarCount), false],P$.JSToolBarUI$1$1));
@@ -303,11 +303,11 @@ Clazz.newMeth(C$, 'createFloatingWindow$javax_swing_JToolBar', function (toolbar
 var dialog;
 var window = (I$[13]||$incl$(13)).getWindowAncestor$java_awt_Component(toolbar);
 if (Clazz.instanceOf(window, "java.awt.Frame")) {
-dialog = Clazz.new_((I$[24]||$incl$(24)).c$$java_awt_Frame$S$Z, [this, null, window, toolbar.getName(), false]);
+dialog=Clazz.new_((I$[24]||$incl$(24)).c$$java_awt_Frame$S$Z, [this, null, window, toolbar.getName(), false]);
 } else if (Clazz.instanceOf(window, "java.awt.Dialog")) {
-dialog = Clazz.new_((I$[24]||$incl$(24)).c$$java_awt_Dialog$S$Z, [this, null, window, toolbar.getName(), false]);
+dialog=Clazz.new_((I$[24]||$incl$(24)).c$$java_awt_Dialog$S$Z, [this, null, window, toolbar.getName(), false]);
 } else {
-dialog = Clazz.new_((I$[24]||$incl$(24)).c$$java_awt_Frame$S$Z, [this, null, null, toolbar.getName(), false]);
+dialog=Clazz.new_((I$[24]||$incl$(24)).c$$java_awt_Frame$S$Z, [this, null, null, toolbar.getName(), false]);
 }dialog.getRootPane().setName$S("ToolBar.FloatingWindow");
 dialog.setTitle$S(toolbar.getName());
 dialog.setResizable$Z(false);
@@ -320,11 +320,11 @@ Clazz.newMeth(C$, 'createDragWindow$javax_swing_JToolBar', function (toolbar) {
 var frame = null;
 if (this.toolBar != null ) {
 var p;
-for (p = this.toolBar.getParent(); p != null  && !(Clazz.instanceOf(p, "java.awt.Window")) ; p = p.getParent()) ;
-if (p != null  && Clazz.instanceOf(p, "java.awt.Window") ) frame = p;
+for (p=this.toolBar.getParent(); p != null  && !(Clazz.instanceOf(p, "java.awt.Window")) ; p=p.getParent()) ;
+if (p != null  && Clazz.instanceOf(p, "java.awt.Window") ) frame=p;
 }if (this.floatingToolBar == null ) {
-this.floatingToolBar = this.createFloatingWindow$javax_swing_JToolBar(this.toolBar);
-}if (Clazz.instanceOf(this.floatingToolBar, "java.awt.Window")) frame = this.floatingToolBar;
+this.floatingToolBar=this.createFloatingWindow$javax_swing_JToolBar(this.toolBar);
+}if (Clazz.instanceOf(this.floatingToolBar, "java.awt.Window")) frame=this.floatingToolBar;
 var dragWindow = Clazz.new_((I$[25]||$incl$(25)).c$$java_awt_Window, [this, null, frame]);
 return dragWindow;
 });
@@ -334,7 +334,7 @@ return this.rolloverBorders;
 });
 
 Clazz.newMeth(C$, 'setRolloverBorders$Z', function (rollover) {
-this.rolloverBorders = rollover;
+this.rolloverBorders=rollover;
 if (this.rolloverBorders) {
 this.installRolloverBorders$javax_swing_JComponent(this.toolBar);
 } else {
@@ -412,8 +412,8 @@ b.setRolloverEnabled$Z(value.booleanValue());
 }}});
 
 Clazz.newMeth(C$, 'setFloatingLocation$I$I', function (x, y) {
-this.floatingX = x;
-this.floatingY = y;
+this.floatingX=x;
+this.floatingY=y;
 });
 
 Clazz.newMeth(C$, 'isFloating', function () {
@@ -425,16 +425,16 @@ if (this.toolBar.isFloatable() == true ) {
 var visible = false;
 var ancestor = (I$[13]||$incl$(13)).getWindowAncestor$java_awt_Component(this.toolBar);
 if (ancestor != null ) {
-visible = ancestor.isVisible();
+visible=ancestor.isVisible();
 }if (this.dragWindow != null ) this.dragWindow.setVisible$Z(false);
-this.floating = b;
+this.floating=b;
 if (this.floatingToolBar == null ) {
-this.floatingToolBar = this.createFloatingWindow$javax_swing_JToolBar(this.toolBar);
+this.floatingToolBar=this.createFloatingWindow$javax_swing_JToolBar(this.toolBar);
 }if (b == true ) {
 if (this.dockingSource == null ) {
-this.dockingSource = this.toolBar.getParent();
+this.dockingSource=this.toolBar.getParent();
 this.dockingSource.remove$java_awt_Component(this.toolBar);
-}this.constraintBeforeFloating = p$.calculateConstraint.apply(this, []);
+}this.constraintBeforeFloating=p$.calculateConstraint.apply(this, []);
 if (this.propertyListener != null ) (I$[3]||$incl$(3)).addPropertyChangeListener$java_beans_PropertyChangeListener(this.propertyListener);
 this.floatingToolBar.getContentPane().add$java_awt_Component$O(this.toolBar, "Center");
 if (Clazz.instanceOf(this.floatingToolBar, "java.awt.Window")) {
@@ -458,15 +458,15 @@ Clazz.newMeth(C$, 'windowOpened$java_awt_event_WindowEvent', function (e) {
 })()
 ), Clazz.new_((I$[26]||$incl$(26)), [this, null],P$.JSToolBarUI$2)));
 }}} else {
-if (this.floatingToolBar == null ) this.floatingToolBar = this.createFloatingWindow$javax_swing_JToolBar(this.toolBar);
+if (this.floatingToolBar == null ) this.floatingToolBar=this.createFloatingWindow$javax_swing_JToolBar(this.toolBar);
 if (Clazz.instanceOf(this.floatingToolBar, "java.awt.Window")) (this.floatingToolBar).setVisible$Z(false);
 this.floatingToolBar.getContentPane().remove$java_awt_Component(this.toolBar);
 var constraint = p$.getDockingConstraint$java_awt_Component$java_awt_Point.apply(this, [this.dockingSource, p]);
 if (constraint == null ) {
-constraint = "North";
+constraint="North";
 }var orientation = p$.mapConstraintToOrientation$S.apply(this, [constraint]);
 this.setOrientation$I(orientation);
-if (this.dockingSource == null ) this.dockingSource = this.toolBar.getParent();
+if (this.dockingSource == null ) this.dockingSource=this.toolBar.getParent();
 if (this.propertyListener != null ) (I$[3]||$incl$(3)).removePropertyChangeListener$java_beans_PropertyChangeListener(this.propertyListener);
 this.dockingSource.add$S$java_awt_Component(constraint, this.toolBar);
 }this.dockingSource.invalidate();
@@ -478,8 +478,8 @@ this.dockingSource.repaint();
 Clazz.newMeth(C$, 'mapConstraintToOrientation$S', function (constraint) {
 var orientation = this.toolBar.getOrientation();
 if (constraint != null ) {
-if (constraint.equals$O("East") || constraint.equals$O("West") ) orientation = 1;
- else if (constraint.equals$O("North") || constraint.equals$O("South") ) orientation = 0;
+if (constraint.equals$O("East") || constraint.equals$O("West") ) orientation=1;
+ else if (constraint.equals$O("North") || constraint.equals$O("South") ) orientation=0;
 }return orientation;
 });
 
@@ -493,7 +493,7 @@ return this.dockingColor;
 });
 
 Clazz.newMeth(C$, 'setDockingColor$java_awt_Color', function (c) {
-this.dockingColor = c;
+this.dockingColor=c;
 });
 
 Clazz.newMeth(C$, 'getFloatingColor', function () {
@@ -501,7 +501,7 @@ return this.floatingColor;
 });
 
 Clazz.newMeth(C$, 'setFloatingColor$java_awt_Color', function (c) {
-this.floatingColor = c;
+this.floatingColor=c;
 });
 
 Clazz.newMeth(C$, 'isBlocked$java_awt_Component$O', function (comp, constraint) {
@@ -523,14 +523,14 @@ Clazz.newMeth(C$, 'calculateConstraint', function () {
 var constraint = null;
 var lm = this.dockingSource.getLayout();
 if (Clazz.instanceOf(lm, "java.awt.BorderLayout")) {
-constraint = (lm).getConstraints$java_awt_Component(this.toolBar);
+constraint=(lm).getConstraints$java_awt_Component(this.toolBar);
 }return (constraint != null ) ? constraint : this.constraintBeforeFloating;
 });
 
 Clazz.newMeth(C$, 'getDockingConstraint$java_awt_Component$java_awt_Point', function (c, p) {
 if (p == null ) return this.constraintBeforeFloating;
 if (c.contains$java_awt_Point(p)) {
-this.dockingSensitivity = (this.toolBar.getOrientation() == 0) ? this.toolBar.getSize().height : this.toolBar.getSize().width;
+this.dockingSensitivity=(this.toolBar.getOrientation() == 0) ? this.toolBar.getSize().height : this.toolBar.getSize().width;
 if (p.y < this.dockingSensitivity && !p$.isBlocked$java_awt_Component$O.apply(this, [c, "North"]) ) {
 return "North";
 }if (p.x >= c.getWidth() - this.dockingSensitivity && !p$.isBlocked$java_awt_Component$O.apply(this, [c, "East"]) ) {
@@ -545,16 +545,16 @@ return "South";
 Clazz.newMeth(C$, 'dragTo$java_awt_Point$java_awt_Point', function (position, origin) {
 if (this.toolBar.isFloatable() == true ) {
 try {
-if (this.dragWindow == null ) this.dragWindow = this.createDragWindow$javax_swing_JToolBar(this.toolBar);
+if (this.dragWindow == null ) this.dragWindow=this.createDragWindow$javax_swing_JToolBar(this.toolBar);
 var offset = this.dragWindow.getOffset();
 if (offset == null ) {
 var size = this.toolBar.getPreferredSize();
-offset = Clazz.new_((I$[6]||$incl$(6)).c$$I$I,[(size.width/2|0), (size.height/2|0)]);
+offset=Clazz.new_((I$[6]||$incl$(6)).c$$I$I,[(size.width/2|0), (size.height/2|0)]);
 this.dragWindow.setOffset$java_awt_Point(offset);
 }var global = Clazz.new_((I$[6]||$incl$(6)).c$$I$I,[origin.x + position.x, origin.y + position.y]);
 var dragPoint = Clazz.new_((I$[6]||$incl$(6)).c$$I$I,[global.x - offset.x, global.y - offset.y]);
-if (this.dockingSource == null ) this.dockingSource = this.toolBar.getParent();
-this.constraintBeforeFloating = p$.calculateConstraint.apply(this, []);
+if (this.dockingSource == null ) this.dockingSource=this.toolBar.getParent();
+this.constraintBeforeFloating=p$.calculateConstraint.apply(this, []);
 var dockingPosition = this.dockingSource.getLocationOnScreen();
 var comparisonPoint = Clazz.new_((I$[6]||$incl$(6)).c$$I$I,[global.x - dockingPosition.x, global.y - dockingPosition.y]);
 if (this.canDock$java_awt_Component$java_awt_Point(this.dockingSource, comparisonPoint)) {
@@ -585,7 +585,7 @@ if (this.toolBar.isFloatable() == true ) {
 try {
 var offset = this.dragWindow.getOffset();
 if (offset == null ) {
-offset = position;
+offset=position;
 this.dragWindow.setOffset$java_awt_Point(offset);
 }var global = Clazz.new_((I$[6]||$incl$(6)).c$$I$I,[origin.x + position.x, origin.y + position.y]);
 this.setFloatingLocation$I$I(global.x - offset.x, global.y - offset.y);
@@ -609,7 +609,7 @@ throw e;
 
 Clazz.newMeth(C$, 'getHandler', function () {
 if (this.handler == null ) {
-this.handler = Clazz.new_((I$[27]||$incl$(27)), [this, null]);
+this.handler=Clazz.new_((I$[27]||$incl$(27)), [this, null]);
 }return this.handler;
 });
 
@@ -626,7 +626,7 @@ return this.getHandler();
 });
 
 Clazz.newMeth(C$, 'createDockingListener', function () {
-this.getHandler().tb = this.toolBar;
+this.getHandler().tb=this.toolBar;
 return this.getHandler();
 });
 
@@ -682,9 +682,9 @@ this.packing = false;
 Clazz.newMeth(C$, 'validate', function () {
 C$.superclazz.prototype.validate.apply(this, []);
 if (!this.packing) {
-this.packing = true;
+this.packing=true;
 this.b$[''].pack();
-this.packing = false;
+this.packing=false;
 }});
 })()
 ), Clazz.new_((I$[22]||$incl$(22)).c$$S$Z, [this, null, this.this$0.id + (++(I$[2]||$incl$(2)).toolbarCount), false],P$.JSToolBarUI$1ToolBarDialog$1));
@@ -765,7 +765,7 @@ c.removeFocusListener$java_awt_event_FocusListener(this.this$0.toolBarFocusListe
 
 Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent', function (evt) {
 var c = evt.getComponent();
-this.this$0.focusedCompIndex = this.this$0.toolBar.getComponentIndex$java_awt_Component(c);
+this.this$0.focusedCompIndex=this.this$0.toolBar.getComponentIndex$java_awt_Component(c);
 });
 
 Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent', function (evt) {
@@ -774,7 +774,7 @@ Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent', function (evt) {
 Clazz.newMeth(C$, 'mousePressed$java_awt_event_MouseEvent', function (evt) {
 if (!this.tb.isEnabled()) {
 return;
-}this.isDragging = false;
+}this.isDragging=false;
 });
 
 Clazz.newMeth(C$, 'mouseReleased$java_awt_event_MouseEvent', function (evt) {
@@ -782,19 +782,19 @@ if (!this.tb.isEnabled()) {
 return;
 }if (this.isDragging == true ) {
 var position = evt.getPoint();
-if (this.origin == null ) this.origin = evt.getComponent().getLocationOnScreen();
+if (this.origin == null ) this.origin=evt.getComponent().getLocationOnScreen();
 this.this$0.floatAt$java_awt_Point$java_awt_Point(position, this.origin);
-}this.origin = null;
-this.isDragging = false;
+}this.origin=null;
+this.isDragging=false;
 });
 
 Clazz.newMeth(C$, 'mouseDragged$java_awt_event_MouseEvent', function (evt) {
 if (!this.tb.isEnabled()) {
 return;
-}this.isDragging = true;
+}this.isDragging=true;
 var position = evt.getPoint();
 if (this.origin == null ) {
-this.origin = evt.getComponent().getLocationOnScreen();
+this.origin=evt.getComponent().getLocationOnScreen();
 }this.this$0.dragTo$java_awt_Point$java_awt_Point(position, this.origin);
 });
 
@@ -820,7 +820,7 @@ var orientation = (evt.getNewValue()).intValue();
 var separator;
 for (var i = 0; i < components.length; ++i) {
 if (Clazz.instanceOf(components[i], "javax.swing.JToolBar.Separator")) {
-separator = components[i];
+separator=components[i];
 if ((orientation == 0)) {
 separator.setOrientation$I(1);
 } else {
@@ -851,18 +851,18 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'windowClosing$java_awt_event_WindowEvent', function (w) {
 if (this.this$0.toolBar.isFloatable() == true ) {
 if (this.this$0.dragWindow != null ) this.this$0.dragWindow.setVisible$Z(false);
-this.this$0.floating = false;
-if (this.this$0.floatingToolBar == null ) this.this$0.floatingToolBar = this.this$0.createFloatingWindow$javax_swing_JToolBar(this.this$0.toolBar);
+this.this$0.floating=false;
+if (this.this$0.floatingToolBar == null ) this.this$0.floatingToolBar=this.this$0.createFloatingWindow$javax_swing_JToolBar(this.this$0.toolBar);
 if (Clazz.instanceOf(this.this$0.floatingToolBar, "java.awt.Window")) (this.this$0.floatingToolBar).setVisible$Z(false);
 this.this$0.floatingToolBar.getContentPane().remove$java_awt_Component(this.this$0.toolBar);
 var constraint = this.this$0.constraintBeforeFloating;
 if (this.this$0.toolBar.getOrientation() == 0) {
 if (constraint == "West" || constraint == "East" ) {
-constraint = "North";
+constraint="North";
 }} else {
 if (constraint == "North" || constraint == "South" ) {
-constraint = "West";
-}}if (this.this$0.dockingSource == null ) this.this$0.dockingSource = this.this$0.toolBar.getParent();
+constraint="West";
+}}if (this.this$0.dockingSource == null ) this.this$0.dockingSource=this.this$0.toolBar.getParent();
 if (this.this$0.propertyListener != null ) (I$[3]||$incl$(3)).removePropertyChangeListener$java_beans_PropertyChangeListener(this.this$0.propertyListener);
 this.this$0.dockingSource.add$java_awt_Component$O(this.this$0.toolBar, constraint);
 this.this$0.dockingSource.invalidate();
@@ -954,8 +954,8 @@ this.origin = null;
 
 Clazz.newMeth(C$, 'c$$javax_swing_JToolBar', function (t) {
 C$.$init$.apply(this);
-this.toolBar = t;
-this.this$0.getHandler().tb = t;
+this.toolBar=t;
+this.this$0.getHandler().tb=t;
 }, 1);
 
 Clazz.newMeth(C$, 'mouseClicked$java_awt_event_MouseEvent', function (e) {
@@ -963,18 +963,18 @@ this.this$0.getHandler().mouseClicked$java_awt_event_MouseEvent(e);
 });
 
 Clazz.newMeth(C$, 'mousePressed$java_awt_event_MouseEvent', function (e) {
-this.this$0.getHandler().tb = this.toolBar;
+this.this$0.getHandler().tb=this.toolBar;
 this.this$0.getHandler().mousePressed$java_awt_event_MouseEvent(e);
-this.isDragging = this.this$0.getHandler().isDragging;
+this.isDragging=this.this$0.getHandler().isDragging;
 });
 
 Clazz.newMeth(C$, 'mouseReleased$java_awt_event_MouseEvent', function (e) {
-this.this$0.getHandler().tb = this.toolBar;
-this.this$0.getHandler().isDragging = this.isDragging;
-this.this$0.getHandler().origin = this.origin;
+this.this$0.getHandler().tb=this.toolBar;
+this.this$0.getHandler().isDragging=this.isDragging;
+this.this$0.getHandler().origin=this.origin;
 this.this$0.getHandler().mouseReleased$java_awt_event_MouseEvent(e);
-this.isDragging = this.this$0.getHandler().isDragging;
-this.origin = this.this$0.getHandler().origin;
+this.isDragging=this.this$0.getHandler().isDragging;
+this.origin=this.this$0.getHandler().origin;
 });
 
 Clazz.newMeth(C$, 'mouseEntered$java_awt_event_MouseEvent', function (e) {
@@ -986,11 +986,11 @@ this.this$0.getHandler().mouseExited$java_awt_event_MouseEvent(e);
 });
 
 Clazz.newMeth(C$, 'mouseDragged$java_awt_event_MouseEvent', function (e) {
-this.this$0.getHandler().tb = this.toolBar;
-this.this$0.getHandler().origin = this.origin;
+this.this$0.getHandler().tb=this.toolBar;
+this.this$0.getHandler().origin=this.origin;
 this.this$0.getHandler().mouseDragged$java_awt_event_MouseEvent(e);
-this.isDragging = this.this$0.getHandler().isDragging;
-this.origin = this.this$0.getHandler().origin;
+this.isDragging=this.this$0.getHandler().isDragging;
+this.origin=this.this$0.getHandler().origin;
 });
 
 Clazz.newMeth(C$, 'mouseMoved$java_awt_event_MouseEvent', function (e) {
@@ -1031,7 +1031,7 @@ return this.orientation;
 Clazz.newMeth(C$, 'setOrientation$I', function (o) {
 if (this.isShowing()) {
 if (o == this.orientation) return;
-this.orientation = o;
+this.orientation=o;
 var size = this.getSize();
 this.setSize$java_awt_Dimension(Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[size.height, size.width]));
 if (this.offset != null ) {
@@ -1049,12 +1049,12 @@ return this.offset;
 });
 
 Clazz.newMeth(C$, 'setOffset$java_awt_Point', function (p) {
-this.offset = p;
+this.offset=p;
 });
 
 Clazz.newMeth(C$, 'setBorderColor$java_awt_Color', function (c) {
 if (this.borderColor === c ) return;
-this.borderColor = c;
+this.borderColor=c;
 this.repaint();
 });
 
@@ -1074,4 +1074,4 @@ return Clazz.new_((I$[7]||$incl$(7)).c$$I$I$I$I,[1, 1, 1, 1]);
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:03:28
+//Created 2018-05-24 08:48:02

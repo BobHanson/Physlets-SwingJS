@@ -15,14 +15,14 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.outsideBorder = null;
-this.insideBorder = null;
+this.outsideBorder=null;
+this.insideBorder=null;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_border_Border$javax_swing_border_Border', function (outsideBorder, insideBorder) {
 Clazz.super_(C$, this,1);
-this.outsideBorder = outsideBorder;
-this.insideBorder = insideBorder;
+this.outsideBorder=outsideBorder;
+this.insideBorder=insideBorder;
 }, 1);
 
 Clazz.newMeth(C$, 'isBorderOpaque', function () {
@@ -35,35 +35,35 @@ var px;
 var py;
 var pw;
 var ph;
-px = x;
-py = y;
-pw = width;
-ph = height;
+px=x;
+py=y;
+pw=width;
+ph=height;
 if (this.outsideBorder != null ) {
 this.outsideBorder.paintBorder$java_awt_Component$java_awt_Graphics$I$I$I$I(c, g, px, py, pw, ph);
-nextInsets = this.outsideBorder.getBorderInsets$java_awt_Component(c);
-px = px+(nextInsets.left);
-py = py+(nextInsets.top);
-pw = pw - nextInsets.right - nextInsets.left ;
-ph = ph - nextInsets.bottom - nextInsets.top ;
+nextInsets=this.outsideBorder.getBorderInsets$java_awt_Component(c);
+px+=nextInsets.left;
+py+=nextInsets.top;
+pw=pw - nextInsets.right - nextInsets.left ;
+ph=ph - nextInsets.bottom - nextInsets.top ;
 }if (this.insideBorder != null ) this.insideBorder.paintBorder$java_awt_Component$java_awt_Graphics$I$I$I$I(c, g, px, py, pw, ph);
 });
 
 Clazz.newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
 var nextInsets;
-insets.top = insets.left = insets.right = insets.bottom = 0;
+insets.top=insets.left=insets.right=insets.bottom=0;
 if (this.outsideBorder != null ) {
-nextInsets = this.outsideBorder.getBorderInsets$java_awt_Component(c);
-insets.top = insets.top+(nextInsets.top);
-insets.left = insets.left+(nextInsets.left);
-insets.right = insets.right+(nextInsets.right);
-insets.bottom = insets.bottom+(nextInsets.bottom);
+nextInsets=this.outsideBorder.getBorderInsets$java_awt_Component(c);
+insets.top+=nextInsets.top;
+insets.left+=nextInsets.left;
+insets.right+=nextInsets.right;
+insets.bottom+=nextInsets.bottom;
 }if (this.insideBorder != null ) {
-nextInsets = this.insideBorder.getBorderInsets$java_awt_Component(c);
-insets.top = insets.top+(nextInsets.top);
-insets.left = insets.left+(nextInsets.left);
-insets.right = insets.right+(nextInsets.right);
-insets.bottom = insets.bottom+(nextInsets.bottom);
+nextInsets=this.insideBorder.getBorderInsets$java_awt_Component(c);
+insets.top+=nextInsets.top;
+insets.left+=nextInsets.left;
+insets.right+=nextInsets.right;
+insets.bottom+=nextInsets.bottom;
 }return insets;
 });
 
@@ -79,4 +79,4 @@ Clazz.newMeth(C$, 'getInsideBorder', function () {
 return this.insideBorder;
 });
 })();
-//Created 2018-05-15 01:02:42
+//Created 2018-05-24 08:46:45

@@ -16,9 +16,9 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_Color$sun_java2d_SurfaceData', function (xorColor, sd) {
 C$.$init$.apply(this);
-this.xorColor = xorColor;
-this.xorPixel = xorColor.getRGB();
-this.alphaMask = -16777216;
+this.xorColor=xorColor;
+this.xorPixel=xorColor.getRGB();
+this.alphaMask=-16777216;
 }, 1);
 
 Clazz.newMeth(C$, 'getXorColor', function () {
@@ -39,4 +39,4 @@ return Clazz.new_((I$[1]||$incl$(1)).c$$sun_java2d_loops_XORComposite$java_awt_i
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:10
+//Created 2018-05-24 08:47:32

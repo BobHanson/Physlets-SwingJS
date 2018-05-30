@@ -95,13 +95,13 @@ throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["primaryType
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["subType"]);
 }if (representationClass == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["representationClass"]);
-}if (params == null ) params = Clazz.new_((I$[5]||$incl$(5)));
+}if (params == null ) params=Clazz.new_((I$[5]||$incl$(5)));
 params.set$S$S("class", representationClass.getName());
 if (humanPresentableName == null ) {
-humanPresentableName = params.get$S("humanPresentableName");
-if (humanPresentableName == null ) humanPresentableName = primaryType + "/" + subType ;
+humanPresentableName=params.get$S("humanPresentableName");
+if (humanPresentableName == null ) humanPresentableName=primaryType + "/" + subType ;
 }try {
-this.mimeType = Clazz.new_((I$[6]||$incl$(6)).c$$S$S$java_awt_datatransfer_MimeTypeParameterList,[primaryType, subType, params]);
+this.mimeType=Clazz.new_((I$[6]||$incl$(6)).c$$S$S$java_awt_datatransfer_MimeTypeParameterList,[primaryType, subType, params]);
 } catch (mtpe) {
 if (Clazz.exceptionOf(mtpe, "java.awt.datatransfer.MimeTypeParseException")){
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["MimeType Parse Exception: " + mtpe.getMessage()]);
@@ -109,8 +109,8 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["MimeTyp
 throw mtpe;
 }
 }
-this.representationClass = representationClass;
-this.humanPresentableName = humanPresentableName;
+this.representationClass=representationClass;
+this.humanPresentableName=humanPresentableName;
 this.mimeType.removeParameter$S("humanPresentableName");
 }, 1);
 
@@ -176,18 +176,18 @@ throw mtpe;
 Clazz.newMeth(C$, 'initialize$S$S$ClassLoader', function (mimeType, humanPresentableName, classLoader) {
 if (mimeType == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["mimeType"]);
-}this.mimeType = Clazz.new_((I$[6]||$incl$(6)).c$$S,[mimeType]);
+}this.mimeType=Clazz.new_((I$[6]||$incl$(6)).c$$S,[mimeType]);
 var rcn = this.getParameter$S("class");
 if (rcn == null ) {
 if ("application/x-java-serialized-object".equals$O(this.mimeType.getBaseType())) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["no representation class specified for:" + mimeType]);
- else this.representationClass = Clazz.getClass((I$[1]||$incl$(1)));
+ else this.representationClass=Clazz.getClass((I$[1]||$incl$(1)));
 } else {
-this.representationClass = C$.tryToLoadClass$S$ClassLoader(rcn, classLoader);
+this.representationClass=C$.tryToLoadClass$S$ClassLoader(rcn, classLoader);
 }this.mimeType.setParameter$S$S("class", this.representationClass.getName());
 if (humanPresentableName == null ) {
-humanPresentableName = this.mimeType.getParameter$S("humanPresentableName");
-if (humanPresentableName == null ) humanPresentableName = this.mimeType.getPrimaryType() + "/" + this.mimeType.getSubType() ;
-}this.humanPresentableName = humanPresentableName;
+humanPresentableName=this.mimeType.getParameter$S("humanPresentableName");
+if (humanPresentableName == null ) humanPresentableName=this.mimeType.getPrimaryType() + "/" + this.mimeType.getSubType() ;
+}this.humanPresentableName=humanPresentableName;
 this.mimeType.removeParameter$S("humanPresentableName");
 });
 
@@ -216,7 +216,7 @@ Clazz.newMeth(C$, 'getTextPlainUnicodeFlavor', function () {
 var encoding = null;
 var transferer = (I$[7]||$incl$(7)).getInstance();
 if (transferer != null ) {
-encoding = transferer.getDefaultUnicodeEncoding();
+encoding=transferer.getDefaultUnicodeEncoding();
 }return Clazz.new_(C$.c$$S$S,["text/plain;charset=" + encoding + ";class=java.io.InputStream" , "Plain Text"]);
 }, 1);
 
@@ -224,7 +224,7 @@ Clazz.newMeth(C$, 'selectBestTextFlavor$java_awt_datatransfer_DataFlavorA', func
 if (availableFlavors == null  || availableFlavors.length == 0 ) {
 return null;
 }if (C$.textFlavorComparator == null ) {
-C$.textFlavorComparator = Clazz.new_((I$[8]||$incl$(8)));
+C$.textFlavorComparator=Clazz.new_((I$[8]||$incl$(8)));
 }var bestFlavor = (I$[9]||$incl$(9)).max$java_util_Collection$java_util_Comparator((I$[10]||$incl$(10)).asList$TTA(availableFlavors), C$.textFlavorComparator);
 if (!bestFlavor.isFlavorTextType()) {
 return null;
@@ -243,9 +243,9 @@ return Clazz.new_((I$[11]||$incl$(11)).c$$S,[transferObject]);
 return Clazz.new_((I$[12]||$incl$(12)).c$$CA,[transferObject]);
 }var stream = null;
 if (Clazz.instanceOf(transferObject, "java.io.InputStream")) {
-stream = transferObject;
+stream=transferObject;
 } else if (Clazz.instanceOf(transferObject, Clazz.array(Byte.TYPE, -1))) {
-stream = Clazz.new_((I$[13]||$incl$(13)).c$$BA,[transferObject]);
+stream=Clazz.new_((I$[13]||$incl$(13)).c$$BA,[transferObject]);
 }if (stream == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["transfer data is not Reader, String, CharBuffer, char array, InputStream, ByteBuffer, or byte array"]);
 }var encoding = this.getParameter$S("charset");
@@ -280,7 +280,7 @@ return (this.mimeType != null ) ? this.mimeType.getParameter$S(paramName) : null
 }});
 
 Clazz.newMeth(C$, 'setHumanPresentableName$S', function (humanPresentableName) {
-this.humanPresentableName = humanPresentableName;
+this.humanPresentableName=humanPresentableName;
 });
 
 Clazz.newMeth(C$, 'equals$O', function (o) {
@@ -316,11 +316,11 @@ return this.isMimeTypeEqual$S(s);
 Clazz.newMeth(C$, 'hashCode', function () {
 var total = 0;
 if (this.representationClass != null ) {
-total = total+(this.representationClass.hashCode());
+total+=this.representationClass.hashCode();
 }if (this.mimeType != null ) {
 var primaryType = this.mimeType.getPrimaryType();
 if (primaryType != null ) {
-total = total+(primaryType.hashCode());
+total+=primaryType.hashCode();
 }if ("text".equals$O(primaryType) && (I$[7]||$incl$(7)).doesSubtypeSupportCharset$java_awt_datatransfer_DataFlavor(this) && this.representationClass != null    && !(this.isRepresentationClassReader() || Clazz.getClass(java.lang.String).equals$O(this.representationClass) || this.isRepresentationClassCharBuffer() || (I$[7]||$incl$(7)).charArrayClass.equals$O(this.representationClass)  ) ) {
 }}return total;
 });
@@ -420,21 +420,21 @@ os.writeObject$O(null);
 
 Clazz.newMeth(C$, 'readExternal$java_io_ObjectInput', function (is) {
 var rcn = null;
-this.mimeType = is.readObject();
+this.mimeType=is.readObject();
 if (this.mimeType != null ) {
-this.humanPresentableName = this.mimeType.getParameter$S("humanPresentableName");
+this.humanPresentableName=this.mimeType.getParameter$S("humanPresentableName");
 this.mimeType.removeParameter$S("humanPresentableName");
-rcn = this.mimeType.getParameter$S("class");
+rcn=this.mimeType.getParameter$S("class");
 if (rcn == null ) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["no class parameter specified in: " + this.mimeType]);
 }}try {
-this.representationClass = is.readObject();
+this.representationClass=is.readObject();
 } catch (ode) {
 if (Clazz.exceptionOf(ode, "java.io.OptionalDataException")){
 if (!ode.eof || ode.length != 0 ) {
 throw ode;
 }if (rcn != null ) {
-this.representationClass = C$.tryToLoadClass$S$ClassLoader(rcn, this.getClass().getClassLoader());
+this.representationClass=C$.tryToLoadClass$S$ClassLoader(rcn, this.getClass().getClassLoader());
 }} else {
 throw ode;
 }
@@ -444,7 +444,7 @@ throw ode;
 Clazz.newMeth(C$, 'clone', function () {
 var newObj = Clazz.clone(this);
 if (this.mimeType != null ) {
-(newObj).mimeType = this.mimeType.clone();
+(newObj).mimeType=this.mimeType.clone();
 }return newObj;
 });
 
@@ -483,4 +483,4 @@ return 0;
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:01:54
+//Created 2018-05-24 08:45:14

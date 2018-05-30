@@ -11,7 +11,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$BA', function (data) {
 C$.$init$.apply(this);
-this.data = data;
+this.data=data;
 }, 1);
 
 Clazz.newMeth(C$, 'equals$O', function (o) {
@@ -34,4 +34,4 @@ return  String.instantialize(this.data);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:55

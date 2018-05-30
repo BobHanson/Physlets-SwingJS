@@ -21,7 +21,7 @@ C$.c$$java_util_Properties.apply(this, [null]);
 
 Clazz.newMeth(C$, 'c$$java_util_Properties', function (defaults) {
 Clazz.super_(C$, this,1);
-this.defaults = defaults;
+this.defaults=defaults;
 }, 1);
 
 Clazz.newMeth(C$, 'setProperty$S$S', function (key, value) {
@@ -44,32 +44,32 @@ var valueStart;
 var c;
 var hasSep;
 var precedingBackslash;
-while ((limit = lr.readLine()) >= 0){
-c = String.fromCharCode(0);
-keyLen = 0;
-valueStart = limit;
-hasSep = false;
-precedingBackslash = false;
+while ((limit=lr.readLine()) >= 0){
+c=String.fromCharCode(0);
+keyLen=0;
+valueStart=limit;
+hasSep=false;
+precedingBackslash=false;
 while (keyLen < limit){
-c = lr.lineBuf[keyLen];
+c=lr.lineBuf[keyLen];
 if ((c == "=" || c == ":" ) && !precedingBackslash ) {
-valueStart = keyLen + 1;
-hasSep = true;
+valueStart=keyLen + 1;
+hasSep=true;
 break;
 } else if ((c == " " || c == "\u0009"  || c == "\u000c" ) && !precedingBackslash ) {
-valueStart = keyLen + 1;
+valueStart=keyLen + 1;
 break;
 }if (c == "\\") {
-precedingBackslash = !precedingBackslash;
+precedingBackslash=!precedingBackslash;
 } else {
-precedingBackslash = false;
+precedingBackslash=false;
 }keyLen++;
 }
 while (valueStart < limit){
-c = lr.lineBuf[valueStart];
+c=lr.lineBuf[valueStart];
 if (c != " " && c != "\u0009"  && c != "\u000c" ) {
 if (!hasSep && (c == "=" || c == ":" ) ) {
-hasSep = true;
+hasSep=true;
 } else {
 break;
 }}valueStart++;
@@ -84,20 +84,20 @@ Clazz.newMeth(C$, 'loadConvert$CA$I$I$CA', function ($in, off, len, convtBuf) {
 if (convtBuf.length < len) {
 var newLen = len * 2;
 if (newLen < 0) {
-newLen = 2147483647;
-}convtBuf = Clazz.array(Character.TYPE, [newLen]);
+newLen=2147483647;
+}convtBuf=Clazz.array(Character.TYPE, [newLen]);
 }var aChar;
 var out = convtBuf;
 var outLen = 0;
 var end = off + len;
 while (off < end){
-aChar = $in[off++];
+aChar=$in[off++];
 if (aChar == "\\") {
-aChar = $in[off++];
+aChar=$in[off++];
 if (aChar == "u") {
 var value = 0;
 for (var i = 0; i < 4; i++) {
-aChar = $in[off++];
+aChar=$in[off++];
 switch (aChar.$c()) {
 case 48:
 case 49:
@@ -109,7 +109,7 @@ case 54:
 case 55:
 case 56:
 case 57:
-value = (value << 4) + aChar.$c() - 48;
+value=(value << 4) + aChar.$c() - 48;
 break;
 case 97:
 case 98:
@@ -117,7 +117,7 @@ case 99:
 case 100:
 case 101:
 case 102:
-value = (value << 4) + 10 + aChar.$c()  - 97;
+value=(value << 4) + 10 + aChar.$c()  - 97;
 break;
 case 65:
 case 66:
@@ -125,21 +125,21 @@ case 67:
 case 68:
 case 69:
 case 70:
-value = (value << 4) + 10 + aChar.$c()  - 65;
+value=(value << 4) + 10 + aChar.$c()  - 65;
 break;
 default:
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Malformed \\uxxxx encoding."]);
 }
 }
-out[outLen++] = String.fromCharCode(value);
+out[outLen++]=String.fromCharCode(value);
 } else {
-if (aChar == "t") aChar = "\u0009";
- else if (aChar == "r") aChar = "\u000d";
- else if (aChar == "n") aChar = "\u000a";
- else if (aChar == "f") aChar = "\u000c";
-out[outLen++] = aChar;
+if (aChar == "t") aChar="\u0009";
+ else if (aChar == "r") aChar="\u000d";
+ else if (aChar == "n") aChar="\u000a";
+ else if (aChar == "f") aChar="\u000c";
+out[outLen++]=aChar;
 }} else {
-out[outLen++] = aChar;
+out[outLen++]=aChar;
 }}
 return  String.instantialize(out, 0, outLen);
 });
@@ -210,14 +210,14 @@ this.inOff = 0;
 
 Clazz.newMeth(C$, 'c$$java_io_InputStream', function (inStream) {
 C$.$init$.apply(this);
-this.inStream = inStream;
-this.inByteBuf = Clazz.array(Byte.TYPE, [8192]);
+this.inStream=inStream;
+this.inByteBuf=Clazz.array(Byte.TYPE, [8192]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_Reader', function (reader) {
 C$.$init$.apply(this);
-this.reader = reader;
-this.inCharBuf = Clazz.array(Character.TYPE, [8192]);
+this.reader=reader;
+this.inCharBuf=Clazz.array(Character.TYPE, [8192]);
 }, 1);
 
 Clazz.newMeth(C$, 'readLine', function () {
@@ -231,18 +231,18 @@ var precedingBackslash = false;
 var skipLF = false;
 while (true){
 if (this.inOff >= this.inLimit) {
-this.inLimit = (this.inStream == null ) ? this.reader.read$CA(this.inCharBuf) : this.inStream.read$BA(this.inByteBuf);
-this.inOff = 0;
+this.inLimit=(this.inStream == null ) ? this.reader.read$CA(this.inCharBuf) : this.inStream.read$BA(this.inByteBuf);
+this.inOff=0;
 if (this.inLimit <= 0) {
 if (len == 0 || isCommentLine ) {
 return -1;
 }return len;
 }}if (this.inStream != null ) {
-c = String.fromCharCode((255 & this.inByteBuf[this.inOff++]));
+c=String.fromCharCode((255 & this.inByteBuf[this.inOff++]));
 } else {
-c = this.inCharBuf[this.inOff++];
+c=this.inCharBuf[this.inOff++];
 }if (skipLF) {
-skipLF = false;
+skipLF=false;
 if (c == "\u000a") {
 continue;
 }}if (skipWhiteSpace) {
@@ -250,43 +250,43 @@ if (c == " " || c == "\u0009"  || c == "\u000c" ) {
 continue;
 }if (!appendedLineBegin && (c == "\u000d" || c == "\u000a" ) ) {
 continue;
-}skipWhiteSpace = false;
-appendedLineBegin = false;
+}skipWhiteSpace=false;
+appendedLineBegin=false;
 }if (isNewLine) {
-isNewLine = false;
+isNewLine=false;
 if (c == "#" || c == "!" ) {
-isCommentLine = true;
+isCommentLine=true;
 continue;
 }}if (c != "\u000a" && c != "\u000d" ) {
-this.lineBuf[len++] = c;
+this.lineBuf[len++]=c;
 if (len == this.lineBuf.length) {
 var newLength = this.lineBuf.length * 2;
 var buf = Clazz.array(Character.TYPE, [newLength]);
 System.arraycopy(this.lineBuf, 0, buf, 0, this.lineBuf.length);
-this.lineBuf = buf;
+this.lineBuf=buf;
 }if (c == "\\") {
-precedingBackslash = !precedingBackslash;
+precedingBackslash=!precedingBackslash;
 } else {
-precedingBackslash = false;
+precedingBackslash=false;
 }} else {
 if (isCommentLine || len == 0 ) {
-isCommentLine = false;
-isNewLine = true;
-skipWhiteSpace = true;
-len = 0;
+isCommentLine=false;
+isNewLine=true;
+skipWhiteSpace=true;
+len=0;
 continue;
 }if (this.inOff >= this.inLimit) {
-this.inLimit = (this.inStream == null ) ? this.reader.read$CA(this.inCharBuf) : this.inStream.read$BA(this.inByteBuf);
-this.inOff = 0;
+this.inLimit=(this.inStream == null ) ? this.reader.read$CA(this.inCharBuf) : this.inStream.read$BA(this.inByteBuf);
+this.inOff=0;
 if (this.inLimit <= 0) {
 return len;
 }}if (precedingBackslash) {
-len = len-(1);
-skipWhiteSpace = true;
-appendedLineBegin = true;
-precedingBackslash = false;
+len-=1;
+skipWhiteSpace=true;
+appendedLineBegin=true;
+precedingBackslash=false;
 if (c == "\u000d") {
-skipLF = true;
+skipLF=true;
 }} else {
 return len;
 }}}
@@ -295,4 +295,4 @@ return len;
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:14
+//Created 2018-05-24 08:45:48

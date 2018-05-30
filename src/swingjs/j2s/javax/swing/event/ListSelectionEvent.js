@@ -17,9 +17,9 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$O$I$I$Z', function (source, firstIndex, lastIndex, isAdjusting) {
 C$.superclazz.c$.apply(this, [source]);
 C$.$init$.apply(this);
-this.firstIndex = firstIndex;
-this.lastIndex = lastIndex;
-this.isAdjusting = isAdjusting;
+this.firstIndex=firstIndex;
+this.lastIndex=lastIndex;
+this.isAdjusting=isAdjusting;
 }, 1);
 
 Clazz.newMeth(C$, 'getFirstIndex', function () {
@@ -41,4 +41,4 @@ return this.getClass().getName() + "[" + properties + "]" ;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:45
+//Created 2018-05-24 08:46:48

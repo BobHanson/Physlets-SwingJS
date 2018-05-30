@@ -15,7 +15,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_Component$I$java_awt_Component', function (source, id, child) {
 C$.superclazz.c$$java_awt_Component$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.child = child;
+this.child=child;
 }, 1);
 
 Clazz.newMeth(C$, 'getContainer', function () {
@@ -30,17 +30,17 @@ Clazz.newMeth(C$, 'paramString', function () {
 var typeStr;
 switch (this.id) {
 case 300:
-typeStr = "COMPONENT_ADDED";
+typeStr="COMPONENT_ADDED";
 break;
 case 301:
-typeStr = "COMPONENT_REMOVED";
+typeStr="COMPONENT_REMOVED";
 break;
 default:
-typeStr = "unknown type";
+typeStr="unknown type";
 }
 return typeStr + ",child=" + this.child.getName() ;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:17

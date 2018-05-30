@@ -17,28 +17,28 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.map = Clazz.new_((I$[1]||$incl$(1)));
+this.map=Clazz.new_((I$[1]||$incl$(1)));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Collection', function (c) {
 Clazz.super_(C$, this,1);
-this.map = Clazz.new_((I$[1]||$incl$(1)).c$$I,[Math.max(((c.size() / 0.75)|0) + 1, 16)]);
+this.map=Clazz.new_((I$[1]||$incl$(1)).c$$I,[Math.max(((c.size() / 0.75)|0) + 1, 16)]);
 this.addAll$java_util_Collection(c);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$F', function (initialCapacity, loadFactor) {
 Clazz.super_(C$, this,1);
-this.map = Clazz.new_((I$[1]||$incl$(1)).c$$I$F,[initialCapacity, loadFactor]);
+this.map=Clazz.new_((I$[1]||$incl$(1)).c$$I$F,[initialCapacity, loadFactor]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (initialCapacity) {
 Clazz.super_(C$, this,1);
-this.map = Clazz.new_((I$[1]||$incl$(1)).c$$I,[initialCapacity]);
+this.map=Clazz.new_((I$[1]||$incl$(1)).c$$I,[initialCapacity]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$F$Z', function (initialCapacity, loadFactor, dummy) {
 Clazz.super_(C$, this,1);
-this.map = Clazz.new_((I$[2]||$incl$(2)).c$$I$F,[initialCapacity, loadFactor]);
+this.map=Clazz.new_((I$[2]||$incl$(2)).c$$I$F,[initialCapacity, loadFactor]);
 }, 1);
 
 Clazz.newMeth(C$, 'iterator', function () {
@@ -72,7 +72,7 @@ this.map.clear();
 Clazz.newMeth(C$, 'clone', function () {
 try {
 var newSet = Clazz.clone(this);
-newSet.map = this.map.clone();
+newSet.map=this.map.clone();
 return newSet;
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.CloneNotSupportedException")){
@@ -96,7 +96,7 @@ Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream', function (s) {
 s.defaultReadObject();
 var capacity = s.readInt();
 var loadFactor = s.readFloat();
-this.map = (Clazz.instanceOf((this), "java.util.LinkedHashSet") ? Clazz.new_((I$[2]||$incl$(2)).c$$I$F,[capacity, loadFactor]) : Clazz.new_((I$[1]||$incl$(1)).c$$I$F,[capacity, loadFactor]));
+this.map=(Clazz.instanceOf((this), "java.util.LinkedHashSet") ? Clazz.new_((I$[2]||$incl$(2)).c$$I$F,[capacity, loadFactor]) : Clazz.new_((I$[1]||$incl$(1)).c$$I$F,[capacity, loadFactor]));
 var size = s.readInt();
 for (var i = 0; i < size; i++) {
 var e = s.readObject();
@@ -104,4 +104,4 @@ this.map.put$TK$TV(e, C$.PRESENT);
 }
 });
 })();
-//Created 2018-05-15 01:02:13
+//Created 2018-05-24 08:45:47

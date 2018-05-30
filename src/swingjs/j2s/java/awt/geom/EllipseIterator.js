@@ -21,13 +21,13 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_Ellipse2D$java_awt_geom_AffineTransform', function (e, at) {
 C$.$init$.apply(this);
-this.x = e.getX();
-this.y = e.getY();
-this.w = e.getWidth();
-this.h = e.getHeight();
-this.affine = at;
+this.x=e.getX();
+this.y=e.getY();
+this.w=e.getWidth();
+this.h=e.getHeight();
+this.affine=at;
 if (this.w < 0  || this.h < 0  ) {
-this.index = 6;
+this.index=6;
 }}, 1);
 
 Clazz.newMeth(C$, 'getWindingRule', function () {
@@ -49,18 +49,18 @@ throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["ellipse i
 return 4;
 }if (this.index == 0) {
 var ctrls = C$.ctrlpts[3];
-coords[0] = (this.x + ctrls[4] * this.w);
-coords[1] = (this.y + ctrls[5] * this.h);
+coords[0]=(this.x + ctrls[4] * this.w);
+coords[1]=(this.y + ctrls[5] * this.h);
 if (this.affine != null ) {
 this.affine.transform$FA$I$FA$I$I(coords, 0, coords, 0, 1);
 }return 0;
 }var ctrls = C$.ctrlpts[this.index - 1];
-coords[0] = (this.x + ctrls[0] * this.w);
-coords[1] = (this.y + ctrls[1] * this.h);
-coords[2] = (this.x + ctrls[2] * this.w);
-coords[3] = (this.y + ctrls[3] * this.h);
-coords[4] = (this.x + ctrls[4] * this.w);
-coords[5] = (this.y + ctrls[5] * this.h);
+coords[0]=(this.x + ctrls[0] * this.w);
+coords[1]=(this.y + ctrls[1] * this.h);
+coords[2]=(this.x + ctrls[2] * this.w);
+coords[3]=(this.y + ctrls[3] * this.h);
+coords[4]=(this.x + ctrls[4] * this.w);
+coords[5]=(this.y + ctrls[5] * this.h);
 if (this.affine != null ) {
 this.affine.transform$FA$I$FA$I$I(coords, 0, coords, 0, 3);
 }return 3;
@@ -73,18 +73,18 @@ throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["ellipse i
 return 4;
 }if (this.index == 0) {
 var ctrls = C$.ctrlpts[3];
-coords[0] = this.x + ctrls[4] * this.w;
-coords[1] = this.y + ctrls[5] * this.h;
+coords[0]=this.x + ctrls[4] * this.w;
+coords[1]=this.y + ctrls[5] * this.h;
 if (this.affine != null ) {
 this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, 1);
 }return 0;
 }var ctrls = C$.ctrlpts[this.index - 1];
-coords[0] = this.x + ctrls[0] * this.w;
-coords[1] = this.y + ctrls[1] * this.h;
-coords[2] = this.x + ctrls[2] * this.w;
-coords[3] = this.y + ctrls[3] * this.h;
-coords[4] = this.x + ctrls[4] * this.w;
-coords[5] = this.y + ctrls[5] * this.h;
+coords[0]=this.x + ctrls[0] * this.w;
+coords[1]=this.y + ctrls[1] * this.h;
+coords[2]=this.x + ctrls[2] * this.w;
+coords[3]=this.y + ctrls[3] * this.h;
+coords[4]=this.x + ctrls[4] * this.w;
+coords[5]=this.y + ctrls[5] * this.h;
 if (this.affine != null ) {
 this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, 3);
 }return 3;
@@ -92,4 +92,4 @@ this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, 3);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:59
+//Created 2018-05-24 08:45:21

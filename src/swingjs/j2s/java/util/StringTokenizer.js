@@ -26,10 +26,10 @@ C$.c$$S$S$Z.apply(this, [string, delimiters, false]);
 Clazz.newMeth(C$, 'c$$S$S$Z', function (string, delimiters, returnDelimiters) {
 C$.$init$.apply(this);
 if (string != null ) {
-this.string = string;
-this.delimiters = delimiters;
-this.returnDelimiters = returnDelimiters;
-this.position = 0;
+this.string=string;
+this.delimiters=delimiters;
+this.returnDelimiters=returnDelimiters;
+this.position=0;
 } else throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
 }, 1);
 
@@ -41,9 +41,9 @@ if (this.delimiters.indexOf(this.string.charAt(i), 0) >= 0) {
 if (this.returnDelimiters) count++;
 if (inToken) {
 count++;
-inToken = false;
+inToken=false;
 }} else {
-inToken = true;
+inToken=true;
 }}
 if (inToken) count++;
 return count;
@@ -77,7 +77,7 @@ for (this.position++; this.position < length; this.position++) if (this.delimite
 return this.string.substring(i);
 }while (i < length && this.delimiters.indexOf(this.string.charAt(i), 0) >= 0 )i++;
 
-this.position = i;
+this.position=i;
 if (i < length) {
 for (this.position++; this.position < length; this.position++) if (this.delimiters.indexOf(this.string.charAt(this.position), 0) >= 0) return this.string.substring(i, this.position);
 
@@ -86,10 +86,10 @@ return this.string.substring(i);
 });
 
 Clazz.newMeth(C$, 'nextToken$S', function (delims) {
-this.delimiters = delims;
+this.delimiters=delims;
 return this.nextToken();
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:14
+//Created 2018-05-24 08:45:49

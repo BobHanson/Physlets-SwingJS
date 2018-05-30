@@ -15,7 +15,7 @@ this.params.put$TK$TV("type", "JPG");
 
 Clazz.newMeth(C$, 'write$javax_imageio_metadata_IIOMetadata$javax_imageio_IIOImage$javax_imageio_ImageWriteParam', function (streamMetadata, image, param) {
 this.setMetaData$O(streamMetadata);
-if (param == null ) param = this.getDefaultWriteParam();
+if (param == null ) param=this.getDefaultWriteParam();
 this.params.put$TK$TV("qualityJPG", Integer.$valueOf(((param.getCompressionQuality() * 100)|0)));
 this.write$javax_imageio_IIOImage(image);
 });
@@ -24,4 +24,4 @@ Clazz.newMeth(C$, 'getDefaultWriteParam', function () {
 return Clazz.new_((I$[1]||$incl$(1)).c$$java_util_Locale,[null]);
 });
 })();
-//Created 2018-05-15 01:03:18
+//Created 2018-05-24 08:47:48

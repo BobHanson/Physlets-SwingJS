@@ -19,19 +19,19 @@ this.elementStack = null;
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Document', function (document) {
 C$.$init$.apply(this);
-this.root = document.getDefaultRootElement();
+this.root=document.getDefaultRootElement();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (root) {
 C$.$init$.apply(this);
-this.root = root;
+this.root=root;
 }, 1);
 
 Clazz.newMeth(C$, 'clone', function () {
 try {
 var it = Clazz.new_(C$.c$$javax_swing_text_Element,[this.root]);
 if (this.elementStack != null ) {
-it.elementStack = Clazz.new_((I$[1]||$incl$(1)));
+it.elementStack=Clazz.new_((I$[1]||$incl$(1)));
 for (var i = 0; i < this.elementStack.size(); i++) {
 var item = this.elementStack.elementAt$I(i);
 var clonee = item.clone();
@@ -50,7 +50,7 @@ throw e;
 Clazz.newMeth(C$, 'first', function () {
 if (this.root == null ) {
 return null;
-}this.elementStack = Clazz.new_((I$[1]||$incl$(1)));
+}this.elementStack=Clazz.new_((I$[1]||$incl$(1)));
 if (this.root.getElementCount() != 0) {
 this.elementStack.push$TE(Clazz.new_((I$[3]||$incl$(3)).c$$javax_swing_text_Element, [this, null, this.root]));
 }return this.root;
@@ -101,7 +101,7 @@ return this.next();
 
 Clazz.newMeth(C$, 'previous', function () {
 var stackSize;
-if (this.elementStack == null  || (stackSize = this.elementStack.size()) == 0 ) {
+if (this.elementStack == null  || (stackSize=this.elementStack.size()) == 0 ) {
 return null;
 }var item = this.elementStack.peek();
 var elem = item.getElement();
@@ -114,10 +114,10 @@ return elem;
 if (stackSize == 1) {
 return null;
 }var top = this.elementStack.pop();
-item = this.elementStack.peek();
+item=this.elementStack.peek();
 this.elementStack.push$TE(top);
-elem = item.getElement();
-index = item.getIndex();
+elem=item.getElement();
+index=item.getIndex();
 return ((index == -1) ? elem : p$.getDeepestLeaf$javax_swing_text_Element.apply(this, [elem.getElement$I(index)]));
 }return null;
 });
@@ -150,8 +150,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
 C$.$init$.apply(this);
-this.item = elem;
-this.childIndex = -1;
+this.item=elem;
+this.childIndex=-1;
 }, 1);
 
 Clazz.newMeth(C$, 'incrementIndex', function () {
@@ -175,4 +175,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:54
+//Created 2018-05-24 08:47:04

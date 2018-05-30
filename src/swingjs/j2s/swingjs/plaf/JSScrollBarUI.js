@@ -16,7 +16,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.isScrollBar = true;
+this.isScrollBar=true;
 }, 1);
 
 Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
@@ -35,10 +35,10 @@ return Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[wh, wh]);
 });
 
 Clazz.newMeth(C$, 'setVisible$Z', function (b) {
-this.isInvisible = (this.myScrollPaneUI != null  && this.myScrollPaneUI.scrollBarUIDisabled );
-b = (b&!this.isInvisible);
+this.isInvisible=(this.myScrollPaneUI != null  && this.myScrollPaneUI.scrollBarUIDisabled );
+b&=!this.isInvisible;
 (I$[3]||$incl$(3)).setVisible(this.getOuterNode(), b);
 (I$[3]||$incl$(3)).setVisible(this.jqSlider, b);
 });
 })();
-//Created 2018-05-15 01:03:25
+//Created 2018-05-24 08:47:57

@@ -22,14 +22,14 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.fd = -1;
-this.useCount = Clazz.new_((I$[1]||$incl$(1)));
+this.fd=-1;
+this.useCount=Clazz.new_((I$[1]||$incl$(1)));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (fd) {
 C$.$init$.apply(this);
-this.fd = fd;
-this.useCount = Clazz.new_((I$[1]||$incl$(1)));
+this.fd=fd;
+this.useCount=Clazz.new_((I$[1]||$incl$(1)));
 }, 1);
 
 Clazz.newMeth(C$, 'valid', function () {
@@ -44,4 +44,4 @@ Clazz.newMeth(C$, 'decrementAndGetUseCount', function () {
 return this.useCount.decrementAndGet();
 });
 })();
-//Created 2018-05-15 01:02:04
+//Created 2018-05-24 08:45:33

@@ -19,7 +19,7 @@ return null;
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.listener = Clazz.new_((I$[1]||$incl$(1)));
+this.listener=Clazz.new_((I$[1]||$incl$(1)));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (title) {
@@ -55,4 +55,4 @@ Clazz.newMeth(C$, 'getMenubar', function () {
 return this.getJMenuBar();
 });
 })();
-//Created 2018-05-15 01:01:43
+//Created 2018-05-24 08:45:00

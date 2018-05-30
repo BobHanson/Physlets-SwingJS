@@ -23,8 +23,8 @@ C$.c$$I$I.apply(this, [p.x, p.y]);
 
 Clazz.newMeth(C$, 'c$$I$I', function (x, y) {
 Clazz.super_(C$, this,1);
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 }, 1);
 
 Clazz.newMeth(C$, 'getX', function () {
@@ -48,18 +48,18 @@ this.move$I$I(x, y);
 });
 
 Clazz.newMeth(C$, 'setLocation$D$D', function (x, y) {
-this.x = (Math.floor(x + 0.5)|0);
-this.y = (Math.floor(y + 0.5)|0);
+this.x=(Math.floor(x + 0.5)|0);
+this.y=(Math.floor(y + 0.5)|0);
 });
 
 Clazz.newMeth(C$, 'move$I$I', function (x, y) {
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 });
 
 Clazz.newMeth(C$, 'translate$I$I', function (dx, dy) {
-this.x = this.x+(dx);
-this.y = this.y+(dy);
+this.x+=dx;
+this.y+=dy;
 });
 
 Clazz.newMeth(C$, 'equals$O', function (obj) {
@@ -73,4 +73,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.getClass().getName() + "[x=" + this.x + ",y=" + this.y + "]" ;
 });
 })();
-//Created 2018-05-15 01:01:53
+//Created 2018-05-24 08:45:12

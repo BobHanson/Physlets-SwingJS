@@ -18,21 +18,21 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_io_OutputStream$S', function (out, charsetName) {
 C$.superclazz.c$$O.apply(this, [out]);
 C$.$init$.apply(this);
-this.stream = out;
+this.stream=out;
 p$.setCharset$S.apply(this, [charsetName]);
 }, 1);
 
 Clazz.newMeth(C$, 'setCharset$S', function (charsetName) {
-if (charsetName == null ) charsetName = "UTF-8";
+if (charsetName == null ) charsetName="UTF-8";
 if (!charsetName.equals$O("UTF-8")) throw Clazz.new_(Clazz.load('java.io.UnsupportedEncodingException'));
-this.charsetName = "UTF-8";
-this.writer = Clazz.new_((I$[1]||$incl$(1)));
+this.charsetName="UTF-8";
+this.writer=Clazz.new_((I$[1]||$incl$(1)));
 });
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream', function (out) {
 C$.superclazz.c$$O.apply(this, [out]);
 C$.$init$.apply(this);
-this.stream = out;
+this.stream=out;
 try {
 p$.setCharset$S.apply(this, [null]);
 } catch (e) {
@@ -72,7 +72,7 @@ var s = this.writer.getBuffer().toString();
 if (s.length$() > 0) {
 var buf = s.getBytes();
 this.stream.write$BA$I$I(buf, 0, buf.length);
-}this.writer = Clazz.new_((I$[1]||$incl$(1)));
+}this.writer=Clazz.new_((I$[1]||$incl$(1)));
 });
 
 Clazz.newMeth(C$, 'close', function () {
@@ -86,4 +86,4 @@ return (I$[2]||$incl$(2)).getInstanceWithParams$S$ClassA$OA("java.io.BufferedWri
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:05
+//Created 2018-05-24 08:45:34

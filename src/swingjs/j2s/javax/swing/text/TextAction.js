@@ -35,7 +35,7 @@ h.put$TK$TV((value != null  ? value : ""), a);
 var actions = Clazz.array((I$[2]||$incl$(2)), [h.size()]);
 var index = 0;
 for (var e = h.elements(); e.hasMoreElements(); ) {
-actions[index++] = e.nextElement();
+actions[index++]=e.nextElement();
 }
 return actions;
 }, 1);
@@ -46,4 +46,4 @@ return (I$[3]||$incl$(3)).getFocusedComponent();
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:58
+//Created 2018-05-24 08:47:09

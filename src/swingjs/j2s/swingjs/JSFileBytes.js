@@ -15,7 +15,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$BA', function (name, data) {
 C$.superclazz.c$$S.apply(this, [name]);
 C$.$init$.apply(this);
-this.bytes = data;
+this.bytes=data;
 }, 1);
 
 Clazz.newMeth(C$, 'getData', function () {
@@ -24,4 +24,4 @@ return this.bytes;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:14
+//Created 2018-05-24 08:47:42

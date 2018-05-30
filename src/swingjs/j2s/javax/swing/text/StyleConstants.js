@@ -108,7 +108,7 @@ a.addAttribute$O$O(C$.IconAttribute, c);
 Clazz.newMeth(C$, 'getFontFamily$javax_swing_text_AttributeSet', function (a) {
 var family = a.getAttribute$O(C$.FontFamily);
 if (family == null ) {
-family = "Monospaced";
+family="Monospaced";
 }return family;
 }, 1);
 
@@ -196,7 +196,7 @@ a.addAttribute$O$O(C$.Subscript, (I$[5]||$incl$(5)).$valueOf(b));
 Clazz.newMeth(C$, 'getForeground$javax_swing_text_AttributeSet', function (a) {
 var fg = a.getAttribute$O(C$.Foreground);
 if (fg == null ) {
-fg = (I$[6]||$incl$(6)).black;
+fg=(I$[6]||$incl$(6)).black;
 }return fg;
 }, 1);
 
@@ -207,7 +207,7 @@ a.addAttribute$O$O(C$.Foreground, fg);
 Clazz.newMeth(C$, 'getBackground$javax_swing_text_AttributeSet', function (a) {
 var fg = a.getAttribute$O(C$.Background);
 if (fg == null ) {
-fg = (I$[6]||$incl$(6)).black;
+fg=(I$[6]||$incl$(6)).black;
 }return fg;
 }, 1);
 
@@ -303,7 +303,7 @@ a.addAttribute$O$O(C$.TabSet, tabs);
 
 Clazz.newMeth(C$, 'c$$S', function (representation) {
 C$.$init$.apply(this);
-this.representation = representation;
+this.representation=representation;
 }, 1);
 ;
 (function(){var C$=Clazz.newClass(P$.StyleConstants, "ParagraphConstants", function(){
@@ -384,4 +384,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:57
+//Created 2018-05-24 08:47:08

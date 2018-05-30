@@ -47,10 +47,10 @@ break;
 });
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.splitPane = jc;
-this.dividerLocationIsSet = false;
-this.dividerKeyboardResize = false;
-this.keepHidden = false;
+this.splitPane=jc;
+this.dividerLocationIsSet=false;
+this.dividerKeyboardResize=false;
+this.keepHidden=false;
 this.installDefaults();
 this.installListeners();
 this.setLastDragLocation$I(-1);
@@ -60,10 +60,10 @@ Clazz.newMeth(C$, 'installDefaults', function () {
 (I$[4]||$incl$(4)).installBorder$javax_swing_JComponent$S(this.splitPane, "SplitPane.border");
 (I$[4]||$incl$(4)).installColors$javax_swing_JComponent$S$S(this.splitPane, "SplitPane.background", "SplitPane.foreground");
 (I$[4]||$incl$(4)).installProperty$javax_swing_JComponent$S$O(this.splitPane, "opaque", (I$[5]||$incl$(5)).TRUE);
-if (this.divider == null ) this.divider = Clazz.new_((I$[6]||$incl$(6)).c$$swingjs_plaf_JSSplitPaneUI, [this, null, this]);
+if (this.divider == null ) this.divider=Clazz.new_((I$[6]||$incl$(6)).c$$swingjs_plaf_JSSplitPaneUI, [this, null, this]);
 this.setOrientation$I(this.splitPane.getOrientation());
 (I$[4]||$incl$(4)).installProperty$javax_swing_JComponent$S$O(this.splitPane, "dividerSize", (I$[7]||$incl$(7)).get$O("SplitPane.dividerSize"));
-this.dividerSize = this.splitPane.getDividerSize();
+this.dividerSize=this.splitPane.getDividerSize();
 this.splitPane.add$java_awt_Component$O(this.divider, "divider");
 this.setContinuousLayout$Z(this.splitPane.isContinuousLayout());
 this.resetLayoutManager();
@@ -74,16 +74,16 @@ this.setNonContinuousLayoutDivider$java_awt_Component$Z(this.nonContinuousLayout
 }});
 
 Clazz.newMeth(C$, 'installListeners', function () {
-if ((this.propertyChangeListener = this.createPropertyChangeListener()) != null ) {
+if ((this.propertyChangeListener=this.createPropertyChangeListener()) != null ) {
 this.splitPane.addPropertyChangeListener$java_beans_PropertyChangeListener(this.propertyChangeListener);
 }});
 
 Clazz.newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (jc) {
 this.uninstallListeners();
 this.uninstallDefaults();
-this.dividerLocationIsSet = false;
-this.dividerKeyboardResize = false;
-this.splitPane = null;
+this.dividerLocationIsSet=false;
+this.dividerKeyboardResize=false;
+this.splitPane=null;
 });
 
 Clazz.newMeth(C$, 'uninstallDefaults', function () {
@@ -93,16 +93,16 @@ this.splitPane.setLayout$java_awt_LayoutManager(null);
 this.splitPane.remove$java_awt_Component(this.nonContinuousLayoutDivider);
 }(I$[4]||$incl$(4)).uninstallBorder$javax_swing_JComponent(this.splitPane);
 this.splitPane.remove$java_awt_Component(this.divider);
-this.divider = null;
-this.nonContinuousLayoutDivider = null;
+this.divider=null;
+this.nonContinuousLayoutDivider=null;
 this.setNonContinuousLayoutDivider$java_awt_Component(null);
 });
 
 Clazz.newMeth(C$, 'uninstallListeners', function () {
 if (this.propertyChangeListener != null ) {
 this.splitPane.removePropertyChangeListener$java_beans_PropertyChangeListener(this.propertyChangeListener);
-this.propertyChangeListener = null;
-}this.handler = null;
+this.propertyChangeListener=null;
+}this.handler=null;
 });
 
 Clazz.newMeth(C$, 'createPropertyChangeListener', function () {
@@ -111,7 +111,7 @@ return this.getHandler();
 
 Clazz.newMeth(C$, 'getHandler', function () {
 if (this.handler == null ) {
-this.handler = Clazz.new_((I$[8]||$incl$(8)), [this, null]);
+this.handler=Clazz.new_((I$[8]||$incl$(8)), [this, null]);
 }return this.handler;
 });
 
@@ -124,7 +124,7 @@ return this.orientation;
 });
 
 Clazz.newMeth(C$, 'setOrientation$I', function (orientation) {
-this.orientation = orientation;
+this.orientation=orientation;
 });
 
 Clazz.newMeth(C$, 'isContinuousLayout', function () {
@@ -132,7 +132,7 @@ return this.continuousLayout;
 });
 
 Clazz.newMeth(C$, 'setContinuousLayout$Z', function (b) {
-this.continuousLayout = b;
+this.continuousLayout=b;
 });
 
 Clazz.newMeth(C$, 'getLastDragLocation', function () {
@@ -140,7 +140,7 @@ return this.lastDragLocation;
 });
 
 Clazz.newMeth(C$, 'setLastDragLocation$I', function (l) {
-this.lastDragLocation = l;
+this.lastDragLocation=l;
 });
 
 Clazz.newMeth(C$, 'getKeyboardMoveIncrement', function () {
@@ -171,7 +171,7 @@ this.setNonContinuousLayoutDivider$java_awt_Component$Z(newDivider, true);
 Clazz.newMeth(C$, 'setNonContinuousLayoutDivider$java_awt_Component$Z', function (newDivider, rememberSizes) {
 if (this.nonContinuousLayoutDivider != null  && this.splitPane != null  ) {
 this.splitPane.remove$java_awt_Component(this.nonContinuousLayoutDivider);
-}this.nonContinuousLayoutDivider = newDivider;
+}this.nonContinuousLayoutDivider=newDivider;
 });
 
 Clazz.newMeth(C$, 'getNonContinuousLayoutDivider', function () {
@@ -191,9 +191,9 @@ this.splitPane.repaint();
 
 Clazz.newMeth(C$, 'setDividerLocation$javax_swing_JSplitPane$I', function (jc, location) {
 if (this.ignoreDividerLocationChange) {
-this.ignoreDividerLocationChange = false;
+this.ignoreDividerLocationChange=false;
 return;
-}this.dividerLocationIsSet = true;
+}this.dividerLocationIsSet=true;
 this.splitPane.revalidate();
 this.splitPane.repaint();
 if (this.keepHidden) {
@@ -215,14 +215,14 @@ if ((leftC != null ) && (leftC.isVisible()) ) {
 var insets = this.splitPane.getInsets();
 var minSize = leftC.getMinimumSize();
 if (this.orientation == 1) {
-minLoc = minSize.width;
+minLoc=minSize.width;
 } else {
-minLoc = minSize.height;
+minLoc=minSize.height;
 }if (insets != null ) {
 if (this.orientation == 1) {
-minLoc = minLoc+(insets.left);
+minLoc+=insets.left;
 } else {
-minLoc = minLoc+(insets.top);
+minLoc+=insets.top;
 }}}return minLoc;
 });
 
@@ -234,17 +234,17 @@ if (rightC != null ) {
 var insets = this.splitPane.getInsets();
 var minSize = Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[0, 0]);
 if (rightC.isVisible()) {
-minSize = rightC.getMinimumSize();
+minSize=rightC.getMinimumSize();
 }if (this.orientation == 1) {
-maxLoc = splitPaneSize.width - minSize.width;
+maxLoc=splitPaneSize.width - minSize.width;
 } else {
-maxLoc = splitPaneSize.height - minSize.height;
-}maxLoc = maxLoc-(this.dividerSize);
+maxLoc=splitPaneSize.height - minSize.height;
+}maxLoc-=this.dividerSize;
 if (insets != null ) {
 if (this.orientation == 1) {
-maxLoc = maxLoc-(insets.right);
+maxLoc-=insets.right;
 } else {
-maxLoc = maxLoc-(insets.top);
+maxLoc-=insets.top;
 }}}return Math.max(this.getMinimumDividerLocation$javax_swing_JSplitPane(this.splitPane), maxLoc);
 });
 
@@ -253,9 +253,9 @@ Clazz.newMeth(C$, 'finishedPaintingChildren$javax_swing_JSplitPane$java_awt_Grap
 
 Clazz.newMeth(C$, 'paint$java_awt_Graphics$javax_swing_JComponent', function (g, jc) {
 if (!this.painted && this.splitPane.getDividerLocation() < 0 ) {
-this.ignoreDividerLocationChange = true;
+this.ignoreDividerLocationChange=true;
 this.splitPane.setDividerLocationInt$I(this.getDividerLocation$javax_swing_JSplitPane(this.splitPane));
-}this.painted = true;
+}this.painted=true;
 });
 
 Clazz.newMeth(C$, 'getPreferredSize$javax_swing_JComponent', function (jc) {
@@ -279,9 +279,9 @@ return null;
 
 Clazz.newMeth(C$, 'resetLayoutManager', function () {
 if (this.orientation == 1) {
-this.layoutManager = Clazz.new_((I$[11]||$incl$(11)).c$$I, [this, null, 0]);
+this.layoutManager=Clazz.new_((I$[11]||$incl$(11)).c$$I, [this, null, 0]);
 } else {
-this.layoutManager = Clazz.new_((I$[11]||$incl$(11)).c$$I, [this, null, 1]);
+this.layoutManager=Clazz.new_((I$[11]||$incl$(11)).c$$I, [this, null, 1]);
 }this.splitPane.setLayout$java_awt_LayoutManager(this.layoutManager);
 this.layoutManager.updateComponents();
 this.splitPane.revalidate();
@@ -289,7 +289,7 @@ this.splitPane.repaint();
 });
 
 Clazz.newMeth(C$, 'setKeepHidden$Z', function (keepHidden) {
-this.keepHidden = keepHidden;
+this.keepHidden=keepHidden;
 });
 
 Clazz.newMeth(C$, 'getKeepHidden', function () {
@@ -297,16 +297,16 @@ return this.keepHidden;
 });
 
 Clazz.newMeth(C$, 'startDragging', function () {
-this.beginDragDividerLocation = this.getDividerLocation$javax_swing_JSplitPane(this.splitPane);
-this.draggingHW = true;
+this.beginDragDividerLocation=this.getDividerLocation$javax_swing_JSplitPane(this.splitPane);
+this.draggingHW=true;
 if (this.orientation == 1) {
 this.setLastDragLocation$I(this.divider.getBounds().x);
-this.dividerSize = this.divider.getSize().width;
+this.dividerSize=this.divider.getSize().width;
 if (!this.isContinuousLayout() && this.draggingHW ) {
 this.nonContinuousLayoutDivider.setBounds$I$I$I$I(this.getLastDragLocation(), 0, this.dividerSize, this.splitPane.getHeight());
 }} else {
 this.setLastDragLocation$I(this.divider.getBounds().y);
-this.dividerSize = this.divider.getSize().height;
+this.dividerSize=this.divider.getSize().height;
 if (!this.isContinuousLayout() && this.draggingHW ) {
 this.nonContinuousLayoutDivider.setBounds$I$I$I$I(0, this.getLastDragLocation(), this.splitPane.getWidth(), this.dividerSize);
 }}});
@@ -522,15 +522,15 @@ C$.c$$I.apply(this, [0]);
 
 Clazz.newMeth(C$, 'c$$I', function (axis) {
 C$.$init$.apply(this);
-this.axis = axis;
-this.components = Clazz.array((I$[1]||$incl$(1)), [3]);
-this.sizes = Clazz.array(Integer.TYPE, [3]);
+this.axis=axis;
+this.components=Clazz.array((I$[1]||$incl$(1)), [3]);
+this.sizes=Clazz.array(Integer.TYPE, [3]);
 }, 1);
 
 Clazz.newMeth(C$, 'layoutContainer$java_awt_Container', function (container) {
 var containerSize = container.getSize();
 if (containerSize.height <= 0 || containerSize.width <= 0 ) {
-this.lastSplitPaneSize = 0;
+this.lastSplitPaneSize=0;
 return;
 }var spDividerLocation = this.this$0.splitPane.getDividerLocation();
 var insets = this.this$0.splitPane.getInsets();
@@ -541,31 +541,31 @@ if ((this.doReset && !this.this$0.dividerLocationIsSet ) || spDividerLocation < 
 this.resetToPreferredSizes$I(availableSize);
 } else if (this.lastSplitPaneSize <= 0 || availableSize == this.lastSplitPaneSize  || !this.this$0.painted  || (dSize != null  && this.getSizeForPrimaryAxis$java_awt_Dimension(dSize) != this.sizes[2] ) ) {
 if (dSize != null ) {
-this.sizes[2] = this.getSizeForPrimaryAxis$java_awt_Dimension(dSize);
+this.sizes[2]=this.getSizeForPrimaryAxis$java_awt_Dimension(dSize);
 } else {
-this.sizes[2] = 0;
+this.sizes[2]=0;
 }this.setDividerLocation$I$I(spDividerLocation - dOffset, availableSize);
-this.this$0.dividerLocationIsSet = false;
+this.this$0.dividerLocationIsSet=false;
 } else if (availableSize != this.lastSplitPaneSize) {
 this.distributeSpace$I$Z(availableSize - this.lastSplitPaneSize, this.this$0.getKeepHidden());
-}this.doReset = false;
-this.this$0.dividerLocationIsSet = false;
-this.lastSplitPaneSize = availableSize;
+}this.doReset=false;
+this.this$0.dividerLocationIsSet=false;
+this.lastSplitPaneSize=availableSize;
 var nextLocation = this.getInitialLocation$java_awt_Insets(insets);
 var counter = 0;
 while (counter < 3){
 if (this.components[counter] != null  && this.components[counter].isVisible() ) {
 this.setComponentToSize$java_awt_Component$I$I$java_awt_Insets$java_awt_Dimension(this.components[counter], this.sizes[counter], nextLocation, insets, containerSize);
-nextLocation = nextLocation+(this.sizes[counter]);
+nextLocation+=this.sizes[counter];
 }switch (counter) {
 case 0:
-counter = 2;
+counter=2;
 break;
 case 2:
-counter = 1;
+counter=1;
 break;
 case 1:
-counter = 3;
+counter=3;
 break;
 }
 }
@@ -573,12 +573,12 @@ if (this.this$0.painted) {
 var newLocation = this.this$0.getDividerLocation$javax_swing_JSplitPane(this.this$0.splitPane);
 if (newLocation != (spDividerLocation - dOffset)) {
 var lastLocation = this.this$0.splitPane.getLastDividerLocation();
-this.this$0.ignoreDividerLocationChange = true;
+this.this$0.ignoreDividerLocationChange=true;
 try {
 this.this$0.splitPane.setDividerLocationInt$I(newLocation);
 this.this$0.splitPane.setLastDividerLocation$I(lastLocation);
 } finally {
-this.this$0.ignoreDividerLocationChange = false;
+this.this$0.ignoreDividerLocationChange=false;
 }
 }}});
 
@@ -586,19 +586,19 @@ Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (place, co
 var isValid = true;
 if (place != null ) {
 if (place.equals$O("divider")) {
-this.components[2] = component;
-this.sizes[2] = this.getSizeForPrimaryAxis$java_awt_Dimension(component.getPreferredSize());
+this.components[2]=component;
+this.sizes[2]=this.getSizeForPrimaryAxis$java_awt_Dimension(component.getPreferredSize());
 } else if (place.equals$O("left") || place.equals$O("top") ) {
-this.components[0] = component;
-this.sizes[0] = 0;
+this.components[0]=component;
+this.sizes[0]=0;
 } else if (place.equals$O("right") || place.equals$O("bottom") ) {
-this.components[1] = component;
-this.sizes[1] = 0;
-} else if (!place.equals$O("nonContinuousDivider")) isValid = false;
+this.components[1]=component;
+this.sizes[1]=0;
+} else if (!place.equals$O("nonContinuousDivider")) isValid=false;
 } else {
-isValid = false;
+isValid=false;
 }if (!isValid) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["cannot add to layout: " + "unknown constraint: " + place ]);
-this.doReset = true;
+this.doReset=true;
 });
 
 Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container', function (container) {
@@ -609,12 +609,12 @@ for (var counter = 0; counter < 3; counter++) {
 if (this.components[counter] != null ) {
 var minSize = this.components[counter].getMinimumSize();
 var secSize = this.getSizeForSecondaryAxis$java_awt_Dimension(minSize);
-minPrimary = minPrimary+(this.getSizeForPrimaryAxis$java_awt_Dimension(minSize));
-if (secSize > minSecondary) minSecondary = secSize;
+minPrimary+=this.getSizeForPrimaryAxis$java_awt_Dimension(minSize);
+if (secSize > minSecondary) minSecondary=secSize;
 }}
 if (insets != null ) {
-minPrimary = minPrimary+(this.getSizeForPrimaryAxis$java_awt_Insets$Z(insets, true) + this.getSizeForPrimaryAxis$java_awt_Insets$Z(insets, false));
-minSecondary = minSecondary+(this.getSizeForSecondaryAxis$java_awt_Insets$Z(insets, true) + this.getSizeForSecondaryAxis$java_awt_Insets$Z(insets, false));
+minPrimary+=this.getSizeForPrimaryAxis$java_awt_Insets$Z(insets, true) + this.getSizeForPrimaryAxis$java_awt_Insets$Z(insets, false);
+minSecondary+=this.getSizeForSecondaryAxis$java_awt_Insets$Z(insets, true) + this.getSizeForSecondaryAxis$java_awt_Insets$Z(insets, false);
 }if (this.axis == 0) {
 return Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[minPrimary, minSecondary]);
 }return Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[minSecondary, minPrimary]);
@@ -628,12 +628,12 @@ for (var counter = 0; counter < 3; counter++) {
 if (this.components[counter] != null ) {
 var preSize = this.components[counter].getPreferredSize();
 var secSize = this.getSizeForSecondaryAxis$java_awt_Dimension(preSize);
-prePrimary = prePrimary+(this.getSizeForPrimaryAxis$java_awt_Dimension(preSize));
-if (secSize > preSecondary) preSecondary = secSize;
+prePrimary+=this.getSizeForPrimaryAxis$java_awt_Dimension(preSize);
+if (secSize > preSecondary) preSecondary=secSize;
 }}
 if (insets != null ) {
-prePrimary = prePrimary+(this.getSizeForPrimaryAxis$java_awt_Insets$Z(insets, true) + this.getSizeForPrimaryAxis$java_awt_Insets$Z(insets, false));
-preSecondary = preSecondary+(this.getSizeForSecondaryAxis$java_awt_Insets$Z(insets, true) + this.getSizeForSecondaryAxis$java_awt_Insets$Z(insets, false));
+prePrimary+=this.getSizeForPrimaryAxis$java_awt_Insets$Z(insets, true) + this.getSizeForPrimaryAxis$java_awt_Insets$Z(insets, false);
+preSecondary+=this.getSizeForSecondaryAxis$java_awt_Insets$Z(insets, true) + this.getSizeForSecondaryAxis$java_awt_Insets$Z(insets, false);
 }if (this.axis == 0) {
 return Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[prePrimary, preSecondary]);
 }return Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[preSecondary, prePrimary]);
@@ -642,9 +642,9 @@ return Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[prePrimary, preSecondary]);
 Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component', function (component) {
 for (var counter = 0; counter < 3; counter++) {
 if (this.components[counter] === component ) {
-this.components[counter] = null;
-this.sizes[counter] = 0;
-this.doReset = true;
+this.components[counter]=null;
+this.sizes[counter]=0;
+this.doReset=true;
 }}
 });
 
@@ -671,12 +671,12 @@ return Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[2147483647, 2147483647]);
 });
 
 Clazz.newMeth(C$, 'resetToPreferredSizes', function () {
-this.doReset = true;
+this.doReset=true;
 });
 
 Clazz.newMeth(C$, 'resetSizeAt$I', function (index) {
-this.sizes[index] = 0;
-this.doReset = true;
+this.sizes[index]=0;
+this.doReset=true;
 });
 
 Clazz.newMeth(C$, 'setSizes$IA', function (newSizes) {
@@ -758,35 +758,35 @@ return insets.left;
 
 Clazz.newMeth(C$, 'updateComponents', function () {
 var comp;
-comp = this.this$0.splitPane.getLeftComponent();
+comp=this.this$0.splitPane.getLeftComponent();
 if (this.components[0] !== comp ) {
-this.components[0] = comp;
+this.components[0]=comp;
 if (comp == null ) {
-this.sizes[0] = 0;
+this.sizes[0]=0;
 } else {
-this.sizes[0] = -1;
-}}comp = this.this$0.splitPane.getRightComponent();
+this.sizes[0]=-1;
+}}comp=this.this$0.splitPane.getRightComponent();
 if (this.components[1] !== comp ) {
-this.components[1] = comp;
+this.components[1]=comp;
 if (comp == null ) {
-this.sizes[1] = 0;
+this.sizes[1]=0;
 } else {
-this.sizes[1] = -1;
+this.sizes[1]=-1;
 }}var children = this.this$0.splitPane.getComponents();
 var oldDivider = this.components[2];
-this.components[2] = null;
+this.components[2]=null;
 for (var counter = children.length - 1; counter >= 0; counter--) {
 if (children[counter] !== this.components[0]  && children[counter] !== this.components[1]   && children[counter] !== this.this$0.nonContinuousLayoutDivider  ) {
 if (oldDivider !== children[counter] ) {
-this.components[2] = children[counter];
+this.components[2]=children[counter];
 } else {
-this.components[2] = oldDivider;
+this.components[2]=oldDivider;
 }break;
 }}
 if (this.components[2] == null ) {
-this.sizes[2] = 0;
+this.sizes[2]=0;
 } else {
-this.sizes[2] = this.getSizeForPrimaryAxis$java_awt_Dimension(this.components[2].getPreferredSize());
+this.sizes[2]=this.getSizeForPrimaryAxis$java_awt_Dimension(this.components[2].getPreferredSize());
 }});
 
 Clazz.newMeth(C$, 'setDividerLocation$I$I', function (leftSize, availableSize) {
@@ -795,27 +795,27 @@ var rValid = (this.components[1] != null  && this.components[1].isVisible() );
 var dValid = (this.components[2] != null  && this.components[2].isVisible() );
 var max = availableSize;
 if (dValid) {
-max = max-(this.sizes[2]);
-}leftSize = Math.max(0, Math.min(leftSize, max));
+max-=this.sizes[2];
+}leftSize=Math.max(0, Math.min(leftSize, max));
 if (lValid) {
 if (rValid) {
-this.sizes[0] = leftSize;
-this.sizes[1] = max - leftSize;
+this.sizes[0]=leftSize;
+this.sizes[1]=max - leftSize;
 } else {
-this.sizes[0] = max;
-this.sizes[1] = 0;
+this.sizes[0]=max;
+this.sizes[1]=0;
 }} else if (rValid) {
-this.sizes[1] = max;
-this.sizes[0] = 0;
+this.sizes[1]=max;
+this.sizes[0]=0;
 }});
 
 Clazz.newMeth(C$, 'getPreferredSizes', function () {
 var retValue = Clazz.array(Integer.TYPE, [3]);
 for (var counter = 0; counter < 3; counter++) {
 if (this.components[counter] != null  && this.components[counter].isVisible() ) {
-retValue[counter] = this.getPreferredSizeOfComponent$java_awt_Component(this.components[counter]);
+retValue[counter]=this.getPreferredSizeOfComponent$java_awt_Component(this.components[counter]);
 } else {
-retValue[counter] = -1;
+retValue[counter]=-1;
 }}
 return retValue;
 });
@@ -824,11 +824,11 @@ Clazz.newMeth(C$, 'getMinimumSizes', function () {
 var retValue = Clazz.array(Integer.TYPE, [3]);
 for (var counter = 0; counter < 2; counter++) {
 if (this.components[counter] != null  && this.components[counter].isVisible() ) {
-retValue[counter] = this.getMinimumSizeOfComponent$java_awt_Component(this.components[counter]);
+retValue[counter]=this.getMinimumSizeOfComponent$java_awt_Component(this.components[counter]);
 } else {
-retValue[counter] = -1;
+retValue[counter]=-1;
 }}
-retValue[2] = (this.components[2] != null ) ? this.getMinimumSizeOfComponent$java_awt_Component(this.components[2]) : -1;
+retValue[2]=(this.components[2] != null ) ? this.getMinimumSizeOfComponent$java_awt_Component(this.components[2]) : -1;
 return retValue;
 });
 
@@ -837,14 +837,14 @@ var testSizes = this.getPreferredSizes();
 var totalSize = 0;
 for (var counter = 0; counter < 3; counter++) {
 if (testSizes[counter] != -1) {
-totalSize = totalSize+(testSizes[counter]);
+totalSize+=testSizes[counter];
 }}
 if (totalSize > availableSize) {
-testSizes = this.getMinimumSizes();
-totalSize = 0;
+testSizes=this.getMinimumSizes();
+totalSize=0;
 for (var counter = 0; counter < 3; counter++) {
 if (testSizes[counter] != -1) {
-totalSize = totalSize+(testSizes[counter]);
+totalSize+=testSizes[counter];
 }}
 }this.setSizes$IA(testSizes);
 this.distributeSpace$I$Z(availableSize - totalSize, false);
@@ -855,52 +855,52 @@ var lValid = (this.components[0] != null  && this.components[0].isVisible() );
 var rValid = (this.components[1] != null  && this.components[1].isVisible() );
 if (keepHidden) {
 if (lValid && this.getSizeForPrimaryAxis$java_awt_Dimension(this.components[0].getSize()) == 0 ) {
-lValid = false;
+lValid=false;
 if (rValid && this.getSizeForPrimaryAxis$java_awt_Dimension(this.components[1].getSize()) == 0 ) {
-lValid = true;
+lValid=true;
 }} else if (rValid && this.getSizeForPrimaryAxis$java_awt_Dimension(this.components[1].getSize()) == 0 ) {
-rValid = false;
+rValid=false;
 }}if (lValid && rValid ) {
 var weight = this.this$0.splitPane.getResizeWeight();
 var lExtra = ((weight * space)|0);
 var rExtra = (space - lExtra);
-this.sizes[0] = this.sizes[0]+(lExtra);
-this.sizes[1] = this.sizes[1]+(rExtra);
+this.sizes[0]+=lExtra;
+this.sizes[1]+=rExtra;
 var lMin = this.getMinimumSizeOfComponent$java_awt_Component(this.components[0]);
 var rMin = this.getMinimumSizeOfComponent$java_awt_Component(this.components[1]);
 var lMinValid = (this.sizes[0] >= lMin);
 var rMinValid = (this.sizes[1] >= rMin);
 if (!lMinValid && !rMinValid ) {
 if (this.sizes[0] < 0) {
-this.sizes[1] = this.sizes[1]+(this.sizes[0]);
-this.sizes[0] = 0;
+this.sizes[1]+=this.sizes[0];
+this.sizes[0]=0;
 } else if (this.sizes[1] < 0) {
-this.sizes[0] = this.sizes[0]+(this.sizes[1]);
-this.sizes[1] = 0;
+this.sizes[0]+=this.sizes[1];
+this.sizes[1]=0;
 }} else if (!lMinValid) {
 if (this.sizes[1] - (lMin - this.sizes[0]) < rMin) {
 if (this.sizes[0] < 0) {
-this.sizes[1] = this.sizes[1]+(this.sizes[0]);
-this.sizes[0] = 0;
+this.sizes[1]+=this.sizes[0];
+this.sizes[0]=0;
 }} else {
-this.sizes[1] = this.sizes[1]-((lMin - this.sizes[0]));
-this.sizes[0] = lMin;
+this.sizes[1]-=(lMin - this.sizes[0]);
+this.sizes[0]=lMin;
 }} else if (!rMinValid) {
 if (this.sizes[0] - (rMin - this.sizes[1]) < lMin) {
 if (this.sizes[1] < 0) {
-this.sizes[0] = this.sizes[0]+(this.sizes[1]);
-this.sizes[1] = 0;
+this.sizes[0]+=this.sizes[1];
+this.sizes[1]=0;
 }} else {
-this.sizes[0] = this.sizes[0]-((rMin - this.sizes[1]));
-this.sizes[1] = rMin;
+this.sizes[0]-=(rMin - this.sizes[1]);
+this.sizes[1]=rMin;
 }}if (this.sizes[0] < 0) {
-this.sizes[0] = 0;
+this.sizes[0]=0;
 }if (this.sizes[1] < 0) {
-this.sizes[1] = 0;
+this.sizes[1]=0;
 }} else if (lValid) {
-this.sizes[0] = Math.max(0, this.sizes[0] + space);
+this.sizes[0]=Math.max(0, this.sizes[0] + space);
 } else if (rValid) {
-this.sizes[1] = Math.max(0, this.sizes[1] + space);
+this.sizes[1]=Math.max(0, this.sizes[1] + space);
 }});
 })()
 ;
@@ -938,7 +938,7 @@ Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) 
 if (e.getSource() === this.this$0.splitPane ) {
 var changeName = e.getPropertyName();
 if (changeName == "orientation") {
-this.this$0.orientation = this.this$0.splitPane.getOrientation();
+this.this$0.orientation=this.this$0.splitPane.getOrientation();
 this.this$0.resetLayoutManager();
 } else if (changeName == "continuousLayout") {
 this.this$0.setContinuousLayout$Z(this.this$0.splitPane.isContinuousLayout());
@@ -948,22 +948,22 @@ this.this$0.setNonContinuousLayoutDivider$java_awt_Component$Z(this.this$0.creat
 } else if (this.this$0.nonContinuousLayoutDivider.getParent() == null ) {
 this.this$0.setNonContinuousLayoutDivider$java_awt_Component$Z(this.this$0.nonContinuousLayoutDivider, true);
 }}} else if (changeName == "dividerSize") {
-this.this$0.dividerSize = this.this$0.splitPane.getDividerSize();
+this.this$0.dividerSize=this.this$0.splitPane.getDividerSize();
 this.this$0.splitPane.revalidate();
 this.this$0.splitPane.repaint();
 }}});
 
 Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent', function (ev) {
-this.this$0.dividerKeyboardResize = true;
+this.this$0.dividerKeyboardResize=true;
 this.this$0.splitPane.repaint();
 });
 
 Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent', function (ev) {
-this.this$0.dividerKeyboardResize = false;
+this.this$0.dividerKeyboardResize=false;
 this.this$0.splitPane.repaint();
 });
 })()
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:26
+//Created 2018-05-24 08:47:59

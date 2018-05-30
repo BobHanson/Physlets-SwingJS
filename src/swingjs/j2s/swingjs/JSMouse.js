@@ -23,20 +23,20 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$swingjs_JSFrameViewer', function (v) {
 C$.$init$.apply(this);
-this.viewer = v;
+this.viewer=v;
 }, 1);
 
 Clazz.newMeth(C$, 'processEvent$I$I$I$I$J$O$I', function (id, x, y, modifiers, time, jqevent, scroll) {
-this.jqevent = jqevent;
-if (id != 507 && id != 503 ) modifiers = C$.applyLeftMouse$I(modifiers);
+this.jqevent=jqevent;
+if (id != 507 && id != 503 ) modifiers=C$.applyLeftMouse$I(modifiers);
 switch (id) {
 case 507:
 this.wheeled$J$I$I$I$I(time, x, y, scroll, modifiers);
 break;
 case 501:
-this.xWhenPressed = x;
-this.yWhenPressed = y;
-this.modifiersWhenPressed10 = modifiers;
+this.xWhenPressed=x;
+this.yWhenPressed=y;
+this.modifiersWhenPressed10=modifiers;
 p$.pressed$J$I$I$I$Z.apply(this, [time, x, y, modifiers, false]);
 break;
 case 506:
@@ -67,7 +67,7 @@ p$.getMouse2.apply(this, []).processTwoPointGesture$FAAA(touches);
 });
 
 Clazz.newMeth(C$, 'getMouse2', function () {
-return (this.mouse2 == null  ? (this.mouse2 = (I$[1]||$incl$(1)).getInstance$S("swingjs.JSMouse2")).set$swingjs_JSMouse(this) : this.mouse2);
+return (this.mouse2 == null  ? (this.mouse2=(I$[1]||$incl$(1)).getInstance$S("swingjs.JSMouse2")).set$swingjs_JSMouse(this) : this.mouse2);
 });
 
 Clazz.newMeth(C$, 'translateXYBy$I$I', function (deltaX, deltaY) {
@@ -95,7 +95,7 @@ p$.released$J$I$I$I.apply(this, [e.getWhen(), e.getX(), e.getY(), e.getModifiers
 
 Clazz.newMeth(C$, 'mouseDragged$java_awt_event_MouseEvent', function (e) {
 var modifiers = e.getModifiers();
-if ((modifiers & 28) == 0) modifiers = modifiers|(16);
+if ((modifiers & 28) == 0) modifiers|=16;
 p$.dragged$J$I$I$I.apply(this, [e.getWhen(), e.getX(), e.getY(), modifiers]);
 });
 
@@ -109,7 +109,7 @@ this.wheeled$J$I$I$I$I(e.getWhen(), 0, 0, e.getWheelRotation(), e.getModifiers()
 });
 
 Clazz.newMeth(C$, 'entry$J$I$I$Z', function (time, x, y, isExit) {
-this.wheeling = false;
+this.wheeling=false;
 p$.mouseEnterExit$J$I$I$Z.apply(this, [time, x, y, isExit]);
 });
 
@@ -123,25 +123,25 @@ if (this.isCtrlShiftMouseDown) p$.mouseAction$I$J$I$I$I$I$I.apply(this, [506, ti
 });
 
 Clazz.newMeth(C$, 'wheeled$J$I$I$I$I', function (time, x, y, rotation, modifiers) {
-this.wheeling = true;
+this.wheeling=true;
 p$.mouseAction$I$J$I$I$I$I$I.apply(this, [507, time, x, y, 0, modifiers & -29 | 32, rotation]);
 });
 
 Clazz.newMeth(C$, 'pressed$J$I$I$I$Z', function (time, x, y, modifiers, isPopupTrigger) {
-this.isCtrlShiftMouseDown = ((modifiers & 3) == 3);
-this.wheeling = false;
+this.isCtrlShiftMouseDown=((modifiers & 3) == 3);
+this.wheeling=false;
 p$.mouseAction$I$J$I$I$I$I$I.apply(this, [501, time, x, y, 0, modifiers, 0]);
 });
 
 Clazz.newMeth(C$, 'released$J$I$I$I', function (time, x, y, modifiers) {
-this.isCtrlShiftMouseDown = false;
-this.wheeling = false;
+this.isCtrlShiftMouseDown=false;
+this.wheeling=false;
 p$.mouseAction$I$J$I$I$I$I$I.apply(this, [502, time, x, y, 0, modifiers, 0]);
 });
 
 Clazz.newMeth(C$, 'dragged$J$I$I$I', function (time, x, y, modifiers) {
 if (this.wheeling) return;
-if ((modifiers & 20) == 20) modifiers = modifiers & -5 | 2;
+if ((modifiers & 20) == 20) modifiers=modifiers & -5 | 2;
 p$.mouseAction$I$J$I$I$I$I$I.apply(this, [506, time, x, y, 0, modifiers, 0]);
 });
 
@@ -173,9 +173,9 @@ var count = p$.updateClickCount$I$J$I$I.apply(this, [id, time, x, y]);
 var source = this.viewer.top;
 var e;
 if (id == 507) {
-e = Clazz.new_((I$[3]||$incl$(3)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I$I$I,[source, id, time, modifiers, x, y, x, y, count, popupTrigger, 0, 1, dy]);
+e=Clazz.new_((I$[3]||$incl$(3)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I$I$I,[source, id, time, modifiers, x, y, x, y, count, popupTrigger, 0, 1, dy]);
 } else {
-e = Clazz.new_((I$[4]||$incl$(4)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,[source, id, time, modifiers, x, y, x, y, count, popupTrigger, button]);
+e=Clazz.new_((I$[4]||$incl$(4)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,[source, id, time, modifiers, x, y, x, y, count, popupTrigger, button]);
 }var bdata = Clazz.array(Byte.TYPE, [0]);
 e.setBData$BA(bdata);
 var jqevent = this.jqevent;
@@ -191,20 +191,20 @@ if (c == null ) {
 
 Clazz.newMeth(C$, 'updateClickCount$I$J$I$I', function (id, time, x, y) {
 var reset = (time - this.lasttime > 500 || Math.abs(x - this.lastx) > 3  || Math.abs(y - this.lasty) > 3 );
-this.lasttime = time;
-this.lastx = x;
-this.lasty = y;
+this.lasttime=time;
+this.lastx=x;
+this.lasty=y;
 var ret = this.clickCount;
 switch (id) {
 case 501:
-ret = this.clickCount = (reset ? 1 : this.clickCount + 1);
+ret=this.clickCount=(reset ? 1 : this.clickCount + 1);
 break;
 case 504:
 case 505:
-this.clickCount = 0;
+this.clickCount=0;
 break;
 case 503:
-if (reset) this.clickCount = 0;
+if (reset) this.clickCount=0;
 break;
 case 502:
 case 506:
@@ -216,4 +216,4 @@ return ret;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:16
+//Created 2018-05-24 08:47:45

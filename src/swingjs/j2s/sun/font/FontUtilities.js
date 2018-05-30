@@ -17,17 +17,17 @@ C$.$clinit$ = function() {Clazz.load(C$, 1);
 C$.$debugFonts = false;
 {
 var osName = System.getProperty("os.name", "unknownOS");
-C$.isSolaris = osName.startsWith$S("SunOS");
-C$.isLinux = osName.startsWith$S("Linux");
-C$.isMacOSX = osName.contains$CharSequence("OS X");
-C$.isWindows = osName.startsWith$S("Windows");
+C$.isSolaris=osName.startsWith$S("SunOS");
+C$.isLinux=osName.startsWith$S("Linux");
+C$.isMacOSX=osName.contains$CharSequence("OS X");
+C$.isWindows=osName.startsWith$S("Windows");
 var jreLibDirName = System.getProperty("java.home", "") + "/" + "lib" ;
 var jreFontDirName = jreLibDirName + "/" + "fonts" ;
 var lucidaFile = Clazz.new_((I$[1]||$incl$(1)).c$$S,[jreFontDirName + "/" + "LucidaSansRegular.ttf" ]);
-C$.isOpenJDK = !lucidaFile.exists();
+C$.isOpenJDK=!lucidaFile.exists();
 var debugLevel = System.getProperty("sun.java2d.debugfonts");
 if (debugLevel != null  && !debugLevel.equals$O("false") ) {
-C$.$debugFonts = true;
+C$.$debugFonts=true;
 }if (C$.$debugFonts) {
 }}
 ;
@@ -95,4 +95,4 @@ return null;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:09
+//Created 2018-05-24 08:47:31

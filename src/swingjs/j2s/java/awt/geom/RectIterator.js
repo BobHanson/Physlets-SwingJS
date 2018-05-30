@@ -22,12 +22,12 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$java_awt_geom_Rectangle2D$java_awt_geom_AffineTransform', function (r, at) {
-this.x = r.getX();
-this.y = r.getY();
-this.w = r.getWidth();
-this.h = r.getHeight();
-this.affine = at;
-this.index = (this.w < 0  || this.h < 0   ? 6 : 0);
+this.x=r.getX();
+this.y=r.getY();
+this.w=r.getWidth();
+this.h=r.getHeight();
+this.affine=at;
+this.index=(this.w < 0  || this.h < 0   ? 6 : 0);
 return this;
 });
 
@@ -48,8 +48,8 @@ if (this.isDone()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["rect iterator out of bounds"]);
 }if (this.index == 5) {
 return 4;
-}coords[0] = this.x;
-coords[1] = this.y;
+}coords[0]=this.x;
+coords[1]=this.y;
 if (this.index == 1 || this.index == 2 ) {
 coords[0] += this.w;
 }if (this.index == 2 || this.index == 3 ) {
@@ -64,8 +64,8 @@ if (this.isDone()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["rect iterator out of bounds"]);
 }if (this.index == 5) {
 return 4;
-}coords[0] = this.x;
-coords[1] = this.y;
+}coords[0]=this.x;
+coords[1]=this.y;
 if (this.index == 1 || this.index == 2 ) {
 coords[0] += this.w;
 }if (this.index == 2 || this.index == 3 ) {
@@ -75,4 +75,4 @@ this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, 1);
 }return (this.index == 0 ? 0 : 1);
 });
 })();
-//Created 2018-05-15 01:02:00
+//Created 2018-05-24 08:45:22

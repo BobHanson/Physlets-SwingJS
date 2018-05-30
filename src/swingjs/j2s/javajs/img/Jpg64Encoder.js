@@ -13,21 +13,21 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'setParams$java_util_Map', function (params) {
-this.defaultQuality = 75;
-this.outTemp = params.remove$O("outputChannelTemp");
+this.defaultQuality=75;
+this.outTemp=params.remove$O("outputChannelTemp");
 C$.superclazz.prototype.setParams$java_util_Map.apply(this, [params]);
 });
 
 Clazz.newMeth(C$, 'generate', function () {
 var out0 = this.out;
-this.out = this.outTemp;
+this.out=this.outTemp;
 C$.superclazz.prototype.generate.apply(this, []);
 var bytes = (I$[1]||$incl$(1)).getBytes64$BA(this.out.toByteArray());
-this.outTemp = null;
-this.out = out0;
+this.outTemp=null;
+this.out=out0;
 this.out.write$BA$I$I(bytes, 0, bytes.length);
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:54

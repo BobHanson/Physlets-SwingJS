@@ -14,19 +14,19 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.isContainer = true;
+this.isContainer=true;
 this.setDoc();
 }, 1);
 
 Clazz.newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.containerNode = this.domNode = this.newDOMObject$S$S$SA("div", this.id, []);
+this.containerNode=this.domNode=this.newDOMObject$S$S$SA("div", this.id, []);
 (I$[1]||$incl$(1)).setPositionAbsolute(this.domNode, 0, 0);
 }return this.domNode;
 });
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.menuBar = jc;
+this.menuBar=jc;
 if (this.menuBar.getLayout() == null  || Clazz.instanceOf(this.menuBar.getLayout(), "javax.swing.plaf.UIResource") ) {
 this.menuBar.setLayout$java_awt_LayoutManager(Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_Container$I,[this.menuBar, 2]));
 }(I$[3]||$incl$(3)).installColorsAndFont$javax_swing_JComponent$S$S$S(jc, "MenuBar.background", "MenuBar.foreground", "MenuBar.font");
@@ -36,7 +36,7 @@ Clazz.newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (jc) {
 });
 
 Clazz.newMeth(C$, 'getContainerHeight', function () {
-return this.height = 25;
+return this.height=25;
 });
 
 Clazz.newMeth(C$, 'getPreferredSize', function () {
@@ -44,4 +44,4 @@ var d = Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[0, 25]);
 return d;
 });
 })();
-//Created 2018-05-15 01:03:23
+//Created 2018-05-24 08:47:55

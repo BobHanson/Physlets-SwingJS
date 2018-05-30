@@ -27,12 +27,12 @@ this.menuItem = false;
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.stateMask = 0;
+this.stateMask=0;
 this.setEnabled$Z(true);
 }, 1);
 
 Clazz.newMeth(C$, 'setActionCommand$S', function (actionCommand) {
-this.actionCommand = actionCommand;
+this.actionCommand=actionCommand;
 });
 
 Clazz.newMeth(C$, 'getActionCommand', function () {
@@ -67,9 +67,9 @@ return;
 if ((this.isArmed() == b ) || !this.isEnabled() ) {
 return;
 }}if (b) {
-this.stateMask = this.stateMask|(1);
+this.stateMask|=1;
 } else {
-this.stateMask = this.stateMask&(-2);
+this.stateMask&=-2;
 }this.fireStateChanged();
 });
 
@@ -77,11 +77,11 @@ Clazz.newMeth(C$, 'setEnabled$Z', function (b) {
 if (this.isEnabled() == b ) {
 return;
 }if (b) {
-this.stateMask = this.stateMask|(8);
+this.stateMask|=8;
 } else {
-this.stateMask = this.stateMask&(-9);
-this.stateMask = this.stateMask&(-2);
-this.stateMask = this.stateMask&(-5);
+this.stateMask&=-9;
+this.stateMask&=-2;
+this.stateMask&=-5;
 }this.fireStateChanged();
 });
 
@@ -89,9 +89,9 @@ Clazz.newMeth(C$, 'setSelected$Z', function (b) {
 if (this.isSelected() == b ) {
 return;
 }if (b) {
-this.stateMask = this.stateMask|(2);
+this.stateMask|=2;
 } else {
-this.stateMask = this.stateMask&(-3);
+this.stateMask&=-3;
 }this.fireItemStateChanged$java_awt_event_ItemEvent(Clazz.new_((I$[3]||$incl$(3)).c$$java_awt_ItemSelectable$I$O$I,[this, 701, this, b ? 1 : 2]));
 this.fireStateChanged();
 });
@@ -100,16 +100,16 @@ Clazz.newMeth(C$, 'setPressed$Z', function (b) {
 if ((this.isPressed() == b ) || !this.isEnabled() ) {
 return;
 }if (b) {
-this.stateMask = this.stateMask|(4);
+this.stateMask|=4;
 } else {
-this.stateMask = this.stateMask&(-5);
+this.stateMask&=-5;
 }if (!this.isPressed() && this.isArmed() ) {
 var modifiers = 0;
 var currentEvent = (I$[4]||$incl$(4)).getCurrentEvent();
 if (Clazz.instanceOf(currentEvent, "java.awt.event.InputEvent")) {
-modifiers = (currentEvent).getModifiers();
+modifiers=(currentEvent).getModifiers();
 } else if (Clazz.instanceOf(currentEvent, "java.awt.event.ActionEvent")) {
-modifiers = (currentEvent).getModifiers();
+modifiers=(currentEvent).getModifiers();
 }this.fireActionPerformed$java_awt_event_ActionEvent(Clazz.new_((I$[5]||$incl$(5)).c$$O$I$S$J$I,[this, 1001, this.getActionCommand(), (I$[4]||$incl$(4)).getMostRecentEventTime(), modifiers]));
 }this.fireStateChanged();
 });
@@ -118,14 +118,14 @@ Clazz.newMeth(C$, 'setRollover$Z', function (b) {
 if ((this.isRollover() == b ) || !this.isEnabled() ) {
 return;
 }if (b) {
-this.stateMask = this.stateMask|(16);
+this.stateMask|=16;
 } else {
-this.stateMask = this.stateMask&(-17);
+this.stateMask&=-17;
 }this.fireStateChanged();
 });
 
 Clazz.newMeth(C$, 'setMnemonic$I', function (key) {
-this.mnemonic = key;
+this.mnemonic=key;
 this.fireStateChanged();
 });
 
@@ -147,9 +147,9 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[6]||$incl$(6)),['
 
 Clazz.newMeth(C$, 'fireStateChanged', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[6]||$incl$(6)),['stateChanged$javax_swing_event_ChangeEvent']) ) {
-if (this.changeEvent == null ) this.changeEvent = Clazz.new_((I$[7]||$incl$(7)).c$$O,[this]);
+if (this.changeEvent == null ) this.changeEvent=Clazz.new_((I$[7]||$incl$(7)).c$$O,[this]);
 (listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -168,7 +168,7 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[8]||$incl$(8)),['
 
 Clazz.newMeth(C$, 'fireActionPerformed$java_awt_event_ActionEvent', function (e) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[8]||$incl$(8)),['actionPerformed$java_awt_event_ActionEvent']) ) {
 (listeners[i + 1]).actionPerformed$java_awt_event_ActionEvent(e);
 }}
@@ -188,7 +188,7 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[9]||$incl$(9)),['
 
 Clazz.newMeth(C$, 'fireItemStateChanged$java_awt_event_ItemEvent', function (e) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[9]||$incl$(9)),['itemStateChanged$java_awt_event_ItemEvent']) ) {
 (listeners[i + 1]).itemStateChanged$java_awt_event_ItemEvent(e);
 }}
@@ -203,7 +203,7 @@ return null;
 });
 
 Clazz.newMeth(C$, 'setGroup$javax_swing_ButtonGroup', function (group) {
-this.group = group;
+this.group=group;
 });
 
 Clazz.newMeth(C$, 'getGroup', function () {
@@ -215,7 +215,7 @@ return this.menuItem;
 });
 
 Clazz.newMeth(C$, 'setMenuItem$Z', function (menuItem) {
-this.menuItem = menuItem;
+this.menuItem=menuItem;
 });
 })();
-//Created 2018-05-15 01:02:24
+//Created 2018-05-24 08:46:07

@@ -85,16 +85,16 @@ var correctEntry = null;
 if (key == null ) {
 while (correctEntry == null  && i.hasNext() ){
 var e = i.next();
-if (e.getKey() == null ) correctEntry = e;
+if (e.getKey() == null ) correctEntry=e;
 }
 } else {
 while (correctEntry == null  && i.hasNext() ){
 var e = i.next();
-if (key.equals$O(e.getKey())) correctEntry = e;
+if (key.equals$O(e.getKey())) correctEntry=e;
 }
 }var oldValue = null;
 if (correctEntry != null ) {
-oldValue = correctEntry.getValue();
+oldValue=correctEntry.getValue();
 i.remove();
 }return oldValue;
 });
@@ -110,7 +110,7 @@ this.entrySet().clear();
 
 Clazz.newMeth(C$, 'keySet', function () {
 if (this.$keySet == null ) {
-this.$keySet = ((
+this.$keySet=((
 (function(){var C$=Clazz.newClass(P$, "AbstractMap$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.util.AbstractSet'), null, 1);
 
 C$.$clinit$ = function() {Clazz.load(C$, 1);
@@ -172,7 +172,7 @@ return this.b$['java.util.AbstractMap'].containsKey$O(k);
 
 Clazz.newMeth(C$, 'values', function () {
 if (this.$values == null ) {
-this.$values = ((
+this.$values=((
 (function(){var C$=Clazz.newClass(P$, "AbstractMap$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.util.AbstractCollection'), null, 1);
 
 C$.$clinit$ = function() {Clazz.load(C$, 1);
@@ -269,7 +269,7 @@ return true;
 Clazz.newMeth(C$, 'hashCode', function () {
 var h = 0;
 var i = this.entrySet().iterator();
-while (i.hasNext())h = h+(i.next().hashCode());
+while (i.hasNext())h+=i.next().hashCode();
 
 return h;
 });
@@ -293,8 +293,8 @@ sb.append$S(", ");
 
 Clazz.newMeth(C$, 'clone', function () {
 var result = Clazz.clone(this);
-result.$keySet = null;
-result.$values = null;
+result.$keySet=null;
+result.$values=null;
 return result;
 });
 
@@ -320,14 +320,14 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, ['c$$TK$TV'], function (key, value) {
 C$.$init$.apply(this);
-this.key = key;
-this.value = value;
+this.key=key;
+this.value=value;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Map_Entry', function (entry) {
 C$.$init$.apply(this);
-this.key = entry.getKey();
-this.value = entry.getValue();
+this.key=entry.getKey();
+this.value=entry.getValue();
 }, 1);
 
 Clazz.newMeth(C$, 'getKey', function () {
@@ -340,7 +340,7 @@ return this.value;
 
 Clazz.newMeth(C$, ['setValue$TV'], function (value) {
 var oldValue = this.value;
-this.value = value;
+this.value=value;
 return oldValue;
 });
 
@@ -379,14 +379,14 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, ['c$$TK$TV'], function (key, value) {
 C$.$init$.apply(this);
-this.key = key;
-this.value = value;
+this.key=key;
+this.value=value;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Map_Entry', function (entry) {
 C$.$init$.apply(this);
-this.key = entry.getKey();
-this.value = entry.getValue();
+this.key=entry.getKey();
+this.value=entry.getValue();
 }, 1);
 
 Clazz.newMeth(C$, 'getKey', function () {
@@ -418,4 +418,4 @@ return this.key + "=" + this.value ;
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:44

@@ -20,10 +20,10 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.fetchers = Clazz.array((I$[5]||$incl$(5)), [4]);
-this.numFetchers = 0;
-this.numWaiting = 0;
-this.waitList = Clazz.new_((I$[6]||$incl$(6)));
+this.fetchers=Clazz.array((I$[5]||$incl$(5)), [4]);
+this.numFetchers=0;
+this.numWaiting=0;
+this.waitList=Clazz.new_((I$[6]||$incl$(6)));
 }, 1);
 
 Clazz.newMeth(C$, 'getFetcherInfo', function () {
@@ -31,9 +31,9 @@ var appContext = (I$[3]||$incl$(3)).getAppContext();
 {
 var info = appContext.get$O(C$.FETCHER_INFO_KEY);
 if (info == null ) {
-info = Clazz.new_(C$);
+info=Clazz.new_(C$);
 appContext.put$O$O(C$.FETCHER_INFO_KEY, info);
 }return info;
 }}, 1);
 })();
-//Created 2018-05-15 01:03:08
+//Created 2018-05-24 08:47:27

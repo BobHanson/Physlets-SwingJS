@@ -45,9 +45,9 @@ sb.append$C(dfs.getMonetaryDecimalSeparator());
 sb.append$S(dfs.getNaN());
 sb.append$C(dfs.getPercent());
 sb.append$C("+");
-this.specialChars = sb.toString();
+this.specialChars=sb.toString();
 } else {
-this.specialChars = "";
+this.specialChars="";
 }});
 
 Clazz.newMeth(C$, 'stringToValueParse$S$java_text_Format', function (text, f) {
@@ -148,7 +148,7 @@ if (this.isValidMask()) {
 var max = this.getFormattedTextField().getDocument().getLength();
 var iterator = this.getIterator();
 if (index >= max) {
-index = index+(direction);
+index+=direction;
 }while (index >= 0 && index < max ){
 iterator.setIndex$I(index);
 var attrs = iterator.getAttributes();
@@ -159,7 +159,7 @@ var key = keys.next();
 if (Clazz.instanceOf(key, "java.text.NumberFormat.Field")) {
 return key;
 }}
-}index = index+(direction);
+}index+=direction;
 }
 }return null;
 });
@@ -176,9 +176,9 @@ var field = p$.getFieldFrom$I$I.apply(this, [offset, -1]);
 var newValue;
 try {
 if (field == null  || (field !== (I$[3]||$incl$(3)).EXPONENT  && field !== (I$[3]||$incl$(3)).EXPONENT_SYMBOL   && field !== (I$[3]||$incl$(3)).EXPONENT_SIGN  ) ) {
-newValue = p$.toggleSign$Z.apply(this, [(aChar == p$.getPositiveSign.apply(this, []))]);
+newValue=p$.toggleSign$Z.apply(this, [(aChar == p$.getPositiveSign.apply(this, []))]);
 } else {
-newValue = p$.toggleExponentSign$I$C.apply(this, [offset, aChar]);
+newValue=p$.toggleExponentSign$I$C.apply(this, [offset, aChar]);
 }if (newValue != null  && this.isValidValue$O$Z(newValue, false) ) {
 var lc = this.getLiteralCountTo$I(offset);
 var string = this.valueToString$O(newValue);
@@ -204,16 +204,16 @@ var string = value.toString();
 if (string != null  && string.length$() > 0 ) {
 if (positive) {
 if (string.charAt(0) == "-") {
-string = string.substring(1);
+string=string.substring(1);
 }} else {
 if (string.charAt(0) == "+") {
-string = string.substring(1);
+string=string.substring(1);
 }if (string.length$() > 0 && string.charAt(0) != "-" ) {
-string = "-" + string;
+string="-" + string;
 }}if (string != null ) {
 var valueClass = this.getValueClass();
 if (valueClass == null ) {
-valueClass = value.getClass();
+valueClass=value.getClass();
 }try {
 var cons = valueClass.getConstructor$ClassA(Clazz.array(java.lang.Class, -1, [Clazz.getClass(java.lang.String)]));
 if (cons != null ) {
@@ -228,14 +228,14 @@ var string = this.getFormattedTextField().getText();
 var replaceLength = 0;
 var loc = this.getAttributeStart$java_text_AttributedCharacterIterator_Attribute((I$[3]||$incl$(3)).EXPONENT_SIGN);
 if (loc >= 0) {
-replaceLength = 1;
-offset = loc;
+replaceLength=1;
+offset=loc;
 }if (aChar == p$.getPositiveSign.apply(this, [])) {
-string = this.getReplaceString$I$I$S(offset, replaceLength, null);
+string=this.getReplaceString$I$I$S(offset, replaceLength, null);
 } else {
-string = this.getReplaceString$I$I$S(offset, replaceLength,  String.instantialize(Clazz.array(Character.TYPE, -1, [aChar])));
+string=this.getReplaceString$I$I$S(offset, replaceLength,  String.instantialize(Clazz.array(Character.TYPE, -1, [aChar])));
 }return this.stringToValue$S(string);
 });
 var $b$ = new Int8Array(1);
 })();
-//Created 2018-05-15 01:02:56
+//Created 2018-05-24 08:47:07

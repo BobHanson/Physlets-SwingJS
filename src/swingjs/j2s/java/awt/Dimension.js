@@ -23,8 +23,8 @@ C$.c$$I$I.apply(this, [d.width, d.height]);
 
 Clazz.newMeth(C$, 'c$$I$I', function (width, height) {
 Clazz.super_(C$, this,1);
-this.width = width;
-this.height = height;
+this.width=width;
+this.height=height;
 }, 1);
 
 Clazz.newMeth(C$, 'getWidth', function () {
@@ -40,18 +40,18 @@ return Clazz.new_(C$.c$$I$I,[this.width, this.height]);
 });
 
 Clazz.newMeth(C$, 'setSize$java_awt_Dimension', function (d) {
-this.width = d.width;
-this.height = d.height;
+this.width=d.width;
+this.height=d.height;
 });
 
 Clazz.newMeth(C$, 'setSize$I$I', function (width, height) {
-this.width = width;
-this.height = height;
+this.width=width;
+this.height=height;
 });
 
 Clazz.newMeth(C$, 'setSize$D$D', function (width, height) {
-this.width = (Math.ceil(width)|0);
-this.height = (Math.ceil(height)|0);
+this.width=(Math.ceil(width)|0);
+this.height=(Math.ceil(height)|0);
 });
 
 Clazz.newMeth(C$, 'equals$O', function (obj) {
@@ -70,4 +70,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.getClass().getName() + "[width=" + this.width + ",height=" + this.height + "]" ;
 });
 })();
-//Created 2018-05-15 01:01:50
+//Created 2018-05-24 08:45:08

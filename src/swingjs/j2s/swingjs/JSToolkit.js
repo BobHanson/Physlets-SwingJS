@@ -97,7 +97,7 @@ return def;
 Clazz.newMeth(C$, 'getGraphicsConfiguration', function () {
 var ap = (I$[2]||$incl$(2)).getAppletViewer();
 var gc = ap.graphicsConfig;
-return (gc == null  ? (gc = ap.graphicsConfig = (I$[2]||$incl$(2)).getInstance$S("swingjs.JSGraphicsConfiguration")) : gc);
+return (gc == null  ? (gc=ap.graphicsConfig=(I$[2]||$incl$(2)).getInstance$S("swingjs.JSGraphicsConfiguration")) : gc);
 }, 1);
 
 Clazz.newMeth(C$, 'isFocused$java_awt_Window', function (window) {
@@ -116,7 +116,7 @@ return css;
 Clazz.newMeth(C$, 'getStringWidth$swingjs_api_js_HTML5CanvasContext2D$java_awt_Font$S', function (context, font, text) {
 if (text == null  || text.length$() == 0 ) return 0;
 var fontInfo = C$.getCanvasFont$java_awt_Font(font);
-if (context == null ) context = C$.getDefaultCanvasContext2d();
+if (context == null ) context=C$.getDefaultCanvasContext2d();
 var w = 0;
 {
 context.font = fontInfo;
@@ -138,7 +138,7 @@ return "#" + s.substring(s.length$() - 6);
 }, 1);
 
 Clazz.newMeth(C$, 'getLookAndFeelDefaults', function () {
-if (C$.uid == null ) C$.uid = (I$[4]||$incl$(4)).getLookAndFeel().getDefaults();
+if (C$.uid == null ) C$.uid=(I$[4]||$incl$(4)).getLookAndFeel().getDefaults();
 return C$.uid;
 }, 1);
 
@@ -258,7 +258,7 @@ ui = c.getUI && c.getUI();
 if (ui == null ) {
 var s = c.getClass().getName();
 if (!(I$[7]||$incl$(7)).isOneOf$S$S(s, ";javax.swing.Box.Filler;")) System.out.println$S("[JSToolkit] Component " + s + " has no corresponding JSComponentUI, class " + c.getClass().getName() );
-ui = Clazz.new_((I$[8]||$incl$(8)).c$$java_awt_Component,[c]);
+ui=Clazz.new_((I$[8]||$incl$(8)).c$$java_awt_Component,[c]);
 }return ui;
 }, 1);
 
@@ -273,7 +273,7 @@ return c.__CLASS_NAME__;
 }, 1);
 
 Clazz.newMeth(C$, 'getImagekit', function () {
-return (this.imageKit == null  ? this.imageKit = (I$[5]||$incl$(5)).getInstance$S$Z("swingjs.JSImagekit", false) : this.imageKit);
+return (this.imageKit == null  ? this.imageKit=(I$[5]||$incl$(5)).getInstance$S$Z("swingjs.JSImagekit", false) : this.imageKit);
 });
 
 Clazz.newMeth(C$, 'getImage$S', function (filename) {
@@ -338,7 +338,7 @@ return true;
 }, 1);
 
 Clazz.newMeth(C$, 'getAudioPlayer', function () {
-return (C$.audioPlayer == null  ? C$.audioPlayer = (I$[2]||$incl$(2)).getInstance$S("swingjs.JSAudio") : C$.audioPlayer);
+return (C$.audioPlayer == null  ? C$.audioPlayer=(I$[2]||$incl$(2)).getInstance$S("swingjs.JSAudio") : C$.audioPlayer);
 }, 1);
 
 Clazz.newMeth(C$, 'playAudio$BA$javax_sound_sampled_AudioFormat', function (data, audioFormat) {
@@ -376,7 +376,7 @@ clearTimeout(html5Id);
 }, 1);
 
 Clazz.newMeth(C$, 'getSystemClipboard', function () {
-if (C$.systemClipboard == null ) C$.systemClipboard = (I$[2]||$incl$(2)).getInstance$S("java.awt.datatransfer.Clipboard");
+if (C$.systemClipboard == null ) C$.systemClipboard=(I$[2]||$incl$(2)).getInstance$S("java.awt.datatransfer.Clipboard");
 return C$.systemClipboard;
 });
 
@@ -388,46 +388,46 @@ Clazz.newMeth(C$, 'setCursor$java_awt_Cursor', function (c) {
 var curs = null;
 switch (c == null  ? 0 : c.getType()) {
 case 1:
-curs = "crosshair";
+curs="crosshair";
 break;
 case 3:
-curs = "wait";
+curs="wait";
 break;
 case 2:
-curs = "text";
+curs="text";
 break;
 case 8:
 case 9:
-curs = "ns-resize";
+curs="ns-resize";
 break;
 case 12:
-curs = "grab";
+curs="grab";
 break;
 case 13:
-curs = "move";
+curs="move";
 break;
 case 7:
 case 4:
-curs = "nesw-resize";
+curs="nesw-resize";
 break;
 case 5:
 case 6:
-curs = "nwse-resize";
+curs="nwse-resize";
 break;
 case 11:
 case 10:
-curs = "ew-resize";
+curs="ew-resize";
 break;
 case 0:
 default:
-curs = "default";
+curs="default";
 break;
 }
 (I$[12]||$incl$(12)).setCursor(curs);
 }, 1);
 
 Clazz.newMeth(C$, 'getFontList', function () {
-if (C$.hardwiredFontList == null ) C$.hardwiredFontList = Clazz.array(java.lang.String, -1, ["Dialog", "SansSerif", "Serif", "Monospaced", "DialogInput"]);
+if (C$.hardwiredFontList == null ) C$.hardwiredFontList=Clazz.array(java.lang.String, -1, ["Dialog", "SansSerif", "Serif", "Monospaced", "DialogInput"]);
 return C$.hardwiredFontList;
 });
 
@@ -444,7 +444,7 @@ var strStyle = "";
 if (font.isItalic()) strStyle += "italic ";
 if (font.isBold()) strStyle += "bold ";
 var family = font.getFamily();
-if (family.equals$O("SansSerif") || family.equals$O("Dialog") || family.equals$O("DialogInput")  ) family = "Arial";
+if (family.equals$O("SansSerif") || family.equals$O("Dialog") || family.equals$O("DialogInput")  ) family="Arial";
 return strStyle + font.getSize() + "px " + family ;
 }, 1);
 
@@ -483,4 +483,4 @@ job.setAttributes$S$java_awt_JobAttributes$java_awt_PageAttributes(jobtitle, job
 return job;
 });
 })();
-//Created 2018-05-15 01:03:17
+//Created 2018-05-24 08:47:47

@@ -43,9 +43,9 @@ for (var column = 0; column < this.numSwatches.width; column++) {
 g.setColor$java_awt_Color(p$.getColorForCell$I$I.apply(this, [column, row]));
 var x;
 if ((!this.getComponentOrientation().isLeftToRight()) && (Clazz.instanceOf(this, "javax.swing.colorchooser.RecentSwatchPanel")) ) {
-x = (this.numSwatches.width - column - 1 ) * (this.swatchSize.width + this.gap.width);
+x=(this.numSwatches.width - column - 1 ) * (this.swatchSize.width + this.gap.width);
 } else {
-x = column * (this.swatchSize.width + this.gap.width);
+x=column * (this.swatchSize.width + this.gap.width);
 }g.fillRect$I$I$I$I(x, y, this.swatchSize.width, this.swatchSize.height);
 g.setColor$java_awt_Color((I$[11]||$incl$(11)).black);
 g.drawLine$I$I$I$I(x + this.swatchSize.width - 1, y, x + this.swatchSize.width - 1, y + this.swatchSize.height - 1);
@@ -71,9 +71,9 @@ return color.getRed() + ", " + color.getGreen() + ", " + color.getBlue() ;
 Clazz.newMeth(C$, 'getColorForLocation$I$I', function (x, y) {
 var column;
 if ((!this.getComponentOrientation().isLeftToRight()) && (Clazz.instanceOf(this, "javax.swing.colorchooser.RecentSwatchPanel")) ) {
-column = this.numSwatches.width - (x/(this.swatchSize.width + this.gap.width)|0) - 1;
+column=this.numSwatches.width - (x/(this.swatchSize.width + this.gap.width)|0) - 1;
 } else {
-column = (x/(this.swatchSize.width + this.gap.width)|0);
+column=(x/(this.swatchSize.width + this.gap.width)|0);
 }var row = (y/(this.swatchSize.height + this.gap.height)|0);
 return p$.getColorForCell$I$I.apply(this, [column, row]);
 });
@@ -82,4 +82,4 @@ Clazz.newMeth(C$, 'getColorForCell$I$I', function (column, row) {
 return this.colors[(row * this.numSwatches.width) + column];
 });
 })();
-//Created 2018-05-15 01:02:44
+//Created 2018-05-24 08:46:47

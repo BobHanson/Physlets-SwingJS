@@ -47,7 +47,7 @@ this.initTitleGC$S$java_awt_GraphicsConfiguration(title, gc);
 }, 1);
 
 Clazz.newMeth(C$, 'initTitleGC$S$java_awt_GraphicsConfiguration', function (title, gc) {
-this.title = (title == null  ? "" : title);
+this.title=(title == null  ? "" : title);
 this.initWinGC$java_awt_Window$java_awt_GraphicsConfiguration(null, gc);
 });
 
@@ -64,7 +64,7 @@ C$.superclazz.prototype.addNotify.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'getOrCreatePeer', function () {
-return (this.ui == null  ? null : this.peer == null  ? (this.peer = this.getToolkit().createFrame$java_awt_Frame(this)) : this.peer);
+return (this.ui == null  ? null : this.peer == null  ? (this.peer=this.getToolkit().createFrame$java_awt_Frame(this)) : this.peer);
 });
 
 Clazz.newMeth(C$, 'getTitle', function () {
@@ -74,9 +74,9 @@ return this.title;
 Clazz.newMeth(C$, 'setTitle$S', function (title) {
 var oldTitle = this.title;
 if (title == null ) {
-title = "";
+title="";
 }{
-this.title = title;
+this.title=title;
 var peer = this.peer;
 if (peer != null ) {
 peer.setTitle$S(title);
@@ -102,7 +102,7 @@ return this.resizable;
 Clazz.newMeth(C$, 'setResizable$Z', function (resizable) {
 var oldResizable = this.resizable;
 {
-this.resizable = resizable;
+this.resizable=resizable;
 }this.firePropertyChange$S$Z$Z("resizable", oldResizable, resizable);
 });
 
@@ -117,7 +117,7 @@ this.setExtendedState$I(current & -2);
 Clazz.newMeth(C$, 'setExtendedState$I', function (state) {
 if (!p$.isFrameStateSupported$I.apply(this, [state])) {
 return;
-}this.$state = state;
+}this.$state=state;
 });
 
 Clazz.newMeth(C$, 'isFrameStateSupported$I', function (state) {
@@ -125,7 +125,7 @@ if (!this.getToolkit().isFrameStateSupported$I(state)) {
 if (((state & 1) != 0) && !this.getToolkit().isFrameStateSupported$I(1) ) {
 return false;
 } else {
-state = state&(-2);
+state&=-2;
 }return this.getToolkit().isFrameStateSupported$I(state);
 }return true;
 });
@@ -139,7 +139,7 @@ return this.$state;
 });
 
 Clazz.newMeth(C$, 'setMaximizedBounds$java_awt_Rectangle', function (bounds) {
-this.maximizedBounds = bounds;
+this.maximizedBounds=bounds;
 });
 
 Clazz.newMeth(C$, 'getMaximizedBounds', function () {
@@ -150,7 +150,7 @@ Clazz.newMeth(C$, 'setUndecorated$Z', function (undecorated) {
 {
 if (this.isDisplayable()) {
 throw Clazz.new_(Clazz.load('java.awt.IllegalComponentStateException').c$$S,["The frame is displayable."]);
-}this.undecorated = undecorated;
+}this.undecorated=undecorated;
 }});
 
 Clazz.newMeth(C$, 'isUndecorated', function () {
@@ -207,9 +207,9 @@ var frames = Clazz.array(C$, [frameCount]);
 var c = 0;
 for (var w, $w = 0, $$w = allWindows; $w<$$w.length&&((w=$$w[$w]),1);$w++) {
 if (Clazz.instanceOf(w, "java.awt.Frame")) {
-frames[c++] = w;
+frames[c++]=w;
 }}
 return frames;
 }, 1);
 })();
-//Created 2018-05-15 01:01:51
+//Created 2018-05-24 08:45:09

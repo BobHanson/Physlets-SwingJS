@@ -40,12 +40,12 @@ C$.superclazz.c$$java_io_OutputStream.apply(this, [out]);
 C$.$init$.apply(this);
 this.jzSetDOS$java_io_OutputStream$swingjs_jzlib_Deflater$I$Z(out, this.deflater, 0, true);
 this.jzSetDOS$java_io_OutputStream$swingjs_jzlib_Deflater$I$Z(out, this.deflater, 0, true);
-this.usesDefaultDeflater = true;
+this.usesDefaultDeflater=true;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream', function (out) {
 C$.c$$java_io_OutputStream$Z.apply(this, [out, false]);
-this.usesDefaultDeflater = true;
+this.usesDefaultDeflater=true;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_ByteArrayOutputStream$java_util_zip_Deflater', function (bos, deflater) {
@@ -58,4 +58,4 @@ Clazz.newMeth(C$, 'setDOS$java_io_OutputStream$java_util_zip_Deflater', function
 this.jzSetDOS$java_io_OutputStream$swingjs_jzlib_Deflater$I$Z(out, deflater, 0, true);
 });
 })();
-//Created 2018-05-15 01:02:16
+//Created 2018-05-24 08:45:51

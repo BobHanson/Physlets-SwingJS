@@ -17,7 +17,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.a = C$.emptyArray;
+this.a=C$.emptyArray;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (numEntries) {
@@ -36,7 +36,7 @@ this.setSizes$IA(sizes);
 
 Clazz.newMeth(C$, 'setSizes$I$I', function (length, size) {
 if (this.a.length != length) {
-this.a = Clazz.array(Integer.TYPE, [length]);
+this.a=Clazz.array(Integer.TYPE, [length]);
 }p$.setSizes$I$I$I.apply(this, [0, length, size]);
 });
 
@@ -44,13 +44,13 @@ Clazz.newMeth(C$, 'setSizes$I$I$I', function (from, to, size) {
 if (to <= from) {
 return 0;
 }var m = ((from + to)/2|0);
-this.a[m] = size + p$.setSizes$I$I$I.apply(this, [from, m, size]);
+this.a[m]=size + p$.setSizes$I$I$I.apply(this, [from, m, size]);
 return this.a[m] + p$.setSizes$I$I$I.apply(this, [m + 1, to, size]);
 });
 
 Clazz.newMeth(C$, 'setSizes$IA', function (sizes) {
 if (this.a.length != sizes.length) {
-this.a = Clazz.array(Integer.TYPE, [sizes.length]);
+this.a=Clazz.array(Integer.TYPE, [sizes.length]);
 }p$.setSizes$I$I$IA.apply(this, [0, this.a.length, sizes]);
 });
 
@@ -58,7 +58,7 @@ Clazz.newMeth(C$, 'setSizes$I$I$IA', function (from, to, sizes) {
 if (to <= from) {
 return 0;
 }var m = ((from + to)/2|0);
-this.a[m] = sizes[m] + p$.setSizes$I$I$IA.apply(this, [from, m, sizes]);
+this.a[m]=sizes[m] + p$.setSizes$I$I$IA.apply(this, [from, m, sizes]);
 return this.a[m] + p$.setSizes$I$I$IA.apply(this, [m + 1, to, sizes]);
 });
 
@@ -73,7 +73,7 @@ Clazz.newMeth(C$, 'getSizes$I$I$IA', function (from, to, sizes) {
 if (to <= from) {
 return 0;
 }var m = ((from + to)/2|0);
-sizes[m] = this.a[m] - p$.getSizes$I$I$IA.apply(this, [from, m, sizes]);
+sizes[m]=this.a[m] - p$.getSizes$I$I$IA.apply(this, [from, m, sizes]);
 return this.a[m] + p$.getSizes$I$I$IA.apply(this, [m + 1, to, sizes]);
 });
 
@@ -119,7 +119,7 @@ if (to <= from) {
 return;
 }var m = ((from + to)/2|0);
 if (index <= m) {
-this.a[m] = this.a[m]+(delta);
+this.a[m]+=delta;
 p$.changeSize$I$I$I$I.apply(this, [from, m, index, delta]);
 } else {
 p$.changeSize$I$I$I$I.apply(this, [m + 1, to, index, delta]);
@@ -129,15 +129,15 @@ Clazz.newMeth(C$, 'insertEntries$I$I$I', function (start, length, value) {
 var sizes = this.getSizes();
 var end = start + length;
 var n = this.a.length + length;
-this.a = Clazz.array(Integer.TYPE, [n]);
+this.a=Clazz.array(Integer.TYPE, [n]);
 for (var i = 0; i < start; i++) {
-this.a[i] = sizes[i];
+this.a[i]=sizes[i];
 }
 for (var i = start; i < end; i++) {
-this.a[i] = value;
+this.a[i]=value;
 }
 for (var i = end; i < n; i++) {
-this.a[i] = sizes[i - length];
+this.a[i]=sizes[i - length];
 }
 this.setSizes$IA(this.a);
 });
@@ -145,14 +145,14 @@ this.setSizes$IA(this.a);
 Clazz.newMeth(C$, 'removeEntries$I$I', function (start, length) {
 var sizes = this.getSizes();
 var n = this.a.length - length;
-this.a = Clazz.array(Integer.TYPE, [n]);
+this.a=Clazz.array(Integer.TYPE, [n]);
 for (var i = 0; i < start; i++) {
-this.a[i] = sizes[i];
+this.a[i]=sizes[i];
 }
 for (var i = start; i < n; i++) {
-this.a[i] = sizes[i + length];
+this.a[i]=sizes[i + length];
 }
 this.setSizes$IA(this.a);
 });
 })();
-//Created 2018-05-15 01:02:40
+//Created 2018-05-24 08:46:39

@@ -82,19 +82,19 @@ Clazz.newMeth(C$, 'init$ThreadGroup$Runnable$S$J$O', function (g, target, name, 
 var parent = (Thread.thisThread == null  ? null : Thread.thisThread);
 if (g == null ) {
 if (g == null  && parent != null   && !parent.equals$O("working") ) {
-g = parent.getThreadGroup();
+g=parent.getThreadGroup();
 }}if (g == null ) {
-g = this.newThreadGroup$ThreadGroup$S(null, name);
-parent = this;
+g=this.newThreadGroup$ThreadGroup$S(null, name);
+parent=this;
 }g.checkAccess();
 g.addUnstarted();
-this.group = g;
-this.priority = parent.getPriority();
-this.name = name;
-this.target = target;
+this.group=g;
+this.priority=parent.getPriority();
+this.name=name;
+this.target=target;
 this.setPriority$I(this.priority);
-this.tid = Thread.nextThreadID();
-this.me = this;
+this.tid=Thread.nextThreadID();
+this.me=this;
 });
 
 Clazz.newMeth(C$, 'newThreadGroup$ThreadGroup$S', function (group, name) {
@@ -150,7 +150,7 @@ p$.stop0$O.apply(this, [this.throwableFromStop]);
 }});
 
 Clazz.newMeth(C$, 'start0', function () {
-this.started = true;
+this.started=true;
 (I$[2]||$incl$(2)).dispatch$O$I$I(this, 0, 0);
 });
 
@@ -176,8 +176,8 @@ p$.stop0$O.apply(this, [th]);
 } else {
 if (th == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.stopBeforeStart = true;
-this.throwableFromStop = th;
+}this.stopBeforeStart=true;
+this.throwableFromStop=th;
 }});
 
 Clazz.newMeth(C$, 'interrupt', function () {
@@ -194,7 +194,7 @@ return p$.isInterruptedB$Z.apply(this, [false]);
 
 Clazz.newMeth(C$, 'isInterruptedB$Z', function (clearInterrupted) {
 var wasInt = this.$interrupted;
-if (clearInterrupted) this.$interrupted = false;
+if (clearInterrupted) this.$interrupted=false;
 return wasInt;
 });
 
@@ -221,10 +221,10 @@ var g;
 this.checkAccess();
 if (newPriority > 10 || newPriority < 1 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
-}if ((g = this.getThreadGroup()) != null ) {
+}if ((g=this.getThreadGroup()) != null ) {
 if (newPriority > g.getMaxPriority()) {
-newPriority = g.getMaxPriority();
-}p$.setPriority0$I.apply(this, [this.priority = newPriority]);
+newPriority=g.getMaxPriority();
+}p$.setPriority0$I.apply(this, [this.priority=newPriority]);
 }});
 
 Clazz.newMeth(C$, 'getPriority', function () {
@@ -233,7 +233,7 @@ return this.priority;
 
 Clazz.newMeth(C$, 'setName$S', function (name) {
 this.checkAccess();
-this.name = name;
+this.name=name;
 });
 
 Clazz.newMeth(C$, 'getName', function () {
@@ -272,7 +272,7 @@ var delay = millis - now;
 if (delay <= 0) {
 break;
 }this.wait$J(delay);
-now = System.currentTimeMillis() - base;
+now=System.currentTimeMillis() - base;
 }
 }});
 
@@ -298,7 +298,7 @@ Clazz.newMeth(C$, 'setDaemon$Z', function (on) {
 this.checkAccess();
 if (this.isAlive()) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalThreadStateException'));
-}this.daemon = on;
+}this.daemon=on;
 });
 
 Clazz.newMeth(C$, 'isDaemon', function () {
@@ -372,7 +372,7 @@ return (I$[7]||$incl$(7)).WAITING;
 });
 
 Clazz.newMeth(C$, 'setDefaultUncaughtExceptionHandler$Thread_UncaughtExceptionHandler', function (eh) {
-Thread.defaultUncaughtExceptionHandler = eh;
+Thread.defaultUncaughtExceptionHandler=eh;
 }, 1);
 
 Clazz.newMeth(C$, 'getDefaultUncaughtExceptionHandler', function () {
@@ -385,14 +385,14 @@ return this.uncaughtExceptionHandler != null  ? this.uncaughtExceptionHandler : 
 
 Clazz.newMeth(C$, 'setUncaughtExceptionHandler$Thread_UncaughtExceptionHandler', function (eh) {
 this.checkAccess();
-this.uncaughtExceptionHandler = eh;
+this.uncaughtExceptionHandler=eh;
 });
 
 Clazz.newMeth(C$, 'setPriority0$I', function (newPriority) {
 });
 
 Clazz.newMeth(C$, 'stop0$O', function (o) {
-this.stopped = true;
+this.stopped=true;
 });
 
 Clazz.newMeth(C$, 'suspend0', function () {
@@ -402,7 +402,7 @@ Clazz.newMeth(C$, 'resume0', function () {
 });
 
 Clazz.newMeth(C$, 'interrupt0', function () {
-this.$interrupted = true;
+this.$interrupted=true;
 });
 ;
 (function(){var C$=Clazz.newClass(Thread, "State", null, 'Enum');
@@ -429,4 +429,4 @@ Clazz.newMeth(C$, 'values', function() { return $vals }, 1);
 });
 })()
 })();
-//Created 2018-05-15 01:02:08
+//Created 2018-05-24 08:45:39

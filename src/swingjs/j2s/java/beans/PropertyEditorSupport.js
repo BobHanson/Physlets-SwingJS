@@ -31,11 +31,11 @@ return this.source;
 });
 
 Clazz.newMeth(C$, 'setSource$O', function (source) {
-this.source = source;
+this.source=source;
 });
 
 Clazz.newMeth(C$, 'setValue$O', function (value) {
-this.value = value;
+this.value=value;
 this.firePropertyChange();
 });
 
@@ -79,7 +79,7 @@ return false;
 
 Clazz.newMeth(C$, 'addPropertyChangeListener$java_beans_PropertyChangeListener', function (listener) {
 if (this.listeners == null ) {
-this.listeners = Clazz.new_((I$[1]||$incl$(1)));
+this.listeners=Clazz.new_((I$[1]||$incl$(1)));
 }this.listeners.addElement$TE(listener);
 });
 
@@ -94,7 +94,7 @@ var targets;
 {
 if (this.listeners == null ) {
 return;
-}targets = this.listeners.clone();
+}targets=this.listeners.clone();
 }var evt = Clazz.new_((I$[2]||$incl$(2)).c$$O$S$O$O,[this.source, null, null, null]);
 for (var i = 0; i < targets.size(); i++) {
 var target = targets.elementAt$I(i);
@@ -102,4 +102,4 @@ target.propertyChange$java_beans_PropertyChangeEvent(evt);
 }
 });
 })();
-//Created 2018-05-15 01:02:03
+//Created 2018-05-24 08:45:31

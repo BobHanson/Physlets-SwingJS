@@ -22,14 +22,14 @@ this.int4 = Clazz.array(Byte.TYPE, [4]);
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.pngBytes = Clazz.array(Byte.TYPE, [250]);
-this.crc = Clazz.new_((I$[1]||$incl$(1)));
+this.pngBytes=Clazz.array(Byte.TYPE, [250]);
+this.crc=Clazz.new_((I$[1]||$incl$(1)));
 }, 1);
 
 Clazz.newMeth(C$, 'setData$BA$I', function (b, pt) {
-this.pngBytes = b;
-this.dataLen = b.length;
-this.startPos = this.bytePos = pt;
+this.pngBytes=b;
+this.dataLen=b.length;
+this.startPos=this.bytePos=pt;
 });
 
 Clazz.newMeth(C$, 'getBytes', function () {
@@ -43,8 +43,8 @@ this.writeInt4$I((this.crc.getValue()|0));
 });
 
 Clazz.newMeth(C$, 'writeInt2$I', function (n) {
-this.int2[0] = ((((n >> 8) & 255)|0)|0);
-this.int2[1] = (((n & 255)|0)|0);
+this.int2[0]=((((n >> 8) & 255)|0)|0);
+this.int2[1]=(((n & 255)|0)|0);
 this.writeBytes$BA(this.int2);
 });
 
@@ -54,10 +54,10 @@ this.writeBytes$BA(this.int4);
 });
 
 Clazz.newMeth(C$, 'getInt4$I$BA', function (n, int4) {
-int4[0] = ((((n >> 24) & 255)|0)|0);
-int4[1] = ((((n >> 16) & 255)|0)|0);
-int4[2] = ((((n >> 8) & 255)|0)|0);
-int4[3] = (((n & 255)|0)|0);
+int4[0]=((((n >> 24) & 255)|0)|0);
+int4[1]=((((n >> 16) & 255)|0)|0);
+int4[2]=((((n >> 8) & 255)|0)|0);
+int4[3]=(((n & 255)|0)|0);
 }, 1);
 
 Clazz.newMeth(C$, 'writeByte$I', function (b) {
@@ -71,11 +71,11 @@ this.writeBytes$BA(s.getBytes());
 
 Clazz.newMeth(C$, 'writeBytes$BA', function (data) {
 var newPos = this.bytePos + data.length;
-this.dataLen = Math.max(this.dataLen, newPos);
-if (newPos > this.pngBytes.length) this.pngBytes = (I$[2]||$incl$(2)).arrayCopyByte$BA$I(this.pngBytes, newPos + 16);
+this.dataLen=Math.max(this.dataLen, newPos);
+if (newPos > this.pngBytes.length) this.pngBytes=(I$[2]||$incl$(2)).arrayCopyByte$BA$I(this.pngBytes, newPos + 16);
 System.arraycopy(data, 0, this.pngBytes, this.bytePos, data.length);
-this.bytePos = newPos;
+this.bytePos=newPos;
 });
 var $b$ = new Int8Array(1);
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:53

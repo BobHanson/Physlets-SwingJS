@@ -16,7 +16,7 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setWindowAccessor$sun_awt_AWTAccessor_WindowAccessor', function (wa) {
-C$.windowAccessor = wa;
+C$.windowAccessor=wa;
 }, 1);
 
 Clazz.newMeth(C$, 'getWindowAccessor', function () {
@@ -24,7 +24,7 @@ return C$.windowAccessor;
 }, 1);
 
 Clazz.newMeth(C$, 'setComponentAccessor$sun_awt_AWTAccessor_ComponentAccessor', function (ca) {
-C$.componentAccessor = ca;
+C$.componentAccessor=ca;
 }, 1);
 
 Clazz.newMeth(C$, 'getComponentAccessor', function () {
@@ -32,7 +32,7 @@ return C$.componentAccessor;
 }, 1);
 
 Clazz.newMeth(C$, 'setAWTEventAccessor$sun_awt_AWTAccessor_AWTEventAccessor', function (aea) {
-C$.awtEventAccessor = aea;
+C$.awtEventAccessor=aea;
 }, 1);
 
 Clazz.newMeth(C$, 'getAWTEventAccessor', function () {
@@ -40,7 +40,7 @@ return C$.awtEventAccessor;
 }, 1);
 
 Clazz.newMeth(C$, 'setEventQueueAccessor$sun_awt_AWTAccessor_EventQueueAccessor', function (eqa) {
-C$.eventQueueAccessor = eqa;
+C$.eventQueueAccessor=eqa;
 }, 1);
 
 Clazz.newMeth(C$, 'getEventQueueAccessor', function () {
@@ -75,4 +75,4 @@ return C$.eventQueueAccessor;
 });
 })()
 })();
-//Created 2018-05-15 01:03:04
+//Created 2018-05-24 08:47:20

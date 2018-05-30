@@ -24,13 +24,13 @@ C$.$init$.apply(this);
 Clazz.newMeth(C$, 'c$$I$I', function (rule, initialTypes) {
 C$.$init$.apply(this);
 this.setWindingRule$I(rule);
-this.pointTypes = Clazz.array(Byte.TYPE, [initialTypes]);
+this.pointTypes=Clazz.array(Byte.TYPE, [initialTypes]);
 }, 1);
 
 Clazz.newMeth(C$, 'closePath', function () {
 if (this.numTypes == 0 || this.pointTypes[this.numTypes - 1] != 4 ) {
 this.needRoom$Z$I(true, 0);
-this.pointTypes[this.numTypes++] = (4|0);
+this.pointTypes[this.numTypes++]=(4|0);
 }});
 
 Clazz.newMeth(C$, 'append$java_awt_Shape$Z', function (s, connect) {
@@ -44,7 +44,7 @@ return this.windingRule;
 Clazz.newMeth(C$, 'setWindingRule$I', function (rule) {
 if (rule != 0 && rule != 1 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["winding rule must be WIND_EVEN_ODD or WIND_NON_ZERO"]);
-}this.windingRule = rule;
+}this.windingRule=rule;
 });
 
 Clazz.newMeth(C$, 'getCurrentPoint', function () {
@@ -57,13 +57,13 @@ switch (this.pointTypes[i]) {
 case 0:
 break loop;
 case 1:
-index = index-(2);
+index-=2;
 break;
 case 2:
-index = index-(4);
+index-=4;
 break;
 case 3:
-index = index-(6);
+index-=6;
 break;
 case 4:
 break;
@@ -73,7 +73,7 @@ break;
 });
 
 Clazz.newMeth(C$, 'reset', function () {
-this.numTypes = this.numCoords = 0;
+this.numTypes=this.numCoords=0;
 });
 
 Clazz.newMeth(C$, 'createTransformedShape$java_awt_geom_AffineTransform', function (at) {
@@ -195,7 +195,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_Path2D', function (path) {
 C$.$init$.apply(this);
-this.path = path;
+this.path=path;
 }, 1);
 
 Clazz.newMeth(C$, 'getWindingRule', function () {
@@ -208,7 +208,7 @@ return (this.typeIdx >= this.path.numTypes);
 
 Clazz.newMeth(C$, 'next', function () {
 var type = this.path.pointTypes[this.typeIdx++];
-this.pointIdx = this.pointIdx+(C$.curvecoords[type]);
+this.pointIdx+=C$.curvecoords[type];
 });
 
 Clazz.newMeth(C$);
@@ -241,8 +241,8 @@ C$.c$$I$I.apply(this, [rule, 20]);
 Clazz.newMeth(C$, 'c$$I$I', function (rule, initialCapacity) {
 Clazz.super_(C$, this,1);
 this.setWindingRule$I(rule);
-this.pointTypes = Clazz.array(Byte.TYPE, [initialCapacity]);
-this.floatCoords = Clazz.array(Float.TYPE, [initialCapacity * 2]);
+this.pointTypes=Clazz.array(Byte.TYPE, [initialCapacity]);
+this.floatCoords=Clazz.array(Float.TYPE, [initialCapacity * 2]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Shape', function (s) {
@@ -258,24 +258,24 @@ Clazz.newMeth(C$, 'setPath$java_awt_Shape$java_awt_geom_AffineTransform', functi
 if (Clazz.instanceOf(s, "java.awt.geom.Path2D")) {
 var p2d = s;
 this.setWindingRule$I(p2d.windingRule);
-this.numTypes = p2d.numTypes;
-this.pointTypes = (I$[2]||$incl$(2)).copyOf$BA$I(p2d.pointTypes, p2d.pointTypes.length);
-this.numCoords = p2d.numCoords;
-this.floatCoords = p2d.cloneCoordsFloat$java_awt_geom_AffineTransform(at);
+this.numTypes=p2d.numTypes;
+this.pointTypes=(I$[2]||$incl$(2)).copyOf$BA$I(p2d.pointTypes, p2d.pointTypes.length);
+this.numCoords=p2d.numCoords;
+this.floatCoords=p2d.cloneCoordsFloat$java_awt_geom_AffineTransform(at);
 } else {
 var pi = s.getPathIterator$java_awt_geom_AffineTransform(at);
 this.setWindingRule$I(pi.getWindingRule());
-this.pointTypes = Clazz.array(Byte.TYPE, [20]);
-this.floatCoords = Clazz.array(Float.TYPE, [40]);
+this.pointTypes=Clazz.array(Byte.TYPE, [20]);
+this.floatCoords=Clazz.array(Float.TYPE, [40]);
 this.append$java_awt_geom_PathIterator$Z(pi, false);
 }});
 
 Clazz.newMeth(C$, 'cloneCoordsFloat$java_awt_geom_AffineTransform', function (at) {
 var ret;
 if (at == null ) {
-ret = (I$[2]||$incl$(2)).copyOf$FA$I(this.floatCoords, this.floatCoords.length);
+ret=(I$[2]||$incl$(2)).copyOf$FA$I(this.floatCoords, this.floatCoords.length);
 } else {
-ret = Clazz.array(Float.TYPE, [this.floatCoords.length]);
+ret=Clazz.array(Float.TYPE, [this.floatCoords.length]);
 at.transform$FA$I$FA$I$I(this.floatCoords, 0, ret, 0, (this.numCoords/2|0));
 }return ret;
 });
@@ -284,7 +284,7 @@ Clazz.newMeth(C$, 'cloneCoordsDouble$java_awt_geom_AffineTransform', function (a
 var ret = Clazz.array(Double.TYPE, [this.floatCoords.length]);
 if (at == null ) {
 for (var i = 0; i < this.numCoords; i++) {
-ret[i] = this.floatCoords[i];
+ret[i]=this.floatCoords[i];
 }
 } else {
 at.transform$FA$I$DA$I$I(this.floatCoords, 0, ret, 0, (this.numCoords/2|0));
@@ -292,13 +292,13 @@ at.transform$FA$I$DA$I$I(this.floatCoords, 0, ret, 0, (this.numCoords/2|0));
 });
 
 Clazz.newMeth(C$, 'append$F$F', function (x, y) {
-this.floatCoords[this.numCoords++] = x;
-this.floatCoords[this.numCoords++] = y;
+this.floatCoords[this.numCoords++]=x;
+this.floatCoords[this.numCoords++]=y;
 });
 
 Clazz.newMeth(C$, 'append$D$D', function (x, y) {
-this.floatCoords[this.numCoords++] = x;
-this.floatCoords[this.numCoords++] = y;
+this.floatCoords[this.numCoords++]=x;
+this.floatCoords[this.numCoords++]=y;
 });
 
 Clazz.newMeth(C$, 'append$java_awt_geom_PathIterator$Z', function (pi, connect) {
@@ -325,7 +325,7 @@ this.closePath();
 break;
 }
 pi.next();
-connect = false;
+connect=false;
 }
 });
 
@@ -340,92 +340,92 @@ throw Clazz.new_(Clazz.load('java.awt.geom.IllegalPathStateException').c$$S,["mi
 if (this.numTypes >= size) {
 var grow = size;
 if (grow > 500) {
-grow = 500;
-}this.pointTypes = (I$[2]||$incl$(2)).copyOf$BA$I(this.pointTypes, size + grow);
-}size = this.floatCoords.length;
+grow=500;
+}this.pointTypes=(I$[2]||$incl$(2)).copyOf$BA$I(this.pointTypes, size + grow);
+}size=this.floatCoords.length;
 if (this.numCoords + newCoords > size) {
 var grow = size;
 if (grow > 1000) {
-grow = 1000;
+grow=1000;
 }if (grow < newCoords) {
-grow = newCoords;
-}this.floatCoords = (I$[2]||$incl$(2)).copyOf$FA$I(this.floatCoords, size + grow);
+grow=newCoords;
+}this.floatCoords=(I$[2]||$incl$(2)).copyOf$FA$I(this.floatCoords, size + grow);
 }});
 
 Clazz.newMeth(C$, 'moveTo$D$D', function (x, y) {
 if (this.numTypes > 0 && this.pointTypes[this.numTypes - 1] == 0 ) {
-this.floatCoords[this.numCoords - 2] = x;
-this.floatCoords[this.numCoords - 1] = y;
+this.floatCoords[this.numCoords - 2]=x;
+this.floatCoords[this.numCoords - 1]=y;
 } else {
 this.needRoom$Z$I(false, 2);
-this.pointTypes[this.numTypes++] = (0|0);
-this.floatCoords[this.numCoords++] = x;
-this.floatCoords[this.numCoords++] = y;
+this.pointTypes[this.numTypes++]=(0|0);
+this.floatCoords[this.numCoords++]=x;
+this.floatCoords[this.numCoords++]=y;
 }});
 
 Clazz.newMeth(C$, 'moveTo$F$F', function (x, y) {
 if (this.numTypes > 0 && this.pointTypes[this.numTypes - 1] == 0 ) {
-this.floatCoords[this.numCoords - 2] = x;
-this.floatCoords[this.numCoords - 1] = y;
+this.floatCoords[this.numCoords - 2]=x;
+this.floatCoords[this.numCoords - 1]=y;
 } else {
 this.needRoom$Z$I(false, 2);
-this.pointTypes[this.numTypes++] = (0|0);
-this.floatCoords[this.numCoords++] = x;
-this.floatCoords[this.numCoords++] = y;
+this.pointTypes[this.numTypes++]=(0|0);
+this.floatCoords[this.numCoords++]=x;
+this.floatCoords[this.numCoords++]=y;
 }});
 
 Clazz.newMeth(C$, 'lineTo$D$D', function (x, y) {
 this.needRoom$Z$I(true, 2);
-this.pointTypes[this.numTypes++] = (1|0);
-this.floatCoords[this.numCoords++] = x;
-this.floatCoords[this.numCoords++] = y;
+this.pointTypes[this.numTypes++]=(1|0);
+this.floatCoords[this.numCoords++]=x;
+this.floatCoords[this.numCoords++]=y;
 });
 
 Clazz.newMeth(C$, 'lineTo$F$F', function (x, y) {
 this.needRoom$Z$I(true, 2);
-this.pointTypes[this.numTypes++] = (1|0);
-this.floatCoords[this.numCoords++] = x;
-this.floatCoords[this.numCoords++] = y;
+this.pointTypes[this.numTypes++]=(1|0);
+this.floatCoords[this.numCoords++]=x;
+this.floatCoords[this.numCoords++]=y;
 });
 
 Clazz.newMeth(C$, 'quadTo$D$D$D$D', function (x1, y1, x2, y2) {
 this.needRoom$Z$I(true, 4);
-this.pointTypes[this.numTypes++] = (2|0);
-this.floatCoords[this.numCoords++] = x1;
-this.floatCoords[this.numCoords++] = y1;
-this.floatCoords[this.numCoords++] = x2;
-this.floatCoords[this.numCoords++] = y2;
+this.pointTypes[this.numTypes++]=(2|0);
+this.floatCoords[this.numCoords++]=x1;
+this.floatCoords[this.numCoords++]=y1;
+this.floatCoords[this.numCoords++]=x2;
+this.floatCoords[this.numCoords++]=y2;
 });
 
 Clazz.newMeth(C$, 'quadTo$F$F$F$F', function (x1, y1, x2, y2) {
 this.needRoom$Z$I(true, 4);
-this.pointTypes[this.numTypes++] = (2|0);
-this.floatCoords[this.numCoords++] = x1;
-this.floatCoords[this.numCoords++] = y1;
-this.floatCoords[this.numCoords++] = x2;
-this.floatCoords[this.numCoords++] = y2;
+this.pointTypes[this.numTypes++]=(2|0);
+this.floatCoords[this.numCoords++]=x1;
+this.floatCoords[this.numCoords++]=y1;
+this.floatCoords[this.numCoords++]=x2;
+this.floatCoords[this.numCoords++]=y2;
 });
 
 Clazz.newMeth(C$, 'curveTo$D$D$D$D$D$D', function (x1, y1, x2, y2, x3, y3) {
 this.needRoom$Z$I(true, 6);
-this.pointTypes[this.numTypes++] = (3|0);
-this.floatCoords[this.numCoords++] = x1;
-this.floatCoords[this.numCoords++] = y1;
-this.floatCoords[this.numCoords++] = x2;
-this.floatCoords[this.numCoords++] = y2;
-this.floatCoords[this.numCoords++] = x3;
-this.floatCoords[this.numCoords++] = y3;
+this.pointTypes[this.numTypes++]=(3|0);
+this.floatCoords[this.numCoords++]=x1;
+this.floatCoords[this.numCoords++]=y1;
+this.floatCoords[this.numCoords++]=x2;
+this.floatCoords[this.numCoords++]=y2;
+this.floatCoords[this.numCoords++]=x3;
+this.floatCoords[this.numCoords++]=y3;
 });
 
 Clazz.newMeth(C$, 'curveTo$F$F$F$F$F$F', function (x1, y1, x2, y2, x3, y3) {
 this.needRoom$Z$I(true, 6);
-this.pointTypes[this.numTypes++] = (3|0);
-this.floatCoords[this.numCoords++] = x1;
-this.floatCoords[this.numCoords++] = y1;
-this.floatCoords[this.numCoords++] = x2;
-this.floatCoords[this.numCoords++] = y2;
-this.floatCoords[this.numCoords++] = x3;
-this.floatCoords[this.numCoords++] = y3;
+this.pointTypes[this.numTypes++]=(3|0);
+this.floatCoords[this.numCoords++]=x1;
+this.floatCoords[this.numCoords++]=y1;
+this.floatCoords[this.numCoords++]=x2;
+this.floatCoords[this.numCoords++]=y2;
+this.floatCoords[this.numCoords++]=x3;
+this.floatCoords[this.numCoords++]=y3;
 });
 
 Clazz.newMeth(C$, 'pointCrossings$D$D', function (px, py) {
@@ -436,43 +436,43 @@ var cury;
 var endx;
 var endy;
 var coords = this.floatCoords;
-curx = movx = coords[0];
-cury = movy = coords[1];
+curx=movx=coords[0];
+cury=movy=coords[1];
 var crossings = 0;
 var ci = 2;
 for (var i = 1; i < this.numTypes; i++) {
 switch (this.pointTypes[i]) {
 case 0:
 if (cury != movy ) {
-crossings = crossings+((I$[4]||$incl$(4)).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, movx, movy));
-}movx = curx = coords[ci++];
-movy = cury = coords[ci++];
+crossings+=(I$[4]||$incl$(4)).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, movx, movy);
+}movx=curx=coords[ci++];
+movy=cury=coords[ci++];
 break;
 case 1:
-crossings = crossings+((I$[4]||$incl$(4)).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, endx = coords[ci++], endy = coords[ci++]));
-curx = endx;
-cury = endy;
+crossings+=(I$[4]||$incl$(4)).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, endx=coords[ci++], endy=coords[ci++]);
+curx=endx;
+cury=endy;
 break;
 case 2:
-crossings = crossings+((I$[4]||$incl$(4)).pointCrossingsForQuad$D$D$D$D$D$D$D$D$I(px, py, curx, cury, coords[ci++], coords[ci++], endx = coords[ci++], endy = coords[ci++], 0));
-curx = endx;
-cury = endy;
+crossings+=(I$[4]||$incl$(4)).pointCrossingsForQuad$D$D$D$D$D$D$D$D$I(px, py, curx, cury, coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0);
+curx=endx;
+cury=endy;
 break;
 case 3:
-crossings = crossings+((I$[4]||$incl$(4)).pointCrossingsForCubic$D$D$D$D$D$D$D$D$D$D$I(px, py, curx, cury, coords[ci++], coords[ci++], coords[ci++], coords[ci++], endx = coords[ci++], endy = coords[ci++], 0));
-curx = endx;
-cury = endy;
+crossings+=(I$[4]||$incl$(4)).pointCrossingsForCubic$D$D$D$D$D$D$D$D$D$D$I(px, py, curx, cury, coords[ci++], coords[ci++], coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0);
+curx=endx;
+cury=endy;
 break;
 case 4:
 if (cury != movy ) {
-crossings = crossings+((I$[4]||$incl$(4)).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, movx, movy));
-}curx = movx;
-cury = movy;
+crossings+=(I$[4]||$incl$(4)).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, movx, movy);
+}curx=movx;
+cury=movy;
 break;
 }
 }
 if (cury != movy ) {
-crossings = crossings+((I$[4]||$incl$(4)).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, movx, movy));
+crossings+=(I$[4]||$incl$(4)).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, movx, movy);
 }return crossings;
 });
 
@@ -484,43 +484,43 @@ var movx;
 var movy;
 var endx;
 var endy;
-curx = movx = coords[0];
-cury = movy = coords[1];
+curx=movx=coords[0];
+cury=movy=coords[1];
 var crossings = 0;
 var ci = 2;
 for (var i = 1; crossings != -2147483648 && i < this.numTypes ; i++) {
 switch (this.pointTypes[i]) {
 case 0:
 if (curx != movx  || cury != movy  ) {
-crossings = (I$[4]||$incl$(4)).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxmax, rymax, curx, cury, movx, movy);
-}movx = curx = coords[ci++];
-movy = cury = coords[ci++];
+crossings=(I$[4]||$incl$(4)).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxmax, rymax, curx, cury, movx, movy);
+}movx=curx=coords[ci++];
+movy=cury=coords[ci++];
 break;
 case 1:
-crossings = (I$[4]||$incl$(4)).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxmax, rymax, curx, cury, endx = coords[ci++], endy = coords[ci++]);
-curx = endx;
-cury = endy;
+crossings=(I$[4]||$incl$(4)).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxmax, rymax, curx, cury, endx=coords[ci++], endy=coords[ci++]);
+curx=endx;
+cury=endy;
 break;
 case 2:
-crossings = (I$[4]||$incl$(4)).rectCrossingsForQuad$I$D$D$D$D$D$D$D$D$D$D$I(crossings, rxmin, rymin, rxmax, rymax, curx, cury, coords[ci++], coords[ci++], endx = coords[ci++], endy = coords[ci++], 0);
-curx = endx;
-cury = endy;
+crossings=(I$[4]||$incl$(4)).rectCrossingsForQuad$I$D$D$D$D$D$D$D$D$D$D$I(crossings, rxmin, rymin, rxmax, rymax, curx, cury, coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0);
+curx=endx;
+cury=endy;
 break;
 case 3:
-crossings = (I$[4]||$incl$(4)).rectCrossingsForCubic$I$D$D$D$D$D$D$D$D$D$D$D$D$I(crossings, rxmin, rymin, rxmax, rymax, curx, cury, coords[ci++], coords[ci++], coords[ci++], coords[ci++], endx = coords[ci++], endy = coords[ci++], 0);
-curx = endx;
-cury = endy;
+crossings=(I$[4]||$incl$(4)).rectCrossingsForCubic$I$D$D$D$D$D$D$D$D$D$D$D$D$I(crossings, rxmin, rymin, rxmax, rymax, curx, cury, coords[ci++], coords[ci++], coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0);
+curx=endx;
+cury=endy;
 break;
 case 4:
 if (curx != movx  || cury != movy  ) {
-crossings = (I$[4]||$incl$(4)).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxmax, rymax, curx, cury, movx, movy);
-}curx = movx;
-cury = movy;
+crossings=(I$[4]||$incl$(4)).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxmax, rymax, curx, cury, movx, movy);
+}curx=movx;
+cury=movy;
 break;
 }
 }
 if (crossings != -2147483648 && (curx != movx  || cury != movy  ) ) {
-crossings = (I$[4]||$incl$(4)).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxmax, rymax, curx, cury, movx, movy);
+crossings=(I$[4]||$incl$(4)).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxmax, rymax, curx, cury, movx, movy);
 }return crossings;
 });
 
@@ -535,18 +535,18 @@ var x2;
 var y2;
 var i = this.numCoords;
 if (i > 0) {
-y1 = y2 = this.floatCoords[--i];
-x1 = x2 = this.floatCoords[--i];
+y1=y2=this.floatCoords[--i];
+x1=x2=this.floatCoords[--i];
 while (i > 0){
 var y = this.floatCoords[--i];
 var x = this.floatCoords[--i];
-if (x < x1 ) x1 = x;
-if (y < y1 ) y1 = y;
-if (x > x2 ) x2 = x;
-if (y > y2 ) y2 = y;
+if (x < x1 ) x1=x;
+if (y < y1 ) y1=y;
+if (x > x2 ) x2=x;
+if (y > y2 ) y2=y;
 }
 } else {
-x1 = y1 = x2 = y2 = 0.0;
+x1=y1=x2=y2=0.0;
 }return Clazz.new_((I$[5]||$incl$(5)).c$$F$F$F$F,[x1, y1, x2 - x1, y2 - y1]);
 });
 
@@ -579,7 +579,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_geom_Path2D_Float', function (p2df) {
 C$.superclazz.c$$java_awt_geom_Path2D.apply(this, [p2df]);
 C$.$init$.apply(this);
-this.floatCoords = p2df.floatCoords;
+this.floatCoords=p2df.floatCoords;
 }, 1);
 
 Clazz.newMeth(C$, 'currentSegment$FA', function (coords) {
@@ -595,7 +595,7 @@ var type = this.path.pointTypes[this.typeIdx];
 var numCoords = (I$[1]||$incl$(1)).curvecoords[type];
 if (numCoords > 0) {
 for (var i = 0; i < numCoords; i++) {
-coords[i] = this.floatCoords[this.pointIdx + i];
+coords[i]=this.floatCoords[this.pointIdx + i];
 }
 }return type;
 });
@@ -622,8 +622,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_geom_Path2D_Float$java_awt_geom_AffineTransform', function (p2df, at) {
 C$.superclazz.c$$java_awt_geom_Path2D.apply(this, [p2df]);
 C$.$init$.apply(this);
-this.floatCoords = p2df.floatCoords;
-this.affine = at;
+this.floatCoords=p2df.floatCoords;
+this.affine=at;
 }, 1);
 
 Clazz.newMeth(C$, 'currentSegment$FA', function (coords) {
@@ -672,7 +672,7 @@ C$.c$$I$I.apply(this, [rule, 20]);
 Clazz.newMeth(C$, 'c$$I$I', function (rule, initialCapacity) {
 C$.superclazz.c$$I$I.apply(this, [rule, initialCapacity]);
 C$.$init$.apply(this);
-this.doubleCoords = Clazz.array(Double.TYPE, [initialCapacity * 2]);
+this.doubleCoords=Clazz.array(Double.TYPE, [initialCapacity * 2]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Shape', function (s) {
@@ -684,15 +684,15 @@ Clazz.super_(C$, this,1);
 if (Clazz.instanceOf(s, "java.awt.geom.Path2D")) {
 var p2d = s;
 this.setWindingRule$I(p2d.windingRule);
-this.numTypes = p2d.numTypes;
-this.pointTypes = (I$[2]||$incl$(2)).copyOf$BA$I(p2d.pointTypes, p2d.pointTypes.length);
-this.numCoords = p2d.numCoords;
-this.doubleCoords = p2d.cloneCoordsDouble$java_awt_geom_AffineTransform(at);
+this.numTypes=p2d.numTypes;
+this.pointTypes=(I$[2]||$incl$(2)).copyOf$BA$I(p2d.pointTypes, p2d.pointTypes.length);
+this.numCoords=p2d.numCoords;
+this.doubleCoords=p2d.cloneCoordsDouble$java_awt_geom_AffineTransform(at);
 } else {
 var pi = s.getPathIterator$java_awt_geom_AffineTransform(at);
 this.setWindingRule$I(pi.getWindingRule());
-this.pointTypes = Clazz.array(Byte.TYPE, [20]);
-this.doubleCoords = Clazz.array(Double.TYPE, [40]);
+this.pointTypes=Clazz.array(Byte.TYPE, [20]);
+this.doubleCoords=Clazz.array(Double.TYPE, [40]);
 this.append$java_awt_geom_PathIterator$Z(pi, false);
 }}, 1);
 
@@ -700,7 +700,7 @@ Clazz.newMeth(C$, 'cloneCoordsFloat$java_awt_geom_AffineTransform', function (at
 var ret = Clazz.array(Float.TYPE, [this.doubleCoords.length]);
 if (at == null ) {
 for (var i = 0; i < this.numCoords; i++) {
-ret[i] = this.doubleCoords[i];
+ret[i]=this.doubleCoords[i];
 }
 } else {
 at.transform$DA$I$FA$I$I(this.doubleCoords, 0, ret, 0, (this.numCoords/2|0));
@@ -710,21 +710,21 @@ at.transform$DA$I$FA$I$I(this.doubleCoords, 0, ret, 0, (this.numCoords/2|0));
 Clazz.newMeth(C$, 'cloneCoordsDouble$java_awt_geom_AffineTransform', function (at) {
 var ret;
 if (at == null ) {
-ret = (I$[2]||$incl$(2)).copyOf$DA$I(this.doubleCoords, this.doubleCoords.length);
+ret=(I$[2]||$incl$(2)).copyOf$DA$I(this.doubleCoords, this.doubleCoords.length);
 } else {
-ret = Clazz.array(Double.TYPE, [this.doubleCoords.length]);
+ret=Clazz.array(Double.TYPE, [this.doubleCoords.length]);
 at.transform$DA$I$DA$I$I(this.doubleCoords, 0, ret, 0, (this.numCoords/2|0));
 }return ret;
 });
 
 Clazz.newMeth(C$, 'append$F$F', function (x, y) {
-this.doubleCoords[this.numCoords++] = x;
-this.doubleCoords[this.numCoords++] = y;
+this.doubleCoords[this.numCoords++]=x;
+this.doubleCoords[this.numCoords++]=y;
 });
 
 Clazz.newMeth(C$, 'append$D$D', function (x, y) {
-this.doubleCoords[this.numCoords++] = x;
-this.doubleCoords[this.numCoords++] = y;
+this.doubleCoords[this.numCoords++]=x;
+this.doubleCoords[this.numCoords++]=y;
 });
 
 Clazz.newMeth(C$, 'append$java_awt_geom_PathIterator$Z', function (pi, connect) {
@@ -751,7 +751,7 @@ this.closePath();
 break;
 }
 pi.next();
-connect = false;
+connect=false;
 }
 });
 
@@ -766,54 +766,54 @@ throw Clazz.new_(Clazz.load('java.awt.geom.IllegalPathStateException').c$$S,["mi
 if (this.numTypes >= size) {
 var grow = size;
 if (grow > 500) {
-grow = 500;
-}this.pointTypes = (I$[2]||$incl$(2)).copyOf$BA$I(this.pointTypes, size + grow);
-}size = this.doubleCoords.length;
+grow=500;
+}this.pointTypes=(I$[2]||$incl$(2)).copyOf$BA$I(this.pointTypes, size + grow);
+}size=this.doubleCoords.length;
 if (this.numCoords + newCoords > size) {
 var grow = size;
 if (grow > 1000) {
-grow = 1000;
+grow=1000;
 }if (grow < newCoords) {
-grow = newCoords;
-}this.doubleCoords = (I$[2]||$incl$(2)).copyOf$DA$I(this.doubleCoords, size + grow);
+grow=newCoords;
+}this.doubleCoords=(I$[2]||$incl$(2)).copyOf$DA$I(this.doubleCoords, size + grow);
 }});
 
 Clazz.newMeth(C$, 'moveTo$D$D', function (x, y) {
 if (this.numTypes > 0 && this.pointTypes[this.numTypes - 1] == 0 ) {
-this.doubleCoords[this.numCoords - 2] = x;
-this.doubleCoords[this.numCoords - 1] = y;
+this.doubleCoords[this.numCoords - 2]=x;
+this.doubleCoords[this.numCoords - 1]=y;
 } else {
 this.needRoom$Z$I(false, 2);
-this.pointTypes[this.numTypes++] = (0|0);
-this.doubleCoords[this.numCoords++] = x;
-this.doubleCoords[this.numCoords++] = y;
+this.pointTypes[this.numTypes++]=(0|0);
+this.doubleCoords[this.numCoords++]=x;
+this.doubleCoords[this.numCoords++]=y;
 }});
 
 Clazz.newMeth(C$, 'lineTo$D$D', function (x, y) {
 this.needRoom$Z$I(true, 2);
-this.pointTypes[this.numTypes++] = (1|0);
-this.doubleCoords[this.numCoords++] = x;
-this.doubleCoords[this.numCoords++] = y;
+this.pointTypes[this.numTypes++]=(1|0);
+this.doubleCoords[this.numCoords++]=x;
+this.doubleCoords[this.numCoords++]=y;
 });
 
 Clazz.newMeth(C$, 'quadTo$D$D$D$D', function (x1, y1, x2, y2) {
 this.needRoom$Z$I(true, 4);
-this.pointTypes[this.numTypes++] = (2|0);
-this.doubleCoords[this.numCoords++] = x1;
-this.doubleCoords[this.numCoords++] = y1;
-this.doubleCoords[this.numCoords++] = x2;
-this.doubleCoords[this.numCoords++] = y2;
+this.pointTypes[this.numTypes++]=(2|0);
+this.doubleCoords[this.numCoords++]=x1;
+this.doubleCoords[this.numCoords++]=y1;
+this.doubleCoords[this.numCoords++]=x2;
+this.doubleCoords[this.numCoords++]=y2;
 });
 
 Clazz.newMeth(C$, 'curveTo$D$D$D$D$D$D', function (x1, y1, x2, y2, x3, y3) {
 this.needRoom$Z$I(true, 6);
-this.pointTypes[this.numTypes++] = (3|0);
-this.doubleCoords[this.numCoords++] = x1;
-this.doubleCoords[this.numCoords++] = y1;
-this.doubleCoords[this.numCoords++] = x2;
-this.doubleCoords[this.numCoords++] = y2;
-this.doubleCoords[this.numCoords++] = x3;
-this.doubleCoords[this.numCoords++] = y3;
+this.pointTypes[this.numTypes++]=(3|0);
+this.doubleCoords[this.numCoords++]=x1;
+this.doubleCoords[this.numCoords++]=y1;
+this.doubleCoords[this.numCoords++]=x2;
+this.doubleCoords[this.numCoords++]=y2;
+this.doubleCoords[this.numCoords++]=x3;
+this.doubleCoords[this.numCoords++]=y3;
 });
 
 Clazz.newMeth(C$, 'pointCrossings$D$D', function (px, py) {
@@ -824,43 +824,43 @@ var cury;
 var endx;
 var endy;
 var coords = this.doubleCoords;
-curx = movx = coords[0];
-cury = movy = coords[1];
+curx=movx=coords[0];
+cury=movy=coords[1];
 var crossings = 0;
 var ci = 2;
 for (var i = 1; i < this.numTypes; i++) {
 switch (this.pointTypes[i]) {
 case 0:
 if (cury != movy ) {
-crossings = crossings+((I$[4]||$incl$(4)).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, movx, movy));
-}movx = curx = coords[ci++];
-movy = cury = coords[ci++];
+crossings+=(I$[4]||$incl$(4)).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, movx, movy);
+}movx=curx=coords[ci++];
+movy=cury=coords[ci++];
 break;
 case 1:
-crossings = crossings+((I$[4]||$incl$(4)).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, endx = coords[ci++], endy = coords[ci++]));
-curx = endx;
-cury = endy;
+crossings+=(I$[4]||$incl$(4)).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, endx=coords[ci++], endy=coords[ci++]);
+curx=endx;
+cury=endy;
 break;
 case 2:
-crossings = crossings+((I$[4]||$incl$(4)).pointCrossingsForQuad$D$D$D$D$D$D$D$D$I(px, py, curx, cury, coords[ci++], coords[ci++], endx = coords[ci++], endy = coords[ci++], 0));
-curx = endx;
-cury = endy;
+crossings+=(I$[4]||$incl$(4)).pointCrossingsForQuad$D$D$D$D$D$D$D$D$I(px, py, curx, cury, coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0);
+curx=endx;
+cury=endy;
 break;
 case 3:
-crossings = crossings+((I$[4]||$incl$(4)).pointCrossingsForCubic$D$D$D$D$D$D$D$D$D$D$I(px, py, curx, cury, coords[ci++], coords[ci++], coords[ci++], coords[ci++], endx = coords[ci++], endy = coords[ci++], 0));
-curx = endx;
-cury = endy;
+crossings+=(I$[4]||$incl$(4)).pointCrossingsForCubic$D$D$D$D$D$D$D$D$D$D$I(px, py, curx, cury, coords[ci++], coords[ci++], coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0);
+curx=endx;
+cury=endy;
 break;
 case 4:
 if (cury != movy ) {
-crossings = crossings+((I$[4]||$incl$(4)).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, movx, movy));
-}curx = movx;
-cury = movy;
+crossings+=(I$[4]||$incl$(4)).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, movx, movy);
+}curx=movx;
+cury=movy;
 break;
 }
 }
 if (cury != movy ) {
-crossings = crossings+((I$[4]||$incl$(4)).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, movx, movy));
+crossings+=(I$[4]||$incl$(4)).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, movx, movy);
 }return crossings;
 });
 
@@ -872,45 +872,45 @@ var movx;
 var movy;
 var endx;
 var endy;
-curx = movx = coords[0];
-cury = movy = coords[1];
+curx=movx=coords[0];
+cury=movy=coords[1];
 var crossings = 0;
 var ci = 2;
 for (var i = 1; crossings != -2147483648 && i < this.numTypes ; i++) {
 switch (this.pointTypes[i]) {
 case 0:
 if (curx != movx  || cury != movy  ) {
-crossings = (I$[4]||$incl$(4)).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxmax, rymax, curx, cury, movx, movy);
-}movx = curx = coords[ci++];
-movy = cury = coords[ci++];
+crossings=(I$[4]||$incl$(4)).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxmax, rymax, curx, cury, movx, movy);
+}movx=curx=coords[ci++];
+movy=cury=coords[ci++];
 break;
 case 1:
-endx = coords[ci++];
-endy = coords[ci++];
-crossings = (I$[4]||$incl$(4)).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxmax, rymax, curx, cury, endx, endy);
-curx = endx;
-cury = endy;
+endx=coords[ci++];
+endy=coords[ci++];
+crossings=(I$[4]||$incl$(4)).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxmax, rymax, curx, cury, endx, endy);
+curx=endx;
+cury=endy;
 break;
 case 2:
-crossings = (I$[4]||$incl$(4)).rectCrossingsForQuad$I$D$D$D$D$D$D$D$D$D$D$I(crossings, rxmin, rymin, rxmax, rymax, curx, cury, coords[ci++], coords[ci++], endx = coords[ci++], endy = coords[ci++], 0);
-curx = endx;
-cury = endy;
+crossings=(I$[4]||$incl$(4)).rectCrossingsForQuad$I$D$D$D$D$D$D$D$D$D$D$I(crossings, rxmin, rymin, rxmax, rymax, curx, cury, coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0);
+curx=endx;
+cury=endy;
 break;
 case 3:
-crossings = (I$[4]||$incl$(4)).rectCrossingsForCubic$I$D$D$D$D$D$D$D$D$D$D$D$D$I(crossings, rxmin, rymin, rxmax, rymax, curx, cury, coords[ci++], coords[ci++], coords[ci++], coords[ci++], endx = coords[ci++], endy = coords[ci++], 0);
-curx = endx;
-cury = endy;
+crossings=(I$[4]||$incl$(4)).rectCrossingsForCubic$I$D$D$D$D$D$D$D$D$D$D$D$D$I(crossings, rxmin, rymin, rxmax, rymax, curx, cury, coords[ci++], coords[ci++], coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0);
+curx=endx;
+cury=endy;
 break;
 case 4:
 if (curx != movx  || cury != movy  ) {
-crossings = (I$[4]||$incl$(4)).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxmax, rymax, curx, cury, movx, movy);
-}curx = movx;
-cury = movy;
+crossings=(I$[4]||$incl$(4)).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxmax, rymax, curx, cury, movx, movy);
+}curx=movx;
+cury=movy;
 break;
 }
 }
 if (crossings != -2147483648 && (curx != movx  || cury != movy  ) ) {
-crossings = (I$[4]||$incl$(4)).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxmax, rymax, curx, cury, movx, movy);
+crossings=(I$[4]||$incl$(4)).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxmax, rymax, curx, cury, movx, movy);
 }return crossings;
 });
 
@@ -925,18 +925,18 @@ var x2;
 var y2;
 var i = this.numCoords;
 if (i > 0) {
-y1 = y2 = this.doubleCoords[--i];
-x1 = x2 = this.doubleCoords[--i];
+y1=y2=this.doubleCoords[--i];
+x1=x2=this.doubleCoords[--i];
 while (i > 0){
 var y = this.doubleCoords[--i];
 var x = this.doubleCoords[--i];
-if (x < x1 ) x1 = x;
-if (y < y1 ) y1 = y;
-if (x > x2 ) x2 = x;
-if (y > y2 ) y2 = y;
+if (x < x1 ) x1=x;
+if (y < y1 ) y1=y;
+if (x > x2 ) x2=x;
+if (y > y2 ) y2=y;
 }
 } else {
-x1 = y1 = x2 = y2 = 0.0;
+x1=y1=x2=y2=0.0;
 }return Clazz.new_((I$[9]||$incl$(9)).c$$D$D$D$D,[x1, y1, x2 - x1, y2 - y1]);
 });
 
@@ -969,7 +969,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_geom_Path2D_Double', function (p2dd) {
 C$.superclazz.c$$java_awt_geom_Path2D.apply(this, [p2dd]);
 C$.$init$.apply(this);
-this.doubleCoords = p2dd.doubleCoords;
+this.doubleCoords=p2dd.doubleCoords;
 }, 1);
 
 Clazz.newMeth(C$, 'currentSegment$FA', function (coords) {
@@ -977,7 +977,7 @@ var type = this.path.pointTypes[this.typeIdx];
 var numCoords = (I$[1]||$incl$(1)).curvecoords[type];
 if (numCoords > 0) {
 for (var i = 0; i < numCoords; i++) {
-coords[i] = this.doubleCoords[this.pointIdx + i];
+coords[i]=this.doubleCoords[this.pointIdx + i];
 }
 }return type;
 });
@@ -1012,8 +1012,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_geom_Path2D_Double$java_awt_geom_AffineTransform', function (p2dd, at) {
 C$.superclazz.c$$java_awt_geom_Path2D.apply(this, [p2dd]);
 C$.$init$.apply(this);
-this.doubleCoords = p2dd.doubleCoords;
-this.affine = at;
+this.doubleCoords=p2dd.doubleCoords;
+this.affine=at;
 }, 1);
 
 Clazz.newMeth(C$, 'currentSegment$FA', function (coords) {
@@ -1036,4 +1036,4 @@ Clazz.newMeth(C$);
 })()
 })()
 })();
-//Created 2018-05-15 01:01:59
+//Created 2018-05-24 08:45:21

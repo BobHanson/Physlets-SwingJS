@@ -22,7 +22,7 @@ Clazz.newMeth(C$, 'flip$I', function (bitIndex) {
 if (bitIndex < 0) throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException').c$$S,["bitIndex < 0: " + bitIndex]);
 var wordIndex = javajs.util.BS.wordIndex$I(bitIndex);
 this.expandTo$I(wordIndex);
-this.words[$j$=wordIndex] = this.words[$j$]^((1 << bitIndex));
+this.words[wordIndex]^=(1 << bitIndex);
 });
 
 Clazz.newMeth(C$, 'flip$I$I', function (fromIndex, toIndex) {
@@ -33,12 +33,12 @@ this.expandTo$I(endWordIndex);
 var firstWordMask = -1 << fromIndex;
 var lastWordMask = -1 >>> -toIndex;
 if (startWordIndex == endWordIndex) {
-this.words[$j$=startWordIndex] = this.words[$j$]^((firstWordMask & lastWordMask));
+this.words[startWordIndex]^=(firstWordMask & lastWordMask);
 } else {
-this.words[$j$=startWordIndex] = this.words[$j$]^(firstWordMask);
-for (var i = startWordIndex + 1; i < endWordIndex; i++) this.words[i] = this.words[i]^(-1);
+this.words[startWordIndex]^=firstWordMask;
+for (var i = startWordIndex + 1; i < endWordIndex; i++) this.words[i]^=-1;
 
-this.words[$j$=endWordIndex] = this.words[$j$]^(lastWordMask);
+this.words[endWordIndex]^=lastWordMask;
 }});
 
 Clazz.newMeth(C$, 'set$I$Z', function (bitIndex, value) {
@@ -65,19 +65,18 @@ this.clearAll();
 Clazz.newMeth(C$, 'get$I$I', function (fromIndex, toIndex) {
 var len = this.length$();
 if (len <= fromIndex || fromIndex == toIndex ) return Clazz.new_(C$.c$$I,[0]);
-if (toIndex > len) toIndex = len;
+if (toIndex > len) toIndex=len;
 var result = Clazz.new_(C$.c$$I,[toIndex - fromIndex]);
 var targetWords = javajs.util.BS.wordIndex$I(toIndex - fromIndex - 1 ) + 1;
 var sourceIndex = javajs.util.BS.wordIndex$I(fromIndex);
 var wordAligned = ((fromIndex & 31) == 0);
-for (var i = 0; i < targetWords - 1; i++, sourceIndex++) result.words[i] = wordAligned ? this.words[sourceIndex] : (this.words[sourceIndex] >>> fromIndex) | (this.words[sourceIndex + 1] << -fromIndex);
+for (var i = 0; i < targetWords - 1; i++, sourceIndex++) result.words[i]=wordAligned ? this.words[sourceIndex] : (this.words[sourceIndex] >>> fromIndex) | (this.words[sourceIndex + 1] << -fromIndex);
 
 var lastWordMask = -1 >>> -toIndex;
-result.words[targetWords - 1] = ((toIndex - 1) & 31) < (fromIndex & 31) ? ((this.words[sourceIndex] >>> fromIndex) | (this.words[sourceIndex + 1] & lastWordMask) << -fromIndex) : ((this.words[sourceIndex] & lastWordMask) >>> fromIndex);
-result.wordsInUse = targetWords;
+result.words[targetWords - 1]=((toIndex - 1) & 31) < (fromIndex & 31) ? ((this.words[sourceIndex] >>> fromIndex) | (this.words[sourceIndex + 1] & lastWordMask) << -fromIndex) : ((this.words[sourceIndex] & lastWordMask) >>> fromIndex);
+result.wordsInUse=targetWords;
 result.recalculateWordsInUse();
 return result;
 });
-var $j$;
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:45

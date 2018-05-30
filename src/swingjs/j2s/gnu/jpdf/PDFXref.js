@@ -17,9 +17,9 @@ C$.c$$I$I$I.apply(this, [id, offset, 0]);
 
 Clazz.newMeth(C$, 'c$$I$I$I', function (id, offset, generation) {
 C$.$init$.apply(this);
-this.id = id;
-this.offset = offset;
-this.generation = generation;
+this.id=id;
+this.offset=offset;
+this.generation=generation;
 }, 1);
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -32,4 +32,4 @@ return rs + " n ";
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:47
+//Created 2018-05-24 08:45:04

@@ -35,7 +35,7 @@ C$.c$$java_util_TimeZone.apply(this, [(I$[1]||$incl$(1)).getDefault()]);
 
 Clazz.newMeth(C$, 'c$$java_util_TimeZone', function (zone) {
 C$.$init$.apply(this);
-this.zoneinfo = zone;
+this.zoneinfo=zone;
 }, 1);
 
 Clazz.newMeth(C$, 'getEra', function () {
@@ -45,8 +45,8 @@ return this.era;
 Clazz.newMeth(C$, 'setEra$sun_util_calendar_Era', function (era) {
 if (this.era === era ) {
 return this;
-}this.era = era;
-this.normalized = false;
+}this.era=era;
+this.normalized=false;
 return this;
 });
 
@@ -56,15 +56,15 @@ return this.year;
 
 Clazz.newMeth(C$, 'setYear$I', function (year) {
 if (this.year != year) {
-this.year = year;
-this.normalized = false;
+this.year=year;
+this.normalized=false;
 }return this;
 });
 
 Clazz.newMeth(C$, 'addYear$I', function (n) {
 if (n != 0) {
-this.year = this.year+(n);
-this.normalized = false;
+this.year+=n;
+this.normalized=false;
 }return this;
 });
 
@@ -73,7 +73,7 @@ return this.leapYear;
 });
 
 Clazz.newMeth(C$, 'setLeapYear$Z', function (leapYear) {
-this.leapYear = leapYear;
+this.leapYear=leapYear;
 });
 
 Clazz.newMeth(C$, 'getMonth', function () {
@@ -82,15 +82,15 @@ return this.month;
 
 Clazz.newMeth(C$, 'setMonth$I', function (month) {
 if (this.month != month) {
-this.month = month;
-this.normalized = false;
+this.month=month;
+this.normalized=false;
 }return this;
 });
 
 Clazz.newMeth(C$, 'addMonth$I', function (n) {
 if (n != 0) {
-this.month = this.month+(n);
-this.normalized = false;
+this.month+=n;
+this.normalized=false;
 }return this;
 });
 
@@ -100,21 +100,21 @@ return this.dayOfMonth;
 
 Clazz.newMeth(C$, 'setDayOfMonth$I', function (date) {
 if (this.dayOfMonth != date) {
-this.dayOfMonth = date;
-this.normalized = false;
+this.dayOfMonth=date;
+this.normalized=false;
 }return this;
 });
 
 Clazz.newMeth(C$, 'addDayOfMonth$I', function (n) {
 if (n != 0) {
-this.dayOfMonth = this.dayOfMonth+(n);
-this.normalized = false;
+this.dayOfMonth+=n;
+this.normalized=false;
 }return this;
 });
 
 Clazz.newMeth(C$, 'getDayOfWeek', function () {
 if (!this.isNormalized()) {
-this.dayOfWeek = -2147483648;
+this.dayOfWeek=-2147483648;
 }return this.dayOfWeek;
 });
 
@@ -124,15 +124,15 @@ return this.hours;
 
 Clazz.newMeth(C$, 'setHours$I', function (hours) {
 if (this.hours != hours) {
-this.hours = hours;
-this.normalized = false;
+this.hours=hours;
+this.normalized=false;
 }return this;
 });
 
 Clazz.newMeth(C$, 'addHours$I', function (n) {
 if (n != 0) {
-this.hours = this.hours+(n);
-this.normalized = false;
+this.hours+=n;
+this.normalized=false;
 }return this;
 });
 
@@ -142,15 +142,15 @@ return this.minutes;
 
 Clazz.newMeth(C$, 'setMinutes$I', function (minutes) {
 if (this.minutes != minutes) {
-this.minutes = minutes;
-this.normalized = false;
+this.minutes=minutes;
+this.normalized=false;
 }return this;
 });
 
 Clazz.newMeth(C$, 'addMinutes$I', function (n) {
 if (n != 0) {
-this.minutes = this.minutes+(n);
-this.normalized = false;
+this.minutes+=n;
+this.normalized=false;
 }return this;
 });
 
@@ -160,15 +160,15 @@ return this.seconds;
 
 Clazz.newMeth(C$, 'setSeconds$I', function (seconds) {
 if (this.seconds != seconds) {
-this.seconds = seconds;
-this.normalized = false;
+this.seconds=seconds;
+this.normalized=false;
 }return this;
 });
 
 Clazz.newMeth(C$, 'addSeconds$I', function (n) {
 if (n != 0) {
-this.seconds = this.seconds+(n);
-this.normalized = false;
+this.seconds+=n;
+this.normalized=false;
 }return this;
 });
 
@@ -178,21 +178,21 @@ return this.millis;
 
 Clazz.newMeth(C$, 'setMillis$I', function (millis) {
 if (this.millis != millis) {
-this.millis = millis;
-this.normalized = false;
+this.millis=millis;
+this.normalized=false;
 }return this;
 });
 
 Clazz.newMeth(C$, 'addMillis$I', function (n) {
 if (n != 0) {
-this.millis = this.millis+(n);
-this.normalized = false;
+this.millis+=n;
+this.normalized=false;
 }return this;
 });
 
 Clazz.newMeth(C$, 'getTimeOfDay', function () {
 if (!this.isNormalized()) {
-return this.fraction = -9223372036854775808;
+return this.fraction=-9223372036854775808;
 }return this.fraction;
 });
 
@@ -227,7 +227,7 @@ return this;
 });
 
 Clazz.newMeth(C$, 'setTimeOfDay$J', function (fraction) {
-this.fraction = fraction;
+this.fraction=fraction;
 });
 
 Clazz.newMeth(C$, 'isNormalized', function () {
@@ -239,7 +239,7 @@ return this.forceStandardTime;
 });
 
 Clazz.newMeth(C$, 'setStandardTime$Z', function (standardTime) {
-this.forceStandardTime = standardTime;
+this.forceStandardTime=standardTime;
 });
 
 Clazz.newMeth(C$, 'isDaylightTime', function () {
@@ -249,7 +249,7 @@ return false;
 });
 
 Clazz.newMeth(C$, 'setLocale$java_util_Locale', function (loc) {
-this.locale = loc;
+this.locale=loc;
 });
 
 Clazz.newMeth(C$, 'getZone', function () {
@@ -257,7 +257,7 @@ return this.zoneinfo;
 });
 
 Clazz.newMeth(C$, 'setZone$java_util_TimeZone', function (zoneinfo) {
-this.zoneinfo = zoneinfo;
+this.zoneinfo=zoneinfo;
 return this;
 });
 
@@ -282,13 +282,13 @@ return false;
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var hash = (((((this.year - 1970) * 12) + (this.month - 1)) * 30) + this.dayOfMonth) * 24;
-hash = ((((((hash + this.hours) * 60) + this.minutes) * 60) + this.seconds) * 1000) + this.millis;
-hash = hash-(this.zoneOffset);
+hash=((((((hash + this.hours) * 60) + this.minutes) * 60) + this.seconds) * 1000) + this.millis;
+hash-=this.zoneOffset;
 var normalized = this.isNormalized() ? 1 : 0;
 var era = 0;
 var e = this.getEra();
 if (e != null ) {
-era = e.hashCode();
+era=e.hashCode();
 }var zone = this.zoneinfo != null  ? this.zoneinfo.hashCode() : 0;
 return (hash|0) * ((hash >> 32)|0) ^ era ^ normalized ^ zone;
 });
@@ -320,12 +320,12 @@ sb.append$C("Z");
 var offset;
 var sign;
 if (this.zoneOffset > 0) {
-offset = this.zoneOffset;
-sign = "+";
+offset=this.zoneOffset;
+sign="+";
 } else {
-offset = -this.zoneOffset;
-sign = "-";
-}offset = (offset/60000|0);
+offset=-this.zoneOffset;
+sign="-";
+}offset=(offset/60000|0);
 sb.append$C(sign);
 (I$[4]||$incl$(4)).sprintf0d$StringBuilder$I$I(sb, (offset/60|0), 2);
 (I$[4]||$incl$(4)).sprintf0d$StringBuilder$I$I(sb, offset % 60, 2);
@@ -335,11 +335,11 @@ sb.append$S(" local time");
 });
 
 Clazz.newMeth(C$, 'setDayOfWeek$I', function (dayOfWeek) {
-this.dayOfWeek = dayOfWeek;
+this.dayOfWeek=dayOfWeek;
 });
 
 Clazz.newMeth(C$, 'setNormalized$Z', function (normalized) {
-this.normalized = normalized;
+this.normalized=normalized;
 });
 
 Clazz.newMeth(C$, 'getZoneOffset', function () {
@@ -347,7 +347,7 @@ return this.zoneOffset;
 });
 
 Clazz.newMeth(C$, 'setZoneOffset$I', function (offset) {
-this.zoneOffset = offset;
+this.zoneOffset=offset;
 });
 
 Clazz.newMeth(C$, 'getDaylightSaving', function () {
@@ -355,7 +355,7 @@ return this.daylightSaving;
 });
 
 Clazz.newMeth(C$, 'setDaylightSaving$I', function (daylightSaving) {
-this.daylightSaving = daylightSaving;
+this.daylightSaving=daylightSaving;
 });
 })();
-//Created 2018-05-15 01:03:12
+//Created 2018-05-24 08:47:38

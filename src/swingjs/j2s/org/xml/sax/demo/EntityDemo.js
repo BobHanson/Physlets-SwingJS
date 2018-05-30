@@ -20,8 +20,8 @@ var handler;
 if (args.length != 1) {
 System.err.println$S("Usage: java -Dorg.xml.sax.parser=<classname> EntityDemo <document>");
 System.exit(2);
-}parser = (I$[2]||$incl$(2)).makeParser();
-handler = Clazz.new_(C$);
+}parser=(I$[2]||$incl$(2)).makeParser();
+handler=Clazz.new_(C$);
 parser.setEntityResolver$org_xml_sax_EntityResolver(handler);
 parser.setDTDHandler$org_xml_sax_DTDHandler(handler);
 parser.setDocumentHandler$org_xml_sax_DocumentHandler(handler);
@@ -42,11 +42,11 @@ var currentDirectory = System.getProperty("user.dir");
 var fileSep = System.getProperty("file.separator");
 var file = currentDirectory.$replace(fileSep.charAt(0), "/") + '/';
 if (file.charAt(0) != "/") {
-file = "/" + file;
-}baseURL = Clazz.new_((I$[4]||$incl$(4)).c$$S$S$S,["file", null, file]);
+file="/" + file;
+}baseURL=Clazz.new_((I$[4]||$incl$(4)).c$$S$S$S,["file", null, file]);
 return Clazz.new_((I$[4]||$incl$(4)).c$$java_net_URL$S,[baseURL, url]).toString();
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:03
+//Created 2018-05-24 08:47:18

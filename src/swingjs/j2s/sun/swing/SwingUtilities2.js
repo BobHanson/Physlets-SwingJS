@@ -75,11 +75,11 @@ var oldAAValue = g2.getRenderingHint$java_awt_RenderingHints_Key((I$[3]||$incl$(
 if (info.aaHint !== oldAAValue ) {
 g2.setRenderingHint$java_awt_RenderingHints_Key$O((I$[3]||$incl$(3)).KEY_TEXT_ANTIALIASING, info.aaHint);
 } else {
-oldAAValue = null;
+oldAAValue=null;
 }if (info.lcdContrastHint != null ) {
-oldContrast = g2.getRenderingHint$java_awt_RenderingHints_Key((I$[3]||$incl$(3)).KEY_TEXT_LCD_CONTRAST);
+oldContrast=g2.getRenderingHint$java_awt_RenderingHints_Key((I$[3]||$incl$(3)).KEY_TEXT_LCD_CONTRAST);
 if (info.lcdContrastHint.equals(oldContrast)) {
-oldContrast = null;
+oldContrast=null;
 } else {
 g2.setRenderingHint$java_awt_RenderingHints_Key$O((I$[3]||$incl$(3)).KEY_TEXT_LCD_CONTRAST, info.lcdContrastHint);
 }}g.drawString$S$I$I(text, x, y);
@@ -96,7 +96,7 @@ var index = list.locationToIndex$java_awt_Point(point);
 if (index != -1) {
 var bySize = list.getClientProperty$O("List.isFileList");
 if (Clazz.instanceOf(bySize, "java.lang.Boolean") && (bySize).booleanValue() && !C$.pointIsInActualBounds$javax_swing_JList$I$java_awt_Point(list, index, point)  ) {
-index = -1;
+index=-1;
 }}return index;
 }, 1);
 
@@ -108,8 +108,8 @@ var item = renderer.getListCellRendererComponent$javax_swing_JList$O$I$Z$Z(list,
 var itemSize = item.getPreferredSize();
 var cellBounds = list.getCellBounds$I$I(index, index);
 if (!item.getComponentOrientation().isLeftToRight()) {
-cellBounds.x = cellBounds.x+((cellBounds.width - itemSize.width));
-}cellBounds.width = itemSize.width;
+cellBounds.x+=(cellBounds.width - itemSize.width);
+}cellBounds.width=itemSize.width;
 return cellBounds.contains$java_awt_Point(point);
 }, 1);
 
@@ -121,8 +121,8 @@ var value = table.getValueAt$I$I(row, column);
 var cell = tcr.getTableCellRendererComponent$javax_swing_JTable$O$Z$Z$I$I(table, value, false, false, row, column);
 var itemSize = cell.getPreferredSize();
 var cellBounds = table.getCellRect$I$I$Z(row, column, false);
-cellBounds.width = itemSize.width;
-cellBounds.height = itemSize.height;
+cellBounds.width=itemSize.width;
+cellBounds.height=itemSize.height;
 if (p.x > cellBounds.x + cellBounds.width || p.y > cellBounds.y + cellBounds.height ) {
 return true;
 }return false;
@@ -130,7 +130,7 @@ return true;
 
 Clazz.newMeth(C$, 'setLeadAnchorWithoutSelection$javax_swing_ListSelectionModel$I$I', function (model, lead, anchor) {
 if (anchor == -1) {
-anchor = lead;
+anchor=lead;
 }if (lead == -1) {
 model.setAnchorSelectionIndex$I(-1);
 model.setLeadSelectionIndex$I(-1);
@@ -261,15 +261,15 @@ var pComp;
 var length;
 var forward;
 if (horizontal) {
-p0 = rect.x;
-pComp = p.x;
-length = rect.width;
-forward = ltr;
+p0=rect.x;
+pComp=p.x;
+length=rect.width;
+forward=ltr;
 } else {
-p0 = rect.y;
-pComp = p.y;
-length = rect.height;
-forward = true;
+p0=rect.y;
+pComp=p.y;
+length=rect.height;
+forward=true;
 }if (three) {
 var boundary = (length >= 30) ? 10 : (length/3|0);
 if (pComp < p0 + boundary) {
@@ -336,4 +336,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:11
+//Created 2018-05-24 08:47:36

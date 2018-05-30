@@ -34,7 +34,7 @@ if (name == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
 }if (name.length$() > 65535) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["entry name too long"]);
-}this.name = name;
+}this.name=name;
 }, 1);
 
 Clazz.newMeth(C$, 'getName', function () {
@@ -42,7 +42,7 @@ return this.name;
 });
 
 Clazz.newMeth(C$, 'setTime$J', function (time) {
-this.time = C$.javaToDosTime$J(time);
+this.time=C$.javaToDosTime$J(time);
 });
 
 Clazz.newMeth(C$, 'getTime', function () {
@@ -52,7 +52,7 @@ return this.time != -1 ? C$.dosToJavaTime$J(this.time) : -1;
 Clazz.newMeth(C$, 'setSize$J', function (size) {
 if (size < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid entry size"]);
-}this.size = size;
+}this.size=size;
 });
 
 Clazz.newMeth(C$, 'getSize', function () {
@@ -64,13 +64,13 @@ return this.csize;
 });
 
 Clazz.newMeth(C$, 'setCompressedSize$J', function (csize) {
-this.csize = csize;
+this.csize=csize;
 });
 
 Clazz.newMeth(C$, 'setCrc$J', function (crc) {
 if (crc < 0 || crc > 4294967295 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid entry crc-32"]);
-}this.crc = crc;
+}this.crc=crc;
 });
 
 Clazz.newMeth(C$, 'getCrc', function () {
@@ -80,7 +80,7 @@ return this.crc;
 Clazz.newMeth(C$, 'setMethod$I', function (method) {
 if (method != 0 && method != 8 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid compression method"]);
-}this.method = method;
+}this.method=method;
 });
 
 Clazz.newMeth(C$, 'getMethod', function () {
@@ -90,7 +90,7 @@ return this.method;
 Clazz.newMeth(C$, 'setExtra$BA', function (extra) {
 if (extra != null  && extra.length > 65535 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid extra field length"]);
-}this.extra = extra;
+}this.extra=extra;
 });
 
 Clazz.newMeth(C$, 'getExtra', function () {
@@ -98,7 +98,7 @@ return this.extra;
 });
 
 Clazz.newMeth(C$, 'setComment$S', function (comment) {
-this.comment = comment;
+this.comment=comment;
 });
 
 Clazz.newMeth(C$, 'getComment', function () {
@@ -134,7 +134,7 @@ Clazz.newMeth(C$, 'clone', function () {
 try {
 var e = Clazz.clone(this);
 if (this.extra != null ) {
-e.extra = Clazz.array(Byte.TYPE, [this.extra.length]);
+e.extra=Clazz.array(Byte.TYPE, [this.extra.length]);
 System.arraycopy(this.extra, 0, e.extra, 0, this.extra.length);
 }return e;
 } catch (e) {
@@ -148,4 +148,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:16
+//Created 2018-05-24 08:45:52

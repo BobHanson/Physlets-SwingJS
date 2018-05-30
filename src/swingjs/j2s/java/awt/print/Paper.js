@@ -16,19 +16,19 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.mHeight = 792.0;
-this.mWidth = 612.0;
-this.mImageableArea = Clazz.new_((I$[1]||$incl$(1)).c$$D$D$D$D,[72, 72, this.mWidth - 144, this.mHeight - 144]);
+this.mHeight=792.0;
+this.mWidth=612.0;
+this.mImageableArea=Clazz.new_((I$[1]||$incl$(1)).c$$D$D$D$D,[72, 72, this.mWidth - 144, this.mHeight - 144]);
 }, 1);
 
 Clazz.newMeth(C$, 'clone', function () {
 var newPaper;
 try {
-newPaper = Clazz.clone(this);
+newPaper=Clazz.clone(this);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.CloneNotSupportedException")){
 e.printStackTrace();
-newPaper = null;
+newPaper=null;
 } else {
 throw e;
 }
@@ -41,8 +41,8 @@ return this.mHeight;
 });
 
 Clazz.newMeth(C$, 'setSize$D$D', function (width, height) {
-this.mWidth = width;
-this.mHeight = height;
+this.mWidth=width;
+this.mHeight=height;
 });
 
 Clazz.newMeth(C$, 'getWidth', function () {
@@ -50,7 +50,7 @@ return this.mWidth;
 });
 
 Clazz.newMeth(C$, 'setImageableArea$D$D$D$D', function (x, y, width, height) {
-this.mImageableArea = Clazz.new_((I$[1]||$incl$(1)).c$$D$D$D$D,[x, y, width, height]);
+this.mImageableArea=Clazz.new_((I$[1]||$incl$(1)).c$$D$D$D$D,[x, y, width, height]);
 });
 
 Clazz.newMeth(C$, 'getImageableX', function () {
@@ -69,4 +69,4 @@ Clazz.newMeth(C$, 'getImageableHeight', function () {
 return this.mImageableArea.getHeight();
 });
 })();
-//Created 2018-05-15 01:02:03
+//Created 2018-05-24 08:45:29

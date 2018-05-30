@@ -35,9 +35,9 @@ this.haveTextArea = false;
 }, 1);
 
 Clazz.newMeth(C$, 'updateDOMNode', function () {
-this.isContainer = true;
+this.isContainer=true;
 if (this.domNode == null ) {
-this.domNode = this.newDOMObject$S$S$SA("div", this.id, []);
+this.domNode=this.newDOMObject$S$S$SA("div", this.id, []);
 }return this.domNode;
 });
 
@@ -48,14 +48,14 @@ hscrollbar.addPropertyChangeListener$java_beans_PropertyChangeListener(this);
 var vscrollbar = this.scrollpane.getVerticalScrollBar();
 vscrollbar.addChangeListener$javax_swing_event_ChangeListener(this);
 vscrollbar.addPropertyChangeListener$java_beans_PropertyChangeListener(this);
-this.viewport = this.scrollpane.getViewport();
+this.viewport=this.scrollpane.getViewport();
 var sc = this.viewport.getView();
 if (sc == null  || sc.ui == null  ) return false;
 if (sc !== this.scrolledComponent ) {
-this.scrolledComponent = sc;
-this.scrolledUI = sc.ui;
-this.scrolledUI.scrollPaneUI = this;
-this.scrollNode = this.scrolledUI.domNode;
+this.scrolledComponent=sc;
+this.scrolledUI=sc.ui;
+this.scrolledUI.scrollPaneUI=this;
+this.scrollNode=this.scrolledUI.domNode;
 (I$[2]||$incl$(2)).setSize(this.scrollNode, this.c.getWidth(), this.c.getHeight());
 }return true;
 });
@@ -105,7 +105,7 @@ vpBorder.paintBorder$java_awt_Component$java_awt_Graphics$I$I$I$I(this.scrollpan
 }});
 
 Clazz.newMeth(C$, 'checkTextAreaHeight', function () {
-this.haveTextArea = false;
+this.haveTextArea=false;
 var vp = this.scrollpane.getViewport();
 if (vp == null ) return;
 var vsb = this.scrollpane.getVerticalScrollBar();
@@ -114,13 +114,13 @@ if (vsb != null ) (vsb.getUI()).setScrollPaneCSS();
 if (hsb != null ) (hsb.getUI()).setScrollPaneCSS();
 var sc = vp.getView();
 if (sc == null  || sc.getUI() == null   || sc.getUIClassID() != "TextAreaUI" ) return;
-this.haveTextArea = true;
-if (this.textAreaSize == null ) this.textAreaSize = Clazz.new_((I$[4]||$incl$(4)));
+this.haveTextArea=true;
+if (this.textAreaSize == null ) this.textAreaSize=Clazz.new_((I$[4]||$incl$(4)));
 (sc.getUI()).getTextAreaTextSize$java_awt_Dimension(this.textAreaSize);
 var overHeight = this.textAreaSize.height > sc.getBounds().height;
 var overWidth = this.textAreaSize.width > sc.getBounds().width;
-if (vsb == null  || !overHeight ) this.textAreaSize.height = sc.getHeight();
-if (hsb == null  || !overWidth ) this.textAreaSize.width = sc.getWidth();
+if (vsb == null  || !overHeight ) this.textAreaSize.height=sc.getHeight();
+if (hsb == null  || !overWidth ) this.textAreaSize.width=sc.getWidth();
 sc.setSize$java_awt_Dimension(this.textAreaSize);
 });
 
@@ -133,25 +133,25 @@ Clazz.newMeth(C$, 'installDefaults$javax_swing_JScrollPane', function (scrollpan
 (I$[5]||$incl$(5)).installColorsAndFont$javax_swing_JComponent$S$S$S(scrollpane, "ScrollPane.background", "ScrollPane.foreground", "ScrollPane.font");
 var vpBorder = scrollpane.getViewportBorder();
 if ((vpBorder == null ) || (Clazz.instanceOf(vpBorder, "javax.swing.plaf.UIResource")) ) {
-vpBorder = (I$[6]||$incl$(6)).getBorder$O("ScrollPane.viewportBorder");
+vpBorder=(I$[6]||$incl$(6)).getBorder$O("ScrollPane.viewportBorder");
 scrollpane.setViewportBorder$javax_swing_border_Border(vpBorder);
 }(I$[5]||$incl$(5)).installProperty$javax_swing_JComponent$S$O(scrollpane, "opaque", (I$[7]||$incl$(7)).TRUE);
 });
 
 Clazz.newMeth(C$, 'installListeners$javax_swing_JScrollPane', function (c) {
-this.vsbChangeListener = this.createVSBChangeListener();
-this.vsbPropertyChangeListener = p$.createVSBPropertyChangeListener.apply(this, []);
-this.hsbChangeListener = this.createHSBChangeListener();
-this.hsbPropertyChangeListener = p$.createHSBPropertyChangeListener.apply(this, []);
-this.viewportChangeListener = this.createViewportChangeListener();
-this.spPropertyChangeListener = this.createPropertyChangeListener();
+this.vsbChangeListener=this.createVSBChangeListener();
+this.vsbPropertyChangeListener=p$.createVSBPropertyChangeListener.apply(this, []);
+this.hsbChangeListener=this.createHSBChangeListener();
+this.hsbPropertyChangeListener=p$.createHSBPropertyChangeListener.apply(this, []);
+this.viewportChangeListener=this.createViewportChangeListener();
+this.spPropertyChangeListener=this.createPropertyChangeListener();
 var viewport = this.scrollpane.getViewport();
 var vsb = this.scrollpane.getVerticalScrollBar();
 var hsb = this.scrollpane.getHorizontalScrollBar();
 if (viewport != null ) {
 viewport.addChangeListener$javax_swing_event_ChangeListener(this.viewportChangeListener);
 viewport.addPropertyChangeListener$java_beans_PropertyChangeListener(this);
-}this.horizBarUI = this.vertBarUI = null;
+}this.horizBarUI=this.vertBarUI=null;
 if (vsb != null ) {
 vsb.getModel().addChangeListener$javax_swing_event_ChangeListener(this.vsbChangeListener);
 vsb.addPropertyChangeListener$java_beans_PropertyChangeListener(this.vsbPropertyChangeListener);
@@ -171,7 +171,7 @@ Clazz.newMeth(C$, 'getInputMap$I', function (condition) {
 if (condition == 1) {
 var keyMap = (I$[10]||$incl$(10)).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.scrollpane, this, "ScrollPane.ancestorInputMap");
 var rtlKeyMap;
-if (this.scrollpane.getComponentOrientation().isLeftToRight() || ((rtlKeyMap = (I$[10]||$incl$(10)).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.scrollpane, this, "ScrollPane.ancestorInputMap.RightToLeft")) == null ) ) {
+if (this.scrollpane.getComponentOrientation().isLeftToRight() || ((rtlKeyMap=(I$[10]||$incl$(10)).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.scrollpane, this, "ScrollPane.ancestorInputMap.RightToLeft")) == null ) ) {
 return keyMap;
 } else {
 rtlKeyMap.setParent$javax_swing_InputMap(keyMap);
@@ -180,7 +180,7 @@ return rtlKeyMap;
 });
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.scrollpane = jc;
+this.scrollpane=jc;
 this.installDefaults$javax_swing_JScrollPane(this.scrollpane);
 this.installListeners$javax_swing_JScrollPane(this.scrollpane);
 this.installKeyboardActions$javax_swing_JScrollPane(this.scrollpane);
@@ -205,11 +205,11 @@ vsb.removePropertyChangeListener$java_beans_PropertyChangeListener(this.vsbPrope
 hsb.getModel().removeChangeListener$javax_swing_event_ChangeListener(this.hsbChangeListener);
 hsb.removePropertyChangeListener$java_beans_PropertyChangeListener(this.hsbPropertyChangeListener);
 }this.scrollpane.removePropertyChangeListener$java_beans_PropertyChangeListener(this.spPropertyChangeListener);
-this.vsbChangeListener = null;
-this.hsbChangeListener = null;
-this.viewportChangeListener = null;
-this.spPropertyChangeListener = null;
-this.handler = null;
+this.vsbChangeListener=null;
+this.hsbChangeListener=null;
+this.viewportChangeListener=null;
+this.spPropertyChangeListener=null;
+this.handler=null;
 });
 
 Clazz.newMeth(C$, 'uninstallKeyboardActions$javax_swing_JScrollPane', function (c) {
@@ -221,12 +221,12 @@ Clazz.newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (jc) {
 this.uninstallDefaults$javax_swing_JScrollPane(this.scrollpane);
 this.uninstallListeners$javax_swing_JComponent(this.scrollpane);
 this.uninstallKeyboardActions$javax_swing_JScrollPane(this.scrollpane);
-this.scrollpane = null;
+this.scrollpane=null;
 });
 
 Clazz.newMeth(C$, 'getHandler', function () {
 if (this.handler == null ) {
-this.handler = Clazz.new_((I$[11]||$incl$(11)), [this, null]);
+this.handler=Clazz.new_((I$[11]||$incl$(11)), [this, null]);
 }return this.handler;
 });
 
@@ -251,33 +251,33 @@ var extent = extentSize.width;
 var max = viewSize.width;
 var value;
 if (ltr) {
-value = Math.max(0, Math.min(viewPosition.x, max - extent));
+value=Math.max(0, Math.min(viewPosition.x, max - extent));
 } else {
 var currentValue = hsb.getValue();
 if (this.setValueCalled && ((max - currentValue) == viewPosition.x) ) {
-value = Math.max(0, Math.min(max - extent, currentValue));
+value=Math.max(0, Math.min(max - extent, currentValue));
 if (extent != 0) {
-this.setValueCalled = false;
+this.setValueCalled=false;
 }} else {
 if (extent > max) {
-viewPosition.x = max - extent;
+viewPosition.x=max - extent;
 viewport.setViewPosition$java_awt_Point(viewPosition);
-value = 0;
+value=0;
 } else {
-value = Math.max(0, Math.min(max - extent, max - extent - viewPosition.x ));
+value=Math.max(0, Math.min(max - extent, max - extent - viewPosition.x ));
 }}}hsb.setValues$I$I$I$I(value, extent, 0, max);
 }if (rowHead != null ) {
 var p = rowHead.getViewPosition();
-p.y = viewport.getViewPosition().y;
-p.x = 0;
+p.y=viewport.getViewPosition().y;
+p.x=0;
 rowHead.setViewPosition$java_awt_Point(p);
 }if (colHead != null ) {
 var p = colHead.getViewPosition();
 if (ltr) {
-p.x = viewport.getViewPosition().x;
+p.x=viewport.getViewPosition().x;
 } else {
-p.x = Math.max(0, viewport.getViewPosition().x);
-}p.y = 0;
+p.x=Math.max(0, viewport.getViewPosition().x);
+}p.y=0;
 colHead.setViewPosition$java_awt_Point(p);
 }}});
 
@@ -285,8 +285,8 @@ Clazz.newMeth(C$, 'getBaseline$javax_swing_JComponent$I$I', function (c, width, 
 var viewport = this.scrollpane.getViewport();
 var spInsets = this.scrollpane.getInsets();
 var y = spInsets.top;
-height = height - spInsets.top - spInsets.bottom ;
-width = width - spInsets.left - spInsets.right ;
+height=height - spInsets.top - spInsets.bottom ;
+width=width - spInsets.left - spInsets.right ;
 var columnHeader = this.scrollpane.getColumnHeader();
 if (columnHeader != null  && columnHeader.isVisible() ) {
 var header = columnHeader.getView();
@@ -296,20 +296,20 @@ var baseline = header.getBaseline$I$I(headerPref.width, headerPref.height);
 if (baseline >= 0) {
 return y + baseline;
 }}var columnPref = columnHeader.getPreferredSize();
-height = height-(columnPref.height);
-y = y+(columnPref.height);
+height-=columnPref.height;
+y+=columnPref.height;
 }var view = (viewport == null ) ? null : viewport.getView();
 if (view != null  && view.isVisible()  && view.getBaselineResizeBehavior() === (I$[12]||$incl$(12)).CONSTANT_ASCENT  ) {
 var viewportBorder = this.scrollpane.getViewportBorder();
 if (viewportBorder != null ) {
 var vpbInsets = viewportBorder.getBorderInsets$java_awt_Component(this.scrollpane);
-y = y+(vpbInsets.top);
-height = height - vpbInsets.top - vpbInsets.bottom ;
-width = width - vpbInsets.left - vpbInsets.right ;
+y+=vpbInsets.top;
+height=height - vpbInsets.top - vpbInsets.bottom ;
+width=width - vpbInsets.left - vpbInsets.right ;
 }if (view.getWidth() > 0 && view.getHeight() > 0 ) {
 var min = view.getMinimumSize();
-width = Math.max(min.width, view.getWidth());
-height = Math.max(min.height, view.getHeight());
+width=Math.max(min.width, view.getWidth());
+height=Math.max(min.height, view.getHeight());
 }if (width > 0 && height > 0 ) {
 var baseline = view.getBaseline$I$I(width, height);
 if (baseline > 0) {
@@ -355,15 +355,15 @@ oldViewport.removeChangeListener$javax_swing_event_ChangeListener(this.viewportC
 }if (newViewport != null ) {
 var p = newViewport.getViewPosition();
 if (this.scrollpane.getComponentOrientation().isLeftToRight()) {
-p.x = Math.max(p.x, 0);
+p.x=Math.max(p.x, 0);
 } else {
 var max = newViewport.getViewSize().width;
 var extent = newViewport.getExtentSize().width;
 if (extent > max) {
-p.x = max - extent;
+p.x=max - extent;
 } else {
-p.x = Math.max(0, Math.min(max - extent, p.x));
-}}p.y = Math.max(p.y, 0);
+p.x=Math.max(0, Math.min(max - extent, p.x));
+}}p.y=Math.max(p.y, 0);
 newViewport.setViewPosition$java_awt_Point(p);
 newViewport.addChangeListener$javax_swing_event_ChangeListener(this.viewportChangeListener);
 }});
@@ -373,7 +373,7 @@ var newRowHead = (e.getNewValue());
 if (newRowHead != null ) {
 var viewport = this.scrollpane.getViewport();
 var p = newRowHead.getViewPosition();
-p.y = (viewport != null ) ? viewport.getViewPosition().y : 0;
+p.y=(viewport != null ) ? viewport.getViewPosition().y : 0;
 newRowHead.setViewPosition$java_awt_Point(p);
 }});
 
@@ -383,12 +383,12 @@ if (newColHead != null ) {
 var viewport = this.scrollpane.getViewport();
 var p = newColHead.getViewPosition();
 if (viewport == null ) {
-p.x = 0;
+p.x=0;
 } else {
 if (this.scrollpane.getComponentOrientation().isLeftToRight()) {
-p.x = viewport.getViewPosition().x;
+p.x=viewport.getViewPosition().x;
 } else {
-p.x = Math.max(0, viewport.getViewPosition().x);
+p.x=Math.max(0, viewport.getViewPosition().x);
 }}newColHead.setViewPosition$java_awt_Point(p);
 this.scrollpane.add$java_awt_Component$O(newColHead, "COLUMN_HEADER");
 }});
@@ -408,16 +408,16 @@ if (cl != null ) {
 sb.getModel().removeChangeListener$javax_swing_event_ChangeListener(cl);
 }if (pcl != null ) {
 sb.removePropertyChangeListener$java_beans_PropertyChangeListener(pcl);
-}}sb = pce.getNewValue();
+}}sb=pce.getNewValue();
 if (sb != null ) {
 if (isVertical) {
-this.vertBarUI = sb.getUI();
-this.vertBarUI.isScrollPaneScrollBar = true;
-this.vertBarUI.myScrollPaneUI = this;
+this.vertBarUI=sb.getUI();
+this.vertBarUI.isScrollPaneScrollBar=true;
+this.vertBarUI.myScrollPaneUI=this;
 } else {
-this.horizBarUI = sb.getUI();
-this.horizBarUI.isScrollPaneScrollBar = true;
-this.horizBarUI.myScrollPaneUI = this;
+this.horizBarUI=sb.getUI();
+this.horizBarUI.isScrollPaneScrollBar=true;
+this.horizBarUI.myScrollPaneUI=this;
 }if (cl != null ) {
 sb.getModel().addChangeListener$javax_swing_event_ChangeListener(cl);
 }if (pcl != null ) {
@@ -557,7 +557,7 @@ p$.scroll$javax_swing_JScrollPane$I$I$Z.apply(this, [scrollPane, 0, ltr ? 1 : -1
 Clazz.newMeth(C$, 'scrollEnd$javax_swing_JScrollPane', function (scrollpane) {
 var vp = scrollpane.getViewport();
 var view;
-if (vp != null  && (view = vp.getView()) != null  ) {
+if (vp != null  && (view=vp.getView()) != null  ) {
 var visRect = vp.getViewRect();
 var bounds = view.getBounds();
 if (scrollpane.getComponentOrientation().isLeftToRight()) {
@@ -569,7 +569,7 @@ vp.setViewPosition$java_awt_Point(Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[0, bound
 Clazz.newMeth(C$, 'scrollHome$javax_swing_JScrollPane', function (scrollpane) {
 var vp = scrollpane.getViewport();
 var view;
-if (vp != null  && (view = vp.getView()) != null  ) {
+if (vp != null  && (view=vp.getView()) != null  ) {
 if (scrollpane.getComponentOrientation().isLeftToRight()) {
 vp.setViewPosition$java_awt_Point(Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[0, 0]));
 } else {
@@ -581,42 +581,42 @@ vp.setViewPosition$java_awt_Point(Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[bounds.w
 Clazz.newMeth(C$, 'scroll$javax_swing_JScrollPane$I$I$Z', function (scrollpane, orientation, direction, block) {
 var vp = scrollpane.getViewport();
 var view;
-if (vp != null  && (view = vp.getView()) != null  ) {
+if (vp != null  && (view=vp.getView()) != null  ) {
 var visRect = vp.getViewRect();
 var vSize = view.getSize();
 var amount;
 if (Clazz.instanceOf(view, "javax.swing.Scrollable")) {
 if (block) {
-amount = (view).getScrollableBlockIncrement$java_awt_Rectangle$I$I(visRect, orientation, direction);
+amount=(view).getScrollableBlockIncrement$java_awt_Rectangle$I$I(visRect, orientation, direction);
 } else {
-amount = (view).getScrollableUnitIncrement$java_awt_Rectangle$I$I(visRect, orientation, direction);
+amount=(view).getScrollableUnitIncrement$java_awt_Rectangle$I$I(visRect, orientation, direction);
 }} else {
 if (block) {
 if (orientation == 1) {
-amount = visRect.height;
+amount=visRect.height;
 } else {
-amount = visRect.width;
+amount=visRect.width;
 }} else {
-amount = 10;
+amount=10;
 }}if (orientation == 1) {
-visRect.y = visRect.y+((amount * direction));
+visRect.y+=(amount * direction);
 if ((visRect.y + visRect.height) > vSize.height) {
-visRect.y = Math.max(0, vSize.height - visRect.height);
+visRect.y=Math.max(0, vSize.height - visRect.height);
 } else if (visRect.y < 0) {
-visRect.y = 0;
+visRect.y=0;
 }} else {
 if (scrollpane.getComponentOrientation().isLeftToRight()) {
-visRect.x = visRect.x+((amount * direction));
+visRect.x+=(amount * direction);
 if ((visRect.x + visRect.width) > vSize.width) {
-visRect.x = Math.max(0, vSize.width - visRect.width);
+visRect.x=Math.max(0, vSize.width - visRect.width);
 } else if (visRect.x < 0) {
-visRect.x = 0;
+visRect.x=0;
 }} else {
-visRect.x = visRect.x-((amount * direction));
+visRect.x-=(amount * direction);
 if (visRect.width > vSize.width) {
-visRect.x = vSize.width - visRect.width;
+visRect.x=vSize.width - visRect.width;
 } else {
-visRect.x = Math.max(0, Math.min(vSize.width - visRect.width, visRect.x));
+visRect.x=Math.max(0, Math.min(vSize.width - visRect.width, visRect.x));
 }}}vp.setViewPosition$java_awt_Point(visRect.getLocation());
 }});
 
@@ -652,7 +652,7 @@ p$.vsbStateChanged$javax_swing_JViewport$javax_swing_event_ChangeEvent.apply(thi
 Clazz.newMeth(C$, 'vsbStateChanged$javax_swing_JViewport$javax_swing_event_ChangeEvent', function (viewport, e) {
 var model = (e.getSource());
 var p = viewport.getViewPosition();
-p.y = model.getValue();
+p.y=model.getValue();
 viewport.setViewPosition$java_awt_Point(p);
 });
 
@@ -661,17 +661,17 @@ var model = (e.getSource());
 var p = viewport.getViewPosition();
 var value = model.getValue();
 if (this.this$0.scrollpane.getComponentOrientation().isLeftToRight()) {
-p.x = value;
+p.x=value;
 } else {
 var max = viewport.getViewSize().width;
 var extent = viewport.getExtentSize().width;
 var oldX = p.x;
-p.x = max - extent - value ;
+p.x=max - extent - value ;
 if ((extent == 0) && (value != 0) && (oldX == max)  ) {
-this.this$0.setValueCalled = true;
+this.this$0.setValueCalled=true;
 } else {
 if ((extent != 0) && (oldX < 0) && (p.x == 0)  ) {
-p.x = p.x+(value);
+p.x+=value;
 }}}viewport.setViewPosition$java_awt_Point(p);
 });
 
@@ -715,10 +715,10 @@ var sb = this.this$0.scrollpane.getVerticalScrollBar();
 var oldModel = e.getOldValue();
 var cl = null;
 if (source === sb ) {
-cl = this.this$0.vsbChangeListener;
+cl=this.this$0.vsbChangeListener;
 } else if (source === this.this$0.scrollpane.getHorizontalScrollBar() ) {
-sb = this.this$0.scrollpane.getHorizontalScrollBar();
-cl = this.this$0.hsbChangeListener;
+sb=this.this$0.scrollpane.getHorizontalScrollBar();
+cl=this.this$0.hsbChangeListener;
 }if (cl != null ) {
 if (oldModel != null ) {
 oldModel.removeChangeListener$javax_swing_event_ChangeListener(cl);
@@ -730,9 +730,9 @@ var hsb = this.this$0.scrollpane.getHorizontalScrollBar();
 var viewport = this.this$0.scrollpane.getViewport();
 var p = viewport.getViewPosition();
 if (this.this$0.scrollpane.getComponentOrientation().isLeftToRight()) {
-p.x = hsb.getValue();
+p.x=hsb.getValue();
 } else {
-p.x = viewport.getViewSize().width - viewport.getExtentSize().width - hsb.getValue() ;
+p.x=viewport.getViewSize().width - viewport.getExtentSize().width - hsb.getValue() ;
 }viewport.setViewPosition$java_awt_Point(p);
 }}});
 
@@ -741,4 +741,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:25
+//Created 2018-05-24 08:47:58

@@ -28,16 +28,16 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element$I', function (elem, axis) {
 C$.superclazz.c$$javax_swing_text_Element.apply(this, [elem]);
 C$.$init$.apply(this);
-this.tempRect = Clazz.new_((I$[1]||$incl$(1)));
-this.majorAxis = axis;
-this.majorOffsets = Clazz.array(Integer.TYPE, [0]);
-this.majorSpans = Clazz.array(Integer.TYPE, [0]);
-this.majorReqValid = false;
-this.majorAllocValid = false;
-this.minorOffsets = Clazz.array(Integer.TYPE, [0]);
-this.minorSpans = Clazz.array(Integer.TYPE, [0]);
-this.minorReqValid = false;
-this.minorAllocValid = false;
+this.tempRect=Clazz.new_((I$[1]||$incl$(1)));
+this.majorAxis=axis;
+this.majorOffsets=Clazz.array(Integer.TYPE, [0]);
+this.majorSpans=Clazz.array(Integer.TYPE, [0]);
+this.majorReqValid=false;
+this.majorAllocValid=false;
+this.minorOffsets=Clazz.array(Integer.TYPE, [0]);
+this.minorSpans=Clazz.array(Integer.TYPE, [0]);
+this.minorReqValid=false;
+this.minorAllocValid=false;
 }, 1);
 
 Clazz.newMeth(C$, 'getAxis', function () {
@@ -46,16 +46,16 @@ return this.majorAxis;
 
 Clazz.newMeth(C$, 'setAxis$I', function (axis) {
 var axisChanged = (axis != this.majorAxis);
-this.majorAxis = axis;
+this.majorAxis=axis;
 if (axisChanged) {
 this.preferenceChanged$javax_swing_text_View$Z$Z(null, true, true);
 }});
 
 Clazz.newMeth(C$, 'layoutChanged$I', function (axis) {
 if (axis == this.majorAxis) {
-this.majorAllocValid = false;
+this.majorAllocValid=false;
 } else {
-this.minorAllocValid = false;
+this.minorAllocValid=false;
 }});
 
 Clazz.newMeth(C$, 'isLayoutValid$I', function (axis) {
@@ -73,14 +73,14 @@ child.paint$java_awt_Graphics$java_awt_Shape(g, alloc);
 Clazz.newMeth(C$, 'replace$I$I$javax_swing_text_ViewA', function (index, length, elems) {
 C$.superclazz.prototype.replace$I$I$javax_swing_text_ViewA.apply(this, [index, length, elems]);
 var nInserted = (elems != null ) ? elems.length : 0;
-this.majorOffsets = this.updateLayoutArray$IA$I$I(this.majorOffsets, index, nInserted);
-this.majorSpans = this.updateLayoutArray$IA$I$I(this.majorSpans, index, nInserted);
-this.majorReqValid = false;
-this.majorAllocValid = false;
-this.minorOffsets = this.updateLayoutArray$IA$I$I(this.minorOffsets, index, nInserted);
-this.minorSpans = this.updateLayoutArray$IA$I$I(this.minorSpans, index, nInserted);
-this.minorReqValid = false;
-this.minorAllocValid = false;
+this.majorOffsets=this.updateLayoutArray$IA$I$I(this.majorOffsets, index, nInserted);
+this.majorSpans=this.updateLayoutArray$IA$I$I(this.majorSpans, index, nInserted);
+this.majorReqValid=false;
+this.majorAllocValid=false;
+this.minorOffsets=this.updateLayoutArray$IA$I$I(this.minorOffsets, index, nInserted);
+this.minorSpans=this.updateLayoutArray$IA$I$I(this.minorSpans, index, nInserted);
+this.minorReqValid=false;
+this.minorAllocValid=false;
 });
 
 Clazz.newMeth(C$, 'updateLayoutArray$IA$I$I', function (oldArray, offset, nInserted) {
@@ -101,11 +101,11 @@ var pos = e.getOffset();
 var index = this.getViewIndexAtPosition$I(pos);
 var alloc = this.getInsideAllocation$java_awt_Shape(a);
 if (this.majorAxis == 0) {
-alloc.x = alloc.x+(this.majorOffsets[index]);
-alloc.width = alloc.width-(this.majorOffsets[index]);
+alloc.x+=this.majorOffsets[index];
+alloc.width-=this.majorOffsets[index];
 } else {
-alloc.y = alloc.y+(this.minorOffsets[index]);
-alloc.height = alloc.height-(this.minorOffsets[index]);
+alloc.y+=this.minorOffsets[index];
+alloc.height-=this.minorOffsets[index];
 }c.repaint$I$I$I$I(alloc.x, alloc.y, alloc.width, alloc.height);
 }}});
 
@@ -113,11 +113,11 @@ Clazz.newMeth(C$, 'preferenceChanged$javax_swing_text_View$Z$Z', function (child
 var majorChanged = (this.majorAxis == 0) ? width : height;
 var minorChanged = (this.majorAxis == 0) ? height : width;
 if (majorChanged) {
-this.majorReqValid = false;
-this.majorAllocValid = false;
+this.majorReqValid=false;
+this.majorAllocValid=false;
 }if (minorChanged) {
-this.minorReqValid = false;
-this.minorAllocValid = false;
+this.minorReqValid=false;
+this.minorAllocValid=false;
 }C$.superclazz.prototype.preferenceChanged$javax_swing_text_View$Z$Z.apply(this, [child, width, height]);
 });
 
@@ -135,21 +135,21 @@ return 1;
 Clazz.newMeth(C$, 'setSpanOnAxis$I$F', function (axis, span) {
 if (axis == this.majorAxis) {
 if (this.majorSpan != (span|0)) {
-this.majorAllocValid = false;
+this.majorAllocValid=false;
 }if (!this.majorAllocValid) {
-this.majorSpan = (span|0);
+this.majorSpan=(span|0);
 this.checkRequests$I(this.majorAxis);
 this.layoutMajorAxis$I$I$IA$IA(this.majorSpan, axis, this.majorOffsets, this.majorSpans);
-this.majorAllocValid = true;
+this.majorAllocValid=true;
 this.updateChildSizes();
 }} else {
 if (((span|0)) != this.minorSpan) {
-this.minorAllocValid = false;
+this.minorAllocValid=false;
 }if (!this.minorAllocValid) {
-this.minorSpan = (span|0);
+this.minorSpan=(span|0);
 this.checkRequests$I(axis);
 this.layoutMinorAxis$I$I$IA$IA(this.minorSpan, axis, this.minorOffsets, this.minorSpans);
-this.minorAllocValid = true;
+this.minorAllocValid=true;
 this.updateChildSizes();
 }}});
 
@@ -185,10 +185,10 @@ var x = alloc.x + this.getLeftInset();
 var y = alloc.y + this.getTopInset();
 var clip = g.getClipBounds();
 for (var i = 0; i < n; i++) {
-this.tempRect.x = x + this.getOffset$I$I(0, i);
-this.tempRect.y = y + this.getOffset$I$I(1, i);
-this.tempRect.width = this.getSpan$I$I(0, i);
-this.tempRect.height = this.getSpan$I$I(1, i);
+this.tempRect.x=x + this.getOffset$I$I(0, i);
+this.tempRect.y=y + this.getOffset$I$I(1, i);
+this.tempRect.width=this.getSpan$I$I(0, i);
+this.tempRect.height=this.getSpan$I$I(1, i);
 var trx0 = this.tempRect.x;
 var trx1 = trx0 + this.tempRect.width;
 var try0 = this.tempRect.y;
@@ -307,10 +307,10 @@ return this.getView$I(n - 1);
 }});
 
 Clazz.newMeth(C$, 'childAllocation$I$java_awt_Rectangle', function (index, alloc) {
-alloc.x = alloc.x+(this.getOffset$I$I(0, index));
-alloc.y = alloc.y+(this.getOffset$I$I(1, index));
-alloc.width = this.getSpan$I$I(0, index);
-alloc.height = this.getSpan$I$I(1, index);
+alloc.x+=this.getOffset$I$I(0, index);
+alloc.y+=this.getOffset$I$I(1, index);
+alloc.width=this.getSpan$I$I(0, index);
+alloc.height=this.getSpan$I$I(1, index);
 });
 
 Clazz.newMeth(C$, 'layout$I$I', function (width, height) {
@@ -321,20 +321,20 @@ this.setSpanOnAxis$I$F(1, height);
 Clazz.newMeth(C$, 'getWidth', function () {
 var span;
 if (this.majorAxis == 0) {
-span = this.majorSpan;
+span=this.majorSpan;
 } else {
-span = this.minorSpan;
-}span = span+(this.getLeftInset() - this.getRightInset());
+span=this.minorSpan;
+}span+=this.getLeftInset() - this.getRightInset();
 return span;
 });
 
 Clazz.newMeth(C$, 'getHeight', function () {
 var span;
 if (this.majorAxis == 1) {
-span = this.majorSpan;
+span=this.majorSpan;
 } else {
-span = this.minorSpan;
-}span = span+(this.getTopInset() - this.getBottomInset());
+span=this.minorSpan;
+}span+=this.getTopInset() - this.getBottomInset();
 return span;
 });
 
@@ -343,37 +343,37 @@ var preferred = 0;
 var n = this.getViewCount();
 for (var i = 0; i < n; i++) {
 var v = this.getView$I(i);
-spans[i] = (v.getPreferredSpan$I(axis)|0);
-preferred = preferred+(spans[i]);
+spans[i]=(v.getPreferredSpan$I(axis)|0);
+preferred+=spans[i];
 }
 var desiredAdjustment = targetSpan - preferred;
 var adjustmentFactor = 0.0;
 var diffs = null;
 if (desiredAdjustment != 0) {
 var totalSpan = 0;
-diffs = Clazz.array(Integer.TYPE, [n]);
+diffs=Clazz.array(Integer.TYPE, [n]);
 for (var i = 0; i < n; i++) {
 var v = this.getView$I(i);
 var tmp;
 if (desiredAdjustment < 0) {
-tmp = (v.getMinimumSpan$I(axis)|0);
-diffs[i] = spans[i] - tmp;
+tmp=(v.getMinimumSpan$I(axis)|0);
+diffs[i]=spans[i] - tmp;
 } else {
-tmp = (v.getMaximumSpan$I(axis)|0);
-diffs[i] = tmp - spans[i];
-}totalSpan = totalSpan+(tmp);
+tmp=(v.getMaximumSpan$I(axis)|0);
+diffs[i]=tmp - spans[i];
+}totalSpan+=tmp;
 }
 var maximumAdjustment = Math.abs(totalSpan - preferred);
-adjustmentFactor = desiredAdjustment / maximumAdjustment;
-adjustmentFactor = Math.min(adjustmentFactor, 1.0);
-adjustmentFactor = Math.max(adjustmentFactor, -1.0);
+adjustmentFactor=desiredAdjustment / maximumAdjustment;
+adjustmentFactor=Math.min(adjustmentFactor, 1.0);
+adjustmentFactor=Math.max(adjustmentFactor, -1.0);
 }var totalOffset = 0;
 for (var i = 0; i < n; i++) {
-offsets[i] = totalOffset;
+offsets[i]=totalOffset;
 if (desiredAdjustment != 0) {
 var adjF = adjustmentFactor * diffs[i];
-spans[i] = spans[i]+(Math.round(adjF));
-}totalOffset = (Math.min(totalOffset + spans[i], 2147483647)|0);
+spans[i]+=Math.round(adjF);
+}totalOffset=(Math.min(totalOffset + spans[i], 2147483647)|0);
 }
 });
 
@@ -384,12 +384,12 @@ var v = this.getView$I(i);
 var max = (v.getMaximumSpan$I(axis)|0);
 if (max < targetSpan) {
 var align = v.getAlignment$I(axis);
-offsets[i] = (((targetSpan - max) * align)|0);
-spans[i] = max;
+offsets[i]=(((targetSpan - max) * align)|0);
+spans[i]=max;
 } else {
 var min = (v.getMinimumSpan$I(axis)|0);
-offsets[i] = 0;
-spans[i] = Math.max(min, targetSpan);
+offsets[i]=0;
+spans[i]=Math.max(min, targetSpan);
 }}
 });
 
@@ -405,11 +405,11 @@ pref += v.getPreferredSpan$I(axis);
 max += v.getMaximumSpan$I(axis);
 }
 if (r == null ) {
-r = Clazz.new_((I$[2]||$incl$(2)));
-}r.alignment = 0.5;
-r.minimum = (min|0);
-r.preferred = (pref|0);
-r.maximum = (max|0);
+r=Clazz.new_((I$[2]||$incl$(2)));
+}r.alignment=0.5;
+r.minimum=(min|0);
+r.preferred=(pref|0);
+r.maximum=(max|0);
 return r;
 });
 
@@ -420,16 +420,16 @@ var max = 2147483647;
 var n = this.getViewCount();
 for (var i = 0; i < n; i++) {
 var v = this.getView$I(i);
-min = Math.max((v.getMinimumSpan$I(axis)|0), min);
-pref = Math.max((v.getPreferredSpan$I(axis)|0), pref);
-max = Math.max((v.getMaximumSpan$I(axis)|0), max);
+min=Math.max((v.getMinimumSpan$I(axis)|0), min);
+pref=Math.max((v.getPreferredSpan$I(axis)|0), pref);
+max=Math.max((v.getMaximumSpan$I(axis)|0), max);
 }
 if (r == null ) {
-r = Clazz.new_((I$[2]||$incl$(2)));
-r.alignment = 0.5;
-}r.preferred = (pref|0);
-r.minimum = min;
-r.maximum = max;
+r=Clazz.new_((I$[2]||$incl$(2)));
+r.alignment=0.5;
+}r.preferred=(pref|0);
+r.minimum=min;
+r.maximum=max;
 return r;
 });
 
@@ -438,11 +438,11 @@ if ((axis != 0) && (axis != 1) ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Invalid axis: " + axis]);
 }if (axis == this.majorAxis) {
 if (!this.majorReqValid) {
-this.majorRequest = this.calculateMajorAxisRequirements$I$javax_swing_SizeRequirements(axis, this.majorRequest);
-this.majorReqValid = true;
+this.majorRequest=this.calculateMajorAxisRequirements$I$javax_swing_SizeRequirements(axis, this.majorRequest);
+this.majorReqValid=true;
 }} else if (!this.minorReqValid) {
-this.minorRequest = this.calculateMinorAxisRequirements$I$javax_swing_SizeRequirements(axis, this.minorRequest);
-this.minorReqValid = true;
+this.minorRequest=this.calculateMinorAxisRequirements$I$javax_swing_SizeRequirements(axis, this.minorRequest);
+this.minorReqValid=true;
 }});
 
 Clazz.newMeth(C$, 'baselineLayout$I$I$IA$IA', function (targetSpan, axis, offsets, spans) {
@@ -457,16 +457,16 @@ if (v.getResizeWeight$I(axis) > 0) {
 var minSpan = v.getMinimumSpan$I(axis);
 var maxSpan = v.getMaximumSpan$I(axis);
 if (align == 0.0 ) {
-viewSpan = Math.max(Math.min(maxSpan, totalDescent), minSpan);
+viewSpan=Math.max(Math.min(maxSpan, totalDescent), minSpan);
 } else if (align == 1.0 ) {
-viewSpan = Math.max(Math.min(maxSpan, totalAscent), minSpan);
+viewSpan=Math.max(Math.min(maxSpan, totalAscent), minSpan);
 } else {
 var fitSpan = Math.min(totalAscent / align, totalDescent / (1.0 - align));
-viewSpan = Math.max(Math.min(maxSpan, fitSpan), minSpan);
+viewSpan=Math.max(Math.min(maxSpan, fitSpan), minSpan);
 }} else {
-viewSpan = v.getPreferredSpan$I(axis);
-}offsets[i] = totalAscent - ((viewSpan * align)|0);
-spans[i] = (viewSpan|0);
+viewSpan=v.getPreferredSpan$I(axis);
+}offsets[i]=totalAscent - ((viewSpan * align)|0);
+spans[i]=(viewSpan|0);
 }
 });
 
@@ -474,8 +474,8 @@ Clazz.newMeth(C$, 'baselineRequirements$I$javax_swing_SizeRequirements', functio
 var totalAscent = Clazz.new_((I$[2]||$incl$(2)));
 var totalDescent = Clazz.new_((I$[2]||$incl$(2)));
 if (r == null ) {
-r = Clazz.new_((I$[2]||$incl$(2)));
-}r.alignment = 0.5;
+r=Clazz.new_((I$[2]||$incl$(2)));
+}r.alignment=0.5;
 var n = this.getViewCount();
 for (var i = 0; i < n; i++) {
 var v = this.getView$I(i);
@@ -483,40 +483,40 @@ var align = v.getAlignment$I(axis);
 var span;
 var ascent;
 var descent;
-span = v.getPreferredSpan$I(axis);
-ascent = ((align * span)|0);
-descent = ((span - ascent)|0);
-totalAscent.preferred = Math.max(ascent, totalAscent.preferred);
-totalDescent.preferred = Math.max(descent, totalDescent.preferred);
+span=v.getPreferredSpan$I(axis);
+ascent=((align * span)|0);
+descent=((span - ascent)|0);
+totalAscent.preferred=Math.max(ascent, totalAscent.preferred);
+totalDescent.preferred=Math.max(descent, totalDescent.preferred);
 if (v.getResizeWeight$I(axis) > 0) {
-span = v.getMinimumSpan$I(axis);
-ascent = ((align * span)|0);
-descent = ((span - ascent)|0);
-totalAscent.minimum = Math.max(ascent, totalAscent.minimum);
-totalDescent.minimum = Math.max(descent, totalDescent.minimum);
-span = v.getMaximumSpan$I(axis);
-ascent = ((align * span)|0);
-descent = ((span - ascent)|0);
-totalAscent.maximum = Math.max(ascent, totalAscent.maximum);
-totalDescent.maximum = Math.max(descent, totalDescent.maximum);
+span=v.getMinimumSpan$I(axis);
+ascent=((align * span)|0);
+descent=((span - ascent)|0);
+totalAscent.minimum=Math.max(ascent, totalAscent.minimum);
+totalDescent.minimum=Math.max(descent, totalDescent.minimum);
+span=v.getMaximumSpan$I(axis);
+ascent=((align * span)|0);
+descent=((span - ascent)|0);
+totalAscent.maximum=Math.max(ascent, totalAscent.maximum);
+totalDescent.maximum=Math.max(descent, totalDescent.maximum);
 } else {
-totalAscent.minimum = Math.max(ascent, totalAscent.minimum);
-totalDescent.minimum = Math.max(descent, totalDescent.minimum);
-totalAscent.maximum = Math.max(ascent, totalAscent.maximum);
-totalDescent.maximum = Math.max(descent, totalDescent.maximum);
+totalAscent.minimum=Math.max(ascent, totalAscent.minimum);
+totalDescent.minimum=Math.max(descent, totalDescent.minimum);
+totalAscent.maximum=Math.max(ascent, totalAscent.maximum);
+totalDescent.maximum=Math.max(descent, totalDescent.maximum);
 }}
-r.preferred = (Math.min(totalAscent.preferred + totalDescent.preferred, 2147483647)|0);
+r.preferred=(Math.min(totalAscent.preferred + totalDescent.preferred, 2147483647)|0);
 if (r.preferred > 0) {
-r.alignment = totalAscent.preferred / r.preferred;
+r.alignment=totalAscent.preferred / r.preferred;
 }if (r.alignment == 0.0 ) {
-r.minimum = totalDescent.minimum;
-r.maximum = totalDescent.maximum;
+r.minimum=totalDescent.minimum;
+r.maximum=totalDescent.maximum;
 } else if (r.alignment == 1.0 ) {
-r.minimum = totalAscent.minimum;
-r.maximum = totalAscent.maximum;
+r.minimum=totalAscent.minimum;
+r.maximum=totalAscent.maximum;
 } else {
-r.minimum = Math.round(Math.max(totalAscent.minimum / r.alignment, totalDescent.minimum / (1.0 - r.alignment)));
-r.maximum = Math.round(Math.min(totalAscent.maximum / r.alignment, totalDescent.maximum / (1.0 - r.alignment)));
+r.minimum=Math.round(Math.max(totalAscent.minimum / r.alignment, totalDescent.minimum / (1.0 - r.alignment)));
+r.maximum=Math.round(Math.min(totalAscent.maximum / r.alignment, totalDescent.maximum / (1.0 - r.alignment)));
 }return r;
 });
 
@@ -543,4 +543,4 @@ return (v).flipEastAndWestAtEnds$I$javax_swing_text_Position_Bias(position, bias
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:52
+//Created 2018-05-24 08:47:01

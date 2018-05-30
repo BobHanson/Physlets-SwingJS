@@ -44,7 +44,7 @@ return this.defaultCapable;
 
 Clazz.newMeth(C$, 'setDefaultCapable$Z', function (defaultCapable) {
 var oldDefaultCapable = this.defaultCapable;
-this.defaultCapable = defaultCapable;
+this.defaultCapable=defaultCapable;
 this.firePropertyChange$S$Z$Z("defaultCapable", oldDefaultCapable, defaultCapable);
 });
 
@@ -60,4 +60,4 @@ var defaultCapableString = (this.defaultCapable ? "true" : "false");
 return C$.superclazz.prototype.paramString.apply(this, []) + ",defaultCapable=" + defaultCapableString ;
 });
 })();
-//Created 2018-05-15 01:02:25
+//Created 2018-05-24 08:46:11

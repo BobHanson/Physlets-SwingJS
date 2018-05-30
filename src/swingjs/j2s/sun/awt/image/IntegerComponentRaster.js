@@ -42,32 +42,32 @@ this.setIntCompRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_
 
 Clazz.newMeth(C$, 'setIntCompRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_Raster', function (sampleModel, dataBuffer, aRegion, origin, parent) {
 this.setSunRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_Raster(sampleModel, dataBuffer, aRegion, origin, parent);
-this.maxX = this.minX + this.width;
-this.maxY = this.minY + this.height;
+this.maxX=this.minX + this.width;
+this.maxY=this.minY + this.height;
 if (!(Clazz.instanceOf(dataBuffer, "java.awt.image.DataBufferInt"))) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["IntegerComponentRasters must haveinteger DataBuffers"]);
 }var dbi = dataBuffer;
 if (dbi.getNumBanks() != 1) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["DataBuffer for IntegerComponentRasters must only have 1 bank."]);
-}this.data = P$.SunWritableRaster.stealData$java_awt_image_DataBufferInt$I(dbi, 0);
+}this.data=P$.SunWritableRaster.stealData$java_awt_image_DataBufferInt$I(dbi, 0);
 if (Clazz.instanceOf(sampleModel, "java.awt.image.SinglePixelPackedSampleModel")) {
 var sppsm = sampleModel;
 var boffsets = sppsm.getBitOffsets();
 var notByteBoundary = false;
 for (var i = 1; i < boffsets.length; i++) {
 if ((boffsets[i] % 8) != 0) {
-notByteBoundary = true;
+notByteBoundary=true;
 }}
-this.type = (notByteBoundary ? 9 : 10);
-this.scanlineStride = sppsm.getScanlineStride();
-this.pixelStride = 1;
-this.dataOffsets = Clazz.array(Integer.TYPE, [1]);
-this.dataOffsets[0] = dbi.getOffset();
-this.bandOffset = this.dataOffsets[0];
+this.type=(notByteBoundary ? 9 : 10);
+this.scanlineStride=sppsm.getScanlineStride();
+this.pixelStride=1;
+this.dataOffsets=Clazz.array(Integer.TYPE, [1]);
+this.dataOffsets[0]=dbi.getOffset();
+this.bandOffset=this.dataOffsets[0];
 var xOffset = aRegion.x - origin.x;
 var yOffset = aRegion.y - origin.y;
-this.dataOffsets[0] = this.dataOffsets[0]+(xOffset + yOffset * this.scanlineStride);
-this.numDataElems = sppsm.getNumDataElements();
+this.dataOffsets[0]+=xOffset + yOffset * this.scanlineStride;
+this.numDataElems=sppsm.getNumDataElements();
 } else {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["IntegerComponentRasters must have SinglePixelPackedSampleModel"]);
 }this.verify();
@@ -98,12 +98,12 @@ if ((x < this.minX) || (y < this.minY) || (x >= this.maxX) || (y >= this.maxY)  
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var outData;
 if (obj == null ) {
-outData = Clazz.array(Integer.TYPE, [this.numDataElements]);
+outData=Clazz.array(Integer.TYPE, [this.numDataElements]);
 } else {
-outData = obj;
+outData=obj;
 }var off = (y - this.minY) * this.scanlineStride + (x - this.minX) * this.pixelStride;
 for (var band = 0; band < this.numDataElements; band++) {
-outData[band] = this.data[this.dataOffsets[band] + off];
+outData[band]=this.data[this.dataOffsets[band] + off];
 }
 return outData;
 });
@@ -113,19 +113,19 @@ if ((x < this.minX) || (y < this.minY) || (x + w > this.maxX) || (y + h > this.m
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var outData;
 if (Clazz.instanceOf(obj, Clazz.array(Integer.TYPE, -1))) {
-outData = obj;
+outData=obj;
 } else {
-outData = Clazz.array(Integer.TYPE, [this.numDataElements * w * h ]);
+outData=Clazz.array(Integer.TYPE, [this.numDataElements * w * h ]);
 }var yoff = (y - this.minY) * this.scanlineStride + (x - this.minX) * this.pixelStride;
 var xoff;
 var off = 0;
 var xstart;
 var ystart;
-for (ystart = 0; ystart < h; ystart++, yoff = yoff+(this.scanlineStride)) {
-xoff = yoff;
-for (xstart = 0; xstart < w; xstart++, xoff = xoff+(this.pixelStride)) {
+for (ystart=0; ystart < h; ystart++, yoff+=this.scanlineStride) {
+xoff=yoff;
+for (xstart=0; xstart < w; xstart++, xoff+=this.pixelStride) {
 for (var c = 0; c < this.numDataElements; c++) {
-outData[off++] = this.data[this.dataOffsets[c] + xoff];
+outData[off++]=this.data[this.dataOffsets[c] + xoff];
 }
 }
 }
@@ -138,7 +138,7 @@ throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["C
 }var inData = obj;
 var off = (y - this.minY) * this.scanlineStride + (x - this.minX) * this.pixelStride;
 for (var i = 0; i < this.numDataElements; i++) {
-this.data[this.dataOffsets[i] + off] = inData[i];
+this.data[this.dataOffsets[i] + off]=inData[i];
 }
 this.markDirty();
 });
@@ -163,23 +163,23 @@ if (Clazz.instanceOf(inRaster, "sun.awt.image.IntegerComponentRaster") && (this.
 var ict = inRaster;
 if (ict.getNumDataElements() != 1) {
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["Number of bands does not match"]);
-}tdata = ict.getDataStorage();
+}tdata=ict.getDataStorage();
 var tss = ict.getScanlineStride();
 var toff = ict.getDataOffset$I(0);
 var srcOffset = toff;
 var dstOffset = this.dataOffsets[0] + (dstY - this.minY) * this.scanlineStride + (dstX - this.minX);
 if (ict.getPixelStride() == this.pixelStride) {
-width = width*(this.pixelStride);
+width*=this.pixelStride;
 for (var startY = 0; startY < height; startY++) {
 System.arraycopy(tdata, srcOffset, this.data, dstOffset, width);
-srcOffset = srcOffset+(tss);
-dstOffset = dstOffset+(this.scanlineStride);
+srcOffset+=tss;
+dstOffset+=this.scanlineStride;
 }
 this.markDirty();
 return;
 }}var odata = null;
 for (var startY = 0; startY < height; startY++) {
-odata = inRaster.getDataElements$I$I$I$I$O(srcOffX, srcOffY + startY, width, 1, odata);
+odata=inRaster.getDataElements$I$I$I$I$O(srcOffX, srcOffY + startY, width, 1, odata);
 this.setDataElements$I$I$I$I$O(dstX, dstY + startY, width, 1, odata);
 }
 });
@@ -193,11 +193,11 @@ var xoff;
 var off = 0;
 var xstart;
 var ystart;
-for (ystart = 0; ystart < h; ystart++, yoff = yoff+(this.scanlineStride)) {
-xoff = yoff;
-for (xstart = 0; xstart < w; xstart++, xoff = xoff+(this.pixelStride)) {
+for (ystart=0; ystart < h; ystart++, yoff+=this.scanlineStride) {
+xoff=yoff;
+for (xstart=0; xstart < w; xstart++, xoff+=this.pixelStride) {
 for (var c = 0; c < this.numDataElements; c++) {
-this.data[this.dataOffsets[c] + xoff] = inData[off++];
+this.data[this.dataOffsets[c] + xoff]=inData[off++];
 }
 }
 }
@@ -214,8 +214,8 @@ throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["(x + 
 }if ((y + height < y) || (y + height > this.minY + this.height) ) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["(y + height) is outside raster"]);
 }var sm;
-if (bandList != null ) sm = this.sampleModel.createSubsetSampleModel$IA(bandList);
- else sm = this.sampleModel;
+if (bandList != null ) sm=this.sampleModel.createSubsetSampleModel$IA(bandList);
+ else sm=this.sampleModel;
 var deltaX = x0 - x;
 var deltaY = y0 - y;
 return Clazz.new_(C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_Raster,[sm, this.dataBuffer, Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I,[x0, y0, width, height]), Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[this.sampleModelTranslateX + deltaX, this.sampleModelTranslateY + deltaY]), this]);
@@ -254,15 +254,15 @@ throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["Incor
 }var lastPixelOffset = (this.width - 1) * this.pixelStride;
 if (lastPixelOffset > (2147483647 - lastScanOffset)) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["Incorrect raster attributes"]);
-}lastPixelOffset = lastPixelOffset+(lastScanOffset);
+}lastPixelOffset+=lastScanOffset;
 var index;
 var maxIndex = 0;
 for (var i = 0; i < this.numDataElements; i++) {
 if (this.dataOffsets[i] > (2147483647 - lastPixelOffset)) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["Incorrect band offset: " + this.dataOffsets[i]]);
-}index = lastPixelOffset + this.dataOffsets[i];
+}index=lastPixelOffset + this.dataOffsets[i];
 if (index > maxIndex) {
-maxIndex = index;
+maxIndex=index;
 }}
 if (this.data.length <= maxIndex) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["Data array too small (should be > " + maxIndex + " )" ]);
@@ -272,4 +272,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return  String.instantialize("IntegerComponentRaster: width = " + this.width + " height = " + this.height + " #Bands = " + this.numBands + " #DataElements " + this.numDataElements + " xOff = " + this.sampleModelTranslateX + " yOff = " + this.sampleModelTranslateY + " dataOffset[0] " + this.dataOffsets[0] );
 });
 })();
-//Created 2018-05-15 01:03:08
+//Created 2018-05-24 08:47:28

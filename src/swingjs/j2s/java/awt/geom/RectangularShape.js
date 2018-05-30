@@ -50,12 +50,12 @@ this.setFrame$D$D$D$D(r.getX(), r.getY(), r.getWidth(), r.getHeight());
 Clazz.newMeth(C$, 'setFrameFromDiagonal$D$D$D$D', function (x1, y1, x2, y2) {
 if (x2 < x1 ) {
 var t = x1;
-x1 = x2;
-x2 = t;
+x1=x2;
+x2=t;
 }if (y2 < y1 ) {
 var t = y1;
-y1 = y2;
-y2 = t;
+y1=y2;
+y2=t;
 }this.setFrame$D$D$D$D(x1, y1, x2 - x1, y2 - y1);
 });
 
@@ -115,4 +115,4 @@ throw e;
 }
 });
 })();
-//Created 2018-05-15 01:02:00
+//Created 2018-05-24 08:45:22

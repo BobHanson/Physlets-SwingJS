@@ -51,7 +51,7 @@ this.setSelected$Z(b);
 Clazz.newMeth(C$, 'getSelectedObjects', function () {
 if (this.isSelected() == false ) return null;
 var selectedObjects = Clazz.array(java.lang.Object, [1]);
-selectedObjects[0] = this.getText();
+selectedObjects[0]=this.getText();
 return selectedObjects;
 });
 
@@ -63,4 +63,4 @@ Clazz.newMeth(C$, 'shouldUpdateSelectedStateFromAction', function () {
 return true;
 });
 })();
-//Created 2018-05-15 01:02:26
+//Created 2018-05-24 08:46:12

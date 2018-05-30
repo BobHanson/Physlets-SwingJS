@@ -9,8 +9,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'init$I$Z', function (w, nowrap) {
 this.setAdler32();
-if (w == 0) w = 15;
-this.istate = Clazz.new_((I$[1]||$incl$(1)).c$$swingjs_jzlib_ZStream,[this]);
+if (w == 0) w=15;
+this.istate=Clazz.new_((I$[1]||$incl$(1)).c$$swingjs_jzlib_ZStream,[this]);
 this.istate.inflateInit$I(nowrap ? -w : w);
 return this;
 });
@@ -47,10 +47,10 @@ return this.istate.mode == 12;
 });
 
 Clazz.newMeth(C$, 'reset', function () {
-this.avail_in = 0;
+this.avail_in=0;
 if (this.istate != null ) this.istate.reset();
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:19
+//Created 2018-05-24 08:47:49

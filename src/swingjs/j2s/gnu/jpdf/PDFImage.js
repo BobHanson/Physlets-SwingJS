@@ -30,8 +30,8 @@ this.setImage$java_awt_Image$I$I$I$I$java_awt_image_ImageObserver(img, 0, 0, img
 
 Clazz.newMeth(C$, 'c$$java_awt_Image$I$I$I$I$java_awt_image_ImageObserver', function (img, x, y, w, h, obs) {
 C$.c$.apply(this, []);
-this.objwidth = w;
-this.objheight = h;
+this.objwidth=w;
+this.objheight=h;
 this.setImage$java_awt_Image$I$I$I$I$java_awt_image_ImageObserver(img, x, y, img.getWidth$java_awt_image_ImageObserver(this), img.getHeight$java_awt_image_ImageObserver(this), obs);
 }, 1);
 
@@ -40,7 +40,7 @@ return this.width;
 });
 
 Clazz.newMeth(C$, 'setWidth$I', function (v) {
-this.width = v;
+this.width=v;
 });
 
 Clazz.newMeth(C$, 'getHeight', function () {
@@ -48,11 +48,11 @@ return this.height;
 });
 
 Clazz.newMeth(C$, 'setHeight$I', function (v) {
-this.height = v;
+this.height=v;
 });
 
 Clazz.newMeth(C$, 'setName$S', function (n) {
-this.name = n;
+this.name=n;
 });
 
 Clazz.newMeth(C$, 'getName', function () {
@@ -60,9 +60,9 @@ return this.name;
 });
 
 Clazz.newMeth(C$, 'setImage$java_awt_Image$I$I$I$I$java_awt_image_ImageObserver', function (img, x, y, w, h, obs) {
-this.img = img;
-this.width = w;
-this.height = h;
+this.img=img;
+this.width=w;
+this.height=h;
 });
 
 Clazz.newMeth(C$, 'base85Encoding$S', function (stringToEncode) {
@@ -81,8 +81,8 @@ var digitVector = Clazz.new_((I$[2]||$incl$(2)));
 var number = Long.parseLong(stringToEncode, 16);
 var remainder = 0;
 while (number >= 85){
-remainder = ((number % 85)|0);
-number = (number/85|0);
+remainder=((number % 85)|0);
+number=(number/85|0);
 digitVector.add$I$TE(0,  new Integer(remainder));
 }
 digitVector.add$I$TE(0,  new Integer((number|0)));
@@ -94,16 +94,16 @@ var tuple = sb.toString();
 var len = tuple.length$();
 switch (len) {
 case 1:
-tuple = "!!!!" + tuple;
+tuple="!!!!" + tuple;
 break;
 case 2:
-tuple = "!!!" + tuple;
+tuple="!!!" + tuple;
 break;
 case 3:
-tuple = "!!" + tuple;
+tuple="!!" + tuple;
 break;
 case 4:
-tuple = "!" + tuple;
+tuple="!" + tuple;
 break;
 default:
 break;
@@ -163,7 +163,7 @@ var tuple = out.substring$I$I(0, 8);
 out.$delete$I$I(0, 8);
 var encTuple = p$.base85Encoding$S.apply(this, [tuple]);
 if (encTuple.equals$O("!!!!!")) {
-encTuple = "z";
+encTuple="z";
 }(I$[5]||$incl$(5)).write$java_io_OutputStream$S(bos, encTuple);
 }}
 }
@@ -183,19 +183,19 @@ var redHex = Integer.toHexString(red);
 var greenHex = Integer.toHexString(green);
 var blueHex = Integer.toHexString(blue);
 if (redHex.length$() == 1) {
-redHex = "0" + redHex;
+redHex="0" + redHex;
 }if (greenHex.length$() == 1) {
-greenHex = "0" + greenHex;
+greenHex="0" + greenHex;
 }if (blueHex.length$() == 1) {
-blueHex = "0" + blueHex;
+blueHex="0" + blueHex;
 }return redHex + greenHex + blueHex ;
 }, 1);
 
 Clazz.newMeth(C$, 'imageUpdate$java_awt_Image$I$I$I$I$I', function (img, infoflags, x, y, w, h) {
 System.err.println$S("img=" + img + "\ninfoflags=" + infoflags + "\nx=" + x + " y=" + y + " w=" + w + " h=" + h );
-if (infoflags == 1) this.width = w;
-if (infoflags == 2) this.height = h;
+if (infoflags == 1) this.width=w;
+if (infoflags == 2) this.height=h;
 return false;
 });
 })();
-//Created 2018-05-15 01:01:46
+//Created 2018-05-24 08:45:03

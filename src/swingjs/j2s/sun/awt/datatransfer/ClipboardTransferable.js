@@ -31,7 +31,7 @@ var flavor = iter.next();
 var lFormat = flavorsForFormats.get$O(flavor);
 p$.fetchOneFlavor$sun_awt_datatransfer_SunClipboard$java_awt_datatransfer_DataFlavor$Long$java_util_HashMap.apply(this, [clipboard, flavor, lFormat, cached_data]);
 }
-this.flavors = (I$[1]||$incl$(1)).getInstance().setToSortedDataFlavorArray$java_util_Set$java_util_Map(this.flavorsToData.keySet(), flavorsForFormats);
+this.flavors=(I$[1]||$incl$(1)).getInstance().setToSortedDataFlavorArray$java_util_Set$java_util_Map(this.flavorsToData.keySet(), flavorsForFormats);
 }} finally {
 clipboard.closeClipboard();
 }
@@ -43,12 +43,12 @@ var format = lFormat.longValue();
 var data = null;
 if (!cached_data.containsKey$O(lFormat)) {
 try {
-data = clipboard.getClipboardData$J(format);
+data=clipboard.getClipboardData$J(format);
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$, "java.io.IOException")){
 var e = e$$;
 {
-data = e;
+data=e;
 }
 } else {
 var e = e$$;
@@ -59,7 +59,7 @@ e.printStackTrace();
 }
 cached_data.put$TK$TV(lFormat, data);
 } else {
-data = cached_data.get$O(lFormat);
+data=cached_data.get$O(lFormat);
 }if (Clazz.instanceOf(data, "java.io.IOException")) {
 this.flavorsToData.put$TK$TV(flavor, data);
 return false;
@@ -85,7 +85,7 @@ if (Clazz.instanceOf(ret, "java.io.IOException")) {
 throw ret;
 } else if (Clazz.instanceOf(ret, "sun.awt.datatransfer.ClipboardTransferable.DataFactory")) {
 var factory = ret;
-ret = factory.getTransferData$java_awt_datatransfer_DataFlavor(flavor);
+ret=factory.getTransferData$java_awt_datatransfer_DataFlavor(flavor);
 }return ret;
 });
 ;
@@ -104,8 +104,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$J$BA', function (format, data) {
 C$.$init$.apply(this);
-this.format = format;
-this.data = data;
+this.format=format;
+this.data=data;
 }, 1);
 
 Clazz.newMeth(C$, 'getTransferData$java_awt_datatransfer_DataFlavor', function (flavor) {
@@ -117,4 +117,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:06
+//Created 2018-05-24 08:47:24

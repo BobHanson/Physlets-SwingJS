@@ -22,13 +22,13 @@ C$.$init$.apply(this);
 if (iterators == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["Iterators must not be null"]);
 }if (iterators.length == 0) {
-this.text = "";
+this.text="";
 } else {
 var buffer = Clazz.new_((I$[6]||$incl$(6)));
 for (var counter = 0; counter < iterators.length; counter++) {
 p$.appendContents$StringBuffer$java_text_CharacterIterator.apply(this, [buffer, iterators[counter]]);
 }
-this.text = buffer.toString();
+this.text=buffer.toString();
 if (this.text.length$() > 0) {
 var offset = 0;
 var last = null;
@@ -42,10 +42,10 @@ iterator.setIndex$I(index);
 var attrs = iterator.getAttributes();
 if (C$.mapsDiffer$java_util_Map$java_util_Map(last, attrs)) {
 p$.setAttributes$java_util_Map$I.apply(this, [attrs, index - start + offset]);
-}last = attrs;
-index = iterator.getRunLimit();
+}last=attrs;
+index=iterator.getRunLimit();
 }
-offset = offset+((end - start));
+offset+=(end - start);
 }
 }}}, 1);
 
@@ -53,14 +53,14 @@ Clazz.newMeth(C$, 'c$$S', function (text) {
 C$.$init$.apply(this);
 if (text == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.text = text;
+}this.text=text;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$java_util_Map', function (text, attributes) {
 C$.$init$.apply(this);
 if (text == null  || attributes == null  ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.text = text;
+}this.text=text;
 if (text.length$() == 0) {
 if (attributes.isEmpty()) return;
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Can\'t add attribute to 0-length text"]);
@@ -69,8 +69,8 @@ if (attributeCount > 0) {
 p$.createRunAttributeDataVectors.apply(this, []);
 var newRunAttributes = Clazz.new_((I$[7]||$incl$(7)).c$$I,[attributeCount]);
 var newRunAttributeValues = Clazz.new_((I$[7]||$incl$(7)).c$$I,[attributeCount]);
-this.runAttributes[0] = newRunAttributes;
-this.runAttributeValues[0] = newRunAttributeValues;
+this.runAttributes[0]=newRunAttributes;
+this.runAttributeValues[0]=newRunAttributeValues;
 var iterator = attributes.entrySet().iterator();
 while (iterator.hasNext()){
 var entry = iterator.next();
@@ -96,9 +96,9 @@ var textEndIndex = text.getEndIndex();
 if (beginIndex < textBeginIndex || endIndex > textEndIndex  || beginIndex > endIndex ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Invalid substring range"]);
 var textBuffer = Clazz.new_((I$[6]||$incl$(6)));
 text.setIndex$I(beginIndex);
-for (var c = text.current(); text.getIndex() < endIndex; c = text.next()) textBuffer.append$C(c);
+for (var c = text.current(); text.getIndex() < endIndex; c=text.next()) textBuffer.append$C(c);
 
-this.text = textBuffer.toString();
+this.text=textBuffer.toString();
 if (beginIndex == endIndex) return;
 var keys = Clazz.new_((I$[4]||$incl$(4)));
 if (attributes == null ) {
@@ -125,8 +125,8 @@ if (limit > endIndex) break;
 }} else {
 if (start >= endIndex) break;
 if (limit > beginIndex) {
-if (start < beginIndex) start = beginIndex;
-if (limit > endIndex) limit = endIndex;
+if (start < beginIndex) start=beginIndex;
+if (limit > endIndex) limit=endIndex;
 if (start != limit) {
 this.addAttribute$java_text_AttributedCharacterIterator_Attribute$O$I$I(attributeKey, value, start - beginIndex, limit - beginIndex);
 }}}}text.setIndex$I(limit);
@@ -182,11 +182,11 @@ Clazz.newMeth(C$, 'createRunAttributeDataVectors', function () {
 var newRunStarts = Clazz.array(Integer.TYPE, [10]);
 var newRunAttributes = Clazz.array((I$[7]||$incl$(7)), [10]);
 var newRunAttributeValues = Clazz.array((I$[7]||$incl$(7)), [10]);
-this.runStarts = newRunStarts;
-this.runAttributes = newRunAttributes;
-this.runAttributeValues = newRunAttributeValues;
-this.runArraySize = 10;
-this.runCount = 1;
+this.runStarts=newRunStarts;
+this.runAttributes=newRunAttributes;
+this.runAttributeValues=newRunAttributeValues;
+this.runArraySize=10;
+this.runCount=1;
 });
 
 Clazz.newMeth(C$, 'ensureRunBreak$I', function (offset) {
@@ -208,32 +208,32 @@ var newRunStarts = Clazz.array(Integer.TYPE, [newArraySize]);
 var newRunAttributes = Clazz.array((I$[7]||$incl$(7)), [newArraySize]);
 var newRunAttributeValues = Clazz.array((I$[7]||$incl$(7)), [newArraySize]);
 for (var i = 0; i < this.runArraySize; i++) {
-newRunStarts[i] = this.runStarts[i];
-newRunAttributes[i] = this.runAttributes[i];
-newRunAttributeValues[i] = this.runAttributeValues[i];
+newRunStarts[i]=this.runStarts[i];
+newRunAttributes[i]=this.runAttributes[i];
+newRunAttributeValues[i]=this.runAttributeValues[i];
 }
-this.runStarts = newRunStarts;
-this.runAttributes = newRunAttributes;
-this.runAttributeValues = newRunAttributeValues;
-this.runArraySize = newArraySize;
+this.runStarts=newRunStarts;
+this.runAttributes=newRunAttributes;
+this.runAttributeValues=newRunAttributeValues;
+this.runArraySize=newArraySize;
 }var newRunAttributes = null;
 var newRunAttributeValues = null;
 if (copyAttrs) {
 var oldRunAttributes = this.runAttributes[runIndex - 1];
 var oldRunAttributeValues = this.runAttributeValues[runIndex - 1];
 if (oldRunAttributes != null ) {
-newRunAttributes = oldRunAttributes.clone();
+newRunAttributes=oldRunAttributes.clone();
 }if (oldRunAttributeValues != null ) {
-newRunAttributeValues = oldRunAttributeValues.clone();
+newRunAttributeValues=oldRunAttributeValues.clone();
 }}this.runCount++;
 for (var i = this.runCount - 1; i > runIndex; i--) {
-this.runStarts[i] = this.runStarts[i - 1];
-this.runAttributes[i] = this.runAttributes[i - 1];
-this.runAttributeValues[i] = this.runAttributeValues[i - 1];
+this.runStarts[i]=this.runStarts[i - 1];
+this.runAttributes[i]=this.runAttributes[i - 1];
+this.runAttributeValues[i]=this.runAttributeValues[i - 1];
 }
-this.runStarts[runIndex] = offset;
-this.runAttributes[runIndex] = newRunAttributes;
-this.runAttributeValues[runIndex] = newRunAttributeValues;
+this.runStarts[runIndex]=offset;
+this.runAttributes[runIndex]=newRunAttributes;
+this.runAttributeValues[runIndex]=newRunAttributeValues;
 return runIndex;
 });
 
@@ -243,10 +243,10 @@ var keyValueIndex = -1;
 if (this.runAttributes[i] == null ) {
 var newRunAttributes = Clazz.new_((I$[7]||$incl$(7)));
 var newRunAttributeValues = Clazz.new_((I$[7]||$incl$(7)));
-this.runAttributes[i] = newRunAttributes;
-this.runAttributeValues[i] = newRunAttributeValues;
+this.runAttributes[i]=newRunAttributes;
+this.runAttributeValues[i]=newRunAttributeValues;
 } else {
-keyValueIndex = this.runAttributes[i].indexOf$O(attribute);
+keyValueIndex=this.runAttributes[i].indexOf$O(attribute);
 }if (keyValueIndex == -1) {
 var oldSize = this.runAttributes[i].size();
 this.runAttributes[i].addElement$TE(attribute);
@@ -305,7 +305,7 @@ var currIndex = runIndex;
 var runStart = this.runStarts[currIndex];
 while (runStart >= beginIndex && C$.valuesMatch$O$O(value, p$.getAttribute$java_text_AttributedCharacterIterator_Attribute$I.apply(this, [attribute, currIndex - 1])) ){
 currIndex--;
-runStart = this.runStarts[currIndex];
+runStart=this.runStarts[currIndex];
 }
 if (runStart < beginIndex) {
 return null;
@@ -315,7 +315,7 @@ var currIndex = runIndex;
 var runLimit = (currIndex < this.runCount - 1) ? this.runStarts[currIndex + 1] : textLength;
 while (runLimit <= endIndex && C$.valuesMatch$O$O(value, p$.getAttribute$java_text_AttributedCharacterIterator_Attribute$I.apply(this, [attribute, currIndex + 1])) ){
 currIndex++;
-runLimit = (currIndex < this.runCount - 1) ? this.runStarts[currIndex + 1] : textLength;
+runLimit=(currIndex < this.runCount - 1) ? this.runStarts[currIndex + 1] : textLength;
 }
 if (runLimit > endIndex) {
 return null;
@@ -353,7 +353,7 @@ if (this.runCount == 0) {
 p$.createRunAttributeDataVectors.apply(this, []);
 }var index = p$.ensureRunBreak$I$Z.apply(this, [offset, false]);
 var size;
-if (attrs != null  && (size = attrs.size()) > 0 ) {
+if (attrs != null  && (size=attrs.size()) > 0 ) {
 var runAttrs = Clazz.new_((I$[7]||$incl$(7)).c$$I,[size]);
 var runValues = Clazz.new_((I$[7]||$incl$(7)).c$$I,[size]);
 var iterator = attrs.entrySet().iterator();
@@ -362,8 +362,8 @@ var entry = iterator.next();
 runAttrs.add$TE(entry.getKey());
 runValues.add$TE(entry.getValue());
 }
-this.runAttributes[index] = runAttrs;
-this.runAttributeValues[index] = runValues;
+this.runAttributes[index]=runAttrs;
+this.runAttributeValues[index]=runValues;
 }});
 
 Clazz.newMeth(C$, 'mapsDiffer$java_util_Map$java_util_Map', function (last, attrs) {
@@ -397,9 +397,9 @@ Clazz.newMeth(C$, 'c$$java_text_AttributedCharacterIterator_AttributeA$I$I', fun
 C$.$init$.apply(this);
 if (beginIndex < 0 || beginIndex > endIndex  || endIndex > this.this$0.length$() ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Invalid substring range"]);
-}this.beginIndex = beginIndex;
-this.endIndex = endIndex;
-this.currentIndex = beginIndex;
+}this.beginIndex=beginIndex;
+this.endIndex=endIndex;
+this.currentIndex=beginIndex;
 p$.updateRunInfo.apply(this, []);
 }, 1);
 
@@ -493,10 +493,10 @@ var runStart = this.currentRunStart;
 var runIndex = this.currentRunIndex;
 while (runStart > this.beginIndex && P$.AttributedString.valuesMatch$O$O(value, this.this$0.getAttribute$java_text_AttributedCharacterIterator_Attribute$I(attribute, runIndex - 1)) ){
 runIndex--;
-runStart = this.this$0.runStarts[runIndex];
+runStart=this.this$0.runStarts[runIndex];
 }
 if (runStart < this.beginIndex) {
-runStart = this.beginIndex;
+runStart=this.beginIndex;
 }return runStart;
 }});
 
@@ -508,10 +508,10 @@ var runStart = this.currentRunStart;
 var runIndex = this.currentRunIndex;
 while (runStart > this.beginIndex && this.this$0.attributeValuesMatch$java_util_Set$I$I(attributes, this.currentRunIndex, runIndex - 1) ){
 runIndex--;
-runStart = this.this$0.runStarts[runIndex];
+runStart=this.this$0.runStarts[runIndex];
 }
 if (runStart < this.beginIndex) {
-runStart = this.beginIndex;
+runStart=this.beginIndex;
 }return runStart;
 }});
 
@@ -528,10 +528,10 @@ var runLimit = this.currentRunLimit;
 var runIndex = this.currentRunIndex;
 while (runLimit < this.endIndex && P$.AttributedString.valuesMatch$O$O(value, this.this$0.getAttribute$java_text_AttributedCharacterIterator_Attribute$I(attribute, runIndex + 1)) ){
 runIndex++;
-runLimit = runIndex < this.this$0.runCount - 1 ? this.this$0.runStarts[runIndex + 1] : this.endIndex;
+runLimit=runIndex < this.this$0.runCount - 1 ? this.this$0.runStarts[runIndex + 1] : this.endIndex;
 }
 if (runLimit > this.endIndex) {
-runLimit = this.endIndex;
+runLimit=this.endIndex;
 }return runLimit;
 }});
 
@@ -543,10 +543,10 @@ var runLimit = this.currentRunLimit;
 var runIndex = this.currentRunIndex;
 while (runLimit < this.endIndex && this.this$0.attributeValuesMatch$java_util_Set$I$I(attributes, this.currentRunIndex, runIndex + 1) ){
 runIndex++;
-runLimit = runIndex < this.this$0.runCount - 1 ? this.this$0.runStarts[runIndex + 1] : this.endIndex;
+runLimit=runIndex < this.this$0.runCount - 1 ? this.this$0.runStarts[runIndex + 1] : this.endIndex;
 }
 if (runLimit > this.endIndex) {
-runLimit = this.endIndex;
+runLimit=this.endIndex;
 }return runLimit;
 }});
 
@@ -587,7 +587,7 @@ return this.this$0;
 });
 
 Clazz.newMeth(C$, 'internalSetIndex$I', function (position) {
-this.currentIndex = position;
+this.currentIndex=position;
 if (position < this.currentRunStart || position >= this.currentRunLimit ) {
 p$.updateRunInfo.apply(this, []);
 }if (this.currentIndex == this.endIndex) {
@@ -598,24 +598,24 @@ return this.this$0.charAt$I.apply(this.this$0, [position]);
 
 Clazz.newMeth(C$, 'updateRunInfo', function () {
 if (this.currentIndex == this.endIndex) {
-this.currentRunStart = this.currentRunLimit = this.endIndex;
-this.currentRunIndex = -1;
+this.currentRunStart=this.currentRunLimit=this.endIndex;
+this.currentRunIndex=-1;
 } else {
 {
 var runIndex = -1;
 while (runIndex < this.this$0.runCount - 1 && this.this$0.runStarts[runIndex + 1] <= this.currentIndex )runIndex++;
 
-this.currentRunIndex = runIndex;
+this.currentRunIndex=runIndex;
 if (runIndex >= 0) {
-this.currentRunStart = this.this$0.runStarts[runIndex];
-if (this.currentRunStart < this.beginIndex) this.currentRunStart = this.beginIndex;
+this.currentRunStart=this.this$0.runStarts[runIndex];
+if (this.currentRunStart < this.beginIndex) this.currentRunStart=this.beginIndex;
 } else {
-this.currentRunStart = this.beginIndex;
+this.currentRunStart=this.beginIndex;
 }if (runIndex < this.this$0.runCount - 1) {
-this.currentRunLimit = this.this$0.runStarts[runIndex + 1];
-if (this.currentRunLimit > this.endIndex) this.currentRunLimit = this.endIndex;
+this.currentRunLimit=this.this$0.runStarts[runIndex + 1];
+if (this.currentRunLimit > this.endIndex) this.currentRunLimit=this.endIndex;
 } else {
-this.currentRunLimit = this.endIndex;
+this.currentRunLimit=this.endIndex;
 }}}});
 
 Clazz.newMeth(C$);
@@ -640,9 +640,9 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I$I$I', function (runIndex, beginIndex, endIndex) {
 Clazz.super_(C$, this,1);
-this.runIndex = runIndex;
-this.beginIndex = beginIndex;
-this.endIndex = endIndex;
+this.runIndex=runIndex;
+this.beginIndex=beginIndex;
+this.endIndex=endIndex;
 }, 1);
 
 Clazz.newMeth(C$, 'entrySet', function () {
@@ -653,7 +653,7 @@ for (var i = 0; i < size; i++) {
 var key = this.this$0.runAttributes[this.runIndex].get$I(i);
 var value = this.this$0.runAttributeValues[this.runIndex].get$I(i);
 if (Clazz.instanceOf(value, "java.text.Annotation")) {
-value = this.this$0.getAttributeCheckRange$java_text_AttributedCharacterIterator_Attribute$I$I$I(key, this.runIndex, this.beginIndex, this.endIndex);
+value=this.this$0.getAttributeCheckRange$java_text_AttributedCharacterIterator_Attribute$I$I$I(key, this.runIndex, this.beginIndex, this.endIndex);
 if (value == null ) {
 continue;
 }}var entry = Clazz.new_((I$[5]||$incl$(5)).c$$java_text_AttributedCharacterIterator_Attribute$O,[key, value]);
@@ -671,4 +671,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:10
+//Created 2018-05-24 08:45:42

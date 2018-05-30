@@ -30,7 +30,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
 C$.$init$.apply(this);
-this.name = name;
+this.name=name;
 if (this.getClass() === Clazz.getClass(C$) ) {
 C$.instanceMap.put$TK$TV(name, this);
 }}, 1);
@@ -64,4 +64,4 @@ throw Clazz.new_(Clazz.load('java.io.InvalidObjectException').c$$S,["unknown att
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:10
+//Created 2018-05-24 08:45:42

@@ -17,8 +17,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S', function (str) {
 Clazz.super_(C$, this,1);
 if (str != null ) {
-this.buffer = str;
-this.count = str.length$();
+this.buffer=str;
+this.count=str.length$();
 } else {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
 }}, 1);
@@ -40,16 +40,16 @@ if (length == 0) {
 return 0;
 }var copylen = this.count - this.pos < length ? this.count - this.pos : length;
 for (var i = 0; i < copylen; i++) {
-b[offset + i] = ((this.buffer.charAt(this.pos + i).$c()|0)|0);
+b[offset + i]=((this.buffer.charAt(this.pos + i).$c()|0)|0);
 }
-this.pos = this.pos+(copylen);
+this.pos+=copylen;
 return copylen;
 }throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException'));
 }throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,[(I$[1]||$incl$(1)).getString$S("K0047")]);
 });
 
 Clazz.newMeth(C$, 'reset', function () {
-this.pos = 0;
+this.pos=0;
 });
 
 Clazz.newMeth(C$, 'skip$J', function (n) {
@@ -57,14 +57,14 @@ if (n <= 0) {
 return 0;
 }var numskipped;
 if (this.count - this.pos < n) {
-numskipped = this.count - this.pos;
-this.pos = this.count;
+numskipped=this.count - this.pos;
+this.pos=this.count;
 } else {
-numskipped = (n|0);
-this.pos = this.pos+(n);
+numskipped=(n|0);
+this.pos+=n;
 }return numskipped;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:06
+//Created 2018-05-24 08:45:35

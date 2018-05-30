@@ -24,7 +24,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I', function (oldMode) {
 C$.$init$.apply(this);
-this.oldMode = oldMode;
+this.oldMode=oldMode;
 }, 1);
 
 Clazz.newMeth(C$, '$valueOf$I', function (rm) {
@@ -54,4 +54,4 @@ Clazz.newMeth(C$);
 var $vals=[];
 Clazz.newMeth(C$, 'values', function() { return $vals }, 1);
 })();
-//Created 2018-05-15 01:02:09
+//Created 2018-05-24 08:45:40

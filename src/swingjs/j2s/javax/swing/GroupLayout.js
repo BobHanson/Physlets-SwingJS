@@ -51,19 +51,19 @@ Clazz.newMeth(C$, 'c$$java_awt_Container', function (host) {
 C$.$init$.apply(this);
 if (host == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Container must be non-null"]);
-}this.honorsVisibility = true;
-this.host = host;
+}this.honorsVisibility=true;
+this.host=host;
 this.setHorizontalGroup$javax_swing_GroupLayout_Group(this.createParallelGroup$javax_swing_GroupLayout_Alignment$Z((I$[11]||$incl$(11)).LEADING, true));
 this.setVerticalGroup$javax_swing_GroupLayout_Group(this.createParallelGroup$javax_swing_GroupLayout_Alignment$Z((I$[11]||$incl$(11)).LEADING, true));
-this.componentInfos = Clazz.new_((I$[14]||$incl$(14)));
-this.tmpParallelSet = Clazz.new_((I$[15]||$incl$(15)));
+this.componentInfos=Clazz.new_((I$[14]||$incl$(14)));
+this.tmpParallelSet=Clazz.new_((I$[15]||$incl$(15)));
 }, 1);
 
 Clazz.newMeth(C$, 'setHonorsVisibility$Z', function (honorsVisibility) {
 if (this.honorsVisibility != honorsVisibility ) {
-this.honorsVisibility = honorsVisibility;
-this.springsChanged = true;
-this.isValid = false;
+this.honorsVisibility=honorsVisibility;
+this.springsChanged=true;
+this.isValid=false;
 p$.invalidateHost.apply(this, []);
 }});
 
@@ -75,14 +75,14 @@ Clazz.newMeth(C$, 'setHonorsVisibility$java_awt_Component$Boolean', function (co
 if (component == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Component must be non-null"]);
 }p$.getComponentInfo$java_awt_Component.apply(this, [component]).setHonorsVisibility$Boolean(honorsVisibility);
-this.springsChanged = true;
-this.isValid = false;
+this.springsChanged=true;
+this.isValid=false;
 p$.invalidateHost.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'setAutoCreateGaps$Z', function (autoCreatePadding) {
 if (this.autocreatePadding != autoCreatePadding ) {
-this.autocreatePadding = autoCreatePadding;
+this.autocreatePadding=autoCreatePadding;
 p$.invalidateHost.apply(this, []);
 }});
 
@@ -92,9 +92,9 @@ return this.autocreatePadding;
 
 Clazz.newMeth(C$, 'setAutoCreateContainerGaps$Z', function (autoCreateContainerPadding) {
 if (this.autocreateContainerPadding != autoCreateContainerPadding ) {
-this.autocreateContainerPadding = autoCreateContainerPadding;
-this.horizontalGroup = p$.createTopLevelGroup$javax_swing_GroupLayout_Group.apply(this, [p$.getHorizontalGroup.apply(this, [])]);
-this.verticalGroup = p$.createTopLevelGroup$javax_swing_GroupLayout_Group.apply(this, [p$.getVerticalGroup.apply(this, [])]);
+this.autocreateContainerPadding=autoCreateContainerPadding;
+this.horizontalGroup=p$.createTopLevelGroup$javax_swing_GroupLayout_Group.apply(this, [p$.getHorizontalGroup.apply(this, [])]);
+this.verticalGroup=p$.createTopLevelGroup$javax_swing_GroupLayout_Group.apply(this, [p$.getVerticalGroup.apply(this, [])]);
 p$.invalidateHost.apply(this, []);
 }});
 
@@ -105,28 +105,28 @@ return this.autocreateContainerPadding;
 Clazz.newMeth(C$, 'setHorizontalGroup$javax_swing_GroupLayout_Group', function (group) {
 if (group == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Group must be non-null"]);
-}this.horizontalGroup = p$.createTopLevelGroup$javax_swing_GroupLayout_Group.apply(this, [group]);
+}this.horizontalGroup=p$.createTopLevelGroup$javax_swing_GroupLayout_Group.apply(this, [group]);
 p$.invalidateHost.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'getHorizontalGroup', function () {
 var index = 0;
 if (this.horizontalGroup.springs.size() > 1) {
-index = 1;
+index=1;
 }return this.horizontalGroup.springs.get$I(index);
 });
 
 Clazz.newMeth(C$, 'setVerticalGroup$javax_swing_GroupLayout_Group', function (group) {
 if (group == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Group must be non-null"]);
-}this.verticalGroup = p$.createTopLevelGroup$javax_swing_GroupLayout_Group.apply(this, [group]);
+}this.verticalGroup=p$.createTopLevelGroup$javax_swing_GroupLayout_Group.apply(this, [group]);
 p$.invalidateHost.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'getVerticalGroup', function () {
 var index = 0;
 if (this.verticalGroup.springs.size() > 1) {
-index = 1;
+index=1;
 }return this.verticalGroup.springs.get$I(index);
 });
 
@@ -179,9 +179,9 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Compone
 }
 var glAxis;
 if (axis == 0) {
-glAxis = 0;
+glAxis=0;
 } else if (axis == 1) {
-glAxis = 1;
+glAxis=1;
 } else {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Axis must be one of SwingConstants.HORIZONTAL or SwingConstants.VERTICAL"]);
 }var master = p$.getComponentInfo$java_awt_Component.apply(this, [components[components.length - 1]]).getLinkInfo$I(glAxis);
@@ -209,7 +209,7 @@ p$.invalidateHost.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'setLayoutStyle$javax_swing_LayoutStyle', function (layoutStyle) {
-this.layoutStyle = layoutStyle;
+this.layoutStyle=layoutStyle;
 p$.invalidateHost.apply(this, []);
 });
 
@@ -220,7 +220,7 @@ return this.layoutStyle;
 Clazz.newMeth(C$, 'getLayoutStyle0', function () {
 var layoutStyle = this.getLayoutStyle();
 if (layoutStyle == null ) {
-layoutStyle = (I$[19]||$incl$(19)).getInstance();
+layoutStyle=(I$[19]||$incl$(19)).getInstance();
 }return layoutStyle;
 });
 
@@ -239,8 +239,8 @@ Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component', function (componen
 var info = this.componentInfos.remove$O(component);
 if (info != null ) {
 info.dispose();
-this.springsChanged = true;
-this.isValid = false;
+this.springsChanged=true;
+this.isValid=false;
 }});
 
 Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container', function (parent) {
@@ -293,18 +293,18 @@ return 0.5;
 Clazz.newMeth(C$, 'invalidateLayout$java_awt_Container', function (parent) {
 p$.checkParent$java_awt_Container.apply(this, [parent]);
 {
-this.isValid = false;
+this.isValid=false;
 }});
 
 Clazz.newMeth(C$, 'prepare$I', function (sizeType) {
 var visChanged = false;
 if (!this.isValid) {
-this.isValid = true;
+this.isValid=true;
 this.horizontalGroup.setSize$I$I$I(0, -2147483648, -2147483648);
 this.verticalGroup.setSize$I$I$I(1, -2147483648, -2147483648);
 for (var ci, $ci = this.componentInfos.values().iterator(); $ci.hasNext()&&((ci=$ci.next()),1);) {
 if (ci.updateVisibility()) {
-visChanged = true;
+visChanged=true;
 }ci.clearCachedSize();
 }
 }if (this.springsChanged) {
@@ -318,7 +318,7 @@ if (this.getAutoCreateGaps()) {
 p$.insertAutopadding$Z.apply(this, [true]);
 } else if (this.hasPreferredPaddingSprings || this.getAutoCreateContainerGaps() ) {
 p$.insertAutopadding$Z.apply(this, [false]);
-}this.springsChanged = false;
+}this.springsChanged=false;
 }if (sizeType != 3 && (this.getAutoCreateGaps() || this.getAutoCreateContainerGaps() || this.hasPreferredPaddingSprings  ) ) {
 p$.calculateAutopadding$javax_swing_GroupLayout_Group$I$I$I$I.apply(this, [this.horizontalGroup, 0, sizeType, 0, 0]);
 p$.calculateAutopadding$javax_swing_GroupLayout_Group$I$I$I$I.apply(this, [this.verticalGroup, 1, sizeType, 0, 0]);
@@ -328,13 +328,13 @@ Clazz.newMeth(C$, 'calculateAutopadding$javax_swing_GroupLayout_Group$I$I$I$I', 
 group.unsetAutopadding();
 switch (sizeType) {
 case 0:
-size = group.getMinimumSize$I(axis);
+size=group.getMinimumSize$I(axis);
 break;
 case 1:
-size = group.getPreferredSize$I(axis);
+size=group.getPreferredSize$I(axis);
 break;
 case 2:
-size = group.getMaximumSize$I(axis);
+size=group.getMaximumSize$I(axis);
 break;
 default:
 break;
@@ -376,7 +376,7 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["GroupLa
 Clazz.newMeth(C$, 'getComponentInfo$java_awt_Component', function (component) {
 var info = this.componentInfos.get$O(component);
 if (info == null ) {
-info = Clazz.new_((I$[21]||$incl$(21)).c$$java_awt_Component, [this, null, component]);
+info=Clazz.new_((I$[21]||$incl$(21)).c$$java_awt_Component, [this, null, component]);
 this.componentInfos.put$TK$TV(component, info);
 if (component.getParent() !== this.host ) {
 this.host.add$java_awt_Component(component);
@@ -394,29 +394,29 @@ var targetInfo = p$.getComponentInfo$java_awt_Component.apply(this, [target]);
 var sourceSpring;
 var targetSpring;
 if (axis == 0) {
-sourceSpring = sourceInfo.horizontalSpring;
-targetSpring = targetInfo.horizontalSpring;
+sourceSpring=sourceInfo.horizontalSpring;
+targetSpring=targetInfo.horizontalSpring;
 } else {
-sourceSpring = sourceInfo.verticalSpring;
-targetSpring = targetInfo.verticalSpring;
+sourceSpring=sourceInfo.verticalSpring;
+targetSpring=targetInfo.verticalSpring;
 }var sourcePath = this.tmpParallelSet;
 sourcePath.clear();
 var spring = sourceSpring.getParent();
 while (spring != null ){
 sourcePath.add$TE(spring);
-spring = spring.getParent();
+spring=spring.getParent();
 }
-spring = targetSpring.getParent();
+spring=targetSpring.getParent();
 while (spring != null ){
 if (sourcePath.contains$O(spring)) {
 sourcePath.clear();
 while (spring != null ){
 if (Clazz.instanceOf(spring, "javax.swing.GroupLayout.ParallelGroup")) {
 return true;
-}spring = spring.getParent();
+}spring=spring.getParent();
 }
 return false;
-}spring = spring.getParent();
+}spring=spring.getParent();
 }
 sourcePath.clear();
 return false;
@@ -443,13 +443,13 @@ var origin = "";
 var padding = "";
 if (Clazz.instanceOf(spring, "javax.swing.GroupLayout.ComponentSpring")) {
 var cSpring = spring;
-origin = Integer.toString(cSpring.getOrigin()) + " ";
+origin=Integer.toString(cSpring.getOrigin()) + " ";
 var name = cSpring.getComponent().getName();
 if (name != null ) {
-origin = "name=" + name + ", " ;
+origin="name=" + name + ", " ;
 }}if (Clazz.instanceOf(spring, "javax.swing.GroupLayout.AutoPreferredGapSpring")) {
 var paddingSpring = spring;
-padding = ", userCreated=" + paddingSpring.getUserCreated() + ", matches=" + paddingSpring.getMatchDescription() ;
+padding=", userCreated=" + paddingSpring.getUserCreated() + ", matches=" + paddingSpring.getMatchDescription() ;
 }buffer.append$S(indent + spring.getClass().getName() + " " + Integer.toHexString(spring.hashCode()) + " " + origin + ", size=" + spring.getSize() + ", alignment=" + spring.getAlignment() + " prefs=[" + spring.getMinimumSize$I(axis) + " " + spring.getPreferredSize$I(axis) + " " + spring.getMaximumSize$I(axis) + padding + "]\n" );
 if (Clazz.instanceOf(spring, "javax.swing.GroupLayout.Group")) {
 var springs = (spring).springs;
@@ -496,11 +496,11 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.min = this.pref = this.max = -2147483648;
+this.min=this.pref=this.max=-2147483648;
 }, 1);
 
 Clazz.newMeth(C$, 'setParent$javax_swing_GroupLayout_Spring', function (parent) {
-this.parent = parent;
+this.parent=parent;
 });
 
 Clazz.newMeth(C$, 'getParent', function () {
@@ -508,7 +508,7 @@ return this.parent;
 });
 
 Clazz.newMeth(C$, 'setAlignment$javax_swing_GroupLayout_Alignment', function (alignment) {
-this.alignment = alignment;
+this.alignment=alignment;
 });
 
 Clazz.newMeth(C$, 'getAlignment', function () {
@@ -517,30 +517,30 @@ return this.alignment;
 
 Clazz.newMeth(C$, 'getMinimumSize$I', function (axis) {
 if (this.min == -2147483648) {
-this.min = this.constrain$I(this.calculateMinimumSize$I(axis));
+this.min=this.constrain$I(this.calculateMinimumSize$I(axis));
 }return this.min;
 });
 
 Clazz.newMeth(C$, 'getPreferredSize$I', function (axis) {
 if (this.pref == -2147483648) {
-this.pref = this.constrain$I(this.calculatePreferredSize$I(axis));
+this.pref=this.constrain$I(this.calculatePreferredSize$I(axis));
 }return this.pref;
 });
 
 Clazz.newMeth(C$, 'getMaximumSize$I', function (axis) {
 if (this.max == -2147483648) {
-this.max = this.constrain$I(this.calculateMaximumSize$I(axis));
+this.max=this.constrain$I(this.calculateMaximumSize$I(axis));
 }return this.max;
 });
 
 Clazz.newMeth(C$, 'setSize$I$I$I', function (axis, origin, size) {
-this.size = size;
+this.size=size;
 if (size == -2147483648) {
 this.unset();
 }});
 
 Clazz.newMeth(C$, 'unset', function () {
-this.size = this.min = this.pref = this.max = -2147483648;
+this.size=this.min=this.pref=this.max=-2147483648;
 });
 
 Clazz.newMeth(C$, 'getSize', function () {
@@ -583,7 +583,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.springs = Clazz.new_((I$[2]||$incl$(2)));
+this.springs=Clazz.new_((I$[2]||$incl$(2)));
 }, 1);
 
 Clazz.newMeth(C$, 'addGroup$javax_swing_GroupLayout_Group', function (group) {
@@ -618,7 +618,7 @@ Clazz.newMeth(C$, 'addSpring$javax_swing_GroupLayout_Spring', function (spring) 
 this.springs.add$TE(spring);
 spring.setParent$javax_swing_GroupLayout_Spring(this);
 if (!(Clazz.instanceOf(spring, "javax.swing.GroupLayout.AutoPreferredGapSpring")) || !(spring).getUserCreated() ) {
-this.this$0.springsChanged = true;
+this.this$0.springsChanged=true;
 }return this;
 });
 
@@ -652,7 +652,7 @@ return 0;
 return this.getSpringSize$javax_swing_GroupLayout_Spring$I$I(this.getSpring$I(0), axis, type);
 }var size = this.constrain$I(this.operator$I$I(this.getSpringSize$javax_swing_GroupLayout_Spring$I$I(this.getSpring$I(0), axis, type), this.getSpringSize$javax_swing_GroupLayout_Spring$I$I(this.getSpring$I(1), axis, type)));
 for (var counter = 2; counter < count; counter++) {
-size = this.constrain$I(this.operator$I$I(size, this.getSpringSize$javax_swing_GroupLayout_Spring$I$I(this.getSpring$I(counter), axis, type)));
+size=this.constrain$I(this.operator$I$I(size, this.getSpringSize$javax_swing_GroupLayout_Spring$I$I(this.getSpring$I(counter), axis, type)));
 }
 return size;
 });
@@ -743,7 +743,7 @@ return C$.superclazz.prototype.addGroup$javax_swing_GroupLayout_Group.apply(this
 Clazz.newMeth(C$, 'addGroup$Z$javax_swing_GroupLayout_Group', function (useAsBaseline, group) {
 C$.superclazz.prototype.addGroup$javax_swing_GroupLayout_Group.apply(this, [group]);
 if (useAsBaseline) {
-this.baselineSpring = group;
+this.baselineSpring=group;
 }return this;
 });
 
@@ -754,7 +754,7 @@ return C$.superclazz.prototype.addComponent$java_awt_Component.apply(this, [comp
 Clazz.newMeth(C$, 'addComponent$Z$java_awt_Component', function (useAsBaseline, component) {
 C$.superclazz.prototype.addComponent$java_awt_Component.apply(this, [component]);
 if (useAsBaseline) {
-this.baselineSpring = this.springs.get$I(this.springs.size() - 1);
+this.baselineSpring=this.springs.get$I(this.springs.size() - 1);
 }return this;
 });
 
@@ -765,7 +765,7 @@ return C$.superclazz.prototype.addComponent$java_awt_Component$I$I$I.apply(this,
 Clazz.newMeth(C$, 'addComponent$Z$java_awt_Component$I$I$I', function (useAsBaseline, component, min, pref, max) {
 C$.superclazz.prototype.addComponent$java_awt_Component$I$I$I.apply(this, [component, min, pref, max]);
 if (useAsBaseline) {
-this.baselineSpring = this.springs.get$I(this.springs.size() - 1);
+this.baselineSpring=this.springs.get$I(this.springs.size() - 1);
 }return this;
 });
 
@@ -798,7 +798,7 @@ Clazz.newMeth(C$, 'addPreferredGap$javax_swing_LayoutStyle_ComponentPlacement$I$
 if (type !== (I$[6]||$incl$(6)).RELATED  && type !== (I$[6]||$incl$(6)).UNRELATED  ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Type must be one of LayoutStyle.ComponentPlacement.RELATED or LayoutStyle.ComponentPlacement.UNRELATED"]);
 }p$.checkPreferredGapValues$I$I.apply(this, [pref, max]);
-this.this$0.hasPreferredPaddingSprings = true;
+this.this$0.hasPreferredPaddingSprings=true;
 return this.addSpring$javax_swing_GroupLayout_Spring(Clazz.new_((I$[7]||$incl$(7)).c$$javax_swing_LayoutStyle_ComponentPlacement$I$I, [this, null, type, pref, max]));
 });
 
@@ -809,7 +809,7 @@ return this.addContainerGap$I$I(-1, -1);
 Clazz.newMeth(C$, 'addContainerGap$I$I', function (pref, max) {
 if ((pref < 0 && pref != -1 ) || (max < 0 && max != -1  && max != -2 ) || (pref >= 0 && max >= 0  && pref > max )  ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Pref and max must be either DEFAULT_VALUE or >= 0 and pref <= max"]);
-}this.this$0.hasPreferredPaddingSprings = true;
+}this.this$0.hasPreferredPaddingSprings=true;
 return this.addSpring$javax_swing_GroupLayout_Spring(Clazz.new_((I$[8]||$incl$(8)).c$$I$I, [this, null, pref, max]));
 });
 
@@ -823,7 +823,7 @@ if (size == pref) {
 for (var spring, $spring = this.springs.iterator(); $spring.hasNext()&&((spring=$spring.next()),1);) {
 var springPref = spring.getPreferredSize$I(axis);
 spring.setSize$I$I$I(axis, origin, springPref);
-origin = origin+(springPref);
+origin+=springPref;
 }
 } else if (this.springs.size() == 1) {
 var spring = this.getSpring$I(0);
@@ -837,7 +837,7 @@ var delta = size - this.getPreferredSize$I(axis);
 var useMin = (delta < 0);
 var springCount = this.springs.size();
 if (useMin) {
-delta = delta*(-1);
+delta*=-1;
 }var resizable = p$.buildResizableList$I$Z.apply(this, [axis, useMin]);
 var resizableCount = resizable.size();
 if (resizableCount > 0) {
@@ -848,30 +848,30 @@ var sign = useMin ? -1 : 1;
 for (var counter = 0; counter < resizableCount; counter++) {
 var springDelta = resizable.get$I(counter);
 if ((counter + 1) == resizableCount) {
-sDelta = sDelta+(slop);
-}springDelta.delta = Math.min(sDelta, springDelta.delta);
-delta = delta-(springDelta.delta);
+sDelta+=slop;
+}springDelta.delta=Math.min(sDelta, springDelta.delta);
+delta-=springDelta.delta;
 if (springDelta.delta != sDelta && counter + 1 < resizableCount ) {
-sDelta = (delta/(resizableCount - counter - 1 )|0);
-slop = delta - sDelta * (resizableCount - counter - 1 );
-}sizes[springDelta.index] = sign * springDelta.delta;
+sDelta=(delta/(resizableCount - counter - 1 )|0);
+slop=delta - sDelta * (resizableCount - counter - 1 );
+}sizes[springDelta.index]=sign * springDelta.delta;
 }
 for (var counter = 0; counter < springCount; counter++) {
 var spring = this.getSpring$I(counter);
 var sSize = spring.getPreferredSize$I(axis) + sizes[counter];
 spring.setSize$I$I$I(axis, origin, sSize);
-origin = origin+(sSize);
+origin+=sSize;
 }
 } else {
 for (var counter = 0; counter < springCount; counter++) {
 var spring = this.getSpring$I(counter);
 var sSize;
 if (useMin) {
-sSize = spring.getMinimumSize$I(axis);
+sSize=spring.getMinimumSize$I(axis);
 } else {
-sSize = spring.getMaximumSize$I(axis);
+sSize=spring.getMaximumSize$I(axis);
 }spring.setSize$I$I$I(axis, origin, sSize);
-origin = origin+(sSize);
+origin+=sSize;
 }
 }});
 
@@ -882,9 +882,9 @@ for (var counter = 0; counter < size; counter++) {
 var spring = this.getSpring$I(counter);
 var sDelta;
 if (useMin) {
-sDelta = spring.getPreferredSize$I(axis) - spring.getMinimumSize$I(axis);
+sDelta=spring.getPreferredSize$I(axis) - spring.getMinimumSize$I(axis);
 } else {
-sDelta = spring.getMaximumSize$I(axis) - spring.getPreferredSize$I(axis);
+sDelta=spring.getMaximumSize$I(axis) - spring.getPreferredSize$I(axis);
 }if (sDelta > 0) {
 sorted.add$TE(Clazz.new_((I$[9]||$incl$(9)).c$$I$I,[counter, sDelta]));
 }}
@@ -915,7 +915,7 @@ if (newLeadingPadding.size() == 0) {
 var padding = spring;
 padding.setSources$java_util_List(newLeading);
 newLeading.clear();
-counter = p$.indexOfNextNonZeroSpring$I$Z.apply(this, [counter + 1, true]);
+counter=p$.indexOfNextNonZeroSpring$I$Z.apply(this, [counter + 1, true]);
 if (counter == this.springs.size()) {
 if (!(Clazz.instanceOf(padding, "javax.swing.GroupLayout.ContainerAutoPreferredGapSpring"))) {
 trailingPadding.add$TE(padding);
@@ -923,7 +923,7 @@ trailingPadding.add$TE(padding);
 newLeadingPadding.clear();
 newLeadingPadding.add$TE(padding);
 }} else {
-counter = p$.indexOfNextNonZeroSpring$I$Z.apply(this, [counter + 1, true]);
+counter=p$.indexOfNextNonZeroSpring$I$Z.apply(this, [counter + 1, true]);
 }} else {
 if (newLeading.size() > 0 && insert ) {
 var padding = Clazz.new_((I$[7]||$incl$(7)), [this, null]);
@@ -939,21 +939,21 @@ gapSpring.addTarget$javax_swing_GroupLayout_ComponentSpring$I(cSpring, axis);
 }
 newLeading.clear();
 newLeadingPadding.clear();
-counter = p$.indexOfNextNonZeroSpring$I$Z.apply(this, [counter + 1, false]);
+counter=p$.indexOfNextNonZeroSpring$I$Z.apply(this, [counter + 1, false]);
 if (counter == this.springs.size()) {
 trailing.add$TE(cSpring);
 } else {
 newLeading.add$TE(cSpring);
 }} else if (Clazz.instanceOf(spring, "javax.swing.GroupLayout.Group")) {
 if (newTrailing == null ) {
-newTrailing = Clazz.new_((I$[2]||$incl$(2)).c$$I,[1]);
+newTrailing=Clazz.new_((I$[2]||$incl$(2)).c$$I,[1]);
 } else {
 newTrailing.clear();
 }newTrailingPadding.clear();
 (spring).insertAutopadding$I$java_util_List$java_util_List$java_util_List$java_util_List$Z(axis, newLeadingPadding, newTrailingPadding, newLeading, newTrailing, insert);
 newLeading.clear();
 newLeadingPadding.clear();
-counter = p$.indexOfNextNonZeroSpring$I$Z.apply(this, [counter + 1, (newTrailing.size() == 0)]);
+counter=p$.indexOfNextNonZeroSpring$I$Z.apply(this, [counter + 1, (newTrailing.size() == 0)]);
 if (counter == this.springs.size()) {
 trailing.addAll$java_util_Collection(newTrailing);
 trailingPadding.addAll$java_util_Collection(newTrailingPadding);
@@ -976,7 +976,7 @@ for (var spring, $spring = this.springs.iterator(); $spring.hasNext()&&((spring=
 if (spring === this.baselineSpring ) {
 return size + baseline;
 } else {
-size = size+(spring.getPreferredSize$I(1));
+size+=spring.getPreferredSize$I(1);
 }}
 }}return -1;
 });
@@ -989,7 +989,7 @@ for (var spring, $spring = this.springs.iterator(); $spring.hasNext()&&((spring=
 if (spring === this.baselineSpring ) {
 break;
 } else if (spring.isResizable$I(1)) {
-leadingResizable = true;
+leadingResizable=true;
 break;
 }}
 var trailingResizable = false;
@@ -998,7 +998,7 @@ var spring = this.springs.get$I(i);
 if (spring === this.baselineSpring ) {
 break;
 }if (spring.isResizable$I(1)) {
-trailingResizable = true;
+trailingResizable=true;
 break;
 }}
 if (leadingResizable && !trailingResizable ) {
@@ -1050,8 +1050,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I$I', function (index, delta) {
 C$.$init$.apply(this);
-this.index = index;
-this.delta = delta;
+this.index=index;
+this.delta=delta;
 }, 1);
 
 Clazz.newMeth(C$, ['compareTo$javax_swing_GroupLayout_SpringDelta','compareTo$TT'], function (o) {
@@ -1084,8 +1084,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_GroupLayout_Alignment$Z', function (childAlignment, resizable) {
 Clazz.super_(C$, this,1);
-this.childAlignment = childAlignment;
-this.resizable = resizable;
+this.childAlignment=childAlignment;
+this.resizable=resizable;
 }, 1);
 
 Clazz.newMeth(C$, 'addGroup$javax_swing_GroupLayout_Group', function (group) {
@@ -1155,7 +1155,7 @@ Clazz.newMeth(C$, 'setChildSize$javax_swing_GroupLayout_Spring$I$I$I', function 
 var alignment = spring.getAlignment();
 var springSize = Math.min(Math.max(spring.getMinimumSize$I(axis), size), spring.getMaximumSize$I(axis));
 if (alignment == null ) {
-alignment = this.childAlignment;
+alignment=this.childAlignment;
 }switch (alignment) {
 case (I$[11]||$incl$(11)).TRAILING:
 spring.setSize$I$I$I(axis, origin + size - springSize, springSize);
@@ -1223,20 +1223,20 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$Z', function (resizable) {
 C$.superclazz.c$$javax_swing_GroupLayout_Alignment$Z.apply(this, [(I$[11]||$incl$(11)).LEADING, resizable]);
 C$.$init$.apply(this);
-this.prefAscent = this.prefDescent = -1;
-this.calcedBaseline = false;
+this.prefAscent=this.prefDescent=-1;
+this.calcedBaseline=false;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Z$Z', function (resizable, baselineAnchoredToTop) {
 C$.c$$Z.apply(this, [resizable]);
-this.baselineAnchoredToTop = baselineAnchoredToTop;
-this.baselineAnchorSet = true;
+this.baselineAnchoredToTop=baselineAnchoredToTop;
+this.baselineAnchorSet=true;
 }, 1);
 
 Clazz.newMeth(C$, 'unset', function () {
 C$.superclazz.prototype.unset.apply(this, []);
-this.prefAscent = this.prefDescent = -1;
-this.calcedBaseline = false;
+this.prefAscent=this.prefDescent=-1;
+this.calcedBaseline=false;
 });
 
 Clazz.newMeth(C$, 'setValidSize$I$I$I', function (axis, origin, size) {
@@ -1261,8 +1261,8 @@ return this.prefAscent + this.prefDescent;
 });
 
 Clazz.newMeth(C$, 'calculateBaselineAndResizeBehavior', function () {
-this.prefAscent = 0;
-this.prefDescent = 0;
+this.prefAscent=0;
+this.prefDescent=0;
 var baselineSpringCount = 0;
 var resizeBehavior = null;
 for (var spring, $spring = this.springs.iterator(); $spring.hasNext()&&((spring=$spring.next()),1);) {
@@ -1272,20 +1272,20 @@ if (baseline >= 0) {
 if (spring.isResizable$I(1)) {
 var brb = spring.getBaselineResizeBehavior();
 if (resizeBehavior == null ) {
-resizeBehavior = brb;
+resizeBehavior=brb;
 } else if (brb !== resizeBehavior ) {
-resizeBehavior = (I$[1]||$incl$(1)).CONSTANT_ASCENT;
-}}this.prefAscent = Math.max(this.prefAscent, baseline);
-this.prefDescent = Math.max(this.prefDescent, spring.getPreferredSize$I(1) - baseline);
+resizeBehavior=(I$[1]||$incl$(1)).CONSTANT_ASCENT;
+}}this.prefAscent=Math.max(this.prefAscent, baseline);
+this.prefDescent=Math.max(this.prefDescent, spring.getPreferredSize$I(1) - baseline);
 baselineSpringCount++;
 }}}
 if (!this.baselineAnchorSet) {
 if (resizeBehavior === (I$[1]||$incl$(1)).CONSTANT_DESCENT ) {
-this.baselineAnchoredToTop = false;
+this.baselineAnchoredToTop=false;
 } else {
-this.baselineAnchoredToTop = true;
-}}this.allSpringsHaveBaseline = (baselineSpringCount == this.springs.size());
-this.calcedBaseline = true;
+this.baselineAnchoredToTop=true;
+}}this.allSpringsHaveBaseline=(baselineSpringCount == this.springs.size());
+this.calcedBaseline=true;
 });
 
 Clazz.newMeth(C$, 'calculateMaxSize', function () {
@@ -1295,23 +1295,23 @@ var nonBaselineMax = 0;
 for (var spring, $spring = this.springs.iterator(); $spring.hasNext()&&((spring=$spring.next()),1);) {
 var baseline;
 var springMax = spring.getMaximumSize$I(1);
-if ((spring.getAlignment() == null  || spring.getAlignment() === (I$[11]||$incl$(11)).BASELINE  ) && (baseline = spring.getBaseline()) >= 0 ) {
+if ((spring.getAlignment() == null  || spring.getAlignment() === (I$[11]||$incl$(11)).BASELINE  ) && (baseline=spring.getBaseline()) >= 0 ) {
 var springPref = spring.getPreferredSize$I(1);
 if (springPref != springMax) {
 switch (spring.getBaselineResizeBehavior()) {
 case (I$[1]||$incl$(1)).CONSTANT_ASCENT:
 if (this.baselineAnchoredToTop) {
-maxDescent = Math.max(maxDescent, springMax - baseline);
+maxDescent=Math.max(maxDescent, springMax - baseline);
 }break;
 case (I$[1]||$incl$(1)).CONSTANT_DESCENT:
 if (!this.baselineAnchoredToTop) {
-maxAscent = Math.max(maxAscent, springMax - springPref + baseline);
+maxAscent=Math.max(maxAscent, springMax - springPref + baseline);
 }break;
 default:
 break;
 }
 }} else {
-nonBaselineMax = Math.max(nonBaselineMax, springMax);
+nonBaselineMax=Math.max(nonBaselineMax, springMax);
 }}
 return Math.max(nonBaselineMax, maxAscent + maxDescent);
 });
@@ -1321,35 +1321,35 @@ var minAscent = 0;
 var minDescent = 0;
 var nonBaselineMin = 0;
 if (this.baselineAnchoredToTop) {
-minAscent = this.prefAscent;
+minAscent=this.prefAscent;
 } else {
-minDescent = this.prefDescent;
+minDescent=this.prefDescent;
 }for (var spring, $spring = this.springs.iterator(); $spring.hasNext()&&((spring=$spring.next()),1);) {
 var springMin = spring.getMinimumSize$I(1);
 var baseline;
-if ((spring.getAlignment() == null  || spring.getAlignment() === (I$[11]||$incl$(11)).BASELINE  ) && (baseline = spring.getBaseline()) >= 0 ) {
+if ((spring.getAlignment() == null  || spring.getAlignment() === (I$[11]||$incl$(11)).BASELINE  ) && (baseline=spring.getBaseline()) >= 0 ) {
 var springPref = spring.getPreferredSize$I(1);
 var brb = spring.getBaselineResizeBehavior();
 switch (brb) {
 case (I$[1]||$incl$(1)).CONSTANT_ASCENT:
 if (this.baselineAnchoredToTop) {
-minDescent = Math.max(springMin - baseline, minDescent);
+minDescent=Math.max(springMin - baseline, minDescent);
 } else {
-minAscent = Math.max(baseline, minAscent);
+minAscent=Math.max(baseline, minAscent);
 }break;
 case (I$[1]||$incl$(1)).CONSTANT_DESCENT:
 if (!this.baselineAnchoredToTop) {
-minAscent = Math.max(baseline - (springPref - springMin), minAscent);
+minAscent=Math.max(baseline - (springPref - springMin), minAscent);
 } else {
-minDescent = Math.max(springPref - baseline, minDescent);
+minDescent=Math.max(springPref - baseline, minDescent);
 }break;
 default:
-minAscent = Math.max(baseline, minAscent);
-minDescent = Math.max(springPref - baseline, minDescent);
+minAscent=Math.max(baseline, minAscent);
+minDescent=Math.max(springPref - baseline, minDescent);
 break;
 }
 } else {
-nonBaselineMin = Math.max(nonBaselineMin, springMin);
+nonBaselineMin=Math.max(nonBaselineMin, springMin);
 }}
 return Math.max(nonBaselineMin, minAscent + minDescent);
 });
@@ -1358,11 +1358,11 @@ Clazz.newMeth(C$, 'baselineLayout$I$I', function (origin, size) {
 var ascent;
 var descent;
 if (this.baselineAnchoredToTop) {
-ascent = this.prefAscent;
-descent = size - ascent;
+ascent=this.prefAscent;
+descent=size - ascent;
 } else {
-ascent = size - this.prefDescent;
-descent = this.prefDescent;
+ascent=size - this.prefDescent;
+descent=this.prefDescent;
 }for (var spring, $spring = this.springs.iterator(); $spring.hasNext()&&((spring=$spring.next()),1);) {
 var alignment = spring.getAlignment();
 if (alignment == null  || alignment === (I$[11]||$incl$(11)).BASELINE  ) {
@@ -1374,15 +1374,15 @@ var height = springPref;
 var y;
 switch (spring.getBaselineResizeBehavior()) {
 case (I$[1]||$incl$(1)).CONSTANT_ASCENT:
-y = origin + ascent - baseline;
-height = Math.min(descent, springMax - baseline) + baseline;
+y=origin + ascent - baseline;
+height=Math.min(descent, springMax - baseline) + baseline;
 break;
 case (I$[1]||$incl$(1)).CONSTANT_DESCENT:
-height = Math.min(ascent, springMax - springPref + baseline) + (springPref - baseline);
-y = origin + ascent + (springPref - baseline)  - height;
+height=Math.min(ascent, springMax - springPref + baseline) + (springPref - baseline);
+y=origin + ascent + (springPref - baseline)  - height;
 break;
 default:
-y = origin + ascent - baseline;
+y=origin + ascent - baseline;
 break;
 }
 spring.setSize$I$I$I(1, y, height);
@@ -1443,13 +1443,13 @@ this.baseline = -1;
 
 Clazz.newMeth(C$, 'c$$java_awt_Component$I$I$I', function (component, min, pref, max) {
 Clazz.super_(C$, this,1);
-this.component = component;
+this.component=component;
 if (component == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Component must be non-null"]);
 }P$.GroupLayout.checkSize$I$I$I$Z(min, pref, max, true);
-this.$min = min;
-this.$max = max;
-this.$pref = pref;
+this.$min=min;
+this.$max=max;
+this.$pref=pref;
 this.this$0.getComponentInfo$java_awt_Component.apply(this.this$0, [component]);
 }, 1);
 
@@ -1519,9 +1519,9 @@ return ci.getLinkSize$I$I(axis, type);
 
 Clazz.newMeth(C$, 'setSize$I$I$I', function (axis, origin, size) {
 C$.superclazz.prototype.setSize$I$I$I.apply(this, [axis, origin, size]);
-this.origin = origin;
+this.origin=origin;
 if (size == -2147483648) {
-this.baseline = -1;
+this.baseline=-1;
 }});
 
 Clazz.newMeth(C$, 'getOrigin', function () {
@@ -1529,7 +1529,7 @@ return this.origin;
 });
 
 Clazz.newMeth(C$, 'setComponent$java_awt_Component', function (component) {
-this.component = component;
+this.component=component;
 });
 
 Clazz.newMeth(C$, 'getComponent', function () {
@@ -1542,7 +1542,7 @@ var horizontalSpring = this.this$0.getComponentInfo$java_awt_Component.apply(thi
 var width = horizontalSpring.getPreferredSize$I(0);
 var height = this.getPreferredSize$I(1);
 if (width > 0 && height > 0 ) {
-this.baseline = this.component.getBaseline$I$I(width, height);
+this.baseline=this.component.getBaseline$I$I(width, height);
 }}return this.baseline;
 });
 
@@ -1556,11 +1556,11 @@ return this.this$0.getComponentInfo$java_awt_Component.apply(this.this$0, [this.
 
 Clazz.newMeth(C$, 'installIfNecessary$I', function (axis) {
 if (!this.installed) {
-this.installed = true;
+this.installed=true;
 if (axis == 0) {
-this.this$0.getComponentInfo$java_awt_Component.apply(this.this$0, [this.component]).horizontalSpring = this;
+this.this$0.getComponentInfo$java_awt_Component.apply(this.this$0, [this.component]).horizontalSpring=this;
 } else {
-this.this$0.getComponentInfo$java_awt_Component.apply(this.this$0, [this.component]).verticalSpring = this;
+this.this$0.getComponentInfo$java_awt_Component.apply(this.this$0, [this.component]).verticalSpring=this;
 }}});
 
 Clazz.newMeth(C$, 'willHaveZeroSize$Z', function (treatAutopaddingAsZeroSized) {
@@ -1592,11 +1592,11 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_JComponent$javax_swing_JComponent$javax_swing_LayoutStyle_ComponentPlacement$I$I', function (source, target, type, pref, max) {
 Clazz.super_(C$, this,1);
-this.source = source;
-this.target = target;
-this.type = type;
-this.$pref = pref;
-this.$max = max;
+this.source=source;
+this.target=target;
+this.type=type;
+this.$pref=pref;
+this.$max=max;
 }, 1);
 
 Clazz.newMeth(C$, 'calculateMinimumSize$I', function (axis) {
@@ -1620,9 +1620,9 @@ return p$.getPadding$I.apply(this, [axis]);
 Clazz.newMeth(C$, 'getPadding$I', function (axis) {
 var position;
 if (axis == 0) {
-position = 3;
+position=3;
 } else {
-position = 5;
+position=5;
 }return this.this$0.getLayoutStyle0.apply(this.this$0, []).getPreferredGap$javax_swing_JComponent$javax_swing_JComponent$javax_swing_LayoutStyle_ComponentPlacement$I$java_awt_Container(this.source, this.target, this.type, position, this.this$0.host);
 });
 
@@ -1653,9 +1653,9 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$I$I$I', function (min, pref, max) {
 Clazz.super_(C$, this,1);
 P$.GroupLayout.checkSize$I$I$I$Z(min, pref, max, false);
-this.$min = min;
-this.$pref = pref;
-this.$max = max;
+this.$min=min;
+this.$pref=pref;
+this.$max=max;
 }, 1);
 
 Clazz.newMeth(C$, 'calculateMinimumSize$I', function (axis) {
@@ -1707,31 +1707,31 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.$pref = -2;
-this.$max = -2;
-this.type = (I$[6]||$incl$(6)).RELATED;
+this.$pref=-2;
+this.$max=-2;
+this.type=(I$[6]||$incl$(6)).RELATED;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I', function (pref, max) {
 Clazz.super_(C$, this,1);
-this.$pref = pref;
-this.$max = max;
+this.$pref=pref;
+this.$max=max;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_LayoutStyle_ComponentPlacement$I$I', function (type, pref, max) {
 Clazz.super_(C$, this,1);
-this.type = type;
-this.$pref = pref;
-this.$max = max;
-this.userCreated = true;
+this.type=type;
+this.$pref=pref;
+this.$max=max;
+this.userCreated=true;
 }, 1);
 
 Clazz.newMeth(C$, 'setSources$java_util_List', function (sources) {
-this.sources = Clazz.new_((I$[2]||$incl$(2)).c$$java_util_Collection,[sources]);
+this.sources=Clazz.new_((I$[2]||$incl$(2)).c$$java_util_Collection,[sources]);
 });
 
 Clazz.newMeth(C$, 'setUserCreated$Z', function (userCreated) {
-this.userCreated = userCreated;
+this.userCreated=userCreated;
 });
 
 Clazz.newMeth(C$, 'getUserCreated', function () {
@@ -1739,41 +1739,41 @@ return this.userCreated;
 });
 
 Clazz.newMeth(C$, 'unset', function () {
-this.lastSize = this.getSize();
+this.lastSize=this.getSize();
 C$.superclazz.prototype.unset.apply(this, []);
-this.$size = 0;
+this.$size=0;
 });
 
 Clazz.newMeth(C$, 'reset', function () {
-this.$size = 0;
-this.sources = null;
-this.source = null;
-this.matches = null;
+this.$size=0;
+this.sources=null;
+this.source=null;
+this.matches=null;
 });
 
 Clazz.newMeth(C$, 'calculatePadding$I', function (axis) {
-this.$size = -2147483648;
+this.$size=-2147483648;
 var maxPadding = -2147483648;
 if (this.matches != null ) {
 var p = this.this$0.getLayoutStyle0.apply(this.this$0, []);
 var position;
 if (axis == 0) {
 if (this.this$0.isLeftToRight.apply(this.this$0, [])) {
-position = 3;
+position=3;
 } else {
-position = 7;
+position=7;
 }} else {
-position = 5;
+position=5;
 }for (var i = this.matches.size() - 1; i >= 0; i--) {
 var match = this.matches.get$I(i);
-maxPadding = Math.max(maxPadding, p$.calculatePadding$javax_swing_LayoutStyle$I$javax_swing_GroupLayout_ComponentSpring$javax_swing_GroupLayout_ComponentSpring.apply(this, [p, position, match.source, match.target]));
+maxPadding=Math.max(maxPadding, p$.calculatePadding$javax_swing_LayoutStyle$I$javax_swing_GroupLayout_ComponentSpring$javax_swing_GroupLayout_ComponentSpring.apply(this, [p, position, match.source, match.target]));
 }
 }if (this.$size == -2147483648) {
-this.$size = 0;
+this.$size=0;
 }if (maxPadding == -2147483648) {
-maxPadding = 0;
+maxPadding=0;
 }if (this.lastSize != -2147483648) {
-this.$size = this.$size+(Math.min(maxPadding, this.lastSize));
+this.$size+=Math.min(maxPadding, this.lastSize);
 }});
 
 Clazz.newMeth(C$, 'calculatePadding$javax_swing_LayoutStyle$I$javax_swing_GroupLayout_ComponentSpring$javax_swing_GroupLayout_ComponentSpring', function (p, position, source, target) {
@@ -1781,11 +1781,11 @@ var delta = target.getOrigin() - (source.getOrigin() + source.getSize());
 if (delta >= 0) {
 var padding;
 if ((Clazz.instanceOf(source.getComponent(), "javax.swing.JComponent")) && (Clazz.instanceOf(target.getComponent(), "javax.swing.JComponent")) ) {
-padding = p.getPreferredGap$javax_swing_JComponent$javax_swing_JComponent$javax_swing_LayoutStyle_ComponentPlacement$I$java_awt_Container(source.getComponent(), target.getComponent(), this.type, position, this.this$0.host);
+padding=p.getPreferredGap$javax_swing_JComponent$javax_swing_JComponent$javax_swing_LayoutStyle_ComponentPlacement$I$java_awt_Container(source.getComponent(), target.getComponent(), this.type, position, this.this$0.host);
 } else {
-padding = 10;
+padding=10;
 }if (padding > delta) {
-this.$size = Math.max(this.$size, padding - delta);
+this.$size=Math.max(this.$size, padding - delta);
 }return padding;
 }return 0;
 });
@@ -1806,7 +1806,7 @@ p$.addValidTarget$javax_swing_GroupLayout_ComponentSpring$javax_swing_GroupLayou
 
 Clazz.newMeth(C$, 'addValidTarget$javax_swing_GroupLayout_ComponentSpring$javax_swing_GroupLayout_ComponentSpring', function (source, target) {
 if (this.matches == null ) {
-this.matches = Clazz.new_((I$[2]||$incl$(2)).c$$I,[1]);
+this.matches=Clazz.new_((I$[2]||$incl$(2)).c$$I,[1]);
 }this.matches.add$TE(Clazz.new_((I$[12]||$incl$(12)).c$$javax_swing_GroupLayout_ComponentSpring$javax_swing_GroupLayout_ComponentSpring,[source, target]));
 });
 
@@ -1855,8 +1855,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_GroupLayout_ComponentSpring$javax_swing_GroupLayout_ComponentSpring', function (source, target) {
 C$.$init$.apply(this);
-this.source = source;
-this.target = target;
+this.source=source;
+this.target=target;
 }, 1);
 
 Clazz.newMeth(C$, 'toString$javax_swing_GroupLayout_ComponentSpring', function (spring) {
@@ -1900,7 +1900,7 @@ this.setUserCreated$Z(true);
 
 Clazz.newMeth(C$, 'addTarget$javax_swing_GroupLayout_ComponentSpring$I', function (spring, axis) {
 if (this.targets == null ) {
-this.targets = Clazz.new_((I$[2]||$incl$(2)).c$$I,[1]);
+this.targets=Clazz.new_((I$[2]||$incl$(2)).c$$I,[1]);
 }this.targets.add$TE(spring);
 });
 
@@ -1908,51 +1908,51 @@ Clazz.newMeth(C$, 'calculatePadding$I', function (axis) {
 var p = this.this$0.getLayoutStyle0.apply(this.this$0, []);
 var maxPadding = 0;
 var position;
-this.$size = 0;
+this.$size=0;
 if (this.targets != null ) {
 if (axis == 0) {
 if (this.this$0.isLeftToRight.apply(this.this$0, [])) {
-position = 7;
+position=7;
 } else {
-position = 3;
+position=3;
 }} else {
-position = 5;
+position=5;
 }for (var i = this.targets.size() - 1; i >= 0; i--) {
 var targetSpring = this.targets.get$I(i);
 var padding = 10;
 if (Clazz.instanceOf(targetSpring.getComponent(), "javax.swing.JComponent")) {
-padding = p.getContainerGap$javax_swing_JComponent$I$java_awt_Container(targetSpring.getComponent(), position, this.this$0.host);
-maxPadding = Math.max(padding, maxPadding);
-padding = padding-(targetSpring.getOrigin());
+padding=p.getContainerGap$javax_swing_JComponent$I$java_awt_Container(targetSpring.getComponent(), position, this.this$0.host);
+maxPadding=Math.max(padding, maxPadding);
+padding-=targetSpring.getOrigin();
 } else {
-maxPadding = Math.max(padding, maxPadding);
-}this.$size = Math.max(this.$size, padding);
+maxPadding=Math.max(padding, maxPadding);
+}this.$size=Math.max(this.$size, padding);
 }
 } else {
 if (axis == 0) {
 if (this.this$0.isLeftToRight.apply(this.this$0, [])) {
-position = 3;
+position=3;
 } else {
-position = 7;
+position=7;
 }} else {
-position = 5;
+position=5;
 }if (this.sources != null ) {
 for (var i = this.sources.size() - 1; i >= 0; i--) {
 var sourceSpring = this.sources.get$I(i);
-maxPadding = Math.max(maxPadding, p$.updateSize$javax_swing_LayoutStyle$javax_swing_GroupLayout_ComponentSpring$I.apply(this, [p, sourceSpring, position]));
+maxPadding=Math.max(maxPadding, p$.updateSize$javax_swing_LayoutStyle$javax_swing_GroupLayout_ComponentSpring$I.apply(this, [p, sourceSpring, position]));
 }
 } else if (this.source != null ) {
-maxPadding = p$.updateSize$javax_swing_LayoutStyle$javax_swing_GroupLayout_ComponentSpring$I.apply(this, [p, this.source, position]);
+maxPadding=p$.updateSize$javax_swing_LayoutStyle$javax_swing_GroupLayout_ComponentSpring$I.apply(this, [p, this.source, position]);
 }}if (this.lastSize != -2147483648) {
-this.$size = this.$size+(Math.min(maxPadding, this.lastSize));
+this.$size+=Math.min(maxPadding, this.lastSize);
 }});
 
 Clazz.newMeth(C$, 'updateSize$javax_swing_LayoutStyle$javax_swing_GroupLayout_ComponentSpring$I', function (p, sourceSpring, position) {
 var padding = 10;
 if (Clazz.instanceOf(sourceSpring.getComponent(), "javax.swing.JComponent")) {
-padding = p.getContainerGap$javax_swing_JComponent$I$java_awt_Container(sourceSpring.getComponent(), position, this.this$0.host);
+padding=p.getContainerGap$javax_swing_JComponent$I$java_awt_Container(sourceSpring.getComponent(), position, this.this$0.host);
 }var delta = Math.max(0, this.getParent().getSize() - sourceSpring.getSize() - sourceSpring.getOrigin() );
-this.$size = Math.max(this.$size, padding - delta);
+this.$size=Math.max(this.$size, padding - delta);
 return padding;
 });
 
@@ -1982,9 +1982,9 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I', function (axis) {
 C$.$init$.apply(this);
-this.linked = Clazz.new_((I$[2]||$incl$(2)));
-this.size = -2147483648;
-this.axis = axis;
+this.linked=Clazz.new_((I$[2]||$incl$(2)));
+this.size=-2147483648;
+this.axis=axis;
 }, 1);
 
 Clazz.newMeth(C$, 'add$javax_swing_GroupLayout_ComponentInfo', function (child) {
@@ -2009,12 +2009,12 @@ this.linked.get$I(0).setLinkInfo$I$javax_swing_GroupLayout_LinkInfo(this.axis, n
 });
 
 Clazz.newMeth(C$, 'clearCachedSize', function () {
-this.size = -2147483648;
+this.size=-2147483648;
 });
 
 Clazz.newMeth(C$, 'getSize$I', function (axis) {
 if (this.size == -2147483648) {
-this.size = p$.calculateLinkedSize$I.apply(this, [axis]);
+this.size=p$.calculateLinkedSize$I.apply(this, [axis]);
 }return this.size;
 });
 
@@ -2023,10 +2023,10 @@ var size = 0;
 for (var info, $info = this.linked.iterator(); $info.hasNext()&&((info=$info.next()),1);) {
 var spring;
 if (axis == 0) {
-spring = info.horizontalSpring;
+spring=info.horizontalSpring;
 } else {
-spring = info.verticalSpring;
-}size = Math.max(size, spring.calculateNonlinkedPreferredSize$I(axis));
+spring=info.verticalSpring;
+}size=Math.max(size, spring.calculateNonlinkedPreferredSize$I(axis));
 }
 return size;
 });
@@ -2055,15 +2055,15 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_Component', function (component) {
 C$.$init$.apply(this);
-this.component = component;
+this.component=component;
 this.updateVisibility();
 }, 1);
 
 Clazz.newMeth(C$, 'dispose', function () {
 p$.removeSpring$javax_swing_GroupLayout_Spring.apply(this, [this.horizontalSpring]);
-this.horizontalSpring = null;
+this.horizontalSpring=null;
 p$.removeSpring$javax_swing_GroupLayout_Spring.apply(this, [this.verticalSpring]);
-this.verticalSpring = null;
+this.verticalSpring=null;
 if (this.horizontalMaster != null ) {
 this.horizontalMaster.remove$javax_swing_GroupLayout_ComponentInfo(this);
 }if (this.verticalMaster != null ) {
@@ -2071,7 +2071,7 @@ this.verticalMaster.remove$javax_swing_GroupLayout_ComponentInfo(this);
 }});
 
 Clazz.newMeth(C$, 'setHonorsVisibility$Boolean', function (honorsVisibility) {
-this.honorsVisibility = honorsVisibility;
+this.honorsVisibility=honorsVisibility;
 });
 
 Clazz.newMeth(C$, 'removeSpring$javax_swing_GroupLayout_Spring', function (spring) {
@@ -2086,12 +2086,12 @@ return this.visible;
 Clazz.newMeth(C$, 'updateVisibility', function () {
 var honorsVisibility;
 if (this.honorsVisibility == null ) {
-honorsVisibility = this.this$0.getHonorsVisibility();
+honorsVisibility=this.this$0.getHonorsVisibility();
 } else {
-honorsVisibility = (this.honorsVisibility).booleanValue();
+honorsVisibility=(this.honorsVisibility).booleanValue();
 }var newVisible = (honorsVisibility) ? this.component.isVisible() : true;
 if (this.visible != newVisible ) {
-this.visible = newVisible;
+this.visible=newVisible;
 return true;
 }return false;
 });
@@ -2102,12 +2102,12 @@ var w = this.horizontalSpring.getSize();
 var y = this.verticalSpring.getOrigin();
 var h = this.verticalSpring.getSize();
 if (!ltr) {
-x = parentWidth - x - w ;
+x=parentWidth - x - w ;
 }this.component.setBounds$I$I$I$I(x + insets.left, y + insets.top, w, h);
 });
 
 Clazz.newMeth(C$, 'setComponent$java_awt_Component', function (component) {
-this.component = component;
+this.component=component;
 if (this.horizontalSpring != null ) {
 this.horizontalSpring.setComponent$java_awt_Component(component);
 }if (this.verticalSpring != null ) {
@@ -2122,9 +2122,9 @@ return this.horizontalMaster != null ;
 
 Clazz.newMeth(C$, 'setLinkInfo$I$javax_swing_GroupLayout_LinkInfo', function (axis, linkInfo) {
 if (axis == 0) {
-this.horizontalMaster = linkInfo;
+this.horizontalMaster=linkInfo;
 } else {
-this.verticalMaster = linkInfo;
+this.verticalMaster=linkInfo;
 }});
 
 Clazz.newMeth(C$, 'getLinkInfo$I', function (axis) {
@@ -2159,4 +2159,4 @@ return this.verticalMaster.getSize$I(axis);
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:25
+//Created 2018-05-24 08:46:10

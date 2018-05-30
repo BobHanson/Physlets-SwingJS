@@ -15,9 +15,9 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_io_InputStream$java_util_zip_Inflater$I', function ($in, inflater, size) {
 C$.superclazz.c$$java_io_InputStream$swingjs_jzlib_Inflater$I$Z.apply(this, [$in, inflater, size, true]);
 C$.$init$.apply(this);
-this.inf = inflater;
+this.inf=inflater;
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:16
+//Created 2018-05-24 08:45:52

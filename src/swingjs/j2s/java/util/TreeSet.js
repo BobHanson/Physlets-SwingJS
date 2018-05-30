@@ -17,7 +17,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_util_NavigableMap', function (m) {
 Clazz.super_(C$, this,1);
-this.m = m;
+this.m=m;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
@@ -151,7 +151,7 @@ return (e == null ) ? null : e.getKey();
 Clazz.newMeth(C$, 'clone', function () {
 var clone = null;
 try {
-clone = Clazz.clone(this);
+clone=Clazz.clone(this);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.CloneNotSupportedException")){
 throw Clazz.new_((I$[2]||$incl$(2)));
@@ -159,7 +159,7 @@ throw Clazz.new_((I$[2]||$incl$(2)));
 throw e;
 }
 }
-clone.m = Clazz.new_((I$[1]||$incl$(1)).c$$java_util_SortedMap,[this.m]);
+clone.m=Clazz.new_((I$[1]||$incl$(1)).c$$java_util_SortedMap,[this.m]);
 return clone;
 });
 
@@ -175,11 +175,11 @@ Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream', function (s) {
 s.defaultReadObject();
 var c = s.readObject();
 var tm;
-if (c == null ) tm = Clazz.new_((I$[1]||$incl$(1)));
- else tm = Clazz.new_((I$[1]||$incl$(1)).c$$java_util_Comparator,[c]);
-this.m = tm;
+if (c == null ) tm=Clazz.new_((I$[1]||$incl$(1)));
+ else tm=Clazz.new_((I$[1]||$incl$(1)).c$$java_util_Comparator,[c]);
+this.m=tm;
 var size = s.readInt();
 tm.readTreeSet$I$java_io_ObjectInputStream$TV(size, s, C$.PRESENT);
 });
 })();
-//Created 2018-05-15 01:02:15
+//Created 2018-05-24 08:45:50

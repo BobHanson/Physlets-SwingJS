@@ -62,7 +62,7 @@ if (nElements == 0 || array == null  ) return array;
 var oldLength = C$.getLength$O(array);
 if (firstElement >= oldLength) return array;
 var n = oldLength - (firstElement + nElements);
-if (n < 0) n = 0;
+if (n < 0) n=0;
 var t = C$.newInstanceO$O$I(array, firstElement + n);
 if (firstElement > 0) System.arraycopy(array, 0, t, 0, firstElement);
 if (n > 0) System.arraycopy(array, firstElement + nElements, t, firstElement, n);
@@ -71,7 +71,7 @@ return t;
 
 Clazz.newMeth(C$, 'arrayCopyObject$O$I', function (array, newLength) {
 var oldLength = (array == null  ? -1 : C$.getLength$O(array));
-if (newLength < 0) newLength = oldLength;
+if (newLength < 0) newLength=oldLength;
 if (newLength == oldLength) return array;
 {
 if (newLength < oldLength) return Clazz.array(-1, array, 0, newLength);
@@ -93,7 +93,7 @@ return array.length
 
 Clazz.newMeth(C$, 'arrayCopyS$SA$I', function (array, newLength) {
 var oldLength = (array == null  ? -1 : array.length);
-if (newLength < 0) newLength = oldLength;
+if (newLength < 0) newLength=oldLength;
 {
 if (newLength < oldLength) return Clazz.array(-1, array, 0, newLength);
 }
@@ -112,7 +112,7 @@ System.arraycopy(array, 0, t, 0, oldLength < newLength ? oldLength : newLength);
 }, 1);
 
 Clazz.newMeth(C$, 'arrayCopyPt$javajs_util_T3A$I', function (array, newLength) {
-if (newLength < 0) newLength = array.length;
+if (newLength < 0) newLength=array.length;
 var t = Clazz.array((I$[2]||$incl$(2)), [newLength]);
 if (array != null ) {
 var oldLength = array.length;
@@ -122,7 +122,7 @@ System.arraycopy(array, 0, t, 0, oldLength < newLength ? oldLength : newLength);
 
 Clazz.newMeth(C$, 'arrayCopyF$FA$I', function (array, newLength) {
 var oldLength = (array == null  ? -1 : array.length);
-if (newLength < 0) newLength = oldLength;
+if (newLength < 0) newLength=oldLength;
 {
 if (newLength < oldLength) return Clazz.array(-1, array, 0, newLength);
 }
@@ -134,7 +134,7 @@ System.arraycopy(array, 0, t, 0, oldLength < newLength ? oldLength : newLength);
 
 Clazz.newMeth(C$, 'arrayCopyI$IA$I', function (array, newLength) {
 var oldLength = (array == null  ? -1 : array.length);
-if (newLength < 0) newLength = oldLength;
+if (newLength < 0) newLength=oldLength;
 {
 if (newLength < oldLength) return Clazz.array(-1, array, 0, newLength);
 }
@@ -147,12 +147,12 @@ System.arraycopy(array, 0, t, 0, oldLength < newLength ? oldLength : newLength);
 Clazz.newMeth(C$, 'arrayCopyRangeI$IA$I$I', function (array, i0, n) {
 if (array == null ) return null;
 var oldLength = array.length;
-if (n == -1) n = oldLength;
-if (n == -2) n = (oldLength/2|0);
+if (n == -1) n=oldLength;
+if (n == -2) n=(oldLength/2|0);
 {
 return Clazz.array(-1, array, i0, n);
 }
-n = n-(i0);
+n-=i0;
 var t = Clazz.array(Integer.TYPE, [n]);
 System.arraycopy(array, i0, t, 0, n);
 return t;
@@ -164,7 +164,7 @@ if (array == null ) return null;
 return Clazz.array(-1, array, i0, n).reverse();
 }
 var t = C$.arrayCopyRangeI$IA$I$I(array, i0, n);
-if (n < 0) n = array.length;
+if (n < 0) n=array.length;
 for (var i = (n/2|0); --i >= 0; ) C$.swapInt$IA$I$I(t, i, n - 1 - i );
 
 return t;
@@ -172,7 +172,7 @@ return t;
 
 Clazz.newMeth(C$, 'arrayCopyShort$HA$I', function (array, newLength) {
 var oldLength = (array == null  ? -1 : array.length);
-if (newLength < 0) newLength = oldLength;
+if (newLength < 0) newLength=oldLength;
 {
 if (newLength < oldLength) return Clazz.array(-1, array, 0, newLength);
 }
@@ -184,7 +184,7 @@ System.arraycopy(array, 0, t, 0, oldLength < newLength ? oldLength : newLength);
 
 Clazz.newMeth(C$, 'arrayCopyByte$BA$I', function (array, newLength) {
 var oldLength = (array == null  ? -1 : array.length);
-if (newLength < 0) newLength = oldLength;
+if (newLength < 0) newLength=oldLength;
 {
 if (newLength < oldLength) return Clazz.array(-1, array, 0, newLength);
 }
@@ -196,7 +196,7 @@ System.arraycopy(array, 0, t, 0, oldLength < newLength ? oldLength : newLength);
 
 Clazz.newMeth(C$, 'arrayCopyBool$ZA$I', function (array, newLength) {
 var oldLength = (array == null  ? -1 : array.length);
-if (newLength < 0) newLength = oldLength;
+if (newLength < 0) newLength=oldLength;
 {
 if (newLength < oldLength) return Clazz.array(-1, array, 0, newLength);
 }
@@ -208,8 +208,8 @@ System.arraycopy(array, 0, t, 0, oldLength < newLength ? oldLength : newLength);
 
 Clazz.newMeth(C$, 'swapInt$IA$I$I', function (array, indexA, indexB) {
 var t = array[indexA];
-array[indexA] = array[indexB];
-array[indexB] = t;
+array[indexA]=array[indexB];
+array[indexB]=t;
 }, 1);
 
 Clazz.newMeth(C$, 'dumpArray$S$FAA$I$I$I$I', function (msg, A, x1, x2, y1, y2) {
@@ -249,8 +249,8 @@ return Clazz.array((I$[5]||$incl$(5)), [size]);
 
 Clazz.newMeth(C$, 'swap$OA$I$I', function (o, i, j) {
 var oi = o[i];
-o[i] = o[j];
-o[j] = oi;
+o[i]=o[j];
+o[j]=oi;
 }, 1);
 
 Clazz.newMeth(C$, 'newFloat2$I', function (n) {
@@ -356,4 +356,4 @@ for (var i = b.length; --i >= 0;) { var j = b[i] & 0xFF; if (j >= 0x80) j -= 0x1
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:55

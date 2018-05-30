@@ -15,7 +15,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$sun_audio_AudioData', function (data) {
 C$.superclazz.c$$BA.apply(this, [data.buffer]);
 C$.$init$.apply(this);
-this.ad = data;
+this.ad=data;
 }, 1);
 
 Clazz.newMeth(C$, 'getAudioData', function () {
@@ -24,4 +24,4 @@ return this.ad;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:04
+//Created 2018-05-24 08:47:19

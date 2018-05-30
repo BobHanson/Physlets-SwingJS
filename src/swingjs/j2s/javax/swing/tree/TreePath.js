@@ -13,28 +13,28 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$OA', function (path) {
 C$.$init$.apply(this);
 if (path == null  || path.length == 0 ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["path in TreePath must be non null and not empty."]);
-this.lastPathComponent = path[path.length - 1];
-if (path.length > 1) this.parentPath = Clazz.new_(C$.c$$OA$I,[path, path.length - 1]);
+this.lastPathComponent=path[path.length - 1];
+if (path.length > 1) this.parentPath=Clazz.new_(C$.c$$OA$I,[path, path.length - 1]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$O', function (singlePath) {
 C$.$init$.apply(this);
 if (singlePath == null ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["path in TreePath must be non null."]);
-this.lastPathComponent = singlePath;
-this.parentPath = null;
+this.lastPathComponent=singlePath;
+this.parentPath=null;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_tree_TreePath$O', function (parent, lastElement) {
 C$.$init$.apply(this);
 if (lastElement == null ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["path in TreePath must be non null."]);
-this.parentPath = parent;
-this.lastPathComponent = lastElement;
+this.parentPath=parent;
+this.lastPathComponent=lastElement;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$OA$I', function (path, length) {
 C$.$init$.apply(this);
-this.lastPathComponent = path[length - 1];
-if (length > 1) this.parentPath = Clazz.new_(C$.c$$OA$I,[path, length - 1]);
+this.lastPathComponent=path[length - 1];
+if (length > 1) this.parentPath=Clazz.new_(C$.c$$OA$I,[path, length - 1]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
@@ -44,8 +44,8 @@ C$.$init$.apply(this);
 Clazz.newMeth(C$, 'getPath', function () {
 var i = this.getPathCount();
 var result = Clazz.array(java.lang.Object, [i--]);
-for (var path = this; path != null ; path = path.parentPath) {
-result[i--] = path.lastPathComponent;
+for (var path = this; path != null ; path=path.parentPath) {
+result[i--]=path.lastPathComponent;
 }
 return result;
 });
@@ -56,7 +56,7 @@ return this.lastPathComponent;
 
 Clazz.newMeth(C$, 'getPathCount', function () {
 var result = 0;
-for (var path = this; path != null ; path = path.parentPath) {
+for (var path = this; path != null ; path=path.parentPath) {
 result++;
 }
 return result;
@@ -67,7 +67,7 @@ var pathLength = this.getPathCount();
 if (element < 0 || element >= pathLength ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Index " + element + " is out of the specified range" ]);
 var path = this;
 for (var i = pathLength - 1; i != element; i--) {
-path = path.parentPath;
+path=path.parentPath;
 }
 return path.lastPathComponent;
 });
@@ -77,10 +77,10 @@ if (o === this ) return true;
 if (Clazz.instanceOf(o, "javax.swing.tree.TreePath")) {
 var oTreePath = o;
 if (this.getPathCount() != oTreePath.getPathCount()) return false;
-for (var path = this; path != null ; path = path.parentPath) {
+for (var path = this; path != null ; path=path.parentPath) {
 if (!(path.lastPathComponent.equals$O(oTreePath.lastPathComponent))) {
 return false;
-}oTreePath = oTreePath.parentPath;
+}oTreePath=oTreePath.parentPath;
 }
 return true;
 }return false;
@@ -96,7 +96,7 @@ if (aTreePath != null ) {
 var pathLength = this.getPathCount();
 var oPathLength = aTreePath.getPathCount();
 if (oPathLength < pathLength) return false;
-while (oPathLength-- > pathLength)aTreePath = aTreePath.getParentPath();
+while (oPathLength-- > pathLength)aTreePath=aTreePath.getParentPath();
 
 return this.equals$O(aTreePath);
 }return false;
@@ -121,4 +121,4 @@ tempSpot.append$S("]");
 return tempSpot.toString();
 });
 })();
-//Created 2018-05-15 01:03:00
+//Created 2018-05-24 08:47:11

@@ -20,10 +20,10 @@ Clazz.newMeth(C$, 'c$$S$S$S$I', function (cls, method, file, line) {
 C$.$init$.apply(this);
 if (cls == null  || method == null  ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.declaringClass = cls;
-this.methodName = method;
-this.fileName = file;
-this.lineNumber = line;
+}this.declaringClass=cls;
+this.methodName=method;
+this.fileName=file;
+this.lineNumber=line;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
@@ -100,4 +100,4 @@ buf.append$I(lineNum);
 }}return buf.toString();
 });
 })();
-//Created 2018-05-15 01:02:07
+//Created 2018-05-24 08:45:38

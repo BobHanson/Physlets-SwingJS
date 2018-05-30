@@ -12,11 +12,11 @@ C$.HANDLE_TOP_LEVEL_PAINT = false;
 C$.repaintManagerKey = Clazz.getClass(C$);
 C$.volatileImageBufferEnabled = true;
 {
-C$.volatileImageBufferEnabled = false;
+C$.volatileImageBufferEnabled=false;
 var headless = false;
 if (C$.volatileImageBufferEnabled && headless ) {
-C$.volatileImageBufferEnabled = false;
-}C$.HANDLE_TOP_LEVEL_PAINT = true;
+C$.volatileImageBufferEnabled=false;
+}C$.HANDLE_TOP_LEVEL_PAINT=true;
 }
 ;
 }
@@ -51,7 +51,7 @@ return C$.currentManager$java_awt_Component$sun_awt_AppContext(c, (I$[3]||$incl$
 Clazz.newMeth(C$, 'currentManager$java_awt_Component$sun_awt_AppContext', function (c, appContext) {
 var rm = appContext.get$O(C$.repaintManagerKey);
 if (rm == null ) {
-rm = Clazz.new_(C$);
+rm=Clazz.new_(C$);
 rm.set$java_awt_Component(c);
 appContext.put$O$O(C$.repaintManagerKey, rm);
 }return rm;
@@ -71,43 +71,43 @@ if (aRepaintManager != null ) {
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
 p$.setMaps.apply(this, []);
-this.processingRunnable = Clazz.new_((I$[5]||$incl$(5)), [this, null]);
+this.processingRunnable=Clazz.new_((I$[5]||$incl$(5)), [this, null]);
 }, 1);
 
 Clazz.newMeth(C$, 'set$java_awt_Component', function (c) {
-this.myComponent = c;
+this.myComponent=c;
 p$.setMaps.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'setMaps', function () {
-this.dirtyComponents = Clazz.new_((I$[6]||$incl$(6)));
-this.tmpDirtyComponents = Clazz.new_((I$[6]||$incl$(6)));
-this.hwDirtyComponents = Clazz.new_((I$[6]||$incl$(6)));
+this.dirtyComponents=Clazz.new_((I$[6]||$incl$(6)));
+this.tmpDirtyComponents=Clazz.new_((I$[6]||$incl$(6)));
+this.hwDirtyComponents=Clazz.new_((I$[6]||$incl$(6)));
 });
 
 Clazz.newMeth(C$, 'addInvalidComponent$javax_swing_JComponent', function (invalidComponent) {
 var validateRoot = null;
-for (var c = invalidComponent; c != null ; c = c.getParent()) {
+for (var c = invalidComponent; c != null ; c=c.getParent()) {
 if ((Clazz.instanceOf(c, "javax.swing.CellRendererPane"))) {
 return;
 }if ((Clazz.instanceOf(c, "javax.swing.JComponent")) && ((c).isValidateRoot()) ) {
-validateRoot = c;
+validateRoot=c;
 break;
 }}
 if (validateRoot == null ) {
 return;
 }var root = null;
-for (var c = validateRoot; c != null ; c = c.getParent()) {
+for (var c = validateRoot; c != null ; c=c.getParent()) {
 if (!c.isVisible()) {
 return;
 }if ((Clazz.instanceOf(c, "java.awt.Window")) || (Clazz.instanceOf(c, "java.applet.Applet")) ) {
-root = c;
+root=c;
 break;
 }}
 if (root == null ) {
 return;
 }if (this.invalidComponents == null ) {
-this.invalidComponents = Clazz.new_((I$[7]||$incl$(7)));
+this.invalidComponents=Clazz.new_((I$[7]||$incl$(7)));
 } else {
 var n = this.invalidComponents.size();
 for (var i = 0; i < n; i++) {
@@ -130,13 +130,13 @@ if (w <= 0 || h <= 0  || c == null   || c.getWidth() <= 0  || c.getHeight() <= 0
 if (p$.extendDirtyRegion$java_awt_Component$I$I$I$I.apply(this, [c, x, y, w, h])) {
 return;
 }var root = null;
-for (var p = c; p != null ; p = p.getParent()) {
+for (var p = c; p != null ; p=p.getParent()) {
 if (!p.isVisible() || p.getPeer() == null  ) {
 return;
 }if ((Clazz.instanceOf(p, "java.awt.Window")) || (Clazz.instanceOf(p, "java.applet.Applet")) ) {
 if (Clazz.instanceOf(p, "java.awt.Frame") && ((p).getExtendedState() & 1) == 1 ) {
 return;
-}root = p;
+}root=p;
 break;
 }}
 if (root == null ) return;
@@ -164,8 +164,8 @@ var hws;
 {
 if (this.hwDirtyComponents.size() == 0) {
 return;
-}hws = this.hwDirtyComponents;
-this.hwDirtyComponents = Clazz.new_((I$[6]||$incl$(6)));
+}hws=this.hwDirtyComponents;
+this.hwDirtyComponents=Clazz.new_((I$[6]||$incl$(6)));
 }for (var hw, $hw = hws.keySet().iterator(); $hw.hasNext()&&((hw=$hw.next()),1);) {
 var dirty = hws.get$O(hw);
 if (Clazz.instanceOf(hw, "java.awt.Window")) {
@@ -199,7 +199,7 @@ return true;
 Clazz.newMeth(C$, 'getDirtyRegion$javax_swing_JComponent', function (aComponent) {
 var r = null;
 {
-r = this.dirtyComponents.get$O(aComponent);
+r=this.dirtyComponents.get$O(aComponent);
 }if (r == null ) return Clazz.new_((I$[2]||$incl$(2)).c$$I$I$I$I,[0, 0, 0, 0]);
  else return Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_Rectangle,[r]);
 });
@@ -215,7 +215,7 @@ this.dirtyComponents.remove$O(aComponent);
 
 Clazz.newMeth(C$, 'isCompletelyDirty$javax_swing_JComponent', function (aComponent) {
 var r;
-r = this.getDirtyRegion$javax_swing_JComponent(aComponent);
+r=this.getDirtyRegion$javax_swing_JComponent(aComponent);
 if (r.width == 2147483647 && r.height == 2147483647 ) return true;
  else return false;
 });
@@ -225,8 +225,8 @@ var ic;
 {
 if (this.invalidComponents == null ) {
 return;
-}ic = this.invalidComponents;
-this.invalidComponents = null;
+}ic=this.invalidComponents;
+this.invalidComponents=null;
 }var n = ic.size();
 for (var i = 0; i < n; i++) {
 var c = ic.get$I(i);
@@ -238,9 +238,9 @@ Clazz.newMeth(C$, 'prePaintDirtyRegions', function () {
 var dirtyComponents;
 var runnableList;
 {
-dirtyComponents = this.dirtyComponents;
-runnableList = this.runnableList;
-this.runnableList = null;
+dirtyComponents=this.dirtyComponents;
+runnableList=this.runnableList;
+this.runnableList=null;
 }if (runnableList != null ) {
 for (var runnable, $runnable = runnableList.iterator(); $runnable.hasNext()&&((runnable=$runnable.next()),1);) {
 runnable.run();
@@ -272,8 +272,8 @@ return dirtyComponents;
 Clazz.newMeth(C$, 'paintDirtyRegions', function () {
 {
 var tmp = this.tmpDirtyComponents;
-this.tmpDirtyComponents = this.dirtyComponents;
-this.dirtyComponents = tmp;
+this.tmpDirtyComponents=this.dirtyComponents;
+this.dirtyComponents=tmp;
 this.dirtyComponents.clear();
 }p$.paintDirtyRegions1$java_util_Map.apply(this, [this.tmpDirtyComponents]);
 });
@@ -287,7 +287,7 @@ for (var dirty, $dirty = tmpDirtyComponents.keySet().iterator(); $dirty.hasNext(
 this.collectDirtyComponents$java_util_Map$java_awt_Component$java_util_List(tmpDirtyComponents, dirty, roots);
 }
 var count = roots.size();
-this.painting = true;
+this.painting=true;
 try {
 for (var j = 0; j < count; j++) {
 var i = j;
@@ -308,12 +308,12 @@ g.dispose();
 }
 }}if (this.repaintRoot != null ) {
 p$.adjustRoots$javax_swing_JComponent$javajs_util_Lst$I.apply(this, [this.repaintRoot, roots, i + 1]);
-count = roots.size();
+count=roots.size();
 this.repaintRoot.paintImmediately$I$I$I$I(0, 0, this.repaintRoot.getWidth(), this.repaintRoot.getHeight());
-this.repaintRoot = null;
+this.repaintRoot=null;
 }}
 } finally {
-this.painting = false;
+this.painting=false;
 }
 tmpDirtyComponents.clear();
 });
@@ -324,7 +324,7 @@ var c = roots.get$I(i);
 for (; ; ) {
 if (c === root  || c == null   || !(Clazz.instanceOf(c, "javax.swing.JComponent")) ) {
 break;
-}c = c.getParent();
+}c=c.getParent();
 }
 if (c === root ) {
 roots.removeItemAt$I(i);
@@ -339,43 +339,43 @@ var rootDy;
 var component;
 var rootDirtyComponent;
 var parent;
-component = rootDirtyComponent = dirtyComponent;
+component=rootDirtyComponent=dirtyComponent;
 var x = dirtyComponent.getX();
 var y = dirtyComponent.getY();
 var w = dirtyComponent.getWidth();
 var h = dirtyComponent.getHeight();
-dx = rootDx = 0;
-dy = rootDy = 0;
+dx=rootDx=0;
+dy=rootDy=0;
 this.tmp.setBounds$java_awt_Rectangle(dirtyComponents.get$O(dirtyComponent));
 (I$[4]||$incl$(4)).computeIntersection$I$I$I$I$java_awt_Rectangle(0, 0, w, h, this.tmp);
 if (this.tmp.isEmpty()) {
 return;
 }for (; ; ) {
 if (!(Clazz.instanceOf(component, "javax.swing.JComponent"))) break;
-parent = component.getParent();
+parent=component.getParent();
 if (parent == null ) break;
-component = parent;
-dx = dx+(x);
-dy = dy+(y);
-this.tmp.x = this.tmp.x+(x);
-this.tmp.y = this.tmp.y+(y);
-x = component.getX();
-y = component.getY();
-w = component.getWidth();
-h = component.getHeight();
-this.tmp = (I$[4]||$incl$(4)).computeIntersection$I$I$I$I$java_awt_Rectangle(0, 0, w, h, this.tmp);
+component=parent;
+dx+=x;
+dy+=y;
+this.tmp.x+=x;
+this.tmp.y+=y;
+x=component.getX();
+y=component.getY();
+w=component.getWidth();
+h=component.getHeight();
+this.tmp=(I$[4]||$incl$(4)).computeIntersection$I$I$I$I$java_awt_Rectangle(0, 0, w, h, this.tmp);
 if (this.tmp.isEmpty()) {
 return;
 }if (dirtyComponents.get$O(component) != null ) {
-rootDirtyComponent = component;
-rootDx = dx;
-rootDy = dy;
+rootDirtyComponent=component;
+rootDx=dx;
+rootDy=dy;
 }}
 if (dirtyComponent !== rootDirtyComponent ) {
 var r;
-this.tmp.x = this.tmp.x+(rootDx - dx);
-this.tmp.y = this.tmp.y+(rootDy - dy);
-r = dirtyComponents.get$O(rootDirtyComponent);
+this.tmp.x+=rootDx - dx;
+this.tmp.y+=rootDy - dy;
+r=dirtyComponents.get$O(rootDirtyComponent);
 (I$[4]||$incl$(4)).computeUnion$I$I$I$I$java_awt_Rectangle(this.tmp.x, this.tmp.y, this.tmp.width, this.tmp.height, r);
 }if (!roots.contains$O(rootDirtyComponent)) roots.add$TE(rootDirtyComponent);
 });
@@ -399,7 +399,7 @@ var image = this.volatileMap.get$O(config);
 if (image == null  || image.getWidth() < width  || image.getHeight() < height ) {
 if (image != null ) {
 image.flush();
-}image = config.createCompatibleVolatileImage$I$I(width, height);
+}image=config.createCompatibleVolatileImage$I$I(width, height);
 this.volatileMap.put$TK$TV(config, image);
 }return image;
 });
@@ -440,12 +440,12 @@ var multiThreadedPaint = false;
 var paintDepth = 0;
 var currentThread = (I$[12]||$incl$(12)).currentThread();
 {
-paintDepth = this.paintDepth;
+paintDepth=this.paintDepth;
 if (this.paintThread == null  || currentThread === this.paintThread  ) {
-this.paintThread = currentThread;
+this.paintThread=currentThread;
 this.paintDepth++;
 } else {
-multiThreadedPaint = true;
+multiThreadedPaint=true;
 }}});
 
 Clazz.newMeth(C$, 'endPaint', function () {
@@ -481,14 +481,14 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'markPending', function () {
 if (!this.pending) {
-this.pending = true;
+this.pending=true;
 return true;
 }return false;
 });
 
 Clazz.newMeth(C$, 'run', function () {
 {
-this.pending = false;
+this.pending=false;
 }this.this$0.scheduleHeavyWeightPaints();
 this.this$0.validateInvalidComponents();
 this.this$0.prePaintDirtyRegions();
@@ -497,4 +497,4 @@ this.this$0.prePaintDirtyRegions();
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:39
+//Created 2018-05-24 08:46:38

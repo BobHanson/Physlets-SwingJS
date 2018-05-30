@@ -14,10 +14,10 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$sun_awt_geom_CurveLink$sun_awt_geom_ChainEnd', function (first, partner) {
 C$.$init$.apply(this);
-this.head = first;
-this.tail = first;
-this.partner = partner;
-this.etag = first.getEdgeTag();
+this.head=first;
+this.tail=first;
+this.partner=partner;
+this.etag=first.getEdgeTag();
 }, 1);
 
 Clazz.newMeth(C$, 'getChain', function () {
@@ -25,7 +25,7 @@ return this.head;
 });
 
 Clazz.newMeth(C$, 'setOtherEnd$sun_awt_geom_ChainEnd', function (partner) {
-this.partner = partner;
+this.partner=partner;
 });
 
 Clazz.newMeth(C$, 'getPartner', function () {
@@ -40,37 +40,37 @@ throw Clazz.new_((I$[1]||$incl$(1)).c$$S,["Linking chains of the same type!"]);
 }var enter;
 var exit;
 if (this.etag == 1) {
-enter = this;
-exit = that;
+enter=this;
+exit=that;
 } else {
-enter = that;
-exit = this;
-}this.etag = 0;
-that.etag = 0;
+enter=that;
+exit=this;
+}this.etag=0;
+that.etag=0;
 enter.tail.setNext$sun_awt_geom_CurveLink(exit.head);
-enter.tail = exit.tail;
+enter.tail=exit.tail;
 if (this.partner === that ) {
 return enter.head;
 }var otherenter = exit.partner;
 var otherexit = enter.partner;
-otherenter.partner = otherexit;
-otherexit.partner = otherenter;
+otherenter.partner=otherexit;
+otherexit.partner=otherenter;
 if (enter.head.getYTop() < otherenter.head.getYTop() ) {
 enter.tail.setNext$sun_awt_geom_CurveLink(otherenter.head);
-otherenter.head = enter.head;
+otherenter.head=enter.head;
 } else {
 otherexit.tail.setNext$sun_awt_geom_CurveLink(enter.head);
-otherexit.tail = enter.tail;
+otherexit.tail=enter.tail;
 }return null;
 });
 
 Clazz.newMeth(C$, 'addLink$sun_awt_geom_CurveLink', function (newlink) {
 if (this.etag == 1) {
 this.tail.setNext$sun_awt_geom_CurveLink(newlink);
-this.tail = newlink;
+this.tail=newlink;
 } else {
 newlink.setNext$sun_awt_geom_CurveLink(this.head);
-this.head = newlink;
+this.head=newlink;
 }});
 
 Clazz.newMeth(C$, 'getX', function () {
@@ -82,4 +82,4 @@ return this.head.getXBot();
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:07
+//Created 2018-05-24 08:47:25

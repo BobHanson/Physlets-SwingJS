@@ -33,7 +33,7 @@ return 5;
 });
 
 Clazz.newMeth(C$, 'setImage$java_awt_Image', function (img) {
-this.image = img;
+this.image=img;
 });
 
 Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics', function (g) {
@@ -46,4 +46,4 @@ g.drawImage$java_awt_Image$I$I$java_awt_image_ImageObserver(this.image, 0, 0, th
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:47
+//Created 2018-05-24 08:45:04

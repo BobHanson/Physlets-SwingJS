@@ -20,7 +20,7 @@ Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
 this.setSelectionModel$javax_swing_SingleSelectionModel(Clazz.new_((I$[1]||$incl$(1))));
-this.uiClassID = "MenuBarUI";
+this.uiClassID="MenuBarUI";
 this.updateUI();
 }, 1);
 
@@ -30,7 +30,7 @@ return this.selectionModel;
 
 Clazz.newMeth(C$, 'setSelectionModel$javax_swing_SingleSelectionModel', function (model) {
 var oldValue = this.selectionModel;
-this.selectionModel = model;
+this.selectionModel=model;
 this.firePropertyChange$S$O$O("selectionModel", oldValue, this.selectionModel);
 });
 
@@ -100,7 +100,7 @@ C$.superclazz.prototype.paintBorder$java_awt_Graphics.apply(this, [g]);
 
 Clazz.newMeth(C$, 'setMargin$java_awt_Insets', function (m) {
 var old = this.margin;
-this.margin = m;
+this.margin=m;
 this.firePropertyChange$S$O$O("margin", old, m);
 if (old == null  || !old.equals$O(m) ) {
 this.revalidate();
@@ -129,12 +129,12 @@ var tmp = Clazz.new_((I$[4]||$incl$(4)));
 var c = this.getComponentCount();
 var i;
 var m;
-for (i = 0; i < c; i++) {
-m = this.getComponent$I(i);
+for (i=0; i < c; i++) {
+m=this.getComponent$I(i);
 if (Clazz.instanceOf(m, "javax.swing.MenuElement")) tmp.addElement$TE(m);
 }
-result = Clazz.array((I$[5]||$incl$(5)), [tmp.size()]);
-for (i = 0, c = tmp.size(); i < c; i++) result[i] = tmp.elementAt$I(i);
+result=Clazz.array((I$[5]||$incl$(5)), [tmp.size()]);
+for (i=0, c=tmp.size(); i < c; i++) result[i]=tmp.elementAt$I(i);
 
 return result;
 });
@@ -186,4 +186,4 @@ C$.superclazz.prototype.removeNotify.apply(this, []);
 (I$[6]||$incl$(6)).getCurrentManager().unregisterMenuBar$javax_swing_JMenuBar(this);
 });
 })();
-//Created 2018-05-15 01:02:30
+//Created 2018-05-24 08:46:19

@@ -13,9 +13,9 @@ if (contents == null ) {
 return null;
 }var clen = contents.length;
 var tmpobj = Clazz.array(java.lang.String, [clen + 1]);
-tmpobj[0] = key;
+tmpobj[0]=key;
 for (var i = 0; i < clen; i++) {
-tmpobj[i + 1] = contents[i];
+tmpobj[i + 1]=contents[i];
 }
 return tmpobj;
 });
@@ -26,4 +26,4 @@ return Clazz.new_((I$[1]||$incl$(1)).c$$I,[size]);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:13
+//Created 2018-05-24 08:47:39

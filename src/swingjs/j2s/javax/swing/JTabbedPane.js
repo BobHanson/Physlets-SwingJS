@@ -38,9 +38,9 @@ Clazz.newMeth(C$, 'c$$I$I', function (tabPlacement, tabLayoutPolicy) {
 Clazz.super_(C$, this,1);
 this.setTabPlacement$I(tabPlacement);
 this.setTabLayoutPolicy$I(tabLayoutPolicy);
-this.pages = Clazz.new_((I$[3]||$incl$(3)));
+this.pages=Clazz.new_((I$[3]||$incl$(3)));
 this.setModel$javax_swing_SingleSelectionModel(Clazz.new_((I$[4]||$incl$(4))));
-this.uiClassID = "TabbedPaneUI";
+this.uiClassID="TabbedPaneUI";
 this.updateUI();
 }, 1);
 
@@ -74,7 +74,7 @@ var selIndex = this.getSelectedIndex();
 if (selIndex < 0) {
 if (this.visComp != null  && this.visComp.isVisible() ) {
 this.visComp.setVisible$Z(false);
-}this.visComp = null;
+}this.visComp=null;
 } else {
 var newComp = this.getComponentAt$I(selIndex);
 if (newComp != null  && newComp !== this.visComp  ) {
@@ -83,11 +83,11 @@ if (this.visComp.isVisible()) {
 this.visComp.setVisible$Z(false);
 }}if (!newComp.isVisible()) {
 newComp.setVisible$Z(true);
-}this.visComp = newComp;
+}this.visComp=newComp;
 }}var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[6]||$incl$(6)),['stateChanged$javax_swing_event_ChangeEvent']) ) {
-if (this.changeEvent == null ) this.changeEvent = Clazz.new_((I$[7]||$incl$(7)).c$$O,[this]);
+if (this.changeEvent == null ) this.changeEvent=Clazz.new_((I$[7]||$incl$(7)).c$$O,[this]);
 (listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -100,10 +100,10 @@ Clazz.newMeth(C$, 'setModel$javax_swing_SingleSelectionModel', function (model) 
 var oldModel = this.getModel();
 if (oldModel != null ) {
 oldModel.removeChangeListener$javax_swing_event_ChangeListener(this.changeListener);
-this.changeListener = null;
-}this.model = model;
+this.changeListener=null;
+}this.model=model;
 if (model != null ) {
-this.changeListener = this.createChangeListener();
+this.changeListener=this.createChangeListener();
 model.addChangeListener$javax_swing_event_ChangeListener(this.changeListener);
 }this.firePropertyChange$S$O$O("model", oldModel, model);
 this.repaint();
@@ -118,7 +118,7 @@ if (tabPlacement != 1 && tabPlacement != 2  && tabPlacement != 3  && tabPlacemen
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["illegal tab placement: must be TOP, BOTTOM, LEFT, or RIGHT"]);
 }if (this.tabPlacement != tabPlacement) {
 var oldValue = this.tabPlacement;
-this.tabPlacement = tabPlacement;
+this.tabPlacement=tabPlacement;
 this.firePropertyChange$S$I$I("tabPlacement", oldValue, tabPlacement);
 this.revalidate();
 this.repaint();
@@ -133,7 +133,7 @@ if (tabLayoutPolicy != 0 && tabLayoutPolicy != 1 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["illegal tab layout policy: must be WRAP_TAB_LAYOUT or SCROLL_TAB_LAYOUT"]);
 }if (this.tabLayoutPolicy != tabLayoutPolicy) {
 var oldValue = this.tabLayoutPolicy;
-this.tabLayoutPolicy = tabLayoutPolicy;
+this.tabLayoutPolicy=tabLayoutPolicy;
 this.firePropertyChange$S$I$I("tabLayoutPolicy", oldValue, tabLayoutPolicy);
 this.revalidate();
 this.repaint();
@@ -253,7 +253,7 @@ p$.checkIndex$I.apply(this, [index]);
 var component = this.getComponentAt$I(index);
 var selected = this.getSelectedIndex();
 if (component === this.visComp ) {
-this.visComp = null;
+this.visComp=null;
 }this.setTabComponentAt$I$java_awt_Component(index, null);
 this.pages.removeItemAt$I(index);
 this.putClientProperty$O$O("__index_to_remove__",  new Integer(index));
@@ -321,7 +321,7 @@ return this.pages.get$I(index).icon;
 Clazz.newMeth(C$, 'getDisabledIconAt$I', function (index) {
 var page = this.pages.get$I(index);
 if (page.disabledIcon == null ) {
-page.disabledIcon = (I$[9]||$incl$(9)).getLookAndFeel().getDisabledIcon$javax_swing_JComponent$javax_swing_Icon(this, page.icon);
+page.disabledIcon=(I$[9]||$incl$(9)).getLookAndFeel().getDisabledIcon$javax_swing_JComponent$javax_swing_Icon(this, page.icon);
 }return page.disabledIcon;
 });
 
@@ -367,7 +367,7 @@ return (this.ui).getTabBounds$javax_swing_JTabbedPane$I(this, index);
 Clazz.newMeth(C$, 'setTitleAt$I$S', function (index, title) {
 var page = this.pages.get$I(index);
 var oldTitle = page.title;
-page.title = title;
+page.title=title;
 if (oldTitle != title) {
 this.firePropertyChange$S$I$I("indexForTitle", -1, index);
 }page.updateDisplayedMnemonicIndex();
@@ -380,23 +380,23 @@ Clazz.newMeth(C$, 'setIconAt$I$javax_swing_Icon', function (index, icon) {
 var page = this.pages.get$I(index);
 var oldIcon = page.icon;
 if (icon !== oldIcon ) {
-page.icon = icon;
+page.icon=icon;
 if (Clazz.instanceOf(page.disabledIcon, "javax.swing.plaf.UIResource")) {
-page.disabledIcon = null;
+page.disabledIcon=null;
 }this.revalidate();
 this.repaint();
 }});
 
 Clazz.newMeth(C$, 'setDisabledIconAt$I$javax_swing_Icon', function (index, disabledIcon) {
 var oldIcon = this.pages.get$I(index).disabledIcon;
-this.pages.get$I(index).disabledIcon = disabledIcon;
+this.pages.get$I(index).disabledIcon=disabledIcon;
 if (disabledIcon !== oldIcon  && !this.isEnabledAt$I(index) ) {
 this.revalidate();
 this.repaint();
 }});
 
 Clazz.newMeth(C$, 'setToolTipTextAt$I$S', function (index, toolTipText) {
-this.pages.get$I(index).tip = toolTipText;
+this.pages.get$I(index).tip=toolTipText;
 });
 
 Clazz.newMeth(C$, 'setBackgroundAt$I$java_awt_Color', function (index, background) {
@@ -436,10 +436,10 @@ for (var i = 0; i < count; i++) {
 if (children[i] === page.component ) {
 C$.superclazz.prototype.remove$I.apply(this, [i]);
 }}
-}}page.component = component;
+}}page.component=component;
 var selectedPage = (this.getSelectedIndex() == index);
 if (selectedPage) {
-this.visComp = component;
+this.visComp=component;
 }if (component != null ) {
 component.setVisible$Z(selectedPage);
 this.addImplCont$java_awt_Component$O$I(component, null, -1);
@@ -509,14 +509,14 @@ throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException').c$$S,["Index:
 Clazz.newMeth(C$, 'paramString', function () {
 var tabPlacementString;
 if (this.tabPlacement == 1) {
-tabPlacementString = "TOP";
+tabPlacementString="TOP";
 } else if (this.tabPlacement == 3) {
-tabPlacementString = "BOTTOM";
+tabPlacementString="BOTTOM";
 } else if (this.tabPlacement == 2) {
-tabPlacementString = "LEFT";
+tabPlacementString="LEFT";
 } else if (this.tabPlacement == 4) {
-tabPlacementString = "RIGHT";
-} else tabPlacementString = "";
+tabPlacementString="RIGHT";
+} else tabPlacementString="";
 var haveRegisteredString = (this.haveRegistered ? "true" : "false");
 return C$.superclazz.prototype.paramString.apply(this, []) + ",haveRegistered=" + haveRegisteredString + ",tabPlacement=" + tabPlacementString ;
 });
@@ -529,7 +529,7 @@ if (component !== oldValue ) {
 var tabComponentIndex = this.indexOfTabComponent$java_awt_Component(component);
 if (tabComponentIndex != -1) {
 this.setTabComponentAt$I$java_awt_Component(tabComponentIndex, null);
-}this.pages.get$I(index).tabComponent = component;
+}this.pages.get$I(index).tabComponent=component;
 this.firePropertyChange$S$I$I("indexForTabComponent", -1, index);
 }});
 
@@ -591,16 +591,16 @@ this.mnemonicIndex = -1;
 
 Clazz.newMeth(C$, 'c$$javax_swing_JTabbedPane$S$javax_swing_Icon$javax_swing_Icon$java_awt_Component$S', function (parent, title, icon, disabledIcon, component, tip) {
 C$.$init$.apply(this);
-this.title = title;
-this.icon = icon;
-this.disabledIcon = disabledIcon;
-this.parent = parent;
-this.component = component;
-this.tip = tip;
+this.title=title;
+this.icon=icon;
+this.disabledIcon=disabledIcon;
+this.parent=parent;
+this.component=component;
+this.tip=tip;
 }, 1);
 
 Clazz.newMeth(C$, 'setMnemonic$I', function (mnemonic) {
-this.mnemonic = mnemonic;
+this.mnemonic=mnemonic;
 this.updateDisplayedMnemonicIndex();
 });
 
@@ -612,7 +612,7 @@ Clazz.newMeth(C$, 'setDisplayedMnemonicIndex$I', function (mnemonicIndex) {
 if (this.mnemonicIndex != mnemonicIndex) {
 if (mnemonicIndex != -1 && (this.title == null  || mnemonicIndex < 0  || mnemonicIndex >= this.title.length$() ) ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Invalid mnemonic index: " + mnemonicIndex]);
-}this.mnemonicIndex = mnemonicIndex;
+}this.mnemonicIndex=mnemonicIndex;
 this.this$0.firePropertyChange$S$O$O("displayedMnemonicIndexAt", null, null);
 }});
 
@@ -629,7 +629,7 @@ return this.background != null  ? this.background : this.parent.getBackground();
 });
 
 Clazz.newMeth(C$, 'setBackground$java_awt_Color', function (c) {
-this.background = c;
+this.background=c;
 });
 
 Clazz.newMeth(C$, 'getForeground', function () {
@@ -637,7 +637,7 @@ return this.foreground != null  ? this.foreground : this.parent.getForeground();
 });
 
 Clazz.newMeth(C$, 'setForeground$java_awt_Color', function (c) {
-this.foreground = c;
+this.foreground=c;
 });
 
 Clazz.newMeth(C$, 'isEnabled', function () {
@@ -645,7 +645,7 @@ return this.enabled;
 });
 
 Clazz.newMeth(C$, 'setEnabled$Z', function (b) {
-this.enabled = b;
+this.enabled=b;
 });
 
 Clazz.newMeth(C$, 'isVisible', function () {
@@ -684,4 +684,4 @@ return (this.parent.getUI()).getTabBounds$javax_swing_JTabbedPane$I(this.parent,
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:34
+//Created 2018-05-24 08:46:25

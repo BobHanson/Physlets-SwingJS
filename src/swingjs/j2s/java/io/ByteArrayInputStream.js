@@ -17,17 +17,17 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$BA', function (buf) {
 Clazz.super_(C$, this,1);
-this.$mark = 0;
-this.buf = buf;
-this.count = buf.length;
+this.$mark=0;
+this.buf=buf;
+this.count=buf.length;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$BA$I$I', function (buf, offset, length) {
 Clazz.super_(C$, this,1);
-this.buf = buf;
-this.pos = offset >= buf.length ? buf.length : offset;
-this.$mark = this.pos;
-this.count = length + this.pos > buf.length ? buf.length : length + this.pos;
+this.buf=buf;
+this.pos=offset >= buf.length ? buf.length : offset;
+this.$mark=this.pos;
+this.count=length + this.pos > buf.length ? buf.length : length + this.pos;
 }, 1);
 
 Clazz.newMeth(C$, 'available', function () {
@@ -38,7 +38,7 @@ Clazz.newMeth(C$, 'close', function () {
 });
 
 Clazz.newMeth(C$, 'mark$I', function (readlimit) {
-this.$mark = this.pos;
+this.$mark=this.pos;
 });
 
 Clazz.newMeth(C$, 'markSupported', function () {
@@ -58,24 +58,24 @@ if (length == 0) {
 return 0;
 }var copylen = this.count - this.pos < length ? this.count - this.pos : length;
 System.arraycopy(this.buf, this.pos, b, offset, copylen);
-this.pos = this.pos+(copylen);
+this.pos+=copylen;
 return copylen;
 }throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException'));
 }throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
 });
 
 Clazz.newMeth(C$, 'reset', function () {
-this.pos = this.$mark;
+this.pos=this.$mark;
 });
 
 Clazz.newMeth(C$, 'skip$J', function (n) {
 if (n <= 0) {
 return 0;
 }var temp = this.pos;
-this.pos = this.count - this.pos < n ? this.count : ((this.pos + n)|0);
+this.pos=this.count - this.pos < n ? this.count : ((this.pos + n)|0);
 return this.pos - temp;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:04
+//Created 2018-05-24 08:45:32

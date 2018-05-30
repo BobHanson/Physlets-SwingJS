@@ -99,13 +99,13 @@ return true;
 Clazz.newMeth(C$, 'getClipBounds$java_awt_Rectangle', function (r) {
 var clipRect = this.getClipBounds();
 if (clipRect != null ) {
-r.x = clipRect.x;
-r.y = clipRect.y;
-r.width = clipRect.width;
-r.height = clipRect.height;
+r.x=clipRect.x;
+r.y=clipRect.y;
+r.width=clipRect.width;
+r.height=clipRect.height;
 } else if (r == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["null rectangle parameter"]);
 }return r;
 });
 })();
-//Created 2018-05-15 01:01:51
+//Created 2018-05-24 08:45:09

@@ -55,8 +55,8 @@ this.inputAttributeUpdater.updateInputAttributes$I$I$javax_swing_text_JTextCompo
 Clazz.newMeth(C$, 'deinstall$javax_swing_JEditorPane', function (c) {
 c.removeCaretListener$javax_swing_event_CaretListener(this.inputAttributeUpdater);
 c.removePropertyChangeListener$java_beans_PropertyChangeListener(this.inputAttributeUpdater);
-this.currentRun = null;
-this.currentParagraph = null;
+this.currentRun=null;
+this.currentParagraph=null;
 });
 
 Clazz.newMeth(C$, 'getViewFactory', function () {
@@ -65,14 +65,14 @@ return C$.defaultFactory;
 
 Clazz.newMeth(C$, 'clone', function () {
 var o = Clazz.clone(this);
-o.currentRun = o.currentParagraph = null;
+o.currentRun=o.currentParagraph=null;
 o.createInputAttributeUpdated();
 o.createInputAttributes();
 return o;
 });
 
 Clazz.newMeth(C$, 'createInputAttributes', function () {
-this.inputAttributes = ((
+this.inputAttributes=((
 (function(){var C$=Clazz.newClass(P$, "StyledEditorKit$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('javax.swing.text.SimpleAttributeSet'), null, 1);
 
 C$.$clinit$ = function() {Clazz.load(C$, 1);
@@ -93,7 +93,7 @@ return Clazz.new_((I$[6]||$incl$(6)).c$$javax_swing_text_AttributeSet,[this]);
 });
 
 Clazz.newMeth(C$, 'createInputAttributeUpdated', function () {
-this.inputAttributeUpdater = Clazz.new_((I$[20]||$incl$(20)), [this, null]);
+this.inputAttributeUpdater=Clazz.new_((I$[20]||$incl$(20)), [this, null]);
 });
 
 Clazz.newMeth(C$, 'createInputAttributes$javax_swing_text_Element$javax_swing_text_MutableAttributeSet', function (element, set) {
@@ -123,13 +123,13 @@ return;
 }var start = Math.min(dot, mark);
 var doc = aDoc;
 var run;
-this.this$0.currentParagraph = doc.getParagraphElement$I(start);
+this.this$0.currentParagraph=doc.getParagraphElement$I(start);
 if (this.this$0.currentParagraph.getStartOffset() == start || dot != mark ) {
-run = doc.getCharacterElement$I(start);
+run=doc.getCharacterElement$I(start);
 } else {
-run = doc.getCharacterElement$I(Math.max(start - 1, 0));
+run=doc.getCharacterElement$I(Math.max(start - 1, 0));
 }if (run !== this.this$0.currentRun ) {
-this.this$0.currentRun = run;
+this.this$0.currentRun=run;
 this.this$0.createInputAttributes$javax_swing_text_Element$javax_swing_text_MutableAttributeSet(this.this$0.currentRun, this.this$0.getInputAttributes());
 }});
 
@@ -253,7 +253,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$S', function (nm, family) {
 C$.superclazz.c$$S.apply(this, [nm]);
 C$.$init$.apply(this);
-this.family = family;
+this.family=family;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -263,7 +263,7 @@ var family = this.family;
 if ((e != null ) && (e.getSource() === editor ) ) {
 var s = e.getActionCommand();
 if (s != null ) {
-family = s;
+family=s;
 }}if (family != null ) {
 var attr = Clazz.new_((I$[6]||$incl$(6)));
 (I$[7]||$incl$(7)).setFontFamily$javax_swing_text_MutableAttributeSet$S(attr, family);
@@ -293,7 +293,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$I', function (nm, size) {
 C$.superclazz.c$$S.apply(this, [nm]);
 C$.$init$.apply(this);
-this.size = size;
+this.size=size;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -303,7 +303,7 @@ var size = this.size;
 if ((e != null ) && (e.getSource() === editor ) ) {
 var s = e.getActionCommand();
 try {
-size = Integer.parseInt(s, 10);
+size=Integer.parseInt(s, 10);
 } catch (nfe) {
 if (Clazz.exceptionOf(nfe, "java.lang.NumberFormatException")){
 } else {
@@ -339,7 +339,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$java_awt_Color', function (nm, fg) {
 C$.superclazz.c$$S.apply(this, [nm]);
 C$.$init$.apply(this);
-this.fg = fg;
+this.fg=fg;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -349,7 +349,7 @@ var fg = this.fg;
 if ((e != null ) && (e.getSource() === editor ) ) {
 var s = e.getActionCommand();
 try {
-fg = (I$[9]||$incl$(9)).decode$S(s);
+fg=(I$[9]||$incl$(9)).decode$S(s);
 } catch (nfe) {
 if (Clazz.exceptionOf(nfe, "java.lang.NumberFormatException")){
 } else {
@@ -385,7 +385,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$I', function (nm, a) {
 C$.superclazz.c$$S.apply(this, [nm]);
 C$.$init$.apply(this);
-this.a = a;
+this.a=a;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -395,7 +395,7 @@ var a = this.a;
 if ((e != null ) && (e.getSource() === editor ) ) {
 var s = e.getActionCommand();
 try {
-a = Integer.parseInt(s, 10);
+a=Integer.parseInt(s, 10);
 } catch (nfe) {
 if (Clazz.exceptionOf(nfe, "java.lang.NumberFormatException")){
 } else {
@@ -521,7 +521,7 @@ return;
 if (this.tempSet != null ) {
 this.tempSet.removeAttributes$javax_swing_text_AttributeSet(this.tempSet);
 } else {
-this.tempSet = Clazz.new_((I$[6]||$incl$(6)));
+this.tempSet=Clazz.new_((I$[6]||$incl$(6)));
 }this.tempSet.addAttributes$javax_swing_text_AttributeSet(sek.getInputAttributes());
 target.replaceSelection$S("\u000a");
 var ia = sek.getInputAttributes();
@@ -538,4 +538,4 @@ return;
 }}});
 })()
 })();
-//Created 2018-05-15 01:02:58
+//Created 2018-05-24 08:47:08

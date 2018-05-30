@@ -16,15 +16,15 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I$I$I$I$Z$javax_swing_MenuElementA$javax_swing_MenuSelectionManager', function (source, id, when, modifiers, x, y, clickCount, popupTrigger, p, m) {
 C$.superclazz.c$$java_awt_Component$I$J$I$I$I$I$Z.apply(this, [source, id, when, modifiers, x, y, clickCount, popupTrigger]);
 C$.$init$.apply(this);
-this.path = p;
-this.manager = m;
+this.path=p;
+this.manager=m;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$javax_swing_MenuElementA$javax_swing_MenuSelectionManager', function (source, id, when, modifiers, x, y, xAbs, yAbs, clickCount, popupTrigger, p, m) {
 C$.superclazz.c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I.apply(this, [source, id, when, modifiers, x, y, xAbs, yAbs, clickCount, popupTrigger, 0]);
 C$.$init$.apply(this);
-this.path = p;
-this.manager = m;
+this.path=p;
+this.manager=m;
 }, 1);
 
 Clazz.newMeth(C$, 'getPath', function () {
@@ -37,4 +37,4 @@ return this.manager;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:45
+//Created 2018-05-24 08:46:48

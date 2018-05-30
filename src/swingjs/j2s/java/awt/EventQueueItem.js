@@ -13,10 +13,10 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_AWTEvent', function (evt) {
 C$.$init$.apply(this);
-this.event = evt;
-this.id = evt.getID();
+this.event=evt;
+this.id=evt.getID();
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:50
+//Created 2018-05-24 08:45:08

@@ -762,7 +762,7 @@ public class DataGraph extends SApplet {
    }
 
   /**
-   * Changes the properies of an object.
+   * Changes the properties of an object.
    * The first argument is the object identifier.
    * The second argument is the name of the property and the third is a
    * comma-delimited list of parameters.  For example, the scale can be added a follows:

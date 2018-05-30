@@ -22,16 +22,16 @@ this.bytearr = null;
 Clazz.newMeth(C$, 'c$$java_io_InputStream', function ($in) {
 C$.superclazz.c$$O.apply(this, [$in]);
 C$.$init$.apply(this);
-this.$in = $in;
-this.charsetName = "UTF-8";
+this.$in=$in;
+this.charsetName="UTF-8";
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_InputStream$S', function ($in, charsetName) {
 C$.superclazz.c$$O.apply(this, [$in]);
 C$.$init$.apply(this);
-this.$in = $in;
-this.charsetName = charsetName;
-if (!(this.isUTF8 = "UTF-8".equals$O(charsetName)) && !"ISO-8859-1".equals$O(charsetName) ) throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["charsetName"]);
+this.$in=$in;
+this.charsetName=charsetName;
+if (!(this.isUTF8="UTF-8".equals$O(charsetName)) && !"ISO-8859-1".equals$O(charsetName) ) throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["charsetName"]);
 }, 1);
 
 Clazz.newMeth(C$, 'getEncoding', function () {
@@ -39,7 +39,7 @@ return this.charsetName;
 });
 
 Clazz.newMeth(C$, 'read$CA$I$I', function (cbuf, offset, length) {
-if (this.bytearr == null  || this.bytearr.length < length ) this.bytearr = Clazz.array(Byte.TYPE, [length]);
+if (this.bytearr == null  || this.bytearr.length < length ) this.bytearr=Clazz.array(Byte.TYPE, [length]);
 var c;
 var char2;
 var char3;
@@ -50,38 +50,38 @@ var nAvail = this.$in.available();
 if (byteLen < 0) return -1;
 var nMax = byteLen;
 while (byteCount < nMax){
-c = this.bytearr[byteCount] & 255;
+c=this.bytearr[byteCount] & 255;
 if (this.isUTF8) switch (c >> 4) {
 case 0xC:
 case 0xD:
 if (byteCount + 1 >= byteLen) {
 if (nAvail >= 1) {
-nMax = byteCount;
+nMax=byteCount;
 continue;
-}} else if (((char2 = this.bytearr[byteCount + 1]) & 192) == 128) {
-cbuf[charCount++] = String.fromCharCode((((c & 31) << 6) | (char2 & 63)));
-byteCount = byteCount+(2);
+}} else if (((char2=this.bytearr[byteCount + 1]) & 192) == 128) {
+cbuf[charCount++]=String.fromCharCode((((c & 31) << 6) | (char2 & 63)));
+byteCount+=2;
 continue;
-}this.isUTF8 = false;
+}this.isUTF8=false;
 break;
 case 0xE:
 if (byteCount + 2 >= byteLen) {
 if (nAvail >= 2) {
-nMax = byteCount;
+nMax=byteCount;
 continue;
-}} else if (((char2 = this.bytearr[byteCount + 1]) & 192) == 128 && ((char3 = this.bytearr[byteCount + 2]) & 192) == 128 ) {
-cbuf[charCount++] = String.fromCharCode((((c & 15) << 12) | ((char2 & 63) << 6) | (char3 & 63) ));
-byteCount = byteCount+(3);
+}} else if (((char2=this.bytearr[byteCount + 1]) & 192) == 128 && ((char3=this.bytearr[byteCount + 2]) & 192) == 128 ) {
+cbuf[charCount++]=String.fromCharCode((((c & 15) << 12) | ((char2 & 63) << 6) | (char3 & 63) ));
+byteCount+=3;
 continue;
-}this.isUTF8 = false;
+}this.isUTF8=false;
 break;
 }
 byteCount++;
-cbuf[charCount++] = String.fromCharCode(c);
+cbuf[charCount++]=String.fromCharCode(c);
 }
-this.pos = byteLen - byteCount;
+this.pos=byteLen - byteCount;
 for (var i = 0; i < this.pos; i++) {
-this.bytearr[i] = (this.bytearr[byteCount++]|0);
+this.bytearr[i]=(this.bytearr[byteCount++]|0);
 }
 return charCount - offset;
 });
@@ -92,9 +92,9 @@ return this.isOpen;
 
 Clazz.newMeth(C$, 'close', function () {
 this.$in.close();
-this.isOpen = false;
+this.isOpen=false;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:05
+//Created 2018-05-24 08:45:34

@@ -16,8 +16,8 @@ this.inputType = "text";
 
 Clazz.newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.allowPaintedBackground = false;
-this.focusNode = this.$enableNode = this.valueNode = this.domNode = (I$[1]||$incl$(1)).setStyles(this.newDOMObject$S$S$SA("input", this.id, ["type", this.inputType]), ["lineHeight", "0.8", "box-sizing", "border-box"]);
+this.allowPaintedBackground=false;
+this.focusNode=this.$enableNode=this.valueNode=this.domNode=(I$[1]||$incl$(1)).setStyles(this.newDOMObject$S$S$SA("input", this.id, ["type", this.inputType]), ["lineHeight", "0.8", "box-sizing", "border-box"]);
 (I$[1]||$incl$(1)).setAttrs(this.focusNode, ["ui", this]);
 this.setDataComponent$swingjs_api_js_DOMNode(this.domNode);
 this.bindJSKeyEvents$swingjs_api_js_DOMNode$Z(this.domNode, false);
@@ -35,7 +35,7 @@ return Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[0, addingCSS ? 0 : -2]);
 });
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.textField = jc;
+this.textField=jc;
 C$.superclazz.prototype.installUI$javax_swing_JComponent.apply(this, [jc]);
 });
 
@@ -52,4 +52,4 @@ return "TextField.";
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:27
+//Created 2018-05-24 08:48:00

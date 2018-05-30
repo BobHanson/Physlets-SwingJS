@@ -53,20 +53,20 @@ var y = bdate.getNormalizedYear();
 var ml = p$.getMonthLength$I$I.apply(this, [y, m]);
 if (!(d > 0 && d <= ml )) {
 if (d <= 0 && d > -28 ) {
-ml = p$.getMonthLength$I$I.apply(this, [y, --m]);
-d = d+(ml);
+ml=p$.getMonthLength$I$I.apply(this, [y, --m]);
+d+=ml;
 bdate.setDayOfMonth$I((d|0));
 if (m == 0) {
-m = 12;
+m=12;
 bdate.setNormalizedYear$I(y - 1);
 }bdate.setMonth$I(m);
 } else if (d > ml && d < (ml + 28) ) {
-d = d-(ml);
+d-=ml;
 ++m;
 bdate.setDayOfMonth$I((d|0));
 if (m > 12) {
 bdate.setNormalizedYear$I(y + 1);
-m = 1;
+m=1;
 }bdate.setMonth$I(m);
 } else {
 var fixedDate = d + this.getFixedDate$I$I$I$sun_util_calendar_BaseCalendar_Date(y, m, 1, bdate) - 1;
@@ -86,13 +86,13 @@ var year = bdate.getNormalizedYear();
 var month = bdate.getMonth();
 if (month <= 0) {
 var xm = 1 - month;
-year = year-(((((xm/12|0)) + 1)|0));
-month = 13 - (xm % 12);
+year-=((((xm/12|0)) + 1)|0);
+month=13 - (xm % 12);
 bdate.setNormalizedYear$I(year);
 bdate.setMonth$I((month|0));
 } else if (month > 12) {
-year = year+(((((month - 1)/12|0))|0));
-month = ((month - 1)) % 12 + 1;
+year+=((((month - 1)/12|0))|0);
+month=((month - 1)) % 12 + 1;
 bdate.setNormalizedYear$I(year);
 bdate.setMonth$I((month|0));
 }});
@@ -149,11 +149,11 @@ cache.setCache$I$J$I(year, jan1, this.isLeapYear$I(year) ? 366 : 365);
 }var prevyear = year - 1;
 var days = dayOfMonth;
 if (prevyear >= 0) {
-days = days+((365 * prevyear) + ((prevyear/4|0)) - ((prevyear/100|0)) + ((prevyear/400|0)) + (((367 * month - 362)/12|0)));
+days+=(365 * prevyear) + ((prevyear/4|0)) - ((prevyear/100|0)) + ((prevyear/400|0)) + (((367 * month - 362)/12|0));
 } else {
-days = days+((365 * prevyear) + (I$[1]||$incl$(1)).floorDivide$J$J(prevyear, 4) - (I$[1]||$incl$(1)).floorDivide$J$J(prevyear, 100) + (I$[1]||$incl$(1)).floorDivide$J$J(prevyear, 400) + (I$[1]||$incl$(1)).floorDivide$I$I((367 * month - 362), 12));
+days+=(365 * prevyear) + (I$[1]||$incl$(1)).floorDivide$J$J(prevyear, 4) - (I$[1]||$incl$(1)).floorDivide$J$J(prevyear, 100) + (I$[1]||$incl$(1)).floorDivide$J$J(prevyear, 400) + (I$[1]||$incl$(1)).floorDivide$I$I((367 * month - 362), 12);
 }if (month > 2) {
-days = days-(this.isLeapYear$I(year) ? 1 : 2);
+days-=this.isLeapYear$I(year) ? 1 : 2;
 }if (cache != null  && isJan1 ) {
 cache.setCache$I$J$I(year, days, this.isLeapYear$I(year) ? 366 : 365);
 }return days;
@@ -165,25 +165,25 @@ var year;
 var jan1;
 var isLeap;
 if (gdate.hit$J(fixedDate)) {
-year = gdate.getCachedYear();
-jan1 = gdate.getCachedJan1();
-isLeap = this.isLeapYear$I(year);
+year=gdate.getCachedYear();
+jan1=gdate.getCachedJan1();
+isLeap=this.isLeapYear$I(year);
 } else {
-year = this.getGregorianYearFromFixedDate$J(fixedDate);
-jan1 = this.getFixedDate$I$I$I$sun_util_calendar_BaseCalendar_Date(year, 1, 1, null);
-isLeap = this.isLeapYear$I(year);
+year=this.getGregorianYearFromFixedDate$J(fixedDate);
+jan1=this.getFixedDate$I$I$I$sun_util_calendar_BaseCalendar_Date(year, 1, 1, null);
+isLeap=this.isLeapYear$I(year);
 gdate.setCache$I$J$I(year, jan1, isLeap ? 366 : 365);
 }var priorDays = ((fixedDate - jan1)|0);
 var mar1 = jan1 + 31 + 28 ;
 if (isLeap) {
 ++mar1;
 }if (fixedDate >= mar1) {
-priorDays = priorDays+(isLeap ? 1 : 2);
+priorDays+=isLeap ? 1 : 2;
 }var month = 12 * priorDays + 373;
 if (month > 0) {
-month = (month/367|0);
+month=(month/367|0);
 } else {
-month = (I$[1]||$incl$(1)).floorDivide$I$I(month, 367);
+month=(I$[1]||$incl$(1)).floorDivide$I$I(month, 367);
 }var month1 = jan1 + C$.ACCUMULATED_DAYS_IN_MONTH[month];
 if (isLeap && month >= 3 ) {
 ++month1;
@@ -225,26 +225,26 @@ var n4;
 var n1;
 var year;
 if (fixedDate > 0) {
-d0 = fixedDate - 1;
-n400 = (((d0/146097|0))|0);
-d1 = ((d0 % 146097)|0);
-n100 = (d1/36524|0);
-d2 = d1 % 36524;
-n4 = (d2/1461|0);
-d3 = d2 % 1461;
-n1 = (d3/365|0);
-d4 = (d3 % 365) + 1;
+d0=fixedDate - 1;
+n400=(((d0/146097|0))|0);
+d1=((d0 % 146097)|0);
+n100=(d1/36524|0);
+d2=d1 % 36524;
+n4=(d2/1461|0);
+d3=d2 % 1461;
+n1=(d3/365|0);
+d4=(d3 % 365) + 1;
 } else {
-d0 = fixedDate - 1;
-n400 = ((I$[1]||$incl$(1)).floorDivide$J$J(d0, 146097)|0);
-d1 = ((I$[1]||$incl$(1)).mod$J$J(d0, 146097)|0);
-n100 = (I$[1]||$incl$(1)).floorDivide$I$I(d1, 36524);
-d2 = (I$[1]||$incl$(1)).mod$I$I(d1, 36524);
-n4 = (I$[1]||$incl$(1)).floorDivide$I$I(d2, 1461);
-d3 = (I$[1]||$incl$(1)).mod$I$I(d2, 1461);
-n1 = (I$[1]||$incl$(1)).floorDivide$I$I(d3, 365);
-d4 = (I$[1]||$incl$(1)).mod$I$I(d3, 365) + 1;
-}year = 400 * n400 + 100 * n100 + 4 * n4 + n1;
+d0=fixedDate - 1;
+n400=((I$[1]||$incl$(1)).floorDivide$J$J(d0, 146097)|0);
+d1=((I$[1]||$incl$(1)).mod$J$J(d0, 146097)|0);
+n100=(I$[1]||$incl$(1)).floorDivide$I$I(d1, 36524);
+d2=(I$[1]||$incl$(1)).mod$I$I(d1, 36524);
+n4=(I$[1]||$incl$(1)).floorDivide$I$I(d2, 1461);
+d3=(I$[1]||$incl$(1)).mod$I$I(d2, 1461);
+n1=(I$[1]||$incl$(1)).floorDivide$I$I(d3, 365);
+d4=(I$[1]||$incl$(1)).mod$I$I(d3, 365) + 1;
+}year=400 * n400 + 100 * n100 + 4 * n4 + n1;
 if (!(n100 == 4 || n1 == 4 )) {
 ++year;
 }return year;
@@ -312,12 +312,12 @@ return this.cachedFixedDateJan1;
 });
 
 Clazz.newMeth(C$, 'setCache$I$J$I', function (year, jan1, len) {
-this.cachedYear = year;
-this.cachedFixedDateJan1 = jan1;
-this.cachedFixedDateNextJan1 = jan1 + len;
+this.cachedYear=year;
+this.cachedFixedDateJan1=jan1;
+this.cachedFixedDateNextJan1=jan1 + len;
 });
 })()
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:12
+//Created 2018-05-24 08:47:38

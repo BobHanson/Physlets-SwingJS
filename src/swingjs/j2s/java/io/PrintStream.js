@@ -29,12 +29,12 @@ Clazz.newMeth(C$, 'c$$Z$java_io_OutputStream', function (autoFlush, out) {
 C$.superclazz.c$$java_io_OutputStream.apply(this, [out]);
 C$.$init$.apply(this);
 if (out == null ) throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["Null output stream"]);
-this.autoFlush = autoFlush;
+this.autoFlush=autoFlush;
 }, 1);
 
 Clazz.newMeth(C$, 'init$java_io_OutputStreamWriter', function (osw) {
-this.streamWriter = osw;
-this.bufferedWriter = Clazz.new_((I$[1]||$incl$(1)).c$$java_io_Writer,[osw]);
+this.streamWriter=osw;
+this.bufferedWriter=Clazz.new_((I$[1]||$incl$(1)).c$$java_io_Writer,[osw]);
 });
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream$Z', function (out, autoFlush) {
@@ -73,7 +73,7 @@ p$.ensureOpen.apply(this, []);
 this.out.flush();
 } catch (x) {
 if (Clazz.exceptionOf(x, "java.io.IOException")){
-this.trouble = true;
+this.trouble=true;
 } else {
 throw x;
 }
@@ -83,20 +83,20 @@ throw x;
 Clazz.newMeth(C$, 'close', function () {
 {
 if (!this.closing) {
-this.closing = true;
+this.closing=true;
 try {
 this.bufferedWriter.close();
 this.out.close();
 } catch (x) {
 if (Clazz.exceptionOf(x, "java.io.IOException")){
-this.trouble = true;
+this.trouble=true;
 } else {
 throw x;
 }
 }
-this.bufferedWriter = null;
-this.streamWriter = null;
-this.out = null;
+this.bufferedWriter=null;
+this.streamWriter=null;
+this.out=null;
 }}});
 
 Clazz.newMeth(C$, 'checkError', function () {
@@ -108,11 +108,11 @@ return ps.checkError();
 });
 
 Clazz.newMeth(C$, 'setError', function () {
-this.trouble = true;
+this.trouble=true;
 });
 
 Clazz.newMeth(C$, 'clearError', function () {
-this.trouble = false;
+this.trouble=false;
 });
 
 Clazz.newMeth(C$, 'write$I', function (b) {
@@ -130,7 +130,7 @@ var x = e$$;
 } else if (Clazz.exceptionOf(e$$, "java.io.IOException")){
 var x = e$$;
 {
-this.trouble = true;
+this.trouble=true;
 }
 } else {
 throw e$$;
@@ -153,7 +153,7 @@ var x = e$$;
 } else if (Clazz.exceptionOf(e$$, "java.io.IOException")){
 var x = e$$;
 {
-this.trouble = true;
+this.trouble=true;
 }
 } else {
 throw e$$;
@@ -181,7 +181,7 @@ var x = e$$;
 } else if (Clazz.exceptionOf(e$$, "java.io.IOException")){
 var x = e$$;
 {
-this.trouble = true;
+this.trouble=true;
 }
 } else {
 throw e$$;
@@ -206,7 +206,7 @@ var x = e$$;
 } else if (Clazz.exceptionOf(e$$, "java.io.IOException")){
 var x = e$$;
 {
-this.trouble = true;
+this.trouble=true;
 }
 } else {
 throw e$$;
@@ -231,7 +231,7 @@ var x = e$$;
 } else if (Clazz.exceptionOf(e$$, "java.io.IOException")){
 var x = e$$;
 {
-this.trouble = true;
+this.trouble=true;
 }
 } else {
 throw e$$;
@@ -269,7 +269,7 @@ p$.write$CA.apply(this, [s]);
 
 Clazz.newMeth(C$, 'print$S', function (s) {
 if (s == null ) {
-s = "null";
+s="null";
 }p$.write$S.apply(this, [s]);
 });
 
@@ -348,7 +348,7 @@ Clazz.newMeth(C$, 'format$S$OA', function (format, args) {
 try {
 {
 p$.ensureOpen.apply(this, []);
-if ((this.formatter == null ) || (this.formatter.locale() !== (I$[5]||$incl$(5)).getDefault() ) ) this.formatter = Clazz.new_((I$[6]||$incl$(6)).c$$Appendable,[this]);
+if ((this.formatter == null ) || (this.formatter.locale() !== (I$[5]||$incl$(5)).getDefault() ) ) this.formatter=Clazz.new_((I$[6]||$incl$(6)).c$$Appendable,[this]);
 this.formatter.format$java_util_Locale$S$OA((I$[5]||$incl$(5)).getDefault(), format, args);
 }} catch (e$$) {
 if (Clazz.exceptionOf(e$$, "java.io.InterruptedIOException")){
@@ -359,7 +359,7 @@ var x = e$$;
 } else if (Clazz.exceptionOf(e$$, "java.io.IOException")){
 var x = e$$;
 {
-this.trouble = true;
+this.trouble=true;
 }
 } else {
 throw e$$;
@@ -372,7 +372,7 @@ Clazz.newMeth(C$, 'format$java_util_Locale$S$OA', function (l, format, args) {
 try {
 {
 p$.ensureOpen.apply(this, []);
-if ((this.formatter == null ) || (this.formatter.locale() !== l ) ) this.formatter = Clazz.new_((I$[6]||$incl$(6)).c$$Appendable$java_util_Locale,[this, l]);
+if ((this.formatter == null ) || (this.formatter.locale() !== l ) ) this.formatter=Clazz.new_((I$[6]||$incl$(6)).c$$Appendable$java_util_Locale,[this, l]);
 this.formatter.format$java_util_Locale$S$OA(l, format, args);
 }} catch (e$$) {
 if (Clazz.exceptionOf(e$$, "java.io.InterruptedIOException")){
@@ -383,7 +383,7 @@ var x = e$$;
 } else if (Clazz.exceptionOf(e$$, "java.io.IOException")){
 var x = e$$;
 {
-this.trouble = true;
+this.trouble=true;
 }
 } else {
 throw e$$;
@@ -411,4 +411,4 @@ return this;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:05
+//Created 2018-05-24 08:45:34

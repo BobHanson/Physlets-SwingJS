@@ -17,11 +17,11 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_sound_sampled_AudioFileFormat_Type$I$javax_sound_sampled_AudioFormat$I', function (type, byteLength, format, frameLength) {
 C$.$init$.apply(this);
-this.type = type;
-this.byteLength = byteLength;
-this.format = format;
-this.frameLength = frameLength;
-this.$properties = null;
+this.type=type;
+this.byteLength=byteLength;
+this.format=format;
+this.frameLength=frameLength;
+this.$properties=null;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_sound_sampled_AudioFileFormat_Type$javax_sound_sampled_AudioFormat$I', function (type, format, frameLength) {
@@ -30,7 +30,7 @@ C$.c$$javax_sound_sampled_AudioFileFormat_Type$I$javax_sound_sampled_AudioFormat
 
 Clazz.newMeth(C$, 'c$$javax_sound_sampled_AudioFileFormat_Type$javax_sound_sampled_AudioFormat$I$java_util_Map', function (type, format, frameLength, properties) {
 C$.c$$javax_sound_sampled_AudioFileFormat_Type$I$javax_sound_sampled_AudioFormat$I.apply(this, [type, -1, format, frameLength]);
-this.$properties = Clazz.new_((I$[1]||$incl$(1)).c$$java_util_Map,[properties]);
+this.$properties=Clazz.new_((I$[1]||$incl$(1)).c$$java_util_Map,[properties]);
 }, 1);
 
 Clazz.newMeth(C$, 'getType', function () {
@@ -52,9 +52,9 @@ return this.frameLength;
 Clazz.newMeth(C$, 'properties', function () {
 var ret;
 if (this.$properties == null ) {
-ret = Clazz.new_((I$[1]||$incl$(1)).c$$I,[0]);
+ret=Clazz.new_((I$[1]||$incl$(1)).c$$I,[0]);
 } else {
-ret = (this.$properties.clone());
+ret=(this.$properties.clone());
 }return (I$[2]||$incl$(2)).unmodifiableMap$java_util_Map(ret);
 });
 
@@ -110,8 +110,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S$S', function (name, extension) {
 C$.$init$.apply(this);
-this.name = name;
-this.extension = extension;
+this.name=name;
+this.extension=extension;
 }, 1);
 
 Clazz.newMeth(C$, 'equals$O', function (obj) {
@@ -149,4 +149,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:21
+//Created 2018-05-24 08:46:01

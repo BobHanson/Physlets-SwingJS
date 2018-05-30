@@ -20,16 +20,16 @@ C$.$init$.apply(this);
 Clazz.newMeth(C$, 'c$$S$S', function (className, detailMessage) {
 C$.superclazz.c$$S.apply(this, [detailMessage]);
 C$.$init$.apply(this);
-this.classname = className;
+this.classname=className;
 }, 1);
 
 Clazz.newMeth(C$, 'getMessage', function () {
 var msg = C$.superclazz.prototype.getMessage.apply(this, []);
 if (this.classname != null ) {
-msg = this.classname + ';' + ' ' + msg ;
+msg=this.classname + ';' + ' ' + msg ;
 }return msg;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:05
+//Created 2018-05-24 08:45:34

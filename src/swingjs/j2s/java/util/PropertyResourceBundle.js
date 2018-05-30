@@ -20,7 +20,7 @@ this.setStream$java_io_InputStream(stream);
 Clazz.newMeth(C$, 'setStream$java_io_InputStream', function (stream) {
 var properties = Clazz.new_((I$[1]||$incl$(1)));
 properties.load$java_io_InputStream(stream);
-this.lookup = Clazz.new_((I$[2]||$incl$(2)).c$$java_util_Map,[properties]);
+this.lookup=Clazz.new_((I$[2]||$incl$(2)).c$$java_util_Map,[properties]);
 return this;
 });
 
@@ -28,7 +28,7 @@ Clazz.newMeth(C$, 'c$$java_io_Reader', function (reader) {
 Clazz.super_(C$, this,1);
 var properties = Clazz.new_((I$[1]||$incl$(1)));
 properties.load$java_io_Reader(reader);
-this.lookup = Clazz.new_((I$[2]||$incl$(2)).c$$java_util_Map,[properties]);
+this.lookup=Clazz.new_((I$[2]||$incl$(2)).c$$java_util_Map,[properties]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
@@ -50,4 +50,4 @@ Clazz.newMeth(C$, 'handleKeySet', function () {
 return this.lookup.keySet();
 });
 })();
-//Created 2018-05-15 01:02:14
+//Created 2018-05-24 08:45:49

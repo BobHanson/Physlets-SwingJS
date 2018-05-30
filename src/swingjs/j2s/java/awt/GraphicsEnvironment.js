@@ -12,7 +12,7 @@ C$.$init$.apply(this);
 
 Clazz.newMeth(C$, 'getLocalGraphicsEnvironment', function () {
 if (C$.localEnv == null ) {
-C$.localEnv = (I$[1]||$incl$(1)).getInstance$S("swingjs.JSGraphicsEnvironment");
+C$.localEnv=(I$[1]||$incl$(1)).getInstance$S("swingjs.JSGraphicsEnvironment");
 }return C$.localEnv;
 }, 1);
 
@@ -45,4 +45,4 @@ Clazz.newMeth(C$, 'getCenterPoint', function () {
 return null;
 });
 })();
-//Created 2018-05-15 01:01:51
+//Created 2018-05-24 08:45:09

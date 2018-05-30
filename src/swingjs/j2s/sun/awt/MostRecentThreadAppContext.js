@@ -12,10 +12,10 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$Thread$sun_awt_AppContext', function (key, value) {
 C$.$init$.apply(this);
-this.thread = key;
-this.appContext = value;
+this.thread=key;
+this.appContext=value;
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:21

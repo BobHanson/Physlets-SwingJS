@@ -20,22 +20,22 @@ var b = this.jc;
 var isNew = false;
 var doAll = false;
 if (this.domNode == null ) {
-doAll = true;
+doAll=true;
 var name = this.id;
-this.domBtn = this.$enableNode = this.newDOMObject$S$S$SA("input", this.id, ["type", myType, "name", name]);
-this.iconNode = this.newDOMObject$S$S$SA("span", this.id + "_icon", []);
-this.textNode = this.newDOMObject$S$S$SA("label", this.id + "l1", []);
-this.label = this.newDOMObject$S$S$SA("label", this.id + "l2", ["htmlFor", this.id]);
+this.domBtn=this.$enableNode=this.newDOMObject$S$S$SA("input", this.id, ["type", myType, "name", name]);
+this.iconNode=this.newDOMObject$S$S$SA("span", this.id + "_icon", []);
+this.textNode=this.newDOMObject$S$S$SA("label", this.id + "l1", []);
+this.label=this.newDOMObject$S$S$SA("label", this.id + "l2", ["htmlFor", this.id]);
 this.setDataComponent$swingjs_api_js_DOMNode(this.label);
 this.setDataComponent$swingjs_api_js_DOMNode(this.iconNode);
 this.setDataComponent$swingjs_api_js_DOMNode(this.domBtn);
 this.setDataComponent$swingjs_api_js_DOMNode(this.textNode);
 this.setEnabled$Z(this.c.isEnabled());
 if (this.isMenuItem) {
-this.domNode = this.createItem$S$swingjs_api_js_DOMNode("_item", this.label);
+this.domNode=this.createItem$S$swingjs_api_js_DOMNode("_item", this.label);
 } else {
-this.domNode = this.newDOMObject$S$S$SA("div", this.id + "_0", []);
-this.centeringNode = this.newDOMObject$S$S$SA("div", this.id + "_ctr", []);
+this.domNode=this.newDOMObject$S$S$SA("div", this.id + "_0", []);
+this.centeringNode=this.newDOMObject$S$S$SA("div", this.id + "_ctr", []);
 this.centeringNode.appendChild(this.label);
 this.domNode.appendChild(this.centeringNode);
 }}if (b.isSelected() || isNew ) (I$[1]||$incl$(1)).setAttr(this.domBtn, "checked", "true");
@@ -49,7 +49,7 @@ var dobj = null;
 if (!this.isMenuItem) {
 var wBtn = this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(this.domBtn, false, false).width - 1;
 var wIcon = Math.max(0, this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(this.iconNode, false, false).width - 1);
-dobj = this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(this.wrap$S$S$swingjs_api_js_DOMNodeA("div", "", [this.iconNode, this.domBtn, this.textNode]), false, false);
+dobj=this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(this.wrap$S$S$swingjs_api_js_DOMNodeA("div", "", [this.iconNode, this.domBtn, this.textNode]), false, false);
 (I$[1]||$incl$(1)).setStyles(this.textNode, ["left", wBtn + wIcon + "px" ]);
 P$.JSComponentUI.vCenter$swingjs_api_js_DOMNode$I(this.domBtn, -75);
 P$.JSComponentUI.vCenter$swingjs_api_js_DOMNode$I(this.iconNode, -15);
@@ -74,9 +74,9 @@ Clazz.newMeth(C$, 'setHTMLSize$swingjs_api_js_DOMNode$Z', function (obj, addCSS)
 (I$[1]||$incl$(1)).setStyles(this.textNode, ["position", null, "width", null, "height", null]);
 var d;
 if (this.isMenuItem) {
-d = Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[20, 20]);
+d=Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[20, 20]);
 } else {
-d = this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(obj, addCSS, false);
+d=this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(obj, addCSS, false);
 (I$[1]||$incl$(1)).setPositionAbsolute(this.domBtn, -2147483648, 0);
 (I$[1]||$incl$(1)).setPositionAbsolute(this.textNode, -2147483648, 0);
 (I$[1]||$incl$(1)).setPositionAbsolute(this.label, -2147483648, 0);
@@ -95,4 +95,4 @@ return 4;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:24
+//Created 2018-05-24 08:47:57

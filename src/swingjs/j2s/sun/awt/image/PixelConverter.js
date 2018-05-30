@@ -29,13 +29,13 @@ var bytearr = obj;
 var pix = 0;
 switch (bytearr.length) {
 default:
-pix = bytearr[3] << 24;
+pix=bytearr[3] << 24;
 case 3:
-pix = pix|((bytearr[2] & 255) << 16);
+pix|=(bytearr[2] & 255) << 16;
 case 2:
-pix = pix|((bytearr[1] & 255) << 8);
+pix|=(bytearr[1] & 255) << 8;
 case 1:
-pix = pix|((bytearr[0] & 255));
+pix|=(bytearr[0] & 255);
 }
 return pix;
 case 2:
@@ -124,7 +124,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.alphaMask = -16777216;
+this.alphaMask=-16777216;
 }, 1);
 
 Clazz.newMeth(C$, 'rgbToPixel$I$java_awt_image_ColorModel', function (rgb, cm) {
@@ -161,12 +161,12 @@ Clazz.newMeth(C$, 'pixelToRgb$I$java_awt_image_ColorModel', function (pixel, cm)
 var r;
 var g;
 var b;
-r = (pixel >> 11) & 31;
-r = (r << 3) | (r >> 2);
-g = (pixel >> 5) & 63;
-g = (g << 2) | (g >> 4);
-b = (pixel) & 31;
-b = (b << 3) | (b >> 2);
+r=(pixel >> 11) & 31;
+r=(r << 3) | (r >> 2);
+g=(pixel >> 5) & 63;
+g=(g << 2) | (g >> 4);
+b=(pixel) & 31;
+b=(b << 3) | (b >> 2);
 return (-16777216 | (r << 16) | (g << 8) | (b) );
 });
 })()
@@ -196,12 +196,12 @@ Clazz.newMeth(C$, 'pixelToRgb$I$java_awt_image_ColorModel', function (pixel, cm)
 var r;
 var g;
 var b;
-r = (pixel >> 11) & 31;
-r = (r << 3) | (r >> 2);
-g = (pixel >> 6) & 31;
-g = (g << 3) | (g >> 2);
-b = (pixel >> 1) & 31;
-b = (b << 3) | (b >> 2);
+r=(pixel >> 11) & 31;
+r=(r << 3) | (r >> 2);
+g=(pixel >> 6) & 31;
+g=(g << 3) | (g >> 2);
+b=(pixel >> 1) & 31;
+b=(b << 3) | (b >> 2);
 return (-16777216 | (r << 16) | (g << 8) | (b) );
 });
 })()
@@ -231,12 +231,12 @@ Clazz.newMeth(C$, 'pixelToRgb$I$java_awt_image_ColorModel', function (pixel, cm)
 var r;
 var g;
 var b;
-r = (pixel >> 10) & 31;
-r = (r << 3) | (r >> 2);
-g = (pixel >> 5) & 31;
-g = (g << 3) | (g >> 2);
-b = (pixel) & 31;
-b = (b << 3) | (b >> 2);
+r=(pixel >> 10) & 31;
+r=(r << 3) | (r >> 2);
+g=(pixel >> 5) & 31;
+g=(g << 3) | (g >> 2);
+b=(pixel) & 31;
+b=(b << 3) | (b >> 2);
 return (-16777216 | (r << 16) | (g << 8) | (b) );
 });
 })()
@@ -256,7 +256,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.alphaMask = 61440;
+this.alphaMask=61440;
 }, 1);
 
 Clazz.newMeth(C$, 'rgbToPixel$I$java_awt_image_ColorModel', function (rgb, cm) {
@@ -272,14 +272,14 @@ var a;
 var r;
 var g;
 var b;
-a = pixel & 61440;
-a = ((pixel << 16) | (pixel << 12)) & -16777216;
-r = pixel & 3840;
-r = ((pixel << 12) | (pixel << 8)) & 16711680;
-g = pixel & 240;
-g = ((pixel << 8) | (pixel << 4)) & 65280;
-b = pixel & 15;
-b = ((pixel << 4) | (pixel << 0)) & 255;
+a=pixel & 61440;
+a=((pixel << 16) | (pixel << 12)) & -16777216;
+r=pixel & 3840;
+r=((pixel << 12) | (pixel << 8)) & 16711680;
+g=pixel & 240;
+g=((pixel << 8) | (pixel << 4)) & 65280;
+b=pixel & 15;
+b=((pixel << 4) | (pixel << 0)) & 255;
 return (a | r | g | b );
 });
 })()
@@ -351,7 +351,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.alphaMask = 255;
+this.alphaMask=255;
 }, 1);
 
 Clazz.newMeth(C$, 'rgbToPixel$I$java_awt_image_ColorModel', function (rgb, cm) {
@@ -378,7 +378,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.alphaMask = 255;
+this.alphaMask=255;
 }, 1);
 
 Clazz.newMeth(C$, 'rgbToPixel$I$java_awt_image_ColorModel', function (rgb, cm) {
@@ -389,9 +389,9 @@ var r = (rgb >> 16) & 255;
 var g = (rgb >> 8) & 255;
 var b = (rgb) & 255;
 var a2 = a + (a >> 7);
-r = (r * a2) >> 8;
-g = (g * a2) >> 8;
-b = (b * a2) >> 8;
+r=(r * a2) >> 8;
+g=(g * a2) >> 8;
+b=(b * a2) >> 8;
 return ((r << 24) | (g << 16) | (b << 8) | (a) );
 });
 
@@ -402,9 +402,9 @@ return ((pixel >>> 8) | (pixel << 24));
 }var r = pixel >>> 24;
 var g = (pixel >> 16) & 255;
 var b = (pixel >> 8) & 255;
-r = (((r << 8) - r)/a|0);
-g = (((g << 8) - g)/a|0);
-b = (((b << 8) - b)/a|0);
+r=(((r << 8) - r)/a|0);
+g=(((g << 8) - g)/a|0);
+b=(((b << 8) - b)/a|0);
 return ((r << 24) | (g << 16) | (b << 8) | (a) );
 });
 })()
@@ -424,7 +424,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.alphaMask = -16777216;
+this.alphaMask=-16777216;
 }, 1);
 
 Clazz.newMeth(C$, 'rgbToPixel$I$java_awt_image_ColorModel', function (rgb, cm) {
@@ -435,9 +435,9 @@ var r = (rgb >> 16) & 255;
 var g = (rgb >> 8) & 255;
 var b = (rgb) & 255;
 var a2 = a + (a >> 7);
-r = (r * a2) >> 8;
-g = (g * a2) >> 8;
-b = (b * a2) >> 8;
+r=(r * a2) >> 8;
+g=(g * a2) >> 8;
+b=(b * a2) >> 8;
 return ((a << 24) | (r << 16) | (g << 8) | (b) );
 });
 
@@ -448,9 +448,9 @@ return pixel;
 }var r = (pixel >> 16) & 255;
 var g = (pixel >> 8) & 255;
 var b = (pixel) & 255;
-r = (((r << 8) - r)/a|0);
-g = (((g << 8) - g)/a|0);
-b = (((b << 8) - b)/a|0);
+r=(((r << 8) - r)/a|0);
+g=(((g << 8) - g)/a|0);
+b=(((b << 8) - b)/a|0);
 return ((a << 24) | (r << 16) | (g << 8) | (b) );
 });
 })()
@@ -535,9 +535,9 @@ return ((red * 76.843 + grn * 150.85899999999998 + blu * 29.298000000000002 + 0.
 });
 
 Clazz.newMeth(C$, 'pixelToRgb$I$java_awt_image_ColorModel', function (pixel, cm) {
-pixel = pixel >> 8;
+pixel=pixel >> 8;
 return (((((65280 | pixel) << 8) | pixel) << 8) | pixel);
 });
 })()
 })();
-//Created 2018-05-15 01:03:09
+//Created 2018-05-24 08:47:28

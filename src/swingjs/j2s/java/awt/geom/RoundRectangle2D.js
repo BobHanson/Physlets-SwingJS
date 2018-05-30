@@ -33,12 +33,12 @@ if (x < rrx0  || y < rry0   || x >= rrx1   || y >= rry1  ) {
 return false;
 }var aw = Math.min(this.getWidth(), Math.abs(this.getArcWidth())) / 2.0;
 var ah = Math.min(this.getHeight(), Math.abs(this.getArcHeight())) / 2.0;
-if (x >= (rrx0 += aw)  && x < (rrx0 = rrx1 - aw)  ) {
+if (x >= (rrx0 += aw)  && x < (rrx0=rrx1 - aw)  ) {
 return true;
-}if (y >= (rry0 += ah)  && y < (rry0 = rry1 - ah)  ) {
+}if (y >= (rry0 += ah)  && y < (rry0=rry1 - ah)  ) {
 return true;
-}x = (x - rrx0) / aw;
-y = (y - rry0) / ah;
+}x=(x - rrx0) / aw;
+y=(y - rry0) / ah;
 return (x * x + y * y <= 1.0 );
 });
 
@@ -74,10 +74,10 @@ if (x0class == 2 || x1class == 2  || y0class == 2  || y1class == 2 ) {
 return true;
 }if ((x0class < 2 && x1class > 2 ) || (y0class < 2 && y1class > 2 ) ) {
 return true;
-}x = (x1class == 1) ? (x = x + w - (rrx0 + aw)) : (x = x - (rrx1 - aw));
-y = (y1class == 1) ? (y = y + h - (rry0 + ah)) : (y = y - (rry1 - ah));
-x = x / aw;
-y = y / ah;
+}x=(x1class == 1) ? (x=x + w - (rrx0 + aw)) : (x=x - (rrx1 - aw));
+y=(y1class == 1) ? (y=y + h - (rry0 + ah)) : (y=y - (rry1 - ah));
+x=x / aw;
+y=y / ah;
 return (x * x + y * y <= 1.0 );
 });
 
@@ -93,11 +93,11 @@ return Clazz.new_((I$[3]||$incl$(3)).c$$java_awt_geom_RoundRectangle2D$java_awt_
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var bits = java.lang.Double.doubleToLongBits(this.getX());
-bits = bits+(java.lang.Double.doubleToLongBits(this.getY()) * 37);
-bits = bits+(java.lang.Double.doubleToLongBits(this.getWidth()) * 43);
-bits = bits+(java.lang.Double.doubleToLongBits(this.getHeight()) * 47);
-bits = bits+(java.lang.Double.doubleToLongBits(this.getArcWidth()) * 53);
-bits = bits+(java.lang.Double.doubleToLongBits(this.getArcHeight()) * 59);
+bits+=java.lang.Double.doubleToLongBits(this.getY()) * 37;
+bits+=java.lang.Double.doubleToLongBits(this.getWidth()) * 43;
+bits+=java.lang.Double.doubleToLongBits(this.getHeight()) * 47;
+bits+=java.lang.Double.doubleToLongBits(this.getArcWidth()) * 53;
+bits+=java.lang.Double.doubleToLongBits(this.getArcHeight()) * 59;
 return (((bits|0)) ^ (((bits >> 32)|0)));
 });
 
@@ -168,30 +168,30 @@ return (this.width <= 0.0 ) || (this.height <= 0.0 ) ;
 });
 
 Clazz.newMeth(C$, 'setRoundRect$F$F$F$F$F$F', function (x, y, w, h, arcw, arch) {
-this.x = x;
-this.y = y;
-this.width = w;
-this.height = h;
-this.arcwidth = arcw;
-this.archeight = arch;
+this.x=x;
+this.y=y;
+this.width=w;
+this.height=h;
+this.arcwidth=arcw;
+this.archeight=arch;
 });
 
 Clazz.newMeth(C$, 'setRoundRect$D$D$D$D$D$D', function (x, y, w, h, arcw, arch) {
-this.x = x;
-this.y = y;
-this.width = w;
-this.height = h;
-this.arcwidth = arcw;
-this.archeight = arch;
+this.x=x;
+this.y=y;
+this.width=w;
+this.height=h;
+this.arcwidth=arcw;
+this.archeight=arch;
 });
 
 Clazz.newMeth(C$, 'setRoundRect$java_awt_geom_RoundRectangle2D', function (rr) {
-this.x = rr.getX();
-this.y = rr.getY();
-this.width = rr.getWidth();
-this.height = rr.getHeight();
-this.arcwidth = rr.getArcWidth();
-this.archeight = rr.getArcHeight();
+this.x=rr.getX();
+this.y=rr.getY();
+this.width=rr.getWidth();
+this.height=rr.getHeight();
+this.arcwidth=rr.getArcWidth();
+this.archeight=rr.getArcHeight();
 });
 
 Clazz.newMeth(C$, 'getBounds2D', function () {
@@ -257,21 +257,21 @@ return (this.width <= 0.0 ) || (this.height <= 0.0 ) ;
 });
 
 Clazz.newMeth(C$, 'setRoundRect$D$D$D$D$D$D', function (x, y, w, h, arcw, arch) {
-this.x = x;
-this.y = y;
-this.width = w;
-this.height = h;
-this.arcwidth = arcw;
-this.archeight = arch;
+this.x=x;
+this.y=y;
+this.width=w;
+this.height=h;
+this.arcwidth=arcw;
+this.archeight=arch;
 });
 
 Clazz.newMeth(C$, 'setRoundRect$java_awt_geom_RoundRectangle2D', function (rr) {
-this.x = rr.getX();
-this.y = rr.getY();
-this.width = rr.getWidth();
-this.height = rr.getHeight();
-this.arcwidth = rr.getArcWidth();
-this.archeight = rr.getArcHeight();
+this.x=rr.getX();
+this.y=rr.getY();
+this.width=rr.getWidth();
+this.height=rr.getHeight();
+this.arcwidth=rr.getArcWidth();
+this.archeight=rr.getArcHeight();
 });
 
 Clazz.newMeth(C$, 'getBounds2D', function () {
@@ -279,4 +279,4 @@ return Clazz.new_((I$[2]||$incl$(2)).c$$D$D$D$D,[this.x, this.y, this.width, thi
 });
 })()
 })();
-//Created 2018-05-15 01:02:00
+//Created 2018-05-24 08:45:22

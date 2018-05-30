@@ -35,20 +35,20 @@ return true;
 });
 
 Clazz.newMeth(C$, 'setRoundingMode$java_math_RoundingMode', function (r) {
-this.roundingMode = r;
+this.roundingMode=r;
 });
 
 Clazz.newMeth(C$, 'clear', function () {
-this.decimalAt = 0;
-this.count = 0;
+this.decimalAt=0;
+this.count=0;
 });
 
 Clazz.newMeth(C$, 'append$C', function (digit) {
 if (this.count == this.digits.length) {
 var data = Clazz.array(Character.TYPE, [this.count + 100]);
 System.arraycopy(this.digits, 0, data, 0, this.count);
-this.digits = data;
-}this.digits[this.count++] = digit;
+this.digits=data;
+}this.digits[this.count++]=digit;
 });
 
 Clazz.newMeth(C$, 'getDouble', function () {
@@ -103,44 +103,44 @@ this.set$Z$S$I$Z(isNegative, Double.toString(source), maximumDigits, fixedPoint)
 });
 
 Clazz.newMeth(C$, 'set$Z$S$I$Z', function (isNegative, s, maximumDigits, fixedPoint) {
-this.isNegative = isNegative;
+this.isNegative=isNegative;
 var len = s.length$();
 var source = p$.getDataChars$I.apply(this, [len]);
 s.getChars$I$I$CA$I(0, len, source, 0);
-this.decimalAt = -1;
-this.count = 0;
+this.decimalAt=-1;
+this.count=0;
 var exponent = 0;
 var leadingZerosAfterDecimal = 0;
 var nonZeroDigitSeen = false;
 for (var i = 0; i < len; ) {
 var c = source[i++];
 if (c == ".") {
-this.decimalAt = this.count;
+this.decimalAt=this.count;
 } else if (c == "e" || c == "E" ) {
-exponent = C$.parseInt$CA$I$I(source, i, len);
+exponent=C$.parseInt$CA$I$I(source, i, len);
 break;
 } else {
 if (!nonZeroDigitSeen) {
-nonZeroDigitSeen = (c != "0");
+nonZeroDigitSeen=(c != "0");
 if (!nonZeroDigitSeen && this.decimalAt != -1 ) ++leadingZerosAfterDecimal;
 }if (nonZeroDigitSeen) {
-this.digits[this.count++] = c;
+this.digits[this.count++]=c;
 }}}
 if (this.decimalAt == -1) {
-this.decimalAt = this.count;
+this.decimalAt=this.count;
 }if (nonZeroDigitSeen) {
-this.decimalAt = this.decimalAt+(exponent - leadingZerosAfterDecimal);
+this.decimalAt+=exponent - leadingZerosAfterDecimal;
 }if (fixedPoint) {
 if (-this.decimalAt > maximumDigits) {
-this.count = 0;
+this.count=0;
 return;
 } else if (-this.decimalAt == maximumDigits) {
 if (p$.shouldRoundUp$I.apply(this, [0])) {
-this.count = 1;
+this.count=1;
 ++this.decimalAt;
-this.digits[0] = "1";
+this.digits[0]="1";
 } else {
-this.count = 0;
+this.count=0;
 }return;
 }}while (this.count > 1 && this.digits[this.count - 1] == "0" ){
 --this.count;
@@ -154,15 +154,15 @@ if (p$.shouldRoundUp$I.apply(this, [maximumDigits])) {
 for (; ; ) {
 --maximumDigits;
 if (maximumDigits < 0) {
-this.digits[0] = "1";
+this.digits[0]="1";
 ++this.decimalAt;
-maximumDigits = 0;
+maximumDigits=0;
 break;
-}(this.digits[maximumDigits] = String.fromCharCode(this.digits[maximumDigits].$c()+1));
+}(this.digits[maximumDigits]=String.fromCharCode(this.digits[maximumDigits].$c()+1));
 if (this.digits[maximumDigits] <= "9") break;
 }
 ++maximumDigits;
-}this.count = maximumDigits;
+}this.count=maximumDigits;
 while (this.count > 1 && this.digits[this.count - 1] == "0" ){
 --this.count;
 }
@@ -231,23 +231,23 @@ this.setLong$Z$J$I(isNegative, source, 0);
 });
 
 Clazz.newMeth(C$, 'setLong$Z$J$I', function (isNegative, source, maximumDigits) {
-this.isNegative = isNegative;
+this.isNegative=isNegative;
 if (source <= 0) {
 if (source == -9223372036854775808) {
-this.decimalAt = this.count = 19;
+this.decimalAt=this.count=19;
 System.arraycopy(C$.LONG_MIN_REP, 0, this.digits, 0, this.count);
 } else {
-this.decimalAt = this.count = 0;
+this.decimalAt=this.count=0;
 }} else {
 var left = 19;
 var right;
 while (source >= 1){
-this.digits[--left] = String.fromCharCode((48 + (source % 10)));
-source = (source/10|0);
+this.digits[--left]=String.fromCharCode((48 + (source % 10)));
+source=(source/10|0);
 }
-this.decimalAt = 19 - left;
-for (right = 18; this.digits[right] == "0"; --right) ;
-this.count = right - left + 1;
+this.decimalAt=19 - left;
+for (right=18; this.digits[right] == "0"; --right) ;
+this.count=right - left + 1;
 System.arraycopy(this.digits, left, this.digits, 0, this.count);
 }if (maximumDigits > 0) p$.round$I.apply(this, [maximumDigits]);
 });
@@ -265,7 +265,7 @@ return true;
 Clazz.newMeth(C$, 'hashCode', function () {
 var hashcode = this.decimalAt;
 for (var i = 0; i < this.count; i++) {
-hashcode = hashcode * 37 + (this.digits[i]).$c();
+hashcode=hashcode * 37 + (this.digits[i]).$c();
 }
 return hashcode;
 });
@@ -275,8 +275,8 @@ try {
 var other = Clazz.clone(this);
 var newDigits = Clazz.array(Character.TYPE, [this.digits.length]);
 System.arraycopy(this.digits, 0, newDigits, 0, this.digits.length);
-other.digits = newDigits;
-other.tempBuffer = null;
+other.digits=newDigits;
+other.tempBuffer=null;
 return other;
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.CloneNotSupportedException")){
@@ -299,16 +299,16 @@ return true;
 Clazz.newMeth(C$, 'parseInt$CA$I$I', function (str, offset, strLen) {
 var c;
 var positive = true;
-if ((c = str[offset]) == "-") {
-positive = false;
+if ((c=str[offset]) == "-") {
+positive=false;
 offset++;
 } else if (c == "+") {
 offset++;
 }var value = 0;
 while (offset < strLen){
-c = str[offset++];
+c=str[offset++];
 if (c >= "0" && c <= "9" ) {
-value = value * 10 + (c.$c() - 48);
+value=value * 10 + (c.$c() - 48);
 } else {
 break;
 }}
@@ -328,7 +328,7 @@ return buf.toString();
 
 Clazz.newMeth(C$, 'getStringBuffer', function () {
 if (this.tempBuffer == null ) {
-this.tempBuffer = Clazz.new_((I$[3]||$incl$(3)).c$$I,[19]);
+this.tempBuffer=Clazz.new_((I$[3]||$incl$(3)).c$$I,[19]);
 } else {
 this.tempBuffer.setLength$I(0);
 }return this.tempBuffer;
@@ -336,11 +336,11 @@ this.tempBuffer.setLength$I(0);
 
 Clazz.newMeth(C$, 'getDataChars$I', function (length) {
 if (this.data == null  || this.data.length < length ) {
-this.data = Clazz.array(Character.TYPE, [length]);
+this.data=Clazz.array(Character.TYPE, [length]);
 }return this.data;
 });
 C$.$_ASSERT_ENABLED_ = ClassLoader.$getClassAssertionStatus(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:10
+//Created 2018-05-24 08:45:43

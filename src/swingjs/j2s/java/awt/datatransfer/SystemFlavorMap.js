@@ -33,12 +33,12 @@ this.disabledMappingGenerationKeys = Clazz.new_((I$[2]||$incl$(2)));
 Clazz.newMeth(C$, 'getDefaultFlavorMap', function () {
 var contextClassLoader = (I$[3]||$incl$(3)).currentThread().getContextClassLoader();
 if (contextClassLoader == null ) {
-contextClassLoader = ClassLoader.getSystemClassLoader();
+contextClassLoader=ClassLoader.getSystemClassLoader();
 }var fm;
 {
-fm = C$.flavorMaps.get$O(contextClassLoader);
+fm=C$.flavorMaps.get$O(contextClassLoader);
 if (fm == null ) {
-fm = Clazz.new_(C$);
+fm=Clazz.new_(C$);
 C$.flavorMaps.put$TK$TV(contextClassLoader, fm);
 }}return fm;
 }, 1);
@@ -54,15 +54,15 @@ if (firstChar != "#" && firstChar != "!" ) {
 while (p$.continueLine$S.apply(this, [line])){
 var nextLine = $in.readLine();
 if (nextLine == null ) {
-nextLine =  String.instantialize("");
+nextLine= String.instantialize("");
 }var loppedLine = line.substring(0, line.length$() - 1);
 var startIndex = 0;
 for (; startIndex < nextLine.length$(); startIndex++) {
 if (" \u0009\u000d\u000a\u000c".indexOf(nextLine.charAt(startIndex)) == -1) {
 break;
 }}
-nextLine = nextLine.substring(startIndex, nextLine.length$());
-line =  String.instantialize(loppedLine + nextLine);
+nextLine=nextLine.substring(startIndex, nextLine.length$());
+line= String.instantialize(loppedLine + nextLine);
 }
 var len = line.length$();
 var keyStart = 0;
@@ -95,8 +95,8 @@ break;
 }
 var key = line.substring(keyStart, separatorIndex);
 var value = (separatorIndex < len) ? line.substring(valueIndex, len) : "";
-key = p$.loadConvert$S.apply(this, [key]);
-value = p$.loadConvert$S.apply(this, [value]);
+key=p$.loadConvert$S.apply(this, [key]);
+value=p$.loadConvert$S.apply(this, [value]);
 try {
 var mime = Clazz.new_((I$[4]||$incl$(4)).c$$S,[value]);
 if ("text".equals$O(mime.getPrimaryType())) {
@@ -109,7 +109,7 @@ transferer.registerTextFlavorProperties$S$S$S$S(key, charset, mime.getParameter$
 mime.removeParameter$S("class");
 mime.removeParameter$S("eoln");
 mime.removeParameter$S("terminators");
-value = mime.toString();
+value=mime.toString();
 }} catch (e) {
 if (Clazz.exceptionOf(e, "java.awt.datatransfer.MimeTypeParseException")){
 e.printStackTrace();
@@ -120,11 +120,11 @@ throw e;
 }
 var flavor;
 try {
-flavor = Clazz.new_((I$[6]||$incl$(6)).c$$S,[value]);
+flavor=Clazz.new_((I$[6]||$incl$(6)).c$$S,[value]);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
 try {
-flavor = Clazz.new_((I$[6]||$incl$(6)).c$$S$S,[value, null]);
+flavor=Clazz.new_((I$[6]||$incl$(6)).c$$S$S,[value, null]);
 } catch (ee) {
 if (Clazz.exceptionOf(ee, "java.lang.Exception")){
 ee.printStackTrace();
@@ -160,13 +160,13 @@ var aChar;
 var len = theString.length$();
 var outBuffer = Clazz.new_((I$[7]||$incl$(7)).c$$I,[len]);
 for (var x = 0; x < len; ) {
-aChar = theString.charAt(x++);
+aChar=theString.charAt(x++);
 if (aChar == "\\") {
-aChar = theString.charAt(x++);
+aChar=theString.charAt(x++);
 if (aChar == "u") {
 var value = 0;
 for (var i = 0; i < 4; i++) {
-aChar = theString.charAt(x++);
+aChar=theString.charAt(x++);
 switch (aChar.$c()) {
 case 48:
 case 49:
@@ -179,7 +179,7 @@ case 55:
 case 56:
 case 57:
 {
-value = (value << 4) + aChar.$c() - 48;
+value=(value << 4) + aChar.$c() - 48;
 break;
 }case 97:
 case 98:
@@ -188,7 +188,7 @@ case 100:
 case 101:
 case 102:
 {
-value = (value << 4) + 10 + aChar.$c()  - 97;
+value=(value << 4) + 10 + aChar.$c()  - 97;
 break;
 }case 65:
 case 66:
@@ -197,7 +197,7 @@ case 68:
 case 69:
 case 70:
 {
-value = (value << 4) + 10 + aChar.$c()  - 65;
+value=(value << 4) + 10 + aChar.$c()  - 65;
 break;
 }default:
 {
@@ -207,13 +207,13 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Malform
 outBuffer.append$C(String.fromCharCode(value));
 } else {
 if (aChar == "t") {
-aChar = "\u0009";
+aChar="\u0009";
 } else if (aChar == "r") {
-aChar = "\u000d";
+aChar="\u000d";
 } else if (aChar == "n") {
-aChar = "\u000a";
+aChar="\u000a";
 } else if (aChar == "f") {
-aChar = "\u000c";
+aChar="\u000c";
 }outBuffer.append$C(aChar);
 }} else {
 outBuffer.append$C(aChar);
@@ -224,7 +224,7 @@ return outBuffer.toString();
 Clazz.newMeth(C$, 'store$O$O$java_util_Map', function (hashed, listed, map) {
 var list = map.get$O(hashed);
 if (list == null ) {
-list = Clazz.new_((I$[8]||$incl$(8)).c$$I,[1]);
+list=Clazz.new_((I$[8]||$incl$(8)).c$$I,[1]);
 map.put$TK$TV(hashed, list);
 }if (!list.contains$O(listed)) {
 list.add$TE(listed);
@@ -240,12 +240,12 @@ if (!platformFlavors.isEmpty()) {
 if (flavors != null ) {
 platformFlavors.removeAll$java_util_Collection(Clazz.new_((I$[2]||$incl$(2)).c$$java_util_Collection,[flavors]));
 platformFlavors.addAll$java_util_Collection(flavors);
-}flavors = platformFlavors;
+}flavors=platformFlavors;
 }}}if (flavors == null  && C$.isJavaMIMEType$S(nat) ) {
 var decoded = C$.decodeJavaMIMEType$S(nat);
 var flavor = null;
 try {
-flavor = Clazz.new_((I$[6]||$incl$(6)).c$$S,[decoded]);
+flavor=Clazz.new_((I$[6]||$incl$(6)).c$$S,[decoded]);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
 System.err.println$S("Exception \"" + e.getClass().getName() + ": " + e.getMessage() + "\"while constructing DataFlavor for: " + decoded );
@@ -254,14 +254,14 @@ throw e;
 }
 }
 if (flavor != null ) {
-flavors = Clazz.new_((I$[8]||$incl$(8)).c$$I,[1]);
+flavors=Clazz.new_((I$[8]||$incl$(8)).c$$I,[1]);
 this.nativeToFlavor.put$TK$TV(nat, flavors);
 flavors.add$TE(flavor);
 this.getFlavorsForNativeCache.remove$O(nat);
 this.getFlavorsForNativeCache.remove$O(null);
 var natives = this.flavorToNative.get$O(flavor);
 if (natives == null ) {
-natives = Clazz.new_((I$[8]||$incl$(8)).c$$I,[1]);
+natives=Clazz.new_((I$[8]||$incl$(8)).c$$I,[1]);
 this.flavorToNative.put$TK$TV(flavor, natives);
 }natives.add$TE(nat);
 this.getNativesForFlavorCache.remove$O(flavor);
@@ -279,24 +279,24 @@ if (!platformNatives.isEmpty()) {
 if (natives != null ) {
 platformNatives.removeAll$java_util_Collection(Clazz.new_((I$[2]||$incl$(2)).c$$java_util_Collection,[natives]));
 platformNatives.addAll$java_util_Collection(natives);
-}natives = platformNatives;
+}natives=platformNatives;
 }}}if (natives == null ) {
 if (synthesize) {
 var encoded = C$.encodeDataFlavor$java_awt_datatransfer_DataFlavor(flav);
-natives = Clazz.new_((I$[8]||$incl$(8)).c$$I,[1]);
+natives=Clazz.new_((I$[8]||$incl$(8)).c$$I,[1]);
 this.flavorToNative.put$TK$TV(flav, natives);
 natives.add$TE(encoded);
 this.getNativesForFlavorCache.remove$O(flav);
 this.getNativesForFlavorCache.remove$O(null);
 var flavors = this.nativeToFlavor.get$O(encoded);
 if (flavors == null ) {
-flavors = Clazz.new_((I$[8]||$incl$(8)).c$$I,[1]);
+flavors=Clazz.new_((I$[8]||$incl$(8)).c$$I,[1]);
 this.nativeToFlavor.put$TK$TV(encoded, flavors);
 }flavors.add$TE(flav);
 this.getFlavorsForNativeCache.remove$O(encoded);
 this.getFlavorsForNativeCache.remove$O(null);
 } else {
-natives = Clazz.new_((I$[8]||$incl$(8)).c$$I,[0]);
+natives=Clazz.new_((I$[8]||$incl$(8)).c$$I,[0]);
 }}return natives;
 });
 
@@ -304,47 +304,47 @@ Clazz.newMeth(C$, 'getNativesForFlavor$java_awt_datatransfer_DataFlavor', functi
 var retval = null;
 var ref = this.getNativesForFlavorCache.get$O(flav);
 if (ref != null ) {
-retval = ref.get();
+retval=ref.get();
 if (retval != null ) {
 return Clazz.new_((I$[8]||$incl$(8)).c$$java_util_Collection,[retval]);
 }}if (flav == null ) {
-retval = Clazz.new_((I$[8]||$incl$(8)).c$$java_util_Collection,[this.nativeToFlavor.keySet()]);
+retval=Clazz.new_((I$[8]||$incl$(8)).c$$java_util_Collection,[this.nativeToFlavor.keySet()]);
 } else if (this.disabledMappingGenerationKeys.contains$O(flav)) {
-retval = p$.flavorToNativeLookup$java_awt_datatransfer_DataFlavor$Z.apply(this, [flav, false]);
+retval=p$.flavorToNativeLookup$java_awt_datatransfer_DataFlavor$Z.apply(this, [flav, false]);
 } else if ((I$[5]||$incl$(5)).isFlavorCharsetTextType$java_awt_datatransfer_DataFlavor(flav)) {
 if ("text".equals$O(flav.getPrimaryType())) {
-retval = this.flavorToNative.get$O(flav.mimeType.getBaseType());
+retval=this.flavorToNative.get$O(flav.mimeType.getBaseType());
 if (retval != null ) {
-retval = Clazz.new_((I$[8]||$incl$(8)).c$$java_util_Collection,[retval]);
+retval=Clazz.new_((I$[8]||$incl$(8)).c$$java_util_Collection,[retval]);
 }}var textPlainList = this.flavorToNative.get$O("text/plain");
 if (textPlainList != null  && !textPlainList.isEmpty() ) {
-textPlainList = Clazz.new_((I$[8]||$incl$(8)).c$$java_util_Collection,[textPlainList]);
+textPlainList=Clazz.new_((I$[8]||$incl$(8)).c$$java_util_Collection,[textPlainList]);
 if (retval != null  && !retval.isEmpty() ) {
 textPlainList.removeAll$java_util_Collection(Clazz.new_((I$[2]||$incl$(2)).c$$java_util_Collection,[retval]));
 retval.addAll$java_util_Collection(textPlainList);
 } else {
-retval = textPlainList;
+retval=textPlainList;
 }}if (retval == null  || retval.isEmpty() ) {
-retval = p$.flavorToNativeLookup$java_awt_datatransfer_DataFlavor$Z.apply(this, [flav, true]);
+retval=p$.flavorToNativeLookup$java_awt_datatransfer_DataFlavor$Z.apply(this, [flav, true]);
 } else {
 var explicitList = p$.flavorToNativeLookup$java_awt_datatransfer_DataFlavor$Z.apply(this, [flav, false]);
 if (!explicitList.isEmpty()) {
-explicitList = Clazz.new_((I$[8]||$incl$(8)).c$$java_util_Collection,[explicitList]);
+explicitList=Clazz.new_((I$[8]||$incl$(8)).c$$java_util_Collection,[explicitList]);
 explicitList.removeAll$java_util_Collection(Clazz.new_((I$[2]||$incl$(2)).c$$java_util_Collection,[retval]));
 retval.addAll$java_util_Collection(explicitList);
 }}} else if ((I$[5]||$incl$(5)).isFlavorNoncharsetTextType$java_awt_datatransfer_DataFlavor(flav)) {
-retval = this.flavorToNative.get$O(flav.mimeType.getBaseType());
+retval=this.flavorToNative.get$O(flav.mimeType.getBaseType());
 if (retval == null  || retval.isEmpty() ) {
-retval = p$.flavorToNativeLookup$java_awt_datatransfer_DataFlavor$Z.apply(this, [flav, true]);
+retval=p$.flavorToNativeLookup$java_awt_datatransfer_DataFlavor$Z.apply(this, [flav, true]);
 } else {
 var explicitList = p$.flavorToNativeLookup$java_awt_datatransfer_DataFlavor$Z.apply(this, [flav, false]);
 if (!explicitList.isEmpty()) {
-retval = Clazz.new_((I$[8]||$incl$(8)).c$$java_util_Collection,[retval]);
-explicitList = Clazz.new_((I$[8]||$incl$(8)).c$$java_util_Collection,[explicitList]);
+retval=Clazz.new_((I$[8]||$incl$(8)).c$$java_util_Collection,[retval]);
+explicitList=Clazz.new_((I$[8]||$incl$(8)).c$$java_util_Collection,[explicitList]);
 explicitList.removeAll$java_util_Collection(Clazz.new_((I$[2]||$incl$(2)).c$$java_util_Collection,[retval]));
 retval.addAll$java_util_Collection(explicitList);
 }}} else {
-retval = p$.flavorToNativeLookup$java_awt_datatransfer_DataFlavor$Z.apply(this, [flav, true]);
+retval=p$.flavorToNativeLookup$java_awt_datatransfer_DataFlavor$Z.apply(this, [flav, true]);
 }this.getNativesForFlavorCache.put$TK$TV(flav, Clazz.new_((I$[9]||$incl$(9)).c$$TT,[retval]));
 return Clazz.new_((I$[8]||$incl$(8)).c$$java_util_Collection,[retval]);
 });
@@ -380,7 +380,7 @@ var baseType = value;
 var subType = null;
 try {
 var mimeType = Clazz.new_((I$[4]||$incl$(4)).c$$S,[baseType]);
-subType = mimeType.getSubType();
+subType=mimeType.getSubType();
 } catch (mtpe) {
 if (Clazz.exceptionOf(mtpe, "java.awt.datatransfer.MimeTypeParseException")){
 Clazz.assert(C$, this, function(){return false});
@@ -394,7 +394,7 @@ retval.add$TE((I$[6]||$incl$(6)).stringFlavor);
 }for (var i = 0; i < C$.UNICODE_TEXT_CLASSES.length; i++) {
 var toAdd = null;
 try {
-toAdd = Clazz.new_((I$[6]||$incl$(6)).c$$S,[baseType + ";charset=Unicode;class=" + C$.UNICODE_TEXT_CLASSES[i] ]);
+toAdd=Clazz.new_((I$[6]||$incl$(6)).c$$S,[baseType + ";charset=Unicode;class=" + C$.UNICODE_TEXT_CLASSES[i] ]);
 } catch (cannotHappen) {
 if (Clazz.exceptionOf(cannotHappen, "java.lang.ClassNotFoundException")){
 } else {
@@ -409,7 +409,7 @@ var charset = charset_iter.next();
 for (var i = 0; i < C$.ENCODED_TEXT_CLASSES.length; i++) {
 var toAdd = null;
 try {
-toAdd = Clazz.new_((I$[6]||$incl$(6)).c$$S,[baseType + ";charset=" + charset + ";class=" + C$.ENCODED_TEXT_CLASSES[i] ]);
+toAdd=Clazz.new_((I$[6]||$incl$(6)).c$$S,[baseType + ";charset=" + charset + ";class=" + C$.ENCODED_TEXT_CLASSES[i] ]);
 } catch (cannotHappen) {
 if (Clazz.exceptionOf(cannotHappen, "java.lang.ClassNotFoundException")){
 } else {
@@ -417,7 +417,7 @@ throw cannotHappen;
 }
 }
 if (toAdd.equals$java_awt_datatransfer_DataFlavor((I$[6]||$incl$(6)).plainTextFlavor)) {
-toAdd = (I$[6]||$incl$(6)).plainTextFlavor;
+toAdd=(I$[6]||$incl$(6)).plainTextFlavor;
 }if (dups.add$TE(toAdd)) {
 retval.add$TE(toAdd);
 }}
@@ -428,7 +428,7 @@ retval.add$TE((I$[6]||$incl$(6)).plainTextFlavor);
 for (var i = 0; i < C$.ENCODED_TEXT_CLASSES.length; i++) {
 var toAdd = null;
 try {
-toAdd = Clazz.new_((I$[6]||$incl$(6)).c$$S,[baseType + ";class=" + C$.ENCODED_TEXT_CLASSES[i] ]);
+toAdd=Clazz.new_((I$[6]||$incl$(6)).c$$S,[baseType + ";class=" + C$.ENCODED_TEXT_CLASSES[i] ]);
 } catch (cannotHappen) {
 if (Clazz.exceptionOf(cannotHappen, "java.lang.ClassNotFoundException")){
 } else {
@@ -451,7 +451,7 @@ return arrayList.clone();
 Clazz.newMeth(C$, 'getNativesForFlavors$java_awt_datatransfer_DataFlavorA', function (flavors) {
 if (flavors == null ) {
 var flavor_list = this.getFlavorsForNative$S(null);
-flavors = Clazz.array((I$[6]||$incl$(6)), [flavor_list.size()]);
+flavors=Clazz.array((I$[6]||$incl$(6)), [flavor_list.size()]);
 flavor_list.toArray$TTA(flavors);
 }var retval = Clazz.new_((I$[1]||$incl$(1)).c$$I$F,[flavors.length, 1.0]);
 for (var i = 0; i < flavors.length; i++) {
@@ -465,7 +465,7 @@ return retval;
 Clazz.newMeth(C$, 'getFlavorsForNatives$SA', function (natives) {
 if (natives == null ) {
 var native_list = this.getNativesForFlavor$java_awt_datatransfer_DataFlavor(null);
-natives = Clazz.array(java.lang.String, [native_list.size()]);
+natives=Clazz.array(java.lang.String, [native_list.size()]);
 native_list.toArray$TTA(natives);
 }var retval = Clazz.new_((I$[1]||$incl$(1)).c$$I$F,[natives.length, 1.0]);
 for (var i = 0; i < natives.length; i++) {
@@ -481,7 +481,7 @@ if (flav == null  || nat == null  ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["null arguments not permitted"]);
 }var natives = this.flavorToNative.get$O(flav);
 if (natives == null ) {
-natives = Clazz.new_((I$[8]||$incl$(8)).c$$I,[1]);
+natives=Clazz.new_((I$[8]||$incl$(8)).c$$I,[1]);
 this.flavorToNative.put$TK$TV(flav, natives);
 } else if (natives.contains$O(nat)) {
 return;
@@ -507,7 +507,7 @@ if (nat == null  || flav == null  ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["null arguments not permitted"]);
 }var flavors = this.nativeToFlavor.get$O(nat);
 if (flavors == null ) {
-flavors = Clazz.new_((I$[8]||$incl$(8)).c$$I,[1]);
+flavors=Clazz.new_((I$[8]||$incl$(8)).c$$I,[1]);
 this.nativeToFlavor.put$TK$TV(nat, flavors);
 } else if (flavors.contains$O(flav)) {
 return;
@@ -552,4 +552,4 @@ C$.$_ASSERT_ENABLED_ = ClassLoader.$getClassAssertionStatus(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:55
+//Created 2018-05-24 08:45:15

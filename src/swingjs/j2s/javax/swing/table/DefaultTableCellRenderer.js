@@ -43,12 +43,12 @@ return border;
 
 Clazz.newMeth(C$, 'setForeground$java_awt_Color', function (c) {
 C$.superclazz.prototype.setForeground$java_awt_Color.apply(this, [c]);
-this.unselectedForeground = c;
+this.unselectedForeground=c;
 });
 
 Clazz.newMeth(C$, 'setBackground$java_awt_Color', function (c) {
 C$.superclazz.prototype.setBackground$java_awt_Color.apply(this, [c]);
-this.unselectedBackground = c;
+this.unselectedBackground=c;
 });
 
 Clazz.newMeth(C$, 'updateUI', function () {
@@ -68,23 +68,23 @@ var background = this.unselectedBackground != null  ? this.unselectedBackground 
 if (background == null  || Clazz.instanceOf(background, "javax.swing.plaf.UIResource") ) {
 var alternateColor = (I$[2]||$incl$(2)).getColor$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Table.alternateRowColor");
 if (alternateColor != null  && row % 2 != 0 ) {
-background = alternateColor;
+background=alternateColor;
 }}C$.superclazz.prototype.setForeground$java_awt_Color.apply(this, [this.unselectedForeground != null  ? this.unselectedForeground : table.getForeground()]);
 C$.superclazz.prototype.setBackground$java_awt_Color.apply(this, [background]);
 }this.setFont$java_awt_Font(table.getFont());
 if (hasFocus) {
 var border = null;
 if (isSelected) {
-border = (I$[2]||$incl$(2)).getBorder$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Table.focusSelectedCellHighlightBorder");
+border=(I$[2]||$incl$(2)).getBorder$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Table.focusSelectedCellHighlightBorder");
 }if (border == null ) {
-border = (I$[2]||$incl$(2)).getBorder$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Table.focusCellHighlightBorder");
+border=(I$[2]||$incl$(2)).getBorder$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Table.focusCellHighlightBorder");
 }this.setBorder$javax_swing_border_Border(border);
 if (!isSelected && table.isCellEditable$I$I(row, column) ) {
 var col;
-col = (I$[2]||$incl$(2)).getColor$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Table.focusCellForeground");
+col=(I$[2]||$incl$(2)).getColor$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Table.focusCellForeground");
 if (col != null ) {
 C$.superclazz.prototype.setForeground$java_awt_Color.apply(this, [col]);
-}col = (I$[2]||$incl$(2)).getColor$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Table.focusCellBackground");
+}col=(I$[2]||$incl$(2)).getColor$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Table.focusCellBackground");
 if (col != null ) {
 C$.superclazz.prototype.setBackground$java_awt_Color.apply(this, [col]);
 }}} else {
@@ -97,7 +97,7 @@ Clazz.newMeth(C$, 'isOpaque', function () {
 var back = this.getBackground();
 var p = this.getParent();
 if (p != null ) {
-p = p.getParent();
+p=p.getParent();
 }var colorMatch = (back != null ) && (p != null ) && back.equals$O(p.getBackground()) && p.isOpaque()  ;
 return !colorMatch && C$.superclazz.prototype.isOpaque.apply(this, []) ;
 });
@@ -145,4 +145,4 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:51
+//Created 2018-05-24 08:46:59

@@ -38,8 +38,8 @@ this.usesSIngleFilePane = true;
 }, 1);
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (c) {
-this.accessoryPanel = Clazz.new_((I$[4]||$incl$(4)).c$$java_awt_LayoutManager,[Clazz.new_((I$[5]||$incl$(5)))]);
-this.filechooser = c;
+this.accessoryPanel=Clazz.new_((I$[4]||$incl$(4)).c$$java_awt_LayoutManager,[Clazz.new_((I$[5]||$incl$(5)))]);
+this.filechooser=c;
 this.installDefaults$javax_swing_JFileChooser(this.filechooser);
 this.installComponents$javax_swing_JFileChooser(this.filechooser);
 this.installListeners$javax_swing_JFileChooser(this.filechooser);
@@ -52,7 +52,7 @@ this.uninstallComponents$javax_swing_JFileChooser(this.filechooser);
 this.uninstallDefaults$javax_swing_JFileChooser(this.filechooser);
 if (this.accessoryPanel != null ) {
 this.accessoryPanel.removeAll();
-}this.accessoryPanel = null;
+}this.accessoryPanel=null;
 this.getFileChooser().removeAll();
 });
 
@@ -63,7 +63,7 @@ Clazz.newMeth(C$, 'uninstallComponents$javax_swing_JFileChooser', function (fc) 
 });
 
 Clazz.newMeth(C$, 'installListeners$javax_swing_JFileChooser', function (fc) {
-this.propertyChangeListener = this.createPropertyChangeListener$javax_swing_JFileChooser(fc);
+this.propertyChangeListener=this.createPropertyChangeListener$javax_swing_JFileChooser(fc);
 if (this.propertyChangeListener != null ) {
 fc.addPropertyChangeListener$java_beans_PropertyChangeListener(this.propertyChangeListener);
 }var inputMap = this.getInputMap$I(1);
@@ -102,9 +102,9 @@ this.installStrings$javax_swing_JFileChooser(fc);
 });
 
 Clazz.newMeth(C$, 'installStrings$javax_swing_JFileChooser', function (fc) {
-this.openButtonText = "Open";
-this.openDialogTitleText = "Open File";
-this.cancelButtonText = "Cancel";
+this.openButtonText="Open";
+this.openDialogTitleText="Open File";
+this.cancelButtonText="Cancel";
 });
 
 Clazz.newMeth(C$, 'uninstallDefaults$javax_swing_JFileChooser', function (fc) {
@@ -112,8 +112,8 @@ this.uninstallStrings$javax_swing_JFileChooser(fc);
 });
 
 Clazz.newMeth(C$, 'uninstallStrings$javax_swing_JFileChooser', function (fc) {
-this.openButtonText = null;
-this.cancelButtonText = null;
+this.openButtonText=null;
+this.cancelButtonText=null;
 });
 
 Clazz.newMeth(C$, 'createPropertyChangeListener$javax_swing_JFileChooser', function (fc) {
@@ -207,7 +207,7 @@ Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var chooser = this.this$0.getFileChooser();
 var filename = this.this$0.getFileName();
 if (filename != null ) {
-filename = filename.trim();
+filename=filename.trim();
 }if (filename == null  || filename.equals$O("") ) {
 return;
 }var selectedFile = Clazz.new_((I$[1]||$incl$(1)).c$$S,[filename]);
@@ -236,4 +236,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:22
+//Created 2018-05-24 08:47:54

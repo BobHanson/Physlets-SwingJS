@@ -17,14 +17,14 @@ this.hash = 0;
 
 Clazz.newMeth(C$, 'c$$S$S$J$Z', function (name, abbr, since, localTime) {
 C$.$init$.apply(this);
-this.name = name;
-this.abbr = abbr;
-this.since = since;
-this.localTime = localTime;
+this.name=name;
+this.abbr=abbr;
+this.since=since;
+this.localTime=localTime;
 var gcal = (I$[1]||$incl$(1)).getGregorianCalendar();
 var d = gcal.newCalendarDate$java_util_TimeZone(null);
 gcal.getCalendarDate$J$sun_util_calendar_CalendarDate(since, d);
-this.sinceDate = Clazz.new_((I$[2]||$incl$(2)).c$$sun_util_calendar_BaseCalendar_Date,[d]);
+this.sinceDate=Clazz.new_((I$[2]||$incl$(2)).c$$sun_util_calendar_BaseCalendar_Date,[d]);
 }, 1);
 
 Clazz.newMeth(C$, 'getName', function () {
@@ -67,7 +67,7 @@ return this.name.equals$O(that.name) && this.abbr.equals$O(that.abbr) && this.si
 
 Clazz.newMeth(C$, 'hashCode', function () {
 if (this.hash == 0) {
-this.hash = this.name.hashCode() ^ this.abbr.hashCode() ^ (this.since|0) ^ ((this.since >> 32)|0) ^ (this.localTime ? 1 : 0) ;
+this.hash=this.name.hashCode() ^ this.abbr.hashCode() ^ (this.since|0) ^ ((this.since >> 32)|0) ^ (this.localTime ? 1 : 0) ;
 }return this.hash;
 });
 
@@ -86,4 +86,4 @@ return sb.toString();
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:12
+//Created 2018-05-24 08:47:38

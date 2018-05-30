@@ -41,7 +41,7 @@ return this.$isDisposed;
 Clazz.newMeth(C$, 'c$$ThreadGroup', function (threadGroup) {
 C$.$init$.apply(this);
 C$.numAppContexts++;
-this.threadGroup = threadGroup;
+this.threadGroup=threadGroup;
 C$.threadGroup2appContext.put$TK$TV(threadGroup, this);
 
 this.contextClassLoader = this;
@@ -52,22 +52,22 @@ var currentThread = (I$[6]||$incl$(6)).currentThread();
 var appContext = null;
 var recent = C$.mostRecentThreadAppContext;
 if ((recent != null ) && (recent.thread === currentThread ) ) {
-appContext = recent.appContext;
+appContext=recent.appContext;
 } else {
 var currentThreadGroup = currentThread.getThreadGroup();
 var threadGroup = currentThreadGroup;
-appContext = C$.threadGroup2appContext.get$O(threadGroup);
+appContext=C$.threadGroup2appContext.get$O(threadGroup);
 while (appContext == null ){
-threadGroup = threadGroup.getParent();
+threadGroup=threadGroup.getParent();
 if (threadGroup == null ) {
-appContext = (I$[7]||$incl$(7)).createNewAppContext();
+appContext=(I$[7]||$incl$(7)).createNewAppContext();
 break;
-}appContext = C$.threadGroup2appContext.get$O(threadGroup);
+}appContext=C$.threadGroup2appContext.get$O(threadGroup);
 }
-for (var tg = currentThreadGroup; tg !== threadGroup ; tg = tg.getParent()) {
+for (var tg = currentThreadGroup; tg !== threadGroup ; tg=tg.getParent()) {
 C$.threadGroup2appContext.put$TK$TV(tg, appContext);
 }
-C$.mostRecentThreadAppContext = Clazz.new_((I$[8]||$incl$(8)).c$$Thread$sun_awt_AppContext,[currentThread, appContext]);
+C$.mostRecentThreadAppContext=Clazz.new_((I$[8]||$incl$(8)).c$$Thread$sun_awt_AppContext,[currentThread, appContext]);
 }return appContext;
 }, 1);
 
@@ -85,27 +85,27 @@ if ((recent != null ) && (recent.key === key ) ) {
 return recent.value;
 }var value = this.table.get$O(key);
 if (this.mostRecentKeyValue == null ) {
-this.mostRecentKeyValue = Clazz.new_((I$[9]||$incl$(9)).c$$O$O,[key, value]);
-this.shadowMostRecentKeyValue = Clazz.new_((I$[9]||$incl$(9)).c$$O$O,[key, value]);
+this.mostRecentKeyValue=Clazz.new_((I$[9]||$incl$(9)).c$$O$O,[key, value]);
+this.shadowMostRecentKeyValue=Clazz.new_((I$[9]||$incl$(9)).c$$O$O,[key, value]);
 } else {
 var auxKeyValue = this.mostRecentKeyValue;
 this.shadowMostRecentKeyValue.setPair$O$O(key, value);
-this.mostRecentKeyValue = this.shadowMostRecentKeyValue;
-this.shadowMostRecentKeyValue = auxKeyValue;
+this.mostRecentKeyValue=this.shadowMostRecentKeyValue;
+this.shadowMostRecentKeyValue=auxKeyValue;
 }return value;
 }});
 
 Clazz.newMeth(C$, 'put$O$O', function (key, value) {
 {
 var recent = this.mostRecentKeyValue;
-if ((recent != null ) && (recent.key === key ) ) recent.value = value;
+if ((recent != null ) && (recent.key === key ) ) recent.value=value;
 return this.table.put$TK$TV(key, value);
 }});
 
 Clazz.newMeth(C$, 'remove$O', function (key) {
 {
 var recent = this.mostRecentKeyValue;
-if ((recent != null ) && (recent.key === key ) ) recent.value = null;
+if ((recent != null ) && (recent.key === key ) ) recent.value=null;
 return this.table.remove$O(key);
 }});
 
@@ -127,7 +127,7 @@ Clazz.newMeth(C$, 'addPropertyChangeListener$S$java_beans_PropertyChangeListener
 if (listener == null ) {
 return;
 }if (this.changeSupport == null ) {
-this.changeSupport = Clazz.new_((I$[11]||$incl$(11)).c$$O,[this]);
+this.changeSupport=Clazz.new_((I$[11]||$incl$(11)).c$$O,[this]);
 }this.changeSupport.addPropertyChangeListener$S$java_beans_PropertyChangeListener(propertyName, listener);
 });
 
@@ -145,4 +145,4 @@ return Clazz.array((I$[10]||$incl$(10)), [0]);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:21

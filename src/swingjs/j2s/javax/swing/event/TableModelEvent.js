@@ -34,10 +34,10 @@ C$.c$$javax_swing_table_TableModel$I$I$I$I.apply(this, [source, firstRow, lastRo
 Clazz.newMeth(C$, 'c$$javax_swing_table_TableModel$I$I$I$I', function (source, firstRow, lastRow, column, type) {
 C$.superclazz.c$.apply(this, [source]);
 C$.$init$.apply(this);
-this.firstRow = firstRow;
-this.lastRow = lastRow;
-this.column = column;
-this.type = type;
+this.firstRow=firstRow;
+this.lastRow=lastRow;
+this.column=column;
+this.type=type;
 }, 1);
 
 Clazz.newMeth(C$, 'getFirstRow', function () {
@@ -58,4 +58,4 @@ return this.type;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:46
+//Created 2018-05-24 08:46:49

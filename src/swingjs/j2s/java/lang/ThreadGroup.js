@@ -32,12 +32,12 @@ C$.c$$ThreadGroup$S.apply(this, [(I$[1]||$incl$(1)).currentThread().getThreadGro
 
 Clazz.newMeth(C$, 'c$$ThreadGroup$S', function (parent, name) {
 C$.$init$.apply(this);
-this.name = name;
-this.parent = parent;
+this.name=name;
+this.parent=parent;
 if (parent != null ) {
-this.maxPriority = parent.maxPriority;
-this.daemon = parent.daemon;
-this.vmAllowSuspension = parent.vmAllowSuspension;
+this.maxPriority=parent.maxPriority;
+this.daemon=parent.daemon;
+this.vmAllowSuspension=parent.vmAllowSuspension;
 parent.add$ThreadGroup(this);
 }}, 1);
 
@@ -64,7 +64,7 @@ return this.destroyed;
 
 Clazz.newMeth(C$, 'setDaemon$Z', function (daemon) {
 this.checkAccess();
-this.daemon = daemon;
+this.daemon=daemon;
 });
 
 Clazz.newMeth(C$, 'setMaxPriority$I', function (pri) {
@@ -74,19 +74,19 @@ var groupsSnapshot;
 this.checkAccess();
 if (pri < 1 || pri > 10 ) {
 return;
-}this.maxPriority = (this.parent != null ) ? Math.min(pri, this.parent.maxPriority) : pri;
-ngroupsSnapshot = this.ngroups;
+}this.maxPriority=(this.parent != null ) ? Math.min(pri, this.parent.maxPriority) : pri;
+ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
 } else {
-groupsSnapshot = null;
+groupsSnapshot=null;
 }}for (var i = 0; i < ngroupsSnapshot; i++) {
 groupsSnapshot[i].setMaxPriority$I(pri);
 }
 });
 
 Clazz.newMeth(C$, 'parentOf$ThreadGroup', function (g) {
-for (; g != null ; g = g.parent) {
+for (; g != null ; g=g.parent) {
 if (g === this ) {
 return true;
 }}
@@ -103,14 +103,14 @@ var groupsSnapshot;
 {
 if (this.destroyed) {
 return 0;
-}result = this.nthreads;
-ngroupsSnapshot = this.ngroups;
+}result=this.nthreads;
+ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
 } else {
-groupsSnapshot = null;
+groupsSnapshot=null;
 }}for (var i = 0; i < ngroupsSnapshot; i++) {
-result = result+(groupsSnapshot[i].activeCount());
+result+=groupsSnapshot[i].activeCount();
 }
 return result;
 });
@@ -133,20 +133,20 @@ if (this.destroyed) {
 return 0;
 }var nt = this.nthreads;
 if (nt > list.length - n) {
-nt = list.length - n;
+nt=list.length - n;
 }for (var i = 0; i < nt; i++) {
 if (this.threads[i].isAlive()) {
-list[n++] = this.threads[i];
+list[n++]=this.threads[i];
 }}
 if (recurse) {
-ngroupsSnapshot = this.ngroups;
+ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
 } else {
-groupsSnapshot = null;
+groupsSnapshot=null;
 }}}if (recurse) {
 for (var i = 0; i < ngroupsSnapshot; i++) {
-n = groupsSnapshot[i].enumerate$ThreadA$I$Z(list, n, true);
+n=groupsSnapshot[i].enumerate$ThreadA$I$Z(list, n, true);
 }
 }return n;
 });
@@ -157,14 +157,14 @@ var groupsSnapshot;
 {
 if (this.destroyed) {
 return 0;
-}ngroupsSnapshot = this.ngroups;
+}ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
 } else {
-groupsSnapshot = null;
+groupsSnapshot=null;
 }}var n = ngroupsSnapshot;
 for (var i = 0; i < ngroupsSnapshot; i++) {
-n = n+(groupsSnapshot[i].activeGroupCount());
+n+=groupsSnapshot[i].activeGroupCount();
 }
 return n;
 });
@@ -187,19 +187,19 @@ if (this.destroyed) {
 return 0;
 }var ng = this.ngroups;
 if (ng > list.length - n) {
-ng = list.length - n;
+ng=list.length - n;
 }if (ng > 0) {
 System.arraycopy(this.groups, 0, list, n, ng);
-n = n+(ng);
+n+=ng;
 }if (recurse) {
-ngroupsSnapshot = this.ngroups;
+ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
 } else {
-groupsSnapshot = null;
+groupsSnapshot=null;
 }}}if (recurse) {
 for (var i = 0; i < ngroupsSnapshot; i++) {
-n = groupsSnapshot[i].enumerate$ThreadGroupA$I$Z(list, n, true);
+n=groupsSnapshot[i].enumerate$ThreadGroupA$I$Z(list, n, true);
 }
 }return n;
 });
@@ -216,11 +216,11 @@ this.checkAccess();
 for (var i = 0; i < this.nthreads; i++) {
 this.threads[i].interrupt();
 }
-ngroupsSnapshot = this.ngroups;
+ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
 } else {
-groupsSnapshot = null;
+groupsSnapshot=null;
 }}for (var i = 0; i < ngroupsSnapshot; i++) {
 groupsSnapshot[i].interrupt();
 }
@@ -238,14 +238,14 @@ var groupsSnapshot = null;
 {
 this.checkAccess();
 for (var i = 0; i < this.nthreads; i++) {
-if (this.threads[i] === us ) suicide = true;
+if (this.threads[i] === us ) suicide=true;
  else if (suspend) this.threads[i].suspend();
  else this.threads[i].stop();
 }
-ngroupsSnapshot = this.ngroups;
+ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
-}}for (var i = 0; i < ngroupsSnapshot; i++) suicide = groupsSnapshot[i].stopOrSuspend$Z(suspend) || suicide ;
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+}}for (var i = 0; i < ngroupsSnapshot; i++) suicide=groupsSnapshot[i].stopOrSuspend$Z(suspend) || suicide ;
 
 return suicide;
 });
@@ -258,11 +258,11 @@ this.checkAccess();
 for (var i = 0; i < this.nthreads; i++) {
 this.threads[i].resume();
 }
-ngroupsSnapshot = this.ngroups;
+ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
 } else {
-groupsSnapshot = null;
+groupsSnapshot=null;
 }}for (var i = 0; i < ngroupsSnapshot; i++) {
 groupsSnapshot[i].resume();
 }
@@ -275,18 +275,18 @@ var groupsSnapshot;
 this.checkAccess();
 if (this.destroyed || (this.nthreads > 0) ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalThreadStateException'));
-}ngroupsSnapshot = this.ngroups;
+}ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
 } else {
-groupsSnapshot = null;
+groupsSnapshot=null;
 }if (this.parent != null ) {
-this.destroyed = true;
-this.ngroups = 0;
-this.groups = null;
-this.nthreads = 0;
-this.threads = null;
-}}for (var i = 0; i < ngroupsSnapshot; i = i+(1)) {
+this.destroyed=true;
+this.ngroups=0;
+this.groups=null;
+this.nthreads=0;
+this.threads=null;
+}}for (var i = 0; i < ngroupsSnapshot; i+=1) {
 groupsSnapshot[i].destroy();
 }
 if (this.parent != null ) {
@@ -298,10 +298,10 @@ Clazz.newMeth(C$, 'add$ThreadGroup', function (g) {
 if (this.destroyed) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalThreadStateException'));
 }if (this.groups == null ) {
-this.groups = Clazz.array((I$[3]||$incl$(3)), [4]);
+this.groups=Clazz.array((I$[3]||$incl$(3)), [4]);
 } else if (this.ngroups == this.groups.length) {
-this.groups = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, this.ngroups * 2);
-}this.groups[this.ngroups] = g;
+this.groups=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, this.ngroups * 2);
+}this.groups[this.ngroups]=g;
 this.ngroups++;
 }});
 
@@ -311,9 +311,9 @@ if (this.destroyed) {
 return;
 }for (var i = 0; i < this.ngroups; i++) {
 if (this.groups[i] === g ) {
-this.ngroups = this.ngroups-(1);
+this.ngroups-=1;
 System.arraycopy(this.groups, i + 1, this.groups, i, this.ngroups - i);
-this.groups[this.ngroups] = null;
+this.groups[this.ngroups]=null;
 break;
 }}
 if (this.nthreads == 0) {
@@ -334,10 +334,10 @@ Clazz.newMeth(C$, 'add$Thread', function (t) {
 if (this.destroyed) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalThreadStateException'));
 }if (this.threads == null ) {
-this.threads = Clazz.array((I$[4]||$incl$(4)), [4]);
+this.threads=Clazz.array((I$[4]||$incl$(4)), [4]);
 } else if (this.nthreads == this.threads.length) {
-this.threads = (I$[2]||$incl$(2)).copyOf$TTA$I(this.threads, this.nthreads * 2);
-}this.threads[this.nthreads] = t;
+this.threads=(I$[2]||$incl$(2)).copyOf$TTA$I(this.threads, this.nthreads * 2);
+}this.threads[this.nthreads]=t;
 this.nthreads++;
 this.nUnstartedThreads--;
 }});
@@ -349,7 +349,7 @@ return;
 }for (var i = 0; i < this.nthreads; i++) {
 if (this.threads[i] === t ) {
 System.arraycopy(this.threads, i + 1, this.threads, i, --this.nthreads - i);
-this.threads[this.nthreads] = null;
+this.threads[this.nthreads]=null;
 break;
 }}
 if (this.nthreads == 0) {
@@ -376,4 +376,4 @@ return this.getClass().getName() + "[name=" + this.getName() + ",maxpri=" + this
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:08
+//Created 2018-05-24 08:45:39

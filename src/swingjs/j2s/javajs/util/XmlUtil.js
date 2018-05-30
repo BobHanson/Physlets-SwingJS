@@ -28,21 +28,21 @@ sb.append$S("</").append$S(name).append$S(">\u000a");
 Clazz.newMeth(C$, 'appendTagAll$javajs_util_SB$S$OA$O$Z$Z', function (sb, name, attributes, data, isCdata, doClose) {
 var closer = ">";
 if (name.endsWith$S("/")) {
-name = name.substring(0, name.length$() - 1);
+name=name.substring(0, name.length$() - 1);
 if (data == null ) {
-closer = "/>\u000a";
-doClose = false;
+closer="/>\u000a";
+doClose=false;
 }}sb.append$S("<").append$S(name);
 if (attributes != null ) for (var i = 0; i < attributes.length; i++) {
 var o = attributes[i];
 if (o == null ) continue;
-if (Clazz.instanceOf(o, Clazz.array(java.lang.Object, -1))) for (var j = 0; j < (o).length; j = j+(2)) C$.appendAttrib$javajs_util_SB$O$O(sb, (o)[j], (o)[j + 1]);
+if (Clazz.instanceOf(o, Clazz.array(java.lang.Object, -1))) for (var j = 0; j < (o).length; j+=2) C$.appendAttrib$javajs_util_SB$O$O(sb, (o)[j], (o)[j + 1]);
 
  else C$.appendAttrib$javajs_util_SB$O$O(sb, o, attributes[++i]);
 }
 sb.append$S(closer);
 if (data != null ) {
-if (isCdata) data = C$.wrapCdata$O(data);
+if (isCdata) data=C$.wrapCdata$O(data);
 sb.appendO$O(data);
 }if (doClose) C$.closeTag$javajs_util_SB$S(sb, name);
 }, 1);
@@ -70,4 +70,4 @@ if (value == null ) return;
 sb.append$S(" ").appendO$O(name).append$S("=\"").appendO$O(value).append$S("\"");
 }, 1);
 })();
-//Created 2018-05-15 01:02:19
+//Created 2018-05-24 08:45:58

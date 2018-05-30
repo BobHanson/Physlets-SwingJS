@@ -14,7 +14,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$Z', function (initialValue) {
 C$.$init$.apply(this);
-this.value = initialValue ? 1 : 0;
+this.value=initialValue ? 1 : 0;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
@@ -29,7 +29,7 @@ Clazz.newMeth(C$, 'compareAndSet$Z$Z', function (expect, update) {
 var e = expect ? 1 : 0;
 var u = update ? 1 : 0;
 if (this.value == e) {
-this.value = u;
+this.value=u;
 return true;
 }return false;
 });
@@ -39,11 +39,11 @@ return this.compareAndSet$Z$Z(expect, update);
 });
 
 Clazz.newMeth(C$, 'set$Z', function (newValue) {
-this.value = newValue ? 1 : 0;
+this.value=newValue ? 1 : 0;
 });
 
 Clazz.newMeth(C$, 'lazySet$Z', function (newValue) {
-this.value = newValue ? 1 : 0;
+this.value=newValue ? 1 : 0;
 });
 
 Clazz.newMeth(C$, 'getAndSet$Z', function (newValue) {
@@ -57,4 +57,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return "" + this.get();
 });
 })();
-//Created 2018-05-15 01:02:15
+//Created 2018-05-24 08:45:51

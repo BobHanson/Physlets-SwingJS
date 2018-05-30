@@ -15,14 +15,14 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$Throwable', function (exception) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.undeclaredThrowable = exception;
+this.undeclaredThrowable=exception;
 this.initCause$Throwable(exception);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Throwable$S', function (exception, detailMessage) {
 C$.superclazz.c$$S.apply(this, [detailMessage]);
 C$.$init$.apply(this);
-this.undeclaredThrowable = exception;
+this.undeclaredThrowable=exception;
 this.initCause$Throwable(exception);
 }, 1);
 
@@ -36,4 +36,4 @@ return this.undeclaredThrowable;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:09
+//Created 2018-05-24 08:45:40

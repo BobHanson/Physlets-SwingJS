@@ -29,13 +29,13 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$HA$IA$I$I$I', function (static_tree, extra_bits, extra_base, elems, max_length) {
 C$.$init$.apply(this);
-this.static_tree = static_tree;
-this.extra_bits = extra_bits;
-this.extra_base = extra_base;
-this.elems = elems;
-this.max_length = max_length;
+this.static_tree=static_tree;
+this.extra_bits=extra_bits;
+this.extra_base=extra_base;
+this.elems=elems;
+this.max_length=max_length;
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:19
+//Created 2018-05-24 08:47:49

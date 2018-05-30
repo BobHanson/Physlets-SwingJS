@@ -52,7 +52,7 @@ Clazz.super_(C$, this,1);
 
 Clazz.newMeth(C$, 'c$$java_util_Locale', function (locale) {
 Clazz.super_(C$, this,1);
-this.locale = locale;
+this.locale=locale;
 }, 1);
 
 Clazz.newMeth(C$, 'clonePreferredTileSizes$java_awt_DimensionA', function (sizes) {
@@ -60,7 +60,7 @@ if (sizes == null ) {
 return null;
 }var temp = Clazz.array((I$[1]||$incl$(1)), [sizes.length]);
 for (var i = 0; i < sizes.length; i++) {
-temp[i] = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Dimension,[sizes[i]]);
+temp[i]=Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Dimension,[sizes[i]]);
 }
 return temp;
 }, 1);
@@ -82,7 +82,7 @@ if (this.canWriteTiles() == false ) {
 throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException').c$$S,["Tiling not supported!"]);
 }if (mode < 0 || mode > 3 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Illegal value for mode!"]);
-}this.tilingMode = mode;
+}this.tilingMode=mode;
 if (mode == 2) {
 this.unsetTiling();
 }});
@@ -111,20 +111,20 @@ if (!this.canOffsetTiles() && tilesOffset ) {
 throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException').c$$S,["Can\'t offset tiles!"]);
 }if (this.preferredTileSizes != null ) {
 var ok = true;
-for (var i = 0; i < this.preferredTileSizes.length; i = i+(2)) {
+for (var i = 0; i < this.preferredTileSizes.length; i+=2) {
 var min = this.preferredTileSizes[i];
 var max = this.preferredTileSizes[i + 1];
 if ((tileWidth < min.width) || (tileWidth > max.width) || (tileHeight < min.height) || (tileHeight > max.height)  ) {
-ok = false;
+ok=false;
 break;
 }}
 if (!ok) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Illegal tile size!"]);
-}}this.tilingSet = true;
-this.tileWidth = tileWidth;
-this.tileHeight = tileHeight;
-this.tileGridXOffset = tileGridXOffset;
-this.tileGridYOffset = tileGridYOffset;
+}}this.tilingSet=true;
+this.tileWidth=tileWidth;
+this.tileHeight=tileHeight;
+this.tileGridXOffset=tileGridXOffset;
+this.tileGridYOffset=tileGridYOffset;
 });
 
 Clazz.newMeth(C$, 'unsetTiling', function () {
@@ -132,11 +132,11 @@ if (!this.canWriteTiles()) {
 throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException').c$$S,["Tiling not supported!"]);
 }if (this.getTilingMode() != 2) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["Tiling mode not MODE_EXPLICIT!"]);
-}this.tilingSet = false;
-this.tileWidth = 0;
-this.tileHeight = 0;
-this.tileGridXOffset = 0;
-this.tileGridYOffset = 0;
+}this.tilingSet=false;
+this.tileWidth=0;
+this.tileHeight=0;
+this.tileGridXOffset=0;
+this.tileGridYOffset=0;
 });
 
 Clazz.newMeth(C$, 'getTileWidth', function () {
@@ -190,7 +190,7 @@ throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException').c$$S,["Pr
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Illegal value for mode!"]);
 }if (mode == 2) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["MODE_EXPLICIT not supported for progressive output"]);
-}this.progressiveMode = mode;
+}this.progressiveMode=mode;
 });
 
 Clazz.newMeth(C$, 'getProgressiveMode', function () {
@@ -208,7 +208,7 @@ if (!this.canWriteCompressed()) {
 throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException').c$$S,["Compression not supported."]);
 }if (mode < 0 || mode > 3 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Illegal value for mode!"]);
-}this.compressionMode = mode;
+}this.compressionMode=mode;
 if (mode == 2) {
 this.unsetCompression();
 }});
@@ -240,12 +240,12 @@ var found = false;
 if (legalTypes != null ) {
 for (var i = 0; i < legalTypes.length; i++) {
 if (compressionType.equals$O(legalTypes[i])) {
-found = true;
+found=true;
 break;
 }}
 }if (!found) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Unknown compression type!"]);
-}}this.compressionType = compressionType;
+}}this.compressionType=compressionType;
 });
 
 Clazz.newMeth(C$, 'getCompressionType', function () {
@@ -261,8 +261,8 @@ if (!this.canWriteCompressed()) {
 throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException').c$$S,["Compression not supported"]);
 }if (this.getCompressionMode() != 2) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["Compression mode not MODE_EXPLICIT!"]);
-}this.compressionType = null;
-this.compressionQuality = 1.0;
+}this.compressionType=null;
+this.compressionQuality=1.0;
 });
 
 Clazz.newMeth(C$, 'getLocalizedCompressionTypeName', function () {
@@ -294,7 +294,7 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["Compressio
 throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["No compression type set!"]);
 }if (quality < 0.0  || quality > 1.0  ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Quality out-of-bounds!"]);
-}this.compressionQuality = quality;
+}this.compressionQuality=quality;
 });
 
 Clazz.newMeth(C$, 'getCompressionQuality', function () {
@@ -339,4 +339,4 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["No compres
 }return null;
 });
 })();
-//Created 2018-05-15 01:02:20
+//Created 2018-05-24 08:45:59

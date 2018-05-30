@@ -74,17 +74,17 @@ Clazz.newMeth(C$, 'testColorValueRange$I$I$I$I', function (r, g, b, a) {
 var rangeError = false;
 var badComponentString = "";
 if (a < 0 || a > 255 ) {
-rangeError = true;
-badComponentString = badComponentString + " Alpha";
+rangeError=true;
+badComponentString=badComponentString + " Alpha";
 }if (r < 0 || r > 255 ) {
-rangeError = true;
-badComponentString = badComponentString + " Red";
+rangeError=true;
+badComponentString=badComponentString + " Red";
 }if (g < 0 || g > 255 ) {
-rangeError = true;
-badComponentString = badComponentString + " Green";
+rangeError=true;
+badComponentString=badComponentString + " Green";
 }if (b < 0 || b > 255 ) {
-rangeError = true;
-badComponentString = badComponentString + " Blue";
+rangeError=true;
+badComponentString=badComponentString + " Blue";
 }if (rangeError == true ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Color parameter outside of expected range:" + badComponentString]);
 }}, 1);
@@ -99,21 +99,21 @@ C$.c$$I$I$I$I.apply(this, [r, g, b, 255]);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I', function (r, g, b, a) {
 C$.$init$.apply(this);
-this.value = ((a & 255) << 24) | ((r & 255) << 16) | ((g & 255) << 8) | ((b & 255) << 0) ;
+this.value=((a & 255) << 24) | ((r & 255) << 16) | ((g & 255) << 8) | ((b & 255) << 0) ;
 C$.testColorValueRange$I$I$I$I(r, g, b, a);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (rgb) {
 C$.$init$.apply(this);
-this.value = -16777216 | rgb;
+this.value=-16777216 | rgb;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$Z', function (rgba, hasalpha) {
 C$.$init$.apply(this);
 if (hasalpha) {
-this.value = rgba;
+this.value=rgba;
 } else {
-this.value = -16777216 | rgba;
+this.value=-16777216 | rgba;
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$F$F$F', function (r, g, b) {
@@ -122,11 +122,11 @@ C$.c$$F$F$F$F.apply(this, [r, g, b, 1.0]);
 
 Clazz.newMeth(C$, 'c$$F$F$F$F', function (r, g, b, a) {
 C$.c$$I$I$I$I.apply(this, [((r * 255 + 0.5)|0), ((g * 255 + 0.5)|0), ((b * 255 + 0.5)|0), ((a * 255 + 0.5)|0)]);
-this.frgbvalue = Clazz.array(Float.TYPE, [3]);
-this.frgbvalue[0] = r;
-this.frgbvalue[1] = g;
-this.frgbvalue[2] = b;
-this.falpha = a;
+this.frgbvalue=Clazz.array(Float.TYPE, [3]);
+this.frgbvalue[0]=r;
+this.frgbvalue[1]=g;
+this.frgbvalue[2]=b;
+this.falpha=a;
 }, 1);
 
 Clazz.newMeth(C$, 'getRed', function () {
@@ -156,9 +156,9 @@ var b = this.getBlue();
 var i = 3;
 if (r == 0 && g == 0  && b == 0 ) {
 return Clazz.new_(C$.c$$I$I$I,[i, i, i]);
-}if (r > 0 && r < i ) r = i;
-if (g > 0 && g < i ) g = i;
-if (b > 0 && b < i ) b = i;
+}if (r > 0 && r < i ) r=i;
+if (g > 0 && g < i ) g=i;
+if (b > 0 && b < i ) b=i;
 return Clazz.new_(C$.c$$I$I$I,[Math.min(((r / 0.7)|0), 255), Math.min(((g / 0.7)|0), 255), Math.min(((b / 0.7)|0), 255)]);
 });
 
@@ -212,7 +212,7 @@ var r = 0;
 var g = 0;
 var b = 0;
 if (saturation == 0 ) {
-r = g = b = ((brightness * 255.0 + 0.5)|0);
+r=g=b=((brightness * 255.0 + 0.5)|0);
 } else {
 var h = (hue - Math.floor(hue)) * 6.0;
 var f = h - java.lang.Math.floor(h);
@@ -221,34 +221,34 @@ var q = brightness * (1.0 - saturation * f);
 var t = brightness * (1.0 - (saturation * (1.0 - f)));
 switch ((h|0)) {
 case 0:
-r = ((brightness * 255.0 + 0.5)|0);
-g = ((t * 255.0 + 0.5)|0);
-b = ((p * 255.0 + 0.5)|0);
+r=((brightness * 255.0 + 0.5)|0);
+g=((t * 255.0 + 0.5)|0);
+b=((p * 255.0 + 0.5)|0);
 break;
 case 1:
-r = ((q * 255.0 + 0.5)|0);
-g = ((brightness * 255.0 + 0.5)|0);
-b = ((p * 255.0 + 0.5)|0);
+r=((q * 255.0 + 0.5)|0);
+g=((brightness * 255.0 + 0.5)|0);
+b=((p * 255.0 + 0.5)|0);
 break;
 case 2:
-r = ((p * 255.0 + 0.5)|0);
-g = ((brightness * 255.0 + 0.5)|0);
-b = ((t * 255.0 + 0.5)|0);
+r=((p * 255.0 + 0.5)|0);
+g=((brightness * 255.0 + 0.5)|0);
+b=((t * 255.0 + 0.5)|0);
 break;
 case 3:
-r = ((p * 255.0 + 0.5)|0);
-g = ((q * 255.0 + 0.5)|0);
-b = ((brightness * 255.0 + 0.5)|0);
+r=((p * 255.0 + 0.5)|0);
+g=((q * 255.0 + 0.5)|0);
+b=((brightness * 255.0 + 0.5)|0);
 break;
 case 4:
-r = ((t * 255.0 + 0.5)|0);
-g = ((p * 255.0 + 0.5)|0);
-b = ((brightness * 255.0 + 0.5)|0);
+r=((t * 255.0 + 0.5)|0);
+g=((p * 255.0 + 0.5)|0);
+b=((brightness * 255.0 + 0.5)|0);
 break;
 case 5:
-r = ((brightness * 255.0 + 0.5)|0);
-g = ((p * 255.0 + 0.5)|0);
-b = ((q * 255.0 + 0.5)|0);
+r=((brightness * 255.0 + 0.5)|0);
+g=((p * 255.0 + 0.5)|0);
+b=((q * 255.0 + 0.5)|0);
 break;
 }
 }return -16777216 | (r << 16) | (g << 8) | (b << 0) ;
@@ -259,27 +259,27 @@ var hue;
 var saturation;
 var brightness;
 if (hsbvals == null ) {
-hsbvals = Clazz.array(Float.TYPE, [3]);
+hsbvals=Clazz.array(Float.TYPE, [3]);
 }var cmax = (r > g) ? r : g;
-if (b > cmax) cmax = b;
+if (b > cmax) cmax=b;
 var cmin = (r < g) ? r : g;
-if (b < cmin) cmin = b;
-brightness = (cmax) / 255.0;
-if (cmax != 0) saturation = ((cmax - cmin)) / (cmax);
- else saturation = 0;
-if (saturation == 0 ) hue = 0;
+if (b < cmin) cmin=b;
+brightness=(cmax) / 255.0;
+if (cmax != 0) saturation=((cmax - cmin)) / (cmax);
+ else saturation=0;
+if (saturation == 0 ) hue=0;
  else {
 var redc = ((cmax - r)) / ((cmax - cmin));
 var greenc = ((cmax - g)) / ((cmax - cmin));
 var bluec = ((cmax - b)) / ((cmax - cmin));
-if (r == cmax) hue = bluec - greenc;
- else if (g == cmax) hue = 2.0 + redc - bluec;
- else hue = 4.0 + greenc - redc;
-hue = hue / 6.0;
-if (hue < 0 ) hue = hue + 1.0;
-}hsbvals[0] = hue;
-hsbvals[1] = saturation;
-hsbvals[2] = brightness;
+if (r == cmax) hue=bluec - greenc;
+ else if (g == cmax) hue=2.0 + redc - bluec;
+ else hue=4.0 + greenc - redc;
+hue=hue / 6.0;
+if (hue < 0 ) hue=hue + 1.0;
+}hsbvals[0]=hue;
+hsbvals[1]=saturation;
+hsbvals[2]=brightness;
 return hsbvals;
 }, 1);
 
@@ -290,36 +290,36 @@ return Clazz.new_(C$.c$$I,[C$.HSBtoRGB$F$F$F(h, s, b)]);
 Clazz.newMeth(C$, 'getRGBComponents$FA', function (compArray) {
 var f;
 if (compArray == null ) {
-f = Clazz.array(Float.TYPE, [4]);
+f=Clazz.array(Float.TYPE, [4]);
 } else {
-f = compArray;
+f=compArray;
 }if (this.frgbvalue == null ) {
-f[0] = (this.getRed()) / 255.0;
-f[1] = (this.getGreen()) / 255.0;
-f[2] = (this.getBlue()) / 255.0;
-f[3] = (this.getAlpha()) / 255.0;
+f[0]=(this.getRed()) / 255.0;
+f[1]=(this.getGreen()) / 255.0;
+f[2]=(this.getBlue()) / 255.0;
+f[3]=(this.getAlpha()) / 255.0;
 } else {
-f[0] = this.frgbvalue[0];
-f[1] = this.frgbvalue[1];
-f[2] = this.frgbvalue[2];
-f[3] = this.falpha;
+f[0]=this.frgbvalue[0];
+f[1]=this.frgbvalue[1];
+f[2]=this.frgbvalue[2];
+f[3]=this.falpha;
 }return f;
 });
 
 Clazz.newMeth(C$, 'getRGBColorComponents$FA', function (compArray) {
 var f;
 if (compArray == null ) {
-f = Clazz.array(Float.TYPE, [3]);
+f=Clazz.array(Float.TYPE, [3]);
 } else {
-f = compArray;
+f=compArray;
 }if (this.frgbvalue == null ) {
-f[0] = (this.getRed()) / 255.0;
-f[1] = (this.getGreen()) / 255.0;
-f[2] = (this.getBlue()) / 255.0;
+f[0]=(this.getRed()) / 255.0;
+f[1]=(this.getGreen()) / 255.0;
+f[2]=(this.getBlue()) / 255.0;
 } else {
-f[0] = this.frgbvalue[0];
-f[1] = this.frgbvalue[1];
-f[2] = this.frgbvalue[2];
+f[0]=this.frgbvalue[0];
+f[1]=this.frgbvalue[1];
+f[2]=this.frgbvalue[2];
 }return f;
 });
 
@@ -328,19 +328,19 @@ if (this.frgbvalue == null ) return this.getRGBComponents$FA(compArray);
 var f;
 var n = this.frgbvalue.length;
 if (compArray == null ) {
-f = Clazz.array(Float.TYPE, [n + 1]);
+f=Clazz.array(Float.TYPE, [n + 1]);
 } else {
-f = compArray;
+f=compArray;
 }for (var i = 0; i < n; i++) {
-f[i] = this.frgbvalue[i];
+f[i]=this.frgbvalue[i];
 }
-f[n] = this.falpha;
+f[n]=this.falpha;
 return f;
 });
 
 Clazz.newMeth(C$, 'createContext$java_awt_image_ColorModel$java_awt_Rectangle$java_awt_geom_Rectangle2D$java_awt_geom_AffineTransform$java_awt_RenderingHints', function (cm, r, r2d, xform, hints) {
 if (this.context == null  || this.context.getRGB() != this.getRGB() ) {
-this.context = Clazz.new_((I$[1]||$incl$(1)).c$$I$java_awt_image_ColorModel,[this.getRGB(), cm]);
+this.context=Clazz.new_((I$[1]||$incl$(1)).c$$I$java_awt_image_ColorModel,[this.getRGB(), cm]);
 }return this.context;
 });
 
@@ -354,4 +354,4 @@ return 2;
 return 3;
 }});
 })();
-//Created 2018-05-15 01:01:49
+//Created 2018-05-24 08:45:06

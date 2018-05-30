@@ -26,9 +26,9 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
 this.setAllowsInvalid$Z(false);
-this.containsLiteralChars = true;
-this.maskChars = C$.EmptyMaskChars;
-this.placeholder = " ";
+this.containsLiteralChars=true;
+this.maskChars=C$.EmptyMaskChars;
+this.placeholder=" ";
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (mask) {
@@ -37,7 +37,7 @@ this.setMask$S(mask);
 }, 1);
 
 Clazz.newMeth(C$, 'setMask$S', function (mask) {
-this.mask = mask;
+this.mask=mask;
 p$.updateInternalMask.apply(this, []);
 });
 
@@ -46,7 +46,7 @@ return this.mask;
 });
 
 Clazz.newMeth(C$, 'setValidCharacters$S', function (validCharacters) {
-this.validCharacters = validCharacters;
+this.validCharacters=validCharacters;
 });
 
 Clazz.newMeth(C$, 'getValidCharacters', function () {
@@ -54,7 +54,7 @@ return this.validCharacters;
 });
 
 Clazz.newMeth(C$, 'setInvalidCharacters$S', function (invalidCharacters) {
-this.invalidCharacters = invalidCharacters;
+this.invalidCharacters=invalidCharacters;
 });
 
 Clazz.newMeth(C$, 'getInvalidCharacters', function () {
@@ -62,7 +62,7 @@ return this.invalidCharacters;
 });
 
 Clazz.newMeth(C$, 'setPlaceholder$S', function (placeholder) {
-this.placeholderString = placeholder;
+this.placeholderString=placeholder;
 });
 
 Clazz.newMeth(C$, 'getPlaceholder', function () {
@@ -70,7 +70,7 @@ return this.placeholderString;
 });
 
 Clazz.newMeth(C$, 'setPlaceholderCharacter$C', function (placeholder) {
-this.placeholder = placeholder;
+this.placeholder=placeholder;
 });
 
 Clazz.newMeth(C$, 'getPlaceholderCharacter', function () {
@@ -78,7 +78,7 @@ return this.placeholder;
 });
 
 Clazz.newMeth(C$, 'setValueContainsLiteralCharacters$Z', function (containsLiteralChars) {
-this.containsLiteralChars = containsLiteralChars;
+this.containsLiteralChars=containsLiteralChars;
 });
 
 Clazz.newMeth(C$, 'getValueContainsLiteralCharacters', function () {
@@ -115,9 +115,9 @@ throw pe;
 
 Clazz.newMeth(C$, 'stringToValue$S$Z', function (value, completeMatch) {
 var errorOffset = -1;
-if ((errorOffset = p$.getInvalidOffset$S$Z.apply(this, [value, completeMatch])) == -1) {
+if ((errorOffset=p$.getInvalidOffset$S$Z.apply(this, [value, completeMatch])) == -1) {
 if (!this.getValueContainsLiteralCharacters()) {
-value = p$.stripLiteralChars$S.apply(this, [value]);
+value=p$.stripLiteralChars$S.apply(this, [value]);
 }return C$.superclazz.prototype.stringToValue$S.apply(this, [value]);
 }throw Clazz.new_(Clazz.load('java.text.ParseException').c$$S$I,["stringToValue passed invalid value", errorOffset]);
 });
@@ -153,7 +153,7 @@ temp.add$TE(Clazz.new_((I$[4]||$incl$(4)), [this, null]));
 break;
 case "\'".$c():
 if (++counter < maxCounter) {
-maskChar = mask.charAt(counter);
+maskChar=mask.charAt(counter);
 temp.add$TE(Clazz.new_((I$[5]||$incl$(5)).c$$C, [this, null, maskChar]));
 }break;
 case "U".$c():
@@ -180,9 +180,9 @@ break;
 }
 }
 }if (fixed.size() == 0) {
-this.maskChars = C$.EmptyMaskChars;
+this.maskChars=C$.EmptyMaskChars;
 } else {
-this.maskChars = Clazz.array((I$[1]||$incl$(1)), [fixed.size()]);
+this.maskChars=Clazz.array((I$[1]||$incl$(1)), [fixed.size()]);
 fixed.toArray$TTA(this.maskChars);
 }});
 
@@ -222,13 +222,13 @@ var last = 0;
 for (var counter = 0, max = string.length$(); counter < max; counter++) {
 if (p$.isLiteral$I.apply(this, [counter])) {
 if (sb == null ) {
-sb = Clazz.new_((I$[2]||$incl$(2)));
+sb=Clazz.new_((I$[2]||$incl$(2)));
 if (counter > 0) {
 sb.append$S(string.substring(0, counter));
-}last = counter + 1;
+}last=counter + 1;
 } else if (last != counter) {
 sb.append$S(string.substring(last, counter));
-}last = counter + 1;
+}last=counter + 1;
 }}
 if (sb == null ) {
 return string;
@@ -247,7 +247,7 @@ Clazz.newMeth(C$, 'isValidEdit$javax_swing_text_DefaultFormatter_ReplaceHolder',
 if (!this.getAllowsInvalid()) {
 var newString = this.getReplaceString$I$I$S(rh.offset, rh.length, rh.text);
 try {
-rh.value = p$.stringToValue$S$Z.apply(this, [newString, false]);
+rh.value=p$.stringToValue$S$Z.apply(this, [newString, false]);
 return true;
 } catch (pe) {
 if (Clazz.exceptionOf(pe, "java.text.ParseException")){
@@ -274,7 +274,7 @@ if (textIndex < tl && p$.isValidCharacter$I$C.apply(this, [rh.offset + counter, 
 var aChar = text.charAt(textIndex);
 if (aChar != p$.getCharacter$I$C.apply(this, [rh.offset + counter, aChar])) {
 if (replace == null ) {
-replace = Clazz.new_((I$[2]||$incl$(2)));
+replace=Clazz.new_((I$[2]||$incl$(2)));
 if (textIndex > 0) {
 replace.append$S(text.substring(0, textIndex));
 }}}if (replace != null ) {
@@ -284,15 +284,15 @@ replace.append$C(p$.getCharacter$I$C.apply(this, [rh.offset + counter, aChar]));
 if (replace != null ) {
 replace.append$C(p$.getLiteral$I.apply(this, [rh.offset + counter]));
 if (textIndex < tl) {
-max = Math.min(max + 1, p$.getMaxLength.apply(this, []) - rh.offset);
+max=Math.min(max + 1, p$.getMaxLength.apply(this, []) - rh.offset);
 }} else if (textIndex > 0) {
-replace = Clazz.new_((I$[2]||$incl$(2)).c$$I,[max]);
+replace=Clazz.new_((I$[2]||$incl$(2)).c$$I,[max]);
 replace.append$S(text.substring(0, textIndex));
 replace.append$C(p$.getLiteral$I.apply(this, [rh.offset + counter]));
 if (textIndex < tl) {
-max = Math.min(max + 1, p$.getMaxLength.apply(this, []) - rh.offset);
+max=Math.min(max + 1, p$.getMaxLength.apply(this, []) - rh.offset);
 } else if (rh.cursorPosition == -1) {
-rh.cursorPosition = rh.offset + counter;
+rh.cursorPosition=rh.offset + counter;
 }} else {
 rh.offset++;
 rh.length--;
@@ -300,21 +300,21 @@ counter--;
 max--;
 }} else if (textIndex >= tl) {
 if (replace == null ) {
-replace = Clazz.new_((I$[2]||$incl$(2)));
+replace=Clazz.new_((I$[2]||$incl$(2)));
 if (text != null ) {
 replace.append$S(text);
 }}replace.append$C(this.getPlaceholderCharacter());
 if (tl > 0 && rh.cursorPosition == -1 ) {
-rh.cursorPosition = rh.offset + counter;
+rh.cursorPosition=rh.offset + counter;
 }} else {
 return false;
 }}
 if (replace != null ) {
-rh.text = replace.toString();
+rh.text=replace.toString();
 } else if (text != null  && rh.offset + tl > p$.getMaxLength.apply(this, []) ) {
-rh.text = text.substring(0, p$.getMaxLength.apply(this, []) - rh.offset);
+rh.text=text.substring(0, p$.getMaxLength.apply(this, []) - rh.offset);
 }if (this.getOverwriteMode() && rh.text != null  ) {
-rh.length = rh.text.length$();
+rh.length=rh.text.length$();
 }}return C$.superclazz.prototype.canReplace$javax_swing_text_DefaultFormatter_ReplaceHolder.apply(this, [rh]);
 });
 ;
@@ -332,11 +332,11 @@ return false;
 Clazz.newMeth(C$, 'isValidCharacter$C', function (aChar) {
 if (this.isLiteral()) {
 return (this.getChar$C(aChar) == aChar);
-}aChar = this.getChar$C(aChar);
+}aChar=this.getChar$C(aChar);
 var filter = this.this$0.getValidCharacters();
 if (filter != null  && filter.indexOf(aChar) == -1 ) {
 return false;
-}filter = this.this$0.getInvalidCharacters();
+}filter=this.this$0.getInvalidCharacters();
 if (filter != null  && filter.indexOf(aChar) != -1 ) {
 return false;
 }return true;
@@ -354,16 +354,16 @@ buff.append$C(this.getChar$C(aChar));
 if (this.this$0.getValueContainsLiteralCharacters()) {
 if (inString && aChar != this.getChar$C(aChar) ) {
 throw Clazz.new_(Clazz.load('java.text.ParseException').c$$S$I,["Invalid character: " + aChar, index[0]]);
-}index[0] = index[0] + 1;
+}index[0]=index[0] + 1;
 }} else if (index[0] >= formatting.length$()) {
 if (placeholder != null  && index[0] < placeholder.length$() ) {
 buff.append$C(placeholder.charAt(index[0]));
 } else {
 buff.append$C(this.this$0.getPlaceholderCharacter());
-}index[0] = index[0] + 1;
+}index[0]=index[0] + 1;
 } else if (this.isValidCharacter$C(aChar)) {
 buff.append$C(this.getChar$C(aChar));
-index[0] = index[0] + 1;
+index[0]=index[0] + 1;
 } else {
 throw Clazz.new_(Clazz.load('java.text.ParseException').c$$S$I,["Invalid character: " + aChar, index[0]]);
 }});
@@ -388,7 +388,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$C', function (fixedChar) {
 Clazz.super_(C$, this,1);
-this.fixedChar = fixedChar;
+this.fixedChar=fixedChar;
 }, 1);
 
 Clazz.newMeth(C$, 'isLiteral', function () {
@@ -518,4 +518,4 @@ return aChar;
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:56
+//Created 2018-05-24 08:47:06

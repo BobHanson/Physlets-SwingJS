@@ -15,12 +15,12 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$$S.apply(this, ["/Pages"]);
 C$.$init$.apply(this);
-this.pages = Clazz.new_((I$[1]||$incl$(1)));
+this.pages=Clazz.new_((I$[1]||$incl$(1)));
 }, 1);
 
 Clazz.newMeth(C$, 'add$gnu_jpdf_PDFPage', function (page) {
 this.pages.addElement$TE(page);
-page.pdfPageList = this;
+page.pdfPageList=this;
 });
 
 Clazz.newMeth(C$, 'getPage$I', function (page) {
@@ -38,4 +38,4 @@ this.writeStart$java_io_OutputStream(os);
 this.writeEnd$java_io_OutputStream(os);
 });
 })();
-//Created 2018-05-15 01:01:47
+//Created 2018-05-24 08:45:03

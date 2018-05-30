@@ -10,8 +10,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.sb = Clazz.new_((I$[1]||$incl$(1)));
-this.root = Clazz.new_((I$[2]||$incl$(2)), [this, null]);
+this.sb=Clazz.new_((I$[1]||$incl$(1)));
+this.root=Clazz.new_((I$[2]||$incl$(2)), [this, null]);
 }, 1);
 
 Clazz.newMeth(C$, 'getLength', function () {
@@ -26,12 +26,12 @@ return this.sb.substring2$I$I(offset, offset + length);
 Clazz.newMeth(C$, 'getText$I$I$javax_swing_text_Segment', function (offset, length, chars) {
 this.checkLoc$I$I(offset, offset + length);
 if (this.tempChar == null ) {
-this.tempChar = Clazz.array(Character.TYPE, [this.sb.length$()]);
-for (var i = this.tempChar.length; --i >= 0; ) this.tempChar[i] = this.sb.charAt$I(i);
+this.tempChar=Clazz.array(Character.TYPE, [this.sb.length$()]);
+for (var i = this.tempChar.length; --i >= 0; ) this.tempChar[i]=this.sb.charAt$I(i);
 
-}chars.array = this.tempChar;
-chars.offset = offset;
-chars.count = length;
+}chars.array=this.tempChar;
+chars.offset=offset;
+chars.count=length;
 });
 
 Clazz.newMeth(C$, 'getStartPosition', function () {
@@ -45,9 +45,9 @@ return Clazz.new_((I$[3]||$incl$(3)).c$$I,[this.sb.length$()]);
 Clazz.newMeth(C$, 'createPosition$I', function (offs) {
 this.checkLoc$I$I(offs, offs);
 var i = Integer.$valueOf(offs);
-if (this.positions == null ) this.positions = Clazz.new_((I$[4]||$incl$(4)));
+if (this.positions == null ) this.positions=Clazz.new_((I$[4]||$incl$(4)));
 var p = this.positions.get$O(i);
-if (p == null ) this.positions.put$TK$TV(i, p = Clazz.new_((I$[3]||$incl$(3)).c$$I,[offs]));
+if (p == null ) this.positions.put$TK$TV(i, p=Clazz.new_((I$[3]||$incl$(3)).c$$I,[offs]));
 return p;
 });
 
@@ -58,4 +58,4 @@ return this.root;
 Clazz.newMeth(C$, 'render$Runnable', function (r) {
 });
 })();
-//Created 2018-05-15 01:03:16
+//Created 2018-05-24 08:47:45

@@ -69,16 +69,16 @@ var x2 = src.getX2();
 var y2 = src.getY2();
 var centerx = (ctrlx1 + ctrlx2) / 2.0;
 var centery = (ctrly1 + ctrly2) / 2.0;
-ctrlx1 = (x1 + ctrlx1) / 2.0;
-ctrly1 = (y1 + ctrly1) / 2.0;
-ctrlx2 = (x2 + ctrlx2) / 2.0;
-ctrly2 = (y2 + ctrly2) / 2.0;
+ctrlx1=(x1 + ctrlx1) / 2.0;
+ctrly1=(y1 + ctrly1) / 2.0;
+ctrlx2=(x2 + ctrlx2) / 2.0;
+ctrly2=(y2 + ctrly2) / 2.0;
 var ctrlx12 = (ctrlx1 + centerx) / 2.0;
 var ctrly12 = (ctrly1 + centery) / 2.0;
 var ctrlx21 = (ctrlx2 + centerx) / 2.0;
 var ctrly21 = (ctrly2 + centery) / 2.0;
-centerx = (ctrlx12 + ctrlx21) / 2.0;
-centery = (ctrly12 + ctrly21) / 2.0;
+centerx=(ctrlx12 + ctrlx21) / 2.0;
+centery=(ctrly12 + ctrly21) / 2.0;
 if (left != null ) {
 left.setCurve$D$D$D$D$D$D$D$D(x1, y1, ctrlx1, ctrly1, ctrlx12, ctrly12, centerx, centery);
 }if (right != null ) {
@@ -95,37 +95,37 @@ var ctrly2 = src[srcoff + 5];
 var x2 = src[srcoff + 6];
 var y2 = src[srcoff + 7];
 if (left != null ) {
-left[leftoff + 0] = x1;
-left[leftoff + 1] = y1;
+left[leftoff + 0]=x1;
+left[leftoff + 1]=y1;
 }if (right != null ) {
-right[rightoff + 6] = x2;
-right[rightoff + 7] = y2;
-}x1 = (x1 + ctrlx1) / 2.0;
-y1 = (y1 + ctrly1) / 2.0;
-x2 = (x2 + ctrlx2) / 2.0;
-y2 = (y2 + ctrly2) / 2.0;
+right[rightoff + 6]=x2;
+right[rightoff + 7]=y2;
+}x1=(x1 + ctrlx1) / 2.0;
+y1=(y1 + ctrly1) / 2.0;
+x2=(x2 + ctrlx2) / 2.0;
+y2=(y2 + ctrly2) / 2.0;
 var centerx = (ctrlx1 + ctrlx2) / 2.0;
 var centery = (ctrly1 + ctrly2) / 2.0;
-ctrlx1 = (x1 + centerx) / 2.0;
-ctrly1 = (y1 + centery) / 2.0;
-ctrlx2 = (x2 + centerx) / 2.0;
-ctrly2 = (y2 + centery) / 2.0;
-centerx = (ctrlx1 + ctrlx2) / 2.0;
-centery = (ctrly1 + ctrly2) / 2.0;
+ctrlx1=(x1 + centerx) / 2.0;
+ctrly1=(y1 + centery) / 2.0;
+ctrlx2=(x2 + centerx) / 2.0;
+ctrly2=(y2 + centery) / 2.0;
+centerx=(ctrlx1 + ctrlx2) / 2.0;
+centery=(ctrly1 + ctrly2) / 2.0;
 if (left != null ) {
-left[leftoff + 2] = x1;
-left[leftoff + 3] = y1;
-left[leftoff + 4] = ctrlx1;
-left[leftoff + 5] = ctrly1;
-left[leftoff + 6] = centerx;
-left[leftoff + 7] = centery;
+left[leftoff + 2]=x1;
+left[leftoff + 3]=y1;
+left[leftoff + 4]=ctrlx1;
+left[leftoff + 5]=ctrly1;
+left[leftoff + 6]=centerx;
+left[leftoff + 7]=centery;
 }if (right != null ) {
-right[rightoff + 0] = centerx;
-right[rightoff + 1] = centery;
-right[rightoff + 2] = ctrlx2;
-right[rightoff + 3] = ctrly2;
-right[rightoff + 4] = x2;
-right[rightoff + 5] = y2;
+right[rightoff + 0]=centerx;
+right[rightoff + 1]=centery;
+right[rightoff + 2]=ctrlx2;
+right[rightoff + 3]=ctrly2;
+right[rightoff + 4]=x2;
+right[rightoff + 5]=y2;
 }}, 1);
 
 Clazz.newMeth(C$, 'solveCubic$DA', function (eqn) {
@@ -144,27 +144,27 @@ var Q = (a * a - 3.0 * b) / 9.0;
 var R = (2.0 * a * a * a  - 9.0 * a * b  + 27.0 * c) / 54.0;
 var R2 = R * R;
 var Q3 = Q * Q * Q ;
-a = a / 3.0;
+a=a / 3.0;
 if (R2 < Q3 ) {
 var theta = Math.acos(R / Math.sqrt(Q3));
-Q = -2.0 * Math.sqrt(Q);
+Q=-2.0 * Math.sqrt(Q);
 if (res === eqn ) {
-eqn = Clazz.array(Double.TYPE, [4]);
+eqn=Clazz.array(Double.TYPE, [4]);
 System.arraycopy(res, 0, eqn, 0, 4);
-}res[roots++] = Q * Math.cos(theta / 3.0) - a;
-res[roots++] = Q * Math.cos((theta + 6.283185307179586) / 3.0) - a;
-res[roots++] = Q * Math.cos((theta - 6.283185307179586) / 3.0) - a;
+}res[roots++]=Q * Math.cos(theta / 3.0) - a;
+res[roots++]=Q * Math.cos((theta + 6.283185307179586) / 3.0) - a;
+res[roots++]=Q * Math.cos((theta - 6.283185307179586) / 3.0) - a;
 C$.fixRoots$DA$DA(res, eqn);
 } else {
 var neg = (R < 0.0 );
 var S = Math.sqrt(R2 - Q3);
 if (neg) {
-R = -R;
+R=-R;
 }var A = Math.pow(R + S, 0.3333333333333333);
 if (!neg) {
-A = -A;
+A=-A;
 }var B = (A == 0.0 ) ? 0.0 : (Q / A);
-res[roots++] = (A + B) - a;
+res[roots++]=(A + B) - a;
 }return roots;
 }, 1);
 
@@ -173,16 +173,16 @@ var EPSILON = 1.0E-5;
 for (var i = 0; i < 3; i++) {
 var t = res[i];
 if (Math.abs(t) < 1.0E-5 ) {
-res[i] = C$.findZero$D$D$DA(t, 0, eqn);
+res[i]=C$.findZero$D$D$DA(t, 0, eqn);
 } else if (Math.abs(t - 1) < 1.0E-5 ) {
-res[i] = C$.findZero$D$D$DA(t, 1, eqn);
+res[i]=C$.findZero$D$D$DA(t, 1, eqn);
 }}
 }, 1);
 
 Clazz.newMeth(C$, 'solveEqn$DA$I$D', function (eqn, order, t) {
 var v = eqn[order];
 while (--order >= 0){
-v = v * t + eqn[order];
+v=v * t + eqn[order];
 }
 return v;
 }, 1);
@@ -193,7 +193,7 @@ var slope;
 var origdelta = 0;
 var origt = t;
 while (true){
-slope = C$.solveEqn$DA$I$D(slopeqn, 2, t);
+slope=C$.solveEqn$DA$I$D(slopeqn, 2, t);
 if (slope == 0 ) {
 return t;
 }var y = C$.solveEqn$DA$I$D(eqn, 3, t);
@@ -201,7 +201,7 @@ if (y == 0 ) {
 return t;
 }var delta = -(y / slope);
 if (origdelta == 0 ) {
-origdelta = delta;
+origdelta=delta;
 }if (t < target ) {
 if (delta < 0 ) return t;
 } else if (t > target ) {
@@ -215,9 +215,9 @@ return t;
 var tag = (origt < t  ? C$.getTag$D$D$D(target, origt, t) : C$.getTag$D$D$D(target, t, origt));
 if (tag != 0) {
 return (origt + t) / 2;
-}t = target;
+}t=target;
 } else {
-t = newt;
+t=newt;
 }}
 }, 1);
 
@@ -237,10 +237,10 @@ return this.contains$D$D(p.getX(), p.getY());
 });
 
 Clazz.newMeth(C$, 'fillEqn$DA$D$D$D$D$D', function (eqn, val, c1, cp1, cp2, c2) {
-eqn[0] = c1 - val;
-eqn[1] = (cp1 - c1) * 3.0;
-eqn[2] = (cp2 - cp1 - cp1  + c1) * 3.0;
-eqn[3] = c2 + (cp1 - cp2) * 3.0 - c1;
+eqn[0]=c1 - val;
+eqn[1]=(cp1 - c1) * 3.0;
+eqn[2]=(cp2 - cp1 - cp1  + c1) * 3.0;
+eqn[3]=c2 + (cp1 - cp2) * 3.0 - c1;
 return;
 }, 1);
 
@@ -250,7 +250,7 @@ for (var i = 0; i < num; i++) {
 var t = vals[i];
 if ((include0 ? t >= 0  : t > 0 ) && (include1 ? t <= 1  : t < 1 ) && (inflect == null  || inflect[1] + (2 * inflect[2] + 3 * inflect[3] * t ) * t != 0  )  ) {
 var u = 1 - t;
-vals[j++] = c1 * u * u * u  + 3 * cp1 * t * u * u  + 3 * cp2 * t * t * u  + c2 * t * t * t ;
+vals[j++]=c1 * u * u * u  + 3 * cp1 * t * u * u  + 3 * cp2 * t * t * u  + c2 * t * t * t ;
 }}
 return j;
 }, 1);
@@ -324,12 +324,12 @@ var res = Clazz.array(Double.TYPE, [4]);
 if (!yoverlap) {
 C$.fillEqn$DA$D$D$D$D$D(eqn, (y1tag < 0 ? y : y + h), y1, ctrly1, ctrly2, y2);
 var num = C$.solveCubic$DA$DA(eqn, res);
-num = C$.evalCubic$DA$I$Z$Z$DA$D$D$D$D(res, num, true, true, null, x1, ctrlx1, ctrlx2, x2);
+num=C$.evalCubic$DA$I$Z$Z$DA$D$D$D$D(res, num, true, true, null, x1, ctrlx1, ctrlx2, x2);
 return (num == 2 && C$.getTag$D$D$D(res[0], x, x + w) * C$.getTag$D$D$D(res[1], x, x + w) <= 0 );
 }if (!xoverlap) {
 C$.fillEqn$DA$D$D$D$D$D(eqn, (x1tag < 0 ? x : x + w), x1, ctrlx1, ctrlx2, x2);
 var num = C$.solveCubic$DA$DA(eqn, res);
-num = C$.evalCubic$DA$I$Z$Z$DA$D$D$D$D(res, num, true, true, null, y1, ctrly1, ctrly2, y2);
+num=C$.evalCubic$DA$I$Z$Z$DA$D$D$D$D(res, num, true, true, null, y1, ctrly1, ctrly2, y2);
 return (num == 2 && C$.getTag$D$D$D(res[0], y, y + h) * C$.getTag$D$D$D(res[1], y, y + h) <= 0 );
 }var dx = x2 - x1;
 var dy = y2 - y1;
@@ -337,24 +337,24 @@ var k = y2 * x1 - x2 * y1;
 var c1tag;
 var c2tag;
 if (y1tag == 0) {
-c1tag = x1tag;
+c1tag=x1tag;
 } else {
-c1tag = C$.getTag$D$D$D((k + dx * (y1tag < 0 ? y : y + h)) / dy, x, x + w);
+c1tag=C$.getTag$D$D$D((k + dx * (y1tag < 0 ? y : y + h)) / dy, x, x + w);
 }if (y2tag == 0) {
-c2tag = x2tag;
+c2tag=x2tag;
 } else {
-c2tag = C$.getTag$D$D$D((k + dx * (y2tag < 0 ? y : y + h)) / dy, x, x + w);
+c2tag=C$.getTag$D$D$D((k + dx * (y2tag < 0 ? y : y + h)) / dy, x, x + w);
 }if (c1tag * c2tag <= 0) {
 return true;
-}c1tag = ((c1tag * x1tag <= 0) ? y1tag : y2tag);
+}c1tag=((c1tag * x1tag <= 0) ? y1tag : y2tag);
 C$.fillEqn$DA$D$D$D$D$D(eqn, (c2tag < 0 ? x : x + w), x1, ctrlx1, ctrlx2, x2);
 var num = C$.solveCubic$DA$DA(eqn, res);
-num = C$.evalCubic$DA$I$Z$Z$DA$D$D$D$D(res, num, true, true, null, y1, ctrly1, ctrly2, y2);
+num=C$.evalCubic$DA$I$Z$Z$DA$D$D$D$D(res, num, true, true, null, y1, ctrly1, ctrly2, y2);
 var tags = Clazz.array(Integer.TYPE, [num + 1]);
 for (var i = 0; i < num; i++) {
-tags[i] = C$.getTag$D$D$D(res[i], y, y + h);
+tags[i]=C$.getTag$D$D$D(res[i], y, y + h);
 }
-tags[num] = c1tag;
+tags[num]=c1tag;
 (I$[8]||$incl$(8)).sort$IA(tags);
 return ((num >= 1 && tags[0] * tags[1] <= 0 ) || (num >= 3 && tags[2] * tags[3] <= 0 ) );
 });
@@ -480,25 +480,25 @@ return Clazz.new_((I$[1]||$incl$(1)).c$$F$F,[this.x2, this.y2]);
 });
 
 Clazz.newMeth(C$, 'setCurve$D$D$D$D$D$D$D$D', function (x1, y1, ctrlx1, ctrly1, ctrlx2, ctrly2, x2, y2) {
-this.x1 = x1;
-this.y1 = y1;
-this.ctrlx1 = ctrlx1;
-this.ctrly1 = ctrly1;
-this.ctrlx2 = ctrlx2;
-this.ctrly2 = ctrly2;
-this.x2 = x2;
-this.y2 = y2;
+this.x1=x1;
+this.y1=y1;
+this.ctrlx1=ctrlx1;
+this.ctrly1=ctrly1;
+this.ctrlx2=ctrlx2;
+this.ctrly2=ctrly2;
+this.x2=x2;
+this.y2=y2;
 });
 
 Clazz.newMeth(C$, 'setCurve$F$F$F$F$F$F$F$F', function (x1, y1, ctrlx1, ctrly1, ctrlx2, ctrly2, x2, y2) {
-this.x1 = x1;
-this.y1 = y1;
-this.ctrlx1 = ctrlx1;
-this.ctrly1 = ctrly1;
-this.ctrlx2 = ctrlx2;
-this.ctrly2 = ctrly2;
-this.x2 = x2;
-this.y2 = y2;
+this.x1=x1;
+this.y1=y1;
+this.ctrlx1=ctrlx1;
+this.ctrly1=ctrly1;
+this.ctrlx2=ctrlx2;
+this.ctrly2=ctrly2;
+this.x2=x2;
+this.y2=y2;
 });
 
 Clazz.newMeth(C$, 'getBounds2D', function () {
@@ -590,14 +590,14 @@ return Clazz.new_((I$[3]||$incl$(3)).c$$D$D,[this.x2, this.y2]);
 });
 
 Clazz.newMeth(C$, 'setCurve$D$D$D$D$D$D$D$D', function (x1, y1, ctrlx1, ctrly1, ctrlx2, ctrly2, x2, y2) {
-this.x1 = x1;
-this.y1 = y1;
-this.ctrlx1 = ctrlx1;
-this.ctrly1 = ctrly1;
-this.ctrlx2 = ctrlx2;
-this.ctrly2 = ctrly2;
-this.x2 = x2;
-this.y2 = y2;
+this.x1=x1;
+this.y1=y1;
+this.ctrlx1=ctrlx1;
+this.ctrly1=ctrly1;
+this.ctrlx2=ctrlx2;
+this.ctrly2=ctrly2;
+this.x2=x2;
+this.y2=y2;
 });
 
 Clazz.newMeth(C$, 'getBounds2D', function () {
@@ -609,4 +609,4 @@ return Clazz.new_((I$[4]||$incl$(4)).c$$D$D$D$D,[left, top, right - left, bottom
 });
 })()
 })();
-//Created 2018-05-15 01:01:59
+//Created 2018-05-24 08:45:20

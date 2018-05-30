@@ -57,11 +57,11 @@ alert('native method must be replaced! Lsun/awt/image/ImageRepresentation;.initI
 
 Clazz.newMeth(C$, 'c$$sun_awt_image_ToolkitImage$java_awt_image_ColorModel$Z', function (im, cmodel, forceCMhint) {
 Clazz.super_(C$, this,1);
-this.image = im;
+this.image=im;
 if (Clazz.instanceOf(this.image.getSource(), "sun.awt.image.InputStreamImageSource")) {
-this.src = this.image.getSource();
+this.src=this.image.getSource();
 }this.setColorModel$java_awt_image_ColorModel(cmodel);
-this.forceCMhint = forceCMhint;
+this.forceCMhint=forceCMhint;
 }, 1);
 
 Clazz.newMeth(C$, 'reconstruct$I', function (flags) {
@@ -72,7 +72,7 @@ if ((this.availinfo & 64) == 0 && missinginfo != 0 ) {
 this.numWaiters++;
 try {
 this.startProduction();
-missinginfo = flags & ~this.availinfo;
+missinginfo=flags & ~this.availinfo;
 while ((this.availinfo & 64) == 0 && missinginfo != 0 ){
 try {
 this.wait();
@@ -84,7 +84,7 @@ return;
 throw e;
 }
 }
-missinginfo = flags & ~this.availinfo;
+missinginfo=flags & ~this.availinfo;
 }
 } finally {
 p$.decrementWaiters.apply(this, []);
@@ -100,10 +100,10 @@ if (w <= 0 || h <= 0 ) {
 this.imageComplete$I(1);
 return;
 }if (this.width != w || this.height != h ) {
-this.bimage = null;
-}this.width = w;
-this.height = h;
-this.availinfo = this.availinfo|(3);
+this.bimage=null;
+}this.width=w;
+this.height=h;
+this.availinfo|=3;
 });
 
 Clazz.newMeth(C$, 'getWidth', function () {
@@ -138,51 +138,51 @@ this.newInfo$java_awt_Image$I$I$I$I$I(this.image, 4, 0, 0, 0, 0);
 Clazz.newMeth(C$, 'setColorModel$java_awt_image_ColorModel', function (model) {
 if (this.src != null ) {
 this.src.checkSecurity$O$Z(null, false);
-}this.srcModel = model;
+}this.srcModel=model;
 if (Clazz.instanceOf(model, "java.awt.image.IndexColorModel")) {
 if (model.getTransparency() == (I$[4]||$incl$(4)).TRANSLUCENT) {
-this.cmodel = (I$[5]||$incl$(5)).getRGBdefault();
-this.srcLUT = null;
+this.cmodel=(I$[5]||$incl$(5)).getRGBdefault();
+this.srcLUT=null;
 } else {
 var icm = model;
-this.numSrcLUT = icm.getMapSize();
-this.srcLUT = Clazz.array(Integer.TYPE, [Math.max(this.numSrcLUT, 256)]);
+this.numSrcLUT=icm.getMapSize();
+this.srcLUT=Clazz.array(Integer.TYPE, [Math.max(this.numSrcLUT, 256)]);
 icm.getRGBs$IA(this.srcLUT);
-this.srcLUTtransIndex = icm.getTransparentPixel();
-this.cmodel = model;
+this.srcLUTtransIndex=icm.getTransparentPixel();
+this.cmodel=model;
 }} else {
 if (this.cmodel == null ) {
-this.cmodel = model;
-this.srcLUT = null;
+this.cmodel=model;
+this.srcLUT=null;
 } else if (Clazz.instanceOf(model, "java.awt.image.DirectColorModel")) {
 var dcm = model;
 if ((dcm.getRedMask() == 16711680) && (dcm.getGreenMask() == 65280) && (dcm.getBlueMask() == 255)  ) {
-this.cmodel = model;
-this.srcLUT = null;
-}}}this.isSameCM = (this.cmodel === model );
+this.cmodel=model;
+this.srcLUT=null;
+}}}this.isSameCM=(this.cmodel === model );
 });
 
 Clazz.newMeth(C$, 'createBufferedImage', function () {
-this.isDefaultBI = false;
+this.isDefaultBI=false;
 try {
-this.biRaster = this.cmodel.createCompatibleWritableRaster$I$I(this.width, this.height);
-this.bimage = this.createImage$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable(this.cmodel, this.biRaster, this.cmodel.isAlphaPremultiplied(), null);
+this.biRaster=this.cmodel.createCompatibleWritableRaster$I$I(this.width, this.height);
+this.bimage=this.createImage$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable(this.cmodel, this.biRaster, this.cmodel.isAlphaPremultiplied(), null);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
-this.cmodel = (I$[5]||$incl$(5)).getRGBdefault();
-this.biRaster = this.cmodel.createCompatibleWritableRaster$I$I(this.width, this.height);
-this.bimage = this.createImage$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable(this.cmodel, this.biRaster, false, null);
+this.cmodel=(I$[5]||$incl$(5)).getRGBdefault();
+this.biRaster=this.cmodel.createCompatibleWritableRaster$I$I(this.width, this.height);
+this.bimage=this.createImage$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable(this.cmodel, this.biRaster, false, null);
 } else {
 throw e;
 }
 }
 var type = this.bimage.getType();
 if ((this.cmodel === (I$[5]||$incl$(5)).getRGBdefault() ) || (type == 1) || (type == 3)  ) {
-this.isDefaultBI = true;
+this.isDefaultBI=true;
 } else if (Clazz.instanceOf(this.cmodel, "java.awt.image.DirectColorModel")) {
 var dcm = this.cmodel;
 if (dcm.getRedMask() == 16711680 && dcm.getGreenMask() == 65280  && dcm.getBlueMask() == 255 ) {
-this.isDefaultBI = true;
+this.isDefaultBI=true;
 }}});
 
 Clazz.newMeth(C$, 'convertToRGB', function () {
@@ -196,31 +196,31 @@ var bct = this.biRaster;
 var data = bct.getDataStorage();
 var coff = bct.getDataOffset$I(0);
 for (var i = 0; i < size; i++) {
-newpixels[i] = this.srcLUT[data[coff + i] & 255];
+newpixels[i]=this.srcLUT[data[coff + i] & 255];
 }
 } else {
 var srcpixels = null;
 var off = 0;
 for (var y = 0; y < h; y++) {
 for (var x = 0; x < w; x++) {
-srcpixels = this.biRaster.getDataElements$I$I$O(x, y, srcpixels);
-newpixels[off++] = this.cmodel.getRGB$O(srcpixels);
+srcpixels=this.biRaster.getDataElements$I$I$O(x, y, srcpixels);
+newpixels[off++]=this.cmodel.getRGB$O(srcpixels);
 }
 }
 }(I$[7]||$incl$(7)).markDirty$java_awt_image_DataBuffer(dbi);
-this.isSameCM = false;
-this.cmodel = (I$[5]||$incl$(5)).getRGBdefault();
+this.isSameCM=false;
+this.cmodel=(I$[5]||$incl$(5)).getRGBdefault();
 var bandMasks = Clazz.array(Integer.TYPE, -1, [16711680, 65280, 255, -16777216]);
-this.biRaster = (I$[8]||$incl$(8)).createPackedRaster$java_awt_image_DataBuffer$I$I$I$IA$java_awt_Point(dbi, w, h, w, bandMasks, null);
-this.bimage = this.createImage$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable(this.cmodel, this.biRaster, this.cmodel.isAlphaPremultiplied(), null);
-this.srcLUT = null;
-this.isDefaultBI = true;
+this.biRaster=(I$[8]||$incl$(8)).createPackedRaster$java_awt_image_DataBuffer$I$I$I$IA$java_awt_Point(dbi, w, h, w, bandMasks, null);
+this.bimage=this.createImage$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable(this.cmodel, this.biRaster, this.cmodel.isAlphaPremultiplied(), null);
+this.srcLUT=null;
+this.isDefaultBI=true;
 });
 
 Clazz.newMeth(C$, 'setHints$I', function (h) {
 if (this.src != null ) {
 this.src.checkSecurity$O$Z(null, false);
-}this.hints = h;
+}this.hints=h;
 });
 
 Clazz.newMeth(C$, 'setICMpixels$I$I$I$I$IA$BA$I$I$sun_awt_image_IntegerComponentRaster', function (x, y, w, h, lut, pix, off, scansize, ict) {
@@ -242,7 +242,7 @@ this.src.checkSecurity$O$Z(null, false);
 }{
 if (this.bimage == null ) {
 if (this.cmodel == null ) {
-this.cmodel = model;
+this.cmodel=model;
 }this.createBufferedImage();
 }if (w <= 0 || h <= 0 ) {
 return;
@@ -251,23 +251,23 @@ var biHeight = this.biRaster.getHeight();
 var x1 = x + w;
 var y1 = y + h;
 if (x < 0) {
-off = off-(x);
-x = 0;
+off-=x;
+x=0;
 } else if (x1 < 0) {
-x1 = biWidth;
+x1=biWidth;
 }if (y < 0) {
-off = off-(y * scansize);
-y = 0;
+off-=y * scansize;
+y=0;
 } else if (y1 < 0) {
-y1 = biHeight;
+y1=biHeight;
 }if (x1 > biWidth) {
-x1 = biWidth;
+x1=biWidth;
 }if (y1 > biHeight) {
-y1 = biHeight;
+y1=biHeight;
 }if (x >= x1 || y >= y1 ) {
 return;
-}w = x1 - x;
-h = y1 - y;
+}w=x1 - x;
+h=y1 - y;
 if (off < 0 || off >= pix.length ) {
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["Data offset out of bounds."]);
 }var remainder = pix.length - off;
@@ -275,11 +275,11 @@ if (remainder < w) {
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["Data array is too short."]);
 }var num;
 if (scansize < 0) {
-num = ((off/-scansize|0)) + 1;
+num=((off/-scansize|0)) + 1;
 } else if (scansize > 0) {
-num = (((remainder - w)/scansize|0)) + 1;
+num=(((remainder - w)/scansize|0)) + 1;
 } else {
-num = h;
+num=h;
 }if (h > num) {
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["Data array is too short."]);
 }if (this.isSameCM && (this.cmodel !== model ) && (this.srcLUT != null ) && (Clazz.instanceOf(model, "java.awt.image.IndexColorModel")) && (Clazz.instanceOf(this.biRaster, "sun.awt.image.ByteComponentRaster"))  ) {
@@ -293,11 +293,11 @@ bct.markDirty();
 if (numlut != this.numSrcLUT) {
 var hasAlpha = icm.hasAlpha();
 if (this.srcLUTtransIndex != -1) {
-hasAlpha = true;
+hasAlpha=true;
 }var nbits = icm.getPixelSize();
-icm = Clazz.new_((I$[9]||$incl$(9)).c$$I$I$IA$I$Z$I$I,[nbits, this.numSrcLUT, this.srcLUT, 0, hasAlpha, this.srcLUTtransIndex, (nbits > 8 ? 1 : 0)]);
-this.cmodel = icm;
-this.bimage = this.createImage$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable(icm, bct, false, null);
+icm=Clazz.new_((I$[9]||$incl$(9)).c$$I$I$IA$I$Z$I$I,[nbits, this.numSrcLUT, this.srcLUT, 0, hasAlpha, this.srcLUTtransIndex, (nbits > 8 ? 1 : 0)]);
+this.cmodel=icm;
+this.bimage=this.createImage$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable(icm, bct, false, null);
 }return;
 }}if (this.isDefaultBI) {
 var pixel;
@@ -305,50 +305,50 @@ var iraster = this.biRaster;
 if (this.srcLUT != null  && Clazz.instanceOf(model, "java.awt.image.IndexColorModel") ) {
 if (model !== this.srcModel ) {
 (model).getRGBs$IA(this.srcLUT);
-this.srcModel = model;
+this.srcModel=model;
 }if (C$.s_useNative) {
 p$.setICMpixels$I$I$I$I$IA$BA$I$I$sun_awt_image_IntegerComponentRaster.apply(this, [x, y, w, h, this.srcLUT, pix, off, scansize, iraster]);
 iraster.markDirty();
 } else {
 var storage = Clazz.array(Integer.TYPE, [w * h]);
 var soff = 0;
-for (var yoff = 0; yoff < h; yoff++, lineOff = lineOff+(scansize)) {
-poff = lineOff;
+for (var yoff = 0; yoff < h; yoff++, lineOff+=scansize) {
+poff=lineOff;
 for (var i = 0; i < w; i++) {
-storage[soff++] = this.srcLUT[pix[poff++] & 255];
+storage[soff++]=this.srcLUT[pix[poff++] & 255];
 }
 }
 iraster.setDataElements$I$I$I$I$O(x, y, w, h, storage);
 }} else {
 var storage = Clazz.array(Integer.TYPE, [w]);
-for (var yoff = y; yoff < y + h; yoff++, lineOff = lineOff+(scansize)) {
-poff = lineOff;
+for (var yoff = y; yoff < y + h; yoff++, lineOff+=scansize) {
+poff=lineOff;
 for (var i = 0; i < w; i++) {
-storage[i] = model.getRGB$I(pix[poff++] & 255);
+storage[i]=model.getRGB$I(pix[poff++] & 255);
 }
 iraster.setDataElements$I$I$I$I$O(x, yoff, w, 1, storage);
 }
-this.availinfo = this.availinfo|(8);
+this.availinfo|=8;
 }} else if ((this.cmodel === model ) && (Clazz.instanceOf(this.biRaster, "sun.awt.image.ByteComponentRaster")) && (this.biRaster.getNumDataElements() == 1)  ) {
 var bt = this.biRaster;
 if (off == 0 && scansize == w ) {
 bt.putByteData$I$I$I$I$BA(x, y, w, h, pix);
 } else {
 var bpix = Clazz.array(Byte.TYPE, [w]);
-poff = off;
+poff=off;
 for (var yoff = y; yoff < y + h; yoff++) {
 System.arraycopy(pix, poff, bpix, 0, w);
 bt.putByteData$I$I$I$I$BA(x, yoff, w, 1, bpix);
-poff = poff+(scansize);
+poff+=scansize;
 }
 }} else {
-for (var yoff = y; yoff < y + h; yoff++, lineOff = lineOff+(scansize)) {
-poff = lineOff;
+for (var yoff = y; yoff < y + h; yoff++, lineOff+=scansize) {
+poff=lineOff;
 for (var xoff = x; xoff < x + w; xoff++) {
 this.bimage.setRGB$I$I$I(xoff, yoff, model.getRGB$I(pix[poff++] & 255));
 }
 }
-this.availinfo = this.availinfo|(8);
+this.availinfo|=8;
 }}if ((this.availinfo & 16) == 0) {
 this.newInfo$java_awt_Image$I$I$I$I$I(this.image, 8, x, y, w, h);
 }});
@@ -361,7 +361,7 @@ this.src.checkSecurity$O$Z(null, false);
 }{
 if (this.bimage == null ) {
 if (this.cmodel == null ) {
-this.cmodel = model;
+this.cmodel=model;
 }this.createBufferedImage();
 }var storage = Clazz.array(Integer.TYPE, [w]);
 var yoff;
@@ -373,7 +373,7 @@ var iraster = this.biRaster;
 if (off == 0 && scansize == w ) {
 iraster.setDataElements$I$I$I$I$O(x, y, w, h, pix);
 } else {
-for (yoff = y; yoff < y + h; yoff++, lineOff = lineOff+(scansize)) {
+for (yoff=y; yoff < y + h; yoff++, lineOff+=scansize) {
 System.arraycopy(pix, lineOff, storage, 0, w);
 iraster.setDataElements$I$I$I$I$O(x, yoff, w, 1, storage);
 }
@@ -386,31 +386,31 @@ var data = iraster.getDataStorage();
 if (this.cmodel.equals$O(model)) {
 var sstride = iraster.getScanlineStride();
 var doff = y * sstride + x;
-for (yoff = 0; yoff < h; yoff++, lineOff = lineOff+(scansize)) {
+for (yoff=0; yoff < h; yoff++, lineOff+=scansize) {
 System.arraycopy(pix, lineOff, data, doff, w);
-doff = doff+(sstride);
+doff+=sstride;
 }
 iraster.markDirty();
 } else {
-for (yoff = y; yoff < y + h; yoff++, lineOff = lineOff+(scansize)) {
-poff = lineOff;
+for (yoff=y; yoff < y + h; yoff++, lineOff+=scansize) {
+poff=lineOff;
 for (var i = 0; i < w; i++) {
-storage[i] = model.getRGB$I(pix[poff++]);
+storage[i]=model.getRGB$I(pix[poff++]);
 }
 iraster.setDataElements$I$I$I$I$O(x, yoff, w, 1, storage);
 }
-}this.availinfo = this.availinfo|(8);
+}this.availinfo|=8;
 } else {
 var tmp = null;
-for (yoff = y; yoff < y + h; yoff++, lineOff = lineOff+(scansize)) {
-poff = lineOff;
+for (yoff=y; yoff < y + h; yoff++, lineOff+=scansize) {
+poff=lineOff;
 for (var xoff = x; xoff < x + w; xoff++) {
-pixel = model.getRGB$I(pix[poff++]);
-tmp = this.cmodel.getDataElements$I$O(pixel, tmp);
+pixel=model.getRGB$I(pix[poff++]);
+tmp=this.cmodel.getDataElements$I$O(pixel, tmp);
 this.biRaster.setDataElements$I$I$O(xoff, yoff, tmp);
 }
 }
-this.availinfo = this.availinfo|(8);
+this.availinfo|=8;
 }}}if (((this.availinfo & 16) == 0)) {
 this.newInfo$java_awt_Image$I$I$I$I$I(this.image, 8, x, y, w, h);
 }});
@@ -450,32 +450,32 @@ var info;
 switch (status) {
 default:
 case 4:
-done = true;
-info = 128;
+done=true;
+info=128;
 break;
 case 1:
 this.image.addInfo$I(64);
-done = true;
-info = 64;
+done=true;
+info=64;
 this.dispose();
 break;
 case 3:
-done = true;
-info = 32;
+done=true;
+info=32;
 break;
 case 2:
-done = false;
-info = 16;
+done=false;
+info=16;
 break;
 }
 {
 if (done) {
 this.image.getSource().removeConsumer$java_awt_image_ImageConsumer(this);
-this.consuming = false;
-this.newbits = null;
+this.consuming=false;
+this.newbits=null;
 if (this.bimage != null ) {
-this.bimage = this.getOpaqueRGBImage();
-}}this.availinfo = this.availinfo|(info);
+this.bimage=this.getOpaqueRGBImage();
+}}this.availinfo|=info;
 this.notifyAll();
 }this.newInfo$java_awt_Image$I$I$I$I$I(this.image, info, 0, 0, this.width, this.height);
 this.image.infoDone$I(status);
@@ -483,7 +483,7 @@ this.image.infoDone$I(status);
 
 Clazz.newMeth(C$, 'startProduction', function () {
 if (!this.consuming) {
-this.consuming = true;
+this.consuming=true;
 this.image.getSource().startProduction$java_awt_image_ImageConsumer(this);
 }});
 
@@ -512,7 +512,7 @@ iw.imageUpdate$java_awt_Image$I$I$I$I$I(this.image, 192, -1, -1, -1, -1);
 if (!done) {
 this.addWatcher$java_awt_image_ImageObserver(iw);
 this.startProduction();
-done = ((this.availinfo & 32) != 0);
+done=((this.availinfo & 32) != 0);
 }return done;
 });
 
@@ -536,7 +536,7 @@ var abort = ((this.availinfo & 128) != 0);
 if (!done && !abort ) {
 this.addWatcher$java_awt_image_ImageObserver(iw);
 this.startProduction();
-done = ((this.availinfo & 32) != 0);
+done=((this.availinfo & 32) != 0);
 }if (done || (0 != (this.availinfo & 16)) ) {
 g.drawImage$java_awt_Image$I$I$java_awt_Color$java_awt_image_ImageObserver(this.bimage, x, y, bg, null);
 }return done;
@@ -554,7 +554,7 @@ var abort = ((this.availinfo & 128) != 0);
 if (!done && !abort ) {
 this.addWatcher$java_awt_image_ImageObserver(iw);
 this.startProduction();
-done = ((this.availinfo & 32) != 0);
+done=((this.availinfo & 32) != 0);
 }if (done || (0 != (this.availinfo & 16)) ) {
 g.drawImage$java_awt_Image$I$I$I$I$java_awt_Color$java_awt_image_ImageObserver(this.bimage, x, y, w, h, bg, null);
 }return done;
@@ -572,7 +572,7 @@ var abort = ((this.availinfo & 128) != 0);
 if (!done && !abort ) {
 this.addWatcher$java_awt_image_ImageObserver(iw);
 this.startProduction();
-done = ((this.availinfo & 32) != 0);
+done=((this.availinfo & 32) != 0);
 }if (done || (0 != (this.availinfo & 16)) ) {
 g.drawImage$java_awt_Image$I$I$I$I$I$I$I$I$java_awt_Color$java_awt_image_ImageObserver(this.bimage, dx1, dy1, dx2, dy2, sx1, sy1, sx2, sy2, bg, null);
 }return done;
@@ -591,7 +591,7 @@ var abort = ((this.availinfo & 128) != 0);
 if (!done && !abort ) {
 this.addWatcher$java_awt_image_ImageObserver(iw);
 this.startProduction();
-done = ((this.availinfo & 32) != 0);
+done=((this.availinfo & 32) != 0);
 }if (done || (0 != (this.availinfo & 16)) ) {
 g2.drawImage$java_awt_Image$java_awt_geom_AffineTransform$java_awt_image_ImageObserver(this.bimage, xform, null);
 }return done;
@@ -599,23 +599,23 @@ g2.drawImage$java_awt_Image$java_awt_geom_AffineTransform$java_awt_image_ImageOb
 
 Clazz.newMeth(C$, 'abort', function () {
 this.image.getSource().removeConsumer$java_awt_image_ImageConsumer(this);
-this.consuming = false;
-this.newbits = null;
-this.bimage = null;
-this.biRaster = null;
-this.cmodel = null;
-this.srcLUT = null;
-this.isDefaultBI = false;
-this.isSameCM = false;
+this.consuming=false;
+this.newbits=null;
+this.bimage=null;
+this.biRaster=null;
+this.cmodel=null;
+this.srcLUT=null;
+this.isDefaultBI=false;
+this.isSameCM=false;
 this.newInfo$java_awt_Image$I$I$I$I$I(this.image, 128, -1, -1, -1, -1);
-this.availinfo = this.availinfo&(-121);
+this.availinfo&=-121;
 });
 
 Clazz.newMeth(C$, 'dispose', function () {
 this.image.getSource().removeConsumer$java_awt_image_ImageConsumer(this);
-this.consuming = false;
-this.newbits = null;
-this.availinfo = this.availinfo&(-57);
+this.consuming=false;
+this.newbits=null;
+this.availinfo&=-57;
 });
 
 Clazz.newMeth(C$, 'setAccelerationPriority$F', function (priority) {
@@ -625,4 +625,4 @@ this.bimage.setAccelerationPriority$F(priority);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:08
+//Created 2018-05-24 08:47:28

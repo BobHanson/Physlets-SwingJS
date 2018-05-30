@@ -19,9 +19,9 @@ this.clickCountToStart = 1;
 
 Clazz.newMeth(C$, 'c$$javax_swing_JTextField', function (textField) {
 Clazz.super_(C$, this,1);
-this.editorComponent = textField;
-this.clickCountToStart = 2;
-this.delegate = ((
+this.editorComponent=textField;
+this.clickCountToStart=2;
+this.delegate=((
 (function(){var C$=Clazz.newClass(P$, "DefaultCellEditor$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load(['javax.swing.DefaultCellEditor','.EditorDelegate']), null, 1);
 
 C$.$clinit$ = function() {Clazz.load(C$, 1);
@@ -44,8 +44,8 @@ textField.addActionListener$java_awt_event_ActionListener(this.delegate);
 
 Clazz.newMeth(C$, 'c$$javax_swing_JCheckBox', function (checkBox) {
 Clazz.super_(C$, this,1);
-this.editorComponent = checkBox;
-this.delegate = ((
+this.editorComponent=checkBox;
+this.delegate=((
 (function(){var C$=Clazz.newClass(P$, "DefaultCellEditor$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load(['javax.swing.DefaultCellEditor','.EditorDelegate']), null, 1);
 
 C$.$clinit$ = function() {Clazz.load(C$, 1);
@@ -57,9 +57,9 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'setValue$O', function (value) {
 var selected = false;
 if (Clazz.instanceOf(value, "java.lang.Boolean")) {
-selected = (value).booleanValue();
+selected=(value).booleanValue();
 } else if (Clazz.instanceOf(value, "java.lang.String")) {
-selected = value.equals$O("true");
+selected=value.equals$O("true");
 }this.$finals.checkBox.setSelected$Z(selected);
 });
 
@@ -74,9 +74,9 @@ checkBox.setRequestFocusEnabled$Z(false);
 
 Clazz.newMeth(C$, 'c$$javax_swing_JComboBox', function (comboBox) {
 Clazz.super_(C$, this,1);
-this.editorComponent = comboBox;
+this.editorComponent=comboBox;
 comboBox.putClientProperty$O$O("JComboBox.isTableCellEditor", (I$[3]||$incl$(3)).TRUE);
-this.delegate = ((
+this.delegate=((
 (function(){var C$=Clazz.newClass(P$, "DefaultCellEditor$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load(['javax.swing.DefaultCellEditor','.EditorDelegate']), null, 1);
 
 C$.$clinit$ = function() {Clazz.load(C$, 1);
@@ -115,7 +115,7 @@ return this.editorComponent;
 });
 
 Clazz.newMeth(C$, 'setClickCountToStart$I', function (count) {
-this.clickCountToStart = count;
+this.clickCountToStart=count;
 });
 
 Clazz.newMeth(C$, 'getClickCountToStart', function () {
@@ -183,7 +183,7 @@ return this.value;
 });
 
 Clazz.newMeth(C$, 'setValue$O', function (value) {
-this.value = value;
+this.value=value;
 });
 
 Clazz.newMeth(C$, 'isCellEditable$java_util_EventObject', function (anEvent) {
@@ -222,4 +222,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:24
+//Created 2018-05-24 08:46:08

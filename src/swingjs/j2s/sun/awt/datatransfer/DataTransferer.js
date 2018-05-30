@@ -36,36 +36,36 @@ C$.dtLog = (I$[8]||$incl$(8)).getLogger$S("sun.awt.datatransfer.DataTransfer");
 var tCharArrayClass = null;
 var tByteArrayClass = null;
 try {
-tCharArrayClass = Clazz.forName("[C");
-tByteArrayClass = Clazz.forName("[B");
+tCharArrayClass=Clazz.forName("[C");
+tByteArrayClass=Clazz.forName("[B");
 } catch (cannotHappen) {
 if (Clazz.exceptionOf(cannotHappen, "java.lang.ClassNotFoundException")){
 } else {
 throw cannotHappen;
 }
 }
-C$.charArrayClass = tCharArrayClass;
-C$.byteArrayClass = tByteArrayClass;
+C$.charArrayClass=tCharArrayClass;
+C$.byteArrayClass=tByteArrayClass;
 var tPlainTextStringFlavor = null;
 try {
-tPlainTextStringFlavor = Clazz.new_((I$[9]||$incl$(9)).c$$S,["text/plain;charset=Unicode;class=java.lang.String"]);
+tPlainTextStringFlavor=Clazz.new_((I$[9]||$incl$(9)).c$$S,["text/plain;charset=Unicode;class=java.lang.String"]);
 } catch (cannotHappen) {
 if (Clazz.exceptionOf(cannotHappen, "java.lang.ClassNotFoundException")){
 } else {
 throw cannotHappen;
 }
 }
-C$.plainTextStringFlavor = tPlainTextStringFlavor;
+C$.plainTextStringFlavor=tPlainTextStringFlavor;
 var tJavaTextEncodingFlavor = null;
 try {
-tJavaTextEncodingFlavor = Clazz.new_((I$[9]||$incl$(9)).c$$S,["application/x-java-text-encoding;class=\"[B\""]);
+tJavaTextEncodingFlavor=Clazz.new_((I$[9]||$incl$(9)).c$$S,["application/x-java-text-encoding;class=\"[B\""]);
 } catch (cannotHappen) {
 if (Clazz.exceptionOf(cannotHappen, "java.lang.ClassNotFoundException")){
 } else {
 throw cannotHappen;
 }
 }
-C$.javaTextEncodingFlavor = tJavaTextEncodingFlavor;
+C$.javaTextEncodingFlavor=tJavaTextEncodingFlavor;
 var tempMap = Clazz.new_((I$[1]||$incl$(1)).c$$I,[17]);
 tempMap.put$TK$TV("sgml", (I$[10]||$incl$(10)).TRUE);
 tempMap.put$TK$TV("xml", (I$[10]||$incl$(10)).TRUE);
@@ -82,7 +82,7 @@ tempMap.put$TK$TV("tab-separated-values", (I$[10]||$incl$(10)).FALSE);
 tempMap.put$TK$TV("t140", (I$[10]||$incl$(10)).FALSE);
 tempMap.put$TK$TV("rfc822-headers", (I$[10]||$incl$(10)).FALSE);
 tempMap.put$TK$TV("parityfec", (I$[10]||$incl$(10)).FALSE);
-C$.textMIMESubtypeCharsetSupport = (I$[3]||$incl$(3)).synchronizedMap$java_util_Map(tempMap);
+C$.textMIMESubtypeCharsetSupport=(I$[3]||$incl$(3)).synchronizedMap$java_util_Map(tempMap);
 }
 ;
 C$.DEPLOYMENT_CACHE_PROPERTIES = Clazz.array(java.lang.String, -1, ["deployment.system.cachedir", "deployment.user.cachedir", "deployment.javaws.cachedir", "deployment.javapi.cachedir"]);
@@ -114,13 +114,13 @@ var cls = null;
 var method = null;
 var ret = null;
 try {
-cls = Clazz.forName(this.$finals.name);
+cls=Clazz.forName(this.$finals.name);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.ClassNotFoundException")){
 var cl = ClassLoader.getSystemClassLoader();
 if (cl != null ) {
 try {
-cls = cl.loadClass$S(this.$finals.name);
+cls=cl.loadClass$S(this.$finals.name);
 } catch (ee) {
 if (Clazz.exceptionOf(ee, "java.lang.ClassNotFoundException")){
 ee.printStackTrace();
@@ -135,7 +135,7 @@ throw e;
 }
 if (cls != null ) {
 try {
-method = cls.getDeclaredMethod$S$ClassA("getInstanceImpl", []);
+method=cls.getDeclaredMethod$S$ClassA("getInstanceImpl", []);
 method.setAccessible$Z(true);
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$, "java.lang.NoSuchMethodException")){
@@ -156,7 +156,7 @@ throw e$$;
 }
 }if (method != null ) {
 try {
-ret = method.invoke$O$OA(null, null);
+ret=method.invoke$O$OA(null, null);
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$, "java.lang.reflect.InvocationTargetException")){
 var e = e$$;
@@ -178,7 +178,7 @@ throw e$$;
 });
 })()
 ), Clazz.new_((I$[15]||$incl$(15)).$init$, [this, {name: name}]));
-C$.transferer = (I$[16]||$incl$(16)).doPrivileged$java_security_PrivilegedAction(action);
+C$.transferer=(I$[16]||$incl$(16)).doPrivileged$java_security_PrivilegedAction(action);
 }}}}return C$.transferer;
 }, 1);
 
@@ -261,7 +261,7 @@ tempSet.add$TE("UTF-16BE");
 tempSet.add$TE("UTF-16LE");
 tempSet.add$TE("UTF-16");
 tempSet.add$TE(C$.getDefaultTextCharset());
-C$.$standardEncodings = (I$[3]||$incl$(3)).unmodifiableSortedSet$java_util_SortedSet(tempSet);
+C$.$standardEncodings=(I$[3]||$incl$(3)).unmodifiableSortedSet$java_util_SortedSet(tempSet);
 }return C$.$standardEncodings.iterator();
 }, 1);
 
@@ -352,7 +352,7 @@ var flavor = flavors[i];
 if (flavor == null ) continue;
 if (flavor.isFlavorTextType() || flavor.isFlavorJavaFileListType() || (I$[9]||$incl$(9)).imageFlavor.equals$java_awt_datatransfer_DataFlavor(flavor) || flavor.isRepresentationClassSerializable() || flavor.isRepresentationClassInputStream() || flavor.isRepresentationClassRemote()  ) {
 var natives = map.getNativesForFlavor$java_awt_datatransfer_DataFlavor(flavor);
-currentIndex = currentIndex+(natives.size());
+currentIndex+=natives.size();
 for (var iter = natives.iterator(); iter.hasNext(); ) {
 var lFormat = this.getFormatForNativeAsLong$S(iter.next());
 var index = Integer.$valueOf(currentIndex--);
@@ -362,7 +362,7 @@ if (("text".equals$O(flavor.getPrimaryType()) && "plain".equals$O(flavor.getSubT
 textPlainMap.put$TK$TV(lFormat, flavor);
 textPlainIndexMap.put$TK$TV(lFormat, index);
 }}
-currentIndex = currentIndex+(natives.size());
+currentIndex+=natives.size();
 }}
 formatMap.putAll$java_util_Map(textPlainMap);
 indexMap.putAll$java_util_Map(textPlainIndexMap);
@@ -450,7 +450,7 @@ Clazz.newMeth(C$, 'getBestCharsetForTextFormat$Long$java_awt_datatransfer_Transf
 var charset = null;
 if (localeTransferable != null  && this.isLocaleDependentTextFormat$J((lFormat).longValue())  && localeTransferable.isDataFlavorSupported$java_awt_datatransfer_DataFlavor(C$.javaTextEncodingFlavor) ) {
 try {
-charset =  String.instantialize(localeTransferable.getTransferData$java_awt_datatransfer_DataFlavor(C$.javaTextEncodingFlavor), "UTF-8");
+charset= String.instantialize(localeTransferable.getTransferData$java_awt_datatransfer_DataFlavor(C$.javaTextEncodingFlavor), "UTF-8");
 } catch (cannotHappen) {
 if (Clazz.exceptionOf(cannotHappen, "java.awt.datatransfer.UnsupportedFlavorException")){
 } else {
@@ -458,9 +458,9 @@ throw cannotHappen;
 }
 }
 } else {
-charset = this.getCharsetForTextFormat$Long(lFormat);
+charset=this.getCharsetForTextFormat$Long(lFormat);
 }if (charset == null ) {
-charset = C$.getDefaultTextCharset();
+charset=C$.getDefaultTextCharset();
 }return charset;
 });
 
@@ -474,7 +474,7 @@ var buffer = Clazz.new_((I$[23]||$incl$(23)).c$$I,[length * 2]);
 for (var i = 0; i < length; i++) {
 if (str.startsWith$S$I(eoln, i)) {
 buffer.append$S(eoln);
-i = i+(eoln.length$() - 1);
+i+=eoln.length$() - 1;
 continue;
 }var c = str.charAt(i);
 if (c == "\u000a") {
@@ -482,7 +482,7 @@ buffer.append$S(eoln);
 } else {
 buffer.append$C(c);
 }}
-str = buffer.toString();
+str=buffer.toString();
 }var bytes = str.getBytes(charset);
 var terminators = C$.nativeTerminators.get$O(lFormat);
 if (terminators != null ) {
@@ -490,15 +490,15 @@ var numTerminators = terminators.intValue();
 var terminatedBytes = Clazz.array(Byte.TYPE, [bytes.length + numTerminators]);
 System.arraycopy(bytes, 0, terminatedBytes, 0, bytes.length);
 for (var i = bytes.length; i < terminatedBytes.length; i++) {
-terminatedBytes[i] = (0|0);
+terminatedBytes[i]=(0|0);
 }
-bytes = terminatedBytes;
+bytes=terminatedBytes;
 }return bytes;
 });
 
 Clazz.newMeth(C$, 'translateBytesOrStreamToString$java_io_InputStream$BA$J$java_awt_datatransfer_Transferable', function (str, bytes, format, localeTransferable) {
 if (bytes == null ) {
-bytes = C$.inputStreamToByteArray$java_io_InputStream(str);
+bytes=C$.inputStreamToByteArray$java_io_InputStream(str);
 }str.close();
 var lFormat = Long.$valueOf(format);
 var charset = p$.getBestCharsetForTextFormat$Long$java_awt_datatransfer_Transferable.apply(this, [lFormat, localeTransferable]);
@@ -507,7 +507,7 @@ var terminators = C$.nativeTerminators.get$O(lFormat);
 var count;
 if (terminators != null ) {
 var numTerminators = terminators.intValue();
-search : for (count = 0; count < (bytes.length - numTerminators + 1); count = count+(numTerminators)) {
+search : for (count=0; count < (bytes.length - numTerminators + 1); count+=numTerminators) {
 for (var i = count; i < count + numTerminators; i++) {
 if (bytes[i] != 0) {
 continue search;
@@ -515,31 +515,31 @@ continue search;
 break search;
 }
 } else {
-count = bytes.length;
+count=bytes.length;
 }var converted =  String.instantialize(bytes, 0, count, charset);
 if (eoln != null ) {
 var buf = converted.toCharArray();
 var eoln_arr = eoln.toCharArray();
-converted = null;
+converted=null;
 var j = 0;
 var match;
 for (var i = 0; i < buf.length; ) {
 if (i + eoln_arr.length > buf.length) {
-buf[j++] = buf[i++];
+buf[j++]=buf[i++];
 continue;
-}match = true;
+}match=true;
 for (var k = 0, l = i; k < eoln_arr.length; k++, l++) {
 if (eoln_arr[k] != buf[l]) {
-match = false;
+match=false;
 break;
 }}
 if (match) {
-buf[j++] = "\u000a";
-i = i+(eoln_arr.length);
+buf[j++]="\u000a";
+i+=eoln_arr.length;
 } else {
-buf[j++] = buf[i++];
+buf[j++]=buf[i++];
 }}
-converted =  String.instantialize(buf, 0, j);
+converted= String.instantialize(buf, 0, j);
 }return converted;
 });
 
@@ -547,16 +547,16 @@ Clazz.newMeth(C$, 'translateTransferable$java_awt_datatransfer_Transferable$java
 var obj;
 var stringSelectionHack;
 try {
-obj = contents.getTransferData$java_awt_datatransfer_DataFlavor(flavor);
+obj=contents.getTransferData$java_awt_datatransfer_DataFlavor(flavor);
 if (obj == null ) {
 return null;
 }if (flavor.equals$java_awt_datatransfer_DataFlavor((I$[9]||$incl$(9)).plainTextFlavor) && !(Clazz.instanceOf(obj, "java.io.InputStream")) ) {
-obj = contents.getTransferData$java_awt_datatransfer_DataFlavor((I$[9]||$incl$(9)).stringFlavor);
+obj=contents.getTransferData$java_awt_datatransfer_DataFlavor((I$[9]||$incl$(9)).stringFlavor);
 if (obj == null ) {
 return null;
-}stringSelectionHack = true;
+}stringSelectionHack=true;
 } else {
-stringSelectionHack = false;
+stringSelectionHack=false;
 }} catch (e) {
 if (Clazz.exceptionOf(e, "java.awt.datatransfer.UnsupportedFlavorException")){
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[e.getMessage()]);
@@ -572,7 +572,7 @@ throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["cannot transfer non-te
 }var r = obj;
 var buf = Clazz.new_((I$[23]||$incl$(23)));
 var c;
-while ((c = r.read()) != -1){
+while ((c=r.read()) != -1){
 buf.append$C(String.fromCharCode(c));
 }
 r.close();
@@ -632,7 +632,7 @@ var avail = is.available();
 var tmp = Clazz.array(Byte.TYPE, [avail > 8192 ? avail : 8192]);
 do {
 var ret;
-if (!(eof = (ret = is.read$BA$I$I(tmp, 0, tmp.length)) == -1)) {
+if (!(eof=(ret=is.read$BA$I$I(tmp, 0, tmp.length)) == -1)) {
 bos.write$BA$I$I(tmp, 0, ret);
 }} while (!eof);
 is.close();
@@ -658,19 +658,19 @@ return this.translateBytesOrStream$java_io_InputStream$BA$java_awt_datatransfer_
 
 Clazz.newMeth(C$, 'translateBytesOrStream$java_io_InputStream$BA$java_awt_datatransfer_DataFlavor$J$java_awt_datatransfer_Transferable', function (str, bytes, flavor, format, localeTransferable) {
 if (str == null ) {
-str = Clazz.new_((I$[25]||$incl$(25)).c$$BA,[bytes]);
+str=Clazz.new_((I$[25]||$incl$(25)).c$$BA,[bytes]);
 }if (this.isFileFormat$J(format)) {
 if (!(I$[9]||$incl$(9)).javaFileListFlavor.equals$java_awt_datatransfer_DataFlavor(flavor)) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["data translation failed"]);
 }if (bytes == null ) {
-bytes = C$.inputStreamToByteArray$java_io_InputStream(str);
+bytes=C$.inputStreamToByteArray$java_io_InputStream(str);
 }var filenames = this.dragQueryFile$BA(bytes);
 if (filenames == null ) {
 str.close();
 return null;
 }var files = Clazz.array((I$[26]||$incl$(26)), [filenames.length]);
 for (var i = 0; i < filenames.length; i++) {
-files[i] = Clazz.new_((I$[26]||$incl$(26)).c$$S,[filenames[i]]);
+files[i]=Clazz.new_((I$[26]||$incl$(26)).c$$S,[filenames[i]]);
 }
 str.close();
 return (I$[22]||$incl$(22)).asList$TTA(files);
@@ -697,10 +697,10 @@ throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["cannot transfer non-te
 }return p$.translateBytesOrStreamToString$java_io_InputStream$BA$J$java_awt_datatransfer_Transferable.apply(this, [str, bytes, format, localeTransferable]).toCharArray();
 } else if (flavor.isRepresentationClassByteBuffer()) {
 if (C$.isFlavorCharsetTextType$java_awt_datatransfer_DataFlavor(flavor) && this.isTextFormat$J(format) ) {
-bytes = p$.translateBytesOrStreamToString$java_io_InputStream$BA$J$java_awt_datatransfer_Transferable.apply(this, [str, bytes, format, localeTransferable]).getBytes(C$.getTextCharset$java_awt_datatransfer_DataFlavor(flavor));
+bytes=p$.translateBytesOrStreamToString$java_io_InputStream$BA$J$java_awt_datatransfer_Transferable.apply(this, [str, bytes, format, localeTransferable]).getBytes(C$.getTextCharset$java_awt_datatransfer_DataFlavor(flavor));
 } else {
 if (bytes == null ) {
-bytes = C$.inputStreamToByteArray$java_io_InputStream(str);
+bytes=C$.inputStreamToByteArray$java_io_InputStream(str);
 }}return null;
 } else if (C$.byteArrayClass.equals$O(flavor.getRepresentationClass())) {
 if (C$.isFlavorCharsetTextType$java_awt_datatransfer_DataFlavor(flavor) && this.isTextFormat$J(format) ) {
@@ -734,16 +734,16 @@ continue;
 allowedFiles.append$S("\\r\\n");
 }allowedFiles.append$S(fileName);
 }
-ret_val = allowedFiles.toString();
+ret_val=allowedFiles.toString();
 return ret_val;
 });
 
 Clazz.newMeth(C$, 'castToFile$O', function (fileObject) {
 var filePath = null;
 if (Clazz.instanceOf(fileObject, "java.io.File")) {
-filePath = (fileObject).getCanonicalPath();
+filePath=(fileObject).getCanonicalPath();
 } else if (Clazz.instanceOf(fileObject, "java.lang.String")) {
-filePath = fileObject;
+filePath=fileObject;
 }return Clazz.new_((I$[26]||$incl$(26)).c$$S,[filePath]);
 });
 
@@ -765,7 +765,7 @@ throw ioe;
 }}
 }for (var it = C$.deploymentCacheDirectoryList.iterator(); it.hasNext(); ) {
 var deploymentCacheDirectory = it.next();
-for (var dir = f; dir != null ; dir = dir.getParentFile()) {
+for (var dir = f; dir != null ; dir=dir.getParentFile()) {
 if (dir.equals$O(deploymentCacheDirectory)) {
 return true;
 }}
@@ -780,7 +780,7 @@ return arg;
 } else {
 var constructors = null;
 try {
-constructors = (I$[16]||$incl$(16)).doPrivileged$java_security_PrivilegedAction(((
+constructors=(I$[16]||$incl$(16)).doPrivileged$java_security_PrivilegedAction(((
 (function(){var C$=Clazz.newClass(P$, "DataTransferer$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.security.PrivilegedAction', 1);
 
 C$.$clinit$ = function() {Clazz.load(C$, 1);
@@ -807,7 +807,7 @@ if (!(I$[30]||$incl$(30)).isPublic$I(constructors[j].getModifiers())) {
 continue;
 }var ptypes = constructors[j].getParameterTypes();
 if (ptypes != null  && ptypes.length == 1  && clazz.equals$O(ptypes[0]) ) {
-constructor = constructors[j];
+constructor=constructors[j];
 break;
 }}
 if (constructor == null ) {
@@ -835,14 +835,14 @@ System.arraycopy(arr1, 0, ret, 0, arr1.length);
 System.arraycopy(arr2, 0, ret, arr1.length, arr2.length);
 return ret;
 } else {
-str1 = Clazz.new_((I$[25]||$incl$(25)).c$$BA,[arr1]);
-str2 = obj2;
+str1=Clazz.new_((I$[25]||$incl$(25)).c$$BA,[arr1]);
+str2=obj2;
 }} else {
-str1 = obj1;
+str1=obj1;
 if (Clazz.instanceOf(obj2, Clazz.array(Byte.TYPE, -1))) {
-str2 = Clazz.new_((I$[25]||$incl$(25)).c$$BA,[obj2]);
+str2=Clazz.new_((I$[25]||$incl$(25)).c$$BA,[obj2]);
 } else {
-str2 = obj2;
+str2=obj2;
 }}return Clazz.new_((I$[31]||$incl$(31)).c$$java_io_InputStream$java_io_InputStream,[str1, str2]);
 });
 
@@ -872,11 +872,11 @@ return;
 try {
 var flavor = this.$finals.formatMap.get$O(Long.$valueOf(this.$finals.format));
 if (flavor != null ) {
-data = this.b$['sun.awt.datatransfer.DataTransferer'].translateTransferable$java_awt_datatransfer_Transferable$java_awt_datatransfer_DataFlavor$J(this.$finals.contents, flavor, this.$finals.format);
+data=this.b$['sun.awt.datatransfer.DataTransferer'].translateTransferable$java_awt_datatransfer_Transferable$java_awt_datatransfer_DataFlavor$J(this.$finals.contents, flavor, this.$finals.format);
 }} catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
 e.printStackTrace();
-data = null;
+data=null;
 } else {
 throw e;
 }
@@ -887,7 +887,7 @@ this.$finals.stack.push$TE(data);
 this.b$['sun.awt.datatransfer.DataTransferer'].getToolkitThreadBlockedHandler().exit();
 } finally {
 this.b$['sun.awt.datatransfer.DataTransferer'].getToolkitThreadBlockedHandler().unlock();
-this.done = true;
+this.done=true;
 }
 });
 })()
@@ -902,14 +902,14 @@ this.getToolkitThreadBlockedHandler().enter();
 }
 if (appContext != null ) {
 appContext.remove$O("DATA_CONVERTER_KEY");
-}ret = stack.pop();
+}ret=stack.pop();
 } finally {
 this.getToolkitThreadBlockedHandler().unlock();
 }
  else {
 var flavor = formatMap.get$O(Long.$valueOf(format));
 if (flavor != null ) {
-ret = this.translateTransferable$java_awt_datatransfer_Transferable$java_awt_datatransfer_DataFlavor$J(contents, flavor, format);
+ret=this.translateTransferable$java_awt_datatransfer_Transferable$java_awt_datatransfer_DataFlavor$J(contents, flavor, format);
 }}return ret;
 });
 
@@ -932,7 +932,7 @@ var keySet = map.keySet();
 var retval = Clazz.array(Long.TYPE, [keySet.size()]);
 var i = 0;
 for (var iter = keySet.iterator(); iter.hasNext(); i++) {
-retval[i] = (iter.next()).longValue();
+retval[i]=(iter.next()).longValue();
 }
 return retval;
 }, 1);
@@ -960,7 +960,7 @@ Clazz.newMeth(C$, 'inputStreamToByteArray$java_io_InputStream', function (str) {
 var baos = Clazz.new_((I$[24]||$incl$(24)));
 var len = 0;
 var buf = Clazz.array(Byte.TYPE, [8192]);
-while ((len = str.read$BA(buf)) != -1){
+while ((len=str.read$BA(buf)) != -1){
 baos.write$BA$I$I(buf, 0, len);
 }
 return baos.toByteArray();
@@ -995,16 +995,16 @@ C$.c$$Z.apply(this, [true]);
 
 Clazz.newMeth(C$, 'c$$Z', function (order) {
 C$.$init$.apply(this);
-this.order = order;
+this.order=order;
 }, 1);
 
 Clazz.newMeth(C$, 'compareIndices$java_util_Map$O$O$Integer', function (indexMap, obj1, obj2, fallbackIndex) {
 var index1 = indexMap.get$O(obj1);
 var index2 = indexMap.get$O(obj2);
 if (index1 == null ) {
-index1 = fallbackIndex;
+index1=fallbackIndex;
 }if (index2 == null ) {
-index2 = fallbackIndex;
+index2=fallbackIndex;
 }return index1.compareTo(index2);
 }, 1);
 
@@ -1012,9 +1012,9 @@ Clazz.newMeth(C$, 'compareLongs$java_util_Map$O$O$Long', function (indexMap, obj
 var index1 = indexMap.get$O(obj1);
 var index2 = indexMap.get$O(obj2);
 if (index1 == null ) {
-index1 = fallbackIndex;
+index1=fallbackIndex;
 }if (index2 == null ) {
-index2 = fallbackIndex;
+index2=fallbackIndex;
 }return index1.compareTo(index2);
 }, 1);
 })()
@@ -1046,7 +1046,7 @@ var defEncoding = (I$[2]||$incl$(2)).canonicalName$S((I$[2]||$incl$(2)).getDefau
 if (charsetsMap.get$O(C$.defaultEncoding) == null ) {
 charsetsMap.put$TK$TV(C$.defaultEncoding, C$.DEFAULT_CHARSET_INDEX);
 }charsetsMap.put$TK$TV("UNSUPPORTED", C$.UNSUPPORTED_CHARSET_INDEX);
-C$.charsets = (I$[3]||$incl$(3)).unmodifiableMap$java_util_Map(charsetsMap);
+C$.charsets=(I$[3]||$incl$(3)).unmodifiableMap$java_util_Map(charsetsMap);
 }
 ;
 }
@@ -1067,17 +1067,17 @@ Clazz.newMeth(C$, ['compare$O$O','compare$TT$TT'], function (obj1, obj2) {
 var charset1 = null;
 var charset2 = null;
 if (this.order == true ) {
-charset1 = obj1;
-charset2 = obj2;
+charset1=obj1;
+charset2=obj2;
 } else {
-charset1 = obj2;
-charset2 = obj1;
+charset1=obj2;
+charset2=obj1;
 }return this.compareCharsets$S$S(charset1, charset2);
 });
 
 Clazz.newMeth(C$, 'compareCharsets$S$S', function (charset1, charset2) {
-charset1 = C$.getEncoding$S(charset1);
-charset2 = C$.getEncoding$S(charset2);
+charset1=C$.getEncoding$S(charset1);
+charset2=C$.getEncoding$S(charset2);
 var comp = P$.DataTransferer.IndexedComparator.compareIndices$java_util_Map$O$O$Integer(C$.charsets, charset1, charset2, C$.OTHER_CHARSET_INDEX);
 if (comp == 0) {
 return charset2.compareTo$S(charset1);
@@ -1124,15 +1124,15 @@ C$.UNKNOWN_OBJECT_WINS_L = Long.$valueOf(9223372036854775807);
 {
 var exactTypesMap = Clazz.new_((I$[1]||$incl$(1)).c$$I$F,[4, 1.0]);
 exactTypesMap.put$TK$TV("application/x-java-file-list", Integer.$valueOf(0));
-C$.exactTypes = (I$[3]||$incl$(3)).unmodifiableMap$java_util_Map(exactTypesMap);
+C$.exactTypes=(I$[3]||$incl$(3)).unmodifiableMap$java_util_Map(exactTypesMap);
 }{
 var primaryTypesMap = Clazz.new_((I$[1]||$incl$(1)).c$$I$F,[1, 1.0]);
 primaryTypesMap.put$TK$TV("application", Integer.$valueOf(0));
-C$.primaryTypes = (I$[3]||$incl$(3)).unmodifiableMap$java_util_Map(primaryTypesMap);
+C$.primaryTypes=(I$[3]||$incl$(3)).unmodifiableMap$java_util_Map(primaryTypesMap);
 }{
 var nonTextRepresentationsMap = Clazz.new_((I$[1]||$incl$(1)).c$$I$F,[3, 1.0]);
 nonTextRepresentationsMap.put$TK$TV(Clazz.getClass((I$[4]||$incl$(4))), Integer.$valueOf(0));
-C$.nonTextRepresentations = (I$[3]||$incl$(3)).unmodifiableMap$java_util_Map(nonTextRepresentationsMap);
+C$.nonTextRepresentations=(I$[3]||$incl$(3)).unmodifiableMap$java_util_Map(nonTextRepresentationsMap);
 }{
 var textTypesMap = Clazz.new_((I$[1]||$incl$(1)).c$$I$F,[16, 1.0]);
 textTypesMap.put$TK$TV("text/plain", Integer.$valueOf(0));
@@ -1151,18 +1151,18 @@ textTypesMap.put$TK$TV("text/rtf", Integer.$valueOf(12));
 textTypesMap.put$TK$TV("text/html", Integer.$valueOf(13));
 textTypesMap.put$TK$TV("text/xml", Integer.$valueOf(14));
 textTypesMap.put$TK$TV("text/sgml", Integer.$valueOf(15));
-C$.textTypes = (I$[3]||$incl$(3)).unmodifiableMap$java_util_Map(textTypesMap);
+C$.textTypes=(I$[3]||$incl$(3)).unmodifiableMap$java_util_Map(textTypesMap);
 }{
 var decodedTextRepresentationsMap = Clazz.new_((I$[1]||$incl$(1)).c$$I$F,[4, 1.0]);
 decodedTextRepresentationsMap.put$TK$TV((I$[2]||$incl$(2)).charArrayClass, Integer.$valueOf(0));
 decodedTextRepresentationsMap.put$TK$TV(Clazz.getClass(java.lang.String), Integer.$valueOf(2));
 decodedTextRepresentationsMap.put$TK$TV(Clazz.getClass((I$[5]||$incl$(5))), Integer.$valueOf(3));
-C$.decodedTextRepresentations = (I$[3]||$incl$(3)).unmodifiableMap$java_util_Map(decodedTextRepresentationsMap);
+C$.decodedTextRepresentations=(I$[3]||$incl$(3)).unmodifiableMap$java_util_Map(decodedTextRepresentationsMap);
 }{
 var encodedTextRepresentationsMap = Clazz.new_((I$[1]||$incl$(1)).c$$I$F,[3, 1.0]);
 encodedTextRepresentationsMap.put$TK$TV((I$[2]||$incl$(2)).byteArrayClass, Integer.$valueOf(0));
 encodedTextRepresentationsMap.put$TK$TV(Clazz.getClass((I$[4]||$incl$(4))), Integer.$valueOf(2));
-C$.encodedTextRepresentations = (I$[3]||$incl$(3)).unmodifiableMap$java_util_Map(encodedTextRepresentationsMap);
+C$.encodedTextRepresentations=(I$[3]||$incl$(3)).unmodifiableMap$java_util_Map(encodedTextRepresentationsMap);
 }}
 ;
 }
@@ -1183,8 +1183,8 @@ C$.c$$Z.apply(this, [true]);
 Clazz.newMeth(C$, 'c$$Z', function (order) {
 C$.superclazz.c$$Z.apply(this, [order]);
 C$.$init$.apply(this);
-this.charsetComparator = Clazz.new_((I$[6]||$incl$(6)).c$$Z,[order]);
-this.flavorToFormatMap = (I$[3]||$incl$(3)).EMPTY_MAP;
+this.charsetComparator=Clazz.new_((I$[6]||$incl$(6)).c$$Z,[order]);
+this.flavorToFormatMap=(I$[3]||$incl$(3)).EMPTY_MAP;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Map', function (map) {
@@ -1194,21 +1194,21 @@ C$.c$$java_util_Map$Z.apply(this, [map, true]);
 Clazz.newMeth(C$, 'c$$java_util_Map$Z', function (map, order) {
 C$.superclazz.c$$Z.apply(this, [order]);
 C$.$init$.apply(this);
-this.charsetComparator = Clazz.new_((I$[6]||$incl$(6)).c$$Z,[order]);
+this.charsetComparator=Clazz.new_((I$[6]||$incl$(6)).c$$Z,[order]);
 var hashMap = Clazz.new_((I$[1]||$incl$(1)).c$$I,[map.size()]);
 hashMap.putAll$java_util_Map(map);
-this.flavorToFormatMap = (I$[3]||$incl$(3)).unmodifiableMap$java_util_Map(hashMap);
+this.flavorToFormatMap=(I$[3]||$incl$(3)).unmodifiableMap$java_util_Map(hashMap);
 }, 1);
 
 Clazz.newMeth(C$, ['compare$O$O','compare$TT$TT'], function (obj1, obj2) {
 var flavor1 = null;
 var flavor2 = null;
 if (this.order == true ) {
-flavor1 = obj1;
-flavor2 = obj2;
+flavor1=obj1;
+flavor2=obj2;
 } else {
-flavor1 = obj2;
-flavor2 = obj1;
+flavor1=obj2;
+flavor2=obj1;
 }if (flavor1.equals$java_awt_datatransfer_DataFlavor(flavor2)) {
 return 0;
 }var comp = 0;
@@ -1221,27 +1221,27 @@ var subType2 = flavor2.getSubType();
 var mimeType2 = primaryType2 + "/" + subType2 ;
 var class2 = flavor2.getRepresentationClass();
 if (flavor1.isFlavorTextType() && flavor2.isFlavorTextType() ) {
-comp = P$.DataTransferer.IndexedComparator.compareIndices$java_util_Map$O$O$Integer(C$.textTypes, mimeType1, mimeType2, C$.UNKNOWN_OBJECT_LOSES);
+comp=P$.DataTransferer.IndexedComparator.compareIndices$java_util_Map$O$O$Integer(C$.textTypes, mimeType1, mimeType2, C$.UNKNOWN_OBJECT_LOSES);
 if (comp != 0) {
 return comp;
 }if (P$.DataTransferer.doesSubtypeSupportCharset$java_awt_datatransfer_DataFlavor(flavor1)) {
-comp = P$.DataTransferer.IndexedComparator.compareIndices$java_util_Map$O$O$Integer(C$.decodedTextRepresentations, class1, class2, C$.UNKNOWN_OBJECT_LOSES);
+comp=P$.DataTransferer.IndexedComparator.compareIndices$java_util_Map$O$O$Integer(C$.decodedTextRepresentations, class1, class2, C$.UNKNOWN_OBJECT_LOSES);
 if (comp != 0) {
 return comp;
-}comp = this.charsetComparator.compareCharsets$S$S((I$[2]||$incl$(2)).getTextCharset$java_awt_datatransfer_DataFlavor(flavor1), (I$[2]||$incl$(2)).getTextCharset$java_awt_datatransfer_DataFlavor(flavor2));
+}comp=this.charsetComparator.compareCharsets$S$S((I$[2]||$incl$(2)).getTextCharset$java_awt_datatransfer_DataFlavor(flavor1), (I$[2]||$incl$(2)).getTextCharset$java_awt_datatransfer_DataFlavor(flavor2));
 if (comp != 0) {
 return comp;
-}}comp = P$.DataTransferer.IndexedComparator.compareIndices$java_util_Map$O$O$Integer(C$.encodedTextRepresentations, class1, class2, C$.UNKNOWN_OBJECT_LOSES);
+}}comp=P$.DataTransferer.IndexedComparator.compareIndices$java_util_Map$O$O$Integer(C$.encodedTextRepresentations, class1, class2, C$.UNKNOWN_OBJECT_LOSES);
 if (comp != 0) {
 return comp;
 }} else {
-comp = P$.DataTransferer.IndexedComparator.compareIndices$java_util_Map$O$O$Integer(C$.primaryTypes, primaryType1, primaryType2, C$.UNKNOWN_OBJECT_LOSES);
+comp=P$.DataTransferer.IndexedComparator.compareIndices$java_util_Map$O$O$Integer(C$.primaryTypes, primaryType1, primaryType2, C$.UNKNOWN_OBJECT_LOSES);
 if (comp != 0) {
 return comp;
-}comp = P$.DataTransferer.IndexedComparator.compareIndices$java_util_Map$O$O$Integer(C$.exactTypes, mimeType1, mimeType2, C$.UNKNOWN_OBJECT_WINS);
+}comp=P$.DataTransferer.IndexedComparator.compareIndices$java_util_Map$O$O$Integer(C$.exactTypes, mimeType1, mimeType2, C$.UNKNOWN_OBJECT_WINS);
 if (comp != 0) {
 return comp;
-}comp = P$.DataTransferer.IndexedComparator.compareIndices$java_util_Map$O$O$Integer(C$.nonTextRepresentations, class1, class2, C$.UNKNOWN_OBJECT_LOSES);
+}comp=P$.DataTransferer.IndexedComparator.compareIndices$java_util_Map$O$O$Integer(C$.nonTextRepresentations, class1, class2, C$.UNKNOWN_OBJECT_LOSES);
 if (comp != 0) {
 return comp;
 }}return P$.DataTransferer.IndexedComparator.compareLongs$java_util_Map$O$O$Long(this.flavorToFormatMap, flavor1, flavor2, C$.UNKNOWN_OBJECT_LOSES_L);
@@ -1268,13 +1268,13 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_util_Map', function (indexMap) {
 C$.superclazz.c$$Z.apply(this, [true]);
 C$.$init$.apply(this);
-this.indexMap = indexMap;
+this.indexMap=indexMap;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Map$Z', function (indexMap, order) {
 C$.superclazz.c$$Z.apply(this, [order]);
 C$.$init$.apply(this);
-this.indexMap = indexMap;
+this.indexMap=indexMap;
 }, 1);
 
 Clazz.newMeth(C$, ['compare$O$O','compare$TT$TT'], function (obj1, obj2) {
@@ -1289,4 +1289,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:06
+//Created 2018-05-24 08:47:24

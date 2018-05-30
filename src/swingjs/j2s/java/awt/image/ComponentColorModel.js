@@ -35,12 +35,12 @@ switch (transferType) {
 case 0:
 case 1:
 case 3:
-this.signed = false;
-this.needScaleInit = true;
+this.signed=false;
+this.needScaleInit=true;
 break;
 case 2:
-this.signed = true;
-this.needScaleInit = true;
+this.signed=true;
+this.needScaleInit=true;
 break;
 default:
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["This constructor is not " + "compatible with transferType " + transferType ]);
@@ -77,37 +77,37 @@ if (hasAlpha) {
 ++numComponents;
 }var bits = Clazz.array(Integer.TYPE, [numComponents]);
 for (var i = 0; i < numComponents; i++) {
-bits[i] = numBits;
+bits[i]=numBits;
 }
 return bits;
 }, 1);
 
 Clazz.newMeth(C$, 'setupLUTs', function () {
 if (this.is_sRGB) {
-this.is_sRGB_stdScale = true;
-this.nonStdScale = false;
+this.is_sRGB_stdScale=true;
+this.nonStdScale=false;
 } else if (this.needScaleInit) {
-this.nonStdScale = false;
+this.nonStdScale=false;
 for (var i = 0; i < this.numColorComponents; i++) {
 if ((this.colorSpace.getMinValue$I(i) != 0.0 ) || (this.colorSpace.getMaxValue$I(i) != 1.0 ) ) {
-this.nonStdScale = true;
+this.nonStdScale=true;
 break;
 }}
 if (this.nonStdScale) {
-this.min = Clazz.array(Float.TYPE, [this.numColorComponents]);
-this.diffMinMax = Clazz.array(Float.TYPE, [this.numColorComponents]);
+this.min=Clazz.array(Float.TYPE, [this.numColorComponents]);
+this.diffMinMax=Clazz.array(Float.TYPE, [this.numColorComponents]);
 for (var i = 0; i < this.numColorComponents; i++) {
-this.min[i] = this.colorSpace.getMinValue$I(i);
-this.diffMinMax[i] = this.colorSpace.getMaxValue$I(i) - this.min[i];
+this.min[i]=this.colorSpace.getMinValue$I(i);
+this.diffMinMax[i]=this.colorSpace.getMaxValue$I(i) - this.min[i];
 }
 }}});
 
 Clazz.newMeth(C$, 'initScale', function () {
-this.needScaleInit = false;
+this.needScaleInit=false;
 if (this.nonStdScale || this.signed ) {
-this.noUnnorm = true;
+this.noUnnorm=true;
 } else {
-this.noUnnorm = false;
+this.noUnnorm=false;
 }var lowVal;
 var highVal;
 switch (this.transferType) {
@@ -115,79 +115,79 @@ case 0:
 {
 var bpixel = Clazz.array(Byte.TYPE, [this.numComponents]);
 for (var i = 0; i < this.numColorComponents; i++) {
-bpixel[i] = (0|0);
+bpixel[i]=(0|0);
 }
 if (this.supportsAlpha) {
-bpixel[this.numColorComponents] = ((((1 << this.nBits[this.numColorComponents]) - 1)|0)|0);
-}lowVal = this.getNormalizedComponents$O$FA$I(bpixel, null, 0);
+bpixel[this.numColorComponents]=((((1 << this.nBits[this.numColorComponents]) - 1)|0)|0);
+}lowVal=this.getNormalizedComponents$O$FA$I(bpixel, null, 0);
 for (var i = 0; i < this.numColorComponents; i++) {
-bpixel[i] = ((((1 << this.nBits[i]) - 1)|0)|0);
+bpixel[i]=((((1 << this.nBits[i]) - 1)|0)|0);
 }
-highVal = this.getNormalizedComponents$O$FA$I(bpixel, null, 0);
+highVal=this.getNormalizedComponents$O$FA$I(bpixel, null, 0);
 }break;
 case 1:
 {
 var uspixel = Clazz.array(Short.TYPE, [this.numComponents]);
 for (var i = 0; i < this.numColorComponents; i++) {
-uspixel[i] = (0|0);
+uspixel[i]=(0|0);
 }
 if (this.supportsAlpha) {
-uspixel[this.numColorComponents] = (((1 << this.nBits[this.numColorComponents]) - 1)|0);
-}lowVal = this.getNormalizedComponents$O$FA$I(uspixel, null, 0);
+uspixel[this.numColorComponents]=(((1 << this.nBits[this.numColorComponents]) - 1)|0);
+}lowVal=this.getNormalizedComponents$O$FA$I(uspixel, null, 0);
 for (var i = 0; i < this.numColorComponents; i++) {
-uspixel[i] = (((1 << this.nBits[i]) - 1)|0);
+uspixel[i]=(((1 << this.nBits[i]) - 1)|0);
 }
-highVal = this.getNormalizedComponents$O$FA$I(uspixel, null, 0);
+highVal=this.getNormalizedComponents$O$FA$I(uspixel, null, 0);
 }break;
 case 3:
 {
 var ipixel = Clazz.array(Integer.TYPE, [this.numComponents]);
 for (var i = 0; i < this.numColorComponents; i++) {
-ipixel[i] = 0;
+ipixel[i]=0;
 }
 if (this.supportsAlpha) {
-ipixel[this.numColorComponents] = ((1 << this.nBits[this.numColorComponents]) - 1);
-}lowVal = this.getNormalizedComponents$O$FA$I(ipixel, null, 0);
+ipixel[this.numColorComponents]=((1 << this.nBits[this.numColorComponents]) - 1);
+}lowVal=this.getNormalizedComponents$O$FA$I(ipixel, null, 0);
 for (var i = 0; i < this.numColorComponents; i++) {
-ipixel[i] = ((1 << this.nBits[i]) - 1);
+ipixel[i]=((1 << this.nBits[i]) - 1);
 }
-highVal = this.getNormalizedComponents$O$FA$I(ipixel, null, 0);
+highVal=this.getNormalizedComponents$O$FA$I(ipixel, null, 0);
 }break;
 case 2:
 {
 var spixel = Clazz.array(Short.TYPE, [this.numComponents]);
 for (var i = 0; i < this.numColorComponents; i++) {
-spixel[i] = (0|0);
+spixel[i]=(0|0);
 }
 if (this.supportsAlpha) {
-spixel[this.numColorComponents] = (32767|0);
-}lowVal = this.getNormalizedComponents$O$FA$I(spixel, null, 0);
+spixel[this.numColorComponents]=(32767|0);
+}lowVal=this.getNormalizedComponents$O$FA$I(spixel, null, 0);
 for (var i = 0; i < this.numColorComponents; i++) {
-spixel[i] = (32767|0);
+spixel[i]=(32767|0);
 }
-highVal = this.getNormalizedComponents$O$FA$I(spixel, null, 0);
+highVal=this.getNormalizedComponents$O$FA$I(spixel, null, 0);
 }break;
 default:
-lowVal = highVal = null;
+lowVal=highVal=null;
 break;
 }
-this.nonStdScale = false;
+this.nonStdScale=false;
 for (var i = 0; i < this.numColorComponents; i++) {
 if ((lowVal[i] != 0.0 ) || (highVal[i] != 1.0 ) ) {
-this.nonStdScale = true;
+this.nonStdScale=true;
 break;
 }}
 if (this.nonStdScale) {
-this.noUnnorm = true;
-this.is_sRGB_stdScale = false;
-this.is_LinearRGB_stdScale = false;
-this.is_LinearGray_stdScale = false;
-this.is_ICCGray_stdScale = false;
-this.compOffset = Clazz.array(Float.TYPE, [this.numColorComponents]);
-this.compScale = Clazz.array(Float.TYPE, [this.numColorComponents]);
+this.noUnnorm=true;
+this.is_sRGB_stdScale=false;
+this.is_LinearRGB_stdScale=false;
+this.is_LinearGray_stdScale=false;
+this.is_ICCGray_stdScale=false;
+this.compOffset=Clazz.array(Float.TYPE, [this.numColorComponents]);
+this.compScale=Clazz.array(Float.TYPE, [this.numColorComponents]);
 for (var i = 0; i < this.numColorComponents; i++) {
-this.compOffset[i] = lowVal[i];
-this.compScale[i] = 1.0 / (highVal[i] - lowVal[i]);
+this.compOffset[i]=lowVal[i];
+this.compScale[i]=1.0 / (highVal[i] - lowVal[i]);
 }
 }});
 
@@ -203,17 +203,17 @@ switch (this.transferType) {
 case 0:
 {
 var bpixel = Clazz.array(Byte.TYPE, -1, [($b$[0] = pixel, $b$[0])]);
-opixel = bpixel;
+opixel=bpixel;
 }break;
 case 1:
 {
 var spixel = Clazz.array(Short.TYPE, -1, [($s$[0] = pixel, $s$[0])]);
-opixel = spixel;
+opixel=spixel;
 }break;
 case 3:
 {
 var ipixel = Clazz.array(Integer.TYPE, -1, [pixel]);
-opixel = ipixel;
+opixel=ipixel;
 }break;
 }
 var norm = this.getNormalizedComponents$O$FA$I(opixel, null, 0);
@@ -271,22 +271,22 @@ return 0;
 return (((sdata[idx] / 32767.0) * scalefactor + 0.5)|0);
 }}case 0:
 var bdata = inData;
-comp = bdata[idx] & mask;
-precision = 8;
+comp=bdata[idx] & mask;
+precision=8;
 if (needAlpha) {
-alp = bdata[this.numColorComponents] & mask;
+alp=bdata[this.numColorComponents] & mask;
 }break;
 case 1:
 var usdata = inData;
-comp = usdata[idx] & mask;
+comp=usdata[idx] & mask;
 if (needAlpha) {
-alp = usdata[this.numColorComponents] & mask;
+alp=usdata[this.numColorComponents] & mask;
 }break;
 case 3:
 var idata = inData;
-comp = idata[idx];
+comp=idata[idx];
 if (needAlpha) {
-alp = idata[this.numColorComponents];
+alp=idata[this.numColorComponents];
 }break;
 default:
 throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException').c$$S,["This method has not " + "been implemented for transferType " + this.transferType ]);
@@ -344,19 +344,19 @@ var mask = (1 << this.nBits[aIdx]) - 1;
 switch (this.transferType) {
 case 2:
 var sdata = inData;
-alpha = (((sdata[aIdx] / 32767.0) * 255.0 + 0.5)|0);
+alpha=(((sdata[aIdx] / 32767.0) * 255.0 + 0.5)|0);
 return alpha;
 case 0:
 var bdata = inData;
-alpha = bdata[aIdx] & mask;
+alpha=bdata[aIdx] & mask;
 break;
 case 1:
 var usdata = inData;
-alpha = usdata[aIdx] & mask;
+alpha=usdata[aIdx] & mask;
 break;
 case 3:
 var idata = inData;
-alpha = idata[aIdx];
+alpha=idata[aIdx];
 break;
 default:
 throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException').c$$S,["This method has not " + "been implemented for transferType " + this.transferType ]);
@@ -385,9 +385,9 @@ var red;
 var grn;
 var blu;
 var alp;
-red = (rgb >> 16) & 255;
-grn = (rgb >> 8) & 255;
-blu = rgb & 255;
+red=(rgb >> 16) & 255;
+grn=(rgb >> 8) & 255;
+blu=rgb & 255;
 if (this.needScaleInit) {
 p$.initScale.apply(this, []);
 }if (this.signed) {
@@ -396,207 +396,207 @@ case 2:
 {
 var sdata;
 if (pixel == null ) {
-sdata = Clazz.array(Short.TYPE, [this.numComponents]);
+sdata=Clazz.array(Short.TYPE, [this.numComponents]);
 } else {
-sdata = pixel;
+sdata=pixel;
 }var factor;
 if (this.is_sRGB_stdScale || this.is_LinearRGB_stdScale ) {
-factor = 128.49803;
+factor=128.49803;
 if (this.is_LinearRGB_stdScale) {
-red = this.fromsRGB8LUT16[red] & 65535;
-grn = this.fromsRGB8LUT16[grn] & 65535;
-blu = this.fromsRGB8LUT16[blu] & 65535;
-factor = 0.49999237;
+red=this.fromsRGB8LUT16[red] & 65535;
+grn=this.fromsRGB8LUT16[grn] & 65535;
+blu=this.fromsRGB8LUT16[blu] & 65535;
+factor=0.49999237;
 }if (this.supportsAlpha) {
-alp = (rgb >> 24) & 255;
-sdata[3] = ((alp * 128.49803 + 0.5)|0);
+alp=(rgb >> 24) & 255;
+sdata[3]=((alp * 128.49803 + 0.5)|0);
 if (this.$isAlphaPremultiplied) {
-factor = alp * factor * 0.003921569 ;
-}}sdata[0] = ((red * factor + 0.5)|0);
-sdata[1] = ((grn * factor + 0.5)|0);
-sdata[2] = ((blu * factor + 0.5)|0);
+factor=alp * factor * 0.003921569 ;
+}}sdata[0]=((red * factor + 0.5)|0);
+sdata[1]=((grn * factor + 0.5)|0);
+sdata[2]=((blu * factor + 0.5)|0);
 } else if (this.is_LinearGray_stdScale) {
-red = this.fromsRGB8LUT16[red] & 65535;
-grn = this.fromsRGB8LUT16[grn] & 65535;
-blu = this.fromsRGB8LUT16[blu] & 65535;
+red=this.fromsRGB8LUT16[red] & 65535;
+grn=this.fromsRGB8LUT16[grn] & 65535;
+blu=this.fromsRGB8LUT16[blu] & 65535;
 var gray = ((0.2125 * red) + (0.7154 * grn) + (0.0721 * blu) ) / 65535.0;
-factor = 32767.0;
+factor=32767.0;
 if (this.supportsAlpha) {
-alp = (rgb >> 24) & 255;
-sdata[1] = ((alp * 128.49803 + 0.5)|0);
+alp=(rgb >> 24) & 255;
+sdata[1]=((alp * 128.49803 + 0.5)|0);
 if (this.$isAlphaPremultiplied) {
-factor = alp * factor * 0.003921569 ;
-}}sdata[0] = ((gray * factor + 0.5)|0);
+factor=alp * factor * 0.003921569 ;
+}}sdata[0]=((gray * factor + 0.5)|0);
 } else if (this.is_ICCGray_stdScale) {
-red = this.fromsRGB8LUT16[red] & 65535;
-grn = this.fromsRGB8LUT16[grn] & 65535;
-blu = this.fromsRGB8LUT16[blu] & 65535;
+red=this.fromsRGB8LUT16[red] & 65535;
+grn=this.fromsRGB8LUT16[grn] & 65535;
+blu=this.fromsRGB8LUT16[blu] & 65535;
 var gray = (((0.2125 * red) + (0.7154 * grn) + (0.0721 * blu) + 0.5 )|0);
-gray = this.fromLinearGray16ToOtherGray16LUT[gray] & 65535;
-factor = 0.49999237;
+gray=this.fromLinearGray16ToOtherGray16LUT[gray] & 65535;
+factor=0.49999237;
 if (this.supportsAlpha) {
-alp = (rgb >> 24) & 255;
-sdata[1] = ((alp * 128.49803 + 0.5)|0);
+alp=(rgb >> 24) & 255;
+sdata[1]=((alp * 128.49803 + 0.5)|0);
 if (this.$isAlphaPremultiplied) {
-factor = alp * factor * 0.003921569 ;
-}}sdata[0] = ((gray * factor + 0.5)|0);
+factor=alp * factor * 0.003921569 ;
+}}sdata[0]=((gray * factor + 0.5)|0);
 } else {
-factor = 0.003921569;
+factor=0.003921569;
 var norm = Clazz.array(Float.TYPE, [3]);
-norm[0] = red * factor;
-norm[1] = grn * factor;
-norm[2] = blu * factor;
-norm = this.colorSpace.fromRGB$FA(norm);
+norm[0]=red * factor;
+norm[1]=grn * factor;
+norm[2]=blu * factor;
+norm=this.colorSpace.fromRGB$FA(norm);
 if (this.nonStdScale) {
 for (var i = 0; i < this.numColorComponents; i++) {
-norm[i] = (norm[i] - this.compOffset[i]) * this.compScale[i];
+norm[i]=(norm[i] - this.compOffset[i]) * this.compScale[i];
 if (norm[i] < 0.0 ) {
-norm[i] = 0.0;
+norm[i]=0.0;
 }if (norm[i] > 1.0 ) {
-norm[i] = 1.0;
+norm[i]=1.0;
 }}
-}factor = 32767.0;
+}factor=32767.0;
 if (this.supportsAlpha) {
-alp = (rgb >> 24) & 255;
-sdata[this.numColorComponents] = ((alp * 128.49803 + 0.5)|0);
+alp=(rgb >> 24) & 255;
+sdata[this.numColorComponents]=((alp * 128.49803 + 0.5)|0);
 if (this.$isAlphaPremultiplied) {
 factor *= alp * 0.003921569;
 }}for (var i = 0; i < this.numColorComponents; i++) {
-sdata[i] = ((norm[i] * factor + 0.5)|0);
+sdata[i]=((norm[i] * factor + 0.5)|0);
 }
 }return sdata;
 }}
 }var intpixel;
 if (this.transferType == 3 && pixel != null  ) {
-intpixel = pixel;
+intpixel=pixel;
 } else {
-intpixel = Clazz.array(Integer.TYPE, [this.numComponents]);
+intpixel=Clazz.array(Integer.TYPE, [this.numComponents]);
 }if (this.is_sRGB_stdScale || this.is_LinearRGB_stdScale ) {
 var precision;
 var factor;
 if (this.is_LinearRGB_stdScale) {
 if (this.transferType == 0) {
-red = this.fromsRGB8LUT8[red] & 255;
-grn = this.fromsRGB8LUT8[grn] & 255;
-blu = this.fromsRGB8LUT8[blu] & 255;
-precision = 8;
-factor = 0.003921569;
+red=this.fromsRGB8LUT8[red] & 255;
+grn=this.fromsRGB8LUT8[grn] & 255;
+blu=this.fromsRGB8LUT8[blu] & 255;
+precision=8;
+factor=0.003921569;
 } else {
-red = this.fromsRGB8LUT16[red] & 65535;
-grn = this.fromsRGB8LUT16[grn] & 65535;
-blu = this.fromsRGB8LUT16[blu] & 65535;
-precision = 16;
-factor = 1.5259022E-5;
+red=this.fromsRGB8LUT16[red] & 65535;
+grn=this.fromsRGB8LUT16[grn] & 65535;
+blu=this.fromsRGB8LUT16[blu] & 65535;
+precision=16;
+factor=1.5259022E-5;
 }} else {
-precision = 8;
-factor = 0.003921569;
+precision=8;
+factor=0.003921569;
 }if (this.supportsAlpha) {
-alp = (rgb >> 24) & 255;
+alp=(rgb >> 24) & 255;
 if (this.nBits[3] == 8) {
-intpixel[3] = alp;
+intpixel[3]=alp;
 } else {
-intpixel[3] = ((alp * 0.003921569 * ((1 << this.nBits[3]) - 1)  + 0.5)|0);
+intpixel[3]=((alp * 0.003921569 * ((1 << this.nBits[3]) - 1)  + 0.5)|0);
 }if (this.$isAlphaPremultiplied) {
 factor *= (alp * 0.003921569);
-precision = -1;
+precision=-1;
 }}if (this.nBits[0] == precision) {
-intpixel[0] = red;
+intpixel[0]=red;
 } else {
-intpixel[0] = ((red * factor * ((1 << this.nBits[0]) - 1)  + 0.5)|0);
+intpixel[0]=((red * factor * ((1 << this.nBits[0]) - 1)  + 0.5)|0);
 }if (this.nBits[1] == precision) {
-intpixel[1] = (grn);
+intpixel[1]=(grn);
 } else {
-intpixel[1] = ((grn * factor * ((1 << this.nBits[1]) - 1)  + 0.5)|0);
+intpixel[1]=((grn * factor * ((1 << this.nBits[1]) - 1)  + 0.5)|0);
 }if (this.nBits[2] == precision) {
-intpixel[2] = (blu);
+intpixel[2]=(blu);
 } else {
-intpixel[2] = ((blu * factor * ((1 << this.nBits[2]) - 1)  + 0.5)|0);
+intpixel[2]=((blu * factor * ((1 << this.nBits[2]) - 1)  + 0.5)|0);
 }} else if (this.is_LinearGray_stdScale) {
-red = this.fromsRGB8LUT16[red] & 65535;
-grn = this.fromsRGB8LUT16[grn] & 65535;
-blu = this.fromsRGB8LUT16[blu] & 65535;
+red=this.fromsRGB8LUT16[red] & 65535;
+grn=this.fromsRGB8LUT16[grn] & 65535;
+blu=this.fromsRGB8LUT16[blu] & 65535;
 var gray = ((0.2125 * red) + (0.7154 * grn) + (0.0721 * blu) ) / 65535.0;
 if (this.supportsAlpha) {
-alp = (rgb >> 24) & 255;
+alp=(rgb >> 24) & 255;
 if (this.nBits[1] == 8) {
-intpixel[1] = alp;
+intpixel[1]=alp;
 } else {
-intpixel[1] = ((alp * 0.003921569 * ((1 << this.nBits[1]) - 1)  + 0.5)|0);
+intpixel[1]=((alp * 0.003921569 * ((1 << this.nBits[1]) - 1)  + 0.5)|0);
 }if (this.$isAlphaPremultiplied) {
 gray *= (alp * 0.003921569);
-}}intpixel[0] = ((gray * ((1 << this.nBits[0]) - 1) + 0.5)|0);
+}}intpixel[0]=((gray * ((1 << this.nBits[0]) - 1) + 0.5)|0);
 } else if (this.is_ICCGray_stdScale) {
-red = this.fromsRGB8LUT16[red] & 65535;
-grn = this.fromsRGB8LUT16[grn] & 65535;
-blu = this.fromsRGB8LUT16[blu] & 65535;
+red=this.fromsRGB8LUT16[red] & 65535;
+grn=this.fromsRGB8LUT16[grn] & 65535;
+blu=this.fromsRGB8LUT16[blu] & 65535;
 var gray16 = (((0.2125 * red) + (0.7154 * grn) + (0.0721 * blu) + 0.5 )|0);
 var gray = (this.fromLinearGray16ToOtherGray16LUT[gray16] & 65535) / 65535.0;
 if (this.supportsAlpha) {
-alp = (rgb >> 24) & 255;
+alp=(rgb >> 24) & 255;
 if (this.nBits[1] == 8) {
-intpixel[1] = alp;
+intpixel[1]=alp;
 } else {
-intpixel[1] = ((alp * 0.003921569 * ((1 << this.nBits[1]) - 1)  + 0.5)|0);
+intpixel[1]=((alp * 0.003921569 * ((1 << this.nBits[1]) - 1)  + 0.5)|0);
 }if (this.$isAlphaPremultiplied) {
 gray *= (alp * 0.003921569);
-}}intpixel[0] = ((gray * ((1 << this.nBits[0]) - 1) + 0.5)|0);
+}}intpixel[0]=((gray * ((1 << this.nBits[0]) - 1) + 0.5)|0);
 } else {
 var norm = Clazz.array(Float.TYPE, [3]);
 var factor = 0.003921569;
-norm[0] = red * factor;
-norm[1] = grn * factor;
-norm[2] = blu * factor;
-norm = this.colorSpace.fromRGB$FA(norm);
+norm[0]=red * factor;
+norm[1]=grn * factor;
+norm[2]=blu * factor;
+norm=this.colorSpace.fromRGB$FA(norm);
 if (this.nonStdScale) {
 for (var i = 0; i < this.numColorComponents; i++) {
-norm[i] = (norm[i] - this.compOffset[i]) * this.compScale[i];
+norm[i]=(norm[i] - this.compOffset[i]) * this.compScale[i];
 if (norm[i] < 0.0 ) {
-norm[i] = 0.0;
+norm[i]=0.0;
 }if (norm[i] > 1.0 ) {
-norm[i] = 1.0;
+norm[i]=1.0;
 }}
 }if (this.supportsAlpha) {
-alp = (rgb >> 24) & 255;
+alp=(rgb >> 24) & 255;
 if (this.nBits[this.numColorComponents] == 8) {
-intpixel[this.numColorComponents] = alp;
+intpixel[this.numColorComponents]=alp;
 } else {
-intpixel[this.numColorComponents] = ((alp * factor * ((1 << this.nBits[this.numColorComponents]) - 1)  + 0.5)|0);
+intpixel[this.numColorComponents]=((alp * factor * ((1 << this.nBits[this.numColorComponents]) - 1)  + 0.5)|0);
 }if (this.$isAlphaPremultiplied) {
 factor *= alp;
 for (var i = 0; i < this.numColorComponents; i++) {
 norm[i] *= factor;
 }
 }}for (var i = 0; i < this.numColorComponents; i++) {
-intpixel[i] = ((norm[i] * ((1 << this.nBits[i]) - 1) + 0.5)|0);
+intpixel[i]=((norm[i] * ((1 << this.nBits[i]) - 1) + 0.5)|0);
 }
 }switch (this.transferType) {
 case 0:
 {
 var bdata;
 if (pixel == null ) {
-bdata = Clazz.array(Byte.TYPE, [this.numComponents]);
+bdata=Clazz.array(Byte.TYPE, [this.numComponents]);
 } else {
-bdata = pixel;
+bdata=pixel;
 }for (var i = 0; i < this.numComponents; i++) {
-bdata[i] = (((255 & intpixel[i])|0)|0);
+bdata[i]=(((255 & intpixel[i])|0)|0);
 }
 return bdata;
 }case 1:
 {
 var sdata;
 if (pixel == null ) {
-sdata = Clazz.array(Short.TYPE, [this.numComponents]);
+sdata=Clazz.array(Short.TYPE, [this.numComponents]);
 } else {
-sdata = pixel;
+sdata=pixel;
 }for (var i = 0; i < this.numComponents; i++) {
-sdata[i] = ((intpixel[i] & 65535)|0);
+sdata[i]=((intpixel[i] & 65535)|0);
 }
 return sdata;
 }case 3:
 if (this.maxBits > 23) {
 for (var i = 0; i < this.numComponents; i++) {
 if (intpixel[i] > ((1 << this.nBits[i]) - 1)) {
-intpixel[i] = (1 << this.nBits[i]) - 1;
+intpixel[i]=(1 << this.nBits[i]) - 1;
 }}
 }return intpixel;
 }
@@ -611,8 +611,8 @@ p$.initScale.apply(this, []);
 }if (this.noUnnorm) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["This ColorModel does not support the unnormalized form"]);
 }if (components == null ) {
-components = Clazz.array(Integer.TYPE, [offset + 1]);
-}components[offset + 0] = (pixel & ((1 << this.nBits[0]) - 1));
+components=Clazz.array(Integer.TYPE, [offset + 1]);
+}components[offset + 0]=(pixel & ((1 << this.nBits[0]) - 1));
 return components;
 });
 
@@ -623,15 +623,15 @@ p$.initScale.apply(this, []);
 }if (this.noUnnorm) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["This ColorModel does not support the unnormalized form"]);
 }if (Clazz.instanceOf(pixel, Clazz.array(Integer.TYPE, -1))) {
-intpixel = pixel;
+intpixel=pixel;
 } else {
-intpixel = (I$[1]||$incl$(1)).toIntArray$O(pixel);
+intpixel=(I$[1]||$incl$(1)).toIntArray$O(pixel);
 if (intpixel == null ) {
 throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException').c$$S,["This method has not been " + "implemented for transferType " + this.transferType ]);
 }}if (intpixel.length < this.numComponents) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Length of pixel array < number of components in model"]);
 }if (components == null ) {
-components = Clazz.array(Integer.TYPE, [offset + this.numComponents]);
+components=Clazz.array(Integer.TYPE, [offset + this.numComponents]);
 } else if ((components.length - offset) < this.numComponents) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Length of components array < number of components in model"]);
 }System.arraycopy(intpixel, 0, components, offset, this.numComponents);
@@ -676,31 +676,31 @@ case 3:
 {
 var pixel;
 if (obj == null ) {
-pixel = Clazz.array(Integer.TYPE, [this.numComponents]);
+pixel=Clazz.array(Integer.TYPE, [this.numComponents]);
 } else {
-pixel = obj;
+pixel=obj;
 }System.arraycopy(components, offset, pixel, 0, this.numComponents);
 return pixel;
 }case 0:
 {
 var pixel;
 if (obj == null ) {
-pixel = Clazz.array(Byte.TYPE, [this.numComponents]);
+pixel=Clazz.array(Byte.TYPE, [this.numComponents]);
 } else {
-pixel = obj;
+pixel=obj;
 }for (var i = 0; i < this.numComponents; i++) {
-pixel[i] = (((components[offset + i] & 255)|0)|0);
+pixel[i]=(((components[offset + i] & 255)|0)|0);
 }
 return pixel;
 }case 1:
 {
 var pixel;
 if (obj == null ) {
-pixel = Clazz.array(Short.TYPE, [this.numComponents]);
+pixel=Clazz.array(Short.TYPE, [this.numComponents]);
 } else {
-pixel = obj;
+pixel=obj;
 }for (var i = 0; i < this.numComponents; i++) {
-pixel[i] = ((components[offset + i] & 65535)|0);
+pixel[i]=((components[offset + i] & 65535)|0);
 }
 return pixel;
 }default:
@@ -740,86 +740,86 @@ var stdNormComponents;
 if (this.needScaleInit) {
 p$.initScale.apply(this, []);
 }if (this.nonStdScale) {
-stdNormComponents = Clazz.array(Float.TYPE, [this.numComponents]);
+stdNormComponents=Clazz.array(Float.TYPE, [this.numComponents]);
 for (var c = 0, nc = normOffset; c < this.numColorComponents; c++, nc++) {
-stdNormComponents[c] = (normComponents[nc] - this.compOffset[c]) * this.compScale[c];
+stdNormComponents[c]=(normComponents[nc] - this.compOffset[c]) * this.compScale[c];
 if (stdNormComponents[c] < 0.0 ) {
-stdNormComponents[c] = 0.0;
+stdNormComponents[c]=0.0;
 }if (stdNormComponents[c] > 1.0 ) {
-stdNormComponents[c] = 1.0;
+stdNormComponents[c]=1.0;
 }}
 if (this.supportsAlpha) {
-stdNormComponents[this.numColorComponents] = normComponents[this.numColorComponents + normOffset];
-}normOffset = 0;
+stdNormComponents[this.numColorComponents]=normComponents[this.numColorComponents + normOffset];
+}normOffset=0;
 } else {
-stdNormComponents = normComponents;
+stdNormComponents=normComponents;
 }switch (this.transferType) {
 case 0:
 var bpixel;
 if (obj == null ) {
-bpixel = Clazz.array(Byte.TYPE, [this.numComponents]);
+bpixel=Clazz.array(Byte.TYPE, [this.numComponents]);
 } else {
-bpixel = obj;
+bpixel=obj;
 }if (needAlpha) {
 var alpha = stdNormComponents[this.numColorComponents + normOffset];
 for (var c = 0, nc = normOffset; c < this.numColorComponents; c++, nc++) {
-bpixel[c] = ((((stdNormComponents[nc] * alpha) * (((1 << this.nBits[c]) - 1)) + 0.5)|0)|0);
+bpixel[c]=((((stdNormComponents[nc] * alpha) * (((1 << this.nBits[c]) - 1)) + 0.5)|0)|0);
 }
-bpixel[this.numColorComponents] = (((alpha * (((1 << this.nBits[this.numColorComponents]) - 1)) + 0.5)|0)|0);
+bpixel[this.numColorComponents]=(((alpha * (((1 << this.nBits[this.numColorComponents]) - 1)) + 0.5)|0)|0);
 } else {
 for (var c = 0, nc = normOffset; c < this.numComponents; c++, nc++) {
-bpixel[c] = (((stdNormComponents[nc] * (((1 << this.nBits[c]) - 1)) + 0.5)|0)|0);
+bpixel[c]=(((stdNormComponents[nc] * (((1 << this.nBits[c]) - 1)) + 0.5)|0)|0);
 }
 }return bpixel;
 case 1:
 var uspixel;
 if (obj == null ) {
-uspixel = Clazz.array(Short.TYPE, [this.numComponents]);
+uspixel=Clazz.array(Short.TYPE, [this.numComponents]);
 } else {
-uspixel = obj;
+uspixel=obj;
 }if (needAlpha) {
 var alpha = stdNormComponents[this.numColorComponents + normOffset];
 for (var c = 0, nc = normOffset; c < this.numColorComponents; c++, nc++) {
-uspixel[c] = (((stdNormComponents[nc] * alpha) * (((1 << this.nBits[c]) - 1)) + 0.5)|0);
+uspixel[c]=(((stdNormComponents[nc] * alpha) * (((1 << this.nBits[c]) - 1)) + 0.5)|0);
 }
-uspixel[this.numColorComponents] = ((alpha * (((1 << this.nBits[this.numColorComponents]) - 1)) + 0.5)|0);
+uspixel[this.numColorComponents]=((alpha * (((1 << this.nBits[this.numColorComponents]) - 1)) + 0.5)|0);
 } else {
 for (var c = 0, nc = normOffset; c < this.numComponents; c++, nc++) {
-uspixel[c] = ((stdNormComponents[nc] * (((1 << this.nBits[c]) - 1)) + 0.5)|0);
+uspixel[c]=((stdNormComponents[nc] * (((1 << this.nBits[c]) - 1)) + 0.5)|0);
 }
 }return uspixel;
 case 3:
 var ipixel;
 if (obj == null ) {
-ipixel = Clazz.array(Integer.TYPE, [this.numComponents]);
+ipixel=Clazz.array(Integer.TYPE, [this.numComponents]);
 } else {
-ipixel = obj;
+ipixel=obj;
 }if (needAlpha) {
 var alpha = stdNormComponents[this.numColorComponents + normOffset];
 for (var c = 0, nc = normOffset; c < this.numColorComponents; c++, nc++) {
-ipixel[c] = (((stdNormComponents[nc] * alpha) * (((1 << this.nBits[c]) - 1)) + 0.5)|0);
+ipixel[c]=(((stdNormComponents[nc] * alpha) * (((1 << this.nBits[c]) - 1)) + 0.5)|0);
 }
-ipixel[this.numColorComponents] = ((alpha * (((1 << this.nBits[this.numColorComponents]) - 1)) + 0.5)|0);
+ipixel[this.numColorComponents]=((alpha * (((1 << this.nBits[this.numColorComponents]) - 1)) + 0.5)|0);
 } else {
 for (var c = 0, nc = normOffset; c < this.numComponents; c++, nc++) {
-ipixel[c] = ((stdNormComponents[nc] * (((1 << this.nBits[c]) - 1)) + 0.5)|0);
+ipixel[c]=((stdNormComponents[nc] * (((1 << this.nBits[c]) - 1)) + 0.5)|0);
 }
 }return ipixel;
 case 2:
 var spixel;
 if (obj == null ) {
-spixel = Clazz.array(Short.TYPE, [this.numComponents]);
+spixel=Clazz.array(Short.TYPE, [this.numComponents]);
 } else {
-spixel = obj;
+spixel=obj;
 }if (needAlpha) {
 var alpha = stdNormComponents[this.numColorComponents + normOffset];
 for (var c = 0, nc = normOffset; c < this.numColorComponents; c++, nc++) {
-spixel[c] = ((stdNormComponents[nc] * alpha * 32767.0  + 0.5)|0);
+spixel[c]=((stdNormComponents[nc] * alpha * 32767.0  + 0.5)|0);
 }
-spixel[this.numColorComponents] = ((alpha * 32767.0 + 0.5)|0);
+spixel[this.numColorComponents]=((alpha * 32767.0 + 0.5)|0);
 } else {
 for (var c = 0, nc = normOffset; c < this.numComponents; c++, nc++) {
-spixel[c] = ((stdNormComponents[nc] * 32767.0 + 0.5)|0);
+spixel[c]=((stdNormComponents[nc] * 32767.0 + 0.5)|0);
 }
 }return spixel;
 default:
@@ -829,30 +829,30 @@ throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException').c$$S,["Th
 
 Clazz.newMeth(C$, 'getNormalizedComponents$O$FA$I', function (pixel, normComponents, normOffset) {
 if (normComponents == null ) {
-normComponents = Clazz.array(Float.TYPE, [this.numComponents + normOffset]);
+normComponents=Clazz.array(Float.TYPE, [this.numComponents + normOffset]);
 }switch (this.transferType) {
 case 0:
 var bpixel = pixel;
 for (var c = 0, nc = normOffset; c < this.numComponents; c++, nc++) {
-normComponents[nc] = ((bpixel[c] & 255)) / (((1 << this.nBits[c]) - 1));
+normComponents[nc]=((bpixel[c] & 255)) / (((1 << this.nBits[c]) - 1));
 }
 break;
 case 1:
 var uspixel = pixel;
 for (var c = 0, nc = normOffset; c < this.numComponents; c++, nc++) {
-normComponents[nc] = ((uspixel[c] & 65535)) / (((1 << this.nBits[c]) - 1));
+normComponents[nc]=((uspixel[c] & 65535)) / (((1 << this.nBits[c]) - 1));
 }
 break;
 case 3:
 var ipixel = pixel;
 for (var c = 0, nc = normOffset; c < this.numComponents; c++, nc++) {
-normComponents[nc] = (ipixel[c]) / (((1 << this.nBits[c]) - 1));
+normComponents[nc]=(ipixel[c]) / (((1 << this.nBits[c]) - 1));
 }
 break;
 case 2:
 var spixel = pixel;
 for (var c = 0, nc = normOffset; c < this.numComponents; c++, nc++) {
-normComponents[nc] = (spixel[c]) / 32767.0;
+normComponents[nc]=(spixel[c]) / 32767.0;
 }
 break;
 default:
@@ -867,7 +867,7 @@ normComponents[c] *= invAlpha;
 }
 }}if (this.min != null ) {
 for (var c = 0; c < this.numColorComponents; c++) {
-normComponents[c + normOffset] = this.min[c] + this.diffMinMax[c] * normComponents[c + normOffset];
+normComponents[c + normOffset]=this.min[c] + this.diffMinMax[c] * normComponents[c + normOffset];
 }
 }return normComponents;
 });
@@ -890,18 +890,18 @@ var pixel = null;
 var zpixel = null;
 var alphaScale = 1.0 / (((1 << this.nBits[aIdx]) - 1));
 for (var y = 0; y < h; y++, rY++) {
-rX = rminX;
+rX=rminX;
 for (var x = 0; x < w; x++, rX++) {
-pixel = raster.getDataElements$I$I$O(rX, rY, pixel);
-normAlpha = (pixel[aIdx] & 255) * alphaScale;
+pixel=raster.getDataElements$I$I$O(rX, rY, pixel);
+normAlpha=(pixel[aIdx] & 255) * alphaScale;
 if (normAlpha != 0.0 ) {
 for (var c = 0; c < aIdx; c++) {
-pixel[c] = ((((pixel[c] & 255) * normAlpha + 0.5)|0)|0);
+pixel[c]=((((pixel[c] & 255) * normAlpha + 0.5)|0)|0);
 }
 raster.setDataElements$I$I$O(rX, rY, pixel);
 } else {
 if (zpixel == null ) {
-zpixel = Clazz.array(Byte.TYPE, [this.numComponents]);
+zpixel=Clazz.array(Byte.TYPE, [this.numComponents]);
 (I$[2]||$incl$(2)).fill$BA$B(zpixel, ($b$[0] = 0, $b$[0]));
 }raster.setDataElements$I$I$O(rX, rY, zpixel);
 }}
@@ -913,18 +913,18 @@ var pixel = null;
 var zpixel = null;
 var alphaScale = 1.0 / (((1 << this.nBits[aIdx]) - 1));
 for (var y = 0; y < h; y++, rY++) {
-rX = rminX;
+rX=rminX;
 for (var x = 0; x < w; x++, rX++) {
-pixel = raster.getDataElements$I$I$O(rX, rY, pixel);
-normAlpha = (pixel[aIdx] & 65535) * alphaScale;
+pixel=raster.getDataElements$I$I$O(rX, rY, pixel);
+normAlpha=(pixel[aIdx] & 65535) * alphaScale;
 if (normAlpha != 0.0 ) {
 for (var c = 0; c < aIdx; c++) {
-pixel[c] = (((pixel[c] & 65535) * normAlpha + 0.5)|0);
+pixel[c]=(((pixel[c] & 65535) * normAlpha + 0.5)|0);
 }
 raster.setDataElements$I$I$O(rX, rY, pixel);
 } else {
 if (zpixel == null ) {
-zpixel = Clazz.array(Short.TYPE, [this.numComponents]);
+zpixel=Clazz.array(Short.TYPE, [this.numComponents]);
 (I$[2]||$incl$(2)).fill$HA$H(zpixel, 0);
 }raster.setDataElements$I$I$O(rX, rY, zpixel);
 }}
@@ -936,18 +936,18 @@ var pixel = null;
 var zpixel = null;
 var alphaScale = 1.0 / (((1 << this.nBits[aIdx]) - 1));
 for (var y = 0; y < h; y++, rY++) {
-rX = rminX;
+rX=rminX;
 for (var x = 0; x < w; x++, rX++) {
-pixel = raster.getDataElements$I$I$O(rX, rY, pixel);
-normAlpha = pixel[aIdx] * alphaScale;
+pixel=raster.getDataElements$I$I$O(rX, rY, pixel);
+normAlpha=pixel[aIdx] * alphaScale;
 if (normAlpha != 0.0 ) {
 for (var c = 0; c < aIdx; c++) {
-pixel[c] = ((pixel[c] * normAlpha + 0.5)|0);
+pixel[c]=((pixel[c] * normAlpha + 0.5)|0);
 }
 raster.setDataElements$I$I$O(rX, rY, pixel);
 } else {
 if (zpixel == null ) {
-zpixel = Clazz.array(Integer.TYPE, [this.numComponents]);
+zpixel=Clazz.array(Integer.TYPE, [this.numComponents]);
 (I$[2]||$incl$(2)).fill$IA$I(zpixel, 0);
 }raster.setDataElements$I$I$O(rX, rY, zpixel);
 }}
@@ -959,18 +959,18 @@ var pixel = null;
 var zpixel = null;
 var alphaScale = 3.051851E-5;
 for (var y = 0; y < h; y++, rY++) {
-rX = rminX;
+rX=rminX;
 for (var x = 0; x < w; x++, rX++) {
-pixel = raster.getDataElements$I$I$O(rX, rY, pixel);
-normAlpha = pixel[aIdx] * alphaScale;
+pixel=raster.getDataElements$I$I$O(rX, rY, pixel);
+normAlpha=pixel[aIdx] * alphaScale;
 if (normAlpha != 0.0 ) {
 for (var c = 0; c < aIdx; c++) {
-pixel[c] = ((pixel[c] * normAlpha + 0.5)|0);
+pixel[c]=((pixel[c] * normAlpha + 0.5)|0);
 }
 raster.setDataElements$I$I$O(rX, rY, pixel);
 } else {
 if (zpixel == null ) {
-zpixel = Clazz.array(Short.TYPE, [this.numComponents]);
+zpixel=Clazz.array(Short.TYPE, [this.numComponents]);
 (I$[2]||$incl$(2)).fill$HA$H(zpixel, 0);
 }raster.setDataElements$I$I$O(rX, rY, zpixel);
 }}
@@ -986,14 +986,14 @@ case 0:
 var pixel = null;
 var alphaScale = 1.0 / (((1 << this.nBits[aIdx]) - 1));
 for (var y = 0; y < h; y++, rY++) {
-rX = rminX;
+rX=rminX;
 for (var x = 0; x < w; x++, rX++) {
-pixel = raster.getDataElements$I$I$O(rX, rY, pixel);
-normAlpha = (pixel[aIdx] & 255) * alphaScale;
+pixel=raster.getDataElements$I$I$O(rX, rY, pixel);
+normAlpha=(pixel[aIdx] & 255) * alphaScale;
 if (normAlpha != 0.0 ) {
 var invAlpha = 1.0 / normAlpha;
 for (var c = 0; c < aIdx; c++) {
-pixel[c] = ((((pixel[c] & 255) * invAlpha + 0.5)|0)|0);
+pixel[c]=((((pixel[c] & 255) * invAlpha + 0.5)|0)|0);
 }
 raster.setDataElements$I$I$O(rX, rY, pixel);
 }}
@@ -1004,14 +1004,14 @@ case 1:
 var pixel = null;
 var alphaScale = 1.0 / (((1 << this.nBits[aIdx]) - 1));
 for (var y = 0; y < h; y++, rY++) {
-rX = rminX;
+rX=rminX;
 for (var x = 0; x < w; x++, rX++) {
-pixel = raster.getDataElements$I$I$O(rX, rY, pixel);
-normAlpha = (pixel[aIdx] & 65535) * alphaScale;
+pixel=raster.getDataElements$I$I$O(rX, rY, pixel);
+normAlpha=(pixel[aIdx] & 65535) * alphaScale;
 if (normAlpha != 0.0 ) {
 var invAlpha = 1.0 / normAlpha;
 for (var c = 0; c < aIdx; c++) {
-pixel[c] = (((pixel[c] & 65535) * invAlpha + 0.5)|0);
+pixel[c]=(((pixel[c] & 65535) * invAlpha + 0.5)|0);
 }
 raster.setDataElements$I$I$O(rX, rY, pixel);
 }}
@@ -1022,14 +1022,14 @@ case 3:
 var pixel = null;
 var alphaScale = 1.0 / (((1 << this.nBits[aIdx]) - 1));
 for (var y = 0; y < h; y++, rY++) {
-rX = rminX;
+rX=rminX;
 for (var x = 0; x < w; x++, rX++) {
-pixel = raster.getDataElements$I$I$O(rX, rY, pixel);
-normAlpha = pixel[aIdx] * alphaScale;
+pixel=raster.getDataElements$I$I$O(rX, rY, pixel);
+normAlpha=pixel[aIdx] * alphaScale;
 if (normAlpha != 0.0 ) {
 var invAlpha = 1.0 / normAlpha;
 for (var c = 0; c < aIdx; c++) {
-pixel[c] = ((pixel[c] * invAlpha + 0.5)|0);
+pixel[c]=((pixel[c] * invAlpha + 0.5)|0);
 }
 raster.setDataElements$I$I$O(rX, rY, pixel);
 }}
@@ -1040,14 +1040,14 @@ case 2:
 var pixel = null;
 var alphaScale = 3.051851E-5;
 for (var y = 0; y < h; y++, rY++) {
-rX = rminX;
+rX=rminX;
 for (var x = 0; x < w; x++, rX++) {
-pixel = raster.getDataElements$I$I$O(rX, rY, pixel);
-normAlpha = pixel[aIdx] * alphaScale;
+pixel=raster.getDataElements$I$I$O(rX, rY, pixel);
+normAlpha=pixel[aIdx] * alphaScale;
 if (normAlpha != 0.0 ) {
 var invAlpha = 1.0 / normAlpha;
 for (var c = 0; c < aIdx; c++) {
-pixel[c] = ((pixel[c] * invAlpha + 0.5)|0);
+pixel[c]=((pixel[c] * invAlpha + 0.5)|0);
 }
 raster.setDataElements$I$I$O(rX, rY, pixel);
 }}
@@ -1085,7 +1085,7 @@ break;
 default:
 var sm = this.createCompatibleSampleModel$I$I(w, h);
 var db = sm.createDataBuffer();
-raster = (I$[3]||$incl$(3)).createWritableRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Point(sm, db, null);
+raster=(I$[3]||$incl$(3)).createWritableRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Point(sm, db, null);
 }
 return raster;
 });
@@ -1093,7 +1093,7 @@ return raster;
 Clazz.newMeth(C$, 'createCompatibleSampleModel$I$I', function (w, h) {
 var bandOffsets = Clazz.array(Integer.TYPE, [this.numComponents]);
 for (var i = 0; i < this.numComponents; i++) {
-bandOffsets[i] = i;
+bandOffsets[i]=i;
 }
 switch (this.transferType) {
 case 0:
@@ -1120,7 +1120,7 @@ return null;
 }var x = raster.getMinX();
 var y = raster.getMinY();
 var band = Clazz.array(Integer.TYPE, [1]);
-band[0] = raster.getNumBands() - 1;
+band[0]=raster.getNumBands() - 1;
 return raster.createWritableChild$I$I$I$I$I$I$IA(x, y, raster.getWidth(), raster.getHeight(), x, y, band);
 });
 
@@ -1136,4 +1136,4 @@ var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:00
+//Created 2018-05-24 08:45:24

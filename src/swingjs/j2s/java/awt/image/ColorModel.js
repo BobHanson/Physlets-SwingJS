@@ -50,54 +50,54 @@ this.is_sRGB = true;
 
 Clazz.newMeth(C$, 'getRGBdefault', function () {
 if (C$.RGBdefault == null ) {
-C$.RGBdefault = Clazz.new_((I$[2]||$incl$(2)).c$$I$I$I$I$I,[32, 16711680, 65280, 255, -16777216]);
+C$.RGBdefault=Clazz.new_((I$[2]||$incl$(2)).c$$I$I$I$I$I,[32, 16711680, 65280, 255, -16777216]);
 }return C$.RGBdefault;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (bits) {
 C$.$init$.apply(this);
-this.pixel_bits = bits;
+this.pixel_bits=bits;
 if (bits < 1) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Number of bits must be > 0"]);
-}this.numComponents = 4;
-this.numColorComponents = 3;
-this.maxBits = bits;
-this.transferType = C$.getDefaultTransferType$I(bits);
+}this.numComponents=4;
+this.numColorComponents=3;
+this.maxBits=bits;
+this.transferType=C$.getDefaultTransferType$I(bits);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$IA$java_awt_color_ColorSpace$Z$Z$I$I', function (pixel_bits, bits, cspace, hasAlpha, isAlphaPremultiplied, transparency, transferType) {
 C$.$init$.apply(this);
-this.colorSpace = cspace;
-this.colorSpaceType = cspace.getType();
-this.numColorComponents = cspace.getNumComponents();
-this.numComponents = this.numColorComponents + (hasAlpha ? 1 : 0);
-this.supportsAlpha = hasAlpha;
+this.colorSpace=cspace;
+this.colorSpaceType=cspace.getType();
+this.numColorComponents=cspace.getNumComponents();
+this.numComponents=this.numColorComponents + (hasAlpha ? 1 : 0);
+this.supportsAlpha=hasAlpha;
 if (bits.length < this.numComponents) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Number of color/alpha components should be " + this.numComponents + " but length of bits array is " + bits.length ]);
 }if (transparency < 1 || transparency > 3 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Unknown transparency: " + transparency]);
 }if (this.supportsAlpha == false ) {
-this.$isAlphaPremultiplied = false;
-this.transparency = 1;
+this.$isAlphaPremultiplied=false;
+this.transparency=1;
 } else {
-this.$isAlphaPremultiplied = isAlphaPremultiplied;
-this.transparency = transparency;
-}this.nBits = bits.clone();
-this.pixel_bits = pixel_bits;
+this.$isAlphaPremultiplied=isAlphaPremultiplied;
+this.transparency=transparency;
+}this.nBits=bits.clone();
+this.pixel_bits=pixel_bits;
 if (pixel_bits <= 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Number of pixel bits must be > 0"]);
-}this.maxBits = 0;
+}this.maxBits=0;
 for (var i = 0; i < bits.length; i++) {
 if (bits[i] < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Number of bits must be >= 0"]);
 }if (this.maxBits < bits[i]) {
-this.maxBits = bits[i];
+this.maxBits=bits[i];
 }}
 if (this.maxBits == 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["There must be at least one component with > 0 pixel bits."]);
 }if (cspace !== (I$[1]||$incl$(1)).getInstance$I(1000) ) {
-this.is_sRGB = false;
-}this.transferType = transferType;
+this.is_sRGB=false;
+}this.transferType=transferType;
 }, 1);
 
 Clazz.newMeth(C$, 'hasAlpha', function () {
@@ -150,18 +150,18 @@ var length = 0;
 switch (this.transferType) {
 case 0:
 var bdata = inData;
-pixel = bdata[0] & 255;
-length = bdata.length;
+pixel=bdata[0] & 255;
+length=bdata.length;
 break;
 case 1:
 var sdata = inData;
-pixel = sdata[0] & 65535;
-length = sdata.length;
+pixel=sdata[0] & 65535;
+length=sdata.length;
 break;
 case 3:
 var idata = inData;
-pixel = idata[0];
-length = idata.length;
+pixel=idata[0];
+length=idata.length;
 break;
 default:
 throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException').c$$S,["This method has not been " + "implemented for transferType " + this.transferType ]);
@@ -178,18 +178,18 @@ var length = 0;
 switch (this.transferType) {
 case 0:
 var bdata = inData;
-pixel = bdata[0] & 255;
-length = bdata.length;
+pixel=bdata[0] & 255;
+length=bdata.length;
 break;
 case 1:
 var sdata = inData;
-pixel = sdata[0] & 65535;
-length = sdata.length;
+pixel=sdata[0] & 65535;
+length=sdata.length;
 break;
 case 3:
 var idata = inData;
-pixel = idata[0];
-length = idata.length;
+pixel=idata[0];
+length=idata.length;
 break;
 default:
 throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException').c$$S,["This method has not been " + "implemented for transferType " + this.transferType ]);
@@ -206,18 +206,18 @@ var length = 0;
 switch (this.transferType) {
 case 0:
 var bdata = inData;
-pixel = bdata[0] & 255;
-length = bdata.length;
+pixel=bdata[0] & 255;
+length=bdata.length;
 break;
 case 1:
 var sdata = inData;
-pixel = sdata[0] & 65535;
-length = sdata.length;
+pixel=sdata[0] & 65535;
+length=sdata.length;
 break;
 case 3:
 var idata = inData;
-pixel = idata[0];
-length = idata.length;
+pixel=idata[0];
+length=idata.length;
 break;
 default:
 throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException').c$$S,["This method has not been " + "implemented for transferType " + this.transferType ]);
@@ -234,18 +234,18 @@ var length = 0;
 switch (this.transferType) {
 case 0:
 var bdata = inData;
-pixel = bdata[0] & 255;
-length = bdata.length;
+pixel=bdata[0] & 255;
+length=bdata.length;
 break;
 case 1:
 var sdata = inData;
-pixel = sdata[0] & 65535;
-length = sdata.length;
+pixel=sdata[0] & 65535;
+length=sdata.length;
 break;
 case 3:
 var idata = inData;
-pixel = idata[0];
-length = idata.length;
+pixel=idata[0];
+length=idata.length;
 break;
 default:
 throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException').c$$S,["This method has not been " + "implemented for transferType " + this.transferType ]);
@@ -280,16 +280,16 @@ throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException').c$$S,["Th
 }if ((normComponents.length - normOffset) < this.numComponents) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Incorrect number of components.  Expecting " + this.numComponents]);
 }if (components == null ) {
-components = Clazz.array(Integer.TYPE, [offset + this.numComponents]);
+components=Clazz.array(Integer.TYPE, [offset + this.numComponents]);
 }if (this.supportsAlpha && this.$isAlphaPremultiplied ) {
 var normAlpha = normComponents[normOffset + this.numColorComponents];
 for (var i = 0; i < this.numColorComponents; i++) {
-components[offset + i] = ((normComponents[normOffset + i] * ((1 << this.nBits[i]) - 1) * normAlpha  + 0.5)|0);
+components[offset + i]=((normComponents[normOffset + i] * ((1 << this.nBits[i]) - 1) * normAlpha  + 0.5)|0);
 }
-components[offset + this.numColorComponents] = ((normAlpha * ((1 << this.nBits[this.numColorComponents]) - 1) + 0.5)|0);
+components[offset + this.numColorComponents]=((normAlpha * ((1 << this.nBits[this.numColorComponents]) - 1) + 0.5)|0);
 } else {
 for (var i = 0; i < this.numComponents; i++) {
-components[offset + i] = ((normComponents[normOffset + i] * ((1 << this.nBits[i]) - 1) + 0.5)|0);
+components[offset + i]=((normComponents[normOffset + i] * ((1 << this.nBits[i]) - 1) + 0.5)|0);
 }
 }return components;
 });
@@ -302,22 +302,22 @@ throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException').c$$S,["Th
 }if ((components.length - offset) < this.numComponents) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Incorrect number of components.  Expecting " + this.numComponents]);
 }if (normComponents == null ) {
-normComponents = Clazz.array(Float.TYPE, [this.numComponents + normOffset]);
+normComponents=Clazz.array(Float.TYPE, [this.numComponents + normOffset]);
 }if (this.supportsAlpha && this.$isAlphaPremultiplied ) {
 var normAlpha = components[offset + this.numColorComponents];
 normAlpha /= ((1 << this.nBits[this.numColorComponents]) - 1);
 if (normAlpha != 0.0 ) {
 for (var i = 0; i < this.numColorComponents; i++) {
-normComponents[normOffset + i] = (components[offset + i]) / (normAlpha * (((1 << this.nBits[i]) - 1)));
+normComponents[normOffset + i]=(components[offset + i]) / (normAlpha * (((1 << this.nBits[i]) - 1)));
 }
 } else {
 for (var i = 0; i < this.numColorComponents; i++) {
-normComponents[normOffset + i] = 0.0;
+normComponents[normOffset + i]=0.0;
 }
-}normComponents[normOffset + this.numColorComponents] = normAlpha;
+}normComponents[normOffset + this.numColorComponents]=normAlpha;
 } else {
 for (var i = 0; i < this.numComponents; i++) {
-normComponents[normOffset + i] = (components[offset + i]) / (((1 << this.nBits[i]) - 1));
+normComponents[normOffset + i]=(components[offset + i]) / (((1 << this.nBits[i]) - 1));
 }
 }return normComponents;
 });
@@ -370,10 +370,10 @@ return ((this.nBits == null ) && (nb == null ) );
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var result = 0;
-result = (this.supportsAlpha ? 2 : 3) + (this.$isAlphaPremultiplied ? 4 : 5) + this.pixel_bits * 6  + this.transparency * 7 + this.numComponents * 8;
+result=(this.supportsAlpha ? 2 : 3) + (this.$isAlphaPremultiplied ? 4 : 5) + this.pixel_bits * 6  + this.transparency * 7 + this.numComponents * 8;
 if (this.nBits != null ) {
 for (var i = 0; i < this.numComponents; i++) {
-result = result + this.nBits[i] * (i + 9);
+result=result + this.nBits[i] * (i + 9);
 }
 }return result;
 });
@@ -425,4 +425,4 @@ return false;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:00
+//Created 2018-05-24 08:45:24

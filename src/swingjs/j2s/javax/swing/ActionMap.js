@@ -15,7 +15,7 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setParent$javax_swing_ActionMap', function (map) {
-this.parent = map;
+this.parent=map;
 });
 
 Clazz.newMeth(C$, 'getParent', function () {
@@ -29,7 +29,7 @@ return;
 this.remove$O(key);
 } else {
 if (this.arrayTable == null ) {
-this.arrayTable = Clazz.new_((I$[1]||$incl$(1)));
+this.arrayTable=Clazz.new_((I$[1]||$incl$(1)));
 }this.arrayTable.put$O$O(key, action);
 }});
 
@@ -81,13 +81,13 @@ return keys;
 return pKeys;
 }var keyMap = Clazz.new_((I$[2]||$incl$(2)));
 var counter;
-for (counter = keys.length - 1; counter >= 0; counter--) {
+for (counter=keys.length - 1; counter >= 0; counter--) {
 keyMap.put$TK$TV(keys[counter], keys[counter]);
 }
-for (counter = pKeys.length - 1; counter >= 0; counter--) {
+for (counter=pKeys.length - 1; counter >= 0; counter--) {
 keyMap.put$TK$TV(pKeys[counter], pKeys[counter]);
 }
 return keyMap.keySet().toArray();
 });
 })();
-//Created 2018-05-15 01:02:22
+//Created 2018-05-24 08:46:06

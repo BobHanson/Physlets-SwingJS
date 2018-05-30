@@ -7,6 +7,7 @@
 
 // Google closure compiler cannot handle Clazz.new or Clazz.super
 
+// BH 5/19/2018 8:22:25 PM fix for new int[] {'a'}
 // BH 4/16/2018 6:14:10 PM msie flag in monitor
 // BH 2/22/2018 12:34:07 AM array.clone() fix
 // BH 2/20/2018 12:59:28 AM adds Character.isISOControl
@@ -853,10 +854,14 @@ var newTypedA = function(baseClass, args, nBits, ndims) {
     // Clazz.newA(5 ,null, "SA")        new String[5] val = null
     // Clazz.newA(-1, ["A","B"], "SA")  new String[]   val = {"A", "B"}
     // Clazz.newA(3, 5, 0, "IAA")       new int[3][5] (second pass, so now args = [5, 0, "IA"])
-    if (val == null)
+    if (val == null) {
       nBits = 0;
-    else if (nBits > 0 && dim < 0)
+    } else if (nBits > 0 && dim < 0) {
+      // make sure this is not a character
+      for (var i = val.length; --i >= 0;)
+        val[i].charAt && (val[i] = val[i].charAt(0));
       dim = val; // because we can initialize an array using new Int32Array([...])
+    }
     if (nBits > 0)
       ndims = 1;
     var atype;

@@ -28,10 +28,10 @@ C$.c$$O$javax_swing_event_HyperlinkEvent_EventType$java_net_URL$S$javax_swing_te
 Clazz.newMeth(C$, 'c$$O$javax_swing_event_HyperlinkEvent_EventType$java_net_URL$S$javax_swing_text_Element', function (source, type, u, desc, sourceElement) {
 C$.superclazz.c$.apply(this, [source]);
 C$.$init$.apply(this);
-this.type = type;
-this.u = u;
-this.desc = desc;
-this.sourceElement = sourceElement;
+this.type=type;
+this.u=u;
+this.desc=desc;
+this.sourceElement=sourceElement;
 }, 1);
 
 Clazz.newMeth(C$, 'getEventType', function () {
@@ -74,7 +74,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S', function (s) {
 C$.$init$.apply(this);
-this.typeString = s;
+this.typeString=s;
 }, 1);
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -86,4 +86,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:45
+//Created 2018-05-24 08:46:48

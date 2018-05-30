@@ -16,7 +16,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$I$java_awt_Color', function (rgb, printColor) {
 C$.superclazz.c$$I.apply(this, [rgb]);
 C$.$init$.apply(this);
-this.printColor = printColor;
+this.printColor=printColor;
 }, 1);
 
 Clazz.newMeth(C$, 'getPrintColor', function () {
@@ -29,4 +29,4 @@ return Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Color,[this]);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:11
+//Created 2018-05-24 08:47:36

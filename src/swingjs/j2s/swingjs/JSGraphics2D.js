@@ -39,10 +39,10 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$O', function (canvas) {
 C$.$init$.apply(this);
-this.hints = Clazz.new_((I$[1]||$incl$(1)).c$$java_util_Map,[Clazz.new_((I$[2]||$incl$(2)))]);
-this.canvas = canvas;
-this.ctx = this.canvas.getContext("2d");
-this.$transform = Clazz.new_((I$[3]||$incl$(3)));
+this.hints=Clazz.new_((I$[1]||$incl$(1)).c$$java_util_Map,[Clazz.new_((I$[2]||$incl$(2)))]);
+this.canvas=canvas;
+this.ctx=this.canvas.getContext("2d");
+this.$transform=Clazz.new_((I$[3]||$incl$(3)));
 this.setStroke$java_awt_Stroke(Clazz.new_((I$[4]||$incl$(4))));
 {
 this.gc = SwingJS;
@@ -82,6 +82,7 @@ p$.doArc$D$D$D$D$D$D$Z.apply(this, [centerX, centerY, width, height, startAngle,
 });
 
 Clazz.newMeth(C$, 'doCirc$I$I$I$Z', function (left, top, diameter, fill) {
+if (diameter <= 0) return;
 var r = diameter / 2.0;
 this.ctx.beginPath();
 this.ctx.arc(left + r, top + r, r, 0, 6.283185307179586, false);
@@ -91,11 +92,12 @@ if (fill) this.ctx.fill();
 });
 
 Clazz.newMeth(C$, 'doArc$D$D$D$D$D$D$Z', function (x, y, width, height, startAngle, arcAngle, fill) {
+if (width <= 0  || height <= 0  ) return;
 this.ctx.save();
 {
 if (arcAngle < 0 ) {
 startAngle += arcAngle;
-arcAngle = -arcAngle;
+arcAngle=-arcAngle;
 }this.ctx.translate(x, y);
 this.ctx.scale(width / 2, height / 2);
 this.ctx.beginPath();
@@ -111,10 +113,10 @@ return a * 0.017453292519943295;
 });
 
 Clazz.newMeth(C$, 'background$java_awt_Color', function (bgcolor) {
-this.backgroundColor = bgcolor;
+this.backgroundColor=bgcolor;
 if (bgcolor == null ) {
 if (!this.isShifted) this.ctx.translate(-0.5, -0.5);
-this.isShifted = true;
+this.isShifted=true;
 return;
 }this.clearRect$I$I$I$I(0, 0, this.width, this.height);
 });
@@ -140,6 +142,7 @@ this.ctx.stroke();
 }});
 
 Clazz.newMeth(C$, 'drawRect$I$I$I$I', function (x, y, width, height) {
+if (width <= 0 || height <= 0 ) return;
 this.ctx.beginPath();
 this.ctx.rect(x, y, width, height);
 this.ctx.stroke();
@@ -154,11 +157,13 @@ p$.doPoly$IA$IA$I$Z.apply(this, [axPoints, ayPoints, nPoints, true]);
 });
 
 Clazz.newMeth(C$, 'fillRect$I$I$I$I', function (x, y, width, height) {
-this.backgroundPainted = true;
+if (width <= 0 || height <= 0 ) return;
+this.backgroundPainted=true;
 this.ctx.fillRect(x, y, width, height);
 });
 
 Clazz.newMeth(C$, 'fill3DRect$I$I$I$I$Z', function (x, y, width, height, raised) {
+if (width <= 0 || height <= 0 ) return;
 var p = this.getPaint();
 var c = this.getColor();
 var brighter = c.brighter();
@@ -179,7 +184,7 @@ this.setPaint$java_awt_Paint(p);
 
 Clazz.newMeth(C$, 'setFont$java_awt_Font', function (font) {
 if (font === this.font ) return;
-this.font = font;
+this.font=font;
 if (font != null ) (I$[5]||$incl$(5)).setFont(this.ctx, (I$[6]||$incl$(6)).getCanvasFont$java_awt_Font(font));
 });
 
@@ -196,7 +201,7 @@ return true;
 });
 
 Clazz.newMeth(C$, 'doStroke$Z', function (isBegin) {
-this.inPath = isBegin;
+this.inPath=isBegin;
 if (isBegin) {
 this.ctx.beginPath();
 } else {
@@ -209,7 +214,7 @@ this.ctx.lineTo(x2, y2);
 
 Clazz.newMeth(C$, 'clip$java_awt_Shape', function (s) {
 p$.doShape$java_awt_Shape.apply(this, [s]);
-this.currentClip = s;
+this.currentClip=s;
 this.ctx.clip();
 });
 
@@ -257,7 +262,8 @@ return this.drawImagePriv$java_awt_Image$I$I$java_awt_image_ImageObserver(img, x
 });
 
 Clazz.newMeth(C$, 'drawImage$java_awt_Image$I$I$I$I$java_awt_image_ImageObserver', function (img, x, y, width, height, observer) {
-this.backgroundPainted = true;
+if (width <= 0 || height <= 0 ) return true;
+this.backgroundPainted=true;
 if (img != null ) {
 var imgNode = p$.getImageNode$java_awt_Image.apply(this, [img]);
 if (imgNode != null ) this.ctx.drawImage(imgNode, x, y, width, height);
@@ -266,7 +272,7 @@ if (observer != null ) p$.observe$java_awt_Image$java_awt_image_ImageObserver$Z.
 });
 
 Clazz.newMeth(C$, 'getImageNode$java_awt_Image', function (img) {
-this.backgroundPainted = true;
+this.backgroundPainted=true;
 var imgNode = (I$[7]||$incl$(7)).getImageNode(img);
 return (imgNode == null  ? (I$[8]||$incl$(8)).createImageNode$java_awt_Image(img) : imgNode);
 });
@@ -276,19 +282,20 @@ observer.imageUpdate$java_awt_Image$I$I$I$I$I(img, (isOK ? 0 : 192), -1, -1, -1,
 });
 
 Clazz.newMeth(C$, 'drawImage$java_awt_Image$I$I$java_awt_Color$java_awt_image_ImageObserver', function (img, x, y, bgcolor, observer) {
-this.backgroundPainted = true;
+this.backgroundPainted=true;
 (I$[9]||$incl$(9)).notImplemented$S(null);
 return this.drawImage$java_awt_Image$I$I$java_awt_image_ImageObserver(img, x, y, observer);
 });
 
 Clazz.newMeth(C$, 'drawImage$java_awt_Image$I$I$I$I$java_awt_Color$java_awt_image_ImageObserver', function (img, x, y, width, height, bgcolor, observer) {
-this.backgroundPainted = true;
+if (width <= 0 || height <= 0 ) return false;
+this.backgroundPainted=true;
 (I$[9]||$incl$(9)).notImplemented$S(null);
 return this.drawImage$java_awt_Image$I$I$I$I$java_awt_image_ImageObserver(img, x, y, width, height, observer);
 });
 
 Clazz.newMeth(C$, 'drawImage$java_awt_Image$I$I$I$I$I$I$I$I$java_awt_image_ImageObserver', function (img, dx1, dy1, dx2, dy2, sx1, sy1, sx2, sy2, observer) {
-this.backgroundPainted = true;
+this.backgroundPainted=true;
 if (img != null ) {
 var bytes = null;
 var imgNode = p$.getImageNode$java_awt_Image.apply(this, [img]);
@@ -323,7 +330,7 @@ return ret;
 });
 
 Clazz.newMeth(C$, 'drawImagePriv$java_awt_Image$I$I$java_awt_image_ImageObserver', function (img, x, y, observer) {
-this.backgroundPainted = true;
+this.backgroundPainted=true;
 if (img != null ) {
 var pixels = null;
 var isRGB = false;
@@ -335,21 +342,21 @@ var imgNode = null;
 var width = (img).getRaster().getWidth();
 var height = (img).getRaster().getHeight();
 if (pixels == null ) {
-if ((imgNode = p$.getImageNode$java_awt_Image.apply(this, [img])) != null ) this.ctx.drawImage(imgNode, x, y, width, height);
+if ((imgNode=p$.getImageNode$java_awt_Image.apply(this, [img])) != null ) this.ctx.drawImage(imgNode, x, y, width, height);
 } else {
 if (this.buf8 == null  || x != this.lastx  || y != this.lasty  || this.nx != width  || this.ny != height ) {
-this.imageData = (I$[5]||$incl$(5)).getImageData(this.ctx, x, y, width, height);
-this.buf8 = (I$[5]||$incl$(5)).getBuf8(this.imageData);
-this.lastx = x;
-this.lasty = y;
-this.nx = width;
-this.ny = height;
+this.imageData=(I$[5]||$incl$(5)).getImageData(this.ctx, x, y, width, height);
+this.buf8=(I$[5]||$incl$(5)).getBuf8(this.imageData);
+this.lastx=x;
+this.lasty=y;
+this.nx=width;
+this.ny=height;
 }for (var pt = 0, i = 0, n = Math.min((this.buf8.length/4|0), pixels.length); i < n; i++) {
 var argb = pixels[i];
-this.buf8[pt++] = (argb >> 16) & 255;
-this.buf8[pt++] = (argb >> 8) & 255;
-this.buf8[pt++] = argb & 255;
-this.buf8[pt++] = (isRGB ? 255 : (argb >> 24) & 255);
+this.buf8[pt++]=(argb >> 16) & 255;
+this.buf8[pt++]=(argb >> 8) & 255;
+this.buf8[pt++]=argb & 255;
+this.buf8[pt++]=(isRGB ? 255 : (argb >> 24) & 255);
 }
 (I$[5]||$incl$(5)).putImageData(this.ctx, this.imageData, x, y);
 }if (observer != null ) p$.observe$java_awt_Image$java_awt_image_ImageObserver$Z.apply(this, [img, observer, imgNode != null ]);
@@ -367,10 +374,10 @@ return this.currentStroke;
 
 Clazz.newMeth(C$, 'setStroke$java_awt_Stroke', function (s) {
 if (!(Clazz.instanceOf(s, "java.awt.BasicStroke"))) return;
-var b = this.currentStroke = s;
+var b = this.currentStroke=s;
 var dash = b.getDashArray();
 var idash = Clazz.array(Integer.TYPE, [dash == null  ? 0 : dash.length]);
-for (var i = idash.length; --i >= 0; ) idash[i] = (dash[i]|0);
+for (var i = idash.length; --i >= 0; ) idash[i]=(dash[i]|0);
 
 this.ctx.setLineDash(idash);
 p$.setLineWidth$D.apply(this, [b.getLineWidth()]);
@@ -379,25 +386,25 @@ var lineJoin;
 var miterLimit = -1;
 switch (b.getEndCap()) {
 case 0:
-lineCap = "butt";
+lineCap="butt";
 break;
 case 2:
-lineCap = "square";
+lineCap="square";
 break;
 case 1:
 default:
-lineCap = "round";
+lineCap="round";
 }
 switch (b.getLineJoin()) {
 case 2:
-lineJoin = "bevel";
+lineJoin="bevel";
 break;
 case 0:
-lineJoin = "miter";
-miterLimit = b.getMiterLimit();
+lineJoin="miter";
+miterLimit=b.getMiterLimit();
 break;
 case 1:
-lineJoin = "round";
+lineJoin="round";
 }
 {
 this.ctx.lineCap = lineCap; this.ctx.lineJoin = lineJoin; if (miterLimit >= 0) this.ctx.miterLimit = miterLimit;
@@ -413,7 +420,7 @@ return this.hints.get$O(hintKey);
 });
 
 Clazz.newMeth(C$, 'setRenderingHints$java_util_Map', function (hints) {
-this.hints = Clazz.new_((I$[1]||$incl$(1)).c$$java_util_Map,[hints]);
+this.hints=Clazz.new_((I$[1]||$incl$(1)).c$$java_util_Map,[hints]);
 });
 
 Clazz.newMeth(C$, 'addRenderingHints$java_util_Map', function (hints) {
@@ -438,7 +445,7 @@ return this.foregroundColor;
 });
 
 Clazz.newMeth(C$, 'setColor$java_awt_Color', function (c) {
-this.foregroundColor = c;
+this.foregroundColor=c;
 p$.setGraphicsColor$java_awt_Color.apply(this, [c]);
 });
 
@@ -447,7 +454,7 @@ this.setColor$java_awt_Color(paint);
 });
 
 Clazz.newMeth(C$, 'getFont', function () {
-if (this.font == null ) this.font = Clazz.new_((I$[10]||$incl$(10)).c$$S$I$I,["Arial", 0, 12]);
+if (this.font == null ) this.font=Clazz.new_((I$[10]||$incl$(10)).c$$S$I$I,["Arial", 0, 12]);
 return this.font;
 });
 
@@ -475,11 +482,11 @@ this.ctx.clip();
 
 Clazz.newMeth(C$, 'setCurrentClip$I$I$I$I', function (x, y, width, height) {
 var r = (Clazz.instanceOf(this.currentClip, "java.awt.Rectangle") ? this.currentClip : null);
-if (r == null  || r.x != x  || r.y != y  || r.width != width  || r.height != height ) this.currentClip = Clazz.new_((I$[12]||$incl$(12)).c$$I$I$I$I,[x, y, width, height]);
+if (r == null  || r.x != x  || r.y != y  || r.width != width  || r.height != height ) this.currentClip=Clazz.new_((I$[12]||$incl$(12)).c$$I$I$I$I,[x, y, width, height]);
 });
 
 Clazz.newMeth(C$, 'setClip$java_awt_Shape', function (clip) {
-this.currentClip = clip;
+this.currentClip=clip;
 this.ctx.beginPath();
 p$.doShape$java_awt_Shape.apply(this, [clip]);
 this.ctx.clip();
@@ -616,27 +623,27 @@ return this.getClipBounds$java_awt_Rectangle(null);
 Clazz.newMeth(C$, 'getClipBounds$java_awt_Rectangle', function (r) {
 var clipRect = p$.getClipBoundsImpl.apply(this, []);
 if (r == null ) {
-r = clipRect;
+r=clipRect;
 } else {
-r.x = clipRect.x;
-r.y = clipRect.y;
-r.width = clipRect.width;
-r.height = clipRect.height;
+r.x=clipRect.x;
+r.y=clipRect.y;
+r.width=clipRect.width;
+r.height=clipRect.height;
 }return r;
 });
 
 Clazz.newMeth(C$, 'getClipBoundsImpl', function () {
 if (this.currentClip == null ) {
-this.currentClip = Clazz.new_((I$[12]||$incl$(12)).c$$I$I$I$I,[0, 0, this.width, this.height]);
+this.currentClip=Clazz.new_((I$[12]||$incl$(12)).c$$I$I$I$I,[0, 0, this.width, this.height]);
 }return this.currentClip.getBounds();
 });
 
 Clazz.newMeth(C$, 'setComposite$java_awt_Composite', function (comp) {
 if (comp === this.currentComposite ) return;
 var newRule = 0;
-var isValid = (comp == null  || this.currentComposite == null   || (Clazz.instanceOf(comp, "java.awt.AlphaComposite")) && (newRule = (comp).getRule()) != this.currentComposite.getRule()  );
+var isValid = (comp == null  || this.currentComposite == null   || (Clazz.instanceOf(comp, "java.awt.AlphaComposite")) && (newRule=(comp).getRule()) != this.currentComposite.getRule()  );
 if (isValid && (I$[8]||$incl$(8)).setGraphicsCompositeAlpha$swingjs_JSGraphics2D$I(this, newRule) ) {
-this.currentComposite = comp;
+this.currentComposite=comp;
 }this.setAlpha$F(comp == null  ? 1 : (comp).getAlpha());
 });
 
@@ -669,19 +676,19 @@ var alpha = 0;
 {
 alpha = this.ctx.globalAlpha;
 }
-map[0] = Float.$valueOf(alpha);
-map[1] = this.currentComposite;
-map[2] = this.currentStroke;
-map[3] = this.$transform;
-map[4] = this.font;
-map[5] = this.currentClip;
-map[6] = (this.backgroundPainted ? (I$[15]||$incl$(15)).TRUE : (I$[15]||$incl$(15)).FALSE);
-this.backgroundPainted = false;
+map[0]=Float.$valueOf(alpha);
+map[1]=this.currentComposite;
+map[2]=this.currentStroke;
+map[3]=this.$transform;
+map[4]=this.font;
+map[5]=this.currentClip;
+map[6]=(this.backgroundPainted ? (I$[15]||$incl$(15)).TRUE : (I$[15]||$incl$(15)).FALSE);
+this.backgroundPainted=false;
 return (I$[5]||$incl$(5)).push(this.ctx, map);
 });
 
 Clazz.newMeth(C$, 'reset$I', function (n0) {
-if (n0 < 1) n0 = 1;
+if (n0 < 1) n0=1;
 while ((I$[5]||$incl$(5)).getSavedLevel(this.ctx) >= n0){
 var map = (I$[5]||$incl$(5)).pop(this.ctx);
 this.setComposite$java_awt_Composite(map[1]);
@@ -690,8 +697,8 @@ if (alpha != null ) this.setAlpha$F(alpha.floatValue());
 this.setStroke$java_awt_Stroke(map[2]);
 this.setTransform$java_awt_geom_AffineTransform(map[3]);
 this.setFont$java_awt_Font(map[4]);
-this.currentClip = map[5];
-this.backgroundPainted = (map[6]).booleanValue();
+this.currentClip=map[5];
+this.backgroundPainted=(map[6]).booleanValue();
 this.ctx.restore();
 }
 });
@@ -714,11 +721,11 @@ var g = this;
 {
 g = Clazz.clone(this);
 }
-g.$transform = Clazz.new_((I$[3]||$incl$(3)).c$$java_awt_geom_AffineTransform,[this.$transform]);
+g.$transform=Clazz.new_((I$[3]||$incl$(3)).c$$java_awt_geom_AffineTransform,[this.$transform]);
 if (this.hints != null ) {
-g.hints = this.hints.clone();
+g.hints=this.hints.clone();
 }g.setStroke$java_awt_Stroke(this.currentStroke.clone());
-g.initialState = n;
+g.initialState=n;
 return g;
 });
 
@@ -728,4 +735,4 @@ this.reset$I(this.initialState);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:15
+//Created 2018-05-24 08:47:43

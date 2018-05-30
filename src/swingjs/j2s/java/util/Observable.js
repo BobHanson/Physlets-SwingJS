@@ -23,7 +23,7 @@ throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
 });
 
 Clazz.newMeth(C$, 'clearChanged', function () {
-this.changed = false;
+this.changed=false;
 });
 
 Clazz.newMeth(C$, 'countObservers', function () {
@@ -57,7 +57,7 @@ this.clearChanged();
 }});
 
 Clazz.newMeth(C$, 'setChanged', function () {
-this.changed = true;
+this.changed=true;
 });
 })();
-//Created 2018-05-15 01:02:14
+//Created 2018-05-24 08:45:48

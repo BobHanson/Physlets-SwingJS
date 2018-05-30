@@ -44,19 +44,19 @@ return this.columnNumber;
 });
 
 Clazz.newMeth(C$, 'setPublicId$S', function (publicId) {
-this.publicId = publicId;
+this.publicId=publicId;
 });
 
 Clazz.newMeth(C$, 'setSystemId$S', function (systemId) {
-this.systemId = systemId;
+this.systemId=systemId;
 });
 
 Clazz.newMeth(C$, 'setLineNumber$I', function (lineNumber) {
-this.lineNumber = lineNumber;
+this.lineNumber=lineNumber;
 });
 
 Clazz.newMeth(C$, 'setColumnNumber$I', function (columnNumber) {
-this.columnNumber = columnNumber;
+this.columnNumber=columnNumber;
 });
 })();
-//Created 2018-05-15 01:03:02
+//Created 2018-05-24 08:47:14

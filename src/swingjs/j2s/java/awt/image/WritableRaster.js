@@ -48,9 +48,9 @@ throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["(pare
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["(parentY + height) is outside raster"]);
 }var sm;
 if (bandList != null ) {
-sm = this.sampleModel.createSubsetSampleModel$IA(bandList);
+sm=this.sampleModel.createSubsetSampleModel$IA(bandList);
 } else {
-sm = this.sampleModel;
+sm=this.sampleModel;
 }var deltaX = childMinX - parentX;
 var deltaY = childMinY - parentY;
 return Clazz.new_(C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_Raster,[sm, this.getDataBuffer(), Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I,[childMinX, childMinY, w, h]), Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[this.sampleModelTranslateX + deltaX, this.sampleModelTranslateY + deltaY]), this]);
@@ -71,7 +71,7 @@ throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["C
 var srcOffY = inRaster.getMinY();
 var tdata = null;
 for (var startY = 0; startY < height; startY++) {
-tdata = inRaster.getDataElements$I$I$I$I$O(srcOffX, srcOffY + startY, width, 1, tdata);
+tdata=inRaster.getDataElements$I$I$I$I$O(srcOffX, srcOffY + startY, width, 1, tdata);
 this.setDataElements$I$I$I$I$O(dstOffX, dstOffY + startY, width, 1, tdata);
 }
 });
@@ -93,18 +93,18 @@ var dstOffX = dx + srcOffX;
 var dstOffY = dy + srcOffY;
 if (dstOffX < this.minX) {
 var skipX = this.minX - dstOffX;
-width = width-(skipX);
-srcOffX = srcOffX+(skipX);
-dstOffX = this.minX;
+width-=skipX;
+srcOffX+=skipX;
+dstOffX=this.minX;
 }if (dstOffY < this.minY) {
 var skipY = this.minY - dstOffY;
-height = height-(skipY);
-srcOffY = srcOffY+(skipY);
-dstOffY = this.minY;
+height-=skipY;
+srcOffY+=skipY;
+dstOffY=this.minY;
 }if (dstOffX + width > this.minX + this.width) {
-width = this.minX + this.width - dstOffX;
+width=this.minX + this.width - dstOffX;
 }if (dstOffY + height > this.minY + this.height) {
-height = this.minY + this.height - dstOffY;
+height=this.minY + this.height - dstOffY;
 }if (width <= 0 || height <= 0 ) {
 return;
 }switch (srcRaster.getSampleModel().getDataType()) {
@@ -112,7 +112,7 @@ case 0:
 case 3:
 var iData = null;
 for (var startY = 0; startY < height; startY++) {
-iData = srcRaster.getPixels$I$I$I$I$IA(srcOffX, srcOffY + startY, width, 1, iData);
+iData=srcRaster.getPixels$I$I$I$I$IA(srcOffX, srcOffY + startY, width, 1, iData);
 this.setPixels$I$I$I$I$IA(dstOffX, dstOffY + startY, width, 1, iData);
 }
 break;
@@ -167,4 +167,4 @@ Clazz.newMeth(C$, 'setSamples$I$I$I$I$I$DA', function (x, y, w, h, b, dArray) {
 this.sampleModel.setSamples$I$I$I$I$I$DA$java_awt_image_DataBuffer(x - this.sampleModelTranslateX, y - this.sampleModelTranslateY, w, h, b, dArray, this.dataBuffer);
 });
 })();
-//Created 2018-05-15 01:02:02
+//Created 2018-05-24 08:45:28

@@ -23,8 +23,8 @@ return this.$ordinal;
 
 Clazz.newMeth(C$, 'c$$S$I', function (name, ordinal) {
 C$.$init$.apply(this);
-this.$name = name;
-this.$ordinal = ordinal;
+this.$name=name;
+this.$ordinal=ordinal;
 }, 1);
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -71,4 +71,4 @@ Clazz.newMeth(C$, 'finalize', function () {
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:07
+//Created 2018-05-24 08:45:37

@@ -8,26 +8,26 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'initValues', function () {
-this.swatchSize = (I$[15]||$incl$(15)).getDimension$O("ColorChooser.swatchesRecentSwatchSize");
-this.numSwatches = Clazz.new_((I$[14]||$incl$(14)).c$$I$I,[5, 7]);
-this.gap = Clazz.new_((I$[14]||$incl$(14)).c$$I$I,[1, 1]);
+this.swatchSize=(I$[15]||$incl$(15)).getDimension$O("ColorChooser.swatchesRecentSwatchSize");
+this.numSwatches=Clazz.new_((I$[14]||$incl$(14)).c$$I$I,[5, 7]);
+this.gap=Clazz.new_((I$[14]||$incl$(14)).c$$I$I,[1, 1]);
 });
 
 Clazz.newMeth(C$, 'initColors', function () {
 var defaultRecentColor = (I$[15]||$incl$(15)).getColor$O("ColorChooser.swatchesDefaultRecentColor");
 var numColors = this.numSwatches.width * this.numSwatches.height;
-this.colors = Clazz.array((I$[11]||$incl$(11)), [numColors]);
+this.colors=Clazz.array((I$[11]||$incl$(11)), [numColors]);
 for (var i = 0; i < numColors; i++) {
-this.colors[i] = defaultRecentColor;
+this.colors[i]=defaultRecentColor;
 }
 });
 
 Clazz.newMeth(C$, 'setMostRecentColor$java_awt_Color', function (c) {
 System.arraycopy(this.colors, 0, this.colors, 1, this.colors.length - 1);
-this.colors[0] = c;
+this.colors[0]=c;
 this.repaint();
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:44
+//Created 2018-05-24 08:46:47

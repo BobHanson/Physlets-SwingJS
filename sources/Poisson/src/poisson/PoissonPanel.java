@@ -25,6 +25,8 @@ import edu.davidson.tools.SApplet;
 import edu.davidson.tools.SDataSource;
 
 public final class PoissonPanel extends Panel implements Runnable, SScalable, SDataSource{
+  //boolean isJS = /** @j2sNative true || */ false;
+  boolean isJS = true; // for debugging
   private boolean  hasFieldThing=false;   // flag to indicate that the vector field should be treated like a drawing thing.
   private boolean  hasContourThing=false;   // flag to indicate that the vector field should be treated like a drawing thing.
   private boolean keepRunning=true;
@@ -516,6 +518,7 @@ public final class PoissonPanel extends Panel implements Runnable, SScalable, SD
         activeElement.paintActive(g);
     }
     if(dragThing!=null){
+         if(isJS)g.drawImage(osi,0,0,this);
          g.setXORMode(getBackground());
          dragThing.paint(g);
          dragThing.paintMySlaves(g);
@@ -530,13 +533,6 @@ public final class PoissonPanel extends Panel implements Runnable, SScalable, SD
     }
     paintCoordinates(g,mouseX,mouseY);
     g.dispose();
-    /*
-    if(activeElement!=null && activeElement.hasChanged){
-        setConductors();
-        invalidPotential=true;
-        repaint();
-        start();
-    } */
   }
 
   public void setCaption(String s){
@@ -662,36 +658,6 @@ public final class PoissonPanel extends Panel implements Runnable, SScalable, SD
    copyToDisplayMatrix();
    contour.setGrid(displaymatrix,xmin,xmax,ymin,ymax);
   }
-/*
-  public void setContourLevels(){
-     if(contourInterval==0 || things.size()==0){
-         contour.setAutoLevels(true);
-         //contour.setGrid(potential,xmin,xmax,ymin,ymax);
-         return;
-     }
-     double vmin=0, vmax=0, vtemp=0;
-     for (int k=0;k<things.size();k++){
-             vtemp = ((PotentialObject)things.elementAt(k)).getPotential();
-             if(vtemp<vmin) vmin=vtemp;
-             if(vtemp>vmax) vmax=vtemp;
-     }
-     if(vmax==vmin){
-         contour.setAutoLevels(true);
-         //contour.setGrid(potential,xmin,xmax,ymin,ymax);
-         return;
-     }
-     int numLevels=(int)Math.floor(1+(vmax-vmin)/contourInterval);
-//    System.out.println("levels"+ numLevels);
-     double[] levels= new double[numLevels];
-     vtemp=vmin;
-     for(int k=0; k<numLevels; k++){
-         levels[k]=vtemp;
-         vtemp=vtemp+contourInterval;
-     }
-     contour.setLevels(levels, levels.length);  // this also sets autolevels to false
-  }
-
-*/
 
   public void setDefault(){
       stopThread();
@@ -877,6 +843,53 @@ public final class PoissonPanel extends Panel implements Runnable, SScalable, SD
   private double err = 0;
   private Timer timer;
   
+	public void runTimer() {
+		switch (state) {
+		case STATE_INIT:
+			keepRunning = true;
+			err = 10 * tolerance;
+			counter = 0;
+			setMessage(null);
+			state = STATE_LOOP;
+		case STATE_LOOP:
+			if (keepRunning && counter < maxInterations) {
+				for (int i = 0; i < 20; i++) {
+					if (keepRunning)
+						err = step();
+					if (err < tolerance) {
+						keepRunning = false;
+						state = STATE_STOP;
+						//System.out.println("Poisson calculation done counter=" + counter + " error =" + err);
+						break;
+					}
+					counter++;
+				}
+				timer = new Timer(sleepTime, new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						runTimer();
+					}
+				});
+				timer.setRepeats(false);
+				timer.start();
+			}
+			break;
+		case STATE_STOP:
+			keepRunning = false;
+			if ((err > tolerance) && (counter >= maxInterations)) {
+				setMessage(owner.label_not_converge);
+			} else
+				setMessage(null);
+			invalidPotential = true;
+			copyToDisplayMatrix();
+			owner.updateDataConnections();
+			runThread = null;
+			if(counter != 0) osi = null;
+			repaint();
+			break;
+		}
+	}
+  
 	@SuppressWarnings("unused")
 	public void run() {
 		while (true) {
@@ -893,11 +906,14 @@ public final class PoissonPanel extends Panel implements Runnable, SScalable, SD
 						( /** @j2sNative true || */ runThread == Thread.currentThread()) 
 						&& counter < maxInterations) {
 					try {
-						for (int i = 0; i < 10; i++) {
+						for (int i = 0; i < 20; i++) {
 							if (keepRunning)
 								err = step();
-							if (err < tolerance)
+							if (err < tolerance) {
 								keepRunning = false;
+								break;
+							}
+							//System.out.println("Poisson calculation running counter="+counter + "error =" +err);
 							counter++;
 						}
 						if (keepRunning) {
@@ -935,16 +951,19 @@ public final class PoissonPanel extends Panel implements Runnable, SScalable, SD
 				return;
 			}
 		}
-
 	}
 
   //Start the Poisson calculation
   public synchronized void startThread() {
       if (runThread == null){
           runThread = new Thread(this);
-          keepRunning=true;
-          state = STATE_INIT;
-          runThread.start();
+      } 
+      keepRunning=true;
+	  state = STATE_INIT;
+      if(isJS) {
+          runTimer();
+      }else {
+        runThread.start();
       }
   }
 
@@ -952,23 +971,19 @@ public final class PoissonPanel extends Panel implements Runnable, SScalable, SD
 	public synchronized void stopThread() {
 		Thread currentThread = runThread;
 		keepRunning = false;
-		/**
-		 * 
-		 * @j2sNative
-		 * 
-		 * 			this.runThread=null;
-		 */
-		{
-			if (currentThread != null) {
+		state = STATE_STOP;
+		if(isJS){
+			this.runThread=null;
+		}else if (currentThread != null) {
 				try {
 					currentThread.interrupt();
 					currentThread.join();
+					runThread = null;
 				} catch (InterruptedException e) {
 					currentThread.stop();
 					runThread = null;
 				}
 			}
-		}
 	}
 
   public double step(){
@@ -1240,16 +1255,12 @@ public final class PoissonPanel extends Panel implements Runnable, SScalable, SD
         jj=yPts2g-1;
         q2-=potential[i][jj]-(potential[i+1][jj]+potential[i-1][jj]+potential[i][jj]+potential[i][jj-1])/4.0;
     }
-   // System.out.println("charge left="+q1);
-    //System.out.println("charge right="+q2);
     for (int j=1;j<yPts2g-1;j++){   // top and bottom
         ii=0;
         q3-=potential[ii][j]-(potential[ii+1][j]+potential[ii][j]+potential[ii][j+1]+potential[ii][j-1])/4.0;
         ii=xPts2g-1;
         q4-=potential[ii][j]-(potential[ii][j]+potential[ii-1][j]+potential[ii][j+1]+potential[ii][j-1])/4.0;
     }
-    //System.out.println("chage top="+q3);
-    //System.out.println("chage bottom="+q4);
     qtot+=q1+q2+q3+q4;
     System.out.println("chage total="+qtot);
 
@@ -1285,8 +1296,8 @@ public final class PoissonPanel extends Panel implements Runnable, SScalable, SD
   public void recalculate(){
       setConductors();
       invalidPotential=true;
-      repaint();
       startThread();
+      repaint();
   }
 
   public synchronized void resizeMatrices(int xp,int yp, int gp){
@@ -1492,17 +1503,19 @@ public final class PoissonPanel extends Panel implements Runnable, SScalable, SD
   }
 
   /**
-   * Repaint whenevers the system parameters are changed.
+   * Repaint whenever the system parameters are changed.
    *
    * @param              autoRefresh Automatic repaint?
    */
   public void setAutoRefresh(boolean ar){
       autoRefresh=ar;
+      stopThread();
       if(autoRefresh){
         setConductors();
         invalidPotential=true;
-        repaint();
+        osi = null;
         startThread();
+        repaint();
       }
   }
 

@@ -40,7 +40,7 @@ this.setHorizontalScrollBar$javax_swing_JScrollBar(this.createHorizontalScrollBa
 if (view != null ) {
 this.setViewportView$java_awt_Component(view);
 }this.setUIProperty$S$O("opaque", new Boolean(true));
-this.uiClassID = "ScrollPaneUI";
+this.uiClassID="ScrollPaneUI";
 this.updateUI();
 if (!this.getComponentOrientation().isLeftToRight()) {
 this.viewport.setViewPosition$java_awt_Point(Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[2147483647, 0]));
@@ -87,7 +87,7 @@ default:
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid verticalScrollBarPolicy"]);
 }
 var old = this.verticalScrollBarPolicy;
-this.verticalScrollBarPolicy = policy;
+this.verticalScrollBarPolicy=policy;
 this.firePropertyChange$S$I$I("verticalScrollBarPolicy", old, policy);
 this.revalidate();
 this.repaint();
@@ -107,7 +107,7 @@ default:
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid horizontalScrollBarPolicy"]);
 }
 var old = this.horizontalScrollBarPolicy;
-this.horizontalScrollBarPolicy = policy;
+this.horizontalScrollBarPolicy=policy;
 this.firePropertyChange$S$I$I("horizontalScrollBarPolicy", old, policy);
 this.revalidate();
 this.repaint();
@@ -119,38 +119,38 @@ return this.viewportBorder;
 
 Clazz.newMeth(C$, 'setViewportBorder$javax_swing_border_Border', function (viewportBorder) {
 var oldValue = this.viewportBorder;
-this.viewportBorder = viewportBorder;
+this.viewportBorder=viewportBorder;
 this.firePropertyChange$S$O$O("viewportBorder", oldValue, viewportBorder);
 });
 
 Clazz.newMeth(C$, 'getViewportBorderBounds', function () {
 var borderR = Clazz.new_((I$[4]||$incl$(4)).c$$java_awt_Dimension,[this.getSize()]);
 var insets = this.getInsets();
-borderR.x = insets.left;
-borderR.y = insets.top;
-borderR.width = borderR.width-(insets.left + insets.right);
-borderR.height = borderR.height-(insets.top + insets.bottom);
+borderR.x=insets.left;
+borderR.y=insets.top;
+borderR.width-=insets.left + insets.right;
+borderR.height-=insets.top + insets.bottom;
 var leftToRight = (I$[5]||$incl$(5)).isLeftToRight$java_awt_Component(this);
 var colHead = this.getColumnHeader();
 if ((colHead != null ) && (colHead.isVisible()) ) {
 var colHeadHeight = colHead.getHeight();
-borderR.y = borderR.y+(colHeadHeight);
-borderR.height = borderR.height-(colHeadHeight);
+borderR.y+=colHeadHeight;
+borderR.height-=colHeadHeight;
 }var rowHead = this.getRowHeader();
 if ((rowHead != null ) && (rowHead.isVisible()) ) {
 var rowHeadWidth = rowHead.getWidth();
 if (leftToRight) {
-borderR.x = borderR.x+(rowHeadWidth);
-}borderR.width = borderR.width-(rowHeadWidth);
+borderR.x+=rowHeadWidth;
+}borderR.width-=rowHeadWidth;
 }var vsb = this.getVerticalScrollBar();
 if ((vsb != null ) && (vsb.isVisible()) ) {
 var vsbWidth = vsb.getWidth();
 if (!leftToRight) {
-borderR.x = borderR.x+(vsbWidth);
-}borderR.width = borderR.width-(vsbWidth);
+borderR.x+=vsbWidth;
+}borderR.width-=vsbWidth;
 }var hsb = this.getHorizontalScrollBar();
 if ((hsb != null ) && (hsb.isVisible()) ) {
-borderR.height = borderR.height-(hsb.getHeight());
+borderR.height-=hsb.getHeight();
 }return borderR;
 });
 
@@ -164,7 +164,7 @@ return this.horizontalScrollBar;
 
 Clazz.newMeth(C$, 'setHorizontalScrollBar$javax_swing_JScrollBar', function (horizontalScrollBar) {
 var old = this.getHorizontalScrollBar();
-this.horizontalScrollBar = horizontalScrollBar;
+this.horizontalScrollBar=horizontalScrollBar;
 if (horizontalScrollBar != null ) {
 this.add$java_awt_Component$O(horizontalScrollBar, "HORIZONTAL_SCROLLBAR");
 } else if (old != null ) {
@@ -184,7 +184,7 @@ return this.verticalScrollBar;
 
 Clazz.newMeth(C$, 'setVerticalScrollBar$javax_swing_JScrollBar', function (verticalScrollBar) {
 var old = this.getVerticalScrollBar();
-this.verticalScrollBar = verticalScrollBar;
+this.verticalScrollBar=verticalScrollBar;
 this.add$java_awt_Component$O(verticalScrollBar, "VERTICAL_SCROLLBAR");
 this.firePropertyChange$S$O$O("verticalScrollBar", old, verticalScrollBar);
 this.revalidate();
@@ -201,7 +201,7 @@ return this.viewport;
 
 Clazz.newMeth(C$, 'setViewport$javax_swing_JViewport', function (viewport) {
 var old = this.getViewport();
-this.viewport = viewport;
+this.viewport=viewport;
 if (viewport != null ) {
 this.add$java_awt_Component$O(viewport, "VIEWPORT");
 } else if (old != null ) {
@@ -223,7 +223,7 @@ return this.rowHeader;
 
 Clazz.newMeth(C$, 'setRowHeader$javax_swing_JViewport', function (rowHeader) {
 var old = this.getRowHeader();
-this.rowHeader = rowHeader;
+this.rowHeader=rowHeader;
 if (rowHeader != null ) {
 this.add$java_awt_Component$O(rowHeader, "ROW_HEADER");
 } else if (old != null ) {
@@ -245,7 +245,7 @@ return this.columnHeader;
 
 Clazz.newMeth(C$, 'setColumnHeader$javax_swing_JViewport', function (columnHeader) {
 var old = this.getColumnHeader();
-this.columnHeader = columnHeader;
+this.columnHeader=columnHeader;
 if (columnHeader != null ) {
 this.add$java_awt_Component$O(columnHeader, "COLUMN_HEADER");
 } else if (old != null ) {
@@ -264,13 +264,13 @@ this.setColumnHeader$javax_swing_JViewport(this.createViewport());
 Clazz.newMeth(C$, 'getCorner$S', function (key) {
 var isLeftToRight = this.getComponentOrientation().isLeftToRight();
 if (key.equals$O("LOWER_LEADING_CORNER")) {
-key = isLeftToRight ? "LOWER_LEFT_CORNER" : "LOWER_RIGHT_CORNER";
+key=isLeftToRight ? "LOWER_LEFT_CORNER" : "LOWER_RIGHT_CORNER";
 } else if (key.equals$O("LOWER_TRAILING_CORNER")) {
-key = isLeftToRight ? "LOWER_RIGHT_CORNER" : "LOWER_LEFT_CORNER";
+key=isLeftToRight ? "LOWER_RIGHT_CORNER" : "LOWER_LEFT_CORNER";
 } else if (key.equals$O("UPPER_LEADING_CORNER")) {
-key = isLeftToRight ? "UPPER_LEFT_CORNER" : "UPPER_RIGHT_CORNER";
+key=isLeftToRight ? "UPPER_LEFT_CORNER" : "UPPER_RIGHT_CORNER";
 } else if (key.equals$O("UPPER_TRAILING_CORNER")) {
-key = isLeftToRight ? "UPPER_RIGHT_CORNER" : "UPPER_LEFT_CORNER";
+key=isLeftToRight ? "UPPER_RIGHT_CORNER" : "UPPER_LEFT_CORNER";
 }if (key.equals$O("LOWER_LEFT_CORNER")) {
 return this.lowerLeft;
 } else if (key.equals$O("LOWER_RIGHT_CORNER")) {
@@ -287,25 +287,25 @@ Clazz.newMeth(C$, 'setCorner$S$java_awt_Component', function (key, corner) {
 var old;
 var isLeftToRight = this.getComponentOrientation().isLeftToRight();
 if (key.equals$O("LOWER_LEADING_CORNER")) {
-key = isLeftToRight ? "LOWER_LEFT_CORNER" : "LOWER_RIGHT_CORNER";
+key=isLeftToRight ? "LOWER_LEFT_CORNER" : "LOWER_RIGHT_CORNER";
 } else if (key.equals$O("LOWER_TRAILING_CORNER")) {
-key = isLeftToRight ? "LOWER_RIGHT_CORNER" : "LOWER_LEFT_CORNER";
+key=isLeftToRight ? "LOWER_RIGHT_CORNER" : "LOWER_LEFT_CORNER";
 } else if (key.equals$O("UPPER_LEADING_CORNER")) {
-key = isLeftToRight ? "UPPER_LEFT_CORNER" : "UPPER_RIGHT_CORNER";
+key=isLeftToRight ? "UPPER_LEFT_CORNER" : "UPPER_RIGHT_CORNER";
 } else if (key.equals$O("UPPER_TRAILING_CORNER")) {
-key = isLeftToRight ? "UPPER_RIGHT_CORNER" : "UPPER_LEFT_CORNER";
+key=isLeftToRight ? "UPPER_RIGHT_CORNER" : "UPPER_LEFT_CORNER";
 }if (key.equals$O("LOWER_LEFT_CORNER")) {
-old = this.lowerLeft;
-this.lowerLeft = corner;
+old=this.lowerLeft;
+this.lowerLeft=corner;
 } else if (key.equals$O("LOWER_RIGHT_CORNER")) {
-old = this.lowerRight;
-this.lowerRight = corner;
+old=this.lowerRight;
+this.lowerRight=corner;
 } else if (key.equals$O("UPPER_LEFT_CORNER")) {
-old = this.upperLeft;
-this.upperLeft = corner;
+old=this.upperLeft;
+this.upperLeft=corner;
 } else if (key.equals$O("UPPER_RIGHT_CORNER")) {
-old = this.upperRight;
-this.upperRight = corner;
+old=this.upperRight;
+this.upperRight=corner;
 } else {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid corner key"]);
 }if (old != null ) {
@@ -329,7 +329,7 @@ return this.wheelScrollState;
 
 Clazz.newMeth(C$, 'setWheelScrollingEnabled$Z', function (handleWheel) {
 var old = this.wheelScrollState;
-this.wheelScrollState = handleWheel;
+this.wheelScrollState=handleWheel;
 this.firePropertyChange$S$Z$Z("wheelScrollingEnabled", old, handleWheel);
 });
 ;
@@ -356,7 +356,7 @@ this.putClientProperty$O$O("JScrollBar.fastWheelScrolling", (I$[1]||$incl$(1)).T
 }, 1);
 
 Clazz.newMeth(C$, 'setUnitIncrement$I', function (unitIncrement) {
-this.unitIncrementSet = true;
+this.unitIncrementSet=true;
 this.putClientProperty$O$O("JScrollBar.fastWheelScrolling", null);
 C$.superclazz.prototype.setUnitIncrement$I.apply(this, [unitIncrement]);
 });
@@ -372,7 +372,7 @@ return C$.superclazz.prototype.getUnitIncrement$I.apply(this, [direction]);
 }});
 
 Clazz.newMeth(C$, 'setBlockIncrement$I', function (blockIncrement) {
-this.blockIncrementSet = true;
+this.blockIncrementSet=true;
 this.putClientProperty$O$O("JScrollBar.fastWheelScrolling", null);
 C$.superclazz.prototype.setBlockIncrement$I.apply(this, [blockIncrement]);
 });
@@ -394,4 +394,4 @@ return vp.getExtentSize().width;
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:33
+//Created 2018-05-24 08:46:22

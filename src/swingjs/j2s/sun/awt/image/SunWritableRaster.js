@@ -15,7 +15,7 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'getStealer', function () {
-return (C$.stealer == null  ? C$.stealer = ((
+return (C$.stealer == null  ? C$.stealer=((
 (function(){var C$=Clazz.newClass(P$, "SunWritableRaster$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'sun.awt.image.DataStealer', 1);
 
 C$.$clinit$ = function() {Clazz.load(C$, 1);
@@ -37,7 +37,7 @@ return db.theTrackable;
 });
 
 Clazz.newMeth(C$, 'setTrackable$java_awt_image_DataBuffer$sun_java2d_StateTrackableDelegate', function (db, trackable) {
-db.theTrackable = trackable;
+db.theTrackable=trackable;
 });
 })()
 ), Clazz.new_((I$[1]||$incl$(1)).$init$, [this, null])) : C$.stealer);
@@ -77,13 +77,13 @@ C$.markDirty$java_awt_image_DataBuffer(wr.getDataBuffer());
 Clazz.newMeth(C$, 'c$$java_awt_image_SampleModel$java_awt_Point', function (sampleModel, origin) {
 C$.superclazz.c$$java_awt_image_SampleModel$java_awt_Point.apply(this, [sampleModel, origin]);
 C$.$init$.apply(this);
-this.theTrackable = C$.stealTrackable$java_awt_image_DataBuffer(this.dataBuffer);
+this.theTrackable=C$.stealTrackable$java_awt_image_DataBuffer(this.dataBuffer);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Point', function (sampleModel, dataBuffer, origin) {
 C$.superclazz.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Point.apply(this, [sampleModel, dataBuffer, origin]);
 C$.$init$.apply(this);
-this.theTrackable = C$.stealTrackable$java_awt_image_DataBuffer(dataBuffer);
+this.theTrackable=C$.stealTrackable$java_awt_image_DataBuffer(dataBuffer);
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
@@ -97,11 +97,11 @@ this.setSunRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_
 
 Clazz.newMeth(C$, 'setSunRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_Raster', function (sampleModel, dataBuffer, aRegion, sampleModelTranslate, parent) {
 this.setRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_Raster(sampleModel, dataBuffer, aRegion, sampleModelTranslate, parent);
-this.theTrackable = C$.stealTrackable$java_awt_image_DataBuffer(dataBuffer);
+this.theTrackable=C$.stealTrackable$java_awt_image_DataBuffer(dataBuffer);
 });
 
 Clazz.newMeth(C$, 'markDirty', function () {
 this.theTrackable.markDirty();
 });
 })();
-//Created 2018-05-15 01:03:09
+//Created 2018-05-24 08:47:29

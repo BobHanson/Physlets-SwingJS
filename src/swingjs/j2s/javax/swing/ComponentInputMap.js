@@ -14,7 +14,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_JComponent', function (component) {
 Clazz.super_(C$, this,1);
-this.component = component;
+this.component=component;
 if (component == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["ComponentInputMaps must be associated with a non-null JComponent"]);
 }}, 1);
@@ -53,4 +53,4 @@ this.getComponent().componentInputMapChanged$javax_swing_ComponentInputMap(this)
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:23
+//Created 2018-05-24 08:46:07

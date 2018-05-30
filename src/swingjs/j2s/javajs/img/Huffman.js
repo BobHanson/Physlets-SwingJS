@@ -45,8 +45,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$I$I', function (width, height) {
 C$.$init$.apply(this);
 p$.initHuf.apply(this, []);
-this.imageWidth = width;
-this.imageHeight = height;
+this.imageWidth=width;
+this.imageHeight=height;
 }, 1);
 
 Clazz.newMeth(C$, 'HuffmanBlockEncoder$javajs_util_OC$IA$I$I$I', function (out, zigzag, prec, dcCode, acCode) {
@@ -56,43 +56,43 @@ var nbits;
 var k;
 var r;
 var i;
-this.numOfDCTables = 2;
-this.numOfACTables = 2;
+this.numOfDCTables=2;
+this.numOfACTables=2;
 var matrixDC = this.dc_matrix[dcCode];
 var matrixAC = this.ac_matrix[acCode];
-temp = temp2 = zigzag[0] - prec;
+temp=temp2=zigzag[0] - prec;
 if (temp < 0) {
-temp = -temp;
+temp=-temp;
 temp2--;
-}nbits = 0;
+}nbits=0;
 while (temp != 0){
 nbits++;
-temp = temp>>(1);
+temp>>=1;
 }
 this.bufferIt$javajs_util_OC$I$I(out, matrixDC[nbits][0], matrixDC[nbits][1]);
 if (nbits != 0) {
 this.bufferIt$javajs_util_OC$I$I(out, temp2, nbits);
-}r = 0;
-for (k = 1; k < 64; k++) {
-if ((temp = zigzag[C$.jpegNaturalOrder[k]]) == 0) {
+}r=0;
+for (k=1; k < 64; k++) {
+if ((temp=zigzag[C$.jpegNaturalOrder[k]]) == 0) {
 r++;
 } else {
 while (r > 15){
 this.bufferIt$javajs_util_OC$I$I(out, matrixAC[0xF0][0], matrixAC[0xF0][1]);
-r = r-(16);
+r-=16;
 }
-temp2 = temp;
+temp2=temp;
 if (temp < 0) {
-temp = -temp;
+temp=-temp;
 temp2--;
-}nbits = 1;
-while ((temp = temp>>(1)) != 0){
+}nbits=1;
+while ((temp>>=1) != 0){
 nbits++;
 }
-i = (r << 4) + nbits;
+i=(r << 4) + nbits;
 this.bufferIt$javajs_util_OC$I$I(out, matrixAC[i][0], matrixAC[i][1]);
 this.bufferIt$javajs_util_OC$I$I(out, temp2, nbits);
-r = 0;
+r=0;
 }}
 if (r > 0) {
 this.bufferIt$javajs_util_OC$I$I(out, matrixAC[0][0], matrixAC[0][1]);
@@ -101,20 +101,20 @@ this.bufferIt$javajs_util_OC$I$I(out, matrixAC[0][0], matrixAC[0][1]);
 Clazz.newMeth(C$, 'bufferIt$javajs_util_OC$I$I', function (out, code, size) {
 var putBuffer = code;
 var putBits = this.bufferPutBits;
-putBuffer = putBuffer&((1 << size) - 1);
-putBits = putBits+(size);
-putBuffer = putBuffer<<(24 - putBits);
-putBuffer = putBuffer|(this.bufferPutBuffer);
+putBuffer&=(1 << size) - 1;
+putBits+=size;
+putBuffer<<=24 - putBits;
+putBuffer|=this.bufferPutBuffer;
 while (putBits >= 8){
 var c = ((putBuffer >> 16) & 255);
 out.writeByteAsInt$I(c);
 if (c == 255) {
 out.writeByteAsInt$I(0);
-}putBuffer = putBuffer<<(8);
-putBits = putBits-(8);
+}putBuffer<<=8;
+putBits-=8;
 }
-this.bufferPutBuffer = putBuffer;
-this.bufferPutBits = putBits;
+this.bufferPutBuffer=putBuffer;
+this.bufferPutBits=putBits;
 });
 
 Clazz.newMeth(C$, 'flushBuffer$javajs_util_OC', function (out) {
@@ -125,8 +125,8 @@ var c = ((putBuffer >> 16) & 255);
 out.writeByteAsInt$I(c);
 if (c == 255) {
 out.writeByteAsInt$I(0);
-}putBuffer = putBuffer<<(8);
-putBits = putBits-(8);
+}putBuffer<<=8;
+putBits-=8;
 }
 if (putBits > 0) {
 var c = ((putBuffer >> 16) & 255);
@@ -134,12 +134,12 @@ out.writeByteAsInt$I(c);
 }});
 
 Clazz.newMeth(C$, 'initHuf', function () {
-this.dc_matrix0 = Clazz.array(Integer.TYPE, [12, 2]);
-this.dc_matrix1 = Clazz.array(Integer.TYPE, [12, 2]);
-this.ac_matrix0 = Clazz.array(Integer.TYPE, [255, 2]);
-this.ac_matrix1 = Clazz.array(Integer.TYPE, [255, 2]);
-this.dc_matrix = (I$[4]||$incl$(4)).newInt3$I$I(2, -1);
-this.ac_matrix = (I$[4]||$incl$(4)).newInt3$I$I(2, -1);
+this.dc_matrix0=Clazz.array(Integer.TYPE, [12, 2]);
+this.dc_matrix1=Clazz.array(Integer.TYPE, [12, 2]);
+this.ac_matrix0=Clazz.array(Integer.TYPE, [255, 2]);
+this.ac_matrix1=Clazz.array(Integer.TYPE, [255, 2]);
+this.dc_matrix=(I$[4]||$incl$(4)).newInt3$I$I(2, -1);
+this.ac_matrix=(I$[4]||$incl$(4)).newInt3$I$I(2, -1);
 var p;
 var l;
 var i;
@@ -148,104 +148,104 @@ var si;
 var code;
 var huffsize = Clazz.array(Integer.TYPE, [257]);
 var huffcode = Clazz.array(Integer.TYPE, [257]);
-p = 0;
-for (l = 1; l <= 16; l++) {
-for (i = C$.bitsDCchrominance[l]; --i >= 0; ) {
-huffsize[p++] = l;
+p=0;
+for (l=1; l <= 16; l++) {
+for (i=C$.bitsDCchrominance[l]; --i >= 0; ) {
+huffsize[p++]=l;
 }
 }
-huffsize[p] = 0;
-lastp = p;
-code = 0;
-si = huffsize[0];
-p = 0;
+huffsize[p]=0;
+lastp=p;
+code=0;
+si=huffsize[0];
+p=0;
 while (huffsize[p] != 0){
 while (huffsize[p] == si){
-huffcode[p++] = code;
+huffcode[p++]=code;
 code++;
 }
-code = code<<(1);
+code<<=1;
 si++;
 }
-for (p = 0; p < lastp; p++) {
-this.dc_matrix1[C$.valDCchrominance[p]][0] = huffcode[p];
-this.dc_matrix1[C$.valDCchrominance[p]][1] = huffsize[p];
+for (p=0; p < lastp; p++) {
+this.dc_matrix1[C$.valDCchrominance[p]][0]=huffcode[p];
+this.dc_matrix1[C$.valDCchrominance[p]][1]=huffsize[p];
 }
-p = 0;
-for (l = 1; l <= 16; l++) {
-for (i = C$.bitsACchrominance[l]; --i >= 0; ) {
-huffsize[p++] = l;
+p=0;
+for (l=1; l <= 16; l++) {
+for (i=C$.bitsACchrominance[l]; --i >= 0; ) {
+huffsize[p++]=l;
 }
 }
-huffsize[p] = 0;
-lastp = p;
-code = 0;
-si = huffsize[0];
-p = 0;
+huffsize[p]=0;
+lastp=p;
+code=0;
+si=huffsize[0];
+p=0;
 while (huffsize[p] != 0){
 while (huffsize[p] == si){
-huffcode[p++] = code;
+huffcode[p++]=code;
 code++;
 }
-code = code<<(1);
+code<<=1;
 si++;
 }
-for (p = 0; p < lastp; p++) {
-this.ac_matrix1[C$.valACchrominance[p]][0] = huffcode[p];
-this.ac_matrix1[C$.valACchrominance[p]][1] = huffsize[p];
+for (p=0; p < lastp; p++) {
+this.ac_matrix1[C$.valACchrominance[p]][0]=huffcode[p];
+this.ac_matrix1[C$.valACchrominance[p]][1]=huffsize[p];
 }
-p = 0;
-for (l = 1; l <= 16; l++) {
-for (i = C$.bitsDCluminance[l]; --i >= 0; ) {
-huffsize[p++] = l;
+p=0;
+for (l=1; l <= 16; l++) {
+for (i=C$.bitsDCluminance[l]; --i >= 0; ) {
+huffsize[p++]=l;
 }
 }
-huffsize[p] = 0;
-lastp = p;
-code = 0;
-si = huffsize[0];
-p = 0;
+huffsize[p]=0;
+lastp=p;
+code=0;
+si=huffsize[0];
+p=0;
 while (huffsize[p] != 0){
 while (huffsize[p] == si){
-huffcode[p++] = code;
+huffcode[p++]=code;
 code++;
 }
-code = code<<(1);
+code<<=1;
 si++;
 }
-for (p = 0; p < lastp; p++) {
-this.dc_matrix0[C$.valDCluminance[p]][0] = huffcode[p];
-this.dc_matrix0[C$.valDCluminance[p]][1] = huffsize[p];
+for (p=0; p < lastp; p++) {
+this.dc_matrix0[C$.valDCluminance[p]][0]=huffcode[p];
+this.dc_matrix0[C$.valDCluminance[p]][1]=huffsize[p];
 }
-p = 0;
-for (l = 1; l <= 16; l++) {
-for (i = C$.bitsACluminance[l]; --i >= 0; ) {
-huffsize[p++] = l;
+p=0;
+for (l=1; l <= 16; l++) {
+for (i=C$.bitsACluminance[l]; --i >= 0; ) {
+huffsize[p++]=l;
 }
 }
-huffsize[p] = 0;
-lastp = p;
-code = 0;
-si = huffsize[0];
-p = 0;
+huffsize[p]=0;
+lastp=p;
+code=0;
+si=huffsize[0];
+p=0;
 while (huffsize[p] != 0){
 while (huffsize[p] == si){
-huffcode[p++] = code;
+huffcode[p++]=code;
 code++;
 }
-code = code<<(1);
+code<<=1;
 si++;
 }
 for (var q = 0; q < lastp; q++) {
-this.ac_matrix0[C$.valACluminance[q]][0] = huffcode[q];
-this.ac_matrix0[C$.valACluminance[q]][1] = huffsize[q];
+this.ac_matrix0[C$.valACluminance[q]][0]=huffcode[q];
+this.ac_matrix0[C$.valACluminance[q]][1]=huffsize[q];
 }
-this.dc_matrix[0] = this.dc_matrix0;
-this.dc_matrix[1] = this.dc_matrix1;
-this.ac_matrix[0] = this.ac_matrix0;
-this.ac_matrix[1] = this.ac_matrix1;
+this.dc_matrix[0]=this.dc_matrix0;
+this.dc_matrix[1]=this.dc_matrix1;
+this.ac_matrix[0]=this.ac_matrix0;
+this.ac_matrix[1]=this.ac_matrix1;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:54

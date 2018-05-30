@@ -21,9 +21,9 @@ C$.c$$O$javax_swing_tree_TreePath$IA$OA.apply(this, [source, Clazz.new_((I$[1]||
 Clazz.newMeth(C$, 'c$$O$javax_swing_tree_TreePath$IA$OA', function (source, path, childIndices, children) {
 C$.superclazz.c$.apply(this, [source]);
 C$.$init$.apply(this);
-this.path = path;
-this.childIndices = childIndices;
-this.children = children;
+this.path=path;
+this.childIndices=childIndices;
+this.children=children;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$O$OA', function (source, path) {
@@ -33,8 +33,8 @@ C$.c$$O$javax_swing_tree_TreePath.apply(this, [source, Clazz.new_((I$[1]||$incl$
 Clazz.newMeth(C$, 'c$$O$javax_swing_tree_TreePath', function (source, path) {
 C$.superclazz.c$.apply(this, [source]);
 C$.$init$.apply(this);
-this.path = path;
-this.childIndices = Clazz.array(Integer.TYPE, [0]);
+this.path=path;
+this.childIndices=Clazz.array(Integer.TYPE, [0]);
 }, 1);
 
 Clazz.newMeth(C$, 'getTreePath', function () {
@@ -83,4 +83,4 @@ retBuffer.append$S("]");
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:46
+//Created 2018-05-24 08:46:49

@@ -26,7 +26,7 @@ return this.name;
 });
 
 Clazz.newMeth(C$, 'setName$S', function (name) {
-this.name = name;
+this.name=name;
 });
 
 Clazz.newMeth(C$, 'getDisplayName', function () {
@@ -36,7 +36,7 @@ return this.getName();
 });
 
 Clazz.newMeth(C$, 'setDisplayName$S', function (displayName) {
-this.displayName = displayName;
+this.displayName=displayName;
 });
 
 Clazz.newMeth(C$, 'isExpert', function () {
@@ -44,7 +44,7 @@ return this.expert;
 });
 
 Clazz.newMeth(C$, 'setExpert$Z', function (expert) {
-this.expert = expert;
+this.expert=expert;
 });
 
 Clazz.newMeth(C$, 'isHidden', function () {
@@ -52,7 +52,7 @@ return this.hidden;
 });
 
 Clazz.newMeth(C$, 'setHidden$Z', function (hidden) {
-this.hidden = hidden;
+this.hidden=hidden;
 });
 
 Clazz.newMeth(C$, 'isPreferred', function () {
@@ -60,7 +60,7 @@ return this.preferred;
 });
 
 Clazz.newMeth(C$, 'setPreferred$Z', function (preferred) {
-this.preferred = preferred;
+this.preferred=preferred;
 });
 
 Clazz.newMeth(C$, 'getShortDescription', function () {
@@ -70,12 +70,12 @@ return this.getDisplayName();
 });
 
 Clazz.newMeth(C$, 'setShortDescription$S', function (text) {
-this.shortDescription = text;
+this.shortDescription=text;
 });
 
 Clazz.newMeth(C$, 'setValue$S$O', function (attributeName, value) {
 if (this.table == null ) {
-this.table = Clazz.new_((I$[1]||$incl$(1)));
+this.table=Clazz.new_((I$[1]||$incl$(1)));
 }this.table.put$TK$TV(attributeName, value);
 });
 
@@ -87,38 +87,38 @@ return null;
 
 Clazz.newMeth(C$, 'attributeNames', function () {
 if (this.table == null ) {
-this.table = Clazz.new_((I$[1]||$incl$(1)));
+this.table=Clazz.new_((I$[1]||$incl$(1)));
 }return this.table.keys();
 });
 
 Clazz.newMeth(C$, 'c$$java_beans_FeatureDescriptor$java_beans_FeatureDescriptor', function (x, y) {
 C$.$init$.apply(this);
-this.expert = !!(x.expert | y.expert);
-this.hidden = !!(x.hidden | y.hidden);
-this.preferred = !!(x.preferred | y.preferred);
-this.name = y.name;
-this.shortDescription = x.shortDescription;
+this.expert=!!(x.expert | y.expert);
+this.hidden=!!(x.hidden | y.hidden);
+this.preferred=!!(x.preferred | y.preferred);
+this.name=y.name;
+this.shortDescription=x.shortDescription;
 if (y.shortDescription != null ) {
-this.shortDescription = y.shortDescription;
-}this.displayName = x.displayName;
+this.shortDescription=y.shortDescription;
+}this.displayName=x.displayName;
 if (y.displayName != null ) {
-this.displayName = y.displayName;
-}this.classRef = x.classRef;
+this.displayName=y.displayName;
+}this.classRef=x.classRef;
 if (y.classRef != null ) {
-this.classRef = y.classRef;
+this.classRef=y.classRef;
 }p$.addTable$java_util_Hashtable.apply(this, [x.table]);
 p$.addTable$java_util_Hashtable.apply(this, [y.table]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_beans_FeatureDescriptor', function (old) {
 C$.$init$.apply(this);
-this.expert = old.expert;
-this.hidden = old.hidden;
-this.preferred = old.preferred;
-this.name = old.name;
-this.shortDescription = old.shortDescription;
-this.displayName = old.displayName;
-this.classRef = old.classRef;
+this.expert=old.expert;
+this.hidden=old.hidden;
+this.preferred=old.preferred;
+this.name=old.name;
+this.shortDescription=old.shortDescription;
+this.displayName=old.displayName;
+this.classRef=old.classRef;
 p$.addTable$java_util_Hashtable.apply(this, [old.table]);
 }, 1);
 
@@ -134,7 +134,7 @@ this.setValue$S$O(key, value);
 });
 
 Clazz.newMeth(C$, 'setClass0$Class', function (cls) {
-this.classRef = cls;
+this.classRef=cls;
 });
 
 Clazz.newMeth(C$, 'getClass0', function () {
@@ -149,4 +149,4 @@ Clazz.newMeth(C$, 'getParameterTypes$Class$reflect_Method', function (base, meth
 return Clazz.array(java.lang.Class, [0]);
 }, 1);
 })();
-//Created 2018-05-15 01:02:03
+//Created 2018-05-24 08:45:30

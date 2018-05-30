@@ -14,14 +14,14 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I', function (value) {
 C$.$init$.apply(this);
-this.value = value;
+this.value=value;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I', function (value, lowerBound, upperBound) {
 C$.$init$.apply(this);
 if (lowerBound > value || value > upperBound ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Value " + value + " not in range " + lowerBound + ".." + upperBound ]);
-}this.value = value;
+}this.value=value;
 }, 1);
 
 Clazz.newMeth(C$, 'getValue', function () {
@@ -42,4 +42,4 @@ return "" + this.value;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:21
+//Created 2018-05-24 08:46:01

@@ -15,8 +15,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_text_AttributedCharacterIterator_Attribute$O', function (key, value) {
 C$.$init$.apply(this);
-this.key = key;
-this.value = value;
+this.key=key;
+this.value=value;
 }, 1);
 
 Clazz.newMeth(C$, 'equals$O', function (o) {
@@ -48,4 +48,4 @@ return this.key.toString() + "=" + this.value.toString() ;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:10
+//Created 2018-05-24 08:45:42

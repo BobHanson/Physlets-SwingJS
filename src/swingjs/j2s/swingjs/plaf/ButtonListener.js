@@ -21,7 +21,7 @@ map.put$javax_swing_Action(Clazz.new_((I$[1]||$incl$(1)).c$$S,["released"]));
 
 Clazz.newMeth(C$, 'c$$swingjs_plaf_JSButtonUI$Z', function (ui, isMenuItem) {
 C$.$init$.apply(this);
-this.ui = ui;
+this.ui=ui;
 }, 1);
 
 Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
@@ -62,7 +62,7 @@ var m = b.getMnemonic();
 if (m != 0) {
 var map = (I$[3]||$incl$(3)).getUIInputMap$javax_swing_JComponent$I(b, 2);
 if (map == null ) {
-map = Clazz.new_((I$[4]||$incl$(4)).c$$javax_swing_JComponent,[b]);
+map=Clazz.new_((I$[4]||$incl$(4)).c$$javax_swing_JComponent,[b]);
 (I$[3]||$incl$(3)).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(b, 2, map);
 }map.clear();
 map.put$javax_swing_KeyStroke$O((I$[5]||$incl$(5)).getKeyStroke$I$I$Z(m, 8, false), "pressed");
@@ -181,4 +181,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:19
+//Created 2018-05-24 08:47:50

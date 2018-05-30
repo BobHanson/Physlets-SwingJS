@@ -34,15 +34,15 @@ var linept = 0;
 var linelen = line.length$();
 for (var i = off; i < len && linelen >= 0 ; i++) {
 if (linept >= linelen) {
-linept = 0;
-buf[i] = "\u000a";
-line = this.readLine();
-linelen = (line == null  ? -1 : line.length$());
+linept=0;
+buf[i]="\u000a";
+line=this.readLine();
+linelen=(line == null  ? -1 : line.length$());
 } else {
-buf[i] = line.charAt(linept++);
+buf[i]=line.charAt(linept++);
 }nRead++;
 }
 return nRead;
 });
 })();
-//Created 2018-05-15 01:02:18
+//Created 2018-05-24 08:45:56

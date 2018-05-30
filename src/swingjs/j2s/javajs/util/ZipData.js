@@ -15,18 +15,18 @@ this.isEnabled = true;
 
 Clazz.newMeth(C$, 'c$$I', function (nBytes) {
 C$.$init$.apply(this);
-this.nBytes = nBytes;
+this.nBytes=nBytes;
 }, 1);
 
 Clazz.newMeth(C$, 'addBytes$BA$I$I', function (byteBuf, nSectorBytes, nBytesRemaining) {
 if (this.pt == 0) {
 if (!(I$[1]||$incl$(1)).isGzipB$BA(byteBuf)) {
-this.isEnabled = false;
+this.isEnabled=false;
 return -1;
-}this.buf = Clazz.array(Byte.TYPE, [nBytesRemaining]);
+}this.buf=Clazz.array(Byte.TYPE, [nBytesRemaining]);
 }var nToAdd = Math.min(nSectorBytes, nBytesRemaining);
 System.arraycopy(byteBuf, 0, this.buf, this.pt, nToAdd);
-this.pt = this.pt+(nToAdd);
+this.pt+=nToAdd;
 return nBytesRemaining - nToAdd;
 });
 
@@ -51,4 +51,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:20
+//Created 2018-05-24 08:45:58

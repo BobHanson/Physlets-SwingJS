@@ -22,8 +22,8 @@ this.rootPaneCheckingEnabled = false;
 
 Clazz.newMeth(C$, 'add$java_awt_Component$O', function (comp, constraints) {
 if (Clazz.instanceOf(comp, "javax.swing.JApplet")) {
-this.isAppletFrame = true;
-(comp).getLayeredPane().isFramedApplet = true;
+this.isAppletFrame=true;
+(comp).getLayeredPane().isFramedApplet=true;
 }C$.superclazz.prototype.add$java_awt_Component$O.apply(this, [comp, constraints]);
 });
 
@@ -44,7 +44,7 @@ Clazz.super_(C$, this,1);
 this.initTitleGC$S$java_awt_GraphicsConfiguration(title, gc);
 this.enableEvents$J(72);
 this.setLocale$java_util_Locale((I$[1]||$incl$(1)).getDefaultLocale());
-this.uiClassID = "FrameUI";
+this.uiClassID="FrameUI";
 this.setRootPane$javax_swing_JRootPane(this.createRootPane());
 this.rootPane.setFrameViewer$swingjs_JSFrameViewer(this.setFrameViewer$swingjs_JSFrameViewer(null));
 this.setBackground$java_awt_Color((I$[2]||$incl$(2)).getColor$O("control"));
@@ -93,7 +93,7 @@ var security = System.getSecurityManager();
 if (security != null ) {
 security.checkExit$I(0);
 }}var oldValue = this.defaultCloseOperation;
-this.defaultCloseOperation = operation;
+this.defaultCloseOperation=operation;
 this.firePropertyChange$S$I$I("defaultCloseOperation", oldValue, operation);
 }});
 
@@ -103,7 +103,7 @@ return this.defaultCloseOperation;
 
 Clazz.newMeth(C$, 'setTransferHandler$javax_swing_TransferHandler', function (newHandler) {
 var oldHandler = this.transferHandler;
-this.transferHandler = newHandler;
+this.transferHandler=newHandler;
 (I$[4]||$incl$(4)).installSwingDropTargetAsNecessary$java_awt_Component$javax_swing_TransferHandler(this, this.transferHandler);
 this.firePropertyChange$S$O$O("transferHandler", oldHandler, newHandler);
 });
@@ -135,7 +135,7 @@ return this.rootPaneCheckingEnabled;
 });
 
 Clazz.newMeth(C$, 'setRootPaneCheckingEnabled$Z', function (enabled) {
-this.rootPaneCheckingEnabled = enabled;
+this.rootPaneCheckingEnabled=enabled;
 });
 
 Clazz.newMeth(C$, 'addImpl$java_awt_Component$O$I', function (comp, constraints, index) {
@@ -165,7 +165,7 @@ return this.rootPane;
 Clazz.newMeth(C$, 'setRootPane$javax_swing_JRootPane', function (root) {
 if (this.rootPane != null ) {
 this.remove$java_awt_Component(this.rootPane);
-}this.rootPane = root;
+}this.rootPane=root;
 if (this.rootPane != null ) {
 var checkingEnabled = this.isRootPaneCheckingEnabled();
 try {
@@ -226,24 +226,24 @@ if (defaultLookAndFeelDecorated) {
 Clazz.newMeth(C$, 'isDefaultLookAndFeelDecorated', function () {
 var defaultLookAndFeelDecorated = (I$[4]||$incl$(4)).appContextGet$O(C$.defaultLookAndFeelDecoratedKey);
 if (defaultLookAndFeelDecorated == null ) {
-defaultLookAndFeelDecorated = (I$[6]||$incl$(6)).FALSE;
+defaultLookAndFeelDecorated=(I$[6]||$incl$(6)).FALSE;
 }return defaultLookAndFeelDecorated.booleanValue();
 }, 1);
 
 Clazz.newMeth(C$, 'paramString', function () {
 var defaultCloseOperationString;
 if (this.defaultCloseOperation == 1) {
-defaultCloseOperationString = "HIDE_ON_CLOSE";
+defaultCloseOperationString="HIDE_ON_CLOSE";
 } else if (this.defaultCloseOperation == 2) {
-defaultCloseOperationString = "DISPOSE_ON_CLOSE";
+defaultCloseOperationString="DISPOSE_ON_CLOSE";
 } else if (this.defaultCloseOperation == 0) {
-defaultCloseOperationString = "DO_NOTHING_ON_CLOSE";
+defaultCloseOperationString="DO_NOTHING_ON_CLOSE";
 } else if (this.defaultCloseOperation == 3) {
-defaultCloseOperationString = "EXIT_ON_CLOSE";
-} else defaultCloseOperationString = "";
+defaultCloseOperationString="EXIT_ON_CLOSE";
+} else defaultCloseOperationString="";
 var rootPaneString = (this.rootPane != null  ? this.rootPane.toString() : "");
 var rootPaneCheckingEnabledString = (this.rootPaneCheckingEnabled ? "true" : "false");
 return C$.superclazz.prototype.paramString.apply(this, []) + ",defaultCloseOperation=" + defaultCloseOperationString + ",rootPane=" + rootPaneString + ",rootPaneCheckingEnabled=" + rootPaneCheckingEnabledString ;
 });
 })();
-//Created 2018-05-15 01:02:29
+//Created 2018-05-24 08:46:17

@@ -18,28 +18,28 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'getFontMetrics', function () {
-if (this.fm == null ) ((this.fm = Clazz.new_((I$[1]||$incl$(1))))).setFont$java_awt_Font(this);
+if (this.fm == null ) ((this.fm=Clazz.new_((I$[1]||$incl$(1))))).setFont$java_awt_Font(this);
 return this.fm;
 });
 
 Clazz.newMeth(C$, 'setFontMetrics$java_awt_FontMetrics', function (fm) {
-this.fm = fm;
+this.fm=fm;
 });
 
 Clazz.newMeth(C$, 'c$$S$I$I', function (name, style, size) {
 C$.$init$.apply(this);
-this.name = (name != null ) ? name : "Default";
-this.style = (style & -4) == 0 ? style : 0;
-this.size = size;
-this.pointSize = size;
+this.name=(name != null ) ? name : "Default";
+this.style=(style & -4) == 0 ? style : 0;
+this.size=size;
+this.pointSize=size;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Font', function (font) {
 C$.$init$.apply(this);
-this.name = font.name;
-this.style = font.style;
-this.size = font.size;
-this.pointSize = font.pointSize;
+this.name=font.name;
+this.style=font.style;
+this.size=font.size;
+this.pointSize=font.pointSize;
 }, 1);
 
 Clazz.newMeth(C$, 'getTransform', function () {
@@ -47,7 +47,7 @@ return Clazz.new_((I$[2]||$incl$(2)));
 });
 
 Clazz.newMeth(C$, 'getFamily', function () {
-return (this.family == null  ? this.family = (I$[3]||$incl$(3)).getFontFamily$java_awt_Font(this) : this.family);
+return (this.family == null  ? this.family=(I$[3]||$incl$(3)).getFontFamily$java_awt_Font(this) : this.family);
 });
 
 Clazz.newMeth(C$, 'getName', function () {
@@ -109,13 +109,13 @@ var styleIndex = str.lastIndexOf(sepChar, sizeIndex - 1);
 var strlen = str.length$();
 if (sizeIndex > 0 && sizeIndex + 1 < strlen ) {
 try {
-fontSize = Integer.$valueOf(str.substring(sizeIndex + 1)).intValue();
+fontSize=Integer.$valueOf(str.substring(sizeIndex + 1)).intValue();
 if (fontSize <= 0) {
-fontSize = 12;
+fontSize=12;
 }} catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.NumberFormatException")){
-styleIndex = sizeIndex;
-sizeIndex = strlen;
+styleIndex=sizeIndex;
+sizeIndex=strlen;
 if (str.charAt(sizeIndex - 1) == sepChar) {
 sizeIndex--;
 }} else {
@@ -123,37 +123,37 @@ throw e;
 }
 }
 }if (styleIndex >= 0 && styleIndex + 1 < strlen ) {
-styleName = str.substring(styleIndex + 1, sizeIndex);
-styleName = styleName.toLowerCase();
+styleName=str.substring(styleIndex + 1, sizeIndex);
+styleName=styleName.toLowerCase();
 if (styleName.equals$O("bolditalic")) {
-fontStyle = 3;
+fontStyle=3;
 } else if (styleName.equals$O("italic")) {
-fontStyle = 2;
+fontStyle=2;
 } else if (styleName.equals$O("bold")) {
-fontStyle = 1;
+fontStyle=1;
 } else if (styleName.equals$O("plain")) {
-fontStyle = 0;
+fontStyle=0;
 } else {
-styleIndex = sizeIndex;
+styleIndex=sizeIndex;
 if (str.charAt(styleIndex - 1) == sepChar) {
 styleIndex--;
-}}fontName = str.substring(0, styleIndex);
+}}fontName=str.substring(0, styleIndex);
 } else {
 var fontEnd = strlen;
 if (styleIndex > 0) {
-fontEnd = styleIndex;
+fontEnd=styleIndex;
 } else if (sizeIndex > 0) {
-fontEnd = sizeIndex;
+fontEnd=sizeIndex;
 }if (fontEnd > 0 && str.charAt(fontEnd - 1) == sepChar ) {
 fontEnd--;
-}fontName = str.substring(0, fontEnd);
+}fontName=str.substring(0, fontEnd);
 }return Clazz.new_(C$.c$$S$I$I,[fontName, fontStyle, fontSize]);
 }, 1);
 
 Clazz.newMeth(C$, 'getFont$S$java_awt_Font', function (nm, font) {
 var str = null;
 try {
-str = System.getProperty(nm);
+str=System.getProperty(nm);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.SecurityException")){
 } else {
@@ -167,7 +167,7 @@ return font;
 
 Clazz.newMeth(C$, 'hashCode', function () {
 if (this.hash == 0) {
-this.hash = this.name.hashCode() ^ this.style ^ this.size ;
+this.hash=this.name.hashCode() ^ this.style ^ this.size ;
 }return this.hash;
 });
 
@@ -191,9 +191,9 @@ throw e;
 Clazz.newMeth(C$, 'toString', function () {
 var strStyle;
 if (this.isBold()) {
-strStyle = this.isItalic() ? "bolditalic" : "bold";
+strStyle=this.isItalic() ? "bolditalic" : "bold";
 } else {
-strStyle = this.isItalic() ? "italic" : "plain";
+strStyle=this.isItalic() ? "italic" : "plain";
 }return this.getClass().getName() + "[family=" + this.getFamily() + ",name=" + this.name + ",style=" + strStyle + ",size=" + this.size + "]" ;
 });
 
@@ -204,13 +204,13 @@ return attributes;
 
 Clazz.newMeth(C$, 'deriveFont$I$F', function (style, sizePts) {
 var f = Clazz.new_(C$.c$$S$I$I,[this.name, style, ((sizePts + 0.5)|0)]);
-f.pointSize = sizePts;
+f.pointSize=sizePts;
 return f;
 });
 
 Clazz.newMeth(C$, 'deriveFont$F', function (sizePts) {
 var f = Clazz.new_(C$.c$$S$I$I,[this.name, this.style, ((sizePts + 0.5)|0)]);
-f.pointSize = sizePts;
+f.pointSize=sizePts;
 return f;
 });
 
@@ -237,7 +237,7 @@ return this.getStringBoundsStr$S$I$I(sb.toString(), 0, -1);
 });
 
 Clazz.newMeth(C$, 'getStringBoundsStr$S$I$I', function (s, i, j) {
-if (j >= i) s = s.substring(i, j);
+if (j >= i) s=s.substring(i, j);
 var fm = this.getFontMetrics();
 var dec = fm.getDescent();
 var asc = fm.getAscent();
@@ -250,4 +250,4 @@ Clazz.newMeth(C$, 'finalize', function () {
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:50
+//Created 2018-05-24 08:45:09

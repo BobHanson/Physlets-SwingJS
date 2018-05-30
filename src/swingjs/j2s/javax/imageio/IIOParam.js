@@ -30,12 +30,12 @@ this.controller = null;
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.controller = this.defaultController;
+this.controller=this.defaultController;
 }, 1);
 
 Clazz.newMeth(C$, 'setSourceRegion$java_awt_Rectangle', function (sourceRegion) {
 if (sourceRegion == null ) {
-this.sourceRegion = null;
+this.sourceRegion=null;
 return;
 }if (sourceRegion.x < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["sourceRegion.x < 0!"]);
@@ -49,7 +49,7 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["sourceR
 throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["sourceRegion.width <= subsamplingXOffset!"]);
 }if (sourceRegion.height <= this.subsamplingYOffset) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["sourceRegion.height <= subsamplingYOffset!"]);
-}this.sourceRegion = sourceRegion.clone();
+}this.sourceRegion=sourceRegion.clone();
 });
 
 Clazz.newMeth(C$, 'getSourceRegion', function () {
@@ -70,10 +70,10 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["subsamp
 }if (this.sourceRegion != null ) {
 if (subsamplingXOffset >= this.sourceRegion.width || subsamplingYOffset >= this.sourceRegion.height ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["region contains no pixels!"]);
-}}this.sourceXSubsampling = sourceXSubsampling;
-this.sourceYSubsampling = sourceYSubsampling;
-this.subsamplingXOffset = subsamplingXOffset;
-this.subsamplingYOffset = subsamplingYOffset;
+}}this.sourceXSubsampling=sourceXSubsampling;
+this.sourceYSubsampling=sourceYSubsampling;
+this.subsamplingXOffset=subsamplingXOffset;
+this.subsamplingYOffset=subsamplingYOffset;
 });
 
 Clazz.newMeth(C$, 'getSourceXSubsampling', function () {
@@ -94,7 +94,7 @@ return this.subsamplingYOffset;
 
 Clazz.newMeth(C$, 'setSourceBands$IA', function (sourceBands) {
 if (sourceBands == null ) {
-this.sourceBands = null;
+this.sourceBands=null;
 } else {
 var numBands = sourceBands.length;
 for (var i = 0; i < numBands; i++) {
@@ -106,7 +106,7 @@ if (band == sourceBands[j]) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Duplicate band value!"]);
 }}
 }
-this.sourceBands = (sourceBands.clone());
+this.sourceBands=(sourceBands.clone());
 }});
 
 Clazz.newMeth(C$, 'getSourceBands', function () {
@@ -116,7 +116,7 @@ return null;
 });
 
 Clazz.newMeth(C$, 'setDestinationType$javax_imageio_ImageTypeSpecifier', function (destinationType) {
-this.destinationType = destinationType;
+this.destinationType=destinationType;
 });
 
 Clazz.newMeth(C$, 'getDestinationType', function () {
@@ -126,7 +126,7 @@ return this.destinationType;
 Clazz.newMeth(C$, 'setDestinationOffset$java_awt_Point', function (destinationOffset) {
 if (destinationOffset == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["destinationOffset == null!"]);
-}this.destinationOffset = destinationOffset.clone();
+}this.destinationOffset=destinationOffset.clone();
 });
 
 Clazz.newMeth(C$, 'getDestinationOffset', function () {
@@ -134,7 +134,7 @@ return this.destinationOffset.clone();
 });
 
 Clazz.newMeth(C$, 'setController$javax_imageio_IIOParamController', function (controller) {
-this.controller = controller;
+this.controller=controller;
 });
 
 Clazz.newMeth(C$, 'getController', function () {
@@ -155,4 +155,4 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["hasControl
 }return this.getController().activate$javax_imageio_IIOParam(this);
 });
 })();
-//Created 2018-05-15 01:02:20
+//Created 2018-05-24 08:45:59

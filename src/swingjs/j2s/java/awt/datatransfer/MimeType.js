@@ -31,21 +31,21 @@ C$.c$$S$S$java_awt_datatransfer_MimeTypeParameterList.apply(this, [primary, sub,
 Clazz.newMeth(C$, 'c$$S$S$java_awt_datatransfer_MimeTypeParameterList', function (primary, sub, mtpl) {
 C$.$init$.apply(this);
 if (p$.isValidToken$S.apply(this, [primary])) {
-this.primaryType = primary.toLowerCase();
+this.primaryType=primary.toLowerCase();
 } else {
 throw Clazz.new_(Clazz.load('java.awt.datatransfer.MimeTypeParseException').c$$S,["Primary type is invalid."]);
 }if (p$.isValidToken$S.apply(this, [sub])) {
-this.subType = sub.toLowerCase();
+this.subType=sub.toLowerCase();
 } else {
 throw Clazz.new_(Clazz.load('java.awt.datatransfer.MimeTypeParseException').c$$S,["Sub type is invalid."]);
-}this.parameters = mtpl.clone();
+}this.parameters=mtpl.clone();
 }, 1);
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var code = 0;
-code = code+(this.primaryType.hashCode());
-code = code+(this.subType.hashCode());
-code = code+(this.parameters.hashCode());
+code+=this.primaryType.hashCode();
+code+=this.subType.hashCode();
+code+=this.parameters.hashCode();
 return code;
 });
 
@@ -65,13 +65,13 @@ throw Clazz.new_(Clazz.load('java.awt.datatransfer.MimeTypeParseException').c$$S
 } else if ((slashIndex < 0) && (semIndex >= 0) ) {
 throw Clazz.new_(Clazz.load('java.awt.datatransfer.MimeTypeParseException').c$$S,["Unable to find a sub type."]);
 } else if ((slashIndex >= 0) && (semIndex < 0) ) {
-this.primaryType = rawdata.substring(0, slashIndex).trim().toLowerCase();
-this.subType = rawdata.substring(slashIndex + 1).trim().toLowerCase();
-this.parameters = Clazz.new_((I$[1]||$incl$(1)));
+this.primaryType=rawdata.substring(0, slashIndex).trim().toLowerCase();
+this.subType=rawdata.substring(slashIndex + 1).trim().toLowerCase();
+this.parameters=Clazz.new_((I$[1]||$incl$(1)));
 } else if (slashIndex < semIndex) {
-this.primaryType = rawdata.substring(0, slashIndex).trim().toLowerCase();
-this.subType = rawdata.substring(slashIndex + 1, semIndex).trim().toLowerCase();
-this.parameters = Clazz.new_((I$[1]||$incl$(1)).c$$S,[rawdata.substring(semIndex)]);
+this.primaryType=rawdata.substring(0, slashIndex).trim().toLowerCase();
+this.subType=rawdata.substring(slashIndex + 1, semIndex).trim().toLowerCase();
+this.parameters=Clazz.new_((I$[1]||$incl$(1)).c$$S,[rawdata.substring(semIndex)]);
 } else {
 throw Clazz.new_(Clazz.load('java.awt.datatransfer.MimeTypeParseException').c$$S,["Unable to find a sub type."]);
 }if (!p$.isValidToken$S.apply(this, [this.primaryType])) {
@@ -125,14 +125,14 @@ return this.match$java_awt_datatransfer_MimeType(Clazz.new_(C$.c$$S,[rawdata]));
 Clazz.newMeth(C$, 'clone', function () {
 var newObj = null;
 try {
-newObj = Clazz.clone(this);
+newObj=Clazz.clone(this);
 } catch (cannotHappen) {
 if (Clazz.exceptionOf(cannotHappen, "java.lang.CloneNotSupportedException")){
 } else {
 throw cannotHappen;
 }
 }
-newObj.parameters = this.parameters.clone();
+newObj.parameters=this.parameters.clone();
 return newObj;
 });
 
@@ -153,4 +153,4 @@ return true;
 return false;
 }});
 })();
-//Created 2018-05-15 01:01:55
+//Created 2018-05-24 08:45:14

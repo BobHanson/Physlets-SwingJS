@@ -74,7 +74,7 @@ var model = b.getModel();
 var shade = this.shadow;
 var p = b.getParent();
 if (p != null  && p.getBackground().equals$O(this.shadow) ) {
-shade = this.darkShadow;
+shade=this.darkShadow;
 }if ((model.isRollover() && !(model.isPressed() && !model.isArmed() ) ) || model.isSelected() ) {
 var oldColor = g.getColor();
 g.translate$I$I(x, y);
@@ -119,17 +119,17 @@ return this.getBorderInsets$java_awt_Component$java_awt_Insets(c, Clazz.new_((I$
 Clazz.newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
 var margin = null;
 if (Clazz.instanceOf(c, "javax.swing.AbstractButton")) {
-margin = (c).getMargin();
+margin=(c).getMargin();
 }if (margin == null  || Clazz.instanceOf(margin, "javax.swing.plaf.UIResource") ) {
-insets.left = this.left;
-insets.top = this.top;
-insets.right = this.right;
-insets.bottom = this.bottom;
+insets.left=this.left;
+insets.top=this.top;
+insets.right=this.right;
+insets.bottom=this.bottom;
 } else {
-insets.left = margin.left;
-insets.top = margin.top;
-insets.right = margin.right;
-insets.bottom = margin.bottom;
+insets.left=margin.left;
+insets.top=margin.top;
+insets.right=margin.right;
+insets.bottom=margin.bottom;
 }return insets;
 });
 })()
@@ -154,10 +154,10 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color', function (shadow, darkShadow, highlight, lightHighlight) {
 Clazz.super_(C$, this,1);
-this.shadow = shadow;
-this.darkShadow = darkShadow;
-this.highlight = highlight;
-this.lightHighlight = lightHighlight;
+this.shadow=shadow;
+this.darkShadow=darkShadow;
+this.highlight=highlight;
+this.lightHighlight=lightHighlight;
 }, 1);
 
 Clazz.newMeth(C$, 'paintBorder$java_awt_Component$java_awt_Graphics$I$I$I$I', function (c, g, x, y, width, height) {
@@ -166,9 +166,9 @@ var isDefault = false;
 if (Clazz.instanceOf(c, "javax.swing.AbstractButton")) {
 var b = c;
 var model = b.getModel();
-isPressed = model.isPressed() && model.isArmed() ;
+isPressed=model.isPressed() && model.isArmed() ;
 if (Clazz.instanceOf(c, "javax.swing.JButton")) {
-isDefault = (c).isDefaultButton();
+isDefault=(c).isDefaultButton();
 }}(I$[2]||$incl$(2)).drawBezel$java_awt_Graphics$I$I$I$I$Z$Z$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color(g, x, y, width, height, isPressed, isDefault, this.shadow, this.darkShadow, this.highlight, this.lightHighlight);
 });
 
@@ -177,8 +177,8 @@ return this.getBorderInsets$java_awt_Component$java_awt_Insets(c, Clazz.new_((I$
 });
 
 Clazz.newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
-insets.top = 2;
-insets.left = insets.bottom = insets.right = 3;
+insets.top=2;
+insets.left=insets.bottom=insets.right=3;
 return insets;
 });
 
@@ -209,7 +209,7 @@ return Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I,[2, 2, 2, 2]);
 });
 
 Clazz.newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
-insets.top = insets.left = insets.bottom = insets.right = 2;
+insets.top=insets.left=insets.bottom=insets.right=2;
 return insets;
 });
 
@@ -248,7 +248,7 @@ return this.getBorderInsets$java_awt_Component$java_awt_Insets(c, Clazz.new_((I$
 });
 
 Clazz.newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
-insets.top = insets.left = insets.bottom = insets.right = 2;
+insets.top=insets.left=insets.bottom=insets.right=2;
 return insets;
 });
 
@@ -273,8 +273,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_Color$java_awt_Color', function (shadow, highlight) {
 Clazz.super_(C$, this,1);
-this.shadow = shadow;
-this.highlight = highlight;
+this.shadow=shadow;
+this.highlight=highlight;
 }, 1);
 
 Clazz.newMeth(C$, 'paintBorder$java_awt_Component$java_awt_Graphics$I$I$I$I', function (c, g, x, y, width, height) {
@@ -293,10 +293,10 @@ return this.getBorderInsets$java_awt_Component$java_awt_Insets(c, Clazz.new_((I$
 });
 
 Clazz.newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
-insets.top = 0;
-insets.left = 0;
-insets.bottom = 2;
-insets.right = 0;
+insets.top=0;
+insets.left=0;
+insets.bottom=2;
+insets.right=0;
 return insets;
 });
 
@@ -321,17 +321,17 @@ Clazz.newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function
 var margin = null;
 if (Clazz.instanceOf(c, "javax.swing.AbstractButton")) {
 var b = c;
-margin = b.getMargin();
+margin=b.getMargin();
 } else if (Clazz.instanceOf(c, "javax.swing.JToolBar")) {
 var t = c;
-margin = t.getMargin();
+margin=t.getMargin();
 } else if (Clazz.instanceOf(c, "javax.swing.text.JTextComponent")) {
 var t = c;
-margin = t.getMargin();
-}insets.top = margin != null  ? margin.top : 0;
-insets.left = margin != null  ? margin.left : 0;
-insets.bottom = margin != null  ? margin.bottom : 0;
-insets.right = margin != null  ? margin.right : 0;
+margin=t.getMargin();
+}insets.top=margin != null  ? margin.top : 0;
+insets.left=margin != null  ? margin.left : 0;
+insets.bottom=margin != null  ? margin.bottom : 0;
+insets.right=margin != null  ? margin.right : 0;
 return insets;
 });
 
@@ -358,10 +358,10 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color', function (shadow, darkShadow, highlight, lightHighlight) {
 Clazz.super_(C$, this,1);
-this.shadow = shadow;
-this.highlight = highlight;
-this.darkShadow = darkShadow;
-this.lightHighlight = lightHighlight;
+this.shadow=shadow;
+this.highlight=highlight;
+this.darkShadow=darkShadow;
+this.lightHighlight=lightHighlight;
 }, 1);
 
 Clazz.newMeth(C$, 'paintBorder$java_awt_Component$java_awt_Graphics$I$I$I$I', function (c, g, x, y, width, height) {
@@ -375,11 +375,11 @@ return this.getBorderInsets$java_awt_Component$java_awt_Insets(c, Clazz.new_((I$
 Clazz.newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
 var margin = null;
 if (Clazz.instanceOf(c, "javax.swing.text.JTextComponent")) {
-margin = (c).getMargin();
-}insets.top = margin != null  ? 2 + margin.top : 2;
-insets.left = margin != null  ? 2 + margin.left : 2;
-insets.bottom = margin != null  ? 2 + margin.bottom : 2;
-insets.right = margin != null  ? 2 + margin.right : 2;
+margin=(c).getMargin();
+}insets.top=margin != null  ? 2 + margin.top : 2;
+insets.left=margin != null  ? 2 + margin.left : 2;
+insets.bottom=margin != null  ? 2 + margin.bottom : 2;
+insets.right=margin != null  ? 2 + margin.right : 2;
 return insets;
 });
 
@@ -404,28 +404,28 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_Color$java_awt_Color', function (highlight, shadow) {
 C$.$init$.apply(this);
-this.highlight = highlight;
-this.shadow = shadow;
+this.highlight=highlight;
+this.shadow=shadow;
 }, 1);
 
 Clazz.newMeth(C$, 'paintBorder$java_awt_Component$java_awt_Graphics$I$I$I$I', function (c, g, x, y, width, height) {
 var child;
 var cBounds;
 var splitPane = c;
-child = splitPane.getLeftComponent();
+child=splitPane.getLeftComponent();
 g.setColor$java_awt_Color(c.getBackground());
 g.drawRect$I$I$I$I(x, y, width - 1, height - 1);
 if (splitPane.getOrientation() == 1) {
 if (child != null ) {
-cBounds = child.getBounds();
+cBounds=child.getBounds();
 g.setColor$java_awt_Color(this.shadow);
 g.drawLine$I$I$I$I(0, 0, cBounds.width + 1, 0);
 g.drawLine$I$I$I$I(0, 1, 0, cBounds.height + 1);
 g.setColor$java_awt_Color(this.highlight);
 g.drawLine$I$I$I$I(0, cBounds.height + 1, cBounds.width + 1, cBounds.height + 1);
-}child = splitPane.getRightComponent();
+}child=splitPane.getRightComponent();
 if (child != null ) {
-cBounds = child.getBounds();
+cBounds=child.getBounds();
 var maxX = cBounds.x + cBounds.width;
 var maxY = cBounds.y + cBounds.height;
 g.setColor$java_awt_Color(this.shadow);
@@ -435,16 +435,16 @@ g.drawLine$I$I$I$I(cBounds.x - 1, maxY, maxX, maxY);
 g.drawLine$I$I$I$I(maxX, 0, maxX, maxY + 1);
 }} else {
 if (child != null ) {
-cBounds = child.getBounds();
+cBounds=child.getBounds();
 g.setColor$java_awt_Color(this.shadow);
 g.drawLine$I$I$I$I(0, 0, cBounds.width + 1, 0);
 g.drawLine$I$I$I$I(0, 1, 0, cBounds.height);
 g.setColor$java_awt_Color(this.highlight);
 g.drawLine$I$I$I$I(1 + cBounds.width, 0, 1 + cBounds.width, cBounds.height + 1);
 g.drawLine$I$I$I$I(0, cBounds.height + 1, 0, cBounds.height + 1);
-}child = splitPane.getRightComponent();
+}child=splitPane.getRightComponent();
 if (child != null ) {
-cBounds = child.getBounds();
+cBounds=child.getBounds();
 var maxX = cBounds.x + cBounds.width;
 var maxY = cBounds.y + cBounds.height;
 g.setColor$java_awt_Color(this.shadow);
@@ -468,4 +468,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:50
+//Created 2018-05-24 08:46:57

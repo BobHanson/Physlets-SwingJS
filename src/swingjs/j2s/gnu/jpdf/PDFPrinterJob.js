@@ -21,8 +21,8 @@ this.pageable = null;
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.attributes = Clazz.new_((I$[1]||$incl$(1)));
-this.info = Clazz.new_((I$[2]||$incl$(2)));
+this.attributes=Clazz.new_((I$[1]||$incl$(1)));
+this.info=Clazz.new_((I$[2]||$incl$(2)));
 this.setJobName$S("Java Printing");
 }, 1);
 
@@ -62,8 +62,8 @@ var pageCount;
 var file = null;
 var fileOutputStream = null;
 try {
-file = Clazz.new_((I$[6]||$incl$(6)).c$$S,[pathname]);
-fileOutputStream = Clazz.new_((I$[7]||$incl$(7)).c$$java_io_File,[file]);
+file=Clazz.new_((I$[6]||$incl$(6)).c$$S,[pathname]);
+fileOutputStream=Clazz.new_((I$[7]||$incl$(7)).c$$java_io_File,[file]);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
 System.err.println$S("Error!! - Invalid output file path: " + pathname);
@@ -73,15 +73,15 @@ throw e;
 }
 System.out.println$S("GNU JPDF creating " + file);
 var pdfGraphics = null;
-this.printJob = Clazz.new_((I$[8]||$incl$(8)).c$$java_io_OutputStream,[fileOutputStream]);
+this.printJob=Clazz.new_((I$[8]||$incl$(8)).c$$java_io_OutputStream,[fileOutputStream]);
 if (this.info != null ) {
 this.printJob.getPDFDocument().setPDFInfo$gnu_jpdf_PDFInfo(this.info);
-}pageCount = (this.pageable == null  ? 1 : this.pageable.getNumberOfPages());
+}pageCount=(this.pageable == null  ? 1 : this.pageable.getNumberOfPages());
 for (var pageIndex = 0; pageIndex < pageCount; pageIndex++) {
-if (this.pageable != null ) this.pageFormat = this.pageable.getPageFormat$I(pageIndex);
-if (this.pageFormat == null ) this.pageFormat = this.defaultPage();
-pdfGraphics = this.printJob.getGraphics$java_awt_print_PageFormat(this.pageFormat);
-if (this.pageable != null ) this.printable = this.pageable.getPrintable$I(pageIndex);
+if (this.pageable != null ) this.pageFormat=this.pageable.getPageFormat$I(pageIndex);
+if (this.pageFormat == null ) this.pageFormat=this.defaultPage();
+pdfGraphics=this.printJob.getGraphics$java_awt_print_PageFormat(this.pageFormat);
+if (this.pageable != null ) this.printable=this.pageable.getPrintable$I(pageIndex);
 this.printable.print$java_awt_Graphics$java_awt_print_PageFormat$I(pdfGraphics, this.pageFormat, pageIndex);
 pdfGraphics.dispose();
 }
@@ -94,18 +94,18 @@ var file;
 var path;
 var jobName = this.getJobName();
 if (C$.fileChooser == null ) {
-C$.fileChooser = Clazz.new_((I$[9]||$incl$(9)));
+C$.fileChooser=Clazz.new_((I$[9]||$incl$(9)));
 C$.fileChooser.setMultiSelectionEnabled$Z(false);
 C$.fileChooser.setFileSelectionMode$I(0);
 }if (jobName.equals$O("")) {
-jobName = "Java Printing";
-}jobName = jobName.replaceAll$S$S("\\\\", "-");
-jobName = jobName.replaceAll$S$S("/", "-");
-path = C$.fileChooser.getCurrentDirectory();
-file = Clazz.new_((I$[6]||$incl$(6)).c$$java_io_File$S,[path, jobName + ".pdf"]);
+jobName="Java Printing";
+}jobName=jobName.replaceAll$S$S("\\\\", "-");
+jobName=jobName.replaceAll$S$S("/", "-");
+path=C$.fileChooser.getCurrentDirectory();
+file=Clazz.new_((I$[6]||$incl$(6)).c$$java_io_File$S,[path, jobName + ".pdf"]);
 C$.fileChooser.setSelectedFile$java_io_File(file);
 if (C$.fileChooser.showSaveDialog$java_awt_Component(null) == 0) {
-file = C$.fileChooser.getSelectedFile();
+file=C$.fileChooser.getSelectedFile();
 var s = file.getAbsolutePath();
 if (!s.endsWith$S(".pdf")) s += ".pdf";
 this.print$S(s);
@@ -136,16 +136,16 @@ this.info.setTitle$S(jobName);
 Clazz.newMeth(C$, 'setPageable$java_awt_print_Pageable', function (document) {
 if (document == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["Pageable cannot be null."]);
-}this.pageable = document;
+}this.pageable=document;
 });
 
 Clazz.newMeth(C$, 'setPrintable$java_awt_print_Printable', function (painter) {
-this.printable = painter;
+this.printable=painter;
 });
 
 Clazz.newMeth(C$, 'setPrintable$java_awt_print_Printable$java_awt_print_PageFormat', function (painter, format) {
-this.printable = painter;
-this.pageFormat = format;
+this.printable=painter;
+this.pageFormat=format;
 });
 
 Clazz.newMeth(C$, 'setTitle$S', function (title) {
@@ -156,4 +156,4 @@ Clazz.newMeth(C$, 'validatePage$java_awt_print_PageFormat', function (page) {
 return page.clone();
 });
 })();
-//Created 2018-05-15 01:01:47
+//Created 2018-05-24 08:45:03

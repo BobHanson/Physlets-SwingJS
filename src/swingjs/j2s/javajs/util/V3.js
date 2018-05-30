@@ -21,9 +21,9 @@ return C$.new3$F$F$F(t1.x - t2.x, t1.y - t2.y, t1.z - t2.z);
 
 Clazz.newMeth(C$, 'new3$F$F$F', function (x, y, z) {
 var v = Clazz.new_(C$);
-v.x = x;
-v.y = y;
-v.z = z;
+v.x=x;
+v.y=y;
+v.z=z;
 return v;
 }, 1);
 
@@ -35,4 +35,4 @@ var cross = Math.sqrt(xx * xx + yy * yy + zz * zz);
 return Math.abs(Math.atan2(cross, this.dot$javajs_util_T3(v1)));
 });
 })();
-//Created 2018-05-15 01:02:19
+//Created 2018-05-24 08:45:58

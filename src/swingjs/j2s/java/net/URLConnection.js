@@ -18,7 +18,7 @@ this.connected = false;
 
 Clazz.newMeth(C$, 'setDoInput$Z', function (doinput) {
 if (this.connected) throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["Already connected"]);
-this.doInput = doinput;
+this.doInput=doinput;
 });
 
 Clazz.newMeth(C$, 'getDoInput', function () {
@@ -27,7 +27,7 @@ return this.doInput;
 
 Clazz.newMeth(C$, 'setDoOutput$Z', function (dooutput) {
 if (this.connected) throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["Already connected"]);
-this.doOutput = dooutput;
+this.doOutput=dooutput;
 });
 
 Clazz.newMeth(C$, 'getDoOutput', function () {
@@ -36,7 +36,7 @@ return this.doOutput;
 
 Clazz.newMeth(C$, 'c$$java_net_URL', function (url) {
 C$.$init$.apply(this);
-this.url = url;
+this.url=url;
 }, 1);
 
 Clazz.newMeth(C$, 'getURL', function () {
@@ -54,9 +54,9 @@ throw Clazz.new_(Clazz.load('java.net.UnknownServiceException').c$$S,["protocol 
 Clazz.newMeth(C$, 'setRequestProperty$S$S', function (key, value) {
 if (this.connected) throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["Already connected"]);
 if (key == null ) throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["key is null"]);
-if (this.requests == null ) this.requests = Clazz.new_((I$[1]||$incl$(1)));
+if (this.requests == null ) this.requests=Clazz.new_((I$[1]||$incl$(1)));
 for (var i = this.requests.size(); --i >= 0; ) if (this.requests.get$I(i)[0].equals$O(key)) {
-this.requests.get$I(i)[1] = value;
+this.requests.get$I(i)[1]=value;
 return;
 }
 this.requests.addLast$TV(Clazz.array(java.lang.String, -1, [key, value]));
@@ -64,4 +64,4 @@ this.requests.addLast$TV(Clazz.array(java.lang.String, -1, [key, value]));
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:09
+//Created 2018-05-24 08:45:41

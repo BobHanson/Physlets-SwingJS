@@ -33,10 +33,10 @@ Clazz.newMeth(C$, 'start$javax_swing_JComponent$java_awt_event_MouseEvent', func
 var screenLocation = c.getLocationOnScreen();
 if (C$.component !== c ) {
 p$._stop$javax_swing_JComponent.apply(this, [C$.component]);
-}C$.component = c;
-C$.event = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,[C$.component, e.getID(), e.getWhen(), e.getModifiers(), e.getX() + screenLocation.x, e.getY() + screenLocation.y, e.getXOnScreen(), e.getYOnScreen(), e.getClickCount(), e.isPopupTrigger(), 0]);
+}C$.component=c;
+C$.event=Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,[C$.component, e.getID(), e.getWhen(), e.getModifiers(), e.getX() + screenLocation.x, e.getY() + screenLocation.y, e.getXOnScreen(), e.getYOnScreen(), e.getClickCount(), e.isPopupTrigger(), 0]);
 if (C$.timer == null ) {
-C$.timer = Clazz.new_((I$[2]||$incl$(2)).c$$I$java_awt_event_ActionListener,[100, this]);
+C$.timer=Clazz.new_((I$[2]||$incl$(2)).c$$I$java_awt_event_ActionListener,[100, this]);
 }if (!C$.timer.isRunning()) {
 C$.timer.start();
 }});
@@ -45,9 +45,9 @@ Clazz.newMeth(C$, '_stop$javax_swing_JComponent', function (c) {
 if (C$.component === c ) {
 if (C$.timer != null ) {
 C$.timer.stop();
-}C$.timer = null;
-C$.event = null;
-C$.component = null;
+}C$.timer=null;
+C$.event=null;
+C$.component=null;
 }});
 
 Clazz.newMeth(C$, '_isRunning$javax_swing_JComponent', function (c) {
@@ -59,7 +59,7 @@ var component = e.getComponent();
 var stop = true;
 if (component.isShowing()) {
 var visibleRect = component.getVisibleRect();
-stop = visibleRect.contains$I$I(e.getX(), e.getY());
+stop=visibleRect.contains$I$I(e.getX(), e.getY());
 }if (stop) {
 p$._stop$javax_swing_JComponent.apply(this, [component]);
 } else {
@@ -76,4 +76,4 @@ var e = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,
 component.superProcessMouseMotionEvent$java_awt_event_MouseEvent(e);
 });
 })();
-//Created 2018-05-15 01:02:22
+//Created 2018-05-24 08:46:06

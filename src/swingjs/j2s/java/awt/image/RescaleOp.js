@@ -23,25 +23,25 @@ this.swingJStype = "R".$c();
 
 Clazz.newMeth(C$, 'c$$FA$FA$java_awt_RenderingHints', function (scaleFactors, offsets, hints) {
 C$.$init$.apply(this);
-this.length = scaleFactors.length;
-if (this.length > offsets.length) this.length = offsets.length;
-this.scaleFactors = Clazz.array(Float.TYPE, [this.length]);
-this.offsets = Clazz.array(Float.TYPE, [this.length]);
+this.length=scaleFactors.length;
+if (this.length > offsets.length) this.length=offsets.length;
+this.scaleFactors=Clazz.array(Float.TYPE, [this.length]);
+this.offsets=Clazz.array(Float.TYPE, [this.length]);
 for (var i = 0; i < this.length; i++) {
-this.scaleFactors[i] = scaleFactors[i];
-this.offsets[i] = offsets[i];
+this.scaleFactors[i]=scaleFactors[i];
+this.offsets[i]=offsets[i];
 }
-this.hints = hints;
+this.hints=hints;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$F$F$java_awt_RenderingHints', function (scaleFactor, offset, hints) {
 C$.$init$.apply(this);
-this.length = 1;
-this.scaleFactors = Clazz.array(Float.TYPE, [1]);
-this.offsets = Clazz.array(Float.TYPE, [1]);
-this.scaleFactors[0] = scaleFactor;
-this.offsets[0] = offset;
-this.hints = hints;
+this.length=1;
+this.scaleFactors=Clazz.array(Float.TYPE, [1]);
+this.offsets=Clazz.array(Float.TYPE, [1]);
+this.scaleFactors[0]=scaleFactor;
+this.offsets[0]=offset;
+this.hints=hints;
 }, 1);
 
 Clazz.newMeth(C$, 'getScaleFactors$FA', function (scaleFactors) {
@@ -72,10 +72,10 @@ for (var i = 0; i < nElems; i++) {
 var val = ((i * bandScale + bandOff)|0);
 if ((val & -256) != 0) {
 if (val < 0) {
-val = 0;
+val=0;
 } else {
-val = 255;
-}}bandLutData[i] = ((val|0)|0);
+val=255;
+}}bandLutData[i]=((val|0)|0);
 }
 }
 return Clazz.new_((I$[1]||$incl$(1)).c$$I$BAA,[0, lutData]);
@@ -86,7 +86,7 @@ var datatype = src.getDataBuffer().getDataType();
 if (datatype != 0) {
 return false;
 }var dstSM = dst.getSampleModel();
-this.dstNbits = dstSM.getSampleSize$I(0);
+this.dstNbits=dstSM.getSampleSize$I(0);
 if (!(this.dstNbits == 8 || this.dstNbits == 16 )) {
 return false;
 }for (var i = 1; i < src.getNumBands(); i++) {
@@ -95,7 +95,7 @@ if (bandSize != this.dstNbits) {
 return false;
 }}
 var srcSM = src.getSampleModel();
-this.srcNbits = srcSM.getSampleSize$I(0);
+this.srcNbits=srcSM.getSampleSize$I(0);
 if (this.srcNbits > 16) {
 return false;
 }for (var i = 1; i < src.getNumBands(); i++) {
@@ -113,18 +113,18 @@ var numBands = srcCM.getNumColorComponents();
 if (this.length != 1 && this.length != numBands  && this.length != srcCM.getNumComponents() ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Number of scaling constants does not equal the number of of color or color/alpha  components"]);
 }if (this.length > numBands && srcCM.hasAlpha() ) {
-this.length = numBands + 1;
+this.length=numBands + 1;
 }var width = src.getWidth();
 var height = src.getHeight();
 if (dst == null ) {
-dst = this.createCompatibleDestImage$java_awt_image_BufferedImage$java_awt_image_ColorModel(src, null);
-dstCM = srcCM;
+dst=this.createCompatibleDestImage$java_awt_image_BufferedImage$java_awt_image_ColorModel(src, null);
+dstCM=srcCM;
 } else {
 if (width != dst.getWidth()) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Src width (" + width + ") not equal to dst width (" + dst.getWidth() + ")" ]);
 }if (height != dst.getHeight()) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Src height (" + height + ") not equal to dst height (" + dst.getHeight() + ")" ]);
-}dstCM = dst.getColorModel();
+}dstCM=dst.getColorModel();
 if (srcCM.getColorSpace().getType() != dstCM.getColorSpace().getType()) {
 (I$[2]||$incl$(2)).notImplemented$S(null);
 throw Clazz.new_(Clazz.load('java.awt.image.ImagingOpException').c$$S,["SwingJS only supports RGB color space"]);
@@ -137,9 +137,9 @@ var minx = srcRaster.getMinX();
 var miny = srcRaster.getMinY();
 var bands = Clazz.array(Integer.TYPE, [numBands - 1]);
 for (var i = 0; i < numBands - 1; i++) {
-bands[i] = i;
+bands[i]=i;
 }
-srcRaster = srcRaster.createWritableChild$I$I$I$I$I$I$IA(minx, miny, srcRaster.getWidth(), srcRaster.getHeight(), minx, miny, bands);
+srcRaster=srcRaster.createWritableChild$I$I$I$I$I$I$IA(minx, miny, srcRaster.getWidth(), srcRaster.getHeight(), minx, miny, bands);
 }}if (dstCM.hasAlpha()) {
 var dstNumBands = dstRaster.getNumBands();
 if (dstNumBands - 1 == this.length || this.length == 1 ) {
@@ -147,9 +147,9 @@ var minx = dstRaster.getMinX();
 var miny = dstRaster.getMinY();
 var bands = Clazz.array(Integer.TYPE, [numBands - 1]);
 for (var i = 0; i < numBands - 1; i++) {
-bands[i] = i;
+bands[i]=i;
 }
-dstRaster = dstRaster.createWritableChild$I$I$I$I$I$I$IA(minx, miny, dstRaster.getWidth(), dstRaster.getHeight(), minx, miny, bands);
+dstRaster=dstRaster.createWritableChild$I$I$I$I$I$I$IA(minx, miny, dstRaster.getWidth(), dstRaster.getHeight(), minx, miny, bands);
 }}this.filter$java_awt_image_Raster$java_awt_image_WritableRaster(srcRaster, dstRaster);
 return origDst;
 });
@@ -162,7 +162,7 @@ var srcPix = null;
 var step = 0;
 var tidx = 0;
 if (dst == null ) {
-dst = this.createCompatibleDestRaster$java_awt_image_Raster(src);
+dst=this.createCompatibleDestRaster$java_awt_image_Raster(src);
 } else if (height != dst.getHeight() || width != dst.getWidth() ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Width or height of Rasters do not match"]);
 } else if (numBands != dst.getNumBands()) {
@@ -180,7 +180,7 @@ var op = Clazz.new_((I$[3]||$incl$(3)).c$$java_awt_image_LookupTable$java_awt_Re
 op.filter$java_awt_image_Raster$java_awt_image_WritableRaster(src, dst);
 }} else {
 if (this.length > 1) {
-step = 1;
+step=1;
 }var sminX = src.getMinX();
 var sY = src.getMinY();
 var dminX = dst.getMinX();
@@ -192,25 +192,25 @@ var dstMax = Clazz.array(Integer.TYPE, [numBands]);
 var dstMask = Clazz.array(Integer.TYPE, [numBands]);
 var dstSM = dst.getSampleModel();
 for (var z = 0; z < numBands; z++) {
-nbits = dstSM.getSampleSize$I(z);
-dstMax[z] = (1 << nbits) - 1;
-dstMask[z] = ~(dstMax[z]);
+nbits=dstSM.getSampleSize$I(z);
+dstMax[z]=(1 << nbits) - 1;
+dstMask[z]=~(dstMax[z]);
 }
 var val;
 for (var y = 0; y < height; y++, sY++, dY++) {
-dX = dminX;
-sX = sminX;
+dX=dminX;
+sX=sminX;
 for (var x = 0; x < width; x++, sX++, dX++) {
-srcPix = src.getPixel$I$I$IA(sX, sY, srcPix);
-tidx = 0;
-for (var z = 0; z < numBands; z++, tidx = tidx+(step)) {
-val = ((srcPix[z] * this.scaleFactors[tidx] + this.offsets[tidx])|0);
+srcPix=src.getPixel$I$I$IA(sX, sY, srcPix);
+tidx=0;
+for (var z = 0; z < numBands; z++, tidx+=step) {
+val=((srcPix[z] * this.scaleFactors[tidx] + this.offsets[tidx])|0);
 if ((val & dstMask[z]) != 0) {
 if (val < 0) {
-val = 0;
+val=0;
 } else {
-val = dstMax[z];
-}}srcPix[z] = val;
+val=dstMax[z];
+}}srcPix[z]=val;
 }
 dst.setPixel$I$I$IA(dX, dY, srcPix);
 }
@@ -230,11 +230,11 @@ Clazz.newMeth(C$, 'createCompatibleDestImage$java_awt_image_BufferedImage$java_a
 var image;
 if (destCM == null ) {
 var cm = src.getColorModel();
-image = Clazz.new_((I$[4]||$incl$(4)).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[cm, src.getRaster().createCompatibleWritableRaster(), cm.isAlphaPremultiplied(), null]);
+image=Clazz.new_((I$[4]||$incl$(4)).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[cm, src.getRaster().createCompatibleWritableRaster(), cm.isAlphaPremultiplied(), null]);
 } else {
 var w = src.getWidth();
 var h = src.getHeight();
-image = Clazz.new_((I$[4]||$incl$(4)).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[destCM, destCM.createCompatibleWritableRaster$I$I(w, h), destCM.isAlphaPremultiplied(), null]);
+image=Clazz.new_((I$[4]||$incl$(4)).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[destCM, destCM.createCompatibleWritableRaster$I$I(w, h), destCM.isAlphaPremultiplied(), null]);
 }return image;
 });
 
@@ -244,7 +244,7 @@ return src.createCompatibleWritableRaster$I$I(src.getWidth(), src.getHeight());
 
 Clazz.newMeth(C$, 'getPoint2D$java_awt_geom_Point2D$java_awt_geom_Point2D', function (srcPt, dstPt) {
 if (dstPt == null ) {
-dstPt = Clazz.new_((I$[5]||$incl$(5)));
+dstPt=Clazz.new_((I$[5]||$incl$(5)));
 }dstPt.setLocation$D$D(srcPt.getX(), srcPt.getY());
 return dstPt;
 });
@@ -255,4 +255,4 @@ return this.hints;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:02
+//Created 2018-05-24 08:45:27

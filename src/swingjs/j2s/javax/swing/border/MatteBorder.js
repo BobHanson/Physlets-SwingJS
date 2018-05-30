@@ -17,25 +17,25 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$I$I$I$I$java_awt_Color', function (top, left, bottom, right, matteColor) {
 C$.superclazz.c$$I$I$I$I.apply(this, [top, left, bottom, right]);
 C$.$init$.apply(this);
-this.color = matteColor;
+this.color=matteColor;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Insets$java_awt_Color', function (borderInsets, matteColor) {
 C$.superclazz.c$$java_awt_Insets.apply(this, [borderInsets]);
 C$.$init$.apply(this);
-this.color = matteColor;
+this.color=matteColor;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I$javax_swing_Icon', function (top, left, bottom, right, tileIcon) {
 C$.superclazz.c$$I$I$I$I.apply(this, [top, left, bottom, right]);
 C$.$init$.apply(this);
-this.tileIcon = tileIcon;
+this.tileIcon=tileIcon;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Insets$javax_swing_Icon', function (borderInsets, tileIcon) {
 C$.superclazz.c$$java_awt_Insets.apply(this, [borderInsets]);
 C$.$init$.apply(this);
-this.tileIcon = tileIcon;
+this.tileIcon=tileIcon;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_Icon', function (tileIcon) {
@@ -47,7 +47,7 @@ var insets = this.getBorderInsets$java_awt_Component(c);
 var oldColor = g.getColor();
 g.translate$I$I(x, y);
 if (this.tileIcon != null ) {
-this.color = (this.tileIcon.getIconWidth() == -1) ? (I$[1]||$incl$(1)).gray : null;
+this.color=(this.tileIcon.getIconWidth() == -1) ? (I$[1]||$incl$(1)).gray : null;
 }if (this.color != null ) {
 g.setColor$java_awt_Color(this.color);
 g.fillRect$I$I$I$I(0, 0, width - insets.right, insets.top);
@@ -62,40 +62,40 @@ var ypos;
 var startx;
 var starty;
 var cg;
-cg = g.create();
+cg=g.create();
 cg.setClip$I$I$I$I(0, 0, width, insets.top);
-for (ypos = 0; insets.top - ypos > 0; ypos = ypos+(tileH)) {
-for (xpos = 0; width - xpos > 0; xpos = xpos+(tileW)) {
+for (ypos=0; insets.top - ypos > 0; ypos+=tileH) {
+for (xpos=0; width - xpos > 0; xpos+=tileW) {
 this.tileIcon.paintIcon$java_awt_Component$java_awt_Graphics$I$I(c, cg, xpos, ypos);
 }
 }
 cg.dispose();
-cg = g.create();
+cg=g.create();
 cg.setClip$I$I$I$I(0, insets.top, insets.left, height - insets.top);
-starty = insets.top - (insets.top % tileH);
-startx = 0;
-for (ypos = starty; height - ypos > 0; ypos = ypos+(tileH)) {
-for (xpos = startx; insets.left - xpos > 0; xpos = xpos+(tileW)) {
+starty=insets.top - (insets.top % tileH);
+startx=0;
+for (ypos=starty; height - ypos > 0; ypos+=tileH) {
+for (xpos=startx; insets.left - xpos > 0; xpos+=tileW) {
 this.tileIcon.paintIcon$java_awt_Component$java_awt_Graphics$I$I(c, cg, xpos, ypos);
 }
 }
 cg.dispose();
-cg = g.create();
+cg=g.create();
 cg.setClip$I$I$I$I(insets.left, height - insets.bottom, width - insets.left, insets.bottom);
-starty = (height - insets.bottom) - ((height - insets.bottom) % tileH);
-startx = insets.left - (insets.left % tileW);
-for (ypos = starty; height - ypos > 0; ypos = ypos+(tileH)) {
-for (xpos = startx; width - xpos > 0; xpos = xpos+(tileW)) {
+starty=(height - insets.bottom) - ((height - insets.bottom) % tileH);
+startx=insets.left - (insets.left % tileW);
+for (ypos=starty; height - ypos > 0; ypos+=tileH) {
+for (xpos=startx; width - xpos > 0; xpos+=tileW) {
 this.tileIcon.paintIcon$java_awt_Component$java_awt_Graphics$I$I(c, cg, xpos, ypos);
 }
 }
 cg.dispose();
-cg = g.create();
+cg=g.create();
 cg.setClip$I$I$I$I(width - insets.right, insets.top, insets.right, height - insets.top - insets.bottom );
-starty = insets.top - (insets.top % tileH);
-startx = width - insets.right - ((width - insets.right) % tileW) ;
-for (ypos = starty; height - ypos > 0; ypos = ypos+(tileH)) {
-for (xpos = startx; width - xpos > 0; xpos = xpos+(tileW)) {
+starty=insets.top - (insets.top % tileH);
+startx=width - insets.right - ((width - insets.right) % tileW) ;
+for (ypos=starty; height - ypos > 0; ypos+=tileH) {
+for (xpos=startx; width - xpos > 0; xpos+=tileW) {
 this.tileIcon.paintIcon$java_awt_Component$java_awt_Graphics$I$I(c, cg, xpos, ypos);
 }
 }
@@ -120,15 +120,15 @@ Clazz.newMeth(C$, 'computeInsets$java_awt_Insets', function (insets) {
 if (this.tileIcon != null  && this.top == -1  && this.bottom == -1  && this.left == -1  && this.right == -1 ) {
 var w = this.tileIcon.getIconWidth();
 var h = this.tileIcon.getIconHeight();
-insets.top = h;
-insets.right = w;
-insets.bottom = h;
-insets.left = w;
+insets.top=h;
+insets.right=w;
+insets.bottom=h;
+insets.left=w;
 } else {
-insets.left = this.left;
-insets.top = this.top;
-insets.right = this.right;
-insets.bottom = this.bottom;
+insets.left=this.left;
+insets.top=this.top;
+insets.right=this.right;
+insets.bottom=this.bottom;
 }return insets;
 });
 
@@ -146,4 +146,4 @@ return this.color != null ;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:43
+//Created 2018-05-24 08:46:45

@@ -23,25 +23,25 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$$S.apply(this, ["/Outlines"]);
 C$.$init$.apply(this);
-this.outlines = Clazz.new_((I$[1]||$incl$(1)));
-this.title = null;
-this.dest = null;
-this.destMode = false;
+this.outlines=Clazz.new_((I$[1]||$incl$(1)));
+this.title=null;
+this.dest=null;
+this.destMode=false;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$gnu_jpdf_PDFPage', function (title, dest) {
 C$.c$.apply(this, []);
-this.title = title;
-this.dest = dest;
+this.title=title;
+this.dest=dest;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$gnu_jpdf_PDFPage$I$I$I$I', function (title, dest, l, b, r, t) {
 C$.c$$S$gnu_jpdf_PDFPage.apply(this, [title, dest]);
-this.destMode = true;
-this.l = l;
-this.b = b;
-this.r = r;
-this.t = t;
+this.destMode=true;
+this.l=l;
+this.b=b;
+this.r=r;
+this.t=t;
 }, 1);
 
 Clazz.newMeth(C$, 'add$S$gnu_jpdf_PDFPage', function (title, dest) {
@@ -62,7 +62,7 @@ return outline;
 
 Clazz.newMeth(C$, 'add$gnu_jpdf_PDFOutline', function (outline) {
 this.outlines.addElement$TE(outline);
-outline.parent = this;
+outline.parent=this;
 });
 
 Clazz.newMeth(C$, 'write$java_io_OutputStream', function (os) {
@@ -135,9 +135,9 @@ return this.outlines.elements();
 Clazz.newMeth(C$, 'descendants', function () {
 var c = this.outlines.size();
 for (var o, $o = this.outlines.iterator(); $o.hasNext()&&((o=$o.next()),1);) {
-c = c+(o.descendants());
+c+=o.descendants();
 }
 return c;
 });
 })();
-//Created 2018-05-15 01:01:47
+//Created 2018-05-24 08:45:03

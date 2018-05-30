@@ -25,7 +25,7 @@ Clazz.newMeth(C$, 'setMetaData$O', function (streamMetadata) {
 
 Clazz.newMeth(C$, 'write$java_awt_image_RenderedImage$S$java_io_OutputStream', function (im, fileName, out) {
 try {
-if (out == null  && fileName != null  ) out = Clazz.new_((I$[2]||$incl$(2))).setParams$javajs_api_BytePoster$S$Z$java_io_OutputStream(null, fileName, false, null);
+if (out == null  && fileName != null  ) out=Clazz.new_((I$[2]||$incl$(2))).setParams$javajs_api_BytePoster$S$Z$java_io_OutputStream(null, fileName, false, null);
 this.setOutput$O(out);
 this.write$javax_imageio_metadata_IIOMetadata$javax_imageio_IIOImage$javax_imageio_ImageWriteParam(null, Clazz.new_((I$[3]||$incl$(3)).c$$java_awt_image_RenderedImage$java_util_List$javax_imageio_metadata_IIOMetadata,[im, null, null]), null);
 } catch (e) {
@@ -41,13 +41,13 @@ return true;
 Clazz.newMeth(C$, 'setOutput$O', function (out) {
 var outputChannel = null;
 if (Clazz.instanceOf(out, "javajs.util.OC")) {
-outputChannel = out;
+outputChannel=out;
 } else if (Clazz.instanceOf(out, "java.io.FileOutputStream")) {
 {
 outputChannel = out.out;
 }
 } else {
-outputChannel = Clazz.new_((I$[2]||$incl$(2))).setParams$javajs_api_BytePoster$S$Z$java_io_OutputStream(null, null, false, out);
+outputChannel=Clazz.new_((I$[2]||$incl$(2))).setParams$javajs_api_BytePoster$S$Z$java_io_OutputStream(null, null, false, out);
 }this.params.put$TK$TV("outputChannel", outputChannel);
 });
 
@@ -68,10 +68,10 @@ throw e;
 Clazz.newMeth(C$, 'writeToFileOrStream$S$java_io_OutputStream', function (fileName, out) {
 var outputChannel = this.params.get$O("outputChannel");
 if (out != null ) {
-outputChannel = Clazz.new_((I$[2]||$incl$(2)));
+outputChannel=Clazz.new_((I$[2]||$incl$(2)));
 outputChannel.setParams$javajs_api_BytePoster$S$Z$java_io_OutputStream(null, fileName, false, out);
 this.params.put$TK$TV("outputChannel", outputChannel);
-}if (outputChannel != null ) fileName = outputChannel.getFileName();
+}if (outputChannel != null ) fileName=outputChannel.getFileName();
 try {
 var o = this.writeImage$java_util_Map(this.params);
 if (Clazz.instanceOf(o, "java.lang.String")) {
@@ -94,12 +94,12 @@ if (image == null  && !params.containsKey$O("rgbbuf") ) throw Clazz.new_(Clazz.l
 var bytes = null;
 var errMsg = null;
 var type = params.get$O("type");
-if (type == null ) type = "png";
-type = type.toUpperCase();
+if (type == null ) type="png";
+type=type.toUpperCase();
 var fileName = params.get$O("fileName");
 var software = params.get$O("software");
 if (software == null ) {
-software = "SwingJS";
+software="SwingJS";
 }var comment = params.get$O("comment");
 if (comment == null ) params.put$TK$TV("comment", software);
 var out = params.get$O("outputChannel");
@@ -107,22 +107,22 @@ var asBytes = (out == null  && fileName == null  );
 var closeChannel = (out == null  && fileName != null  );
 var isOK = false;
 try {
-if (out == null  && (out = this.getOutputChannel$S(fileName)) == null  ) return "ERROR: canceled";
-fileName = out.getFileName();
+if (out == null  && (out=this.getOutputChannel$S(fileName)) == null  ) return "ERROR: canceled";
+fileName=out.getFileName();
 params.put$TK$TV("date", (I$[5]||$incl$(5)).getDateFormat$S("8601"));
 if (type.startsWith$S("JP")) {
-type = (I$[6]||$incl$(6)).rep$S$S$S(type, "E", "");
+type=(I$[6]||$incl$(6)).rep$S$S$S(type, "E", "");
 if (type.equals$O("JPG64")) {
 params.put$TK$TV("outputChannelTemp", this.getOutputChannel$S(null));
 }} else if (type.equals$O("PDF")) {
 } else if (type.startsWith$S("PNG")) {
 }var errRet = Clazz.array(java.lang.String, [1]);
-isOK = p$.createTheImage$java_awt_image_BufferedImage$S$javajs_util_OC$java_util_Map$SA.apply(this, [image, type, out, params, errRet]);
+isOK=p$.createTheImage$java_awt_image_BufferedImage$S$javajs_util_OC$java_util_Map$SA.apply(this, [image, type, out, params, errRet]);
 if (closeChannel) out.closeChannel();
 if (isOK) {
-if (asBytes) bytes = out.toByteArray();
+if (asBytes) bytes=out.toByteArray();
 } else {
-errMsg = errRet[0];
+errMsg=errRet[0];
 }} finally {
 if (bytes != null  || out != null  ) params.put$TK$TV("byteCount", Integer.$valueOf(bytes != null  ? bytes.length : isOK ? out.getByteCount() : -1));
 }
@@ -136,10 +136,10 @@ return outputChannel.setParams$javajs_api_BytePoster$S$Z$java_io_OutputStream(nu
 
 Clazz.newMeth(C$, 'createTheImage$java_awt_image_BufferedImage$S$javajs_util_OC$java_util_Map$SA', function (image, type, out, params, errRet) {
 params.put$TK$TV("mimeType", "image/" + type.toLowerCase());
-type = type.substring(0, 1) + type.substring(1).toLowerCase();
+type=type.substring(0, 1) + type.substring(1).toLowerCase();
 var ie = (I$[7]||$incl$(7)).getInstance$S$Z("javajs.img." + type + "Encoder" , true);
 if (ie == null ) {
-errRet[0] = "Image encoder type " + type + " not available" ;
+errRet[0]="Image encoder type " + type + " not available" ;
 return false;
 }var doClose = true;
 var pixels;
@@ -147,22 +147,22 @@ var w;
 var h;
 try {
 if (image == null ) {
-w = (params.get$O("width")).intValue();
-h = (params.get$O("height")).intValue();
-pixels = params.get$O("rgbbuf");
+w=(params.get$O("width")).intValue();
+h=(params.get$O("height")).intValue();
+pixels=params.get$O("rgbbuf");
 } else {
-w = image.getWidth();
-h = image.getHeight();
-pixels = image.getRangeRGB$I$I$I$I$IA$I$I(0, 0, w, h, Clazz.array(Integer.TYPE, [w * h]), 0, w);
+w=image.getWidth();
+h=image.getHeight();
+pixels=image.getRangeRGB$I$I$I$I$IA$I$I(0, 0, w, h, Clazz.array(Integer.TYPE, [w * h]), 0, w);
 }params.put$TK$TV("imageWidth", Integer.$valueOf(w));
 params.put$TK$TV("imageHeight", Integer.$valueOf(h));
 params.put$TK$TV("imagePixels", pixels);
-doClose = ie.createImage$S$javajs_util_OC$java_util_Map(type, out, params);
+doClose=ie.createImage$S$javajs_util_OC$java_util_Map(type, out, params);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
-errRet[0] = e.toString();
+errRet[0]=e.toString();
 out.cancel();
-doClose = true;
+doClose=true;
 } else {
 throw e;
 }
@@ -176,4 +176,4 @@ Clazz.newMeth(C$, 'getLocale', function () {
 return this.locale;
 });
 })();
-//Created 2018-05-15 01:02:20
+//Created 2018-05-24 08:45:59

@@ -178,9 +178,9 @@ if (Double.isNaN(d)) {
 return NaN;
 }var sig = d;
 if (d > 0 ) {
-sig = 1.0;
+sig=1.0;
 } else if (d < 0 ) {
-sig = -1.0;
+sig=-1.0;
 }return sig;
 }, 1);
 
@@ -189,9 +189,9 @@ if (Float.isNaN(f)) {
 return NaN;
 }var sig = f;
 if (f > 0 ) {
-sig = 1.0;
+sig=1.0;
 } else if (f < 0 ) {
-sig = -1.0;
+sig=-1.0;
 }return sig;
 }, 1);
 
@@ -238,4 +238,4 @@ alert('native method must be replaced! Ljava/lang/StrictMath;.nextafterf(FF)F');
 }
 , 2);
 })();
-//Created 2018-05-15 01:02:07
+//Created 2018-05-24 08:45:38

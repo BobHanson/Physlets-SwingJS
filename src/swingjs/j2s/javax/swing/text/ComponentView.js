@@ -125,8 +125,8 @@ if (parent != null ) {
 if (this.c == null ) {
 var comp = this.createComponent();
 if (comp != null ) {
-this.createdC = comp;
-this.c = Clazz.new_((I$[5]||$incl$(5)).c$$java_awt_Component, [this, null, comp]);
+this.createdC=comp;
+this.c=Clazz.new_((I$[5]||$incl$(5)).c$$java_awt_Component, [this, null, comp]);
 }}if (this.c != null ) {
 if (this.c.getParent() == null ) {
 parent.add$java_awt_Component$O(this.c, this);
@@ -145,8 +145,8 @@ var p1 = this.getEndOffset();
 if ((pos >= p0) && (pos <= p1) ) {
 var r = a.getBounds();
 if (pos == p1) {
-r.x = r.x+(r.width);
-}r.width = 0;
+r.x+=r.width;
+}r.width=0;
 return r;
 }throw Clazz.new_(Clazz.load('javax.swing.text.BadLocationException').c$$S$I,[pos + " not in range " + p0 + "," + p1 , pos]);
 });
@@ -154,9 +154,9 @@ return r;
 Clazz.newMeth(C$, 'viewToModel$F$F$java_awt_Shape$javax_swing_text_Position_BiasA', function (x, y, a, bias) {
 var alloc = a;
 if (x < alloc.x + ((alloc.width/2|0)) ) {
-bias[0] = (I$[6]||$incl$(6)).Forward;
+bias[0]=(I$[6]||$incl$(6)).Forward;
 return this.getStartOffset();
-}bias[0] = (I$[6]||$incl$(6)).Backward;
+}bias[0]=(I$[6]||$incl$(6)).Backward;
 return this.getEndOffset();
 });
 ;
@@ -212,13 +212,13 @@ this.validate();
 Clazz.newMeth(C$, 'cacheChildSizes', function () {
 if (this.getComponentCount() > 0) {
 var child = this.getComponent$I(0);
-this.min = child.getMinimumSize();
-this.pref = child.getPreferredSize();
-this.max = child.getMaximumSize();
-this.yalign = child.getAlignmentY();
-this.xalign = child.getAlignmentX();
+this.min=child.getMinimumSize();
+this.pref=child.getPreferredSize();
+this.max=child.getMaximumSize();
+this.yalign=child.getAlignmentY();
+this.xalign=child.getAlignmentX();
 } else {
-this.min = this.pref = this.max = Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[0, 0]);
+this.min=this.pref=this.max=Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[0, 0]);
 }});
 
 Clazz.newMeth(C$, 'setVisible$Z', function (b) {
@@ -267,4 +267,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:53
+//Created 2018-05-24 08:47:02

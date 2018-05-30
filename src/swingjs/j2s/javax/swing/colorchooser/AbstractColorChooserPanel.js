@@ -28,16 +28,16 @@ return -1;
 Clazz.newMeth(C$, 'installChooserPanel$javax_swing_JColorChooser', function (enclosingChooser) {
 if (this.chooser != null ) {
 throw Clazz.new_(Clazz.load('java.lang.RuntimeException').c$$S,["This chooser panel is already installed"]);
-}this.chooser = enclosingChooser;
+}this.chooser=enclosingChooser;
 this.buildChooser();
 this.updateChooser();
-this.colorListener = Clazz.new_((I$[1]||$incl$(1)), [this, null]);
+this.colorListener=Clazz.new_((I$[1]||$incl$(1)), [this, null]);
 this.getColorSelectionModel().addChangeListener$javax_swing_event_ChangeListener(this.colorListener);
 });
 
 Clazz.newMeth(C$, 'uninstallChooserPanel$javax_swing_JColorChooser', function (enclosingChooser) {
 this.getColorSelectionModel().removeChangeListener$javax_swing_event_ChangeListener(this.colorListener);
-this.chooser = null;
+this.chooser=null;
 });
 
 Clazz.newMeth(C$, 'getColorSelectionModel', function () {
@@ -51,7 +51,7 @@ return this.getColorSelectionModel().getSelectedColor();
 Clazz.newMeth(C$, 'paint$java_awt_Graphics', function (g) {
 if (this.dirty) {
 this.updateChooser();
-this.dirty = false;
+this.dirty=false;
 }C$.superclazz.prototype.paint$java_awt_Graphics.apply(this, [g]);
 });
 
@@ -84,9 +84,9 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
 if (this.this$0.isShowing()) {
 this.this$0.updateChooser();
-this.this$0.dirty = false;
+this.this$0.dirty=false;
 } else {
-this.this$0.dirty = true;
+this.this$0.dirty=true;
 }});
 
 Clazz.newMeth(C$);
@@ -94,4 +94,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:43
+//Created 2018-05-24 08:46:46

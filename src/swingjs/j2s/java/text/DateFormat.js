@@ -78,7 +78,7 @@ return C$.getDateTimeInstance$I$I(3, 3);
 }, 1);
 
 Clazz.newMeth(C$, 'setCalendar$java_util_Calendar', function (newCalendar) {
-this.calendar = newCalendar;
+this.calendar=newCalendar;
 });
 
 Clazz.newMeth(C$, 'getCalendar', function () {
@@ -86,7 +86,7 @@ return this.calendar;
 });
 
 Clazz.newMeth(C$, 'setNumberFormat$java_text_NumberFormat', function (newNumberFormat) {
-this.numberFormat = newNumberFormat;
+this.numberFormat=newNumberFormat;
 });
 
 Clazz.newMeth(C$, 'getNumberFormat', function () {
@@ -122,8 +122,8 @@ return (this.calendar.getFirstDayOfWeek() == other.calendar.getFirstDayOfWeek() 
 
 Clazz.newMeth(C$, 'clone', function () {
 var other = Clazz.clone(this);
-other.calendar = this.calendar.clone();
-other.numberFormat = this.numberFormat.clone();
+other.calendar=this.calendar.clone();
+other.numberFormat=this.numberFormat.clone();
 return other;
 });
 
@@ -132,12 +132,12 @@ if ((flags & 1) != 0) {
 if (timeStyle < 0 || timeStyle > 3 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Illegal time style " + timeStyle]);
 }} else {
-timeStyle = -1;
+timeStyle=-1;
 }if ((flags & 2) != 0) {
 if (dateStyle < 0 || dateStyle > 3 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Illegal date style " + dateStyle]);
 }} else {
-dateStyle = -1;
+dateStyle=-1;
 }try {
 return Clazz.new_((I$[7]||$incl$(7)).c$$I$I$java_util_Locale,[timeStyle, dateStyle, loc]);
 } catch (e) {
@@ -217,11 +217,11 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Unknown
 Clazz.newMeth(C$, 'c$$S$I', function (name, calendarField) {
 C$.superclazz.c$$S.apply(this, [name]);
 C$.$init$.apply(this);
-this.calendarField = calendarField;
+this.calendarField=calendarField;
 if (this.getClass() === Clazz.getClass(C$) ) {
 C$.$instanceMap.put$TK$TV(name, this);
 if (calendarField >= 0) {
-C$.calendarToFieldMapping[calendarField] = this;
+C$.calendarToFieldMapping[calendarField]=this;
 }}}, 1);
 
 Clazz.newMeth(C$, 'getCalendarField', function () {
@@ -241,4 +241,4 @@ throw Clazz.new_(Clazz.load('java.io.InvalidObjectException').c$$S,["unknown att
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:10
+//Created 2018-05-24 08:45:43

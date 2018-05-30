@@ -31,19 +31,19 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.sortKeys = (I$[1]||$incl$(1)).emptyList();
-this.maxSortKeys = 3;
+this.sortKeys=(I$[1]||$incl$(1)).emptyList();
+this.maxSortKeys=3;
 }, 1);
 
 Clazz.newMeth(C$, ['setModelWrapper$javax_swing_DefaultRowSorter_ModelWrapper'], function (modelWrapper) {
 if (modelWrapper == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["modelWrapper most be non-null"]);
 }var last = this.modelWrapper;
-this.modelWrapper = modelWrapper;
+this.modelWrapper=modelWrapper;
 if (last != null ) {
 this.modelStructureChanged();
 } else {
-this.modelRowCount = this.getModelWrapper().getRowCount();
+this.modelRowCount=this.getModelWrapper().getRowCount();
 }});
 
 Clazz.newMeth(C$, 'getModelWrapper', function () {
@@ -57,11 +57,11 @@ return this.getModelWrapper().getModel();
 Clazz.newMeth(C$, 'setSortable$I$Z', function (column, sortable) {
 p$.checkColumn$I.apply(this, [column]);
 if (this.$isSortable == null ) {
-this.$isSortable = Clazz.array(Boolean.TYPE, [this.getModelWrapper().getColumnCount()]);
+this.$isSortable=Clazz.array(Boolean.TYPE, [this.getModelWrapper().getColumnCount()]);
 for (var i = this.$isSortable.length - 1; i >= 0; i--) {
-this.$isSortable[i] = true;
+this.$isSortable[i]=true;
 }
-}this.$isSortable[column] = sortable;
+}this.$isSortable[column]=sortable;
 });
 
 Clazz.newMeth(C$, 'isSortable$I', function (column) {
@@ -77,9 +77,9 @@ for (var key, $key = sortKeys.iterator(); $key.hasNext()&&((key=$key.next()),1);
 if (key == null  || key.getColumn() < 0  || key.getColumn() >= max ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Invalid SortKey"]);
 }}
-this.sortKeys = (I$[1]||$incl$(1)).unmodifiableList$java_util_List(Clazz.new_((I$[2]||$incl$(2)).c$$java_util_Collection,[sortKeys]));
+this.sortKeys=(I$[1]||$incl$(1)).unmodifiableList$java_util_List(Clazz.new_((I$[2]||$incl$(2)).c$$java_util_Collection,[sortKeys]));
 } else {
-this.sortKeys = (I$[1]||$incl$(1)).emptyList();
+this.sortKeys=(I$[1]||$incl$(1)).emptyList();
 }if (!this.sortKeys.equals$O(old)) {
 this.fireSortOrderChanged();
 if (this.viewToModel == null ) {
@@ -95,7 +95,7 @@ return this.sortKeys;
 Clazz.newMeth(C$, 'setMaxSortKeys$I', function (max) {
 if (max < 1) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Invalid max"]);
-}this.maxSortKeys = max;
+}this.maxSortKeys=max;
 });
 
 Clazz.newMeth(C$, 'getMaxSortKeys', function () {
@@ -103,7 +103,7 @@ return this.maxSortKeys;
 });
 
 Clazz.newMeth(C$, 'setSortsOnUpdates$Z', function (sortsOnUpdates) {
-this.sortsOnUpdates = sortsOnUpdates;
+this.sortsOnUpdates=sortsOnUpdates;
 });
 
 Clazz.newMeth(C$, 'getSortsOnUpdates', function () {
@@ -111,7 +111,7 @@ return this.sortsOnUpdates;
 });
 
 Clazz.newMeth(C$, 'setRowFilter$javax_swing_RowFilter', function (filter) {
-this.filter = filter;
+this.filter=filter;
 this.sort();
 });
 
@@ -125,12 +125,12 @@ if (this.isSortable$I(column)) {
 var keys = Clazz.new_((I$[2]||$incl$(2)).c$$java_util_Collection,[this.getSortKeys()]);
 var sortKey;
 var sortIndex;
-for (sortIndex = keys.size() - 1; sortIndex >= 0; sortIndex--) {
+for (sortIndex=keys.size() - 1; sortIndex >= 0; sortIndex--) {
 if (keys.get$I(sortIndex).getColumn() == column) {
 break;
 }}
 if (sortIndex == -1) {
-sortKey = Clazz.new_((I$[3]||$incl$(3)).c$$I$javax_swing_SortOrder,[column, (I$[4]||$incl$(4)).ASCENDING]);
+sortKey=Clazz.new_((I$[3]||$incl$(3)).c$$I$javax_swing_SortOrder,[column, (I$[4]||$incl$(4)).ASCENDING]);
 keys.add$I$TE(0, sortKey);
 } else if (sortIndex == 0) {
 keys.set$I$TE(0, p$.toggle$javax_swing_RowSorter_SortKey.apply(this, [keys.get$I(0)]));
@@ -138,7 +138,7 @@ keys.set$I$TE(0, p$.toggle$javax_swing_RowSorter_SortKey.apply(this, [keys.get$I
 keys.remove$I(sortIndex);
 keys.add$I$TE(0, Clazz.new_((I$[3]||$incl$(3)).c$$I$javax_swing_SortOrder,[column, (I$[4]||$incl$(4)).ASCENDING]));
 }if (keys.size() > this.getMaxSortKeys()) {
-keys = keys.subList$I$I(0, this.getMaxSortKeys());
+keys=keys.subList$I$I(0, this.getMaxSortKeys());
 }this.setSortKeys$java_util_List(keys);
 }});
 
@@ -176,14 +176,14 @@ p$.updateUseToString.apply(this, []);
 p$.cacheSortKeys$java_util_List.apply(this, [this.getSortKeys()]);
 if (p$.isUnsorted.apply(this, [])) {
 if (this.getRowFilter() == null ) {
-this.viewToModel = null;
-this.modelToView = null;
+this.viewToModel=null;
+this.modelToView=null;
 } else {
 var included = 0;
 for (var i = 0; i < this.modelToView.length; i++) {
 if (this.modelToView[i] != -1) {
-this.viewToModel[included].modelIndex = i;
-this.modelToView[i] = included++;
+this.viewToModel[included].modelIndex=i;
+this.modelToView[i]=included++;
 }}
 }} else {
 (I$[5]||$incl$(5)).sort$OA(this.viewToModel);
@@ -192,15 +192,15 @@ p$.setModelToViewFromViewToModel$Z.apply(this, [false]);
 });
 
 Clazz.newMeth(C$, 'sort', function () {
-this.sorted = true;
+this.sorted=true;
 var lastViewToModel = p$.getViewToModelAsInts$javax_swing_DefaultRowSorter_RowA.apply(this, [this.viewToModel]);
 p$.updateUseToString.apply(this, []);
 if (p$.isUnsorted.apply(this, [])) {
-this.cachedSortKeys = Clazz.array((I$[3]||$incl$(3)), [0]);
+this.cachedSortKeys=Clazz.array((I$[3]||$incl$(3)), [0]);
 if (this.getRowFilter() == null ) {
 if (this.viewToModel != null ) {
-this.viewToModel = null;
-this.modelToView = null;
+this.viewToModel=null;
+this.modelToView=null;
 } else {
 return;
 }} else {
@@ -220,9 +220,9 @@ p$.setModelToViewFromViewToModel$Z.apply(this, [false]);
 Clazz.newMeth(C$, 'updateUseToString', function () {
 var i = this.getModelWrapper().getColumnCount();
 if (this.$useToString == null  || this.$useToString.length != i ) {
-this.$useToString = Clazz.array(Boolean.TYPE, [i]);
+this.$useToString=Clazz.array(Boolean.TYPE, [i]);
 }for (--i; i >= 0; i--) {
-this.$useToString[i] = this.useToString$I(i);
+this.$useToString[i]=this.useToString$I(i);
 }
 });
 
@@ -232,51 +232,51 @@ var i;
 var j;
 var excludedCount = 0;
 p$.createModelToView$I.apply(this, [rowCount]);
-for (i = 0; i < rowCount; i++) {
+for (i=0; i < rowCount; i++) {
 if (p$.include$I.apply(this, [i])) {
-this.modelToView[i] = i - excludedCount;
+this.modelToView[i]=i - excludedCount;
 } else {
-this.modelToView[i] = -1;
+this.modelToView[i]=-1;
 excludedCount++;
 }}
 p$.createViewToModel$I.apply(this, [rowCount - excludedCount]);
-for (i = 0, j = 0; i < rowCount; i++) {
+for (i=0, j=0; i < rowCount; i++) {
 if (this.modelToView[i] != -1) {
-this.viewToModel[j++].modelIndex = i;
+this.viewToModel[j++].modelIndex=i;
 }}
 });
 
 Clazz.newMeth(C$, 'createModelToView$I', function (rowCount) {
 if (this.modelToView == null  || this.modelToView.length != rowCount ) {
-this.modelToView = Clazz.array(Integer.TYPE, [rowCount]);
+this.modelToView=Clazz.array(Integer.TYPE, [rowCount]);
 }});
 
 Clazz.newMeth(C$, 'createViewToModel$I', function (rowCount) {
 var recreateFrom = 0;
 if (this.viewToModel != null ) {
-recreateFrom = Math.min(rowCount, this.viewToModel.length);
+recreateFrom=Math.min(rowCount, this.viewToModel.length);
 if (this.viewToModel.length != rowCount) {
 var oldViewToModel = this.viewToModel;
-this.viewToModel = Clazz.array((I$[6]||$incl$(6)), [rowCount]);
+this.viewToModel=Clazz.array((I$[6]||$incl$(6)), [rowCount]);
 System.arraycopy(oldViewToModel, 0, this.viewToModel, 0, recreateFrom);
 }} else {
-this.viewToModel = Clazz.array((I$[6]||$incl$(6)), [rowCount]);
+this.viewToModel=Clazz.array((I$[6]||$incl$(6)), [rowCount]);
 }var i;
-for (i = 0; i < recreateFrom; i++) {
-this.viewToModel[i].modelIndex = i;
+for (i=0; i < recreateFrom; i++) {
+this.viewToModel[i].modelIndex=i;
 }
-for (i = recreateFrom; i < rowCount; i++) {
-this.viewToModel[i] = Clazz.new_((I$[6]||$incl$(6)).c$$javax_swing_DefaultRowSorter$I,[this, i]);
+for (i=recreateFrom; i < rowCount; i++) {
+this.viewToModel[i]=Clazz.new_((I$[6]||$incl$(6)).c$$javax_swing_DefaultRowSorter$I,[this, i]);
 }
 });
 
 Clazz.newMeth(C$, 'cacheSortKeys$java_util_List', function (keys) {
 var keySize = keys.size();
-this.sortComparators = Clazz.array(java.util.Comparator, [keySize]);
+this.sortComparators=Clazz.array(java.util.Comparator, [keySize]);
 for (var i = 0; i < keySize; i++) {
-this.sortComparators[i] = p$.getComparator0$I.apply(this, [keys.get$I(i).getColumn()]);
+this.sortComparators[i]=p$.getComparator0$I.apply(this, [keys.get$I(i).getColumn()]);
 }
-this.cachedSortKeys = keys.toArray$TTA(Clazz.array((I$[3]||$incl$(3)), [keySize]));
+this.cachedSortKeys=keys.toArray$TTA(Clazz.array((I$[3]||$incl$(3)), [keySize]));
 });
 
 Clazz.newMeth(C$, 'useToString$I', function (column) {
@@ -286,11 +286,11 @@ return (this.getComparator$I(column) == null );
 Clazz.newMeth(C$, 'setModelToViewFromViewToModel$Z', function (unsetFirst) {
 var i;
 if (unsetFirst) {
-for (i = this.modelToView.length - 1; i >= 0; i--) {
-this.modelToView[i] = -1;
+for (i=this.modelToView.length - 1; i >= 0; i--) {
+this.modelToView[i]=-1;
 }
-}for (i = this.viewToModel.length - 1; i >= 0; i--) {
-this.modelToView[this.viewToModel[i].modelIndex] = i;
+}for (i=this.viewToModel.length - 1; i >= 0; i--) {
+this.modelToView[this.viewToModel[i].modelIndex]=i;
 }
 });
 
@@ -298,7 +298,7 @@ Clazz.newMeth(C$, 'getViewToModelAsInts$javax_swing_DefaultRowSorter_RowA', func
 if (viewToModel != null ) {
 var viewToModelI = Clazz.array(Integer.TYPE, [viewToModel.length]);
 for (var i = viewToModel.length - 1; i >= 0; i--) {
-viewToModelI[i] = viewToModel[i].modelIndex;
+viewToModelI[i]=viewToModel[i].modelIndex;
 }
 return viewToModelI;
 }return Clazz.array(Integer.TYPE, [0]);
@@ -307,8 +307,8 @@ return viewToModelI;
 Clazz.newMeth(C$, 'setComparator$I$java_util_Comparator', function (column, comparator) {
 p$.checkColumn$I.apply(this, [column]);
 if (this.comparators == null ) {
-this.comparators = Clazz.array(java.util.Comparator, [this.getModelWrapper().getColumnCount()]);
-}this.comparators[column] = comparator;
+this.comparators=Clazz.array(java.util.Comparator, [this.getModelWrapper().getColumnCount()]);
+}this.comparators[column]=comparator;
 });
 
 Clazz.newMeth(C$, 'getComparator$I', function (column) {
@@ -327,8 +327,8 @@ return comparator;
 
 Clazz.newMeth(C$, ['getFilterEntry$I'], function (modelIndex) {
 if (this.filterEntry == null ) {
-this.filterEntry = Clazz.new_((I$[7]||$incl$(7)), [this, null]);
-}this.filterEntry.modelIndex = modelIndex;
+this.filterEntry=Clazz.new_((I$[7]||$incl$(7)), [this, null]);
+}this.filterEntry.modelIndex=modelIndex;
 return this.filterEntry;
 });
 
@@ -343,10 +343,10 @@ return this.getModelWrapper().getRowCount();
 });
 
 Clazz.newMeth(C$, 'allChanged', function () {
-this.modelToView = null;
-this.viewToModel = null;
-this.comparators = null;
-this.$isSortable = null;
+this.modelToView=null;
+this.viewToModel=null;
+this.comparators=null;
+this.$isSortable=null;
 if (p$.isUnsorted.apply(this, [])) {
 this.sort();
 } else {
@@ -355,11 +355,11 @@ this.setSortKeys$java_util_List(null);
 
 Clazz.newMeth(C$, 'modelStructureChanged', function () {
 p$.allChanged.apply(this, []);
-this.modelRowCount = this.getModelWrapper().getRowCount();
+this.modelRowCount=this.getModelWrapper().getRowCount();
 });
 
 Clazz.newMeth(C$, 'allRowsChanged', function () {
-this.modelRowCount = this.getModelWrapper().getRowCount();
+this.modelRowCount=this.getModelWrapper().getRowCount();
 this.sort();
 });
 
@@ -368,7 +368,7 @@ p$.checkAgainstModel$I$I.apply(this, [firstRow, endRow]);
 var newModelRowCount = this.getModelWrapper().getRowCount();
 if (endRow >= newModelRowCount) {
 throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException').c$$S,["Invalid range"]);
-}this.modelRowCount = newModelRowCount;
+}this.modelRowCount=newModelRowCount;
 if (p$.shouldOptimizeChange$I$I.apply(this, [firstRow, endRow])) {
 p$.rowsInserted0$I$I.apply(this, [firstRow, endRow]);
 }});
@@ -377,7 +377,7 @@ Clazz.newMeth(C$, 'rowsDeleted$I$I', function (firstRow, endRow) {
 p$.checkAgainstModel$I$I.apply(this, [firstRow, endRow]);
 if (firstRow >= this.modelRowCount || endRow >= this.modelRowCount ) {
 throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException').c$$S,["Invalid range"]);
-}this.modelRowCount = this.getModelWrapper().getRowCount();
+}this.modelRowCount=this.getModelWrapper().getRowCount();
 if (p$.shouldOptimizeChange$I$I.apply(this, [firstRow, endRow])) {
 p$.rowsDeleted0$I$I.apply(this, [firstRow, endRow]);
 }});
@@ -390,7 +390,7 @@ throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException').c$$S,["Invali
 if (p$.shouldOptimizeChange$I$I.apply(this, [firstRow, endRow])) {
 p$.rowsUpdated0$I$I.apply(this, [firstRow, endRow]);
 }} else {
-this.sorted = false;
+this.sorted=false;
 }});
 
 Clazz.newMeth(C$, 'rowsUpdated$I$I$I', function (firstRow, endRow, column) {
@@ -417,27 +417,27 @@ var v1;
 var v2;
 var result;
 for (var counter = 0; counter < this.cachedSortKeys.length; counter++) {
-column = this.cachedSortKeys[counter].getColumn();
-sortOrder = this.cachedSortKeys[counter].getSortOrder();
+column=this.cachedSortKeys[counter].getColumn();
+sortOrder=this.cachedSortKeys[counter].getSortOrder();
 if (sortOrder === (I$[4]||$incl$(4)).UNSORTED ) {
-result = model1 - model2;
+result=model1 - model2;
 } else {
-v1 = this.getModelWrapper().getValueAt$I$I(model1, column);
-v2 = this.getModelWrapper().getValueAt$I$I(model2, column);
+v1=this.getModelWrapper().getValueAt$I$I(model1, column);
+v2=this.getModelWrapper().getValueAt$I$I(model2, column);
 if (v1 == null ) {
 if (v2 == null ) {
-result = 0;
+result=0;
 } else {
-result = -1;
+result=-1;
 }} else if (v2 == null ) {
-result = 1;
+result=1;
 } else {
 var c = this.sortComparators[counter];
 {
 result = (c != null ? c.compare$O$O(v1, v2) : typeof c == "object" ? ((v1 = v1.toString()) < (v2 = v2.toString) ? -1 : v1 == v2 ? 0 : 1) : (v1 < v2 ? -1 : v1 == v2 ? 0 : 1));
 }
 }if (sortOrder === (I$[4]||$incl$(4)).DESCENDING ) {
-result = result*(-1);
+result*=-1;
 }}if (result != 0) {
 return result;
 }}
@@ -453,12 +453,12 @@ var last = 0;
 var index;
 var max = toAdd.size();
 for (var i = 0; i < max; i++) {
-index = (I$[5]||$incl$(5)).binarySearch$OA$O(current, toAdd.get$I(i));
+index=(I$[5]||$incl$(5)).binarySearch$OA$O(current, toAdd.get$I(i));
 if (index < 0) {
-index = -1 - index;
+index=-1 - index;
 }System.arraycopy(current, last, this.viewToModel, last + i, index - last);
-this.viewToModel[index + i] = toAdd.get$I(i);
-last = index;
+this.viewToModel[index + i]=toAdd.get$I(i);
+last=index;
 }
 System.arraycopy(current, last, this.viewToModel, last + max, current.length - last);
 });
@@ -477,20 +477,20 @@ var oldViewToModel = p$.getViewToModelAsInts$javax_swing_DefaultRowSorter_RowA.a
 var i;
 var delta = (lastRow - firstRow) + 1;
 var added = Clazz.new_((I$[2]||$incl$(2)).c$$I,[delta]);
-for (i = firstRow; i <= lastRow; i++) {
+for (i=firstRow; i <= lastRow; i++) {
 if (p$.include$I.apply(this, [i])) {
 added.add$TE(Clazz.new_((I$[6]||$incl$(6)).c$$javax_swing_DefaultRowSorter$I,[this, i]));
 }}
 var viewIndex;
-for (i = this.modelToView.length - 1; i >= firstRow; i--) {
-viewIndex = this.modelToView[i];
+for (i=this.modelToView.length - 1; i >= firstRow; i--) {
+viewIndex=this.modelToView[i];
 if (viewIndex != -1) {
-this.viewToModel[viewIndex].modelIndex = this.viewToModel[viewIndex].modelIndex+(delta);
+this.viewToModel[viewIndex].modelIndex+=delta;
 }}
 if (added.size() > 0) {
 (I$[1]||$incl$(1)).sort$java_util_List(added);
 var lastViewToModel = this.viewToModel;
-this.viewToModel = Clazz.array((I$[6]||$incl$(6)), [this.viewToModel.length + added.size()]);
+this.viewToModel=Clazz.array((I$[6]||$incl$(6)), [this.viewToModel.length + added.size()]);
 p$.insertInOrder$java_util_List$javax_swing_DefaultRowSorter_RowA.apply(this, [added, lastViewToModel]);
 }p$.createModelToView$I.apply(this, [this.getModelWrapper().getRowCount()]);
 p$.setModelToViewFromViewToModel$Z.apply(this, [true]);
@@ -502,30 +502,30 @@ var oldViewToModel = p$.getViewToModelAsInts$javax_swing_DefaultRowSorter_RowA.a
 var removedFromView = 0;
 var i;
 var viewIndex;
-for (i = firstRow; i <= lastRow; i++) {
-viewIndex = this.modelToView[i];
+for (i=firstRow; i <= lastRow; i++) {
+viewIndex=this.modelToView[i];
 if (viewIndex != -1) {
 removedFromView++;
-this.viewToModel[viewIndex] = null;
+this.viewToModel[viewIndex]=null;
 }}
 var delta = lastRow - firstRow + 1;
-for (i = this.modelToView.length - 1; i > lastRow; i--) {
-viewIndex = this.modelToView[i];
+for (i=this.modelToView.length - 1; i > lastRow; i--) {
+viewIndex=this.modelToView[i];
 if (viewIndex != -1) {
-this.viewToModel[viewIndex].modelIndex = this.viewToModel[viewIndex].modelIndex-(delta);
+this.viewToModel[viewIndex].modelIndex-=delta;
 }}
 if (removedFromView > 0) {
 var newViewToModel = Clazz.array((I$[6]||$incl$(6)), [this.viewToModel.length - removedFromView]);
 var newIndex = 0;
 var last = 0;
-for (i = 0; i < this.viewToModel.length; i++) {
+for (i=0; i < this.viewToModel.length; i++) {
 if (this.viewToModel[i] == null ) {
 System.arraycopy(this.viewToModel, last, newViewToModel, newIndex, i - last);
-newIndex = newIndex+((i - last));
-last = i + 1;
+newIndex+=(i - last);
+last=i + 1;
 }}
 System.arraycopy(this.viewToModel, last, newViewToModel, newIndex, this.viewToModel.length - last);
-this.viewToModel = newViewToModel;
+this.viewToModel=newViewToModel;
 }p$.createModelToView$I.apply(this, [this.getModelWrapper().getRowCount()]);
 p$.setModelToViewFromViewToModel$Z.apply(this, [true]);
 this.fireRowSorterChanged$IA(oldViewToModel);
@@ -539,15 +539,15 @@ var delta = lastRow - firstRow + 1;
 var modelIndex;
 if (this.getRowFilter() == null ) {
 var updated = Clazz.array((I$[6]||$incl$(6)), [delta]);
-for (j = 0, i = firstRow; i <= lastRow; i++, j++) {
-updated[j] = this.viewToModel[this.modelToView[i]];
+for (j=0, i=firstRow; i <= lastRow; i++, j++) {
+updated[j]=this.viewToModel[this.modelToView[i]];
 }
 (I$[5]||$incl$(5)).sort$OA(updated);
 var intermediary = Clazz.array((I$[6]||$incl$(6)), [this.viewToModel.length - delta]);
-for (i = 0, j = 0; i < this.viewToModel.length; i++) {
-modelIndex = this.viewToModel[i].modelIndex;
+for (i=0, j=0; i < this.viewToModel.length; i++) {
+modelIndex=this.viewToModel[i].modelIndex;
 if (modelIndex < firstRow || modelIndex > lastRow ) {
-intermediary[j++] = this.viewToModel[i];
+intermediary[j++]=this.viewToModel[i];
 }}
 p$.insertInOrder$java_util_List$javax_swing_DefaultRowSorter_RowA.apply(this, [(I$[5]||$incl$(5)).asList$TTA(updated), intermediary]);
 p$.setModelToViewFromViewToModel$Z.apply(this, [false]);
@@ -556,7 +556,7 @@ var updated = Clazz.new_((I$[2]||$incl$(2)).c$$I,[delta]);
 var newlyVisible = 0;
 var newlyHidden = 0;
 var effected = 0;
-for (i = firstRow; i <= lastRow; i++) {
+for (i=firstRow; i <= lastRow; i++) {
 if (this.modelToView[i] == -1) {
 if (p$.include$I.apply(this, [i])) {
 updated.add$TE(Clazz.new_((I$[6]||$incl$(6)).c$$javax_swing_DefaultRowSorter$I,[this, i]));
@@ -566,18 +566,18 @@ if (!p$.include$I.apply(this, [i])) {
 newlyHidden++;
 } else {
 updated.add$TE(this.viewToModel[this.modelToView[i]]);
-}this.modelToView[i] = -2;
+}this.modelToView[i]=-2;
 effected++;
 }}
 (I$[1]||$incl$(1)).sort$java_util_List(updated);
 var intermediary = Clazz.array((I$[6]||$incl$(6)), [this.viewToModel.length - effected]);
-for (i = 0, j = 0; i < this.viewToModel.length; i++) {
-modelIndex = this.viewToModel[i].modelIndex;
+for (i=0, j=0; i < this.viewToModel.length; i++) {
+modelIndex=this.viewToModel[i].modelIndex;
 if (this.modelToView[modelIndex] != -2) {
-intermediary[j++] = this.viewToModel[i];
+intermediary[j++]=this.viewToModel[i];
 }}
 if (newlyVisible != newlyHidden) {
-this.viewToModel = Clazz.array((I$[6]||$incl$(6)), [this.viewToModel.length + newlyVisible - newlyHidden]);
+this.viewToModel=Clazz.array((I$[6]||$incl$(6)), [this.viewToModel.length + newlyVisible - newlyHidden]);
 }p$.insertInOrder$java_util_List$javax_swing_DefaultRowSorter_RowA.apply(this, [updated, intermediary]);
 p$.setModelToViewFromViewToModel$Z.apply(this, [true]);
 }this.fireRowSorterChanged$IA(oldViewToModel);
@@ -666,8 +666,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_DefaultRowSorter$I', function (sorter, index) {
 C$.$init$.apply(this);
-this.sorter = sorter;
-this.modelIndex = index;
+this.sorter=sorter;
+this.modelIndex=index;
 }, 1);
 
 Clazz.newMeth(C$, ['compareTo$javax_swing_DefaultRowSorter_Row','compareTo$TT'], function (o) {
@@ -677,4 +677,4 @@ return this.sorter.compare$I$I(this.modelIndex, o.modelIndex);
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:24
+//Created 2018-05-24 08:46:09

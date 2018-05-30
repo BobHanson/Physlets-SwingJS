@@ -15,7 +15,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$O$sun_awt_ModalityListener$I', function (source, listener, id) {
 C$.superclazz.c$$O$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.listener = listener;
+this.listener=listener;
 }, 1);
 
 Clazz.newMeth(C$, 'dispatch', function () {
@@ -33,4 +33,4 @@ throw Clazz.new_((I$[1]||$incl$(1)).c$$S,["Invalid event id."]);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:22

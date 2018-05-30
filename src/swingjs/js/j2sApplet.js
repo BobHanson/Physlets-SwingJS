@@ -1,5 +1,6 @@
 // j2sCore.js (based on JmolCore.js)
 
+// BH 3/16/2018 5:25:09 AM fixes for dragging on phones
 // BH 2/20/2018 12:08:08 AM adds J2S._getKeyModifiers
 // BH 1/8/2018 10:27:46 PM SwingJS2
 // BH 12/22/2017 1:18:42 PM adds j2sargs for setting arguments
@@ -1287,8 +1288,11 @@ J2S._getDefaultLanguage = function(isAll) { return (isAll ? J2S.featureDetection
 
 		J2S.$bind(who, 'mousedown touchstart', function(ev) {    
       
+      
    //   System.out.println(["j2sApplet DOWN",ev.type,doIgnore(ev),ev.target.id,ev.target.getAttribute("role"),ev.target["data-ui"]]);
       
+      lastDragx = lastDragy = 99999;
+        
       if (doIgnore(ev))
         return true;
 
@@ -1472,6 +1476,9 @@ J2S._getDefaultLanguage = function(isAll) { return (isAll ? J2S.featureDetection
 	var getMouseModifiers = function(ev) {
 		var modifiers = 0;
 		switch (ev.button) {
+    default:
+      ev.button = 0;
+      // fall through
 		case 0:
 			modifiers = (1<<4)|(1<<10);//InputEvent.BUTTON1 + InputEvent.BUTTON1_DOWN_MASK;
 			break;
@@ -1561,6 +1568,9 @@ J2S._getDefaultLanguage = function(isAll) { return (isAll ? J2S.featureDetection
 		return true;
 	}
 
+  var lastDragx = 99999;
+  var lastDragy = 99999;
+  
 	J2S._drag = function(who, ev) {
     
 		ev.stopPropagation();
@@ -1572,7 +1582,12 @@ J2S._getDefaultLanguage = function(isAll) { return (isAll ? J2S.featureDetection
 		var xym = J2S._jsGetXY(who, ev);
 		if(!xym) return false;
     
-		if (!who.isDragging)
+    if (lastDragx == xym[0] && lastDragy == xym[1])
+      return false;
+    lastDragx = xym[0];
+    lastDragy = xym[1];
+    
+    if (!who.isDragging)
 			xym[2] = 0;
 
     var ui = ev.target["data-ui"];
@@ -1885,9 +1900,9 @@ J2S.Cache.put = function(filename, data) {
 			this._code = J2S._documentWrite(t);
 		};
 
-		proto._newCanvas = function(doReplace, w, h) {
+		proto._newCanvas = function(doReplace) {
 			if (this._is2D)
-				this._createCanvas2d(doReplace, w, h);
+				this._createCanvas2d(doReplace);
 			else
 				this._GLmol.create();
 		};
@@ -1901,7 +1916,7 @@ J2S.Cache.put = function(filename, data) {
 ////////
 
 
-		proto._createCanvas2d = function(doReplace, w, h) {
+		proto._createCanvas2d = function(doReplace) {
 			var container = J2S.$(this, "appletdiv");
 			//if (doReplace) {
       
@@ -1916,12 +1931,8 @@ J2S.Cache.put = function(filename, data) {
 			J2S._jsUnsetMouse(this._mouseInterface);
 			} catch (e) {}
 			//}
-      if (w) {
-        container.width(w);
-        container.height(h);
-      }
-      Math.round(container.width());
-			Math.round(container.height());
+			var w = Math.round(container.width());
+			var h = Math.round(container.height());
 			var canvas = document.createElement( 'canvas' );
 			canvas.applet = this;
 			this._canvas = canvas;
@@ -2010,9 +2021,6 @@ J2S.Cache.put = function(filename, data) {
         if (applet.__Info.main && applet.__Info.headless) {
           cl.main(applet.__Info.args || []);
         } else {
-          if (!isNaN(applet.__Info.width) && (applet.__Info.width != applet._getWidth() || applet.__Info.height != applet._getHeight())) {
-            applet._newCanvas(true, applet.__Info.width, applet.__Info.height);
-          }
         	var viewerOptions = Clazz.new_(Clazz.load("java.util.Hashtable"));
           viewerOptions.put = viewerOptions.put$TK$TV;
         	J2S._setAppletParams(applet._availableParams, viewerOptions, applet.__Info, true);

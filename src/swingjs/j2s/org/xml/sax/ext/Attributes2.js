@@ -4,4 +4,4 @@ var C$=Clazz.newInterface(P$, "Attributes2", null, null, 'org.xml.sax.Attributes
 C$.$clinit$ = function() {Clazz.load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:03:03
+//Created 2018-05-24 08:47:18

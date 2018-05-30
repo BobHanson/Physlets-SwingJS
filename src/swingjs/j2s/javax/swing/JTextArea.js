@@ -40,10 +40,10 @@ C$.c$$javax_swing_text_Document$S$I$I.apply(this, [doc, null, 0, 0]);
 Clazz.newMeth(C$, 'c$$javax_swing_text_Document$S$I$I', function (doc, text, rows, columns) {
 C$.superclazz.c$$S.apply(this, ["TextAreaUI"]);
 C$.$init$.apply(this);
-this.rows = rows;
-this.columns = columns;
+this.rows=rows;
+this.columns=columns;
 if (doc == null ) {
-doc = this.createDefaultModel();
+doc=this.createDefaultModel();
 }this.setDocument$javax_swing_text_Document(doc);
 if (text != null ) {
 this.setText$S(text);
@@ -74,13 +74,13 @@ var doc = this.getDocument();
 if (doc != null ) {
 var i = doc.getProperty$O("tabSize");
 if (i != null ) {
-size = i.intValue();
+size=i.intValue();
 }}return size;
 });
 
 Clazz.newMeth(C$, 'setLineWrap$Z', function (wrap) {
 var old = this.wrap;
-this.wrap = wrap;
+this.wrap=wrap;
 this.firePropertyChange$S$Z$Z("lineWrap", old, wrap);
 });
 
@@ -90,7 +90,7 @@ return this.wrap;
 
 Clazz.newMeth(C$, 'setWrapStyleWord$Z', function (word) {
 var old = this.word;
-this.word = word;
+this.word=word;
 this.firePropertyChange$S$Z$Z("wrapStyleWord", old, word);
 });
 
@@ -195,14 +195,14 @@ var oldVal = this.rows;
 if (rows < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["rows less than zero."]);
 }if (rows != oldVal) {
-this.rows = rows;
+this.rows=rows;
 this.invalidate();
 }});
 
 Clazz.newMeth(C$, 'getRowHeight', function () {
 if (this.rowHeight == 0) {
 var metrics = this.getFontMetrics$java_awt_Font(this.getFont());
-this.rowHeight = metrics.getHeight();
+this.rowHeight=metrics.getHeight();
 }return this.rowHeight;
 });
 
@@ -215,32 +215,32 @@ var oldVal = this.columns;
 if (columns < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["columns less than zero."]);
 }if (columns != oldVal) {
-this.columns = columns;
+this.columns=columns;
 this.invalidate();
 }});
 
 Clazz.newMeth(C$, 'getColumnWidth', function () {
 if (this.columnWidth == 0) {
 var metrics = this.getFontMetrics$java_awt_Font(this.getFont());
-this.columnWidth = metrics.charWidth$C("m");
+this.columnWidth=metrics.charWidth$C("m");
 }return this.columnWidth;
 });
 
 Clazz.newMeth(C$, 'getPreferredSize', function () {
 var d = this.getPrefSizeJComp();
-d = (d == null ) ? Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[400, 400]) : d;
+d=(d == null ) ? Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[400, 400]) : d;
 var insets = this.getInsets();
 if (this.columns != 0) {
-d.width = Math.max(d.width, this.columns * this.getColumnWidth() + insets.left + insets.right);
+d.width=Math.max(d.width, this.columns * this.getColumnWidth() + insets.left + insets.right);
 }if (this.rows != 0) {
-d.height = Math.max(d.height, this.rows * this.getRowHeight() + insets.top + insets.bottom);
+d.height=Math.max(d.height, this.rows * this.getRowHeight() + insets.top + insets.bottom);
 }return d;
 });
 
 Clazz.newMeth(C$, 'setFont$java_awt_Font', function (f) {
 C$.superclazz.prototype.setFont$java_awt_Font.apply(this, [f]);
-this.rowHeight = 0;
-this.columnWidth = 0;
+this.rowHeight=0;
+this.columnWidth=0;
 });
 
 Clazz.newMeth(C$, 'paramString', function () {
@@ -255,10 +255,10 @@ return (this.wrap) ? true : C$.superclazz.prototype.getScrollableTracksViewportW
 
 Clazz.newMeth(C$, 'getPreferredScrollableViewportSize', function () {
 var size = C$.superclazz.prototype.getPreferredScrollableViewportSize.apply(this, []);
-size = (size == null ) ? Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[400, 400]) : size;
+size=(size == null ) ? Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[400, 400]) : size;
 var insets = this.getInsets();
-size.width = (this.columns == 0) ? size.width : this.columns * this.getColumnWidth() + insets.left + insets.right;
-size.height = (this.rows == 0) ? size.height : this.rows * this.getRowHeight() + insets.top + insets.bottom;
+size.width=(this.columns == 0) ? size.width : this.columns * this.getColumnWidth() + insets.left + insets.right;
+size.height=(this.rows == 0) ? size.height : this.rows * this.getRowHeight() + insets.top + insets.bottom;
 return size;
 });
 
@@ -273,4 +273,4 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Invalid
 }
 });
 })();
-//Created 2018-05-15 01:02:35
+//Created 2018-05-24 08:46:28

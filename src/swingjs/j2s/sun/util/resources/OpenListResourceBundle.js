@@ -55,11 +55,11 @@ if (key == null  || value == null  ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
 }temp.put$TK$TV(key, value);
 }
-this.lookup = temp;
+this.lookup=temp;
 });
 
 Clazz.newMeth(C$, 'createMap$I', function (size) {
 return Clazz.new_((I$[2]||$incl$(2)).c$$I,[size]);
 });
 })();
-//Created 2018-05-15 01:03:12
+//Created 2018-05-24 08:47:38

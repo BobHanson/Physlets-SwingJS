@@ -23,10 +23,10 @@ this.editorExplicitlySet = false;
 
 Clazz.newMeth(C$, 'c$$javax_swing_SpinnerModel', function (model) {
 Clazz.super_(C$, this,1);
-this.model = model;
-this.editor = this.createEditor$javax_swing_SpinnerModel(model);
+this.model=model;
+this.editor=this.createEditor$javax_swing_SpinnerModel(model);
 this.setUIProperty$S$O("opaque", new Boolean(true));
-this.uiClassID = "SpinnerUI";
+this.uiClassID="SpinnerUI";
 this.updateUI();
 }, 1);
 
@@ -48,14 +48,14 @@ if (model == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["null model"]);
 }if (!model.equals$O(this.model)) {
 var oldModel = this.model;
-this.model = model;
+this.model=model;
 if (this.modelListener != null ) {
 oldModel.removeChangeListener$javax_swing_event_ChangeListener(this.modelListener);
 this.model.addChangeListener$javax_swing_event_ChangeListener(this.modelListener);
 }this.firePropertyChange$S$O$O("model", oldModel, model);
 if (!this.editorExplicitlySet) {
 this.setEditor$javax_swing_JComponent(this.createEditor$javax_swing_SpinnerModel(model));
-this.editorExplicitlySet = false;
+this.editorExplicitlySet=false;
 }this.repaint();
 this.revalidate();
 }});
@@ -78,7 +78,7 @@ return this.getModel().getNextValue();
 
 Clazz.newMeth(C$, 'addChangeListener$javax_swing_event_ChangeListener', function (listener) {
 if (this.modelListener == null ) {
-this.modelListener = Clazz.new_((I$[15]||$incl$(15)), [this, null]);
+this.modelListener=Clazz.new_((I$[15]||$incl$(15)), [this, null]);
 this.getModel().addChangeListener$javax_swing_event_ChangeListener(this.modelListener);
 }this.listenerList.add$Class$TT(Clazz.getClass((I$[16]||$incl$(16)),['stateChanged$javax_swing_event_ChangeEvent']), listener);
 });
@@ -93,10 +93,10 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[16]||$incl$(16)),
 
 Clazz.newMeth(C$, 'fireStateChanged', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[16]||$incl$(16)),['stateChanged$javax_swing_event_ChangeEvent']) ) {
 if (this.changeEvent == null ) {
-this.changeEvent = Clazz.new_((I$[17]||$incl$(17)).c$$O,[this]);
+this.changeEvent=Clazz.new_((I$[17]||$incl$(17)).c$$O,[this]);
 }(listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -110,10 +110,10 @@ if (editor == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["null editor"]);
 }if (!editor.equals$O(this.editor)) {
 var oldEditor = this.editor;
-this.editor = editor;
+this.editor=editor;
 if (Clazz.instanceOf(oldEditor, "javax.swing.JSpinner.DefaultEditor")) {
 (oldEditor).dismiss$javax_swing_JSpinner(this);
-}this.editorExplicitlySet = true;
+}this.editorExplicitlySet=true;
 this.firePropertyChange$S$O$O("editor", oldEditor, editor);
 this.revalidate();
 this.repaint();
@@ -183,7 +183,7 @@ spinner.removeChangeListener$javax_swing_event_ChangeListener(this);
 });
 
 Clazz.newMeth(C$, 'getSpinner', function () {
-for (var c = this; c != null ; c = c.getParent()) {
+for (var c = this; c != null ; c=c.getParent()) {
 if (Clazz.instanceOf(c, "javax.swing.JSpinner")) {
 return c;
 }}
@@ -242,8 +242,8 @@ Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container', function (parent) {
 var preferredSize = p$.insetSize$java_awt_Container.apply(this, [parent]);
 if (parent.getComponentCount() > 0) {
 var childSize = this.getComponent$I(0).getPreferredSize();
-preferredSize.width = preferredSize.width+(childSize.width);
-preferredSize.height = preferredSize.height+(childSize.height);
+preferredSize.width+=childSize.width;
+preferredSize.height+=childSize.height;
 }return preferredSize;
 });
 
@@ -251,8 +251,8 @@ Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container', function (parent) {
 var minimumSize = p$.insetSize$java_awt_Container.apply(this, [parent]);
 if (parent.getComponentCount() > 0) {
 var childSize = this.getComponent$I(0).getMinimumSize();
-minimumSize.width = minimumSize.width+(childSize.width);
-minimumSize.height = minimumSize.height+(childSize.height);
+minimumSize.width+=childSize.width;
+minimumSize.height+=childSize.height;
 }return minimumSize;
 });
 
@@ -270,8 +270,8 @@ Clazz.newMeth(C$, 'commitEdit', function () {
 Clazz.newMeth(C$, 'getBaseline$I$I', function (width, height) {
 C$.superclazz.prototype.getBaseline$I$I.apply(this, [width, height]);
 var insets = this.getInsets();
-width = width - insets.left - insets.right ;
-height = height - insets.top - insets.bottom ;
+width=width - insets.left - insets.right ;
+height=height - insets.top - insets.bottom ;
 var baseline = this.getComponent$I(0).getBaseline$I$I(width, height);
 if (baseline >= 0) {
 return baseline + insets.top;
@@ -303,7 +303,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$javax_swing_SpinnerNumberModel$java_text_NumberFormat', function (model, format) {
 C$.superclazz.c$$java_text_NumberFormat.apply(this, [format]);
 C$.$init$.apply(this);
-this.model = model;
+this.model=model;
 this.setValueClass$Class(model.getValue().getClass());
 }, 1);
 
@@ -436,7 +436,7 @@ return string;
 
 Clazz.newMeth(C$, 'getDocumentFilter', function () {
 if (this.filter == null ) {
-this.filter = Clazz.new_((I$[8]||$incl$(8)), [this, null]);
+this.filter=Clazz.new_((I$[8]||$incl$(8)), [this, null]);
 }return this.filter;
 });
 ;
@@ -511,4 +511,4 @@ Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (ae) {
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:33
+//Created 2018-05-24 08:46:24

@@ -19,7 +19,7 @@ C$.c$$O$Runnable$O$Z$J.apply(this, [source, runnable, null, false, flags]);
 Clazz.newMeth(C$, 'c$$O$Runnable$O$Z$J', function (source, runnable, notifier, catchExceptions, flags) {
 C$.superclazz.c$$O$I$Runnable$O$Z.apply(this, [source, 1200, runnable, notifier, catchExceptions]);
 C$.$init$.apply(this);
-this.flags = flags;
+this.flags=flags;
 }, 1);
 
 Clazz.newMeth(C$, 'getFlags', function () {
@@ -32,4 +32,4 @@ return null;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:22

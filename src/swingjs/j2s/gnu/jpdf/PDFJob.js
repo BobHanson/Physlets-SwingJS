@@ -27,21 +27,21 @@ C$.c$$java_io_OutputStream$S.apply(this, [os, "PDF Doc"]);
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream$S', function (os, title) {
 Clazz.super_(C$, this,1);
-this.os = os;
-this.pdfDocument = Clazz.new_((I$[2]||$incl$(2)));
-this.pagenum = 0;
+this.os=os;
+this.pdfDocument=Clazz.new_((I$[2]||$incl$(2)));
+this.pagenum=0;
 this.pdfDocument.getPDFInfo().setTitle$S(title);
 }, 1);
 
 Clazz.newMeth(C$, 'getGraphics$I', function (orient) {
-this.page = Clazz.new_((I$[3]||$incl$(3)).c$$I,[orient]);
+this.page=Clazz.new_((I$[3]||$incl$(3)).c$$I,[orient]);
 this.pdfDocument.add$gnu_jpdf_PDFObject(this.page);
 this.pagenum++;
 return Clazz.new_((I$[4]||$incl$(4)).c$$gnu_jpdf_PDFPage$gnu_jpdf_PDFJob, [this, null, this.page, this]);
 });
 
 Clazz.newMeth(C$, 'getGraphics$java_awt_print_PageFormat', function (pageFormat) {
-this.page = Clazz.new_((I$[3]||$incl$(3)).c$$java_awt_print_PageFormat,[pageFormat]);
+this.page=Clazz.new_((I$[3]||$incl$(3)).c$$java_awt_print_PageFormat,[pageFormat]);
 this.pdfDocument.add$gnu_jpdf_PDFObject(this.page);
 this.pagenum++;
 return Clazz.new_((I$[4]||$incl$(4)).c$$gnu_jpdf_PDFPage$gnu_jpdf_PDFJob, [this, null, this.page, this]);
@@ -69,8 +69,8 @@ throw e;
 }
 }
 System.out.println$S("GNU JPDF job complete: " + this.pdfDocument.getPDFInfo().getTitle());
-this.os = null;
-this.pdfDocument = null;
+this.os=null;
+this.pdfDocument=null;
 });
 
 Clazz.newMeth(C$, 'getGraphics', function () {
@@ -134,20 +134,20 @@ Clazz.newMeth(C$, 'c$$gnu_jpdf_PDFPage$gnu_jpdf_PDFJob', function (page, job) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
 this.init$gnu_jpdf_PDFPage(page);
-this.job = job;
+this.job=job;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$gnu_jpdf_PDFPage$gnu_jpdf_PDFJob$java_io_PrintWriter', function (page, job, pw) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
 this.init$gnu_jpdf_PDFPage$java_io_PrintWriter(page, pw);
-this.job = job;
+this.job=job;
 }, 1);
 
 Clazz.newMeth(C$, 'create', function () {
 this.closeBlock();
 var g = Clazz.new_(C$.c$$gnu_jpdf_PDFPage$gnu_jpdf_PDFJob$java_io_PrintWriter, [this, null, this.getPage(), this.job, this.getWriter()]);
-g.clipRectangle = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[this.clipRectangle]);
+g.clipRectangle=Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[this.clipRectangle]);
 return g;
 });
 
@@ -158,4 +158,4 @@ return this.job;
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:01:46
+//Created 2018-05-24 08:45:03

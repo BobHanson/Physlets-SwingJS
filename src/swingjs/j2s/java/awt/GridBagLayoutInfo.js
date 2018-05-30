@@ -22,8 +22,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I$I', function (width, height) {
 C$.$init$.apply(this);
-this.width = width;
-this.height = height;
+this.width=width;
+this.height=height;
 }, 1);
 
 Clazz.newMeth(C$, 'hasConstantDescent$I', function (row) {
@@ -36,4 +36,4 @@ return (this.$hasBaseline && this.baselineType[row] != 0 );
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:52
+//Created 2018-05-24 08:45:10

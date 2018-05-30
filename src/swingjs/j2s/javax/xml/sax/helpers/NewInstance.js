@@ -7,16 +7,16 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'newInstance$ClassLoader$S', function (classLoader, className) {
 var driverClass;
 if (classLoader == null ) {
-driverClass = Clazz.forName(className);
+driverClass=Clazz.forName(className);
 } else {
-driverClass = classLoader.loadClass$S(className);
+driverClass=classLoader.loadClass$S(className);
 }return driverClass.newInstance();
 }, 1);
 
 Clazz.newMeth(C$, 'getClassLoader', function () {
 var m = null;
 try {
-m = Clazz.getClass((I$[1]||$incl$(1))).getMethod$S$ClassA("getContextClassLoader", []);
+m=Clazz.getClass((I$[1]||$incl$(1))).getMethod$S$ClassA("getContextClassLoader", []);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.NoSuchMethodException")){
 return Clazz.getClass(C$).getClassLoader();
@@ -45,4 +45,4 @@ throw e$$;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:02
+//Created 2018-05-24 08:47:14

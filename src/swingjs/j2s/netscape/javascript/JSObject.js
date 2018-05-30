@@ -17,9 +17,9 @@ C$.$init$.apply(this);
 Clazz.newMeth(C$, '$call', function (jsFuncName, params) {
 var ret = null;
 try {
-if (params == null ) params = Clazz.array(java.lang.Object, [0]);
+if (params == null ) params=Clazz.array(java.lang.Object, [0]);
 for (var i = params.length; --i >= 0; ) {
-params[i] = p$.unfixObject.apply(this, [params[i]]);
+params[i]=p$.unfixObject.apply(this, [params[i]]);
 }
 
 ret = this.obj[jsFuncName].apply(this.obj, params);
@@ -56,7 +56,7 @@ case "boolean":
 return (I$[1]||$incl$(1)).$valueOf("" + ret);
 default:
 var jsobject = Clazz.new_(C$);
-jsobject.obj = ret;
+jsobject.obj=ret;
 return jsobject;
 }
 });
@@ -124,8 +124,8 @@ throw Clazz.new_(Clazz.load('netscape.javascript.JSException'),["" + t + " setSl
 Clazz.newMeth(C$, 'getWindow', function (applet) {
 var jsobject = Clazz.new_(C$);
 var context = applet.getAppletContext();
-jsobject.obj = context.html5Applet._window ||null;
+jsobject.obj=context.html5Applet._window ||null;
 return jsobject;
 }, 1);
 })();
-//Created 2018-05-15 01:03:02
+//Created 2018-05-24 08:47:15

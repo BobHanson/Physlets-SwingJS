@@ -28,4 +28,4 @@ Clazz.newMeth(C$, 'getDefaultConfiguration', function () {
 return (I$[2]||$incl$(2)).getGraphicsConfiguration();
 });
 })();
-//Created 2018-05-15 01:03:17
+//Created 2018-05-24 08:47:47

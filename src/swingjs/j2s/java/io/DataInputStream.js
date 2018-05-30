@@ -36,15 +36,15 @@ var n = 0;
 while (n < len){
 var count = this.$in.read$BA$I$I(b, off + n, len - n);
 if (count < 0) throw Clazz.new_(Clazz.load('java.io.EOFException'));
-n = n+(count);
+n+=count;
 }
 });
 
 Clazz.newMeth(C$, 'skipBytes$I', function (n) {
 var total = 0;
 var cur = 0;
-while ((total < n) && ((cur = (this.$in.skip$J(n - total)|0)) > 0) ){
-total = total+(cur);
+while ((total < n) && ((cur=(this.$in.skip$J(n - total)|0)) > 0) ){
+total+=cur;
 }
 return total;
 });
@@ -119,12 +119,12 @@ return Double.longBitsToDouble(this.readLong());
 Clazz.newMeth(C$, 'readLine', function () {
 var buf = this.lineBuffer;
 if (buf == null ) {
-buf = this.lineBuffer = Clazz.array(Character.TYPE, [128]);
+buf=this.lineBuffer=Clazz.array(Character.TYPE, [128]);
 }var room = buf.length;
 var offset = 0;
 var c;
 loop : while (true){
-switch (c = this.$in.read()) {
+switch (c=this.$in.read()) {
 case -1:
 case 10:
 break loop;
@@ -132,16 +132,16 @@ case 13:
 var c2 = this.$in.read();
 if ((c2 != 10 ) && (c2 != -1) ) {
 if (!(Clazz.instanceOf(this.$in, "java.io.PushbackInputStream"))) {
-this.$in = Clazz.new_((I$[1]||$incl$(1)).c$$java_io_InputStream$I,[this.$in, 1]);
+this.$in=Clazz.new_((I$[1]||$incl$(1)).c$$java_io_InputStream$I,[this.$in, 1]);
 }(this.$in).unreadByte$I(c2);
 }break loop;
 default:
 if (--room < 0) {
-buf = Clazz.array(Character.TYPE, [offset + 128]);
-room = buf.length - offset - 1 ;
+buf=Clazz.array(Character.TYPE, [offset + 128]);
+room=buf.length - offset - 1 ;
 System.arraycopy(this.lineBuffer, 0, buf, 0, offset);
-this.lineBuffer = buf;
-}buf[offset++] = String.fromCharCode(c);
+this.lineBuffer=buf;
+}buf[offset++]=String.fromCharCode(c);
 break;
 }
 }
@@ -156,19 +156,19 @@ return C$.readUTFBytes$java_io_DataInput$I(this, -1);
 
 Clazz.newMeth(C$, 'readUTFBytes$java_io_DataInput$I', function ($in, utflen) {
 var isByteArray = (utflen >= 0);
-if (!isByteArray) utflen = $in.readUnsignedShort();
+if (!isByteArray) utflen=$in.readUnsignedShort();
 var bytearr = null;
 var chararr = null;
 if (Clazz.instanceOf($in, "java.io.DataInputStream")) {
 var dis = $in;
 if (dis.bytearr.length < utflen) {
-dis.bytearr = Clazz.array(Byte.TYPE, [isByteArray ? utflen : utflen * 2]);
-dis.chararr = Clazz.array(Character.TYPE, [dis.bytearr.length]);
-}chararr = dis.chararr;
-bytearr = dis.bytearr;
+dis.bytearr=Clazz.array(Byte.TYPE, [isByteArray ? utflen : utflen * 2]);
+dis.chararr=Clazz.array(Character.TYPE, [dis.bytearr.length]);
+}chararr=dis.chararr;
+bytearr=dis.bytearr;
 } else {
-bytearr = Clazz.array(Byte.TYPE, [utflen]);
-chararr = Clazz.array(Character.TYPE, [utflen]);
+bytearr=Clazz.array(Byte.TYPE, [utflen]);
+chararr=Clazz.array(Character.TYPE, [utflen]);
 }var c;
 var char2;
 var char3;
@@ -176,13 +176,13 @@ var count = 0;
 var chararr_count = 0;
 $in.readFully$BA$I$I(bytearr, 0, utflen);
 while (count < utflen){
-c = bytearr[count] & 255;
+c=bytearr[count] & 255;
 if (c > 127) break;
 count++;
-chararr[chararr_count++] = String.fromCharCode(c);
+chararr[chararr_count++]=String.fromCharCode(c);
 }
 while (count < utflen){
-c = bytearr[count] & 255;
+c=bytearr[count] & 255;
 switch (c >> 4) {
 case 0:
 case 1:
@@ -193,23 +193,23 @@ case 5:
 case 6:
 case 7:
 count++;
-chararr[chararr_count++] = String.fromCharCode(c);
+chararr[chararr_count++]=String.fromCharCode(c);
 break;
 case 12:
 case 13:
-count = count+(2);
+count+=2;
 if (count > utflen) throw Clazz.new_(Clazz.load('java.io.UTFDataFormatException').c$$S,["malformed input: partial character at end"]);
-char2 = bytearr[count - 1];
+char2=bytearr[count - 1];
 if ((char2 & 192) != 128) throw Clazz.new_(Clazz.load('java.io.UTFDataFormatException').c$$S,["malformed input around byte " + count]);
-chararr[chararr_count++] = String.fromCharCode((((c & 31) << 6) | (char2 & 63)));
+chararr[chararr_count++]=String.fromCharCode((((c & 31) << 6) | (char2 & 63)));
 break;
 case 14:
-count = count+(3);
+count+=3;
 if (count > utflen) throw Clazz.new_(Clazz.load('java.io.UTFDataFormatException').c$$S,["malformed input: partial character at end"]);
-char2 = bytearr[count - 2];
-char3 = bytearr[count - 1];
+char2=bytearr[count - 2];
+char3=bytearr[count - 1];
 if (((char2 & 192) != 128) || ((char3 & 192) != 128) ) throw Clazz.new_(Clazz.load('java.io.UTFDataFormatException').c$$S,["malformed input around byte " + (count - 1)]);
-chararr[chararr_count++] = String.fromCharCode((((c & 15) << 12) | ((char2 & 63) << 6) | ((char3 & 63) << 0) ));
+chararr[chararr_count++]=String.fromCharCode((((c & 15) << 12) | ((char2 & 63) << 6) | ((char3 & 63) << 0) ));
 break;
 default:
 throw Clazz.new_(Clazz.load('java.io.UTFDataFormatException').c$$S,["malformed input around byte " + count]);
@@ -226,4 +226,4 @@ var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:04
+//Created 2018-05-24 08:45:33

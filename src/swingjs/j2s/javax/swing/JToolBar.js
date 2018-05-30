@@ -38,11 +38,11 @@ Clazz.newMeth(C$, 'c$$S$I', function (name, orientation) {
 Clazz.super_(C$, this,1);
 this.setName$S(name);
 p$.checkOrientation$I.apply(this, [orientation]);
-this.orientation = orientation;
+this.orientation=orientation;
 var layout = Clazz.new_((I$[2]||$incl$(2)).c$$I, [this, null, orientation]);
 this.setLayout$java_awt_LayoutManager(layout);
 this.addPropertyChangeListener$java_beans_PropertyChangeListener(layout);
-this.uiClassID = "ToolBarUI";
+this.uiClassID="ToolBarUI";
 this.updateUI();
 }, 1);
 
@@ -73,7 +73,7 @@ return component[i];
 
 Clazz.newMeth(C$, 'setMargin$java_awt_Insets', function (m) {
 var old = this.margin;
-this.margin = m;
+this.margin=m;
 this.firePropertyChange$S$O$O("margin", old, m);
 this.revalidate();
 this.repaint();
@@ -93,7 +93,7 @@ return this.$paintBorder;
 Clazz.newMeth(C$, 'setBorderPainted$Z', function (b) {
 if (this.$paintBorder != b ) {
 var old = this.$paintBorder;
-this.$paintBorder = b;
+this.$paintBorder=b;
 this.firePropertyChange$S$Z$Z("borderPainted", old, b);
 this.revalidate();
 this.repaint();
@@ -111,7 +111,7 @@ return this.floatable;
 Clazz.newMeth(C$, 'setFloatable$Z', function (b) {
 if (this.floatable != b ) {
 var old = this.floatable;
-this.floatable = b;
+this.floatable=b;
 this.firePropertyChange$S$Z$Z("floatable", old, b);
 this.revalidate();
 this.repaint();
@@ -125,7 +125,7 @@ Clazz.newMeth(C$, 'setOrientation$I', function (o) {
 p$.checkOrientation$I.apply(this, [o]);
 if (this.orientation != o) {
 var old = this.orientation;
-this.orientation = o;
+this.orientation=o;
 this.firePropertyChange$S$I$I("orientation", old, o);
 this.revalidate();
 this.repaint();
@@ -181,7 +181,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'createActionPropertyChangeListener$javax_swing_Action', function (a) {
 var pcl = this.b$['javax.swing.JToolBar'].createActionChangeListener$javax_swing_JButton(this);
 if (pcl == null ) {
-pcl = C$.superclazz.prototype.createActionPropertyChangeListener$javax_swing_Action.apply(this, [a]);
+pcl=C$.superclazz.prototype.createActionPropertyChangeListener$javax_swing_Action.apply(this, [a]);
 }return pcl;
 });
 })()
@@ -251,7 +251,7 @@ this.setSeparatorSize$java_awt_Dimension(size);
 
 Clazz.newMeth(C$, 'setSeparatorSize$java_awt_Dimension', function (size) {
 if (size != null ) {
-this.separatorSize = size;
+this.separatorSize=size;
 } else {
 C$.superclazz.prototype.updateUI.apply(this, []);
 }this.invalidate();
@@ -301,9 +301,9 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$I', function (orientation) {
 C$.$init$.apply(this);
 if (orientation == 1) {
-this.lm = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Container$I,[this.this$0, 3]);
+this.lm=Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Container$I,[this.this$0, 3]);
 } else {
-this.lm = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Container$I,[this.this$0, 2]);
+this.lm=Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Container$I,[this.this$0, 2]);
 }}, 1);
 
 Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (name, comp) {
@@ -350,12 +350,12 @@ Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) 
 var name = e.getPropertyName();
 if (name.equals$O("orientation")) {
 var o = (e.getNewValue()).intValue();
-if (o == 1) this.lm = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Container$I,[this.this$0, 3]);
+if (o == 1) this.lm=Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Container$I,[this.this$0, 3]);
  else {
-this.lm = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Container$I,[this.this$0, 2]);
+this.lm=Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Container$I,[this.this$0, 2]);
 }}});
 
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:36
+//Created 2018-05-24 08:46:29

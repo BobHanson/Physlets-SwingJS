@@ -27,7 +27,7 @@ this.keyCode = 0;
 Clazz.newMeth(C$, 'getAWTKeyStrokeClass', function () {
 var clazz = (I$[1]||$incl$(1)).getAppContext().get$O(Clazz.getClass(C$));
 if (clazz == null ) {
-clazz = Clazz.getClass(C$);
+clazz=Clazz.getClass(C$);
 (I$[1]||$incl$(1)).getAppContext().put$O$O(Clazz.getClass(C$), Clazz.getClass(C$));
 }return clazz;
 }, 1);
@@ -38,10 +38,10 @@ C$.$init$.apply(this);
 
 Clazz.newMeth(C$, 'c$$C$I$I$Z', function (keyChar, keyCode, modifiers, onKeyRelease) {
 C$.$init$.apply(this);
-this.keyChar = keyChar;
-this.keyCode = keyCode;
-this.modifiers = modifiers;
-this.onKeyRelease = onKeyRelease;
+this.keyChar=keyChar;
+this.keyCode=keyCode;
+this.modifiers=modifiers;
+this.onKeyRelease=onKeyRelease;
 }, 1);
 
 Clazz.newMeth(C$, 'registerSubclass$Class', function (subclass) {
@@ -110,12 +110,12 @@ Clazz.newMeth(C$, 'getCachedStroke$C$I$I$Z', function (keyChar, keyCode, modifie
 var cache = (I$[1]||$incl$(1)).getAppContext().get$O(C$.APP_CONTEXT_CACHE_KEY);
 var cacheKey = (I$[1]||$incl$(1)).getAppContext().get$O(C$.APP_CONTEXT_KEYSTROKE_KEY);
 if (cache == null ) {
-cache = Clazz.new_((I$[2]||$incl$(2)));
+cache=Clazz.new_((I$[2]||$incl$(2)));
 (I$[1]||$incl$(1)).getAppContext().put$O$O(C$.APP_CONTEXT_CACHE_KEY, cache);
 }if (cacheKey == null ) {
 try {
 var clazz = C$.getAWTKeyStrokeClass();
-cacheKey = C$.getCtor$Class(clazz).newInstance$OA(null);
+cacheKey=C$.getCtor$Class(clazz).newInstance$OA(null);
 (I$[1]||$incl$(1)).getAppContext().put$O$O(C$.APP_CONTEXT_KEYSTROKE_KEY, cacheKey);
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$, "java.lang.InstantiationException")){
@@ -137,13 +137,13 @@ Clazz.assert(C$, this, function(){return false});
 throw e$$;
 }
 }
-}cacheKey.keyChar = keyChar;
-cacheKey.keyCode = keyCode;
-cacheKey.modifiers = C$.mapNewModifiers$I(C$.mapOldModifiers$I(modifiers));
-cacheKey.onKeyRelease = onKeyRelease;
+}cacheKey.keyChar=keyChar;
+cacheKey.keyCode=keyCode;
+cacheKey.modifiers=C$.mapNewModifiers$I(C$.mapOldModifiers$I(modifiers));
+cacheKey.onKeyRelease=onKeyRelease;
 var stroke = cache.get$O(cacheKey);
 if (stroke == null ) {
-stroke = cacheKey;
+stroke=cacheKey;
 cache.put$TK$TV(stroke, stroke);
 (I$[1]||$incl$(1)).getAppContext().remove$O(C$.APP_CONTEXT_KEYSTROKE_KEY);
 }return stroke;
@@ -201,7 +201,7 @@ uninitializedMap.put$TK$TV("altGraph", Integer.$valueOf(8224));
 uninitializedMap.put$TK$TV("button1", Integer.$valueOf(1024));
 uninitializedMap.put$TK$TV("button2", Integer.$valueOf(2048));
 uninitializedMap.put$TK$TV("button3", Integer.$valueOf(4096));
-C$.modifierKeywords = (I$[4]||$incl$(4)).synchronizedMap$java_util_Map(uninitializedMap);
+C$.modifierKeywords=(I$[4]||$incl$(4)).synchronizedMap$java_util_Map(uninitializedMap);
 }}var count = st.countTokens();
 for (var i = 1; i <= count; i++) {
 var token = st.nextToken();
@@ -216,17 +216,17 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["String 
 var keyCode = C$.getVKValue$S(keyCodeName);
 return C$.getCachedStroke$C$I$I$Z("\uffff", keyCode, mask, released);
 }if (token.equals$O("released")) {
-released = true;
+released=true;
 continue;
 }if (token.equals$O("pressed")) {
-pressed = true;
+pressed=true;
 continue;
 }if (token.equals$O("typed")) {
-typed = true;
+typed=true;
 continue;
 }var tokenMask = C$.modifierKeywords.get$O(token);
 if (tokenMask != null ) {
-mask = mask|(tokenMask.intValue());
+mask|=tokenMask.intValue();
 } else {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["String formatted incorrectly"]);
 }}
@@ -234,7 +234,7 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["String 
 }, 1);
 
 Clazz.newMeth(C$, 'getVKCollection', function () {
-return (C$.vks == null  ? (C$.vks = Clazz.new_((I$[5]||$incl$(5)))) : C$.vks);
+return (C$.vks == null  ? (C$.vks=Clazz.new_((I$[5]||$incl$(5)))) : C$.vks);
 }, 1);
 
 Clazz.newMeth(C$, 'addKeyCode$S$I', function (key, keyCode) {
@@ -332,32 +332,32 @@ C$.registerSubclass$Class(newClass);
 
 Clazz.newMeth(C$, 'mapOldModifiers$I', function (modifiers) {
 if ((modifiers & 1) != 0) {
-modifiers = modifiers|(64);
+modifiers|=64;
 }if ((modifiers & 8) != 0) {
-modifiers = modifiers|(512);
+modifiers|=512;
 }if ((modifiers & 32) != 0) {
-modifiers = modifiers|(8192);
+modifiers|=8192;
 }if ((modifiers & 2) != 0) {
-modifiers = modifiers|(128);
+modifiers|=128;
 }if ((modifiers & 4) != 0) {
-modifiers = modifiers|(256);
-}modifiers = modifiers&(16320);
+modifiers|=256;
+}modifiers&=16320;
 return modifiers;
 }, 1);
 
 Clazz.newMeth(C$, 'mapNewModifiers$I', function (modifiers) {
 if ((modifiers & 64) != 0) {
-modifiers = modifiers|(1);
+modifiers|=1;
 }if ((modifiers & 512) != 0) {
-modifiers = modifiers|(8);
+modifiers|=8;
 }if ((modifiers & 8192) != 0) {
-modifiers = modifiers|(32);
+modifiers|=32;
 }if ((modifiers & 128) != 0) {
-modifiers = modifiers|(2);
+modifiers|=2;
 }if ((modifiers & 256) != 0) {
-modifiers = modifiers|(4);
+modifiers|=4;
 }return modifiers;
 }, 1);
 C$.$_ASSERT_ENABLED_ = ClassLoader.$getClassAssertionStatus(C$);
 })();
-//Created 2018-05-15 01:01:48
+//Created 2018-05-24 08:45:05

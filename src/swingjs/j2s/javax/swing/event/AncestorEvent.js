@@ -16,8 +16,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$javax_swing_JComponent$I$java_awt_Container$java_awt_Container', function (source, id, ancestor, ancestorParent) {
 C$.superclazz.c$$O$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.ancestor = ancestor;
-this.ancestorParent = ancestorParent;
+this.ancestor=ancestor;
+this.ancestorParent=ancestorParent;
 }, 1);
 
 Clazz.newMeth(C$, 'getAncestor', function () {
@@ -34,4 +34,4 @@ return this.getSource();
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:45
+//Created 2018-05-24 08:46:48

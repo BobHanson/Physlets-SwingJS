@@ -27,11 +27,11 @@ var bytes = (I$[1]||$incl$(1)).getLimitedStreamBytes$java_io_InputStream$J(url.o
 var audioFormat = C$.getAudioFormatForStreamOrBytes$java_io_ByteArrayInputStream$BA(null, bytes);
 var format = audioFormat.getProperty$S("fileFormat");
 if (format == null  || format == "AU" ) {
-bytes = this.createWaveData$BA$javax_sound_sampled_AudioFormat(bytes, audioFormat);
-format = "wav";
+bytes=this.createWaveData$BA$javax_sound_sampled_AudioFormat(bytes, audioFormat);
+format="wav";
 }if (bytes == null ) return;
-this.myURI = p$.getBase64$BA$S.apply(this, [bytes, format]);
-this.myPlayer = (I$[2]||$incl$(2)).getAudioElement(this.myURI, false);
+this.myURI=p$.getBase64$BA$S.apply(this, [bytes, format]);
+this.myPlayer=(I$[2]||$incl$(2)).getAudioElement(this.myURI, false);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
 System.out.println$S("Exception creating AudioClip for " + url);
@@ -90,7 +90,7 @@ return this.getAudio$BA$javax_sound_sampled_AudioFormat(fileData, format);
 
 Clazz.newMeth(C$, 'getFormat$BA$S', function (fileData, fileType) {
 var props = Clazz.new_((I$[5]||$incl$(5)));
-if (fileType == null ) fileType = C$.getAudioTypeForBytes$BA(fileData);
+if (fileType == null ) fileType=C$.getAudioTypeForBytes$BA(fileData);
 props.put$TK$TV("fileFormat", fileType);
 return Clazz.new_((I$[6]||$incl$(6)).c$$javax_sound_sampled_AudioFormat_Encoding$F$I$I$I$F$Z$java_util_Map,[null, -1, -1, -1, -1, -1, false, props]);
 });
@@ -98,8 +98,8 @@ return Clazz.new_((I$[6]||$incl$(6)).c$$javax_sound_sampled_AudioFormat_Encoding
 Clazz.newMeth(C$, 'getAudio$BA$javax_sound_sampled_AudioFormat', function (data, audioFormat) {
 var format = audioFormat.getProperty$S("fileFormat");
 if (format == null  || format == "AU" ) {
-data = this.createWaveData$BA$javax_sound_sampled_AudioFormat(data, audioFormat);
-format = "wav";
+data=this.createWaveData$BA$javax_sound_sampled_AudioFormat(data, audioFormat);
+format="wav";
 }if (data == null ) return null;
 return (I$[2]||$incl$(2)).getAudioElement(p$.getBase64$BA$S.apply(this, [data, format]), false);
 });
@@ -129,19 +129,19 @@ switch ("PCM_SIGNED     PCM_UNSIGNED   PCM_FLOAT      ULAW           ALAW       
 case 0:
 switch (bitsPerSample) {
 case 8:
-fmt = 7;
-data = C$.toULaw$BA(data);
+fmt=7;
+data=C$.toULaw$BA(data);
 break;
 case 16:
-fmt = 1;
-if (af.isBigEndian()) data = C$.toLittleEndian$BA(data);
+fmt=1;
+if (af.isBigEndian()) data=C$.toLittleEndian$BA(data);
 break;
 }
 break;
 case 45:
 if (bitsPerSample == 8) {
-fmt = 7;
-if (C$.isAU$BA(data)) offset = (I$[8]||$incl$(8)).bytesToInt$BA$I$Z(data, 4, true);
+fmt=7;
+if (C$.isAU$BA(data)) offset=(I$[8]||$incl$(8)).bytesToInt$BA$I$Z(data, 4, true);
 }break;
 }
 if (fmt == 0) throw Clazz.new_(Clazz.load('javax.sound.sampled.UnsupportedAudioFileException').c$$S,["unsupported format " + bitsPerSample + "-bit " + format ]);
@@ -170,8 +170,8 @@ return out.toByteArray();
 Clazz.newMeth(C$, 'toLittleEndian$BA', function (data) {
 var b = Clazz.array(Byte.TYPE, [data.length]);
 for (var i = data.length; --i > 0; --i) {
-b[i - 1] = (data[i]|0);
-b[i] = (data[i - 1]|0);
+b[i - 1]=(data[i]|0);
+b[i]=(data[i - 1]|0);
 }
 return b;
 }, 1);
@@ -179,7 +179,7 @@ return b;
 Clazz.newMeth(C$, 'toULaw$BA', function (data) {
 var b = Clazz.array(Byte.TYPE, [data.length]);
 System.arraycopy(data, 0, b, 0, b.length);
-for (var i = b.length; --i >= 0; ) b[i] = ((C$.to_ulaw[128 + b[i]]|0)|0);
+for (var i = b.length; --i >= 0; ) b[i]=((C$.to_ulaw[128 + b[i]]|0)|0);
 
 return b;
 }, 1);
@@ -205,29 +205,29 @@ if (fmt == "MP3") {
 } else if (fmt == "OGG") {
 } else if (fmt == "AU") {
 if (stream != null ) {
-header = Clazz.array(Byte.TYPE, [24]);
+header=Clazz.array(Byte.TYPE, [24]);
 stream.read$BA(header);
-}sampleSizeInBits = 8;
+}sampleSizeInBits=8;
 var pt = (I$[8]||$incl$(8)).bytesToInt$BA$I$Z(header, 4, true);
 var length = (I$[8]||$incl$(8)).bytesToInt$BA$I$Z(header, 8, true);
 var enc = (I$[8]||$incl$(8)).bytesToInt$BA$I$Z(header, 12, true);
-frameRate = sampleRate = (I$[8]||$incl$(8)).bytesToInt$BA$I$Z(header, 16, true);
-channels = (I$[8]||$incl$(8)).bytesToInt$BA$I$Z(header, 20, true);
-frameSize = (channels * sampleSizeInBits/8|0);
-bigEndian = true;
+frameRate=sampleRate=(I$[8]||$incl$(8)).bytesToInt$BA$I$Z(header, 16, true);
+channels=(I$[8]||$incl$(8)).bytesToInt$BA$I$Z(header, 20, true);
+frameSize=(channels * sampleSizeInBits/8|0);
+bigEndian=true;
 if (enc != 1) {
 System.out.println$S("AU audio encoding " + enc + " not supported" );
-}encoding = (I$[11]||$incl$(11)).ULAW;
+}encoding=(I$[11]||$incl$(11)).ULAW;
 } else if (fmt == "WAV") {
 if (stream != null ) {
-header = Clazz.array(Byte.TYPE, [36]);
+header=Clazz.array(Byte.TYPE, [36]);
 stream.read$BA(header);
 }var enc = (I$[8]||$incl$(8)).bytesToShort$BA$I$Z(header, 20, false);
-if (enc == 1) encoding = (I$[11]||$incl$(11)).PCM_SIGNED;
-channels = (I$[8]||$incl$(8)).bytesToShort$BA$I$Z(header, 22, false);
-frameRate = sampleRate = (I$[8]||$incl$(8)).bytesToInt$BA$I$Z(header, 24, false);
-frameSize = (I$[8]||$incl$(8)).bytesToShort$BA$I$Z(header, 32, false);
-sampleSizeInBits = (I$[8]||$incl$(8)).bytesToShort$BA$I$Z(header, 34, false);
+if (enc == 1) encoding=(I$[11]||$incl$(11)).PCM_SIGNED;
+channels=(I$[8]||$incl$(8)).bytesToShort$BA$I$Z(header, 22, false);
+frameRate=sampleRate=(I$[8]||$incl$(8)).bytesToInt$BA$I$Z(header, 24, false);
+frameSize=(I$[8]||$incl$(8)).bytesToShort$BA$I$Z(header, 32, false);
+sampleSizeInBits=(I$[8]||$incl$(8)).bytesToShort$BA$I$Z(header, 34, false);
 }} catch (e) {
 } finally {
 if (stream != null ) stream.reset();
@@ -275,4 +275,4 @@ return b[0] == 46 && b[1] == 115  && b[2] == 110  && b[3] == 100 ;
 }, 1);
 var $s$ = new Int16Array(1);
 })();
-//Created 2018-05-15 01:03:14
+//Created 2018-05-24 08:47:41

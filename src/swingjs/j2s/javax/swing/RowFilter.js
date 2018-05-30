@@ -91,7 +91,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$IA', function (columns) {
 Clazz.super_(C$, this,1);
 P$.RowFilter.checkIndices$IA(columns);
-this.columns = columns;
+this.columns=columns;
 }, 1);
 
 Clazz.newMeth(C$, 'include$javax_swing_RowFilter_Entry', function (value) {
@@ -134,7 +134,7 @@ C$.superclazz.c$$IA.apply(this, [columns]);
 C$.$init$.apply(this);
 if (regex == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Pattern must be non-null"]);
-}this.matcher = regex.matcher$CharSequence("");
+}this.matcher=regex.matcher$CharSequence("");
 }, 1);
 
 Clazz.newMeth(C$, 'include$javax_swing_RowFilter_Entry$I', function (value, index) {
@@ -166,8 +166,8 @@ C$.superclazz.c$$IA.apply(this, [columns]);
 C$.$init$.apply(this);
 if (type == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["type must be non-null"]);
-}this.type = type;
-this.date = date;
+}this.type=type;
+this.date=date;
 }, 1);
 
 Clazz.newMeth(C$, 'include$javax_swing_RowFilter_Entry$I', function (value, index) {
@@ -215,9 +215,9 @@ C$.superclazz.c$$IA.apply(this, [columns]);
 C$.$init$.apply(this);
 if (type == null  || number == null  ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["type and number must be non-null"]);
-}this.type = type;
-this.number = number;
-this.isComparable = (Clazz.instanceOf(number, "java.lang.Comparable"));
+}this.type=type;
+this.number=number;
+this.isComparable=(Clazz.instanceOf(number, "java.lang.Comparable"));
 }, 1);
 
 Clazz.newMeth(C$, 'include$javax_swing_RowFilter_Entry$I', function (value, index) {
@@ -226,9 +226,9 @@ if (Clazz.instanceOf(v, "java.lang.Number")) {
 var compareResult;
 var vClass = v.getClass();
 if (this.number.getClass() === vClass  && this.isComparable ) {
-compareResult = (this.number).compareTo$TT(v);
+compareResult=(this.number).compareTo$TT(v);
 } else {
-compareResult = p$.longCompare$Number.apply(this, [v]);
+compareResult=p$.longCompare$Number.apply(this, [v]);
 }switch (this.type) {
 case (I$[1]||$incl$(1)).BEFORE:
 return (compareResult > 0);
@@ -273,7 +273,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$Iterable', function (filters) {
 Clazz.super_(C$, this,1);
-this.filters = Clazz.new_((I$[2]||$incl$(2)));
+this.filters=Clazz.new_((I$[2]||$incl$(2)));
 for (var filter, $filter = filters.iterator(); $filter.hasNext()&&((filter=$filter.next()),1);) {
 if (filter == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Filter must be non-null"]);
@@ -337,7 +337,7 @@ Clazz.newMeth(C$, ['c$$javax_swing_RowFilter'], function (filter) {
 Clazz.super_(C$, this,1);
 if (filter == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["filter must be non-null"]);
-}this.filter = filter;
+}this.filter=filter;
 }, 1);
 
 Clazz.newMeth(C$, 'include$javax_swing_RowFilter_Entry', function (value) {
@@ -349,4 +349,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:39
+//Created 2018-05-24 08:46:38

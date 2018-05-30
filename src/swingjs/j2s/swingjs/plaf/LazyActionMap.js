@@ -16,7 +16,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'installLazyActionMap$javax_swing_JComponent$Class$S', function (c, loaderClass, defaultsKey) {
 var map = (I$[1]||$incl$(1)).get$O(defaultsKey);
 if (map == null ) {
-map = Clazz.new_(C$.c$$Class,[loaderClass]);
+map=Clazz.new_(C$.c$$Class,[loaderClass]);
 (I$[1]||$incl$(1)).getLookAndFeelDefaults().put$O$O(defaultsKey, map);
 }(I$[2]||$incl$(2)).replaceUIActionMap$javax_swing_JComponent$javax_swing_ActionMap(c, map);
 }, 1);
@@ -24,14 +24,14 @@ map = Clazz.new_(C$.c$$Class,[loaderClass]);
 Clazz.newMeth(C$, 'getActionMap$Class$S', function (loaderClass, defaultsKey) {
 var map = (I$[1]||$incl$(1)).get$O(defaultsKey);
 if (map == null ) {
-map = Clazz.new_(C$.c$$Class,[loaderClass]);
+map=Clazz.new_(C$.c$$Class,[loaderClass]);
 (I$[1]||$incl$(1)).getLookAndFeelDefaults().put$O$O(defaultsKey, map);
 }return map;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Class', function (loader) {
 Clazz.super_(C$, this,1);
-this._loader = loader;
+this._loader=loader;
 }, 1);
 
 Clazz.newMeth(C$, 'put$javax_swing_Action', function (action) {
@@ -81,7 +81,7 @@ C$.superclazz.prototype.setParent$javax_swing_ActionMap.apply(this, [map]);
 Clazz.newMeth(C$, 'loadIfNecessary', function () {
 if (this._loader != null ) {
 var loader = this._loader;
-this._loader = null;
+this._loader=null;
 {
 loader.$clazz$.loadActionMap$swingjs_plaf_LazyActionMap(this);
 }
@@ -89,4 +89,4 @@ loader.$clazz$.loadActionMap$swingjs_plaf_LazyActionMap(this);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:28
+//Created 2018-05-24 08:48:02

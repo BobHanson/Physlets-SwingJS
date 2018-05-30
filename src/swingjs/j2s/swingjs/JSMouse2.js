@@ -14,7 +14,7 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$swingjs_JSMouse', function (mouse) {
-this.mouse = mouse;
+this.mouse=mouse;
 return this;
 });
 
@@ -51,10 +51,10 @@ var deltaX = ((x1last - t1[t1.length - 2][0])|0);
 var deltaY = ((y1last - t1[t1.length - 2][1])|0);
 this.mouse.translateXYBy$I$I(deltaX, deltaY);
 } else if (cos12 < -0.8 ) {
-v1 = (I$[1]||$incl$(1)).new3$F$F$F(x2first - x1first, y2first - y1first, 0);
-v2 = (I$[1]||$incl$(1)).new3$F$F$F(x2last - x1last, y2last - y1last, 0);
+v1=(I$[1]||$incl$(1)).new3$F$F$F(x2first - x1first, y2first - y1first, 0);
+v2=(I$[1]||$incl$(1)).new3$F$F$F(x2last - x1last, y2last - y1last, 0);
 var dx = v2.length$() - v1.length$();
 this.mouse.wheeled$J$I$I$I$I(System.currentTimeMillis(), 0, 0, dx < 0  ? -1 : 1, 507);
 }});
 })();
-//Created 2018-05-15 01:03:16
+//Created 2018-05-24 08:47:45

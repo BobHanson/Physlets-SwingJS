@@ -17,11 +17,11 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_GraphicsConfiguration$I$I$I$O', function (graphicsConfig, width, height, transparency, capsObject) {
 Clazz.super_(C$, this,1);
-this.graphicsConfig = graphicsConfig;
-this.width = width;
-this.height = height;
-this.transparency = transparency;
-this.caps = capsObject;
+this.graphicsConfig=graphicsConfig;
+this.width=width;
+this.height=height;
+this.transparency=transparency;
+this.caps=capsObject;
 }, 1);
 
 Clazz.newMeth(C$, 'getWidth', function () {
@@ -70,4 +70,4 @@ return null;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:09
+//Created 2018-05-24 08:47:28

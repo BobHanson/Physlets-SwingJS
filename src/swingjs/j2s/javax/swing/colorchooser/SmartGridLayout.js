@@ -25,9 +25,9 @@ this.componentCount = 0;
 
 Clazz.newMeth(C$, 'c$$I$I', function (numColumns, numRows) {
 C$.$init$.apply(this);
-this.rows = numRows;
-this.columns = numColumns;
-this.layoutGrid = Clazz.array((I$[1]||$incl$(1)), [numColumns, numRows]);
+this.rows=numRows;
+this.columns=numColumns;
+this.layoutGrid=Clazz.array((I$[1]||$incl$(1)), [numColumns, numRows]);
 }, 1);
 
 Clazz.newMeth(C$, 'layoutContainer$java_awt_Container', function (c) {
@@ -35,10 +35,10 @@ p$.buildLayoutGrid$java_awt_Container.apply(this, [c]);
 var rowHeights = Clazz.array(Integer.TYPE, [this.rows]);
 var columnWidths = Clazz.array(Integer.TYPE, [this.columns]);
 for (var row = 0; row < this.rows; row++) {
-rowHeights[row] = p$.computeRowHeight$I.apply(this, [row]);
+rowHeights[row]=p$.computeRowHeight$I.apply(this, [row]);
 }
 for (var column = 0; column < this.columns; column++) {
-columnWidths[column] = p$.computeColumnWidth$I.apply(this, [column]);
+columnWidths[column]=p$.computeColumnWidth$I.apply(this, [column]);
 }
 var insets = c.getInsets();
 if (c.getComponentOrientation().isLeftToRight()) {
@@ -48,21 +48,21 @@ var vertLoc = insets.top;
 for (var row = 0; row < this.rows; row++) {
 var current = this.layoutGrid[column][row];
 current.setBounds$I$I$I$I(horizLoc, vertLoc, columnWidths[column], rowHeights[row]);
-vertLoc = vertLoc+((rowHeights[row] + this.yGap));
+vertLoc+=(rowHeights[row] + this.yGap);
 }
-horizLoc = horizLoc+((columnWidths[column] + this.xGap));
+horizLoc+=(columnWidths[column] + this.xGap);
 }
 } else {
 var horizLoc = c.getWidth() - insets.right;
 for (var column = 0; column < this.columns; column++) {
 var vertLoc = insets.top;
-horizLoc = horizLoc-(columnWidths[column]);
+horizLoc-=columnWidths[column];
 for (var row = 0; row < this.rows; row++) {
 var current = this.layoutGrid[column][row];
 current.setBounds$I$I$I$I(horizLoc, vertLoc, columnWidths[column], rowHeights[row]);
-vertLoc = vertLoc+((rowHeights[row] + this.yGap));
+vertLoc+=(rowHeights[row] + this.yGap);
 }
-horizLoc = horizLoc-(this.xGap);
+horizLoc-=this.xGap;
 }
 }});
 
@@ -72,13 +72,13 @@ var insets = c.getInsets();
 var height = 0;
 var width = 0;
 for (var row = 0; row < this.rows; row++) {
-height = height+(p$.computeRowHeight$I.apply(this, [row]));
+height+=p$.computeRowHeight$I.apply(this, [row]);
 }
 for (var column = 0; column < this.columns; column++) {
-width = width+(p$.computeColumnWidth$I.apply(this, [column]));
+width+=p$.computeColumnWidth$I.apply(this, [column]);
 }
-height = height+((this.yGap * (this.rows - 1)) + insets.top + insets.bottom );
-width = width+((this.xGap * (this.columns - 1)) + insets.right + insets.left );
+height+=(this.yGap * (this.rows - 1)) + insets.top + insets.bottom ;
+width+=(this.xGap * (this.columns - 1)) + insets.right + insets.left ;
 return Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[width, height]);
 });
 
@@ -98,9 +98,9 @@ for (var componentCount = 0; componentCount < children.length; componentCount++)
 var row = 0;
 var column = 0;
 if (componentCount != 0) {
-column = componentCount % this.columns;
-row = ((componentCount - column)/this.columns|0);
-}this.layoutGrid[column][row] = children[componentCount];
+column=componentCount % this.columns;
+row=((componentCount - column)/this.columns|0);
+}this.layoutGrid[column][row]=children[componentCount];
 }
 });
 
@@ -109,7 +109,7 @@ var maxWidth = 1;
 for (var row = 0; row < this.rows; row++) {
 var width = this.layoutGrid[columnNum][row].getPreferredSize().width;
 if (width > maxWidth) {
-maxWidth = width;
+maxWidth=width;
 }}
 return maxWidth;
 });
@@ -119,11 +119,11 @@ var maxHeight = 1;
 for (var column = 0; column < this.columns; column++) {
 var height = this.layoutGrid[column][rowNum].getPreferredSize().height;
 if (height > maxHeight) {
-maxHeight = height;
+maxHeight=height;
 }}
 return maxHeight;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:44
+//Created 2018-05-24 08:46:47

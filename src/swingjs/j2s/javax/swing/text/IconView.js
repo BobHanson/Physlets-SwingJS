@@ -16,7 +16,7 @@ Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
 C$.superclazz.c$$javax_swing_text_Element.apply(this, [elem]);
 C$.$init$.apply(this);
 var attr = elem.getAttributes();
-this.c = (I$[1]||$incl$(1)).getIcon$javax_swing_text_AttributeSet(attr);
+this.c=(I$[1]||$incl$(1)).getIcon$javax_swing_text_AttributeSet(attr);
 }, 1);
 
 Clazz.newMeth(C$, 'paint$java_awt_Graphics$java_awt_Shape', function (g, a) {
@@ -50,8 +50,8 @@ var p1 = this.getEndOffset();
 if ((pos >= p0) && (pos <= p1) ) {
 var r = a.getBounds();
 if (pos == p1) {
-r.x = r.x+(r.width);
-}r.width = 0;
+r.x+=r.width;
+}r.width=0;
 return r;
 }throw Clazz.new_(Clazz.load('javax.swing.text.BadLocationException').c$$S$I,[pos + " not in range " + p0 + "," + p1 , pos]);
 });
@@ -59,12 +59,12 @@ return r;
 Clazz.newMeth(C$, 'viewToModel$F$F$java_awt_Shape$javax_swing_text_Position_BiasA', function (x, y, a, bias) {
 var alloc = a;
 if (x < alloc.x + ((alloc.width/2|0)) ) {
-bias[0] = (I$[2]||$incl$(2)).Forward;
+bias[0]=(I$[2]||$incl$(2)).Forward;
 return this.getStartOffset();
-}bias[0] = (I$[2]||$incl$(2)).Backward;
+}bias[0]=(I$[2]||$incl$(2)).Backward;
 return this.getEndOffset();
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:55
+//Created 2018-05-24 08:47:05

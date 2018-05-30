@@ -17,7 +17,7 @@ Clazz.newMeth(C$, 'c$$sun_util_calendar_BaseCalendar_Date', function (date) {
 Clazz.super_(C$, this,1);
 if (date == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.date = date;
+}this.date=date;
 }, 1);
 
 Clazz.newMeth(C$, 'getEra', function () {
@@ -258,4 +258,4 @@ throw Clazz.new_(Clazz.load('java.lang.UnsupportedOperationException'));
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:12
+//Created 2018-05-24 08:47:38

@@ -11,7 +11,7 @@ Clazz.newMeth(C$, 'c$$java_awt_LayoutManager$Z', function (layout, isDoubleBuffe
 Clazz.super_(C$, this,1);
 this.setLayout$java_awt_LayoutManager(layout);
 this.setUIProperty$S$O("opaque", (I$[1]||$incl$(1)).TRUE);
-this.uiClassID = "PanelUI";
+this.uiClassID="PanelUI";
 this.updateUI();
 }, 1);
 
@@ -27,4 +27,4 @@ Clazz.newMeth(C$, 'c$', function () {
 C$.c$$Z.apply(this, [true]);
 }, 1);
 })();
-//Created 2018-05-15 01:02:31
+//Created 2018-05-24 08:46:19

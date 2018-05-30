@@ -15,11 +15,11 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'install$javax_swing_text_JTextComponent', function (c) {
-this.c = c;
+this.c=c;
 });
 
 Clazz.newMeth(C$, 'deinstall$javax_swing_text_JTextComponent', function (c) {
-this.c = null;
+this.c=null;
 });
 
 Clazz.newMeth(C$, 'paint$java_awt_Graphics', function (g) {
@@ -68,12 +68,12 @@ return this.mark;
 });
 
 Clazz.newMeth(C$, 'setDot$I', function (dot) {
-this.dot = this.mark = dot;
+this.dot=this.mark=dot;
 });
 
 Clazz.newMeth(C$, 'moveDot$I', function (dot) {
-this.mark = this.dot;
-this.dot = dot;
+this.mark=this.dot;
+this.dot=dot;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -82,4 +82,4 @@ return "caret[" + this.dot + "," + this.mark + "]" ;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:20
+//Created 2018-05-24 08:47:52

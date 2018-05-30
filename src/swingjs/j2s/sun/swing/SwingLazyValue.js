@@ -29,10 +29,10 @@ C$.c$$S$S$OA.apply(this, [c, null, o]);
 
 Clazz.newMeth(C$, 'c$$S$S$OA', function (c, m, o) {
 C$.$init$.apply(this);
-this.className = c;
-this.methodName = m;
+this.className=c;
+this.methodName=m;
 if (o != null ) {
-this.args = o.clone();
+this.args=o.clone();
 }}, 1);
 
 Clazz.newMeth(C$, 'createValue$javax_swing_UIDefaults', function (table) {
@@ -58,20 +58,20 @@ return null;
 Clazz.newMeth(C$, 'getClassArray$OA', function (args) {
 var types = null;
 if (args != null ) {
-types = Clazz.array(java.lang.Class, [args.length]);
+types=Clazz.array(java.lang.Class, [args.length]);
 for (var i = 0; i < args.length; i++) {
 if (Clazz.instanceOf(args[i], "java.lang.Integer")) {
-types[i] = Integer.TYPE;
+types[i]=Integer.TYPE;
 } else if (Clazz.instanceOf(args[i], "java.lang.Boolean")) {
-types[i] = (I$[1]||$incl$(1)).TYPE;
+types[i]=(I$[1]||$incl$(1)).TYPE;
 } else if (Clazz.instanceOf(args[i], "javax.swing.plaf.ColorUIResource")) {
-types[i] = Clazz.getClass((I$[2]||$incl$(2)));
+types[i]=Clazz.getClass((I$[2]||$incl$(2)));
 } else {
-types[i] = args[i].getClass();
+types[i]=args[i].getClass();
 }}
 }return types;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:11
+//Created 2018-05-24 08:47:36

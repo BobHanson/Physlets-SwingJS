@@ -32,16 +32,16 @@ C$.c$$javax_swing_JTree$javax_swing_tree_DefaultTreeCellRenderer$javax_swing_tre
 
 Clazz.newMeth(C$, 'c$$javax_swing_JTree$javax_swing_tree_DefaultTreeCellRenderer$javax_swing_tree_TreeCellEditor', function (tree, renderer, editor) {
 C$.$init$.apply(this);
-this.renderer = renderer;
-this.realEditor = editor;
-if (this.realEditor == null ) this.realEditor = this.createTreeCellEditor();
-this.editingContainer = this.createContainer();
+this.renderer=renderer;
+this.realEditor=editor;
+if (this.realEditor == null ) this.realEditor=this.createTreeCellEditor();
+this.editingContainer=this.createContainer();
 this.setTree$javax_swing_JTree(tree);
 this.setBorderSelectionColor$java_awt_Color((I$[2]||$incl$(2)).getColor$O("Tree.editorBorderSelectionColor"));
 }, 1);
 
 Clazz.newMeth(C$, 'setBorderSelectionColor$java_awt_Color', function (newColor) {
-this.borderSelectionColor = newColor;
+this.borderSelectionColor=newColor;
 });
 
 Clazz.newMeth(C$, 'getBorderSelectionColor', function () {
@@ -49,7 +49,7 @@ return this.borderSelectionColor;
 });
 
 Clazz.newMeth(C$, 'setFont$java_awt_Font', function (font) {
-this.font = font;
+this.font=font;
 });
 
 Clazz.newMeth(C$, 'getFont', function () {
@@ -58,17 +58,17 @@ return this.font;
 
 Clazz.newMeth(C$, 'getTreeCellEditorComponent$javax_swing_JTree$O$Z$Z$Z$I', function (tree, value, isSelected, expanded, leaf, row) {
 this.setTree$javax_swing_JTree(tree);
-this.lastRow = row;
+this.lastRow=row;
 this.determineOffset$javax_swing_JTree$O$Z$Z$Z$I(tree, value, isSelected, expanded, leaf, row);
 if (this.editingComponent != null ) {
 this.editingContainer.remove$java_awt_Component(this.editingComponent);
-}this.editingComponent = this.realEditor.getTreeCellEditorComponent$javax_swing_JTree$O$Z$Z$Z$I(tree, value, isSelected, expanded, leaf, row);
+}this.editingComponent=this.realEditor.getTreeCellEditorComponent$javax_swing_JTree$O$Z$Z$Z$I(tree, value, isSelected, expanded, leaf, row);
 var newPath = tree.getPathForRow$I(row);
-this.canEdit = (this.lastPath != null  && newPath != null   && this.lastPath.equals$O(newPath) );
+this.canEdit=(this.lastPath != null  && newPath != null   && this.lastPath.equals$O(newPath) );
 var font = this.getFont();
 if (font == null ) {
-if (this.renderer != null ) font = this.renderer.getFont();
-if (font == null ) font = tree.getFont();
+if (this.renderer != null ) font=this.renderer.getFont();
+if (font == null ) font=tree.getFont();
 }this.editingContainer.setFont$java_awt_Font(font);
 this.prepareForEditing();
 return this.editingContainer;
@@ -86,9 +86,9 @@ if (Clazz.instanceOf(event.getSource(), "javax.swing.JTree")) {
 this.setTree$javax_swing_JTree(event.getSource());
 if (Clazz.instanceOf(event, "java.awt.event.MouseEvent")) {
 var path = this.tree.getPathForLocation$I$I((event).getX(), (event).getY());
-editable = (this.lastPath != null  && path != null   && this.lastPath.equals$O(path) );
+editable=(this.lastPath != null  && path != null   && this.lastPath.equals$O(path) );
 if (path != null ) {
-this.lastRow = this.tree.getRowForPath$javax_swing_tree_TreePath(path);
+this.lastRow=this.tree.getRowForPath$javax_swing_tree_TreePath(path);
 var value = path.getLastPathComponent();
 var isSelected = this.tree.isRowSelected$I(this.lastRow);
 var expanded = this.tree.isExpanded$javax_swing_tree_TreePath(path);
@@ -96,7 +96,7 @@ var treeModel = this.tree.getModel();
 var leaf = treeModel.isLeaf$O(value);
 this.determineOffset$javax_swing_JTree$O$Z$Z$Z$I(this.tree, value, isSelected, expanded, leaf, this.lastRow);
 }}}}if (!this.realEditor.isCellEditable$java_util_EventObject(event)) return false;
-if (this.canEditImmediately$java_util_EventObject(event)) retValue = true;
+if (this.canEditImmediately$java_util_EventObject(event)) retValue=true;
  else if (editable && this.shouldStartEditingTimer$java_util_EventObject(event) ) {
 this.startEditingTimer();
 }if (retValue) this.prepareForEditing();
@@ -133,8 +133,8 @@ return (this.realEditor).getCellEditorListeners();
 
 Clazz.newMeth(C$, 'valueChanged$javax_swing_event_TreeSelectionEvent', function (e) {
 if (this.tree != null ) {
-if (this.tree.getSelectionCount() == 1) this.lastPath = this.tree.getSelectionPath();
- else this.lastPath = null;
+if (this.tree.getSelectionCount() == 1) this.lastPath=this.tree.getSelectionPath();
+ else this.lastPath=null;
 }});
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -145,7 +145,7 @@ this.tree.startEditingAtPath$javax_swing_tree_TreePath(this.lastPath);
 Clazz.newMeth(C$, 'setTree$javax_swing_JTree', function (newTree) {
 if (this.tree !== newTree ) {
 if (this.tree != null ) this.tree.removeTreeSelectionListener$javax_swing_event_TreeSelectionListener(this);
-this.tree = newTree;
+this.tree=newTree;
 if (this.tree != null ) this.tree.addTreeSelectionListener$javax_swing_event_TreeSelectionListener(this);
 }});
 
@@ -180,14 +180,14 @@ return false;
 
 Clazz.newMeth(C$, 'determineOffset$javax_swing_JTree$O$Z$Z$Z$I', function (tree, value, isSelected, expanded, leaf, row) {
 if (this.renderer != null ) {
-if (leaf) this.editingIcon = this.renderer.getLeafIcon();
- else if (expanded) this.editingIcon = this.renderer.getOpenIcon();
- else this.editingIcon = this.renderer.getClosedIcon();
-if (this.editingIcon != null ) this.offset = this.renderer.getIconTextGap() + this.editingIcon.getIconWidth();
- else this.offset = this.renderer.getIconTextGap();
+if (leaf) this.editingIcon=this.renderer.getLeafIcon();
+ else if (expanded) this.editingIcon=this.renderer.getOpenIcon();
+ else this.editingIcon=this.renderer.getClosedIcon();
+if (this.editingIcon != null ) this.offset=this.renderer.getIconTextGap() + this.editingIcon.getIconWidth();
+ else this.offset=this.renderer.getIconTextGap();
 } else {
-this.editingIcon = null;
-this.offset = 0;
+this.editingIcon=null;
+this.offset=0;
 }});
 
 Clazz.newMeth(C$, 'prepareForEditing', function () {
@@ -223,7 +223,7 @@ return editor;
 Clazz.newMeth(C$, 'cleanupAfterEditing', function () {
 if (this.editingComponent != null ) {
 this.editingContainer.remove$java_awt_Component(this.editingComponent);
-}this.editingComponent = null;
+}this.editingComponent=null;
 });
 ;
 (function(){var C$=Clazz.newClass(P$.DefaultTreeCellEditor, "DefaultTextField", function(){
@@ -249,7 +249,7 @@ this.setBorder$javax_swing_border_Border(border);
 
 Clazz.newMeth(C$, 'setBorder$javax_swing_border_Border', function (border) {
 C$.superclazz.prototype.setBorder$javax_swing_border_Border.apply(this, [border]);
-this.$border = border;
+this.$border=border;
 });
 
 Clazz.newMeth(C$, 'getBorder', function () {
@@ -260,7 +260,7 @@ Clazz.newMeth(C$, 'getFont', function () {
 var font = C$.superclazz.prototype.getFont.apply(this, []);
 if (Clazz.instanceOf(font, "javax.swing.plaf.FontUIResource")) {
 var parent = this.getParent();
-if (parent != null  && parent.getFont() != null  ) font = parent.getFont();
+if (parent != null  && parent.getFont() != null  ) font=parent.getFont();
 }return font;
 });
 
@@ -268,7 +268,7 @@ Clazz.newMeth(C$, 'getPreferredSize', function () {
 var size = this.getPrefSizeJTF();
 if (this.this$0.renderer != null  && this.this$0.getFont() == null  ) {
 var rSize = this.this$0.renderer.getPreferredSize();
-size.height = rSize.height;
+size.height=rSize.height;
 }return size;
 });
 
@@ -329,11 +329,11 @@ return (this.getHeight()/2|0) - (totalY + ((totalHeight/2|0)));
 Clazz.newMeth(C$, 'getPreferredSize', function () {
 if (this.this$0.editingComponent != null ) {
 var pSize = this.this$0.editingComponent.getPreferredSize();
-pSize.width = pSize.width+(this.this$0.offset + 5);
+pSize.width+=this.this$0.offset + 5;
 var rSize = (this.this$0.renderer != null ) ? this.this$0.renderer.getPreferredSize() : null;
-if (rSize != null ) pSize.height = Math.max(pSize.height, rSize.height);
-if (this.this$0.editingIcon != null ) pSize.height = Math.max(pSize.height, this.this$0.editingIcon.getIconHeight());
-pSize.width = Math.max(pSize.width, 100);
+if (rSize != null ) pSize.height=Math.max(pSize.height, rSize.height);
+if (this.this$0.editingIcon != null ) pSize.height=Math.max(pSize.height, this.this$0.editingIcon.getIconHeight());
+pSize.width=Math.max(pSize.width, 100);
 return pSize;
 }return Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[0, 0]);
 });
@@ -341,4 +341,4 @@ return pSize;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:59
+//Created 2018-05-24 08:47:10

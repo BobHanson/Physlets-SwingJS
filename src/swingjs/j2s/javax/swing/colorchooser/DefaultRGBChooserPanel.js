@@ -82,14 +82,14 @@ this.add$java_awt_Component$O(enclosure, "Center");
 var l = Clazz.new_((I$[4]||$incl$(4)).c$$S,[redString]);
 l.setDisplayedMnemonic$I((I$[5]||$incl$(5)).getInt$O$I("ColorChooser.rgbRedMnemonic", -1));
 enclosure.add$java_awt_Component(l);
-this.redSlider = Clazz.new_((I$[6]||$incl$(6)).c$$I$I$I$I,[0, 0, 255, color.getRed()]);
+this.redSlider=Clazz.new_((I$[6]||$incl$(6)).c$$I$I$I$I,[0, 0, 255, color.getRed()]);
 this.redSlider.setMajorTickSpacing$I(85);
 this.redSlider.setMinorTickSpacing$I(17);
 this.redSlider.setPaintTicks$Z(true);
 this.redSlider.setPaintLabels$Z(true);
 this.redSlider.setInheritsPopupMenu$Z(true);
 enclosure.add$java_awt_Component(this.redSlider);
-this.redField = Clazz.new_((I$[7]||$incl$(7)).c$$javax_swing_SpinnerModel,[Clazz.new_((I$[8]||$incl$(8)).c$$I$I$I$I,[color.getRed(), 0, 255, 1])]);
+this.redField=Clazz.new_((I$[7]||$incl$(7)).c$$javax_swing_SpinnerModel,[Clazz.new_((I$[8]||$incl$(8)).c$$I$I$I$I,[color.getRed(), 0, 255, 1])]);
 l.setLabelFor$java_awt_Component(this.redSlider);
 this.redField.setInheritsPopupMenu$Z(true);
 var redFieldHolder = Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_LayoutManager,[Clazz.new_((I$[9]||$incl$(9)))]);
@@ -97,17 +97,17 @@ redFieldHolder.setInheritsPopupMenu$Z(true);
 this.redField.addChangeListener$javax_swing_event_ChangeListener(this);
 redFieldHolder.add$java_awt_Component(this.redField);
 enclosure.add$java_awt_Component(redFieldHolder);
-l = Clazz.new_((I$[4]||$incl$(4)).c$$S,[greenString]);
+l=Clazz.new_((I$[4]||$incl$(4)).c$$S,[greenString]);
 l.setDisplayedMnemonic$I((I$[5]||$incl$(5)).getInt$O$I("ColorChooser.rgbGreenMnemonic", -1));
 enclosure.add$java_awt_Component(l);
-this.greenSlider = Clazz.new_((I$[6]||$incl$(6)).c$$I$I$I$I,[0, 0, 255, color.getGreen()]);
+this.greenSlider=Clazz.new_((I$[6]||$incl$(6)).c$$I$I$I$I,[0, 0, 255, color.getGreen()]);
 this.greenSlider.setMajorTickSpacing$I(85);
 this.greenSlider.setMinorTickSpacing$I(17);
 this.greenSlider.setPaintTicks$Z(true);
 this.greenSlider.setPaintLabels$Z(true);
 this.greenSlider.setInheritsPopupMenu$Z(true);
 enclosure.add$java_awt_Component(this.greenSlider);
-this.greenField = Clazz.new_((I$[7]||$incl$(7)).c$$javax_swing_SpinnerModel,[Clazz.new_((I$[8]||$incl$(8)).c$$I$I$I$I,[color.getGreen(), 0, 255, 1])]);
+this.greenField=Clazz.new_((I$[7]||$incl$(7)).c$$javax_swing_SpinnerModel,[Clazz.new_((I$[8]||$incl$(8)).c$$I$I$I$I,[color.getGreen(), 0, 255, 1])]);
 l.setLabelFor$java_awt_Component(this.greenSlider);
 this.greenField.setInheritsPopupMenu$Z(true);
 var greenFieldHolder = Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_LayoutManager,[Clazz.new_((I$[9]||$incl$(9)))]);
@@ -115,17 +115,17 @@ greenFieldHolder.add$java_awt_Component(this.greenField);
 greenFieldHolder.setInheritsPopupMenu$Z(true);
 this.greenField.addChangeListener$javax_swing_event_ChangeListener(this);
 enclosure.add$java_awt_Component(greenFieldHolder);
-l = Clazz.new_((I$[4]||$incl$(4)).c$$S,[blueString]);
+l=Clazz.new_((I$[4]||$incl$(4)).c$$S,[blueString]);
 l.setDisplayedMnemonic$I((I$[5]||$incl$(5)).getInt$O$I("ColorChooser.rgbBlueMnemonic", -1));
 enclosure.add$java_awt_Component(l);
-this.blueSlider = Clazz.new_((I$[6]||$incl$(6)).c$$I$I$I$I,[0, 0, 255, color.getBlue()]);
+this.blueSlider=Clazz.new_((I$[6]||$incl$(6)).c$$I$I$I$I,[0, 0, 255, color.getBlue()]);
 this.blueSlider.setMajorTickSpacing$I(85);
 this.blueSlider.setMinorTickSpacing$I(17);
 this.blueSlider.setPaintTicks$Z(true);
 this.blueSlider.setPaintLabels$Z(true);
 this.blueSlider.setInheritsPopupMenu$Z(true);
 enclosure.add$java_awt_Component(this.blueSlider);
-this.blueField = Clazz.new_((I$[7]||$incl$(7)).c$$javax_swing_SpinnerModel,[Clazz.new_((I$[8]||$incl$(8)).c$$I$I$I$I,[color.getBlue(), 0, 255, 1])]);
+this.blueField=Clazz.new_((I$[7]||$incl$(7)).c$$javax_swing_SpinnerModel,[Clazz.new_((I$[8]||$incl$(8)).c$$I$I$I$I,[color.getBlue(), 0, 255, 1])]);
 l.setLabelFor$java_awt_Component(this.blueSlider);
 this.blueField.setInheritsPopupMenu$Z(true);
 var blueFieldHolder = Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_LayoutManager,[Clazz.new_((I$[9]||$incl$(9)))]);
@@ -148,9 +148,9 @@ this.removeAll();
 
 Clazz.newMeth(C$, 'updateChooser', function () {
 if (!this.isAdjusting) {
-this.isAdjusting = true;
+this.isAdjusting=true;
 p$.setColor$java_awt_Color.apply(this, [this.getColorFromModel()]);
-this.isAdjusting = false;
+this.isAdjusting=false;
 }});
 
 Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
@@ -168,4 +168,4 @@ var color = Clazz.new_((I$[11]||$incl$(11)).c$$I$I$I,[red, green, blue]);
 this.getColorSelectionModel().setSelectedColor$java_awt_Color(color);
 }});
 })();
-//Created 2018-05-15 01:02:44
+//Created 2018-05-24 08:46:47

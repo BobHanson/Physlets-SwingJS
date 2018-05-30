@@ -68,7 +68,7 @@ throw e;
 info.numWaiting--;
 }
 }
-src = info.waitList.elementAt$I(0);
+src=info.waitList.elementAt$I(0);
 info.waitList.removeElement$O(src);
 }
 return src;
@@ -89,7 +89,7 @@ throw e;
 var me = (I$[2]||$incl$(2)).currentThread();
 for (var i = 0; i < info.fetchers.length; i++) {
 if (info.fetchers[i] === me ) {
-info.fetchers[i] = null;
+info.fetchers[i]=null;
 info.numFetchers--;
 }}
 }}
@@ -123,7 +123,7 @@ var me = (I$[2]||$incl$(2)).currentThread();
 {
 for (var i = 0; i < info.fetchers.length; i++) {
 if (info.fetchers[i] === me ) {
-info.fetchers[i] = null;
+info.fetchers[i]=null;
 info.numFetchers--;
 me.setName$S("Image Animator " + i);
 if (info.waitList.size() > info.numWaiting) {
@@ -142,10 +142,10 @@ for (var i = 0; i < info.fetchers.length; i++) {
 if (info.fetchers[i] === me ) {
 return;
 }if (info.fetchers[i] == null ) {
-index = i;
+index=i;
 }}
 if (index >= 0) {
-info.fetchers[index] = me;
+info.fetchers[index]=me;
 info.numFetchers++;
 me.setName$S("Image Fetcher " + index);
 return;
@@ -157,18 +157,18 @@ var threadGroup = appContext.getThreadGroup();
 var fetcherThreadGroup;
 try {
 if (threadGroup.getParent() != null ) {
-fetcherThreadGroup = threadGroup;
+fetcherThreadGroup=threadGroup;
 } else {
-threadGroup = (I$[2]||$incl$(2)).currentThread().getThreadGroup();
+threadGroup=(I$[2]||$incl$(2)).currentThread().getThreadGroup();
 var parent = threadGroup.getParent();
 while ((parent != null ) && (parent.getParent() != null ) ){
-threadGroup = parent;
-parent = threadGroup.getParent();
+threadGroup=parent;
+parent=threadGroup.getParent();
 }
-fetcherThreadGroup = threadGroup;
+fetcherThreadGroup=threadGroup;
 }} catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.SecurityException")){
-fetcherThreadGroup = appContext.getThreadGroup();
+fetcherThreadGroup=appContext.getThreadGroup();
 } else {
 throw e;
 }
@@ -176,7 +176,7 @@ throw e;
 var fetcherGroup = fetcherThreadGroup;
 for (var i = 0; i < info.fetchers.length; i++) {
 if (info.fetchers[i] == null ) {
-info.fetchers[i] = Clazz.new_(C$.c$$ThreadGroup$I,[fetcherGroup, i]);
+info.fetchers[i]=Clazz.new_(C$.c$$ThreadGroup$I,[fetcherGroup, i]);
 info.fetchers[i].start();
 info.numFetchers++;
 break;
@@ -186,4 +186,4 @@ return;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:08
+//Created 2018-05-24 08:47:27

@@ -15,31 +15,31 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.objects = Clazz.new_((I$[1]||$incl$(1)));
+this.objects=Clazz.new_((I$[1]||$incl$(1)));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$OA', function (items) {
 Clazz.super_(C$, this,1);
-this.objects = Clazz.new_((I$[1]||$incl$(1)));
+this.objects=Clazz.new_((I$[1]||$incl$(1)));
 this.objects.ensureCapacity$I(items.length);
 var i;
 var c;
-for (i = 0, c = items.length; i < c; i++) this.objects.addElement$TE(items[i]);
+for (i=0, c=items.length; i < c; i++) this.objects.addElement$TE(items[i]);
 
 if (this.getSize() > 0) {
-this.selectedObject = this.getElementAt$I(0);
+this.selectedObject=this.getElementAt$I(0);
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Vector', function (v) {
 Clazz.super_(C$, this,1);
-this.objects = v;
+this.objects=v;
 if (this.getSize() > 0) {
-this.selectedObject = this.getElementAt$I(0);
+this.selectedObject=this.getElementAt$I(0);
 }}, 1);
 
 Clazz.newMeth(C$, 'setSelectedItem$O', function (anObject) {
 if ((this.selectedObject != null  && !this.selectedObject.equals$O(anObject) ) || this.selectedObject == null  && anObject != null   ) {
-this.selectedObject = anObject;
+this.selectedObject=anObject;
 this.fireContentsChanged$O$I$I(this, -1, -1);
 }});
 
@@ -93,10 +93,10 @@ if (this.objects.size() > 0) {
 var firstIndex = 0;
 var lastIndex = this.objects.size() - 1;
 this.objects.removeAllElements();
-this.selectedObject = null;
+this.selectedObject=null;
 this.fireIntervalRemoved$O$I$I(this, firstIndex, lastIndex);
 } else {
-this.selectedObject = null;
+this.selectedObject=null;
 }});
 })();
-//Created 2018-05-15 01:02:24
+//Created 2018-05-24 08:46:08

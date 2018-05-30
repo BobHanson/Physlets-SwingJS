@@ -29,9 +29,9 @@ return this.index1;
 Clazz.newMeth(C$, 'c$$O$I$I$I', function (source, type, index0, index1) {
 C$.superclazz.c$.apply(this, [source]);
 C$.$init$.apply(this);
-this.type = type;
-this.index0 = Math.min(index0, index1);
-this.index1 = Math.max(index0, index1);
+this.type=type;
+this.index0=Math.min(index0, index1);
+this.index1=Math.max(index0, index1);
 }, 1);
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -40,4 +40,4 @@ return this.getClass().getName() + "[type=" + this.type + ",index0=" + this.inde
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:45
+//Created 2018-05-24 08:46:48

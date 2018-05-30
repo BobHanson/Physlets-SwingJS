@@ -19,7 +19,7 @@ var i = 0;
 var j = 0;
 while (i < 188){
 var entry = (data[i++]).$c() << 16;
-CharacterData01.A[j++] = entry | data[i++];
+CharacterData01.A[j++]=entry | data[i++];
 }
 }}
 ;
@@ -69,7 +69,7 @@ var mapChar = ch;
 var val = this.getProperties$I(ch);
 if ((val & 131072) != 0) {
 var offset = val << 5 >> 23;
-mapChar = ch + offset;
+mapChar=ch + offset;
 }return mapChar;
 });
 
@@ -78,7 +78,7 @@ var mapChar = ch;
 var val = this.getProperties$I(ch);
 if ((val & 65536) != 0) {
 var offset = val << 5 >> 23;
-mapChar = ch - offset;
+mapChar=ch - offset;
 }return mapChar;
 });
 
@@ -87,11 +87,11 @@ var mapChar = ch;
 var val = this.getProperties$I(ch);
 if ((val & 32768) != 0) {
 if ((val & 65536) == 0) {
-mapChar = ch + 1;
+mapChar=ch + 1;
 } else if ((val & 131072) == 0) {
-mapChar = ch - 1;
+mapChar=ch - 1;
 }} else if ((val & 65536) != 0) {
-mapChar = this.toUpperCase$I(ch);
+mapChar=this.toUpperCase$I(ch);
 }return mapChar;
 });
 
@@ -101,9 +101,9 @@ if (radix >= 2 && radix <= 36 ) {
 var val = this.getProperties$I(ch);
 var kind = val & 31;
 if (kind == 9) {
-value = ch + ((val & 992) >> 5) & 31;
+value=ch + ((val & 992) >> 5) & 31;
 } else if ((val & 3072) == 3072) {
-value = (ch + ((val & 992) >> 5) & 31) + 10;
+value=(ch + ((val & 992) >> 5) & 31) + 10;
 }}return (value < radix) ? value : -1;
 });
 
@@ -113,122 +113,122 @@ var retval = -1;
 switch (val & 3072) {
 default:
 case (0x00000000):
-retval = -1;
+retval=-1;
 break;
 case (0x00000400):
-retval = ch + ((val & 992) >> 5) & 31;
+retval=ch + ((val & 992) >> 5) & 31;
 break;
 case (0x00000800):
 switch (ch) {
 case 0x10113:
-retval = 40;
+retval=40;
 break;
 case 0x10114:
-retval = 50;
+retval=50;
 break;
 case 0x10115:
-retval = 60;
+retval=60;
 break;
 case 0x10116:
-retval = 70;
+retval=70;
 break;
 case 0x10117:
-retval = 80;
+retval=80;
 break;
 case 0x10118:
-retval = 90;
+retval=90;
 break;
 case 0x10119:
-retval = 100;
+retval=100;
 break;
 case 0x1011A:
-retval = 200;
+retval=200;
 break;
 case 0x1011B:
-retval = 300;
+retval=300;
 break;
 case 0x1011C:
-retval = 400;
+retval=400;
 break;
 case 0x1011D:
-retval = 500;
+retval=500;
 break;
 case 0x1011E:
-retval = 600;
+retval=600;
 break;
 case 0x1011F:
-retval = 700;
+retval=700;
 break;
 case 0x10120:
-retval = 800;
+retval=800;
 break;
 case 0x10121:
-retval = 900;
+retval=900;
 break;
 case 0x10122:
-retval = 1000;
+retval=1000;
 break;
 case 0x10123:
-retval = 2000;
+retval=2000;
 break;
 case 0x10124:
-retval = 3000;
+retval=3000;
 break;
 case 0x10125:
-retval = 4000;
+retval=4000;
 break;
 case 0x10126:
-retval = 5000;
+retval=5000;
 break;
 case 0x10127:
-retval = 6000;
+retval=6000;
 break;
 case 0x10128:
-retval = 7000;
+retval=7000;
 break;
 case 0x10129:
-retval = 8000;
+retval=8000;
 break;
 case 0x1012A:
-retval = 9000;
+retval=9000;
 break;
 case 0x1012B:
-retval = 10000;
+retval=10000;
 break;
 case 0x1012C:
-retval = 20000;
+retval=20000;
 break;
 case 0x1012D:
-retval = 30000;
+retval=30000;
 break;
 case 0x1012E:
-retval = 40000;
+retval=40000;
 break;
 case 0x1012F:
-retval = 50000;
+retval=50000;
 break;
 case 0x10130:
-retval = 60000;
+retval=60000;
 break;
 case 0x10131:
-retval = 70000;
+retval=70000;
 break;
 case 0x10132:
-retval = 80000;
+retval=80000;
 break;
 case 0x10133:
-retval = 90000;
+retval=90000;
 break;
 case 0x10323:
-retval = 50;
+retval=50;
 break;
 default:
-retval = -2;
+retval=-2;
 break;
 }
 break;
 case (0x00000C00):
-retval = (ch + ((val & 992) >> 5) & 31) + 10;
+retval=(ch + ((val & 992) >> 5) & 31) + 10;
 break;
 }
 return retval;
@@ -243,7 +243,7 @@ Clazz.newMeth(C$, 'getDirectionality$I', function (ch) {
 var val = this.getProperties$I(ch);
 var directionality = ($b$[0] = (((val & 2013265920) >> 27)|0), $b$[0]);
 if (directionality == 15) {
-directionality = ($b$[0] = -1, $b$[0]);
+directionality=($b$[0] = -1, $b$[0]);
 }return $b$[0] = directionality, $b$[0];
 });
 
@@ -258,4 +258,4 @@ Clazz.super_(C$, this,1);
 C$.$_ASSERT_ENABLED_ = ClassLoader.$getClassAssertionStatus(C$);
 var $b$ = new Int8Array(1);
 })();
-//Created 2018-05-15 01:02:06
+//Created 2018-05-24 08:45:36

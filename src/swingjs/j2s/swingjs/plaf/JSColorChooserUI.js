@@ -42,20 +42,20 @@ this.chooser.removeChooserPanel$javax_swing_colorchooser_AbstractColorChooserPan
 });
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (c) {
-this.chooser = c;
+this.chooser=c;
 C$.superclazz.prototype.installUI$javax_swing_JComponent.apply(this, [c]);
 this.installDefaults();
 this.installListeners();
-this.tabbedPane = Clazz.new_((I$[4]||$incl$(4)));
+this.tabbedPane=Clazz.new_((I$[4]||$incl$(4)));
 this.tabbedPane.setName$S("ColorChooser.tabPane");
 this.tabbedPane.setInheritsPopupMenu$Z(true);
-this.singlePanel = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_LayoutManager,[Clazz.new_((I$[2]||$incl$(2)))]);
+this.singlePanel=Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_LayoutManager,[Clazz.new_((I$[2]||$incl$(2)))]);
 this.singlePanel.setName$S("ColorChooser.panel");
 this.singlePanel.setInheritsPopupMenu$Z(true);
 this.chooser.setLayout$java_awt_LayoutManager(Clazz.new_((I$[5]||$incl$(5))));
-this.defaultChoosers = this.createDefaultChoosers();
+this.defaultChoosers=this.createDefaultChoosers();
 this.chooser.setChooserPanels$javax_swing_colorchooser_AbstractColorChooserPanelA(this.defaultChoosers);
-this.previewPanelHolder = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_LayoutManager,[Clazz.new_((I$[2]||$incl$(2)))]);
+this.previewPanelHolder=Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_LayoutManager,[Clazz.new_((I$[2]||$incl$(2)))]);
 this.previewPanelHolder.setName$S("ColorChooser.previewPanelHolder");
 if ((I$[6]||$incl$(6)).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(this.chooser, this, "ColorChooser.showPreviewPanelText", true)) {
 var previewString = "Preview";
@@ -76,27 +76,27 @@ this.uninstallDefaults();
 this.previewPanelHolder.remove$java_awt_Component(this.previewPanel);
 if (Clazz.instanceOf(this.previewPanel, "javax.swing.plaf.UIResource")) {
 this.chooser.setPreviewPanel$javax_swing_JComponent(null);
-}this.previewPanelHolder = null;
-this.previewPanel = null;
-this.defaultChoosers = null;
-this.chooser = null;
-this.tabbedPane = null;
-this.handler = null;
+}this.previewPanelHolder=null;
+this.previewPanel=null;
+this.defaultChoosers=null;
+this.chooser=null;
+this.tabbedPane=null;
+this.handler=null;
 });
 
 Clazz.newMeth(C$, 'installPreviewPanel', function () {
 if (this.previewPanel != null ) {
 this.previewPanelHolder.remove$java_awt_Component(this.previewPanel);
 this.previewPanel.removeMouseListener$java_awt_event_MouseListener(p$.getHandler.apply(this, []));
-}this.previewPanel = this.chooser.getPreviewPanel();
+}this.previewPanel=this.chooser.getPreviewPanel();
 var layoutSize = Clazz.new_((I$[8]||$incl$(8)));
 if (this.previewPanel != null ) {
-layoutSize = Clazz.new_((I$[5]||$incl$(5))).minimumLayoutSize$java_awt_Container(this.previewPanel);
+layoutSize=Clazz.new_((I$[5]||$incl$(5))).minimumLayoutSize$java_awt_Container(this.previewPanel);
 if ((this.previewPanelHolder != null ) && (this.chooser != null ) && (layoutSize.getWidth() + layoutSize.getHeight() == 0 )  ) {
 this.chooser.remove$java_awt_Component(this.previewPanelHolder);
 return;
 }}if (this.previewPanel == null  || Clazz.instanceOf(this.previewPanel, "javax.swing.plaf.UIResource") ) {
-this.previewPanel = (I$[3]||$incl$(3)).getPreviewPanel();
+this.previewPanel=(I$[3]||$incl$(3)).getPreviewPanel();
 this.chooser.setPreviewPanel$javax_swing_JComponent(this.previewPanel);
 }this.previewPanel.setForeground$java_awt_Color(this.chooser.getColor());
 this.previewPanelHolder.add$java_awt_Component(this.previewPanel);
@@ -113,15 +113,15 @@ Clazz.newMeth(C$, 'uninstallDefaults', function () {
 });
 
 Clazz.newMeth(C$, 'installListeners', function () {
-this.propertyChangeListener = this.createPropertyChangeListener();
+this.propertyChangeListener=this.createPropertyChangeListener();
 this.chooser.addPropertyChangeListener$java_beans_PropertyChangeListener(this.propertyChangeListener);
-this.previewListener = p$.getHandler.apply(this, []);
+this.previewListener=p$.getHandler.apply(this, []);
 this.chooser.getSelectionModel().addChangeListener$javax_swing_event_ChangeListener(this.previewListener);
 });
 
 Clazz.newMeth(C$, 'getHandler', function () {
 if (this.handler == null ) {
-this.handler = Clazz.new_((I$[11]||$incl$(11)), [this, null]);
+this.handler=Clazz.new_((I$[11]||$incl$(11)), [this, null]);
 }return this.handler;
 });
 
@@ -245,4 +245,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:21
+//Created 2018-05-24 08:47:53

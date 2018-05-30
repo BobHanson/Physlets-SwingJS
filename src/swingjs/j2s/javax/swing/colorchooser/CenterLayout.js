@@ -18,8 +18,8 @@ var c = container.getComponent$I(0);
 if (c != null ) {
 var size = c.getPreferredSize();
 var insets = container.getInsets();
-size.width = size.width+(insets.left + insets.right);
-size.height = size.height+(insets.top + insets.bottom);
+size.width+=insets.left + insets.right;
+size.height+=insets.top + insets.bottom;
 return size;
 } else {
 return Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[0, 0]);
@@ -36,12 +36,12 @@ c.setSize$java_awt_Dimension(c.getPreferredSize());
 var size = c.getSize();
 var containerSize = container.getSize();
 var containerInsets = container.getInsets();
-containerSize.width = containerSize.width-(containerInsets.left + containerInsets.right);
-containerSize.height = containerSize.height-(containerInsets.top + containerInsets.bottom);
+containerSize.width-=containerInsets.left + containerInsets.right;
+containerSize.height-=containerInsets.top + containerInsets.bottom;
 var componentLeft = ((containerSize.width/2|0)) - ((size.width/2|0));
 var componentTop = ((containerSize.height/2|0)) - ((size.height/2|0));
-componentLeft = componentLeft+(containerInsets.left);
-componentTop = componentTop+(containerInsets.top);
+componentLeft+=containerInsets.left;
+componentTop+=containerInsets.top;
 c.setBounds$I$I$I$I(componentLeft, componentTop, size.width, size.height);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
@@ -53,4 +53,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:43
+//Created 2018-05-24 08:46:46

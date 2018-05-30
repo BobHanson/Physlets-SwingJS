@@ -59,4 +59,4 @@ Clazz.newMeth(C$, 'print$javax_print_attribute_PrintRequestAttributeSet', functi
 this.print();
 });
 })();
-//Created 2018-05-15 01:02:03
+//Created 2018-05-24 08:45:30

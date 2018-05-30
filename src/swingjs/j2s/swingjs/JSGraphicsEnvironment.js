@@ -23,8 +23,8 @@ return img.getImageGraphic().create();
 Clazz.newMeth(C$, 'getAllFonts', function () {
 if (C$.availableFonts == null ) {
 var names = this.getAvailableFontFamilyNames();
-C$.availableFonts = Clazz.array((I$[1]||$incl$(1)), [names.length]);
-for (var i = names.length; --i >= 0; ) C$.availableFonts[i] = Clazz.new_((I$[1]||$incl$(1)).c$$S$I$I,[names[i], 0, 1]);
+C$.availableFonts=Clazz.array((I$[1]||$incl$(1)), [names.length]);
+for (var i = names.length; --i >= 0; ) C$.availableFonts[i]=Clazz.new_((I$[1]||$incl$(1)).c$$S$I$I,[names[i], 0, 1]);
 
 }return C$.availableFonts;
 });
@@ -38,7 +38,7 @@ return (I$[2]||$incl$(2)).getDefaultToolkit().getFontList();
 });
 
 Clazz.newMeth(C$, 'getDefaultScreenDevice', function () {
-if (C$.device == null ) C$.device = (I$[3]||$incl$(3)).getInstance$S("swingjs.JSScreenDevice");
+if (C$.device == null ) C$.device=(I$[3]||$incl$(3)).getInstance$S("swingjs.JSScreenDevice");
 return C$.device;
 });
 
@@ -51,4 +51,4 @@ Clazz.newMeth(C$, 'getScreenDevices', function () {
 return Clazz.array((I$[5]||$incl$(5)), -1, [this.getDefaultScreenDevice()]);
 });
 })();
-//Created 2018-05-15 01:03:15
+//Created 2018-05-24 08:47:44

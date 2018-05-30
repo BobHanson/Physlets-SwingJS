@@ -14,13 +14,13 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.domNode = this.newDOMObject$S$S$SA("div", this.id, []);
+this.domNode=this.newDOMObject$S$S$SA("div", this.id, []);
 this.ignoreAllMouseEvents$swingjs_api_js_DOMNode(this.domNode);
 }return this.domNode;
 });
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.viewport = jc;
+this.viewport=jc;
 });
 
 Clazz.newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (jc) {
@@ -37,4 +37,4 @@ return (I$[2]||$incl$(2)).setStyles(this.setHTMLElementCUI(), ["overflow", "hidd
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:28
+//Created 2018-05-24 08:48:02

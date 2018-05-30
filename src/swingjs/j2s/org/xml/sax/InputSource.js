@@ -33,7 +33,7 @@ this.setCharacterStream$java_io_Reader(characterStream);
 }, 1);
 
 Clazz.newMeth(C$, 'setPublicId$S', function (publicId) {
-this.publicId = publicId;
+this.publicId=publicId;
 });
 
 Clazz.newMeth(C$, 'getPublicId', function () {
@@ -41,7 +41,7 @@ return this.publicId;
 });
 
 Clazz.newMeth(C$, 'setSystemId$S', function (systemId) {
-this.systemId = systemId;
+this.systemId=systemId;
 });
 
 Clazz.newMeth(C$, 'getSystemId', function () {
@@ -49,7 +49,7 @@ return this.systemId;
 });
 
 Clazz.newMeth(C$, 'setByteStream$java_io_InputStream', function (byteStream) {
-this.byteStream = byteStream;
+this.byteStream=byteStream;
 });
 
 Clazz.newMeth(C$, 'getByteStream', function () {
@@ -57,7 +57,7 @@ return this.byteStream;
 });
 
 Clazz.newMeth(C$, 'setEncoding$S', function (encoding) {
-this.encoding = encoding;
+this.encoding=encoding;
 });
 
 Clazz.newMeth(C$, 'getEncoding', function () {
@@ -65,11 +65,11 @@ return this.encoding;
 });
 
 Clazz.newMeth(C$, 'setCharacterStream$java_io_Reader', function (characterStream) {
-this.characterStream = characterStream;
+this.characterStream=characterStream;
 });
 
 Clazz.newMeth(C$, 'getCharacterStream', function () {
 return this.characterStream;
 });
 })();
-//Created 2018-05-15 01:03:03
+//Created 2018-05-24 08:47:17

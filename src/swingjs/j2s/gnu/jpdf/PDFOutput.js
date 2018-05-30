@@ -16,23 +16,23 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream', function (os) {
 C$.$init$.apply(this);
-this.os = os;
-this.offset = 0;
-this.offsets = Clazz.new_((I$[1]||$incl$(1)));
-this.baos = Clazz.new_((I$[2]||$incl$(2)));
+this.os=os;
+this.offset=0;
+this.offsets=Clazz.new_((I$[1]||$incl$(1)));
+this.baos=Clazz.new_((I$[2]||$incl$(2)));
 (I$[3]||$incl$(3)).write$java_io_OutputStream$S(this.baos, "%PDF-1.2\u000a");
 (I$[3]||$incl$(3)).write$java_io_OutputStream$S(this.baos, "%\u00e2\u00e3\u00cf\u00d3\u000a");
-this.offset = this.baos.size();
+this.offset=this.baos.size();
 this.baos.writeTo$java_io_OutputStream(os);
 }, 1);
 
 Clazz.newMeth(C$, 'write$gnu_jpdf_PDFObject', function (ob) {
-if (Clazz.instanceOf(ob, "gnu.jpdf.PDFCatalog")) this.rootID = ob;
-if (Clazz.instanceOf(ob, "gnu.jpdf.PDFInfo")) this.infoID = ob;
+if (Clazz.instanceOf(ob, "gnu.jpdf.PDFCatalog")) this.rootID=ob;
+if (Clazz.instanceOf(ob, "gnu.jpdf.PDFInfo")) this.infoID=ob;
 this.offsets.addElement$TE(Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[ob.getSerialID(), this.offset]));
 this.baos.reset();
 ob.write$java_io_OutputStream(this.baos);
-this.offset = this.offset+(this.baos.size());
+this.offset+=this.baos.size();
 this.baos.writeTo$java_io_OutputStream(this.os);
 });
 
@@ -45,13 +45,13 @@ var lastid = -1;
 var block = Clazz.new_((I$[1]||$incl$(1)));
 block.addElement$TE(Clazz.new_((I$[4]||$incl$(4)).c$$I$I$I,[0, 0, 65535]));
 for (var x, $x = this.offsets.iterator(); $x.hasNext()&&((x=$x.next()),1);) {
-if (firstid == -1) firstid = x.id;
+if (firstid == -1) firstid=x.id;
 if (lastid > -1 && x.id != (lastid + 1) ) {
 this.writeblock$I$java_util_Vector(firstid, block);
 block.removeAllElements();
-firstid = -1;
+firstid=-1;
 }block.addElement$TE(x);
-lastid = x.id;
+lastid=x.id;
 }
 if (firstid > -1) this.writeblock$I$java_util_Vector(firstid, block);
 (I$[3]||$incl$(3)).write$java_io_OutputStream$S(this.baos, "trailer\u000a<<\u000a");
@@ -87,4 +87,4 @@ for (var x, $x = block.iterator(); $x.hasNext()&&((x=$x.next()),1);) {
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:47
+//Created 2018-05-24 08:45:03

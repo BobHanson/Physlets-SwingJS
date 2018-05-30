@@ -11,7 +11,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$O', function (value) {
 C$.$init$.apply(this);
-this.value = value;
+this.value=value;
 }, 1);
 
 Clazz.newMeth(C$, 'getValue', function () {
@@ -24,4 +24,4 @@ return this.getClass().getName() + "[value=" + this.value + "]" ;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:10
+//Created 2018-05-24 08:45:41

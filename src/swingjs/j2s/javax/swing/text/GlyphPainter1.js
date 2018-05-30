@@ -50,7 +50,7 @@ var text;
 if (pos == p1) {
 return Clazz.new_((I$[3]||$incl$(3)).c$$I$I$I$I,[alloc.x + alloc.width, alloc.y, 0, this.metrics.getHeight()]);
 }if ((pos >= p0) && (pos <= p1) ) {
-text = v.getText$I$I(p0, pos);
+text=v.getText$I$I(p0, pos);
 var justificationData = p$.getJustificationData$javax_swing_text_GlyphView.apply(this, [v]);
 var width = (I$[1]||$incl$(1)).getTabbedTextWidth$javax_swing_text_View$javax_swing_text_Segment$java_awt_FontMetrics$I$javax_swing_text_TabExpander$I$IA(v, text, this.metrics, alloc.x, expander, p0, justificationData);
 (I$[2]||$incl$(2)).releaseSharedSegment$javax_swing_text_Segment(text);
@@ -71,7 +71,7 @@ var offs = (I$[1]||$incl$(1)).getTabbedTextOffset$javax_swing_text_View$javax_sw
 var retValue = p0 + offs;
 if (retValue == p1) {
 retValue--;
-}biasReturn[0] = (I$[4]||$incl$(4)).Forward;
+}biasReturn[0]=(I$[4]||$incl$(4)).Forward;
 return retValue;
 });
 
@@ -90,7 +90,7 @@ Clazz.newMeth(C$, 'sync$javax_swing_text_GlyphView', function (v) {
 var f = v.getFont();
 if ((this.metrics == null ) || (!f.equals$O(this.metrics.getFont())) ) {
 var c = v.getContainer();
-this.metrics = (c != null ) ? c.getFontMetrics$java_awt_Font(f) : (I$[5]||$incl$(5)).getDefaultToolkit().getFontMetrics$java_awt_Font(f);
+this.metrics=(c != null ) ? c.getFontMetrics$java_awt_Font(f) : (I$[5]||$incl$(5)).getDefaultToolkit().getFontMetrics$java_awt_Font(f);
 }});
 
 Clazz.newMeth(C$, 'getJustificationData$javax_swing_text_GlyphView', function (v) {
@@ -98,10 +98,10 @@ var parent = v.getParent();
 var ret = null;
 if (Clazz.instanceOf(parent, "javax.swing.text.ParagraphView.Row")) {
 var row = (parent);
-ret = row.justificationData;
+ret=row.justificationData;
 }return ret;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:55
+//Created 2018-05-24 08:47:04

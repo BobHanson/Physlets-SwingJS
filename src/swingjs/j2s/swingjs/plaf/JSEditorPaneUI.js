@@ -16,8 +16,8 @@ this.myInsets = Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I,[0, 0, 5, 5]);
 
 Clazz.newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.allowPaintedBackground = false;
-this.$domBtn = this.focusNode = this.$enableNode = this.textNode = this.valueNode = this.domNode = this.newDOMObject$S$S$SA("div", this.id, []);
+this.allowPaintedBackground=false;
+this.$domBtn=this.focusNode=this.$enableNode=this.textNode=this.valueNode=this.domNode=this.newDOMObject$S$S$SA("div", this.id, []);
 (I$[2]||$incl$(2)).setStyles(this.domNode, ["resize", "none"]);
 this.setDataUI$swingjs_api_js_DOMNode(this.domNode);
 if ((this.c).isEditable()) this.bindJSKeyEvents$swingjs_api_js_DOMNode$Z(this.domNode, true);
@@ -41,4 +41,4 @@ return "EditablePane.";
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:22
+//Created 2018-05-24 08:47:53

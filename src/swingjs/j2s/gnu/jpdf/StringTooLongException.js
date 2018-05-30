@@ -14,7 +14,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S', function (msg) {
 Clazz.super_(C$, this,1);
-this.msg = msg;
+this.msg=msg;
 }, 1);
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -27,4 +27,4 @@ return this.msg;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:47
+//Created 2018-05-24 08:45:04

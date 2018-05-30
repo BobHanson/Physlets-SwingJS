@@ -17,7 +17,7 @@ return;
 if ((lightweight && (weightFlags & 2) == 0 ) || (!lightweight && (weightFlags & 1) == 0 ) ) {
 return;
 }if (bounds == null ) {
-bounds = comp.getBounds();
+bounds=comp.getBounds();
 }if (clip == null  || clip.intersects$java_awt_geom_Rectangle2D(bounds) ) {
 var cg = g.create();
 try {
@@ -72,4 +72,4 @@ return C$.instance;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:22

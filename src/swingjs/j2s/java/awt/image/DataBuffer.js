@@ -31,12 +31,12 @@ C$.c$$sun_java2d_StateTrackable_State$I$I.apply(this, [(I$[1]||$incl$(1)).UNTRAC
 
 Clazz.newMeth(C$, 'c$$sun_java2d_StateTrackable_State$I$I', function (initialState, dataType, size) {
 C$.$init$.apply(this);
-this.theTrackable = (I$[2]||$incl$(2)).createInstance$sun_java2d_StateTrackable_State(initialState);
-this.dataType = dataType;
-this.banks = 1;
-this.size = size;
-this.offset = 0;
-this.offsets = Clazz.array(Integer.TYPE, [1]);
+this.theTrackable=(I$[2]||$incl$(2)).createInstance$sun_java2d_StateTrackable_State(initialState);
+this.dataType=dataType;
+this.banks=1;
+this.size=size;
+this.offset=0;
+this.offsets=Clazz.array(Integer.TYPE, [1]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I', function (dataType, size, numBanks) {
@@ -45,12 +45,12 @@ C$.c$$sun_java2d_StateTrackable_State$I$I$I.apply(this, [(I$[1]||$incl$(1)).UNTR
 
 Clazz.newMeth(C$, 'c$$sun_java2d_StateTrackable_State$I$I$I', function (initialState, dataType, size, numBanks) {
 C$.$init$.apply(this);
-this.theTrackable = (I$[2]||$incl$(2)).createInstance$sun_java2d_StateTrackable_State(initialState);
-this.dataType = dataType;
-this.banks = numBanks;
-this.size = size;
-this.offset = 0;
-this.offsets = Clazz.array(Integer.TYPE, [this.banks]);
+this.theTrackable=(I$[2]||$incl$(2)).createInstance$sun_java2d_StateTrackable_State(initialState);
+this.dataType=dataType;
+this.banks=numBanks;
+this.size=size;
+this.offset=0;
+this.offsets=Clazz.array(Integer.TYPE, [this.banks]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I', function (dataType, size, numBanks, offset) {
@@ -59,14 +59,14 @@ C$.c$$sun_java2d_StateTrackable_State$I$I$I$I.apply(this, [(I$[1]||$incl$(1)).UN
 
 Clazz.newMeth(C$, 'c$$sun_java2d_StateTrackable_State$I$I$I$I', function (initialState, dataType, size, numBanks, offset) {
 C$.$init$.apply(this);
-this.theTrackable = (I$[2]||$incl$(2)).createInstance$sun_java2d_StateTrackable_State(initialState);
-this.dataType = dataType;
-this.banks = numBanks;
-this.size = size;
-this.offset = offset;
-this.offsets = Clazz.array(Integer.TYPE, [numBanks]);
+this.theTrackable=(I$[2]||$incl$(2)).createInstance$sun_java2d_StateTrackable_State(initialState);
+this.dataType=dataType;
+this.banks=numBanks;
+this.size=size;
+this.offset=offset;
+this.offsets=Clazz.array(Integer.TYPE, [numBanks]);
 for (var i = 0; i < numBanks; i++) {
-this.offsets[i] = offset;
+this.offsets[i]=offset;
 }
 }, 1);
 
@@ -78,12 +78,12 @@ Clazz.newMeth(C$, 'c$$sun_java2d_StateTrackable_State$I$I$I$IA', function (initi
 C$.$init$.apply(this);
 if (numBanks != offsets.length) {
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["Number of banks does not match number of bank offsets"]);
-}this.theTrackable = (I$[2]||$incl$(2)).createInstance$sun_java2d_StateTrackable_State(initialState);
-this.dataType = dataType;
-this.banks = numBanks;
-this.size = size;
-this.offset = offsets[0];
-this.offsets = offsets.clone();
+}this.theTrackable=(I$[2]||$incl$(2)).createInstance$sun_java2d_StateTrackable_State(initialState);
+this.dataType=dataType;
+this.banks=numBanks;
+this.size=size;
+this.offset=offsets[0];
+this.offsets=offsets.clone();
 }, 1);
 
 Clazz.newMeth(C$, 'getDataType', function () {
@@ -155,14 +155,14 @@ return null;
 var sdata = obj;
 var idata = Clazz.array(Integer.TYPE, [sdata.length]);
 for (var i = 0; i < sdata.length; i++) {
-idata[i] = sdata[i] & 65535;
+idata[i]=sdata[i] & 65535;
 }
 return idata;
 } else if (Clazz.instanceOf(obj, Clazz.array(Byte.TYPE, -1))) {
 var bdata = obj;
 var idata = Clazz.array(Integer.TYPE, [bdata.length]);
 for (var i = 0; i < bdata.length; i++) {
-idata[i] = 255 & (bdata[i]|0);
+idata[i]=255 & (bdata[i]|0);
 }
 return idata;
 }return null;
@@ -170,4 +170,4 @@ return idata;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:01
+//Created 2018-05-24 08:45:25

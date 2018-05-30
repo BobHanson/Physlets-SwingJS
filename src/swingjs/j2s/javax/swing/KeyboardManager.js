@@ -25,7 +25,7 @@ return C$.currentManager;
 }, 1);
 
 Clazz.newMeth(C$, 'setCurrentManager$javax_swing_KeyboardManager', function (km) {
-C$.currentManager = km;
+C$.currentManager=km;
 }, 1);
 
 Clazz.newMeth(C$, 'registerKeyStroke$javax_swing_KeyStroke$javax_swing_JComponent', function (k, c) {
@@ -34,7 +34,7 @@ if (topContainer == null ) {
 return;
 }var keyMap = this.containerMap.get$O(topContainer);
 if (keyMap == null ) {
-keyMap = this.registerNewTopContainer$java_awt_Container(topContainer);
+keyMap=this.registerNewTopContainer$java_awt_Container(topContainer);
 }var tmp = keyMap.get$O(k);
 if (tmp == null ) {
 keyMap.put$TK$TV(k, c);
@@ -55,7 +55,7 @@ System.out.println$S("Unexpected condition in registerKeyStroke");
 });
 
 Clazz.newMeth(C$, 'getTopAncestor$javax_swing_JComponent', function (c) {
-for (var p = c.getParent(); p != null ; p = p.getParent()) {
+for (var p = c.getParent(); p != null ; p=p.getParent()) {
 if (Clazz.instanceOf(p, "java.awt.Window") && (p).isFocusableWindow()  || Clazz.instanceOf(p, "java.applet.Applet") ) {
 return p;
 }}
@@ -93,9 +93,9 @@ System.out.println$S("Aquired pre-used event!");
 (I$[3]||$incl$(3)).dumpStack();
 }var ks;
 if (e.getID() == 400) {
-ks = (I$[5]||$incl$(5)).getKeyStroke$C(e.getKeyChar());
+ks=(I$[5]||$incl$(5)).getKeyStroke$C(e.getKeyChar());
 } else {
-ks = (I$[5]||$incl$(5)).getKeyStroke$I$I$Z(e.getKeyCode(), e.getModifiers(), !pressed);
+ks=(I$[5]||$incl$(5)).getKeyStroke$I$I$Z(e.getKeyCode(), e.getModifiers(), !pressed);
 }var keyMap = this.containerMap.get$O(topAncestor);
 if (keyMap != null ) {
 var tmp = keyMap.get$O(ks);
@@ -142,10 +142,10 @@ if (top == null ) {
 return;
 }var keyMap = this.containerMap.get$O(top);
 if (keyMap == null ) {
-keyMap = this.registerNewTopContainer$java_awt_Container(top);
+keyMap=this.registerNewTopContainer$java_awt_Container(top);
 }var menuBars = keyMap.get$O(Clazz.getClass((I$[6]||$incl$(6))));
 if (menuBars == null ) {
-menuBars = Clazz.new_((I$[2]||$incl$(2)));
+menuBars=Clazz.new_((I$[2]||$incl$(2)));
 keyMap.put$TK$TV(Clazz.getClass((I$[6]||$incl$(6))), menuBars);
 }if (!menuBars.contains$O(mb)) {
 menuBars.addElement$TE(mb);
@@ -187,8 +187,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$O$O', function (comp, key) {
 C$.$init$.apply(this);
-this.component = comp;
-this.keyStroke = key;
+this.component=comp;
+this.keyStroke=key;
 }, 1);
 
 Clazz.newMeth(C$, 'equals$O', function (o) {
@@ -207,4 +207,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:37
+//Created 2018-05-24 08:46:32

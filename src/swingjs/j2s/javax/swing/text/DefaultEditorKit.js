@@ -58,39 +58,39 @@ var isCR = false;
 var last;
 var wasEmpty = (doc.getLength() == 0);
 var attr = this.getInputAttributes();
-while ((nch = $in.read$CA$I$I(buff, 0, buff.length)) != -1){
-last = 0;
+while ((nch=$in.read$CA$I$I(buff, 0, buff.length)) != -1){
+last=0;
 for (var counter = 0; counter < nch; counter++) {
 switch ((buff[counter]).$c()) {
 case 13:
 if (lastWasCR) {
-isCR = true;
+isCR=true;
 if (counter == 0) {
 doc.insertString$I$S$javax_swing_text_AttributeSet(pos, "\u000a", attr);
 pos++;
 } else {
-buff[counter - 1] = "\u000a";
+buff[counter - 1]="\u000a";
 }} else {
-lastWasCR = true;
+lastWasCR=true;
 }break;
 case 10:
 if (lastWasCR) {
 if (counter > (last + 1)) {
 doc.insertString$I$S$javax_swing_text_AttributeSet(pos,  String.instantialize(buff, last, counter - last - 1 ), attr);
-pos = pos+((counter - last - 1 ));
-}lastWasCR = false;
-last = counter;
-isCRLF = true;
+pos+=(counter - last - 1 );
+}lastWasCR=false;
+last=counter;
+isCRLF=true;
 }break;
 default:
 if (lastWasCR) {
-isCR = true;
+isCR=true;
 if (counter == 0) {
 doc.insertString$I$S$javax_swing_text_AttributeSet(pos, "\u000a", attr);
 pos++;
 } else {
-buff[counter - 1] = "\u000a";
-}lastWasCR = false;
+buff[counter - 1]="\u000a";
+}lastWasCR=false;
 }break;
 }
 }
@@ -98,14 +98,14 @@ if (last < nch) {
 if (lastWasCR) {
 if (last < (nch - 1)) {
 doc.insertString$I$S$javax_swing_text_AttributeSet(pos,  String.instantialize(buff, last, nch - last - 1 ), attr);
-pos = pos+((nch - last - 1 ));
+pos+=(nch - last - 1 );
 }} else {
 doc.insertString$I$S$javax_swing_text_AttributeSet(pos,  String.instantialize(buff, last, nch - last), attr);
-pos = pos+((nch - last));
+pos+=(nch - last);
 }}}
 if (lastWasCR) {
 doc.insertString$I$S$javax_swing_text_AttributeSet(pos, "\u000a", attr);
-isCR = true;
+isCR=true;
 }if (wasEmpty) {
 if (isCRLF) {
 doc.putProperty$O$O("__EndOfLine__", "\u000d\u000a");
@@ -124,7 +124,7 @@ var offs = pos;
 var endOfLineProperty = doc.getProperty$O("__EndOfLine__");
 if (endOfLineProperty == null ) {
 try {
-endOfLineProperty = System.getProperty("line.separator");
+endOfLineProperty=System.getProperty("line.separator");
 } catch (se) {
 if (Clazz.exceptionOf(se, "java.lang.SecurityException")){
 } else {
@@ -133,9 +133,9 @@ throw se;
 }
 }var endOfLine;
 if (Clazz.instanceOf(endOfLineProperty, "java.lang.String")) {
-endOfLine = endOfLineProperty;
+endOfLine=endOfLineProperty;
 } else {
-endOfLine = null;
+endOfLine=null;
 }if (endOfLineProperty != null  && !endOfLine.equals$O("\u000a") ) {
 while (nleft > 0){
 var n = Math.min(nleft, 4096);
@@ -148,20 +148,20 @@ if (array[counter] == "\u000a") {
 if (counter > last) {
 out.write$CA$I$I(array, last, counter - last);
 }out.write$S(endOfLine);
-last = counter + 1;
+last=counter + 1;
 }}
 if (maxCounter > last) {
 out.write$CA$I$I(array, last, maxCounter - last);
-}offs = offs+(n);
-nleft = nleft-(n);
+}offs+=n;
+nleft-=n;
 }
 } else {
 while (nleft > 0){
 var n = Math.min(nleft, 4096);
 doc.getText$I$I$javax_swing_text_Segment(offs, n, data);
 out.write$CA$I$I(data.array, data.offset, data.count);
-offs = offs+(n);
-nleft = nleft-(n);
+offs+=n;
+nleft-=n;
 }
 }out.flush();
 });
@@ -300,7 +300,7 @@ var dot = caret.getDot();
 var mark = caret.getMark();
 if (dot != mark) {
 doc.remove$I$I(Math.min(dot, mark), Math.abs(dot - mark));
-beep = false;
+beep=false;
 } else if (dot > 0) {
 var delChars = 1;
 if (dot > 1) {
@@ -308,9 +308,9 @@ var dotChars = doc.getText$I$I(dot - 2, 2);
 var c0 = dotChars.charAt(0);
 var c1 = dotChars.charAt(1);
 if (c0 >= "\ud800" && c0 <= "\udbff"  && c1 >= "\udc00"  && c1 <= "\udfff" ) {
-delChars = 2;
+delChars=2;
 }}doc.remove$I$I(dot - delChars, delChars);
-beep = false;
+beep=false;
 }} catch (bl) {
 if (Clazz.exceptionOf(bl, "javax.swing.text.BadLocationException")){
 } else {
@@ -348,7 +348,7 @@ var dot = caret.getDot();
 var mark = caret.getMark();
 if (dot != mark) {
 doc.remove$I$I(Math.min(dot, mark), Math.abs(dot - mark));
-beep = false;
+beep=false;
 } else if (dot < doc.getLength()) {
 var delChars = 1;
 if (dot < doc.getLength() - 1) {
@@ -356,9 +356,9 @@ var dotChars = doc.getText$I$I(dot, 2);
 var c0 = dotChars.charAt(0);
 var c1 = dotChars.charAt(1);
 if (c0 >= "\ud800" && c0 <= "\udbff"  && c1 >= "\udc00"  && c1 <= "\udfff" ) {
-delChars = 2;
+delChars=2;
 }}doc.remove$I$I(dot, delChars);
-beep = false;
+beep=false;
 }} catch (bl) {
 if (Clazz.exceptionOf(bl, "javax.swing.text.BadLocationException")){
 } else {
@@ -521,8 +521,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$I$Z', function (nm, direction, select) {
 C$.superclazz.c$$S.apply(this, [nm]);
 C$.$init$.apply(this);
-this.select = select;
-this.direction = direction;
+this.select=select;
+this.direction=direction;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -541,17 +541,17 @@ var dotBounds = target.modelToView$I(selectedIndex);
 var x = (magicPosition != null ) ? magicPosition.x : dotBounds.x;
 var h = dotBounds.height;
 if (h > 0) {
-scrollAmount = (scrollAmount/h|0) * h;
-}newVis.y = p$.constrainY$javax_swing_text_JTextComponent$I$I.apply(this, [target, initialY + scrollAmount, visible.height]);
+scrollAmount=(scrollAmount/h|0) * h;
+}newVis.y=p$.constrainY$javax_swing_text_JTextComponent$I$I.apply(this, [target, initialY + scrollAmount, visible.height]);
 var newIndex;
 if (visible.contains$I$I(dotBounds.x, dotBounds.y)) {
-newIndex = target.viewToModel$java_awt_Point(Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[x, p$.constrainY$javax_swing_text_JTextComponent$I$I.apply(this, [target, dotBounds.y + scrollAmount, 0])]));
+newIndex=target.viewToModel$java_awt_Point(Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[x, p$.constrainY$javax_swing_text_JTextComponent$I$I.apply(this, [target, dotBounds.y + scrollAmount, 0])]));
 } else {
 if (this.direction == -1) {
-newIndex = target.viewToModel$java_awt_Point(Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[x, newVis.y]));
+newIndex=target.viewToModel$java_awt_Point(Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[x, newVis.y]));
 } else {
-newIndex = target.viewToModel$java_awt_Point(Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[x, newVis.y + visible.height]));
-}}newIndex = p$.constrainOffset$javax_swing_text_JTextComponent$I.apply(this, [target, newIndex]);
+newIndex=target.viewToModel$java_awt_Point(Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[x, newVis.y + visible.height]));
+}}newIndex=p$.constrainOffset$javax_swing_text_JTextComponent$I.apply(this, [target, newIndex]);
 if (newIndex != selectedIndex) {
 p$.adjustScrollIfNecessary$javax_swing_text_JTextComponent$java_awt_Rectangle$I$I.apply(this, [target, newVis, initialY, newIndex]);
 if (this.select) {
@@ -565,7 +565,7 @@ throw ble;
 }
 }
 } else {
-newVis.y = p$.constrainY$javax_swing_text_JTextComponent$I$I.apply(this, [target, initialY + scrollAmount, visible.height]);
+newVis.y=p$.constrainY$javax_swing_text_JTextComponent$I$I.apply(this, [target, initialY + scrollAmount, visible.height]);
 }if (magicPosition != null ) {
 caret.setMagicCaretPosition$java_awt_Point(magicPosition);
 }target.scrollRectToVisible$java_awt_Rectangle(newVis);
@@ -573,18 +573,18 @@ caret.setMagicCaretPosition$java_awt_Point(magicPosition);
 
 Clazz.newMeth(C$, 'constrainY$javax_swing_text_JTextComponent$I$I', function (target, y, vis) {
 if (y < 0) {
-y = 0;
+y=0;
 } else if (y + vis > target.getHeight()) {
-y = Math.max(0, target.getHeight() - vis);
+y=Math.max(0, target.getHeight() - vis);
 }return y;
 });
 
 Clazz.newMeth(C$, 'constrainOffset$javax_swing_text_JTextComponent$I', function (text, offset) {
 var doc = text.getDocument();
 if ((offset != 0) && (offset > doc.getLength()) ) {
-offset = doc.getLength();
+offset=doc.getLength();
 }if (offset < 0) {
-offset = 0;
+offset=0;
 }return offset;
 });
 
@@ -594,11 +594,11 @@ var dotBounds = text.modelToView$I(index);
 if (dotBounds.y < visible.y || (dotBounds.y > (visible.y + visible.height))  || (dotBounds.y + dotBounds.height) > (visible.y + visible.height) ) {
 var y;
 if (dotBounds.y < visible.y) {
-y = dotBounds.y;
+y=dotBounds.y;
 } else {
-y = dotBounds.y + dotBounds.height - visible.height;
+y=dotBounds.y + dotBounds.height - visible.height;
 }if ((this.direction == -1 && y < initialY ) || (this.direction == 1 && y > initialY ) ) {
-visible.y = y;
+visible.y=y;
 }}} catch (ble) {
 if (Clazz.exceptionOf(ble, "javax.swing.text.BadLocationException")){
 } else {
@@ -629,8 +629,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$Z$Z', function (nm, left, select) {
 C$.superclazz.c$$S.apply(this, [nm]);
 C$.$init$.apply(this);
-this.select = select;
-this.left = left;
+this.select=select;
+this.left=left;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -640,20 +640,20 @@ var selectedIndex;
 var visible = Clazz.new_((I$[2]||$incl$(2)));
 target.computeVisibleRect$java_awt_Rectangle(visible);
 if (this.left) {
-visible.x = Math.max(0, visible.x - visible.width);
+visible.x=Math.max(0, visible.x - visible.width);
 } else {
-visible.x = visible.x+(visible.width);
-}selectedIndex = target.getCaretPosition();
+visible.x+=visible.width;
+}selectedIndex=target.getCaretPosition();
 if (selectedIndex != -1) {
 if (this.left) {
-selectedIndex = target.viewToModel$java_awt_Point(Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[visible.x, visible.y]));
+selectedIndex=target.viewToModel$java_awt_Point(Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[visible.x, visible.y]));
 } else {
-selectedIndex = target.viewToModel$java_awt_Point(Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[visible.x + visible.width - 1, visible.y + visible.height - 1]));
+selectedIndex=target.viewToModel$java_awt_Point(Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[visible.x + visible.width - 1, visible.y + visible.height - 1]));
 }var doc = target.getDocument();
 if ((selectedIndex != 0) && (selectedIndex > (doc.getLength() - 1)) ) {
-selectedIndex = doc.getLength() - 1;
+selectedIndex=doc.getLength() - 1;
 } else if (selectedIndex < 0) {
-selectedIndex = 0;
+selectedIndex=0;
 }if (this.select) target.moveCaretPosition$I(selectedIndex);
  else target.setCaretPosition$I(selectedIndex);
 }}});
@@ -680,8 +680,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$Z$I', function (nm, select, direction) {
 C$.superclazz.c$$S.apply(this, [nm]);
 C$.$init$.apply(this);
-this.select = select;
-this.direction = direction;
+this.select=select;
+this.direction=direction;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -695,14 +695,14 @@ var magicPosition = caret.getMagicCaretPosition();
 try {
 if (magicPosition == null  && (this.direction == 1 || this.direction == 5 ) ) {
 var r = (bidiCaret != null ) ? (target.getUI()).modelToView$javax_swing_text_JTextComponent$I$javax_swing_text_Position_Bias(target, dot, bidiCaret.getDotBias()) : target.modelToView$I(dot);
-magicPosition = Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[r.x, r.y]);
+magicPosition=Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[r.x, r.y]);
 }var filter = target.getNavigationFilter();
 if (filter != null ) {
-dot = filter.getNextVisualPositionFrom$javax_swing_text_JTextComponent$I$javax_swing_text_Position_Bias$I$javax_swing_text_Position_BiasA(target, dot, (bidiCaret != null ) ? bidiCaret.getDotBias() : (I$[4]||$incl$(4)).Forward, this.direction, bias);
+dot=filter.getNextVisualPositionFrom$javax_swing_text_JTextComponent$I$javax_swing_text_Position_Bias$I$javax_swing_text_Position_BiasA(target, dot, (bidiCaret != null ) ? bidiCaret.getDotBias() : (I$[4]||$incl$(4)).Forward, this.direction, bias);
 } else {
-dot = (target.getUI()).getNextVisualPositionFrom$javax_swing_text_JTextComponent$I$javax_swing_text_Position_Bias$I$javax_swing_text_Position_BiasA(target, dot, (bidiCaret != null ) ? bidiCaret.getDotBias() : (I$[4]||$incl$(4)).Forward, this.direction, bias);
+dot=(target.getUI()).getNextVisualPositionFrom$javax_swing_text_JTextComponent$I$javax_swing_text_Position_Bias$I$javax_swing_text_Position_BiasA(target, dot, (bidiCaret != null ) ? bidiCaret.getDotBias() : (I$[4]||$incl$(4)).Forward, this.direction, bias);
 }if (bias[0] == null ) {
-bias[0] = (I$[4]||$incl$(4)).Forward;
+bias[0]=(I$[4]||$incl$(4)).Forward;
 }if (bidiCaret != null ) {
 if (this.select) {
 bidiCaret.moveDot$I$javax_swing_text_Position_Bias(dot, bias[0]);
@@ -744,7 +744,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
 C$.superclazz.c$$S.apply(this, [nm]);
 C$.$init$.apply(this);
-this.select = select;
+this.select=select;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -787,7 +787,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
 C$.superclazz.c$$S.apply(this, [nm]);
 C$.$init$.apply(this);
-this.select = select;
+this.select=select;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -830,7 +830,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
 C$.superclazz.c$$S.apply(this, [nm]);
 C$.$init$.apply(this);
-this.select = select;
+this.select=select;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -840,15 +840,15 @@ var offs = target.getCaretPosition();
 var failed = false;
 try {
 var curPara = (I$[5]||$incl$(5)).getParagraphElement$javax_swing_text_JTextComponent$I(target, offs);
-offs = (I$[5]||$incl$(5)).getPreviousWord$javax_swing_text_JTextComponent$I(target, offs);
+offs=(I$[5]||$incl$(5)).getPreviousWord$javax_swing_text_JTextComponent$I(target, offs);
 if (offs < curPara.getStartOffset()) {
-offs = (I$[5]||$incl$(5)).getParagraphElement$javax_swing_text_JTextComponent$I(target, offs).getEndOffset() - 1;
+offs=(I$[5]||$incl$(5)).getParagraphElement$javax_swing_text_JTextComponent$I(target, offs).getEndOffset() - 1;
 }} catch (bl) {
 if (Clazz.exceptionOf(bl, "javax.swing.text.BadLocationException")){
 if (offs != 0) {
-offs = 0;
+offs=0;
 } else {
-failed = true;
+failed=true;
 }} else {
 throw bl;
 }
@@ -883,7 +883,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
 C$.superclazz.c$$S.apply(this, [nm]);
 C$.$init$.apply(this);
-this.select = select;
+this.select=select;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -894,19 +894,19 @@ var failed = false;
 var oldOffs = offs;
 var curPara = (I$[5]||$incl$(5)).getParagraphElement$javax_swing_text_JTextComponent$I(target, offs);
 try {
-offs = (I$[5]||$incl$(5)).getNextWord$javax_swing_text_JTextComponent$I(target, offs);
+offs=(I$[5]||$incl$(5)).getNextWord$javax_swing_text_JTextComponent$I(target, offs);
 if (offs >= curPara.getEndOffset() && oldOffs != curPara.getEndOffset() - 1 ) {
-offs = curPara.getEndOffset() - 1;
+offs=curPara.getEndOffset() - 1;
 }} catch (bl) {
 if (Clazz.exceptionOf(bl, "javax.swing.text.BadLocationException")){
 var end = target.getDocument().getLength();
 if (offs != end) {
 if (oldOffs != curPara.getEndOffset() - 1) {
-offs = curPara.getEndOffset() - 1;
+offs=curPara.getEndOffset() - 1;
 } else {
-offs = end;
+offs=end;
 }} else {
-failed = true;
+failed=true;
 }} else {
 throw bl;
 }
@@ -941,7 +941,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
 C$.superclazz.c$$S.apply(this, [nm]);
 C$.$init$.apply(this);
-this.select = select;
+this.select=select;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -984,7 +984,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
 C$.superclazz.c$$S.apply(this, [nm]);
 C$.$init$.apply(this);
-this.select = select;
+this.select=select;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -1027,7 +1027,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
 C$.superclazz.c$$S.apply(this, [nm]);
 C$.$init$.apply(this);
-this.select = select;
+this.select=select;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -1035,7 +1035,7 @@ var target = this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 var offs = target.getCaretPosition();
 var elem = (I$[5]||$incl$(5)).getParagraphElement$javax_swing_text_JTextComponent$I(target, offs);
-offs = elem.getStartOffset();
+offs=elem.getStartOffset();
 if (this.select) {
 target.moveCaretPosition$I(offs);
 } else {
@@ -1063,7 +1063,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
 C$.superclazz.c$$S.apply(this, [nm]);
 C$.$init$.apply(this);
-this.select = select;
+this.select=select;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -1071,7 +1071,7 @@ var target = this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 var offs = target.getCaretPosition();
 var elem = (I$[5]||$incl$(5)).getParagraphElement$javax_swing_text_JTextComponent$I(target, offs);
-offs = Math.min(target.getDocument().getLength(), elem.getEndOffset());
+offs=Math.min(target.getDocument().getLength(), elem.getEndOffset());
 if (this.select) {
 target.moveCaretPosition$I(offs);
 } else {
@@ -1099,7 +1099,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
 C$.superclazz.c$$S.apply(this, [nm]);
 C$.$init$.apply(this);
-this.select = select;
+this.select=select;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -1132,7 +1132,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
 C$.superclazz.c$$S.apply(this, [nm]);
 C$.$init$.apply(this);
-this.select = select;
+this.select=select;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -1168,8 +1168,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$$S.apply(this, ["select-word"]);
 C$.$init$.apply(this);
-this.start = Clazz.new_((I$[6]||$incl$(6)).c$$S$Z,["pigdog", false]);
-this.end = Clazz.new_((I$[7]||$incl$(7)).c$$S$Z,["pigdog", true]);
+this.start=Clazz.new_((I$[6]||$incl$(6)).c$$S$Z,["pigdog", false]);
+this.end=Clazz.new_((I$[7]||$incl$(7)).c$$S$Z,["pigdog", true]);
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -1197,8 +1197,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$$S.apply(this, ["select-line"]);
 C$.$init$.apply(this);
-this.start = Clazz.new_((I$[8]||$incl$(8)).c$$S$Z,["pigdog", false]);
-this.end = Clazz.new_((I$[9]||$incl$(9)).c$$S$Z,["pigdog", true]);
+this.start=Clazz.new_((I$[8]||$incl$(8)).c$$S$Z,["pigdog", false]);
+this.end=Clazz.new_((I$[9]||$incl$(9)).c$$S$Z,["pigdog", true]);
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -1226,8 +1226,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$$S.apply(this, ["select-paragraph"]);
 C$.$init$.apply(this);
-this.start = Clazz.new_((I$[10]||$incl$(10)).c$$S$Z,["pigdog", false]);
-this.end = Clazz.new_((I$[11]||$incl$(11)).c$$S$Z,["pigdog", true]);
+this.start=Clazz.new_((I$[10]||$incl$(10)).c$$S$Z,["pigdog", false]);
+this.end=Clazz.new_((I$[11]||$incl$(11)).c$$S$Z,["pigdog", true]);
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -1302,11 +1302,11 @@ var target = this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 var last = target.getComponentOrientation();
 var next;
-if (last === (I$[12]||$incl$(12)).RIGHT_TO_LEFT ) next = (I$[12]||$incl$(12)).LEFT_TO_RIGHT;
- else next = (I$[12]||$incl$(12)).RIGHT_TO_LEFT;
+if (last === (I$[12]||$incl$(12)).RIGHT_TO_LEFT ) next=(I$[12]||$incl$(12)).LEFT_TO_RIGHT;
+ else next=(I$[12]||$incl$(12)).RIGHT_TO_LEFT;
 target.setComponentOrientation$java_awt_ComponentOrientation(next);
 target.repaint();
 }});
 })()
 })();
-//Created 2018-05-15 01:02:53
+//Created 2018-05-24 08:47:03

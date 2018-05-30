@@ -52,113 +52,113 @@ var w;
 var xp;
 var y;
 var z;
-p = 0;
-i = n;
+p=0;
+i=n;
 do {
 this.c[b[bindex + p]]++;
 p++;
 i--;
 } while (i != 0);
 if (this.c[0] == n) {
-t[0] = -1;
-m[0] = 0;
+t[0]=-1;
+m[0]=0;
 return 0;
-}l = m[0];
-for (j = 1; j <= 15; j++) if (this.c[j] != 0) break;
+}l=m[0];
+for (j=1; j <= 15; j++) if (this.c[j] != 0) break;
 
-k = j;
+k=j;
 if (l < j) {
-l = j;
-}for (i = 15; i != 0; i--) {
+l=j;
+}for (i=15; i != 0; i--) {
 if (this.c[i] != 0) break;
 }
-g = i;
+g=i;
 if (l > i) {
-l = i;
-}m[0] = l;
-for (y = 1 << j; j < i; j++, y = y<<(1)) {
-if ((y = y-(this.c[j])) < 0) {
+l=i;
+}m[0]=l;
+for (y=1 << j; j < i; j++, y<<=1) {
+if ((y-=this.c[j]) < 0) {
 return -3;
 }}
-if ((y = y-(this.c[i])) < 0) {
+if ((y-=this.c[i]) < 0) {
 return -3;
-}this.c[i] = this.c[i]+(y);
-this.x[1] = j = 0;
-p = 1;
-xp = 2;
+}this.c[i]+=y;
+this.x[1]=j=0;
+p=1;
+xp=2;
 while (--i != 0){
-this.x[xp] = (j = j+(this.c[p]));
+this.x[xp]=(j+=this.c[p]);
 xp++;
 p++;
 }
-i = 0;
-p = 0;
+i=0;
+p=0;
 do {
-if ((j = b[bindex + p]) != 0) {
-v[this.x[j]++] = i;
+if ((j=b[bindex + p]) != 0) {
+v[this.x[j]++]=i;
 }p++;
 } while (++i < n);
-n = this.x[g];
-this.x[0] = i = 0;
-p = 0;
-h = -1;
-w = -l;
-this.u[0] = 0;
-q = 0;
-z = 0;
+n=this.x[g];
+this.x[0]=i=0;
+p=0;
+h=-1;
+w=-l;
+this.u[0]=0;
+q=0;
+z=0;
 for (; k <= g; k++) {
-a = this.c[k];
+a=this.c[k];
 while (a-- != 0){
 while (k > w + l){
 h++;
-w = w+(l);
-z = g - w;
-z = (z > l) ? l : z;
-if ((f = 1 << (j = k - w)) > a + 1) {
-f = f-(a + 1);
-xp = k;
+w+=l;
+z=g - w;
+z=(z > l) ? l : z;
+if ((f=1 << (j=k - w)) > a + 1) {
+f-=a + 1;
+xp=k;
 if (j < z) {
 while (++j < z){
-if ((f = f<<(1)) <= this.c[++xp]) break;
-f = f-(this.c[xp]);
+if ((f<<=1) <= this.c[++xp]) break;
+f-=this.c[xp];
 }
-}}z = 1 << j;
+}}z=1 << j;
 if (hn[0] + z > 1440) {
 return -3;
-}this.u[h] = q = hn[0];
-hn[0] = hn[0]+(z);
+}this.u[h]=q=hn[0];
+hn[0]+=z;
 if (h != 0) {
-this.x[h] = i;
-this.r[0] = (j|0);
-this.r[1] = (l|0);
-j = i >>> (w - l);
-this.r[2] = (q - this.u[h - 1] - j );
+this.x[h]=i;
+this.r[0]=(j|0);
+this.r[1]=(l|0);
+j=i >>> (w - l);
+this.r[2]=(q - this.u[h - 1] - j );
 System.arraycopy(this.r, 0, hp, (this.u[h - 1] + j) * 3, 3);
 } else {
-t[0] = q;
+t[0]=q;
 }}
-this.r[1] = ((k - w)|0);
+this.r[1]=((k - w)|0);
 if (p >= n) {
-this.r[0] = 192;
+this.r[0]=192;
 } else if (v[p] < s) {
-this.r[0] = ((v[p] < 256 ? 0 : 96)|0);
-this.r[2] = v[p++];
+this.r[0]=((v[p] < 256 ? 0 : 96)|0);
+this.r[2]=v[p++];
 } else {
-this.r[0] = ((e[v[p] - s] + 16 + 64 )|0);
-this.r[2] = d[v[p++] - s];
-}f = 1 << (k - w);
-for (j = i >>> w; j < z; j = j+(f)) {
+this.r[0]=((e[v[p] - s] + 16 + 64 )|0);
+this.r[2]=d[v[p++] - s];
+}f=1 << (k - w);
+for (j=i >>> w; j < z; j+=f) {
 System.arraycopy(this.r, 0, hp, (q + j) * 3, 3);
 }
-for (j = 1 << (k - 1); (i & j) != 0; j = j>>>(1)) {
-i = i^(j);
+for (j=1 << (k - 1); (i & j) != 0; j>>>=1) {
+i^=j;
 }
-i = i^(j);
-mask = (1 << w) - 1;
+i^=j;
+mask=(1 << w) - 1;
 while ((i & mask) != this.x[h]){
 h--;
-w = w-(l);
-mask = (1 << w) - 1;
+w-=l;
+mask=(1 << w) - 1;
 }
 }
 }
@@ -168,69 +168,69 @@ return y != 0 && g != 1  ? -5 : 0;
 Clazz.newMeth(C$, 'inflate_trees_bits$IA$IA$IA$IA$swingjs_jzlib_ZStream', function (c, bb, tb, hp, z) {
 var result;
 p$.initWorkArea$I.apply(this, [19]);
-this.hn[0] = 0;
-result = p$.huft_build$IA$I$I$I$IA$IA$IA$IA$IA$IA$IA.apply(this, [c, 0, 19, 19, null, null, tb, bb, hp, this.hn, this.v]);
+this.hn[0]=0;
+result=p$.huft_build$IA$I$I$I$IA$IA$IA$IA$IA$IA$IA.apply(this, [c, 0, 19, 19, null, null, tb, bb, hp, this.hn, this.v]);
 if (result == -3) {
-z.msg = "oversubscribed dynamic bit lengths tree";
+z.msg="oversubscribed dynamic bit lengths tree";
 } else if (result == -5 || bb[0] == 0 ) {
-z.msg = "incomplete dynamic bit lengths tree";
-result = -3;
+z.msg="incomplete dynamic bit lengths tree";
+result=-3;
 }return result;
 });
 
 Clazz.newMeth(C$, 'inflate_trees_dynamic$I$I$IA$IA$IA$IA$IA$IA$swingjs_jzlib_ZStream', function (nl, nd, c, bl, bd, tl, td, hp, z) {
 var result;
 p$.initWorkArea$I.apply(this, [288]);
-this.hn[0] = 0;
-result = p$.huft_build$IA$I$I$I$IA$IA$IA$IA$IA$IA$IA.apply(this, [c, 0, nl, 257, C$.cplens, C$.cplext, tl, bl, hp, this.hn, this.v]);
+this.hn[0]=0;
+result=p$.huft_build$IA$I$I$I$IA$IA$IA$IA$IA$IA$IA.apply(this, [c, 0, nl, 257, C$.cplens, C$.cplext, tl, bl, hp, this.hn, this.v]);
 if (result != 0 || bl[0] == 0 ) {
 if (result == -3) {
-z.msg = "oversubscribed literal/length tree";
+z.msg="oversubscribed literal/length tree";
 } else if (result != -4) {
-z.msg = "incomplete literal/length tree";
-result = -3;
+z.msg="incomplete literal/length tree";
+result=-3;
 }return result;
 }p$.initWorkArea$I.apply(this, [288]);
-result = p$.huft_build$IA$I$I$I$IA$IA$IA$IA$IA$IA$IA.apply(this, [c, nl, nd, 0, C$.cpdist, C$.cpdext, td, bd, hp, this.hn, this.v]);
+result=p$.huft_build$IA$I$I$I$IA$IA$IA$IA$IA$IA$IA.apply(this, [c, nl, nd, 0, C$.cpdist, C$.cpdext, td, bd, hp, this.hn, this.v]);
 if (result != 0 || (bd[0] == 0 && nl > 257 ) ) {
 if (result == -3) {
-z.msg = "oversubscribed distance tree";
+z.msg="oversubscribed distance tree";
 } else if (result == -5) {
-z.msg = "incomplete distance tree";
-result = -3;
+z.msg="incomplete distance tree";
+result=-3;
 } else if (result != -4) {
-z.msg = "empty distance tree with lengths";
-result = -3;
+z.msg="empty distance tree with lengths";
+result=-3;
 }return result;
 }return 0;
 });
 
 Clazz.newMeth(C$, 'inflate_trees_fixed$IA$IA$IAA$IAA$swingjs_jzlib_ZStream', function (bl, bd, tl, td, z) {
-bl[0] = 9;
-bd[0] = 5;
-tl[0] = C$.fixed_tl;
-td[0] = C$.fixed_td;
+bl[0]=9;
+bd[0]=5;
+tl[0]=C$.fixed_tl;
+td[0]=C$.fixed_td;
 return 0;
 }, 1);
 
 Clazz.newMeth(C$, 'initWorkArea$I', function (vsize) {
 if (this.hn == null ) {
-this.hn = Clazz.array(Integer.TYPE, [1]);
-this.v = Clazz.array(Integer.TYPE, [vsize]);
-this.c = Clazz.array(Integer.TYPE, [16]);
-this.r = Clazz.array(Integer.TYPE, [3]);
-this.u = Clazz.array(Integer.TYPE, [15]);
-this.x = Clazz.array(Integer.TYPE, [16]);
+this.hn=Clazz.array(Integer.TYPE, [1]);
+this.v=Clazz.array(Integer.TYPE, [vsize]);
+this.c=Clazz.array(Integer.TYPE, [16]);
+this.r=Clazz.array(Integer.TYPE, [3]);
+this.u=Clazz.array(Integer.TYPE, [15]);
+this.x=Clazz.array(Integer.TYPE, [16]);
 }if (this.v.length < vsize) {
-this.v = Clazz.array(Integer.TYPE, [vsize]);
+this.v=Clazz.array(Integer.TYPE, [vsize]);
 }for (var i = 0; i < vsize; i++) {
-this.v[i] = 0;
+this.v[i]=0;
 }
 for (var i = 0; i < 16; i++) {
-this.c[i] = 0;
+this.c[i]=0;
 }
 for (var i = 0; i < 3; i++) {
-this.r[i] = 0;
+this.r[i]=0;
 }
 System.arraycopy(this.c, 0, this.u, 0, 15);
 System.arraycopy(this.c, 0, this.x, 0, 16);
@@ -238,4 +238,4 @@ System.arraycopy(this.c, 0, this.x, 0, 16);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:19
+//Created 2018-05-24 08:47:49

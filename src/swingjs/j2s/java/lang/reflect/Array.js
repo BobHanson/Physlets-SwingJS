@@ -176,32 +176,32 @@ type = array.__ARRAYTYPE;
 try {
 switch (type) {
 case "BA":
-(array)[index] = ((value).byteValue()|0);
+(array)[index]=((value).byteValue()|0);
 return;
 case "CA":
-(array)[index] = (value).charValue();
+(array)[index]=(value).charValue();
 return;
 case "HA":
-(array)[index] = (value).shortValue();
+(array)[index]=(value).shortValue();
 return;
 case "IA":
-(array)[index] = (value).intValue();
+(array)[index]=(value).intValue();
 return;
 case "JA":
-(array)[index] = (value).longValue();
+(array)[index]=(value).longValue();
 return;
 case "ZA":
-(array)[index] = (value).booleanValue();
+(array)[index]=(value).booleanValue();
 return;
 case "FA":
-(array)[index] = (value).floatValue();
+(array)[index]=(value).floatValue();
 return;
 case "DA":
-(array)[index] = (value).doubleValue();
+(array)[index]=(value).doubleValue();
 return;
 default:
 {
-(array)[index] = value;
+(array)[index]=value;
 }}
 } catch (e) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
@@ -216,7 +216,7 @@ type = array.__ARRAYTYPE;
 }
 switch (type) {
 case "ZA":
-(array)[index] = z;
+(array)[index]=z;
 return;
 }
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
@@ -234,7 +234,7 @@ case "IA":
 case "JA":
 case "FA":
 case "DA":
-(array)[index] = (b|0);
+(array)[index]=(b|0);
 return;
 }
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
@@ -247,7 +247,7 @@ type = array.__ARRAYTYPE;
 }
 switch (type) {
 case "CA":
-(array)[index] = c;
+(array)[index]=c;
 return;
 }
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
@@ -264,7 +264,7 @@ case "IA":
 case "JA":
 case "FA":
 case "DA":
-(array)[index] = s;
+(array)[index]=s;
 return;
 }
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
@@ -280,7 +280,7 @@ case "IA":
 case "JA":
 case "FA":
 case "DA":
-(array)[index] = i;
+(array)[index]=i;
 return;
 }
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
@@ -295,7 +295,7 @@ switch (type) {
 case "JA":
 case "FA":
 case "DA":
-(array)[index] = l;
+(array)[index]=l;
 return;
 }
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
@@ -309,7 +309,7 @@ type = array.__ARRAYTYPE;
 switch (type) {
 case "FA":
 case "DA":
-(array)[index] = f;
+(array)[index]=f;
 return;
 }
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
@@ -322,7 +322,7 @@ type = array.__ARRAYTYPE;
 }
 switch (type) {
 case "DA":
-(array)[index] = d;
+(array)[index]=d;
 return;
 }
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
@@ -341,4 +341,4 @@ return Clazz.array(componentType, dimensions);
 }, 1);
 var $b$ = new Int8Array(1);
 })();
-//Created 2018-05-15 01:02:09
+//Created 2018-05-24 08:45:40

@@ -23,8 +23,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
 C$.superclazz.c$$javax_swing_text_Element$I.apply(this, [elem, 1]);
 C$.$init$.apply(this);
-this.rows = Clazz.new_((I$[3]||$incl$(3)));
-this.gridValid = false;
+this.rows=Clazz.new_((I$[3]||$incl$(3)));
+this.gridValid=false;
 }, 1);
 
 Clazz.newMeth(C$, 'createTableRow$javax_swing_text_Element', function (elem) {
@@ -69,7 +69,7 @@ return 1;
 });
 
 Clazz.newMeth(C$, 'invalidateGrid', function () {
-this.gridValid = false;
+this.gridValid=false;
 });
 
 Clazz.newMeth(C$, 'forwardUpdate$javax_swing_event_DocumentEvent_ElementChange$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory', function (ec, e, a, f) {
@@ -118,17 +118,17 @@ this.addFill$I$I(i, j);
 }}
 }
 if (colSpan > 1) {
-col = col+(colSpan - 1);
+col+=colSpan - 1;
 }}}
-maxColumns = Math.max(maxColumns, col);
+maxColumns=Math.max(maxColumns, col);
 }
-this.columnSpans = Clazz.array(Integer.TYPE, [maxColumns]);
-this.columnOffsets = Clazz.array(Integer.TYPE, [maxColumns]);
-this.columnRequirements = Clazz.array((I$[6]||$incl$(6)), [maxColumns]);
+this.columnSpans=Clazz.array(Integer.TYPE, [maxColumns]);
+this.columnOffsets=Clazz.array(Integer.TYPE, [maxColumns]);
+this.columnRequirements=Clazz.array((I$[6]||$incl$(6)), [maxColumns]);
 for (var i = 0; i < maxColumns; i++) {
-this.columnRequirements[i] = Clazz.new_((I$[6]||$incl$(6)));
+this.columnRequirements[i]=Clazz.new_((I$[6]||$incl$(6)));
 }
-this.gridValid = true;
+this.gridValid=true;
 }});
 
 Clazz.newMeth(C$, 'addFill$I$I', function (row, col) {
@@ -156,20 +156,20 @@ Clazz.newMeth(C$, 'calculateMinorAxisRequirements$I$javax_swing_SizeRequirements
 this.updateGrid();
 this.calculateColumnRequirements$I(axis);
 if (r == null ) {
-r = Clazz.new_((I$[6]||$incl$(6)));
+r=Clazz.new_((I$[6]||$incl$(6)));
 }var min = 0;
 var pref = 0;
 var max = 0;
 for (var i = 0; i < this.columnRequirements.length; i++) {
 var req = this.columnRequirements[i];
-min = min+(req.minimum);
-pref = pref+(req.preferred);
-max = max+(req.maximum);
+min+=req.minimum;
+pref+=req.preferred;
+max+=req.maximum;
 }
-r.minimum = (min|0);
-r.preferred = (pref|0);
-r.maximum = (max|0);
-r.alignment = 0;
+r.minimum=(min|0);
+r.preferred=(pref|0);
+r.maximum=(max|0);
+r.alignment=0;
 return r;
 });
 
@@ -187,8 +187,8 @@ var colSpan = this.getColumnsOccupied$javax_swing_text_View(cv);
 if (colSpan == 1) {
 this.checkSingleColumnCell$I$I$javax_swing_text_View(axis, col, cv);
 } else {
-hasMultiColumn = true;
-col = col+(colSpan - 1);
+hasMultiColumn=true;
+col+=colSpan - 1;
 }}
 }
 if (hasMultiColumn) {
@@ -202,16 +202,16 @@ for (; row.isFilled$I(col); col++) ;
 var colSpan = this.getColumnsOccupied$javax_swing_text_View(cv);
 if (colSpan > 1) {
 this.checkMultiColumnCell$I$I$I$javax_swing_text_View(axis, col, colSpan, cv);
-col = col+(colSpan - 1);
+col+=colSpan - 1;
 }}
 }
 }});
 
 Clazz.newMeth(C$, 'checkSingleColumnCell$I$I$javax_swing_text_View', function (axis, col, v) {
 var req = this.columnRequirements[col];
-req.minimum = Math.max((v.getMinimumSpan$I(axis)|0), req.minimum);
-req.preferred = Math.max((v.getPreferredSpan$I(axis)|0), req.preferred);
-req.maximum = Math.max((v.getMaximumSpan$I(axis)|0), req.maximum);
+req.minimum=Math.max((v.getMinimumSpan$I(axis)|0), req.minimum);
+req.preferred=Math.max((v.getPreferredSpan$I(axis)|0), req.preferred);
+req.maximum=Math.max((v.getMaximumSpan$I(axis)|0), req.maximum);
 });
 
 Clazz.newMeth(C$, 'checkMultiColumnCell$I$I$I$javax_swing_text_View', function (axis, col, ncols, v) {
@@ -219,38 +219,38 @@ var min = 0;
 var pref = 0;
 for (var i = 0; i < ncols; i++) {
 var req = this.columnRequirements[col + i];
-min = min+(req.minimum);
-pref = pref+(req.preferred);
+min+=req.minimum;
+pref+=req.preferred;
 }
 var cmin = (v.getMinimumSpan$I(axis)|0);
 if (cmin > min) {
 var reqs = Clazz.array((I$[6]||$incl$(6)), [ncols]);
 for (var i = 0; i < ncols; i++) {
-var r = reqs[i] = this.columnRequirements[col + i];
-r.maximum = Math.max(r.maximum, (v.getMaximumSpan$I(axis)|0));
+var r = reqs[i]=this.columnRequirements[col + i];
+r.maximum=Math.max(r.maximum, (v.getMaximumSpan$I(axis)|0));
 }
 var spans = Clazz.array(Integer.TYPE, [ncols]);
 var offsets = Clazz.array(Integer.TYPE, [ncols]);
 (I$[6]||$incl$(6)).calculateTiledPositions$I$javax_swing_SizeRequirements$javax_swing_SizeRequirementsA$IA$IA(cmin, null, reqs, offsets, spans);
 for (var i = 0; i < ncols; i++) {
 var req = reqs[i];
-req.minimum = Math.max(spans[i], req.minimum);
-req.preferred = Math.max(req.minimum, req.preferred);
-req.maximum = Math.max(req.preferred, req.maximum);
+req.minimum=Math.max(spans[i], req.minimum);
+req.preferred=Math.max(req.minimum, req.preferred);
+req.maximum=Math.max(req.preferred, req.maximum);
 }
 }var cpref = (v.getPreferredSpan$I(axis)|0);
 if (cpref > pref) {
 var reqs = Clazz.array((I$[6]||$incl$(6)), [ncols]);
 for (var i = 0; i < ncols; i++) {
-reqs[i] = this.columnRequirements[col + i];
+reqs[i]=this.columnRequirements[col + i];
 }
 var spans = Clazz.array(Integer.TYPE, [ncols]);
 var offsets = Clazz.array(Integer.TYPE, [ncols]);
 (I$[6]||$incl$(6)).calculateTiledPositions$I$javax_swing_SizeRequirements$javax_swing_SizeRequirementsA$IA$IA(cpref, null, reqs, offsets, spans);
 for (var i = 0; i < ncols; i++) {
 var req = reqs[i];
-req.preferred = Math.max(spans[i], req.preferred);
-req.maximum = Math.max(req.preferred, req.maximum);
+req.preferred=Math.max(spans[i], req.preferred);
+req.maximum=Math.max(req.preferred, req.maximum);
 }
 }});
 
@@ -292,7 +292,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
 C$.superclazz.c$$javax_swing_text_Element$I.apply(this, [elem, 0]);
 C$.$init$.apply(this);
-this.fillColumns = Clazz.new_((I$[1]||$incl$(1)));
+this.fillColumns=Clazz.new_((I$[1]||$incl$(1)));
 }, 1);
 
 Clazz.newMeth(C$, 'clearFilledColumns', function () {
@@ -312,7 +312,7 @@ return this.row;
 });
 
 Clazz.newMeth(C$, 'setRow$I', function (row) {
-this.row = row;
+this.row=row;
 });
 
 Clazz.newMeth(C$, 'getColumnCount', function () {
@@ -337,15 +337,15 @@ for (var cell = 0; cell < ncells; cell++, col++) {
 var cv = this.getView$I(cell);
 for (; this.isFilled$I(col); col++) ;
 var colSpan = this.this$0.getColumnsOccupied$javax_swing_text_View(cv);
-spans[cell] = this.this$0.columnSpans[col];
-offsets[cell] = this.this$0.columnOffsets[col];
+spans[cell]=this.this$0.columnSpans[col];
+offsets[cell]=this.this$0.columnOffsets[col];
 if (colSpan > 1) {
 var n = this.this$0.columnSpans.length;
 for (var j = 1; j < colSpan; j++) {
 if ((col + j) < n) {
-spans[$j$=cell] = spans[$j$]+(this.this$0.columnSpans[col + j]);
+spans[cell]+=this.this$0.columnSpans[col + j];
 }}
-col = col+(colSpan - 1);
+col+=colSpan - 1;
 }}
 });
 
@@ -363,10 +363,10 @@ for (var j = 1; j < rowSpan; j++) {
 var row = this.getRow() + j;
 if (row < this.this$0.getViewCount()) {
 var span = this.this$0.getSpan$I$I(1, this.getRow() + j);
-spans[$j$=cell] = spans[$j$]+(span);
+spans[cell]+=span;
 }}
 }if (colSpan > 1) {
-col = col+(colSpan - 1);
+col+=colSpan - 1;
 }}
 });
 
@@ -392,7 +392,6 @@ this.childAllocation$I$java_awt_Rectangle(n - 1, a);
 }return v;
 }return null;
 });
-var $j$;
 
 Clazz.newMeth(C$);
 })()
@@ -427,8 +426,8 @@ return 1;
 });
 
 Clazz.newMeth(C$, 'setGridLocation$I$I', function (row, col) {
-this.row = row;
-this.col = col;
+this.row=row;
+this.col=col;
 });
 
 Clazz.newMeth(C$, 'getGridRow', function () {
@@ -448,4 +447,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:58
+//Created 2018-05-24 08:47:09

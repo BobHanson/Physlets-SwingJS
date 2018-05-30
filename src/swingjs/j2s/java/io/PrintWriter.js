@@ -28,9 +28,9 @@ C$.c$$java_io_Writer$Z.apply(this, [out, false]);
 Clazz.newMeth(C$, 'c$$java_io_Writer$Z', function (out, autoFlush) {
 C$.superclazz.c$$O.apply(this, [out]);
 C$.$init$.apply(this);
-this.out = out;
-this.autoFlush = autoFlush;
-this.lineSeparator = System.lineSeparator();
+this.out=out;
+this.autoFlush=autoFlush;
+this.lineSeparator=System.lineSeparator();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream', function (out) {
@@ -40,7 +40,7 @@ C$.c$$java_io_OutputStream$Z.apply(this, [out, false]);
 Clazz.newMeth(C$, 'c$$java_io_OutputStream$Z', function (out, autoFlush) {
 C$.c$$java_io_Writer$Z.apply(this, [Clazz.new_((I$[1]||$incl$(1)).c$$java_io_Writer,[Clazz.new_((I$[2]||$incl$(2)).c$$java_io_OutputStream,[out])]), autoFlush]);
 if (Clazz.instanceOf(out, "java.io.PrintStream")) {
-this.psOut = out;
+this.psOut=out;
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (fileName) {
@@ -74,7 +74,7 @@ p$.ensureOpen.apply(this, []);
 this.out.flush();
 }} catch (x) {
 if (Clazz.exceptionOf(x, "java.io.IOException")){
-this.trouble = true;
+this.trouble=true;
 } else {
 throw x;
 }
@@ -86,10 +86,10 @@ try {
 {
 if (this.out == null ) return;
 this.out.close();
-this.out = null;
+this.out=null;
 }} catch (x) {
 if (Clazz.exceptionOf(x, "java.io.IOException")){
-this.trouble = true;
+this.trouble=true;
 } else {
 throw x;
 }
@@ -108,11 +108,11 @@ return this.psOut.checkError();
 });
 
 Clazz.newMeth(C$, 'setError', function () {
-this.trouble = true;
+this.trouble=true;
 });
 
 Clazz.newMeth(C$, 'clearError', function () {
-this.trouble = false;
+this.trouble=false;
 });
 
 Clazz.newMeth(C$, 'write$I', function (c) {
@@ -129,7 +129,7 @@ var x = e$$;
 } else if (Clazz.exceptionOf(e$$, "java.io.IOException")){
 var x = e$$;
 {
-this.trouble = true;
+this.trouble=true;
 }
 } else {
 throw e$$;
@@ -151,7 +151,7 @@ var x = e$$;
 } else if (Clazz.exceptionOf(e$$, "java.io.IOException")){
 var x = e$$;
 {
-this.trouble = true;
+this.trouble=true;
 }
 } else {
 throw e$$;
@@ -177,7 +177,7 @@ var x = e$$;
 } else if (Clazz.exceptionOf(e$$, "java.io.IOException")){
 var x = e$$;
 {
-this.trouble = true;
+this.trouble=true;
 }
 } else {
 throw e$$;
@@ -204,7 +204,7 @@ var x = e$$;
 } else if (Clazz.exceptionOf(e$$, "java.io.IOException")){
 var x = e$$;
 {
-this.trouble = true;
+this.trouble=true;
 }
 } else {
 throw e$$;
@@ -242,7 +242,7 @@ this.write$CA(s);
 
 Clazz.newMeth(C$, 'print$S', function (s) {
 if (s == null ) {
-s = "null";
+s="null";
 }this.write$S(s);
 });
 
@@ -321,7 +321,7 @@ Clazz.newMeth(C$, 'format$S$OA', function (format, args) {
 try {
 {
 p$.ensureOpen.apply(this, []);
-if ((this.formatter == null ) || (this.formatter.locale() !== (I$[6]||$incl$(6)).getDefault() ) ) this.formatter = p$.newFormatter.apply(this, []);
+if ((this.formatter == null ) || (this.formatter.locale() !== (I$[6]||$incl$(6)).getDefault() ) ) this.formatter=p$.newFormatter.apply(this, []);
 this.formatter.format$java_util_Locale$S$OA((I$[6]||$incl$(6)).getDefault(), format, args);
 if (this.autoFlush) this.out.flush();
 }} catch (e$$) {
@@ -333,7 +333,7 @@ var x = e$$;
 } else if (Clazz.exceptionOf(e$$, "java.io.IOException")){
 var x = e$$;
 {
-this.trouble = true;
+this.trouble=true;
 }
 } else {
 throw e$$;
@@ -350,7 +350,7 @@ Clazz.newMeth(C$, 'format$java_util_Locale$S$OA', function (l, format, args) {
 try {
 {
 p$.ensureOpen.apply(this, []);
-if ((this.formatter == null ) || (this.formatter.locale() !== l ) ) this.formatter = Clazz.new_((I$[8]||$incl$(8)).c$$Appendable$java_util_Locale,[this, l]);
+if ((this.formatter == null ) || (this.formatter.locale() !== l ) ) this.formatter=Clazz.new_((I$[8]||$incl$(8)).c$$Appendable$java_util_Locale,[this, l]);
 this.formatter.format$java_util_Locale$S$OA(l, format, args);
 if (this.autoFlush) this.out.flush();
 }} catch (e$$) {
@@ -362,7 +362,7 @@ var x = e$$;
 } else if (Clazz.exceptionOf(e$$, "java.io.IOException")){
 var x = e$$;
 {
-this.trouble = true;
+this.trouble=true;
 }
 } else {
 throw e$$;
@@ -400,4 +400,4 @@ return this;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:05
+//Created 2018-05-24 08:45:35

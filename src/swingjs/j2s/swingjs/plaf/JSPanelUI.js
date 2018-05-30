@@ -15,15 +15,15 @@ this.$frameZ = 10000;
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.isContainer = true;
+this.isContainer=true;
 this.setDoc();
 }, 1);
 
 Clazz.newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
 var root = this.jc.getRootPane();
-this.isContentPane = (root != null  && this.jc === root.getContentPane()  );
-this.domNode = this.newDOMObject$S$S$SA("div", this.id, []);
+this.isContentPane=(root != null  && this.jc === root.getContentPane()  );
+this.domNode=this.newDOMObject$S$S$SA("div", this.id, []);
 if (root != null  && root.getGlassPane() === this.c  ) (I$[1]||$incl$(1)).setVisible(this.domNode, false);
 }return this.domNode;
 });
@@ -43,4 +43,4 @@ Clazz.newMeth(C$, 'getPreferredSize', function () {
 return null;
 });
 })();
-//Created 2018-05-15 01:03:24
+//Created 2018-05-24 08:47:56

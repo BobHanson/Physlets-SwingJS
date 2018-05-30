@@ -15,14 +15,14 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$Exception', function (detailMessage, rootCause) {
 C$.superclazz.c$$S.apply(this, [detailMessage]);
 C$.$init$.apply(this);
-this.detail = rootCause;
+this.detail=rootCause;
 this.initCause$Throwable(rootCause);
 }, 1);
 
 Clazz.newMeth(C$, 'getMessage', function () {
 var msg = C$.superclazz.prototype.getMessage.apply(this, []);
 if (this.detail != null ) {
-msg = msg + "; " + this.detail.toString() ;
+msg=msg + "; " + this.detail.toString() ;
 }return msg;
 });
 
@@ -32,4 +32,4 @@ return this.detail;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:06
+//Created 2018-05-24 08:45:35

@@ -31,4 +31,4 @@ var dw = this.w - p1.w;
 return Math.sqrt(dx * dx + dy * dy + dz * dz + dw * dw);
 });
 })();
-//Created 2018-05-15 01:02:19
+//Created 2018-05-24 08:45:57

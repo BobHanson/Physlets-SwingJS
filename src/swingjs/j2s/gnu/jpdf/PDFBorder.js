@@ -17,16 +17,16 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$H$D', function (style, width) {
 C$.superclazz.c$$S.apply(this, ["/Border"]);
 C$.$init$.apply(this);
-this.style = style;
-this.width = width;
+this.style=style;
+this.width=width;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$D$DA', function (width, dash) {
 C$.superclazz.c$$S.apply(this, ["/Border"]);
 C$.$init$.apply(this);
-this.style = 1;
-this.width = width;
-this.dash = dash;
+this.style=1;
+this.width=width;
+this.dash=dash;
 }, 1);
 
 Clazz.newMeth(C$, 'write$java_io_OutputStream', function (os) {
@@ -50,4 +50,4 @@ for (var i = 1; i < this.dash.length; i++) {
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:46
+//Created 2018-05-24 08:45:02

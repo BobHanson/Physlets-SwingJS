@@ -21,7 +21,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.q0 = 1;
+this.q0=1;
 }, 1);
 
 Clazz.newMeth(C$, 'newQ$javajs_util_Quat', function (q) {
@@ -57,55 +57,55 @@ return q;
 Clazz.newMeth(C$, 'new4$F$F$F$F', function (q1, q2, q3, q0) {
 var q = Clazz.new_(C$);
 if (q0 < -1 ) {
-q.q0 = -1;
+q.q0=-1;
 return q;
 }if (q0 > 1 ) {
-q.q0 = 1;
+q.q0=1;
 return q;
-}q.q0 = q0;
-q.q1 = q1;
-q.q2 = q2;
-q.q3 = q3;
+}q.q0=q0;
+q.q1=q1;
+q.q2=q2;
+q.q3=q3;
 return q;
 }, 1);
 
 Clazz.newMeth(C$, 'set$javajs_util_Quat', function (q) {
-this.q0 = q.q0;
-this.q1 = q.q1;
-this.q2 = q.q2;
-this.q3 = q.q3;
+this.q0=q.q0;
+this.q1=q.q1;
+this.q2=q.q2;
+this.q3=q.q3;
 });
 
 Clazz.newMeth(C$, 'setP4$javajs_util_P4', function (pt) {
 var factor = (pt == null  ? 0 : pt.distance4$javajs_util_P4(C$.qZero));
 if (factor == 0 ) {
-this.q0 = 1;
+this.q0=1;
 return;
-}this.q0 = pt.w / factor;
-this.q1 = pt.x / factor;
-this.q2 = pt.y / factor;
-this.q3 = pt.z / factor;
+}this.q0=pt.w / factor;
+this.q1=pt.x / factor;
+this.q2=pt.y / factor;
+this.q3=pt.z / factor;
 });
 
 Clazz.newMeth(C$, 'setTA$javajs_util_T3$F', function (pt, theta) {
 if (pt.x == 0  && pt.y == 0   && pt.z == 0  ) {
-this.q0 = 1;
+this.q0=1;
 return;
 }var fact = (Math.sin(theta / 2 * 0.017453292519943295) / Math.sqrt(pt.x * pt.x + pt.y * pt.y + pt.z * pt.z));
-this.q0 = (Math.cos(theta / 2 * 0.017453292519943295));
-this.q1 = (pt.x * fact);
-this.q2 = (pt.y * fact);
-this.q3 = (pt.z * fact);
+this.q0=(Math.cos(theta / 2 * 0.017453292519943295));
+this.q1=(pt.x * fact);
+this.q2=(pt.y * fact);
+this.q3=(pt.z * fact);
 });
 
 Clazz.newMeth(C$, 'setAA$javajs_util_A4', function (a) {
 var aa = (I$[3]||$incl$(3)).newAA$javajs_util_A4(a);
-if (aa.angle == 0 ) aa.y = 1;
+if (aa.angle == 0 ) aa.y=1;
 p$.setM$javajs_util_M3.apply(this, [Clazz.new_((I$[2]||$incl$(2))).setAA$javajs_util_A4(aa)]);
 });
 
 Clazz.newMeth(C$, 'setM$javajs_util_M3', function (mat) {
-this.mat = mat;
+this.mat=mat;
 var trace = mat.m00 + mat.m11 + mat.m22 ;
 var temp;
 var w;
@@ -113,29 +113,29 @@ var x;
 var y;
 var z;
 if (trace >= 0.5 ) {
-w = Math.sqrt(1.0 + trace);
-x = (mat.m21 - mat.m12) / w;
-y = (mat.m02 - mat.m20) / w;
-z = (mat.m10 - mat.m01) / w;
-} else if ((temp = mat.m00 + mat.m00 - trace) >= 0.5 ) {
-x = Math.sqrt(1.0 + temp);
-w = (mat.m21 - mat.m12) / x;
-y = (mat.m10 + mat.m01) / x;
-z = (mat.m20 + mat.m02) / x;
-} else if ((temp = mat.m11 + mat.m11 - trace) >= 0.5  || mat.m11 > mat.m22  ) {
-y = Math.sqrt(1.0 + temp);
-w = (mat.m02 - mat.m20) / y;
-x = (mat.m10 + mat.m01) / y;
-z = (mat.m21 + mat.m12) / y;
+w=Math.sqrt(1.0 + trace);
+x=(mat.m21 - mat.m12) / w;
+y=(mat.m02 - mat.m20) / w;
+z=(mat.m10 - mat.m01) / w;
+} else if ((temp=mat.m00 + mat.m00 - trace) >= 0.5 ) {
+x=Math.sqrt(1.0 + temp);
+w=(mat.m21 - mat.m12) / x;
+y=(mat.m10 + mat.m01) / x;
+z=(mat.m20 + mat.m02) / x;
+} else if ((temp=mat.m11 + mat.m11 - trace) >= 0.5  || mat.m11 > mat.m22  ) {
+y=Math.sqrt(1.0 + temp);
+w=(mat.m02 - mat.m20) / y;
+x=(mat.m10 + mat.m01) / y;
+z=(mat.m21 + mat.m12) / y;
 } else {
-z = Math.sqrt(1.0 + mat.m22 + mat.m22  - trace);
-w = (mat.m10 - mat.m01) / z;
-x = (mat.m20 + mat.m02) / z;
-y = (mat.m21 + mat.m12) / z;
-}this.q0 = (w * 0.5);
-this.q1 = (x * 0.5);
-this.q2 = (y * 0.5);
-this.q3 = (z * 0.5);
+z=Math.sqrt(1.0 + mat.m22 + mat.m22  - trace);
+w=(mat.m10 - mat.m01) / z;
+x=(mat.m20 + mat.m02) / z;
+y=(mat.m21 + mat.m12) / z;
+}this.q0=(w * 0.5);
+this.q1=(x * 0.5);
+this.q2=(y * 0.5);
+this.q3=(z * 0.5);
 });
 
 Clazz.newMeth(C$, 'setRef$javajs_util_Quat', function (qref) {
@@ -160,7 +160,7 @@ vB.sub$javajs_util_T3(center);
 
 Clazz.newMeth(C$, 'getQuaternionFrameV$javajs_util_V3$javajs_util_V3$javajs_util_V3$Z', function (vA, vB, vC, yBased) {
 if (vC == null ) {
-vC = Clazz.new_((I$[4]||$incl$(4)));
+vC=Clazz.new_((I$[4]||$incl$(4)));
 vC.cross$javajs_util_T3$javajs_util_T3(vA, vB);
 if (yBased) vA.cross$javajs_util_T3$javajs_util_T3(vB, vC);
 }var vBprime = Clazz.new_((I$[4]||$incl$(4)));
@@ -182,16 +182,16 @@ return this.mat;
 });
 
 Clazz.newMeth(C$, 'setMatrix', function () {
-this.mat = Clazz.new_((I$[2]||$incl$(2)));
-this.mat.m00 = this.q0 * this.q0 + this.q1 * this.q1 - this.q2 * this.q2 - this.q3 * this.q3;
-this.mat.m01 = 2 * this.q1 * this.q2  - 2 * this.q0 * this.q3 ;
-this.mat.m02 = 2 * this.q1 * this.q3  + 2 * this.q0 * this.q2 ;
-this.mat.m10 = 2 * this.q1 * this.q2  + 2 * this.q0 * this.q3 ;
-this.mat.m11 = this.q0 * this.q0 - this.q1 * this.q1 + this.q2 * this.q2 - this.q3 * this.q3;
-this.mat.m12 = 2 * this.q2 * this.q3  - 2 * this.q0 * this.q1 ;
-this.mat.m20 = 2 * this.q1 * this.q3  - 2 * this.q0 * this.q2 ;
-this.mat.m21 = 2 * this.q2 * this.q3  + 2 * this.q0 * this.q1 ;
-this.mat.m22 = this.q0 * this.q0 - this.q1 * this.q1 - this.q2 * this.q2 + this.q3 * this.q3;
+this.mat=Clazz.new_((I$[2]||$incl$(2)));
+this.mat.m00=this.q0 * this.q0 + this.q1 * this.q1 - this.q2 * this.q2 - this.q3 * this.q3;
+this.mat.m01=2 * this.q1 * this.q2  - 2 * this.q0 * this.q3 ;
+this.mat.m02=2 * this.q1 * this.q3  + 2 * this.q0 * this.q2 ;
+this.mat.m10=2 * this.q1 * this.q2  + 2 * this.q0 * this.q3 ;
+this.mat.m11=this.q0 * this.q0 - this.q1 * this.q1 + this.q2 * this.q2 - this.q3 * this.q3;
+this.mat.m12=2 * this.q2 * this.q3  - 2 * this.q0 * this.q1 ;
+this.mat.m20=2 * this.q1 * this.q3  - 2 * this.q0 * this.q2 ;
+this.mat.m21=2 * this.q2 * this.q3  + 2 * this.q0 * this.q1 ;
+this.mat.m22=this.q0 * this.q0 - this.q1 * this.q1 - this.q2 * this.q2 + this.q3 * this.q3;
 });
 
 Clazz.newMeth(C$, 'add$F', function (x) {
@@ -283,7 +283,7 @@ var theta = this.getTheta();
 var v = this.getNormal();
 if (axisAngle.x * this.q1 + axisAngle.y * this.q2 + axisAngle.z * this.q3 < 0 ) {
 v.scale$F(-1);
-theta = -theta;
+theta=-theta;
 }axisAngle.set4$F$F$F$F(v.x, v.y, v.z, theta);
 return axisAngle;
 });
@@ -293,7 +293,7 @@ var theta = this.getTheta();
 var v = this.getNormal();
 if (vector.x * this.q1 + vector.y * this.q2 + vector.z * this.q3 < 0 ) {
 v.scale$F(-1);
-theta = -theta;
+theta=-theta;
 }return theta;
 });
 
@@ -307,7 +307,7 @@ var sinTheta2 = Math.sin(theta / 2);
 var v = this.getNormal();
 if (sinTheta2 < 0 ) {
 v.scale$F(-1);
-theta = 3.141592653589793 - theta;
+theta=3.141592653589793 - theta;
 }return (I$[3]||$incl$(3)).newVA$javajs_util_V3$F(v, theta);
 });
 
@@ -333,21 +333,21 @@ return "{" + new Float(this.q1).toString() + " " + new Float(this.q2).toString()
 
 Clazz.newMeth(C$, 'div$javajs_util_QuatA$javajs_util_QuatA$I$Z', function (data1, data2, nMax, isRelative) {
 var n;
-if (data1 == null  || data2 == null   || (n = Math.min(data1.length, data2.length)) == 0 ) return null;
-if (nMax > 0 && n > nMax ) n = nMax;
+if (data1 == null  || data2 == null   || (n=Math.min(data1.length, data2.length)) == 0 ) return null;
+if (nMax > 0 && n > nMax ) n=nMax;
 var dqs = Clazz.array(C$, [n]);
 for (var i = 0; i < n; i++) {
 if (data1[i] == null  || data2[i] == null  ) return null;
-dqs[i] = (isRelative ? data1[i].divLeft$javajs_util_Quat(data2[i]) : data1[i].div$javajs_util_Quat(data2[i]));
+dqs[i]=(isRelative ? data1[i].divLeft$javajs_util_Quat(data2[i]) : data1[i].div$javajs_util_Quat(data2[i]));
 }
 return dqs;
 }, 1);
 
 Clazz.newMeth(C$, 'sphereMean$javajs_util_QuatA$FA$F', function (data, retStddev, criterion) {
 if (data == null  || data.length == 0 ) return Clazz.new_(C$);
-if (retStddev == null ) retStddev = Clazz.array(Float.TYPE, [1]);
+if (retStddev == null ) retStddev=Clazz.array(Float.TYPE, [1]);
 if (data.length == 1) {
-retStddev[0] = 0;
+retStddev[0]=0;
 return C$.newQ$javajs_util_Quat(data[0]);
 }var diff = 3.4028235E38;
 var lastStddev = 3.4028235E38;
@@ -355,10 +355,10 @@ var qMean = C$.simpleAverage$javajs_util_QuatA(data);
 var maxIter = 100;
 var iter = 0;
 while (diff > criterion  && lastStddev != 0   && iter < maxIter ){
-qMean = C$.newMean$javajs_util_QuatA$javajs_util_Quat(data, qMean);
-retStddev[0] = C$.stdDev$javajs_util_QuatA$javajs_util_Quat(data, qMean);
-diff = Math.abs(retStddev[0] - lastStddev);
-lastStddev = retStddev[0];
+qMean=C$.newMean$javajs_util_QuatA$javajs_util_Quat(data, qMean);
+retStddev[0]=C$.stdDev$javajs_util_QuatA$javajs_util_Quat(data, qMean);
+diff=Math.abs(retStddev[0] - lastStddev);
+lastStddev=retStddev[0];
 }
 return qMean;
 }, 1);
@@ -375,8 +375,8 @@ var f = 0;
 for (var i = ndata.length; --i >= 0; ) f += Math.abs(ndata[i].get3dProjection$javajs_util_V3(v).dot$javajs_util_T3(mean));
 
 if (f != 0 ) mean.scale$F(f / ndata.length);
-f = Math.sqrt(1 - mean.lengthSquared());
-if (Float.isNaN(f)) f = 0;
+f=Math.sqrt(1 - mean.lengthSquared());
+if (Float.isNaN(f)) f=0;
 return C$.newP4$javajs_util_P4((I$[1]||$incl$(1)).new4$F$F$F$F(mean.x, mean.y, mean.z, f));
 }, 1);
 
@@ -386,9 +386,9 @@ var v;
 var q;
 var dq;
 for (var i = data.length; --i >= 0; ) {
-q = data[i];
-dq = q.div$javajs_util_Quat(mean);
-v = dq.getNormal();
+q=data[i];
+dq=q.div$javajs_util_Quat(mean);
+v=dq.getNormal();
 v.scale$F(dq.getTheta());
 sum.add$javajs_util_T3(v);
 }
@@ -414,9 +414,9 @@ var rG;
 if (this.q1 == 0  && this.q2 == 0  ) {
 var theta = this.getTheta();
 return Clazz.array(Float.TYPE, -1, [this.q3 < 0  ? -theta : theta, 0, 0]);
-}rA = Math.atan2(2 * (this.q2 * this.q3 + this.q0 * this.q1), 2 * (-this.q1 * this.q3 + this.q0 * this.q2));
-rB = Math.acos(this.q3 * this.q3 - this.q2 * this.q2 - this.q1 * this.q1 + this.q0 * this.q0);
-rG = Math.atan2(2 * (this.q2 * this.q3 - this.q0 * this.q1), 2 * (this.q0 * this.q2 + this.q1 * this.q3));
+}rA=Math.atan2(2 * (this.q2 * this.q3 + this.q0 * this.q1), 2 * (-this.q1 * this.q3 + this.q0 * this.q2));
+rB=Math.acos(this.q3 * this.q3 - this.q2 * this.q2 - this.q1 * this.q1 + this.q0 * this.q0);
+rG=Math.atan2(2 * (this.q2 * this.q3 - this.q0 * this.q1), 2 * (this.q0 * this.q2 + this.q1 * this.q3));
 return Clazz.array(Float.TYPE, -1, [(rA / 0.017453292519943295), (rB / 0.017453292519943295), (rG / 0.017453292519943295)]);
 });
 
@@ -427,10 +427,10 @@ var rG;
 if (this.q1 == 0  && this.q2 == 0  ) {
 var theta = this.getTheta();
 return Clazz.array(Float.TYPE, -1, [this.q3 < 0  ? -theta : theta, 0, 0]);
-}rA = Math.atan2(2 * (this.q1 * this.q3 - this.q0 * this.q2), 2 * (this.q0 * this.q1 + this.q2 * this.q3));
-rB = Math.acos(this.q3 * this.q3 - this.q2 * this.q2 - this.q1 * this.q1 + this.q0 * this.q0);
-rG = Math.atan2(2 * (this.q1 * this.q3 + this.q0 * this.q2), 2 * (-this.q2 * this.q3 + this.q0 * this.q1));
+}rA=Math.atan2(2 * (this.q1 * this.q3 - this.q0 * this.q2), 2 * (this.q0 * this.q1 + this.q2 * this.q3));
+rB=Math.acos(this.q3 * this.q3 - this.q2 * this.q2 - this.q1 * this.q1 + this.q0 * this.q0);
+rG=Math.atan2(2 * (this.q1 * this.q3 + this.q0 * this.q2), 2 * (-this.q2 * this.q3 + this.q0 * this.q1));
 return Clazz.array(Float.TYPE, -1, [(rA / 0.017453292519943295), (rB / 0.017453292519943295), (rG / 0.017453292519943295)]);
 });
 })();
-//Created 2018-05-15 01:02:19
+//Created 2018-05-24 08:45:57

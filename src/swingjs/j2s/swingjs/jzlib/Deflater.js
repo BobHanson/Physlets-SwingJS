@@ -14,10 +14,10 @@ this.$finished = false;
 }, 1);
 
 Clazz.newMeth(C$, 'init$I$I$Z', function (level, bits, nowrap) {
-if (bits == 0) bits = 15;
-this.$finished = false;
+if (bits == 0) bits=15;
+this.$finished=false;
 this.setAdler32();
-this.dstate = Clazz.new_((I$[1]||$incl$(1)).c$$swingjs_jzlib_ZStream,[this]);
+this.dstate=Clazz.new_((I$[1]||$incl$(1)).c$$swingjs_jzlib_ZStream,[this]);
 this.dstate.deflateInit2$I$I(level, nowrap ? -bits : bits);
 return this;
 });
@@ -26,15 +26,15 @@ Clazz.newMeth(C$, 'deflate$I', function (flush) {
 if (this.dstate == null ) {
 return -2;
 }var ret = this.dstate.deflate$I(flush);
-if (ret == 1) this.$finished = true;
+if (ret == 1) this.$finished=true;
 return ret;
 });
 
 Clazz.newMeth(C$, 'end', function () {
-this.$finished = true;
+this.$finished=true;
 if (this.dstate == null ) return -2;
 var ret = this.dstate.deflateEnd();
-this.dstate = null;
+this.dstate=null;
 this.free();
 return ret;
 });
@@ -66,4 +66,4 @@ return this.dstate.getBytesWritten();
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:18
+//Created 2018-05-24 08:47:49

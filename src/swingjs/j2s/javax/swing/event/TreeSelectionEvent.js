@@ -18,28 +18,28 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$O$javax_swing_tree_TreePathA$ZA$javax_swing_tree_TreePath$javax_swing_tree_TreePath', function (source, paths, areNew, oldLeadSelectionPath, newLeadSelectionPath) {
 C$.superclazz.c$.apply(this, [source]);
 C$.$init$.apply(this);
-this.paths = paths;
-this.areNew = areNew;
-this.oldLeadSelectionPath = oldLeadSelectionPath;
-this.newLeadSelectionPath = newLeadSelectionPath;
+this.paths=paths;
+this.areNew=areNew;
+this.oldLeadSelectionPath=oldLeadSelectionPath;
+this.newLeadSelectionPath=newLeadSelectionPath;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$O$javax_swing_tree_TreePath$Z$javax_swing_tree_TreePath$javax_swing_tree_TreePath', function (source, path, isNew, oldLeadSelectionPath, newLeadSelectionPath) {
 C$.superclazz.c$.apply(this, [source]);
 C$.$init$.apply(this);
-this.paths = Clazz.array((I$[1]||$incl$(1)), [1]);
-this.paths[0] = path;
-this.areNew = Clazz.array(Boolean.TYPE, [1]);
-this.areNew[0] = isNew;
-this.oldLeadSelectionPath = oldLeadSelectionPath;
-this.newLeadSelectionPath = newLeadSelectionPath;
+this.paths=Clazz.array((I$[1]||$incl$(1)), [1]);
+this.paths[0]=path;
+this.areNew=Clazz.array(Boolean.TYPE, [1]);
+this.areNew[0]=isNew;
+this.oldLeadSelectionPath=oldLeadSelectionPath;
+this.newLeadSelectionPath=newLeadSelectionPath;
 }, 1);
 
 Clazz.newMeth(C$, 'getPaths', function () {
 var numPaths;
 var retPaths;
-numPaths = this.paths.length;
-retPaths = Clazz.array((I$[1]||$incl$(1)), [numPaths]);
+numPaths=this.paths.length;
+retPaths=Clazz.array((I$[1]||$incl$(1)), [numPaths]);
 System.arraycopy(this.paths, 0, retPaths, 0, numPaths);
 return retPaths;
 });
@@ -78,4 +78,4 @@ return Clazz.new_(C$.c$$O$javax_swing_tree_TreePathA$ZA$javax_swing_tree_TreePat
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:46
+//Created 2018-05-24 08:46:49

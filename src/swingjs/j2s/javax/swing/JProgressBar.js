@@ -39,7 +39,7 @@ C$.c$$I$I$I.apply(this, [0, min, max]);
 Clazz.newMeth(C$, 'c$$I$I$I', function (orient, min, max) {
 Clazz.super_(C$, this,1);
 this.setModel$javax_swing_BoundedRangeModel(Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I,[min, 0, min, max]));
-this.uiClassID = "ProgressBarUI";
+this.uiClassID="ProgressBarUI";
 this.updateUI();
 this.setOrientation$I(orient);
 this.setBorderPainted$Z(true);
@@ -51,7 +51,7 @@ this.setIndeterminate$Z(false);
 Clazz.newMeth(C$, 'c$$javax_swing_BoundedRangeModel', function (newModel) {
 Clazz.super_(C$, this,1);
 this.setModel$javax_swing_BoundedRangeModel(newModel);
-this.uiClassID = "ProgressBarUI";
+this.uiClassID="ProgressBarUI";
 this.updateUI();
 this.setOrientation$I(0);
 this.setBorderPainted$Z(true);
@@ -70,7 +70,7 @@ switch (newOrientation) {
 case 1:
 case 0:
 var oldOrientation = this.orientation;
-this.orientation = newOrientation;
+this.orientation=newOrientation;
 this.firePropertyChange$S$I$I("orientation", oldOrientation, newOrientation);
 break;
 default:
@@ -85,7 +85,7 @@ return this.paintString;
 
 Clazz.newMeth(C$, 'setStringPainted$Z', function (b) {
 var oldValue = this.paintString;
-this.paintString = b;
+this.paintString=b;
 this.firePropertyChange$S$Z$Z("stringPainted", oldValue, this.paintString);
 if (this.paintString != oldValue ) {
 this.revalidate();
@@ -97,13 +97,13 @@ if (this.progressString != null ) {
 return this.progressString;
 } else {
 if (this.format == null ) {
-this.format = (I$[2]||$incl$(2)).getPercentInstance();
+this.format=(I$[2]||$incl$(2)).getPercentInstance();
 }return this.format.format$O( new Double(this.getPercentComplete()));
 }});
 
 Clazz.newMeth(C$, 'setString$S', function (s) {
 var oldValue = this.progressString;
-this.progressString = s;
+this.progressString=s;
 this.firePropertyChange$S$O$O("string", oldValue, this.progressString);
 if (this.progressString == null  || oldValue == null   || !this.progressString.equals$O(oldValue) ) {
 this.repaint();
@@ -122,7 +122,7 @@ return this.$paintBorder;
 
 Clazz.newMeth(C$, 'setBorderPainted$Z', function (b) {
 var oldValue = this.$paintBorder;
-this.$paintBorder = b;
+this.$paintBorder=b;
 this.firePropertyChange$S$Z$Z("borderPainted", oldValue, this.$paintBorder);
 if (this.$paintBorder != oldValue ) {
 this.repaint();
@@ -151,9 +151,9 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[4]||$incl$(4)),['
 
 Clazz.newMeth(C$, 'fireStateChanged', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[4]||$incl$(4)),['stateChanged$javax_swing_event_ChangeEvent']) ) {
-if (this.changeEvent == null ) this.changeEvent = Clazz.new_((I$[5]||$incl$(5)).c$$O,[this]);
+if (this.changeEvent == null ) this.changeEvent=Clazz.new_((I$[5]||$incl$(5)).c$$O,[this]);
 (listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -167,10 +167,10 @@ var oldModel = this.getModel();
 if (newModel !== oldModel ) {
 if (oldModel != null ) {
 oldModel.removeChangeListener$javax_swing_event_ChangeListener(this.changeListener);
-this.changeListener = null;
-}this.model = newModel;
+this.changeListener=null;
+}this.model=newModel;
 if (newModel != null ) {
-this.changeListener = this.createChangeListener();
+this.changeListener=this.createChangeListener();
 newModel.addChangeListener$javax_swing_event_ChangeListener(this.changeListener);
 }if (this.model != null ) {
 this.model.setExtent$I(0);
@@ -204,7 +204,7 @@ this.getModel().setMaximum$I(n);
 
 Clazz.newMeth(C$, 'setIndeterminate$Z', function (newValue) {
 var oldValue = this.indeterminate;
-this.indeterminate = newValue;
+this.indeterminate=newValue;
 this.firePropertyChange$S$Z$Z("indeterminate", oldValue, this.indeterminate);
 });
 
@@ -238,4 +238,4 @@ this.this$0.fireStateChanged();
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:32
+//Created 2018-05-24 08:46:20

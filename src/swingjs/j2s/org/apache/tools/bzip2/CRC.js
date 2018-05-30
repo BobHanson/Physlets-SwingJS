@@ -20,7 +20,7 @@ this.initialiseCRC();
 }, 1);
 
 Clazz.newMeth(C$, 'initialiseCRC', function () {
-this.globalCrc = -1;
+this.globalCrc=-1;
 });
 
 Clazz.newMeth(C$, 'getFinalCRC', function () {
@@ -32,23 +32,23 @@ return this.globalCrc;
 });
 
 Clazz.newMeth(C$, 'setGlobalCRC$I', function (newCrc) {
-this.globalCrc = newCrc;
+this.globalCrc=newCrc;
 });
 
 Clazz.newMeth(C$, 'updateCRC$I', function (inCh) {
 var temp = (this.globalCrc >> 24) ^ inCh;
 if (temp < 0) {
-temp = 256 + temp;
-}this.globalCrc = (this.globalCrc << 8) ^ C$.crc32Table[temp];
+temp=256 + temp;
+}this.globalCrc=(this.globalCrc << 8) ^ C$.crc32Table[temp];
 });
 
 Clazz.newMeth(C$, 'updateCRC$I$I', function (inCh, repeat) {
 var globalCrcShadow = this.globalCrc;
 while (repeat-- > 0){
 var temp = (globalCrcShadow >> 24) ^ inCh;
-globalCrcShadow = (globalCrcShadow << 8) ^ C$.crc32Table[(temp >= 0) ? temp : (temp + 256)];
+globalCrcShadow=(globalCrcShadow << 8) ^ C$.crc32Table[(temp >= 0) ? temp : (temp + 256)];
 }
-this.globalCrc = globalCrcShadow;
+this.globalCrc=globalCrcShadow;
 });
 })();
-//Created 2018-05-15 01:03:02
+//Created 2018-05-24 08:47:16

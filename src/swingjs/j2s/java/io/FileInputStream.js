@@ -25,7 +25,7 @@ Clazz.super_(C$, this,1);
 var name = (file != null  ? file.getPath() : null);
 if (name == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.fd = Clazz.new_((I$[2]||$incl$(2)));
+}this.fd=Clazz.new_((I$[2]||$incl$(2)));
 this.fd.incrementAndGetUseCount();
 p$.open$java_io_File.apply(this, [file]);
 }, 1);
@@ -37,12 +37,12 @@ if (fdObj == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
 }if (security != null ) {
 security.checkRead$java_io_FileDescriptor(fdObj);
-}this.fd = fdObj;
+}this.fd=fdObj;
 this.fd.incrementAndGetUseCount();
 }, 1);
 
 Clazz.newMeth(C$, 'open$java_io_File', function (file) {
-this.is = Clazz.new_((I$[3]||$incl$(3)).c$$BA,[(I$[4]||$incl$(4)).getFileAsBytes$O(file)]);
+this.is=Clazz.new_((I$[3]||$incl$(3)).c$$BA,[(I$[4]||$incl$(4)).getFileAsBytes$O(file)]);
 });
 
 Clazz.newMeth(C$, 'read', function () {
@@ -73,7 +73,7 @@ Clazz.newMeth(C$, 'close', function () {
 if (this.closed) {
 return;
 }this.is.close();
-this.closed = true;
+this.closed=true;
 });
 
 Clazz.newMeth(C$, 'getFD', function () {
@@ -87,4 +87,4 @@ this.close();
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:04
+//Created 2018-05-24 08:45:33

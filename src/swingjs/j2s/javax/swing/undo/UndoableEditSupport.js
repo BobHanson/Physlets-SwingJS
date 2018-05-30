@@ -18,10 +18,10 @@ C$.c$$O.apply(this, [null]);
 
 Clazz.newMeth(C$, 'c$$O', function (r) {
 C$.$init$.apply(this);
-this.realSource = r == null  ? this : r;
-this.updateLevel = 0;
-this.compoundEdit = null;
-this.listeners = Clazz.new_((I$[1]||$incl$(1)));
+this.realSource=r == null  ? this : r;
+this.updateLevel=0;
+this.compoundEdit=null;
+this.listeners=Clazz.new_((I$[1]||$incl$(1)));
 }, 1);
 
 Clazz.newMeth(C$, 'addUndoableEditListener$javax_swing_event_UndoableEditListener', function (l) {
@@ -57,7 +57,7 @@ return this.updateLevel;
 
 Clazz.newMeth(C$, 'beginUpdate', function () {
 if (this.updateLevel == 0) {
-this.compoundEdit = this.createCompoundEdit();
+this.compoundEdit=this.createCompoundEdit();
 }this.updateLevel++;
 });
 
@@ -70,11 +70,11 @@ this.updateLevel--;
 if (this.updateLevel == 0) {
 this.compoundEdit.end();
 this._postEdit$javax_swing_undo_UndoableEdit(this.compoundEdit);
-this.compoundEdit = null;
+this.compoundEdit=null;
 }});
 
 Clazz.newMeth(C$, 'toString', function () {
 return C$.superclazz.prototype.toString.apply(this, []) + " updateLevel: " + this.updateLevel + " listeners: " + this.listeners + " compoundEdit: " + this.compoundEdit ;
 });
 })();
-//Created 2018-05-15 01:03:00
+//Created 2018-05-24 08:47:12

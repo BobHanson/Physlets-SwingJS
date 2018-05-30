@@ -26,12 +26,12 @@ var curJarName = null;
 var isCurJarContainClassOnly = false;
 var contents = Clazz.new_((I$[4]||$incl$(4)));
 var map = C$.getJarMap();
-dir = dir.getCanonicalFile();
-line = reader.readLine();
+dir=dir.getCanonicalFile();
+line=reader.readLine();
 if (line == null  || !line.equals$O("% VERSION 2") ) {
 reader.close();
 return;
-}while ((line = reader.readLine()) != null ){
+}while ((line=reader.readLine()) != null ){
 switch ((line.charCodeAt(0))) {
 case 33:
 case 35:
@@ -40,11 +40,11 @@ case 64:
 if ((curJarName != null ) && (contents.size() > 0) ) {
 map.put$TK$TV(Clazz.new_((I$[1]||$incl$(1)).c$$java_io_File$S,[dir, curJarName]), Clazz.new_(C$.c$$java_util_List$Z,[contents, isCurJarContainClassOnly]));
 contents.clear();
-}curJarName = line.substring(2);
+}curJarName=line.substring(2);
 if (line.charAt(0) == "!") {
-isCurJarContainClassOnly = true;
+isCurJarContainClassOnly=true;
 } else if (isCurJarContainClassOnly) {
-isCurJarContainClassOnly = false;
+isCurJarContainClassOnly=false;
 }break;
 }case 37:
 break;
@@ -79,15 +79,15 @@ Clazz.newMeth(C$, 'c$$java_util_List$Z', function (entries, isClassOnlyJar) {
 C$.$init$.apply(this);
 if (entries == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
-}this.contents = entries.toArray$TTA(Clazz.array(java.lang.String, [0]));
-this.isClassOnlyJar = isClassOnlyJar;
+}this.contents=entries.toArray$TTA(Clazz.array(java.lang.String, [0]));
+this.isClassOnlyJar=isClassOnlyJar;
 }, 1);
 
 Clazz.newMeth(C$, 'getJarMap', function () {
 if (C$.jarMap == null ) {
 {
 if (C$.jarMap == null ) {
-C$.jarMap = Clazz.new_((I$[5]||$incl$(5)));
+C$.jarMap=Clazz.new_((I$[5]||$incl$(5)));
 }}}Clazz.assert(C$, this, function(){return C$.jarMap != null });
 return C$.jarMap;
 }, 1);
@@ -95,4 +95,4 @@ C$.$_ASSERT_ENABLED_ = ClassLoader.$getClassAssertionStatus(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:10
+//Created 2018-05-24 08:47:33

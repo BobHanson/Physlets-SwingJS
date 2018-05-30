@@ -23,7 +23,7 @@ this.numberOfFlavorListeners = 0;
 Clazz.newMeth(C$, 'c$$S', function (name) {
 C$.superclazz.c$$S.apply(this, [name]);
 C$.$init$.apply(this);
-this.CLIPBOARD_FLAVOR_LISTENER_KEY = Clazz.new_((I$[2]||$incl$(2)).c$$S,[name + "_CLIPBOARD_FLAVOR_LISTENER_KEY"]);
+this.CLIPBOARD_FLAVOR_LISTENER_KEY=Clazz.new_((I$[2]||$incl$(2)).c$$S,[name + "_CLIPBOARD_FLAVOR_LISTENER_KEY"]);
 }, 1);
 
 Clazz.newMeth(C$, 'setContents$java_awt_datatransfer_Transferable$java_awt_datatransfer_ClipboardOwner', function (contents, owner) {
@@ -33,8 +33,8 @@ throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["contents"])
 var oldOwner = this.owner;
 var oldContents = this.contents;
 try {
-this.owner = owner;
-this.contents = Clazz.new_((I$[3]||$incl$(3)).c$$java_awt_datatransfer_Transferable$Z,[contents, true]);
+this.owner=owner;
+this.contents=Clazz.new_((I$[3]||$incl$(3)).c$$java_awt_datatransfer_Transferable$Z,[contents, true]);
 this.setContentsNative$java_awt_datatransfer_Transferable(contents);
 } finally {
 if (oldOwner != null  && oldOwner !== owner  ) {
@@ -64,7 +64,7 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["Can\'t set
 }context.addPropertyChangeListener$S$java_beans_PropertyChangeListener("disposed", this);
 }if (this.contentsContext != null ) {
 this.contentsContext.removePropertyChangeListener$S$java_beans_PropertyChangeListener("disposed", this);
-}this.contentsContext = context;
+}this.contentsContext=context;
 }});
 
 Clazz.newMeth(C$, 'getContents$O', function (requestor) {
@@ -111,10 +111,10 @@ var formats = this.getClipboardFormats();
 var lFormat = (I$[8]||$incl$(8)).getInstance().getFlavorsForFormats$JA$java_awt_datatransfer_FlavorTable(formats, C$.flavorMap).get$O(flavor);
 if (lFormat == null ) {
 throw Clazz.new_(Clazz.load('java.awt.datatransfer.UnsupportedFlavorException').c$$java_awt_datatransfer_DataFlavor,[flavor]);
-}format = lFormat.longValue();
-data = this.getClipboardData$J(format);
+}format=lFormat.longValue();
+data=this.getClipboardData$J(format);
 if ((I$[8]||$incl$(8)).getInstance().isLocaleDependentTextFormat$J(format)) {
-localeTransferable = this.createLocaleTransferable$JA(formats);
+localeTransferable=this.createLocaleTransferable$JA(formats);
 }} finally {
 this.closeClipboard();
 }
@@ -163,11 +163,11 @@ var context = sunClipboard.contentsContext;
 if (context == null ) {
 return;
 }if (this.$finals.disposedContext == null  || context === this.$finals.disposedContext  ) {
-owner = sunClipboard.owner;
-contents = sunClipboard.contents;
-sunClipboard.contentsContext = null;
-sunClipboard.owner = null;
-sunClipboard.contents = null;
+owner=sunClipboard.owner;
+contents=sunClipboard.contents;
+sunClipboard.contentsContext=null;
+sunClipboard.owner=null;
+sunClipboard.contents=null;
 sunClipboard.clearNativeContext();
 context.removePropertyChangeListener$S$java_beans_PropertyChangeListener("disposed", sunClipboard);
 } else {
@@ -199,14 +199,14 @@ return;
 }var appContext = (I$[6]||$incl$(6)).getAppContext();
 var contextFlavorListeners = appContext.get$O(this.CLIPBOARD_FLAVOR_LISTENER_KEY);
 if (contextFlavorListeners == null ) {
-contextFlavorListeners = Clazz.new_((I$[13]||$incl$(13)).c$$Class,[Clazz.getClass((I$[14]||$incl$(14)),['flavorsChanged$java_awt_datatransfer_FlavorEvent'])]);
+contextFlavorListeners=Clazz.new_((I$[13]||$incl$(13)).c$$Class,[Clazz.getClass((I$[14]||$incl$(14)),['flavorsChanged$java_awt_datatransfer_FlavorEvent'])]);
 appContext.put$O$O(this.CLIPBOARD_FLAVOR_LISTENER_KEY, contextFlavorListeners);
 }contextFlavorListeners.add$java_util_EventListener(listener);
 if (this.numberOfFlavorListeners++ == 0) {
 var currentFormats = null;
 try {
 this.openClipboard$sun_awt_datatransfer_SunClipboard(null);
-currentFormats = this.getClipboardFormats();
+currentFormats=this.getClipboardFormats();
 } catch (exc) {
 if (Clazz.exceptionOf(exc, "java.lang.IllegalStateException")){
 } else {
@@ -215,7 +215,7 @@ throw exc;
 } finally {
 this.closeClipboard();
 }
-this.$currentDataFlavors = C$.formatArrayAsDataFlavorSet$JA(currentFormats);
+this.$currentDataFlavors=C$.formatArrayAsDataFlavorSet$JA(currentFormats);
 this.registerClipboardViewerChecked();
 }});
 
@@ -228,7 +228,7 @@ if (contextFlavorListeners == null ) {
 return;
 }if (contextFlavorListeners.remove$java_util_EventListener(listener) && --this.numberOfFlavorListeners == 0 ) {
 this.unregisterClipboardViewerChecked();
-this.$currentDataFlavors = null;
+this.$currentDataFlavors=null;
 }});
 
 Clazz.newMeth(C$, 'getFlavorListeners', function () {
@@ -242,7 +242,7 @@ return (this.numberOfFlavorListeners > 0);
 
 Clazz.newMeth(C$, 'checkChange$JA', function (formats) {
 var prevDataFlavors = this.$currentDataFlavors;
-this.$currentDataFlavors = C$.formatArrayAsDataFlavorSet$JA(formats);
+this.$currentDataFlavors=C$.formatArrayAsDataFlavorSet$JA(formats);
 if ((prevDataFlavors != null ) && (this.$currentDataFlavors != null ) && prevDataFlavors.equals$O(this.$currentDataFlavors)  ) {
 return;
 };for (var it = (I$[6]||$incl$(6)).getAppContexts().iterator(); it.hasNext(); ) {
@@ -275,7 +275,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_datatransfer_FlavorListener', function (flavorListener) {
 C$.$init$.apply(this);
-this.flavorListener = flavorListener;
+this.flavorListener=flavorListener;
 }, 1);
 
 Clazz.newMeth(C$, 'run', function () {
@@ -288,4 +288,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:06
+//Created 2018-05-24 08:47:24

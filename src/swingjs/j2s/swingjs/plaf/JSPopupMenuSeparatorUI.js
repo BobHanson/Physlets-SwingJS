@@ -10,8 +10,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.isMenuItem = true;
-this.allowPaintedBackground = false;
+this.isMenuItem=true;
+this.allowPaintedBackground=false;
 }, 1);
 })();
-//Created 2018-05-15 01:03:24
+//Created 2018-05-24 08:47:57

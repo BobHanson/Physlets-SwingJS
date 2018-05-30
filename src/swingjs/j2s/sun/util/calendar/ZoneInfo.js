@@ -28,7 +28,7 @@ this.dirty = false;
 }, 1);
 
 Clazz.newMeth(C$, 'setRawOffsetReally$I', function (offset) {
-this.rawOffset = offset;
+this.rawOffset=offset;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
@@ -42,13 +42,13 @@ C$.c$$S$I$I$I$JA$IA$IA$Z.apply(this, [ID, rawOffset, 0, 0, null, null, null, fal
 Clazz.newMeth(C$, 'c$$S$I$I$I$JA$IA$IA$Z', function (ID, rawOffset, dstSavings, checksum, transitions, offsets, simpleTimeZoneParams, willGMTOffsetChange) {
 Clazz.super_(C$, this,1);
 this.setID$S(ID);
-this.rawOffset = rawOffset;
-this.dstSavings = dstSavings;
-this.checksum = checksum;
-this.transitions = transitions;
-this.offsets = offsets;
-this.simpleTimeZoneParams = simpleTimeZoneParams;
-this.willGMTOffsetChange = willGMTOffsetChange;
+this.rawOffset=rawOffset;
+this.dstSavings=dstSavings;
+this.checksum=checksum;
+this.transitions=transitions;
+this.offsets=offsets;
+this.simpleTimeZoneParams=simpleTimeZoneParams;
+this.willGMTOffsetChange=willGMTOffsetChange;
 }, 1);
 
 Clazz.newMeth(C$, 'getOffset$J', function (date) {
@@ -71,16 +71,16 @@ Clazz.newMeth(C$, 'getOffsets$J$IA$I', function (date, offsets, type) {
 if (this.transitions == null ) {
 var offset = p$.getLastRawOffset.apply(this, []);
 if (offsets != null ) {
-offsets[0] = offset;
-offsets[1] = 0;
+offsets[0]=offset;
+offsets[1]=0;
 }return offset;
-}date = date-(this.rawOffsetDiff);
+}date-=this.rawOffsetDiff;
 var index = p$.getTransitionIndex$J$I.apply(this, [date, type]);
 if (index < 0) {
 var offset = p$.getLastRawOffset.apply(this, []);
 if (offsets != null ) {
-offsets[0] = offset;
-offsets[1] = 0;
+offsets[0]=offset;
+offsets[1]=0;
 }return offset;
 }if (index < this.transitions.length) {
 var val = this.transitions[index];
@@ -88,24 +88,24 @@ var offset = this.offsets[((val & 15)|0)] + this.rawOffsetDiff;
 if (offsets != null ) {
 var dst = (((val >>> 4) & 15)|0);
 var save = (dst == 0) ? 0 : this.offsets[dst];
-offsets[0] = offset - save;
-offsets[1] = save;
+offsets[0]=offset - save;
+offsets[1]=save;
 }return offset;
 }var tz = p$.getLastRule.apply(this, []);
 if (tz != null ) {
 var rawoffset = tz.getRawOffset();
 var msec = date;
 if (type != 0) {
-msec = msec-(this.rawOffset);
+msec-=this.rawOffset;
 }var dstoffset = tz.inDaylightTime$java_util_Date(Clazz.new_((I$[1]||$incl$(1)),[msec])) ? tz.getDSTSavings() : 0;
 if (offsets != null ) {
-offsets[0] = rawoffset;
-offsets[1] = dstoffset;
+offsets[0]=rawoffset;
+offsets[1]=dstoffset;
 }return rawoffset + dstoffset;
 }var offset = p$.getLastRawOffset.apply(this, []);
 if (offsets != null ) {
-offsets[0] = offset;
-offsets[1] = 0;
+offsets[0]=offset;
+offsets[1]=0;
 }return offset;
 });
 
@@ -117,15 +117,15 @@ var mid = ((low + high)/2|0);
 var val = this.transitions[mid];
 var midVal = val >> 12;
 if (type != 0) {
-midVal = midVal+(this.offsets[((val & 15)|0)]);
+midVal+=this.offsets[((val & 15)|0)];
 }if (type == 1) {
 var dstIndex = (((val >>> 4) & 15)|0);
 if (dstIndex != 0) {
-midVal = midVal-(this.offsets[dstIndex]);
+midVal-=this.offsets[dstIndex];
 }}if (midVal < date) {
-low = mid + 1;
+low=mid + 1;
 } else if (midVal > date) {
-high = mid - 1;
+high=mid - 1;
 } else {
 return mid;
 }}
@@ -138,10 +138,10 @@ Clazz.newMeth(C$, 'getOffset$I$I$I$I$I$I', function (era, year, month, day, dayO
 if (milliseconds < 0 || milliseconds >= 86400000 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
 }if (era == 0) {
-year = 1 - year;
+year=1 - year;
 } else if (era != 1) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
-}if (C$.gcal == null ) C$.gcal = (I$[2]||$incl$(2)).getGregorianCalendar();
+}if (C$.gcal == null ) C$.gcal=(I$[2]||$incl$(2)).getGregorianCalendar();
 var date = C$.gcal.newCalendarDate$java_util_TimeZone(null);
 date.setDate$I$I$I(year, month + 1, day);
 if (C$.gcal.validate$sun_util_calendar_CalendarDate(date) == false ) {
@@ -151,17 +151,17 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
 }if (this.transitions == null ) {
 return p$.getLastRawOffset.apply(this, []);
 }var dateInMillis = C$.gcal.getTime$sun_util_calendar_CalendarDate(date) + milliseconds;
-dateInMillis = dateInMillis-(this.rawOffset);
+dateInMillis-=this.rawOffset;
 return p$.getOffsets$J$IA$I.apply(this, [dateInMillis, null, 0]);
 });
 
 Clazz.newMeth(C$, 'setRawOffset$I', function (offsetMillis) {
 if (offsetMillis == this.rawOffset + this.rawOffsetDiff) {
 return;
-}this.rawOffsetDiff = offsetMillis - this.rawOffset;
+}this.rawOffsetDiff=offsetMillis - this.rawOffset;
 if (this.lastRule != null ) {
 this.lastRule.setRawOffset$I(offsetMillis);
-}this.dirty = true;
+}this.dirty=true;
 });
 
 Clazz.newMeth(C$, 'getRawOffset', function () {
@@ -211,7 +211,7 @@ return this.getClass().getName() + "[id=\"" + this.getID() + "\"" + ",offset=" +
 
 Clazz.newMeth(C$, 'getLastRule', function () {
 if (this.lastRule == null ) {
-this.lastRule = this.getLastRuleInstance();
+this.lastRule=this.getLastRuleInstance();
 }return this.lastRule;
 });
 
@@ -225,7 +225,7 @@ return Clazz.new_((I$[3]||$incl$(3)).c$$I$S$I$I$I$I$I$I$I$I$I$I$I,[p$.getLastRaw
 
 Clazz.newMeth(C$, 'clone', function () {
 var zi = Clazz.clone(this);
-zi.lastRule = null;
+zi.lastRule=null;
 return zi;
 });
 
@@ -262,10 +262,10 @@ Clazz.newMeth(C$, 'getAliasTable', function () {
 var aliases = null;
 var cache = C$.aliasTable;
 if (cache != null ) {
-aliases = cache;
+aliases=cache;
 if (aliases != null ) {
 return aliases;
 }}return aliases;
 }, 1);
 })();
-//Created 2018-05-15 01:03:12
+//Created 2018-05-24 08:47:38

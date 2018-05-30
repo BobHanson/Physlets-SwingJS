@@ -29,11 +29,11 @@ C$.$init$.apply(this);
 
 Clazz.newMeth(C$, 'c$$I$BA$I$FA$I', function (windingRule, pointTypes, numTypes, pointCoords, numCoords) {
 Clazz.super_(C$, this,1);
-this.windingRule = windingRule;
-this.pointTypes = pointTypes;
-this.numTypes = numTypes;
-this.floatCoords = pointCoords;
-this.numCoords = numCoords;
+this.windingRule=windingRule;
+this.pointTypes=pointTypes;
+this.numTypes=numTypes;
+this.floatCoords=pointCoords;
+this.numCoords=numCoords;
 }, 1);
 })();
-//Created 2018-05-15 01:01:59
+//Created 2018-05-24 08:45:21

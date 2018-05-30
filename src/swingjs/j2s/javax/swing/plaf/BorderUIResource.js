@@ -20,25 +20,25 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'getEtchedBorderUIResource', function () {
 if (C$.etched == null ) {
-C$.etched = Clazz.new_((I$[1]||$incl$(1)));
+C$.etched=Clazz.new_((I$[1]||$incl$(1)));
 }return C$.etched;
 }, 1);
 
 Clazz.newMeth(C$, 'getLoweredBevelBorderUIResource', function () {
 if (C$.loweredBevel == null ) {
-C$.loweredBevel = Clazz.new_((I$[2]||$incl$(2)).c$$I,[1]);
+C$.loweredBevel=Clazz.new_((I$[2]||$incl$(2)).c$$I,[1]);
 }return C$.loweredBevel;
 }, 1);
 
 Clazz.newMeth(C$, 'getRaisedBevelBorderUIResource', function () {
 if (C$.raisedBevel == null ) {
-C$.raisedBevel = Clazz.new_((I$[2]||$incl$(2)).c$$I,[0]);
+C$.raisedBevel=Clazz.new_((I$[2]||$incl$(2)).c$$I,[0]);
 }return C$.raisedBevel;
 }, 1);
 
 Clazz.newMeth(C$, 'getBlackLineBorderUIResource', function () {
 if (C$.blackLine == null ) {
-C$.blackLine = Clazz.new_((I$[3]||$incl$(3)).c$$java_awt_Color,[(I$[4]||$incl$(4)).black]);
+C$.blackLine=Clazz.new_((I$[3]||$incl$(3)).c$$java_awt_Color,[(I$[4]||$incl$(4)).black]);
 }return C$.blackLine;
 }, 1);
 
@@ -46,7 +46,7 @@ Clazz.newMeth(C$, 'c$$javax_swing_border_Border', function (delegate) {
 C$.$init$.apply(this);
 if (delegate == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["null border delegate argument"]);
-}this.delegate = delegate;
+}this.delegate=delegate;
 }, 1);
 
 Clazz.newMeth(C$, 'paintBorder$java_awt_Component$java_awt_Graphics$I$I$I$I', function (c, g, x, y, width, height) {
@@ -257,4 +257,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:46
+//Created 2018-05-24 08:46:51

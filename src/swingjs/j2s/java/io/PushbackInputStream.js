@@ -23,8 +23,8 @@ C$.superclazz.c$$java_io_InputStream.apply(this, [$in]);
 C$.$init$.apply(this);
 if (size <= 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["size <= 0"]);
-}this.buf = Clazz.array(Byte.TYPE, [size]);
-this.pos = size;
+}this.buf=Clazz.array(Byte.TYPE, [size]);
+this.pos=size;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_InputStream', function ($in) {
@@ -49,13 +49,13 @@ return 0;
 }var avail = this.buf.length - this.pos;
 if (avail > 0) {
 if (len < avail) {
-avail = len;
+avail=len;
 }System.arraycopy(this.buf, this.pos, b, off, avail);
-this.pos = this.pos+(avail);
-off = off+(avail);
-len = len-(avail);
+this.pos+=avail;
+off+=avail;
+len-=avail;
 }if (len > 0) {
-len = this.$in.read$BA$I$I(b, off, len);
+len=this.$in.read$BA$I$I(b, off, len);
 if (len == -1) {
 return avail == 0 ? -1 : avail;
 }return avail + len;
@@ -66,14 +66,14 @@ Clazz.newMeth(C$, 'unreadByte$I', function (b) {
 p$.ensureOpen.apply(this, []);
 if (this.pos == 0) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Push back buffer is full"]);
-}this.buf[--this.pos] = ((b|0)|0);
+}this.buf[--this.pos]=((b|0)|0);
 });
 
 Clazz.newMeth(C$, 'unread$BA$I$I', function (b, off, len) {
 p$.ensureOpen.apply(this, []);
 if (len > this.pos) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Push back buffer is full"]);
-}this.pos = this.pos-(len);
+}this.pos-=len;
 System.arraycopy(b, off, this.buf, this.pos, len);
 });
 
@@ -91,11 +91,11 @@ return 0;
 }var pskip = this.buf.length - this.pos;
 if (pskip > 0) {
 if (n < pskip) {
-pskip = n;
-}this.pos = this.pos+(pskip);
-n = n-(pskip);
+pskip=n;
+}this.pos+=pskip;
+n-=pskip;
 }if (n > 0) {
-pskip = pskip+(this.$in.skip$J(n));
+pskip+=this.$in.skip$J(n);
 }return pskip;
 });
 
@@ -113,10 +113,10 @@ throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["mark/reset not support
 Clazz.newMeth(C$, 'close', function () {
 if (this.$in == null ) return;
 this.$in.close();
-this.$in = null;
-this.buf = null;
+this.$in=null;
+this.buf=null;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:05
+//Created 2018-05-24 08:45:35

@@ -17,10 +17,10 @@ Clazz.super_(C$, this,1);
 }, 1);
 
 Clazz.newMeth(C$, 'set4$F$F$F$F', function (x, y, z, w) {
-this.x = x;
-this.y = y;
-this.z = z;
-this.w = w;
+this.x=x;
+this.y=y;
+this.z=z;
+this.w=w;
 });
 
 Clazz.newMeth(C$, 'scale4$F', function (s) {
@@ -46,4 +46,4 @@ Clazz.newMeth(C$, 'toJSON', function () {
 return "[" + new Float(this.x).toString() + ", " + new Float(this.y).toString() + ", " + new Float(this.z).toString() + ", " + new Float(this.w).toString() + "]" ;
 });
 })();
-//Created 2018-05-15 01:02:19
+//Created 2018-05-24 08:45:58

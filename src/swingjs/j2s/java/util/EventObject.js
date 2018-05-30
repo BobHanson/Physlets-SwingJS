@@ -14,7 +14,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function (source) {
 C$.$init$.apply(this);
-if (source != null ) this.source = source;
+if (source != null ) this.source=source;
 }, 1);
 
 Clazz.newMeth(C$, 'getSource', function () {
@@ -25,4 +25,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.getClass().getName() + "[source=" + String.valueOf(this.source) + ']' ;
 });
 })();
-//Created 2018-05-15 01:02:12
+//Created 2018-05-24 08:45:45

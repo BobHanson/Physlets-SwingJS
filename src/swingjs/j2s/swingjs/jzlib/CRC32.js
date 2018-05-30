@@ -19,17 +19,17 @@ this.b1 = Clazz.array(Byte.TYPE, [1]);
 
 Clazz.newMeth(C$, 'update$BA$I$I', function (buf, index, len) {
 var c = ~this.crc;
-while (--len >= 0)c = C$.crc_table[(c ^ buf[index++]) & 255] ^ (c >>> 8);
+while (--len >= 0)c=C$.crc_table[(c ^ buf[index++]) & 255] ^ (c >>> 8);
 
-this.crc = ~c;
+this.crc=~c;
 });
 
 Clazz.newMeth(C$, 'reset', function () {
-this.crc = 0;
+this.crc=0;
 });
 
 Clazz.newMeth(C$, 'resetLong$J', function (vv) {
-this.crc = ((vv & 4294967295)|0);
+this.crc=((vv & 4294967295)|0);
 });
 
 Clazz.newMeth(C$, 'getValue', function () {
@@ -37,10 +37,10 @@ return this.crc & 4294967295;
 });
 
 Clazz.newMeth(C$, 'updateByteAsInt$I', function (b) {
-this.b1[0] = ((b|0)|0);
+this.b1[0]=((b|0)|0);
 this.update$BA$I$I(this.b1, 0, 1);
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:18
+//Created 2018-05-24 08:47:48

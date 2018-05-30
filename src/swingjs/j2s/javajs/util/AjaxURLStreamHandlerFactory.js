@@ -19,8 +19,8 @@ C$.$init$.apply(this);
 
 Clazz.newMeth(C$, 'createURLStreamHandler$S', function (protocol) {
 var fac = this.htFactories.get$O(protocol);
-if (fac == null ) this.htFactories.put$TK$TV(protocol, fac = Clazz.new_((I$[2]||$incl$(2)).c$$S,[protocol]));
+if (fac == null ) this.htFactories.put$TK$TV(protocol, fac=Clazz.new_((I$[2]||$incl$(2)).c$$S,[protocol]));
 return (fac.protocol == null  ? null : fac);
 });
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:55

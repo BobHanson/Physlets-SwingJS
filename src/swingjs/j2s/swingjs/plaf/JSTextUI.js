@@ -23,7 +23,7 @@ this.editable = true;
 
 Clazz.newMeth(C$, 'getComponentText', function () {
 var jtc = this.jc;
-return (jtc.getDocument() == null  ? null : (this.currentText = (this.c).getText()));
+return (jtc.getDocument() == null  ? null : (this.currentText=(this.c).getText()));
 });
 
 Clazz.newMeth(C$, 'installDefaults', function () {
@@ -40,8 +40,8 @@ this.editor.setForeground$java_awt_Color((I$[2]||$incl$(2)).getColor$O(prefix + 
 }var dfg = this.editor.getDisabledTextColor();
 if ((dfg == null ) || (Clazz.instanceOf(dfg, "javax.swing.plaf.UIResource")) ) {
 this.editor.setDisabledTextColor$java_awt_Color((I$[2]||$incl$(2)).getColor$O(prefix + "inactiveForeground"));
-}dfg = (I$[2]||$incl$(2)).getColor$O(prefix + "inactiveBackground");
-this.inactiveBackgroundColor = (dfg == null  ? null : (I$[3]||$incl$(3)).getCSSColor$java_awt_Color(dfg));
+}dfg=(I$[2]||$incl$(2)).getColor$O(prefix + "inactiveBackground");
+this.inactiveBackgroundColor=(dfg == null  ? null : (I$[3]||$incl$(3)).getCSSColor$java_awt_Color(dfg));
 var margin = this.editor.getMargin();
 if (margin == null  || Clazz.instanceOf(margin, "javax.swing.plaf.UIResource") ) {
 this.editor.setMargin$java_awt_Insets((I$[2]||$incl$(2)).getInsets$O(prefix + ".margin"));
@@ -104,7 +104,7 @@ Clazz.newMeth(C$, 'getActionMap', function () {
 var mapName = this.classID + ".actionMap";
 var map = (I$[2]||$incl$(2)).get$O(mapName);
 if (map == null ) {
-map = this.createActionMap();
+map=this.createActionMap();
 if (map != null ) {
 (I$[2]||$incl$(2)).getLookAndFeelDefaults().put$O$O(mapName, map);
 }}return map;
@@ -132,9 +132,9 @@ return this.editor;
 });
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.isToolbarFixed = false;
-this.editor = jc;
-this.textListener = Clazz.new_((I$[9]||$incl$(9)).c$$swingjs_plaf_JSTextUI$javax_swing_text_JTextComponent,[this, this.editor]);
+this.isToolbarFixed=false;
+this.editor=jc;
+this.textListener=Clazz.new_((I$[9]||$incl$(9)).c$$swingjs_plaf_JSTextUI$javax_swing_text_JTextComponent,[this, this.editor]);
 this.installDefaults();
 p$.installDefaults2.apply(this, []);
 this.installListeners$javax_swing_text_JTextComponent(this.editor);
@@ -149,8 +149,8 @@ if (Clazz.instanceOf(lm, "javax.swing.plaf.UIResource")) {
 jc.setLayout$java_awt_LayoutManager(null);
 }this.uninstallKeyboardActions();
 this.uninstallListeners$javax_swing_text_JTextComponent(this.editor);
-this.editor = null;
-this.textListener = null;
+this.editor=null;
+this.textListener=null;
 });
 
 Clazz.newMeth(C$, 'installListeners$javax_swing_text_JTextComponent', function (b) {
@@ -173,8 +173,8 @@ b.getDocument().removeDocumentListener$javax_swing_event_DocumentListener(listen
 Clazz.newMeth(C$, 'getMinimumSize', function () {
 var d = this.getPreferredSize();
 var i = this.jc.getInsets();
-d.width = d.width+(i.left + i.right);
-d.height = d.height+(i.top + i.bottom);
+d.width+=i.left + i.right;
+d.height+=i.top + i.bottom;
 return d;
 });
 
@@ -191,7 +191,7 @@ return false;
 });
 
 Clazz.newMeth(C$, 'setEditable$Z', function (editable) {
-this.editable = editable;
+this.editable=editable;
 if (this.domNode == null ) return;
 (I$[10]||$incl$(10)).setAttr(this.domNode, "readOnly", editable ? null : "true");
 });
@@ -200,13 +200,13 @@ Clazz.newMeth(C$, 'setText$S', function (val) {
 var prop = null;
 var obj = null;
 if (val == null  ? this.currentText != null  : !val.equals$O(this.currentText)) {
-this.currentText = val;
+this.currentText=val;
 if (this.textNode != null ) {
-prop = "innerHTML";
-obj = this.textNode;
+prop="innerHTML";
+obj=this.textNode;
 } else if (this.valueNode != null ) {
-prop = "value";
-obj = this.valueNode;
+prop="value";
+obj=this.valueNode;
 }if (obj != null ) this.setProp$swingjs_api_js_DOMNode$S$S(obj, prop, val);
 }});
 
@@ -233,7 +233,7 @@ this.action = null;
 Clazz.newMeth(C$, 'c$$javax_swing_text_TextAction', function (action) {
 C$.superclazz.c$$S.apply(this, [action.getValue$S("Name")]);
 C$.$init$.apply(this);
-this.action = action;
+this.action=action;
 }, 1);
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -270,4 +270,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:27
+//Created 2018-05-24 08:48:00

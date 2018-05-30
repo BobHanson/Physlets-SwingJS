@@ -23,7 +23,7 @@ return this.index;
 
 Clazz.newMeth(C$, 'setSelectedIndex$I', function (index) {
 if (this.index != index) {
-this.index = index;
+this.index=index;
 this.fireStateChanged();
 }});
 
@@ -34,7 +34,7 @@ this.setSelectedIndex$I(-1);
 Clazz.newMeth(C$, 'isSelected', function () {
 var ret = false;
 if (this.getSelectedIndex() != -1) {
-ret = true;
+ret=true;
 }return ret;
 });
 
@@ -52,9 +52,9 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[2]||$incl$(2)),['
 
 Clazz.newMeth(C$, 'fireStateChanged', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[2]||$incl$(2)),['stateChanged$javax_swing_event_ChangeEvent']) ) {
-if (this.changeEvent == null ) this.changeEvent = Clazz.new_((I$[3]||$incl$(3)).c$$O,[this]);
+if (this.changeEvent == null ) this.changeEvent=Clazz.new_((I$[3]||$incl$(3)).c$$O,[this]);
 (listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -65,4 +65,4 @@ return this.listenerList.getListeners$Class(listenerType);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:24
+//Created 2018-05-24 08:46:10

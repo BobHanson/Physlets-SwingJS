@@ -19,10 +19,10 @@ this.setDoc();
 
 Clazz.newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.domNode = this.newDOMObject$S$S$SA("label", this.id, []);
-this.textNode = this.newDOMObject$S$S$SA("span", this.id + "_text", []);
-this.iconNode = this.newDOMObject$S$S$SA("span", this.id + "_icon", []);
-this.centeringNode = this.newDOMObject$S$S$SA("span", this.id + "_cntr", []);
+this.domNode=this.newDOMObject$S$S$SA("label", this.id, []);
+this.textNode=this.newDOMObject$S$S$SA("span", this.id + "_text", []);
+this.iconNode=this.newDOMObject$S$S$SA("span", this.id + "_icon", []);
+this.centeringNode=this.newDOMObject$S$S$SA("span", this.id + "_cntr", []);
 this.centeringNode.appendChild(this.iconNode);
 this.centeringNode.appendChild(this.textNode);
 this.domNode.appendChild(this.centeringNode);
@@ -41,11 +41,11 @@ return this.outerNode;
 });
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.label = jc;
+this.label=jc;
 (I$[2]||$incl$(2)).installColorsAndFont$javax_swing_JComponent$S$S$S(jc, "Label.background", "Label.foreground", "Label.font");
 });
 
 Clazz.newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (jc) {
 });
 })();
-//Created 2018-05-15 01:03:22
+//Created 2018-05-24 08:47:54

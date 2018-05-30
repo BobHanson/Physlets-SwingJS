@@ -36,7 +36,7 @@ if (this.eos) {
 return -1;
 }var n = this.readInf$BA$I$I(buf, off, len);
 if (n == -1) {
-if (p$.readTrailer.apply(this, [])) this.eos = true;
+if (p$.readTrailer.apply(this, [])) this.eos=true;
  else return this.read$BA$I$I(buf, off, len);
 } else {
 this.crc.update$BA$I$I(buf, off, n);
@@ -46,8 +46,8 @@ this.crc.update$BA$I$I(buf, off, n);
 Clazz.newMeth(C$, 'close', function () {
 if (!this.$closed) {
 C$.superclazz.prototype.close.apply(this, []);
-this.eos = true;
-this.$closed = true;
+this.eos=true;
+this.$closed=true;
 }});
 
 Clazz.newMeth(C$, 'readHeader$java_io_InputStream', function (this_in) {
@@ -63,7 +63,7 @@ var n = 10;
 if ((flg & 4) == 4) {
 var m = p$.readUShort$java_io_InputStream.apply(this, [$in]);
 p$.skipBytes$java_io_InputStream$I.apply(this, [$in, m]);
-n = n+(m + 2);
+n+=m + 2;
 }if ((flg & 8) == 8) {
 do {
 n++;
@@ -76,7 +76,7 @@ n++;
 var v = (this.crc.getValue()|0) & 65535;
 if (p$.readUShort$java_io_InputStream.apply(this, [$in]) != v) {
 throw Clazz.new_(Clazz.load('java.util.zip.ZipException').c$$S,["Corrupt GZIP header"]);
-}n = n+(2);
+}n+=2;
 }this.crc.reset();
 return n;
 });
@@ -104,10 +104,10 @@ while (n > 0){
 var len = $in.read$BA$I$I(this.tmpbuf, 0, n < this.tmpbuf.length ? n : this.tmpbuf.length);
 if (len == -1) {
 throw Clazz.new_(Clazz.load('java.io.EOFException'));
-}n = n-(len);
+}n-=len;
 }
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:16
+//Created 2018-05-24 08:45:52

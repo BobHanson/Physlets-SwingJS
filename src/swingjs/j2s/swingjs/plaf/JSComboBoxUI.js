@@ -15,14 +15,14 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.isContainer = true;
-this.allowPaintedBackground = false;
+this.isContainer=true;
+this.allowPaintedBackground=false;
 this.setDoc();
 }, 1);
 
 Clazz.newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.domNode = this.focusNode = (I$[1]||$incl$(1)).setStyles(this.newDOMObject$S$S$SA("select", this.id, []), ["padding", "0px 0px", "lineHeight", "0.8", "box-sizing", "border-box"]);
+this.domNode=this.focusNode=(I$[1]||$incl$(1)).setStyles(this.newDOMObject$S$S$SA("select", this.id, []), ["padding", "0px 0px", "lineHeight", "0.8", "box-sizing", "border-box"]);
 this.ignoreAllMouseEvents$swingjs_api_js_DOMNode(this.domNode);
 (I$[1]||$incl$(1)).addJqueryHandledEvent(this, this.domNode, "change");
 this.addJQueryFocusCallbacks();
@@ -54,7 +54,7 @@ this.domNode.appendChild(option);
 });
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.comboBox = jc;
+this.comboBox=jc;
 this.installListeners();
 (I$[4]||$incl$(4)).installColorsAndFont$javax_swing_JComponent$S$S$S(jc, "ComboBox.background", "ComboBox.foreground", "ComboBox.font");
 });
@@ -64,8 +64,8 @@ return "ComboBox.";
 });
 
 Clazz.newMeth(C$, 'getDisabledColors$S', function (pp) {
-this.inactiveBackground = (I$[5]||$incl$(5)).getColor$O(pp + "disabledBackground");
-this.inactiveForeground = (I$[5]||$incl$(5)).getColor$O(pp + "disabledForeground");
+this.inactiveBackground=(I$[5]||$incl$(5)).getColor$O(pp + "disabledBackground");
+this.inactiveForeground=(I$[5]||$incl$(5)).getColor$O(pp + "disabledForeground");
 });
 
 Clazz.newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (jc) {
@@ -117,4 +117,4 @@ this.revalidate();
 Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (e) {
 });
 })();
-//Created 2018-05-15 01:03:21
+//Created 2018-05-24 08:47:53

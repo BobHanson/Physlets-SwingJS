@@ -269,6 +269,12 @@ javax/swing/text/JTextComponent.js
 javax/swing/text/TextAction.js
 poisson/CalcThing.js
 poisson/Poisson.js
+poisson/ArrowThing2.js
+poisson/BoxObject.js
+poisson/PotentialObject.js
+poisson/RectObject.js
+poisson/TestChargeThing.js
+poisson/VectorField.js
 poisson/PoissonPanel.js
 poisson/PoissonPanel_mouseAdapter.js
 poisson/PoissonPanel_mouseMotionAdapter.js
@@ -281,9 +287,6 @@ poisson/Poisson_gridCkBox_itemAdapter.js
 poisson/Poisson_poissonPanel_mouseAdapter.js
 poisson/Poisson_rhoCkBox_itemAdapter.js
 poisson/Poisson_voltageNumber_actionAdapter.js
-poisson/PotentialObject.js
-poisson/RectObject.js
-poisson/VectorField.js
 script/ScriptListener.js
 slider/SliderApplet.js
 splotter/SPlotter.js

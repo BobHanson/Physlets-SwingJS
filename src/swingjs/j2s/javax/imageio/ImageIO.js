@@ -141,7 +141,7 @@ return this.useCache;
 });
 
 Clazz.newMeth(C$, 'setUseCache$Z', function (useCache) {
-this.useCache = useCache;
+this.useCache=useCache;
 });
 
 Clazz.newMeth(C$, 'getCacheDirectory', function () {
@@ -157,10 +157,10 @@ return this.hasPermission;
 });
 
 Clazz.newMeth(C$, 'setHasPermission$Boolean', function (hasPermission) {
-this.hasPermission = hasPermission;
+this.hasPermission=hasPermission;
 });
 })()
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:20
+//Created 2018-05-24 08:45:59

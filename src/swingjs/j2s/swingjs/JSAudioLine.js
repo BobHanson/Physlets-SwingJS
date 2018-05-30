@@ -25,7 +25,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_sound_sampled_Line_Info', function (info) {
 C$.$init$.apply(this);
-this.info = info;
+this.info=info;
 }, 1);
 
 Clazz.newMeth(C$, 'open', function () {
@@ -41,16 +41,16 @@ Clazz.newMeth(C$, 'open$javax_sound_sampled_AudioFormat$I', function (format, bu
 window.AudioContext = window.AudioContext || window.webkitAudioContext; this.auctx = new AudioContext();
 }
 if (format != null ) {
-this.info.getFormats()[0] = format;
-this.nChannels = format.getChannels();
-this.sampleRate = (format.getSampleRate()|0);
-this.sampleSizeInBytes = format.getSampleSizeInBits() >> 3;
-this.isBigEndian = format.isBigEndian();
-this.isUnsignedPCM = format.getEncoding() === (I$[1]||$incl$(1)).PCM_UNSIGNED ;
-this.audioBuffer = null;
-}this.startTime = 0;
-this.bOpen = true;
-this.bStopped = false;
+this.info.getFormats()[0]=format;
+this.nChannels=format.getChannels();
+this.sampleRate=(format.getSampleRate()|0);
+this.sampleSizeInBytes=format.getSampleSizeInBits() >> 3;
+this.isBigEndian=format.isBigEndian();
+this.isUnsignedPCM=format.getEncoding() === (I$[1]||$incl$(1)).PCM_UNSIGNED ;
+this.audioBuffer=null;
+}this.startTime=0;
+this.bOpen=true;
+this.bStopped=false;
 });
 
 Clazz.newMeth(C$, 'getLineInfo', function () {
@@ -63,17 +63,17 @@ return this.bOpen;
 
 Clazz.newMeth(C$, 'close', function () {
 if (this.auctx != null ) this.auctx.close();
-this.auctx = null;
-this.bOpen = false;
+this.auctx=null;
+this.bOpen=false;
 });
 
 Clazz.newMeth(C$, 'start', function () {
 this.auctx.resume();
-this.bStopped = false;
+this.bStopped=false;
 });
 
 Clazz.newMeth(C$, 'stop', function () {
-this.bStopped = true;
+this.bStopped=true;
 this.auctx.suspend();
 });
 
@@ -82,7 +82,7 @@ this.flush();
 });
 
 Clazz.newMeth(C$, 'flush', function () {
-this.startTime = 0;
+this.startTime=0;
 this.close();
 });
 
@@ -181,7 +181,7 @@ abLen = (ab ? ab.length : 0);
 }
 var nFrames = ((len - offset)/this.sampleSizeInBytes / this.nChannels |0);
 if (this.audioBuffer == null  || abLen != nFrames ) {
-ab = this.audioBuffer = this.auctx.createBuffer(this.nChannels, nFrames, this.sampleRate);
+ab=this.audioBuffer=this.auctx.createBuffer(this.nChannels, nFrames, this.sampleRate);
 }{
 data = ab.getChannelData(ich);
 }
@@ -190,20 +190,20 @@ var di = bytesPerSample * this.nChannels;
 var big = this.isBigEndian;
 var unsigned = this.isUnsignedPCM;
 var f = 0;
-for (var i = offset + ich * bytesPerSample, pt = 0; i < len; i = i+(di)) {
+for (var i = offset + ich * bytesPerSample, pt = 0; i < len; i+=di) {
 switch (bytesPerSample) {
 case 1:
-f = b[i] * 1.0 / 128;
+f=b[i] * 1.0 / 128;
 break;
 case 2:
 var bi1 = b[i];
 var bi2 = b[i + 1];
-f = (big ? (bi1 << 8) | (bi2 & 255) : (bi2 << 8) | (bi1 & 255)) * 1.0 / 32768;
+f=(big ? (bi1 << 8) | (bi2 & 255) : (bi2 << 8) | (bi1 & 255)) * 1.0 / 32768;
 }
-data[pt++] = (unsigned ? f - 1 : f);
+data[pt++]=(unsigned ? f - 1 : f);
 }
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:14
+//Created 2018-05-24 08:47:42

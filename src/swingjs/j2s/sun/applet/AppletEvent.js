@@ -16,8 +16,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$O$I$O', function (source, id, argument) {
 C$.superclazz.c$.apply(this, [source]);
 C$.$init$.apply(this);
-this.arg = argument;
-this.id = id;
+this.arg=argument;
+this.id=id;
 }, 1);
 
 Clazz.newMeth(C$, 'getID', function () {
@@ -38,4 +38,4 @@ return str;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:04
+//Created 2018-05-24 08:47:19

@@ -20,16 +20,16 @@ C$.superclazz.c$$I$IA$java_awt_color_ColorSpace$Z$Z$I$I.apply(this, [bits, C$.cr
 C$.$init$.apply(this);
 if (bits < 1 || bits > 32 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Number of bits must be between 1 and 32."]);
-}this.maskArray = Clazz.array(Integer.TYPE, [this.numComponents]);
-this.maskOffsets = Clazz.array(Integer.TYPE, [this.numComponents]);
-this.scaleFactors = Clazz.array(Float.TYPE, [this.numComponents]);
+}this.maskArray=Clazz.array(Integer.TYPE, [this.numComponents]);
+this.maskOffsets=Clazz.array(Integer.TYPE, [this.numComponents]);
+this.scaleFactors=Clazz.array(Float.TYPE, [this.numComponents]);
 for (var i = 0; i < this.numColorComponents; i++) {
 p$.DecomposeMask$I$I$S.apply(this, [colorMaskArray[i], i, space.getName$I(i)]);
 }
 if (alphaMask != 0) {
 p$.DecomposeMask$I$I$S.apply(this, [alphaMask, this.numColorComponents, "alpha"]);
 if (this.nBits[this.numComponents - 1] == 1) {
-this.transparency = 2;
+this.transparency=2;
 }}}, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_color_ColorSpace$I$I$I$I$I$Z$I$I', function (space, bits, rmask, gmask, bmask, amask, isAlphaPremultiplied, trans, transferType) {
@@ -37,16 +37,16 @@ C$.superclazz.c$$I$IA$java_awt_color_ColorSpace$Z$Z$I$I.apply(this, [bits, C$.cr
 C$.$init$.apply(this);
 if (space.getType() != 5) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["ColorSpace must be TYPE_RGB."]);
-}this.maskArray = Clazz.array(Integer.TYPE, [this.numComponents]);
-this.maskOffsets = Clazz.array(Integer.TYPE, [this.numComponents]);
-this.scaleFactors = Clazz.array(Float.TYPE, [this.numComponents]);
+}this.maskArray=Clazz.array(Integer.TYPE, [this.numComponents]);
+this.maskOffsets=Clazz.array(Integer.TYPE, [this.numComponents]);
+this.scaleFactors=Clazz.array(Float.TYPE, [this.numComponents]);
 p$.DecomposeMask$I$I$S.apply(this, [rmask, 0, "red"]);
 p$.DecomposeMask$I$I$S.apply(this, [gmask, 1, "green"]);
 p$.DecomposeMask$I$I$S.apply(this, [bmask, 2, "blue"]);
 if (amask != 0) {
 p$.DecomposeMask$I$I$S.apply(this, [amask, 3, "alpha"]);
 if (this.nBits[3] == 1) {
-this.transparency = 2;
+this.transparency=2;
 }}}, 1);
 
 Clazz.newMeth(C$, 'getMask$I', function (index) {
@@ -60,19 +60,19 @@ return this.maskArray.clone();
 Clazz.newMeth(C$, 'DecomposeMask$I$I$S', function (mask, idx, componentName) {
 var off = 0;
 var count = this.nBits[idx];
-this.maskArray[idx] = mask;
+this.maskArray[idx]=mask;
 if (mask != 0) {
 while ((mask & 1) == 0){
-mask = mask>>>(1);
+mask>>>=1;
 off++;
 }
 }if (off + count > this.pixel_bits) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,[componentName + " mask " + Integer.toHexString(this.maskArray[idx]) + " overflows pixel (expecting " + this.pixel_bits + " bits" ]);
-}this.maskOffsets[idx] = off;
+}this.maskOffsets[idx]=off;
 if (count == 0) {
-this.scaleFactors[idx] = 256.0;
+this.scaleFactors[idx]=256.0;
 } else {
-this.scaleFactors[idx] = 255.0 / ((1 << count) - 1);
+this.scaleFactors[idx]=255.0 / ((1 << count) - 1);
 }});
 
 Clazz.newMeth(C$, 'equals$O', function (obj) {
@@ -96,12 +96,12 @@ var numColors = colorMaskArray.length;
 var numAlpha = (alphaMask == 0 ? 0 : 1);
 var arr = Clazz.array(Integer.TYPE, [numColors + numAlpha]);
 for (var i = 0; i < numColors; i++) {
-arr[i] = C$.countBits$I(colorMaskArray[i]);
+arr[i]=C$.countBits$I(colorMaskArray[i]);
 if (arr[i] < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Noncontiguous color mask (" + Integer.toHexString(colorMaskArray[i]) + "at index " + i ]);
 }}
 if (alphaMask != 0) {
-arr[numColors] = C$.countBits$I(alphaMask);
+arr[numColors]=C$.countBits$I(alphaMask);
 if (arr[numColors] < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Noncontiguous alpha mask (" + Integer.toHexString(alphaMask)]);
 }}return arr;
@@ -109,9 +109,9 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Noncont
 
 Clazz.newMeth(C$, 'createBitsArray$I$I$I$I', function (rmask, gmask, bmask, amask) {
 var arr = Clazz.array(Integer.TYPE, [3 + (amask == 0 ? 0 : 1)]);
-arr[0] = C$.countBits$I(rmask);
-arr[1] = C$.countBits$I(gmask);
-arr[2] = C$.countBits$I(bmask);
+arr[0]=C$.countBits$I(rmask);
+arr[1]=C$.countBits$I(gmask);
+arr[2]=C$.countBits$I(bmask);
 if (arr[0] < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Noncontiguous red mask (" + Integer.toHexString(rmask)]);
 } else if (arr[1] < 0) {
@@ -119,7 +119,7 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Noncont
 } else if (arr[2] < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Noncontiguous blue mask (" + Integer.toHexString(bmask)]);
 }if (amask != 0) {
-arr[3] = C$.countBits$I(amask);
+arr[3]=C$.countBits$I(amask);
 if (arr[3] < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Noncontiguous alpha mask (" + Integer.toHexString(amask)]);
 }}return arr;
@@ -129,10 +129,10 @@ Clazz.newMeth(C$, 'countBits$I', function (mask) {
 var count = 0;
 if (mask != 0) {
 while ((mask & 1) == 0){
-mask = mask>>>(1);
+mask>>>=1;
 }
 while ((mask & 1) == 1){
-mask = mask>>>(1);
+mask>>>=1;
 count++;
 }
 }if (mask != 0) {
@@ -142,4 +142,4 @@ return -1;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:01
+//Created 2018-05-24 08:45:26

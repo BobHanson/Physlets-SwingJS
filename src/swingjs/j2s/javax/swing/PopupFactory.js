@@ -28,13 +28,13 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["PopupFa
 Clazz.newMeth(C$, 'getSharedInstance', function () {
 var factory = (I$[1]||$incl$(1)).appContextGet$O(C$.SharedInstanceKey);
 if (factory == null ) {
-factory = Clazz.new_(C$);
+factory=Clazz.new_(C$);
 C$.setSharedInstance$javax_swing_PopupFactory(factory);
 }return factory;
 }, 1);
 
 Clazz.newMeth(C$, 'setPopupType$I', function (type) {
-this.popupType = type;
+this.popupType=type;
 });
 
 Clazz.newMeth(C$, 'getPopupType', function () {
@@ -47,23 +47,23 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Popup.g
 }var popupType = p$.getPopupType$java_awt_Component$java_awt_Component$I$I.apply(this, [owner, contents, x, y]);
 var popup = p$.getPopup$java_awt_Component$java_awt_Component$I$I$I.apply(this, [owner, contents, x, y, popupType]);
 if (popup == null ) {
-popup = p$.getPopup$java_awt_Component$java_awt_Component$I$I$I.apply(this, [owner, contents, x, y, 2]);
+popup=p$.getPopup$java_awt_Component$java_awt_Component$I$I$I.apply(this, [owner, contents, x, y, 2]);
 }return popup;
 });
 
 Clazz.newMeth(C$, 'getPopupType$java_awt_Component$java_awt_Component$I$I', function (owner, contents, ownerX, ownerY) {
 var popupType = this.getPopupType();
 if (owner == null  || p$.invokerInHeavyWeightPopup$java_awt_Component.apply(this, [owner]) ) {
-popupType = 2;
+popupType=2;
 } else if (popupType == 0 && !(Clazz.instanceOf(contents, "javax.swing.JToolTip"))  && !(Clazz.instanceOf(contents, "javax.swing.JPopupMenu")) ) {
-popupType = 1;
+popupType=1;
 }var c = owner;
 while (c != null ){
 if (Clazz.instanceOf(c, "javax.swing.JComponent")) {
 if ((c).getClientProperty$O((I$[16]||$incl$(16)).PopupFactory_FORCE_HEAVYWEIGHT_POPUP) === (I$[17]||$incl$(17)).TRUE ) {
-popupType = 2;
+popupType=2;
 break;
-}}c = c.getParent();
+}}c=c.getParent();
 }
 return popupType;
 });
@@ -95,7 +95,7 @@ return (I$[20]||$incl$(20)).getHeavyWeightPopup$java_awt_Component$java_awt_Comp
 Clazz.newMeth(C$, 'invokerInHeavyWeightPopup$java_awt_Component', function (i) {
 if (i != null ) {
 var parent;
-for (parent = i.getParent(); parent != null ; parent = parent.getParent()) {
+for (parent=i.getParent(); parent != null ; parent=parent.getParent()) {
 if ((I$[3]||$incl$(3)).isHeavyWeight$java_awt_Container(parent)) {
 return true;
 }}
@@ -119,7 +119,7 @@ Clazz.newMeth(C$, 'getHeavyWeightPopup$java_awt_Component$java_awt_Component$I$I
 var window = (owner != null ) ? (I$[1]||$incl$(1)).getWindowAncestor$java_awt_Component(owner) : null;
 var popup = null;
 if (window != null ) {
-popup = C$.getRecycledHeavyWeightPopup$java_awt_Window(window);
+popup=C$.getRecycledHeavyWeightPopup$java_awt_Window(window);
 }var focusPopup = false;
 if (contents != null  && contents.isFocusable() ) {
 if (Clazz.instanceOf(contents, "javax.swing.JPopupMenu")) {
@@ -127,13 +127,13 @@ var jpm = contents;
 var popComps = jpm.getComponents();
 for (var i = 0; i < popComps.length; i++) {
 if (!(Clazz.instanceOf(popComps[i], "javax.swing.MenuElement")) && !(Clazz.instanceOf(popComps[i], "javax.swing.JSeparator")) ) {
-focusPopup = true;
+focusPopup=true;
 break;
 }}
 }}if (popup == null  || (popup.getComponent()).getFocusableWindowState() != focusPopup  ) {
 if (popup != null ) {
 popup._dispose();
-}popup = Clazz.new_(C$);
+}popup=Clazz.new_(C$);
 }popup.reset$java_awt_Component$java_awt_Component$I$I(owner, contents, ownerX, ownerY);
 if (focusPopup) {
 var wnd = popup.getComponent();
@@ -147,7 +147,7 @@ Clazz.newMeth(C$, 'getRecycledHeavyWeightPopup$java_awt_Window', function (w) {
 var cache;
 var heavyPopupCache = C$.getHeavyWeightPopupCache();
 if (heavyPopupCache.containsKey$O(w)) {
-cache = heavyPopupCache.get$O(w);
+cache=heavyPopupCache.get$O(w);
 } else {
 return null;
 }if ((cache.size()) > 0) {
@@ -161,7 +161,7 @@ Clazz.newMeth(C$, 'getHeavyWeightPopupCache', function () {
 {
 var cache = (I$[1]||$incl$(1)).appContextGet$O(C$.heavyWeightPopupCacheKey);
 if (cache == null ) {
-cache = Clazz.new_((I$[2]||$incl$(2)).c$$I,[2]);
+cache=Clazz.new_((I$[2]||$incl$(2)).c$$I,[2]);
 (I$[1]||$incl$(1)).appContextPut$O$O(C$.heavyWeightPopupCacheKey, cache);
 }return cache;
 }}, 1);
@@ -175,9 +175,9 @@ if ((I$[3]||$incl$(3)).isDefaultFrame$O(window) || !(window).isVisible() ) {
 popup._dispose();
 return;
 } else if (heavyPopupCache.containsKey$O(window)) {
-cache = heavyPopupCache.get$O(window);
+cache=heavyPopupCache.get$O(window);
 } else {
-cache = Clazz.new_((I$[4]||$incl$(4)));
+cache=Clazz.new_((I$[4]||$incl$(4)));
 heavyPopupCache.put$TK$TV(window, cache);
 var w = window;
 w.addWindowListener$java_awt_event_WindowListener(((
@@ -193,7 +193,7 @@ Clazz.newMeth(C$, 'windowClosed$java_awt_event_WindowEvent', function (e) {
 var popups;
 {
 var heavyPopupCache2 = P$.PopupFactory.HeavyWeightPopup.getHeavyWeightPopupCache();
-popups = heavyPopupCache2.remove$O(this.$finals.w);
+popups=heavyPopupCache2.remove$O(this.$finals.w);
 }if (popups != null ) {
 for (var counter = popups.size() - 1; counter >= 0; counter--) {
 (popups.get$I(counter))._dispose();
@@ -247,7 +247,7 @@ if (parent != null ) {
 var bounds = component.getBounds();
 parent.remove$java_awt_Component(component);
 parent.repaint$I$I$I$I(bounds.x, bounds.y, bounds.width, bounds.height);
-}}this.owner = null;
+}}this.owner=null;
 });
 
 Clazz.newMeth(C$, 'pack', function () {
@@ -258,11 +258,11 @@ component.setSize$java_awt_Dimension(component.getPreferredSize());
 
 Clazz.newMeth(C$, 'reset$java_awt_Component$java_awt_Component$I$I', function (owner, contents, ownerX, ownerY) {
 if ((Clazz.instanceOf(owner, "javax.swing.JFrame")) || (Clazz.instanceOf(owner, "javax.swing.JDialog")) || (Clazz.instanceOf(owner, "javax.swing.JWindow"))  ) {
-owner = (owner).getLayeredPane();
+owner=(owner).getLayeredPane();
 }C$.superclazz.prototype.reset$java_awt_Component$java_awt_Component$I$I.apply(this, [owner, contents, ownerX, ownerY]);
-this.x = ownerX;
-this.y = ownerY;
-this.owner = owner;
+this.x=ownerX;
+this.y=ownerY;
+this.owner=owner;
 });
 
 Clazz.newMeth(C$, 'overlappedByOwnedWindow', function () {
@@ -288,22 +288,22 @@ if (this.owner != null  && component != null  ) {
 var parent;
 var width = component.getWidth();
 var height = component.getHeight();
-for (parent = this.owner.getParent(); parent != null ; parent = parent.getParent()) {
+for (parent=this.owner.getParent(); parent != null ; parent=parent.getParent()) {
 if (Clazz.instanceOf(parent, "javax.swing.JFrame") || Clazz.instanceOf(parent, "javax.swing.JDialog") || Clazz.instanceOf(parent, "javax.swing.JWindow")  ) {
 var r = parent.getBounds();
 var i = parent.getInsets();
-r.x = r.x+(i.left);
-r.y = r.y+(i.top);
-r.width = r.width-((i.left + i.right));
-r.height = r.height-((i.top + i.bottom));
+r.x+=i.left;
+r.y+=i.top;
+r.width-=(i.left + i.right);
+r.height-=(i.top + i.bottom);
 var gc = parent.getGraphicsConfiguration();
 var popupArea = this.getContainerPopupArea$java_awt_GraphicsConfiguration(gc);
 return r.intersection$java_awt_Rectangle(popupArea).contains$I$I$I$I(this.x, this.y, width, height);
 } else if (Clazz.instanceOf(parent, "javax.swing.JApplet")) {
 var r = parent.getBounds();
 var p = parent.getLocationOnScreen();
-r.x = p.x;
-r.y = p.y;
+r.x=p.x;
+r.y=p.y;
 return r.contains$I$I$I$I(this.x, this.y, width, height);
 } else if (Clazz.instanceOf(parent, "java.awt.Window") || Clazz.instanceOf(parent, "java.applet.Applet") ) {
 break;
@@ -316,15 +316,15 @@ var screenBounds;
 var toolkit = (I$[6]||$incl$(6)).getDefaultToolkit();
 var insets;
 if (gc != null ) {
-screenBounds = gc.getBounds();
-insets = toolkit.getScreenInsets$java_awt_GraphicsConfiguration(gc);
+screenBounds=gc.getBounds();
+insets=toolkit.getScreenInsets$java_awt_GraphicsConfiguration(gc);
 } else {
-screenBounds = Clazz.new_((I$[7]||$incl$(7)).c$$java_awt_Dimension,[toolkit.getScreenSize()]);
-insets = Clazz.new_((I$[8]||$incl$(8)).c$$I$I$I$I,[0, 0, 0, 0]);
-}screenBounds.x = screenBounds.x+(insets.left);
-screenBounds.y = screenBounds.y+(insets.top);
-screenBounds.width = screenBounds.width-((insets.left + insets.right));
-screenBounds.height = screenBounds.height-((insets.top + insets.bottom));
+screenBounds=Clazz.new_((I$[7]||$incl$(7)).c$$java_awt_Dimension,[toolkit.getScreenSize()]);
+insets=Clazz.new_((I$[8]||$incl$(8)).c$$I$I$I$I,[0, 0, 0, 0]);
+}screenBounds.x+=insets.left;
+screenBounds.y+=insets.top;
+screenBounds.width-=(insets.left + insets.right);
+screenBounds.height-=(insets.top + insets.bottom);
 return screenBounds;
 });
 
@@ -344,7 +344,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'getLightWeightPopup$java_awt_Component$java_awt_Component$I$I', function (owner, contents, ownerX, ownerY) {
 var popup = null;
 if (popup == null ) {
-popup = Clazz.new_(C$);
+popup=Clazz.new_(C$);
 }popup.reset$java_awt_Component$java_awt_Component$I$I(owner, contents, ownerX, ownerY);
 if (!popup.fitsOnScreen() || popup.overlappedByOwnedWindow() ) {
 popup.hide();
@@ -361,13 +361,13 @@ component.removeAll();
 Clazz.newMeth(C$, 'show', function () {
 var parent = null;
 if (this.owner != null ) {
-parent = (Clazz.instanceOf(this.owner, "java.awt.Container") ? this.owner : this.owner.getParent());
-}for (var p = parent; p != null ; p = p.getParent()) {
+parent=(Clazz.instanceOf(this.owner, "java.awt.Container") ? this.owner : this.owner.getParent());
+}for (var p = parent; p != null ; p=p.getParent()) {
 if (Clazz.instanceOf(p, "javax.swing.JRootPane")) {
-parent = (p).getLayeredPane();
+parent=(p).getLayeredPane();
 } else if (Clazz.instanceOf(p, "java.awt.Window")) {
 if (parent == null ) {
-parent = p;
+parent=p;
 }break;
 } else if (Clazz.instanceOf(p, "javax.swing.JApplet")) {
 break;
@@ -421,7 +421,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'getMediumWeightPopup$java_awt_Component$java_awt_Component$I$I', function (owner, contents, ownerX, ownerY) {
 var popup = C$.getRecycledMediumWeightPopup();
 if (popup == null ) {
-popup = Clazz.new_(C$);
+popup=Clazz.new_(C$);
 }popup.reset$java_awt_Component$java_awt_Component$I$I(owner, contents, ownerX, ownerY);
 if (!popup.fitsOnScreen() || popup.overlappedByOwnedWindow() ) {
 popup.hide();
@@ -432,7 +432,7 @@ return null;
 Clazz.newMeth(C$, 'getMediumWeightPopupCache', function () {
 var cache = (I$[1]||$incl$(1)).appContextGet$O(C$.mediumWeightPopupCacheKey);
 if (cache == null ) {
-cache = Clazz.new_((I$[12]||$incl$(12)));
+cache=Clazz.new_((I$[12]||$incl$(12)));
 (I$[1]||$incl$(1)).appContextPut$O$O(C$.mediumWeightPopupCacheKey, cache);
 }return cache;
 }, 1);
@@ -464,12 +464,12 @@ Clazz.newMeth(C$, 'show', function () {
 var component = this.getComponent();
 var parent = null;
 if (this.owner != null ) {
-parent = this.owner.getParent();
+parent=this.owner.getParent();
 }while (!(Clazz.instanceOf(parent, "java.awt.Window") || Clazz.instanceOf(parent, "java.applet.Applet") ) && (parent != null ) ){
-parent = parent.getParent();
+parent=parent.getParent();
 }
 if (Clazz.instanceOf(parent, "javax.swing.RootPaneContainer")) {
-parent = (parent).getLayeredPane();
+parent=(parent).getLayeredPane();
 var p = (I$[1]||$incl$(1)).convertScreenLocationToParent$java_awt_Container$I$I(parent, this.x, this.y);
 component.setVisible$Z(false);
 component.setLocation$I$I(p.x, p.y);
@@ -484,7 +484,7 @@ parent.add$java_awt_Component(component);
 
 Clazz.newMeth(C$, 'createComponent$java_awt_Component', function (owner) {
 var component = Clazz.new_((I$[13]||$incl$(13)));
-this.rootPane = Clazz.new_((I$[14]||$incl$(14)).c$$S$Z,["_Popup" + (++(I$[15]||$incl$(15)).popupCount), false]);
+this.rootPane=Clazz.new_((I$[14]||$incl$(14)).c$$S$Z,["_Popup" + (++(I$[15]||$incl$(15)).popupCount), false]);
 this.rootPane.setFrameViewer$swingjs_JSFrameViewer((owner).getFrameViewer());
 this.rootPane.setOpaque$Z(true);
 component.add$java_awt_Component$O(this.rootPane, "Center");
@@ -522,4 +522,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:38
+//Created 2018-05-24 08:46:37

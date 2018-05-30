@@ -26,7 +26,7 @@ C$.$init$.apply(this);
 Clazz.newMeth(C$, 'show', function () {
 var component = this.getComponent();
 if (component != null ) {
-component.visible = false;
+component.visible=false;
 component.show();
 }});
 
@@ -43,14 +43,14 @@ var component = this.getComponent();
 var window = (I$[2]||$incl$(2)).getWindowAncestor$java_awt_Component(component);
 if (Clazz.instanceOf(component, "javax.swing.JWindow")) {
 (component).dispose();
-component = null;
+component=null;
 }if (Clazz.instanceOf(window, "javax.swing.Popup.DefaultFrame")) {
 window.dispose();
 }});
 
 Clazz.newMeth(C$, 'reset$java_awt_Component$java_awt_Component$I$I', function (owner, contents, ownerX, ownerY) {
 if (this.getComponent() == null ) {
-this.component = this.createComponent$java_awt_Component(owner);
+this.component=this.createComponent$java_awt_Component(owner);
 }var c = this.getComponent();
 if (Clazz.instanceOf(c, "javax.swing.JWindow")) {
 var component = this.getComponent();
@@ -70,11 +70,11 @@ if (Clazz.instanceOf(component, "java.awt.Window")) {
 Clazz.newMeth(C$, 'getParentWindow$java_awt_Component', function (owner) {
 var window = null;
 if (Clazz.instanceOf(owner, "java.awt.Window")) {
-window = owner;
+window=owner;
 } else if (owner != null ) {
-window = (I$[2]||$incl$(2)).getWindowAncestor$java_awt_Component(owner);
+window=(I$[2]||$incl$(2)).getWindowAncestor$java_awt_Component(owner);
 }if (window == null ) {
-window = Clazz.new_((I$[3]||$incl$(3)));
+window=Clazz.new_((I$[3]||$incl$(3)));
 }return window;
 });
 
@@ -148,4 +148,4 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:38
+//Created 2018-05-24 08:46:36

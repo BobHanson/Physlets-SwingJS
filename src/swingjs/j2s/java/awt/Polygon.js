@@ -20,8 +20,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.xpoints = Clazz.array(Integer.TYPE, [4]);
-this.ypoints = Clazz.array(Integer.TYPE, [4]);
+this.xpoints=Clazz.array(Integer.TYPE, [4]);
+this.ypoints=Clazz.array(Integer.TYPE, [4]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$IA$IA$I', function (xpoints, ypoints, npoints) {
@@ -30,24 +30,24 @@ if (npoints > xpoints.length || npoints > ypoints.length ) {
 throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException').c$$S,["npoints > xpoints.length || npoints > ypoints.length"]);
 }if (npoints < 0) {
 throw Clazz.new_(Clazz.load('java.lang.NegativeArraySizeException').c$$S,["npoints < 0"]);
-}this.npoints = npoints;
-this.xpoints = (I$[1]||$incl$(1)).copyOf$IA$I(xpoints, npoints);
-this.ypoints = (I$[1]||$incl$(1)).copyOf$IA$I(ypoints, npoints);
+}this.npoints=npoints;
+this.xpoints=(I$[1]||$incl$(1)).copyOf$IA$I(xpoints, npoints);
+this.ypoints=(I$[1]||$incl$(1)).copyOf$IA$I(ypoints, npoints);
 }, 1);
 
 Clazz.newMeth(C$, 'reset', function () {
-this.npoints = 0;
-this.bounds = null;
+this.npoints=0;
+this.bounds=null;
 });
 
 Clazz.newMeth(C$, 'invalidate', function () {
-this.bounds = null;
+this.bounds=null;
 });
 
 Clazz.newMeth(C$, 'translate$I$I', function (deltaX, deltaY) {
 for (var i = 0; i < this.npoints; i++) {
-this.xpoints[i] = this.xpoints[i]+(deltaX);
-this.ypoints[i] = this.ypoints[i]+(deltaY);
+this.xpoints[i]+=deltaX;
+this.ypoints[i]+=deltaY;
 }
 if (this.bounds != null ) {
 this.bounds.translate$I$I(deltaX, deltaY);
@@ -60,39 +60,39 @@ var boundsMaxX = -2147483648;
 var boundsMaxY = -2147483648;
 for (var i = 0; i < npoints; i++) {
 var x = xpoints[i];
-boundsMinX = Math.min(boundsMinX, x);
-boundsMaxX = Math.max(boundsMaxX, x);
+boundsMinX=Math.min(boundsMinX, x);
+boundsMaxX=Math.max(boundsMaxX, x);
 var y = ypoints[i];
-boundsMinY = Math.min(boundsMinY, y);
-boundsMaxY = Math.max(boundsMaxY, y);
+boundsMinY=Math.min(boundsMinY, y);
+boundsMaxY=Math.max(boundsMaxY, y);
 }
-this.bounds = Clazz.new_((I$[2]||$incl$(2)).c$$I$I$I$I,[boundsMinX, boundsMinY, boundsMaxX - boundsMinX, boundsMaxY - boundsMinY]);
+this.bounds=Clazz.new_((I$[2]||$incl$(2)).c$$I$I$I$I,[boundsMinX, boundsMinY, boundsMaxX - boundsMinX, boundsMaxY - boundsMinY]);
 });
 
 Clazz.newMeth(C$, 'updateBounds$I$I', function (x, y) {
 if (x < this.bounds.x) {
-this.bounds.width = this.bounds.width + (this.bounds.x - x);
-this.bounds.x = x;
+this.bounds.width=this.bounds.width + (this.bounds.x - x);
+this.bounds.x=x;
 } else {
-this.bounds.width = Math.max(this.bounds.width, x - this.bounds.x);
+this.bounds.width=Math.max(this.bounds.width, x - this.bounds.x);
 }if (y < this.bounds.y) {
-this.bounds.height = this.bounds.height + (this.bounds.y - y);
-this.bounds.y = y;
+this.bounds.height=this.bounds.height + (this.bounds.y - y);
+this.bounds.y=y;
 } else {
-this.bounds.height = Math.max(this.bounds.height, y - this.bounds.y);
+this.bounds.height=Math.max(this.bounds.height, y - this.bounds.y);
 }});
 
 Clazz.newMeth(C$, 'addPoint$I$I', function (x, y) {
 if (this.npoints >= this.xpoints.length || this.npoints >= this.ypoints.length ) {
 var newLength = this.npoints * 2;
 if (newLength < 4) {
-newLength = 4;
+newLength=4;
 } else if ((newLength & (newLength - 1)) != 0) {
-newLength = Integer.highestOneBit(newLength);
-}this.xpoints = (I$[1]||$incl$(1)).copyOf$IA$I(this.xpoints, newLength);
-this.ypoints = (I$[1]||$incl$(1)).copyOf$IA$I(this.ypoints, newLength);
-}this.xpoints[this.npoints] = x;
-this.ypoints[this.npoints] = y;
+newLength=Integer.highestOneBit(newLength);
+}this.xpoints=(I$[1]||$incl$(1)).copyOf$IA$I(this.xpoints, newLength);
+this.ypoints=(I$[1]||$incl$(1)).copyOf$IA$I(this.ypoints, newLength);
+}this.xpoints[this.npoints]=x;
+this.ypoints[this.npoints]=y;
 this.npoints++;
 if (this.bounds != null ) {
 this.updateBounds$I$I(x, y);
@@ -134,20 +134,20 @@ var lastx = this.xpoints[this.npoints - 1];
 var lasty = this.ypoints[this.npoints - 1];
 var curx;
 var cury;
-for (var i = 0; i < this.npoints; lastx = curx, lasty = cury, i++) {
-curx = this.xpoints[i];
-cury = this.ypoints[i];
+for (var i = 0; i < this.npoints; lastx=curx, lasty=cury, i++) {
+curx=this.xpoints[i];
+cury=this.ypoints[i];
 if (cury == lasty) {
 continue;
 }var leftx;
 if (curx < lastx) {
 if (x >= lastx ) {
 continue;
-}leftx = curx;
+}leftx=curx;
 } else {
 if (x >= curx ) {
 continue;
-}leftx = lastx;
+}leftx=lastx;
 }var test1;
 var test2;
 if (cury < lasty) {
@@ -156,16 +156,16 @@ continue;
 }if (x < leftx ) {
 hits++;
 continue;
-}test1 = x - curx;
-test2 = y - cury;
+}test1=x - curx;
+test2=y - cury;
 } else {
 if (y < lasty  || y >= cury  ) {
 continue;
 }if (x < leftx ) {
 hits++;
 continue;
-}test1 = x - lastx;
-test2 = y - lasty;
+}test1=x - lastx;
+test2=y - lasty;
 }if (test1 < (test2 / (lasty - cury) * (lastx - curx)) ) {
 hits++;
 }}
@@ -179,12 +179,12 @@ var lasty = this.ypoints[this.npoints - 1];
 var curx;
 var cury;
 for (var i = 0; i < this.npoints; i++) {
-curx = this.xpoints[i];
-cury = this.ypoints[i];
+curx=this.xpoints[i];
+cury=this.ypoints[i];
 if (cross.accumulateLine$D$D$D$D(lastx, lasty, curx, cury)) {
 return null;
-}lastx = curx;
-lasty = cury;
+}lastx=curx;
+lasty=cury;
 }
 return cross;
 });
@@ -242,10 +242,10 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_Polygon$java_awt_geom_AffineTransform', function (pg, at) {
 C$.$init$.apply(this);
-this.poly = pg;
-this.transform = at;
+this.poly=pg;
+this.transform=at;
 if (pg.npoints == 0) {
-this.index = 1;
+this.index=1;
 }}, 1);
 
 Clazz.newMeth(C$, 'getWindingRule', function () {
@@ -263,8 +263,8 @@ this.index++;
 Clazz.newMeth(C$, 'currentSegment$FA', function (coords) {
 if (this.index >= this.poly.npoints) {
 return 4;
-}coords[0] = this.poly.xpoints[this.index];
-coords[1] = this.poly.ypoints[this.index];
+}coords[0]=this.poly.xpoints[this.index];
+coords[1]=this.poly.ypoints[this.index];
 if (this.transform != null ) {
 this.transform.transform$FA$I$FA$I$I(coords, 0, coords, 0, 1);
 }return (this.index == 0 ? 0 : 1);
@@ -273,8 +273,8 @@ this.transform.transform$FA$I$FA$I$I(coords, 0, coords, 0, 1);
 Clazz.newMeth(C$, 'currentSegment$DA', function (coords) {
 if (this.index >= this.poly.npoints) {
 return 4;
-}coords[0] = this.poly.xpoints[this.index];
-coords[1] = this.poly.ypoints[this.index];
+}coords[0]=this.poly.xpoints[this.index];
+coords[1]=this.poly.ypoints[this.index];
 if (this.transform != null ) {
 this.transform.transform$DA$I$DA$I$I(coords, 0, coords, 0, 1);
 }return (this.index == 0 ? 0 : 1);
@@ -283,4 +283,4 @@ this.transform.transform$DA$I$DA$I$I(coords, 0, coords, 0, 1);
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:01:53
+//Created 2018-05-24 08:45:12

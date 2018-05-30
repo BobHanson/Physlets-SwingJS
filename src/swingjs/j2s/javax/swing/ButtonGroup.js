@@ -22,7 +22,7 @@ return;
 }this.buttons.addElement$TE(b);
 if (b.isSelected()) {
 if (this.selection == null ) {
-this.selection = b.getModel();
+this.selection=b.getModel();
 } else {
 b.setSelected$Z(false);
 }}b.getModel().setGroup$javax_swing_ButtonGroup(this);
@@ -33,14 +33,14 @@ if (b == null ) {
 return;
 }this.buttons.removeElement$O(b);
 if (b.getModel() === this.selection ) {
-this.selection = null;
+this.selection=null;
 }b.getModel().setGroup$javax_swing_ButtonGroup(null);
 });
 
 Clazz.newMeth(C$, 'clearSelection', function () {
 if (this.selection != null ) {
 var oldSelection = this.selection;
-this.selection = null;
+this.selection=null;
 oldSelection.setSelected$Z(false);
 }});
 
@@ -55,7 +55,7 @@ return this.selection;
 Clazz.newMeth(C$, 'setSelected$javax_swing_ButtonModel$Z', function (m, b) {
 if (b && m != null   && m !== this.selection  ) {
 var oldSelection = this.selection;
-this.selection = m;
+this.selection=m;
 if (oldSelection != null ) {
 oldSelection.setSelected$Z(false);
 }m.setSelected$Z(true);
@@ -72,4 +72,4 @@ return 0;
 return this.buttons.size();
 }});
 })();
-//Created 2018-05-15 01:02:23
+//Created 2018-05-24 08:46:07

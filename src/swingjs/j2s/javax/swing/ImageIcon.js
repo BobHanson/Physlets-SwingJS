@@ -28,11 +28,11 @@ this.height = -1;
 
 Clazz.newMeth(C$, 'c$$S$S', function (filename, description) {
 C$.$init$.apply(this);
-this.image = (I$[2]||$incl$(2)).getDefaultToolkit().getImage$S(filename);
+this.image=(I$[2]||$incl$(2)).getDefaultToolkit().getImage$S(filename);
 if (this.image == null ) {
 return;
-}this.filename = filename;
-this.description = description;
+}this.filename=filename;
+this.description=description;
 this.loadImage$java_awt_Image(this.image);
 }, 1);
 
@@ -42,11 +42,11 @@ C$.c$$S$S.apply(this, [filename, filename]);
 
 Clazz.newMeth(C$, 'c$$java_net_URL$S', function (location, description) {
 C$.$init$.apply(this);
-this.image = (I$[2]||$incl$(2)).getDefaultToolkit().getImage$java_net_URL(location);
+this.image=(I$[2]||$incl$(2)).getDefaultToolkit().getImage$java_net_URL(location);
 if (this.image == null ) {
 return;
-}this.location = location;
-this.description = description;
+}this.location=location;
+this.description=description;
 this.loadImage$java_awt_Image(this.image);
 }, 1);
 
@@ -56,35 +56,35 @@ C$.c$$java_net_URL$S.apply(this, [location, location.toExternalForm()]);
 
 Clazz.newMeth(C$, 'c$$java_awt_Image$S', function (image, description) {
 C$.c$$java_awt_Image.apply(this, [image]);
-this.description = description;
+this.description=description;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Image', function (image) {
 C$.$init$.apply(this);
-this.image = image;
+this.image=image;
 var o = image.getProperty$S$java_awt_image_ImageObserver("comment", this.imageObserver);
 if (Clazz.instanceOf(o, "java.lang.String")) {
-this.description = o;
+this.description=o;
 }this.loadImage$java_awt_Image(image);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$BA$S', function (imageData, description) {
 C$.$init$.apply(this);
-this.image = (I$[2]||$incl$(2)).getDefaultToolkit().createImage$BA(imageData);
+this.image=(I$[2]||$incl$(2)).getDefaultToolkit().createImage$BA(imageData);
 if (this.image == null ) {
 return;
-}this.description = description;
+}this.description=description;
 this.loadImage$java_awt_Image(this.image);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$BA', function (imageData) {
 C$.$init$.apply(this);
-this.image = (I$[2]||$incl$(2)).getDefaultToolkit().createImage$BA(imageData);
+this.image=(I$[2]||$incl$(2)).getDefaultToolkit().createImage$BA(imageData);
 if (this.image == null ) {
 return;
 }var o = this.image.getProperty$S$java_awt_image_ImageObserver("comment", this.imageObserver);
 if (Clazz.instanceOf(o, "java.lang.String")) {
-this.description = o;
+this.description=o;
 }this.loadImage$java_awt_Image(this.image);
 }, 1);
 
@@ -93,8 +93,8 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'loadImage$java_awt_Image', function (image) {
-this.width = image.getWidth$java_awt_image_ImageObserver(this.imageObserver);
-this.height = image.getHeight$java_awt_image_ImageObserver(this.imageObserver);
+this.width=image.getWidth$java_awt_image_ImageObserver(this.imageObserver);
+this.height=image.getHeight$java_awt_image_ImageObserver(this.imageObserver);
 });
 
 Clazz.newMeth(C$, 'getImageLoadStatus', function () {
@@ -106,7 +106,7 @@ return this.image;
 });
 
 Clazz.newMeth(C$, 'setImage$java_awt_Image', function (image) {
-this.image = image;
+this.image=image;
 this.loadImage$java_awt_Image(image);
 });
 
@@ -115,7 +115,7 @@ return this.description;
 });
 
 Clazz.newMeth(C$, 'setDescription$S', function (description) {
-this.description = description;
+this.description=description;
 });
 
 Clazz.newMeth(C$, 'paintIcon$java_awt_Component$java_awt_Graphics$I$I', function (c, g, x, y) {
@@ -134,7 +134,7 @@ return this.height;
 });
 
 Clazz.newMeth(C$, 'setImageObserver$java_awt_image_ImageObserver', function (observer) {
-this.imageObserver = observer;
+this.imageObserver=observer;
 });
 
 Clazz.newMeth(C$, 'getImageObserver', function () {
@@ -147,4 +147,4 @@ return this.description;
 }return C$.superclazz.prototype.toString.apply(this, []);
 });
 })();
-//Created 2018-05-15 01:02:25
+//Created 2018-05-24 08:46:11

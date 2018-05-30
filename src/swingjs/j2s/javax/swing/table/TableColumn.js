@@ -36,15 +36,15 @@ C$.c$$I$I$javax_swing_table_TableCellRenderer$javax_swing_table_TableCellEditor.
 
 Clazz.newMeth(C$, 'c$$I$I$javax_swing_table_TableCellRenderer$javax_swing_table_TableCellEditor', function (modelIndex, width, cellRenderer, cellEditor) {
 C$.$init$.apply(this);
-this.modelIndex = modelIndex;
-this.preferredWidth = this.width = Math.max(width, 0);
-this.cellRenderer = cellRenderer;
-this.cellEditor = cellEditor;
-this.minWidth = Math.min(15, this.width);
-this.maxWidth = 2147483647;
-this.isResizable = true;
-this.resizedPostingDisableCount = 0;
-this.headerValue = null;
+this.modelIndex=modelIndex;
+this.preferredWidth=this.width=Math.max(width, 0);
+this.cellRenderer=cellRenderer;
+this.cellEditor=cellEditor;
+this.minWidth=Math.min(15, this.width);
+this.maxWidth=2147483647;
+this.isResizable=true;
+this.resizedPostingDisableCount=0;
+this.headerValue=null;
 }, 1);
 
 Clazz.newMeth(C$, 'firePropertyChange$S$O$O', function (propertyName, oldValue, newValue) {
@@ -64,7 +64,7 @@ p$.firePropertyChange$S$O$O.apply(this, [propertyName, (I$[1]||$incl$(1)).$value
 
 Clazz.newMeth(C$, 'setModelIndex$I', function (modelIndex) {
 var old = this.modelIndex;
-this.modelIndex = modelIndex;
+this.modelIndex=modelIndex;
 p$.firePropertyChange$S$I$I.apply(this, ["modelIndex", old, modelIndex]);
 });
 
@@ -74,7 +74,7 @@ return this.modelIndex;
 
 Clazz.newMeth(C$, 'setIdentifier$O', function (identifier) {
 var old = this.identifier;
-this.identifier = identifier;
+this.identifier=identifier;
 p$.firePropertyChange$S$O$O.apply(this, ["identifier", old, identifier]);
 });
 
@@ -84,7 +84,7 @@ return (this.identifier != null ) ? this.identifier : this.getHeaderValue();
 
 Clazz.newMeth(C$, 'setHeaderValue$O', function (headerValue) {
 var old = this.headerValue;
-this.headerValue = headerValue;
+this.headerValue=headerValue;
 p$.firePropertyChange$S$O$O.apply(this, ["headerValue", old, headerValue]);
 });
 
@@ -94,7 +94,7 @@ return this.headerValue;
 
 Clazz.newMeth(C$, 'setHeaderRenderer$javax_swing_table_TableCellRenderer', function (headerRenderer) {
 var old = this.headerRenderer;
-this.headerRenderer = headerRenderer;
+this.headerRenderer=headerRenderer;
 p$.firePropertyChange$S$O$O.apply(this, ["headerRenderer", old, headerRenderer]);
 });
 
@@ -104,7 +104,7 @@ return this.headerRenderer;
 
 Clazz.newMeth(C$, 'setCellRenderer$javax_swing_table_TableCellRenderer', function (cellRenderer) {
 var old = this.cellRenderer;
-this.cellRenderer = cellRenderer;
+this.cellRenderer=cellRenderer;
 p$.firePropertyChange$S$O$O.apply(this, ["cellRenderer", old, cellRenderer]);
 });
 
@@ -114,7 +114,7 @@ return this.cellRenderer;
 
 Clazz.newMeth(C$, 'setCellEditor$javax_swing_table_TableCellEditor', function (cellEditor) {
 var old = this.cellEditor;
-this.cellEditor = cellEditor;
+this.cellEditor=cellEditor;
 p$.firePropertyChange$S$O$O.apply(this, ["cellEditor", old, cellEditor]);
 });
 
@@ -124,7 +124,7 @@ return this.cellEditor;
 
 Clazz.newMeth(C$, 'setWidth$I', function (width) {
 var old = this.width;
-this.width = Math.min(Math.max(width, this.minWidth), this.maxWidth);
+this.width=Math.min(Math.max(width, this.minWidth), this.maxWidth);
 p$.firePropertyChange$S$I$I.apply(this, ["width", old, this.width]);
 });
 
@@ -134,7 +134,7 @@ return this.width;
 
 Clazz.newMeth(C$, 'setPreferredWidth$I', function (preferredWidth) {
 var old = this.preferredWidth;
-this.preferredWidth = Math.min(Math.max(preferredWidth, this.minWidth), this.maxWidth);
+this.preferredWidth=Math.min(Math.max(preferredWidth, this.minWidth), this.maxWidth);
 p$.firePropertyChange$S$I$I.apply(this, ["preferredWidth", old, this.preferredWidth]);
 });
 
@@ -144,7 +144,7 @@ return this.preferredWidth;
 
 Clazz.newMeth(C$, 'setMinWidth$I', function (minWidth) {
 var old = this.minWidth;
-this.minWidth = Math.max(Math.min(minWidth, this.maxWidth), 0);
+this.minWidth=Math.max(Math.min(minWidth, this.maxWidth), 0);
 if (this.width < this.minWidth) {
 this.setWidth$I(this.minWidth);
 }if (this.preferredWidth < this.minWidth) {
@@ -158,7 +158,7 @@ return this.minWidth;
 
 Clazz.newMeth(C$, 'setMaxWidth$I', function (maxWidth) {
 var old = this.maxWidth;
-this.maxWidth = Math.max(this.minWidth, maxWidth);
+this.maxWidth=Math.max(this.minWidth, maxWidth);
 if (this.width > this.maxWidth) {
 this.setWidth$I(this.maxWidth);
 }if (this.preferredWidth > this.maxWidth) {
@@ -172,7 +172,7 @@ return this.maxWidth;
 
 Clazz.newMeth(C$, 'setResizable$Z', function (isResizable) {
 var old = this.isResizable;
-this.isResizable = isResizable;
+this.isResizable=isResizable;
 p$.firePropertyChange$S$Z$Z.apply(this, ["isResizable", old, this.isResizable]);
 });
 
@@ -200,7 +200,7 @@ this.resizedPostingDisableCount--;
 
 Clazz.newMeth(C$, 'addPropertyChangeListener$java_beans_PropertyChangeListener', function (listener) {
 if (this.changeSupport == null ) {
-this.changeSupport = Clazz.new_((I$[2]||$incl$(2)).c$$O,[this]);
+this.changeSupport=Clazz.new_((I$[2]||$incl$(2)).c$$O,[this]);
 }this.changeSupport.addPropertyChangeListener$java_beans_PropertyChangeListener(listener);
 });
 
@@ -242,4 +242,4 @@ label.setHorizontalAlignment$I(0);
 return label;
 });
 })();
-//Created 2018-05-15 01:02:52
+//Created 2018-05-24 08:47:00

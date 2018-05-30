@@ -17,20 +17,20 @@ Clazz.newMeth(C$, 'c$$java_awt_image_RenderedImage$java_util_List$javax_imageio_
 C$.$init$.apply(this);
 if (image == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["image == null!"]);
-}this.image = image;
-this.raster = null;
-this.thumbnails = thumbnails;
-this.metadata = metadata;
+}this.image=image;
+this.raster=null;
+this.thumbnails=thumbnails;
+this.metadata=metadata;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_image_Raster$java_util_List$javax_imageio_metadata_IIOMetadata', function (raster, thumbnails, metadata) {
 C$.$init$.apply(this);
 if (raster == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["raster == null!"]);
-}this.raster = raster;
-this.image = null;
-this.thumbnails = thumbnails;
-this.metadata = metadata;
+}this.raster=raster;
+this.image=null;
+this.thumbnails=thumbnails;
+this.metadata=metadata;
 }, 1);
 
 Clazz.newMeth(C$, 'getRenderedImage', function () {
@@ -42,8 +42,8 @@ Clazz.newMeth(C$, 'setRenderedImage$java_awt_image_RenderedImage', function (ima
 {
 if (image == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["image == null!"]);
-}this.image = image;
-this.raster = null;
+}this.image=image;
+this.raster=null;
 }});
 
 Clazz.newMeth(C$, 'hasRaster', function () {
@@ -60,8 +60,8 @@ Clazz.newMeth(C$, 'setRaster$java_awt_image_Raster', function (raster) {
 {
 if (raster == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["raster == null!"]);
-}this.raster = raster;
-this.image = null;
+}this.raster=raster;
+this.image=null;
 }});
 
 Clazz.newMeth(C$, 'getNumThumbnails', function () {
@@ -79,7 +79,7 @@ return this.thumbnails;
 });
 
 Clazz.newMeth(C$, 'setThumbnails$java_util_List', function (thumbnails) {
-this.thumbnails = thumbnails;
+this.thumbnails=thumbnails;
 });
 
 Clazz.newMeth(C$, 'getMetadata', function () {
@@ -87,9 +87,9 @@ return this.metadata;
 });
 
 Clazz.newMeth(C$, 'setMetadata$javax_imageio_metadata_IIOMetadata', function (metadata) {
-this.metadata = metadata;
+this.metadata=metadata;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:20
+//Created 2018-05-24 08:45:59

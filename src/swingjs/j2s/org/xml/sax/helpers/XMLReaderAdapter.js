@@ -30,8 +30,8 @@ p$.setup$org_xml_sax_XMLReader.apply(this, [xmlReader]);
 Clazz.newMeth(C$, 'setup$org_xml_sax_XMLReader', function (xmlReader) {
 if (xmlReader == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["XMLReader must not be null"]);
-}this.xmlReader = xmlReader;
-this.qAtts = Clazz.new_((I$[2]||$incl$(2)), [this, null]);
+}this.xmlReader=xmlReader;
+this.qAtts=Clazz.new_((I$[2]||$incl$(2)), [this, null]);
 });
 
 Clazz.newMeth(C$, 'setLocale$java_util_Locale', function (locale) {
@@ -47,7 +47,7 @@ this.xmlReader.setDTDHandler$org_xml_sax_DTDHandler(handler);
 });
 
 Clazz.newMeth(C$, 'setDocumentHandler$org_xml_sax_DocumentHandler', function (handler) {
-this.documentHandler = handler;
+this.documentHandler=handler;
 });
 
 Clazz.newMeth(C$, 'setErrorHandler$org_xml_sax_ErrorHandler', function (handler) {
@@ -139,7 +139,7 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setAttributes$org_xml_sax_Attributes', function (attributes) {
-this.attributes = attributes;
+this.attributes=attributes;
 });
 
 Clazz.newMeth(C$, 'getLength', function () {
@@ -167,4 +167,4 @@ return this.attributes.getValue$S(qName);
 });
 })()
 })();
-//Created 2018-05-15 01:03:04
+//Created 2018-05-24 08:47:19

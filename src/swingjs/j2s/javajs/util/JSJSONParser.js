@@ -18,20 +18,20 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'parseMap$S$Z', function (str, asHashTable) {
-this.index = 0;
-this.asHashTable = asHashTable;
-this.str = str;
-this.len = str.length$();
+this.index=0;
+this.asHashTable=asHashTable;
+this.str=str;
+this.len=str.length$();
 if (p$.getChar.apply(this, []) != "{") return null;
 p$.returnChar.apply(this, []);
 return p$.getValue$Z.apply(this, [false]);
 });
 
 Clazz.newMeth(C$, 'parse$S$Z', function (str, asHashTable) {
-this.index = 0;
-this.asHashTable = asHashTable;
-this.str = str;
-this.len = str.length$();
+this.index=0;
+this.asHashTable=asHashTable;
+this.str=str;
+this.len=str.length$();
 return p$.getValue$Z.apply(this, [false]);
 });
 
@@ -62,18 +62,18 @@ case 39:
 return p$.getString$C.apply(this, [c]);
 case 123:
 if (!isKey) return p$.getObject.apply(this, []);
-c = String.fromCharCode(0);
+c=String.fromCharCode(0);
 break;
 case 91:
 if (!isKey) return p$.getArray.apply(this, []);
-c = String.fromCharCode(0);
+c=String.fromCharCode(0);
 break;
 default:
 p$.returnChar.apply(this, []);
-while (c >= " " && "[,]{:}'\"".indexOf(c) < 0 )c = p$.next.apply(this, []);
+while (c >= " " && "[,]{:}'\"".indexOf(c) < 0 )c=p$.next.apply(this, []);
 
 p$.returnChar.apply(this, []);
-if (isKey && c != ":" ) c = String.fromCharCode(0);
+if (isKey && c != ":" ) c=String.fromCharCode(0);
 break;
 }
 if (isKey && c.$c() == 0  ) throw Clazz.new_(Clazz.load('javajs.util.JSONException').c$$S,["invalid key"]);
@@ -85,7 +85,7 @@ return (I$[1]||$incl$(1)).TRUE;
 return (I$[1]||$incl$(1)).FALSE;
 }if (string.equals$O("null")) {
 return (this.asHashTable ? string : null);
-}}c = string.charAt(0);
+}}c=string.charAt(0);
 if (c >= "0" && c <= "9"  || c == "-" ) try {
 if (string.indexOf(".") < 0 && string.indexOf("e") < 0  && string.indexOf("E") < 0 ) return  new Integer(string);
 var d = Float.$valueOf(string);
@@ -106,38 +106,38 @@ var sb = null;
 var i0 = this.index;
 for (; ; ) {
 var i1 = this.index;
-switch ((c = p$.next.apply(this, [])).$c()) {
+switch ((c=p$.next.apply(this, [])).$c()) {
 case 0:
 case 10:
 case 13:
 throw this.syntaxError$S("Unterminated string");
 case 92:
-switch ((c = p$.next.apply(this, [])).$c()) {
+switch ((c=p$.next.apply(this, [])).$c()) {
 case 34:
 case 39:
 case 92:
 case 47:
 break;
 case 98:
-c = "\u0008";
+c="\u0008";
 break;
 case 116:
-c = "\u0009";
+c="\u0009";
 break;
 case 110:
-c = "\u000a";
+c="\u000a";
 break;
 case 102:
-c = "\u000c";
+c="\u000c";
 break;
 case 114:
-c = "\u000d";
+c="\u000d";
 break;
 case 117:
 var i = this.index;
-this.index = this.index+(4);
+this.index+=4;
 try {
-c = String.fromCharCode(Integer.parseInt(this.str.substring(i, this.index), 16));
+c=String.fromCharCode(Integer.parseInt(this.str.substring(i, this.index), 16));
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
 throw this.syntaxError$S("Substring bounds error");
@@ -156,7 +156,7 @@ break;
 }
 if (this.index > i1 + 1) {
 if (sb == null ) {
-sb = Clazz.new_((I$[2]||$incl$(2)));
+sb=Clazz.new_((I$[2]||$incl$(2)));
 sb.append$S(this.str.substring(i0, i1));
 }}if (sb != null ) sb.appendC$C(c);
 }
@@ -174,14 +174,14 @@ throw Clazz.new_(Clazz.load('javajs.util.JSONException').c$$S,["invalid object"]
 p$.returnChar.apply(this, []);
 var isKey = false;
 for (; ; ) {
-if ((isKey = !isKey) == true ) key = p$.getValue$Z.apply(this, [true]).toString();
+if ((isKey=!isKey) == true ) key=p$.getValue$Z.apply(this, [true]).toString();
  else map.put$TK$TV(key, p$.getValue$Z.apply(this, [false]));
 switch ((p$.getChar.apply(this, [])).$c()) {
 case 125:
 return map;
 case 58:
 if (isKey) continue;
-isKey = true;
+isKey=true;
 case 44:
 if (!isKey) continue;
 default:
@@ -203,7 +203,7 @@ var isNull = false;
 for (; ; ) {
 if (isNull) {
 l.addLast$TV(null);
-isNull = false;
+isNull=false;
 } else {
 l.addLast$TV(p$.getValue$Z.apply(this, [false]));
 }switch ((p$.getChar.apply(this, [])).$c()) {
@@ -212,7 +212,7 @@ switch ((p$.getChar.apply(this, [])).$c()) {
 case 93:
 return l;
 case 44:
-isNull = true;
+isNull=true;
 default:
 p$.returnChar.apply(this, []);
 }
@@ -229,4 +229,4 @@ Clazz.newMeth(C$, 'syntaxError$S', function (message) {
 return Clazz.new_(Clazz.load('javajs.util.JSONException').c$$S,[message + " for " + this.str.substring(0, Math.min(this.index, this.len)) ]);
 });
 })();
-//Created 2018-05-15 01:02:18
+//Created 2018-05-24 08:45:56

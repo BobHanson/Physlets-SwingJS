@@ -26,23 +26,23 @@ Clazz.newMeth(C$, 'c$$Class$javax_sound_sampled_AudioFormatA$I$I', function (lin
 C$.superclazz.c$$Class.apply(this, [lineClass]);
 C$.$init$.apply(this);
 if (formats == null ) {
-this.formats = Clazz.array((I$[1]||$incl$(1)), [0]);
+this.formats=Clazz.array((I$[1]||$incl$(1)), [0]);
 } else {
-this.formats = formats;
-}this.minBufferSize = minBufferSize;
-this.maxBufferSize = maxBufferSize;
+this.formats=formats;
+}this.minBufferSize=minBufferSize;
+this.maxBufferSize=maxBufferSize;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Class$javax_sound_sampled_AudioFormat$I', function (lineClass, format, bufferSize) {
 C$.superclazz.c$$Class.apply(this, [lineClass]);
 C$.$init$.apply(this);
 if (format == null ) {
-this.formats = Clazz.array((I$[1]||$incl$(1)), [0]);
+this.formats=Clazz.array((I$[1]||$incl$(1)), [0]);
 } else {
 var formats = Clazz.array((I$[1]||$incl$(1)), -1, [format]);
-this.formats = formats;
-}this.minBufferSize = bufferSize;
-this.maxBufferSize = bufferSize;
+this.formats=formats;
+}this.minBufferSize=bufferSize;
+this.maxBufferSize=bufferSize;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Class$javax_sound_sampled_AudioFormat', function (lineClass, format) {
@@ -109,4 +109,4 @@ buf.append$S(", and buffers of up to " + this.minBufferSize + " bytes" );
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:21
+//Created 2018-05-24 08:46:02

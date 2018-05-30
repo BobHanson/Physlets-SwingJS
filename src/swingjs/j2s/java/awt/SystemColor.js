@@ -77,14 +77,14 @@ Clazz.newMeth(C$, 'updateSystemColors', function () {
 if (!(I$[1]||$incl$(1)).isHeadless()) {
 (I$[2]||$incl$(2)).getDefaultToolkit().loadSystemColors$IA(C$.systemColors);
 }for (var i = 0; i < C$.systemColors.length; i++) {
-C$.systemColorObjects[i].value = C$.systemColors[i];
+C$.systemColorObjects[i].value=C$.systemColors[i];
 }
 }, 1);
 
 Clazz.newMeth(C$, 'c$$B', function (index) {
 C$.superclazz.c$$I.apply(this, [C$.systemColors[index]]);
 C$.$init$.apply(this);
-this.index = index;
+this.index=index;
 }, 1);
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -97,11 +97,11 @@ return C$.systemColorObjects[this.value];
 
 Clazz.newMeth(C$, 'writeReplace', function () {
 var color = Clazz.new_(C$.c$$B,[($b$[0] = (this.index|0), $b$[0])]);
-color.value = this.index;
+color.value=this.index;
 return color;
 });
 var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:54
+//Created 2018-05-24 08:45:13

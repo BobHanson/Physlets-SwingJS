@@ -18,20 +18,20 @@ this.next = null;
 
 Clazz.newMeth(C$, 'c$$java_util_Set$java_util_Enumeration', function (set, enumeration) {
 C$.$init$.apply(this);
-this.set = set;
-this.iterator = set.iterator();
-this.enumeration = enumeration;
+this.set=set;
+this.iterator=set.iterator();
+this.enumeration=enumeration;
 }, 1);
 
 Clazz.newMeth(C$, 'hasMoreElements', function () {
 if (this.next == null ) {
 if (this.iterator.hasNext()) {
-this.next = this.iterator.next();
+this.next=this.iterator.next();
 } else if (this.enumeration != null ) {
 while (this.next == null  && this.enumeration.hasMoreElements() ){
-this.next = this.enumeration.nextElement();
+this.next=this.enumeration.nextElement();
 if (this.set.contains$O(this.next)) {
-this.next = null;
+this.next=null;
 }}
 }}return this.next != null ;
 });
@@ -39,7 +39,7 @@ this.next = null;
 Clazz.newMeth(C$, 'nextElement', function () {
 if (this.hasMoreElements()) {
 var result = this.next;
-this.next = null;
+this.next=null;
 return result;
 } else {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
@@ -47,4 +47,4 @@ throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:12
+//Created 2018-05-24 08:47:37

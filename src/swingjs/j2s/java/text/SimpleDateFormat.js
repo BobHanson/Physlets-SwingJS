@@ -45,9 +45,9 @@ Clazz.super_(C$, this,1);
 if (pattern == null  || locale == null  ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
 }p$.initializeCalendar$java_util_Locale.apply(this, [locale]);
-this.pattern = pattern;
-this.formatData = (I$[4]||$incl$(4)).getInstance$java_util_Locale(locale);
-this.locale = locale;
+this.pattern=pattern;
+this.formatData=(I$[4]||$incl$(4)).getInstance$java_util_Locale(locale);
+this.locale=locale;
 p$.initialize$java_util_Locale.apply(this, [locale]);
 }, 1);
 
@@ -55,19 +55,19 @@ Clazz.newMeth(C$, 'c$$S$java_text_DateFormatSymbols', function (pattern, formatS
 Clazz.super_(C$, this,1);
 if (pattern == null  || formatSymbols == null  ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.pattern = pattern;
-this.formatData = formatSymbols.clone();
-this.locale = (I$[3]||$incl$(3)).getDefault();
+}this.pattern=pattern;
+this.formatData=formatSymbols.clone();
+this.locale=(I$[3]||$incl$(3)).getDefault();
 p$.initializeCalendar$java_util_Locale.apply(this, [this.locale]);
 p$.initialize$java_util_Locale.apply(this, [this.locale]);
-this.$useDateFormatSymbols = true;
+this.$useDateFormatSymbols=true;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$java_util_Locale', function (timeStyle, dateStyle, loc) {
 Clazz.super_(C$, this,1);
 if (loc == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.locale = loc;
+}this.locale=loc;
 p$.initializeCalendar$java_util_Locale.apply(this, [loc]);
 var key = p$.getKey.apply(this, []);
 var dateTimePatterns = C$.cachedLocaleData.get$O(key);
@@ -75,7 +75,7 @@ if (dateTimePatterns == null ) {
 var r = (I$[5]||$incl$(5)).getDateFormatData$java_util_Locale(loc);
 if (!p$.isGregorianCalendar.apply(this, [])) {
 try {
-dateTimePatterns = r.getStringArray$S(p$.getCalendarName.apply(this, []) + ".DateTimePatterns");
+dateTimePatterns=r.getStringArray$S(p$.getCalendarName.apply(this, []) + ".DateTimePatterns");
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.util.MissingResourceException")){
 } else {
@@ -83,36 +83,36 @@ throw e;
 }
 }
 }if (dateTimePatterns == null ) {
-dateTimePatterns = r.getStringArray$S("DateTimePatterns");
+dateTimePatterns=r.getStringArray$S("DateTimePatterns");
 }C$.cachedLocaleData.put$TK$TV(key, dateTimePatterns);
-}this.formatData = (I$[4]||$incl$(4)).getInstance$java_util_Locale(loc);
+}this.formatData=(I$[4]||$incl$(4)).getInstance$java_util_Locale(loc);
 if ((timeStyle >= 0) && (dateStyle >= 0) ) {
 var dateTimeArgs = Clazz.array(java.lang.Object, -1, [dateTimePatterns[timeStyle], dateTimePatterns[dateStyle + 4]]);
-this.pattern = (I$[6]||$incl$(6)).format$S$OA(dateTimePatterns[8], dateTimeArgs);
+this.pattern=(I$[6]||$incl$(6)).format$S$OA(dateTimePatterns[8], dateTimeArgs);
 } else if (timeStyle >= 0) {
-this.pattern = dateTimePatterns[timeStyle];
+this.pattern=dateTimePatterns[timeStyle];
 } else if (dateStyle >= 0) {
-this.pattern = dateTimePatterns[dateStyle + 4];
+this.pattern=dateTimePatterns[dateStyle + 4];
 } else {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["No date or time style specified"]);
 }p$.initialize$java_util_Locale.apply(this, [loc]);
 }, 1);
 
 Clazz.newMeth(C$, 'initialize$java_util_Locale', function (loc) {
-this.compiledPattern = p$.compile$S.apply(this, [this.pattern]);
-this.numberFormat = C$.cachedNumberFormatData.get$O(loc);
+this.compiledPattern=p$.compile$S.apply(this, [this.pattern]);
+this.numberFormat=C$.cachedNumberFormatData.get$O(loc);
 if (this.numberFormat == null ) {
-this.numberFormat = (I$[7]||$incl$(7)).getIntegerInstance$java_util_Locale(loc);
+this.numberFormat=(I$[7]||$incl$(7)).getIntegerInstance$java_util_Locale(loc);
 this.numberFormat.setGroupingUsed$Z(false);
 C$.cachedNumberFormatData.put$TK$TV(loc, this.numberFormat);
-}this.numberFormat = this.numberFormat.clone();
+}this.numberFormat=this.numberFormat.clone();
 p$.initializeDefaultCentury.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'initializeCalendar$java_util_Locale', function (loc) {
 if (this.calendar == null ) {
 Clazz.assert(C$, this, function(){return loc != null });
-this.calendar = (I$[8]||$incl$(8)).getInstance$java_util_TimeZone$java_util_Locale((I$[9]||$incl$(9)).getDefault(), loc);
+this.calendar=(I$[8]||$incl$(8)).getInstance$java_util_TimeZone$java_util_Locale((I$[9]||$incl$(9)).getDefault(), loc);
 }});
 
 Clazz.newMeth(C$, 'getKey', function () {
@@ -133,13 +133,13 @@ for (var i = 0; i < length; i++) {
 var c = pattern.charAt(i);
 if (c == "\'") {
 if ((i + 1) < length) {
-c = pattern.charAt(i + 1);
+c=pattern.charAt(i + 1);
 if (c == "\'") {
 i++;
 if (count != 0) {
 C$.encode$I$I$StringBuilder(lastTag, count, compiledPattern);
-lastTag = -1;
-count = 0;
+lastTag=-1;
+count=0;
 }if (inQuote) {
 tmpBuffer.append$C(c);
 } else {
@@ -148,13 +148,13 @@ compiledPattern.append$C(String.fromCharCode((25600 | c)));
 }}if (!inQuote) {
 if (count != 0) {
 C$.encode$I$I$StringBuilder(lastTag, count, compiledPattern);
-lastTag = -1;
-count = 0;
+lastTag=-1;
+count=0;
 }if (tmpBuffer == null ) {
-tmpBuffer = Clazz.new_((I$[10]||$incl$(10)).c$$I,[length]);
+tmpBuffer=Clazz.new_((I$[10]||$incl$(10)).c$$I,[length]);
 } else {
 tmpBuffer.setLength$I(0);
-}inQuote = true;
+}inQuote=true;
 } else {
 var len = tmpBuffer.length$();
 if (len == 1) {
@@ -167,7 +167,7 @@ compiledPattern.append$C(ch);
 }} else {
 C$.encode$I$I$StringBuilder(101, len, compiledPattern);
 compiledPattern.append$CharSequence(tmpBuffer);
-}inQuote = false;
+}inQuote=false;
 }continue;
 }if (inQuote) {
 tmpBuffer.append$C(c);
@@ -175,13 +175,13 @@ continue;
 }if (!(c >= "a" && c <= "z"  || c >= "A" && c <= "Z"  )) {
 if (count != 0) {
 C$.encode$I$I$StringBuilder(lastTag, count, compiledPattern);
-lastTag = -1;
-count = 0;
+lastTag=-1;
+count=0;
 }if (c.$c() < 128 ) {
 compiledPattern.append$C(String.fromCharCode((25600 | c)));
 } else {
 var j;
-for (j = i + 1; j < length; j++) {
+for (j=i + 1; j < length; j++) {
 var d = pattern.charAt(j);
 if (d == "\'" || (d >= "a" && d <= "z"  || d >= "A" && d <= "Z"  ) ) {
 break;
@@ -193,15 +193,15 @@ compiledPattern.append$C(pattern.charAt(i));
 i--;
 }continue;
 }var tag;
-if ((tag = "GyMdkHmsSEDFwWahKzZ".indexOf(c)) == -1) {
+if ((tag="GyMdkHmsSEDFwWahKzZ".indexOf(c)) == -1) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Illegal pattern character \'" + c + "'" ]);
 }if (lastTag == -1 || lastTag == tag ) {
-lastTag = tag;
+lastTag=tag;
 count++;
 continue;
 }C$.encode$I$I$StringBuilder(lastTag, count, compiledPattern);
-lastTag = tag;
-count = 1;
+lastTag=tag;
+count=1;
 }
 if (inQuote) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Unterminated quote"]);
@@ -229,9 +229,9 @@ p$.parseAmbiguousDatesAsAfter$java_util_Date.apply(this, [this.calendar.getTime(
 });
 
 Clazz.newMeth(C$, 'parseAmbiguousDatesAsAfter$java_util_Date', function (startDate) {
-this.defaultCenturyStart = startDate;
+this.defaultCenturyStart=startDate;
 this.calendar.setTime$java_util_Date(startDate);
-this.defaultCenturyStartYear = this.calendar.get$I(1);
+this.defaultCenturyStartYear=this.calendar.get$I(1);
 });
 
 Clazz.newMeth(C$, 'set2DigitYearStart$java_util_Date', function (startDate) {
@@ -243,7 +243,7 @@ return this.defaultCenturyStart;
 });
 
 Clazz.newMeth(C$, 'format$java_util_Date$StringBuffer$java_text_FieldPosition', function (date, toAppendTo, pos) {
-pos.beginIndex = pos.endIndex = 0;
+pos.beginIndex=pos.endIndex=0;
 return p$.format$java_util_Date$StringBuffer$java_text_Format_FieldDelegate.apply(this, [date, toAppendTo, pos.getFieldDelegate()]);
 });
 
@@ -254,15 +254,15 @@ for (var i = 0; i < this.compiledPattern.length; ) {
 var tag = (this.compiledPattern[i]).$c() >>> 8;
 var count = this.compiledPattern[i++] & 255;
 if (count == 255) {
-count = (this.compiledPattern[i++]).$c() << 16;
-count = count|(this.compiledPattern[i++].$c());
+count=(this.compiledPattern[i++]).$c() << 16;
+count|=this.compiledPattern[i++].$c();
 }switch (tag) {
 case 100:
 toAppendTo.append$C(String.fromCharCode(count));
 break;
 case 101:
 toAppendTo.append$CA$I$I(this.compiledPattern, i, count);
-i = i+(count);
+i+=count;
 break;
 default:
 p$.subFormat$I$I$java_text_Format_FieldDelegate$StringBuffer$Z.apply(this, [tag, count, delegate, toAppendTo, useDateFormatSymbols]);
@@ -294,13 +294,13 @@ var field = C$.PATTERN_INDEX_TO_CALENDAR_FIELD[patternCharIndex];
 var value = this.calendar.get$I(field);
 var style = (count >= 4) ? 2 : 1;
 if (!useDateFormatSymbols) {
-current = this.calendar.getDisplayName$I$I$java_util_Locale(field, style, this.locale);
+current=this.calendar.getDisplayName$I$I$java_util_Locale(field, style, this.locale);
 }switch (patternCharIndex) {
 case 0:
 if (useDateFormatSymbols) {
 var eras = this.formatData.getEras();
-if (value < eras.length) current = eras[value];
-}if (current == null ) current = "";
+if (value < eras.length) current=eras[value];
+}if (current == null ) current="";
 break;
 case 1:
 if (Clazz.instanceOf(this.calendar, "java.util.GregorianCalendar")) {
@@ -314,14 +314,14 @@ case 2:
 if (useDateFormatSymbols) {
 var months;
 if (count >= 4) {
-months = this.formatData.getMonths();
-current = months[value];
+months=this.formatData.getMonths();
+current=months[value];
 } else if (count == 3) {
-months = this.formatData.getShortMonths();
-current = months[value];
+months=this.formatData.getShortMonths();
+current=months[value];
 }} else {
 if (count < 3) {
-current = null;
+current=null;
 }}if (current == null ) {
 p$.zeroPaddingNumber$I$I$I$StringBuffer.apply(this, [value + 1, count, maxIntCount, buffer]);
 }break;
@@ -334,16 +334,16 @@ case 9:
 if (useDateFormatSymbols) {
 var weekdays;
 if (count >= 4) {
-weekdays = this.formatData.getWeekdays();
-current = weekdays[value];
+weekdays=this.formatData.getWeekdays();
+current=weekdays[value];
 } else {
-weekdays = this.formatData.getShortWeekdays();
-current = weekdays[value];
+weekdays=this.formatData.getShortWeekdays();
+current=weekdays[value];
 }}break;
 case 14:
 if (useDateFormatSymbols) {
 var ampm = this.formatData.getAmPmStrings();
-current = ampm[value];
+current=ampm[value];
 }break;
 case 15:
 if (current == null ) {
@@ -356,7 +356,7 @@ var id = this.calendar.getTimeZone().getID();
 buffer.append$S(id);
 }break;
 case 18:
-value = ((this.calendar.get$I(15) + this.calendar.get$I(16))/60000|0);
+value=((this.calendar.get$I(15) + this.calendar.get$I(16))/60000|0);
 var width = 4;
 if (value >= 0) {
 buffer.append$C("+");
@@ -380,7 +380,7 @@ delegate.formatted$I$java_text_Format_Field$O$I$I$StringBuffer(fieldID, f, f, be
 Clazz.newMeth(C$, 'zeroPaddingNumber$I$I$I$StringBuffer', function (value, minDigits, maxDigits, buffer) {
 try {
 if (this.zeroDigit.$c() == 0 ) {
-this.zeroDigit = (this.numberFormat).getDecimalFormatSymbols().getZeroDigit();
+this.zeroDigit=(this.numberFormat).getDecimalFormatSymbols().getZeroDigit();
 }if (value >= 0) {
 if (value < 100 && minDigits >= 1  && minDigits <= 2 ) {
 if (value < 10) {
@@ -394,9 +394,9 @@ buffer.append$C(String.fromCharCode((this.zeroDigit.$c() + value % 10)));
 } else if (value >= 1000 && value < 10000 ) {
 if (minDigits == 4) {
 buffer.append$C(String.fromCharCode((this.zeroDigit.$c() + (value/1000|0))));
-value = value%(1000);
+value%=1000;
 buffer.append$C(String.fromCharCode((this.zeroDigit.$c() + (value/100|0))));
-value = value%(100);
+value%=100;
 buffer.append$C(String.fromCharCode((this.zeroDigit.$c() + (value/10|0))));
 buffer.append$C(String.fromCharCode((this.zeroDigit.$c() + value % 10)));
 return;
@@ -441,13 +441,13 @@ var inQuote = false;
 for (var i = 0; i < pattern.length$(); ++i) {
 var c = pattern.charAt(i);
 if (inQuote) {
-if (c == "\'") inQuote = false;
+if (c == "\'") inQuote=false;
 } else {
-if (c == "\'") inQuote = true;
+if (c == "\'") inQuote=true;
  else if ((c >= "a" && c <= "z" ) || (c >= "A" && c <= "Z" ) ) {
 var ci = from.indexOf(c);
 if (ci == -1) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Illegal pattern  character \'" + c + "'" ]);
-c = to.charAt(ci);
+c=to.charAt(ci);
 }}result.append$C(c);
 }
 if (inQuote) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Unfinished quote in pattern"]);
@@ -463,14 +463,14 @@ return p$.translatePattern$S$S$S.apply(this, [this.pattern, "GyMdkHmsSEDFwWahKzZ
 });
 
 Clazz.newMeth(C$, 'applyPattern$S', function (pattern) {
-this.compiledPattern = p$.compile$S.apply(this, [pattern]);
-this.pattern = pattern;
+this.compiledPattern=p$.compile$S.apply(this, [pattern]);
+this.pattern=pattern;
 });
 
 Clazz.newMeth(C$, 'applyLocalizedPattern$S', function (pattern) {
 var p = p$.translatePattern$S$S$S.apply(this, [pattern, this.formatData.getLocalPatternChars(), "GyMdkHmsSEDFwWahKzZ"]);
-this.compiledPattern = p$.compile$S.apply(this, [p]);
-this.pattern = p;
+this.compiledPattern=p$.compile$S.apply(this, [p]);
+this.pattern=p;
 });
 
 Clazz.newMeth(C$, 'getDateFormatSymbols', function () {
@@ -478,13 +478,13 @@ return this.formatData.clone();
 });
 
 Clazz.newMeth(C$, 'setDateFormatSymbols$java_text_DateFormatSymbols', function (newFormatSymbols) {
-this.formatData = newFormatSymbols.clone();
-this.$useDateFormatSymbols = true;
+this.formatData=newFormatSymbols.clone();
+this.$useDateFormatSymbols=true;
 });
 
 Clazz.newMeth(C$, 'clone', function () {
 var other = C$.superclazz.prototype.clone.apply(this, []);
-other.formatData = this.formatData.clone();
+other.formatData=this.formatData.clone();
 return other;
 });
 
@@ -499,4 +499,4 @@ return (this.pattern.equals$O(that.pattern) && this.formatData.equals$O(that.for
 });
 C$.$_ASSERT_ENABLED_ = ClassLoader.$getClassAssertionStatus(C$);
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:44

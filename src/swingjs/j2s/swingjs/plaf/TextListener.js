@@ -17,13 +17,13 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$swingjs_plaf_JSTextUI$javax_swing_text_JTextComponent', function (ui, txtComp) {
 C$.$init$.apply(this);
-this.txtComp = txtComp;
-this.ui = ui;
+this.txtComp=txtComp;
+this.ui=ui;
 }, 1);
 
 Clazz.newMeth(C$, 'checkDocument', function () {
 if (!this.haveDocument && this.txtComp.getDocument() != null  ) {
-this.haveDocument = true;
+this.haveDocument=true;
 this.txtComp.getDocument().addDocumentListener$javax_swing_event_DocumentListener(this);
 }});
 
@@ -87,8 +87,8 @@ if (keyCode == 13) keyCode = 10;
 var oldDot = ui.editor.getCaret().getDot();
 var oldMark = ui.editor.getCaret().getMark();
 if (dot != mark && oldMark == dot ) {
-dot = mark;
-mark = oldMark;
+dot=mark;
+mark=oldMark;
 }switch (eventType) {
 case 507:
 return false;
@@ -133,4 +133,4 @@ this.ui.setText$S(this.txtComp.getText());
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:29
+//Created 2018-05-24 08:48:03

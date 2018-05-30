@@ -57,7 +57,7 @@ Clazz.super_(C$, this,1);
 }, 1);
 
 Clazz.newMeth(C$, 'setUpdatePolicy$I', function (policy) {
-this.updatePolicy = policy;
+this.updatePolicy=policy;
 });
 
 Clazz.newMeth(C$, 'getUpdatePolicy', function () {
@@ -76,10 +76,10 @@ this.component.repaint$I$I$I$I(this.x, this.y, this.width, this.height);
 Clazz.newMeth(C$, 'damage$java_awt_Rectangle', function (r) {
 if (r != null ) {
 var damageWidth = this.getCaretWidth$I(r.height);
-this.x = r.x - 4 - (damageWidth >> 1) ;
-this.y = r.y;
-this.width = 9 + damageWidth;
-this.height = r.height;
+this.x=r.x - 4 - (damageWidth >> 1) ;
+this.y=r.y;
+this.width=9 + damageWidth;
+this.height=r.height;
 this.repaint();
 }});
 
@@ -100,7 +100,7 @@ Clazz.newMeth(C$, 'positionCaret$java_awt_event_MouseEvent', function (e) {
 var pt = Clazz.new_((I$[9]||$incl$(9)).c$$I$I,[e.getX(), e.getY()]);
 var biasRet = Clazz.array((I$[3]||$incl$(3)), [1]);
 var pos = (this.component.getUI()).viewToModel$javax_swing_text_JTextComponent$java_awt_Point$javax_swing_text_Position_BiasA(this.component, pt, biasRet);
-if (biasRet[0] == null ) biasRet[0] = (I$[3]||$incl$(3)).Forward;
+if (biasRet[0] == null ) biasRet[0]=(I$[3]||$incl$(3)).Forward;
 if (pos >= 0) {
 this.setDot$I$javax_swing_text_Position_Bias(pos, biasRet[0]);
 }});
@@ -109,7 +109,7 @@ Clazz.newMeth(C$, 'moveCaret$java_awt_event_MouseEvent', function (e) {
 var pt = Clazz.new_((I$[9]||$incl$(9)).c$$I$I,[e.getX(), e.getY()]);
 var biasRet = Clazz.array((I$[3]||$incl$(3)), [1]);
 var pos = (this.component.getUI()).viewToModel$javax_swing_text_JTextComponent$java_awt_Point$javax_swing_text_Position_BiasA(this.component, pt, biasRet);
-if (biasRet[0] == null ) biasRet[0] = (I$[3]||$incl$(3)).Forward;
+if (biasRet[0] == null ) biasRet[0]=(I$[3]||$incl$(3)).Forward;
 if (pos >= 0) {
 this.moveDot$I$javax_swing_text_Position_Bias(pos, biasRet[0]);
 }});
@@ -131,16 +131,16 @@ var nclicks = e.getClickCount();
 if (!e.isConsumed()) {
 if ((I$[1]||$incl$(1)).isLeftMouseButton$java_awt_event_MouseEvent(e)) {
 if (nclicks == 1) {
-this.selectedWordEvent = null;
+this.selectedWordEvent=null;
 }} else if ((I$[1]||$incl$(1)).isMiddleMouseButton$java_awt_event_MouseEvent(e)) {
 }}});
 
 Clazz.newMeth(C$, 'mousePressed$java_awt_event_MouseEvent', function (e) {
 if ((I$[1]||$incl$(1)).isLeftMouseButton$java_awt_event_MouseEvent(e)) {
 if (e.isConsumed()) {
-this.shouldHandleRelease = true;
+this.shouldHandleRelease=true;
 } else {
-this.shouldHandleRelease = false;
+this.shouldHandleRelease=false;
 this.adjustCaretAndFocus$java_awt_event_MouseEvent(e);
 }}});
 
@@ -197,18 +197,18 @@ this.repaint();
 }this.damage$java_awt_Rectangle(r);
 }g.setColor$java_awt_Color(this.component.getCaretColor());
 var paintWidth = this.getCaretWidth$I(r.height);
-r.x = r.x-(paintWidth >> 1);
+r.x-=paintWidth >> 1;
 g.fillRect$I$I$I$I(r.x, r.y, paintWidth, r.height);
 var doc = this.component.getDocument();
 if (Clazz.instanceOf(doc, "javax.swing.text.AbstractDocument")) {
 var bidi = (doc).getBidiRootElement();
 if ((bidi != null ) && (bidi.getElementCount() > 1) ) {
-this.flagXPoints[0] = r.x + ((this.dotLTR) ? paintWidth : 0);
-this.flagYPoints[0] = r.y;
-this.flagXPoints[1] = this.flagXPoints[0];
-this.flagYPoints[1] = this.flagYPoints[0] + 4;
-this.flagXPoints[2] = this.flagXPoints[0] + ((this.dotLTR) ? 4 : -4);
-this.flagYPoints[2] = this.flagYPoints[0];
+this.flagXPoints[0]=r.x + ((this.dotLTR) ? paintWidth : 0);
+this.flagYPoints[0]=r.y;
+this.flagXPoints[1]=this.flagXPoints[0];
+this.flagYPoints[1]=this.flagYPoints[0] + 4;
+this.flagXPoints[2]=this.flagXPoints[0] + ((this.dotLTR) ? 4 : -4);
+this.flagYPoints[2]=this.flagYPoints[0];
 g.fillPolygon$IA$IA$I(this.flagXPoints, this.flagYPoints, 3);
 }}} catch (e) {
 if (Clazz.exceptionOf(e, "javax.swing.text.BadLocationException")){
@@ -219,11 +219,11 @@ throw e;
 }});
 
 Clazz.newMeth(C$, 'install$javax_swing_text_JTextComponent', function (c) {
-this.component = c;
+this.component=c;
 var doc = c.getDocument();
-this.dot = this.mark = 0;
-this.dotLTR = this.markLTR = true;
-this.dotBias = this.markBias = (I$[3]||$incl$(3)).Forward;
+this.dot=this.mark=0;
+this.dotLTR=this.markLTR=true;
+this.dotBias=this.markBias=(I$[3]||$incl$(3)).Forward;
 if (doc != null ) {
 doc.addDocumentListener$javax_swing_event_DocumentListener(this.handler);
 }c.addPropertyChangeListener$java_beans_PropertyChangeListener(this.handler);
@@ -234,14 +234,14 @@ if (this.component.hasFocus()) {
 this.focusGained$java_awt_event_FocusEvent(null);
 }var ratio = c.getClientProperty$O("caretAspectRatio");
 if (ratio != null ) {
-this.aspectRatio = ratio.floatValue();
+this.aspectRatio=ratio.floatValue();
 } else {
-this.aspectRatio = -1;
+this.aspectRatio=-1;
 }var width = c.getClientProperty$O("caretWidth");
 if (width != null ) {
-this.caretWidth = width.intValue();
+this.caretWidth=width.intValue();
 } else {
-this.caretWidth = -1;
+this.caretWidth=-1;
 }});
 
 Clazz.newMeth(C$, 'deinstall$javax_swing_text_JTextComponent', function (c) {
@@ -253,7 +253,7 @@ var doc = c.getDocument();
 if (doc != null ) {
 doc.removeDocumentListener$javax_swing_event_DocumentListener(this.handler);
 }{
-this.component = null;
+this.component=null;
 }});
 
 Clazz.newMeth(C$, 'addChangeListener$javax_swing_event_ChangeListener', function (l) {
@@ -270,9 +270,9 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[10]||$incl$(10)),
 
 Clazz.newMeth(C$, 'fireStateChanged', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[10]||$incl$(10)),['stateChanged$javax_swing_event_ChangeEvent']) ) {
-if (this.changeEvent == null ) this.changeEvent = Clazz.new_((I$[11]||$incl$(11)).c$$O,[this]);
+if (this.changeEvent == null ) this.changeEvent=Clazz.new_((I$[11]||$incl$(11)).c$$O,[this]);
 (listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -283,7 +283,7 @@ return this.listenerList.getListeners$Class(listenerType);
 
 Clazz.newMeth(C$, 'setSelectionVisible$Z', function (vis) {
 if (vis != this.selectionVisible ) {
-this.selectionVisible = vis;
+this.selectionVisible=vis;
 if (this.selectionVisible) {
 var h = this.component.getHighlighter();
 if ((this.dot != this.mark) && (h != null ) && (this.selectionTag == null )  ) {
@@ -291,10 +291,10 @@ var p0 = Math.min(this.dot, this.mark);
 var p1 = Math.max(this.dot, this.mark);
 var p = this.getSelectionPainter();
 try {
-this.selectionTag = h.addHighlight$I$I$javax_swing_text_Highlighter_HighlightPainter(p0, p1, p);
+this.selectionTag=h.addHighlight$I$I$javax_swing_text_Highlighter_HighlightPainter(p0, p1, p);
 } catch (bl) {
 if (Clazz.exceptionOf(bl, "javax.swing.text.BadLocationException")){
-this.selectionTag = null;
+this.selectionTag=null;
 } else {
 throw bl;
 }
@@ -303,7 +303,7 @@ throw bl;
 if (this.selectionTag != null ) {
 var h = this.component.getHighlighter();
 h.removeHighlight$O(this.selectionTag);
-this.selectionTag = null;
+this.selectionTag=null;
 }}}});
 
 Clazz.newMeth(C$, 'isSelectionVisible', function () {
@@ -320,10 +320,10 @@ return this.visible;
 
 Clazz.newMeth(C$, 'setVisible$Z', function (e) {
 if (this.component != null ) {
-this.active = e;
+this.active=e;
 var mapper = this.component.getUI();
 if (this.visible != e ) {
-this.visible = e;
+this.visible=e;
 try {
 var loc = mapper.modelToView$javax_swing_text_JTextComponent$I$javax_swing_text_Position_Bias(this.component, this.dot, this.dotBias);
 this.damage$java_awt_Rectangle(loc);
@@ -382,14 +382,14 @@ var p1 = Math.max(dot, this.mark);
 if (p0 == p1) {
 if (this.selectionTag != null ) {
 h.removeHighlight$O(this.selectionTag);
-this.selectionTag = null;
+this.selectionTag=null;
 }} else {
 try {
 if (this.selectionTag != null ) {
 h.changeHighlight$O$I$I(this.selectionTag, p0, p1);
 } else {
 var p = this.getSelectionPainter();
-this.selectionTag = h.addHighlight$I$I$javax_swing_text_Highlighter_HighlightPainter(p0, p1, p);
+this.selectionTag=h.addHighlight$I$I$javax_swing_text_Highlighter_HighlightPainter(p0, p1, p);
 }} catch (e) {
 if (Clazz.exceptionOf(e, "javax.swing.text.BadLocationException")){
 throw Clazz.new_((I$[12]||$incl$(12)).c$$S,["Bad caret position"]);
@@ -412,18 +412,18 @@ this.handleSetDot$I$javax_swing_text_Position_Bias(dot, dotBias);
 Clazz.newMeth(C$, 'handleSetDot$I$javax_swing_text_Position_Bias', function (dot, dotBias) {
 var doc = this.component.getDocument();
 if (doc != null ) {
-dot = Math.min(dot, doc.getLength());
-}dot = Math.max(dot, 0);
-if (dot == 0) dotBias = (I$[3]||$incl$(3)).Forward;
-this.mark = dot;
+dot=Math.min(dot, doc.getLength());
+}dot=Math.max(dot, 0);
+if (dot == 0) dotBias=(I$[3]||$incl$(3)).Forward;
+this.mark=dot;
 if (this.dot != dot || this.dotBias !== dotBias   || this.selectionTag != null   || this.forceCaretPositionChange ) {
 this.changeCaretPosition$I$javax_swing_text_Position_Bias(dot, dotBias);
-}this.markBias = this.dotBias;
-this.markLTR = this.dotLTR;
+}this.markBias=this.dotBias;
+this.markLTR=this.dotLTR;
 var h = this.component.getHighlighter();
 if ((h != null ) && (this.selectionTag != null ) ) {
 h.removeHighlight$O(this.selectionTag);
-this.selectionTag = null;
+this.selectionTag=null;
 }});
 
 Clazz.newMeth(C$, 'getDotBias', function () {
@@ -445,22 +445,22 @@ return this.markLTR;
 Clazz.newMeth(C$, 'isPositionLTR$I$javax_swing_text_Position_Bias', function (position, bias) {
 var doc = this.component.getDocument();
 if (Clazz.instanceOf(doc, "javax.swing.text.AbstractDocument")) {
-if (bias === (I$[3]||$incl$(3)).Backward  && --position < 0 ) position = 0;
+if (bias === (I$[3]||$incl$(3)).Backward  && --position < 0 ) position=0;
 return (doc).isLeftToRight$I$I(position, position);
 }return true;
 });
 
 Clazz.newMeth(C$, 'guessBiasForOffset$I$javax_swing_text_Position_Bias$Z', function (offset, lastBias, lastLTR) {
 if (lastLTR != this.isPositionLTR$I$javax_swing_text_Position_Bias(offset, lastBias) ) {
-lastBias = (I$[3]||$incl$(3)).Backward;
+lastBias=(I$[3]||$incl$(3)).Backward;
 } else if (lastBias !== (I$[3]||$incl$(3)).Backward  && lastLTR != this.isPositionLTR$I$javax_swing_text_Position_Bias(offset, (I$[3]||$incl$(3)).Backward)  ) {
-lastBias = (I$[3]||$incl$(3)).Backward;
+lastBias=(I$[3]||$incl$(3)).Backward;
 }if (lastBias === (I$[3]||$incl$(3)).Backward  && offset > 0 ) {
 try {
 var s = Clazz.new_((I$[2]||$incl$(2)));
 this.component.getDocument().getText$I$I$javax_swing_text_Segment(offset - 1, 1, s);
 if (s.count > 0 && s.array[s.offset] == "\u000a" ) {
-lastBias = (I$[3]||$incl$(3)).Forward;
+lastBias=(I$[3]||$incl$(3)).Forward;
 }} catch (ble) {
 if (Clazz.exceptionOf(ble, "javax.swing.text.BadLocationException")){
 } else {
@@ -472,9 +472,9 @@ throw ble;
 
 Clazz.newMeth(C$, 'changeCaretPosition$I$javax_swing_text_Position_Bias', function (dot, dotBias) {
 this.repaint();
-this.dot = dot;
-this.dotBias = dotBias;
-this.dotLTR = this.isPositionLTR$I$javax_swing_text_Position_Bias(dot, dotBias);
+this.dot=dot;
+this.dotBias=dotBias;
+this.dotLTR=this.isPositionLTR$I$javax_swing_text_Position_Bias(dot, dotBias);
 this.fireStateChanged();
 p$.updateSystemSelection.apply(this, []);
 this.setMagicCaretPosition$java_awt_Point(null);
@@ -502,10 +502,10 @@ var doc = this.component.getDocument();
 if ((mapper != null ) && (doc != null ) ) {
 var newLoc;
 try {
-newLoc = mapper.modelToView$javax_swing_text_JTextComponent$I$javax_swing_text_Position_Bias(this.component, this.dot, this.dotBias);
+newLoc=mapper.modelToView$javax_swing_text_JTextComponent$I$javax_swing_text_Position_Bias(this.component, this.dot, this.dotBias);
 } catch (e) {
 if (Clazz.exceptionOf(e, "javax.swing.text.BadLocationException")){
-newLoc = null;
+newLoc=null;
 } else {
 throw e;
 }
@@ -527,7 +527,7 @@ this.handleSetDot$I$javax_swing_text_Position_Bias(length, (I$[3]||$incl$(3)).Fo
 }});
 
 Clazz.newMeth(C$, 'setMagicCaretPosition$java_awt_Point', function (p) {
-this.magicCaretPosition = p;
+this.magicCaretPosition=p;
 });
 
 Clazz.newMeth(C$, 'getMagicCaretPosition', function () {
@@ -546,7 +546,7 @@ return s;
 
 Clazz.newMeth(C$, 'getFilterBypass', function () {
 if (this.filterBypass == null ) {
-this.filterBypass = Clazz.new_((I$[14]||$incl$(14)), [this, null]);
+this.filterBypass=Clazz.new_((I$[14]||$incl$(14)), [this, null]);
 }return this.filterBypass;
 });
 
@@ -560,8 +560,8 @@ var y = this.y;
 if (X < x || Y < y ) {
 return false;
 }if (W > 0) {
-w = w+(x);
-W = W+(X);
+w+=x;
+W+=X;
 if (W <= X) {
 if (w >= x || W > w ) return false;
 } else {
@@ -569,8 +569,8 @@ if (w >= x && W > w ) return false;
 }} else if ((x + w) < X) {
 return false;
 }if (H > 0) {
-h = h+(y);
-H = H+(Y);
+h+=y;
+H+=Y;
 if (H <= Y) {
 if (h >= y || H > h ) return false;
 } else {
@@ -605,7 +605,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_Rectangle', function (r) {
 C$.$init$.apply(this);
-this.r = r;
+this.r=r;
 }, 1);
 
 Clazz.newMeth(C$, 'run', function () {
@@ -640,7 +640,7 @@ if (Clazz.exceptionOf(ble, "javax.swing.text.BadLocationException")){
 throw ble;
 }
 }
-}}this.this$0.visible = !this.this$0.visible;
+}}this.this$0.visible=!this.this$0.visible;
 this.this$0.repaint();
 });
 
@@ -666,12 +666,12 @@ if (Clazz.instanceOf(e, "javax.swing.text.AbstractDocument.UndoRedoDocumentEvent
 this.this$0.setDot$I(offset + length);
 return;
 }if (newDot >= offset) {
-newDot = newDot+(length);
-changed = ($s$[0] = changed|(1), $s$[0]);
+newDot+=length;
+changed=($s$[0] = changed|(1), $s$[0]);
 }var newMark = this.this$0.mark;
 if (newMark >= offset) {
-newMark = newMark+(length);
-changed = ($s$[0] = changed|(2), $s$[0]);
+newMark+=length;
+changed=($s$[0] = changed|(2), $s$[0]);
 }if (changed != 0) {
 var dotBias = this.this$0.dotBias;
 if (this.this$0.dot == offset) {
@@ -680,18 +680,18 @@ var isNewline;
 try {
 var s = Clazz.new_((I$[2]||$incl$(2)));
 doc.getText$I$I$javax_swing_text_Segment(newDot - 1, 1, s);
-isNewline = (s.count > 0 && s.array[s.offset] == "\u000a" );
+isNewline=(s.count > 0 && s.array[s.offset] == "\u000a" );
 } catch (ble) {
 if (Clazz.exceptionOf(ble, "javax.swing.text.BadLocationException")){
-isNewline = false;
+isNewline=false;
 } else {
 throw ble;
 }
 }
 if (isNewline) {
-dotBias = (I$[3]||$incl$(3)).Forward;
+dotBias=(I$[3]||$incl$(3)).Forward;
 } else {
-dotBias = (I$[3]||$incl$(3)).Backward;
+dotBias=(I$[3]||$incl$(3)).Backward;
 }}if (newMark == newDot) {
 this.this$0.setDot$I$javax_swing_text_Position_Bias(newDot, dotBias);
 this.this$0.ensureValidPosition();
@@ -705,8 +705,8 @@ this.this$0.moveDot$I$javax_swing_text_Position_Bias(newDot, dotBias);
 Clazz.newMeth(C$, 'removeUpdate$javax_swing_event_DocumentEvent', function (e) {
 if (this.this$0.getUpdatePolicy() == 1 || (this.this$0.getUpdatePolicy() == 0 && !(I$[1]||$incl$(1)).isEventDispatchThread() ) ) {
 var length = this.this$0.component.getDocument().getLength();
-this.this$0.dot = Math.min(this.this$0.dot, length);
-this.this$0.mark = Math.min(this.this$0.mark, length);
+this.this$0.dot=Math.min(this.this$0.dot, length);
+this.this$0.mark=Math.min(this.this$0.mark, length);
 if ((e.getOffset() < this.this$0.dot || e.getOffset() < this.this$0.mark ) && this.this$0.selectionTag != null  ) {
 try {
 this.this$0.component.getHighlighter().changeHighlight$O$I$I(this.this$0.selectionTag, Math.min(this.this$0.dot, this.this$0.mark), Math.max(this.this$0.dot, this.this$0.mark));
@@ -729,34 +729,34 @@ if (Clazz.instanceOf(e, "javax.swing.text.AbstractDocument.UndoRedoDocumentEvent
 this.this$0.setDot$I(offs0);
 return;
 }if (newDot >= offs1) {
-newDot = newDot-((offs1 - offs0));
+newDot-=(offs1 - offs0);
 if (newDot == offs1) {
-adjustDotBias = true;
+adjustDotBias=true;
 }} else if (newDot >= offs0) {
-newDot = offs0;
-adjustDotBias = true;
+newDot=offs0;
+adjustDotBias=true;
 }if (newMark >= offs1) {
-newMark = newMark-((offs1 - offs0));
+newMark-=(offs1 - offs0);
 if (newMark == offs1) {
-adjustMarkBias = true;
+adjustMarkBias=true;
 }} else if (newMark >= offs0) {
-newMark = offs0;
-adjustMarkBias = true;
+newMark=offs0;
+adjustMarkBias=true;
 }if (newMark == newDot) {
-this.this$0.forceCaretPositionChange = true;
+this.this$0.forceCaretPositionChange=true;
 try {
 this.this$0.setDot$I$javax_swing_text_Position_Bias(newDot, this.this$0.guessBiasForOffset$I$javax_swing_text_Position_Bias$Z(newDot, this.this$0.dotBias, this.this$0.dotLTR));
 } finally {
-this.this$0.forceCaretPositionChange = false;
+this.this$0.forceCaretPositionChange=false;
 }
 this.this$0.ensureValidPosition();
 } else {
 var dotBias = this.this$0.dotBias;
 var markBias = this.this$0.markBias;
 if (adjustDotBias) {
-dotBias = this.this$0.guessBiasForOffset$I$javax_swing_text_Position_Bias$Z(newDot, dotBias, this.this$0.dotLTR);
+dotBias=this.this$0.guessBiasForOffset$I$javax_swing_text_Position_Bias$Z(newDot, dotBias, this.this$0.dotLTR);
 }if (adjustMarkBias) {
-markBias = this.this$0.guessBiasForOffset$I$javax_swing_text_Position_Bias$Z(this.this$0.mark, markBias, this.this$0.markLTR);
+markBias=this.this$0.guessBiasForOffset$I$javax_swing_text_Position_Bias$Z(this.this$0.mark, markBias, this.this$0.markLTR);
 }this.this$0.setDot$I$javax_swing_text_Position_Bias(newMark, markBias);
 if (this.this$0.getDot() == newMark) {
 this.this$0.moveDot$I$javax_swing_text_Position_Bias(newDot, dotBias);
@@ -792,16 +792,16 @@ this.this$0.setSelectionVisible$Z(false);
 }}} else if ("caretWidth".equals$O(evt.getPropertyName())) {
 var newWidth = evt.getNewValue();
 if (newWidth != null ) {
-this.this$0.caretWidth = newWidth.intValue();
+this.this$0.caretWidth=newWidth.intValue();
 } else {
-this.this$0.caretWidth = -1;
+this.this$0.caretWidth=-1;
 }this.this$0.repaint();
 } else if ("caretAspectRatio".equals$O(evt.getPropertyName())) {
 var newRatio = evt.getNewValue();
 if (newRatio != null ) {
-this.this$0.aspectRatio = newRatio.floatValue();
+this.this$0.aspectRatio=newRatio.floatValue();
 } else {
-this.this$0.aspectRatio = -1;
+this.this$0.aspectRatio=-1;
 }this.this$0.repaint();
 }});
 var $s$ = new Int16Array(1);
@@ -834,4 +834,4 @@ this.this$0.handleMoveDot$I$javax_swing_text_Position_Bias(dot, bias);
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:53
+//Created 2018-05-24 08:47:03

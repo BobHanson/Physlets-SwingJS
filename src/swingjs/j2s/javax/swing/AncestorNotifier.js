@@ -17,7 +17,7 @@ this.listenerList = Clazz.new_((I$[1]||$incl$(1)));
 
 Clazz.newMeth(C$, 'c$$javax_swing_JComponent', function (root) {
 C$.$init$.apply(this);
-this.root = root;
+this.root=root;
 this.addListeners$java_awt_Component$Z(root, true);
 }, 1);
 
@@ -35,7 +35,7 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[2]||$incl$(2)),['
 
 Clazz.newMeth(C$, 'fireAncestorAdded$javax_swing_JComponent$I$java_awt_Container$java_awt_Container', function (source, id, ancestor, ancestorParent) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[2]||$incl$(2)),['ancestorAdded$javax_swing_event_AncestorEvent','ancestorMoved$javax_swing_event_AncestorEvent','ancestorRemoved$javax_swing_event_AncestorEvent']) ) {
 var ancestorEvent = Clazz.new_((I$[3]||$incl$(3)).c$$javax_swing_JComponent$I$java_awt_Container$java_awt_Container,[source, id, ancestor, ancestorParent]);
 (listeners[i + 1]).ancestorAdded$javax_swing_event_AncestorEvent(ancestorEvent);
@@ -44,7 +44,7 @@ var ancestorEvent = Clazz.new_((I$[3]||$incl$(3)).c$$javax_swing_JComponent$I$ja
 
 Clazz.newMeth(C$, 'fireAncestorRemoved$javax_swing_JComponent$I$java_awt_Container$java_awt_Container', function (source, id, ancestor, ancestorParent) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[2]||$incl$(2)),['ancestorAdded$javax_swing_event_AncestorEvent','ancestorMoved$javax_swing_event_AncestorEvent','ancestorRemoved$javax_swing_event_AncestorEvent']) ) {
 var ancestorEvent = Clazz.new_((I$[3]||$incl$(3)).c$$javax_swing_JComponent$I$java_awt_Container$java_awt_Container,[source, id, ancestor, ancestorParent]);
 (listeners[i + 1]).ancestorRemoved$javax_swing_event_AncestorEvent(ancestorEvent);
@@ -53,7 +53,7 @@ var ancestorEvent = Clazz.new_((I$[3]||$incl$(3)).c$$javax_swing_JComponent$I$ja
 
 Clazz.newMeth(C$, 'fireAncestorMoved$javax_swing_JComponent$I$java_awt_Container$java_awt_Container', function (source, id, ancestor, ancestorParent) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[2]||$incl$(2)),['ancestorAdded$javax_swing_event_AncestorEvent','ancestorMoved$javax_swing_event_AncestorEvent','ancestorRemoved$javax_swing_event_AncestorEvent']) ) {
 var ancestorEvent = Clazz.new_((I$[3]||$incl$(3)).c$$javax_swing_JComponent$I$java_awt_Container$java_awt_Container,[source, id, ancestor, ancestorParent]);
 (listeners[i + 1]).ancestorMoved$javax_swing_event_AncestorEvent(ancestorEvent);
@@ -66,23 +66,23 @@ this.removeListeners$java_awt_Component(this.root);
 
 Clazz.newMeth(C$, 'addListeners$java_awt_Component$Z', function (ancestor, addToFirst) {
 var a;
-this.firstInvisibleAncestor = null;
-for (a = ancestor; this.firstInvisibleAncestor == null ; a = a.getParent()) {
+this.firstInvisibleAncestor=null;
+for (a=ancestor; this.firstInvisibleAncestor == null ; a=a.getParent()) {
 if (addToFirst || a !== ancestor  ) {
 a.addComponentListener$java_awt_event_ComponentListener(this);
 if (Clazz.instanceOf(a, "javax.swing.JComponent")) {
 var jAncestor = a;
 jAncestor.addPropertyChangeListener$java_beans_PropertyChangeListener(this);
 }}if (!a.isVisible() || a.getParent() == null   || Clazz.instanceOf(a, "java.awt.Window") ) {
-this.firstInvisibleAncestor = a;
+this.firstInvisibleAncestor=a;
 }}
 if (Clazz.instanceOf(this.firstInvisibleAncestor, "java.awt.Window") && this.firstInvisibleAncestor.isVisible() ) {
-this.firstInvisibleAncestor = null;
+this.firstInvisibleAncestor=null;
 }});
 
 Clazz.newMeth(C$, 'removeListeners$java_awt_Component', function (ancestor) {
 var a;
-for (a = ancestor; a != null ; a = a.getParent()) {
+for (a=ancestor; a != null ; a=a.getParent()) {
 a.removeComponentListener$java_awt_event_ComponentListener(this);
 if (Clazz.instanceOf(a, "javax.swing.JComponent")) {
 var jAncestor = a;
@@ -113,7 +113,7 @@ var ancestor = e.getComponent();
 var needsNotify = this.firstInvisibleAncestor == null ;
 if (!(Clazz.instanceOf(ancestor, "java.awt.Window"))) {
 this.removeListeners$java_awt_Component(ancestor.getParent());
-}this.firstInvisibleAncestor = ancestor;
+}this.firstInvisibleAncestor=ancestor;
 if (needsNotify) {
 this.fireAncestorRemoved$javax_swing_JComponent$I$java_awt_Container$java_awt_Container(this.root, 2, ancestor, ancestor.getParent());
 }});
@@ -131,11 +131,11 @@ this.fireAncestorAdded$javax_swing_JComponent$I$java_awt_Container$java_awt_Cont
 var needsNotify = this.firstInvisibleAncestor == null ;
 var oldParent = evt.getOldValue();
 this.removeListeners$java_awt_Component(oldParent);
-this.firstInvisibleAncestor = component;
+this.firstInvisibleAncestor=component;
 if (needsNotify) {
 this.fireAncestorRemoved$javax_swing_JComponent$I$java_awt_Container$java_awt_Container(this.root, 2, component, oldParent);
 }}}});
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:22
+//Created 2018-05-24 08:46:06

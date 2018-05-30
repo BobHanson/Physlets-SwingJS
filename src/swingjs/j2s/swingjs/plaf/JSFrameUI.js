@@ -21,42 +21,42 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-(I$[1]||$incl$(1)).frameZ = (I$[1]||$incl$(1)).frameZ+(1000);
-this.z = (I$[1]||$incl$(1)).frameZ;
-this.isContainer = true;
-this.defaultHeight = 500;
-this.defaultWidth = 500;
+(I$[1]||$incl$(1)).frameZ+=1000;
+this.z=(I$[1]||$incl$(1)).frameZ;
+this.isContainer=true;
+this.defaultHeight=500;
+this.defaultWidth=500;
 this.setDoc();
 }, 1);
 
 Clazz.newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.domNode = this.frameNode = this.newDOMObject$S$S$SA("div", this.id + "_frame", []);
+this.domNode=this.frameNode=this.newDOMObject$S$S$SA("div", this.id + "_frame", []);
 (I$[2]||$incl$(2)).setStyles(this.frameNode, ["box-shadow", "0px 0px 10px gray", "box-sizing", "content-box"]);
 this.setWindowClass$swingjs_api_js_DOMNode(this.frameNode);
 var w = this.c.getWidth();
 var h = this.c.getHeight();
-if (w == 0) w = this.defaultWidth;
-if (h == 0) h = this.defaultHeight;
+if (w == 0) w=this.defaultWidth;
+if (h == 0) h=this.defaultHeight;
 (I$[2]||$incl$(2)).setSize(this.frameNode, w, h);
 (I$[2]||$incl$(2)).setAttr(this.frameNode, "ui", this);
 (I$[2]||$incl$(2)).setPositionAbsolute(this.frameNode, 0, 0);
 this.setJ2sMouseHandler$swingjs_api_js_DOMNode(this.frameNode);
-this.titleBarNode = this.newDOMObject$S$S$SA("div", this.id + "_titlebar", []);
+this.titleBarNode=this.newDOMObject$S$S$SA("div", this.id + "_titlebar", []);
 (I$[2]||$incl$(2)).setPositionAbsolute(this.titleBarNode, 0, 0);
 (I$[2]||$incl$(2)).setStyles(this.titleBarNode, ["background-color", "#E0E0E0", "height", "20px", "font-size", "14px", "font-family", "sans-serif", "font-weight", "bold"]);
-this.titleNode = this.newDOMObject$S$S$SA("label", this.id + "_title", []);
+this.titleNode=this.newDOMObject$S$S$SA("label", this.id + "_title", []);
 (I$[2]||$incl$(2)).setPositionAbsolute(this.titleNode, 2, 4);
 (I$[2]||$incl$(2)).setStyles(this.titleNode, ["height", "20px"]);
-this.closerWrap = this.newDOMObject$S$S$SA("div", this.id + "_closerwrap", []);
+this.closerWrap=this.newDOMObject$S$S$SA("div", this.id + "_closerwrap", []);
 (I$[2]||$incl$(2)).setPositionAbsolute(this.closerWrap, 0, 0);
 (I$[2]||$incl$(2)).setStyles(this.closerWrap, ["text-align", "right"]);
-this.closerNode = this.newDOMObject$S$S$SA("label", this.id + "_closer", ["innerHTML", "X"]);
+this.closerNode=this.newDOMObject$S$S$SA("label", this.id + "_closer", ["innerHTML", "X"]);
 (I$[2]||$incl$(2)).setStyles(this.closerNode, ["width", "20px", "height", "20px", "position", "absolute", "text-align", "center", "right", "0px"]);
 (I$[2]||$incl$(2)).addJqueryHandledEvent(this, this.closerNode, "click mouseenter mouseout");
 this.frameNode.appendChild(this.titleBarNode);
 if (this.isModal) {
-this.modalNode = (I$[2]||$incl$(2)).createElement("div", this.id + "_modaldiv");
+this.modalNode=(I$[2]||$incl$(2)).createElement("div", this.id + "_modaldiv");
 var screen = (I$[3]||$incl$(3)).getDefaultToolkit().getScreenSize();
 (I$[2]||$incl$(2)).setStyles(this.modalNode, ["background", P$.JSComponentUI.toCSSString$java_awt_Color(Clazz.new_((I$[4]||$incl$(4)).c$$I$I$I$I,[100, 100, 100, 100]))]);
 (I$[2]||$incl$(2)).setPositionAbsolute(this.modalNode, 0, 0);
@@ -73,7 +73,7 @@ this.closerWrap.appendChild(this.closerNode);
 var s = this.getInsets();
 (I$[2]||$incl$(2)).setPositionAbsolute(this.frameNode, 0, 0);
 (I$[2]||$incl$(2)).setAttrs(this.frameNode, ["width", "" + this.frame.getWidth() + s.left + s.right , "height", "" + this.frame.getHeight() + s.top + s.bottom ]);
-this.containerNode = this.frameNode;
+this.containerNode=this.frameNode;
 }var strColor = P$.JSComponentUI.toCSSString$java_awt_Color(this.c.getBackground());
 (I$[2]||$incl$(2)).setStyles(this.domNode, ["background-color", strColor]);
 (I$[2]||$incl$(2)).setStyles(this.frameNode, ["background", strColor]);
@@ -124,7 +124,7 @@ Clazz.newMeth(C$, 'setInnerComponentBounds$I$I', function (width, height) {
 });
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.frame = this.c;
+this.frame=this.c;
 C$.superclazz.prototype.installUI$javax_swing_JComponent.apply(this, [jc]);
 (I$[8]||$incl$(8)).installColors$javax_swing_JComponent$S$S(jc, "Frame.background", "Frame.foreground");
 });
@@ -134,7 +134,7 @@ this.closeFrame();
 });
 
 Clazz.newMeth(C$, 'setTitle$S', function (title) {
-this.title = title;
+this.title=title;
 if (this.titleNode != null ) (I$[2]||$incl$(2)).setAttr(this.titleNode, "innerHTML", title);
 });
 
@@ -142,11 +142,11 @@ Clazz.newMeth(C$, 'setMenuBar$O', function (mb) {
 });
 
 Clazz.newMeth(C$, 'setResizable$Z', function (resizeable) {
-this.resizeable = resizeable;
+this.resizeable=resizeable;
 });
 
 Clazz.newMeth(C$, 'setState$I', function (state) {
-this.state = state;
+this.state=state;
 });
 
 Clazz.newMeth(C$, 'getState', function () {
@@ -157,7 +157,7 @@ Clazz.newMeth(C$, 'setMaximizedBounds$java_awt_Rectangle', function (bounds) {
 });
 
 Clazz.newMeth(C$, 'setBoundsPrivate$I$I$I$I', function (x, y, width, height) {
-this.bounds = Clazz.new_((I$[9]||$incl$(9)).c$$I$I$I$I,[x, y, width, height]);
+this.bounds=Clazz.new_((I$[9]||$incl$(9)).c$$I$I$I$I,[x, y, width, height]);
 });
 
 Clazz.newMeth(C$, 'getBoundsPrivate', function () {
@@ -186,4 +186,4 @@ var z = this.getZIndex$S(null) - 1;
 }(I$[2]||$incl$(2)).setVisible(this.modalNode, b);
 }});
 })();
-//Created 2018-05-15 01:03:22
+//Created 2018-05-24 08:47:54

@@ -45,17 +45,17 @@ Clazz.newMeth(C$, 'capacity$I', function (expectedMaxSize) {
 var minCapacity = ((3 * expectedMaxSize)/2|0);
 var result;
 if (minCapacity > 536870912 || minCapacity < 0 ) {
-result = 536870912;
+result=536870912;
 } else {
-result = 4;
-while (result < minCapacity)result = result<<(1);
+result=4;
+while (result < minCapacity)result<<=1;
 
 }return result;
 });
 
 Clazz.newMeth(C$, 'init$I', function (initCapacity) {
-this.threshold = ((initCapacity * 2)/3|0);
-this.table = Clazz.array(java.lang.Object, [2 * initCapacity]);
+this.threshold=((initCapacity * 2)/3|0);
+this.table=Clazz.array(java.lang.Object, [2 * initCapacity]);
 });
 
 Clazz.newMeth(C$, 'c$$java_util_Map', function (m) {
@@ -89,7 +89,7 @@ while (true){
 var item = tab[i];
 if (item === k ) return tab[i + 1];
 if (item == null ) return null;
-i = C$.nextKeyIndex$I$I(i, len);
+i=C$.nextKeyIndex$I$I(i, len);
 }
 });
 
@@ -102,13 +102,13 @@ while (true){
 var item = tab[i];
 if (item === k ) return true;
 if (item == null ) return false;
-i = C$.nextKeyIndex$I$I(i, len);
+i=C$.nextKeyIndex$I$I(i, len);
 }
 });
 
 Clazz.newMeth(C$, 'containsValue$O', function (value) {
 var tab = this.table;
-for (var i = 1; i < tab.length; i = i+(2)) if (tab[i] === value  && tab[i - 1] != null  ) return true;
+for (var i = 1; i < tab.length; i+=2) if (tab[i] === value  && tab[i - 1] != null  ) return true;
 
 return false;
 });
@@ -122,7 +122,7 @@ while (true){
 var item = tab[i];
 if (item === k ) return tab[i + 1] === value ;
 if (item == null ) return false;
-i = C$.nextKeyIndex$I$I(i, len);
+i=C$.nextKeyIndex$I$I(i, len);
 }
 });
 
@@ -132,16 +132,16 @@ var tab = this.table;
 var len = tab.length;
 var i = C$.hash$O$I(k, len);
 var item;
-while ((item = tab[i]) != null ){
+while ((item=tab[i]) != null ){
 if (item === k ) {
 var oldValue = tab[i + 1];
-tab[i + 1] = value;
+tab[i + 1]=value;
 return oldValue;
-}i = C$.nextKeyIndex$I$I(i, len);
+}i=C$.nextKeyIndex$I$I(i, len);
 }
 this.modCount++;
-tab[i] = k;
-tab[i + 1] = value;
+tab[i]=k;
+tab[i + 1]=value;
 if (++this.$size >= this.threshold) p$.resize$I.apply(this, [len]);
 return null;
 });
@@ -152,24 +152,24 @@ var oldTable = this.table;
 var oldLength = oldTable.length;
 if (oldLength == 1073741824) {
 if (this.threshold == 536870911) throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["Capacity exhausted."]);
-this.threshold = 536870911;
+this.threshold=536870911;
 return;
 }if (oldLength >= newLength) return;
 var newTable = Clazz.array(java.lang.Object, [newLength]);
-this.threshold = (newLength/3|0);
-for (var j = 0; j < oldLength; j = j+(2)) {
+this.threshold=(newLength/3|0);
+for (var j = 0; j < oldLength; j+=2) {
 var key = oldTable[j];
 if (key != null ) {
 var value = oldTable[j + 1];
-oldTable[j] = null;
-oldTable[j + 1] = null;
+oldTable[j]=null;
+oldTable[j + 1]=null;
 var i = C$.hash$O$I(key, newLength);
-while (newTable[i] != null )i = C$.nextKeyIndex$I$I(i, newLength);
+while (newTable[i] != null )i=C$.nextKeyIndex$I$I(i, newLength);
 
-newTable[i] = key;
-newTable[i + 1] = value;
+newTable[i]=key;
+newTable[i + 1]=value;
 }}
-this.table = newTable;
+this.table=newTable;
 });
 
 Clazz.newMeth(C$, 'putAll$java_util_Map', function (m) {
@@ -191,12 +191,12 @@ if (item === k ) {
 this.modCount++;
 this.$size--;
 var oldValue = tab[i + 1];
-tab[i + 1] = null;
-tab[i] = null;
+tab[i + 1]=null;
+tab[i]=null;
 p$.closeDeletion$I.apply(this, [i]);
 return oldValue;
 }if (item == null ) return null;
-i = C$.nextKeyIndex$I$I(i, len);
+i=C$.nextKeyIndex$I$I(i, len);
 }
 });
 
@@ -211,12 +211,12 @@ if (item === k ) {
 if (tab[i + 1] !== value ) return false;
 this.modCount++;
 this.$size--;
-tab[i] = null;
-tab[i + 1] = null;
+tab[i]=null;
+tab[i + 1]=null;
 p$.closeDeletion$I.apply(this, [i]);
 return true;
 }if (item == null ) return false;
-i = C$.nextKeyIndex$I$I(i, len);
+i=C$.nextKeyIndex$I$I(i, len);
 }
 });
 
@@ -224,23 +224,23 @@ Clazz.newMeth(C$, 'closeDeletion$I', function (d) {
 var tab = this.table;
 var len = tab.length;
 var item;
-for (var i = C$.nextKeyIndex$I$I(d, len); (item = tab[i]) != null ; i = C$.nextKeyIndex$I$I(i, len)) {
+for (var i = C$.nextKeyIndex$I$I(d, len); (item=tab[i]) != null ; i=C$.nextKeyIndex$I$I(i, len)) {
 var r = C$.hash$O$I(item, len);
 if ((i < r && (r <= d || d <= i ) ) || (r <= d && d <= i ) ) {
-tab[d] = item;
-tab[d + 1] = tab[i + 1];
-tab[i] = null;
-tab[i + 1] = null;
-d = i;
+tab[d]=item;
+tab[d + 1]=tab[i + 1];
+tab[i]=null;
+tab[i + 1]=null;
+d=i;
 }}
 });
 
 Clazz.newMeth(C$, 'clear', function () {
 this.modCount++;
 var tab = this.table;
-for (var i = 0; i < tab.length; i++) tab[i] = null;
+for (var i = 0; i < tab.length; i++) tab[i]=null;
 
-this.$size = 0;
+this.$size=0;
 });
 
 Clazz.newMeth(C$, 'equals$O', function (o) {
@@ -250,7 +250,7 @@ return true;
 var m = o;
 if (m.size() != this.$size) return false;
 var tab = m.table;
-for (var i = 0; i < tab.length; i = i+(2)) {
+for (var i = 0; i < tab.length; i+=2) {
 var k = tab[i];
 if (k != null  && !p$.containsMapping$O$O.apply(this, [k, tab[i + 1]]) ) return false;
 }
@@ -265,11 +265,11 @@ return false;
 Clazz.newMeth(C$, 'hashCode', function () {
 var result = 0;
 var tab = this.table;
-for (var i = 0; i < tab.length; i = i+(2)) {
+for (var i = 0; i < tab.length; i+=2) {
 var key = tab[i];
 if (key != null ) {
 var k = C$.unmaskNull$O(key);
-result = result+(System.identityHashCode(k) ^ System.identityHashCode(tab[i + 1]));
+result+=System.identityHashCode(k) ^ System.identityHashCode(tab[i + 1]);
 }}
 return result;
 });
@@ -277,8 +277,8 @@ return result;
 Clazz.newMeth(C$, 'clone', function () {
 try {
 var m = Clazz.clone(this);
-m.$entrySet = null;
-m.table = this.table.clone();
+m.$entrySet=null;
+m.table=this.table.clone();
 return m;
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.CloneNotSupportedException")){
@@ -292,26 +292,26 @@ throw e;
 Clazz.newMeth(C$, 'keySet', function () {
 var ks = this.$keySet;
 if (ks != null ) return ks;
- else return this.$keySet = Clazz.new_((I$[7]||$incl$(7)), [this, null]);
+ else return this.$keySet=Clazz.new_((I$[7]||$incl$(7)), [this, null]);
 });
 
 Clazz.newMeth(C$, 'values', function () {
 var vs = this.$values;
 if (vs != null ) return vs;
- else return this.$values = Clazz.new_((I$[8]||$incl$(8)), [this, null]);
+ else return this.$values=Clazz.new_((I$[8]||$incl$(8)), [this, null]);
 });
 
 Clazz.newMeth(C$, 'entrySet', function () {
 var es = this.$entrySet;
 if (es != null ) return es;
- else return this.$entrySet = Clazz.new_((I$[9]||$incl$(9)), [this, null]);
+ else return this.$entrySet=Clazz.new_((I$[9]||$incl$(9)), [this, null]);
 });
 
 Clazz.newMeth(C$, 'writeObject$java_io_ObjectOutputStream', function (s) {
 s.defaultWriteObject();
 s.writeInt$I(this.$size);
 var tab = this.table;
-for (var i = 0; i < tab.length; i = i+(2)) {
+for (var i = 0; i < tab.length; i+=2) {
 var key = tab[i];
 if (key != null ) {
 s.writeObject$O(C$.unmaskNull$O(key));
@@ -336,12 +336,12 @@ var tab = this.table;
 var len = tab.length;
 var i = C$.hash$O$I(k, len);
 var item;
-while ((item = tab[i]) != null ){
+while ((item=tab[i]) != null ){
 if (item === k ) throw Clazz.new_(Clazz.load('java.io.StreamCorruptedException'));
-i = C$.nextKeyIndex$I$I(i, len);
+i=C$.nextKeyIndex$I$I(i, len);
 }
-tab[i] = k;
-tab[i + 1] = value;
+tab[i]=k;
+tab[i + 1]=value;
 });
 ;
 (function(){var C$=Clazz.newClass(P$.IdentityHashMap, "IdentityHashMapIterator", function(){
@@ -369,59 +369,59 @@ this.traversalTable = this.this$0.table;
 
 Clazz.newMeth(C$, 'hasNext', function () {
 var tab = this.traversalTable;
-for (var i = this.index; i < tab.length; i = i+(2)) {
+for (var i = this.index; i < tab.length; i+=2) {
 var key = tab[i];
 if (key != null ) {
-this.index = i;
-return this.indexValid = true;
+this.index=i;
+return this.indexValid=true;
 }}
-this.index = tab.length;
+this.index=tab.length;
 return false;
 });
 
 Clazz.newMeth(C$, 'nextIndex', function () {
 if (this.this$0.modCount != this.expectedModCount) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
 if (!this.indexValid && !this.hasNext() ) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
-this.indexValid = false;
-this.lastReturnedIndex = this.index;
-this.index = this.index+(2);
+this.indexValid=false;
+this.lastReturnedIndex=this.index;
+this.index+=2;
 return this.lastReturnedIndex;
 });
 
 Clazz.newMeth(C$, 'remove', function () {
 if (this.lastReturnedIndex == -1) throw Clazz.new_(Clazz.load('java.lang.IllegalStateException'));
 if (this.this$0.modCount != this.expectedModCount) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
-this.expectedModCount = ++this.this$0.modCount;
+this.expectedModCount=++this.this$0.modCount;
 var deletedSlot = this.lastReturnedIndex;
-this.lastReturnedIndex = -1;
+this.lastReturnedIndex=-1;
 this.this$0.$size--;
-this.index = deletedSlot;
-this.indexValid = false;
+this.index=deletedSlot;
+this.indexValid=false;
 var tab = this.traversalTable;
 var len = tab.length;
 var d = deletedSlot;
 var key = tab[d];
-tab[d] = null;
-tab[d + 1] = null;
+tab[d]=null;
+tab[d + 1]=null;
 if (tab !== this.b$['java.util.IdentityHashMap'].table ) {
 this.b$['java.util.IdentityHashMap'].remove$O(key);
-this.expectedModCount = this.this$0.modCount;
+this.expectedModCount=this.this$0.modCount;
 return;
 }var item;
-for (var i = P$.IdentityHashMap.nextKeyIndex$I$I(d, len); (item = tab[i]) != null ; i = P$.IdentityHashMap.nextKeyIndex$I$I(i, len)) {
+for (var i = P$.IdentityHashMap.nextKeyIndex$I$I(d, len); (item=tab[i]) != null ; i=P$.IdentityHashMap.nextKeyIndex$I$I(i, len)) {
 var r = P$.IdentityHashMap.hash$O$I(item, len);
 if ((i < r && (r <= d || d <= i ) ) || (r <= d && d <= i ) ) {
 if (i < deletedSlot && d >= deletedSlot  && this.traversalTable === this.b$['java.util.IdentityHashMap'].table  ) {
 var remaining = len - deletedSlot;
 var newTable = Clazz.array(java.lang.Object, [remaining]);
 System.arraycopy(tab, deletedSlot, newTable, 0, remaining);
-this.traversalTable = newTable;
-this.index = 0;
-}tab[d] = item;
-tab[d + 1] = tab[i + 1];
-tab[i] = null;
-tab[i + 1] = null;
-d = i;
+this.traversalTable=newTable;
+this.index=0;
+}tab[d]=item;
+tab[d + 1]=tab[i + 1];
+tab[i]=null;
+tab[i + 1]=null;
+d=i;
 }}
 });
 
@@ -490,7 +490,7 @@ return this.traversalTable[this.lastReturnedIndex + 1];
 Clazz.newMeth(C$, ['setValue$TV'], function (value) {
 if (this.lastReturnedIndex < 0) throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["Entry was removed"]);
 var oldValue = this.traversalTable[this.lastReturnedIndex + 1];
-this.traversalTable[this.lastReturnedIndex + 1] = value;
+this.traversalTable[this.lastReturnedIndex + 1]=value;
 if (this.traversalTable !== this.b$['java.util.IdentityHashMap'].table ) this.this$0.put$TK$TV(this.traversalTable[this.lastReturnedIndex], value);
 return oldValue;
 });
@@ -548,7 +548,7 @@ var modified = false;
 for (var i = this.iterator(); i.hasNext(); ) {
 if (c.contains$O(i.next())) {
 i.remove();
-modified = true;
+modified=true;
 }}
 return modified;
 });
@@ -559,7 +559,7 @@ this.b$['java.util.IdentityHashMap'].clear();
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var result = 0;
-for (var key, $key = this.iterator(); $key.hasNext()&&((key=$key.next()),1);) result = result+(System.identityHashCode(key));
+for (var key, $key = this.iterator(); $key.hasNext()&&((key=$key.next()),1);) result+=System.identityHashCode(key);
 
 return result;
 });
@@ -644,7 +644,7 @@ var modified = false;
 for (var i = this.iterator(); i.hasNext(); ) {
 if (c.contains$O(i.next())) {
 i.remove();
-modified = true;
+modified=true;
 }}
 return modified;
 });
@@ -653,22 +653,22 @@ Clazz.newMeth(C$, 'toArray', function () {
 var size = this.size();
 var result = Clazz.array(java.lang.Object, [size]);
 var it = this.iterator();
-for (var i = 0; i < size; i++) result[i] = Clazz.new_((I$[4]||$incl$(4)).c$$java_util_Map_Entry,[it.next()]);
+for (var i = 0; i < size; i++) result[i]=Clazz.new_((I$[4]||$incl$(4)).c$$java_util_Map_Entry,[it.next()]);
 
 return result;
 });
 
 Clazz.newMeth(C$, 'toArray$TTA', function (a) {
 var size = this.size();
-if (a.length < size) a = Clazz.array(a.getClass().getComponentType(), size);
+if (a.length < size) a=Clazz.array(a.getClass().getComponentType(), size);
 var it = this.iterator();
-for (var i = 0; i < size; i++) a[i] = Clazz.new_((I$[4]||$incl$(4)).c$$java_util_Map_Entry,[it.next()]);
+for (var i = 0; i < size; i++) a[i]=Clazz.new_((I$[4]||$incl$(4)).c$$java_util_Map_Entry,[it.next()]);
 
-if (a.length > size) a[size] = null;
+if (a.length > size) a[size]=null;
 return a;
 });
 
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:13
+//Created 2018-05-24 08:45:47

@@ -24,8 +24,8 @@ Clazz.newMeth(C$, 'c$$java_awt_Component$I$Z$java_awt_Component$sun_awt_CausedFo
 C$.superclazz.c$$java_awt_Component$I$Z$java_awt_Component.apply(this, [source, id, temporary, opposite]);
 C$.$init$.apply(this);
 if (cause == null ) {
-cause = (I$[1]||$incl$(1)).UNKNOWN;
-}this.cause = cause;
+cause=(I$[1]||$incl$(1)).UNKNOWN;
+}this.cause=cause;
 }, 1);
 
 Clazz.newMeth(C$, 'retarget$java_awt_event_FocusEvent$java_awt_Component', function (e, newSource) {
@@ -63,4 +63,4 @@ Clazz.newMeth(C$, 'values', function() { return $vals }, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:21

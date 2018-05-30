@@ -177,4 +177,4 @@ Clazz.newMeth(C$, 'insert$I$S', function (offset, str) {
 this.replace$I$I$S(offset, offset, str);
 });
 })();
-//Created 2018-05-15 01:02:19
+//Created 2018-05-24 08:45:58

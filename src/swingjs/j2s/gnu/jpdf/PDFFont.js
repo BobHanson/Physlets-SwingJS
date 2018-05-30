@@ -25,16 +25,16 @@ C$.c$$S$S$S$I.apply(this, ["/F1", "/Type1", "Helvetica", 0]);
 Clazz.newMeth(C$, 'c$$S$S$S$I', function (name, type, font, style) {
 C$.superclazz.c$$S.apply(this, ["/Font"]);
 C$.$init$.apply(this);
-this.name = name;
-this.$type = type;
-this.style = style;
+this.name=name;
+this.$type=type;
+this.style=style;
 var f = font.toLowerCase();
-this.font = C$.base14[0][1];
-this.javaFont = C$.base14[0][0];
+this.font=C$.base14[0][1];
+this.javaFont=C$.base14[0][0];
 for (var i = 0; i < C$.base14.length; i++) {
 if (C$.base14[i][0].equals$O(f)) {
-this.javaFont = C$.base14[i][0];
-this.font = C$.base14[i][1 + style];
+this.javaFont=C$.base14[i][0];
+this.font=C$.base14[i][1 + style];
 break;
 }}
 }, 1);
@@ -73,4 +73,4 @@ Clazz.newMeth(C$, 'equals$S$S$I', function (type, font, style) {
 return this.$type.equals$O(type) && (this.font.equalsIgnoreCase$S(font) || this.javaFont.equalsIgnoreCase$S(font) ) ;
 });
 })();
-//Created 2018-05-15 01:01:46
+//Created 2018-05-24 08:45:02

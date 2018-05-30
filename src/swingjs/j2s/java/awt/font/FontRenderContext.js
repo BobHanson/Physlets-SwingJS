@@ -14,21 +14,21 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.defaulting = true;
+this.defaulting=true;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_AffineTransform$Z$Z', function (tx, isAntiAliased, usesFractionalMetrics) {
 C$.$init$.apply(this);
 if (tx != null  && !tx.isIdentity() ) {
-this.tx = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_geom_AffineTransform,[tx]);
+this.tx=Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_geom_AffineTransform,[tx]);
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_AffineTransform$O$O', function (tx, aaHint, fmHint) {
 C$.$init$.apply(this);
 if (tx != null  && !tx.isIdentity() ) {
-this.tx = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_geom_AffineTransform,[tx]);
-}this.aaHintValue = aaHint;
-this.fmHintValue = fmHint;
+this.tx=Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_geom_AffineTransform,[tx]);
+}this.aaHintValue=aaHint;
+this.fmHintValue=fmHint;
 }, 1);
 
 Clazz.newMeth(C$, 'isTransformed', function () {
@@ -106,12 +106,12 @@ return rhs.getAntiAliasingHint() === this.getAntiAliasingHint()  && rhs.getFract
 Clazz.newMeth(C$, 'hashCode', function () {
 var hash = this.tx == null  ? 0 : this.tx.hashCode();
 if (this.defaulting) {
-hash = hash+(this.getAntiAliasingHint().hashCode());
-hash = hash+(this.getFractionalMetricsHint().hashCode());
+hash+=this.getAntiAliasingHint().hashCode();
+hash+=this.getFractionalMetricsHint().hashCode();
 } else {
-hash = hash+(this.aaHintValue.hashCode());
-hash = hash+(this.fmHintValue.hashCode());
+hash+=this.aaHintValue.hashCode();
+hash+=this.fmHintValue.hashCode();
 }return hash;
 });
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:19

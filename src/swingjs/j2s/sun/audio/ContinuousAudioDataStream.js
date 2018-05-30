@@ -16,15 +16,15 @@ Clazz.newMeth(C$, 'read', function () {
 var i = C$.superclazz.prototype.read.apply(this, []);
 if (i == -1) {
 this.reset();
-i = C$.superclazz.prototype.read.apply(this, []);
+i=C$.superclazz.prototype.read.apply(this, []);
 }return i;
 });
 
 Clazz.newMeth(C$, 'read$BA$I$I', function (ab, i1, j) {
 var k;
-for (k = 0; k < j; ) {
+for (k=0; k < j; ) {
 var i2 = C$.superclazz.prototype.read$BA$I$I.apply(this, [ab, i1 + k, j - k]);
-if (i2 >= 0) k = k+(i2);
+if (i2 >= 0) k+=i2;
  else this.reset();
 }
 return k;
@@ -32,4 +32,4 @@ return k;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:04
+//Created 2018-05-24 08:47:20

@@ -48,29 +48,29 @@ this.al = 0;
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.components = (I$[4]||$incl$(4)).newFloat3$I$I(this.numberOfComponents, -1);
-this.compWidth = Clazz.array(Integer.TYPE, [this.numberOfComponents]);
-this.compHeight = Clazz.array(Integer.TYPE, [this.numberOfComponents]);
-this.blockWidth = Clazz.array(Integer.TYPE, [this.numberOfComponents]);
-this.blockHeight = Clazz.array(Integer.TYPE, [this.numberOfComponents]);
+this.components=(I$[4]||$incl$(4)).newFloat3$I$I(this.numberOfComponents, -1);
+this.compWidth=Clazz.array(Integer.TYPE, [this.numberOfComponents]);
+this.compHeight=Clazz.array(Integer.TYPE, [this.numberOfComponents]);
+this.blockWidth=Clazz.array(Integer.TYPE, [this.numberOfComponents]);
+this.blockHeight=Clazz.array(Integer.TYPE, [this.numberOfComponents]);
 }, 1);
 
 Clazz.newMeth(C$, 'getYCCArray$IA', function (pixels) {
-this.maxHsampFactor = 1;
-this.maxVsampFactor = 1;
+this.maxHsampFactor=1;
+this.maxVsampFactor=1;
 for (var y = 0; y < this.numberOfComponents; y++) {
-this.maxHsampFactor = Math.max(this.maxHsampFactor, this.hsampFactor[y]);
-this.maxVsampFactor = Math.max(this.maxVsampFactor, this.vsampFactor[y]);
+this.maxHsampFactor=Math.max(this.maxHsampFactor, this.hsampFactor[y]);
+this.maxVsampFactor=Math.max(this.maxVsampFactor, this.vsampFactor[y]);
 }
 for (var y = 0; y < this.numberOfComponents; y++) {
-this.compWidth[y] = ((((this.imageWidth % 8 != 0) ? ((Math.ceil(this.imageWidth / 8.0)|0)) * 8 : this.imageWidth)/this.maxHsampFactor|0)) * this.hsampFactor[y];
+this.compWidth[y]=((((this.imageWidth % 8 != 0) ? ((Math.ceil(this.imageWidth / 8.0)|0)) * 8 : this.imageWidth)/this.maxHsampFactor|0)) * this.hsampFactor[y];
 if (this.compWidth[y] != (((this.imageWidth/this.maxHsampFactor|0)) * this.hsampFactor[y])) {
-this.lastColumnIsDummy[y] = true;
-}this.blockWidth[y] = (Math.ceil(this.compWidth[y] / 8.0)|0);
-this.compHeight[y] = ((((this.imageHeight % 8 != 0) ? ((Math.ceil(this.imageHeight / 8.0)|0)) * 8 : this.imageHeight)/this.maxVsampFactor|0)) * this.vsampFactor[y];
+this.lastColumnIsDummy[y]=true;
+}this.blockWidth[y]=(Math.ceil(this.compWidth[y] / 8.0)|0);
+this.compHeight[y]=((((this.imageHeight % 8 != 0) ? ((Math.ceil(this.imageHeight / 8.0)|0)) * 8 : this.imageHeight)/this.maxVsampFactor|0)) * this.vsampFactor[y];
 if (this.compHeight[y] != (((this.imageHeight/this.maxVsampFactor|0)) * this.vsampFactor[y])) {
-this.lastRowIsDummy[y] = true;
-}this.blockHeight[y] = (Math.ceil(this.compHeight[y] / 8.0)|0);
+this.lastRowIsDummy[y]=true;
+}this.blockHeight[y]=(Math.ceil(this.compHeight[y] / 8.0)|0);
 }
 var Y = Clazz.array(Float.TYPE, [this.compHeight[0], this.compWidth[0]]);
 var Cr1 = Clazz.array(Float.TYPE, [this.compHeight[0], this.compWidth[0]]);
@@ -81,14 +81,14 @@ var p = pixels[pt];
 var r = ((p >> 16) & 255);
 var g = ((p >> 8) & 255);
 var b = (p & 255);
-Y[y][x] = ((0.299 * r + 0.587 * g + 0.114 * b));
-Cb1[y][x] = 128 + ((-0.16874 * r - 0.33126 * g + 0.5 * b));
-Cr1[y][x] = 128 + ((0.5 * r - 0.41869 * g - 0.08131 * b));
+Y[y][x]=((0.299 * r + 0.587 * g + 0.114 * b));
+Cb1[y][x]=128 + ((-0.16874 * r - 0.33126 * g + 0.5 * b));
+Cr1[y][x]=128 + ((0.5 * r - 0.41869 * g - 0.08131 * b));
 }
 }
-this.components[0] = Y;
-this.components[1] = Cb1;
-this.components[2] = Cr1;
+this.components[0]=Y;
+this.components[1]=Cb1;
+this.components[2]=Cr1;
 });
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:54

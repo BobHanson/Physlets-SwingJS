@@ -11,12 +11,12 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S', function (pattern) {
 C$.$init$.apply(this);
-this.pattern = pattern;
+this.pattern=pattern;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$java_util_Locale', function (pattern, locale) {
 C$.$init$.apply(this);
-this.pattern = pattern;
+this.pattern=pattern;
 }, 1);
 
 Clazz.newMeth(C$, 'format$S$OA', function (pattern, args) {
@@ -34,4 +34,4 @@ return C$.format$S$OA(this.pattern, Clazz.array(java.lang.Object, -1, [obj]));
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:44

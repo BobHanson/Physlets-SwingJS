@@ -32,11 +32,11 @@ Clazz.newMeth(C$, 'connect', function () {
 });
 
 Clazz.newMeth(C$, 'outputBytes$BA', function (bytes) {
-this.bytesOut = bytes;
+this.bytesOut=bytes;
 });
 
 Clazz.newMeth(C$, 'outputString$S', function (post) {
-this.postOut = post;
+this.postOut=post;
 });
 
 Clazz.newMeth(C$, 'getInputStream', function () {
@@ -65,4 +65,4 @@ return p$.doAjax$Z.apply(this, [false]);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:55

@@ -16,8 +16,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_util_EventListener$java_util_EventListener', function (a, b) {
 C$.$init$.apply(this);
-this.a = a;
-this.b = b;
+this.a=a;
+this.b=b;
 }, 1);
 
 Clazz.newMeth(C$, 'remove$java_util_EventListener', function (oldl) {
@@ -385,7 +385,7 @@ var mc = l;
 var lhs = C$.populateListenerArray$java_util_EventListenerA$java_util_EventListener$I(a, mc.a, index);
 return C$.populateListenerArray$java_util_EventListenerA$java_util_EventListener$I(a, mc.b, lhs);
 } else if (a.getClass().getComponentType().isInstance$O(l)) {
-a[index] = l;
+a[index]=l;
 return index + 1;
 } else {
 return index;
@@ -402,4 +402,4 @@ return result;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:48
+//Created 2018-05-24 08:45:05

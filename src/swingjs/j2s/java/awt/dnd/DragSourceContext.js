@@ -37,13 +37,13 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["no drag
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["Transferable"]);
 }if (dragImage != null  && offset == null  ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["offset"]);
-}this.peer = dscp;
-this.trigger = trigger;
-this.cursor = dragCursor;
-this.transferable = t;
-this.listener = dsl;
-this.sourceActions = trigger.getSourceAsDragGestureRecognizer().getSourceActions();
-this.useCustomCursor = (dragCursor != null );
+}this.peer=dscp;
+this.trigger=trigger;
+this.cursor=dragCursor;
+this.transferable=t;
+this.listener=dsl;
+this.sourceActions=trigger.getSourceAsDragGestureRecognizer().getSourceActions();
+this.useCustomCursor=(dragCursor != null );
 this.updateCurrentCursor$I$I$I(trigger.getDragAction(), this.getSourceActions(), 0);
 }, 1);
 
@@ -64,7 +64,7 @@ return this.sourceActions;
 });
 
 Clazz.newMeth(C$, 'setCursor$java_awt_Cursor', function (c) {
-this.useCustomCursor = (c != null );
+this.useCustomCursor=(c != null );
 p$.setCursorImpl$java_awt_Cursor.apply(this, [c]);
 });
 
@@ -76,12 +76,12 @@ Clazz.newMeth(C$, 'addDragSourceListener$java_awt_dnd_DragSourceListener', funct
 if (dsl == null ) return;
 if (this.equals$O(dsl)) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["DragSourceContext may not be its own listener"]);
 if (this.listener != null ) throw Clazz.new_(Clazz.load('java.util.TooManyListenersException'));
- else this.listener = dsl;
+ else this.listener=dsl;
 });
 
 Clazz.newMeth(C$, 'removeDragSourceListener$java_awt_dnd_DragSourceListener', function (dsl) {
 if (this.listener != null  && this.listener.equals$O(dsl) ) {
-this.listener = null;
+this.listener=null;
 } else throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
 });
 
@@ -142,29 +142,29 @@ return;
 }var c = null;
 switch (status) {
 default:
-targetAct = 0;
+targetAct=0;
 case 1:
 case 2:
 case 3:
 var ra = sourceAct & targetAct;
 if (ra == 0) {
-if ((sourceAct & 1073741824) == 1073741824) c = (I$[1]||$incl$(1)).DefaultLinkNoDrop;
- else if ((sourceAct & 2) == 2) c = (I$[1]||$incl$(1)).DefaultMoveNoDrop;
- else c = (I$[1]||$incl$(1)).DefaultCopyNoDrop;
+if ((sourceAct & 1073741824) == 1073741824) c=(I$[1]||$incl$(1)).DefaultLinkNoDrop;
+ else if ((sourceAct & 2) == 2) c=(I$[1]||$incl$(1)).DefaultMoveNoDrop;
+ else c=(I$[1]||$incl$(1)).DefaultCopyNoDrop;
 } else {
-if ((ra & 1073741824) == 1073741824) c = (I$[1]||$incl$(1)).DefaultLinkDrop;
- else if ((ra & 2) == 2) c = (I$[1]||$incl$(1)).DefaultMoveDrop;
- else c = (I$[1]||$incl$(1)).DefaultCopyDrop;
+if ((ra & 1073741824) == 1073741824) c=(I$[1]||$incl$(1)).DefaultLinkDrop;
+ else if ((ra & 2) == 2) c=(I$[1]||$incl$(1)).DefaultMoveDrop;
+ else c=(I$[1]||$incl$(1)).DefaultCopyDrop;
 }}
 p$.setCursorImpl$java_awt_Cursor.apply(this, [c]);
 });
 
 Clazz.newMeth(C$, 'setCursorImpl$java_awt_Cursor', function (c) {
 if (this.cursor == null  || !this.cursor.equals$O(c) ) {
-this.cursor = c;
+this.cursor=c;
 if (this.peer != null ) this.peer.setCursor$java_awt_Cursor(this.cursor);
 }});
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:55
+//Created 2018-05-24 08:45:16

@@ -17,8 +17,8 @@ C$.$init$.apply(this);
 
 Clazz.newMeth(C$, 'decodeWindowsBMP$BA', function (bytes) {
 try {
-this.bis = (I$[1]||$incl$(1)).getBIS$BA(bytes);
-this.temp = Clazz.array(Byte.TYPE, [4]);
+this.bis=(I$[1]||$incl$(1)).getBIS$BA(bytes);
+this.temp=Clazz.array(Byte.TYPE, [4]);
 if (p$.readByte.apply(this, []) != 66  || p$.readByte.apply(this, []) != 77  ) return null;
 p$.readInt.apply(this, []);
 p$.readShort.apply(this, []);
@@ -32,24 +32,24 @@ var imageSize = 0;
 var headerSize = p$.readInt.apply(this, []);
 switch (headerSize) {
 case 12:
-imageWidth = p$.readShort.apply(this, []);
-imageHeight = p$.readShort.apply(this, []);
+imageWidth=p$.readShort.apply(this, []);
+imageHeight=p$.readShort.apply(this, []);
 p$.readShort.apply(this, []);
-bitsPerPixel = p$.readShort.apply(this, []);
+bitsPerPixel=p$.readShort.apply(this, []);
 break;
 case 40:
-imageWidth = p$.readInt.apply(this, []);
-imageHeight = p$.readInt.apply(this, []);
+imageWidth=p$.readInt.apply(this, []);
+imageHeight=p$.readInt.apply(this, []);
 p$.readShort.apply(this, []);
-bitsPerPixel = p$.readShort.apply(this, []);
+bitsPerPixel=p$.readShort.apply(this, []);
 var ncompression = p$.readInt.apply(this, []);
 if (ncompression != 0) {
 System.out.println$S("BMP Compression is :" + ncompression + " -- aborting" );
 return null;
-}imageSize = p$.readInt.apply(this, []);
+}imageSize=p$.readInt.apply(this, []);
 p$.readInt.apply(this, []);
 p$.readInt.apply(this, []);
-nColors = p$.readInt.apply(this, []);
+nColors=p$.readInt.apply(this, []);
 p$.readInt.apply(this, []);
 break;
 default:
@@ -57,10 +57,10 @@ System.out.println$S("BMP Header unrecognized, length=" + headerSize + " -- abor
 return null;
 }
 var isYReversed = (imageHeight < 0);
-if (isYReversed) imageHeight = -imageHeight;
+if (isYReversed) imageHeight=-imageHeight;
 var nPixels = imageHeight * imageWidth;
 var bytesPerPixel = (bitsPerPixel/8|0);
-nColors = (nColors > 0 ? nColors : 1 << bitsPerPixel);
+nColors=(nColors > 0 ? nColors : 1 << bitsPerPixel);
 var npad = (bytesPerPixel == 4 ? 0 : imageSize == 0 ? 4 - (imageWidth % 4) : ((imageSize/imageHeight|0)) - imageWidth * bytesPerPixel) % 4;
 var palette;
 var buf = Clazz.array(Integer.TYPE, [nPixels]);
@@ -70,38 +70,38 @@ var pt1 = (isYReversed ? nPixels : dpt);
 switch (bitsPerPixel) {
 case 32:
 case 24:
-for (var pt = pt0; pt != pt1; pt = pt+(dpt), p$.pad$I.apply(this, [npad])) for (var i = 0; i < imageWidth; i++) buf[pt + i] = p$.readColor$I.apply(this, [bytesPerPixel]);
+for (var pt = pt0; pt != pt1; pt+=dpt, p$.pad$I.apply(this, [npad])) for (var i = 0; i < imageWidth; i++) buf[pt + i]=p$.readColor$I.apply(this, [bytesPerPixel]);
 
 
 break;
 case 8:
-palette = Clazz.array(Integer.TYPE, [nColors]);
-for (var i = 0; i < nColors; i++) palette[i] = p$.readColor$I.apply(this, [4]);
+palette=Clazz.array(Integer.TYPE, [nColors]);
+for (var i = 0; i < nColors; i++) palette[i]=p$.readColor$I.apply(this, [4]);
 
-for (var pt = pt0; pt != pt1; pt = pt+(dpt), p$.pad$I.apply(this, [npad])) for (var i = 0; i < imageWidth; i++) buf[pt + i] = palette[p$.readByte.apply(this, [])];
+for (var pt = pt0; pt != pt1; pt+=dpt, p$.pad$I.apply(this, [npad])) for (var i = 0; i < imageWidth; i++) buf[pt + i]=palette[p$.readByte.apply(this, [])];
 
 
 break;
 case 4:
-npad = (4 - ((((imageWidth + 1)/2|0)) % 4)) % 4;
-palette = Clazz.array(Integer.TYPE, [nColors]);
-for (var i = 0; i < nColors; i++) palette[i] = p$.readColor$I.apply(this, [4]);
+npad=(4 - ((((imageWidth + 1)/2|0)) % 4)) % 4;
+palette=Clazz.array(Integer.TYPE, [nColors]);
+for (var i = 0; i < nColors; i++) palette[i]=p$.readColor$I.apply(this, [4]);
 
 var b4 = 0;
-for (var pt = pt0; pt != pt1; pt = pt+(dpt), p$.pad$I.apply(this, [npad])) for (var i = 0, shift = 4; i < imageWidth; i++, shift = 4 - shift) buf[pt + i] = palette[((shift == 4 ? (b4 = p$.readByte.apply(this, [])) : b4) >> shift) & 15];
+for (var pt = pt0; pt != pt1; pt+=dpt, p$.pad$I.apply(this, [npad])) for (var i = 0, shift = 4; i < imageWidth; i++, shift=4 - shift) buf[pt + i]=palette[((shift == 4 ? (b4=p$.readByte.apply(this, [])) : b4) >> shift) & 15];
 
 
 break;
 case 1:
 var color1 = p$.readColor$I.apply(this, [3]);
 var color2 = p$.readColor$I.apply(this, [3]);
-npad = (4 - ((((imageWidth + 7)/8|0)) % 4)) % 4;
+npad=(4 - ((((imageWidth + 7)/8|0)) % 4)) % 4;
 var b = 0;
-for (var pt = pt0; pt != pt1; pt = pt+(dpt), p$.pad$I.apply(this, [npad])) for (var i = 0, bpt = -1; i < imageWidth; i++, bpt--) {
+for (var pt = pt0; pt != pt1; pt+=dpt, p$.pad$I.apply(this, [npad])) for (var i = 0, bpt = -1; i < imageWidth; i++, bpt--) {
 if (bpt < 0) {
-b = p$.readByte.apply(this, []);
-bpt = 7;
-}buf[pt + i] = ((b & (1 << bpt)) == 0 ? color1 : color2);
+b=p$.readByte.apply(this, []);
+bpt=7;
+}buf[pt + i]=((b & (1 << bpt)) == 0 ? color1 : color2);
 }
 
 break;
@@ -148,4 +148,4 @@ this.bis.read$BA$I$I(this.temp, 0, 1);
 return this.temp[0] & 255;
 });
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:53

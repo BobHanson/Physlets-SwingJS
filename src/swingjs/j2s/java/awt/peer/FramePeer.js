@@ -4,4 +4,4 @@ var C$=Clazz.newInterface(P$, "FramePeer", null, null, 'java.awt.peer.WindowPeer
 C$.$clinit$ = function() {Clazz.load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:02:02
+//Created 2018-05-24 08:45:29

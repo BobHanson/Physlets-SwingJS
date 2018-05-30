@@ -68,7 +68,7 @@ return this.parseIntegerOnly;
 });
 
 Clazz.newMeth(C$, 'setParseIntegerOnly$Z', function (value) {
-this.parseIntegerOnly = value;
+this.parseIntegerOnly=value;
 });
 
 Clazz.newMeth(C$, 'getInstance', function () {
@@ -144,7 +144,7 @@ return this.groupingUsed;
 });
 
 Clazz.newMeth(C$, 'setGroupingUsed$Z', function (newValue) {
-this.groupingUsed = newValue;
+this.groupingUsed=newValue;
 });
 
 Clazz.newMeth(C$, 'getMaximumIntegerDigits', function () {
@@ -152,9 +152,9 @@ return this.maximumIntegerDigits;
 });
 
 Clazz.newMeth(C$, 'setMaximumIntegerDigits$I', function (newValue) {
-this.maximumIntegerDigits = Math.max(0, newValue);
+this.maximumIntegerDigits=Math.max(0, newValue);
 if (this.minimumIntegerDigits > this.maximumIntegerDigits) {
-this.minimumIntegerDigits = this.maximumIntegerDigits;
+this.minimumIntegerDigits=this.maximumIntegerDigits;
 }});
 
 Clazz.newMeth(C$, 'getMinimumIntegerDigits', function () {
@@ -162,9 +162,9 @@ return this.minimumIntegerDigits;
 });
 
 Clazz.newMeth(C$, 'setMinimumIntegerDigits$I', function (newValue) {
-this.minimumIntegerDigits = Math.max(0, newValue);
+this.minimumIntegerDigits=Math.max(0, newValue);
 if (this.minimumIntegerDigits > this.maximumIntegerDigits) {
-this.maximumIntegerDigits = this.minimumIntegerDigits;
+this.maximumIntegerDigits=this.minimumIntegerDigits;
 }});
 
 Clazz.newMeth(C$, 'getMaximumFractionDigits', function () {
@@ -172,9 +172,9 @@ return this.maximumFractionDigits;
 });
 
 Clazz.newMeth(C$, 'setMaximumFractionDigits$I', function (newValue) {
-this.maximumFractionDigits = Math.max(0, newValue);
+this.maximumFractionDigits=Math.max(0, newValue);
 if (this.maximumFractionDigits < this.minimumFractionDigits) {
-this.minimumFractionDigits = this.maximumFractionDigits;
+this.minimumFractionDigits=this.maximumFractionDigits;
 }});
 
 Clazz.newMeth(C$, 'getMinimumFractionDigits', function () {
@@ -182,9 +182,9 @@ return this.minimumFractionDigits;
 });
 
 Clazz.newMeth(C$, 'setMinimumFractionDigits$I', function (newValue) {
-this.minimumFractionDigits = Math.max(0, newValue);
+this.minimumFractionDigits=Math.max(0, newValue);
 if (this.maximumFractionDigits < this.minimumFractionDigits) {
-this.maximumFractionDigits = this.minimumFractionDigits;
+this.maximumFractionDigits=this.minimumFractionDigits;
 }});
 
 Clazz.newMeth(C$, 'getRoundingMode', function () {
@@ -199,7 +199,7 @@ Clazz.newMeth(C$, 'getInstance$java_util_Locale$I', function (desiredLocale, cho
 var numberPatterns = C$.cachedLocaleData.get$O(desiredLocale);
 if (numberPatterns == null ) {
 var resource = (I$[7]||$incl$(7)).getNumberFormatData$java_util_Locale(desiredLocale);
-numberPatterns = resource.getStringArray$S("NumberPatterns");
+numberPatterns=resource.getStringArray$S("NumberPatterns");
 C$.cachedLocaleData.put$TK$TV(desiredLocale, numberPatterns);
 }var symbols = (I$[8]||$incl$(8)).getInstance$java_util_Locale(desiredLocale);
 var entry = (choice == 4) ? 0 : choice;
@@ -258,4 +258,4 @@ C$.$instanceMap.put$TK$TV(name, this);
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:44

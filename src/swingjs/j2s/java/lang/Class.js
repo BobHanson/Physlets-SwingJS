@@ -94,7 +94,7 @@ return (this.getModifiers() & 4096) != 0;
 });
 
 Clazz.newMeth(C$, 'getName', function () {
-if (this.name == null ) this.name = p$.getName0.apply(this, []);
+if (this.name == null ) this.name=p$.getName0.apply(this, []);
 return this.name;
 });
 
@@ -336,12 +336,12 @@ return null;
 Clazz.newMeth(C$, 'privateGetPublicMethods', function () {
 var ms;
 if (this.$methodList$ != null ) {
-ms = Clazz.array((I$[1]||$incl$(1)), [this.$methodList$.length]);
+ms=Clazz.array((I$[1]||$incl$(1)), [this.$methodList$.length]);
 for (var i = ms.length; --i >= 0; ) {
-ms[i] = Clazz.new_((I$[1]||$incl$(1)).c$$Class$S$ClassA$Class$ClassA$I,[this, this.$methodList$[i], null, Clazz.getClass((I$[5]||$incl$(5))), null, 1]);
+ms[i]=Clazz.new_((I$[1]||$incl$(1)).c$$Class$S$ClassA$Class$ClassA$I,[this, this.$methodList$[i], null, Clazz.getClass((I$[5]||$incl$(5))), null, 1]);
 }
 return ms;
-}ms = Clazz.array((I$[1]||$incl$(1)), [0]);
+}ms=Clazz.array((I$[1]||$incl$(1)), [0]);
 {
 var p = this.$clazz$.prototype;
 for (var attr in p) { if (typeof p[attr] == "function" && !p[attr].__CLASS_NAME__ && p[attr] != this.$clazz$[attr] && p[attr].exClazz == this.$clazz$) { // there are polynormical methods.
@@ -381,7 +381,7 @@ if (this.enumConstants == null ) {
 if (!this.isEnum()) return null;
 try {
 var values = this.getMethod$S$ClassA("values", []);
-this.enumConstants = values.invoke$O$OA(null, null);
+this.enumConstants=values.invoke$O$OA(null, null);
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$, "java.lang.reflect.InvocationTargetException")){
 var ex = e$$;
@@ -412,7 +412,7 @@ if (universe == null ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentExc
 var m = Clazz.new_((I$[7]||$incl$(7)).c$$I,[2 * universe.length]);
 for (var constant, $constant = 0, $$constant = universe; $constant<$$constant.length&&((constant=$$constant[$constant]),1);$constant++) m.put$TK$TV((constant).name(), constant);
 
-this.$enumConstantDirectory = m;
+this.$enumConstantDirectory=m;
 }return this.$enumConstantDirectory;
 });
 
@@ -468,14 +468,14 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.methods = Clazz.array((I$[1]||$incl$(1)), [20]);
-this.$length = 0;
+this.methods=Clazz.array((I$[1]||$incl$(1)), [20]);
+this.$length=0;
 }, 1);
 
 Clazz.newMeth(C$, 'add$reflect_Method', function (m) {
 if (this.$length == this.methods.length) {
-this.methods = (I$[2]||$incl$(2)).copyOf$TTA$I(this.methods, 2 * this.methods.length);
-}this.methods[this.$length++] = m;
+this.methods=(I$[2]||$incl$(2)).copyOf$TTA$I(this.methods, 2 * this.methods.length);
+}this.methods[this.$length++]=m;
 });
 
 Clazz.newMeth(C$, 'addAll$reflect_MethodA', function (ma) {
@@ -519,7 +519,7 @@ Clazz.newMeth(C$, 'removeByNameAndSignature$reflect_Method', function (toRemove)
 for (var i = 0; i < this.$length; i++) {
 var m = this.methods[i];
 if (m != null  && m.getReturnType() === toRemove.getReturnType()   && m.getName() == toRemove.getName()  && Class.arrayContentsEq$OA$OA(m.getParameterTypes(), toRemove.getParameterTypes()) ) {
-this.methods[i] = null;
+this.methods[i]=null;
 }}
 });
 
@@ -529,11 +529,11 @@ for (var pos = 0; pos < this.$length; pos++) {
 var m = this.methods[pos];
 if (m != null ) {
 if (pos != newPos) {
-this.methods[newPos] = m;
+this.methods[newPos]=m;
 }newPos++;
 }}
 if (newPos != this.methods.length) {
-this.methods = (I$[2]||$incl$(2)).copyOf$TTA$I(this.methods, newPos);
+this.methods=(I$[2]||$incl$(2)).copyOf$TTA$I(this.methods, newPos);
 }});
 
 Clazz.newMeth(C$, 'getArray', function () {
@@ -541,4 +541,4 @@ return this.methods;
 });
 })()
 })();
-//Created 2018-05-15 01:02:06
+//Created 2018-05-24 08:45:37

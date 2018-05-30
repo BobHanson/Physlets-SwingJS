@@ -18,7 +18,7 @@ Clazz.newMeth(C$, 'c$$O', function (sourceBean) {
 C$.$init$.apply(this);
 if (sourceBean == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.source = sourceBean;
+}this.source=sourceBean;
 }, 1);
 
 Clazz.newMeth(C$, 'addPropertyChangeListener$java_beans_PropertyChangeListener', function (listener) {
@@ -48,7 +48,7 @@ return this.map.getListeners();
 Clazz.newMeth(C$, 'addPropertyChangeListener$S$java_beans_PropertyChangeListener', function (propertyName, listener) {
 if (listener == null  || propertyName == null  ) {
 return;
-}listener = this.map.extract$TL(listener);
+}listener=this.map.extract$TL(listener);
 if (listener != null ) {
 this.map.add$S$TL(propertyName, listener);
 }});
@@ -56,7 +56,7 @@ this.map.add$S$TL(propertyName, listener);
 Clazz.newMeth(C$, 'removePropertyChangeListener$S$java_beans_PropertyChangeListener', function (propertyName, listener) {
 if (listener == null  || propertyName == null  ) {
 return;
-}listener = this.map.extract$TL(listener);
+}listener=this.map.extract$TL(listener);
 if (listener != null ) {
 this.map.remove$S$TL(propertyName, listener);
 }});
@@ -147,4 +147,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:03
+//Created 2018-05-24 08:45:31

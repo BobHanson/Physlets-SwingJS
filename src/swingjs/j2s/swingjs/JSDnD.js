@@ -10,11 +10,11 @@ Clazz.newMeth(C$, 'drop$javax_swing_JComponent$S$BA$I$I', function (jc, name, da
 var target = jc.getDropTarget();
 var offset;
 if (target != null ) {
-offset = jc.getLocationOnScreen();
+offset=jc.getLocationOnScreen();
 target.drop$java_awt_dnd_DropTargetDropEvent(C$.createFileDropEvent$java_awt_dnd_DropTarget$S$BA$I$I(target, name, data, x, y));
 return;
 }var top = jc.getTopLevelAncestor();
-offset = top.getLocationOnScreen();
+offset=top.getLocationOnScreen();
 top.dispatchEvent$java_awt_AWTEvent(Clazz.new_((I$[6]||$incl$(6)).c$$java_awt_Component$I$I$I$S$BA,[jc, 502, x - offset.x, y - offset.y, name, data]));
 }, 1);
 
@@ -60,7 +60,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_Component$I$I$I$S$BA', function (source, id, x, y, name, data) {
 C$.superclazz.c$$java_awt_Component$I$J$I$I$I$I.apply(this, [source, id, System.currentTimeMillis(), 0, x, y, 0]);
 C$.$init$.apply(this);
-this.name = name;
+this.name=name;
 this.setBData$BA(data);
 }, 1);
 
@@ -81,7 +81,7 @@ Clazz.newMeth(C$, 'paramString', function () {
 var typeStr = null;
 switch (this.id) {
 case 502:
-typeStr = "MOUSE_DROPPED";
+typeStr="MOUSE_DROPPED";
 break;
 default:
 return C$.superclazz.prototype.paramString.apply(this, []);
@@ -110,8 +110,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_dnd_DropTarget$S$BA', function (target, name, data) {
 C$.$init$.apply(this);
-this.target = target;
-this.fileTransferable = Clazz.new_((I$[2]||$incl$(2)).c$$S$BA,[name, data]);
+this.target=target;
+this.fileTransferable=Clazz.new_((I$[2]||$incl$(2)).c$$S$BA,[name, data]);
 }, 1);
 
 Clazz.newMeth(C$, 'setTargetActions$I', function (actions) {
@@ -172,12 +172,12 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S$BA', function (name, data) {
 C$.$init$.apply(this);
-this.file = Clazz.new_((I$[3]||$incl$(3)).c$$S$BA,[name, data]);
+this.file=Clazz.new_((I$[3]||$incl$(3)).c$$S$BA,[name, data]);
 }, 1);
 
 Clazz.newMeth(C$, 'getTransferDataFlavors', function () {
 var flavors = Clazz.array((I$[4]||$incl$(4)), [1]);
-flavors[0] = (I$[4]||$incl$(4)).javaFileListFlavor;
+flavors[0]=(I$[4]||$incl$(4)).javaFileListFlavor;
 return flavors;
 });
 
@@ -196,4 +196,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:14
+//Created 2018-05-24 08:47:42

@@ -18,15 +18,15 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.$type = (I$[1]||$incl$(1)).DIRECT;
-this.sa = null;
+this.$type=(I$[1]||$incl$(1)).DIRECT;
+this.sa=null;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_net_Proxy_Type$java_net_SocketAddress', function (type, sa) {
 C$.$init$.apply(this);
 if ((type === (I$[1]||$incl$(1)).DIRECT ) || !(Clazz.instanceOf(sa, "java.net.InetSocketAddress")) ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["type " + type + " is not compatible with address " + sa ]);
-this.$type = type;
-this.sa = sa;
+this.$type=type;
+this.sa=sa;
 }, 1);
 
 Clazz.newMeth(C$, 'type', function () {
@@ -74,4 +74,4 @@ var $vals=[];
 Clazz.newMeth(C$, 'values', function() { return $vals }, 1);
 })()
 })();
-//Created 2018-05-15 01:02:09
+//Created 2018-05-24 08:45:41

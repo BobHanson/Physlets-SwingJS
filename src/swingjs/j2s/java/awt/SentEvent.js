@@ -25,8 +25,8 @@ C$.c$$java_awt_AWTEvent$sun_awt_AppContext.apply(this, [nested, null]);
 Clazz.newMeth(C$, 'c$$java_awt_AWTEvent$sun_awt_AppContext', function (nested, toNotify) {
 C$.superclazz.c$$O$I.apply(this, [(nested != null ) ? nested.getSource() : (I$[1]||$incl$(1)).getDefaultToolkit(), 1007]);
 C$.$init$.apply(this);
-this.nested = nested;
-this.toNotify = toNotify;
+this.nested=nested;
+this.toNotify=toNotify;
 }, 1);
 
 Clazz.newMeth(C$, 'dispatch', function () {
@@ -34,7 +34,7 @@ try {
 if (this.nested != null ) {
 (I$[1]||$incl$(1)).getEventQueue().dispatchEvent$java_awt_AWTEvent(this.nested);
 }} finally {
-this.$dispatched = true;
+this.$dispatched=true;
 if (this.toNotify != null ) {
 (I$[2]||$incl$(2)).postEvent$sun_awt_AppContext$java_awt_AWTEvent(this.toNotify, Clazz.new_(C$));
 }{
@@ -43,11 +43,11 @@ this.notifyAll();
 });
 
 Clazz.newMeth(C$, 'dispose', function () {
-this.$dispatched = true;
+this.$dispatched=true;
 if (this.toNotify != null ) {
 (I$[2]||$incl$(2)).postEvent$sun_awt_AppContext$java_awt_AWTEvent(this.toNotify, Clazz.new_(C$));
 }{
 this.notifyAll();
 }});
 })();
-//Created 2018-05-15 01:01:53
+//Created 2018-05-24 08:45:12

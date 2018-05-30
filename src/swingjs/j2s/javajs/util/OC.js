@@ -34,25 +34,25 @@ return this.bigEndian;
 });
 
 Clazz.newMeth(C$, 'setBigEndian$Z', function (TF) {
-this.bigEndian = TF;
+this.bigEndian=TF;
 });
 
 Clazz.newMeth(C$, 'setParams$javajs_api_BytePoster$S$Z$java_io_OutputStream', function (bytePoster, fileName, asWriter, os) {
-this.bytePoster = bytePoster;
-this.$isBase64 = ";base64,".equals$O(fileName);
+this.bytePoster=bytePoster;
+this.$isBase64=";base64,".equals$O(fileName);
 if (this.$isBase64) {
-fileName = null;
-this.os0 = os;
-os = null;
-}this.fileName = fileName;
-this.os = os;
-this.isLocalFile = (fileName != null  && !C$.isRemote$S(fileName) );
-if (asWriter && !this.$isBase64 && os != null   ) this.bw = (I$[1]||$incl$(1)).getBufferedWriter$java_io_OutputStream$S(os, null);
+fileName=null;
+this.os0=os;
+os=null;
+}this.fileName=fileName;
+this.os=os;
+this.isLocalFile=(fileName != null  && !C$.isRemote$S(fileName) );
+if (asWriter && !this.$isBase64 && os != null   ) this.bw=(I$[1]||$incl$(1)).getBufferedWriter$java_io_OutputStream$S(os, null);
 return this;
 });
 
 Clazz.newMeth(C$, 'setBytes$BA', function (b) {
-this.bytes = b;
+this.bytes=b;
 return this;
 });
 
@@ -69,7 +69,7 @@ return this.byteCount;
 });
 
 Clazz.newMeth(C$, 'setType$S', function (type) {
-this.type = type;
+this.type=type;
 });
 
 Clazz.newMeth(C$, 'getType', function () {
@@ -81,12 +81,12 @@ try {
 if (this.bw != null ) {
 this.bw.write$S(s);
 } else if (this.os == null ) {
-if (this.sb == null ) this.sb = Clazz.new_((I$[2]||$incl$(2)));
+if (this.sb == null ) this.sb=Clazz.new_((I$[2]||$incl$(2)));
 this.sb.append$S(s);
 } else {
 var b = s.getBytes();
 this.os.write$BA$I$I(b, 0, b.length);
-this.byteCount = this.byteCount+(b.length);
+this.byteCount+=b.length;
 return this;
 }} catch (e) {
 if (Clazz.exceptionOf(e, "java.io.IOException")){
@@ -94,12 +94,12 @@ if (Clazz.exceptionOf(e, "java.io.IOException")){
 throw e;
 }
 }
-this.byteCount = this.byteCount+(s.length$());
+this.byteCount+=s.length$();
 return this;
 });
 
 Clazz.newMeth(C$, 'reset', function () {
-this.sb = null;
+this.sb=null;
 p$.initOS.apply(this, []);
 });
 
@@ -113,10 +113,10 @@ return;
 {
 this.os = null;
 }
-if (this.os == null ) this.os = Clazz.new_((I$[3]||$incl$(3)));
+if (this.os == null ) this.os=Clazz.new_((I$[3]||$incl$(3)));
 if (this.bw != null ) {
 this.bw.close();
-this.bw = (I$[1]||$incl$(1)).getBufferedWriter$java_io_OutputStream$S(this.os, null);
+this.bw=(I$[1]||$incl$(1)).getBufferedWriter$java_io_OutputStream$S(this.os, null);
 }} catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
 System.out.println$S(e.toString());
@@ -124,7 +124,7 @@ System.out.println$S(e.toString());
 throw e;
 }
 }
-this.byteCount = 0;
+this.byteCount=0;
 });
 
 Clazz.newMeth(C$, 'writeByteAsInt$I', function (b) {
@@ -151,7 +151,7 @@ if (Clazz.exceptionOf(e, "java.io.IOException")){
 throw e;
 }
 }
-this.byteCount = this.byteCount+(len);
+this.byteCount+=len;
 });
 
 Clazz.newMeth(C$, 'writeShort$H', function (i) {
@@ -196,7 +196,7 @@ this.write$BA$I$I(b, 0, b.length);
 });
 
 Clazz.newMeth(C$, 'cancel', function () {
-this.isCanceled = true;
+this.isCanceled=true;
 this.closeChannel();
 });
 
@@ -219,20 +219,20 @@ throw e;
 }
 }
 if (this.isCanceled) {
-this.closed = true;
+this.closed=true;
 return null;
 }if (this.fileName == null ) {
 if (this.$isBase64) {
 var s = this.getBase64();
 if (this.os0 != null ) {
-this.os = this.os0;
+this.os=this.os0;
 this.append$S(s);
-}this.sb = Clazz.new_((I$[2]||$incl$(2)));
+}this.sb=Clazz.new_((I$[2]||$incl$(2)));
 this.sb.append$S(s);
-this.$isBase64 = false;
+this.$isBase64=false;
 return this.closeChannel();
 }return (this.sb == null  ? null : this.sb.toString());
-}this.closed = true;
+}this.closed=true;
 var jmol = null;
 var _function = null;
 {
@@ -319,4 +319,4 @@ this.writeInt$I(x == 0  ? 0 : Float.floatToIntBits(x));
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:19
+//Created 2018-05-24 08:45:57

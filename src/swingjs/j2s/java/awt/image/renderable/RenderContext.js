@@ -16,9 +16,9 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_AffineTransform$java_awt_Shape$java_awt_RenderingHints', function (usr2dev, aoi, hints) {
 C$.$init$.apply(this);
-this.hints = hints;
-this.aoi = aoi;
-this.usr2dev = usr2dev.clone();
+this.hints=hints;
+this.aoi=aoi;
+this.usr2dev=usr2dev.clone();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_AffineTransform', function (usr2dev) {
@@ -38,11 +38,11 @@ return this.hints;
 });
 
 Clazz.newMeth(C$, 'setRenderingHints$java_awt_RenderingHints', function (hints) {
-this.hints = hints;
+this.hints=hints;
 });
 
 Clazz.newMeth(C$, 'setTransform$java_awt_geom_AffineTransform', function (newTransform) {
-this.usr2dev = newTransform.clone();
+this.usr2dev=newTransform.clone();
 });
 
 Clazz.newMeth(C$, 'preConcatenateTransform$java_awt_geom_AffineTransform', function (modTransform) {
@@ -66,7 +66,7 @@ return this.usr2dev.clone();
 });
 
 Clazz.newMeth(C$, 'setAreaOfInterest$java_awt_Shape', function (newAoi) {
-this.aoi = newAoi;
+this.aoi=newAoi;
 });
 
 Clazz.newMeth(C$, 'getAreaOfInterest', function () {
@@ -80,4 +80,4 @@ return newRenderContext;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:02
+//Created 2018-05-24 08:45:28

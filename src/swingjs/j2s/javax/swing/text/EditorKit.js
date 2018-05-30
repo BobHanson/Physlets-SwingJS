@@ -14,10 +14,10 @@ C$.$init$.apply(this);
 Clazz.newMeth(C$, 'clone', function () {
 var o;
 try {
-o = Clazz.clone(this);
+o=Clazz.clone(this);
 } catch (cnse) {
 if (Clazz.exceptionOf(cnse, "java.lang.CloneNotSupportedException")){
-o = null;
+o=null;
 } else {
 throw cnse;
 }
@@ -31,4 +31,4 @@ Clazz.newMeth(C$, 'install$javax_swing_JEditorPane', function (c) {
 Clazz.newMeth(C$, 'deinstall$javax_swing_JEditorPane', function (c) {
 });
 })();
-//Created 2018-05-15 01:02:54
+//Created 2018-05-24 08:47:04

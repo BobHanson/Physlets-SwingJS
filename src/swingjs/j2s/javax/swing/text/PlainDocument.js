@@ -26,7 +26,7 @@ Clazz.newMeth(C$, 'c$$javax_swing_text_AbstractDocument_Content', function (c) {
 C$.superclazz.c$$javax_swing_text_AbstractDocument_Content.apply(this, [c]);
 C$.$init$.apply(this);
 this.putProperty$O$O("tabSize",  new Integer(8));
-this.defaultRoot = this.createDefaultRoot();
+this.defaultRoot=this.createDefaultRoot();
 }, 1);
 
 Clazz.newMeth(C$, 'insertString$I$S$javax_swing_text_AttributeSet', function (offs, str, a) {
@@ -39,7 +39,7 @@ for (var i = 0; i < n; i++) {
 if (filtered.charAt$I(i) == "\u000a") {
 filtered.setCharAt$I$C(i, " ");
 }}
-str = filtered.toString();
+str=filtered.toString();
 }}C$.superclazz.prototype.insertString$I$S$javax_swing_text_AttributeSet.apply(this, [offs, str, a]);
 });
 
@@ -51,7 +51,7 @@ Clazz.newMeth(C$, 'createDefaultRoot', function () {
 var map = this.createBranchElement$javax_swing_text_Element$javax_swing_text_AttributeSet(null, null);
 var line = this.createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I(map, null, 0, 1);
 var lines = Clazz.array((I$[4]||$incl$(4)), [1]);
-lines[0] = line;
+lines[0]=line;
 map.replace$I$I$javax_swing_text_ElementA(0, 0, lines);
 return map;
 });
@@ -68,8 +68,8 @@ var lineMap = this.getDefaultRootElement();
 var offset = chng.getOffset();
 var length = chng.getLength();
 if (offset > 0) {
-offset = offset-(1);
-length = length+(1);
+offset-=1;
+length+=1;
 }var index = lineMap.getElementIndex$I(offset);
 var rmCandidate = lineMap.getElement$I(index);
 var rmOffs0 = rmCandidate.getStartOffset();
@@ -77,7 +77,7 @@ var rmOffs1 = rmCandidate.getEndOffset();
 var lastOffset = rmOffs0;
 try {
 if (this.s == null ) {
-this.s = Clazz.new_((I$[5]||$incl$(5)));
+this.s=Clazz.new_((I$[5]||$incl$(5)));
 }this.getContent().getChars$I$I$javax_swing_text_Segment(offset, length, this.s);
 var hasBreaks = false;
 for (var i = 0; i < length; i++) {
@@ -85,15 +85,15 @@ var c = this.s.array[this.s.offset + i];
 if (c == "\u000a") {
 var breakOffset = offset + i + 1 ;
 this.added.addElement$TE(this.createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I(lineMap, null, lastOffset, breakOffset));
-lastOffset = breakOffset;
-hasBreaks = true;
+lastOffset=breakOffset;
+hasBreaks=true;
 }}
 if (hasBreaks) {
 this.removed.addElement$TE(rmCandidate);
 if ((offset + length == rmOffs1) && (lastOffset != rmOffs1) && ((index + 1) < lineMap.getElementCount())  ) {
 var e = lineMap.getElement$I(index + 1);
 this.removed.addElement$TE(e);
-rmOffs1 = e.getEndOffset();
+rmOffs1=e.getEndOffset();
 }if (lastOffset < rmOffs1) {
 this.added.addElement$TE(this.createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I(lineMap, null, lastOffset, rmOffs1));
 }var aelems = Clazz.array((I$[4]||$incl$(4)), [this.added.size()]);
@@ -129,7 +129,7 @@ this.removed.addElement$TE(map.getElement$I(i));
 var p0 = map.getElement$I(line0).getStartOffset();
 var p1 = map.getElement$I(line1).getEndOffset();
 var aelems = Clazz.array((I$[4]||$incl$(4)), [1]);
-aelems[0] = this.createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I(map, null, p0, p1);
+aelems[0]=this.createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I(map, null, p0, p1);
 var relems = Clazz.array((I$[4]||$incl$(4)), [this.removed.size()]);
 this.removed.copyInto$OA(relems);
 var ee = Clazz.new_((I$[6]||$incl$(6)).c$$javax_swing_text_Element$I$javax_swing_text_ElementA$javax_swing_text_ElementA,[map, line0, relems, aelems]);
@@ -141,9 +141,9 @@ if (!line.isLeaf()) {
 var leaf = line.getElement$I(line.getElementIndex$I(offset));
 if ((I$[7]||$incl$(7)).isComposedTextElement$javax_swing_text_Element(leaf)) {
 var aelem = Clazz.array((I$[4]||$incl$(4)), [1]);
-aelem[0] = this.createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I(map, null, line.getStartOffset(), line.getEndOffset());
+aelem[0]=this.createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I(map, null, line.getStartOffset(), line.getEndOffset());
 var relem = Clazz.array((I$[4]||$incl$(4)), [1]);
-relem[0] = line;
+relem[0]=line;
 var ee = Clazz.new_((I$[6]||$incl$(6)).c$$javax_swing_text_Element$I$javax_swing_text_ElementA$javax_swing_text_ElementA,[map, line0, relem, aelem]);
 chng.addEdit$javax_swing_undo_UndoableEdit(ee);
 map.replace$I$I$javax_swing_text_ElementA(line0, 1, aelem);
@@ -160,9 +160,9 @@ var elem = lineMap.getElement$I(index);
 var elemStart = elem.getStartOffset();
 var elemEnd = elem.getEndOffset();
 var abelem = Clazz.array((I$[9]||$incl$(9)), [1]);
-abelem[0] = this.createBranchElement$javax_swing_text_Element$javax_swing_text_AttributeSet(lineMap, null);
+abelem[0]=this.createBranchElement$javax_swing_text_Element$javax_swing_text_AttributeSet(lineMap, null);
 var relem = Clazz.array((I$[4]||$incl$(4)), [1]);
-relem[0] = elem;
+relem[0]=elem;
 if (elemStart != offset) this.added.addElement$TE(this.createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I(abelem[0], null, elemStart, offset));
 this.added.addElement$TE(this.createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I(abelem[0], attr, offset, offset + length));
 if (elemEnd != offset + length) this.added.addElement$TE(this.createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I(abelem[0], null, offset + length, elemEnd));
@@ -177,4 +177,4 @@ lineMap.replace$I$I$javax_swing_text_ElementA(index, 1, abelem);
 Clazz.newMeth(C$, 'render$Runnable', function (r) {
 });
 })();
-//Created 2018-05-15 01:02:57
+//Created 2018-05-24 08:47:07

@@ -29,32 +29,32 @@ var endJustifiableContent = 0;
 if (justificationData != null ) {
 var offset = -startOffset + txtOffset;
 var parent = null;
-if (view != null  && (parent = view.getParent()) != null  ) {
-offset = offset+(parent.getStartOffset());
-}spaceAddon = justificationData[0];
-spaceAddonLeftoverEnd = justificationData[1] + offset;
-startJustifiableContent = justificationData[2] + offset;
-endJustifiableContent = justificationData[3] + offset;
+if (view != null  && (parent=view.getParent()) != null  ) {
+offset+=parent.getStartOffset();
+}spaceAddon=justificationData[0];
+spaceAddonLeftoverEnd=justificationData[1] + offset;
+startJustifiableContent=justificationData[2] + offset;
+endJustifiableContent=justificationData[3] + offset;
 }for (var i = txtOffset; i < n; i++) {
 if (txt[i] == "\u0009" || ((spaceAddon != 0 || i <= spaceAddonLeftoverEnd ) && (txt[i] == " ") && startJustifiableContent <= i   && i <= endJustifiableContent ) ) {
-nextX = nextX+(metrics.charsWidth$CA$I$I(txt, i - charCount, charCount));
-charCount = 0;
+nextX+=metrics.charsWidth$CA$I$I(txt, i - charCount, charCount);
+charCount=0;
 if (txt[i] == "\u0009") {
 if (e != null ) {
-nextX = (e.nextTabStop$F$I(nextX, startOffset + i - txtOffset)|0);
+nextX=(e.nextTabStop$F$I(nextX, startOffset + i - txtOffset)|0);
 } else {
-nextX = nextX+(metrics.charWidth$C(" "));
+nextX+=metrics.charWidth$C(" ");
 }} else if (txt[i] == " ") {
-nextX = nextX+(metrics.charWidth$C(" ") + spaceAddon);
+nextX+=metrics.charWidth$C(" ") + spaceAddon;
 if (i <= spaceAddonLeftoverEnd) {
 nextX++;
 }}} else if (txt[i] == "\u000a") {
-nextX = nextX+(metrics.charsWidth$CA$I$I(txt, i - charCount, charCount));
-charCount = 0;
+nextX+=metrics.charsWidth$CA$I$I(txt, i - charCount, charCount);
+charCount=0;
 } else {
 charCount++;
 }}
-nextX = nextX+(metrics.charsWidth$CA$I$I(txt, n - charCount, charCount));
+nextX+=metrics.charsWidth$CA$I$I(txt, n - charCount, charCount);
 return nextX - x;
 }, 1);
 
@@ -85,32 +85,32 @@ var endJustifiableContent = 0;
 if (justificationData != null ) {
 var offset = -startOffset + txtOffset;
 var parent = null;
-if (view != null  && (parent = view.getParent()) != null  ) {
-offset = offset+(parent.getStartOffset());
-}spaceAddon = justificationData[0];
-spaceAddonLeftoverEnd = justificationData[1] + offset;
-startJustifiableContent = justificationData[2] + offset;
-endJustifiableContent = justificationData[3] + offset;
+if (view != null  && (parent=view.getParent()) != null  ) {
+offset+=parent.getStartOffset();
+}spaceAddon=justificationData[0];
+spaceAddonLeftoverEnd=justificationData[1] + offset;
+startJustifiableContent=justificationData[2] + offset;
+endJustifiableContent=justificationData[3] + offset;
 }var n = s.offset + s.count;
 for (var i = s.offset; i < n; i++) {
 if (txt[i] == "\u0009" || ((spaceAddon != 0 || i <= spaceAddonLeftoverEnd ) && (txt[i] == " ") && startJustifiableContent <= i   && i <= endJustifiableContent ) ) {
 if (txt[i] == "\u0009") {
 if (e != null ) {
-nextX = (e.nextTabStop$F$I(nextX, startOffset + i - txtOffset)|0);
+nextX=(e.nextTabStop$F$I(nextX, startOffset + i - txtOffset)|0);
 } else {
-nextX = nextX+(metrics.charWidth$C(" "));
+nextX+=metrics.charWidth$C(" ");
 }} else if (txt[i] == " ") {
-nextX = nextX+(metrics.charWidth$C(" ") + spaceAddon);
+nextX+=metrics.charWidth$C(" ") + spaceAddon;
 if (i <= spaceAddonLeftoverEnd) {
 nextX++;
 }}} else {
-nextX = nextX+(metrics.charWidth$C(txt[i]));
+nextX+=metrics.charWidth$C(txt[i]);
 }if ((x >= currX) && (x < nextX) ) {
 if ((round == false ) || ((x - currX) < (nextX - x)) ) {
 return i - txtOffset;
 } else {
 return i + 1 - txtOffset;
-}}currX = nextX;
+}}currX=nextX;
 }
 return txtCount;
 }, 1);
@@ -127,9 +127,9 @@ return -1;
 var y = r.y;
 while ((r != null ) && (y == r.y) ){
 if (r.height != 0) {
-offs = lastOffs;
-}lastOffs = lastOffs-(1);
-r = (lastOffs >= 0) ? c.modelToView$I(lastOffs) : null;
+offs=lastOffs;
+}lastOffs-=1;
+r=(lastOffs >= 0) ? c.modelToView$I(lastOffs) : null;
 }
 return offs;
 }, 1);
@@ -143,9 +143,9 @@ var lastOffs = offs;
 var y = r.y;
 while ((r != null ) && (y == r.y) ){
 if (r.height != 0) {
-offs = lastOffs;
-}lastOffs = lastOffs+(1);
-r = (lastOffs <= n) ? c.modelToView$I(lastOffs) : null;
+offs=lastOffs;
+}lastOffs+=1;
+r=(lastOffs <= n) ? c.modelToView$I(lastOffs) : null;
 }
 return offs;
 }, 1);
@@ -158,15 +158,15 @@ return -1;
 var y = 0;
 var r = null;
 if (lastOffs >= 0) {
-r = c.modelToView$I(lastOffs);
-y = r.y;
+r=c.modelToView$I(lastOffs);
+y=r.y;
 }while ((r != null ) && (y == r.y) ){
 var span = Math.abs(r.x - x);
 if (span < bestSpan) {
-offs = lastOffs;
-bestSpan = span;
-}lastOffs = lastOffs-(1);
-r = (lastOffs >= 0) ? c.modelToView$I(lastOffs) : null;
+offs=lastOffs;
+bestSpan=span;
+}lastOffs-=1;
+r=(lastOffs >= 0) ? c.modelToView$I(lastOffs) : null;
 }
 return offs;
 }, 1);
@@ -180,15 +180,15 @@ var n = c.getDocument().getLength();
 var y = 0;
 var r = null;
 if (lastOffs <= n) {
-r = c.modelToView$I(lastOffs);
-y = r.y;
+r=c.modelToView$I(lastOffs);
+y=r.y;
 }while ((r != null ) && (y == r.y) ){
 var span = Math.abs(x - r.x);
 if (span < bestSpan) {
-offs = lastOffs;
-bestSpan = span;
-}lastOffs = lastOffs+(1);
-r = (lastOffs <= n) ? c.modelToView$I(lastOffs) : null;
+offs=lastOffs;
+bestSpan=span;
+}lastOffs+=1;
+r=(lastOffs <= n) ? c.modelToView$I(lastOffs) : null;
 }
 return offs;
 }, 1);
@@ -204,9 +204,9 @@ return 0;
 Clazz.newMeth(C$, 'getNextWord$javax_swing_text_JTextComponent$I', function (c, offs) {
 var nextWord;
 var line = C$.getParagraphElement$javax_swing_text_JTextComponent$I(c, offs);
-for (nextWord = C$.getNextWordInParagraph$javax_swing_text_JTextComponent$javax_swing_text_Element$I$Z(c, line, offs, false); nextWord == -1; nextWord = C$.getNextWordInParagraph$javax_swing_text_JTextComponent$javax_swing_text_Element$I$Z(c, line, offs, true)) {
-offs = line.getEndOffset();
-line = C$.getParagraphElement$javax_swing_text_JTextComponent$I(c, offs);
+for (nextWord=C$.getNextWordInParagraph$javax_swing_text_JTextComponent$javax_swing_text_Element$I$Z(c, line, offs, false); nextWord == -1; nextWord=C$.getNextWordInParagraph$javax_swing_text_JTextComponent$javax_swing_text_Element$I$Z(c, line, offs, true)) {
+offs=line.getEndOffset();
+line=C$.getParagraphElement$javax_swing_text_JTextComponent$I(c, offs);
 }
 return nextWord;
 }, 1);
@@ -218,9 +218,9 @@ return 0;
 Clazz.newMeth(C$, 'getPreviousWord$javax_swing_text_JTextComponent$I', function (c, offs) {
 var prevWord;
 var line = C$.getParagraphElement$javax_swing_text_JTextComponent$I(c, offs);
-for (prevWord = C$.getPrevWordInParagraph$javax_swing_text_JTextComponent$javax_swing_text_Element$I(c, line, offs); prevWord == -1; prevWord = C$.getPrevWordInParagraph$javax_swing_text_JTextComponent$javax_swing_text_Element$I(c, line, offs)) {
-offs = line.getStartOffset() - 1;
-line = C$.getParagraphElement$javax_swing_text_JTextComponent$I(c, offs);
+for (prevWord=C$.getPrevWordInParagraph$javax_swing_text_JTextComponent$javax_swing_text_Element$I(c, line, offs); prevWord == -1; prevWord=C$.getPrevWordInParagraph$javax_swing_text_JTextComponent$javax_swing_text_Element$I(c, line, offs)) {
+offs=line.getStartOffset() - 1;
+line=C$.getParagraphElement$javax_swing_text_JTextComponent$I(c, offs);
 }
 return prevWord;
 }, 1);
@@ -244,7 +244,7 @@ return paragraph;
 Clazz.newMeth(C$, 'isComposedTextElement$javax_swing_text_Document$I', function (doc, offset) {
 var elem = doc.getDefaultRootElement();
 while (!elem.isLeaf()){
-elem = elem.getElement$I(elem.getElementIndex$I(offset));
+elem=elem.getElement$I(elem.getElementIndex$I(offset));
 }
 return C$.isComposedTextElement$javax_swing_text_Element(elem);
 }, 1);
@@ -271,42 +271,42 @@ if (pos == -1) {
 var childIndex = (top) ? v.getViewCount() - 1 : 0;
 var child = v.getView$I(childIndex);
 var childBounds = v.getChildAllocation$I$java_awt_Shape(childIndex, alloc);
-retValue = child.getNextVisualPositionFrom$I$javax_swing_text_Position_Bias$java_awt_Shape$I$javax_swing_text_Position_BiasA(pos, b, childBounds, direction, biasRet);
+retValue=child.getNextVisualPositionFrom$I$javax_swing_text_Position_Bias$java_awt_Shape$I$javax_swing_text_Position_BiasA(pos, b, childBounds, direction, biasRet);
 if (retValue == -1 && !top  && v.getViewCount() > 1 ) {
-child = v.getView$I(1);
-childBounds = v.getChildAllocation$I$java_awt_Shape(1, alloc);
-retValue = child.getNextVisualPositionFrom$I$javax_swing_text_Position_Bias$java_awt_Shape$I$javax_swing_text_Position_BiasA(-1, biasRet[0], childBounds, direction, biasRet);
+child=v.getView$I(1);
+childBounds=v.getChildAllocation$I$java_awt_Shape(1, alloc);
+retValue=child.getNextVisualPositionFrom$I$javax_swing_text_Position_Bias$java_awt_Shape$I$javax_swing_text_Position_BiasA(-1, biasRet[0], childBounds, direction, biasRet);
 }} else {
 var increment = (top) ? -1 : 1;
 var childIndex;
 if (b === (I$[2]||$incl$(2)).Backward  && pos > 0 ) {
-childIndex = v.getViewIndex$I$javax_swing_text_Position_Bias(pos - 1, (I$[2]||$incl$(2)).Forward);
+childIndex=v.getViewIndex$I$javax_swing_text_Position_Bias(pos - 1, (I$[2]||$incl$(2)).Forward);
 } else {
-childIndex = v.getViewIndex$I$javax_swing_text_Position_Bias(pos, (I$[2]||$incl$(2)).Forward);
+childIndex=v.getViewIndex$I$javax_swing_text_Position_Bias(pos, (I$[2]||$incl$(2)).Forward);
 }var child = v.getView$I(childIndex);
 var childBounds = v.getChildAllocation$I$java_awt_Shape(childIndex, alloc);
-retValue = child.getNextVisualPositionFrom$I$javax_swing_text_Position_Bias$java_awt_Shape$I$javax_swing_text_Position_BiasA(pos, b, childBounds, direction, biasRet);
+retValue=child.getNextVisualPositionFrom$I$javax_swing_text_Position_Bias$java_awt_Shape$I$javax_swing_text_Position_BiasA(pos, b, childBounds, direction, biasRet);
 if ((direction == 3 || direction == 7 ) && (Clazz.instanceOf(v, "javax.swing.text.CompositeView")) && (v).flipEastAndWestAtEnds$I$javax_swing_text_Position_Bias(pos, b)  ) {
-increment = increment*(-1);
-}childIndex = childIndex+(increment);
+increment*=-1;
+}childIndex+=increment;
 if (retValue == -1 && childIndex >= 0  && childIndex < v.getViewCount() ) {
-child = v.getView$I(childIndex);
-childBounds = v.getChildAllocation$I$java_awt_Shape(childIndex, alloc);
-retValue = child.getNextVisualPositionFrom$I$javax_swing_text_Position_Bias$java_awt_Shape$I$javax_swing_text_Position_BiasA(-1, b, childBounds, direction, biasRet);
+child=v.getView$I(childIndex);
+childBounds=v.getChildAllocation$I$java_awt_Shape(childIndex, alloc);
+retValue=child.getNextVisualPositionFrom$I$javax_swing_text_Position_Bias$java_awt_Shape$I$javax_swing_text_Position_BiasA(-1, b, childBounds, direction, biasRet);
 if (retValue == pos && biasRet[0] !== b  ) {
 return C$.getNextVisualPositionFrom$javax_swing_text_View$I$javax_swing_text_Position_Bias$java_awt_Shape$I$javax_swing_text_Position_BiasA(v, pos, biasRet[0], alloc, direction, biasRet);
 }} else if (retValue != -1 && biasRet[0] !== b   && ((increment == 1 && child.getEndOffset() == retValue ) || (increment == -1 && child.getStartOffset() == retValue ) )  && childIndex >= 0  && childIndex < v.getViewCount() ) {
-child = v.getView$I(childIndex);
-childBounds = v.getChildAllocation$I$java_awt_Shape(childIndex, alloc);
+child=v.getView$I(childIndex);
+childBounds=v.getChildAllocation$I$java_awt_Shape(childIndex, alloc);
 var originalBias = biasRet[0];
 var nextPos = child.getNextVisualPositionFrom$I$javax_swing_text_Position_Bias$java_awt_Shape$I$javax_swing_text_Position_BiasA(-1, b, childBounds, direction, biasRet);
 if (biasRet[0] === b ) {
-retValue = nextPos;
+retValue=nextPos;
 } else {
-biasRet[0] = originalBias;
+biasRet[0]=originalBias;
 }}}return retValue;
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:58
+//Created 2018-05-24 08:47:09

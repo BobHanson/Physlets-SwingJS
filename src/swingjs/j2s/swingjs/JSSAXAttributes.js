@@ -15,7 +15,7 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'createNameMap', function () {
-this.nameMap = Clazz.new_((I$[1]||$incl$(1)));
+this.nameMap=Clazz.new_((I$[1]||$incl$(1)));
 for (var i = this.nodes.length; --i >= 0; ) {
 var ii = Integer.$valueOf(i);
 this.nameMap.put$TK$TV(C$.getFullName$S$S$S(this.getURI$I(i), this.getLocalName$I(i), null), ii);
@@ -25,7 +25,7 @@ this.nameMap.put$TK$TV(this.getQName$I(i), ii);
 
 Clazz.newMeth(C$, 'c$$swingjs_api_js_DOMNode', function (node) {
 C$.$init$.apply(this);
-this.nodes = (I$[2]||$incl$(2)).getAttr(node, "attributes");
+this.nodes=(I$[2]||$incl$(2)).getAttr(node, "attributes");
 }, 1);
 
 Clazz.newMeth(C$, 'getLength', function () {
@@ -132,4 +132,4 @@ return (uri == null  || uri.length$() == 0  ? "" : uri + "#") + (qName == null  
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:16
+//Created 2018-05-24 08:47:46

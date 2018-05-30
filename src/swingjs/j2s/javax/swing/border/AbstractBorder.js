@@ -15,7 +15,7 @@ return Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I,[0, 0, 0, 0]);
 });
 
 Clazz.newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
-insets.left = insets.top = insets.right = insets.bottom = 0;
+insets.left=insets.top=insets.right=insets.bottom=0;
 return insets;
 });
 
@@ -29,8 +29,8 @@ return C$.getInteriorRectangle$java_awt_Component$javax_swing_border_Border$I$I$
 
 Clazz.newMeth(C$, 'getInteriorRectangle$java_awt_Component$javax_swing_border_Border$I$I$I$I', function (c, b, x, y, width, height) {
 var insets;
-if (b != null ) insets = b.getBorderInsets$java_awt_Component(c);
- else insets = Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I,[0, 0, 0, 0]);
+if (b != null ) insets=b.getBorderInsets$java_awt_Component(c);
+ else insets=Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I,[0, 0, 0, 0]);
 return Clazz.new_((I$[2]||$incl$(2)).c$$I$I$I$I,[x + insets.left, y + insets.top, width - insets.right - insets.left , height - insets.top - insets.bottom ]);
 }, 1);
 
@@ -52,4 +52,4 @@ return c.getComponentOrientation().isLeftToRight();
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:42
+//Created 2018-05-24 08:46:45

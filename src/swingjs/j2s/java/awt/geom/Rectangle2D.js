@@ -25,23 +25,23 @@ this.setRect$D$D$D$D(r.getX(), r.getY(), r.getWidth(), r.getHeight());
 Clazz.newMeth(C$, 'intersectsLine$D$D$D$D', function (x1, y1, x2, y2) {
 var out1;
 var out2;
-if ((out2 = this.outcode$D$D(x2, y2)) == 0) {
+if ((out2=this.outcode$D$D(x2, y2)) == 0) {
 return true;
-}while ((out1 = this.outcode$D$D(x1, y1)) != 0){
+}while ((out1=this.outcode$D$D(x1, y1)) != 0){
 if ((out1 & out2) != 0) {
 return false;
 }if ((out1 & 5) != 0) {
 var x = this.getX();
 if ((out1 & 4) != 0) {
 x += this.getWidth();
-}y1 = y1 + (x - x1) * (y2 - y1) / (x2 - x1);
-x1 = x;
+}y1=y1 + (x - x1) * (y2 - y1) / (x2 - x1);
+x1=x;
 } else {
 var y = this.getY();
 if ((out1 & 8) != 0) {
 y += this.getHeight();
-}x1 = x1 + (y - y1) * (x2 - x1) / (y2 - y1);
-y1 = y;
+}x1=x1 + (y - y1) * (x2 - x1) / (y2 - y1);
+y1=y;
 }}
 return true;
 });
@@ -117,18 +117,18 @@ this.setRect$D$D$D$D(x1, y1, x2 - x1, y2 - y1);
 });
 
 Clazz.newMeth(C$, 'getPathIterator$java_awt_geom_AffineTransform', function (at) {
-return (this.iterator == null  ? this.iterator = Clazz.new_((I$[3]||$incl$(3))) : this.iterator).set$java_awt_geom_Rectangle2D$java_awt_geom_AffineTransform(this, at);
+return (this.iterator == null  ? this.iterator=Clazz.new_((I$[3]||$incl$(3))) : this.iterator).set$java_awt_geom_Rectangle2D$java_awt_geom_AffineTransform(this, at);
 });
 
 Clazz.newMeth(C$, 'getPathIterator$java_awt_geom_AffineTransform$D', function (at, flatness) {
-return (this.iterator == null  ? this.iterator = Clazz.new_((I$[3]||$incl$(3))) : this.iterator).set$java_awt_geom_Rectangle2D$java_awt_geom_AffineTransform(this, at);
+return (this.iterator == null  ? this.iterator=Clazz.new_((I$[3]||$incl$(3))) : this.iterator).set$java_awt_geom_Rectangle2D$java_awt_geom_AffineTransform(this, at);
 });
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var bits = java.lang.Double.doubleToLongBits(this.getX());
-bits = bits+(java.lang.Double.doubleToLongBits(this.getY()) * 37);
-bits = bits+(java.lang.Double.doubleToLongBits(this.getWidth()) * 43);
-bits = bits+(java.lang.Double.doubleToLongBits(this.getHeight()) * 47);
+bits+=java.lang.Double.doubleToLongBits(this.getY()) * 37;
+bits+=java.lang.Double.doubleToLongBits(this.getWidth()) * 43;
+bits+=java.lang.Double.doubleToLongBits(this.getHeight()) * 47;
 return (((bits|0)) ^ (((bits >> 32)|0)));
 });
 
@@ -189,40 +189,40 @@ return (this.width <= 0.0 ) || (this.height <= 0.0 ) ;
 });
 
 Clazz.newMeth(C$, 'setRect$F$F$F$F', function (x, y, w, h) {
-this.x = x;
-this.y = y;
-this.width = w;
-this.height = h;
+this.x=x;
+this.y=y;
+this.width=w;
+this.height=h;
 });
 
 Clazz.newMeth(C$, 'setRect$D$D$D$D', function (x, y, w, h) {
-this.x = x;
-this.y = y;
-this.width = w;
-this.height = h;
+this.x=x;
+this.y=y;
+this.width=w;
+this.height=h;
 });
 
 Clazz.newMeth(C$, 'setRect$java_awt_geom_Rectangle2D', function (r) {
-this.x = r.getX();
-this.y = r.getY();
-this.width = r.getWidth();
-this.height = r.getHeight();
+this.x=r.getX();
+this.y=r.getY();
+this.width=r.getWidth();
+this.height=r.getHeight();
 });
 
 Clazz.newMeth(C$, 'outcode$D$D', function (x, y) {
 var out = 0;
 if (this.width <= 0 ) {
-out = out|(5);
+out|=5;
 } else if (x < this.x ) {
-out = out|(1);
+out|=1;
 } else if (x > this.x + this.width ) {
-out = out|(4);
+out|=4;
 }if (this.height <= 0 ) {
-out = out|(10);
+out|=10;
 } else if (y < this.y ) {
-out = out|(2);
+out|=2;
 } else if (y > this.y + this.height ) {
-out = out|(8);
+out|=8;
 }return out;
 });
 
@@ -233,9 +233,9 @@ return Clazz.new_(C$.c$$F$F$F$F,[this.x, this.y, this.width, this.height]);
 Clazz.newMeth(C$, 'createIntersection$java_awt_geom_Rectangle2D', function (r) {
 var dest;
 if (Clazz.instanceOf(r, "java.awt.geom.Rectangle2D.Float")) {
-dest = Clazz.new_(C$);
+dest=Clazz.new_(C$);
 } else {
-dest = Clazz.new_((I$[1]||$incl$(1)));
+dest=Clazz.new_((I$[1]||$incl$(1)));
 }(I$[2]||$incl$(2)).intersect$java_awt_geom_Rectangle2D$java_awt_geom_Rectangle2D$java_awt_geom_Rectangle2D(this, r, dest);
 return dest;
 });
@@ -243,9 +243,9 @@ return dest;
 Clazz.newMeth(C$, 'createUnion$java_awt_geom_Rectangle2D', function (r) {
 var dest;
 if (Clazz.instanceOf(r, "java.awt.geom.Rectangle2D.Float")) {
-dest = Clazz.new_(C$);
+dest=Clazz.new_(C$);
 } else {
-dest = Clazz.new_((I$[1]||$incl$(1)));
+dest=Clazz.new_((I$[1]||$incl$(1)));
 }(I$[2]||$incl$(2)).union$java_awt_geom_Rectangle2D$java_awt_geom_Rectangle2D$java_awt_geom_Rectangle2D(this, r, dest);
 return dest;
 });
@@ -303,33 +303,33 @@ return (this.width <= 0.0 ) || (this.height <= 0.0 ) ;
 });
 
 Clazz.newMeth(C$, 'setRect$D$D$D$D', function (x, y, w, h) {
-this.x = x;
-this.y = y;
-this.width = w;
-this.height = h;
+this.x=x;
+this.y=y;
+this.width=w;
+this.height=h;
 });
 
 Clazz.newMeth(C$, 'setRect$java_awt_geom_Rectangle2D', function (r) {
-this.x = r.getX();
-this.y = r.getY();
-this.width = r.getWidth();
-this.height = r.getHeight();
+this.x=r.getX();
+this.y=r.getY();
+this.width=r.getWidth();
+this.height=r.getHeight();
 });
 
 Clazz.newMeth(C$, 'outcode$D$D', function (x, y) {
 var out = 0;
 if (this.width <= 0 ) {
-out = out|(5);
+out|=5;
 } else if (x < this.x ) {
-out = out|(1);
+out|=1;
 } else if (x > this.x + this.width ) {
-out = out|(4);
+out|=4;
 }if (this.height <= 0 ) {
-out = out|(10);
+out|=10;
 } else if (y < this.y ) {
-out = out|(2);
+out|=2;
 } else if (y > this.y + this.height ) {
-out = out|(8);
+out|=8;
 }return out;
 });
 
@@ -354,4 +354,4 @@ return this.getClass().getName() + "[x=" + new Double(this.x).toString() + ",y="
 });
 })()
 })();
-//Created 2018-05-15 01:02:00
+//Created 2018-05-24 08:45:22

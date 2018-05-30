@@ -41,7 +41,7 @@ C$.c$$java_io_File$Z.apply(this, [Clazz.new_((I$[1]||$incl$(1)).c$$S,["output"])
 }, 1);
 
 Clazz.newMeth(C$, 'open$S', function (name) {
-this.out = Clazz.new_((I$[2]||$incl$(2)));
+this.out=Clazz.new_((I$[2]||$incl$(2)));
 this.out.setParams$javajs_api_BytePoster$S$Z$java_io_OutputStream(null, name, false, null);
 });
 
@@ -75,4 +75,4 @@ this.close();
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:05
+//Created 2018-05-24 08:45:33

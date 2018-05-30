@@ -29,14 +29,14 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$swingjs_JSFrameViewer', function (viewer) {
-this.rpc = viewer.top;
-this.rootPane = this.rpc.getRootPane();
-this.titleHeight = viewer.getInsets().top;
+this.rpc=viewer.top;
+this.rootPane=this.rpc.getRootPane();
+this.titleHeight=viewer.getInsets().top;
 if (viewer.isApplet) {
-this.rootNode = viewer.getDiv$S("appletdiv");
+this.rootNode=viewer.getDiv$S("appletdiv");
 } else {
-this.jframe = this.rpc;
-this.rootNode = (this.jframe.getUI()).domNode;
+this.jframe=this.rpc;
+this.rootNode=(this.jframe.getUI()).domNode;
 }return (this.rootNode == null  ? null : this);
 });
 
@@ -51,16 +51,16 @@ p$.$$swingjs_api_js_DOMNode.apply(this, [this.resizer]).hide();
 });
 
 Clazz.newMeth(C$, 'setMin$I', function (min) {
-this.minSize = min;
+this.minSize=min;
 });
 
 Clazz.newMeth(C$, 'createAndShowResizer', function () {
 var id = this.rootPane.htmlName + "_resizer";
-this.resizer = (I$[1]||$incl$(1)).createElement("div", id);
+this.resizer=(I$[1]||$incl$(1)).createElement("div", id);
 (I$[1]||$incl$(1)).setSize(this.resizer, 10, 10);
 (I$[1]||$incl$(1)).setStyles(this.resizer, ["background-color", "red", "opacity", "0", "cursor", "nwse-resize"]);
 p$.$$swingjs_api_js_DOMNode.apply(this, [this.resizer]).addClass("swingjs-resizer");
-this.rubberBand = (I$[1]||$incl$(1)).createElement("div", id + "_rb");
+this.rubberBand=(I$[1]||$incl$(1)).createElement("div", id + "_rb");
 (I$[1]||$incl$(1)).setStyles(this.rubberBand, ["border", "1px dashed #FF00FF", "z-index", "100000", "position", "absolute", "left", "0px", "top", "0px", "display", "none"]);
 this.rootNode.appendChild(this.resizer);
 this.rootNode.appendChild(this.rubberBand);
@@ -107,9 +107,9 @@ Clazz.newMeth(C$, 'fHandleDOMResize$O$I$I', function (event, dw, dh) {
 var r;
 if (!this.enabled) return;
 if (event == null ) {
-r = p$.getFrameOffset$I$I.apply(this, [dw, dh]);
+r=p$.getFrameOffset$I$I.apply(this, [dw, dh]);
 } else {
-(I$[1]||$incl$(1)).getRectangle(this.rootNode, r = Clazz.new_((I$[4]||$incl$(4))));
+(I$[1]||$incl$(1)).getRectangle(this.rootNode, r=Clazz.new_((I$[4]||$incl$(4))));
 }if (this.jframe == null ) {
 this.rootPane.getGraphics().setColor$java_awt_Color((I$[5]||$incl$(5)).WHITE);
 this.rootPane.getGraphics().fillRect$I$I$I$I(0, 0, r.width, r.height);
@@ -128,13 +128,13 @@ return (I$[2]||$incl$(2)).getJQuery().$(node);
 
 Clazz.newMeth(C$, 'getFrameOffset$I$I', function (dw, dh) {
 var r = (this.rpc).getBounds();
-if (r.width + dw > this.minSize) r.width = r.width+(dw);
-if (r.height + dh > this.minSize) r.height = r.height+(dh);
+if (r.width + dw > this.minSize) r.width+=dw;
+if (r.height + dh > this.minSize) r.height+=dh;
 return r;
 });
 
 Clazz.newMeth(C$, 'setEnabled$Z', function (b) {
-this.enabled = b;
+this.enabled=b;
 });
 })();
-//Created 2018-05-15 01:03:29
+//Created 2018-05-24 08:48:03

@@ -25,9 +25,9 @@ C$.c$$I$S.apply(this, [orientation, "SeparatorUI"]);
 Clazz.newMeth(C$, 'c$$I$S', function (orientation, sid) {
 Clazz.super_(C$, this,1);
 p$.checkOrientation$I.apply(this, [orientation]);
-this.orientation = orientation;
+this.orientation=orientation;
 this.setFocusable$Z(false);
-this.uiClassID = sid;
+this.uiClassID=sid;
 this.updateUI();
 }, 1);
 
@@ -40,7 +40,7 @@ if (this.orientation == orientation) {
 return;
 }var oldValue = this.orientation;
 p$.checkOrientation$I.apply(this, [orientation]);
-this.orientation = orientation;
+this.orientation=orientation;
 this.firePropertyChange$S$I$I("orientation", oldValue, orientation);
 this.revalidate();
 this.repaint();
@@ -61,4 +61,4 @@ var orientationString = (this.orientation == 0 ? "HORIZONTAL" : "VERTICAL");
 return C$.superclazz.prototype.paramString.apply(this, []) + ",orientation=" + orientationString ;
 });
 })();
-//Created 2018-05-15 01:02:33
+//Created 2018-05-24 08:46:22

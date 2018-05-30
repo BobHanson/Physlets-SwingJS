@@ -16,7 +16,7 @@ Clazz.newMeth(C$, 'c$$S', function (f) {
 Clazz.super_(C$, this,1);
 if (null == f ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.flags = f;
+}this.flags=f;
 }, 1);
 
 Clazz.newMeth(C$, 'getFlags', function () {
@@ -29,4 +29,4 @@ return "Flags of the DuplicateFormatFlagsException is '" + this.flags + "'" ;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:12
+//Created 2018-05-24 08:45:45

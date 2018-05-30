@@ -28,39 +28,39 @@ this.imageType = 0;
 
 Clazz.newMeth(C$, 'c$$I$I$I', function (width, height, imageType) {
 Clazz.super_(C$, this,1);
-this.width = width;
-this.height = height;
+this.width=width;
+this.height=height;
 switch (imageType) {
 case 1:
 {
-this.colorModel = Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I$I,[24, 16711680, 65280, 255, 0]);
-this.raster = this.colorModel.createCompatibleWritableRaster$I$I(width, height);
+this.colorModel=Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I$I,[24, 16711680, 65280, 255, 0]);
+this.raster=this.colorModel.createCompatibleWritableRaster$I$I(width, height);
 this.raster.setImage$java_awt_image_BufferedImage(this);
-this._pix = (this.raster.getDataBuffer()).data;
+this._pix=(this.raster.getDataBuffer()).data;
 }break;
 case 3:
 case 2:
 {
-this.colorModel = (I$[2]||$incl$(2)).getRGBdefault();
-this.raster = this.colorModel.createCompatibleWritableRaster$I$I(width, height);
+this.colorModel=(I$[2]||$incl$(2)).getRGBdefault();
+this.raster=this.colorModel.createCompatibleWritableRaster$I$I(width, height);
 this.raster.setImage$java_awt_image_BufferedImage(this);
-this._pix = (this.raster.getDataBuffer()).data;
+this._pix=(this.raster.getDataBuffer()).data;
 }break;
 default:
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Unknown image type " + imageType]);
 }
-this.imageType = imageType;
+this.imageType=imageType;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable', function (cm, raster, isRasterPremultiplied, properties) {
 Clazz.super_(C$, this,1);
 if ((raster.minX != 0) || (raster.minY != 0) ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Raster " + raster + " has minX or minY not equal to zero: " + raster.minX + " " + raster.minY ]);
-}this.colorModel = cm;
-this.raster = raster;
+}this.colorModel=cm;
+this.raster=raster;
 raster.setImage$java_awt_image_BufferedImage(this);
-this._pix = (raster.getDataBuffer()).data;
-this.properties = properties;
+this._pix=(raster.getDataBuffer()).data;
+this.properties=properties;
 }, 1);
 
 Clazz.newMeth(C$, 'getType', function () {
@@ -77,13 +77,13 @@ return this.raster;
 
 Clazz.newMeth(C$, 'getRGB$I$I', function (x, y) {
 this.checkHavePixels();
-if (this._pix == null ) this._pix = this._pixSaved;
+if (this._pix == null ) this._pix=this._pixSaved;
 return this._pix[y * this.width + x];
 });
 
 Clazz.newMeth(C$, 'getRGB$I$I$I$I$IA$I$I', function (startX, startY, w, h, rgbArray, offset, scansize) {
 this.checkHavePixels();
-if (this._pix == null ) this._pix = this._pixSaved;
+if (this._pix == null ) this._pix=this._pixSaved;
 return this.getRangeRGB$I$I$I$I$IA$I$I(startX, startY, w, h, rgbArray, offset, scansize);
 });
 
@@ -97,27 +97,27 @@ return true;
 Clazz.newMeth(C$, 'getRangeRGB$I$I$I$I$IA$I$I', function (startX, startY, w, h, rgbArray, offset, scansize) {
 if (this._pix == null  && this._pixSaved == null  ) this.checkHavePixels();
 var pixels = (this._pix == null  ? this._pixSaved : this._pix);
-for (var y = startY, yoff = offset; y < startY + h; y++, yoff = yoff+(scansize)) for (var off = yoff, x = startX; x < startX + w; x++) rgbArray[off++] = pixels[y * this.width + x];
+for (var y = startY, yoff = offset; y < startY + h; y++, yoff+=scansize) for (var off = yoff, x = startX; x < startX + w; x++) rgbArray[off++]=pixels[y * this.width + x];
 
 
 return rgbArray;
 });
 
 Clazz.newMeth(C$, 'setRGB$I$I$I', function (x, y, rgb) {
-if (this.checkHavePixels()) this._imgNode = null;
+if (this.checkHavePixels()) this._imgNode=null;
 var pixels = (this._pix == null  ? this._pixSaved : this._pix);
-pixels[y * this.width + x] = rgb;
+pixels[y * this.width + x]=rgb;
 });
 
 Clazz.newMeth(C$, 'setRGB$I$I$I$I$IA$I$I', function (startX, startY, w, h, rgbArray, offset, scansize) {
-if (this.checkHavePixels()) this._imgNode = null;
+if (this.checkHavePixels()) this._imgNode=null;
 var pixels = (this._pix == null  ? this._pixSaved : this._pix);
 var width = this.width;
-for (var y = startY, yoff = offset; y < startY + h; y++, yoff = yoff+(scansize)) for (var x = startX, off = yoff; x < startX + w; x++) pixels[y * width + x] = rgbArray[off++];
+for (var y = startY, yoff = offset; y < startY + h; y++, yoff+=scansize) for (var x = startX, off = yoff; x < startX + w; x++) pixels[y * width + x]=rgbArray[off++];
 
 
-this._pix = this._pixSaved = pixels;
-this._g = null;
+this._pix=this._pixSaved=pixels;
+this._g=null;
 this.getImageGraphic();
 });
 
@@ -140,8 +140,8 @@ return this.raster.getHeight();
 Clazz.newMeth(C$, 'getSource', function () {
 if (this.osis == null ) {
 if (this.properties == null ) {
-this.properties = Clazz.new_((I$[3]||$incl$(3)));
-}this.osis = Clazz.new_((I$[4]||$incl$(4)).c$$java_awt_image_BufferedImage$java_util_Hashtable,[this, this.properties]);
+this.properties=Clazz.new_((I$[3]||$incl$(3)));
+}this.osis=Clazz.new_((I$[4]||$incl$(4)).c$$java_awt_image_BufferedImage$java_util_Hashtable,[this, this.properties]);
 }return this.osis;
 });
 
@@ -156,7 +156,7 @@ throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["null proper
 return (I$[5]||$incl$(5)).UndefinedProperty;
 }var o = this.properties.get$O(name);
 if (o == null ) {
-o = (I$[5]||$incl$(5)).UndefinedProperty;
+o=(I$[5]||$incl$(5)).UndefinedProperty;
 }return o;
 });
 
@@ -246,7 +246,7 @@ var wr = (I$[7]||$incl$(7)).createWritableRaster$java_awt_image_SampleModel$java
 var tdata = null;
 this.checkHavePixels();
 for (var i = startY; i < startY + height; i++) {
-tdata = this.raster.getDataElements$I$I$I$I$O(startX, i, width, 1, tdata);
+tdata=this.raster.getDataElements$I$I$I$I$O(startX, i, width, 1, tdata);
 wr.setDataElements$I$I$I$I$O(startX, i, width, 1, tdata);
 }
 return wr;
@@ -262,7 +262,7 @@ var startX = rect.x;
 var startY = rect.y;
 var tdata = null;
 for (var i = startY; i < startY + height; i++) {
-tdata = this.raster.getDataElements$I$I$I$I$O(startX, i, width, 1, tdata);
+tdata=this.raster.getDataElements$I$I$I$I$O(startX, i, width, 1, tdata);
 wr.setDataElements$I$I$I$I$O(startX, i, width, 1, tdata);
 }
 return wr;
@@ -277,7 +277,7 @@ var startX = outRaster.getMinX();
 var startY = outRaster.getMinY();
 var tdata = null;
 for (var i = startY; i < startY + height; i++) {
-tdata = this.raster.getDataElements$I$I$I$I$O(startX, i, width, 1, tdata);
+tdata=this.raster.getDataElements$I$I$I$I$O(startX, i, width, 1, tdata);
 outRaster.setDataElements$I$I$I$I$O(startX, i, width, 1, tdata);
 }
 return outRaster;
@@ -294,12 +294,12 @@ var bclip = Clazz.new_((I$[9]||$incl$(9)).c$$I$I$I$I,[0, 0, this.raster.width, t
 var intersect = rclip.intersection$java_awt_Rectangle(bclip);
 if (intersect.isEmpty()) {
 return;
-}width = intersect.width;
-height = intersect.height;
-startX = intersect.x;
-startY = intersect.y;
+}width=intersect.width;
+height=intersect.height;
+startX=intersect.x;
+startY=intersect.y;
 for (var i = startY; i < startY + height; i++) {
-tdata = r.getPixels$I$I$I$I$IA(startX, i, width, 1, tdata);
+tdata=r.getPixels$I$I$I$I$IA(startX, i, width, 1, tdata);
 this.raster.setPixels$I$I$I$I$IA(startX, i, width, 1, tdata);
 }
 });
@@ -313,7 +313,7 @@ var canvas = null;
 {
 if (this._g) canvas = this._g.canvas;
 }
-if (canvas == null ) canvas = (I$[10]||$incl$(10)).createElement("canvas", null);
+if (canvas == null ) canvas=(I$[10]||$incl$(10)).createElement("canvas", null);
 var w = this.width;
 var h = this.height;
 var data = null;
@@ -324,18 +324,18 @@ canvas.height = h;
 if (!this._g) ctx.drawImage(this._imgNode, 0, 0, w, h);
 data = ctx.getImageData(0, 0, w, h).data;
 }
-this._pix = this.toIntARGB$IA(data);
-this._imgNode = canvas;
-(this.raster.getDataBuffer()).data = this._pix;
+this._pix=this.toIntARGB$IA(data);
+this._imgNode=canvas;
+(this.raster.getDataBuffer()).data=this._pix;
 
 this.raster.data = this._pix;
-this._havePix = true;
+this._havePix=true;
 });
 
 Clazz.newMeth(C$, 'toIntARGB$IA', function (imgData) {
 var n = (imgData.length/4|0);
 var iData = Clazz.array(Integer.TYPE, [n]);
-for (var i = 0, j = 0; i < n; j++) iData[i++] = (imgData[j++] << 16) | (imgData[j++] << 8) | imgData[j++] | -16777216 ;
+for (var i = 0, j = 0; i < n; j++) iData[i++]=(imgData[j++] << 16) | (imgData[j++] << 8) | imgData[j++] | -16777216 ;
 
 return iData;
 });
@@ -347,17 +347,17 @@ var canvas = (I$[10]||$incl$(10)).createElement("canvas", "img" + System.current
 canvas.width = this.getWidth();
 canvas.height = this.getHeight();
 }
-this._canvas = canvas;
+this._canvas=canvas;
 var pix = this._pix;
-this._g = Clazz.new_((I$[11]||$incl$(11)).c$$O,[canvas]);
+this._g=Clazz.new_((I$[11]||$incl$(11)).c$$O,[canvas]);
 if (pix != null ) this._g.drawImagePriv$java_awt_Image$I$I$java_awt_image_ImageObserver(this, 0, 0, null);
 {
 if (pix) pix.img = this;
 }
-this._pix = null;
+this._pix=null;
 }return this._g;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:00
+//Created 2018-05-24 08:45:24

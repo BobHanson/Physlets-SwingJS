@@ -32,10 +32,10 @@ C$.$init$.apply(this);
 Clazz.newMeth(C$, 'c$$I$I$I$I', function (value, extent, min, max) {
 C$.$init$.apply(this);
 if ((max >= min) && (value >= min) && ((value + extent) >= value) && ((value + extent) <= max)  ) {
-this.value = value;
-this.extent = extent;
-this.min = min;
-this.max = max;
+this.value=value;
+this.extent=extent;
+this.min=min;
+this.max=max;
 } else {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid range properties"]);
 }}, 1);
@@ -57,17 +57,17 @@ return this.max;
 });
 
 Clazz.newMeth(C$, 'setValue$I', function (n) {
-n = Math.min(n, 2147483647 - this.extent);
+n=Math.min(n, 2147483647 - this.extent);
 var newValue = Math.max(n, this.min);
 if (newValue + this.extent > this.max) {
-newValue = this.max - this.extent;
+newValue=this.max - this.extent;
 }this.setRangeProperties$I$I$I$I$Z(newValue, this.extent, this.min, this.max, this.isAdjusting);
 });
 
 Clazz.newMeth(C$, 'setExtent$I', function (n) {
 var newExtent = Math.max(0, n);
 if (this.value + newExtent > this.max) {
-newExtent = this.max - this.value;
+newExtent=this.max - this.value;
 }this.setRangeProperties$I$I$I$I$Z(this.value, newExtent, this.min, this.max, this.isAdjusting);
 });
 
@@ -95,22 +95,22 @@ return this.isAdjusting;
 
 Clazz.newMeth(C$, 'setRangeProperties$I$I$I$I$Z', function (newValue, newExtent, newMin, newMax, adjusting) {
 if (newMin > newMax) {
-newMin = newMax;
+newMin=newMax;
 }if (newValue > newMax) {
-newMax = newValue;
+newMax=newValue;
 }if (newValue < newMin) {
-newMin = newValue;
+newMin=newValue;
 }if ((newExtent + newValue) > newMax) {
-newExtent = newMax - newValue;
+newExtent=newMax - newValue;
 }if (newExtent < 0) {
-newExtent = 0;
+newExtent=0;
 }var isChange = (newValue != this.value) || (newExtent != this.extent) || (newMin != this.min) || (newMax != this.max) || (adjusting != this.isAdjusting )  ;
 if (isChange) {
-this.value = newValue;
-this.extent = newExtent;
-this.min = newMin;
-this.max = newMax;
-this.isAdjusting = adjusting;
+this.value=newValue;
+this.extent=newExtent;
+this.min=newMin;
+this.max=newMax;
+this.isAdjusting=adjusting;
 this.fireStateChanged();
 }});
 
@@ -128,10 +128,10 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[2]||$incl$(2)),['
 
 Clazz.newMeth(C$, 'fireStateChanged', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[2]||$incl$(2)),['stateChanged$javax_swing_event_ChangeEvent']) ) {
 if (this.changeEvent == null ) {
-this.changeEvent = Clazz.new_((I$[3]||$incl$(3)).c$$O,[this]);
+this.changeEvent=Clazz.new_((I$[3]||$incl$(3)).c$$O,[this]);
 }(listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -145,4 +145,4 @@ Clazz.newMeth(C$, 'getListeners$Class', function (listenerType) {
 return this.listenerList.getListeners$Class(listenerType);
 });
 })();
-//Created 2018-05-15 01:02:24
+//Created 2018-05-24 08:46:07

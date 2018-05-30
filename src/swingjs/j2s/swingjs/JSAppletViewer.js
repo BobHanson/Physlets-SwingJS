@@ -52,22 +52,22 @@ Clazz.newMeth(C$, 'c$$java_util_Hashtable', function (params) {
 C$.superclazz.c$$java_util_Hashtable.apply(this, [params]);
 C$.$init$.apply(this);
 System.out.println$S("JSAppletViewer initializing2");
-this.isApplet = true;
-this.appletViewer = this;
+this.isApplet=true;
+this.appletViewer=this;
 p$.setDisplayParams$java_util_Hashtable.apply(this, [params]);
 }, 1);
 
 Clazz.newMeth(C$, 'setDisplayParams$java_util_Hashtable', function (params) {
-this.display = params.get$O("display");
+this.display=params.get$O("display");
 var s = "" + params.get$O("isResizable");
-this.$isResizable = "true".equalsIgnoreCase$S(s);
-this.haveResizable = (this.$isResizable || "false".equalsIgnoreCase$S(s) );
-this.addFrame = "true".equalsIgnoreCase$S("" + params.get$O("addFrame"));
-this.insets = Clazz.new_((I$[5]||$incl$(5)).c$$I$I$I$I,[0, 0, 0, 0]);
-this.threadGroup = Clazz.new_((I$[6]||$incl$(6)).c$$S,[this.appletName]);
-this.myThread = Clazz.new_((I$[7]||$incl$(7)).c$$swingjs_JSAppletViewer$ThreadGroup$S,[this, this.threadGroup, this.appletName]);
-(I$[8]||$incl$(8)).thisThread = (this.myThread);
-this.appContext = (I$[9]||$incl$(9)).createNewAppContext();
+this.$isResizable="true".equalsIgnoreCase$S(s);
+this.haveResizable=(this.$isResizable || "false".equalsIgnoreCase$S(s) );
+this.addFrame="true".equalsIgnoreCase$S("" + params.get$O("addFrame"));
+this.insets=Clazz.new_((I$[5]||$incl$(5)).c$$I$I$I$I,[0, 0, 0, 0]);
+this.threadGroup=Clazz.new_((I$[6]||$incl$(6)).c$$S,[this.appletName]);
+this.myThread=Clazz.new_((I$[7]||$incl$(7)).c$$swingjs_JSAppletViewer$ThreadGroup$S,[this, this.threadGroup, this.appletName]);
+(I$[8]||$incl$(8)).thisThread=(this.myThread);
+this.appContext=(I$[9]||$incl$(9)).createNewAppContext();
 (I$[10]||$incl$(10)).getDefaultToolkit();
 Clazz.new_((I$[11]||$incl$(11))).getDevice();
 });
@@ -78,11 +78,11 @@ if (this.status == 0) this.myThread.start();
 });
 
 Clazz.newMeth(C$, 'addAppletListener$sun_applet_AppletListener', function (l) {
-this.listeners = (I$[12]||$incl$(12)).add$sun_applet_AppletListener$sun_applet_AppletListener(this.listeners, l);
+this.listeners=(I$[12]||$incl$(12)).add$sun_applet_AppletListener$sun_applet_AppletListener(this.listeners, l);
 });
 
 Clazz.newMeth(C$, 'removeAppletListener$sun_applet_AppletListener', function (l) {
-this.listeners = (I$[12]||$incl$(12)).remove$sun_applet_AppletListener$sun_applet_AppletListener(this.listeners, l);
+this.listeners=(I$[12]||$incl$(12)).remove$sun_applet_AppletListener$sun_applet_AppletListener(this.listeners, l);
 });
 
 Clazz.newMeth(C$, 'dispatchAppletEvent$I$O', function (id, argument) {
@@ -97,14 +97,14 @@ return true;
 
 Clazz.newMeth(C$, 'appletResize$I$I', function (width, height) {
 var currentSize = Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[this.currentAppletSize.width, this.currentAppletSize.height]);
-this.currentAppletSize.width = width;
-this.currentAppletSize.height = height;
+this.currentAppletSize.width=width;
+this.currentAppletSize.height=height;
 this.japplet.setBounds$I$I$I$I(0, 0, width, height);
 this.japplet.getRootPane().setBounds$I$I$I$I(0, 0, this.getWidth(), this.getHeight());
 this.japplet.getContentPane().setBounds$I$I$I$I(0, 0, this.getWidth(), this.getHeight());
 (this.japplet.getContentPane()).revalidate();
 if (this.addFrame) {
-this.jAppletFrame = Clazz.new_((I$[14]||$incl$(14)).c$$S,["SwingJS Applet Viewer"]);
+this.jAppletFrame=Clazz.new_((I$[14]||$incl$(14)).c$$S,["SwingJS Applet Viewer"]);
 var pane = this.japplet.getContentPane();
 this.jAppletFrame.setContentPane$java_awt_Container(pane);
 this.japplet.setVisible$Z(false);
@@ -158,8 +158,8 @@ return this.html5Applet._getWidth();
 
 Clazz.newMeth(C$, 'setBounds$I$I$I$I', function (x, y, width, height) {
 this.japplet.reshape$I$I$I$I(x, y, width, height);
-this.currentAppletSize.width = width;
-this.currentAppletSize.height = height;
+this.currentAppletSize.width=width;
+this.currentAppletSize.height=height;
 });
 
 Clazz.newMeth(C$, 'getImage$java_net_URL', function (url) {
@@ -214,22 +214,22 @@ System.out.println$S("JSAppletViewer thread run1 mode=" + mode + " status=" + th
 var ok = false;
 switch (mode) {
 case 0:
-this.currentAppletSize.width = this.defaultAppletSize.width = this.getWidth();
-this.currentAppletSize.height = this.defaultAppletSize.height = this.getHeight();
-this.nextStatus = 1;
-ok = true;
+this.currentAppletSize.width=this.defaultAppletSize.width=this.getWidth();
+this.currentAppletSize.height=this.defaultAppletSize.height=this.getHeight();
+this.nextStatus=1;
+ok=true;
 break;
 case 1:
 switch (this.nextStatus) {
 case 1:
 if (this.status != 0) {
 p$.showAppletStatus$S.apply(this, ["notdisposed"]);
-this.status = 7;
+this.status=7;
 break;
 }System.out.println$S("JSAppletViewer runloader");
 p$.runLoader.apply(this, []);
-this.nextStatus = (this.main == null  ? 2 : 76);
-ok = true;
+this.nextStatus=(this.main == null  ? 2 : 76);
+ok=true;
 break;
 case 2:
 if (this.status != 1 && this.status != 5 ) {
@@ -240,24 +240,24 @@ this.japplet.setFont$java_awt_Font(Clazz.new_((I$[17]||$incl$(17)).c$$S$I$I,["Di
 this.japplet.resizeOriginal$I$I(this.defaultAppletSize.width, this.defaultAppletSize.height);
 this.japplet.init();
 this.japplet.validate();
-this.status = 2;
+this.status=2;
 p$.showAppletStatus$S.apply(this, ["initialized"]);
-this.nextStatus = 3;
-ok = true;
+this.nextStatus=3;
+ok=true;
 break;
 case 3:
 if (this.status != 2 && this.status != 4 ) {
 p$.showAppletStatus$S.apply(this, ["notstarted"]);
-this.status = 7;
+this.status=7;
 break;
 }this.japplet.getRootPane().addNotify();
 System.out.println$S("JSAppletViewer start" + this.currentAppletSize);
 this.japplet.resizeOriginal$I$I(this.currentAppletSize.width, this.currentAppletSize.height);
 this.japplet.start();
-this.status = 3;
+this.status=3;
 p$.showAppletStatus$S.apply(this, ["started"]);
-this.nextStatus = 35;
-ok = true;
+this.nextStatus=35;
+ok=true;
 break;
 case 35:
 this.japplet.getContentPane().setBounds$java_awt_Rectangle(this.japplet.getBounds());
@@ -266,42 +266,42 @@ this.japplet.validate();
 p$.showAppletStatus$S.apply(this, ["ready"]);
 (I$[16]||$incl$(16)).readyCallback$S$S$java_awt_Container$swingjs_JSAppletViewer(this.appletName, this.fullName, this.applet, this);
 if (this.$isResizable && !this.addFrame ) {
-this.resizer = ((I$[16]||$incl$(16)).getInstance$S("swingjs.plaf.Resizer")).set$swingjs_JSFrameViewer(this);
+this.resizer=((I$[16]||$incl$(16)).getInstance$S("swingjs.plaf.Resizer")).set$swingjs_JSFrameViewer(this);
 if (this.resizer != null ) this.resizer.show();
 }this.japplet.repaint();
 break;
 case 4:
 if (this.status == 3) {
-this.status = 4;
+this.status=4;
 this.japplet.setVisible$Z(false);
 this.japplet.stop();
 p$.showAppletStatus$S.apply(this, ["stopped"]);
 } else {
 p$.showAppletStatus$S.apply(this, ["notstopped"]);
-this.status = 7;
+this.status=7;
 }break;
 case 5:
 if (this.status == 4 || this.status == 2 ) {
-this.status = 5;
+this.status=5;
 this.japplet.destroy();
 p$.showAppletStatus$S.apply(this, ["destroyed"]);
 } else {
 p$.showAppletStatus$S.apply(this, ["notdestroyed"]);
-this.status = 7;
+this.status=7;
 }break;
 case 75:
 if (this.status == 5 || this.status == 1 ) {
 p$.showAppletStatus$S.apply(this, ["notdisposed"]);
-this.status = 7;
+this.status=7;
 } else {
-this.status = 0;
-this.applet = null;
+this.status=0;
+this.applet=null;
 p$.showAppletStatus$S.apply(this, ["disposed"]);
 }break;
 case 76:
 p$.showAppletStatus$S.apply(this, ["running " + this.main]);
 var args = this.params.get$O("args");
-if (Clazz.instanceOf(args, "java.lang.String")) args = (I$[18]||$incl$(18)).split$S$S(args, " ");
+if (Clazz.instanceOf(args, "java.lang.String")) args=(I$[18]||$incl$(18)).split$S$S(args, " ");
 (this.applet).runMain$S$SA(this.main, args);
 (I$[16]||$incl$(16)).readyCallback$S$S$java_awt_Container$swingjs_JSAppletViewer(this.appletName, this.fullName, this.applet, this);
 break;
@@ -321,47 +321,47 @@ return (ok ? 1 : 2);
 
 Clazz.newMeth(C$, 'runLoader', function () {
 this.dispatchAppletEvent$I$O(51235, null);
-this.status = 1;
-this.main = this.getParameter$S("main");
+this.status=1;
+this.main=this.getParameter$S("main");
 var code = (this.main == null  ? this.getParameter$S("code") : null);
 try {
 if (code == null  && this.main == null  ) {
 System.err.println$S("runloader.err-- \"code\" or \"main\" must be specified.");
 throw Clazz.new_(Clazz.load('java.lang.InstantiationException').c$$S,["\"code\" or \"main\" must be specified."]);
-}if (code == null ) code = "swingjs.JSApplet";
-this.top = this.applet = this.japplet = (I$[16]||$incl$(16)).getInstance$S(code);
+}if (code == null ) code="swingjs.JSApplet";
+this.top=this.applet=this.japplet=(I$[16]||$incl$(16)).getInstance$S(code);
 if (this.applet == null ) {
 System.out.println$S(code + " could not be launched");
-this.status = 7;
+this.status=7;
 } else if (!(Clazz.instanceOf(this.applet, "javax.swing.JApplet"))) {
 (I$[16]||$incl$(16)).alert$O(code + " is not a JApplet!?");
-this.status = 7;
+this.status=7;
 }} catch (e$$) {
 if (Clazz.exceptionOf(e$$, "java.lang.InstantiationException")){
 var e = e$$;
 {
-this.status = 7;
+this.status=7;
 p$.showAppletException$Throwable.apply(this, [e]);
 return;
 }
 } else if (Clazz.exceptionOf(e$$, "java.lang.Exception")){
 var e = e$$;
 {
-this.status = 7;
+this.status=7;
 p$.showAppletException$Throwable.apply(this, [e]);
 return;
 }
 } else if (Clazz.exceptionOf(e$$, "java.lang.ThreadDeath")){
 var e = e$$;
 {
-this.status = 7;
+this.status=7;
 p$.showAppletStatus$S.apply(this, ["death"]);
 return;
 }
 } else if (Clazz.exceptionOf(e$$, "java.lang.Error")){
 var e = e$$;
 {
-this.status = 7;
+this.status=7;
 p$.showAppletException$Throwable.apply(this, [e]);
 return;
 }
@@ -383,7 +383,7 @@ return (this.haveFrames || forceNew  ? Clazz.new_((I$[19]||$incl$(19))) : null);
 });
 
 Clazz.newMeth(C$, 'getTimerQueue', function () {
-return (this.timerQueue == null  ? (this.timerQueue = Clazz.new_((I$[20]||$incl$(20)))) : this.timerQueue);
+return (this.timerQueue == null  ? (this.timerQueue=Clazz.new_((I$[20]||$incl$(20)))) : this.timerQueue);
 });
 
 Clazz.newMeth(C$, 'exit', function () {
@@ -400,4 +400,4 @@ return (I$[21]||$incl$(21)).getAudioClip$java_net_URL(url);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:14
+//Created 2018-05-24 08:47:41

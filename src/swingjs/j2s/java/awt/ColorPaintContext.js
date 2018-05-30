@@ -14,7 +14,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I$java_awt_image_ColorModel', function (color, cm) {
 C$.$init$.apply(this);
-this.color = color;
+this.color=color;
 }, 1);
 
 Clazz.newMeth(C$, 'dispose', function () {
@@ -30,4 +30,4 @@ return (I$[1]||$incl$(1)).getRGBdefault();
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:49
+//Created 2018-05-24 08:45:06

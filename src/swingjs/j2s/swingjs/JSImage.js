@@ -15,8 +15,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$IA$I$I$S', function (argb, width, height, src) {
 C$.superclazz.c$$I$I$I.apply(this, [width, height, 2]);
 C$.$init$.apply(this);
-this.src = src;
-this._pix = argb;
+this.src=src;
+this._pix=argb;
 }, 1);
 
 Clazz.newMeth(C$, 'getDOMImage$BA$S', function (b, type) {
@@ -27,9 +27,9 @@ img = new Image(this.width, this.height);
 //if (this.callback) img.onload = this.callback;
 img.src = dataurl;
 }
-this._imgNode = img;
+this._imgNode=img;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:15
+//Created 2018-05-24 08:47:44

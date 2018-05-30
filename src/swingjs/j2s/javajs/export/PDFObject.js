@@ -20,7 +20,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I', function (index) {
 Clazz.super_(C$, this,1);
-this.index = index;
+this.index=index;
 }, 1);
 
 Clazz.newMeth(C$, 'getRef', function () {
@@ -36,7 +36,7 @@ return "Font".equals$O(this.type);
 });
 
 Clazz.newMeth(C$, 'setStream$BA', function (stream) {
-this.stream = stream;
+this.stream=stream;
 });
 
 Clazz.newMeth(C$, 'getDef$S', function (key) {
@@ -44,13 +44,13 @@ return this.dictionary.get$O(key);
 });
 
 Clazz.newMeth(C$, 'addDef$S$O', function (key, value) {
-if (this.dictionary == null ) this.dictionary = Clazz.new_((I$[1]||$incl$(1)));
+if (this.dictionary == null ) this.dictionary=Clazz.new_((I$[1]||$incl$(1)));
 this.dictionary.put$TK$TV(key, value);
-if (key.equals$O("Type")) this.type = (value).substring(1);
+if (key.equals$O("Type")) this.type=(value).substring(1);
 });
 
 Clazz.newMeth(C$, 'setAsStream', function () {
-this.stream = this.toBytes$I$I(0, -1);
+this.stream=this.toBytes$I$I(0, -1);
 this.setLength$I(0);
 });
 
@@ -62,7 +62,7 @@ p$.write$java_io_OutputStream$BA$I.apply(this, [os, s.getBytes(), 0]);
 if (this.dictionary != null ) {
 if (this.dictionary.containsKey$O("Length")) {
 if (this.stream == null ) this.setAsStream();
-streamLen = this.stream.length;
+streamLen=this.stream.length;
 var doDeflate = (streamLen > 1000);
 if (doDeflate) {
 var deflater = Clazz.new_((I$[2]||$incl$(2)).c$$I,[9]);
@@ -70,9 +70,9 @@ var outBytes = Clazz.new_((I$[3]||$incl$(3)).c$$I,[1024]);
 var compBytes = Clazz.new_((I$[4]||$incl$(4)).c$$java_io_ByteArrayOutputStream$java_util_zip_Deflater,[outBytes, deflater]);
 compBytes.write$BA$I$I(this.stream, 0, streamLen);
 compBytes.finish();
-this.stream = outBytes.toByteArray();
+this.stream=outBytes.toByteArray();
 this.dictionary.put$TK$TV("Filter", "/FlateDecode");
-streamLen = this.stream.length;
+streamLen=this.stream.length;
 }this.dictionary.put$TK$TV("Length", "" + streamLen);
 }p$.write$java_io_OutputStream$BA$I.apply(this, [os, p$.getDictionaryText$java_util_Map$S.apply(this, [this.dictionary, "\u000a"]).getBytes(), 0]);
 }if (this.length$() > 0) p$.write$java_io_OutputStream$BA$I.apply(this, [os, this.toString().getBytes(), 0]);
@@ -85,8 +85,8 @@ return this.len;
 });
 
 Clazz.newMeth(C$, 'write$java_io_OutputStream$BA$I', function (os, bytes, nBytes) {
-if (nBytes == 0) nBytes = bytes.length;
-this.len = this.len+(nBytes);
+if (nBytes == 0) nBytes=bytes.length;
+this.len+=nBytes;
 os.write$BA$I$I(bytes, 0, nBytes);
 });
 
@@ -102,7 +102,7 @@ var o = e.getValue();
 if (Clazz.instanceOf(o, "java.util.Map")) {
 sb.append$S((p$.getDictionaryText$java_util_Map$S.apply(this, [o, ""])));
 continue;
-}s = e.getValue();
+}s=e.getValue();
 if (!s.startsWith$S("/")) sb.append$S(" ");
 sb.appendO$O(s);
 }
@@ -111,16 +111,16 @@ return (sb.length$() > 3 ? sb.append$S(">>").append$S(nl).toString() : "");
 
 Clazz.newMeth(C$, 'createSubdict$java_util_Map$S', function (d0, dict) {
 var d = d0.get$O(dict);
-if (d == null ) d0.put$TK$TV(dict, d = Clazz.new_((I$[1]||$incl$(1))));
+if (d == null ) d0.put$TK$TV(dict, d=Clazz.new_((I$[1]||$incl$(1))));
 return d;
 });
 
 Clazz.newMeth(C$, 'addResource$S$S$S', function (type, key, value) {
 var r = p$.createSubdict$java_util_Map$S.apply(this, [this.dictionary, "Resources"]);
-if (type != null ) r = p$.createSubdict$java_util_Map$S.apply(this, [r, type]);
+if (type != null ) r=p$.createSubdict$java_util_Map$S.apply(this, [r, type]);
 r.put$TK$TV(key, value);
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:53

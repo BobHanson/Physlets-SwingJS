@@ -28,10 +28,10 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[2]||$incl$(2)),['
 Clazz.newMeth(C$, 'fireContentsChanged$O$I$I', function (source, index0, index1) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[2]||$incl$(2)),['contentsChanged$javax_swing_event_ListDataEvent','intervalAdded$javax_swing_event_ListDataEvent','intervalRemoved$javax_swing_event_ListDataEvent']) ) {
 if (e == null ) {
-e = Clazz.new_((I$[3]||$incl$(3)).c$$O$I$I$I,[source, 0, index0, index1]);
+e=Clazz.new_((I$[3]||$incl$(3)).c$$O$I$I$I,[source, 0, index0, index1]);
 }(listeners[i + 1]).contentsChanged$javax_swing_event_ListDataEvent(e);
 }}
 });
@@ -39,10 +39,10 @@ e = Clazz.new_((I$[3]||$incl$(3)).c$$O$I$I$I,[source, 0, index0, index1]);
 Clazz.newMeth(C$, 'fireIntervalAdded$O$I$I', function (source, index0, index1) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[2]||$incl$(2)),['contentsChanged$javax_swing_event_ListDataEvent','intervalAdded$javax_swing_event_ListDataEvent','intervalRemoved$javax_swing_event_ListDataEvent']) ) {
 if (e == null ) {
-e = Clazz.new_((I$[3]||$incl$(3)).c$$O$I$I$I,[source, 1, index0, index1]);
+e=Clazz.new_((I$[3]||$incl$(3)).c$$O$I$I$I,[source, 1, index0, index1]);
 }(listeners[i + 1]).intervalAdded$javax_swing_event_ListDataEvent(e);
 }}
 });
@@ -50,10 +50,10 @@ e = Clazz.new_((I$[3]||$incl$(3)).c$$O$I$I$I,[source, 1, index0, index1]);
 Clazz.newMeth(C$, 'fireIntervalRemoved$O$I$I', function (source, index0, index1) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[2]||$incl$(2)),['contentsChanged$javax_swing_event_ListDataEvent','intervalAdded$javax_swing_event_ListDataEvent','intervalRemoved$javax_swing_event_ListDataEvent']) ) {
 if (e == null ) {
-e = Clazz.new_((I$[3]||$incl$(3)).c$$O$I$I$I,[source, 2, index0, index1]);
+e=Clazz.new_((I$[3]||$incl$(3)).c$$O$I$I$I,[source, 2, index0, index1]);
 }(listeners[i + 1]).intervalRemoved$javax_swing_event_ListDataEvent(e);
 }}
 });
@@ -64,4 +64,4 @@ return this.listenerList.getListeners$Class(listenerType);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:22
+//Created 2018-05-24 08:46:05

@@ -23,7 +23,7 @@ this.changeEvent = null;
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.tableColumns = Clazz.new_((I$[2]||$incl$(2)));
+this.tableColumns=Clazz.new_((I$[2]||$incl$(2)));
 this.setSelectionModel$javax_swing_ListSelectionModel(this.createSelectionModel());
 this.setColumnMargin$I(1);
 p$.invalidateWidthCache.apply(this, []);
@@ -56,7 +56,7 @@ var aColumn;
 if (columnIndex == newIndex) {
 this.fireColumnMoved$javax_swing_event_TableColumnModelEvent(Clazz.new_((I$[3]||$incl$(3)).c$$javax_swing_table_TableColumnModel$I$I,[this, columnIndex, newIndex]));
 return;
-}aColumn = this.tableColumns.elementAt$I(columnIndex);
+}aColumn=this.tableColumns.elementAt$I(columnIndex);
 this.tableColumns.removeElementAt$I(columnIndex);
 var selected = this.selectionModel.isSelectedIndex$I(columnIndex);
 this.selectionModel.removeIndexInterval$I$I(columnIndex, columnIndex);
@@ -71,7 +71,7 @@ this.selectionModel.removeSelectionInterval$I$I(newIndex, newIndex);
 
 Clazz.newMeth(C$, 'setColumnMargin$I', function (newMargin) {
 if (newMargin != this.columnMargin) {
-this.columnMargin = newMargin;
+this.columnMargin=newMargin;
 this.fireColumnMarginChanged();
 }});
 
@@ -90,7 +90,7 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Identif
 var aColumn;
 var index = 0;
 while (enumeration.hasMoreElements()){
-aColumn = enumeration.nextElement();
+aColumn=enumeration.nextElement();
 if (identifier.equals$O(aColumn.getIdentifier())) return index;
 index++;
 }
@@ -110,7 +110,7 @@ if (x < 0) {
 return -1;
 }var cc = this.getColumnCount();
 for (var column = 0; column < cc; column++) {
-x = x - this.getColumn$I(column).getWidth();
+x=x - this.getColumn$I(column).getWidth();
 if (x < 0) {
 return column;
 }}
@@ -130,7 +130,7 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Cannot 
 if (newModel !== oldModel ) {
 if (oldModel != null ) {
 oldModel.removeListSelectionListener$javax_swing_event_ListSelectionListener(this);
-}this.selectionModel = newModel;
+}this.selectionModel=newModel;
 newModel.addListSelectionListener$javax_swing_event_ListSelectionListener(this);
 }});
 
@@ -139,7 +139,7 @@ return this.selectionModel;
 });
 
 Clazz.newMeth(C$, 'setColumnSelectionAllowed$Z', function (flag) {
-this.columnSelectionAllowed = flag;
+this.columnSelectionAllowed=flag;
 });
 
 Clazz.newMeth(C$, 'getColumnSelectionAllowed', function () {
@@ -156,7 +156,7 @@ return Clazz.array(Integer.TYPE, [0]);
 var n = 0;
 for (var i = iMin; i <= iMax; i++) {
 if (this.selectionModel.isSelectedIndex$I(i)) {
-rvTmp[n++] = i;
+rvTmp[n++]=i;
 }}
 var rv = Clazz.array(Integer.TYPE, [n]);
 System.arraycopy(rvTmp, 0, rv, 0, n);
@@ -191,7 +191,7 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[4]||$incl$(4)),['
 
 Clazz.newMeth(C$, 'fireColumnAdded$javax_swing_event_TableColumnModelEvent', function (e) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[4]||$incl$(4)),['columnAdded$javax_swing_event_TableColumnModelEvent','columnMarginChanged$javax_swing_event_ChangeEvent','columnMoved$javax_swing_event_TableColumnModelEvent','columnRemoved$javax_swing_event_TableColumnModelEvent','columnSelectionChanged$javax_swing_event_ListSelectionEvent']) ) {
 (listeners[i + 1]).columnAdded$javax_swing_event_TableColumnModelEvent(e);
 }}
@@ -199,7 +199,7 @@ if (listeners[i] === Clazz.getClass((I$[4]||$incl$(4)),['columnAdded$javax_swing
 
 Clazz.newMeth(C$, 'fireColumnRemoved$javax_swing_event_TableColumnModelEvent', function (e) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[4]||$incl$(4)),['columnAdded$javax_swing_event_TableColumnModelEvent','columnMarginChanged$javax_swing_event_ChangeEvent','columnMoved$javax_swing_event_TableColumnModelEvent','columnRemoved$javax_swing_event_TableColumnModelEvent','columnSelectionChanged$javax_swing_event_ListSelectionEvent']) ) {
 (listeners[i + 1]).columnRemoved$javax_swing_event_TableColumnModelEvent(e);
 }}
@@ -207,7 +207,7 @@ if (listeners[i] === Clazz.getClass((I$[4]||$incl$(4)),['columnAdded$javax_swing
 
 Clazz.newMeth(C$, 'fireColumnMoved$javax_swing_event_TableColumnModelEvent', function (e) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[4]||$incl$(4)),['columnAdded$javax_swing_event_TableColumnModelEvent','columnMarginChanged$javax_swing_event_ChangeEvent','columnMoved$javax_swing_event_TableColumnModelEvent','columnRemoved$javax_swing_event_TableColumnModelEvent','columnSelectionChanged$javax_swing_event_ListSelectionEvent']) ) {
 (listeners[i + 1]).columnMoved$javax_swing_event_TableColumnModelEvent(e);
 }}
@@ -215,7 +215,7 @@ if (listeners[i] === Clazz.getClass((I$[4]||$incl$(4)),['columnAdded$javax_swing
 
 Clazz.newMeth(C$, 'fireColumnSelectionChanged$javax_swing_event_ListSelectionEvent', function (e) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[4]||$incl$(4)),['columnAdded$javax_swing_event_TableColumnModelEvent','columnMarginChanged$javax_swing_event_ChangeEvent','columnMoved$javax_swing_event_TableColumnModelEvent','columnRemoved$javax_swing_event_TableColumnModelEvent','columnSelectionChanged$javax_swing_event_ListSelectionEvent']) ) {
 (listeners[i + 1]).columnSelectionChanged$javax_swing_event_ListSelectionEvent(e);
 }}
@@ -223,9 +223,9 @@ if (listeners[i] === Clazz.getClass((I$[4]||$incl$(4)),['columnAdded$javax_swing
 
 Clazz.newMeth(C$, 'fireColumnMarginChanged', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[4]||$incl$(4)),['columnAdded$javax_swing_event_TableColumnModelEvent','columnMarginChanged$javax_swing_event_ChangeEvent','columnMoved$javax_swing_event_TableColumnModelEvent','columnRemoved$javax_swing_event_TableColumnModelEvent','columnSelectionChanged$javax_swing_event_ListSelectionEvent']) ) {
-if (this.changeEvent == null ) this.changeEvent = Clazz.new_((I$[5]||$incl$(5)).c$$O,[this]);
+if (this.changeEvent == null ) this.changeEvent=Clazz.new_((I$[5]||$incl$(5)).c$$O,[this]);
 (listeners[i + 1]).columnMarginChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -251,14 +251,14 @@ return Clazz.new_((I$[6]||$incl$(6)));
 
 Clazz.newMeth(C$, 'recalcWidthCache', function () {
 var enumeration = this.getColumns();
-this.totalColumnWidth = 0;
+this.totalColumnWidth=0;
 while (enumeration.hasMoreElements()){
-this.totalColumnWidth = this.totalColumnWidth+((enumeration.nextElement()).getWidth());
+this.totalColumnWidth+=(enumeration.nextElement()).getWidth();
 }
 });
 
 Clazz.newMeth(C$, 'invalidateWidthCache', function () {
-this.totalColumnWidth = -1;
+this.totalColumnWidth=-1;
 });
 })();
-//Created 2018-05-15 01:02:51
+//Created 2018-05-24 08:46:59

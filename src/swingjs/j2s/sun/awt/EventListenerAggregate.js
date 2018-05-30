@@ -16,7 +16,7 @@ if (listenerClass == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["listener class is null"]);
 }if (!Clazz.getClass((I$[1]||$incl$(1)),[]).isAssignableFrom$Class(listenerClass)) {
 throw Clazz.new_(Clazz.load('java.lang.ClassCastException').c$$S,["listener class " + listenerClass + " is not assignable to EventListener" ]);
-}this.listenerList = Clazz.array(listenerClass, 0);
+}this.listenerList=Clazz.array(listenerClass, 0);
 }, 1);
 
 Clazz.newMeth(C$, 'getListenerClass', function () {
@@ -29,8 +29,8 @@ if (!listenerClass.isInstance$O(listener)) {
 throw Clazz.new_(Clazz.load('java.lang.ClassCastException').c$$S,["listener " + listener + " is not " + "an instance of listener class " + listenerClass ]);
 }var tmp = Clazz.array(listenerClass, this.listenerList.length + 1);
 System.arraycopy(this.listenerList, 0, tmp, 0, this.listenerList.length);
-tmp[this.listenerList.length] = listener;
-this.listenerList = tmp;
+tmp[this.listenerList.length]=listener;
+this.listenerList=tmp;
 });
 
 Clazz.newMeth(C$, 'remove$java_util_EventListener', function (listener) {
@@ -42,7 +42,7 @@ if (this.listenerList[i].equals$O(listener)) {
 var tmp = Clazz.array(listenerClass, this.listenerList.length - 1);
 System.arraycopy(this.listenerList, 0, tmp, 0, i);
 System.arraycopy(this.listenerList, i + 1, tmp, i, this.listenerList.length - i - 1 );
-this.listenerList = tmp;
+this.listenerList=tmp;
 return true;
 }}
 return false;
@@ -66,4 +66,4 @@ return this.listenerList.length == 0;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:21

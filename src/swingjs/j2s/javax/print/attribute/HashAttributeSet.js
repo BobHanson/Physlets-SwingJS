@@ -26,11 +26,11 @@ s.writeObject$O(attrs[i]);
 
 Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream', function (s) {
 s.defaultReadObject();
-this.attrMap = Clazz.new_((I$[1]||$incl$(1)));
+this.attrMap=Clazz.new_((I$[1]||$incl$(1)));
 var count = s.readInt();
 var attr;
 for (var i = 0; i < count; i++) {
-attr = s.readObject();
+attr=s.readObject();
 this.add$javax_print_attribute_Attribute(attr);
 }
 });
@@ -55,14 +55,14 @@ Clazz.newMeth(C$, 'c$$Class', function (interfaceName) {
 C$.$init$.apply(this);
 if (interfaceName == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["null interface"]);
-}this.myInterface = interfaceName;
+}this.myInterface=interfaceName;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_print_attribute_Attribute$Class', function (attribute, interfaceName) {
 C$.$init$.apply(this);
 if (interfaceName == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["null interface"]);
-}this.myInterface = interfaceName;
+}this.myInterface=interfaceName;
 this.add$javax_print_attribute_Attribute(attribute);
 }, 1);
 
@@ -70,7 +70,7 @@ Clazz.newMeth(C$, 'c$$javax_print_attribute_AttributeA$Class', function (attribu
 C$.$init$.apply(this);
 if (interfaceName == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["null interface"]);
-}this.myInterface = interfaceName;
+}this.myInterface=interfaceName;
 var n = attributes == null  ? 0 : attributes.length;
 for (var i = 0; i < n; ++i) {
 this.add$javax_print_attribute_Attribute(attributes[i]);
@@ -79,7 +79,7 @@ this.add$javax_print_attribute_Attribute(attributes[i]);
 
 Clazz.newMeth(C$, 'c$$javax_print_attribute_AttributeSet$Class', function (attributes, interfaceName) {
 C$.$init$.apply(this);
-this.myInterface = interfaceName;
+this.myInterface=interfaceName;
 if (attributes != null ) {
 var attribArray = attributes.toArray();
 var n = attribArray == null  ? 0 : attribArray.length;
@@ -119,7 +119,7 @@ var result = false;
 for (var i = 0; i < attrs.length; i++) {
 var newValue = (I$[3]||$incl$(3)).verifyAttributeValue$O$Class(attrs[i], this.myInterface);
 var oldValue = this.attrMap.put$TK$TV(newValue.getCategory(), newValue);
-result = (!newValue.equals$O(oldValue)) || result ;
+result=(!newValue.equals$O(oldValue)) || result ;
 }
 return result;
 });
@@ -160,9 +160,9 @@ Clazz.newMeth(C$, 'hashCode', function () {
 var hcode = 0;
 var attrs = this.toArray();
 for (var i = 0; i < attrs.length; i++) {
-hcode = hcode+(attrs[i].hashCode());
+hcode+=attrs[i].hashCode();
 }
 return hcode;
 });
 })();
-//Created 2018-05-15 01:02:21
+//Created 2018-05-24 08:46:00

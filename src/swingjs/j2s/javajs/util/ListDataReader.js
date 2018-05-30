@@ -20,8 +20,8 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setData$O', function (data) {
-this.data = data;
-this.len = this.data.size();
+this.data=data;
+this.len=this.data.size();
 return this;
 });
 
@@ -34,11 +34,11 @@ return (this.pt < this.len ? this.data.get$I(this.pt++) : null);
 });
 
 Clazz.newMeth(C$, 'mark$J', function (ptr) {
-this.ptMark = this.pt;
+this.ptMark=this.pt;
 });
 
 Clazz.newMeth(C$, 'reset', function () {
-this.pt = this.ptMark;
+this.pt=this.ptMark;
 });
 })();
-//Created 2018-05-15 01:02:18
+//Created 2018-05-24 08:45:56

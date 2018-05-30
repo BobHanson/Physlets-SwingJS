@@ -11,7 +11,7 @@ C$.$clinit$ = function() {Clazz.load(C$, 1);
 {
 var iLAFs = Clazz.new_((I$[1]||$incl$(1)).c$$I,[4]);
 iLAFs.add$TE(Clazz.new_((I$[2]||$incl$(2)).c$$S$S,["HTML5", "swingjs.plaf.HTML5LookAndFeel"]));
-C$.installedLAFs = iLAFs.toArray$TTA(Clazz.array((I$[2]||$incl$(2)), [iLAFs.size()]));
+C$.installedLAFs=iLAFs.toArray$TTA(Clazz.array((I$[2]||$incl$(2)), [iLAFs.size()]));
 }
 ;
 }
@@ -40,7 +40,7 @@ Clazz.newMeth(C$, 'installLookAndFeel$S$S', function (name, className) {
 }, 1);
 
 Clazz.newMeth(C$, 'getLookAndFeel', function () {
-return (C$.laf == null  ? (C$.laf = (I$[3]||$incl$(3)).getInstance$S("swingjs.plaf.HTML5LookAndFeel")) : C$.laf);
+return (C$.laf == null  ? (C$.laf=(I$[3]||$incl$(3)).getInstance$S("swingjs.plaf.HTML5LookAndFeel")) : C$.laf);
 }, 1);
 
 Clazz.newMeth(C$, 'setLookAndFeel$javax_swing_LookAndFeel', function (newLookAndFeel) {
@@ -172,7 +172,7 @@ return Clazz.array((I$[6]||$incl$(6)), [0]);
 
 Clazz.newMeth(C$, 'maybeInitialize', function () {
 if (C$.uid == null ) {
-C$.uid = (I$[7]||$incl$(7)).getLookAndFeelDefaults();
+C$.uid=(I$[7]||$incl$(7)).getLookAndFeelDefaults();
 C$.initialize();
 }}, 1);
 
@@ -196,8 +196,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S$S', function (name, className) {
 C$.$init$.apply(this);
-this.name = name;
-this.className = className;
+this.name=name;
+this.className=className;
 }, 1);
 
 Clazz.newMeth(C$, 'getName', function () {
@@ -217,4 +217,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:42
+//Created 2018-05-24 08:46:44

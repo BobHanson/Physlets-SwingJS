@@ -13,18 +13,18 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'setResizer$swingjs_plaf_Resizer', function (resizer) {
-this.resizer = resizer;
+this.resizer=resizer;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.isRootPane = this.isContainer = true;
+this.isRootPane=this.isContainer=true;
 this.setDoc();
 }, 1);
 
 Clazz.newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.domNode = this.newDOMObject$S$S$SA("div", this.id, []);
+this.domNode=this.newDOMObject$S$S$SA("div", this.id, []);
 }return this.domNode;
 });
 
@@ -43,4 +43,4 @@ var resizer = this.jc.getFrameViewer().getResizer();
 if (resizer != null ) resizer.setPosition$I$I(0, 0);
 });
 })();
-//Created 2018-05-15 01:03:25
+//Created 2018-05-24 08:47:57

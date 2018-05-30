@@ -43,8 +43,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_font_TextAttribute', function (ta) {
 C$.$init$.apply(this);
-this.mask = 1 << this.ordinal();
-this.att = ta;
+this.mask=1 << this.ordinal();
+this.att=ta;
 }, 1);
 
 Clazz.newMeth(C$, 'forAttribute$java_text_AttributedCharacterIterator_Attribute', function (ta) {
@@ -63,4 +63,4 @@ Clazz.newMeth(C$);
 var $vals=[];
 Clazz.newMeth(C$, 'values', function() { return $vals }, 1);
 })();
-//Created 2018-05-15 01:03:09
+//Created 2018-05-24 08:47:30

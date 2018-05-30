@@ -19,9 +19,9 @@ this.$size = 0;
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.voidLink = Clazz.new_((I$[1]||$incl$(1)).c$$TET$java_util_LinkedList_Link$java_util_LinkedList_Link,[null, null, null]);
-this.voidLink.previous = this.voidLink;
-this.voidLink.next = this.voidLink;
+this.voidLink=Clazz.new_((I$[1]||$incl$(1)).c$$TET$java_util_LinkedList_Link$java_util_LinkedList_Link,[null, null, null]);
+this.voidLink.previous=this.voidLink;
+this.voidLink.next=this.voidLink;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Collection', function (collection) {
@@ -34,16 +34,16 @@ if (0 <= location && location <= this.$size ) {
 var link = this.voidLink;
 if (location < ((this.$size/2|0))) {
 for (var i = 0; i <= location; i++) {
-link = link.next;
+link=link.next;
 }
 } else {
 for (var i = this.$size; i > location; i--) {
-link = link.previous;
+link=link.previous;
 }
 }var previous = link.previous;
 var newLink = Clazz.new_((I$[1]||$incl$(1)).c$$TET$java_util_LinkedList_Link$java_util_LinkedList_Link,[object, previous, link]);
-previous.next = newLink;
-link.previous = newLink;
+previous.next=newLink;
+link.previous=newLink;
 this.$size++;
 this.modCount++;
 } else {
@@ -53,8 +53,8 @@ throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException'));
 Clazz.newMeth(C$, ['add$TE'], function (object) {
 var oldLast = this.voidLink.previous;
 var newLink = Clazz.new_((I$[1]||$incl$(1)).c$$TET$java_util_LinkedList_Link$java_util_LinkedList_Link,[object, oldLast, this.voidLink]);
-this.voidLink.previous = newLink;
-oldLast.next = newLink;
+this.voidLink.previous=newLink;
+oldLast.next=newLink;
 this.$size++;
 this.modCount++;
 return true;
@@ -69,21 +69,21 @@ return false;
 }var previous = this.voidLink;
 if (location < ((this.$size/2|0))) {
 for (var i = 0; i < location; i++) {
-previous = previous.next;
+previous=previous.next;
 }
 } else {
 for (var i = this.$size; i >= location; i--) {
-previous = previous.previous;
+previous=previous.previous;
 }
 }var next = previous.next;
 for (var e, $e = collection.iterator(); $e.hasNext()&&((e=$e.next()),1);) {
 var newLink = Clazz.new_((I$[1]||$incl$(1)).c$$TET$java_util_LinkedList_Link$java_util_LinkedList_Link,[e, previous, null]);
-previous.next = newLink;
-previous = newLink;
+previous.next=newLink;
+previous=newLink;
 }
-previous.next = next;
-next.previous = previous;
-this.$size = this.$size+(adding);
+previous.next=next;
+next.previous=previous;
+this.$size+=adding;
 this.modCount++;
 return true;
 });
@@ -95,12 +95,12 @@ return false;
 }var previous = this.voidLink.previous;
 for (var e, $e = collection.iterator(); $e.hasNext()&&((e=$e.next()),1);) {
 var newLink = Clazz.new_((I$[1]||$incl$(1)).c$$TET$java_util_LinkedList_Link$java_util_LinkedList_Link,[e, previous, null]);
-previous.next = newLink;
-previous = newLink;
+previous.next=newLink;
+previous=newLink;
 }
-previous.next = this.voidLink;
-this.voidLink.previous = previous;
-this.$size = this.$size+(adding);
+previous.next=this.voidLink;
+this.voidLink.previous=previous;
+this.$size+=adding;
 this.modCount++;
 return true;
 });
@@ -108,8 +108,8 @@ return true;
 Clazz.newMeth(C$, ['addFirst$TE'], function (object) {
 var oldFirst = this.voidLink.next;
 var newLink = Clazz.new_((I$[1]||$incl$(1)).c$$TET$java_util_LinkedList_Link$java_util_LinkedList_Link,[object, this.voidLink, oldFirst]);
-this.voidLink.next = newLink;
-oldFirst.previous = newLink;
+this.voidLink.next=newLink;
+oldFirst.previous=newLink;
 this.$size++;
 this.modCount++;
 });
@@ -117,17 +117,17 @@ this.modCount++;
 Clazz.newMeth(C$, ['addLast$TE'], function (object) {
 var oldLast = this.voidLink.previous;
 var newLink = Clazz.new_((I$[1]||$incl$(1)).c$$TET$java_util_LinkedList_Link$java_util_LinkedList_Link,[object, oldLast, this.voidLink]);
-this.voidLink.previous = newLink;
-oldLast.next = newLink;
+this.voidLink.previous=newLink;
+oldLast.next=newLink;
 this.$size++;
 this.modCount++;
 });
 
 Clazz.newMeth(C$, 'clear', function () {
 if (this.$size > 0) {
-this.$size = 0;
-this.voidLink.next = this.voidLink;
-this.voidLink.previous = this.voidLink;
+this.$size=0;
+this.voidLink.next=this.voidLink;
+this.voidLink.previous=this.voidLink;
 this.modCount++;
 }});
 
@@ -141,13 +141,13 @@ if (object != null ) {
 while (link !== this.voidLink ){
 if (object.equals$O(link.data)) {
 return true;
-}link = link.next;
+}link=link.next;
 }
 } else {
 while (link !== this.voidLink ){
 if (link.data == null ) {
 return true;
-}link = link.next;
+}link=link.next;
 }
 }return false;
 });
@@ -157,11 +157,11 @@ if (0 <= location && location < this.$size ) {
 var link = this.voidLink;
 if (location < ((this.$size/2|0))) {
 for (var i = 0; i <= location; i++) {
-link = link.next;
+link=link.next;
 }
 } else {
 for (var i = this.$size; i > location; i--) {
-link = link.previous;
+link=link.previous;
 }
 }return link.data;
 }throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException'));
@@ -188,14 +188,14 @@ if (object != null ) {
 while (link !== this.voidLink ){
 if (object.equals$O(link.data)) {
 return pos;
-}link = link.next;
+}link=link.next;
 pos++;
 }
 } else {
 while (link !== this.voidLink ){
 if (link.data == null ) {
 return pos;
-}link = link.next;
+}link=link.next;
 pos++;
 }
 }return -1;
@@ -209,14 +209,14 @@ while (link !== this.voidLink ){
 pos--;
 if (object.equals$O(link.data)) {
 return pos;
-}link = link.previous;
+}link=link.previous;
 }
 } else {
 while (link !== this.voidLink ){
 pos--;
 if (link.data == null ) {
 return pos;
-}link = link.previous;
+}link=link.previous;
 }
 }return -1;
 });
@@ -230,16 +230,16 @@ if (0 <= location && location < this.$size ) {
 var link = this.voidLink;
 if (location < ((this.$size/2|0))) {
 for (var i = 0; i <= location; i++) {
-link = link.next;
+link=link.next;
 }
 } else {
 for (var i = this.$size; i > location; i--) {
-link = link.previous;
+link=link.previous;
 }
 }var previous = link.previous;
 var next = link.next;
-previous.next = next;
-next.previous = previous;
+previous.next=next;
+next.previous=previous;
 this.$size--;
 this.modCount++;
 return link.data;
@@ -250,18 +250,18 @@ Clazz.newMeth(C$, 'remove$O', function (object) {
 var link = this.voidLink.next;
 if (object != null ) {
 while (link !== this.voidLink  && !object.equals$O(link.data) ){
-link = link.next;
+link=link.next;
 }
 } else {
 while (link !== this.voidLink  && link.data != null  ){
-link = link.next;
+link=link.next;
 }
 }if (link === this.voidLink ) {
 return false;
 }var next = link.next;
 var previous = link.previous;
-previous.next = next;
-next.previous = previous;
+previous.next=next;
+next.previous=previous;
 this.$size--;
 this.modCount++;
 return true;
@@ -271,8 +271,8 @@ Clazz.newMeth(C$, 'removeFirst', function () {
 var first = this.voidLink.next;
 if (first !== this.voidLink ) {
 var next = first.next;
-this.voidLink.next = next;
-next.previous = this.voidLink;
+this.voidLink.next=next;
+next.previous=this.voidLink;
 this.$size--;
 this.modCount++;
 return first.data;
@@ -283,8 +283,8 @@ Clazz.newMeth(C$, 'removeLast', function () {
 var last = this.voidLink.previous;
 if (last !== this.voidLink ) {
 var previous = last.previous;
-this.voidLink.previous = previous;
-previous.next = this.voidLink;
+this.voidLink.previous=previous;
+previous.next=this.voidLink;
 this.$size--;
 this.modCount++;
 return last.data;
@@ -296,14 +296,14 @@ if (0 <= location && location < this.$size ) {
 var link = this.voidLink;
 if (location < ((this.$size/2|0))) {
 for (var i = 0; i <= location; i++) {
-link = link.next;
+link=link.next;
 }
 } else {
 for (var i = this.$size; i > location; i--) {
-link = link.previous;
+link=link.previous;
 }
 }var result = link.data;
-link.data = object;
+link.data=object;
 return result;
 }throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException'));
 });
@@ -339,8 +339,8 @@ var index = 0;
 var contents = Clazz.array(java.lang.Object, [this.$size]);
 var link = this.voidLink.next;
 while (link !== this.voidLink ){
-contents[index++] = link.data;
-link = link.next;
+contents[index++]=link.data;
+link=link.next;
 }
 return contents;
 });
@@ -349,14 +349,14 @@ Clazz.newMeth(C$, 'toArray$TTA', function (contents) {
 var index = 0;
 if (this.$size > contents.length) {
 var ct = contents.getClass().getComponentType();
-contents = Clazz.array(ct, this.$size);
+contents=Clazz.array(ct, this.$size);
 }var link = this.voidLink.next;
 while (link !== this.voidLink ){
-contents[index++] = link.data;
-link = link.next;
+contents[index++]=link.data;
+link=link.next;
 }
 if (index < contents.length) {
-contents[index] = null;
+contents[index]=null;
 }return contents;
 });
 
@@ -371,16 +371,16 @@ stream.writeObject$O(it.next());
 
 Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream', function (stream) {
 stream.defaultReadObject();
-this.$size = stream.readInt();
-this.voidLink = Clazz.new_((I$[1]||$incl$(1)).c$$TET$java_util_LinkedList_Link$java_util_LinkedList_Link,[null, null, null]);
+this.$size=stream.readInt();
+this.voidLink=Clazz.new_((I$[1]||$incl$(1)).c$$TET$java_util_LinkedList_Link$java_util_LinkedList_Link,[null, null, null]);
 var link = this.voidLink;
 for (var i = this.$size; --i >= 0; ) {
 var nextLink = Clazz.new_((I$[1]||$incl$(1)).c$$TET$java_util_LinkedList_Link$java_util_LinkedList_Link,[stream.readObject(), link, null]);
-link.next = nextLink;
-link = nextLink;
+link.next=nextLink;
+link=nextLink;
 }
-link.next = this.voidLink;
-this.voidLink.previous = link;
+link.next=this.voidLink;
+this.voidLink.previous=link;
 });
 ;
 (function(){var C$=Clazz.newClass(P$.LinkedList, "Link", function(){
@@ -399,9 +399,9 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$TET$java_util_LinkedList_Link$java_util_LinkedList_Link', function (o, p, n) {
 C$.$init$.apply(this);
-this.data = o;
-this.previous = p;
-this.next = n;
+this.data=o;
+this.previous=p;
+this.next=n;
 }, 1);
 
 Clazz.newMeth(C$);
@@ -428,17 +428,17 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_util_LinkedList$I', function (object, location) {
 C$.$init$.apply(this);
-this.list = object;
-this.expectedModCount = this.list.modCount;
+this.list=object;
+this.expectedModCount=this.list.modCount;
 if (0 <= location && location <= this.list.$size ) {
-this.link = this.list.voidLink;
+this.link=this.list.voidLink;
 if (location < (this.list.$size/2|0)) {
-for (this.pos = -1; this.pos + 1 < location; this.pos++) {
-this.link = this.link.next;
+for (this.pos=-1; this.pos + 1 < location; this.pos++) {
+this.link=this.link.next;
 }
 } else {
-for (this.pos = this.list.$size; this.pos >= location; this.pos--) {
-this.link = this.link.previous;
+for (this.pos=this.list.$size; this.pos >= location; this.pos--) {
+this.link=this.link.previous;
 }
 }} else {
 throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException'));
@@ -448,10 +448,10 @@ Clazz.newMeth(C$, ['add$TET','add$TE'], function (object) {
 if (this.expectedModCount == this.list.modCount) {
 var next = this.link.next;
 var newLink = Clazz.new_((I$[1]||$incl$(1)).c$$TET$java_util_LinkedList_Link$java_util_LinkedList_Link,[object, this.link, next]);
-this.link.next = newLink;
-next.previous = newLink;
-this.link = newLink;
-this.lastLink = null;
+this.link.next=newLink;
+next.previous=newLink;
+this.link=newLink;
+this.lastLink=null;
 this.pos++;
 this.expectedModCount++;
 this.list.$size++;
@@ -472,7 +472,7 @@ Clazz.newMeth(C$, 'next', function () {
 if (this.expectedModCount == this.list.modCount) {
 var next = this.link.next;
 if (next !== this.list.voidLink ) {
-this.lastLink = this.link = next;
+this.lastLink=this.link=next;
 this.pos++;
 return this.link.data;
 }throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
@@ -486,8 +486,8 @@ return this.pos + 1;
 Clazz.newMeth(C$, 'previous', function () {
 if (this.expectedModCount == this.list.modCount) {
 if (this.link !== this.list.voidLink ) {
-this.lastLink = this.link;
-this.link = this.link.previous;
+this.lastLink=this.link;
+this.link=this.link.previous;
 this.pos--;
 return this.lastLink.data;
 }throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
@@ -503,12 +503,12 @@ if (this.expectedModCount == this.list.modCount) {
 if (this.lastLink != null ) {
 var next = this.lastLink.next;
 var previous = this.lastLink.previous;
-next.previous = previous;
-previous.next = next;
+next.previous=previous;
+previous.next=next;
 if (this.lastLink === this.link ) {
 this.pos--;
-}this.link = previous;
-this.lastLink = null;
+}this.link=previous;
+this.lastLink=null;
 this.expectedModCount++;
 this.list.$size--;
 this.list.modCount++;
@@ -521,7 +521,7 @@ throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
 Clazz.newMeth(C$, ['set$TET','set$TE'], function (object) {
 if (this.expectedModCount == this.list.modCount) {
 if (this.lastLink != null ) {
-this.lastLink.data = object;
+this.lastLink.data=object;
 } else {
 throw Clazz.new_(Clazz.load('java.lang.IllegalStateException'));
 }} else {
@@ -531,4 +531,4 @@ throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:13
+//Created 2018-05-24 08:45:47

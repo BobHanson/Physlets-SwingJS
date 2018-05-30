@@ -19,14 +19,14 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_dnd_DragGestureRecognizer$I$java_awt_Point$java_util_List', function (dgr, act, ori, evs) {
 C$.superclazz.c$.apply(this, [dgr]);
 C$.$init$.apply(this);
-if ((this.component = dgr.getComponent()) == null ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["null component"]);
-if ((this.dragSource = dgr.getDragSource()) == null ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["null DragSource"]);
+if ((this.component=dgr.getComponent()) == null ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["null component"]);
+if ((this.dragSource=dgr.getDragSource()) == null ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["null DragSource"]);
 if (evs == null  || evs.isEmpty() ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["null or empty list of events"]);
 if (act != 1 && act != 2  && act != 1073741824 ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["bad action"]);
 if (ori == null ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["null origin"]);
-this.events = evs;
-this.action = act;
-this.origin = ori;
+this.events=evs;
+this.action=act;
+this.origin=ori;
 }, 1);
 
 Clazz.newMeth(C$, 'getSourceAsDragGestureRecognizer', function () {
@@ -79,4 +79,4 @@ this.dragSource.startDrag$java_awt_dnd_DragGestureEvent$java_awt_Cursor$java_awt
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:55
+//Created 2018-05-24 08:45:15

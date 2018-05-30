@@ -15,11 +15,11 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$swingjs_JSAppletViewer$ThreadGroup$S', function (ap, group, name) {
 C$.superclazz.c$$ThreadGroup$S.apply(this, [group, name]);
 C$.$init$.apply(this);
-this.appletViewer = ap;
+this.appletViewer=ap;
 }, 1);
 
 Clazz.newMeth(C$, 'run1$I', function (mode) {
-mode = this.appletViewer.run1$I(mode);
+mode=this.appletViewer.run1$I(mode);
 if (mode != 2) this.dispatchAndReturn$Runnable$I(null, mode);
 });
 
@@ -68,4 +68,4 @@ Clazz.newMeth(C$, 'doFinally', function () {
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:13
+//Created 2018-05-24 08:47:40

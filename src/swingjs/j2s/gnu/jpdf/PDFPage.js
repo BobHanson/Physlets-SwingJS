@@ -33,14 +33,14 @@ this.xobjects = Clazz.new_((I$[1]||$incl$(1)));
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$$S.apply(this, ["/Page"]);
 C$.$init$.apply(this);
-this.pageFormat = C$.DEF_FORMAT;
-this.contents = Clazz.new_((I$[1]||$incl$(1)));
-this.thumbnail = null;
-this.annotations = Clazz.new_((I$[1]||$incl$(1)));
-this.resources = Clazz.new_((I$[1]||$incl$(1)));
-this.imageResources = Clazz.new_((I$[1]||$incl$(1)));
-this.fonts = Clazz.new_((I$[1]||$incl$(1)));
-this.procset = null;
+this.pageFormat=C$.DEF_FORMAT;
+this.contents=Clazz.new_((I$[1]||$incl$(1)));
+this.thumbnail=null;
+this.annotations=Clazz.new_((I$[1]||$incl$(1)));
+this.resources=Clazz.new_((I$[1]||$incl$(1)));
+this.imageResources=Clazz.new_((I$[1]||$incl$(1)));
+this.fonts=Clazz.new_((I$[1]||$incl$(1)));
+this.procset=null;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (orientation) {
@@ -50,7 +50,7 @@ this.setOrientation$I(orientation);
 
 Clazz.newMeth(C$, 'c$$java_awt_print_PageFormat', function (pageFormat) {
 C$.c$.apply(this, []);
-this.pageFormat = pageFormat;
+this.pageFormat=pageFormat;
 }, 1);
 
 Clazz.newMeth(C$, 'addToProcset$S', function (proc) {
@@ -156,7 +156,7 @@ this.imageResources.addElement$TE(resource);
 });
 
 Clazz.newMeth(C$, 'setThumbnail$gnu_jpdf_PDFObject', function (thumbnail) {
-this.thumbnail = thumbnail;
+this.thumbnail=thumbnail;
 });
 
 Clazz.newMeth(C$, 'addOutline$S', function (title) {
@@ -241,7 +241,7 @@ var ob = this.contents.elementAt$I(0);
 
 Clazz.newMeth(C$, 'addProcset', function () {
 if (this.procset == null ) {
-this.pdfDocument.add$gnu_jpdf_PDFObject(this.procset = Clazz.new_((I$[10]||$incl$(10)), [this, null]));
+this.pdfDocument.add$gnu_jpdf_PDFObject(this.procset=Clazz.new_((I$[10]||$incl$(10)), [this, null]));
 this.resources.addElement$TE("/ProcSet " + this.procset);
 }});
 
@@ -255,8 +255,8 @@ return this.cxy$I$I(x, y)[0];
 
 Clazz.newMeth(C$, 'cxy$I$I', function (x, y) {
 var r = Clazz.array(Integer.TYPE, [2]);
-r[0] = x;
-r[1] = (this.pageFormat.getHeight()|0) - y;
+r[0]=x;
+r[1]=(this.pageFormat.getHeight()|0) - y;
 return r;
 });
 ;
@@ -278,7 +278,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$$S.apply(this, [null]);
 C$.$init$.apply(this);
-this.set = Clazz.new_((I$[1]||$incl$(1)));
+this.set=Clazz.new_((I$[1]||$incl$(1)));
 this.set.addElement$TE("/PDF");
 }, 1);
 
@@ -297,4 +297,4 @@ for (var str, $str = this.set.iterator(); $str.hasNext()&&((str=$str.next()),1);
 });
 })()
 })();
-//Created 2018-05-15 01:01:47
+//Created 2018-05-24 08:45:03

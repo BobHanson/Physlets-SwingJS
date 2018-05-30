@@ -34,7 +34,7 @@ C$.superclazz.prototype.addNotify.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'getOrCreatePeer', function () {
-return (this.ui == null  ? null : this.peer == null  ? (this.peer = this.getToolkit().createPanel$java_awt_Panel(this)) : this.peer);
+return (this.ui == null  ? null : this.peer == null  ? (this.peer=this.getToolkit().createPanel$java_awt_Panel(this)) : this.peer);
 });
 })();
-//Created 2018-05-15 01:01:53
+//Created 2018-05-24 08:45:12

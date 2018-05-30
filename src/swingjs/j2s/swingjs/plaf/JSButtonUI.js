@@ -20,13 +20,13 @@ this.shiftOffset = 0;
 }, 1);
 
 Clazz.newMeth(C$, 'updateDOMNode', function () {
-this.isSimpleButton = true;
-this.allowPaintedBackground = false;
+this.isSimpleButton=true;
+this.allowPaintedBackground=false;
 if (this.domNode == null ) {
-this.domNode = this.$enableNode = this.newDOMObject$S$S$SA("button", this.id, ["type", "button"]);
+this.domNode=this.$enableNode=this.newDOMObject$S$S$SA("button", this.id, ["type", "button"]);
 (I$[1]||$incl$(1)).setStyles(this.domNode, ["lineHeight", "0.8"]);
-this.iconNode = this.newDOMObject$S$S$SA("span", this.id + "_icon", []);
-this.textNode = this.newDOMObject$S$S$SA("span", this.id + "_btn", []);
+this.iconNode=this.newDOMObject$S$S$SA("span", this.id + "_icon", []);
+this.textNode=this.newDOMObject$S$S$SA("span", this.id + "_btn", []);
 this.domNode.appendChild(this.iconNode);
 this.domNode.appendChild(this.textNode);
 this.setDataComponent$swingjs_api_js_DOMNode(this.domNode);
@@ -43,15 +43,15 @@ var text = this.button.getText();
 var icon = this.button.getIcon();
 var gap = this.button.getIconTextGap();
 if (("|").equals$O(text) || ("-").equals$O(text) ) {
-text = null;
-}this.itemNode = this.newDOMObject$S$S$SA("li", this.id + type, []);
+text=null;
+}this.itemNode=this.newDOMObject$S$S$SA("li", this.id + type, []);
 if (text == null  && icon == null  ) return this.itemNode;
 var aNode = this.newDOMObject$S$S$SA("a", this.id + type + "_a" , []);
 (I$[1]||$incl$(1)).setStyles(aNode, ["margin", "1px 4px 1px 4px"]);
 this.itemNode.appendChild(aNode);
 if (label == null ) {
-if (this.iconNode == null ) this.iconNode = this.newDOMObject$S$S$SA("span", this.id + "_icon", []);
-if (this.textNode == null ) this.textNode = this.newDOMObject$S$S$SA("span", this.id + "_text", []);
+if (this.iconNode == null ) this.iconNode=this.newDOMObject$S$S$SA("span", this.id + "_icon", []);
+if (this.textNode == null ) this.textNode=this.newDOMObject$S$S$SA("span", this.id + "_text", []);
 this.$$O(this.iconNode).attr("role", "menucloser");
 this.$$O(this.textNode).attr("role", "menucloser");
 this.setDataUI$swingjs_api_js_DOMNode(this.iconNode);
@@ -59,7 +59,7 @@ this.setDataUI$swingjs_api_js_DOMNode(this.textNode);
 aNode.appendChild(this.iconNode);
 aNode.appendChild(this.textNode);
 this.setCssFont$swingjs_api_js_DOMNode$java_awt_Font(aNode, this.c.getFont());
-this.$enableNode = aNode;
+this.$enableNode=aNode;
 this.setIconAndText$S$javax_swing_ImageIcon$I$S("btn", icon, gap, text);
 } else {
 aNode.appendChild(label);
@@ -81,7 +81,7 @@ return true;
 });
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.button = jc;
+this.button=jc;
 this.installDefaults$javax_swing_AbstractButton(this.button);
 this.installListeners$javax_swing_AbstractButton(this.button);
 this.installKeyboardActions$javax_swing_AbstractButton(this.button);
@@ -140,7 +140,7 @@ return "Button.";
 
 Clazz.newMeth(C$, 'installDefaults$javax_swing_AbstractButton', function (b) {
 var pp = this.getPropertyPrefix();
-this.defaultTextShiftOffset = (I$[5]||$incl$(5)).getInt$O(pp + "textShiftOffset");
+this.defaultTextShiftOffset=(I$[5]||$incl$(5)).getInt$O(pp + "textShiftOffset");
 if (b.getMargin() == null  || (Clazz.instanceOf(b.getMargin(), "javax.swing.plaf.UIResource")) ) {
 b.setMargin$java_awt_Insets((I$[5]||$incl$(5)).getInsets$O(pp + "margin"));
 }(I$[6]||$incl$(6)).installColorsAndFont$javax_swing_JComponent$S$S$S(b, pp + "background", pp + "foreground", pp + "font");
@@ -153,9 +153,9 @@ return Clazz.new_((I$[7]||$incl$(7)).c$$I$I,[(this.itemNode == null  ? 0 : 10), 
 });
 
 Clazz.newMeth(C$, 'setInnerComponentBounds$I$I', function (width, height) {
-if (this.isSimpleButton && (this.imageNode == null  || this.button.getText() == null  ) ) (I$[1]||$incl$(1)).setSize(this.innerNode = this.domNode, width, height);
+if (this.isSimpleButton && (this.imageNode == null  || this.button.getText() == null  ) ) (I$[1]||$incl$(1)).setSize(this.innerNode=this.domNode, width, height);
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:20
+//Created 2018-05-24 08:47:52

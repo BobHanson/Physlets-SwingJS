@@ -9,17 +9,17 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'initValues', function () {
-this.swatchSize = (I$[15]||$incl$(15)).getDimension$O("ColorChooser.swatchesSwatchSize");
-this.numSwatches = Clazz.new_((I$[14]||$incl$(14)).c$$I$I,[31, 9]);
-this.gap = Clazz.new_((I$[14]||$incl$(14)).c$$I$I,[1, 1]);
+this.swatchSize=(I$[15]||$incl$(15)).getDimension$O("ColorChooser.swatchesSwatchSize");
+this.numSwatches=Clazz.new_((I$[14]||$incl$(14)).c$$I$I,[31, 9]);
+this.gap=Clazz.new_((I$[14]||$incl$(14)).c$$I$I,[1, 1]);
 });
 
 Clazz.newMeth(C$, 'initColors', function () {
 var rawValues = p$.initRawValues.apply(this, []);
 var numColors = (rawValues.length/3|0);
-this.colors = Clazz.array((I$[11]||$incl$(11)), [numColors]);
+this.colors=Clazz.array((I$[11]||$incl$(11)), [numColors]);
 for (var i = 0; i < numColors; i++) {
-this.colors[i] = Clazz.new_((I$[11]||$incl$(11)).c$$I$I$I,[rawValues[(i * 3)], rawValues[(i * 3) + 1], rawValues[(i * 3) + 2]]);
+this.colors[i]=Clazz.new_((I$[11]||$incl$(11)).c$$I$I$I,[rawValues[(i * 3)], rawValues[(i * 3) + 1], rawValues[(i * 3) + 2]]);
 }
 });
 
@@ -30,4 +30,4 @@ return rawValues;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:44
+//Created 2018-05-24 08:46:47

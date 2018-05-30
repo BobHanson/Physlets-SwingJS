@@ -52,4 +52,4 @@ this.$finals.textListener.textValueChanged$java_awt_event_TextEvent(Clazz.new_((
 ), Clazz.new_((I$[2]||$incl$(2)).$init$, [this, {textListener: textListener}])));
 });
 })();
-//Created 2018-05-15 01:01:45
+//Created 2018-05-24 08:45:02

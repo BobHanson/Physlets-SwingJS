@@ -14,7 +14,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I', function (w) {
 Clazz.super_(C$, this,1);
-this.w = w;
+this.w=w;
 }, 1);
 
 Clazz.newMeth(C$, 'getWidth', function () {
@@ -27,4 +27,4 @@ return String.valueOf(this.w);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:13
+//Created 2018-05-24 08:45:47

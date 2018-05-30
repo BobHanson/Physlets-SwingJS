@@ -14,7 +14,7 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'setUseNumberLocalization$Z', function (TF) {
-C$.useNumberLocalization[0] = (TF ? (I$[1]||$incl$(1)).TRUE : (I$[1]||$incl$(1)).FALSE);
+C$.useNumberLocalization[0]=(TF ? (I$[1]||$incl$(1)).TRUE : (I$[1]||$incl$(1)).FALSE);
 }, 1);
 
 Clazz.newMeth(C$, 'formatDecimalDbl$D$I', function (value, decimalDigits) {
@@ -26,49 +26,49 @@ Clazz.newMeth(C$, 'formatDecimal$F$I', function (value, decimalDigits) {
 if (decimalDigits == 2147483647 || value == -Infinity   || value == Infinity   || Float.isNaN(value) ) return "" + new Float(value).toString();
 var n;
 if (decimalDigits < 0) {
-decimalDigits = -decimalDigits;
-if (decimalDigits > C$.formattingStrings.length) decimalDigits = C$.formattingStrings.length;
+decimalDigits=-decimalDigits;
+if (decimalDigits > C$.formattingStrings.length) decimalDigits=C$.formattingStrings.length;
 if (value == 0 ) return C$.formattingStrings[decimalDigits - 1] + "E+0";
-n = 0;
+n=0;
 var d;
 if (Math.abs(value) < 1 ) {
-n = 10;
-d = value * 1.0E-10;
+n=10;
+d=value * 1.0E-10;
 } else {
-n = -10;
-d = value * 1.0E10;
+n=-10;
+d=value * 1.0E10;
 }var s = ("" + new Double(d).toString()).toUpperCase();
 var i = s.indexOf("E");
-n = (I$[2]||$incl$(2)).parseInt$S(s.substring(i + 1)) + n;
+n=(I$[2]||$incl$(2)).parseInt$S(s.substring(i + 1)) + n;
 var sf;
 if (i < 0) {
-sf = "" + new Float(value).toString();
+sf="" + new Float(value).toString();
 } else {
 var f = (I$[2]||$incl$(2)).parseFloat$S(s.substring(0, i));
 if (f == 10  || f == -10  ) {
 f /= 10;
-n = n+((n < 0 ? 1 : -1));
-}sf = C$.formatDecimal$F$I(f, decimalDigits - 1);
+n+=(n < 0 ? 1 : -1);
+}sf=C$.formatDecimal$F$I(f, decimalDigits - 1);
 }return sf + "E" + (n >= 0 ? "+" : "") + n ;
-}if (decimalDigits >= C$.formattingStrings.length) decimalDigits = C$.formattingStrings.length - 1;
+}if (decimalDigits >= C$.formattingStrings.length) decimalDigits=C$.formattingStrings.length - 1;
 var s1 = ("" + new Float(value).toString()).toUpperCase();
 var pt = s1.indexOf(".");
 if (pt < 0) return s1 + C$.formattingStrings[decimalDigits].substring(1);
 var isNeg = s1.startsWith$S("-");
 if (isNeg) {
-s1 = s1.substring(1);
+s1=s1.substring(1);
 pt--;
 }var pt1 = s1.indexOf("E-");
 if (pt1 > 0) {
-n = (I$[2]||$incl$(2)).parseInt$S(s1.substring(pt1 + 1));
-s1 = "0." + "0000000000000000000000000000000000000000".substring(0, -n - 1) + s1.substring(0, 1) + s1.substring(2, pt1) ;
-pt = 1;
-}pt1 = s1.indexOf("E");
+n=(I$[2]||$incl$(2)).parseInt$S(s1.substring(pt1 + 1));
+s1="0." + "0000000000000000000000000000000000000000".substring(0, -n - 1) + s1.substring(0, 1) + s1.substring(2, pt1) ;
+pt=1;
+}pt1=s1.indexOf("E");
 if (pt1 > 0) {
-n = (I$[2]||$incl$(2)).parseInt$S(s1.substring(pt1 + 1));
-s1 = s1.substring(0, 1) + s1.substring(2, pt1) + "0000000000000000000000000000000000000000" ;
-s1 = s1.substring(0, n + 1) + "." + s1.substring(n + 1) ;
-pt = s1.indexOf(".");
+n=(I$[2]||$incl$(2)).parseInt$S(s1.substring(pt1 + 1));
+s1=s1.substring(0, 1) + s1.substring(2, pt1) + "0000000000000000000000000000000000000000" ;
+s1=s1.substring(0, n + 1) + "." + s1.substring(n + 1) ;
+pt=s1.indexOf(".");
 }var len = s1.length$();
 var pt2 = decimalDigits + pt + 1 ;
 if (pt2 < len && s1.charAt(pt2) >= "5" ) {
@@ -78,7 +78,7 @@ for (var i = 0; i < decimalDigits; i++, pt++) {
 if (pt < len) sb.appendC$C(s1.charAt(pt));
  else sb.appendC$C("0");
 }
-s1 = (isNeg ? "-" : "") + sb;
+s1=(isNeg ? "-" : "") + sb;
 return ((I$[1]||$incl$(1)).TRUE.equals(C$.useNumberLocalization[0]) ? s1 : s1.$replace(",", "."));
 }, 1);
 
@@ -93,4 +93,4 @@ return str.substring(0, m + 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:18
+//Created 2018-05-24 08:45:56

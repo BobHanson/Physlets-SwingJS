@@ -28,9 +28,9 @@ C$.$init$.apply(this);
 
 Clazz.newMeth(C$, 'c$$Z$S$S$SA$SA', function (standardMetadataFormatSupported, nativeMetadataFormatName, nativeMetadataFormatClassName, extraMetadataFormatNames, extraMetadataFormatClassNames) {
 C$.$init$.apply(this);
-this.standardFormatSupported = standardMetadataFormatSupported;
-this.nativeMetadataFormatName = nativeMetadataFormatName;
-this.nativeMetadataFormatClassName = nativeMetadataFormatClassName;
+this.standardFormatSupported=standardMetadataFormatSupported;
+this.nativeMetadataFormatName=nativeMetadataFormatName;
+this.nativeMetadataFormatClassName=nativeMetadataFormatClassName;
 if (extraMetadataFormatNames != null ) {
 if (extraMetadataFormatNames.length == 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["extraMetadataFormatNames.length == 0!"]);
@@ -38,8 +38,8 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["extraMe
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["extraMetadataFormatNames != null && extraMetadataFormatClassNames == null!"]);
 }if (extraMetadataFormatClassNames.length != extraMetadataFormatNames.length) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["extraMetadataFormatClassNames.length != extraMetadataFormatNames.length!"]);
-}this.extraMetadataFormatNames = extraMetadataFormatNames.clone();
-this.extraMetadataFormatClassNames = extraMetadataFormatClassNames.clone();
+}this.extraMetadataFormatNames=extraMetadataFormatNames.clone();
+this.extraMetadataFormatClassNames=extraMetadataFormatClassNames.clone();
 } else {
 if (extraMetadataFormatClassNames != null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["extraMetadataFormatNames == null && extraMetadataFormatClassNames != null!"]);
@@ -69,18 +69,18 @@ if (nativeName != null ) {
 }if (standardName != null ) {
 ++numFormats;
 }if (extraNames != null ) {
-numFormats = numFormats+(extraNames.length);
+numFormats+=extraNames.length;
 }if (numFormats == 0) {
 return null;
 }var formats = Clazz.array(java.lang.String, [numFormats]);
 var index = 0;
 if (nativeName != null ) {
-formats[index++] = nativeName;
+formats[index++]=nativeName;
 }if (standardName != null ) {
-formats[index++] = standardName;
+formats[index++]=standardName;
 }if (extraNames != null ) {
 for (var i = 0; i < extraNames.length; i++) {
-formats[index++] = extraNames[i];
+formats[index++]=extraNames[i];
 }
 }return formats;
 });
@@ -92,11 +92,11 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["formatN
 return (I$[1]||$incl$(1)).getStandardFormatInstance();
 }var formatClassName = null;
 if (formatName.equals$O(this.nativeMetadataFormatName)) {
-formatClassName = this.nativeMetadataFormatClassName;
+formatClassName=this.nativeMetadataFormatClassName;
 } else if (this.extraMetadataFormatNames != null ) {
 for (var i = 0; i < this.extraMetadataFormatNames.length; i++) {
 if (formatName.equals$O(this.extraMetadataFormatNames[i])) {
-formatClassName = this.extraMetadataFormatClassNames[i];
+formatClassName=this.extraMetadataFormatClassNames[i];
 break;
 }}
 }if (formatClassName == null ) {
@@ -119,10 +119,10 @@ return this.$finals.o.getClass().getClassLoader();
 })()
 ), Clazz.new_((I$[3]||$incl$(3)).$init$, [this, {o: o}])));
 try {
-cls = Clazz.forName(formatClassName, true, loader);
+cls=Clazz.forName(formatClassName, true, loader);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.ClassNotFoundException")){
-loader = (I$[2]||$incl$(2)).doPrivileged$java_security_PrivilegedAction(((
+loader=(I$[2]||$incl$(2)).doPrivileged$java_security_PrivilegedAction(((
 (function(){var C$=Clazz.newClass(P$, "IIOMetadata$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.security.PrivilegedAction', 1);
 
 C$.$clinit$ = function() {Clazz.load(C$, 1);
@@ -137,10 +137,10 @@ return (I$[4]||$incl$(4)).currentThread().getContextClassLoader();
 })()
 ), Clazz.new_((I$[5]||$incl$(5)).$init$, [this, null])));
 try {
-cls = Clazz.forName(formatClassName, true, loader);
+cls=Clazz.forName(formatClassName, true, loader);
 } catch (e1) {
 if (Clazz.exceptionOf(e1, "java.lang.ClassNotFoundException")){
-cls = Clazz.forName(formatClassName, true, ClassLoader.getSystemClassLoader());
+cls=Clazz.forName(formatClassName, true, ClassLoader.getSystemClassLoader());
 } else {
 throw e1;
 }
@@ -218,7 +218,7 @@ this.mergeTree$S$org_w3c_dom_Node(formatName, root);
 });
 
 Clazz.newMeth(C$, 'setController$javax_imageio_metadata_IIOMetadataController', function (controller) {
-this.controller = controller;
+this.controller=controller;
 });
 
 Clazz.newMeth(C$, 'getController', function () {
@@ -239,4 +239,4 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalStateException').c$$S,["hasControl
 }return this.getController().activate$javax_imageio_metadata_IIOMetadata(this);
 });
 })();
-//Created 2018-05-15 01:02:20
+//Created 2018-05-24 08:45:59

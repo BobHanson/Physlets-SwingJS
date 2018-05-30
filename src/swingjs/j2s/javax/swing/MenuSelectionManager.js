@@ -25,7 +25,7 @@ Clazz.newMeth(C$, 'defaultManager', function () {
 var context = (I$[3]||$incl$(3)).getAppContext();
 var msm = context.get$O(C$.MENU_SELECTION_MANAGER_KEY);
 if (msm == null ) {
-msm = Clazz.new_(C$);
+msm=Clazz.new_(C$);
 context.put$O$O(C$.MENU_SELECTION_MANAGER_KEY, msm);
 }return msm;
 }}, 1);
@@ -36,17 +36,17 @@ var c;
 var currentSelectionCount = this.selection.size();
 var firstDifference = 0;
 if (path == null ) {
-path = Clazz.array((I$[4]||$incl$(4)), [0]);
-}for (i = 0, c = path.length; i < c; i++) {
+path=Clazz.array((I$[4]||$incl$(4)), [0]);
+}for (i=0, c=path.length; i < c; i++) {
 if (i < currentSelectionCount && this.selection.elementAt$I(i) === path[i]  ) firstDifference++;
  else break;
 }
-for (i = currentSelectionCount - 1; i >= firstDifference; i--) {
+for (i=currentSelectionCount - 1; i >= firstDifference; i--) {
 var me = this.selection.elementAt$I(i);
 this.selection.removeElementAt$I(i);
 me.menuSelectionChanged$Z(false);
 }
-for (i = firstDifference, c = path.length; i < c; i++) {
+for (i=firstDifference, c=path.length; i < c; i++) {
 if (path[i] != null ) {
 this.selection.addElement$TE(path[i]);
 path[i].menuSelectionChanged$Z(true);
@@ -58,7 +58,7 @@ Clazz.newMeth(C$, 'getSelectedPath', function () {
 var res = Clazz.array((I$[4]||$incl$(4)), [this.selection.size()]);
 var i;
 var c;
-for (i = 0, c = this.selection.size(); i < c; i++) res[i] = this.selection.elementAt$I(i);
+for (i=0, c=this.selection.size(); i < c; i++) res[i]=this.selection.elementAt$I(i);
 
 return res;
 });
@@ -82,9 +82,9 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[5]||$incl$(5)),['
 
 Clazz.newMeth(C$, 'fireStateChanged', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[5]||$incl$(5)),['stateChanged$javax_swing_event_ChangeEvent']) ) {
-if (this.changeEvent == null ) this.changeEvent = Clazz.new_((I$[6]||$incl$(6)).c$$O,[this]);
+if (this.changeEvent == null ) this.changeEvent=Clazz.new_((I$[6]||$incl$(6)).c$$O,[this]);
 (listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -105,7 +105,7 @@ var subElements;
 var path;
 var tmp;
 var selectionSize;
-p = event.getPoint();
+p=event.getPoint();
 var source = event.getSource();
 if (!source.isShowing()) {
 return;
@@ -114,36 +114,36 @@ var modifiers = event.getModifiers();
 if ((type == 504 || type == 505 ) && ((modifiers & 28) != 0) ) {
 return;
 }(I$[7]||$incl$(7)).convertPointToScreen$java_awt_Point$java_awt_Component(p, source);
-screenX = p.x;
-screenY = p.y;
-tmp = this.selection.clone();
-selectionSize = tmp.size();
+screenX=p.x;
+screenY=p.y;
+tmp=this.selection.clone();
+selectionSize=tmp.size();
 var success = false;
-for (i = selectionSize - 1; i >= 0 && success == false  ; i--) {
-menuElement = tmp.elementAt$I(i);
-subElements = menuElement.getSubElements();
-path = null;
-for (j = 0, d = subElements.length; j < d && success == false  ; j++) {
+for (i=selectionSize - 1; i >= 0 && success == false  ; i--) {
+menuElement=tmp.elementAt$I(i);
+subElements=menuElement.getSubElements();
+path=null;
+for (j=0, d=subElements.length; j < d && success == false  ; j++) {
 if (subElements[j] == null ) continue;
-mc = subElements[j].getComponent();
+mc=subElements[j].getComponent();
 if (!mc.isShowing()) continue;
 if (Clazz.instanceOf(mc, "javax.swing.JComponent")) {
-cWidth = (mc).getWidth();
-cHeight = (mc).getHeight();
+cWidth=(mc).getWidth();
+cHeight=(mc).getHeight();
 } else {
-r2 = mc.getBounds();
-cWidth = r2.width;
-cHeight = r2.height;
-}p.x = screenX;
-p.y = screenY;
+r2=mc.getBounds();
+cWidth=r2.width;
+cHeight=r2.height;
+}p.x=screenX;
+p.y=screenY;
 (I$[7]||$incl$(7)).convertPointFromScreen$java_awt_Point$java_awt_Component(p, mc);
 if ((p.x >= 0 && p.x < cWidth  && p.y >= 0  && p.y < cHeight )) {
 var k;
 if (path == null ) {
-path = Clazz.array((I$[4]||$incl$(4)), [i + 2]);
-for (k = 0; k <= i; k++) path[k] = tmp.elementAt$I(k);
+path=Clazz.array((I$[4]||$incl$(4)), [i + 2]);
+for (k=0; k <= i; k++) path[k]=tmp.elementAt$I(k);
 
-}path[i + 1] = subElements[j];
+}path[i + 1]=subElements[j];
 var currentSelection = this.getSelectedPath();
 if (currentSelection[currentSelection.length - 1] !== path[i + 1]  && (currentSelection.length < 2 || currentSelection[currentSelection.length - 2] !== path[i + 1]  ) ) {
 var oldMC = currentSelection[currentSelection.length - 1].getComponent();
@@ -153,7 +153,7 @@ var enterEvent = Clazz.new_((I$[8]||$incl$(8)).c$$java_awt_Component$I$J$I$I$I$I
 subElements[j].processMouseEvent$java_awt_event_MouseEvent$javax_swing_MenuElementA$javax_swing_MenuSelectionManager(enterEvent, path, this);
 }var mouseEvent = Clazz.new_((I$[8]||$incl$(8)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,[mc, event.getID(), event.getWhen(), event.getModifiers(), p.x, p.y, event.getXOnScreen(), event.getYOnScreen(), event.getClickCount(), event.isPopupTrigger(), 0]);
 subElements[j].processMouseEvent$java_awt_event_MouseEvent$javax_swing_MenuElementA$javax_swing_MenuSelectionManager(mouseEvent, path, this);
-success = true;
+success=true;
 event.consume();
 }}
 }
@@ -175,26 +175,26 @@ var subElements;
 var tmp;
 var selectionSize;
 (I$[7]||$incl$(7)).convertPointToScreen$java_awt_Point$java_awt_Component(p, source);
-screenX = p.x;
-screenY = p.y;
-tmp = this.selection.clone();
-selectionSize = tmp.size();
-for (i = selectionSize - 1; i >= 0; i--) {
-menuElement = tmp.elementAt$I(i);
-subElements = menuElement.getSubElements();
-for (j = 0, d = subElements.length; j < d; j++) {
+screenX=p.x;
+screenY=p.y;
+tmp=this.selection.clone();
+selectionSize=tmp.size();
+for (i=selectionSize - 1; i >= 0; i--) {
+menuElement=tmp.elementAt$I(i);
+subElements=menuElement.getSubElements();
+for (j=0, d=subElements.length; j < d; j++) {
 if (subElements[j] == null ) continue;
-mc = subElements[j].getComponent();
+mc=subElements[j].getComponent();
 if (!mc.isShowing()) continue;
 if (Clazz.instanceOf(mc, "javax.swing.JComponent")) {
-cWidth = (mc).getWidth();
-cHeight = (mc).getHeight();
+cWidth=(mc).getWidth();
+cHeight=(mc).getHeight();
 } else {
-r2 = mc.getBounds();
-cWidth = r2.width;
-cHeight = r2.height;
-}p.x = screenX;
-p.y = screenY;
+r2=mc.getBounds();
+cWidth=r2.width;
+cHeight=r2.height;
+}p.x=screenX;
+p.y=screenY;
 (I$[7]||$incl$(7)).convertPointFromScreen$java_awt_Point$java_awt_Component(p, mc);
 if (p.x >= 0 && p.x < cWidth  && p.y >= 0  && p.y < cHeight ) {
 return mc;
@@ -205,7 +205,7 @@ return null;
 
 Clazz.newMeth(C$, 'processKeyEvent$java_awt_event_KeyEvent', function (e) {
 var sel2 = Clazz.array((I$[4]||$incl$(4)), [0]);
-sel2 = this.selection.toArray$TTA(sel2);
+sel2=this.selection.toArray$TTA(sel2);
 var selSize = sel2.length;
 var path;
 if (selSize < 1) {
@@ -213,21 +213,21 @@ return;
 }for (var i = selSize - 1; i >= 0; i--) {
 var elem = sel2[i];
 var subs = elem.getSubElements();
-path = null;
+path=null;
 for (var j = 0; j < subs.length; j++) {
 if (subs[j] == null  || !subs[j].getComponent().isShowing()  || !subs[j].getComponent().isEnabled() ) {
 continue;
 }if (path == null ) {
-path = Clazz.array((I$[4]||$incl$(4)), [i + 2]);
+path=Clazz.array((I$[4]||$incl$(4)), [i + 2]);
 System.arraycopy(sel2, 0, path, 0, i + 1);
-}path[i + 1] = subs[j];
+}path[i + 1]=subs[j];
 subs[j].processKeyEvent$java_awt_event_KeyEvent$javax_swing_MenuElementA$javax_swing_MenuSelectionManager(e, path, this);
 if (e.isConsumed()) {
 return;
 }}
 }
-path = Clazz.array((I$[4]||$incl$(4)), [1]);
-path[0] = sel2[0];
+path=Clazz.array((I$[4]||$incl$(4)), [1]);
+path[0]=sel2[0];
 path[0].processKeyEvent$java_awt_event_KeyEvent$javax_swing_MenuElementA$javax_swing_MenuSelectionManager(e, path, this);
 if (e.isConsumed()) {
 return;
@@ -247,8 +247,8 @@ var d;
 if (root == null ) return false;
 if (root.getComponent() === c ) return true;
  else {
-children = root.getSubElements();
-for (i = 0, d = children.length; i < d; i++) {
+children=root.getSubElements();
+for (i=0, d=children.length; i < d; i++) {
 if (p$.isComponentPartOfCurrentMenu$javax_swing_MenuElement$java_awt_Component.apply(this, [children[i], c])) return true;
 }
 }return false;
@@ -256,4 +256,4 @@ if (p$.isComponentPartOfCurrentMenu$javax_swing_MenuElement$java_awt_Component.a
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:38
+//Created 2018-05-24 08:46:34

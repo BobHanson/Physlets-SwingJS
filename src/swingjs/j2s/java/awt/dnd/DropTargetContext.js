@@ -16,7 +16,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_dnd_DropTarget', function (dt) {
 C$.$init$.apply(this);
-this.dropTarget = dt;
+this.dropTarget=dt;
 }, 1);
 
 Clazz.newMeth(C$, 'getDropTarget', function () {
@@ -28,12 +28,12 @@ return this.dropTarget.getComponent();
 });
 
 Clazz.newMeth(C$, 'addNotify$java_awt_dnd_peer_DropTargetContextPeer', function (dtcp) {
-this.dropTargetContextPeer = dtcp;
+this.dropTargetContextPeer=dtcp;
 });
 
 Clazz.newMeth(C$, 'removeNotify', function () {
-this.dropTargetContextPeer = null;
-this.transferable = null;
+this.dropTargetContextPeer=null;
+this.transferable=null;
 });
 
 Clazz.newMeth(C$, 'setTargetActions$I', function (actions) {
@@ -100,7 +100,7 @@ if (peer == null ) {
 throw Clazz.new_(Clazz.load('java.awt.dnd.InvalidDnDOperationException'));
 } else {
 if (this.transferable == null ) {
-this.transferable = peer.getTransferable();
+this.transferable=peer.getTransferable();
 var isLocal = peer.isTransferableJVMLocal();
 }return this.transferable;
 }});
@@ -111,4 +111,4 @@ return this.dropTargetContextPeer;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:56
+//Created 2018-05-24 08:45:16

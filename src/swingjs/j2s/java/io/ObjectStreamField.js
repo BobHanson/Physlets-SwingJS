@@ -22,26 +22,26 @@ Clazz.newMeth(C$, 'c$$S$Class', function (name, cl) {
 C$.$init$.apply(this);
 if (name == null  || cl == null  ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.name = name;
-this.type = cl;
+}this.name=name;
+this.type=cl;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$Class$Z', function (name, cl, unshared) {
 C$.$init$.apply(this);
 if (name == null  || cl == null  ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.name = name;
-this.type = cl;
-this.unshared = unshared;
+}this.name=name;
+this.type=cl;
+this.unshared=unshared;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S', function (signature, name) {
 C$.$init$.apply(this);
 if (name == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.name = name;
-this.typeString = signature.$replace(".", "/");
-this.isDeserialized = true;
+}this.name=name;
+this.typeString=signature.$replace(".", "/");
+this.isDeserialized=true;
 }, 1);
 
 Clazz.newMeth(C$, ['compareTo$O','compareTo$TT'], function (o) {
@@ -110,7 +110,7 @@ return null;
 var t = p$.getTypeInternal.apply(this, []);
 var typeName = t.getName().$replace(".", "/");
 var str = (t.isArray()) ? typeName : ("L" + typeName + ';' );
-this.typeString = str.intern();
+this.typeString=str.intern();
 }return this.typeString;
 });
 
@@ -120,7 +120,7 @@ return t != null  && t.isPrimitive() ;
 });
 
 Clazz.newMeth(C$, 'setOffset$I', function (newValue) {
-this.offset = newValue;
+this.offset=newValue;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -150,36 +150,36 @@ Clazz.newMeth(C$, 'resolve$ClassLoader', function (loader) {
 if (this.typeString.length$() == 1) {
 switch ((this.typeString.charCodeAt(0))) {
 case 73:
-this.type = Integer.TYPE;
+this.type=Integer.TYPE;
 return;
 case 66:
-this.type = Byte.TYPE;
+this.type=Byte.TYPE;
 return;
 case 67:
-this.type = Character.TYPE;
+this.type=Character.TYPE;
 return;
 case 83:
-this.type = Short.TYPE;
+this.type=Short.TYPE;
 return;
 case 90:
-this.type = (I$[1]||$incl$(1)).TYPE;
+this.type=(I$[1]||$incl$(1)).TYPE;
 return;
 case 74:
-this.type = Long.TYPE;
+this.type=Long.TYPE;
 return;
 case 70:
-this.type = Float.TYPE;
+this.type=Float.TYPE;
 return;
 case 68:
-this.type = Double.TYPE;
+this.type=Double.TYPE;
 return;
 }
 }var className = this.typeString.$replace("/", ".");
 if (className.charAt(0) == "L") {
-className = className.substring(1, className.length$() - 1);
+className=className.substring(1, className.length$() - 1);
 }try {
 var cl = Clazz.forName(className, false, loader);
-this.type = cl;
+this.type=cl;
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.ClassNotFoundException")){
 } else {
@@ -194,4 +194,4 @@ return this.unshared;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:05
+//Created 2018-05-24 08:45:34

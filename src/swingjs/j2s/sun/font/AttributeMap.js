@@ -18,7 +18,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$sun_font_AttributeValues', function (values) {
 Clazz.super_(C$, this,1);
-this.$$values = values;
+this.$$values=values;
 }, 1);
 
 Clazz.newMeth(C$, 'entrySet', function () {
@@ -36,10 +36,10 @@ return this.$$values;
 Clazz.newMeth(C$, 'delegate', function () {
 if (this.delegateMap == null ) {
 if (C$.first) {
-C$.first = false;
+C$.first=false;
 (I$[1]||$incl$(1)).dumpStack();
-}this.delegateMap = this.$$values.toMap$java_util_Map(Clazz.new_((I$[2]||$incl$(2)).c$$I,[27]));
-this.$$values = null;
+}this.delegateMap=this.$$values.toMap$java_util_Map(Clazz.new_((I$[2]||$incl$(2)).c$$I,[27]));
+this.$$values=null;
 }return this.delegateMap;
 });
 
@@ -51,4 +51,4 @@ return "map of " + this.$$values.toString();
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:09
+//Created 2018-05-24 08:47:29

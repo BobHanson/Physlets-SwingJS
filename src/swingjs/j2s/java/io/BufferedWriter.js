@@ -27,11 +27,11 @@ Clazz.newMeth(C$, 'c$$java_io_Writer$I', function (out, sz) {
 C$.superclazz.c$$O.apply(this, [out]);
 C$.$init$.apply(this);
 if (sz <= 0) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Buffer size <= 0"]);
-this.out = out;
-this.cb = Clazz.array(Character.TYPE, [sz]);
-this.nChars = sz;
-this.nextChar = 0;
-this.lineSeparator = System.lineSeparator();
+this.out=out;
+this.cb=Clazz.array(Character.TYPE, [sz]);
+this.nChars=sz;
+this.nextChar=0;
+this.lineSeparator=System.lineSeparator();
 }, 1);
 
 Clazz.newMeth(C$, 'ensureOpen', function () {
@@ -43,14 +43,14 @@ Clazz.newMeth(C$, 'flushBuffer', function () {
 p$.ensureOpen.apply(this, []);
 if (this.nextChar == 0) return;
 this.out.write$CA$I$I(this.cb, 0, this.nextChar);
-this.nextChar = 0;
+this.nextChar=0;
 }});
 
 Clazz.newMeth(C$, 'write$I', function (c) {
 {
 p$.ensureOpen.apply(this, []);
 if (this.nextChar >= this.nChars) this.flushBuffer();
-this.cb[this.nextChar++] = String.fromCharCode(c);
+this.cb[this.nextChar++]=String.fromCharCode(c);
 }});
 
 Clazz.newMeth(C$, 'min$I$I', function (a, b) {
@@ -74,8 +74,8 @@ var t = off + len;
 while (b < t){
 var d = p$.min$I$I.apply(this, [this.nChars - this.nextChar, t - b]);
 System.arraycopy(cbuf, b, this.cb, this.nextChar, d);
-b = b+(d);
-this.nextChar = this.nextChar+(d);
+b+=d;
+this.nextChar+=d;
 if (this.nextChar >= this.nChars) this.flushBuffer();
 }
 }});
@@ -88,8 +88,8 @@ var t = off + len;
 while (b < t){
 var d = p$.min$I$I.apply(this, [this.nChars - this.nextChar, t - b]);
 s.getChars$I$I$CA$I(b, b + d, this.cb, this.nextChar);
-b = b+(d);
-this.nextChar = this.nextChar+(d);
+b+=d;
+this.nextChar+=d;
 if (this.nextChar >= this.nChars) this.flushBuffer();
 }
 }});
@@ -112,11 +112,11 @@ return;
 this.flushBuffer();
 } finally {
 this.out.close();
-this.out = null;
-this.cb = null;
+this.out=null;
+this.cb=null;
 }
 }});
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:03
+//Created 2018-05-24 08:45:32

@@ -11,11 +11,11 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'add$S$TL', function (name, listener) {
 if (this.map == null ) {
-this.map = Clazz.new_((I$[1]||$incl$(1)));
+this.map=Clazz.new_((I$[1]||$incl$(1)));
 }var array = this.map.get$O(name);
 var size = (array != null ) ? array.length : 0;
 var clone = this.newArray$I(size + 1);
-clone[size] = listener;
+clone[size]=listener;
 if (array != null ) {
 System.arraycopy(array, 0, clone, 0, size);
 }this.map.put$TK$TV(name, clone);
@@ -36,7 +36,7 @@ this.map.put$TK$TV(name, clone);
 } else {
 this.map.remove$O(name);
 if (this.map.isEmpty()) {
-this.map = null;
+this.map=null;
 }}break;
 }}
 }}});
@@ -48,12 +48,12 @@ return (this.map != null ) ? this.map.get$O(name) : null;
 Clazz.newMeth(C$, 'set$S$TLA', function (name, listeners) {
 if (listeners != null ) {
 if (this.map == null ) {
-this.map = Clazz.new_((I$[1]||$incl$(1)));
+this.map=Clazz.new_((I$[1]||$incl$(1)));
 }this.map.put$TK$TV(name, listeners);
 } else if (this.map != null ) {
 this.map.remove$O(name);
 if (this.map.isEmpty()) {
-this.map = null;
+this.map=null;
 }}});
 
 Clazz.newMeth(C$, 'getListeners', function () {
@@ -97,11 +97,11 @@ return (this.map != null ) ? this.map.entrySet() : (I$[3]||$incl$(3)).emptySet()
 Clazz.newMeth(C$, 'extract$TL', function (listener) {
 while (Clazz.instanceOf(listener, "java.util.EventListenerProxy")){
 var proxy = listener;
-listener = proxy.getListener();
+listener=proxy.getListener();
 }
 return listener;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:03
+//Created 2018-05-24 08:45:30

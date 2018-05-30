@@ -26,40 +26,40 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$I$I$I$I', function (s, l, b, r, t) {
 C$.superclazz.c$$S.apply(this, ["/Annot"]);
 C$.$init$.apply(this);
-this.subtype = s;
-this.l = l;
-this.b = b;
-this.r = r;
-this.t = t;
+this.subtype=s;
+this.l=l;
+this.b=b;
+this.r=r;
+this.t=t;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I$S', function (l, b, r, t, s) {
 C$.c$$S$I$I$I$I.apply(this, ["/Text", l, b, r, t]);
-this.s = s;
+this.s=s;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I$gnu_jpdf_PDFObject', function (l, b, r, t, dest) {
 C$.c$$S$I$I$I$I.apply(this, ["/Link", l, b, r, t]);
-this.dest = dest;
-this.fl = -9999;
+this.dest=dest;
+this.fl=-9999;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I$gnu_jpdf_PDFObject$I$I$I$I', function (l, b, r, t, dest, fl, fb, fr, ft) {
 C$.c$$S$I$I$I$I.apply(this, ["/Link", l, b, r, t]);
-this.dest = dest;
-this.fl = fl;
-this.fb = fb;
-this.fr = fr;
-this.ft = ft;
+this.dest=dest;
+this.fl=fl;
+this.fb=fb;
+this.fr=fr;
+this.ft=ft;
 }, 1);
 
 Clazz.newMeth(C$, 'setBorder$H$D', function (style, width) {
-this.border = Clazz.new_((I$[1]||$incl$(1)).c$$H$D,[style, width]);
+this.border=Clazz.new_((I$[1]||$incl$(1)).c$$H$D,[style, width]);
 this.pdfDocument.add$gnu_jpdf_PDFObject(this.border);
 });
 
 Clazz.newMeth(C$, 'setBorder$D$DA', function (width, dash) {
-this.border = Clazz.new_((I$[1]||$incl$(1)).c$$D$DA,[width, dash]);
+this.border=Clazz.new_((I$[1]||$incl$(1)).c$$D$DA,[width, dash]);
 this.pdfDocument.add$gnu_jpdf_PDFObject(this.border);
 });
 
@@ -106,4 +106,4 @@ if (this.fl == -9999) (I$[2]||$incl$(2)).write$java_io_OutputStream$S(os, " /Fit
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:46
+//Created 2018-05-24 08:45:02

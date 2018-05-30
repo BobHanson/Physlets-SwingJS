@@ -15,8 +15,8 @@ this.compName = null;
 
 Clazz.newMeth(C$, 'c$$I$I', function (type, numcomponents) {
 C$.$init$.apply(this);
-this.type = type;
-this.numComponents = numcomponents;
+this.type=type;
+this.numComponents=numcomponents;
 }, 1);
 
 Clazz.newMeth(C$, 'getInstance$I', function (colorspace) {
@@ -25,8 +25,8 @@ switch (colorspace) {
 default:
 case 1000:
 if (C$.sRGBspace == null ) {
-C$.sRGBspace = Clazz.new_(C$.c$$I$I,[5, 3]);
-}theColorSpace = C$.sRGBspace;
+C$.sRGBspace=Clazz.new_(C$.c$$I$I,[5, 3]);
+}theColorSpace=C$.sRGBspace;
 break;
 }
 return theColorSpace;
@@ -58,44 +58,44 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Compone
 }if (this.compName == null ) {
 switch (this.type) {
 case 0:
-this.compName = Clazz.array(java.lang.String, -1, ["X", "Y", "Z"]);
+this.compName=Clazz.array(java.lang.String, -1, ["X", "Y", "Z"]);
 break;
 case 1:
-this.compName = Clazz.array(java.lang.String, -1, ["L", "a", "b"]);
+this.compName=Clazz.array(java.lang.String, -1, ["L", "a", "b"]);
 break;
 case 2:
-this.compName = Clazz.array(java.lang.String, -1, ["L", "u", "v"]);
+this.compName=Clazz.array(java.lang.String, -1, ["L", "u", "v"]);
 break;
 case 3:
-this.compName = Clazz.array(java.lang.String, -1, ["Y", "Cb", "Cr"]);
+this.compName=Clazz.array(java.lang.String, -1, ["Y", "Cb", "Cr"]);
 break;
 case 4:
-this.compName = Clazz.array(java.lang.String, -1, ["Y", "x", "y"]);
+this.compName=Clazz.array(java.lang.String, -1, ["Y", "x", "y"]);
 break;
 case 5:
-this.compName = Clazz.array(java.lang.String, -1, ["Red", "Green", "Blue"]);
+this.compName=Clazz.array(java.lang.String, -1, ["Red", "Green", "Blue"]);
 break;
 case 6:
-this.compName = Clazz.array(java.lang.String, -1, ["Gray"]);
+this.compName=Clazz.array(java.lang.String, -1, ["Gray"]);
 break;
 case 7:
-this.compName = Clazz.array(java.lang.String, -1, ["Hue", "Saturation", "Value"]);
+this.compName=Clazz.array(java.lang.String, -1, ["Hue", "Saturation", "Value"]);
 break;
 case 8:
-this.compName = Clazz.array(java.lang.String, -1, ["Hue", "Lightness", "Saturation"]);
+this.compName=Clazz.array(java.lang.String, -1, ["Hue", "Lightness", "Saturation"]);
 break;
 case 9:
-this.compName = Clazz.array(java.lang.String, -1, ["Cyan", "Magenta", "Yellow", "Black"]);
+this.compName=Clazz.array(java.lang.String, -1, ["Cyan", "Magenta", "Yellow", "Black"]);
 break;
 case 11:
-this.compName = Clazz.array(java.lang.String, -1, ["Cyan", "Magenta", "Yellow"]);
+this.compName=Clazz.array(java.lang.String, -1, ["Cyan", "Magenta", "Yellow"]);
 break;
 default:
 var tmp = Clazz.array(java.lang.String, [this.numComponents]);
 for (var i = 0; i < tmp.length; i++) {
-tmp[i] = "Unnamed color component(" + i + ")" ;
+tmp[i]="Unnamed color component(" + i + ")" ;
 }
-this.compName = tmp;
+this.compName=tmp;
 }
 }return this.compName[idx];
 });
@@ -114,4 +114,4 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Compone
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:54
+//Created 2018-05-24 08:45:14

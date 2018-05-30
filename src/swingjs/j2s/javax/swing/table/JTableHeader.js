@@ -28,16 +28,16 @@ C$.c$$javax_swing_table_TableColumnModel.apply(this, [null]);
 Clazz.newMeth(C$, 'c$$javax_swing_table_TableColumnModel', function (cm) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-if (cm == null ) cm = this.createDefaultColumnModel();
+if (cm == null ) cm=this.createDefaultColumnModel();
 this.setColumnModel$javax_swing_table_TableColumnModel(cm);
 this.initializeLocalVars();
-this.uiClassID = "TableHeaderUI";
+this.uiClassID="TableHeaderUI";
 this.updateUI();
 }, 1);
 
 Clazz.newMeth(C$, 'setTable$javax_swing_JTable', function (table) {
 var old = this.table;
-this.table = table;
+this.table=table;
 this.firePropertyChange$S$O$O("table", old, table);
 });
 
@@ -47,7 +47,7 @@ return this.table;
 
 Clazz.newMeth(C$, 'setReorderingAllowed$Z', function (reorderingAllowed) {
 var old = this.reorderingAllowed;
-this.reorderingAllowed = reorderingAllowed;
+this.reorderingAllowed=reorderingAllowed;
 this.firePropertyChange$S$Z$Z("reorderingAllowed", old, reorderingAllowed);
 });
 
@@ -57,7 +57,7 @@ return this.reorderingAllowed;
 
 Clazz.newMeth(C$, 'setResizingAllowed$Z', function (resizingAllowed) {
 var old = this.resizingAllowed;
-this.resizingAllowed = resizingAllowed;
+this.resizingAllowed=resizingAllowed;
 this.firePropertyChange$S$Z$Z("resizingAllowed", old, resizingAllowed);
 });
 
@@ -78,7 +78,7 @@ return this.resizingColumn;
 });
 
 Clazz.newMeth(C$, 'setUpdateTableInRealTime$Z', function (flag) {
-this.updateTableInRealTime = flag;
+this.updateTableInRealTime=flag;
 });
 
 Clazz.newMeth(C$, 'getUpdateTableInRealTime', function () {
@@ -86,7 +86,7 @@ return this.updateTableInRealTime;
 });
 
 Clazz.newMeth(C$, 'setDefaultRenderer$javax_swing_table_TableCellRenderer', function (defaultRenderer) {
-this.defaultRenderer = defaultRenderer;
+this.defaultRenderer=defaultRenderer;
 });
 
 Clazz.newMeth(C$, 'getDefaultRenderer', function () {
@@ -96,27 +96,27 @@ return this.defaultRenderer;
 Clazz.newMeth(C$, 'columnAtPoint$java_awt_Point', function (point) {
 var x = point.x;
 if (!this.getComponentOrientation().isLeftToRight()) {
-x = p$.getWidthInRightToLeft.apply(this, []) - x - 1 ;
+x=p$.getWidthInRightToLeft.apply(this, []) - x - 1 ;
 }return this.getColumnModel().getColumnIndexAtX$I(x);
 });
 
 Clazz.newMeth(C$, 'getHeaderRect$I', function (column) {
 var r = Clazz.new_((I$[1]||$incl$(1)));
 var cm = this.getColumnModel();
-r.height = this.getHeight();
+r.height=this.getHeight();
 if (column < 0) {
 if (!this.getComponentOrientation().isLeftToRight()) {
-r.x = p$.getWidthInRightToLeft.apply(this, []);
+r.x=p$.getWidthInRightToLeft.apply(this, []);
 }} else if (column >= cm.getColumnCount()) {
 if (this.getComponentOrientation().isLeftToRight()) {
-r.x = this.getWidth();
+r.x=this.getWidth();
 }} else {
 for (var i = 0; i < column; i++) {
-r.x = r.x+(cm.getColumn$I(i).getWidth());
+r.x+=cm.getColumn$I(i).getWidth();
 }
 if (!this.getComponentOrientation().isLeftToRight()) {
-r.x = p$.getWidthInRightToLeft.apply(this, []) - r.x - cm.getColumn$I(column).getWidth() ;
-}r.width = cm.getColumn$I(column).getWidth();
+r.x=p$.getWidthInRightToLeft.apply(this, []) - r.x - cm.getColumn$I(column).getWidth() ;
+}r.width=cm.getColumn$I(column).getWidth();
 }return r;
 });
 
@@ -124,19 +124,19 @@ Clazz.newMeth(C$, 'getToolTipText$java_awt_event_MouseEvent', function (event) {
 var tip = null;
 var p = event.getPoint();
 var column;
-if ((column = this.columnAtPoint$java_awt_Point(p)) != -1) {
+if ((column=this.columnAtPoint$java_awt_Point(p)) != -1) {
 var aColumn = this.columnModel.getColumn$I(column);
 var renderer = aColumn.getHeaderRenderer();
 if (renderer == null ) {
-renderer = this.defaultRenderer;
+renderer=this.defaultRenderer;
 }var component = renderer.getTableCellRendererComponent$javax_swing_JTable$O$Z$Z$I$I(this.getTable(), aColumn.getHeaderValue(), false, false, -1, column);
 if (Clazz.instanceOf(component, "javax.swing.JComponent")) {
 var newEvent;
 var cellRect = this.getHeaderRect$I(column);
 p.translate$I$I(-cellRect.x, -cellRect.y);
-newEvent = Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,[component, event.getID(), event.getWhen(), event.getModifiers(), p.x, p.y, event.getXOnScreen(), event.getYOnScreen(), event.getClickCount(), event.isPopupTrigger(), 0]);
-tip = (component).getToolTipText$java_awt_event_MouseEvent(newEvent);
-}}if (tip == null ) tip = this.getToolTipText();
+newEvent=Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,[component, event.getID(), event.getWhen(), event.getModifiers(), p.x, p.y, event.getXOnScreen(), event.getYOnScreen(), event.getClickCount(), event.isPopupTrigger(), 0]);
+tip=(component).getToolTipText$java_awt_event_MouseEvent(newEvent);
+}}if (tip == null ) tip=this.getToolTipText();
 return tip;
 });
 
@@ -160,7 +160,7 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Cannot 
 if (columnModel !== old ) {
 if (old != null ) {
 old.removeColumnModelListener$javax_swing_event_TableColumnModelListener(this);
-}this.columnModel = columnModel;
+}this.columnModel=columnModel;
 columnModel.addColumnModelListener$javax_swing_event_TableColumnModelListener(this);
 this.firePropertyChange$S$O$O("columnModel", old, columnModel);
 this.resizeAndRepaint();
@@ -199,13 +199,13 @@ return Clazz.new_((I$[5]||$incl$(5)));
 
 Clazz.newMeth(C$, 'initializeLocalVars', function () {
 this.setOpaque$Z(true);
-this.table = null;
-this.reorderingAllowed = true;
-this.resizingAllowed = true;
-this.draggedColumn = null;
-this.draggedDistance = 0;
-this.resizingColumn = null;
-this.updateTableInRealTime = true;
+this.table=null;
+this.reorderingAllowed=true;
+this.resizingAllowed=true;
+this.draggedColumn=null;
+this.draggedDistance=0;
+this.resizingColumn=null;
+this.updateTableInRealTime=true;
 this.setDefaultRenderer$javax_swing_table_TableCellRenderer(this.createDefaultRenderer());
 });
 
@@ -215,15 +215,15 @@ this.repaint();
 });
 
 Clazz.newMeth(C$, 'setDraggedColumn$javax_swing_table_TableColumn', function (aColumn) {
-this.draggedColumn = aColumn;
+this.draggedColumn=aColumn;
 });
 
 Clazz.newMeth(C$, 'setDraggedDistance$I', function (distance) {
-this.draggedDistance = distance;
+this.draggedDistance=distance;
 });
 
 Clazz.newMeth(C$, 'setResizingColumn$javax_swing_table_TableColumn', function (aColumn) {
-this.resizingColumn = aColumn;
+this.resizingColumn=aColumn;
 });
 
 Clazz.newMeth(C$, 'getWidthInRightToLeft', function () {
@@ -239,4 +239,4 @@ var updateTableInRealTimeString = (this.updateTableInRealTime ? "true" : "false"
 return C$.superclazz.prototype.paramString.apply(this, []) + ",draggedDistance=" + this.draggedDistance + ",reorderingAllowed=" + reorderingAllowedString + ",resizingAllowed=" + resizingAllowedString + ",updateTableInRealTime=" + updateTableInRealTimeString ;
 });
 })();
-//Created 2018-05-15 01:02:51
+//Created 2018-05-24 08:46:59

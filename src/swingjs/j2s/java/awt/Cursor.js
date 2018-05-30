@@ -25,9 +25,9 @@ if (type < 0 || type > 13 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["illegal cursor type"]);
 }var c = C$.predefinedPrivate[type];
 if (c == null ) {
-C$.predefinedPrivate[type] = c = Clazz.new_(C$.c$$I,[type]);
+C$.predefinedPrivate[type]=c=Clazz.new_(C$.c$$I,[type]);
 }if (C$.predefined[type] == null ) {
-C$.predefined[type] = c;
+C$.predefined[type]=c;
 }return c;
 }, 1);
 
@@ -43,14 +43,14 @@ Clazz.newMeth(C$, 'c$$I', function (type) {
 C$.$init$.apply(this);
 if (type < 0 || type > 13 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["illegal cursor type"]);
-}this.type = type;
-this.name = "TODO_CURSOR";
+}this.type=type;
+this.name="TODO_CURSOR";
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
 C$.$init$.apply(this);
-this.type = -1;
-this.name = name;
+this.type=-1;
+this.name=name;
 }, 1);
 
 Clazz.newMeth(C$, 'getType', function () {
@@ -67,4 +67,4 @@ return this.getClass().getName() + "[" + this.getName() + "]" ;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:49
+//Created 2018-05-24 08:45:07

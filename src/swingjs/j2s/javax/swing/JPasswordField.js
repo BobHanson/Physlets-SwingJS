@@ -33,13 +33,13 @@ C$.c$$javax_swing_text_Document$S$I.apply(this, [null, text, columns]);
 Clazz.newMeth(C$, 'c$$javax_swing_text_Document$S$I', function (doc, txt, columns) {
 C$.superclazz.c$$javax_swing_text_Document$S$I.apply(this, [doc, txt, columns]);
 C$.$init$.apply(this);
-this.uiClassID = "PasswordFieldUI";
+this.uiClassID="PasswordFieldUI";
 this.updateUI();
 }, 1);
 
 Clazz.newMeth(C$, 'updateUI', function () {
 if (!this.echoCharSet) {
-this.echoChar = "*";
+this.echoChar="*";
 }C$.superclazz.prototype.updateUI.apply(this, []);
 });
 
@@ -48,8 +48,8 @@ return this.echoChar;
 });
 
 Clazz.newMeth(C$, 'setEchoChar$C', function (c) {
-this.echoChar = c;
-this.echoCharSet = true;
+this.echoChar=c;
+this.echoCharSet=true;
 this.repaint();
 this.revalidate();
 });
@@ -97,9 +97,9 @@ Clazz.newMeth(C$, 'customSetUIProperty$S$O', function (propertyName, value) {
 if (propertyName == "echoChar") {
 if (!this.echoCharSet) {
 this.setEchoChar$C((value).charValue());
-this.echoCharSet = false;
+this.echoCharSet=false;
 }return true;
 }return false;
 });
 })();
-//Created 2018-05-15 01:02:31
+//Created 2018-05-24 08:46:20

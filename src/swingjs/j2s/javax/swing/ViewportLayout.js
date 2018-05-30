@@ -36,36 +36,36 @@ var scrollableView = null;
 if (view == null ) {
 return;
 } else if (Clazz.instanceOf(view, "javax.swing.Scrollable")) {
-scrollableView = view;
+scrollableView=view;
 }var viewPrefSize = view.getPreferredSize();
 var vpSize = vp.getSize();
 var extentSize = vp.toViewCoordinates$java_awt_Dimension(vpSize);
 var viewSize = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Dimension,[viewPrefSize]);
 if (scrollableView != null ) {
 if (scrollableView.getScrollableTracksViewportWidth()) {
-viewSize.width = vpSize.width;
+viewSize.width=vpSize.width;
 }if (scrollableView.getScrollableTracksViewportHeight()) {
-viewSize.height = vpSize.height;
+viewSize.height=vpSize.height;
 }}var viewPosition = vp.getViewPosition();
 if (scrollableView == null  || vp.getParent() == null   || vp.getParent().getComponentOrientation().isLeftToRight() ) {
 if ((viewPosition.x + extentSize.width) > viewSize.width) {
-viewPosition.x = Math.max(0, viewSize.width - extentSize.width);
+viewPosition.x=Math.max(0, viewSize.width - extentSize.width);
 }} else {
 if (extentSize.width > viewSize.width) {
-viewPosition.x = viewSize.width - extentSize.width;
+viewPosition.x=viewSize.width - extentSize.width;
 } else {
-viewPosition.x = Math.max(0, Math.min(viewSize.width - extentSize.width, viewPosition.x));
+viewPosition.x=Math.max(0, Math.min(viewSize.width - extentSize.width, viewPosition.x));
 }}if ((viewPosition.y + extentSize.height) > viewSize.height) {
-viewPosition.y = Math.max(0, viewSize.height - extentSize.height);
+viewPosition.y=Math.max(0, viewSize.height - extentSize.height);
 }if (scrollableView == null ) {
 if ((viewPosition.x == 0) && (vpSize.width > viewPrefSize.width) ) {
-viewSize.width = vpSize.width;
+viewSize.width=vpSize.width;
 }if ((viewPosition.y == 0) && (vpSize.height > viewPrefSize.height) ) {
-viewSize.height = vpSize.height;
+viewSize.height=vpSize.height;
 }}vp.setViewPosition$java_awt_Point(viewPosition);
 vp.setViewSize$java_awt_Dimension(viewSize);
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:42
+//Created 2018-05-24 08:46:44

@@ -19,9 +19,9 @@ C$.c$$javax_swing_event_TreeExpansionEvent$S.apply(this, [event, null]);
 Clazz.newMeth(C$, 'c$$javax_swing_event_TreeExpansionEvent$S', function (event, message) {
 C$.superclazz.c$$S.apply(this, [message]);
 C$.$init$.apply(this);
-this.event = event;
+this.event=event;
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:00
+//Created 2018-05-24 08:47:11

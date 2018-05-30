@@ -16,8 +16,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$sun_applet_AppletListener$sun_applet_AppletListener', function (a, b) {
 C$.$init$.apply(this);
-this.a = a;
-this.b = b;
+this.a=a;
+this.b=b;
 }, 1);
 
 Clazz.newMeth(C$, 'appletStateChanged$sun_applet_AppletEvent', function (e) {
@@ -60,4 +60,4 @@ return l;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:04
+//Created 2018-05-24 08:47:19

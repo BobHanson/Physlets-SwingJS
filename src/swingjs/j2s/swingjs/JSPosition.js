@@ -14,7 +14,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I', function (offset) {
 C$.$init$.apply(this);
-this.pos = offset;
+this.pos=offset;
 }, 1);
 
 Clazz.newMeth(C$, 'getOffset', function () {
@@ -23,4 +23,4 @@ return this.pos;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:16
+//Created 2018-05-24 08:47:45

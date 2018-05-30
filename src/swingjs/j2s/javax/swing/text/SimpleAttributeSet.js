@@ -55,7 +55,7 @@ var value = this.table.get$O(name);
 if (value == null ) {
 var parent = this.getResolveParent();
 if (parent != null ) {
-value = parent.getAttribute$O(name);
+value=parent.getAttribute$O(name);
 }}return value;
 });
 
@@ -68,7 +68,7 @@ var result = true;
 var names = attributes.getAttributeNames();
 while (result && names.hasMoreElements() ){
 var name = names.nextElement();
-result = attributes.getAttribute$O(name).equals$O(this.getAttribute$O(name));
+result=attributes.getAttribute$O(name).equals$O(this.getAttribute$O(name));
 }
 return result;
 });
@@ -117,11 +117,11 @@ this.addAttribute$O$O((I$[4]||$incl$(4)).ResolveAttribute, parent);
 Clazz.newMeth(C$, 'clone', function () {
 var attr;
 try {
-attr = Clazz.clone(this);
-attr.table = this.table.clone();
+attr=Clazz.clone(this);
+attr.table=this.table.clone();
 } catch (cnse) {
 if (Clazz.exceptionOf(cnse, "java.lang.CloneNotSupportedException")){
-attr = null;
+attr=null;
 } else {
 throw cnse;
 }
@@ -149,9 +149,9 @@ while (names.hasMoreElements()){
 var key = names.nextElement();
 var value = this.getAttribute$O(key);
 if (Clazz.instanceOf(value, "javax.swing.text.AttributeSet")) {
-s = s + key + "=**AttributeSet** " ;
+s=s + key + "=**AttributeSet** " ;
 } else {
-s = s + key + "=" + value + " " ;
+s=s + key + "=" + value + " " ;
 }}
 return s;
 });
@@ -232,4 +232,4 @@ return 0;
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:57
+//Created 2018-05-24 08:47:08

@@ -15,15 +15,15 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.buf = Clazz.new_((I$[1]||$incl$(1)).c$$I,[16]);
-this.lock = this.buf;
+this.buf=Clazz.new_((I$[1]||$incl$(1)).c$$I,[16]);
+this.lock=this.buf;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (initialSize) {
 Clazz.super_(C$, this,1);
 if (initialSize >= 0) {
-this.buf = Clazz.new_((I$[1]||$incl$(1)).c$$I,[initialSize]);
-this.lock = this.buf;
+this.buf=Clazz.new_((I$[1]||$incl$(1)).c$$I,[initialSize]);
+this.lock=this.buf;
 } else {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
 }}, 1);
@@ -83,10 +83,10 @@ this.append$CharSequence$I$I(csq, 0, csq.length$());
 
 Clazz.newMeth(C$, 'append$CharSequence$I$I', function (csq, start, end) {
 if (null == csq ) {
-csq = "null";
+csq="null";
 }var output = csq.subSequence$I$I(start, end).toString();
 this.write$S$I$I(output, 0, output.length$());
 return this;
 });
 })();
-//Created 2018-05-15 01:02:06
+//Created 2018-05-24 08:45:35

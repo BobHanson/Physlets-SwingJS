@@ -15,18 +15,18 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.hasBeenDone = true;
-this.alive = true;
+this.hasBeenDone=true;
+this.alive=true;
 }, 1);
 
 Clazz.newMeth(C$, 'die', function () {
-this.alive = false;
+this.alive=false;
 });
 
 Clazz.newMeth(C$, 'undo', function () {
 if (!this.canUndo()) {
 throw Clazz.new_(Clazz.load('javax.swing.undo.CannotUndoException'));
-}this.hasBeenDone = false;
+}this.hasBeenDone=false;
 });
 
 Clazz.newMeth(C$, 'canUndo', function () {
@@ -36,7 +36,7 @@ return this.alive && this.hasBeenDone ;
 Clazz.newMeth(C$, 'redo', function () {
 if (!this.canRedo()) {
 throw Clazz.new_(Clazz.load('javax.swing.undo.CannotRedoException'));
-}this.hasBeenDone = true;
+}this.hasBeenDone=true;
 });
 
 Clazz.newMeth(C$, 'canRedo', function () {
@@ -62,18 +62,18 @@ return "";
 Clazz.newMeth(C$, 'getUndoPresentationName', function () {
 var name = this.getPresentationName();
 if (!"".equals$O(name)) {
-name = (I$[1]||$incl$(1)).getString$O("AbstractUndoableEdit.undoText") + " " + name ;
+name=(I$[1]||$incl$(1)).getString$O("AbstractUndoableEdit.undoText") + " " + name ;
 } else {
-name = (I$[1]||$incl$(1)).getString$O("AbstractUndoableEdit.undoText");
+name=(I$[1]||$incl$(1)).getString$O("AbstractUndoableEdit.undoText");
 }return name;
 });
 
 Clazz.newMeth(C$, 'getRedoPresentationName', function () {
 var name = this.getPresentationName();
 if (!"".equals$O(name)) {
-name = (I$[1]||$incl$(1)).getString$O("AbstractUndoableEdit.redoText") + " " + name ;
+name=(I$[1]||$incl$(1)).getString$O("AbstractUndoableEdit.redoText") + " " + name ;
 } else {
-name = (I$[1]||$incl$(1)).getString$O("AbstractUndoableEdit.redoText");
+name=(I$[1]||$incl$(1)).getString$O("AbstractUndoableEdit.redoText");
 }return name;
 });
 
@@ -81,4 +81,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return C$.superclazz.prototype.toString.apply(this, []) + " hasBeenDone: " + this.hasBeenDone + " alive: " + this.alive ;
 });
 })();
-//Created 2018-05-15 01:03:00
+//Created 2018-05-24 08:47:11

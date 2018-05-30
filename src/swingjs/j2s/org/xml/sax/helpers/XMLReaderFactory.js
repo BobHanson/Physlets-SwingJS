@@ -13,7 +13,7 @@ Clazz.newMeth(C$, 'createXMLReader', function () {
 var className = null;
 var loader = (I$[1]||$incl$(1)).getClassLoader();
 try {
-className = System.getProperty("org.xml.sax.driver");
+className=System.getProperty("org.xml.sax.driver");
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.RuntimeException")){
 } else {
@@ -25,11 +25,11 @@ try {
 var service = "META-INF/services/org.xml.sax.driver";
 var $in;
 var reader;
-if (loader == null ) $in = ClassLoader.getSystemResourceAsStream$S(service);
- else $in = loader.getResourceAsStream$S(service);
+if (loader == null ) $in=ClassLoader.getSystemResourceAsStream$S(service);
+ else $in=loader.getResourceAsStream$S(service);
 if ($in != null ) {
-reader = Clazz.new_((I$[2]||$incl$(2)).c$$java_io_Reader,[Clazz.new_((I$[3]||$incl$(3)).c$$java_io_InputStream$S,[$in, "UTF8"])]);
-className = reader.readLine();
+reader=Clazz.new_((I$[2]||$incl$(2)).c$$java_io_Reader,[Clazz.new_((I$[3]||$incl$(3)).c$$java_io_InputStream$S,[$in, "UTF8"])]);
+className=reader.readLine();
 $in.close();
 }} catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
@@ -84,4 +84,4 @@ throw e$$;
 }
 }, 1);
 })();
-//Created 2018-05-15 01:03:04
+//Created 2018-05-24 08:47:19

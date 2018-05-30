@@ -40,18 +40,18 @@ C$.c$$java_io_Writer$javax_swing_text_Document$I$I.apply(this, [w, doc, 0, doc.g
 
 Clazz.newMeth(C$, 'c$$java_io_Writer$javax_swing_text_Document$I$I', function (w, doc, pos, len) {
 C$.$init$.apply(this);
-this.doc = doc;
-this.it = Clazz.new_((I$[1]||$incl$(1)).c$$javax_swing_text_Element,[doc.getDefaultRootElement()]);
-this.out = w;
-this.startOffset = pos;
-this.endOffset = pos + len;
+this.doc=doc;
+this.it=Clazz.new_((I$[1]||$incl$(1)).c$$javax_swing_text_Element,[doc.getDefaultRootElement()]);
+this.out=w;
+this.startOffset=pos;
+this.endOffset=pos + len;
 var docNewline = doc.getProperty$O("__EndOfLine__");
 if (Clazz.instanceOf(docNewline, "java.lang.String")) {
 this.setLineSeparator$S(docNewline);
 } else {
 var newline = null;
 try {
-newline = System.getProperty("line.separator");
+newline=System.getProperty("line.separator");
 } catch (se) {
 if (Clazz.exceptionOf(se, "java.lang.SecurityException")){
 } else {
@@ -59,9 +59,9 @@ throw se;
 }
 }
 if (newline == null ) {
-newline = "\u000a";
+newline="\u000a";
 }this.setLineSeparator$S(newline);
-}this.canWrapLines = true;
+}this.canWrapLines=true;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_Writer$javax_swing_text_Element', function (w, root) {
@@ -70,12 +70,12 @@ C$.c$$java_io_Writer$javax_swing_text_Element$I$I.apply(this, [w, root, 0, root.
 
 Clazz.newMeth(C$, 'c$$java_io_Writer$javax_swing_text_Element$I$I', function (w, root, pos, len) {
 C$.$init$.apply(this);
-this.doc = root.getDocument();
-this.it = Clazz.new_((I$[1]||$incl$(1)).c$$javax_swing_text_Element,[root]);
-this.out = w;
-this.startOffset = pos;
-this.endOffset = pos + len;
-this.canWrapLines = true;
+this.doc=root.getDocument();
+this.it=Clazz.new_((I$[1]||$incl$(1)).c$$javax_swing_text_Element,[root]);
+this.out=w;
+this.startOffset=pos;
+this.endOffset=pos + len;
+this.canWrapLines=true;
 }, 1);
 
 Clazz.newMeth(C$, 'getStartOffset', function () {
@@ -115,14 +115,14 @@ var start = Math.max(this.getStartOffset(), elem.getStartOffset());
 var end = Math.min(this.getEndOffset(), elem.getEndOffset());
 if (start < end) {
 if (this.segment == null ) {
-this.segment = Clazz.new_((I$[2]||$incl$(2)));
+this.segment=Clazz.new_((I$[2]||$incl$(2)));
 }this.getDocument().getText$I$I$javax_swing_text_Segment(start, end - start, this.segment);
 if (this.segment.count > 0) {
 this.write$CA$I$I(this.segment.array, this.segment.offset, this.segment.count);
 }}});
 
 Clazz.newMeth(C$, 'setLineLength$I', function (l) {
-this.maxLineLength = l;
+this.maxLineLength=l;
 });
 
 Clazz.newMeth(C$, 'getLineLength', function () {
@@ -130,8 +130,8 @@ return this.maxLineLength;
 });
 
 Clazz.newMeth(C$, 'setCurrentLineLength$I', function (length) {
-this.currLength = length;
-this.$isLineEmpty = (this.currLength == 0);
+this.currLength=length;
+this.$isLineEmpty=(this.currLength == 0);
 });
 
 Clazz.newMeth(C$, 'getCurrentLineLength', function () {
@@ -143,7 +143,7 @@ return this.$isLineEmpty;
 });
 
 Clazz.newMeth(C$, 'setCanWrapLines$Z', function (newValue) {
-this.canWrapLines = newValue;
+this.canWrapLines=newValue;
 });
 
 Clazz.newMeth(C$, 'getCanWrapLines', function () {
@@ -151,7 +151,7 @@ return this.canWrapLines;
 });
 
 Clazz.newMeth(C$, 'setIndentSpace$I', function (space) {
-this.indentSpace = space;
+this.indentSpace=space;
 });
 
 Clazz.newMeth(C$, 'getIndentSpace', function () {
@@ -159,7 +159,7 @@ return this.indentSpace;
 });
 
 Clazz.newMeth(C$, 'setLineSeparator$S', function (value) {
-this.lineSeparator = value;
+this.lineSeparator=value;
 });
 
 Clazz.newMeth(C$, 'getLineSeparator', function () {
@@ -189,21 +189,21 @@ return this.indentLevel;
 Clazz.newMeth(C$, 'indent', function () {
 var max = this.getIndentLevel() * this.getIndentSpace();
 if (this.indentChars == null  || max > this.indentChars.length ) {
-this.indentChars = Clazz.array(Character.TYPE, [max]);
+this.indentChars=Clazz.array(Character.TYPE, [max]);
 for (var counter = 0; counter < max; counter++) {
-this.indentChars[counter] = " ";
+this.indentChars[counter]=" ";
 }
 }var length = this.getCurrentLineLength();
 var wasEmpty = this.isLineEmpty();
 this.output$CA$I$I(this.indentChars, 0, max);
 if (wasEmpty && length == 0 ) {
-this.$isLineEmpty = true;
+this.$isLineEmpty=true;
 }});
 
 Clazz.newMeth(C$, 'write$C', function (ch) {
 if (this.tempChars == null ) {
-this.tempChars = Clazz.array(Character.TYPE, [128]);
-}this.tempChars[0] = ch;
+this.tempChars=Clazz.array(Character.TYPE, [128]);
+}this.tempChars[0]=ch;
 this.write$CA$I$I(this.tempChars, 0, 1);
 });
 
@@ -212,7 +212,7 @@ if (content == null ) {
 return;
 }var size = content.length$();
 if (this.tempChars == null  || this.tempChars.length < size ) {
-this.tempChars = Clazz.array(Character.TYPE, [size]);
+this.tempChars=Clazz.array(Character.TYPE, [size]);
 }content.getChars$I$I$CA$I(0, size, this.tempChars, 0);
 this.write$CA$I$I(this.tempChars, 0, size);
 });
@@ -221,7 +221,7 @@ Clazz.newMeth(C$, 'writeLineSeparator', function () {
 var newline = this.getLineSeparator();
 var length = newline.length$();
 if (this.newlineChars == null  || this.newlineChars.length < length ) {
-this.newlineChars = Clazz.array(Character.TYPE, [length]);
+this.newlineChars=Clazz.array(Character.TYPE, [length]);
 }newline.getChars$I$I$CA$I(0, length, this.newlineChars, 0);
 this.output$CA$I$I(this.newlineChars, 0, length);
 this.setCurrentLineLength$I(0);
@@ -236,8 +236,8 @@ while (newlineIndex != -1){
 if (newlineIndex > lastIndex) {
 this.output$CA$I$I(chars, lastIndex, newlineIndex - lastIndex);
 }this.writeLineSeparator();
-lastIndex = newlineIndex + 1;
-newlineIndex = p$.indexOf$CA$C$I$I.apply(this, [chars, "\u000a", lastIndex, endIndex]);
+lastIndex=newlineIndex + 1;
+newlineIndex=p$.indexOf$CA$C$I$I.apply(this, [chars, "\u000a", lastIndex, endIndex]);
 }
 if (lastIndex < endIndex) {
 this.output$CA$I$I(chars, lastIndex, endIndex - lastIndex);
@@ -250,51 +250,51 @@ while (lastIndex < endIndex){
 var newlineIndex = p$.indexOf$CA$C$I$I.apply(this, [chars, "\u000a", lastIndex, endIndex]);
 var needsNewline = false;
 var forceNewLine = false;
-lineLength = this.getCurrentLineLength();
+lineLength=this.getCurrentLineLength();
 if (newlineIndex != -1 && (lineLength + (newlineIndex - lastIndex)) < maxLength ) {
 if (newlineIndex > lastIndex) {
 this.output$CA$I$I(chars, lastIndex, newlineIndex - lastIndex);
-}lastIndex = newlineIndex + 1;
-forceNewLine = true;
+}lastIndex=newlineIndex + 1;
+forceNewLine=true;
 } else if (newlineIndex == -1 && (lineLength + (endIndex - lastIndex)) < maxLength ) {
 if (endIndex > lastIndex) {
 this.output$CA$I$I(chars, lastIndex, endIndex - lastIndex);
-}lastIndex = endIndex;
+}lastIndex=endIndex;
 } else {
 var breakPoint = -1;
 var maxBreak = Math.min(endIndex - lastIndex, maxLength - lineLength - 1 );
 var counter = 0;
 while (counter < maxBreak){
 if (Character.isWhitespace(chars[counter + lastIndex])) {
-breakPoint = counter;
+breakPoint=counter;
 }counter++;
 }
 if (breakPoint != -1) {
-breakPoint = breakPoint+(lastIndex + 1);
+breakPoint+=lastIndex + 1;
 this.output$CA$I$I(chars, lastIndex, breakPoint - lastIndex);
-lastIndex = breakPoint;
-needsNewline = true;
+lastIndex=breakPoint;
+needsNewline=true;
 } else {
-counter = Math.max(0, maxBreak);
-maxBreak = endIndex - lastIndex;
+counter=Math.max(0, maxBreak);
+maxBreak=endIndex - lastIndex;
 while (counter < maxBreak){
 if (Character.isWhitespace(chars[counter + lastIndex])) {
-breakPoint = counter;
+breakPoint=counter;
 break;
 }counter++;
 }
 if (breakPoint == -1) {
 this.output$CA$I$I(chars, lastIndex, endIndex - lastIndex);
-breakPoint = endIndex;
+breakPoint=endIndex;
 } else {
-breakPoint = breakPoint+(lastIndex);
+breakPoint+=lastIndex;
 if (chars[breakPoint] == "\u000a") {
 this.output$CA$I$I(chars, lastIndex, breakPoint++ - lastIndex);
-forceNewLine = true;
+forceNewLine=true;
 } else {
 this.output$CA$I$I(chars, lastIndex, ++breakPoint - lastIndex);
-needsNewline = true;
-}}lastIndex = breakPoint;
+needsNewline=true;
+}}lastIndex=breakPoint;
 }}if (forceNewLine || needsNewline || lastIndex < endIndex  ) {
 this.writeLineSeparator();
 if (lastIndex < endIndex || !forceNewLine ) {
@@ -326,4 +326,4 @@ return -1;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:52
+//Created 2018-05-24 08:47:01

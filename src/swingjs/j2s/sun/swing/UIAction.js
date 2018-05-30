@@ -14,7 +14,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
 C$.$init$.apply(this);
-this.name = name;
+this.name=name;
 }, 1);
 
 Clazz.newMeth(C$, 'getName', function () {
@@ -49,4 +49,4 @@ Clazz.newMeth(C$, 'removePropertyChangeListener$java_beans_PropertyChangeListene
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:11
+//Created 2018-05-24 08:47:37

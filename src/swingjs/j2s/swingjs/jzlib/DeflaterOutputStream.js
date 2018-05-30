@@ -25,7 +25,7 @@ this.close_out = true;
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream', function (out) {
 C$.c$$java_io_OutputStream$swingjs_jzlib_Deflater$I$Z.apply(this, [out, Clazz.new_((I$[1]||$incl$(1))).init$I$I$Z(-1, 0, false), 512, true]);
-this.mydeflater = true;
+this.mydeflater=true;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream$swingjs_jzlib_Deflater', function (out, def) {
@@ -43,15 +43,15 @@ this.jzSetDOS$java_io_OutputStream$swingjs_jzlib_Deflater$I$Z(out, deflater, siz
 }, 1);
 
 Clazz.newMeth(C$, 'jzSetDOS$java_io_OutputStream$swingjs_jzlib_Deflater$I$Z', function (out, deflater, size, close_out) {
-this.out = out;
-if (size == 0) size = 512;
-this.deflater = deflater;
-this.buffer = Clazz.array(Byte.TYPE, [size]);
-this.close_out = close_out;
+this.out=out;
+if (size == 0) size=512;
+this.deflater=deflater;
+this.buffer=Clazz.array(Byte.TYPE, [size]);
+this.close_out=close_out;
 });
 
 Clazz.newMeth(C$, 'write$I', function (b) {
-this.buf1[0] = (((b & 255)|0)|0);
+this.buf1[0]=(((b & 255)|0)|0);
 this.write$BA$I$I(this.buf1, 0, 1);
 });
 
@@ -79,7 +79,7 @@ this.finish();
 if (this.mydeflater) {
 this.deflater.end();
 }if (this.close_out) this.out.close();
-this.closed = true;
+this.closed=true;
 }});
 
 Clazz.newMeth(C$, 'deflate$I', function (flush) {
@@ -120,7 +120,7 @@ return this.deflater.getTotalOut();
 });
 
 Clazz.newMeth(C$, 'setSyncFlush$Z', function (syncFlush) {
-this.syncFlush = syncFlush;
+this.syncFlush=syncFlush;
 });
 
 Clazz.newMeth(C$, 'getSyncFlush', function () {
@@ -133,4 +133,4 @@ return this.deflater;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:18
+//Created 2018-05-24 08:47:49

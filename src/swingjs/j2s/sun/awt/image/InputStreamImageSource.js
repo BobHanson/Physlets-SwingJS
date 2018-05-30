@@ -21,7 +21,7 @@ Clazz.newMeth(C$, 'countConsumers$sun_awt_image_ImageConsumerQueue', function (c
 var i = 0;
 while (cq != null ){
 i++;
-cq = cq.next;
+cq=cq.next;
 }
 return i;
 });
@@ -30,8 +30,8 @@ Clazz.newMeth(C$, 'countConsumers', function () {
 var id = this.decoders;
 var i = this.countConsumers$sun_awt_image_ImageConsumerQueue(this.consumers);
 while (id != null ){
-i = i+(this.countConsumers$sun_awt_image_ImageConsumerQueue(id.queue));
-id = id.next;
+i+=this.countConsumers$sun_awt_image_ImageConsumerQueue(id.queue);
+id=id.next;
 }
 return i;
 });
@@ -43,14 +43,14 @@ this.addConsumer$java_awt_image_ImageConsumer$Z(ic, false);
 Clazz.newMeth(C$, 'printQueue$sun_awt_image_ImageConsumerQueue$S', function (cq, prefix) {
 while (cq != null ){
 System.out.println$S(prefix + cq);
-cq = cq.next;
+cq=cq.next;
 }
 });
 
 Clazz.newMeth(C$, 'printQueues$S', function (title) {
 System.out.println$S(title + "[ -----------");
 this.printQueue$sun_awt_image_ImageConsumerQueue$S(this.consumers, "  ");
-for (var id = this.decoders; id != null ; id = id.next) {
+for (var id = this.decoders; id != null ; id=id.next) {
 System.out.println$S("    " + id);
 this.printQueue$sun_awt_image_ImageConsumerQueue$S(id.queue, "      ");
 }
@@ -58,36 +58,36 @@ System.out.println$S("----------- ]" + title);
 });
 
 Clazz.newMeth(C$, 'addConsumer$java_awt_image_ImageConsumer$Z', function (ic, produce) {
-for (var id = this.decoders; id != null ; id = id.next) {
+for (var id = this.decoders; id != null ; id=id.next) {
 if (id.isConsumer$java_awt_image_ImageConsumer(ic)) {
 return;
 }}
 var cq = this.consumers;
 while (cq != null  && cq.consumer !== ic  ){
-cq = cq.next;
+cq=cq.next;
 }
 if (cq == null ) {
-cq = Clazz.new_((I$[1]||$incl$(1)).c$$sun_awt_image_InputStreamImageSource$java_awt_image_ImageConsumer,[this, ic]);
-cq.next = this.consumers;
-this.consumers = cq;
+cq=Clazz.new_((I$[1]||$incl$(1)).c$$sun_awt_image_InputStreamImageSource$java_awt_image_ImageConsumer,[this, ic]);
+cq.next=this.consumers;
+this.consumers=cq;
 } else {
 if (!cq.secure) {
 var context = null;
 var security = System.getSecurityManager();
 if (security != null ) {
-context = security.getSecurityContext();
+context=security.getSecurityContext();
 }if (cq.securityContext == null ) {
-cq.securityContext = context;
+cq.securityContext=context;
 } else if (!cq.securityContext.equals$O(context)) {
 p$.errorConsumer$sun_awt_image_ImageConsumerQueue$Z.apply(this, [cq, false]);
 throw Clazz.new_(Clazz.load('java.lang.SecurityException').c$$S,["Applets are trading image data!"]);
-}}cq.interested = true;
+}}cq.interested=true;
 }if (produce && this.decoder == null  ) {
 p$.startProduction.apply(this, []);
 }});
 
 Clazz.newMeth(C$, 'isConsumer$java_awt_image_ImageConsumer', function (ic) {
-for (var id = this.decoders; id != null ; id = id.next) {
+for (var id = this.decoders; id != null ; id=id.next) {
 if (id.isConsumer$java_awt_image_ImageConsumer(ic)) {
 return true;
 }}
@@ -98,7 +98,7 @@ Clazz.newMeth(C$, 'errorAllConsumers$sun_awt_image_ImageConsumerQueue$Z', functi
 while (cq != null ){
 if (cq.interested) {
 p$.errorConsumer$sun_awt_image_ImageConsumerQueue$Z.apply(this, [cq, needReload]);
-}cq = cq.next;
+}cq=cq.next;
 }
 });
 
@@ -108,10 +108,10 @@ this.removeConsumer$java_awt_image_ImageConsumer(cq.consumer);
 });
 
 Clazz.newMeth(C$, 'removeConsumer$java_awt_image_ImageConsumer', function (ic) {
-for (var id = this.decoders; id != null ; id = id.next) {
+for (var id = this.decoders; id != null ; id=id.next) {
 id.removeConsumer$java_awt_image_ImageConsumer(ic);
 }
-this.consumers = (I$[1]||$incl$(1)).removeConsumer$sun_awt_image_ImageConsumerQueue$java_awt_image_ImageConsumer$Z(this.consumers, ic, false);
+this.consumers=(I$[1]||$incl$(1)).removeConsumer$sun_awt_image_ImageConsumerQueue$java_awt_image_ImageConsumer$Z(this.consumers, ic, false);
 });
 
 Clazz.newMeth(C$, 'startProduction$java_awt_image_ImageConsumer', function (ic) {
@@ -121,7 +121,7 @@ this.addConsumer$java_awt_image_ImageConsumer$Z(ic, true);
 Clazz.newMeth(C$, 'startProduction', function () {
 if (!this.awaitingFetch) {
 (I$[2]||$incl$(2)).add$sun_awt_image_ImageFetchable(this);
-this.awaitingFetch = true;
+this.awaitingFetch=true;
 }});
 
 Clazz.newMeth(C$, 'requestTopDownLeftRightResend$java_awt_image_ImageConsumer', function (ic) {
@@ -138,7 +138,7 @@ return null;
 Clazz.newMeth(C$, 'doFetch', function () {
 {
 if (this.consumers == null ) {
-this.awaitingFetch = false;
+this.awaitingFetch=false;
 return;
 }}var imgd = this.getDecoder();
 if (imgd == null ) {
@@ -173,41 +173,41 @@ p$.errorAllConsumers$sun_awt_image_ImageConsumerQueue$Z.apply(this, [imgd.queue,
 Clazz.newMeth(C$, 'badDecoder', function () {
 var cq;
 {
-cq = this.consumers;
-this.consumers = null;
-this.awaitingFetch = false;
+cq=this.consumers;
+this.consumers=null;
+this.awaitingFetch=false;
 }p$.errorAllConsumers$sun_awt_image_ImageConsumerQueue$Z.apply(this, [cq, false]);
 });
 
 Clazz.newMeth(C$, 'setDecoder$sun_awt_image_ImageDecoder', function (mydecoder) {
 var cq;
 {
-mydecoder.next = this.decoders;
-this.decoders = mydecoder;
-this.decoder = mydecoder;
-cq = this.consumers;
-mydecoder.queue = cq;
-this.consumers = null;
-this.awaitingFetch = false;
+mydecoder.next=this.decoders;
+this.decoders=mydecoder;
+this.decoder=mydecoder;
+cq=this.consumers;
+mydecoder.queue=cq;
+this.consumers=null;
+this.awaitingFetch=false;
 }});
 
 Clazz.newMeth(C$, 'removeDecoder$sun_awt_image_ImageDecoder', function (mydecoder) {
 this.doneDecoding$sun_awt_image_ImageDecoder(mydecoder);
 var idprev = null;
-for (var id = this.decoders; id != null ; id = id.next) {
+for (var id = this.decoders; id != null ; id=id.next) {
 if (id === mydecoder ) {
 if (idprev == null ) {
-this.decoders = id.next;
+this.decoders=id.next;
 } else {
-idprev.next = id.next;
+idprev.next=id.next;
 }break;
-}idprev = id;
+}idprev=id;
 }
 });
 
 Clazz.newMeth(C$, 'doneDecoding$sun_awt_image_ImageDecoder', function (mydecoder) {
 if (this.decoder === mydecoder ) {
-this.decoder = null;
+this.decoder=null;
 if (this.consumers != null ) {
 p$.startProduction.apply(this, []);
 }}});
@@ -217,9 +217,9 @@ this.doneDecoding$sun_awt_image_ImageDecoder(id);
 });
 
 Clazz.newMeth(C$, 'flush', function () {
-this.decoder = null;
+this.decoder=null;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:08
+//Created 2018-05-24 08:47:28

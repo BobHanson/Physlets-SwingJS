@@ -22,12 +22,12 @@ C$.c$$javax_swing_tree_TreeNode$Z.apply(this, [root, false]);
 
 Clazz.newMeth(C$, 'c$$javax_swing_tree_TreeNode$Z', function (root, asksAllowsChildren) {
 C$.$init$.apply(this);
-this.root = root;
-this.$asksAllowsChildren = asksAllowsChildren;
+this.root=root;
+this.$asksAllowsChildren=asksAllowsChildren;
 }, 1);
 
 Clazz.newMeth(C$, 'setAsksAllowsChildren$Z', function (newValue) {
-this.$asksAllowsChildren = newValue;
+this.$asksAllowsChildren=newValue;
 });
 
 Clazz.newMeth(C$, 'asksAllowsChildren', function () {
@@ -36,7 +36,7 @@ return this.$asksAllowsChildren;
 
 Clazz.newMeth(C$, 'setRoot$javax_swing_tree_TreeNode', function (root) {
 var oldRoot = this.root;
-this.root = root;
+this.root=root;
 if (root == null  && oldRoot != null  ) {
 p$.fireTreeStructureChanged$O$javax_swing_tree_TreePath.apply(this, [this, null]);
 } else {
@@ -78,7 +78,7 @@ this.nodeChanged$javax_swing_tree_TreeNode(aNode);
 Clazz.newMeth(C$, 'insertNodeInto$javax_swing_tree_MutableTreeNode$javax_swing_tree_MutableTreeNode$I', function (newChild, parent, index) {
 parent.insert$javax_swing_tree_MutableTreeNode$I(newChild, index);
 var newIndexs = Clazz.array(Integer.TYPE, [1]);
-newIndexs[0] = index;
+newIndexs[0]=index;
 this.nodesWereInserted$javax_swing_tree_TreeNode$IA(parent, newIndexs);
 });
 
@@ -87,9 +87,9 @@ var parent = node.getParent();
 if (parent == null ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["node does not have a parent."]);
 var childIndex = Clazz.array(Integer.TYPE, [1]);
 var removedArray = Clazz.array(java.lang.Object, [1]);
-childIndex[0] = parent.getIndex$javax_swing_tree_TreeNode(node);
+childIndex[0]=parent.getIndex$javax_swing_tree_TreeNode(node);
 parent.remove$I(childIndex[0]);
-removedArray[0] = node;
+removedArray[0]=node;
 this.nodesWereRemoved$javax_swing_tree_TreeNode$IA$OA(parent, childIndex, removedArray);
 });
 
@@ -100,7 +100,7 @@ if (parent != null ) {
 var anIndex = parent.getIndex$javax_swing_tree_TreeNode(node);
 if (anIndex != -1) {
 var cIndexs = Clazz.array(Integer.TYPE, [1]);
-cIndexs[0] = anIndex;
+cIndexs[0]=anIndex;
 this.nodesChanged$javax_swing_tree_TreeNode$IA(parent, cIndexs);
 }} else if (node === this.getRoot() ) {
 this.nodesChanged$javax_swing_tree_TreeNode$IA(node, null);
@@ -115,7 +115,7 @@ Clazz.newMeth(C$, 'nodesWereInserted$javax_swing_tree_TreeNode$IA', function (no
 if (this.listenerList != null  && node != null   && childIndices != null   && childIndices.length > 0 ) {
 var cCount = childIndices.length;
 var newChildren = Clazz.array(java.lang.Object, [cCount]);
-for (var counter = 0; counter < cCount; counter++) newChildren[counter] = node.getChildAt$I(childIndices[counter]);
+for (var counter = 0; counter < cCount; counter++) newChildren[counter]=node.getChildAt$I(childIndices[counter]);
 
 this.fireTreeNodesInserted$O$OA$IA$OA(this, this.getPathToRoot$javax_swing_tree_TreeNode(node), childIndices, newChildren);
 }});
@@ -131,7 +131,7 @@ if (childIndices != null ) {
 var cCount = childIndices.length;
 if (cCount > 0) {
 var cChildren = Clazz.array(java.lang.Object, [cCount]);
-for (var counter = 0; counter < cCount; counter++) cChildren[counter] = node.getChildAt$I(childIndices[counter]);
+for (var counter = 0; counter < cCount; counter++) cChildren[counter]=node.getChildAt$I(childIndices[counter]);
 
 this.fireTreeNodesChanged$O$OA$IA$OA(this, this.getPathToRoot$javax_swing_tree_TreeNode(node), childIndices, cChildren);
 }} else if (node === this.getRoot() ) {
@@ -151,12 +151,12 @@ Clazz.newMeth(C$, 'getPathToRoot$javax_swing_tree_TreeNode$I', function (aNode, 
 var retNodes;
 if (aNode == null ) {
 if (depth == 0) return null;
- else retNodes = Clazz.array((I$[2]||$incl$(2)), [depth]);
+ else retNodes=Clazz.array((I$[2]||$incl$(2)), [depth]);
 } else {
 depth++;
-if (aNode === this.root ) retNodes = Clazz.array((I$[2]||$incl$(2)), [depth]);
- else retNodes = this.getPathToRoot$javax_swing_tree_TreeNode$I(aNode.getParent(), depth);
-retNodes[retNodes.length - depth] = aNode;
+if (aNode === this.root ) retNodes=Clazz.array((I$[2]||$incl$(2)), [depth]);
+ else retNodes=this.getPathToRoot$javax_swing_tree_TreeNode$I(aNode.getParent(), depth);
+retNodes[retNodes.length - depth]=aNode;
 }return retNodes;
 });
 
@@ -175,9 +175,9 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[3]||$incl$(3)),['
 Clazz.newMeth(C$, 'fireTreeNodesChanged$O$OA$IA$OA', function (source, path, childIndices, children) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[3]||$incl$(3)),['treeNodesChanged$javax_swing_event_TreeModelEvent','treeNodesInserted$javax_swing_event_TreeModelEvent','treeNodesRemoved$javax_swing_event_TreeModelEvent','treeStructureChanged$javax_swing_event_TreeModelEvent']) ) {
-if (e == null ) e = Clazz.new_((I$[4]||$incl$(4)).c$$O$OA$IA$OA,[source, path, childIndices, children]);
+if (e == null ) e=Clazz.new_((I$[4]||$incl$(4)).c$$O$OA$IA$OA,[source, path, childIndices, children]);
 (listeners[i + 1]).treeNodesChanged$javax_swing_event_TreeModelEvent(e);
 }}
 });
@@ -185,9 +185,9 @@ if (e == null ) e = Clazz.new_((I$[4]||$incl$(4)).c$$O$OA$IA$OA,[source, path, c
 Clazz.newMeth(C$, 'fireTreeNodesInserted$O$OA$IA$OA', function (source, path, childIndices, children) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[3]||$incl$(3)),['treeNodesChanged$javax_swing_event_TreeModelEvent','treeNodesInserted$javax_swing_event_TreeModelEvent','treeNodesRemoved$javax_swing_event_TreeModelEvent','treeStructureChanged$javax_swing_event_TreeModelEvent']) ) {
-if (e == null ) e = Clazz.new_((I$[4]||$incl$(4)).c$$O$OA$IA$OA,[source, path, childIndices, children]);
+if (e == null ) e=Clazz.new_((I$[4]||$incl$(4)).c$$O$OA$IA$OA,[source, path, childIndices, children]);
 (listeners[i + 1]).treeNodesInserted$javax_swing_event_TreeModelEvent(e);
 }}
 });
@@ -195,9 +195,9 @@ if (e == null ) e = Clazz.new_((I$[4]||$incl$(4)).c$$O$OA$IA$OA,[source, path, c
 Clazz.newMeth(C$, 'fireTreeNodesRemoved$O$OA$IA$OA', function (source, path, childIndices, children) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[3]||$incl$(3)),['treeNodesChanged$javax_swing_event_TreeModelEvent','treeNodesInserted$javax_swing_event_TreeModelEvent','treeNodesRemoved$javax_swing_event_TreeModelEvent','treeStructureChanged$javax_swing_event_TreeModelEvent']) ) {
-if (e == null ) e = Clazz.new_((I$[4]||$incl$(4)).c$$O$OA$IA$OA,[source, path, childIndices, children]);
+if (e == null ) e=Clazz.new_((I$[4]||$incl$(4)).c$$O$OA$IA$OA,[source, path, childIndices, children]);
 (listeners[i + 1]).treeNodesRemoved$javax_swing_event_TreeModelEvent(e);
 }}
 });
@@ -205,9 +205,9 @@ if (e == null ) e = Clazz.new_((I$[4]||$incl$(4)).c$$O$OA$IA$OA,[source, path, c
 Clazz.newMeth(C$, 'fireTreeStructureChanged$O$OA$IA$OA', function (source, path, childIndices, children) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[3]||$incl$(3)),['treeNodesChanged$javax_swing_event_TreeModelEvent','treeNodesInserted$javax_swing_event_TreeModelEvent','treeNodesRemoved$javax_swing_event_TreeModelEvent','treeStructureChanged$javax_swing_event_TreeModelEvent']) ) {
-if (e == null ) e = Clazz.new_((I$[4]||$incl$(4)).c$$O$OA$IA$OA,[source, path, childIndices, children]);
+if (e == null ) e=Clazz.new_((I$[4]||$incl$(4)).c$$O$OA$IA$OA,[source, path, childIndices, children]);
 (listeners[i + 1]).treeStructureChanged$javax_swing_event_TreeModelEvent(e);
 }}
 });
@@ -215,9 +215,9 @@ if (e == null ) e = Clazz.new_((I$[4]||$incl$(4)).c$$O$OA$IA$OA,[source, path, c
 Clazz.newMeth(C$, 'fireTreeStructureChanged$O$javax_swing_tree_TreePath', function (source, path) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[3]||$incl$(3)),['treeNodesChanged$javax_swing_event_TreeModelEvent','treeNodesInserted$javax_swing_event_TreeModelEvent','treeNodesRemoved$javax_swing_event_TreeModelEvent','treeStructureChanged$javax_swing_event_TreeModelEvent']) ) {
-if (e == null ) e = Clazz.new_((I$[4]||$incl$(4)).c$$O$javax_swing_tree_TreePath,[source, path]);
+if (e == null ) e=Clazz.new_((I$[4]||$incl$(4)).c$$O$javax_swing_tree_TreePath,[source, path]);
 (listeners[i + 1]).treeStructureChanged$javax_swing_event_TreeModelEvent(e);
 }}
 });
@@ -228,4 +228,4 @@ return this.listenerList.getListeners$Class(listenerType);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:00
+//Created 2018-05-24 08:47:11

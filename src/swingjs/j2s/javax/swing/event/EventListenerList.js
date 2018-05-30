@@ -25,9 +25,9 @@ var lList = this.listenerList;
 var n = p$.getListenerCount$OA$Class.apply(this, [lList, t]);
 var result = Clazz.array(t, n);
 var j = 0;
-for (var i = lList.length - 2; i >= 0; i = i-(2)) {
+for (var i = lList.length - 2; i >= 0; i-=2) {
 if (lList[i] === t ) {
-result[j++] = lList[i + 1];
+result[j++]=lList[i + 1];
 }}
 return result;
 });
@@ -43,7 +43,7 @@ return p$.getListenerCount$OA$Class.apply(this, [lList, t]);
 
 Clazz.newMeth(C$, 'getListenerCount$OA$Class', function (list, t) {
 var count = 0;
-for (var i = 0; i < list.length; i = i+(2)) {
+for (var i = 0; i < list.length; i+=2) {
 if (t === list[i] ) count++;
 }
 return count;
@@ -53,37 +53,37 @@ Clazz.newMeth(C$, 'add$Class$TT', function (t, l) {
 if (l == null ) {
 return;
 }if (this.listenerList === C$.NULL_ARRAY ) {
-this.listenerList = Clazz.array(java.lang.Object, -1, [t, l]);
+this.listenerList=Clazz.array(java.lang.Object, -1, [t, l]);
 } else {
 var i = this.listenerList.length;
 var tmp = Clazz.array(java.lang.Object, [i + 2]);
 System.arraycopy(this.listenerList, 0, tmp, 0, i);
-tmp[i] = t;
-tmp[i + 1] = l;
-this.listenerList = tmp;
+tmp[i]=t;
+tmp[i + 1]=l;
+this.listenerList=tmp;
 }});
 
 Clazz.newMeth(C$, 'remove$Class$TT', function (t, l) {
 if (l == null ) {
 return;
 }var index = -1;
-for (var i = this.listenerList.length - 2; i >= 0; i = i-(2)) {
+for (var i = this.listenerList.length - 2; i >= 0; i-=2) {
 if ((this.listenerList[i] === t ) && (this.listenerList[i + 1].equals$O(l) == true ) ) {
-index = i;
+index=i;
 break;
 }}
 if (index != -1) {
 var tmp = Clazz.array(java.lang.Object, [this.listenerList.length - 2]);
 System.arraycopy(this.listenerList, 0, tmp, 0, index);
 if (index < tmp.length) System.arraycopy(this.listenerList, index + 2, tmp, index, tmp.length - index);
-this.listenerList = (tmp.length == 0) ? C$.NULL_ARRAY : tmp;
+this.listenerList=(tmp.length == 0) ? C$.NULL_ARRAY : tmp;
 }});
 
 Clazz.newMeth(C$, 'toString', function () {
 var lList = this.listenerList;
 var s = "EventListenerList: ";
 s += (lList.length/2|0) + " listeners: ";
-for (var i = 0; i <= lList.length - 2; i = i+(2)) {
+for (var i = 0; i <= lList.length - 2; i+=2) {
 s += " type " + (lList[i]).getName();
 s += " listener " + lList[i + 1];
 }
@@ -92,4 +92,4 @@ return s;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:45
+//Created 2018-05-24 08:46:48

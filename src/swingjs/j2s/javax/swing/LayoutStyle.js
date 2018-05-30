@@ -15,7 +15,7 @@ if (style == null ) {
 Clazz.newMeth(C$, 'getInstance', function () {
 var style;
 {
-style = (I$[1]||$incl$(1)).getAppContext().get$O(Clazz.getClass(C$));
+style=(I$[1]||$incl$(1)).getAppContext().get$O(Clazz.getClass(C$));
 }if (style == null ) {
 return (I$[2]||$incl$(2)).getLookAndFeel().getLayoutStyle();
 }return style;
@@ -42,4 +42,4 @@ var $vals=[];
 Clazz.newMeth(C$, 'values', function() { return $vals }, 1);
 })()
 })();
-//Created 2018-05-15 01:02:37
+//Created 2018-05-24 08:46:32

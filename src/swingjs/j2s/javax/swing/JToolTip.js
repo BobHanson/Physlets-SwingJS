@@ -16,13 +16,13 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
 this.setOpaque$Z(true);
-this.uiClassID = "ToolTipUI";
+this.uiClassID="ToolTipUI";
 this.updateUI();
 }, 1);
 
 Clazz.newMeth(C$, 'setTipText$S', function (tipText) {
 var oldValue = this.tipText;
-this.tipText = tipText;
+this.tipText=tipText;
 this.firePropertyChange$S$O$O("tiptext", oldValue, tipText);
 });
 
@@ -32,7 +32,7 @@ return this.tipText;
 
 Clazz.newMeth(C$, 'setComponent$javax_swing_JComponent', function (c) {
 var oldValue = this.component;
-this.component = c;
+this.component=c;
 this.firePropertyChange$S$O$O("component", oldValue, c);
 });
 
@@ -49,4 +49,4 @@ var tipTextString = (this.tipText != null  ? this.tipText : "");
 return C$.superclazz.prototype.paramString.apply(this, []) + ",tipText=" + tipTextString ;
 });
 })();
-//Created 2018-05-15 01:02:36
+//Created 2018-05-24 08:46:29

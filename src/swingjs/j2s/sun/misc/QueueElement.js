@@ -16,7 +16,7 @@ this.obj = null;
 
 Clazz.newMeth(C$, 'c$$O', function (obj) {
 C$.$init$.apply(this);
-this.obj = obj;
+this.obj=obj;
 }, 1);
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -25,4 +25,4 @@ return "QueueElement[obj=" + this.obj + (this.prev == null  ? " null" : " prev")
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:10
+//Created 2018-05-24 08:47:33

@@ -32,13 +32,13 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["orienta
 Clazz.newMeth(C$, 'c$$I$I$I$I$I', function (orientation, value, extent, min, max) {
 Clazz.super_(C$, this,1);
 p$.checkOrientation$I.apply(this, [orientation]);
-this.unitIncrement = 1;
-this.blockIncrement = (extent == 0) ? 1 : extent;
-this.orientation = orientation;
-this.model = Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I,[value, extent, min, max]);
-this.model.addChangeListener$javax_swing_event_ChangeListener(this.fwdAdjustmentEvents = Clazz.new_((I$[2]||$incl$(2)), [this, null]));
+this.unitIncrement=1;
+this.blockIncrement=(extent == 0) ? 1 : extent;
+this.orientation=orientation;
+this.model=Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I,[value, extent, min, max]);
+this.model.addChangeListener$javax_swing_event_ChangeListener(this.fwdAdjustmentEvents=Clazz.new_((I$[2]||$incl$(2)), [this, null]));
 this.setRequestFocusEnabled$Z(false);
-this.uiClassID = "ScrollBarUI";
+this.uiClassID="ScrollBarUI";
 this.updateUI();
 }, 1);
 
@@ -65,7 +65,7 @@ return this.orientation;
 Clazz.newMeth(C$, 'setOrientation$I', function (orientation) {
 p$.checkOrientation$I.apply(this, [orientation]);
 var oldValue = this.orientation;
-this.orientation = orientation;
+this.orientation=orientation;
 this.firePropertyChange$S$I$I("orientation", oldValue, orientation);
 if (orientation != oldValue) {
 this.revalidate();
@@ -79,7 +79,7 @@ Clazz.newMeth(C$, 'setModel$javax_swing_BoundedRangeModel', function (newModel) 
 var oldModel = this.model;
 if (this.model != null ) {
 this.model.removeChangeListener$javax_swing_event_ChangeListener(this.fwdAdjustmentEvents);
-}this.model = newModel;
+}this.model=newModel;
 if (this.model != null ) {
 this.model.addChangeListener$javax_swing_event_ChangeListener(this.fwdAdjustmentEvents);
 }this.firePropertyChange$S$O$O("model", oldModel, this.model);
@@ -91,7 +91,7 @@ return this.unitIncrement;
 
 Clazz.newMeth(C$, 'setUnitIncrement$I', function (unitIncrement) {
 var oldValue = this.unitIncrement;
-this.unitIncrement = unitIncrement;
+this.unitIncrement=unitIncrement;
 this.firePropertyChange$S$I$I("unitIncrement", oldValue, unitIncrement);
 });
 
@@ -101,7 +101,7 @@ return this.blockIncrement;
 
 Clazz.newMeth(C$, 'setBlockIncrement$I', function (blockIncrement) {
 var oldValue = this.blockIncrement;
-this.blockIncrement = blockIncrement;
+this.blockIncrement=blockIncrement;
 this.firePropertyChange$S$I$I("blockIncrement", oldValue, blockIncrement);
 });
 
@@ -179,10 +179,10 @@ p$.fireAdjustmentValueChanged$I$I$I$Z.apply(this, [id, type, value, this.getValu
 Clazz.newMeth(C$, 'fireAdjustmentValueChanged$I$I$I$Z', function (id, type, value, isAdjusting) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[3]||$incl$(3)),['adjustmentValueChanged$java_awt_event_AdjustmentEvent']) ) {
 if (e == null ) {
-e = Clazz.new_((I$[4]||$incl$(4)).c$$java_awt_Adjustable$I$I$I$Z,[this, id, type, value, isAdjusting]);
+e=Clazz.new_((I$[4]||$incl$(4)).c$$java_awt_Adjustable$I$I$I$Z,[this, id, type, value, isAdjusting]);
 }(listeners[i + 1]).adjustmentValueChanged$java_awt_event_AdjustmentEvent(e);
 }}
 });
@@ -240,4 +240,4 @@ this.this$0.fireAdjustmentValueChanged$I$I$I$Z.apply(this.this$0, [id, type, val
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:32
+//Created 2018-05-24 08:46:22

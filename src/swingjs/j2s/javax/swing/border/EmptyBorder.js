@@ -17,18 +17,18 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I$I$I$I', function (top, left, bottom, right) {
 Clazz.super_(C$, this,1);
-this.top = top;
-this.right = right;
-this.bottom = bottom;
-this.left = left;
+this.top=top;
+this.right=right;
+this.bottom=bottom;
+this.left=left;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Insets', function (borderInsets) {
 Clazz.super_(C$, this,1);
-this.top = borderInsets.top;
-this.right = borderInsets.right;
-this.bottom = borderInsets.bottom;
-this.left = borderInsets.left;
+this.top=borderInsets.top;
+this.right=borderInsets.right;
+this.bottom=borderInsets.bottom;
+this.left=borderInsets.left;
 }, 1);
 
 Clazz.newMeth(C$, 'paintBorder$java_awt_Component$java_awt_Graphics$I$I$I$I', function (c, g, x, y, width, height) {
@@ -39,10 +39,10 @@ return this.getBorderInsets();
 });
 
 Clazz.newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
-insets.left = this.left;
-insets.top = this.top;
-insets.right = this.right;
-insets.bottom = this.bottom;
+insets.left=this.left;
+insets.top=this.top;
+insets.right=this.right;
+insets.bottom=this.bottom;
 return insets;
 });
 
@@ -56,4 +56,4 @@ return false;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:42
+//Created 2018-05-24 08:46:45

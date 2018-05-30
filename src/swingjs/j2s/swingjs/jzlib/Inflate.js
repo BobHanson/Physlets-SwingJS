@@ -41,10 +41,10 @@ this.inflateReset();
 
 Clazz.newMeth(C$, 'inflateReset', function () {
 if (this.z == null ) return -2;
-this.z.total_in = this.z.total_out = 0;
-this.z.msg = null;
-this.mode = 14;
-this.need_bytes = -1;
+this.z.total_in=this.z.total_out=0;
+this.z.msg=null;
+this.mode=14;
+this.need_bytes=-1;
 this.blocks.reset();
 return 0;
 });
@@ -57,26 +57,26 @@ this.blocks.free();
 
 Clazz.newMeth(C$, 'c$$swingjs_jzlib_ZStream', function (z) {
 C$.$init$.apply(this);
-this.z = z;
+this.z=z;
 }, 1);
 
 Clazz.newMeth(C$, 'inflateInit$I', function (w) {
-this.z.msg = null;
-this.blocks = null;
-this.wrap = 0;
+this.z.msg=null;
+this.blocks=null;
+this.wrap=0;
 if (w < 0) {
-w = -w;
+w=-w;
 } else {
-this.wrap = (w >> 4) + 1;
-if (w < 48) w = w&(15);
+this.wrap=(w >> 4) + 1;
+if (w < 48) w&=15;
 }if (w < 8 || w > 15 ) {
 this.inflateEnd();
 return -2;
 }if (this.blocks != null  && this.wbits != w ) {
 this.blocks.free();
-this.blocks = null;
-}this.wbits = w;
-this.blocks = Clazz.new_((I$[1]||$incl$(1)).c$$swingjs_jzlib_ZStream$I,[this.z, 1 << w]);
+this.blocks=null;
+}this.wbits=w;
+this.blocks=Clazz.new_((I$[1]||$incl$(1)).c$$swingjs_jzlib_ZStream$I,[this.z, 1 << w]);
 this.inflateReset();
 return 0;
 });
@@ -87,16 +87,16 @@ var b;
 if (this.z == null  || this.z.next_in == null  ) {
 if (f == 4 && this.mode == 14 ) return 0;
 return -2;
-}f = f == 4 ? -5 : 0;
-r = -5;
+}f=f == 4 ? -5 : 0;
+r=-5;
 while (true){
 switch (this.mode) {
 case 14:
 if (this.wrap == 0) {
-this.mode = 7;
+this.mode=7;
 break;
 }try {
-r = p$.readBytes$I$I$I.apply(this, [2, r, f]);
+r=p$.readBytes$I$I$I.apply(this, [2, r, f]);
 } catch (e) {
 if (Clazz.exceptionOf(e, "swingjs.jzlib.Inflate.Return")){
 return e.r;
@@ -105,121 +105,121 @@ throw e;
 }
 }
 if ((this.wrap & 2) != 0 && this.need == 35615 ) {
-this.z.checksum = Clazz.new_((I$[2]||$incl$(2)));
+this.z.checksum=Clazz.new_((I$[2]||$incl$(2)));
 p$.checksum$I$J.apply(this, [2, this.need]);
-if (this.gheader == null ) this.gheader = Clazz.new_((I$[3]||$incl$(3)));
-this.mode = 23;
+if (this.gheader == null ) this.gheader=Clazz.new_((I$[3]||$incl$(3)));
+this.mode=23;
 break;
-}this.flags = 0;
-this.method = ((this.need|0)) & 255;
-b = (((this.need >> 8)|0)) & 255;
+}this.flags=0;
+this.method=((this.need|0)) & 255;
+b=(((this.need >> 8)|0)) & 255;
 if ((this.wrap & 1) == 0 || (((this.method << 8) + b) % 31) != 0 ) {
-this.mode = 13;
-this.z.msg = "incorrect header check";
+this.mode=13;
+this.z.msg="incorrect header check";
 break;
 }if ((this.method & 15) != 8) {
-this.mode = 13;
-this.z.msg = "unknown compression method";
+this.mode=13;
+this.z.msg="unknown compression method";
 break;
 }if ((this.method >> 4) + 8 > this.wbits) {
-this.mode = 13;
-this.z.msg = "invalid window size";
+this.mode=13;
+this.z.msg="invalid window size";
 break;
-}this.z.checksum = Clazz.new_((I$[4]||$incl$(4)));
+}this.z.checksum=Clazz.new_((I$[4]||$incl$(4)));
 if ((b & 32) == 0) {
-this.mode = 7;
+this.mode=7;
 break;
-}this.mode = 2;
+}this.mode=2;
 case 2:
 if (this.z.avail_in == 0) return r;
-r = f;
+r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need = ((this.z.next_in[this.z.next_in_index++] & 255) << 24) & 4278190080;
-this.mode = 3;
+this.need=((this.z.next_in[this.z.next_in_index++] & 255) << 24) & 4278190080;
+this.mode=3;
 case 3:
 if (this.z.avail_in == 0) return r;
-r = f;
+r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need = this.need+(((this.z.next_in[this.z.next_in_index++] & 255) << 16) & 16711680);
-this.mode = 4;
+this.need+=((this.z.next_in[this.z.next_in_index++] & 255) << 16) & 16711680;
+this.mode=4;
 case 4:
 if (this.z.avail_in == 0) return r;
-r = f;
+r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need = this.need+(((this.z.next_in[this.z.next_in_index++] & 255) << 8) & 65280);
-this.mode = 5;
+this.need+=((this.z.next_in[this.z.next_in_index++] & 255) << 8) & 65280;
+this.mode=5;
 case 5:
 if (this.z.avail_in == 0) return r;
-r = f;
+r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need = this.need+((this.z.next_in[this.z.next_in_index++] & 255));
+this.need+=(this.z.next_in[this.z.next_in_index++] & 255);
 this.z.checksum.resetLong$J(this.need);
-this.mode = 6;
+this.mode=6;
 return 2;
 case 6:
-this.mode = 13;
-this.z.msg = "need dictionary";
-this.marker = 0;
+this.mode=13;
+this.z.msg="need dictionary";
+this.marker=0;
 return -2;
 case 7:
-r = this.blocks.proc$I(r);
+r=this.blocks.proc$I(r);
 if (r == -3) {
-this.mode = 13;
-this.marker = 0;
+this.mode=13;
+this.marker=0;
 break;
 }if (r == 0) {
-r = f;
+r=f;
 }if (r != 1) {
 return r;
-}r = f;
-this.was = this.z.checksum.getValue();
+}r=f;
+this.was=this.z.checksum.getValue();
 this.blocks.reset();
 if (this.wrap == 0) {
-this.mode = 12;
+this.mode=12;
 break;
-}this.mode = 8;
+}this.mode=8;
 case 8:
 if (this.z.avail_in == 0) return r;
-r = f;
+r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need = ((this.z.next_in[this.z.next_in_index++] & 255) << 24) & 4278190080;
-this.mode = 9;
+this.need=((this.z.next_in[this.z.next_in_index++] & 255) << 24) & 4278190080;
+this.mode=9;
 case 9:
 if (this.z.avail_in == 0) return r;
-r = f;
+r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need = this.need+(((this.z.next_in[this.z.next_in_index++] & 255) << 16) & 16711680);
-this.mode = 10;
+this.need+=((this.z.next_in[this.z.next_in_index++] & 255) << 16) & 16711680;
+this.mode=10;
 case 10:
 if (this.z.avail_in == 0) return r;
-r = f;
+r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need = this.need+(((this.z.next_in[this.z.next_in_index++] & 255) << 8) & 65280);
-this.mode = 11;
+this.need+=((this.z.next_in[this.z.next_in_index++] & 255) << 8) & 65280;
+this.mode=11;
 case 11:
 if (this.z.avail_in == 0) return r;
-r = f;
+r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need = this.need+((this.z.next_in[this.z.next_in_index++] & 255));
+this.need+=(this.z.next_in[this.z.next_in_index++] & 255);
 if (this.flags != 0) {
-this.need = ((this.need & -16777216) >> 24 | (this.need & 16711680) >> 8 | (this.need & 65280) << 8 | (this.need & 65535) << 24) & 4294967295;
+this.need=((this.need & -16777216) >> 24 | (this.need & 16711680) >> 8 | (this.need & 65280) << 8 | (this.need & 65535) << 24) & 4294967295;
 }if ((((this.was)|0)) != (((this.need)|0))) {
-this.z.msg = "incorrect data check";
+this.z.msg="incorrect data check";
 } else if (this.flags != 0 && this.gheader != null  ) {
-this.gheader.crc = this.need;
-}this.mode = 15;
+this.gheader.crc=this.need;
+}this.mode=15;
 case 15:
 if (this.wrap != 0 && this.flags != 0 ) {
 try {
-r = p$.readBytes$I$I$I.apply(this, [4, r, f]);
+r=p$.readBytes$I$I$I.apply(this, [4, r, f]);
 } catch (e) {
 if (Clazz.exceptionOf(e, "swingjs.jzlib.Inflate.Return")){
 return e.r;
@@ -228,27 +228,27 @@ throw e;
 }
 }
 if (this.z.msg != null  && this.z.msg.equals$O("incorrect data check") ) {
-this.mode = 13;
-this.marker = 5;
+this.mode=13;
+this.marker=5;
 break;
 }if (this.need != (this.z.total_out & 4294967295)) {
-this.z.msg = "incorrect length check";
-this.mode = 13;
+this.z.msg="incorrect length check";
+this.mode=13;
 break;
-}this.z.msg = null;
+}this.z.msg=null;
 } else {
 if (this.z.msg != null  && this.z.msg.equals$O("incorrect data check") ) {
-this.mode = 13;
-this.marker = 5;
+this.mode=13;
+this.marker=5;
 break;
-}}this.mode = 12;
+}}this.mode=12;
 case 12:
 return 1;
 case 13:
 return -3;
 case 23:
 try {
-r = p$.readBytes$I$I$I.apply(this, [2, r, f]);
+r=p$.readBytes$I$I$I.apply(this, [2, r, f]);
 } catch (e) {
 if (Clazz.exceptionOf(e, "swingjs.jzlib.Inflate.Return")){
 return e.r;
@@ -256,21 +256,21 @@ return e.r;
 throw e;
 }
 }
-this.flags = ((this.need|0)) & 65535;
+this.flags=((this.need|0)) & 65535;
 if ((this.flags & 255) != 8) {
-this.z.msg = "unknown compression method";
-this.mode = 13;
+this.z.msg="unknown compression method";
+this.mode=13;
 break;
 }if ((this.flags & 57344) != 0) {
-this.z.msg = "unknown header flags set";
-this.mode = 13;
+this.z.msg="unknown header flags set";
+this.mode=13;
 break;
 }if ((this.flags & 512) != 0) {
 p$.checksum$I$J.apply(this, [2, this.need]);
-}this.mode = 16;
+}this.mode=16;
 case 16:
 try {
-r = p$.readBytes$I$I$I.apply(this, [4, r, f]);
+r=p$.readBytes$I$I$I.apply(this, [4, r, f]);
 } catch (e) {
 if (Clazz.exceptionOf(e, "swingjs.jzlib.Inflate.Return")){
 return e.r;
@@ -278,13 +278,13 @@ return e.r;
 throw e;
 }
 }
-if (this.gheader != null ) this.gheader.time = this.need;
+if (this.gheader != null ) this.gheader.time=this.need;
 if ((this.flags & 512) != 0) {
 p$.checksum$I$J.apply(this, [4, this.need]);
-}this.mode = 17;
+}this.mode=17;
 case 17:
 try {
-r = p$.readBytes$I$I$I.apply(this, [2, r, f]);
+r=p$.readBytes$I$I$I.apply(this, [2, r, f]);
 } catch (e) {
 if (Clazz.exceptionOf(e, "swingjs.jzlib.Inflate.Return")){
 return e.r;
@@ -293,15 +293,15 @@ throw e;
 }
 }
 if (this.gheader != null ) {
-this.gheader.xflags = ((this.need|0)) & 255;
-this.gheader.os = (((this.need|0)) >> 8) & 255;
+this.gheader.xflags=((this.need|0)) & 255;
+this.gheader.os=(((this.need|0)) >> 8) & 255;
 }if ((this.flags & 512) != 0) {
 p$.checksum$I$J.apply(this, [2, this.need]);
-}this.mode = 18;
+}this.mode=18;
 case 18:
 if ((this.flags & 1024) != 0) {
 try {
-r = p$.readBytes$I$I$I.apply(this, [2, r, f]);
+r=p$.readBytes$I$I$I.apply(this, [2, r, f]);
 } catch (e) {
 if (Clazz.exceptionOf(e, "swingjs.jzlib.Inflate.Return")){
 return e.r;
@@ -310,24 +310,24 @@ throw e;
 }
 }
 if (this.gheader != null ) {
-this.gheader.extra = Clazz.array(Byte.TYPE, [((this.need|0)) & 65535]);
+this.gheader.extra=Clazz.array(Byte.TYPE, [((this.need|0)) & 65535]);
 }if ((this.flags & 512) != 0) {
 p$.checksum$I$J.apply(this, [2, this.need]);
 }} else if (this.gheader != null ) {
-this.gheader.extra = null;
-}this.mode = 19;
+this.gheader.extra=null;
+}this.mode=19;
 case 19:
 if ((this.flags & 1024) != 0) {
 try {
-r = p$.readBytes$I$I.apply(this, [r, f]);
+r=p$.readBytes$I$I.apply(this, [r, f]);
 if (this.gheader != null ) {
 var foo = this.tmp_string.toByteArray();
-this.tmp_string = null;
+this.tmp_string=null;
 if (foo.length == this.gheader.extra.length) {
 System.arraycopy(foo, 0, this.gheader.extra, 0, foo.length);
 } else {
-this.z.msg = "bad extra field length";
-this.mode = 13;
+this.z.msg="bad extra field length";
+this.mode=13;
 break;
 }}} catch (e) {
 if (Clazz.exceptionOf(e, "swingjs.jzlib.Inflate.Return")){
@@ -337,15 +337,15 @@ throw e;
 }
 }
 } else if (this.gheader != null ) {
-this.gheader.extra = null;
-}this.mode = 20;
+this.gheader.extra=null;
+}this.mode=20;
 case 20:
 if ((this.flags & 2048) != 0) {
 try {
-r = p$.readString$I$I.apply(this, [r, f]);
+r=p$.readString$I$I.apply(this, [r, f]);
 if (this.gheader != null ) {
-this.gheader.name = this.tmp_string.toByteArray();
-}this.tmp_string = null;
+this.gheader.name=this.tmp_string.toByteArray();
+}this.tmp_string=null;
 } catch (e) {
 if (Clazz.exceptionOf(e, "swingjs.jzlib.Inflate.Return")){
 return e.r;
@@ -354,15 +354,15 @@ throw e;
 }
 }
 } else if (this.gheader != null ) {
-this.gheader.name = null;
-}this.mode = 21;
+this.gheader.name=null;
+}this.mode=21;
 case 21:
 if ((this.flags & 4096) != 0) {
 try {
-r = p$.readString$I$I.apply(this, [r, f]);
+r=p$.readString$I$I.apply(this, [r, f]);
 if (this.gheader != null ) {
-this.gheader.comment = this.tmp_string.toByteArray();
-}this.tmp_string = null;
+this.gheader.comment=this.tmp_string.toByteArray();
+}this.tmp_string=null;
 } catch (e) {
 if (Clazz.exceptionOf(e, "swingjs.jzlib.Inflate.Return")){
 return e.r;
@@ -371,12 +371,12 @@ throw e;
 }
 }
 } else if (this.gheader != null ) {
-this.gheader.comment = null;
-}this.mode = 22;
+this.gheader.comment=null;
+}this.mode=22;
 case 22:
 if ((this.flags & 512) != 0) {
 try {
-r = p$.readBytes$I$I$I.apply(this, [2, r, f]);
+r=p$.readBytes$I$I$I.apply(this, [2, r, f]);
 } catch (e) {
 if (Clazz.exceptionOf(e, "swingjs.jzlib.Inflate.Return")){
 return e.r;
@@ -385,14 +385,14 @@ throw e;
 }
 }
 if (this.gheader != null ) {
-this.gheader.hcrc = ((this.need & 65535)|0);
+this.gheader.hcrc=((this.need & 65535)|0);
 }if (this.need != (this.z.checksum.getValue() & 65535)) {
-this.mode = 13;
-this.z.msg = "header crc mismatch";
-this.marker = 5;
+this.mode=13;
+this.z.msg="header crc mismatch";
+this.marker=5;
 break;
-}}this.z.checksum = Clazz.new_((I$[2]||$incl$(2)));
-this.mode = 7;
+}}this.z.checksum=Clazz.new_((I$[2]||$incl$(2)));
+this.mode=7;
 break;
 default:
 return -2;
@@ -413,10 +413,10 @@ if (this.z.checksum.getValue() != adler_need) {
 return -3;
 }}this.z.checksum.reset();
 if (length >= (1 << this.wbits)) {
-length = (1 << this.wbits) - 1;
-index = dictLength - length;
+length=(1 << this.wbits) - 1;
+index=dictLength - length;
 }this.blocks.set_dictionary$BA$I$I(dictionary, index, length);
-this.mode = 7;
+this.mode=7;
 return 0;
 });
 
@@ -428,33 +428,33 @@ var r;
 var w;
 if (this.z == null ) return -2;
 if (this.mode != 13) {
-this.mode = 13;
-this.marker = 0;
-}if ((n = this.z.avail_in) == 0) return -5;
-p = this.z.next_in_index;
-m = this.marker;
+this.mode=13;
+this.marker=0;
+}if ((n=this.z.avail_in) == 0) return -5;
+p=this.z.next_in_index;
+m=this.marker;
 while (n != 0 && m < 4 ){
 if (this.z.next_in[p] == C$.mark[m]) {
 m++;
 } else if (this.z.next_in[p] != 0) {
-m = 0;
+m=0;
 } else {
-m = 4 - m;
+m=4 - m;
 }p++;
 n--;
 }
-this.z.total_in = this.z.total_in+(p - this.z.next_in_index);
-this.z.next_in_index = p;
-this.z.avail_in = n;
-this.marker = m;
+this.z.total_in+=p - this.z.next_in_index;
+this.z.next_in_index=p;
+this.z.avail_in=n;
+this.marker=m;
 if (m != 4) {
 return -3;
-}r = this.z.total_in;
-w = this.z.total_out;
+}r=this.z.total_in;
+w=this.z.total_out;
 this.inflateReset();
-this.z.total_in = r;
-this.z.total_out = w;
-this.mode = 7;
+this.z.total_in=r;
+this.z.total_out=w;
+this.mode=7;
 return 0;
 });
 
@@ -465,36 +465,36 @@ return this.blocks.sync_point();
 
 Clazz.newMeth(C$, 'readBytes$I$I$I', function (n, r, f) {
 if (this.need_bytes == -1) {
-this.need_bytes = n;
-this.need = 0;
+this.need_bytes=n;
+this.need=0;
 }while (this.need_bytes > 0){
 if (this.z.avail_in == 0) {
 throw Clazz.new_((I$[5]||$incl$(5)).c$$I, [this, null, r]);
-}r = f;
+}r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need = this.need | ((this.z.next_in[this.z.next_in_index++] & 255) << ((n - this.need_bytes) * 8));
+this.need=this.need | ((this.z.next_in[this.z.next_in_index++] & 255) << ((n - this.need_bytes) * 8));
 this.need_bytes--;
 }
 if (n == 2) {
-this.need = this.need&(65535);
+this.need&=65535;
 } else if (n == 4) {
-this.need = this.need&(4294967295);
-}this.need_bytes = -1;
+this.need&=4294967295;
+}this.need_bytes=-1;
 return r;
 });
 
 Clazz.newMeth(C$, 'readString$I$I', function (r, f) {
 if (this.tmp_string == null ) {
-this.tmp_string = Clazz.new_((I$[6]||$incl$(6)));
+this.tmp_string=Clazz.new_((I$[6]||$incl$(6)));
 }var b = 0;
 do {
 if (this.z.avail_in == 0) {
 throw Clazz.new_((I$[5]||$incl$(5)).c$$I, [this, null, r]);
-}r = f;
+}r=f;
 this.z.avail_in--;
 this.z.total_in++;
-b = this.z.next_in[this.z.next_in_index];
+b=this.z.next_in[this.z.next_in_index];
 if (b != 0) this.tmp_string.write$BA$I$I(this.z.next_in, this.z.next_in_index, 1);
 this.z.checksum.update$BA$I$I(this.z.next_in, this.z.next_in_index, 1);
 this.z.next_in_index++;
@@ -504,11 +504,11 @@ return r;
 
 Clazz.newMeth(C$, 'readBytes$I$I', function (r, f) {
 if (this.tmp_string == null ) {
-this.tmp_string = Clazz.new_((I$[6]||$incl$(6)));
+this.tmp_string=Clazz.new_((I$[6]||$incl$(6)));
 }while (this.need > 0){
 if (this.z.avail_in == 0) {
 throw Clazz.new_((I$[5]||$incl$(5)).c$$I, [this, null, r]);
-}r = f;
+}r=f;
 this.z.avail_in--;
 this.z.total_in++;
 this.tmp_string.write$BA$I$I(this.z.next_in, this.z.next_in_index, 1);
@@ -521,8 +521,8 @@ return r;
 
 Clazz.newMeth(C$, 'checksum$I$J', function (n, v) {
 for (var i = 0; i < n; i++) {
-this.crcbuf[i] = (((v & 255)|0)|0);
-v = v>>(8);
+this.crcbuf[i]=(((v & 255)|0)|0);
+v>>=8;
 }
 this.z.checksum.update$BA$I$I(this.crcbuf, 0, n);
 });
@@ -569,7 +569,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I', function (r) {
 Clazz.super_(C$, this,1);
-this.r = r;
+this.r=r;
 }, 1);
 
 Clazz.newMeth(C$);
@@ -577,4 +577,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:19
+//Created 2018-05-24 08:47:49

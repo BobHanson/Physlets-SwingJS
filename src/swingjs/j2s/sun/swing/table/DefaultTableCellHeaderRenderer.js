@@ -18,7 +18,7 @@ this.setHorizontalAlignment$I(0);
 }, 1);
 
 Clazz.newMeth(C$, 'setHorizontalTextPosition$I', function (textPosition) {
-this.horizontalTextPositionSet = true;
+this.horizontalTextPositionSet=true;
 C$.superclazz.prototype.setHorizontalTextPosition$I.apply(this, [textPosition]);
 });
 
@@ -31,16 +31,16 @@ if (header != null ) {
 var fgColor = null;
 var bgColor = null;
 if (hasFocus) {
-fgColor = (I$[1]||$incl$(1)).getColor$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "TableHeader.focusCellForeground");
-bgColor = (I$[1]||$incl$(1)).getColor$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "TableHeader.focusCellBackground");
+fgColor=(I$[1]||$incl$(1)).getColor$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "TableHeader.focusCellForeground");
+bgColor=(I$[1]||$incl$(1)).getColor$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "TableHeader.focusCellBackground");
 }if (fgColor == null ) {
-fgColor = header.getForeground();
+fgColor=header.getForeground();
 }if (bgColor == null ) {
-bgColor = header.getBackground();
+bgColor=header.getBackground();
 }this.setForeground$java_awt_Color(fgColor);
 this.setBackground$java_awt_Color(bgColor);
 this.setFont$java_awt_Font(header.getFont());
-isPaintingForPrint = header.isPaintingForPrint();
+isPaintingForPrint=header.isPaintingForPrint();
 }if (!isPaintingForPrint && table.getRowSorter() != null  ) {
 if (!this.horizontalTextPositionSet) {
 this.setHorizontalTextPosition$I(10);
@@ -48,22 +48,22 @@ this.setHorizontalTextPosition$I(10);
 if (sortOrder != null ) {
 switch (sortOrder) {
 case (I$[2]||$incl$(2)).ASCENDING:
-sortIcon = (I$[1]||$incl$(1)).getIcon$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Table.ascendingSortIcon");
+sortIcon=(I$[1]||$incl$(1)).getIcon$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Table.ascendingSortIcon");
 break;
 case (I$[2]||$incl$(2)).DESCENDING:
-sortIcon = (I$[1]||$incl$(1)).getIcon$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Table.descendingSortIcon");
+sortIcon=(I$[1]||$incl$(1)).getIcon$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Table.descendingSortIcon");
 break;
 case (I$[2]||$incl$(2)).UNSORTED:
-sortIcon = (I$[1]||$incl$(1)).getIcon$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Table.naturalSortIcon");
+sortIcon=(I$[1]||$incl$(1)).getIcon$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Table.naturalSortIcon");
 break;
 }
 }}}this.setText$S(value == null  ? "" : value.toString());
 this.setIcon$javax_swing_Icon(sortIcon);
 var border = null;
 if (hasFocus) {
-border = (I$[1]||$incl$(1)).getBorder$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "TableHeader.focusCellBorder");
+border=(I$[1]||$incl$(1)).getBorder$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "TableHeader.focusCellBorder");
 }if (border == null ) {
-border = (I$[1]||$incl$(1)).getBorder$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "TableHeader.cellBorder");
+border=(I$[1]||$incl$(1)).getBorder$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "TableHeader.cellBorder");
 }this.setBorder$javax_swing_border_Border(border);
 return this;
 });
@@ -74,11 +74,11 @@ if (table == null  || table.getRowSorter() == null  ) {
 return rv;
 }var sortKeys = table.getRowSorter().getSortKeys();
 if (sortKeys.size() > 0 && sortKeys.get$I(0).getColumn() == table.convertColumnIndexToModel$I(column) ) {
-rv = sortKeys.get$I(0).getSortOrder();
+rv=sortKeys.get$I(0).getSortOrder();
 }return rv;
 }, 1);
 
 Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics', function (g) {
 });
 })();
-//Created 2018-05-15 01:03:12
+//Created 2018-05-24 08:47:37

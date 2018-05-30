@@ -27,7 +27,7 @@ this.listener2SelectiveListener = Clazz.new_((I$[1]||$incl$(1)));
 
 Clazz.newMeth(C$, 'createComponent$java_awt_Component', function (target) {
 if (C$.lightweightMarker == null ) {
-C$.lightweightMarker = Clazz.new_((I$[2]||$incl$(2)));
+C$.lightweightMarker=Clazz.new_((I$[2]||$incl$(2)));
 }return C$.lightweightMarker;
 });
 
@@ -59,7 +59,7 @@ return Clazz.new_((I$[3]||$incl$(3)).c$$I$I$I$I,[0, 0, 0, 0]);
 }});
 
 Clazz.newMeth(C$, 'getDefaultToolkit', function () {
-return (C$.toolkit == null  ? C$.toolkit = Clazz.new_((I$[4]||$incl$(4))) : C$.toolkit);
+return (C$.toolkit == null  ? C$.toolkit=Clazz.new_((I$[4]||$incl$(4))) : C$.toolkit);
 }, 1);
 
 Clazz.newMeth(C$, 'createImage$BA', function (imagedata) {
@@ -127,22 +127,22 @@ if (this.desktopProperties.isEmpty()) {
 this.initializeDesktopProperties();
 }var value;
 if (propertyName.equals$O("awt.dynamicLayoutSupported")) {
-value = this.lazilyLoadDesktopProperty$S(propertyName);
+value=this.lazilyLoadDesktopProperty$S(propertyName);
 return value;
-}value = this.desktopProperties.get$O(propertyName);
+}value=this.desktopProperties.get$O(propertyName);
 if (value == null ) {
-value = this.lazilyLoadDesktopProperty$S(propertyName);
+value=this.lazilyLoadDesktopProperty$S(propertyName);
 if (value != null ) {
 this.setDesktopProperty$S$O(propertyName, value);
 }}if (Clazz.instanceOf(value, "java.awt.RenderingHints")) {
-value = (value).clone();
+value=(value).clone();
 }return value;
 });
 
 Clazz.newMeth(C$, 'setDesktopProperty$S$O', function (name, newValue) {
 var oldValue;
 {
-oldValue = this.desktopProperties.get$O(name);
+oldValue=this.desktopProperties.get$O(name);
 this.desktopProperties.put$TK$TV(name, newValue);
 }this.desktopPropsSupport.firePropertyChange$S$O$O(name, oldValue, newValue);
 });
@@ -179,7 +179,7 @@ var localL = l;
 if (localL == null ) {
 return null;
 }if (Clazz.instanceOf(l, "java.awt.event.AWTEventListenerProxy")) {
-localL = (l).getListener();
+localL=(l).getListener();
 }return localL;
 }, 1);
 
@@ -190,18 +190,18 @@ return;
 }{
 var selectiveListener = this.listener2SelectiveListener.get$O(localL);
 if (selectiveListener == null ) {
-selectiveListener = Clazz.new_((I$[7]||$incl$(7)).c$$java_awt_event_AWTEventListener$J, [this, null, localL, eventMask]);
+selectiveListener=Clazz.new_((I$[7]||$incl$(7)).c$$java_awt_event_AWTEventListener$J, [this, null, localL, eventMask]);
 this.listener2SelectiveListener.put$TK$TV(localL, selectiveListener);
-this.eventListener = (I$[8]||$incl$(8)).add$java_awt_event_AWTEventListener$java_awt_event_AWTEventListener(this.eventListener, selectiveListener);
+this.eventListener=(I$[8]||$incl$(8)).add$java_awt_event_AWTEventListener$java_awt_event_AWTEventListener(this.eventListener, selectiveListener);
 }selectiveListener.orEventMasks$J(eventMask);
-C$.enabledOnToolkitMask = C$.enabledOnToolkitMask|(eventMask);
+C$.enabledOnToolkitMask|=eventMask;
 var mask = eventMask;
 for (var i = 0; i < 32; i++) {
 if (mask == 0) {
 break;
 }if ((mask & 1) != 0) {
 this.calls[i]++;
-}mask = mask>>>(1);
+}mask>>>=1;
 }
 }});
 
@@ -215,11 +215,11 @@ if (selectiveListener != null ) {
 this.listener2SelectiveListener.remove$O(localL);
 var listenerCalls = selectiveListener.getCalls();
 for (var i = 0; i < 32; i++) {
-this.calls[i] = this.calls[i]-(listenerCalls[i]);
+this.calls[i]-=listenerCalls[i];
 if (this.calls[i] == 0) {
-C$.enabledOnToolkitMask = C$.enabledOnToolkitMask&(~(1 << i));
+C$.enabledOnToolkitMask&=~(1 << i);
 }}
-}this.eventListener = (I$[8]||$incl$(8)).remove$java_awt_event_AWTEventListener$java_awt_event_AWTEventListener(this.eventListener, (selectiveListener == null ) ? localL : selectiveListener);
+}this.eventListener=(I$[8]||$incl$(8)).remove$java_awt_event_AWTEventListener$java_awt_event_AWTEventListener(this.eventListener, (selectiveListener == null ) ? localL : selectiveListener);
 }});
 
 Clazz.newMeth(C$, 'enabledOnToolkit$J', function (eventMask) {
@@ -228,7 +228,7 @@ return (C$.enabledOnToolkitMask & eventMask) != 0;
 
 Clazz.newMeth(C$, 'countAWTEventListeners$J', function (eventMask) {
 var ci = 0;
-for (; eventMask != 0; eventMask = eventMask>>>(1), ci++) {
+for (; eventMask != 0; eventMask>>>=1, ci++) {
 }
 ci--;
 return this.calls[ci];
@@ -241,7 +241,7 @@ var ret = Clazz.array((I$[10]||$incl$(10)), [la.length]);
 for (var i = 0; i < la.length; i++) {
 var sael = la[i];
 var tempL = sael.getListener();
-ret[i] = Clazz.new_((I$[11]||$incl$(11)).c$$J$java_awt_event_AWTEventListener,[sael.getEventMask(), tempL]);
+ret[i]=Clazz.new_((I$[11]||$incl$(11)).c$$J$java_awt_event_AWTEventListener,[sael.getEventMask(), tempL]);
 }
 return ret;
 }});
@@ -342,27 +342,27 @@ return this.calls;
 });
 
 Clazz.newMeth(C$, 'orEventMasks$J', function (mask) {
-this.eventMask = this.eventMask|(mask);
+this.eventMask|=mask;
 for (var i = 0; i < 32; i++) {
 if (mask == 0) {
 break;
 }if ((mask & 1) != 0) {
 this.calls[i]++;
-}mask = mask>>>(1);
+}mask>>>=1;
 }
 });
 
 Clazz.newMeth(C$, 'c$$java_awt_event_AWTEventListener$J', function (l, mask) {
 C$.$init$.apply(this);
-this.listener = l;
-this.eventMask = mask;
+this.listener=l;
+this.eventMask=mask;
 }, 1);
 
 Clazz.newMeth(C$, 'eventDispatched$java_awt_AWTEvent', function (event) {
 var eventBit = 0;
-if (((eventBit = this.eventMask & 1) != 0 && event.id >= 100  && event.id <= 103 ) || ((eventBit = this.eventMask & 2) != 0 && event.id >= 300  && event.id <= 301 ) || ((eventBit = this.eventMask & 4) != 0 && event.id >= 1004  && event.id <= 1005 ) || ((eventBit = this.eventMask & 8) != 0 && event.id >= 400  && event.id <= 402 ) || ((eventBit = this.eventMask & 131072) != 0 && event.id == 507 ) || ((eventBit = this.eventMask & 32) != 0 && (event.id == 503 || event.id == 506 ) ) || ((eventBit = this.eventMask & 16) != 0 && event.id != 503  && event.id != 506  && event.id != 507  && event.id >= 500  && event.id <= 507 ) || ((eventBit = this.eventMask & 64) != 0 && (event.id >= 200 && event.id <= 209 ) ) || ((eventBit = this.eventMask & 128) != 0 && event.id >= 1001  && event.id <= 1001 ) || ((eventBit = this.eventMask & 256) != 0 && event.id >= 601  && event.id <= 601 ) || ((eventBit = this.eventMask & 512) != 0 && event.id >= 701  && event.id <= 701 ) || ((eventBit = this.eventMask & 1024) != 0 && event.id >= 900  && event.id <= 900 ) || ((eventBit = this.eventMask & 2048) != 0 && event.id >= 1100  && event.id <= 1101 ) || ((eventBit = this.eventMask & 8192) != 0 && event.id >= 800  && event.id <= 801 ) || ((eventBit = this.eventMask & 16384) != 0 && event.id >= 1200  && event.id <= 1201 ) || ((eventBit = this.eventMask & 32768) != 0 && event.id == 1400 ) || ((eventBit = this.eventMask & 65536) != 0 && (event.id == 1401 || event.id == 1402 ) ) || ((eventBit = this.eventMask & 262144) != 0 && event.id == 209 ) || ((eventBit = this.eventMask & 524288) != 0 && (event.id == 207 || event.id == 208 ) )  ) {
+if (((eventBit=this.eventMask & 1) != 0 && event.id >= 100  && event.id <= 103 ) || ((eventBit=this.eventMask & 2) != 0 && event.id >= 300  && event.id <= 301 ) || ((eventBit=this.eventMask & 4) != 0 && event.id >= 1004  && event.id <= 1005 ) || ((eventBit=this.eventMask & 8) != 0 && event.id >= 400  && event.id <= 402 ) || ((eventBit=this.eventMask & 131072) != 0 && event.id == 507 ) || ((eventBit=this.eventMask & 32) != 0 && (event.id == 503 || event.id == 506 ) ) || ((eventBit=this.eventMask & 16) != 0 && event.id != 503  && event.id != 506  && event.id != 507  && event.id >= 500  && event.id <= 507 ) || ((eventBit=this.eventMask & 64) != 0 && (event.id >= 200 && event.id <= 209 ) ) || ((eventBit=this.eventMask & 128) != 0 && event.id >= 1001  && event.id <= 1001 ) || ((eventBit=this.eventMask & 256) != 0 && event.id >= 601  && event.id <= 601 ) || ((eventBit=this.eventMask & 512) != 0 && event.id >= 701  && event.id <= 701 ) || ((eventBit=this.eventMask & 1024) != 0 && event.id >= 900  && event.id <= 900 ) || ((eventBit=this.eventMask & 2048) != 0 && event.id >= 1100  && event.id <= 1101 ) || ((eventBit=this.eventMask & 8192) != 0 && event.id >= 800  && event.id <= 801 ) || ((eventBit=this.eventMask & 16384) != 0 && event.id >= 1200  && event.id <= 1201 ) || ((eventBit=this.eventMask & 32768) != 0 && event.id == 1400 ) || ((eventBit=this.eventMask & 65536) != 0 && (event.id == 1401 || event.id == 1402 ) ) || ((eventBit=this.eventMask & 262144) != 0 && event.id == 209 ) || ((eventBit=this.eventMask & 524288) != 0 && (event.id == 207 || event.id == 208 ) )  ) {
 var ci = 0;
-for (var eMask = eventBit; eMask != 0; eMask = eMask>>>(1), ci++) {
+for (var eMask = eventBit; eMask != 0; eMask>>>=1, ci++) {
 }
 ci--;
 for (var i = 0; i < this.calls[ci]; i++) {
@@ -375,4 +375,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:54
+//Created 2018-05-24 08:45:13

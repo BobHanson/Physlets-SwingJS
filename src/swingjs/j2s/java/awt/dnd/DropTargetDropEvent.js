@@ -27,14 +27,14 @@ C$.$init$.apply(this);
 if (cursorLocn == null ) throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["cursorLocn"]);
 if (dropAction != 0 && dropAction != 1  && dropAction != 2  && dropAction != 1073741824 ) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["dropAction = " + dropAction]);
 if ((srcActions & -1073741828) != 0) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["srcActions"]);
-this.location = cursorLocn;
-this.actions = srcActions;
-this.dropAction = dropAction;
+this.location=cursorLocn;
+this.actions=srcActions;
+this.dropAction=dropAction;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_dnd_DropTargetContext$java_awt_Point$I$I$Z', function (dtc, cursorLocn, dropAction, srcActions, isLocal) {
 C$.c$$java_awt_dnd_DropTargetContext$java_awt_Point$I$I.apply(this, [dtc, cursorLocn, dropAction, srcActions]);
-this.isLocalTx = isLocal;
+this.isLocalTx=isLocal;
 }, 1);
 
 Clazz.newMeth(C$, 'getLocation', function () {
@@ -83,4 +83,4 @@ return this.isLocalTx;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:56
+//Created 2018-05-24 08:45:16

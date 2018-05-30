@@ -30,27 +30,27 @@ this.height = -1;
 Clazz.newMeth(C$, 'getMetrics$java_awt_Font', function (font) {
 var m = null;
 var r;
-r = C$.metricsCache.get$O(font);
+r=C$.metricsCache.get$O(font);
 if (r != null ) {
-m = r.get();
+m=r.get();
 }if (m == null ) {
-m = Clazz.new_(C$.c$$java_awt_Font,[font]);
+m=Clazz.new_(C$.c$$java_awt_Font,[font]);
 C$.metricsCache.put$TK$TV(font, Clazz.new_((I$[3]||$incl$(3)).c$$O$O,[font, m]));
 }for (var i = 0; i < C$.recentMetrics.length; i++) {
 if (C$.recentMetrics[i] === m ) {
 return m;
 }}
 {
-C$.recentMetrics[C$.recentIndex++] = m;
+C$.recentMetrics[C$.recentIndex++]=m;
 if (C$.recentIndex == 5) {
-C$.recentIndex = 0;
+C$.recentIndex=0;
 }}return m;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Font', function (font) {
 C$.superclazz.c$$java_awt_Font.apply(this, [font]);
 C$.$init$.apply(this);
-this.font = font;
+this.font=font;
 p$.initMatrixAndMetrics.apply(this, []);
 }, 1);
 
@@ -94,12 +94,12 @@ return widths;
 });
 
 Clazz.newMeth(C$, 'getAscent', function () {
-if (this.ascent == 0 ) this.ascent = this.font.getFontMetrics().getAscent();
+if (this.ascent == 0 ) this.ascent=this.font.getFontMetrics().getAscent();
 return ((C$.roundingUpValue + this.ascent)|0);
 });
 
 Clazz.newMeth(C$, 'getDescent', function () {
-if (this.descent == 0 ) this.descent = this.font.getFontMetrics().getDescent();
+if (this.descent == 0 ) this.descent=this.font.getFontMetrics().getDescent();
 return ((C$.roundingUpValue + this.descent)|0);
 });
 
@@ -109,13 +109,13 @@ return ((C$.roundingUpValue + this.descent + this.leading )|0) - ((C$.roundingUp
 
 Clazz.newMeth(C$, 'getHeight', function () {
 if (this.height < 0) {
-this.height = this.getAscent() + ((C$.roundingUpValue + this.descent + this.leading )|0);
+this.height=this.getAscent() + ((C$.roundingUpValue + this.descent + this.leading )|0);
 }return this.height;
 });
 
 Clazz.newMeth(C$, 'charWidth$I', function (codePoint) {
 if (!Character.isValidCodePoint(codePoint)) {
-codePoint = 65535;
+codePoint=65535;
 }if (codePoint < 256) {
 return this.getWidths()[codePoint];
 } else {
@@ -139,8 +139,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$O$O', function (key, value) {
 C$.$init$.apply(this);
-this.key = key;
-this.val = value;
+this.key=key;
+this.val=value;
 }, 1);
 
 Clazz.newMeth(C$, 'get', function () {
@@ -157,4 +157,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:09
+//Created 2018-05-24 08:47:30

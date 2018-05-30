@@ -20,16 +20,16 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$D$D$D$D$I', function (x0, y0, x1, y1, direction) {
 C$.superclazz.c$$I.apply(this, [direction]);
 C$.$init$.apply(this);
-this.x0 = x0;
-this.y0 = y0;
-this.x1 = x1;
-this.y1 = y1;
+this.x0=x0;
+this.y0=y0;
+this.x1=x1;
+this.y1=y1;
 if (x0 < x1 ) {
-this.xmin = x0;
-this.xmax = x1;
+this.xmin=x0;
+this.xmax=x1;
 } else {
-this.xmin = x1;
-this.xmax = x0;
+this.xmin=x1;
+this.xmax=x0;
 }}, 1);
 
 Clazz.newMeth(C$, 'getOrder', function () {
@@ -140,19 +140,19 @@ var yend;
 if (this.y0 < ylo ) {
 if (this.y1 <= ylo ) {
 return false;
-}ystart = ylo;
-xstart = this.XforY$D(ylo);
+}ystart=ylo;
+xstart=this.XforY$D(ylo);
 } else {
 if (this.y0 >= yhi ) {
 return false;
-}ystart = this.y0;
-xstart = this.x0;
+}ystart=this.y0;
+xstart=this.x0;
 }if (this.y1 > yhi ) {
-yend = yhi;
-xend = this.XforY$D(yhi);
+yend=yhi;
+xend=this.XforY$D(yhi);
 } else {
-yend = this.y1;
-xend = this.x1;
+yend=this.y1;
+xend=this.x1;
 }if (xstart >= xhi  && xend >= xhi  ) {
 return false;
 }if (xstart > xlo  || xend > xlo  ) {
@@ -188,7 +188,7 @@ return C$.superclazz.prototype.compareTo$sun_awt_geom_Curve$DA.apply(this, [othe
 }var c1 = other;
 if (yrange[1] <= yrange[0] ) {
 throw Clazz.new_((I$[1]||$incl$(1)).c$$S,["yrange already screwed up..."]);
-}yrange[1] = Math.min(Math.min(yrange[1], this.y1), c1.y1);
+}yrange[1]=Math.min(Math.min(yrange[1], this.y1), c1.y1);
 if (yrange[1] <= yrange[0] ) {
 throw Clazz.new_((I$[1]||$incl$(1)).c$$S,["backstepping from " + new Double(yrange[0]).toString() + " to " + new Double(yrange[1]).toString() ]);
 }if (this.xmax <= c1.xmin ) {
@@ -203,28 +203,28 @@ var denom = dxb * dya - dxa * dyb;
 var y;
 if (denom != 0 ) {
 var num = ((this.x0 - c1.x0) * dya * dyb  - this.y0 * dxa * dyb  + c1.y0 * dxb * dya );
-y = num / denom;
+y=num / denom;
 if (y <= yrange[0] ) {
-y = Math.min(this.y1, c1.y1);
+y=Math.min(this.y1, c1.y1);
 } else {
 if (y < yrange[1] ) {
-yrange[1] = y;
-}y = Math.max(this.y0, c1.y0);
+yrange[1]=y;
+}y=Math.max(this.y0, c1.y0);
 }} else {
-y = Math.max(this.y0, c1.y0);
+y=Math.max(this.y0, c1.y0);
 }return P$.Curve.orderof$D$D(this.XforY$D(y), c1.XforY$D(y));
 });
 
 Clazz.newMeth(C$, 'getSegment$DA', function (coords) {
 if (this.direction == 1) {
-coords[0] = this.x1;
-coords[1] = this.y1;
+coords[0]=this.x1;
+coords[1]=this.y1;
 } else {
-coords[0] = this.x0;
-coords[1] = this.y0;
+coords[0]=this.x0;
+coords[1]=this.y0;
 }return 1;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:07
+//Created 2018-05-24 08:47:25

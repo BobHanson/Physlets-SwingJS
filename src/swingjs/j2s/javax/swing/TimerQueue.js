@@ -26,7 +26,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.queue = Clazz.new_((I$[4]||$incl$(4)));
+this.queue=Clazz.new_((I$[4]||$incl$(4)));
 this.start();
 }, 1);
 
@@ -34,7 +34,7 @@ Clazz.newMeth(C$, 'sharedInstance', function () {
 {
 var sharedInst = (I$[5]||$incl$(5)).appContextGet$O(C$.sharedInstanceKey);
 if (sharedInst == null ) {
-sharedInst = Clazz.new_(C$);
+sharedInst=Clazz.new_(C$);
 (I$[5]||$incl$(5)).appContextPut$O$O(C$.sharedInstanceKey, sharedInst);
 }return sharedInst;
 }}, 1);
@@ -48,11 +48,11 @@ var timerThread = Clazz.new_((I$[7]||$incl$(7)).c$$ThreadGroup$Runnable$S,[threa
 timerThread.setDaemon$Z(true);
 timerThread.setPriority$I(5);
 timerThread.start();
-this.running = true;
+this.running=true;
 }});
 
 Clazz.newMeth(C$, 'stop', function () {
-this.running = false;
+this.running=false;
 });
 
 Clazz.newMeth(C$, 'addTimer$javax_swing_Timer$J', function (timer, delayMillis) {
@@ -67,7 +67,7 @@ Clazz.newMeth(C$, 'addTimer$javax_swing_TimerQueue_DelayedTimer', function (dela
 Clazz.assert(C$, this, function(){return delayedTimer != null  && !this.containsTimer$javax_swing_Timer(delayedTimer.getTimer()) });
 var timer = delayedTimer.getTimer();
 try {
-timer.delayedTimer = delayedTimer;
+timer.delayedTimer=delayedTimer;
 this.queue.add$TE(delayedTimer);
 } finally {
 }
@@ -77,7 +77,7 @@ Clazz.newMeth(C$, 'removeTimer$javax_swing_Timer', function (timer) {
 try {
 if (timer.delayedTimer != null ) {
 this.queue.remove$O(timer.delayedTimer);
-timer.delayedTimer = null;
+timer.delayedTimer=null;
 }} finally {
 }
 });
@@ -98,7 +98,7 @@ try {
 var delayedTimer = timer.delayedTimer;
 if (delayedTimer != null ) {
 timer.post();
-timer.delayedTimer = null;
+timer.delayedTimer=null;
 if (timer.isRepeats()) {
 delayedTimer.setTime$J(C$.now() + (I$[2]||$incl$(2)).MILLISECONDS.toNanos$J(timer.getDelay()));
 p$.addTimer$javax_swing_TimerQueue_DelayedTimer.apply(this, [delayedTimer]);
@@ -119,7 +119,7 @@ throw ignore;
 } catch (td) {
 if (Clazz.exceptionOf(td, "java.lang.ThreadDeath")){
 {
-this.running = false;
+this.running=false;
 for (var delayedTimer, $delayedTimer = this.queue.iterator(); $delayedTimer.hasNext()&&((delayedTimer=$delayedTimer.next()),1);) {
 delayedTimer.getTimer().cancelNotify();
 }
@@ -138,7 +138,7 @@ for (var delayedTimer, $delayedTimer = this.queue.iterator(); $delayedTimer.hasN
 if (!isFirst) {
 buf.append$S(", ");
 }buf.append$S(delayedTimer.getTimer().toString());
-isFirst = false;
+isFirst=false;
 }
 buf.append$S(")");
 return buf.toString();
@@ -170,9 +170,9 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_Timer$J', function (timer, nanos) {
 C$.$init$.apply(this);
-this.timer = timer;
-this.time = nanos;
-this.sequenceNumber = C$.sequencer.getAndIncrement();
+this.timer=timer;
+this.time=nanos;
+this.sequenceNumber=C$.sequencer.getAndIncrement();
 }, 1);
 
 Clazz.newMeth(C$, 'getDelay$java_util_concurrent_TimeUnit', function (unit) {
@@ -180,7 +180,7 @@ return unit.convert$J$java_util_concurrent_TimeUnit(this.time - P$.TimerQueue.no
 });
 
 Clazz.newMeth(C$, 'setTime$J', function (nanos) {
-this.time = nanos;
+this.time=nanos;
 });
 
 Clazz.newMeth(C$, 'getTimer', function () {
@@ -208,4 +208,4 @@ return (d == 0) ? 0 : ((d < 0) ? -1 : 1);
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:41
+//Created 2018-05-24 08:46:42

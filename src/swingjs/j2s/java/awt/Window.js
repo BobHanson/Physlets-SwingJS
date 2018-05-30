@@ -69,14 +69,14 @@ this.initWinGC$java_awt_Window$java_awt_GraphicsConfiguration(owner, gc);
 
 Clazz.newMeth(C$, 'initWinGC$java_awt_Window$java_awt_GraphicsConfiguration', function (owner, gc) {
 this.setAppContext();
-this.parent = owner;
+this.parent=owner;
 if (owner != null ) owner.addOwnedWindow$java_awt_Window(this);
-this.syncLWRequests = C$.systemSyncLWRequests;
+this.syncLWRequests=C$.systemSyncLWRequests;
 p$.addToWindowList.apply(this, []);
-this.cursor = (I$[3]||$incl$(3)).getPredefinedCursor$I(0);
-this.visible = false;
+this.cursor=(I$[3]||$incl$(3)).getPredefinedCursor$I(0);
+this.visible=false;
 this.setLayout$java_awt_LayoutManager(Clazz.new_((I$[4]||$incl$(4))));
-this.modalExclusionType = (I$[5]||$incl$(5)).NO_EXCLUDE;
+this.modalExclusionType=(I$[5]||$incl$(5)).NO_EXCLUDE;
 });
 
 Clazz.newMeth(C$, 'constructComponentName', function () {
@@ -92,7 +92,7 @@ return Clazz.new_((I$[6]||$incl$(6)));
 });
 
 Clazz.newMeth(C$, 'setIconImages$java_util_List', function (icons) {
-this.icons = (icons == null ) ? Clazz.new_((I$[6]||$incl$(6))) : Clazz.new_((I$[6]||$incl$(6)).c$$java_util_Collection,[icons]);
+this.icons=(icons == null ) ? Clazz.new_((I$[6]||$incl$(6))) : Clazz.new_((I$[6]||$incl$(6)).c$$java_util_Collection,[icons]);
 this.firePropertyChange$S$O$O("iconImage", null, null);
 });
 
@@ -112,7 +112,7 @@ C$.superclazz.prototype.addNotify.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'getOrCreatePeer', function () {
-return (this.ui == null  ? null : this.peer == null  ? (this.peer = this.getToolkit().createWindow$java_awt_Window(this)) : this.peer);
+return (this.ui == null  ? null : this.peer == null  ? (this.peer=this.getToolkit().createWindow$java_awt_Window(this)) : this.peer);
 });
 
 Clazz.newMeth(C$, 'removeNotify', function () {
@@ -127,7 +127,7 @@ parent.addNotify();
 }if (this.peer == null ) {
 this.addNotify();
 }if (this.beforeFirstShow) {
-this.isPacked = true;
+this.isPacked=true;
 }this.repackContainer();
 });
 
@@ -154,9 +154,9 @@ Clazz.newMeth(C$, 'reshape$I$I$I$I', function (x, y, width, height) {
 if (this.isMinimumSizeSet()) {
 var minSize = this.getMinimumSize();
 if (width < minSize.width) {
-width = minSize.width;
+width=minSize.width;
 }if (height < minSize.height) {
-height = minSize.height;
+height=minSize.height;
 }}C$.superclazz.prototype.reshape$I$I$I$I.apply(this, [x, y, width, height]);
 });
 
@@ -170,26 +170,26 @@ if (b) this.repaint();
 
 Clazz.newMeth(C$, 'show', function () {
 this.validate();
-this.isInShow = true;
+this.isInShow=true;
 if (this.visible) {
 this.toFront();
 } else {
-this.beforeFirstShow = false;
+this.beforeFirstShow=false;
 C$.closeSplashScreen();
 C$.superclazz.prototype.show.apply(this, []);
 for (var i = 0; i < this.ownedWindowList.size(); i++) {
 var child = this.ownedWindowList.elementAt$I(i);
 if ((child != null ) && child.showWithParent ) {
 child.show();
-child.showWithParent = false;
+child.showWithParent=false;
 }}
 if (Clazz.instanceOf(this, "java.awt.Frame") || Clazz.instanceOf(this, "java.awt.Dialog") ) {
 C$.updateChildFocusableWindowState$java_awt_Window(this);
-}}this.isInShow = false;
+}}this.isInShow=false;
 if ((this.state & 1) == 0) {
 this.repaint();
 this.postWindowEvent$I(200);
-this.state = this.state|(1);
+this.state|=1;
 }});
 
 Clazz.newMeth(C$, 'updateChildFocusableWindowState$java_awt_Window', function (w) {
@@ -212,7 +212,7 @@ for (var i = 0; i < this.ownedWindowList.size(); i++) {
 var child = this.ownedWindowList.elementAt$I(i);
 if ((child != null ) && child.visible ) {
 child.hide();
-child.showWithParent = true;
+child.showWithParent=true;
 }}
 }C$.superclazz.prototype.hide.apply(this, []);
 });
@@ -244,14 +244,14 @@ Clazz.newMeth(C$, 'run', function () {
 (this.$finals.me).getUI().uninstallJS();
 var ownedWindowArray;
 {
-ownedWindowArray = Clazz.array(java.lang.Object, [this.b$['java.awt.Window'].ownedWindowList.size()]);
+ownedWindowArray=Clazz.array(java.lang.Object, [this.b$['java.awt.Window'].ownedWindowList.size()]);
 this.b$['java.awt.Window'].ownedWindowList.copyInto$OA(ownedWindowArray);
 }for (var i = 0; i < ownedWindowArray.length; i++) {
 var child = ownedWindowArray[i];
 if (child != null ) child.disposeImpl();
 }
 this.b$['java.awt.Window'].hide();
-this.b$['java.awt.Window'].beforeFirstShow = true;
+this.b$['java.awt.Window'].beforeFirstShow=true;
 this.b$['java.awt.Window'].removeNotify();
 this.b$['java.awt.Window'].clearCurrentFocusCycleRootOnHide();
 });
@@ -313,7 +313,7 @@ return (I$[11]||$incl$(11)).getDefault();
 
 Clazz.newMeth(C$, 'setCursor$java_awt_Cursor', function (cursor) {
 if (cursor == null ) {
-cursor = (I$[3]||$incl$(3)).getPredefinedCursor$I(0);
+cursor=(I$[3]||$incl$(3)).getPredefinedCursor$I(0);
 }C$.superclazz.prototype.setCursor$java_awt_Cursor.apply(this, [cursor]);
 });
 
@@ -336,14 +336,14 @@ var fullSize = this.ownedWindowList.size();
 var realSize = 0;
 var fullCopy = Clazz.array(C$, [fullSize]);
 for (var i = 0; i < fullSize; i++) {
-fullCopy[realSize] = this.ownedWindowList.elementAt$I(i);
+fullCopy[realSize]=this.ownedWindowList.elementAt$I(i);
 if (fullCopy[realSize] != null ) {
 realSize++;
 }}
 if (fullSize != realSize) {
-realCopy = (I$[12]||$incl$(12)).copyOf$TTA$I(fullCopy, realSize);
+realCopy=(I$[12]||$incl$(12)).copyOf$TTA$I(fullCopy, realSize);
 } else {
-realCopy = fullCopy;
+realCopy=fullCopy;
 }}return realCopy;
 });
 
@@ -386,14 +386,14 @@ var fullCopy = Clazz.array(C$, [fullSize]);
 for (var i = 0; i < fullSize; i++) {
 var w = windowList.get$I(i);
 if (w != null ) {
-fullCopy[realSize++] = w;
+fullCopy[realSize++]=w;
 }}
 if (fullSize != realSize) {
-realCopy = (I$[12]||$incl$(12)).copyOf$TTA$I(fullCopy, realSize);
+realCopy=(I$[12]||$incl$(12)).copyOf$TTA$I(fullCopy, realSize);
 } else {
-realCopy = fullCopy;
+realCopy=fullCopy;
 }} else {
-realCopy = Clazz.array(C$, [0]);
+realCopy=Clazz.array(C$, [0]);
 }return realCopy;
 }}, 1);
 
@@ -412,7 +412,7 @@ var ownerless = Clazz.array(C$, [ownerlessCount]);
 var c = 0;
 for (var w, $w = 0, $$w = allWindows; $w<$$w.length&&((w=$$w[$w]),1);$w++) {
 if (w.getOwner() == null ) {
-ownerless[c++] = w;
+ownerless[c++]=w;
 }}
 return ownerless;
 }, 1);
@@ -421,19 +421,19 @@ Clazz.newMeth(C$, 'getDocumentRoot', function () {
 {
 var w = this;
 while (w.getOwner() != null ){
-w = w.getOwner();
+w=w.getOwner();
 }
 return w;
 }});
 
 Clazz.newMeth(C$, 'setModalExclusionType$java_awt_Dialog_ModalExclusionType', function (exclusionType) {
 if (exclusionType == null ) {
-exclusionType = (I$[5]||$incl$(5)).NO_EXCLUDE;
+exclusionType=(I$[5]||$incl$(5)).NO_EXCLUDE;
 }if (!(I$[8]||$incl$(8)).getDefaultToolkit().isModalExclusionTypeSupported$java_awt_Dialog_ModalExclusionType(exclusionType)) {
-exclusionType = (I$[5]||$incl$(5)).NO_EXCLUDE;
+exclusionType=(I$[5]||$incl$(5)).NO_EXCLUDE;
 }if (this.modalExclusionType === exclusionType ) {
 return;
-}this.modalExclusionType = exclusionType;
+}this.modalExclusionType=exclusionType;
 });
 
 Clazz.newMeth(C$, 'getModalExclusionType', function () {
@@ -450,40 +450,40 @@ return (owner != null ) && owner.isModalExcluded$java_awt_Dialog_ModalExclusionT
 Clazz.newMeth(C$, 'addWindowListener$java_awt_event_WindowListener', function (l) {
 if (l == null ) {
 return;
-}this.newEventsOnly = true;
-this.windowListener = (I$[14]||$incl$(14)).add$java_awt_event_WindowListener$java_awt_event_WindowListener(this.windowListener, l);
+}this.newEventsOnly=true;
+this.windowListener=(I$[14]||$incl$(14)).add$java_awt_event_WindowListener$java_awt_event_WindowListener(this.windowListener, l);
 });
 
 Clazz.newMeth(C$, 'addWindowStateListener$java_awt_event_WindowStateListener', function (l) {
 if (l == null ) {
 return;
-}this.windowStateListener = (I$[14]||$incl$(14)).add$java_awt_event_WindowStateListener$java_awt_event_WindowStateListener(this.windowStateListener, l);
-this.newEventsOnly = true;
+}this.windowStateListener=(I$[14]||$incl$(14)).add$java_awt_event_WindowStateListener$java_awt_event_WindowStateListener(this.windowStateListener, l);
+this.newEventsOnly=true;
 });
 
 Clazz.newMeth(C$, 'addWindowFocusListener$java_awt_event_WindowFocusListener', function (l) {
 if (l == null ) {
 return;
-}this.windowFocusListener = (I$[14]||$incl$(14)).add$java_awt_event_WindowFocusListener$java_awt_event_WindowFocusListener(this.windowFocusListener, l);
-this.newEventsOnly = true;
+}this.windowFocusListener=(I$[14]||$incl$(14)).add$java_awt_event_WindowFocusListener$java_awt_event_WindowFocusListener(this.windowFocusListener, l);
+this.newEventsOnly=true;
 });
 
 Clazz.newMeth(C$, 'removeWindowListener$java_awt_event_WindowListener', function (l) {
 if (l == null ) {
 return;
-}this.windowListener = (I$[14]||$incl$(14)).remove$java_awt_event_WindowListener$java_awt_event_WindowListener(this.windowListener, l);
+}this.windowListener=(I$[14]||$incl$(14)).remove$java_awt_event_WindowListener$java_awt_event_WindowListener(this.windowListener, l);
 });
 
 Clazz.newMeth(C$, 'removeWindowStateListener$java_awt_event_WindowStateListener', function (l) {
 if (l == null ) {
 return;
-}this.windowStateListener = (I$[14]||$incl$(14)).remove$java_awt_event_WindowStateListener$java_awt_event_WindowStateListener(this.windowStateListener, l);
+}this.windowStateListener=(I$[14]||$incl$(14)).remove$java_awt_event_WindowStateListener$java_awt_event_WindowStateListener(this.windowStateListener, l);
 });
 
 Clazz.newMeth(C$, 'removeWindowFocusListener$java_awt_event_WindowFocusListener', function (l) {
 if (l == null ) {
 return;
-}this.windowFocusListener = (I$[14]||$incl$(14)).remove$java_awt_event_WindowFocusListener$java_awt_event_WindowFocusListener(this.windowFocusListener, l);
+}this.windowFocusListener=(I$[14]||$incl$(14)).remove$java_awt_event_WindowFocusListener$java_awt_event_WindowFocusListener(this.windowFocusListener, l);
 });
 
 Clazz.newMeth(C$, 'getWindowListeners', function () {
@@ -501,11 +501,11 @@ return (this.getListeners$Class(Clazz.getClass((I$[17]||$incl$(17)),['windowStat
 Clazz.newMeth(C$, 'getListeners$Class', function (listenerType) {
 var l = null;
 if (listenerType === Clazz.getClass((I$[16]||$incl$(16)),['windowGainedFocus$java_awt_event_WindowEvent','windowLostFocus$java_awt_event_WindowEvent']) ) {
-l = this.windowFocusListener;
+l=this.windowFocusListener;
 } else if (listenerType === Clazz.getClass((I$[17]||$incl$(17)),['windowStateChanged$java_awt_event_WindowEvent']) ) {
-l = this.windowStateListener;
+l=this.windowStateListener;
 } else if (listenerType === Clazz.getClass((I$[15]||$incl$(15)),['windowActivated$java_awt_event_WindowEvent','windowClosed$java_awt_event_WindowEvent','windowClosing$java_awt_event_WindowEvent','windowDeactivated$java_awt_event_WindowEvent','windowDeiconified$java_awt_event_WindowEvent','windowIconified$java_awt_event_WindowEvent','windowOpened$java_awt_event_WindowEvent']) ) {
-l = this.windowListener;
+l=this.windowListener;
 } else {
 return C$.superclazz.prototype.getListeners$Class.apply(this, [listenerType]);
 }return (I$[14]||$incl$(14)).getListeners$java_util_EventListener$Class(l, listenerType);
@@ -629,8 +629,8 @@ Clazz.newMeth(C$, 'postProcessKeyEvent$java_awt_event_KeyEvent', function (e) {
 Clazz.newMeth(C$, 'setAlwaysOnTop$Z', function (alwaysOnTop) {
 var oldAlwaysOnTop;
 {
-oldAlwaysOnTop = this.alwaysOnTop;
-this.alwaysOnTop = alwaysOnTop;
+oldAlwaysOnTop=this.alwaysOnTop;
+this.alwaysOnTop=alwaysOnTop;
 }if (oldAlwaysOnTop != alwaysOnTop ) {
 if (this.isAlwaysOnTopSupported()) {
 }this.firePropertyChange$S$Z$Z("alwaysOnTop", oldAlwaysOnTop, alwaysOnTop);
@@ -672,7 +672,7 @@ if (!this.getFocusableWindowState()) {
 return false;
 }if (Clazz.instanceOf(this, "java.awt.Frame") || Clazz.instanceOf(this, "java.awt.Dialog") ) {
 return true;
-}for (var owner = this.getOwner(); owner != null ; owner = owner.getOwner()) {
+}for (var owner = this.getOwner(); owner != null ; owner=owner.getOwner()) {
 if (Clazz.instanceOf(owner, "java.awt.Frame") || Clazz.instanceOf(owner, "java.awt.Dialog") ) {
 return owner.isShowing();
 }}
@@ -686,11 +686,11 @@ return this.focusableWindowState;
 Clazz.newMeth(C$, 'setFocusableWindowState$Z', function (focusableWindowState) {
 var oldFocusableWindowState;
 {
-oldFocusableWindowState = this.focusableWindowState;
-this.focusableWindowState = focusableWindowState;
+oldFocusableWindowState=this.focusableWindowState;
+this.focusableWindowState=focusableWindowState;
 }this.firePropertyChange$S$Z$Z("focusableWindowState", oldFocusableWindowState, focusableWindowState);
 if (oldFocusableWindowState && !focusableWindowState && this.isFocused()  ) {
-for (var owner = this.getOwner(); owner != null ; owner = owner.getOwner()) {
+for (var owner = this.getOwner(); owner != null ; owner=owner.getOwner()) {
 }
 }});
 
@@ -741,20 +741,20 @@ this.ownedWindowList.removeElement$O(weakWindow);
 }});
 
 Clazz.newMeth(C$, 'connectOwnedWindow$java_awt_Window', function (child) {
-child.parent = this;
+child.parent=this;
 this.addOwnedWindow$java_awt_Window(child);
 });
 
 Clazz.newMeth(C$, 'addToWindowList', function () {
 var windowList = this.appContext.get$O(Clazz.getClass(C$));
 if (windowList == null ) {
-windowList = Clazz.new_((I$[2]||$incl$(2)));
+windowList=Clazz.new_((I$[2]||$incl$(2)));
 this.appContext.put$O$O(Clazz.getClass(C$), windowList);
 }windowList.add$TE(this);
 });
 
 Clazz.newMeth(C$, 'getGraphicsConfiguration', function () {
-if (this.graphicsConfig == null ) this.graphicsConfig = (I$[18]||$incl$(18)).getGraphicsConfiguration();
+if (this.graphicsConfig == null ) this.graphicsConfig=(I$[18]||$incl$(18)).getGraphicsConfiguration();
 return this.graphicsConfig;
 });
 
@@ -765,12 +765,12 @@ Clazz.newMeth(C$, 'setLocationRelativeTo$java_awt_Component', function (c) {
 var root = null;
 if (c != null ) {
 if (Clazz.instanceOf(c, "java.awt.Window") || Clazz.instanceOf(c, "java.applet.Applet") ) {
-root = c;
+root=c;
 } else {
 var parent;
-for (parent = c.getParent(); parent != null ; parent = parent.getParent()) {
+for (parent=c.getParent(); parent != null ; parent=parent.getParent()) {
 if (Clazz.instanceOf(parent, "java.awt.Window") || Clazz.instanceOf(parent, "java.applet.Applet") ) {
-root = parent;
+root=parent;
 break;
 }}
 }}if ((c != null  && !c.isShowing() ) || root == null   || !root.isShowing() ) {
@@ -785,15 +785,15 @@ var dx = invokerScreenLocation.x + ((invokerSize.width - windowBounds.width) >> 
 var dy = invokerScreenLocation.y + ((invokerSize.height - windowBounds.height) >> 1);
 var ss = root.getGraphicsConfiguration().getBounds();
 if (dy + windowBounds.height > ss.y + ss.height) {
-dy = ss.y + ss.height - windowBounds.height;
+dy=ss.y + ss.height - windowBounds.height;
 if (invokerScreenLocation.x - ss.x + (invokerSize.width/2|0) < (ss.width/2|0)) {
-dx = invokerScreenLocation.x + invokerSize.width;
+dx=invokerScreenLocation.x + invokerSize.width;
 } else {
-dx = invokerScreenLocation.x - windowBounds.width;
+dx=invokerScreenLocation.x - windowBounds.width;
 }}if (dx + windowBounds.width > ss.x + ss.width) {
-dx = ss.x + ss.width - windowBounds.width;
-}if (dx < ss.x) dx = ss.x;
-if (dy < ss.y) dy = ss.y;
+dx=ss.x + ss.width - windowBounds.width;
+}if (dx < ss.x) dx=ss.x;
+if (dy < ss.y) dy=ss.y;
 this.setLocation$I$I(dx, dy);
 }});
 
@@ -811,9 +811,9 @@ return this.temporaryLostComponent;
 Clazz.newMeth(C$, 'setTemporaryLostComponent$java_awt_Component', function (component) {
 var previousComp = this.temporaryLostComponent;
 if (component == null  || component.canBeFocusOwner() ) {
-this.temporaryLostComponent = component;
+this.temporaryLostComponent=component;
 } else {
-this.temporaryLostComponent = null;
+this.temporaryLostComponent=null;
 }return previousComp;
 });
 
@@ -842,7 +842,7 @@ Clazz.newMeth(C$, 'setOpacity$F', function (opacity) {
 {
 if (opacity < 0.0  || opacity > 1.0  ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["The value of opacity should be in the range [0.0f .. 1.0f]."]);
-}this.opacity = opacity;
+}this.opacity=opacity;
 }});
 
 Clazz.newMeth(C$, 'getShape', function () {
@@ -852,13 +852,13 @@ return this.shape;
 
 Clazz.newMeth(C$, 'setShape$java_awt_Shape', function (shape) {
 {
-this.shape = shape;
+this.shape=shape;
 }});
 
 Clazz.newMeth(C$, 'setOpaque$Z', function (opaque) {
 {
 C$.setLayersOpaque$java_awt_Component$Z(this, opaque);
-this.opaque = opaque;
+this.opaque=opaque;
 var peer = this.getPeer();
 if (peer != null ) {
 peer.setOpaque$Z(opaque);
@@ -886,18 +886,18 @@ C$.setLayersOpaque$java_awt_Component$Z(child, isOpaque);
 var hasTransparentBg = C$.TRANSPARENT_BACKGROUND_COLOR.equals$O(bg);
 var container = null;
 if (Clazz.instanceOf(component, "java.awt.Container")) {
-container = component;
+container=component;
 }if (isOpaque) {
 if (hasTransparentBg) {
 var newColor = null;
 if (container != null  && container.preserveBackgroundColor != null  ) {
-newColor = container.preserveBackgroundColor;
+newColor=container.preserveBackgroundColor;
 } else {
-newColor = Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I,[255, 255, 255]);
+newColor=Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I,[255, 255, 255]);
 }component.setBackground$java_awt_Color(newColor);
 }} else {
 if (!hasTransparentBg && container != null  ) {
-container.preserveBackgroundColor = bg;
+container.preserveBackgroundColor=bg;
 }component.setBackground$java_awt_Color(C$.TRANSPARENT_BACKGROUND_COLOR);
 }}, 1);
 
@@ -912,4 +912,4 @@ Clazz.newMeth(C$, 'getLocationOnWindow', function () {
 return Clazz.new_((I$[22]||$incl$(22)).c$$I$I,[0, 0]);
 });
 })();
-//Created 2018-05-15 01:01:54
+//Created 2018-05-24 08:45:14

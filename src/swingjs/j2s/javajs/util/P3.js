@@ -14,22 +14,22 @@ Clazz.super_(C$, this,1);
 
 Clazz.newMeth(C$, 'newP$javajs_util_T3', function (t) {
 var p = Clazz.new_(C$);
-p.x = t.x;
-p.y = t.y;
-p.z = t.z;
+p.x=t.x;
+p.y=t.y;
+p.z=t.z;
 return p;
 }, 1);
 
 Clazz.newMeth(C$, 'getUnlikely', function () {
-return (C$.unlikely == null  ? C$.unlikely = C$.new3$F$F$F(3.1415927, 2.7182817, 8.539734) : C$.unlikely);
+return (C$.unlikely == null  ? C$.unlikely=C$.new3$F$F$F(3.1415927, 2.7182817, 8.539734) : C$.unlikely);
 }, 1);
 
 Clazz.newMeth(C$, 'new3$F$F$F', function (x, y, z) {
 var p = Clazz.new_(C$);
-p.x = x;
-p.y = y;
-p.z = z;
+p.x=x;
+p.y=y;
+p.z=z;
 return p;
 }, 1);
 })();
-//Created 2018-05-15 01:02:19
+//Created 2018-05-24 08:45:57

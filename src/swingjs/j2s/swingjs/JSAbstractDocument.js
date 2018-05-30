@@ -26,8 +26,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.me = this;
-this.props = Clazz.new_((I$[2]||$incl$(2)));
+this.me=this;
+this.props=Clazz.new_((I$[2]||$incl$(2)));
 }, 1);
 
 Clazz.newMeth(C$, 'getRootElements', function () {
@@ -43,20 +43,20 @@ if (this.positions == null  || this.positions.isEmpty() ) return;
 if (isInsert) {
 for (var i, $i = this.positions.keySet().iterator(); $i.hasNext()&&((i=$i.next()),1);) {
 var pos = i.intValue();
-if (pos > offset) this.positions.get$O(i).pos = this.positions.get$O(i).pos+(length);
+if (pos > offset) this.positions.get$O(i).pos+=length;
 }
 return;
 }for (var i, $i = this.positions.keySet().iterator(); $i.hasNext()&&((i=$i.next()),1);) {
 var pos = i.intValue();
 if (pos <= offset) continue;
-if (pos >= offset + length) this.positions.get$O(i).pos = this.positions.get$O(i).pos-(length);
- else this.positions.get$O(i).pos = offset;
+if (pos >= offset + length) this.positions.get$O(i).pos-=length;
+ else this.positions.get$O(i).pos=offset;
 }
 });
 
 Clazz.newMeth(C$, 'getFilterBypass', function () {
 if (this.filterBypass == null ) {
-this.filterBypass = Clazz.new_((I$[4]||$incl$(4)), [this, null]);
+this.filterBypass=Clazz.new_((I$[4]||$incl$(4)), [this, null]);
 }return this.filterBypass;
 });
 
@@ -83,20 +83,20 @@ if (text != null  && text.length$() > 0 ) this.insertString$I$S$javax_swing_text
 }});
 
 Clazz.newMeth(C$, 'taint', function () {
-this.tempChar = null;
+this.tempChar=null;
 });
 
 Clazz.newMeth(C$, 'setLines', function () {
-this.root = Clazz.new_((I$[5]||$incl$(5)), [this, null]);
+this.root=Clazz.new_((I$[5]||$incl$(5)), [this, null]);
 var s = this.sb.toString();
 if (s.lastIndexOf("\u000a") != s.length$() - 1) s += "\n";
 var ilast = 0;
 for (var i = 0; i < s.length$(); i++) {
 if (s.charAt(i) != "\u000a") continue;
 var e = Clazz.new_((I$[5]||$incl$(5)), [this, null]);
-e.start = ilast;
-e.end = i;
-ilast = i + 1;
+e.start=ilast;
+e.end=i;
+ilast=i + 1;
 this.root.addChild$swingjs_JSAbstractDocument_JSElement(e);
 }
 });
@@ -128,45 +128,45 @@ this.fireRemoveUpdate$javax_swing_event_DocumentEvent(chng);
 Clazz.newMeth(C$, 'fireInsertUpdate$javax_swing_event_DocumentEvent', function (e) {
 if (this.listenerList == null ) return;
 p$.checkAlreadyNotifying.apply(this, []);
-this.notifyingListeners = true;
+this.notifyingListeners=true;
 try {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[8]||$incl$(8)),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent']) ) {
 (listeners[i + 1]).insertUpdate$javax_swing_event_DocumentEvent(e);
 }}
 } finally {
-this.notifyingListeners = false;
+this.notifyingListeners=false;
 }
 });
 
 Clazz.newMeth(C$, 'fireChangedUpdate$javax_swing_event_DocumentEvent', function (e) {
 if (this.listenerList == null ) return;
 p$.checkAlreadyNotifying.apply(this, []);
-this.notifyingListeners = true;
+this.notifyingListeners=true;
 try {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[8]||$incl$(8)),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent']) ) {
 (listeners[i + 1]).changedUpdate$javax_swing_event_DocumentEvent(e);
 }}
 } finally {
-this.notifyingListeners = false;
+this.notifyingListeners=false;
 }
 });
 
 Clazz.newMeth(C$, 'fireRemoveUpdate$javax_swing_event_DocumentEvent', function (e) {
 if (this.listenerList == null ) return;
 p$.checkAlreadyNotifying.apply(this, []);
-this.notifyingListeners = true;
+this.notifyingListeners=true;
 try {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[8]||$incl$(8)),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent']) ) {
 (listeners[i + 1]).removeUpdate$javax_swing_event_DocumentEvent(e);
 }}
 } finally {
-this.notifyingListeners = false;
+this.notifyingListeners=false;
 }
 });
 
@@ -175,7 +175,7 @@ if (this.notifyingListeners) throw Clazz.new_(Clazz.load('java.lang.IllegalState
 });
 
 Clazz.newMeth(C$, 'addDocumentListener$javax_swing_event_DocumentListener', function (listener) {
-if (this.listenerList == null ) this.listenerList = Clazz.new_((I$[9]||$incl$(9)));
+if (this.listenerList == null ) this.listenerList=Clazz.new_((I$[9]||$incl$(9)));
 this.listenerList.add$Class$TT(Clazz.getClass((I$[8]||$incl$(8)),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent']), listener);
 });
 
@@ -202,7 +202,7 @@ return -1;
 });
 
 Clazz.newMeth(C$, 'setDocumentFilter$javax_swing_text_DocumentFilter', function (filter) {
-this.filter = filter;
+this.filter=filter;
 });
 
 Clazz.newMeth(C$, 'getDocumentFilter', function () {
@@ -262,15 +262,15 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.children = null;
-this.nchildren = 0;
-this.lastIndex = -1;
+this.children=null;
+this.nchildren=0;
+this.lastIndex=-1;
 }, 1);
 
 Clazz.newMeth(C$, 'addChild$swingjs_JSAbstractDocument_JSElement', function (e) {
-if (this.children == null ) this.children = Clazz.array(C$, [10]);
- else if (this.nchildren == this.children.length) this.children = (I$[1]||$incl$(1)).doubleLength$O(this.children);
-this.children[this.nchildren++] = e;
+if (this.children == null ) this.children=Clazz.array(C$, [10]);
+ else if (this.nchildren == this.children.length) this.children=(I$[1]||$incl$(1)).doubleLength$O(this.children);
+this.children[this.nchildren++]=e;
 });
 
 Clazz.newMeth(C$, 'getDocument', function () {
@@ -310,33 +310,33 @@ return 0;
 return this.nchildren - 1;
 }if ((this.lastIndex >= lower) && (this.lastIndex <= upper) ) {
 var lastHit = this.children[this.lastIndex];
-p0 = lastHit.getStartOffset();
-p1 = lastHit.getEndOffset();
+p0=lastHit.getStartOffset();
+p1=lastHit.getEndOffset();
 if ((offset >= p0) && (offset < p1) ) {
 return this.lastIndex;
 }if (offset < p0) {
-upper = this.lastIndex;
+upper=this.lastIndex;
 } else {
-lower = this.lastIndex;
+lower=this.lastIndex;
 }}while (lower <= upper){
-mid = lower + (((upper - lower)/2|0));
+mid=lower + (((upper - lower)/2|0));
 var elem = this.children[mid];
-p0 = elem.getStartOffset();
-p1 = elem.getEndOffset();
+p0=elem.getStartOffset();
+p1=elem.getEndOffset();
 if ((offset >= p0) && (offset < p1) ) {
-index = mid;
-this.lastIndex = index;
+index=mid;
+this.lastIndex=index;
 return index;
 } else if (offset < p0) {
-upper = mid - 1;
+upper=mid - 1;
 } else {
-lower = mid + 1;
+lower=mid + 1;
 }}
 if (offset < p0) {
-index = mid;
+index=mid;
 } else {
-index = mid + 1;
-}this.lastIndex = index;
+index=mid + 1;
+}this.lastIndex=index;
 return index;
 });
 
@@ -353,4 +353,4 @@ return (this.parent != null );
 });
 })()
 })();
-//Created 2018-05-15 01:03:13
+//Created 2018-05-24 08:47:39

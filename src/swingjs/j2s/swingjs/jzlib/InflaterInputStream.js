@@ -29,9 +29,9 @@ this.b = Clazz.array(Byte.TYPE, [512]);
 Clazz.newMeth(C$, 'c$$java_io_InputStream$swingjs_jzlib_Inflater$I$Z', function ($in, inflater, size, close_in) {
 C$.superclazz.c$$java_io_InputStream.apply(this, [$in]);
 C$.$init$.apply(this);
-this.inflater = inflater;
-this.buf = Clazz.array(Byte.TYPE, [size]);
-this.close_in = close_in;
+this.inflater=inflater;
+this.buf=Clazz.array(Byte.TYPE, [size]);
+this.close_in=close_in;
 }, 1);
 
 Clazz.newMeth(C$, 'read', function () {
@@ -60,14 +60,14 @@ this.inflater.setOutput$BA$I$I(b, off, len);
 while (!this.eof){
 if (this.inflater.avail_in == 0) this.fill();
 var err = this.inflater.inflate$I(0);
-n = n+(this.inflater.next_out_index - off);
-off = this.inflater.next_out_index;
+n+=this.inflater.next_out_index - off;
+off=this.inflater.next_out_index;
 switch (err) {
 case -3:
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[this.inflater.msg]);
 case 1:
 case 2:
-this.eof = true;
+this.eof=true;
 if (err == 2) return -1;
 break;
 default:
@@ -93,12 +93,12 @@ var total = 0;
 while (total < max){
 var len = max - total;
 if (len > this.b.length) {
-len = this.b.length;
-}len = this.read$BA$I$I(this.b, 0, len);
+len=this.b.length;
+}len=this.read$BA$I$I(this.b, 0, len);
 if (len == -1) {
-this.eof = true;
+this.eof=true;
 break;
-}total = total+(len);
+}total+=len;
 }
 return total;
 });
@@ -107,17 +107,17 @@ Clazz.newMeth(C$, 'close', function () {
 if (!this.closed) {
 if (this.myinflater) this.inflater.end();
 if (this.close_in) this.$in.close();
-this.closed = true;
+this.closed=true;
 }});
 
 Clazz.newMeth(C$, 'fill', function () {
 if (this.closed) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Stream closed"]);
-}this.len = this.$in.read$BA$I$I(this.buf, 0, this.buf.length);
+}this.len=this.$in.read$BA$I$I(this.buf, 0, this.buf.length);
 if (this.len == -1) {
 if (this.inflater.istate.wrap == 0 && !this.inflater.finished() ) {
-this.buf[0] = (0|0);
-this.len = 1;
+this.buf[0]=(0|0);
+this.len=1;
 } else if (this.inflater.istate.was != -1) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["footer is not found"]);
 } else {
@@ -163,7 +163,7 @@ do {
 var i = this.$in.read$BA$I$I(b1, 0, 1);
 if (i <= 0) throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["no input"]);
 this.inflater.setInput$BA$I$I$Z(b1, 0, b1.length, false);
-err = this.inflater.inflate$I(0);
+err=this.inflater.inflate$I(0);
 if (err != 0) throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[this.inflater.msg]);
 } while (this.inflater.istate.inParsingHeader());
 });
@@ -174,4 +174,4 @@ return this.inflater;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:19
+//Created 2018-05-24 08:47:49

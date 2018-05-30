@@ -27,9 +27,9 @@ Clazz.super_(C$, this,1);
 
 Clazz.newMeth(C$, 'c$$java_awt_image_ImageProducer', function (is) {
 Clazz.super_(C$, this,1);
-this.source = is;
+this.source=is;
 if (Clazz.instanceOf(is, "sun.awt.image.InputStreamImageSource")) {
-this.src = is;
+this.src=is;
 }}, 1);
 
 Clazz.newMeth(C$, 'getSource', function () {
@@ -73,7 +73,7 @@ if (this.properties == null ) {
 return null;
 }}var o = this.properties.get$O(name);
 if (o == null ) {
-o = (I$[1]||$incl$(1)).UndefinedProperty;
+o=(I$[1]||$incl$(1)).UndefinedProperty;
 }return o;
 });
 
@@ -126,20 +126,20 @@ return;
 }});
 
 Clazz.newMeth(C$, 'addInfo$I', function (newinfo) {
-this.availinfo = this.availinfo|(newinfo);
+this.availinfo|=newinfo;
 this.notifyAll();
 });
 
 Clazz.newMeth(C$, 'setDimensions$I$I', function (w, h) {
-this.width = w;
-this.height = h;
+this.width=w;
+this.height=h;
 this.addInfo$I(3);
 });
 
 Clazz.newMeth(C$, 'setProperties$java_util_Hashtable', function (props) {
 if (props == null ) {
-props = Clazz.new_((I$[3]||$incl$(3)));
-}this.properties = props;
+props=Clazz.new_((I$[3]||$incl$(3)));
+}this.properties=props;
 this.addInfo$I(4);
 });
 
@@ -153,9 +153,9 @@ this.setProperties$java_util_Hashtable(null);
 Clazz.newMeth(C$, 'flush', function () {
 var ir;
 {
-this.availinfo = this.availinfo&(-65);
-ir = this.imagerep;
-this.imagerep = null;
+this.availinfo&=-65;
+ir=this.imagerep;
+this.imagerep=null;
 }if (ir != null ) {
 ir.abort();
 }if (this.src != null ) {
@@ -168,7 +168,7 @@ return Clazz.new_((I$[4]||$incl$(4)).c$$sun_awt_image_ToolkitImage$java_awt_imag
 
 Clazz.newMeth(C$, 'getImageRep', function () {
 if (this.imagerep == null ) {
-this.imagerep = this.makeImageRep();
+this.imagerep=this.makeImageRep();
 }return this.imagerep;
 });
 
@@ -192,4 +192,4 @@ var imageRep = this.getImageRep();
 imageRep.setAccelerationPriority$F(this.accelerationPriority);
 });
 })();
-//Created 2018-05-15 01:03:09
+//Created 2018-05-24 08:47:29

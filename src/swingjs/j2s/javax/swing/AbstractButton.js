@@ -85,7 +85,7 @@ this.hideActionText = false;
 
 Clazz.newMeth(C$, 'setHideActionText$Z', function (hideActionText) {
 if (hideActionText != this.hideActionText ) {
-this.hideActionText = hideActionText;
+this.hideActionText=hideActionText;
 if (this.getAction() != null ) {
 p$.setTextFromAction$javax_swing_Action$Z.apply(this, [this.getAction(), false]);
 }this.firePropertyChange$S$Z$Z("hideActionText", !hideActionText, hideActionText);
@@ -101,7 +101,7 @@ return this.text;
 
 Clazz.newMeth(C$, 'setText$S', function (text) {
 var oldValue = this.text;
-this.text = text;
+this.text=text;
 this.firePropertyChange$S$O$O("text", oldValue, text);
 p$.updateDisplayedMnemonicIndex$S$I.apply(this, [text, this.getMnemonic()]);
 if (text == null  || oldValue == null   || !text.equals$O(oldValue) ) {
@@ -137,13 +137,13 @@ this.model.setArmed$Z(false);
 
 Clazz.newMeth(C$, 'setMargin$java_awt_Insets', function (m) {
 if (Clazz.instanceOf(m, "javax.swing.plaf.UIResource")) {
-this.defaultMargin = m;
+this.defaultMargin=m;
 } else if (Clazz.instanceOf(this.margin, "javax.swing.plaf.UIResource")) {
-this.defaultMargin = this.margin;
+this.defaultMargin=this.margin;
 }if (m == null  && this.defaultMargin != null  ) {
-m = this.defaultMargin;
+m=this.defaultMargin;
 }var old = this.margin;
-this.margin = m;
+this.margin=m;
 this.firePropertyChange$S$O$O("margin", old, m);
 if (old == null  || !old.equals$O(m) ) {
 this.revalidate();
@@ -160,9 +160,9 @@ return this.defaultIcon;
 
 Clazz.newMeth(C$, 'setIcon$javax_swing_Icon', function (defaultIcon) {
 var oldValue = this.defaultIcon;
-this.defaultIcon = defaultIcon;
+this.defaultIcon=defaultIcon;
 if (defaultIcon !== oldValue  && (Clazz.instanceOf(this.disabledIcon, "javax.swing.plaf.UIResource")) ) {
-this.disabledIcon = null;
+this.disabledIcon=null;
 }this.firePropertyChange$S$O$O("icon", oldValue, defaultIcon);
 if (defaultIcon !== oldValue ) {
 if (defaultIcon == null  || oldValue == null   || defaultIcon.getIconWidth() != oldValue.getIconWidth()  || defaultIcon.getIconHeight() != oldValue.getIconHeight() ) {
@@ -176,7 +176,7 @@ return this.pressedIcon;
 
 Clazz.newMeth(C$, 'setPressedIcon$javax_swing_Icon', function (pressedIcon) {
 var oldValue = this.pressedIcon;
-this.pressedIcon = pressedIcon;
+this.pressedIcon=pressedIcon;
 this.firePropertyChange$S$O$O("pressedIcon", oldValue, pressedIcon);
 if (pressedIcon !== oldValue ) {
 if (this.getModel().isPressed()) {
@@ -189,9 +189,9 @@ return this.selectedIcon;
 
 Clazz.newMeth(C$, 'setSelectedIcon$javax_swing_Icon', function (selectedIcon) {
 var oldValue = this.selectedIcon;
-this.selectedIcon = selectedIcon;
+this.selectedIcon=selectedIcon;
 if (selectedIcon !== oldValue  && Clazz.instanceOf(this.disabledSelectedIcon, "javax.swing.plaf.UIResource") ) {
-this.disabledSelectedIcon = null;
+this.disabledSelectedIcon=null;
 }this.firePropertyChange$S$O$O("selectedIcon", oldValue, selectedIcon);
 if (selectedIcon !== oldValue ) {
 if (this.isSelected()) {
@@ -204,7 +204,7 @@ return this.rolloverIcon;
 
 Clazz.newMeth(C$, 'setRolloverIcon$javax_swing_Icon', function (rolloverIcon) {
 var oldValue = this.rolloverIcon;
-this.rolloverIcon = rolloverIcon;
+this.rolloverIcon=rolloverIcon;
 this.firePropertyChange$S$O$O("rolloverIcon", oldValue, rolloverIcon);
 this.setRolloverEnabled$Z(true);
 if (rolloverIcon !== oldValue ) {
@@ -217,7 +217,7 @@ return this.rolloverSelectedIcon;
 
 Clazz.newMeth(C$, 'setRolloverSelectedIcon$javax_swing_Icon', function (rolloverSelectedIcon) {
 var oldValue = this.rolloverSelectedIcon;
-this.rolloverSelectedIcon = rolloverSelectedIcon;
+this.rolloverSelectedIcon=rolloverSelectedIcon;
 this.firePropertyChange$S$O$O("rolloverSelectedIcon", oldValue, rolloverSelectedIcon);
 this.setRolloverEnabled$Z(true);
 if (rolloverSelectedIcon !== oldValue ) {
@@ -227,7 +227,7 @@ this.repaint();
 
 Clazz.newMeth(C$, 'getDisabledIcon', function () {
 if (this.disabledIcon == null ) {
-this.disabledIcon = (I$[2]||$incl$(2)).getLookAndFeel().getDisabledIcon$javax_swing_JComponent$javax_swing_Icon(this, this.getIcon());
+this.disabledIcon=(I$[2]||$incl$(2)).getLookAndFeel().getDisabledIcon$javax_swing_JComponent$javax_swing_Icon(this, this.getIcon());
 if (this.disabledIcon != null ) {
 this.firePropertyChange$S$O$O("disabledIcon", null, this.disabledIcon);
 }}return this.disabledIcon;
@@ -235,7 +235,7 @@ this.firePropertyChange$S$O$O("disabledIcon", null, this.disabledIcon);
 
 Clazz.newMeth(C$, 'setDisabledIcon$javax_swing_Icon', function (disabledIcon) {
 var oldValue = this.disabledIcon;
-this.disabledIcon = disabledIcon;
+this.disabledIcon=disabledIcon;
 this.firePropertyChange$S$O$O("disabledIcon", oldValue, disabledIcon);
 if (disabledIcon !== oldValue ) {
 if (!this.isEnabled()) {
@@ -245,7 +245,7 @@ this.repaint();
 Clazz.newMeth(C$, 'getDisabledSelectedIcon', function () {
 if (this.disabledSelectedIcon == null ) {
 if (this.selectedIcon != null ) {
-this.disabledSelectedIcon = (I$[2]||$incl$(2)).getLookAndFeel().getDisabledSelectedIcon$javax_swing_JComponent$javax_swing_Icon(this, this.getSelectedIcon());
+this.disabledSelectedIcon=(I$[2]||$incl$(2)).getLookAndFeel().getDisabledSelectedIcon$javax_swing_JComponent$javax_swing_Icon(this, this.getSelectedIcon());
 } else {
 return this.getDisabledIcon();
 }}return this.disabledSelectedIcon;
@@ -253,7 +253,7 @@ return this.getDisabledIcon();
 
 Clazz.newMeth(C$, 'setDisabledSelectedIcon$javax_swing_Icon', function (disabledSelectedIcon) {
 var oldValue = this.disabledSelectedIcon;
-this.disabledSelectedIcon = disabledSelectedIcon;
+this.disabledSelectedIcon=disabledSelectedIcon;
 this.firePropertyChange$S$O$O("disabledSelectedIcon", oldValue, disabledSelectedIcon);
 if (disabledSelectedIcon !== oldValue ) {
 if (disabledSelectedIcon == null  || oldValue == null   || disabledSelectedIcon.getIconWidth() != oldValue.getIconWidth()  || disabledSelectedIcon.getIconHeight() != oldValue.getIconHeight() ) {
@@ -269,7 +269,7 @@ return this.verticalAlignment;
 Clazz.newMeth(C$, 'setVerticalAlignment$I', function (alignment) {
 if (alignment == this.verticalAlignment) return;
 var oldValue = this.verticalAlignment;
-this.verticalAlignment = this.checkVerticalKey$I$S(alignment, "verticalAlignment");
+this.verticalAlignment=this.checkVerticalKey$I$S(alignment, "verticalAlignment");
 this.firePropertyChange$S$I$I("verticalAlignment", oldValue, this.verticalAlignment);
 this.repaint();
 });
@@ -281,7 +281,7 @@ return this.horizontalAlignment;
 Clazz.newMeth(C$, 'setHorizontalAlignment$I', function (alignment) {
 if (alignment == this.horizontalAlignment) return;
 var oldValue = this.horizontalAlignment;
-this.horizontalAlignment = this.checkHorizontalKey$I$S(alignment, "horizontalAlignment");
+this.horizontalAlignment=this.checkHorizontalKey$I$S(alignment, "horizontalAlignment");
 this.firePropertyChange$S$I$I("horizontalAlignment", oldValue, this.horizontalAlignment);
 this.repaint();
 });
@@ -293,7 +293,7 @@ return this.verticalTextPosition;
 Clazz.newMeth(C$, 'setVerticalTextPosition$I', function (textPosition) {
 if (textPosition == this.verticalTextPosition) return;
 var oldValue = this.verticalTextPosition;
-this.verticalTextPosition = this.checkVerticalKey$I$S(textPosition, "verticalTextPosition");
+this.verticalTextPosition=this.checkVerticalKey$I$S(textPosition, "verticalTextPosition");
 this.firePropertyChange$S$I$I("verticalTextPosition", oldValue, this.verticalTextPosition);
 this.revalidate();
 this.repaint();
@@ -306,7 +306,7 @@ return this.horizontalTextPosition;
 Clazz.newMeth(C$, 'setHorizontalTextPosition$I', function (textPosition) {
 if (textPosition == this.horizontalTextPosition) return;
 var oldValue = this.horizontalTextPosition;
-this.horizontalTextPosition = this.checkHorizontalKey$I$S(textPosition, "horizontalTextPosition");
+this.horizontalTextPosition=this.checkHorizontalKey$I$S(textPosition, "horizontalTextPosition");
 this.firePropertyChange$S$I$I("horizontalTextPosition", oldValue, this.horizontalTextPosition);
 this.revalidate();
 this.repaint();
@@ -318,8 +318,8 @@ return this.iconTextGap;
 
 Clazz.newMeth(C$, 'setIconTextGap$I', function (iconTextGap) {
 var oldValue = this.iconTextGap;
-this.iconTextGap = iconTextGap;
-this.iconTextGapSet = true;
+this.iconTextGap=iconTextGap;
+this.iconTextGapSet=true;
 this.firePropertyChange$S$I$I("iconTextGap", oldValue, iconTextGap);
 if (iconTextGap != oldValue) {
 this.revalidate();
@@ -353,23 +353,23 @@ this.getModel().setActionCommand$S(actionCommand);
 Clazz.newMeth(C$, 'getActionCommand', function () {
 var ac = this.getModel().getActionCommand();
 if (ac == null ) {
-ac = this.getText();
+ac=this.getText();
 }return ac;
 });
 
 Clazz.newMeth(C$, 'setAction$javax_swing_Action', function (a) {
 var oldValue = this.getAction();
 if (this.$action == null  || !this.$action.equals$O(a) ) {
-this.$action = a;
+this.$action=a;
 if (oldValue != null ) {
 this.removeActionListener$java_awt_event_ActionListener(oldValue);
 oldValue.removePropertyChangeListener$java_beans_PropertyChangeListener(this.actionPropertyChangeListener);
-this.actionPropertyChangeListener = null;
+this.actionPropertyChangeListener=null;
 }this.configurePropertiesFromAction$javax_swing_Action(this.$action);
 if (this.$action != null ) {
 if (!p$.isListener$Class$java_awt_event_ActionListener.apply(this, [Clazz.getClass((I$[3]||$incl$(3)),['actionPerformed$java_awt_event_ActionEvent']), this.$action])) {
 this.addActionListener$java_awt_event_ActionListener(this.$action);
-}this.actionPropertyChangeListener = this.createActionPropertyChangeListener$javax_swing_Action(this.$action);
+}this.actionPropertyChangeListener=this.createActionPropertyChangeListener$javax_swing_Action(this.$action);
 this.$action.addPropertyChangeListener$java_beans_PropertyChangeListener(this.actionPropertyChangeListener);
 }this.firePropertyChange$S$O$O("action", oldValue, this.$action);
 }});
@@ -377,9 +377,9 @@ this.$action.addPropertyChangeListener$java_beans_PropertyChangeListener(this.ac
 Clazz.newMeth(C$, 'isListener$Class$java_awt_event_ActionListener', function (c, a) {
 var isListener = false;
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === c  && listeners[i + 1] === a  ) {
-isListener = true;
+isListener=true;
 }}
 return isListener;
 });
@@ -437,12 +437,12 @@ var iValue = (a == null ) ? null : a.getValue$S("SwingDisplayedMnemonicIndexKey"
 if (fromPropertyChange || iValue != null  ) {
 var value;
 if (iValue == null ) {
-value = -1;
+value=-1;
 } else {
-value = (iValue).intValue();
+value=(iValue).intValue();
 var text = this.getText();
 if (text == null  || value >= text.length$() ) {
-value = -1;
+value=-1;
 }}this.setDisplayedMnemonicIndex$I(value);
 }});
 
@@ -462,9 +462,9 @@ this.setText$S(a.getValue$S("Name"));
 Clazz.newMeth(C$, 'setIconFromAction$javax_swing_Action', function (a) {
 var icon = null;
 if (a != null ) {
-icon = a.getValue$S("SwingLargeIconKey");
+icon=a.getValue$S("SwingLargeIconKey");
 if (icon == null ) {
-icon = a.getValue$S("SmallIcon");
+icon=a.getValue$S("SmallIcon");
 }}this.setIcon$javax_swing_Icon(icon);
 });
 
@@ -484,7 +484,7 @@ this.setActionCommand$S((a != null ) ? a.getValue$S("ActionCommandKey") : null);
 Clazz.newMeth(C$, 'setSelectedFromAction$javax_swing_Action', function (a) {
 var selected = false;
 if (a != null ) {
-selected = (I$[1]||$incl$(1)).isSelected$javax_swing_Action(a);
+selected=(I$[1]||$incl$(1)).isSelected$javax_swing_Action(a);
 }if (selected != this.isSelected() ) {
 this.setSelected$Z(selected);
 if (!selected && this.isSelected() ) {
@@ -508,8 +508,8 @@ return this.$paintBorder;
 
 Clazz.newMeth(C$, 'setBorderPainted$Z', function (b) {
 var oldValue = this.$paintBorder;
-this.$paintBorder = b;
-this.borderPaintedSet = true;
+this.$paintBorder=b;
+this.borderPaintedSet=true;
 this.firePropertyChange$S$Z$Z("borderPainted", oldValue, this.$paintBorder);
 if (b != oldValue ) {
 this.revalidate();
@@ -527,7 +527,7 @@ return this.paintFocus;
 
 Clazz.newMeth(C$, 'setFocusPainted$Z', function (b) {
 var oldValue = this.paintFocus;
-this.paintFocus = b;
+this.paintFocus=b;
 this.firePropertyChange$S$Z$Z("focusPainted", oldValue, this.paintFocus);
 if (b != oldValue  && this.isFocusOwner() ) {
 this.revalidate();
@@ -540,8 +540,8 @@ return this.contentAreaFilled;
 
 Clazz.newMeth(C$, 'setContentAreaFilled$Z', function (b) {
 var oldValue = this.contentAreaFilled;
-this.contentAreaFilled = b;
-this.contentAreaFilledSet = true;
+this.contentAreaFilled=b;
+this.contentAreaFilledSet=true;
 this.firePropertyChange$S$Z$Z("contentAreaFilled", oldValue, this.contentAreaFilled);
 if (b != oldValue ) {
 this.repaint();
@@ -553,8 +553,8 @@ return this.rolloverEnabled;
 
 Clazz.newMeth(C$, 'setRolloverEnabled$Z', function (b) {
 var oldValue = this.rolloverEnabled;
-this.rolloverEnabled = b;
-this.rolloverEnabledSet = true;
+this.rolloverEnabled=b;
+this.rolloverEnabledSet=true;
 this.firePropertyChange$S$Z$Z("rolloverEnabled", oldValue, this.rolloverEnabled);
 if (b != oldValue ) {
 this.repaint();
@@ -571,20 +571,20 @@ p$.updateMnemonicProperties.apply(this, []);
 
 Clazz.newMeth(C$, 'setMnemonic$C', function (mnemonic) {
 var vk = mnemonic.$c();
-if (vk >= 97  && vk <= 122  ) vk = vk-(32);
+if (vk >= 97  && vk <= 122  ) vk-=32;
 this.setMnemonic$I(vk);
 });
 
 Clazz.newMeth(C$, 'setDisplayedMnemonicIndex$I', function (index) {
 var oldValue = this.mnemonicIndex;
 if (index == -1) {
-this.mnemonicIndex = -1;
+this.mnemonicIndex=-1;
 } else {
 var text = this.getText();
 var textLength = (text == null ) ? 0 : text.length$();
 if (index < -1 || index >= textLength ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["index == " + index]);
-}}this.mnemonicIndex = index;
+}}this.mnemonicIndex=index;
 this.firePropertyChange$S$I$I("displayedMnemonicIndex", oldValue, index);
 if (index != oldValue) {
 this.revalidate();
@@ -603,7 +603,7 @@ Clazz.newMeth(C$, 'updateMnemonicProperties', function () {
 var newMnemonic = this.model.getMnemonic();
 if (this.mnemonic != newMnemonic) {
 var oldValue = this.mnemonic;
-this.mnemonic = newMnemonic;
+this.mnemonic=newMnemonic;
 this.firePropertyChange$S$I$I("mnemonic", oldValue, this.mnemonic);
 p$.updateDisplayedMnemonicIndex$S$I.apply(this, [this.getText(), this.mnemonic]);
 this.revalidate();
@@ -613,7 +613,7 @@ this.repaint();
 Clazz.newMeth(C$, 'setMultiClickThreshhold$J', function (threshhold) {
 if (threshhold < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["threshhold must be >= 0"]);
-}this.multiClickThreshhold = threshhold;
+}this.multiClickThreshhold=threshhold;
 });
 
 Clazz.newMeth(C$, 'getMultiClickThreshhold', function () {
@@ -630,21 +630,21 @@ if (oldModel != null ) {
 oldModel.removeChangeListener$javax_swing_event_ChangeListener(this.changeListener);
 oldModel.removeActionListener$java_awt_event_ActionListener(this.actionListener);
 oldModel.removeItemListener$java_awt_event_ItemListener(this.itemListener);
-this.changeListener = null;
-this.actionListener = null;
-this.itemListener = null;
-}this.model = newModel;
+this.changeListener=null;
+this.actionListener=null;
+this.itemListener=null;
+}this.model=newModel;
 if (newModel != null ) {
-this.changeListener = this.createChangeListener();
-this.actionListener = this.createActionListener();
-this.itemListener = this.createItemListener();
+this.changeListener=this.createChangeListener();
+this.actionListener=this.createActionListener();
+this.itemListener=this.createItemListener();
 newModel.addChangeListener$javax_swing_event_ChangeListener(this.changeListener);
 newModel.addActionListener$java_awt_event_ActionListener(this.actionListener);
 newModel.addItemListener$java_awt_event_ItemListener(this.itemListener);
 p$.updateMnemonicProperties.apply(this, []);
 C$.superclazz.prototype.setEnabled$Z.apply(this, [newModel.isEnabled()]);
 } else {
-this.mnemonic = "\u0000".$c();
+this.mnemonic="\u0000".$c();
 }p$.updateDisplayedMnemonicIndex$S$I.apply(this, [this.getText(), this.mnemonic]);
 this.firePropertyChange$S$O$O("model", oldModel, newModel);
 if (newModel !== oldModel ) {
@@ -671,7 +671,7 @@ this.setLayout$java_awt_LayoutManager(Clazz.new_((I$[6]||$incl$(6)).c$$java_awt_
 });
 
 Clazz.newMeth(C$, 'setLayout$java_awt_LayoutManager', function (mgr) {
-this.$setLayout = true;
+this.$setLayout=true;
 C$.superclazz.prototype.setLayout$java_awt_LayoutManager.apply(this, [mgr]);
 });
 
@@ -689,9 +689,9 @@ return (this.listenerList.getListeners$Class(Clazz.getClass((I$[7]||$incl$(7)),[
 
 Clazz.newMeth(C$, 'fireStateChanged', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[7]||$incl$(7)),['stateChanged$javax_swing_event_ChangeEvent']) ) {
-if (this.changeEvent == null ) this.changeEvent = Clazz.new_((I$[8]||$incl$(8)).c$$O,[this]);
+if (this.changeEvent == null ) this.changeEvent=Clazz.new_((I$[8]||$incl$(8)).c$$O,[this]);
 (listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -718,13 +718,13 @@ return p$.getHandler.apply(this, []);
 Clazz.newMeth(C$, 'fireActionPerformed$java_awt_event_ActionEvent', function (event) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[3]||$incl$(3)),['actionPerformed$java_awt_event_ActionEvent']) ) {
 if (e == null ) {
 var actionCommand = event.getActionCommand();
 if (actionCommand == null ) {
-actionCommand = this.getActionCommand();
-}e = Clazz.new_((I$[9]||$incl$(9)).c$$O$I$S$J$I,[this, 1001, actionCommand, event.getWhen(), event.getModifiers()]);
+actionCommand=this.getActionCommand();
+}e=Clazz.new_((I$[9]||$incl$(9)).c$$O$I$S$J$I,[this, 1001, actionCommand, event.getWhen(), event.getModifiers()]);
 }(listeners[i + 1]).actionPerformed$java_awt_event_ActionEvent(e);
 }}
 });
@@ -732,10 +732,10 @@ actionCommand = this.getActionCommand();
 Clazz.newMeth(C$, 'fireItemStateChanged$java_awt_event_ItemEvent', function (event) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[10]||$incl$(10)),['itemStateChanged$java_awt_event_ItemEvent']) ) {
 if (e == null ) {
-e = Clazz.new_((I$[11]||$incl$(11)).c$$java_awt_ItemSelectable$I$O$I,[this, 701, this, event.getStateChange()]);
+e=Clazz.new_((I$[11]||$incl$(11)).c$$java_awt_ItemSelectable$I$O$I,[this, 701, this, event.getStateChange()]);
 }(listeners[i + 1]).itemStateChanged$java_awt_event_ItemEvent(e);
 }}
 });
@@ -779,7 +779,7 @@ Clazz.newMeth(C$, 'getSelectedObjects', function () {
 if (this.isSelected() == false ) {
 return null;
 }var selectedObjects = Clazz.array(java.lang.Object, [1]);
-selectedObjects[0] = this.getText();
+selectedObjects[0]=this.getText();
 return selectedObjects;
 });
 
@@ -788,7 +788,7 @@ if (text != null ) {
 this.setText$S(text);
 }if (icon != null ) {
 this.setIcon$javax_swing_Icon(icon);
-}this.uiClassID = uid;
+}this.uiClassID=uid;
 this.updateUI();
 this.setAlignmentX$F(0.0);
 this.setAlignmentY$F(0.5);
@@ -800,18 +800,18 @@ if (iconDisplayed == null ) {
 return false;
 }if (!this.model.isEnabled()) {
 if (this.model.isSelected()) {
-iconDisplayed = this.getDisabledSelectedIcon();
+iconDisplayed=this.getDisabledSelectedIcon();
 } else {
-iconDisplayed = this.getDisabledIcon();
+iconDisplayed=this.getDisabledIcon();
 }} else if (this.model.isPressed() && this.model.isArmed() ) {
-iconDisplayed = this.getPressedIcon();
+iconDisplayed=this.getPressedIcon();
 } else if (this.isRolloverEnabled() && this.model.isRollover() ) {
 if (this.model.isSelected()) {
-iconDisplayed = this.getRolloverSelectedIcon();
+iconDisplayed=this.getRolloverSelectedIcon();
 } else {
-iconDisplayed = this.getRolloverIcon();
+iconDisplayed=this.getRolloverIcon();
 }} else if (this.model.isSelected()) {
-iconDisplayed = this.getSelectedIcon();
+iconDisplayed=this.getSelectedIcon();
 }if (!(I$[5]||$incl$(5)).doesIconReferenceImage$javax_swing_Icon$java_awt_Image(iconDisplayed, img)) {
 return false;
 }return C$.superclazz.prototype.imageUpdate$java_awt_Image$I$I$I$I$I.apply(this, [img, infoflags, x, y, w, h]);
@@ -821,19 +821,19 @@ Clazz.newMeth(C$, 'setUIProperty$S$O', function (propertyName, value) {
 if (propertyName == "borderPainted") {
 if (!this.borderPaintedSet) {
 this.setBorderPainted$Z((value).booleanValue());
-this.borderPaintedSet = false;
+this.borderPaintedSet=false;
 }} else if (propertyName == "rolloverEnabled") {
 if (!this.rolloverEnabledSet) {
 this.setRolloverEnabled$Z((value).booleanValue());
-this.rolloverEnabledSet = false;
+this.rolloverEnabledSet=false;
 }} else if (propertyName == "iconTextGap") {
 if (!this.iconTextGapSet) {
 this.setIconTextGap$I((value).intValue());
-this.iconTextGapSet = false;
+this.iconTextGapSet=false;
 }} else if (propertyName == "contentAreaFilled") {
 if (!this.contentAreaFilledSet) {
 this.setContentAreaFilled$Z((value).booleanValue());
-this.contentAreaFilledSet = false;
+this.contentAreaFilledSet=false;
 }} else {
 C$.superclazz.prototype.setUIProperty$S$O.apply(this, [propertyName, value]);
 }});
@@ -854,7 +854,7 @@ return C$.superclazz.prototype.paramString.apply(this, []) + ",defaultIcon=" + d
 
 Clazz.newMeth(C$, 'getHandler', function () {
 if (this.handler == null ) {
-this.handler = Clazz.new_((I$[12]||$incl$(12)), [this, null]);
+this.handler=Clazz.new_((I$[12]||$incl$(12)), [this, null]);
 }return this.handler;
 });
 ;
@@ -940,4 +940,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:22
+//Created 2018-05-24 08:46:05

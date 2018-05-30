@@ -17,7 +17,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
 C$.$init$.apply(this);
-this.elem = elem;
+this.elem=elem;
 }, 1);
 
 Clazz.newMeth(C$, 'getParent', function () {
@@ -58,7 +58,7 @@ for (var i = 0; i < this.getViewCount(); i++) {
 if (this.getView$I(i).getParent() === this ) {
 this.getView$I(i).setParent$javax_swing_text_View(null);
 }}
-}this.parent = parent;
+}this.parent=parent;
 });
 
 Clazz.newMeth(C$, 'getViewCount', function () {
@@ -79,13 +79,13 @@ this.replace$I$I$javax_swing_text_ViewA(i, 1, null);
 
 Clazz.newMeth(C$, 'insert$I$javax_swing_text_View', function (offs, v) {
 var one = Clazz.array(C$, [1]);
-one[0] = v;
+one[0]=v;
 this.replace$I$I$javax_swing_text_ViewA(offs, 0, one);
 });
 
 Clazz.newMeth(C$, 'append$javax_swing_text_View', function (v) {
 var one = Clazz.array(C$, [1]);
-one[0] = v;
+one[0]=v;
 this.replace$I$I$javax_swing_text_ViewA(this.getViewCount(), 0, one);
 });
 
@@ -101,43 +101,43 @@ return null;
 });
 
 Clazz.newMeth(C$, 'getNextVisualPositionFrom$I$javax_swing_text_Position_Bias$java_awt_Shape$I$javax_swing_text_Position_BiasA', function (pos, b, a, direction, biasRet) {
-biasRet[0] = (I$[1]||$incl$(1)).Forward;
+biasRet[0]=(I$[1]||$incl$(1)).Forward;
 switch (direction) {
 case 1:
 case 5:
 {
 if (pos == -1) {
-pos = (direction == 1) ? Math.max(0, this.getEndOffset() - 1) : this.getStartOffset();
+pos=(direction == 1) ? Math.max(0, this.getEndOffset() - 1) : this.getStartOffset();
 break;
 }var target = this.getContainer();
 var c = (target != null ) ? target.getCaret() : null;
 var mcp;
 if (c != null ) {
-mcp = c.getMagicCaretPosition();
+mcp=c.getMagicCaretPosition();
 } else {
-mcp = null;
+mcp=null;
 }var x;
 if (mcp == null ) {
 var loc = target.modelToView$I(pos);
-x = (loc == null ) ? 0 : loc.x;
+x=(loc == null ) ? 0 : loc.x;
 } else {
-x = mcp.x;
+x=mcp.x;
 }if (direction == 1) {
-pos = (I$[2]||$incl$(2)).getPositionAbove$javax_swing_text_JTextComponent$I$I(target, pos, x);
+pos=(I$[2]||$incl$(2)).getPositionAbove$javax_swing_text_JTextComponent$I$I(target, pos, x);
 } else {
-pos = (I$[2]||$incl$(2)).getPositionBelow$javax_swing_text_JTextComponent$I$I(target, pos, x);
+pos=(I$[2]||$incl$(2)).getPositionBelow$javax_swing_text_JTextComponent$I$I(target, pos, x);
 }}break;
 case 7:
 if (pos == -1) {
-pos = Math.max(0, this.getEndOffset() - 1);
+pos=Math.max(0, this.getEndOffset() - 1);
 } else {
-pos = Math.max(0, pos - 1);
+pos=Math.max(0, pos - 1);
 }break;
 case 3:
 if (pos == -1) {
-pos = this.getStartOffset();
+pos=this.getStartOffset();
 } else {
-pos = Math.min(pos + 1, this.getDocument().getLength());
+pos=Math.min(pos + 1, this.getDocument().getLength());
 }break;
 default:
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Bad direction: " + direction]);
@@ -150,25 +150,25 @@ var s0 = this.modelToView$I$java_awt_Shape$javax_swing_text_Position_Bias(p0, a,
 var s1;
 if (p1 == this.getEndOffset()) {
 try {
-s1 = this.modelToView$I$java_awt_Shape$javax_swing_text_Position_Bias(p1, a, b1);
+s1=this.modelToView$I$java_awt_Shape$javax_swing_text_Position_Bias(p1, a, b1);
 } catch (ble) {
 if (Clazz.exceptionOf(ble, "javax.swing.text.BadLocationException")){
-s1 = null;
+s1=null;
 } else {
 throw ble;
 }
 }
 if (s1 == null ) {
 var alloc = (Clazz.instanceOf(a, "java.awt.Rectangle")) ? a : a.getBounds();
-s1 = Clazz.new_((I$[3]||$incl$(3)).c$$I$I$I$I,[alloc.x + alloc.width - 1, alloc.y, 1, alloc.height]);
+s1=Clazz.new_((I$[3]||$incl$(3)).c$$I$I$I$I,[alloc.x + alloc.width - 1, alloc.y, 1, alloc.height]);
 }} else {
-s1 = this.modelToView$I$java_awt_Shape$javax_swing_text_Position_Bias(p1, a, b1);
+s1=this.modelToView$I$java_awt_Shape$javax_swing_text_Position_Bias(p1, a, b1);
 }var r0 = s0.getBounds();
 var r1 = (Clazz.instanceOf(s1, "java.awt.Rectangle")) ? s1 : s1.getBounds();
 if (r0.y != r1.y) {
 var alloc = (Clazz.instanceOf(a, "java.awt.Rectangle")) ? a : a.getBounds();
-r0.x = alloc.x;
-r0.width = alloc.width;
+r0.x=alloc.x;
+r0.width=alloc.width;
 }r0.add$java_awt_Rectangle(r1);
 return r0;
 });
@@ -179,7 +179,7 @@ var elem = this.getElement();
 var ec = e.getChange$javax_swing_text_Element(elem);
 if (ec != null ) {
 if (!this.updateChildren$javax_swing_event_DocumentEvent_ElementChange$javax_swing_event_DocumentEvent$javax_swing_text_ViewFactory(ec, e, f)) {
-ec = null;
+ec=null;
 }}this.forwardUpdate$javax_swing_event_DocumentEvent_ElementChange$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory(ec, e, a, f);
 this.updateLayout$javax_swing_event_DocumentEvent_ElementChange$javax_swing_event_DocumentEvent$java_awt_Shape(ec, e, a);
 }});
@@ -190,7 +190,7 @@ var elem = this.getElement();
 var ec = e.getChange$javax_swing_text_Element(elem);
 if (ec != null ) {
 if (!this.updateChildren$javax_swing_event_DocumentEvent_ElementChange$javax_swing_event_DocumentEvent$javax_swing_text_ViewFactory(ec, e, f)) {
-ec = null;
+ec=null;
 }}this.forwardUpdate$javax_swing_event_DocumentEvent_ElementChange$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory(ec, e, a, f);
 this.updateLayout$javax_swing_event_DocumentEvent_ElementChange$javax_swing_event_DocumentEvent$java_awt_Shape(ec, e, a);
 }});
@@ -201,7 +201,7 @@ var elem = this.getElement();
 var ec = e.getChange$javax_swing_text_Element(elem);
 if (ec != null ) {
 if (!this.updateChildren$javax_swing_event_DocumentEvent_ElementChange$javax_swing_event_DocumentEvent$javax_swing_text_ViewFactory(ec, e, f)) {
-ec = null;
+ec=null;
 }}this.forwardUpdate$javax_swing_event_DocumentEvent_ElementChange$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory(ec, e, a, f);
 this.updateLayout$javax_swing_event_DocumentEvent_ElementChange$javax_swing_event_DocumentEvent$java_awt_Shape(ec, e, a);
 }});
@@ -265,7 +265,7 @@ return (v != null ) ? v.getViewFactory() : null;
 Clazz.newMeth(C$, 'getToolTipText$F$F$java_awt_Shape', function (x, y, allocation) {
 var viewIndex = this.getViewIndex$F$F$java_awt_Shape(x, y, allocation);
 if (viewIndex >= 0) {
-allocation = this.getChildAllocation$I$java_awt_Shape(viewIndex, allocation);
+allocation=this.getChildAllocation$I$java_awt_Shape(viewIndex, allocation);
 var rect = (Clazz.instanceOf(allocation, "java.awt.Rectangle")) ? allocation : allocation.getBounds();
 if (rect.contains$D$D(x, y)) {
 return this.getView$I(viewIndex).getToolTipText$F$F$java_awt_Shape(x, y, allocation);
@@ -288,14 +288,14 @@ var removedElems = ec.getChildrenRemoved();
 var addedElems = ec.getChildrenAdded();
 var added = null;
 if (addedElems != null ) {
-added = Clazz.array(C$, [addedElems.length]);
+added=Clazz.array(C$, [addedElems.length]);
 for (var i = 0; i < addedElems.length; i++) {
-added[i] = f.create$javax_swing_text_Element(addedElems[i]);
+added[i]=f.create$javax_swing_text_Element(addedElems[i]);
 }
 }var nremoved = 0;
 var index = ec.getIndex();
 if (removedElems != null ) {
-nremoved = removedElems.length;
+nremoved=removedElems.length;
 }this.replace$I$I$javax_swing_text_ViewA(index, nremoved, added);
 return true;
 });
@@ -304,26 +304,26 @@ Clazz.newMeth(C$, 'forwardUpdate$javax_swing_event_DocumentEvent_ElementChange$j
 var pos = e.getOffset();
 var index0 = this.getViewIndex$I$javax_swing_text_Position_Bias(pos, (I$[1]||$incl$(1)).Forward);
 if (index0 == -1 && e.getType() === (I$[4]||$incl$(4)).REMOVE   && pos >= this.getEndOffset() ) {
-index0 = this.getViewCount() - 1;
+index0=this.getViewCount() - 1;
 }var index1 = index0;
 var v = (index0 >= 0) ? this.getView$I(index0) : null;
 if (v != null ) {
 if ((v.getStartOffset() == pos) && (pos > 0) ) {
-index0 = Math.max(index0 - 1, 0);
+index0=Math.max(index0 - 1, 0);
 }}if (e.getType() !== (I$[4]||$incl$(4)).REMOVE ) {
-index1 = this.getViewIndex$I$javax_swing_text_Position_Bias(pos + e.getLength(), (I$[1]||$incl$(1)).Forward);
+index1=this.getViewIndex$I$javax_swing_text_Position_Bias(pos + e.getLength(), (I$[1]||$incl$(1)).Forward);
 if (index1 < 0) {
-index1 = this.getViewCount() - 1;
+index1=this.getViewCount() - 1;
 }}var hole0 = index1 + 1;
 var hole1 = hole0;
 var addedElems = (ec != null ) ? ec.getChildrenAdded() : null;
 if ((addedElems != null ) && (addedElems.length > 0) ) {
-hole0 = ec.getIndex();
-hole1 = hole0 + addedElems.length - 1;
-}index0 = Math.max(index0, 0);
+hole0=ec.getIndex();
+hole1=hole0 + addedElems.length - 1;
+}index0=Math.max(index0, 0);
 for (var i = index0; i <= index1; i++) {
 if (!((i >= hole0) && (i <= hole1) )) {
-v = this.getView$I(i);
+v=this.getView$I(i);
 if (v != null ) {
 var childAlloc = this.getChildAllocation$I$java_awt_Shape(i, a);
 this.forwardUpdateToView$javax_swing_text_View$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory(v, e, childAlloc, f);
@@ -353,10 +353,10 @@ return this.modelToView$I$java_awt_Shape$javax_swing_text_Position_Bias(pos, a, 
 });
 
 Clazz.newMeth(C$, 'viewToModel$F$F$java_awt_Shape', function (x, y, a) {
-C$.sharedBiasReturn[0] = (I$[1]||$incl$(1)).Forward;
+C$.sharedBiasReturn[0]=(I$[1]||$incl$(1)).Forward;
 return this.viewToModel$F$F$java_awt_Shape$javax_swing_text_Position_BiasA(x, y, a, C$.sharedBiasReturn);
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:58
+//Created 2018-05-24 08:47:09

@@ -15,7 +15,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_io_InputStream', function ($in) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.$in = $in;
+this.$in=$in;
 }, 1);
 
 Clazz.newMeth(C$, 'available', function () {
@@ -56,4 +56,4 @@ return this.$in.skip$J(count);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:05
+//Created 2018-05-24 08:45:34

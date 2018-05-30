@@ -9,12 +9,12 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'new3$I$I$I', function (x, y, z) {
 var pt = Clazz.new_(C$);
-pt.x = x;
-pt.y = y;
-pt.z = z;
+pt.x=x;
+pt.y=y;
+pt.z=z;
 return pt;
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:19
+//Created 2018-05-24 08:45:57

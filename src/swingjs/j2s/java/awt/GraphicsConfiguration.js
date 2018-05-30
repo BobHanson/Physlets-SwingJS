@@ -25,7 +25,7 @@ return (I$[1]||$incl$(1)).getInstanceWithParams$S$ClassA$OA("java.awt.image.Buff
 Clazz.newMeth(C$, 'createCompatibleVolatileImage$I$I', function (width, height) {
 var vi = null;
 try {
-vi = this.createCompatibleVolatileImage$I$I$java_awt_ImageCapabilities$I(width, height, null, 1);
+vi=this.createCompatibleVolatileImage$I$I$java_awt_ImageCapabilities$I(width, height, null, 1);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.awt.AWTException")){
 Clazz.assert(C$, this, function(){return false});
@@ -39,7 +39,7 @@ return vi;
 Clazz.newMeth(C$, 'createCompatibleVolatileImage$I$I$I', function (width, height, transparency) {
 var vi = null;
 try {
-vi = this.createCompatibleVolatileImage$I$I$java_awt_ImageCapabilities$I(width, height, null, transparency);
+vi=this.createCompatibleVolatileImage$I$I$java_awt_ImageCapabilities$I(width, height, null, transparency);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.awt.AWTException")){
 Clazz.assert(C$, this, function(){return false});
@@ -62,4 +62,4 @@ return false;
 });
 C$.$_ASSERT_ENABLED_ = ClassLoader.$getClassAssertionStatus(C$);
 })();
-//Created 2018-05-15 01:01:51
+//Created 2018-05-24 08:45:09

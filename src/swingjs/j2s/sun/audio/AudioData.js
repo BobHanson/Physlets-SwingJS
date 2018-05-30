@@ -17,11 +17,11 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$BA', function (buffer) {
 C$.$init$.apply(this);
-this.buffer = buffer;
-this.format = C$.DEFAULT_FORMAT;
+this.buffer=buffer;
+this.format=C$.DEFAULT_FORMAT;
 try {
 var ais = (I$[3]||$incl$(3)).getAudioInputStream$java_io_ByteArrayInputStream(Clazz.new_((I$[4]||$incl$(4)).c$$BA,[buffer]));
-this.format = ais.getFormat();
+this.format=ais.getFormat();
 ais.close();
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$, "java.io.IOException")){
@@ -40,10 +40,10 @@ throw e$$;
 
 Clazz.newMeth(C$, 'c$$javax_sound_sampled_AudioFormat$BA', function (format, buffer) {
 C$.$init$.apply(this);
-this.format = format;
-this.buffer = buffer;
+this.format=format;
+this.buffer=buffer;
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:04
+//Created 2018-05-24 08:47:19

@@ -52,7 +52,7 @@ return C$.dflt;
 Clazz.newMeth(C$, 'isDragImageSupported', function () {
 var supported;
 try {
-supported = (I$[3]||$incl$(3)).getDefaultToolkit().getDesktopProperty$S("DnD.isDragImageSupported");
+supported=(I$[3]||$incl$(3)).getDefaultToolkit().getDesktopProperty$S("DnD.isDragImageSupported");
 return supported.booleanValue();
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
@@ -70,7 +70,7 @@ C$.$init$.apply(this);
 Clazz.newMeth(C$, 'startDrag$java_awt_dnd_DragGestureEvent$java_awt_Cursor$java_awt_Image$java_awt_Point$java_awt_datatransfer_Transferable$java_awt_dnd_DragSourceListener$java_awt_datatransfer_FlavorMap', function (trigger, dragCursor, dragImage, imageOffset, transferable, dsl, flavorMap) {
 (I$[4]||$incl$(4)).setDragDropInProgress$Z(true);
 try {
-if (flavorMap != null ) this.flavorMap = flavorMap;
+if (flavorMap != null ) this.flavorMap=flavorMap;
 var dscp = (I$[3]||$incl$(3)).getDefaultToolkit().createDragSourceContextPeer$java_awt_dnd_DragGestureEvent(trigger);
 var dsc = this.createDragSourceContext$java_awt_dnd_peer_DragSourceContextPeer$java_awt_dnd_DragGestureEvent$java_awt_Cursor$java_awt_Image$java_awt_Point$java_awt_datatransfer_Transferable$java_awt_dnd_DragSourceListener(dscp, trigger, dragCursor, dragImage, imageOffset, transferable, dsl);
 if (dsc == null ) {
@@ -117,13 +117,13 @@ return (I$[3]||$incl$(3)).getDefaultToolkit().createDragGestureRecognizer$Class$
 Clazz.newMeth(C$, 'addDragSourceListener$java_awt_dnd_DragSourceListener', function (dsl) {
 if (dsl != null ) {
 {
-this.listener = (I$[7]||$incl$(7)).add$java_awt_dnd_DragSourceListener$java_awt_dnd_DragSourceListener(this.listener, dsl);
+this.listener=(I$[7]||$incl$(7)).add$java_awt_dnd_DragSourceListener$java_awt_dnd_DragSourceListener(this.listener, dsl);
 }}});
 
 Clazz.newMeth(C$, 'removeDragSourceListener$java_awt_dnd_DragSourceListener', function (dsl) {
 if (dsl != null ) {
 {
-this.listener = (I$[7]||$incl$(7)).remove$java_awt_dnd_DragSourceListener$java_awt_dnd_DragSourceListener(this.listener, dsl);
+this.listener=(I$[7]||$incl$(7)).remove$java_awt_dnd_DragSourceListener$java_awt_dnd_DragSourceListener(this.listener, dsl);
 }}});
 
 Clazz.newMeth(C$, 'getDragSourceListeners', function () {
@@ -133,13 +133,13 @@ return this.getListeners$Class(Clazz.getClass((I$[8]||$incl$(8)),['dragDropEnd$j
 Clazz.newMeth(C$, 'addDragSourceMotionListener$java_awt_dnd_DragSourceMotionListener', function (dsml) {
 if (dsml != null ) {
 {
-this.motionListener = (I$[7]||$incl$(7)).add$java_awt_dnd_DragSourceMotionListener$java_awt_dnd_DragSourceMotionListener(this.motionListener, dsml);
+this.motionListener=(I$[7]||$incl$(7)).add$java_awt_dnd_DragSourceMotionListener$java_awt_dnd_DragSourceMotionListener(this.motionListener, dsml);
 }}});
 
 Clazz.newMeth(C$, 'removeDragSourceMotionListener$java_awt_dnd_DragSourceMotionListener', function (dsml) {
 if (dsml != null ) {
 {
-this.motionListener = (I$[7]||$incl$(7)).remove$java_awt_dnd_DragSourceMotionListener$java_awt_dnd_DragSourceMotionListener(this.motionListener, dsml);
+this.motionListener=(I$[7]||$incl$(7)).remove$java_awt_dnd_DragSourceMotionListener$java_awt_dnd_DragSourceMotionListener(this.motionListener, dsml);
 }}});
 
 Clazz.newMeth(C$, 'getDragSourceMotionListeners', function () {
@@ -149,9 +149,9 @@ return this.getListeners$Class(Clazz.getClass((I$[9]||$incl$(9)),['dragMouseMove
 Clazz.newMeth(C$, 'getListeners$Class', function (listenerType) {
 var l = null;
 if (listenerType === Clazz.getClass((I$[8]||$incl$(8)),['dragDropEnd$java_awt_dnd_DragSourceDropEvent','dragEnter$java_awt_dnd_DragSourceDragEvent','dragExit$java_awt_dnd_DragSourceEvent','dragOver$java_awt_dnd_DragSourceDragEvent','dropActionChanged$java_awt_dnd_DragSourceDragEvent']) ) {
-l = this.listener;
+l=this.listener;
 } else if (listenerType === Clazz.getClass((I$[9]||$incl$(9)),['dragMouseMoved$java_awt_dnd_DragSourceDragEvent']) ) {
-l = this.motionListener;
+l=this.motionListener;
 }return (I$[10]||$incl$(10)).getListeners$java_util_EventListener$Class(l, listenerType);
 });
 
@@ -195,4 +195,4 @@ Clazz.newMeth(C$, 'getDragThreshold', function () {
 return 5;
 }, 1);
 })();
-//Created 2018-05-15 01:01:55
+//Created 2018-05-24 08:45:16

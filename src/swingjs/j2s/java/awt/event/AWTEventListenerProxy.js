@@ -15,7 +15,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$J$java_awt_event_AWTEventListener', function (eventMask, listener) {
 C$.superclazz.c$.apply(this, [listener]);
 C$.$init$.apply(this);
-this.eventMask = eventMask;
+this.eventMask=eventMask;
 }, 1);
 
 Clazz.newMeth(C$, 'eventDispatched$java_awt_AWTEvent', function (evt) {
@@ -28,4 +28,4 @@ return this.eventMask;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:56
+//Created 2018-05-24 08:45:17

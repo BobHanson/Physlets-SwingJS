@@ -18,20 +18,20 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'initNames', function () {
 var nameMap = Clazz.new_((I$[1]||$incl$(1)));
 var clName = Clazz.new_((I$[2]||$incl$(2)));
-for (var i = 0; i < C$.namePairs.length; i = i+(2)) {
+for (var i = 0; i < C$.namePairs.length; i+=2) {
 clName.setLength$I(0);
 var cl = clName.append$S("sun.util.calendar.").append$S(C$.namePairs[i + 1]).toString();
 nameMap.put$TK$TV(C$.namePairs[i], cl);
 }
 {
 if (!C$.initialized) {
-C$.names = nameMap;
-C$.calendars = Clazz.new_((I$[1]||$incl$(1)));
-C$.initialized = true;
+C$.names=nameMap;
+C$.calendars=Clazz.new_((I$[1]||$incl$(1)));
+C$.initialized=true;
 }}}, 1);
 
 Clazz.newMeth(C$, 'getGregorianCalendar', function () {
-if (C$.GREGORIAN_INSTANCE == null ) C$.GREGORIAN_INSTANCE = (I$[3]||$incl$(3)).getInstance$S$Z("sun.util.calendar.Gregorian", false);
+if (C$.GREGORIAN_INSTANCE == null ) C$.GREGORIAN_INSTANCE=(I$[3]||$incl$(3)).getInstance$S$Z("sun.util.calendar.Gregorian", false);
 return C$.GREGORIAN_INSTANCE;
 }, 1);
 
@@ -48,7 +48,7 @@ if (className == null ) {
 return null;
 }try {
 var cl = Clazz.forName(className);
-cal = cl.newInstance();
+cal=cl.newInstance();
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
 throw Clazz.new_(Clazz.load('java.lang.RuntimeException').c$$S$Throwable,["internal error", e]);
@@ -64,4 +64,4 @@ return (cs == null ) ? cal : cs;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:12
+//Created 2018-05-24 08:47:38

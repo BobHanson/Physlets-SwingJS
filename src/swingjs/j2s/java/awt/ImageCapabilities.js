@@ -15,7 +15,7 @@ this.accelerated = false;
 
 Clazz.newMeth(C$, 'c$$Z', function (accelerated) {
 C$.$init$.apply(this);
-this.accelerated = accelerated;
+this.accelerated=accelerated;
 }, 1);
 
 Clazz.newMeth(C$, 'isAccelerated', function () {
@@ -40,4 +40,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:52
+//Created 2018-05-24 08:45:10

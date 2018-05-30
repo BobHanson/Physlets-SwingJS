@@ -6,8 +6,8 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'makePDFString$S', function (s) {
-if (s.indexOf("(") > -1) s = C$.replace$S$S$S(s, "(", "\\(");
-if (s.indexOf(")") > -1) s = C$.replace$S$S$S(s, ")", "\\)");
+if (s.indexOf("(") > -1) s=C$.replace$S$S$S(s, "(", "\\(");
+if (s.indexOf(")") > -1) s=C$.replace$S$S$S(s, ")", "\\)");
 return "(" + s + ")" ;
 }, 1);
 
@@ -16,10 +16,10 @@ var b = Clazz.new_((I$[1]||$incl$(1)));
 var p = 0;
 var c = 0;
 while (c > -1){
-if ((c = source.indexOf(removeThis, p)) > -1) {
+if ((c=source.indexOf(removeThis, p)) > -1) {
 b.append$S(source.substring(p, c));
 b.append$S(replaceWith);
-p = c + 1;
+p=c + 1;
 }}
 if (p < source.length$()) b.append$S(source.substring(p));
 return b.toString();
@@ -27,4 +27,4 @@ return b.toString();
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:47
+//Created 2018-05-24 08:45:03

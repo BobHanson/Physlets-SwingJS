@@ -9,8 +9,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.inputType = "password";
+this.inputType="password";
 this.setDoc();
 }, 1);
 })();
-//Created 2018-05-15 01:03:24
+//Created 2018-05-24 08:47:56

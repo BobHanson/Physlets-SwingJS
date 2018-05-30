@@ -33,7 +33,7 @@ return (I$[1]||$incl$(1)).getAncestorOfClass$Class$java_awt_Component(Clazz.getC
 Clazz.newMeth(C$, 'getPreferredSize', function () {
 var host = p$.getColorChooser.apply(this, []);
 if (host == null ) {
-host = this;
+host=this;
 }var fm = host.getFontMetrics$java_awt_Font(this.getFont());
 var height = fm.getHeight();
 var width = fm.stringWidth$S(this.sampleText);
@@ -43,7 +43,7 @@ return Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[x, y]);
 });
 
 Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics', function (g) {
-if (this.oldColor == null ) this.oldColor = this.getForeground();
+if (this.oldColor == null ) this.oldColor=this.getForeground();
 g.setColor$java_awt_Color(this.getBackground());
 g.fillRect$I$I$I$I(0, 0, this.getWidth(), this.getHeight());
 if (this.getComponentOrientation().isLeftToRight()) {
@@ -129,4 +129,4 @@ return (this.squareSize * 3 + this.squareGap * 2);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:44
+//Created 2018-05-24 08:46:47

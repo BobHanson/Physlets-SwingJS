@@ -15,8 +15,8 @@ this.listenerList = Clazz.new_((I$[1]||$incl$(1)));
 
 Clazz.newMeth(C$, 'getColumnName$I', function (column) {
 var result = "";
-for (; column >= 0; column = (column/26|0) - 1) {
-result = String.fromCharCode(((String.fromCharCode((column % 26))).$c() + 65)) + result;
+for (; column >= 0; column=(column/26|0) - 1) {
+result=String.fromCharCode(((String.fromCharCode((column % 26))).$c() + 65)) + result;
 }
 return result;
 });
@@ -78,7 +78,7 @@ this.fireTableChanged$javax_swing_event_TableModelEvent(Clazz.new_((I$[3]||$incl
 
 Clazz.newMeth(C$, 'fireTableChanged$javax_swing_event_TableModelEvent', function (e) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[2]||$incl$(2)),['tableChanged$javax_swing_event_TableModelEvent']) ) {
 (listeners[i + 1]).tableChanged$javax_swing_event_TableModelEvent(e);
 }}
@@ -90,4 +90,4 @@ return this.listenerList.getListeners$Class(listenerType);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:50
+//Created 2018-05-24 08:46:58

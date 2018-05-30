@@ -14,9 +14,9 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_io_BufferedReader$I', function (bufferedReader, readLimit) {
 C$.$init$.apply(this);
 bufferedReader.mark$I(readLimit + 1);
-this.buf = Clazz.array(Character.TYPE, [readLimit]);
-this.cchBuf = Math.max(bufferedReader.read$CA$I$I(this.buf, 0, readLimit), 0);
-this.ichCurrent = 0;
+this.buf=Clazz.array(Character.TYPE, [readLimit]);
+this.cchBuf=Math.max(bufferedReader.read$CA$I$I(this.buf, 0, readLimit), 0);
+this.ichCurrent=0;
 bufferedReader.reset();
 }, 1);
 
@@ -28,7 +28,7 @@ Clazz.newMeth(C$, 'readLineWithNewline', function () {
 while (this.ichCurrent < this.cchBuf){
 var ichBeginningOfLine = this.ichCurrent;
 var ch = String.fromCharCode(0);
-while (this.ichCurrent < this.cchBuf && (ch = this.buf[this.ichCurrent++]) != "\u000d"  && ch != "\u000a" ){
+while (this.ichCurrent < this.cchBuf && (ch=this.buf[this.ichCurrent++]) != "\u000d"  && ch != "\u000a" ){
 }
 if (ch == "\u000d" && this.ichCurrent < this.cchBuf  && this.buf[this.ichCurrent] == "\u000a" ) ++this.ichCurrent;
 var cchLine = this.ichCurrent - ichBeginningOfLine;
@@ -40,4 +40,4 @@ return "";
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:18
+//Created 2018-05-24 08:45:56

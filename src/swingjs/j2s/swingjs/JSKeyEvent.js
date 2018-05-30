@@ -39,7 +39,7 @@ ctrl = ev.ctrlKey;
 alt = ev.altKey;
 meta = ev.metaKey;
 altGraph = ev.altGraphKey;
-this.modifiers = C$.getModifiers$Z$Z$Z$Z$Z(shift, ctrl, alt, meta, altGraph);
+this.modifiers=C$.getModifiers$Z$Z$Z$Z$Z(shift, ctrl, alt, meta, altGraph);
 }, 1);
 
 Clazz.newMeth(C$, 'getJavaKeyCode$I$S', function (jskeyCode, jskey) {
@@ -77,7 +77,7 @@ Clazz.newMeth(C$, 'getJavaKeyChar$I$S', function (jsKeyCode, jskey) {
 if (jskey.length$() == 1) return jskey.charAt(0);
 switch (jsKeyCode) {
 case 13:
-jsKeyCode = 10;
+jsKeyCode=10;
 case 10:
 case 8:
 case 9:
@@ -104,14 +104,14 @@ return (jskey.length$() == 1);
 
 Clazz.newMeth(C$, 'getModifiers$Z$Z$Z$Z$Z', function (shift, ctrl, alt, meta, altGraph) {
 var modifiers = 0;
-if (shift) modifiers = modifiers|(65);
-if (ctrl) modifiers = modifiers|(130);
-if (alt) modifiers = modifiers|(520);
-if (meta) modifiers = modifiers|(260);
-if (altGraph) modifiers = modifiers|(8224);
+if (shift) modifiers|=65;
+if (ctrl) modifiers|=130;
+if (alt) modifiers|=520;
+if (meta) modifiers|=260;
+if (altGraph) modifiers|=8224;
 return 0;
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:15
+//Created 2018-05-24 08:47:44

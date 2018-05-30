@@ -23,28 +23,28 @@ var y = a.y;
 var z = a.z;
 var angle = a.angle;
 var n = Math.sqrt(x * x + y * y + z * z);
-n = 1 / n;
+n=1 / n;
 x *= n;
 y *= n;
 z *= n;
 var c = Math.cos(angle);
 var s = Math.sin(angle);
 var omc = 1.0 - c;
-this.m00 = (c + x * x * omc );
-this.m11 = (c + y * y * omc );
-this.m22 = (c + z * z * omc );
+this.m00=(c + x * x * omc );
+this.m11=(c + y * y * omc );
+this.m22=(c + z * z * omc );
 var tmp1 = x * y * omc ;
 var tmp2 = z * s;
-this.m01 = (tmp1 - tmp2);
-this.m10 = (tmp1 + tmp2);
-tmp1 = x * z * omc ;
-tmp2 = y * s;
-this.m02 = (tmp1 + tmp2);
-this.m20 = (tmp1 - tmp2);
-tmp1 = y * z * omc ;
-tmp2 = x * s;
-this.m12 = (tmp1 - tmp2);
-this.m21 = (tmp1 + tmp2);
+this.m01=(tmp1 - tmp2);
+this.m10=(tmp1 + tmp2);
+tmp1=x * z * omc ;
+tmp2=y * s;
+this.m02=(tmp1 + tmp2);
+this.m20=(tmp1 - tmp2);
+tmp1=y * z * omc ;
+tmp2=x * s;
+this.m12=(tmp1 - tmp2);
+this.m21=(tmp1 + tmp2);
 });
 
 Clazz.newMeth(C$, 'rotate$javajs_util_T3', function (t) {
@@ -56,19 +56,19 @@ result.set$F$F$F(this.m00 * t.x + this.m01 * t.y + this.m02 * t.z, this.m10 * t.
 });
 
 Clazz.newMeth(C$, 'setM33$javajs_util_M34', function (m1) {
-this.m00 = m1.m00;
-this.m01 = m1.m01;
-this.m02 = m1.m02;
-this.m10 = m1.m10;
-this.m11 = m1.m11;
-this.m12 = m1.m12;
-this.m20 = m1.m20;
-this.m21 = m1.m21;
-this.m22 = m1.m22;
+this.m00=m1.m00;
+this.m01=m1.m01;
+this.m02=m1.m02;
+this.m10=m1.m10;
+this.m11=m1.m11;
+this.m12=m1.m12;
+this.m20=m1.m20;
+this.m21=m1.m21;
+this.m22=m1.m22;
 });
 
 Clazz.newMeth(C$, 'clear33', function () {
-this.m00 = this.m01 = this.m02 = this.m10 = this.m11 = this.m12 = this.m20 = this.m21 = this.m22 = 0.0;
+this.m00=this.m01=this.m02=this.m10=this.m11=this.m12=this.m20=this.m21=this.m22=0.0;
 });
 
 Clazz.newMeth(C$, 'set33$I$I$F', function (row, col, v) {
@@ -76,39 +76,39 @@ switch (row) {
 case 0:
 switch (col) {
 case 0:
-this.m00 = v;
+this.m00=v;
 return;
 case 1:
-this.m01 = v;
+this.m01=v;
 return;
 case 2:
-this.m02 = v;
+this.m02=v;
 return;
 }
 break;
 case 1:
 switch (col) {
 case 0:
-this.m10 = v;
+this.m10=v;
 return;
 case 1:
-this.m11 = v;
+this.m11=v;
 return;
 case 2:
-this.m12 = v;
+this.m12=v;
 return;
 }
 break;
 case 2:
 switch (col) {
 case 0:
-this.m20 = v;
+this.m20=v;
 return;
 case 1:
-this.m21 = v;
+this.m21=v;
 return;
 case 2:
-this.m22 = v;
+this.m22=v;
 return;
 }
 break;
@@ -156,19 +156,19 @@ return 0;
 Clazz.newMeth(C$, 'setRow33$I$FA', function (row, v) {
 switch (row) {
 case 0:
-this.m00 = v[0];
-this.m01 = v[1];
-this.m02 = v[2];
+this.m00=v[0];
+this.m01=v[1];
+this.m02=v[2];
 return;
 case 1:
-this.m10 = v[0];
-this.m11 = v[1];
-this.m12 = v[2];
+this.m10=v[0];
+this.m11=v[1];
+this.m12=v[2];
 return;
 case 2:
-this.m20 = v[0];
-this.m21 = v[1];
-this.m22 = v[2];
+this.m20=v[0];
+this.m21=v[1];
+this.m22=v[2];
 return;
 default:
 this.err();
@@ -178,19 +178,19 @@ this.err();
 Clazz.newMeth(C$, 'getRow33$I$FA', function (row, v) {
 switch (row) {
 case 0:
-v[0] = this.m00;
-v[1] = this.m01;
-v[2] = this.m02;
+v[0]=this.m00;
+v[1]=this.m01;
+v[2]=this.m02;
 return;
 case 1:
-v[0] = this.m10;
-v[1] = this.m11;
-v[2] = this.m12;
+v[0]=this.m10;
+v[1]=this.m11;
+v[2]=this.m12;
 return;
 case 2:
-v[0] = this.m20;
-v[1] = this.m21;
-v[2] = this.m22;
+v[0]=this.m20;
+v[1]=this.m21;
+v[2]=this.m22;
 return;
 }
 this.err();
@@ -199,19 +199,19 @@ this.err();
 Clazz.newMeth(C$, 'setColumn33$I$FA', function (column, v) {
 switch (column) {
 case 0:
-this.m00 = v[0];
-this.m10 = v[1];
-this.m20 = v[2];
+this.m00=v[0];
+this.m10=v[1];
+this.m20=v[2];
 break;
 case 1:
-this.m01 = v[0];
-this.m11 = v[1];
-this.m21 = v[2];
+this.m01=v[0];
+this.m11=v[1];
+this.m21=v[2];
 break;
 case 2:
-this.m02 = v[0];
-this.m12 = v[1];
-this.m22 = v[2];
+this.m02=v[0];
+this.m12=v[1];
+this.m22=v[2];
 break;
 default:
 this.err();
@@ -221,19 +221,19 @@ this.err();
 Clazz.newMeth(C$, 'getColumn33$I$FA', function (column, v) {
 switch (column) {
 case 0:
-v[0] = this.m00;
-v[1] = this.m10;
-v[2] = this.m20;
+v[0]=this.m00;
+v[1]=this.m10;
+v[2]=this.m20;
 break;
 case 1:
-v[0] = this.m01;
-v[1] = this.m11;
-v[2] = this.m21;
+v[0]=this.m01;
+v[1]=this.m11;
+v[2]=this.m21;
 break;
 case 2:
-v[0] = this.m02;
-v[1] = this.m12;
-v[2] = this.m22;
+v[0]=this.m02;
+v[1]=this.m12;
+v[2]=this.m22;
 break;
 default:
 this.err();
@@ -278,56 +278,56 @@ this.m22 *= x;
 
 Clazz.newMeth(C$, 'transpose33', function () {
 var tmp = this.m01;
-this.m01 = this.m10;
-this.m10 = tmp;
-tmp = this.m02;
-this.m02 = this.m20;
-this.m20 = tmp;
-tmp = this.m12;
-this.m12 = this.m21;
-this.m21 = tmp;
+this.m01=this.m10;
+this.m10=tmp;
+tmp=this.m02;
+this.m02=this.m20;
+this.m20=tmp;
+tmp=this.m12;
+this.m12=this.m21;
+this.m21=tmp;
 });
 
 Clazz.newMeth(C$, 'setXRot$F', function (angle) {
 var c = Math.cos(angle);
 var s = Math.sin(angle);
-this.m00 = 1.0;
-this.m01 = 0.0;
-this.m02 = 0.0;
-this.m10 = 0.0;
-this.m11 = c;
-this.m12 = -s;
-this.m20 = 0.0;
-this.m21 = s;
-this.m22 = c;
+this.m00=1.0;
+this.m01=0.0;
+this.m02=0.0;
+this.m10=0.0;
+this.m11=c;
+this.m12=-s;
+this.m20=0.0;
+this.m21=s;
+this.m22=c;
 });
 
 Clazz.newMeth(C$, 'setYRot$F', function (angle) {
 var c = Math.cos(angle);
 var s = Math.sin(angle);
-this.m00 = c;
-this.m01 = 0.0;
-this.m02 = s;
-this.m10 = 0.0;
-this.m11 = 1.0;
-this.m12 = 0.0;
-this.m20 = -s;
-this.m21 = 0.0;
-this.m22 = c;
+this.m00=c;
+this.m01=0.0;
+this.m02=s;
+this.m10=0.0;
+this.m11=1.0;
+this.m12=0.0;
+this.m20=-s;
+this.m21=0.0;
+this.m22=c;
 });
 
 Clazz.newMeth(C$, 'setZRot$F', function (angle) {
 var c = Math.cos(angle);
 var s = Math.sin(angle);
-this.m00 = c;
-this.m01 = -s;
-this.m02 = 0.0;
-this.m10 = s;
-this.m11 = c;
-this.m12 = 0.0;
-this.m20 = 0.0;
-this.m21 = 0.0;
-this.m22 = 1.0;
+this.m00=c;
+this.m01=-s;
+this.m02=0.0;
+this.m10=s;
+this.m11=c;
+this.m12=0.0;
+this.m20=0.0;
+this.m21=0.0;
+this.m22=1.0;
 });
 
 Clazz.newMeth(C$, 'determinant3', function () {
@@ -340,4 +340,4 @@ throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["m
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:19
+//Created 2018-05-24 08:45:56

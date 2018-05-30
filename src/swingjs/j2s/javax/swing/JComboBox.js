@@ -74,7 +74,7 @@ p$.initComboBox.apply(this, []);
 
 Clazz.newMeth(C$, 'initComboBox', function () {
 this.installAncestorListener();
-this.uiClassID = "ComboBoxUI";
+this.uiClassID="ComboBoxUI";
 this.setUIProperty$S$O("opaque", new Boolean(true));
 this.updateUI();
 });
@@ -115,9 +115,9 @@ Clazz.newMeth(C$, 'setModel$javax_swing_ComboBoxModel', function (aModel) {
 var oldModel = this.dataModel;
 if (oldModel != null ) {
 oldModel.removeListDataListener$javax_swing_event_ListDataListener(this);
-}this.dataModel = aModel;
+}this.dataModel=aModel;
 this.dataModel.addListDataListener$javax_swing_event_ListDataListener(this);
-this.selectedItemReminder = this.dataModel.getSelectedItem();
+this.selectedItemReminder=this.dataModel.getSelectedItem();
 this.firePropertyChange$S$O$O("model", oldModel, this.dataModel);
 });
 
@@ -127,7 +127,7 @@ return this.dataModel;
 
 Clazz.newMeth(C$, 'setLightWeightPopupEnabled$Z', function (aFlag) {
 var oldFlag = this.lightWeightPopupEnabled;
-this.lightWeightPopupEnabled = aFlag;
+this.lightWeightPopupEnabled=aFlag;
 this.firePropertyChange$S$Z$Z("lightWeightPopupEnabled", oldFlag, this.lightWeightPopupEnabled);
 });
 
@@ -137,7 +137,7 @@ return this.lightWeightPopupEnabled;
 
 Clazz.newMeth(C$, 'setEditable$Z', function (aFlag) {
 var oldFlag = this.$isEditable;
-this.$isEditable = aFlag;
+this.$isEditable=aFlag;
 this.firePropertyChange$S$Z$Z("editable", oldFlag, this.$isEditable);
 });
 
@@ -147,7 +147,7 @@ return this.$isEditable;
 
 Clazz.newMeth(C$, 'setMaximumRowCount$I', function (count) {
 var oldCount = this.maximumRowCount;
-this.maximumRowCount = count;
+this.maximumRowCount=count;
 this.firePropertyChange$S$I$I("maximumRowCount", oldCount, this.maximumRowCount);
 });
 
@@ -157,7 +157,7 @@ return this.maximumRowCount;
 
 Clazz.newMeth(C$, 'setRenderer$javax_swing_ListCellRenderer', function (aRenderer) {
 var oldRenderer = this.renderer;
-this.renderer = aRenderer;
+this.renderer=aRenderer;
 this.firePropertyChange$S$O$O("renderer", oldRenderer, this.renderer);
 this.invalidate();
 });
@@ -170,7 +170,7 @@ Clazz.newMeth(C$, 'setEditor$javax_swing_ComboBoxEditor', function (anEditor) {
 var oldEditor = this.editor;
 if (this.editor != null ) {
 this.editor.removeActionListener$java_awt_event_ActionListener(this);
-}this.editor = anEditor;
+}this.editor=anEditor;
 if (this.editor != null ) {
 this.editor.addActionListener$java_awt_event_ActionListener(this);
 }this.firePropertyChange$S$O$O("editor", oldEditor, this.editor);
@@ -189,15 +189,15 @@ var found = false;
 for (var i = 0; i < this.dataModel.getSize(); i++) {
 var element = this.dataModel.getElementAt$I(i);
 if (anObject.equals$O(element)) {
-found = true;
-objectToSelect = element;
+found=true;
+objectToSelect=element;
 break;
 }}
 if (!found) {
 return;
-}}this.selectingItem = true;
+}}this.selectingItem=true;
 this.dataModel.setSelectedItem$O(objectToSelect);
-this.selectingItem = false;
+this.selectingItem=false;
 if (this.selectedItemReminder !== this.dataModel.getSelectedItem() ) {
 this.selectedItemChanged();
 }}this.fireActionEvent();
@@ -222,8 +222,8 @@ var sObject = this.dataModel.getSelectedItem();
 var i;
 var c;
 var obj;
-for (i = 0, c = this.dataModel.getSize(); i < c; i++) {
-obj = this.dataModel.getElementAt$I(i);
+for (i=0, c=this.dataModel.getSize(); i < c; i++) {
+obj=this.dataModel.getElementAt$I(i);
 if (obj != null  && obj.equals$O(sObject) ) return i;
 }
 return -1;
@@ -235,7 +235,7 @@ return this.prototypeDisplayValue;
 
 Clazz.newMeth(C$, 'setPrototypeDisplayValue$O', function (prototypeDisplayValue) {
 var oldValue = this.prototypeDisplayValue;
-this.prototypeDisplayValue = prototypeDisplayValue;
+this.prototypeDisplayValue=prototypeDisplayValue;
 this.firePropertyChange$S$O$O("prototypeDisplayValue", oldValue, prototypeDisplayValue);
 });
 
@@ -270,7 +270,7 @@ for (var i = 0; i < size; ++i) {
 var element = model.getElementAt$I(0);
 model.removeElement$O(element);
 }
-}this.selectedItemReminder = null;
+}this.selectedItemReminder=null;
 if (this.isEditable()) {
 this.editor.setItem$O(null);
 }});
@@ -337,9 +337,9 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[8]||$incl$(8)),['
 Clazz.newMeth(C$, 'firePopupMenuWillBecomeVisible', function () {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[8]||$incl$(8)),['popupMenuCanceled$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeInvisible$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeVisible$javax_swing_event_PopupMenuEvent']) ) {
-if (e == null ) e = Clazz.new_((I$[9]||$incl$(9)).c$$O,[this]);
+if (e == null ) e=Clazz.new_((I$[9]||$incl$(9)).c$$O,[this]);
 (listeners[i + 1]).popupMenuWillBecomeVisible$javax_swing_event_PopupMenuEvent(e);
 }}
 });
@@ -347,9 +347,9 @@ if (e == null ) e = Clazz.new_((I$[9]||$incl$(9)).c$$O,[this]);
 Clazz.newMeth(C$, 'firePopupMenuWillBecomeInvisible', function () {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[8]||$incl$(8)),['popupMenuCanceled$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeInvisible$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeVisible$javax_swing_event_PopupMenuEvent']) ) {
-if (e == null ) e = Clazz.new_((I$[9]||$incl$(9)).c$$O,[this]);
+if (e == null ) e=Clazz.new_((I$[9]||$incl$(9)).c$$O,[this]);
 (listeners[i + 1]).popupMenuWillBecomeInvisible$javax_swing_event_PopupMenuEvent(e);
 }}
 });
@@ -357,15 +357,15 @@ if (e == null ) e = Clazz.new_((I$[9]||$incl$(9)).c$$O,[this]);
 Clazz.newMeth(C$, 'firePopupMenuCanceled', function () {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[8]||$incl$(8)),['popupMenuCanceled$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeInvisible$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeVisible$javax_swing_event_PopupMenuEvent']) ) {
-if (e == null ) e = Clazz.new_((I$[9]||$incl$(9)).c$$O,[this]);
+if (e == null ) e=Clazz.new_((I$[9]||$incl$(9)).c$$O,[this]);
 (listeners[i + 1]).popupMenuCanceled$javax_swing_event_PopupMenuEvent(e);
 }}
 });
 
 Clazz.newMeth(C$, 'setActionCommand$S', function (aCommand) {
-this.actionCommand = aCommand;
+this.actionCommand=aCommand;
 });
 
 Clazz.newMeth(C$, 'getActionCommand', function () {
@@ -375,16 +375,16 @@ return this.actionCommand;
 Clazz.newMeth(C$, 'setAction$javax_swing_Action', function (a) {
 var oldValue = this.getAction();
 if (this.$action == null  || !this.$action.equals$O(a) ) {
-this.$action = a;
+this.$action=a;
 if (oldValue != null ) {
 this.removeActionListener$java_awt_event_ActionListener(oldValue);
 oldValue.removePropertyChangeListener$java_beans_PropertyChangeListener(this.actionPropertyChangeListener);
-this.actionPropertyChangeListener = null;
+this.actionPropertyChangeListener=null;
 }this.configurePropertiesFromAction$javax_swing_Action(this.$action);
 if (this.$action != null ) {
 if (!p$.isListener$Class$java_awt_event_ActionListener.apply(this, [Clazz.getClass((I$[7]||$incl$(7)),['actionPerformed$java_awt_event_ActionEvent']), this.$action])) {
 this.addActionListener$java_awt_event_ActionListener(this.$action);
-}this.actionPropertyChangeListener = this.createActionPropertyChangeListener$javax_swing_Action(this.$action);
+}this.actionPropertyChangeListener=this.createActionPropertyChangeListener$javax_swing_Action(this.$action);
 this.$action.addPropertyChangeListener$java_beans_PropertyChangeListener(this.actionPropertyChangeListener);
 }this.firePropertyChange$S$O$O("action", oldValue, this.$action);
 }});
@@ -392,9 +392,9 @@ this.$action.addPropertyChangeListener$java_beans_PropertyChangeListener(this.ac
 Clazz.newMeth(C$, 'isListener$Class$java_awt_event_ActionListener', function (c, a) {
 var isListener = false;
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === c  && listeners[i + 1] === a  ) {
-isListener = true;
+isListener=true;
 }}
 return isListener;
 });
@@ -428,7 +428,7 @@ this.setActionCommand$S((a != null ) ? a.getValue$S("ActionCommandKey") : null);
 
 Clazz.newMeth(C$, 'fireItemStateChanged$java_awt_event_ItemEvent', function (e) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[6]||$incl$(6)),['itemStateChanged$java_awt_event_ItemEvent']) ) {
 (listeners[i + 1]).itemStateChanged$java_awt_event_ItemEvent(e);
 }}
@@ -436,28 +436,28 @@ if (listeners[i] === Clazz.getClass((I$[6]||$incl$(6)),['itemStateChanged$java_a
 
 Clazz.newMeth(C$, 'fireActionEvent', function () {
 if (!this.firingActionEvent) {
-this.firingActionEvent = true;
+this.firingActionEvent=true;
 var e = null;
 var listeners = this.listenerList.getListenerList();
 var mostRecentEventTime = (I$[11]||$incl$(11)).getMostRecentEventTime();
 var modifiers = 0;
 var currentEvent = (I$[11]||$incl$(11)).getCurrentEvent();
 if (Clazz.instanceOf(currentEvent, "java.awt.event.InputEvent")) {
-modifiers = (currentEvent).getModifiers();
+modifiers=(currentEvent).getModifiers();
 } else if (Clazz.instanceOf(currentEvent, "java.awt.event.ActionEvent")) {
-modifiers = (currentEvent).getModifiers();
-}for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+modifiers=(currentEvent).getModifiers();
+}for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[7]||$incl$(7)),['actionPerformed$java_awt_event_ActionEvent']) ) {
-if (e == null ) e = Clazz.new_((I$[12]||$incl$(12)).c$$O$I$S$J$I,[this, 1001, this.getActionCommand(), mostRecentEventTime, modifiers]);
+if (e == null ) e=Clazz.new_((I$[12]||$incl$(12)).c$$O$I$S$J$I,[this, 1001, this.getActionCommand(), mostRecentEventTime, modifiers]);
 (listeners[i + 1]).actionPerformed$java_awt_event_ActionEvent(e);
 }}
-this.firingActionEvent = false;
+this.firingActionEvent=false;
 }});
 
 Clazz.newMeth(C$, 'selectedItemChanged', function () {
 if (this.selectedItemReminder != null ) {
 this.fireItemStateChanged$java_awt_event_ItemEvent(Clazz.new_((I$[13]||$incl$(13)).c$$java_awt_ItemSelectable$I$O$I,[this, 701, this.selectedItemReminder, 2]));
-}this.selectedItemReminder = this.dataModel.getSelectedItem();
+}this.selectedItemReminder=this.dataModel.getSelectedItem();
 if (this.selectedItemReminder != null ) {
 this.fireItemStateChanged$java_awt_event_ItemEvent(Clazz.new_((I$[13]||$incl$(13)).c$$java_awt_ItemSelectable$I$O$I,[this, 701, this.selectedItemReminder, 1]));
 }});
@@ -467,7 +467,7 @@ var selectedObject = this.getSelectedItem();
 if (selectedObject == null ) return Clazz.array(java.lang.Object, [0]);
  else {
 var result = Clazz.array(java.lang.Object, [1]);
-result[0] = selectedObject;
+result[0]=selectedObject;
 return result;
 }});
 
@@ -501,8 +501,8 @@ this.contentsChanged$javax_swing_event_ListDataEvent(e);
 
 Clazz.newMeth(C$, 'selectWithKeyChar$C', function (keyChar) {
 var index;
-if (this.keySelectionManager == null ) this.keySelectionManager = this.createDefaultKeySelectionManager();
-index = this.keySelectionManager.selectionForKey$C$javax_swing_ComboBoxModel(keyChar, this.getModel());
+if (this.keySelectionManager == null ) this.keySelectionManager=this.createDefaultKeySelectionManager();
+index=this.keySelectionManager.selectionForKey$C$javax_swing_ComboBoxModel(keyChar, this.getModel());
 if (index != -1) {
 this.setSelectedIndex$I(index);
 return true;
@@ -525,7 +525,7 @@ this.hidePopup();
 });
 
 Clazz.newMeth(C$, 'setKeySelectionManager$javax_swing_JComboBox_KeySelectionManager', function (aManager) {
-this.keySelectionManager = aManager;
+this.keySelectionManager=aManager;
 });
 
 Clazz.newMeth(C$, 'getKeySelectionManager', function () {
@@ -598,23 +598,23 @@ var selectedItem = aModel.getSelectedItem();
 var v;
 var pattern;
 if (selectedItem != null ) {
-for (i = 0, c = aModel.getSize(); i < c; i++) {
+for (i=0, c=aModel.getSize(); i < c; i++) {
 if (selectedItem === aModel.getElementAt$I(i) ) {
-currentSelection = i;
+currentSelection=i;
 break;
 }}
-}pattern = ("" + aKey).toLowerCase();
-aKey = pattern.charAt(0);
-for (i = ++currentSelection, c = aModel.getSize(); i < c; i++) {
+}pattern=("" + aKey).toLowerCase();
+aKey=pattern.charAt(0);
+for (i=++currentSelection, c=aModel.getSize(); i < c; i++) {
 var elem = aModel.getElementAt$I(i);
 if (elem != null  && elem.toString() != null  ) {
-v = elem.toString().toLowerCase();
+v=elem.toString().toLowerCase();
 if (v.length$() > 0 && v.charAt(0) == aKey ) return i;
 }}
-for (i = 0; i < currentSelection; i++) {
+for (i=0; i < currentSelection; i++) {
 var elem = aModel.getElementAt$I(i);
 if (elem != null  && elem.toString() != null  ) {
-v = elem.toString().toLowerCase();
+v=elem.toString().toLowerCase();
 if (v.length$() > 0 && v.charAt(0) == aKey ) return i;
 }}
 return -1;
@@ -623,4 +623,4 @@ return -1;
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:26
+//Created 2018-05-24 08:46:13

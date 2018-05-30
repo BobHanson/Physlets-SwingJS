@@ -20,15 +20,15 @@ C$.$init$.apply(this);
 
 Clazz.newMeth(C$, 'put$O$O', function (key, value) {
 if (this.table == null ) {
-this.table = Clazz.array(java.lang.Object, -1, [key, value]);
+this.table=Clazz.array(java.lang.Object, -1, [key, value]);
 } else {
 var size = this.size();
 if (size < 8) {
 if (this.containsKey$O(key)) {
 var tmp = this.table;
-for (var i = 0; i < tmp.length - 1; i = i+(2)) {
+for (var i = 0; i < tmp.length - 1; i+=2) {
 if (tmp[i].equals$O(key)) {
-tmp[i + 1] = value;
+tmp[i + 1]=value;
 break;
 }}
 } else {
@@ -36,9 +36,9 @@ var array = this.table;
 var i = array.length;
 var tmp = Clazz.array(java.lang.Object, [i + 2]);
 System.arraycopy(array, 0, tmp, 0, i);
-tmp[i] = key;
-tmp[i + 1] = value;
-this.table = tmp;
+tmp[i]=key;
+tmp[i + 1]=value;
+this.table=tmp;
 }} else {
 if ((size == 8) && p$.isArray.apply(this, []) ) {
 p$.grow.apply(this, []);
@@ -50,13 +50,13 @@ var value = null;
 if (this.table != null ) {
 if (p$.isArray.apply(this, [])) {
 var array = this.table;
-for (var i = 0; i < array.length - 1; i = i+(2)) {
+for (var i = 0; i < array.length - 1; i+=2) {
 if (array[i].equals$O(key)) {
-value = array[i + 1];
+value=array[i + 1];
 break;
 }}
 } else {
-value = (this.table).get$O(key);
+value=(this.table).get$O(key);
 }}return value;
 });
 
@@ -64,9 +64,9 @@ Clazz.newMeth(C$, 'size', function () {
 var size;
 if (this.table == null ) return 0;
 if (p$.isArray.apply(this, [])) {
-size = ((this.table).length/2|0);
+size=((this.table).length/2|0);
 } else {
-size = (this.table).size();
+size=(this.table).size();
 }return size;
 });
 
@@ -75,13 +75,13 @@ var contains = false;
 if (this.table != null ) {
 if (p$.isArray.apply(this, [])) {
 var array = this.table;
-for (var i = 0; i < array.length - 1; i = i+(2)) {
+for (var i = 0; i < array.length - 1; i+=2) {
 if (array[i].equals$O(key)) {
-contains = true;
+contains=true;
 break;
 }}
 } else {
-contains = (this.table).containsKey$O(key);
+contains=(this.table).containsKey$O(key);
 }}return contains;
 });
 
@@ -93,33 +93,33 @@ return null;
 if (p$.isArray.apply(this, [])) {
 var index = -1;
 var array = this.table;
-for (var i = array.length - 2; i >= 0; i = i-(2)) {
+for (var i = array.length - 2; i >= 0; i-=2) {
 if (array[i].equals$O(key)) {
-index = i;
-value = array[i + 1];
+index=i;
+value=array[i + 1];
 break;
 }}
 if (index != -1) {
 var tmp = Clazz.array(java.lang.Object, [array.length - 2]);
 System.arraycopy(array, 0, tmp, 0, index);
 if (index < tmp.length) System.arraycopy(array, index + 2, tmp, index, tmp.length - index);
-this.table = (tmp.length == 0) ? null : tmp;
+this.table=(tmp.length == 0) ? null : tmp;
 }} else {
-value = (this.table).remove$O(key);
+value=(this.table).remove$O(key);
 }if (this.size() == 7 && !p$.isArray.apply(this, []) ) {
 p$.shrink.apply(this, []);
 }}return value;
 });
 
 Clazz.newMeth(C$, 'clear', function () {
-this.table = null;
+this.table=null;
 });
 
 Clazz.newMeth(C$, 'clone', function () {
 var newArrayTable = Clazz.new_(C$);
 if (p$.isArray.apply(this, [])) {
 var array = this.table;
-for (var i = 0; i < array.length - 1; i = i+(2)) {
+for (var i = 0; i < array.length - 1; i+=2) {
 newArrayTable.put$O$O(array[i], array[i + 1]);
 }
 } else {
@@ -138,18 +138,18 @@ return null;
 }if (p$.isArray.apply(this, [])) {
 var array = this.table;
 if (keys == null ) {
-keys = Clazz.array(java.lang.Object, [(array.length/2|0)]);
-}for (var i = 0, index = 0; i < array.length - 1; i = i+(2), index++) {
-keys[index] = array[i];
+keys=Clazz.array(java.lang.Object, [(array.length/2|0)]);
+}for (var i = 0, index = 0; i < array.length - 1; i+=2, index++) {
+keys[index]=array[i];
 }
 } else {
 var tmp = this.table;
 var enum_ = tmp.keys();
 var counter = tmp.size();
 if (keys == null ) {
-keys = Clazz.array(java.lang.Object, [counter]);
+keys=Clazz.array(java.lang.Object, [counter]);
 }while (counter > 0){
-keys[--counter] = enum_.nextElement();
+keys[--counter]=enum_.nextElement();
 }
 }return keys;
 });
@@ -161,10 +161,10 @@ return (Clazz.instanceOf(this.table, Clazz.array(java.lang.Object, -1)));
 Clazz.newMeth(C$, 'grow', function () {
 var array = this.table;
 var tmp = Clazz.new_((I$[1]||$incl$(1)).c$$I,[(array.length/2|0)]);
-for (var i = 0; i < array.length; i = i+(2)) {
+for (var i = 0; i < array.length; i+=2) {
 tmp.put$TK$TV(array[i], array[i + 1]);
 }
-this.table = tmp;
+this.table=tmp;
 });
 
 Clazz.newMeth(C$, 'shrink', function () {
@@ -174,11 +174,11 @@ var keys = tmp.keys();
 var j = 0;
 while (keys.hasMoreElements()){
 var o = keys.nextElement();
-array[j] = o;
-array[j + 1] = tmp.get$O(o);
-j = j+(2);
+array[j]=o;
+array[j + 1]=tmp.get$O(o);
+j+=2;
 }
-this.table = array;
+this.table=array;
 });
 })();
-//Created 2018-05-15 01:02:22
+//Created 2018-05-24 08:46:06

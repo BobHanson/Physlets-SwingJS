@@ -43,7 +43,7 @@ System.err.println$S("JSComponent: " + listener + " is not a PropertyChangeListe
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.num = ++C$.incr;
+this.num=++C$.incr;
 }, 1);
 
 Clazz.newMeth(C$, 'getGraphics', function () {
@@ -60,16 +60,16 @@ return g;
 });
 
 Clazz.newMeth(C$, 'setFrameViewer$swingjs_JSFrameViewer', function (viewer) {
-return this.frameViewer = (viewer == null  ? viewer = Clazz.new_((I$[2]||$incl$(2))).setForWindow$java_awt_Container(this) : viewer);
+return this.frameViewer=(viewer == null  ? viewer=Clazz.new_((I$[2]||$incl$(2))).setForWindow$java_awt_Container(this) : viewer);
 });
 
 Clazz.newMeth(C$, 'getFrameViewer', function () {
 var parent = null;
-return (this.topFrameViewer != null  ? this.topFrameViewer : this.frameViewer != null  ? this.topFrameViewer = this.frameViewer : (parent = this.getParent()) == null  ? null : (this.topFrameViewer = parent.getFrameViewer()));
+return (this.topFrameViewer != null  ? this.topFrameViewer : this.frameViewer != null  ? this.topFrameViewer=this.frameViewer : (parent=this.getParent()) == null  ? null : (this.topFrameViewer=parent.getFrameViewer()));
 });
 
 Clazz.newMeth(C$, 'getHTMLName$S', function (uid) {
-return (this.htmlName == null  ? this.htmlName = this.appContext.getThreadGroup().getName() + "_" + uid + "_" + this.num  : this.htmlName);
+return (this.htmlName == null  ? this.htmlName=this.appContext.getThreadGroup().getName() + "_" + uid + "_" + this.num  : this.htmlName);
 });
 
 Clazz.newMeth(C$, 'getUIClassID', function () {
@@ -77,7 +77,7 @@ return this.uiClassID;
 });
 
 Clazz.newMeth(C$, 'setUI$javax_swing_plaf_ComponentUI', function (ui) {
-this.ui = ui;
+this.ui=ui;
 if (ui != null ) {
 ui.installJS();
 }});
@@ -87,12 +87,12 @@ return this.ui;
 });
 
 Clazz.newMeth(C$, 'updatePeerVisibility$Z', function (isVisible) {
-if (this.getOrCreatePeer() == null ) this.peerVis = (isVisible ? (I$[3]||$incl$(3)).TRUE : (I$[3]||$incl$(3)).FALSE);
+if (this.getOrCreatePeer() == null ) this.peerVis=(isVisible ? (I$[3]||$incl$(3)).TRUE : (I$[3]||$incl$(3)).FALSE);
  else this.updatePeerVisibilityOrig$Z(isVisible);
 });
 
 Clazz.newMeth(C$, 'getOrCreatePeer', function () {
-return (this.ui == null  ? null : this.ui == null  ? null : this.peer == null  ? (this.peer = this.getToolkit().createComponent$java_awt_Component(this)) : this.peer);
+return (this.ui == null  ? null : this.ui == null  ? null : this.peer == null  ? (this.peer=this.getToolkit().createComponent$java_awt_Component(this)) : this.peer);
 });
 
 Clazz.newMeth(C$, 'updateUI', function () {
@@ -107,9 +107,9 @@ return (g.mark ? g : null);
 
 Clazz.newMeth(C$, 'checkBackgroundPainted$swingjs_JSGraphics2D', function (jsg) {
 if (jsg == null ) {
-this.isBackgroundPainted = false;
+this.isBackgroundPainted=false;
 return;
-}this.isBackgroundPainted = jsg.isBackgroundPainted();
+}this.isBackgroundPainted=jsg.isBackgroundPainted();
 if (this.isBackgroundPainted) {
 this.ui.setBackgroundPainted();
 (this).getRootPane().getUI().setBackgroundPainted();
@@ -119,7 +119,7 @@ Clazz.newMeth(C$, 'selfOrParentBackgroundPainted', function () {
 var c = this;
 while (c != null ){
 if (c.isBackgroundPainted) return true;
-c = c.getParent();
+c=c.getParent();
 }
 return false;
 });
@@ -128,4 +128,4 @@ Clazz.newMeth(C$, 'isBackgroundSet', function () {
 return this.background != null ;
 });
 })();
-//Created 2018-05-15 01:01:52
+//Created 2018-05-24 08:45:11

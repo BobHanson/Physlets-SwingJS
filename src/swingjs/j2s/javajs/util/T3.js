@@ -19,27 +19,27 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$F$F$F', function (x, y, z) {
-this.x = x;
-this.y = y;
-this.z = z;
+this.x=x;
+this.y=y;
+this.z=z;
 });
 
 Clazz.newMeth(C$, 'setA$FA', function (t) {
-this.x = t[0];
-this.y = t[1];
-this.z = t[2];
+this.x=t[0];
+this.y=t[1];
+this.z=t[2];
 });
 
 Clazz.newMeth(C$, 'setT$javajs_util_T3', function (t1) {
-this.x = t1.x;
-this.y = t1.y;
-this.z = t1.z;
+this.x=t1.x;
+this.y=t1.y;
+this.z=t1.z;
 });
 
 Clazz.newMeth(C$, 'add2$javajs_util_T3$javajs_util_T3', function (t1, t2) {
-this.x = t1.x + t2.x;
-this.y = t1.y + t2.y;
-this.z = t1.z + t2.z;
+this.x=t1.x + t2.x;
+this.y=t1.y + t2.y;
+this.z=t1.z + t2.z;
 });
 
 Clazz.newMeth(C$, 'add$javajs_util_T3', function (t1) {
@@ -60,9 +60,9 @@ return Math.sqrt(this.distanceSquared$javajs_util_T3(p1));
 });
 
 Clazz.newMeth(C$, 'sub2$javajs_util_T3$javajs_util_T3', function (t1, t2) {
-this.x = t1.x - t2.x;
-this.y = t1.y - t2.y;
-this.z = t1.z - t2.z;
+this.x=t1.x - t2.x;
+this.y=t1.y - t2.y;
+this.z=t1.z - t2.z;
 });
 
 Clazz.newMeth(C$, 'sub$javajs_util_T3', function (t1) {
@@ -90,15 +90,15 @@ this.z *= p.z;
 });
 
 Clazz.newMeth(C$, 'scaleAdd2$F$javajs_util_T3$javajs_util_T3', function (s, t1, t2) {
-this.x = s * t1.x + t2.x;
-this.y = s * t1.y + t2.y;
-this.z = s * t1.z + t2.z;
+this.x=s * t1.x + t2.x;
+this.y=s * t1.y + t2.y;
+this.z=s * t1.z + t2.z;
 });
 
 Clazz.newMeth(C$, 'ave$javajs_util_T3$javajs_util_T3', function (a, b) {
-this.x = (a.x + b.x) / 2.0;
-this.y = (a.y + b.y) / 2.0;
-this.z = (a.z + b.z) / 2.0;
+this.x=(a.x + b.x) / 2.0;
+this.y=(a.y + b.y) / 2.0;
+this.z=(a.z + b.z) / 2.0;
 });
 
 Clazz.newMeth(C$, 'dot$javajs_util_T3', function (v) {
@@ -126,9 +126,9 @@ this.set$F$F$F(v1.y * v2.z - v1.z * v2.y, v1.z * v2.x - v1.x * v2.z, v1.x * v2.y
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var bits = 1;
-bits = 31 * bits + C$.floatToIntBits$F(this.x);
-bits = 31 * bits + C$.floatToIntBits$F(this.y);
-bits = 31 * bits + C$.floatToIntBits$F(this.z);
+bits=31 * bits + C$.floatToIntBits$F(this.x);
+bits=31 * bits + C$.floatToIntBits$F(this.y);
+bits=31 * bits + C$.floatToIntBits$F(this.z);
 return ((bits ^ (bits >> 32))|0);
 });
 
@@ -150,4 +150,4 @@ Clazz.newMeth(C$, 'toJSON', function () {
 return "[" + new Float(this.x).toString() + "," + new Float(this.y).toString() + "," + new Float(this.z).toString() + "]" ;
 });
 })();
-//Created 2018-05-15 01:02:19
+//Created 2018-05-24 08:45:58

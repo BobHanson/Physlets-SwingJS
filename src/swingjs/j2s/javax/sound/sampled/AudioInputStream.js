@@ -28,14 +28,14 @@ this.markPushBackLen = 0;
 Clazz.newMeth(C$, 'c$$java_io_InputStream$javax_sound_sampled_AudioFormat$J', function (stream, format, length) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.format = format;
-this.frameLength = length;
-this.frameSize = format.getFrameSize();
+this.format=format;
+this.frameLength=length;
+this.frameSize=format.getFrameSize();
 if (this.frameSize == -1 || this.frameSize <= 0 ) {
-this.frameSize = 1;
-}this.stream = stream;
-this.framePos = 0;
-this.markpos = 0;
+this.frameSize=1;
+}this.stream=stream;
+this.framePos=0;
+this.markpos=0;
 }, 1);
 
 Clazz.newMeth(C$, 'getFormat', function () {
@@ -62,7 +62,7 @@ return this.read$BA$I$I(b, 0, b.length);
 
 Clazz.newMeth(C$, 'read$BA$I$I', function (b, off, len) {
 if ((len % this.frameSize) != 0) {
-len = len-((len % this.frameSize));
+len-=(len % this.frameSize);
 if (len == 0) {
 return 0;
 }}if (this.frameLength != -1) {
@@ -70,42 +70,42 @@ if (this.framePos >= this.frameLength) {
 return -1;
 } else {
 if (((len/this.frameSize|0)) > (this.frameLength - this.framePos)) {
-len = ((this.frameLength - this.framePos)|0) * this.frameSize;
+len=((this.frameLength - this.framePos)|0) * this.frameSize;
 }}}var bytesRead = 0;
 var thisOff = off;
 if (this.pushBackLen > 0 && len >= this.pushBackLen ) {
 System.arraycopy(this.pushBackBuffer, 0, b, off, this.pushBackLen);
-thisOff = thisOff+(this.pushBackLen);
-len = len-(this.pushBackLen);
-bytesRead = bytesRead+(this.pushBackLen);
-this.pushBackLen = 0;
+thisOff+=this.pushBackLen;
+len-=this.pushBackLen;
+bytesRead+=this.pushBackLen;
+this.pushBackLen=0;
 }var thisBytesRead = this.stream.read$BA$I$I(b, thisOff, len);
 if (thisBytesRead == -1) {
 return -1;
 }if (thisBytesRead > 0) {
-bytesRead = bytesRead+(thisBytesRead);
+bytesRead+=thisBytesRead;
 }if (bytesRead > 0) {
-this.pushBackLen = bytesRead % this.frameSize;
+this.pushBackLen=bytesRead % this.frameSize;
 if (this.pushBackLen > 0) {
 if (this.pushBackBuffer == null ) {
-this.pushBackBuffer = Clazz.array(Byte.TYPE, [this.frameSize]);
+this.pushBackBuffer=Clazz.array(Byte.TYPE, [this.frameSize]);
 }System.arraycopy(b, off + bytesRead - this.pushBackLen, this.pushBackBuffer, 0, this.pushBackLen);
-bytesRead = bytesRead-(this.pushBackLen);
-}this.framePos = this.framePos+((bytesRead/this.frameSize|0));
+bytesRead-=this.pushBackLen;
+}this.framePos+=(bytesRead/this.frameSize|0);
 }return bytesRead;
 });
 
 Clazz.newMeth(C$, 'skip$J', function (n) {
 if ((n % this.frameSize) != 0) {
-n = n-((n % this.frameSize));
+n-=(n % this.frameSize);
 }if (this.frameLength != -1) {
 if (((n/this.frameSize|0)) > (this.frameLength - this.framePos)) {
-n = (this.frameLength - this.framePos) * this.frameSize;
+n=(this.frameLength - this.framePos) * this.frameSize;
 }}var temp = this.stream.skip$J(n);
 if (temp % this.frameSize != 0) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Could not skip an integer number of frames."]);
 }if (temp >= 0) {
-this.framePos = this.framePos+((temp/this.frameSize|0));
+this.framePos+=(temp/this.frameSize|0);
 }return temp;
 });
 
@@ -124,21 +124,21 @@ this.stream.close();
 Clazz.newMeth(C$, 'mark$I', function (readlimit) {
 this.stream.mark$I(readlimit);
 if (this.markSupported()) {
-this.markpos = this.framePos;
-this.markPushBackLen = this.pushBackLen;
+this.markpos=this.framePos;
+this.markPushBackLen=this.pushBackLen;
 if (this.markPushBackLen > 0) {
 if (this.markPushBackBuffer == null ) {
-this.markPushBackBuffer = Clazz.array(Byte.TYPE, [this.frameSize]);
+this.markPushBackBuffer=Clazz.array(Byte.TYPE, [this.frameSize]);
 }System.arraycopy(this.pushBackBuffer, 0, this.markPushBackBuffer, 0, this.markPushBackLen);
 }}});
 
 Clazz.newMeth(C$, 'reset', function () {
 this.stream.reset();
-this.framePos = this.markpos;
-this.pushBackLen = this.markPushBackLen;
+this.framePos=this.markpos;
+this.pushBackLen=this.markPushBackLen;
 if (this.pushBackLen > 0) {
 if (this.pushBackBuffer == null ) {
-this.pushBackBuffer = Clazz.array(Byte.TYPE, [this.frameSize - 1]);
+this.pushBackBuffer=Clazz.array(Byte.TYPE, [this.frameSize - 1]);
 }System.arraycopy(this.markPushBackBuffer, 0, this.pushBackBuffer, 0, this.pushBackLen);
 }});
 
@@ -148,4 +148,4 @@ return this.stream.markSupported();
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:21
+//Created 2018-05-24 08:46:01

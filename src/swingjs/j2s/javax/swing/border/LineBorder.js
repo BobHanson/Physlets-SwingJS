@@ -18,13 +18,13 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'createBlackLineBorder', function () {
 if (C$.blackLine == null ) {
-C$.blackLine = Clazz.new_(C$.c$$java_awt_Color$I,[(I$[1]||$incl$(1)).black, 1]);
+C$.blackLine=Clazz.new_(C$.c$$java_awt_Color$I,[(I$[1]||$incl$(1)).black, 1]);
 }return C$.blackLine;
 }, 1);
 
 Clazz.newMeth(C$, 'createGrayLineBorder', function () {
 if (C$.grayLine == null ) {
-C$.grayLine = Clazz.new_(C$.c$$java_awt_Color$I,[(I$[1]||$incl$(1)).gray, 1]);
+C$.grayLine=Clazz.new_(C$.c$$java_awt_Color$I,[(I$[1]||$incl$(1)).gray, 1]);
 }return C$.grayLine;
 }, 1);
 
@@ -38,9 +38,9 @@ C$.c$$java_awt_Color$I$Z.apply(this, [color, thickness, false]);
 
 Clazz.newMeth(C$, 'c$$java_awt_Color$I$Z', function (color, thickness, roundedCorners) {
 Clazz.super_(C$, this,1);
-this.lineColor = color;
-this.thickness = thickness;
-this.roundedCorners = roundedCorners;
+this.lineColor=color;
+this.thickness=thickness;
+this.roundedCorners=roundedCorners;
 }, 1);
 
 Clazz.newMeth(C$, 'paintBorder$java_awt_Component$java_awt_Graphics$I$I$I$I', function (c, g, x, y, width, height) {
@@ -54,11 +54,11 @@ var offs = this.thickness;
 var size = offs + offs;
 if (this.roundedCorners) {
 var arc = offs + size;
-outer = Clazz.new_((I$[2]||$incl$(2)).c$$F$F$F$F$F$F,[x, y, width, height, arc, arc]);
-inner = Clazz.new_((I$[2]||$incl$(2)).c$$F$F$F$F$F$F,[x + offs, y + offs, width - size, height - size, arc, arc]);
+outer=Clazz.new_((I$[2]||$incl$(2)).c$$F$F$F$F$F$F,[x, y, width, height, arc, arc]);
+inner=Clazz.new_((I$[2]||$incl$(2)).c$$F$F$F$F$F$F,[x + offs, y + offs, width - size, height - size, arc, arc]);
 } else {
-outer = Clazz.new_((I$[3]||$incl$(3)).c$$F$F$F$F,[x, y, width, height]);
-inner = Clazz.new_((I$[3]||$incl$(3)).c$$F$F$F$F,[x + offs, y + offs, width - size, height - size]);
+outer=Clazz.new_((I$[3]||$incl$(3)).c$$F$F$F$F,[x, y, width, height]);
+inner=Clazz.new_((I$[3]||$incl$(3)).c$$F$F$F$F,[x + offs, y + offs, width - size, height - size]);
 }var path = Clazz.new_((I$[4]||$incl$(4)).c$$I,[0]);
 path.append$java_awt_Shape$Z(outer, false);
 path.append$java_awt_Shape$Z(inner, false);
@@ -71,7 +71,7 @@ return Clazz.new_((I$[5]||$incl$(5)).c$$I$I$I$I,[this.thickness, this.thickness,
 });
 
 Clazz.newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
-insets.left = insets.top = insets.right = insets.bottom = this.thickness;
+insets.left=insets.top=insets.right=insets.bottom=this.thickness;
 return insets;
 });
 
@@ -93,4 +93,4 @@ return !this.roundedCorners;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:43
+//Created 2018-05-24 08:46:45

@@ -15,21 +15,21 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$I$HAA', function (offset, data) {
 C$.superclazz.c$$I$I.apply(this, [offset, data.length]);
 C$.$init$.apply(this);
-this.numComponents = data.length;
-this.numEntries = data[0].length;
-this.data = Clazz.array(Short.TYPE, [this.numComponents, null]);
+this.numComponents=data.length;
+this.numEntries=data[0].length;
+this.data=Clazz.array(Short.TYPE, [this.numComponents, null]);
 for (var i = 0; i < this.numComponents; i++) {
-this.data[i] = data[i];
+this.data[i]=data[i];
 }
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$HA', function (offset, data) {
 C$.superclazz.c$$I$I.apply(this, [offset, data.length]);
 C$.$init$.apply(this);
-this.numComponents = 1;
-this.numEntries = data.length;
-this.data = Clazz.array(Short.TYPE, [1, null]);
-this.data[0] = data;
+this.numComponents=1;
+this.numEntries=data.length;
+this.data=Clazz.array(Short.TYPE, [1, null]);
+this.data[0]=data;
 }, 1);
 
 Clazz.newMeth(C$, 'getTable', function () {
@@ -38,44 +38,44 @@ return this.data;
 
 Clazz.newMeth(C$, 'lookupPixel$IA$IA', function (src, dst) {
 if (dst == null ) {
-dst = Clazz.array(Integer.TYPE, [src.length]);
+dst=Clazz.array(Integer.TYPE, [src.length]);
 }if (this.numComponents == 1) {
 for (var i = 0; i < src.length; i++) {
 var s = (src[i] & 65535) - this.offset;
 if (s < 0) {
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["src[" + i + "]-offset is " + "less than zero" ]);
-}dst[i] = this.data[0][s];
+}dst[i]=this.data[0][s];
 }
 } else {
 for (var i = 0; i < src.length; i++) {
 var s = (src[i] & 65535) - this.offset;
 if (s < 0) {
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["src[" + i + "]-offset is " + "less than zero" ]);
-}dst[i] = this.data[i][s];
+}dst[i]=this.data[i][s];
 }
 }return dst;
 });
 
 Clazz.newMeth(C$, 'lookupPixel$HA$HA', function (src, dst) {
 if (dst == null ) {
-dst = Clazz.array(Short.TYPE, [src.length]);
+dst=Clazz.array(Short.TYPE, [src.length]);
 }if (this.numComponents == 1) {
 for (var i = 0; i < src.length; i++) {
 var s = (src[i] & 65535) - this.offset;
 if (s < 0) {
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["src[" + i + "]-offset is " + "less than zero" ]);
-}dst[i] = this.data[0][s];
+}dst[i]=this.data[0][s];
 }
 } else {
 for (var i = 0; i < src.length; i++) {
 var s = (src[i] & 65535) - this.offset;
 if (s < 0) {
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["src[" + i + "]-offset is " + "less than zero" ]);
-}dst[i] = this.data[i][s];
+}dst[i]=this.data[i][s];
 }
 }return dst;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:02
+//Created 2018-05-24 08:45:27

@@ -73,11 +73,11 @@ C$.c$$java_io_File.apply(this, [Clazz.new_((I$[2]||$incl$(2)).c$$S,[currentDirec
 
 Clazz.newMeth(C$, 'c$$java_io_File', function (currentDirectory) {
 Clazz.super_(C$, this,1);
-this.currentDirectory = currentDirectory;
+this.currentDirectory=currentDirectory;
 }, 1);
 
 Clazz.newMeth(C$, 'setDragEnabled$Z', function (b) {
-this.dragEnabled = b;
+this.dragEnabled=b;
 });
 
 Clazz.newMeth(C$, 'getDragEnabled', function () {
@@ -90,7 +90,7 @@ return this.selectedFile;
 
 Clazz.newMeth(C$, 'setSelectedFile$java_io_File', function (file) {
 var oldValue = this.selectedFile;
-this.selectedFile = file;
+this.selectedFile=file;
 if (this.selectedFile != null ) {
 if (file.isAbsolute() && !p$.isParent$java_io_File$java_io_File.apply(this, [this.getCurrentDirectory(), this.selectedFile]) ) {
 this.setCurrentDirectory$java_io_File(this.selectedFile.getParentFile());
@@ -113,11 +113,11 @@ return this.selectedFiles.clone();
 Clazz.newMeth(C$, 'setSelectedFiles$java_io_FileA', function (selectedFiles) {
 var oldValue = this.selectedFiles;
 if (selectedFiles == null  || selectedFiles.length == 0 ) {
-selectedFiles = null;
-this.selectedFiles = null;
+selectedFiles=null;
+this.selectedFiles=null;
 this.setSelectedFile$java_io_File(null);
 } else {
-this.selectedFiles = selectedFiles.clone();
+this.selectedFiles=selectedFiles.clone();
 this.setSelectedFile$java_io_File(this.selectedFiles[0]);
 }this.firePropertyChange$S$O$O("SelectedFilesChangedProperty", oldValue, selectedFiles);
 });
@@ -129,19 +129,19 @@ return this.currentDirectory;
 Clazz.newMeth(C$, 'setCurrentDirectory$java_io_File', function (dir) {
 var oldValue = this.currentDirectory;
 if (dir != null  && !dir.exists() ) {
-dir = this.currentDirectory;
+dir=this.currentDirectory;
 }this.firePropertyChange$S$O$O("directoryChanged", oldValue, this.currentDirectory);
 });
 
 Clazz.newMeth(C$, 'changeToParentDirectory', function () {
-this.selectedFile = null;
+this.selectedFile=null;
 var oldValue = this.getCurrentDirectory();
 this.setCurrentDirectory$java_io_File(p$.getParentDirectory$java_io_File.apply(this, [oldValue]));
 });
 
 Clazz.newMeth(C$, 'getParentDirectory$java_io_File', function (f) {
 var path = f.getPath();
-if (path.endsWith$S("/")) path = path.substring(path.length$() - 1);
+if (path.endsWith$S("/")) path=path.substring(path.length$() - 1);
 return Clazz.new_((I$[2]||$incl$(2)).c$$S,[path.substring(0, path.lastIndexOf("/"))]);
 });
 
@@ -193,14 +193,14 @@ return (I$[5]||$incl$(5)).ASYNCHRONOUS_INTEGER;
 case 1:
 var name = (I$[3]||$incl$(3)).prompt$S$S((this.dialogTitle == null  ? "File to Save?" : this.dialogTitle), this.lastFileName);
 if (name == null ) return 1;
-this.selectedFile = Clazz.new_((I$[2]||$incl$(2)).c$$S,[name]);
+this.selectedFile=Clazz.new_((I$[2]||$incl$(2)).c$$S,[name]);
 p$.closeDialog.apply(this, []);
 return 0;
 }
 if (approveButtonText != null ) {
 this.setApproveButtonText$S(approveButtonText);
 this.setDialogType$I(2);
-}this.dialog = this.createDialog$java_awt_Component(parent);
+}this.dialog=this.createDialog$java_awt_Component(parent);
 this.dialog.addWindowListener$java_awt_event_WindowListener(((
 (function(){var C$=Clazz.newClass(P$, "JFileChooser$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.WindowAdapter'), null, 1);
 
@@ -211,12 +211,12 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'windowClosing$java_awt_event_WindowEvent', function (e) {
-this.b$['javax.swing.JFileChooser'].returnValue = 1;
+this.b$['javax.swing.JFileChooser'].returnValue=1;
 this.b$['javax.swing.JFileChooser'].closeDialog.apply(this.b$['javax.swing.JFileChooser'], []);
 });
 })()
 ), Clazz.new_((I$[6]||$incl$(6)), [this, null],P$.JFileChooser$2)));
-this.returnValue = (I$[5]||$incl$(5)).ASYNCHRONOUS_INTEGER;
+this.returnValue=(I$[5]||$incl$(5)).ASYNCHRONOUS_INTEGER;
 this.dialog.setVisible$Z(true);
 return this.returnValue;
 });
@@ -230,18 +230,18 @@ this.firePropertyChange$S$O$O("SelectedFile", null, this.selectedFile);
 if (this.dialog != null ) {
 this.firePropertyChange$S$O$O("JFileChooserDialogIsClosingProperty", this.dialog, null);
 this.dialog.dispose();
-this.dialog = null;
+this.dialog=null;
 }});
 
 Clazz.newMeth(C$, 'createDialog$java_awt_Component', function (parent) {
 var title = this.dialogTitle;
-if (title == null ) title = "SwingJS";
+if (title == null ) title="SwingJS";
 var dialog;
 var window = (I$[7]||$incl$(7)).getWindowForComponent$java_awt_Component(parent);
 if (Clazz.instanceOf(window, "java.awt.Frame")) {
-dialog = Clazz.new_((I$[5]||$incl$(5)).c$$java_awt_Frame$S$Z,[window, title, true]);
+dialog=Clazz.new_((I$[5]||$incl$(5)).c$$java_awt_Frame$S$Z,[window, title, true]);
 } else {
-dialog = Clazz.new_((I$[5]||$incl$(5)).c$$java_awt_Dialog$S$Z,[window, title, true]);
+dialog=Clazz.new_((I$[5]||$incl$(5)).c$$java_awt_Dialog$S$Z,[window, title, true]);
 }dialog.setComponentOrientation$java_awt_ComponentOrientation(this.getComponentOrientation());
 var contentPane = dialog.getContentPane();
 contentPane.setLayout$java_awt_LayoutManager(Clazz.new_((I$[8]||$incl$(8))));
@@ -263,7 +263,7 @@ Clazz.newMeth(C$, 'setControlButtonsAreShown$Z', function (b) {
 if (this.controlsShown == b ) {
 return;
 }var oldValue = this.controlsShown;
-this.controlsShown = b;
+this.controlsShown=b;
 this.firePropertyChange$S$Z$Z("ControlButtonsAreShownChangedProperty", oldValue, this.controlsShown);
 });
 
@@ -276,9 +276,9 @@ if (this.dialogType == dialogType) {
 return;
 }if (!(dialogType == 0 || dialogType == 1  || dialogType == 2 )) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Incorrect Dialog Type: " + dialogType]);
-}if (dialogType != 2) this.opensaveType = dialogType;
+}if (dialogType != 2) this.opensaveType=dialogType;
 var oldValue = this.dialogType;
-this.dialogType = dialogType;
+this.dialogType=dialogType;
 if (dialogType == 0 || dialogType == 1 ) {
 this.setApproveButtonText$S(null);
 }this.firePropertyChange$S$I$I("DialogTypeChangedProperty", oldValue, dialogType);
@@ -286,7 +286,7 @@ this.setApproveButtonText$S(null);
 
 Clazz.newMeth(C$, 'setDialogTitle$S', function (dialogTitle) {
 var oldValue = this.dialogTitle;
-this.dialogTitle = dialogTitle;
+this.dialogTitle=dialogTitle;
 if (this.dialog != null ) {
 this.dialog.setTitle$S(dialogTitle);
 }this.firePropertyChange$S$O$O("DialogTitleChangedProperty", oldValue, dialogTitle);
@@ -300,7 +300,7 @@ Clazz.newMeth(C$, 'setApproveButtonToolTipText$S', function (toolTipText) {
 if (this.approveButtonToolTipText == toolTipText) {
 return;
 }var oldValue = this.approveButtonToolTipText;
-this.approveButtonToolTipText = toolTipText;
+this.approveButtonToolTipText=toolTipText;
 this.firePropertyChange$S$O$O("ApproveButtonToolTipTextChangedProperty", oldValue, this.approveButtonToolTipText);
 });
 
@@ -316,14 +316,14 @@ Clazz.newMeth(C$, 'setApproveButtonMnemonic$I', function (mnemonic) {
 if (this.approveButtonMnemonic == mnemonic) {
 return;
 }var oldValue = this.approveButtonMnemonic;
-this.approveButtonMnemonic = mnemonic;
+this.approveButtonMnemonic=mnemonic;
 this.firePropertyChange$S$I$I("ApproveButtonMnemonicChangedProperty", oldValue, this.approveButtonMnemonic);
 });
 
 Clazz.newMeth(C$, 'setApproveButtonMnemonic$C', function (mnemonic) {
 var vk = mnemonic.$c();
 if (vk >= 97  && vk <= 122  ) {
-vk = vk-(32);
+vk-=32;
 }this.setApproveButtonMnemonic$I(vk);
 });
 
@@ -331,7 +331,7 @@ Clazz.newMeth(C$, 'setApproveButtonText$S', function (approveButtonText) {
 if (this.approveButtonText == approveButtonText) {
 return;
 }var oldValue = this.approveButtonText;
-this.approveButtonText = approveButtonText;
+this.approveButtonText=approveButtonText;
 this.firePropertyChange$S$O$O("ApproveButtonTextChangedProperty", oldValue, approveButtonText);
 });
 
@@ -385,7 +385,7 @@ return this.useAcceptAllFileFilter;
 
 Clazz.newMeth(C$, 'setAcceptAllFileFilterUsed$Z', function (b) {
 var oldValue = this.useAcceptAllFileFilter;
-this.useAcceptAllFileFilter = b;
+this.useAcceptAllFileFilter=b;
 if (!b) {
 this.removeChoosableFileFilter$javax_swing_filechooser_FileFilter(this.getAcceptAllFileFilter());
 } else {
@@ -400,7 +400,7 @@ return this.accessory;
 
 Clazz.newMeth(C$, 'setAccessory$javax_swing_JComponent', function (newAccessory) {
 var oldValue = this.accessory;
-this.accessory = newAccessory;
+this.accessory=newAccessory;
 this.firePropertyChange$S$O$O("AccessoryChangedProperty", oldValue, this.accessory);
 });
 
@@ -409,7 +409,7 @@ if (this.fileSelectionMode == mode) {
 return;
 }if ((mode == 0) || (mode == 1) || (mode == 2)  ) {
 var oldValue = this.fileSelectionMode;
-this.fileSelectionMode = mode;
+this.fileSelectionMode=mode;
 this.firePropertyChange$S$I$I("fileSelectionChanged", oldValue, this.fileSelectionMode);
 } else {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Incorrect Mode for file selection: " + mode]);
@@ -431,7 +431,7 @@ Clazz.newMeth(C$, 'setMultiSelectionEnabled$Z', function (b) {
 if (this.multiSelectionEnabled == b ) {
 return;
 }var oldValue = this.multiSelectionEnabled;
-this.multiSelectionEnabled = b;
+this.multiSelectionEnabled=b;
 this.firePropertyChange$S$Z$Z("MultiSelectionEnabledChangedProperty", oldValue, this.multiSelectionEnabled);
 });
 
@@ -446,15 +446,15 @@ return this.useFileHiding;
 Clazz.newMeth(C$, 'setFileHidingEnabled$Z', function (b) {
 if (this.showFilesListener != null ) {
 (I$[11]||$incl$(11)).getDefaultToolkit().removePropertyChangeListener$S$java_beans_PropertyChangeListener("awt.file.showHiddenFiles", this.showFilesListener);
-this.showFilesListener = null;
+this.showFilesListener=null;
 }var oldValue = this.useFileHiding;
-this.useFileHiding = b;
+this.useFileHiding=b;
 this.firePropertyChange$S$Z$Z("FileHidingChanged", oldValue, this.useFileHiding);
 });
 
 Clazz.newMeth(C$, 'setFileFilter$javax_swing_filechooser_FileFilter', function (filter) {
 var oldValue = this.fileFilter;
-this.fileFilter = filter;
+this.fileFilter=filter;
 if (filter != null ) {
 if (this.isMultiSelectionEnabled() && this.selectedFiles != null   && this.selectedFiles.length > 0 ) {
 var fList = Clazz.new_((I$[1]||$incl$(1)));
@@ -463,7 +463,7 @@ for (var i = 0; i < this.selectedFiles.length; i++) {
 if (filter.accept$java_io_File(this.selectedFiles[i])) {
 fList.add$TE(this.selectedFiles[i]);
 } else {
-failed = true;
+failed=true;
 }}
 if (failed) {
 this.setSelectedFiles$java_io_FileA((fList.size() == 0) ? null : fList.toArray$TTA(Clazz.array((I$[2]||$incl$(2)), [fList.size()])));
@@ -478,7 +478,7 @@ return this.fileFilter;
 
 Clazz.newMeth(C$, 'setFileView$javax_swing_filechooser_FileView', function (fileView) {
 var oldValue = this.fileView;
-this.fileView = fileView;
+this.fileView=fileView;
 this.firePropertyChange$S$O$O("fileViewChanged", oldValue, fileView);
 });
 
@@ -490,9 +490,9 @@ Clazz.newMeth(C$, 'getName$java_io_File', function (f) {
 var filename = null;
 if (f != null ) {
 if (this.getFileView() != null ) {
-filename = this.getFileView().getName$java_io_File(f);
+filename=this.getFileView().getName$java_io_File(f);
 }if (filename == null  && this.uiFileView != null  ) {
-filename = this.uiFileView.getName$java_io_File(f);
+filename=this.uiFileView.getName$java_io_File(f);
 }}return filename;
 });
 
@@ -500,9 +500,9 @@ Clazz.newMeth(C$, 'getDescription$java_io_File', function (f) {
 var description = null;
 if (f != null ) {
 if (this.getFileView() != null ) {
-description = this.getFileView().getDescription$java_io_File(f);
+description=this.getFileView().getDescription$java_io_File(f);
 }if (description == null  && this.uiFileView != null  ) {
-description = this.uiFileView.getDescription$java_io_File(f);
+description=this.uiFileView.getDescription$java_io_File(f);
 }}return description;
 });
 
@@ -510,9 +510,9 @@ Clazz.newMeth(C$, 'getTypeDescription$java_io_File', function (f) {
 var typeDescription = null;
 if (f != null ) {
 if (this.getFileView() != null ) {
-typeDescription = this.getFileView().getTypeDescription$java_io_File(f);
+typeDescription=this.getFileView().getTypeDescription$java_io_File(f);
 }if (typeDescription == null  && this.uiFileView != null  ) {
-typeDescription = this.uiFileView.getTypeDescription$java_io_File(f);
+typeDescription=this.uiFileView.getTypeDescription$java_io_File(f);
 }}return typeDescription;
 });
 
@@ -520,28 +520,28 @@ Clazz.newMeth(C$, 'getIcon$java_io_File', function (f) {
 var icon = null;
 if (f != null ) {
 if (this.getFileView() != null ) {
-icon = this.getFileView().getIcon$java_io_File(f);
+icon=this.getFileView().getIcon$java_io_File(f);
 }if (icon == null  && this.uiFileView != null  ) {
-icon = this.uiFileView.getIcon$java_io_File(f);
+icon=this.uiFileView.getIcon$java_io_File(f);
 }}return icon;
 });
 
 Clazz.newMeth(C$, 'accept$java_io_File', function (f) {
 var shown = true;
 if (f != null  && this.fileFilter != null  ) {
-shown = this.fileFilter.accept$java_io_File(f);
+shown=this.fileFilter.accept$java_io_File(f);
 }return shown;
 });
 
 Clazz.newMeth(C$, 'approveSelection', function () {
-this.returnValue = 0;
+this.returnValue=0;
 if (this.dialog != null ) {
 this.dialog.setVisible$Z(false);
 }this.fireActionPerformed$S("ApproveSelection");
 });
 
 Clazz.newMeth(C$, 'cancelSelection', function () {
-this.returnValue = 1;
+this.returnValue=1;
 if (this.dialog != null ) {
 this.dialog.setVisible$Z(false);
 }this.fireActionPerformed$S("CancelSelection");
@@ -565,14 +565,14 @@ var mostRecentEventTime = (I$[13]||$incl$(13)).getMostRecentEventTime();
 var modifiers = 0;
 var currentEvent = (I$[13]||$incl$(13)).getCurrentEvent();
 if (Clazz.instanceOf(currentEvent, "java.awt.event.InputEvent")) {
-modifiers = (currentEvent).getModifiers();
+modifiers=(currentEvent).getModifiers();
 } else if (Clazz.instanceOf(currentEvent, "java.awt.event.ActionEvent")) {
-modifiers = (currentEvent).getModifiers();
+modifiers=(currentEvent).getModifiers();
 }var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[12]||$incl$(12)),['actionPerformed$java_awt_event_ActionEvent']) ) {
 if (e == null ) {
-e = Clazz.new_((I$[14]||$incl$(14)).c$$O$I$S$J$I,[this, 1001, command, mostRecentEventTime, modifiers]);
+e=Clazz.new_((I$[14]||$incl$(14)).c$$O$I$S$J$I,[this, 1001, command, mostRecentEventTime, modifiers]);
 }(listeners[i + 1]).actionPerformed$java_awt_event_ActionEvent(e);
 }}
 });
@@ -582,32 +582,32 @@ var approveButtonTextString = (this.approveButtonText != null  ? this.approveBut
 var dialogTitleString = (this.dialogTitle != null  ? this.dialogTitle : "");
 var dialogTypeString;
 if (this.dialogType == 0) {
-dialogTypeString = "OPEN_DIALOG";
+dialogTypeString="OPEN_DIALOG";
 } else if (this.dialogType == 1) {
-dialogTypeString = "SAVE_DIALOG";
+dialogTypeString="SAVE_DIALOG";
 } else if (this.dialogType == 2) {
-dialogTypeString = "CUSTOM_DIALOG";
-} else dialogTypeString = "";
+dialogTypeString="CUSTOM_DIALOG";
+} else dialogTypeString="";
 var returnValueString;
 if (this.returnValue == 1) {
-returnValueString = "CANCEL_OPTION";
+returnValueString="CANCEL_OPTION";
 } else if (this.returnValue == 0) {
-returnValueString = "APPROVE_OPTION";
+returnValueString="APPROVE_OPTION";
 } else if (this.returnValue == -1) {
-returnValueString = "ERROR_OPTION";
-} else returnValueString = "";
+returnValueString="ERROR_OPTION";
+} else returnValueString="";
 var useFileHidingString = (this.useFileHiding ? "true" : "false");
 var fileSelectionModeString;
 if (this.fileSelectionMode == 0) {
-fileSelectionModeString = "FILES_ONLY";
+fileSelectionModeString="FILES_ONLY";
 } else if (this.fileSelectionMode == 1) {
-fileSelectionModeString = "DIRECTORIES_ONLY";
+fileSelectionModeString="DIRECTORIES_ONLY";
 } else if (this.fileSelectionMode == 2) {
-fileSelectionModeString = "FILES_AND_DIRECTORIES";
-} else fileSelectionModeString = "";
+fileSelectionModeString="FILES_AND_DIRECTORIES";
+} else fileSelectionModeString="";
 var currentDirectoryString = (this.currentDirectory != null  ? this.currentDirectory.toString() : "");
 var selectedFileString = (this.selectedFile != null  ? this.selectedFile.toString() : "");
 return C$.superclazz.prototype.paramString.apply(this, []) + ",approveButtonText=" + approveButtonTextString + ",currentDirectory=" + currentDirectoryString + ",dialogTitle=" + dialogTitleString + ",dialogType=" + dialogTypeString + ",fileSelectionMode=" + fileSelectionModeString + ",returnValue=" + returnValueString + ",selectedFile=" + selectedFileString + ",useFileHiding=" + useFileHidingString ;
 });
 })();
-//Created 2018-05-15 01:02:28
+//Created 2018-05-24 08:46:16

@@ -19,27 +19,27 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$D$D$D', function (x, y, z) {
-this.x = x;
-this.y = y;
-this.z = z;
+this.x=x;
+this.y=y;
+this.z=z;
 });
 
 Clazz.newMeth(C$, 'setA$DA', function (t) {
-this.x = t[0];
-this.y = t[1];
-this.z = t[2];
+this.x=t[0];
+this.y=t[1];
+this.z=t[2];
 });
 
 Clazz.newMeth(C$, 'setT$javajs_util_T3d', function (t1) {
-this.x = t1.x;
-this.y = t1.y;
-this.z = t1.z;
+this.x=t1.x;
+this.y=t1.y;
+this.z=t1.z;
 });
 
 Clazz.newMeth(C$, 'add2$javajs_util_T3d$javajs_util_T3d', function (t1, t2) {
-this.x = t1.x + t2.x;
-this.y = t1.y + t2.y;
-this.z = t1.z + t2.z;
+this.x=t1.x + t2.x;
+this.y=t1.y + t2.y;
+this.z=t1.z + t2.z;
 });
 
 Clazz.newMeth(C$, 'add$javajs_util_T3d', function (t1) {
@@ -49,9 +49,9 @@ this.z += t1.z;
 });
 
 Clazz.newMeth(C$, 'sub2$javajs_util_T3d$javajs_util_T3d', function (t1, t2) {
-this.x = t1.x - t2.x;
-this.y = t1.y - t2.y;
-this.z = t1.z - t2.z;
+this.x=t1.x - t2.x;
+this.y=t1.y - t2.y;
+this.z=t1.z - t2.z;
 });
 
 Clazz.newMeth(C$, 'sub$javajs_util_T3d', function (t1) {
@@ -67,9 +67,9 @@ this.z *= s;
 });
 
 Clazz.newMeth(C$, 'scaleAdd$D$javajs_util_T3d$javajs_util_T3d', function (s, t1, t2) {
-this.x = s * t1.x + t2.x;
-this.y = s * t1.y + t2.y;
-this.z = s * t1.z + t2.z;
+this.x=s * t1.x + t2.x;
+this.y=s * t1.y + t2.y;
+this.z=s * t1.z + t2.z;
 });
 
 Clazz.newMeth(C$, 'hashCode', function () {
@@ -93,4 +93,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return "{" + new Double(this.x).toString() + ", " + new Double(this.y).toString() + ", " + new Double(this.z).toString() + "}" ;
 });
 })();
-//Created 2018-05-15 01:02:19
+//Created 2018-05-24 08:45:58

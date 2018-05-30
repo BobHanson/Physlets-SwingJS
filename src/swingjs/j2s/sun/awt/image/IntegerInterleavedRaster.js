@@ -39,23 +39,23 @@ p$.setIntInterRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_a
 
 Clazz.newMeth(C$, 'setIntInterRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_IntegerInterleavedRaster', function (sampleModel, dataBuffer, aRegion, origin, parent) {
 this.setIntCompRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_Raster(sampleModel, dataBuffer, aRegion, origin, parent);
-this.$maxX = this.minX + this.width;
-this.$maxY = this.minY + this.height;
+this.$maxX=this.minX + this.width;
+this.$maxY=this.minY + this.height;
 if (!(Clazz.instanceOf(dataBuffer, "java.awt.image.DataBufferInt"))) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["IntegerInterleavedRasters must haveinteger DataBuffers"]);
 }var dbi = dataBuffer;
-this.data = P$.SunWritableRaster.stealData$java_awt_image_DataBufferInt$I(dbi, 0);
+this.data=P$.SunWritableRaster.stealData$java_awt_image_DataBufferInt$I(dbi, 0);
 if (Clazz.instanceOf(sampleModel, "java.awt.image.SinglePixelPackedSampleModel")) {
 var sppsm = sampleModel;
-this.scanlineStride = sppsm.getScanlineStride();
-this.pixelStride = 1;
-this.dataOffsets = Clazz.array(Integer.TYPE, [1]);
-this.dataOffsets[0] = dbi.getOffset();
-this.bandOffset = this.dataOffsets[0];
+this.scanlineStride=sppsm.getScanlineStride();
+this.pixelStride=1;
+this.dataOffsets=Clazz.array(Integer.TYPE, [1]);
+this.dataOffsets[0]=dbi.getOffset();
+this.bandOffset=this.dataOffsets[0];
 var xOffset = aRegion.x - origin.x;
 var yOffset = aRegion.y - origin.y;
-this.dataOffsets[0] = this.dataOffsets[0]+(xOffset + yOffset * this.scanlineStride);
-this.numDataElems = sppsm.getNumDataElements();
+this.dataOffsets[0]+=xOffset + yOffset * this.scanlineStride;
+this.numDataElems=sppsm.getNumDataElements();
 } else {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["IntegerInterleavedRasters must have SinglePixelPackedSampleModel"]);
 }this.verify();
@@ -86,11 +86,11 @@ if ((x < this.minX) || (y < this.minY) || (x >= this.$maxX) || (y >= this.$maxY)
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var outData;
 if (obj == null ) {
-outData = Clazz.array(Integer.TYPE, [1]);
+outData=Clazz.array(Integer.TYPE, [1]);
 } else {
-outData = obj;
+outData=obj;
 }var off = (y - this.minY) * this.scanlineStride + (x - this.minX) + this.dataOffsets[0];
-outData[0] = this.data[off];
+outData[0]=this.data[off];
 return outData;
 });
 
@@ -99,15 +99,15 @@ if ((x < this.minX) || (y < this.minY) || (x + w > this.$maxX) || (y + h > this.
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var outData;
 if (Clazz.instanceOf(obj, Clazz.array(Integer.TYPE, -1))) {
-outData = obj;
+outData=obj;
 } else {
-outData = Clazz.array(Integer.TYPE, [w * h]);
+outData=Clazz.array(Integer.TYPE, [w * h]);
 }var yoff = (y - this.minY) * this.scanlineStride + (x - this.minX) + this.dataOffsets[0];
 var off = 0;
 for (var ystart = 0; ystart < h; ystart++) {
 System.arraycopy(this.data, yoff, outData, off, w);
-off = off+(w);
-yoff = yoff+(this.scanlineStride);
+off+=w;
+yoff+=this.scanlineStride;
 }
 return outData;
 });
@@ -117,7 +117,7 @@ if ((x < this.minX) || (y < this.minY) || (x >= this.$maxX) || (y >= this.$maxY)
 throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var inData = obj;
 var off = (y - this.minY) * this.scanlineStride + (x - this.minX) + this.dataOffsets[0];
-this.data[off] = inData[0];
+this.data[off]=inData[0];
 this.markDirty();
 });
 
@@ -139,21 +139,21 @@ var srcOffY = inRaster.getMinY();
 var tdata = null;
 if (Clazz.instanceOf(inRaster, "sun.awt.image.IntegerInterleavedRaster")) {
 var ict = inRaster;
-tdata = ict.getDataStorage();
+tdata=ict.getDataStorage();
 var tss = ict.getScanlineStride();
 var toff = ict.getDataOffset$I(0);
 var srcOffset = toff;
 var dstOffset = this.dataOffsets[0] + (dstY - this.minY) * this.scanlineStride + (dstX - this.minX);
 for (var startY = 0; startY < height; startY++) {
 System.arraycopy(tdata, srcOffset, this.data, dstOffset, width);
-srcOffset = srcOffset+(tss);
-dstOffset = dstOffset+(this.scanlineStride);
+srcOffset+=tss;
+dstOffset+=this.scanlineStride;
 }
 this.markDirty();
 return;
 }var odata = null;
 for (var startY = 0; startY < height; startY++) {
-odata = inRaster.getDataElements$I$I$I$I$O(srcOffX, srcOffY + startY, width, 1, odata);
+odata=inRaster.getDataElements$I$I$I$I$O(srcOffX, srcOffY + startY, width, 1, odata);
 this.setDataElements$I$I$I$I$O(dstX, dstY + startY, width, 1, odata);
 }
 });
@@ -166,8 +166,8 @@ var yoff = (y - this.minY) * this.scanlineStride + (x - this.minX) + this.dataOf
 var off = 0;
 for (var ystart = 0; ystart < h; ystart++) {
 System.arraycopy(inData, off, this.data, yoff, w);
-off = off+(w);
-yoff = yoff+(this.scanlineStride);
+off+=w;
+yoff+=this.scanlineStride;
 }
 this.markDirty();
 });
@@ -182,8 +182,8 @@ throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["(x + 
 }if ((y + height < y) || (y + height > this.minY + this.height) ) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["(y + height) is outside raster"]);
 }var sm;
-if (bandList != null ) sm = this.sampleModel.createSubsetSampleModel$IA(bandList);
- else sm = this.sampleModel;
+if (bandList != null ) sm=this.sampleModel.createSubsetSampleModel$IA(bandList);
+ else sm=this.sampleModel;
 var deltaX = x0 - x;
 var deltaY = y0 - y;
 return Clazz.new_(C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_IntegerInterleavedRaster,[sm, this.dataBuffer, Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I,[x0, y0, width, height]), Clazz.new_((I$[2]||$incl$(2)).c$$I$I,[this.sampleModelTranslateX + deltaX, this.sampleModelTranslateY + deltaY]), this]);
@@ -208,4 +208,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return  String.instantialize("IntegerInterleavedRaster: width = " + this.width + " height = " + this.height + " #Bands = " + this.numBands + " xOff = " + this.sampleModelTranslateX + " yOff = " + this.sampleModelTranslateY + " dataOffset[0] " + this.dataOffsets[0] );
 });
 })();
-//Created 2018-05-15 01:03:08
+//Created 2018-05-24 08:47:28

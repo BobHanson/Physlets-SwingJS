@@ -35,7 +35,7 @@ if (offset <= b.length && 0 <= offset  && 0 <= length  && length <= b.length - o
 for (var i = 0; i < length; i++) {
 var c;
 try {
-if ((c = this.read()) == -1) return i == 0 ? -1 : i;
+if ((c=this.read()) == -1) return i == 0 ? -1 : i;
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.io.IOException")){
 if (i != 0) return i;
@@ -44,7 +44,7 @@ throw e;
 throw e;
 }
 }
-b[offset + i] = ((c|0)|0);
+b[offset + i]=((c|0)|0);
 }
 return length;
 }throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException'));
@@ -58,15 +58,15 @@ Clazz.newMeth(C$, 'skip$J', function (n) {
 if (n <= 0) return 0;
 var skipped = 0;
 var toRead = n < 4096 ? (n|0) : 4096;
-if (C$.skipBuf == null  || C$.skipBuf.length < toRead ) C$.skipBuf = Clazz.array(Byte.TYPE, [toRead]);
+if (C$.skipBuf == null  || C$.skipBuf.length < toRead ) C$.skipBuf=Clazz.array(Byte.TYPE, [toRead]);
 while (skipped < n){
 var read = this.read$BA$I$I(C$.skipBuf, 0, toRead);
 if (read == -1) return skipped;
-skipped = skipped+(read);
+skipped+=read;
 if (read < toRead) return skipped;
-if (n - skipped < toRead) toRead = ((n - skipped)|0);
+if (n - skipped < toRead) toRead=((n - skipped)|0);
 }
 return skipped;
 });
 })();
-//Created 2018-05-15 01:02:05
+//Created 2018-05-24 08:45:34

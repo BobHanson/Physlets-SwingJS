@@ -35,32 +35,32 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.gridx = -1;
-this.gridy = -1;
-this.gridwidth = 1;
-this.gridheight = 1;
-this.weightx = 0;
-this.weighty = 0;
-this.anchor = 10;
-this.fill = 0;
-this.insets = Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I,[0, 0, 0, 0]);
-this.ipadx = 0;
-this.ipady = 0;
+this.gridx=-1;
+this.gridy=-1;
+this.gridwidth=1;
+this.gridheight=1;
+this.weightx=0;
+this.weighty=0;
+this.anchor=10;
+this.fill=0;
+this.insets=Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I,[0, 0, 0, 0]);
+this.ipadx=0;
+this.ipady=0;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I$D$D$I$I$java_awt_Insets$I$I', function (gridx, gridy, gridwidth, gridheight, weightx, weighty, anchor, fill, insets, ipadx, ipady) {
 C$.$init$.apply(this);
-this.gridx = gridx;
-this.gridy = gridy;
-this.gridwidth = gridwidth;
-this.gridheight = gridheight;
-this.fill = fill;
-this.ipadx = ipadx;
-this.ipady = ipady;
-this.insets = insets;
-this.anchor = anchor;
-this.weightx = weightx;
-this.weighty = weighty;
+this.gridx=gridx;
+this.gridy=gridy;
+this.gridwidth=gridwidth;
+this.gridheight=gridheight;
+this.fill=fill;
+this.ipadx=ipadx;
+this.ipady=ipady;
+this.insets=insets;
+this.anchor=anchor;
+this.weightx=weightx;
+this.weighty=weighty;
 }, 1);
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -70,7 +70,7 @@ return "[" + this.gridx + "," + this.gridy + "," + this.gridwidth + "," + this.g
 Clazz.newMeth(C$, 'clone', function () {
 try {
 var c = Clazz.clone(this);
-c.insets = this.insets.clone();
+c.insets=this.insets.clone();
 return c;
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.CloneNotSupportedException")){
@@ -85,4 +85,4 @@ Clazz.newMeth(C$, 'isVerticallyResizable', function () {
 return (this.fill == 1 || this.fill == 3 );
 });
 })();
-//Created 2018-05-15 01:01:51
+//Created 2018-05-24 08:45:10

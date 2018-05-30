@@ -27,8 +27,8 @@ C$.c$$I$I$I.apply(this, [align, 5, 5]);
 
 Clazz.newMeth(C$, 'c$$I$I$I', function (align, hgap, vgap) {
 C$.$init$.apply(this);
-this.hgap = hgap;
-this.vgap = vgap;
+this.hgap=hgap;
+this.vgap=vgap;
 this.setAlignment$I(align);
 }, 1);
 
@@ -37,16 +37,16 @@ return this.newAlign;
 });
 
 Clazz.newMeth(C$, 'setAlignment$I', function (align) {
-this.newAlign = align;
+this.newAlign=align;
 switch (align) {
 case 3:
-this.align = 0;
+this.align=0;
 break;
 case 4:
-this.align = 2;
+this.align=2;
 break;
 default:
-this.align = align;
+this.align=align;
 break;
 }
 });
@@ -56,7 +56,7 @@ return this.hgap;
 });
 
 Clazz.newMeth(C$, 'setHgap$I', function (hgap) {
-this.hgap = hgap;
+this.hgap=hgap;
 });
 
 Clazz.newMeth(C$, 'getVgap', function () {
@@ -64,11 +64,11 @@ return this.vgap;
 });
 
 Clazz.newMeth(C$, 'setVgap$I', function (vgap) {
-this.vgap = vgap;
+this.vgap=vgap;
 });
 
 Clazz.newMeth(C$, 'setAlignOnBaseline$Z', function (alignOnBaseline) {
-this.alignOnBaseline = alignOnBaseline;
+this.alignOnBaseline=alignOnBaseline;
 });
 
 Clazz.newMeth(C$, 'getAlignOnBaseline', function () {
@@ -93,23 +93,23 @@ for (var i = 0; i < nmembers; i++) {
 var m = target.getComponent$I(i);
 if (m.isVisible()) {
 var d = m.getPreferredSize();
-dim.height = Math.max(dim.height, d.height);
+dim.height=Math.max(dim.height, d.height);
 if (firstVisibleComponent) {
-firstVisibleComponent = false;
+firstVisibleComponent=false;
 } else {
-dim.width = dim.width+(this.hgap);
-}dim.width = dim.width+(d.width);
+dim.width+=this.hgap;
+}dim.width+=d.width;
 if (useBaseline) {
 var baseline = m.getBaseline$I$I(d.width, d.height);
 if (baseline >= 0) {
-maxAscent = Math.max(maxAscent, baseline);
-maxDescent = Math.max(maxDescent, d.height - baseline);
+maxAscent=Math.max(maxAscent, baseline);
+maxDescent=Math.max(maxDescent, d.height - baseline);
 }}}}
 if (useBaseline) {
-dim.height = Math.max(maxAscent + maxDescent, dim.height);
+dim.height=Math.max(maxAscent + maxDescent, dim.height);
 }var insets = target.getInsets();
-dim.width = dim.width+(insets.left + insets.right + this.hgap * 2 );
-dim.height = dim.height+(insets.top + insets.bottom + this.vgap * 2 );
+dim.width+=insets.left + insets.right + this.hgap * 2 ;
+dim.height+=insets.top + insets.bottom + this.vgap * 2 ;
 return dim;
 }});
 
@@ -125,41 +125,41 @@ for (var i = 0; i < nmembers; i++) {
 var m = target.getComponent$I(i);
 if (m.visible) {
 var d = m.getMinimumSize();
-dim.height = Math.max(dim.height, d.height);
+dim.height=Math.max(dim.height, d.height);
 if (firstVisibleComponent) {
-firstVisibleComponent = false;
+firstVisibleComponent=false;
 } else {
-dim.width = dim.width+(this.hgap);
-}dim.width = dim.width+(d.width);
+dim.width+=this.hgap;
+}dim.width+=d.width;
 if (useBaseline) {
 var baseline = m.getBaseline$I$I(d.width, d.height);
 if (baseline >= 0) {
-maxAscent = Math.max(maxAscent, baseline);
-maxDescent = Math.max(maxDescent, dim.height - baseline);
+maxAscent=Math.max(maxAscent, baseline);
+maxDescent=Math.max(maxDescent, dim.height - baseline);
 }}}}
 if (useBaseline) {
-dim.height = Math.max(maxAscent + maxDescent, dim.height);
+dim.height=Math.max(maxAscent + maxDescent, dim.height);
 }var insets = target.getInsets();
-dim.width = dim.width+(insets.left + insets.right + this.hgap * 2 );
-dim.height = dim.height+(insets.top + insets.bottom + this.vgap * 2 );
+dim.width+=insets.left + insets.right + this.hgap * 2 ;
+dim.height+=insets.top + insets.bottom + this.vgap * 2 ;
 return dim;
 }});
 
 Clazz.newMeth(C$, 'moveComponents$java_awt_Container$I$I$I$I$I$I$Z$Z$IA$IA', function (target, x, y, width, height, rowStart, rowEnd, ltr, useBaseline, ascent, descent) {
 switch (this.newAlign) {
 case 0:
-x = x+(ltr ? 0 : width);
+x+=ltr ? 0 : width;
 break;
 case 1:
-x = x+((width/2|0));
+x+=(width/2|0);
 break;
 case 2:
-x = x+(ltr ? width : 0);
+x+=ltr ? width : 0;
 break;
 case 3:
 break;
 case 4:
-x = x+(width);
+x+=width;
 break;
 }
 var maxAscent = 0;
@@ -171,26 +171,26 @@ for (var i = rowStart; i < rowEnd; i++) {
 var m = target.getComponent$I(i);
 if (m.visible) {
 if (ascent[i] >= 0) {
-maxAscent = Math.max(maxAscent, ascent[i]);
-maxDescent = Math.max(maxDescent, descent[i]);
+maxAscent=Math.max(maxAscent, ascent[i]);
+maxDescent=Math.max(maxDescent, descent[i]);
 } else {
-nonbaselineHeight = Math.max(m.getHeight(), nonbaselineHeight);
+nonbaselineHeight=Math.max(m.getHeight(), nonbaselineHeight);
 }}}
-height = Math.max(maxAscent + maxDescent, nonbaselineHeight);
-baselineOffset = ((height - maxAscent - maxDescent )/2|0);
+height=Math.max(maxAscent + maxDescent, nonbaselineHeight);
+baselineOffset=((height - maxAscent - maxDescent )/2|0);
 }for (var i = rowStart; i < rowEnd; i++) {
 var m = target.getComponent$I(i);
 if (m.isVisible()) {
 var cy;
 if (useBaseline && ascent[i] >= 0 ) {
-cy = y + baselineOffset + maxAscent  - ascent[i];
+cy=y + baselineOffset + maxAscent  - ascent[i];
 } else {
-cy = y + ((height - m.height)/2|0);
+cy=y + ((height - m.height)/2|0);
 }if (ltr) {
 m.setLocation$I$I(x, cy);
 } else {
 m.setLocation$I$I(target.width - x - m.width , cy);
-}x = x+(m.width + this.hgap);
+}x+=m.width + this.hgap;
 }}
 return height;
 });
@@ -209,8 +209,8 @@ var useBaseline = this.getAlignOnBaseline();
 var ascent = null;
 var descent = null;
 if (useBaseline) {
-ascent = Clazz.array(Integer.TYPE, [nmembers]);
-descent = Clazz.array(Integer.TYPE, [nmembers]);
+ascent=Clazz.array(Integer.TYPE, [nmembers]);
+descent=Clazz.array(Integer.TYPE, [nmembers]);
 }for (var i = 0; i < nmembers; i++) {
 var m = target.getComponent$I(i);
 if (m.isVisible()) {
@@ -219,21 +219,21 @@ m.setSize$I$I(d.width, d.height);
 if (useBaseline) {
 var baseline = m.getBaseline$I$I(d.width, d.height);
 if (baseline >= 0) {
-ascent[i] = baseline;
-descent[i] = d.height - baseline;
+ascent[i]=baseline;
+descent[i]=d.height - baseline;
 } else {
-ascent[i] = -1;
+ascent[i]=-1;
 }}if ((x == 0) || ((x + d.width) <= maxwidth) ) {
 if (x > 0) {
-x = x+(this.hgap);
-}x = x+(d.width);
-rowh = Math.max(rowh, d.height);
+x+=this.hgap;
+}x+=d.width;
+rowh=Math.max(rowh, d.height);
 } else {
-rowh = p$.moveComponents$java_awt_Container$I$I$I$I$I$I$Z$Z$IA$IA.apply(this, [target, insets.left + this.hgap, y, maxwidth - x, rowh, start, i, ltr, useBaseline, ascent, descent]);
-x = d.width;
-y = y+(this.vgap + rowh);
-rowh = d.height;
-start = i;
+rowh=p$.moveComponents$java_awt_Container$I$I$I$I$I$I$Z$Z$IA$IA.apply(this, [target, insets.left + this.hgap, y, maxwidth - x, rowh, start, i, ltr, useBaseline, ascent, descent]);
+x=d.width;
+y+=this.vgap + rowh;
+rowh=d.height;
+start=i;
 }}}
 p$.moveComponents$java_awt_Container$I$I$I$I$I$I$Z$Z$IA$IA.apply(this, [target, insets.left + this.hgap, y, maxwidth - x, rowh, start, nmembers, ltr, useBaseline, ascent, descent]);
 }});
@@ -242,22 +242,22 @@ Clazz.newMeth(C$, 'toString', function () {
 var str = "";
 switch (this.align) {
 case 0:
-str = ",align=left";
+str=",align=left";
 break;
 case 1:
-str = ",align=center";
+str=",align=center";
 break;
 case 2:
-str = ",align=right";
+str=",align=right";
 break;
 case 3:
-str = ",align=leading";
+str=",align=leading";
 break;
 case 4:
-str = ",align=trailing";
+str=",align=trailing";
 break;
 }
 return this.getClass().getName() + "[hgap=" + this.hgap + ",vgap=" + this.vgap + str + "]" ;
 });
 })();
-//Created 2018-05-15 01:01:50
+//Created 2018-05-24 08:45:08

@@ -24,9 +24,9 @@ this.set$java_awt_geom_CubicCurve2D$java_awt_geom_AffineTransform(q, at);
 }, 1);
 
 Clazz.newMeth(C$, 'set$java_awt_geom_CubicCurve2D$java_awt_geom_AffineTransform', function (q, at) {
-this.cubic = q;
-this.affine = at;
-this.index = 0;
+this.cubic=q;
+this.affine=at;
+this.index=0;
 return this;
 });
 
@@ -47,17 +47,17 @@ if (this.isDone()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["cubic iterator iterator out of bounds"]);
 }var type;
 if (this.index == 0) {
-coords[0] = this.cubic.getX1();
-coords[1] = this.cubic.getY1();
-type = 0;
+coords[0]=this.cubic.getX1();
+coords[1]=this.cubic.getY1();
+type=0;
 } else {
-coords[0] = this.cubic.getCtrlX1();
-coords[1] = this.cubic.getCtrlY1();
-coords[2] = this.cubic.getCtrlX2();
-coords[3] = this.cubic.getCtrlY2();
-coords[4] = this.cubic.getX2();
-coords[5] = this.cubic.getY2();
-type = 3;
+coords[0]=this.cubic.getCtrlX1();
+coords[1]=this.cubic.getCtrlY1();
+coords[2]=this.cubic.getCtrlX2();
+coords[3]=this.cubic.getCtrlY2();
+coords[4]=this.cubic.getX2();
+coords[5]=this.cubic.getY2();
+type=3;
 }if (this.affine != null ) {
 this.affine.transform$FA$I$FA$I$I(coords, 0, coords, 0, this.index == 0 ? 1 : 3);
 }return type;
@@ -68,20 +68,20 @@ if (this.isDone()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["cubic iterator iterator out of bounds"]);
 }var type;
 if (this.index == 0) {
-coords[0] = this.cubic.getX1();
-coords[1] = this.cubic.getY1();
-type = 0;
+coords[0]=this.cubic.getX1();
+coords[1]=this.cubic.getY1();
+type=0;
 } else {
-coords[0] = this.cubic.getCtrlX1();
-coords[1] = this.cubic.getCtrlY1();
-coords[2] = this.cubic.getCtrlX2();
-coords[3] = this.cubic.getCtrlY2();
-coords[4] = this.cubic.getX2();
-coords[5] = this.cubic.getY2();
-type = 3;
+coords[0]=this.cubic.getCtrlX1();
+coords[1]=this.cubic.getCtrlY1();
+coords[2]=this.cubic.getCtrlX2();
+coords[3]=this.cubic.getCtrlY2();
+coords[4]=this.cubic.getX2();
+coords[5]=this.cubic.getY2();
+type=3;
 }if (this.affine != null ) {
 this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, this.index == 0 ? 1 : 3);
 }return type;
 });
 })();
-//Created 2018-05-15 01:01:59
+//Created 2018-05-24 08:45:20

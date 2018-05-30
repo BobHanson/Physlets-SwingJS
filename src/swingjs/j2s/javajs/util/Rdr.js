@@ -17,7 +17,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_io_BufferedReader', function (reader) {
 C$.$init$.apply(this);
-this.reader = reader;
+this.reader=reader;
 }, 1);
 
 Clazz.newMeth(C$, 'readNextLine', function () {
@@ -60,7 +60,7 @@ switch (encoding) {
 case (I$[4]||$incl$(4)).UTF8:
 case (I$[4]||$incl$(4)).UTF_16BE:
 case (I$[4]||$incl$(4)).UTF_16LE:
-s = s.substring(1);
+s=s.substring(1);
 break;
 default:
 break;
@@ -87,7 +87,7 @@ return (I$[4]||$incl$(4)).NONE;
 
 Clazz.newMeth(C$, 'getUTFEncodingForStream$java_io_BufferedInputStream', function (is) {
 var abMagic = Clazz.array(Byte.TYPE, [4]);
-abMagic[3] = (1|0);
+abMagic[3]=(1|0);
 try {
 is.mark$I(5);
 } catch (e) {
@@ -144,7 +144,7 @@ return C$.isMessagePackB$BA(C$.getMagic$java_io_InputStream$I(is, 2));
 
 Clazz.newMeth(C$, 'isMessagePackB$BA', function (bytes) {
 var b;
-return (bytes != null  && bytes.length >= 1  && (((b = bytes[0] & 255)) == 222 || (b & 224) == 128 && bytes[1] != 80  ) );
+return (bytes != null  && bytes.length >= 1  && (((b=bytes[0] & 255)) == 222 || (b & 224) == 128 && bytes[1] != 80  ) );
 }, 1);
 
 Clazz.newMeth(C$, 'isPngZipStream$java_io_InputStream', function (is) {
@@ -213,13 +213,13 @@ return ((I$[8]||$incl$(8)).isAB$O(o) ? C$.getBIS$BA(o) : Clazz.instanceOf(o, "ja
 }, 1);
 
 Clazz.newMeth(C$, 'getUnzippedInputStream$javajs_api_GenericZipTools$java_io_BufferedInputStream', function (jzt, bis) {
-while (C$.isGzipS$java_io_InputStream(bis))bis = Clazz.new_((I$[2]||$incl$(2)).c$$java_io_InputStream,[jzt.newGZIPInputStream$java_io_InputStream(bis)]);
+while (C$.isGzipS$java_io_InputStream(bis))bis=Clazz.new_((I$[2]||$incl$(2)).c$$java_io_InputStream,[jzt.newGZIPInputStream$java_io_InputStream(bis)]);
 
 return bis;
 }, 1);
 
 Clazz.newMeth(C$, 'getUnzippedInputStreamBZip2$javajs_api_GenericZipTools$java_io_BufferedInputStream', function (jzt, bis) {
-while (C$.isBZip2S$java_io_InputStream(bis))bis = Clazz.new_((I$[2]||$incl$(2)).c$$java_io_InputStream,[jzt.newBZip2InputStream$java_io_InputStream(bis)]);
+while (C$.isBZip2S$java_io_InputStream(bis))bis=Clazz.new_((I$[2]||$incl$(2)).c$$java_io_InputStream,[jzt.newBZip2InputStream$java_io_InputStream(bis)]);
 
 return bis;
 }, 1);
@@ -233,10 +233,10 @@ var buf = Clazz.array(Byte.TYPE, [1024]);
 var bytes = (out == null  ? Clazz.array(Byte.TYPE, [4096]) : null);
 var len = 0;
 var totalLen = 0;
-while ((len = bis.read$BA$I$I(buf, 0, 1024)) > 0){
-totalLen = totalLen+(len);
+while ((len=bis.read$BA$I$I(buf, 0, 1024)) > 0){
+totalLen+=len;
 if (out == null ) {
-if (totalLen >= bytes.length) bytes = (I$[8]||$incl$(8)).ensureLengthByte$BA$I(bytes, totalLen * 2);
+if (totalLen >= bytes.length) bytes=(I$[8]||$incl$(8)).ensureLengthByte$BA$I(bytes, totalLen * 2);
 System.arraycopy(buf, 0, bytes, totalLen - len, len);
 } else {
 out.write$BA$I$I(buf, 0, len);
@@ -253,15 +253,15 @@ var buf = Clazz.array(Byte.TYPE, [buflen]);
 var bytes = Clazz.array(Byte.TYPE, [n < 0 ? 4096 : (n|0)]);
 var len = 0;
 var totalLen = 0;
-if (n < 0) n = 2147483647;
-while (totalLen < n && (len = is.read$BA$I$I(buf, 0, buflen)) > 0 ){
-totalLen = totalLen+(len);
-if (totalLen > bytes.length) bytes = (I$[8]||$incl$(8)).ensureLengthByte$BA$I(bytes, totalLen * 2);
+if (n < 0) n=2147483647;
+while (totalLen < n && (len=is.read$BA$I$I(buf, 0, buflen)) > 0 ){
+totalLen+=len;
+if (totalLen > bytes.length) bytes=(I$[8]||$incl$(8)).ensureLengthByte$BA$I(bytes, totalLen * 2);
 System.arraycopy(buf, 0, bytes, totalLen - len, len);
-if (n != 2147483647 && totalLen + buflen > bytes.length ) buflen = bytes.length - totalLen;
+if (n != 2147483647 && totalLen + buflen > bytes.length ) buflen=bytes.length - totalLen;
 }
 if (totalLen == bytes.length) return bytes;
-buf = Clazz.array(Byte.TYPE, [totalLen]);
+buf=Clazz.array(Byte.TYPE, [totalLen]);
 System.arraycopy(bytes, 0, buf, 0, totalLen);
 return buf;
 }, 1);
@@ -271,25 +271,25 @@ try {
 var sb = (I$[10]||$incl$(10)).newN$I(8192);
 var line;
 if (nBytesMax < 0) {
-line = br.readLine();
+line=br.readLine();
 if (allowBinary || line != null  && line.indexOf("\u0000") < 0  && (line.length$() != 4 || (line.charCodeAt(0)) != 65533   || line.indexOf("PNG") != 1 )  ) {
 sb.append$S(line).appendC$C("\u000a");
-while ((line = br.readLine()) != null )sb.append$S(line).appendC$C("\u000a");
+while ((line=br.readLine()) != null )sb.append$S(line).appendC$C("\u000a");
 
 }} else {
 var n = 0;
 var len;
-while (n < nBytesMax && (line = br.readLine()) != null  ){
-if (nBytesMax - n < (len = line.length$()) + 1) line = line.substring(0, nBytesMax - n - 1 );
+while (n < nBytesMax && (line=br.readLine()) != null  ){
+if (nBytesMax - n < (len=line.length$()) + 1) line=line.substring(0, nBytesMax - n - 1 );
 sb.append$S(line).appendC$C("\u000a");
-n = n+(len + 1);
+n+=len + 1;
 }
 }br.close();
-data[i] = sb.toString();
+data[i]=sb.toString();
 return true;
 } catch (ioe) {
 if (Clazz.exceptionOf(ioe, "java.lang.Exception")){
-data[i] = ioe.toString();
+data[i]=ioe.toString();
 return false;
 } else {
 throw ioe;
@@ -303,15 +303,15 @@ try {
 var data = C$.getLimitedStreamBytes$java_io_InputStream$J(bis, 74);
 bis.reset();
 var pt = 0;
-for (var i = 64, f = 1; --i > 54; f = f*(10)) pt = pt+((data[i] - 48) * f);
+for (var i = 64, f = 1; --i > 54; f*=10) pt+=(data[i] - 48) * f;
 
 var n = 0;
-for (var i = 74, f = 1; --i > 64; f = f*(10)) n = n+((data[i] - 48) * f);
+for (var i = 74, f = 1; --i > 64; f*=10) n+=(data[i] - 48) * f;
 
-pt_count[0] = pt;
-pt_count[1] = n;
+pt_count[0]=pt;
+pt_count[1]=n;
 } catch (e) {
-pt_count[1] = 0;
+pt_count[1]=0;
 }
 }, 1);
 
@@ -324,10 +324,10 @@ var pt_count = Clazz.array(Integer.TYPE, [2]);
 C$.getPngZipPointAndCount$java_io_BufferedInputStream$IA(bis, pt_count);
 if (pt_count[1] != 0) {
 var pt = pt_count[0];
-while (pt > 0)pt = pt-(bis.skip$J(pt));
+while (pt > 0)pt-=bis.skip$J(pt);
 
 if (!asNewStream) return bis;
-data = C$.getLimitedStreamBytes$java_io_InputStream$J(bis, pt_count[1]);
+data=C$.getLimitedStreamBytes$java_io_InputStream$J(bis, pt_count[1]);
 }} catch (e) {
 } finally {
 try {
@@ -373,7 +373,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_io_BufferedInputStream$S', function (bis, charSet) {
 C$.superclazz.c$$java_io_Reader.apply(this, [Clazz.new_((I$[1]||$incl$(1)).c$$java_io_InputStream$S,[bis, (charSet == null  ? "UTF-8" : charSet)])]);
 C$.$init$.apply(this);
-this.stream = bis;
+this.stream=bis;
 }, 1);
 
 Clazz.newMeth(C$, 'getStream', function () {
@@ -393,4 +393,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:19
+//Created 2018-05-24 08:45:57

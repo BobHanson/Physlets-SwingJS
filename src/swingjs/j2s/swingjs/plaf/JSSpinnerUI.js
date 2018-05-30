@@ -21,24 +21,24 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.domNode = this.newDOMObject$S$S$SA("div", this.id, []);
-this.focusNode = this.valueNode = (I$[1]||$incl$(1)).setStyles(this.newDOMObject$S$S$SA("input", this.id, ["type", "text"]), ["padding", "0px 1px", "width", "30px", "text-align", "right"]);
+this.domNode=this.newDOMObject$S$S$SA("div", this.id, []);
+this.focusNode=this.valueNode=(I$[1]||$incl$(1)).setStyles(this.newDOMObject$S$S$SA("input", this.id, ["type", "text"]), ["padding", "0px 1px", "width", "30px", "text-align", "right"]);
 P$.JSComponentUI.vCenter$swingjs_api_js_DOMNode$I(this.valueNode, -10);
 this.bindJSKeyEvents$swingjs_api_js_DOMNode$Z(this.valueNode, false);
-this.up = (I$[1]||$incl$(1)).setStyles(this.newDOMObject$S$S$SA("div", this.id + "_updiv", []), ["left", "33px", "top", "-5px", "position", "absolute"]);
-this.upNode = (I$[1]||$incl$(1)).setStyles(this.newDOMObject$S$S$SA("input", this.id + "_up", ["type", "button", "value", ""]), ["transform", "scaleY(.5)", "width", "20px", "height", "20px"]);
+this.up=(I$[1]||$incl$(1)).setStyles(this.newDOMObject$S$S$SA("div", this.id + "_updiv", []), ["left", "33px", "top", "-5px", "position", "absolute"]);
+this.upNode=(I$[1]||$incl$(1)).setStyles(this.newDOMObject$S$S$SA("input", this.id + "_up", ["type", "button", "value", ""]), ["transform", "scaleY(.5)", "width", "20px", "height", "20px"]);
 this.up.appendChild(this.upNode);
 this.bindJSEvents$swingjs_api_js_DOMNode$S$I$Z(this.upNode, "mousedown touchstart", 501, true);
 this.bindJSEvents$swingjs_api_js_DOMNode$S$I$Z(this.upNode, "mouseup touchend", 502, true);
-this.dn = (I$[1]||$incl$(1)).setStyles(this.newDOMObject$S$S$SA("div", this.id + "_dndiv", []), ["left", "33px", "top", "5px", "position", "absolute"]);
-this.dnNode = (I$[1]||$incl$(1)).setStyles(this.newDOMObject$S$S$SA("input", this.id + "_dn", ["type", "button", "value", ""]), ["transform", "scaleY(.5)", "width", "20px", "height", "20px"]);
+this.dn=(I$[1]||$incl$(1)).setStyles(this.newDOMObject$S$S$SA("div", this.id + "_dndiv", []), ["left", "33px", "top", "5px", "position", "absolute"]);
+this.dnNode=(I$[1]||$incl$(1)).setStyles(this.newDOMObject$S$S$SA("input", this.id + "_dn", ["type", "button", "value", ""]), ["transform", "scaleY(.5)", "width", "20px", "height", "20px"]);
 this.dn.appendChild(this.dnNode);
 this.bindJSEvents$swingjs_api_js_DOMNode$S$I$Z(this.dnNode, "mousedown touchstart", 501, true);
 this.bindJSEvents$swingjs_api_js_DOMNode$S$I$Z(this.dnNode, "mouseup touchend", 502, true);
 this.domNode.appendChild(this.valueNode);
 this.domNode.appendChild(this.up);
 this.domNode.appendChild(this.dn);
-this.enableNodes = Clazz.array((I$[1]||$incl$(1)), -1, [this.valueNode, this.up, this.dn]);
+this.enableNodes=Clazz.array((I$[1]||$incl$(1)), -1, [this.valueNode, this.up, this.dn]);
 this.addJQueryFocusCallbacks();
 }this.setCssFont$swingjs_api_js_DOMNode$java_awt_Font(p$.setValue.apply(this, []), this.c.getFont());
 var w = (this.spinner.isPreferredSizeSet() ? this.spinner.getPreferredSize().width : 70);
@@ -62,9 +62,9 @@ keyCode = jQueryEvent.keyCode; if (keyCode == 13) keyCode = 10;
 switch (eventID) {
 case 501:
 if (this.timer != null ) this.timer.stop();
-this.incrementing = (id == this.id + "_up");
+this.incrementing=(id == this.id + "_up");
 if (!this.incrementing && id != this.id + "_dn" ) return true;
-this.timer = Clazz.new_((I$[2]||$incl$(2)).c$$I$java_awt_event_ActionListener,[20, ((
+this.timer=Clazz.new_((I$[2]||$incl$(2)).c$$I$java_awt_event_ActionListener,[20, ((
 (function(){var C$=Clazz.newClass(P$, "JSSpinnerUI$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
 C$.$clinit$ = function() {Clazz.load(C$, 1);
@@ -83,7 +83,7 @@ this.doAction();
 break;
 case 502:
 if (this.timer != null ) this.timer.stop();
-this.timer = null;
+this.timer=null;
 break;
 case 401:
 if (keyCode == 10) {
@@ -113,11 +113,11 @@ return;
 });
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.spinner = jc;
+this.spinner=jc;
 (I$[4]||$incl$(4)).installColorsAndFont$javax_swing_JComponent$S$S$S(jc, "Spinner.background", "Spinner.foreground", "Spinner.font");
 C$.superclazz.prototype.installUI$javax_swing_JComponent.apply(this, [jc]);
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:26
+//Created 2018-05-24 08:47:58

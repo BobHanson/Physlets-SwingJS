@@ -71,7 +71,7 @@ Clazz.newMeth(C$, 'createEtchedBorder$I', function (type) {
 switch (type) {
 case 0:
 if (C$.sharedRaisedEtchedBorder == null ) {
-C$.sharedRaisedEtchedBorder = Clazz.new_((I$[2]||$incl$(2)).c$$I,[0]);
+C$.sharedRaisedEtchedBorder=Clazz.new_((I$[2]||$incl$(2)).c$$I,[0]);
 }return C$.sharedRaisedEtchedBorder;
 case 1:
 return C$.sharedEtchedBorder;
@@ -136,4 +136,4 @@ Clazz.newMeth(C$, 'createMatteBorder$I$I$I$I$javax_swing_Icon', function (top, l
 return Clazz.new_((I$[7]||$incl$(7)).c$$I$I$I$I$javax_swing_Icon,[top, left, bottom, right, tileIcon]);
 }, 1);
 })();
-//Created 2018-05-15 01:02:23
+//Created 2018-05-24 08:46:06

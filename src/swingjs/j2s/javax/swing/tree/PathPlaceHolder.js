@@ -12,10 +12,10 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_tree_TreePath$Z', function (path, isNew) {
 C$.$init$.apply(this);
-this.path = path;
-this.isNew = isNew;
+this.path=path;
+this.isNew=isNew;
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:00
+//Created 2018-05-24 08:47:11

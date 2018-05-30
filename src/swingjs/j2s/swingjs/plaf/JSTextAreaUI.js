@@ -16,8 +16,8 @@ this.myInsets = Clazz.new_((I$[1]||$incl$(1)).c$$I$I$I$I,[0, 0, 5, 5]);
 
 Clazz.newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.allowPaintedBackground = false;
-this.$domBtn = this.focusNode = this.$enableNode = this.textNode = this.valueNode = this.domNode = this.newDOMObject$S$S$SA("textarea", this.id, []);
+this.allowPaintedBackground=false;
+this.$domBtn=this.focusNode=this.$enableNode=this.textNode=this.valueNode=this.domNode=this.newDOMObject$S$S$SA("textarea", this.id, []);
 (I$[2]||$incl$(2)).setStyles(this.domNode, ["resize", "none"]);
 this.bindJSKeyEvents$swingjs_api_js_DOMNode$Z(this.domNode, true);
 }this.textListener.checkDocument();
@@ -39,8 +39,8 @@ this.domNode.style.width = null;
 sw = this.domNode.scrollWidth;
 this.domNode.style.width = w;
 }
-d.width = sw;
-d.height = sh;
+d.width=sw;
+d.height=sh;
 });
 
 Clazz.newMeth(C$, 'getInsets', function () {
@@ -61,4 +61,4 @@ return (I$[2]||$incl$(2)).setStyles(this.setHTMLElementCUI(), ["overflow", "hidd
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:27
+//Created 2018-05-24 08:48:00

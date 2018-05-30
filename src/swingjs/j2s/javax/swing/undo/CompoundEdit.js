@@ -16,8 +16,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.inProgress = true;
-this.edits = Clazz.new_((I$[1]||$incl$(1)));
+this.inProgress=true;
+this.edits=Clazz.new_((I$[1]||$incl$(1)));
 }, 1);
 
 Clazz.newMeth(C$, 'undo', function () {
@@ -67,7 +67,7 @@ this.edits.removeElementAt$I(this.edits.size() - 1);
 }});
 
 Clazz.newMeth(C$, 'end', function () {
-this.inProgress = false;
+this.inProgress=false;
 });
 
 Clazz.newMeth(C$, 'canUndo', function () {
@@ -119,4 +119,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return C$.superclazz.prototype.toString.apply(this, []) + " inProgress: " + this.inProgress + " edits: " + this.edits ;
 });
 })();
-//Created 2018-05-15 01:03:00
+//Created 2018-05-24 08:47:11

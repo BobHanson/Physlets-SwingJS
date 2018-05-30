@@ -12,8 +12,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I$SA', function (value, names) {
 C$.$init$.apply(this);
-this.value = value;
-this.names = names;
+this.value=value;
+this.names=names;
 }, 1);
 
 Clazz.newMeth(C$, 'hashCode', function () {
@@ -26,4 +26,4 @@ return this.names[this.value];
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:48
+//Created 2018-05-24 08:45:05

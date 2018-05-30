@@ -18,9 +18,9 @@ var ppmPixels = Clazz.array(Byte.TYPE, [this.width * 3]);
 for (var pt = 0, row = 0; row < this.height; ++row) {
 for (var col = 0, j = 0; col < this.width; ++col, pt++) {
 var p = this.pixels[pt];
-ppmPixels[j++] = ((((p >> 16) & 255)|0)|0);
-ppmPixels[j++] = ((((p >> 8) & 255)|0)|0);
-ppmPixels[j++] = (((p & 255)|0)|0);
+ppmPixels[j++]=((((p >> 16) & 255)|0)|0);
+ppmPixels[j++]=((((p >> 8) & 255)|0)|0);
+ppmPixels[j++]=(((p & 255)|0)|0);
 }
 this.out.write$BA$I$I(ppmPixels, 0, ppmPixels.length);
 }
@@ -28,4 +28,4 @@ this.out.write$BA$I$I(ppmPixels, 0, ppmPixels.length);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:54

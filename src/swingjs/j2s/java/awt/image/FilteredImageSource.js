@@ -16,13 +16,13 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_image_ImageProducer$java_awt_image_ImageFilter', function (orig, imgf) {
 C$.$init$.apply(this);
-this.src = orig;
-this.filter = imgf;
+this.src=orig;
+this.filter=imgf;
 }, 1);
 
 Clazz.newMeth(C$, 'addConsumer$java_awt_image_ImageConsumer', function (ic) {
 if (this.proxies == null ) {
-this.proxies = Clazz.new_((I$[1]||$incl$(1)));
+this.proxies=Clazz.new_((I$[1]||$incl$(1)));
 }if (!this.proxies.containsKey$O(ic)) {
 var imgf = this.filter.getFilterInstance$java_awt_image_ImageConsumer(ic);
 this.proxies.put$TK$TV(ic, imgf);
@@ -40,15 +40,15 @@ if (imgf != null ) {
 this.src.removeConsumer$java_awt_image_ImageConsumer(imgf);
 this.proxies.remove$O(ic);
 if (this.proxies.isEmpty()) {
-this.proxies = null;
+this.proxies=null;
 }}}});
 
 Clazz.newMeth(C$, 'startProduction$java_awt_image_ImageConsumer', function (ic) {
 if (this.proxies == null ) {
-this.proxies = Clazz.new_((I$[1]||$incl$(1)));
+this.proxies=Clazz.new_((I$[1]||$incl$(1)));
 }var imgf = this.proxies.get$O(ic);
 if (imgf == null ) {
-imgf = this.filter.getFilterInstance$java_awt_image_ImageConsumer(ic);
+imgf=this.filter.getFilterInstance$java_awt_image_ImageConsumer(ic);
 this.proxies.put$TK$TV(ic, imgf);
 }this.src.startProduction$java_awt_image_ImageConsumer(imgf);
 });
@@ -62,4 +62,4 @@ imgf.resendTopDownLeftRight$java_awt_image_ImageProducer(this.src);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:01
+//Created 2018-05-24 08:45:25

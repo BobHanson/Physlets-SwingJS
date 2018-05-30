@@ -15,8 +15,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S$Z', function (charSetSpec, charSetKey) {
 Clazz.super_(C$, this,1);
-this.charSetSpec = charSetSpec;
-this.charSetKey = charSetKey;
+this.charSetSpec=charSetSpec;
+this.charSetKey=charSetKey;
 }, 1);
 
 Clazz.newMeth(C$, 'getCharSetSpec', function () {
@@ -29,4 +29,4 @@ return this.charSetKey;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:53
+//Created 2018-05-24 08:47:01

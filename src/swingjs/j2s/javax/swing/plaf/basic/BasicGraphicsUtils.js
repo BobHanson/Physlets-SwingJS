@@ -112,11 +112,11 @@ g.drawLine$I$I$I$I(w - 2, h - 2, w - 2, 1);
 Clazz.newMeth(C$, 'drawDashedRect$java_awt_Graphics$I$I$I$I', function (g, x, y, width, height) {
 var vx;
 var vy;
-for (vx = x; vx < (x + width); vx = vx+(2)) {
+for (vx=x; vx < (x + width); vx+=2) {
 g.fillRect$I$I$I$I(vx, y, 1, 1);
 g.fillRect$I$I$I$I(vx, y + height - 1, 1, 1);
 }
-for (vy = y; vy < (y + height); vy = vy+(2)) {
+for (vy=y; vy < (y + height); vy+=2) {
 g.fillRect$I$I$I$I(x, vy, 1, 1);
 g.fillRect$I$I$I$I(x + width - 1, vy, 1, 1);
 }
@@ -128,4 +128,4 @@ return c.getComponentOrientation().isLeftToRight();
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:50
+//Created 2018-05-24 08:46:57

@@ -27,10 +27,10 @@ Clazz.newMeth(C$, 'c$$I$I$I$I', function (rows, cols, hgap, vgap) {
 C$.$init$.apply(this);
 if ((rows == 0) && (cols == 0) ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["rows and cols cannot both be zero"]);
-}this.rows = rows;
-this.cols = cols;
-this.hgap = hgap;
-this.vgap = vgap;
+}this.rows=rows;
+this.cols=cols;
+this.hgap=hgap;
+this.vgap=vgap;
 }, 1);
 
 Clazz.newMeth(C$, 'getRows', function () {
@@ -40,7 +40,7 @@ return this.rows;
 Clazz.newMeth(C$, 'setRows$I', function (rows) {
 if ((rows == 0) && (this.cols == 0) ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["rows and cols cannot both be zero"]);
-}this.rows = rows;
+}this.rows=rows;
 });
 
 Clazz.newMeth(C$, 'getColumns', function () {
@@ -50,7 +50,7 @@ return this.cols;
 Clazz.newMeth(C$, 'setColumns$I', function (cols) {
 if ((cols == 0) && (this.rows == 0) ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["rows and cols cannot both be zero"]);
-}this.cols = cols;
+}this.cols=cols;
 });
 
 Clazz.newMeth(C$, 'getHgap', function () {
@@ -58,7 +58,7 @@ return this.hgap;
 });
 
 Clazz.newMeth(C$, 'setHgap$I', function (hgap) {
-this.hgap = hgap;
+this.hgap=hgap;
 });
 
 Clazz.newMeth(C$, 'getVgap', function () {
@@ -66,7 +66,7 @@ return this.vgap;
 });
 
 Clazz.newMeth(C$, 'setVgap$I', function (vgap) {
-this.vgap = vgap;
+this.vgap=vgap;
 });
 
 Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (name, comp) {
@@ -82,18 +82,18 @@ var ncomponents = parent.getComponentCount();
 var nrows = this.rows;
 var ncols = this.cols;
 if (nrows > 0) {
-ncols = ((ncomponents + nrows - 1)/nrows|0);
+ncols=((ncomponents + nrows - 1)/nrows|0);
 } else {
-nrows = ((ncomponents + ncols - 1)/ncols|0);
+nrows=((ncomponents + ncols - 1)/ncols|0);
 }var w = 0;
 var h = 0;
 for (var i = 0; i < ncomponents; i++) {
 var comp = parent.getComponent$I(i);
 var d = comp.getPreferredSize();
 if (w < d.width) {
-w = d.width;
+w=d.width;
 }if (h < d.height) {
-h = d.height;
+h=d.height;
 }}
 return Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[insets.left + insets.right + ncols * w  + (ncols - 1) * this.hgap, insets.top + insets.bottom + nrows * h  + (nrows - 1) * this.vgap]);
 }});
@@ -105,18 +105,18 @@ var ncomponents = parent.getComponentCount();
 var nrows = this.rows;
 var ncols = this.cols;
 if (nrows > 0) {
-ncols = ((ncomponents + nrows - 1)/nrows|0);
+ncols=((ncomponents + nrows - 1)/nrows|0);
 } else {
-nrows = ((ncomponents + ncols - 1)/ncols|0);
+nrows=((ncomponents + ncols - 1)/ncols|0);
 }var w = 0;
 var h = 0;
 for (var i = 0; i < ncomponents; i++) {
 var comp = parent.getComponent$I(i);
 var d = comp.getMinimumSize();
 if (w < d.width) {
-w = d.width;
+w=d.width;
 }if (h < d.height) {
-h = d.height;
+h=d.height;
 }}
 return Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[insets.left + insets.right + ncols * w  + (ncols - 1) * this.hgap, insets.top + insets.bottom + nrows * h  + (nrows - 1) * this.vgap]);
 }});
@@ -131,9 +131,9 @@ var ltr = parent.getComponentOrientation().isLeftToRight();
 if (ncomponents == 0) {
 return;
 }if (nrows > 0) {
-ncols = ((ncomponents + nrows - 1)/nrows|0);
+ncols=((ncomponents + nrows - 1)/nrows|0);
 } else {
-nrows = ((ncomponents + ncols - 1)/ncols|0);
+nrows=((ncomponents + ncols - 1)/ncols|0);
 }var totalGapsWidth = (ncols - 1) * this.hgap;
 var widthWOInsets = parent.width - (insets.left + insets.right);
 var widthOnComponent = ((widthWOInsets - totalGapsWidth)/ncols|0);
@@ -143,16 +143,16 @@ var heightWOInsets = parent.height - (insets.top + insets.bottom);
 var heightOnComponent = ((heightWOInsets - totalGapsHeight)/nrows|0);
 var extraHeightAvailable = ((heightWOInsets - (heightOnComponent * nrows + totalGapsHeight))/2|0);
 if (ltr) {
-for (var c = 0, x = insets.left + extraWidthAvailable; c < ncols; c++, x = x+(widthOnComponent + this.hgap)) {
-for (var r = 0, y = insets.top + extraHeightAvailable; r < nrows; r++, y = y+(heightOnComponent + this.vgap)) {
+for (var c = 0, x = insets.left + extraWidthAvailable; c < ncols; c++, x+=widthOnComponent + this.hgap) {
+for (var r = 0, y = insets.top + extraHeightAvailable; r < nrows; r++, y+=heightOnComponent + this.vgap) {
 var i = r * ncols + c;
 if (i < ncomponents) {
 parent.getComponent$I(i).setBounds$I$I$I$I(x, y, widthOnComponent, heightOnComponent);
 }}
 }
 } else {
-for (var c = 0, x = (parent.width - insets.right - widthOnComponent ) - extraWidthAvailable; c < ncols; c++, x = x-(widthOnComponent + this.hgap)) {
-for (var r = 0, y = insets.top + extraHeightAvailable; r < nrows; r++, y = y+(heightOnComponent + this.vgap)) {
+for (var c = 0, x = (parent.width - insets.right - widthOnComponent ) - extraWidthAvailable; c < ncols; c++, x-=widthOnComponent + this.hgap) {
+for (var r = 0, y = insets.top + extraHeightAvailable; r < nrows; r++, y+=heightOnComponent + this.vgap) {
 var i = r * ncols + c;
 if (i < ncomponents) {
 parent.getComponent$I(i).setBounds$I$I$I$I(x, y, widthOnComponent, heightOnComponent);
@@ -164,4 +164,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.getClass().getName() + "[hgap=" + this.hgap + ",vgap=" + this.vgap + ",rows=" + this.rows + ",cols=" + this.cols + "]" ;
 });
 })();
-//Created 2018-05-15 01:01:52
+//Created 2018-05-24 08:45:10

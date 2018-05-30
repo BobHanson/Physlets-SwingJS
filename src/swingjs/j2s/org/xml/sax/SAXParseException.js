@@ -47,10 +47,10 @@ p$.init$S$S$I$I.apply(this, [publicId, systemId, lineNumber, columnNumber]);
 }, 1);
 
 Clazz.newMeth(C$, 'init$S$S$I$I', function (publicId, systemId, lineNumber, columnNumber) {
-this.publicId = publicId;
-this.systemId = systemId;
-this.lineNumber = lineNumber;
-this.columnNumber = columnNumber;
+this.publicId=publicId;
+this.systemId=systemId;
+this.lineNumber=lineNumber;
+this.columnNumber=columnNumber;
 });
 
 Clazz.newMeth(C$, 'getPublicId', function () {
@@ -71,4 +71,4 @@ return this.columnNumber;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:03
+//Created 2018-05-24 08:47:17

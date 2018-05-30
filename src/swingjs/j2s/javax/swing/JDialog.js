@@ -123,7 +123,7 @@ var supportsWindowDecorations = (I$[5]||$incl$(5)).getLookAndFeel().getSupportsW
 if (supportsWindowDecorations) {
 this.setUndecorated$Z(true);
 this.getRootPane().setWindowDecorationStyle$I(2);
-}}this.uiClassID = "DialogUI";
+}}this.uiClassID="DialogUI";
 this.updateUI();
 this.addNotify();
 this.rootPane.addNotify();
@@ -155,7 +155,7 @@ Clazz.newMeth(C$, 'setDefaultCloseOperation$I', function (operation) {
 if (operation != 0 && operation != 1  && operation != 2 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["defaultCloseOperation must be one of: DO_NOTHING_ON_CLOSE, HIDE_ON_CLOSE, or DISPOSE_ON_CLOSE"]);
 }var oldValue = this.defaultCloseOperation;
-this.defaultCloseOperation = operation;
+this.defaultCloseOperation=operation;
 this.firePropertyChange$S$I$I("defaultCloseOperation", oldValue, operation);
 });
 
@@ -165,7 +165,7 @@ return this.defaultCloseOperation;
 
 Clazz.newMeth(C$, 'setTransferHandler$javax_swing_TransferHandler', function (newHandler) {
 var oldHandler = this.transferHandler;
-this.transferHandler = newHandler;
+this.transferHandler=newHandler;
 (I$[2]||$incl$(2)).installSwingDropTargetAsNecessary$java_awt_Component$javax_swing_TransferHandler(this, this.transferHandler);
 this.firePropertyChange$S$O$O("transferHandler", oldHandler, newHandler);
 });
@@ -191,7 +191,7 @@ return this.rootPaneCheckingEnabled;
 });
 
 Clazz.newMeth(C$, 'setRootPaneCheckingEnabled$Z', function (enabled) {
-this.rootPaneCheckingEnabled = enabled;
+this.rootPaneCheckingEnabled=enabled;
 });
 
 Clazz.newMeth(C$, 'addImpl$java_awt_Component$O$I', function (comp, constraints, index) {
@@ -221,7 +221,7 @@ return this.rootPane;
 Clazz.newMeth(C$, 'setRootPane$javax_swing_JRootPane', function (root) {
 if (this.rootPane != null ) {
 this.remove$java_awt_Component(this.rootPane);
-}this.rootPane = root;
+}this.rootPane=root;
 if (this.rootPane != null ) {
 var checkingEnabled = this.isRootPaneCheckingEnabled();
 try {
@@ -278,19 +278,19 @@ if (defaultLookAndFeelDecorated) {
 Clazz.newMeth(C$, 'isDefaultLookAndFeelDecorated', function () {
 var defaultLookAndFeelDecorated = (I$[2]||$incl$(2)).appContextGet$O(C$.defaultLookAndFeelDecoratedKey);
 if (defaultLookAndFeelDecorated == null ) {
-defaultLookAndFeelDecorated = (I$[8]||$incl$(8)).FALSE;
+defaultLookAndFeelDecorated=(I$[8]||$incl$(8)).FALSE;
 }return defaultLookAndFeelDecorated.booleanValue();
 }, 1);
 
 Clazz.newMeth(C$, 'paramString', function () {
 var defaultCloseOperationString;
 if (this.defaultCloseOperation == 1) {
-defaultCloseOperationString = "HIDE_ON_CLOSE";
+defaultCloseOperationString="HIDE_ON_CLOSE";
 } else if (this.defaultCloseOperation == 2) {
-defaultCloseOperationString = "DISPOSE_ON_CLOSE";
+defaultCloseOperationString="DISPOSE_ON_CLOSE";
 } else if (this.defaultCloseOperation == 0) {
-defaultCloseOperationString = "DO_NOTHING_ON_CLOSE";
-} else defaultCloseOperationString = "";
+defaultCloseOperationString="DO_NOTHING_ON_CLOSE";
+} else defaultCloseOperationString="";
 var rootPaneString = (this.rootPane != null  ? this.rootPane.toString() : "");
 var rootPaneCheckingEnabledString = (this.rootPaneCheckingEnabled ? "true" : "false");
 return C$.superclazz.prototype.paramString.apply(this, []) + ",defaultCloseOperation=" + defaultCloseOperationString + ",rootPane=" + rootPaneString + ",rootPaneCheckingEnabled=" + rootPaneCheckingEnabledString ;
@@ -309,4 +309,4 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:27
+//Created 2018-05-24 08:46:14

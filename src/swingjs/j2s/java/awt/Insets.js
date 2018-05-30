@@ -17,17 +17,17 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I$I$I$I', function (top, left, bottom, right) {
 C$.$init$.apply(this);
-this.top = top;
-this.left = left;
-this.bottom = bottom;
-this.right = right;
+this.top=top;
+this.left=left;
+this.bottom=bottom;
+this.right=right;
 }, 1);
 
 Clazz.newMeth(C$, 'set$I$I$I$I', function (top, left, bottom, right) {
-this.top = top;
-this.left = left;
-this.bottom = bottom;
-this.right = right;
+this.top=top;
+this.left=left;
+this.bottom=bottom;
+this.right=right;
 });
 
 Clazz.newMeth(C$, 'equals$O', function (obj) {
@@ -64,4 +64,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:52
+//Created 2018-05-24 08:45:10

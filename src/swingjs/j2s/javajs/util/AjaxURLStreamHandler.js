@@ -14,7 +14,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S', function (protocol) {
 Clazz.super_(C$, this,1);
-this.protocol = protocol;
+this.protocol=protocol;
 }, 1);
 
 Clazz.newMeth(C$, 'openConnection$java_net_URL', function (url) {
@@ -41,4 +41,4 @@ result.append$S(u.getRef());
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:55

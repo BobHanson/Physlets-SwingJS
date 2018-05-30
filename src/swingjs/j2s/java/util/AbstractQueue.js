@@ -45,8 +45,8 @@ throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 Clazz.newMeth(C$, 'clear', function () {
 var o;
 do {
-o = this.poll();
+o=this.poll();
 } while (null != o );
 });
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:44

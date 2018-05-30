@@ -24,9 +24,9 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.offset = 0;
-this.count = 0;
-this.value = Clazz.array(Character.TYPE, [0]);
+this.offset=0;
+this.count=0;
+this.value=Clazz.array(Character.TYPE, [0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (original) {
@@ -36,20 +36,20 @@ var originalValue = original.value;
 var v;
 if (originalValue.length > size) {
 var off = original.offset;
-v = (I$[3]||$incl$(3)).copyOfRange$CA$I$I(originalValue, off, off + size);
+v=(I$[3]||$incl$(3)).copyOfRange$CA$I$I(originalValue, off, off + size);
 } else {
-v = originalValue;
-}this.offset = 0;
-this.count = size;
-this.value = v;
+v=originalValue;
+}this.offset=0;
+this.count=size;
+this.value=v;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$CA', function (value) {
 C$.$init$.apply(this);
 var size = value.length;
-this.offset = 0;
-this.count = size;
-this.value = (I$[3]||$incl$(3)).copyOf$CA$I(value, size);
+this.offset=0;
+this.count=size;
+this.value=(I$[3]||$incl$(3)).copyOf$CA$I(value, size);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$CA$I$I', function (value, offset, count) {
@@ -60,9 +60,9 @@ throw Clazz.new_(Clazz.load('java.lang.StringIndexOutOfBoundsException').c$$I,[o
 throw Clazz.new_(Clazz.load('java.lang.StringIndexOutOfBoundsException').c$$I,[count]);
 }if (offset > value.length - count) {
 throw Clazz.new_(Clazz.load('java.lang.StringIndexOutOfBoundsException').c$$I,[offset + count]);
-}this.offset = 0;
-this.count = count;
-this.value = (I$[3]||$incl$(3)).copyOfRange$CA$I$I(value, offset, offset + count);
+}this.offset=0;
+this.count=count;
+this.value=(I$[3]||$incl$(3)).copyOfRange$CA$I$I(value, offset, offset + count);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$IA$I$I', function (codePoints, offset, count) {
@@ -76,22 +76,22 @@ throw Clazz.new_(Clazz.load('java.lang.StringIndexOutOfBoundsException').c$$I,[o
 }var n = 0;
 for (var i = offset; i < offset + count; i++) {
 var c = codePoints[i];
-if (c >= 0 && c < 65536 ) n = n+(1);
- else if (Character.isSupplementaryCodePoint(c)) n = n+(2);
+if (c >= 0 && c < 65536 ) n+=1;
+ else if (Character.isSupplementaryCodePoint(c)) n+=2;
  else throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,[Integer.toString(c)]);
 }
 var v = Clazz.array(Character.TYPE, [n]);
 for (var i = offset, j = 0; i < offset + count; i++) {
 var c = codePoints[i];
 if (c < 65536) {
-v[j++] = String.fromCharCode(c);
+v[j++]=String.fromCharCode(c);
 } else {
 Character.toSurrogates(c, v, j);
-j = j+(2);
+j+=2;
 }}
-this.value = v;
-this.count = v.length;
-this.offset = 0;
+this.value=v;
+this.count=v.length;
+this.offset=0;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$BA$I$I$I', function (ascii, hibyte, offset, count) {
@@ -100,16 +100,16 @@ String.checkBounds$BA$I$I(ascii, offset, count);
 var value = Clazz.array(Character.TYPE, [count]);
 if (hibyte == 0) {
 for (var i = count; i-- > 0; ) {
-value[i] = String.fromCharCode((ascii[i + offset] & 255));
+value[i]=String.fromCharCode((ascii[i + offset] & 255));
 }
 } else {
-hibyte = hibyte<<(8);
+hibyte<<=8;
 for (var i = count; i-- > 0; ) {
-value[i] = String.fromCharCode((hibyte | (ascii[i + offset] & 255)));
+value[i]=String.fromCharCode((hibyte | (ascii[i + offset] & 255)));
 }
-}this.offset = 0;
-this.count = count;
-this.value = value;
+}this.offset=0;
+this.count=count;
+this.value=value;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$BA$I', function (ascii, hibyte) {
@@ -127,9 +127,9 @@ C$.$init$.apply(this);
 if (charsetName == null ) throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["charsetName"]);
 String.checkBounds$BA$I$I(bytes, offset, length);
 var v = (I$[4]||$incl$(4)).decode$S$BA$I$I(charsetName, bytes, offset, length);
-this.offset = 0;
-this.count = v.length;
-this.value = v;
+this.offset=0;
+this.count=v.length;
+this.value=v;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$BA$I$I$java_nio_charset_Charset', function (bytes, offset, length, charset) {
@@ -137,9 +137,9 @@ C$.$init$.apply(this);
 if (charset == null ) throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["charset"]);
 String.checkBounds$BA$I$I(bytes, offset, length);
 var v = (I$[4]||$incl$(4)).decode$java_nio_charset_Charset$BA$I$I(charset, bytes, offset, length);
-this.offset = 0;
-this.count = v.length;
-this.value = v;
+this.offset=0;
+this.count=v.length;
+this.value=v;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$BA$S', function (bytes, charsetName) {
@@ -154,9 +154,9 @@ Clazz.newMeth(C$, 'c$$BA$I$I', function (bytes, offset, length) {
 C$.$init$.apply(this);
 String.checkBounds$BA$I$I(bytes, offset, length);
 var v = (I$[4]||$incl$(4)).decode$BA$I$I(bytes, offset, length);
-this.offset = 0;
-this.count = v.length;
-this.value = v;
+this.offset=0;
+this.count=v.length;
+this.value=v;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$BA', function (bytes) {
@@ -166,24 +166,24 @@ C$.c$$BA$I$I.apply(this, [bytes, 0, bytes.length]);
 Clazz.newMeth(C$, 'c$$StringBuffer', function (buffer) {
 C$.$init$.apply(this);
 var result = buffer.toString();
-this.value = result.value;
-this.count = result.count;
-this.offset = result.offset;
+this.value=result.value;
+this.count=result.count;
+this.offset=result.offset;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$StringBuilder', function (builder) {
 C$.$init$.apply(this);
 var result = builder.toString();
-this.value = result.value;
-this.count = result.count;
-this.offset = result.offset;
+this.value=result.value;
+this.count=result.count;
+this.offset=result.offset;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$CA', function (offset, count, value) {
 C$.$init$.apply(this);
-this.value = value;
-this.offset = offset;
-this.count = count;
+this.value=value;
+this.offset=offset;
+this.count=count;
 }, 1);
 
 Clazz.newMeth(C$, 'length$', function () {
@@ -251,7 +251,7 @@ var n = this.offset + srcEnd;
 var i = this.offset + srcBegin;
 var val = this.value;
 while (i < n){
-dst[j++] = ((val[i++].$c()|0)|0);
+dst[j++]=((val[i++].$c()|0)|0);
 }
 });
 
@@ -419,9 +419,9 @@ var off = this.offset;
 var val = this.value;
 var len = this.count;
 for (var i = 0; i < len; i++) {
-h = 31 * h + (val[off++]).$c();
+h=31 * h + (val[off++]).$c();
 }
-this.hash = h;
+this.hash=h;
 }return h;
 });
 
@@ -433,7 +433,7 @@ Clazz.newMeth(C$, 'indexOf', function (ch, fromIndex) {
 var max = this.offset + this.count;
 var v = this.value;
 if (fromIndex < 0) {
-fromIndex = 0;
+fromIndex=0;
 } else if (fromIndex >= this.count) {
 return -1;
 }var i = this.offset + fromIndex;
@@ -494,7 +494,7 @@ Clazz.newMeth(C$, 'indexOf', function (source, sourceOffset, sourceCount, target
 if (fromIndex >= sourceCount) {
 return (targetCount == 0 ? sourceCount : -1);
 }if (fromIndex < 0) {
-fromIndex = 0;
+fromIndex=0;
 }if (targetCount == 0) {
 return fromIndex;
 }var first = target[targetOffset];
@@ -525,7 +525,7 @@ var rightIndex = sourceCount - targetCount;
 if (fromIndex < 0) {
 return -1;
 }if (fromIndex > rightIndex) {
-fromIndex = rightIndex;
+fromIndex=rightIndex;
 }if (targetCount == 0) {
 return fromIndex;
 }var strLastIndex = targetOffset + targetCount - 1;
@@ -591,11 +591,11 @@ break;
 if (i < len) {
 var buf = Clazz.array(Character.TYPE, [len]);
 for (var j = 0; j < i; j++) {
-buf[j] = val[off + j];
+buf[j]=val[off + j];
 }
 while (i < len){
 var c = val[off + i];
-buf[i] = (c == oldChar) ? newChar : c;
+buf[i]=(c == oldChar) ? newChar : c;
 i++;
 }
 return  String.instantialize(0, len, buf);
@@ -635,13 +635,13 @@ if (locale == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
 }var firstUpper;
 scan : {
-for (firstUpper = 0; firstUpper < this.count; ) {
+for (firstUpper=0; firstUpper < this.count; ) {
 var c = this.value[this.offset + firstUpper];
 if ((c >= "\ud800") && (c <= "\udbff") ) {
 var supplChar = this.codePointAt(firstUpper);
 if (supplChar != Character.toLowerCase(supplChar)) {
 break scan;
-}firstUpper = firstUpper+(Character.charCount(supplChar));
+}firstUpper+=Character.charCount(supplChar);
 } else {
 if (c != Character.toLowerCase(c)) {
 break scan;
@@ -657,36 +657,36 @@ var lowerCharArray;
 var lowerChar;
 var srcChar;
 var srcCount;
-for (var i = firstUpper; i < this.count; i = i+(srcCount)) {
-srcChar = this.value[this.offset + i].$c();
+for (var i = firstUpper; i < this.count; i+=srcCount) {
+srcChar=this.value[this.offset + i].$c();
 if (String.fromCharCode(srcChar) >= "\ud800" && String.fromCharCode(srcChar) <= "\udbff" ) {
-srcChar = this.codePointAt(i);
-srcCount = Character.charCount(srcChar);
+srcChar=this.codePointAt(i);
+srcCount=Character.charCount(srcChar);
 } else {
-srcCount = 1;
+srcCount=1;
 }if (localeDependent || srcChar == 931  ) {
-lowerChar = (I$[7]||$incl$(7)).toLowerCaseEx$S$I$java_util_Locale(this, i, locale);
+lowerChar=(I$[7]||$incl$(7)).toLowerCaseEx$S$I$java_util_Locale(this, i, locale);
 } else {
-lowerChar = Character.toLowerCase(srcChar);
+lowerChar=Character.toLowerCase(srcChar);
 }if ((lowerChar == -1) || (lowerChar >= 65536) ) {
 if (lowerChar == -1) {
-lowerCharArray = (I$[7]||$incl$(7)).toLowerCaseCharArray$S$I$java_util_Locale(this, i, locale);
+lowerCharArray=(I$[7]||$incl$(7)).toLowerCaseCharArray$S$I$java_util_Locale(this, i, locale);
 } else if (srcCount == 2) {
-resultOffset = resultOffset+(Character.toChars(lowerChar, result, i + resultOffset) - srcCount);
+resultOffset+=Character.toChars(lowerChar, result, i + resultOffset) - srcCount;
 continue;
 } else {
-lowerCharArray = Character.toChars(lowerChar);
+lowerCharArray=Character.toChars(lowerChar);
 }var mapLen = lowerCharArray.length;
 if (mapLen > srcCount) {
 var result2 = Clazz.array(Character.TYPE, [result.length + mapLen - srcCount]);
 System.arraycopy(result, 0, result2, 0, i + resultOffset);
-result = result2;
+result=result2;
 }for (var x = 0; x < mapLen; ++x) {
-result[i + resultOffset + x ] = lowerCharArray[x];
+result[i + resultOffset + x ]=lowerCharArray[x];
 }
-resultOffset = resultOffset+((mapLen - srcCount));
+resultOffset+=(mapLen - srcCount);
 } else {
-result[i + resultOffset] = String.fromCharCode(lowerChar);
+result[i + resultOffset]=String.fromCharCode(lowerChar);
 }}
 return  String.instantialize(0, this.count + resultOffset, result);
 });
@@ -700,18 +700,18 @@ if (locale == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
 }var firstLower;
 scan : {
-for (firstLower = 0; firstLower < this.count; ) {
+for (firstLower=0; firstLower < this.count; ) {
 var c = this.value[this.offset + firstLower].$c();
 var srcCount;
 if ((c >= "\ud800".$c() ) && (c <= "\udbff".$c() ) ) {
-c = this.codePointAt(firstLower);
-srcCount = Character.charCount(c);
+c=this.codePointAt(firstLower);
+srcCount=Character.charCount(c);
 } else {
-srcCount = 1;
+srcCount=1;
 }var upperCaseChar = Character.toUpperCaseEx(c);
 if ((upperCaseChar == -1) || (c != upperCaseChar) ) {
 break scan;
-}firstLower = firstLower+(srcCount);
+}firstLower+=srcCount;
 }
 return this;
 }var result = Clazz.array(Character.TYPE, [this.count]);
@@ -723,39 +723,39 @@ var upperCharArray;
 var upperChar;
 var srcChar;
 var srcCount;
-for (var i = firstLower; i < this.count; i = i+(srcCount)) {
-srcChar = this.value[this.offset + i].$c();
+for (var i = firstLower; i < this.count; i+=srcCount) {
+srcChar=this.value[this.offset + i].$c();
 if (String.fromCharCode(srcChar) >= "\ud800" && String.fromCharCode(srcChar) <= "\udbff" ) {
-srcChar = this.codePointAt(i);
-srcCount = Character.charCount(srcChar);
+srcChar=this.codePointAt(i);
+srcCount=Character.charCount(srcChar);
 } else {
-srcCount = 1;
+srcCount=1;
 }if (localeDependent) {
-upperChar = (I$[7]||$incl$(7)).toUpperCaseEx$S$I$java_util_Locale(this, i, locale);
+upperChar=(I$[7]||$incl$(7)).toUpperCaseEx$S$I$java_util_Locale(this, i, locale);
 } else {
-upperChar = Character.toUpperCaseEx(srcChar);
+upperChar=Character.toUpperCaseEx(srcChar);
 }if ((upperChar == -1) || (upperChar >= 65536) ) {
 if (upperChar == -1) {
 if (localeDependent) {
-upperCharArray = (I$[7]||$incl$(7)).toUpperCaseCharArray$S$I$java_util_Locale(this, i, locale);
+upperCharArray=(I$[7]||$incl$(7)).toUpperCaseCharArray$S$I$java_util_Locale(this, i, locale);
 } else {
-upperCharArray = Character.toUpperCaseCharArray(srcChar);
+upperCharArray=Character.toUpperCaseCharArray(srcChar);
 }} else if (srcCount == 2) {
-resultOffset = resultOffset+(Character.toChars(upperChar, result, i + resultOffset) - srcCount);
+resultOffset+=Character.toChars(upperChar, result, i + resultOffset) - srcCount;
 continue;
 } else {
-upperCharArray = Character.toChars(upperChar);
+upperCharArray=Character.toChars(upperChar);
 }var mapLen = upperCharArray.length;
 if (mapLen > srcCount) {
 var result2 = Clazz.array(Character.TYPE, [result.length + mapLen - srcCount]);
 System.arraycopy(result, 0, result2, 0, i + resultOffset);
-result = result2;
+result=result2;
 }for (var x = 0; x < mapLen; ++x) {
-result[i + resultOffset + x ] = upperCharArray[x];
+result[i + resultOffset + x ]=upperCharArray[x];
 }
-resultOffset = resultOffset+((mapLen - srcCount));
+resultOffset+=(mapLen - srcCount);
 } else {
-result[i + resultOffset] = String.fromCharCode(upperChar);
+result[i + resultOffset]=String.fromCharCode(upperChar);
 }}
 return  String.instantialize(0, this.count + resultOffset, result);
 });
@@ -864,11 +864,11 @@ for (var i = 0; i < min; i++) {
 var c1 = s1.charAt(i);
 var c2 = s2.charAt(i);
 if (c1 != c2) {
-c1 = Character.toUpperCase(c1);
-c2 = Character.toUpperCase(c2);
+c1=Character.toUpperCase(c1);
+c2=Character.toUpperCase(c2);
 if (c1 != c2) {
-c1 = Character.toLowerCase(c1);
-c2 = Character.toLowerCase(c2);
+c1=Character.toLowerCase(c1);
+c2=Character.toLowerCase(c2);
 if (c1 != c2) {
 return c1.$c() - c2.$c();
 }}}}
@@ -878,4 +878,4 @@ return n1 - n2;
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:08
+//Created 2018-05-24 08:45:38

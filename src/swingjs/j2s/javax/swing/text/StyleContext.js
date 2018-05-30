@@ -30,13 +30,13 @@ this.search = Clazz.new_((I$[11]||$incl$(11)));
 
 Clazz.newMeth(C$, 'getDefaultStyleContext', function () {
 if (C$.defaultContext == null ) {
-C$.defaultContext = Clazz.new_(C$);
+C$.defaultContext=Clazz.new_(C$);
 }return C$.defaultContext;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.styles = Clazz.new_((I$[12]||$incl$(12)).c$$javax_swing_text_Style, [this, null, null]);
+this.styles=Clazz.new_((I$[12]||$incl$(12)).c$$javax_swing_text_Style, [this, null, null]);
 this.addStyle$S$javax_swing_text_Style("default", null);
 }, 1);
 
@@ -74,13 +74,13 @@ return (this.styles).getChangeListeners();
 Clazz.newMeth(C$, 'getFont$javax_swing_text_AttributeSet', function (attr) {
 var style = 0;
 if ((I$[1]||$incl$(1)).isBold$javax_swing_text_AttributeSet(attr)) {
-style = style|(1);
+style|=1;
 }if ((I$[1]||$incl$(1)).isItalic$javax_swing_text_AttributeSet(attr)) {
-style = style|(2);
+style|=2;
 }var family = (I$[1]||$incl$(1)).getFontFamily$javax_swing_text_AttributeSet(attr);
 var size = (I$[1]||$incl$(1)).getFontSize$javax_swing_text_AttributeSet(attr);
 if ((I$[1]||$incl$(1)).isSuperscript$javax_swing_text_AttributeSet(attr) || (I$[1]||$incl$(1)).isSubscript$javax_swing_text_AttributeSet(attr) ) {
-size = size-(2);
+size-=2;
 }return this.getFont$S$I$I(family, style, size);
 });
 
@@ -101,9 +101,9 @@ if (defaultStyle != null ) {
 var FONT_ATTRIBUTE_KEY = "FONT_ATTRIBUTE_KEY";
 var defaultFont = defaultStyle.getAttribute$O("FONT_ATTRIBUTE_KEY");
 if (defaultFont != null  && defaultFont.getFamily().equalsIgnoreCase$S(family) ) {
-f = defaultFont.deriveFont$I$F(style, size);
+f=defaultFont.deriveFont$I$F(style, size);
 }}if (f == null ) {
-f = Clazz.new_((I$[13]||$incl$(13)).c$$S$I$I,[family, style, size]);
+f=Clazz.new_((I$[13]||$incl$(13)).c$$S$I$I,[family, style, size]);
 }var key = Clazz.new_((I$[7]||$incl$(7)).c$$S$I$I,[family, style, size]);
 this.fontTable.put$TK$TV(key, f);
 }return f;
@@ -214,7 +214,7 @@ var s = "";
 var iterator = this.attributesPool.keySet().iterator();
 while (iterator.hasNext()){
 var set = iterator.next();
-s = s + set + "\n" ;
+s=s + set + "\n" ;
 }
 return s;
 });
@@ -222,8 +222,8 @@ return s;
 Clazz.newMeth(C$, 'registerStaticAttributeKey$O', function (key) {
 var ioFmt = key.getClass().getName() + "." + key.toString() ;
 if (C$.freezeKeyMap == null ) {
-C$.freezeKeyMap = Clazz.new_((I$[8]||$incl$(8)));
-C$.thawKeyMap = Clazz.new_((I$[8]||$incl$(8)));
+C$.freezeKeyMap=Clazz.new_((I$[8]||$incl$(8)));
+C$.thawKeyMap=Clazz.new_((I$[8]||$incl$(8)));
 }C$.freezeKeyMap.put$TK$TV(key, ioFmt);
 C$.thawKeyMap.put$TK$TV(ioFmt, key);
 }, 1);
@@ -257,7 +257,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$OA', function (attributes) {
 C$.$init$.apply(this);
-this.attributes = attributes;
+this.attributes=attributes;
 p$.updateResolveParent.apply(this, []);
 }, 1);
 
@@ -268,20 +268,20 @@ var tbl = Clazz.array(java.lang.Object, [2 * n]);
 var names = attrs.getAttributeNames();
 var i = 0;
 while (names.hasMoreElements()){
-tbl[i] = names.nextElement();
-tbl[i + 1] = attrs.getAttribute$O(tbl[i]);
-i = i+(2);
+tbl[i]=names.nextElement();
+tbl[i + 1]=attrs.getAttribute$O(tbl[i]);
+i+=2;
 }
-this.attributes = tbl;
+this.attributes=tbl;
 p$.updateResolveParent.apply(this, []);
 }, 1);
 
 Clazz.newMeth(C$, 'updateResolveParent', function () {
-this.resolveParent = null;
+this.resolveParent=null;
 var tbl = this.attributes;
-for (var i = 0; i < tbl.length; i = i+(2)) {
+for (var i = 0; i < tbl.length; i+=2) {
 if (tbl[i] === (I$[1]||$incl$(1)).ResolveAttribute ) {
-this.resolveParent = tbl[i + 1];
+this.resolveParent=tbl[i + 1];
 break;
 }}
 });
@@ -290,7 +290,7 @@ Clazz.newMeth(C$, 'getLocalAttribute$O', function (nm) {
 if (nm === (I$[1]||$incl$(1)).ResolveAttribute ) {
 return this.resolveParent;
 }var tbl = this.attributes;
-for (var i = 0; i < tbl.length; i = i+(2)) {
+for (var i = 0; i < tbl.length; i+=2) {
 if (nm.equals$O(tbl[i])) {
 return tbl[i + 1];
 }}
@@ -300,21 +300,21 @@ return null;
 Clazz.newMeth(C$, 'toString', function () {
 var s = "{";
 var tbl = this.attributes;
-for (var i = 0; i < tbl.length; i = i+(2)) {
+for (var i = 0; i < tbl.length; i+=2) {
 if (Clazz.instanceOf(tbl[i + 1], "javax.swing.text.AttributeSet")) {
-s = s + tbl[i] + "=" + "AttributeSet" + "," ;
+s=s + tbl[i] + "=" + "AttributeSet" + "," ;
 } else {
-s = s + tbl[i] + "=" + tbl[i + 1] + "," ;
+s=s + tbl[i] + "=" + tbl[i + 1] + "," ;
 }}
-s = s + "}";
+s=s + "}";
 return s;
 });
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var code = 0;
 var tbl = this.attributes;
-for (var i = 1; i < tbl.length; i = i+(2)) {
-code = code^(tbl[i].hashCode());
+for (var i = 1; i < tbl.length; i+=2) {
+code^=tbl[i].hashCode();
 }
 return code;
 });
@@ -337,7 +337,7 @@ return (this.attributes.length/2|0);
 Clazz.newMeth(C$, 'isDefined$O', function (key) {
 var a = this.attributes;
 var n = a.length;
-for (var i = 0; i < n; i = i+(2)) {
+for (var i = 0; i < n; i+=2) {
 if (key.equals$O(a[i])) {
 return true;
 }}
@@ -358,7 +358,7 @@ Clazz.newMeth(C$, 'getAttribute$O', function (key) {
 var value = this.getLocalAttribute$O(key);
 if (value == null ) {
 var parent = this.getResolveParent();
-if (parent != null ) value = parent.getAttribute$O(key);
+if (parent != null ) value=parent.getAttribute$O(key);
 }return value;
 });
 
@@ -375,7 +375,7 @@ var result = true;
 var names = attrs.getAttributeNames();
 while (result && names.hasMoreElements() ){
 var name = names.nextElement();
-result = attrs.getAttribute$O(name).equals$O(this.getAttribute$O(name));
+result=attrs.getAttribute$O(name).equals$O(this.getAttribute$O(name));
 }
 return result;
 });
@@ -405,8 +405,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$OA', function (attr) {
 C$.$init$.apply(this);
-this.attr = attr;
-this.i = 0;
+this.attr=attr;
+this.i=0;
 }, 1);
 
 Clazz.newMeth(C$, 'hasMoreElements', function () {
@@ -416,7 +416,7 @@ return this.i < this.attr.length;
 Clazz.newMeth(C$, 'nextElement', function () {
 if (this.i < this.attr.length) {
 var o = this.attr[this.i];
-this.i = this.i+(2);
+this.i+=2;
 return o;
 }throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 });
@@ -457,7 +457,7 @@ Clazz.newMeth(C$, 'initialize$OA', function (sorted) {
 this.keys.removeAllElements();
 this.data.removeAllElements();
 var n = sorted.length;
-for (var i = 0; i < n; i = i+(2)) {
+for (var i = 0; i < n; i+=2) {
 this.keys.addElement$TE(sorted[i]);
 this.data.addElement$TE(sorted[i + 1]);
 }
@@ -468,8 +468,8 @@ var n = this.keys.size();
 var tbl = Clazz.array(java.lang.Object, [2 * n]);
 for (var i = 0; i < n; i++) {
 var offs = 2 * i;
-tbl[offs] = this.keys.elementAt$I(i);
-tbl[offs + 1] = this.data.elementAt$I(i);
+tbl[offs]=this.keys.elementAt$I(i);
+tbl[offs + 1]=this.data.elementAt$I(i);
 }
 return tbl;
 });
@@ -487,7 +487,7 @@ Clazz.newMeth(C$, 'addAttributes$javax_swing_text_AttributeSet', function (attr)
 if (Clazz.instanceOf(attr, "javax.swing.text.StyleContext.SmallAttributeSet")) {
 var tbl = (attr).attributes;
 var n = tbl.length;
-for (var i = 0; i < n; i = i+(2)) {
+for (var i = 0; i < n; i+=2) {
 this.addAttribute$O$O(tbl[i], tbl[i + 1]);
 }
 } else {
@@ -558,9 +558,9 @@ this.setValue$S$I$I(family, style, size);
 }, 1);
 
 Clazz.newMeth(C$, 'setValue$S$I$I', function (family, style, size) {
-this.family = (family != null ) ? family.intern() : null;
-this.style = style;
-this.size = size;
+this.family=(family != null ) ? family.intern() : null;
+this.style=style;
+this.size=size;
 });
 
 Clazz.newMeth(C$, 'hashCode', function () {
@@ -599,7 +599,7 @@ this.changeEvent = null;
 
 Clazz.newMeth(C$, 'c$$S$javax_swing_text_Style', function (name, parent) {
 C$.$init$.apply(this);
-this.attributes = this.this$0.getEmptySet();
+this.attributes=this.this$0.getEmptySet();
 if (name != null ) {
 this.setName$S(name);
 }if (parent != null ) {
@@ -612,7 +612,7 @@ C$.c$$S$javax_swing_text_Style.apply(this, [null, parent]);
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.attributes = this.this$0.getEmptySet();
+this.attributes=this.this$0.getEmptySet();
 }, 1);
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -644,9 +644,9 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[5]||$incl$(5)),['
 
 Clazz.newMeth(C$, 'fireStateChanged', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[5]||$incl$(5)),['stateChanged$javax_swing_event_ChangeEvent']) ) {
-if (this.changeEvent == null ) this.changeEvent = Clazz.new_((I$[6]||$incl$(6)).c$$O,[this]);
+if (this.changeEvent == null ) this.changeEvent=Clazz.new_((I$[6]||$incl$(6)).c$$O,[this]);
 (listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -669,7 +669,7 @@ return this.attributes.isEqual$javax_swing_text_AttributeSet(attr);
 
 Clazz.newMeth(C$, 'copyAttributes', function () {
 var a = Clazz.new_(C$, [this, null]);
-a.attributes = this.attributes.copyAttributes();
+a.attributes=this.attributes.copyAttributes();
 return a;
 });
 
@@ -695,34 +695,34 @@ return this.attributes.getResolveParent();
 
 Clazz.newMeth(C$, 'addAttribute$O$O', function (name, value) {
 var context = this.this$0;
-this.attributes = context.addAttribute$javax_swing_text_AttributeSet$O$O(this.attributes, name, value);
+this.attributes=context.addAttribute$javax_swing_text_AttributeSet$O$O(this.attributes, name, value);
 this.fireStateChanged();
 });
 
 Clazz.newMeth(C$, 'addAttributes$javax_swing_text_AttributeSet', function (attr) {
 var context = this.this$0;
-this.attributes = context.addAttributes$javax_swing_text_AttributeSet$javax_swing_text_AttributeSet(this.attributes, attr);
+this.attributes=context.addAttributes$javax_swing_text_AttributeSet$javax_swing_text_AttributeSet(this.attributes, attr);
 this.fireStateChanged();
 });
 
 Clazz.newMeth(C$, 'removeAttribute$O', function (name) {
 var context = this.this$0;
-this.attributes = context.removeAttribute$javax_swing_text_AttributeSet$O(this.attributes, name);
+this.attributes=context.removeAttribute$javax_swing_text_AttributeSet$O(this.attributes, name);
 this.fireStateChanged();
 });
 
 Clazz.newMeth(C$, 'removeAttributes$java_util_Enumeration', function (names) {
 var context = this.this$0;
-this.attributes = context.removeAttributes$javax_swing_text_AttributeSet$java_util_Enumeration(this.attributes, names);
+this.attributes=context.removeAttributes$javax_swing_text_AttributeSet$java_util_Enumeration(this.attributes, names);
 this.fireStateChanged();
 });
 
 Clazz.newMeth(C$, 'removeAttributes$javax_swing_text_AttributeSet', function (attrs) {
 var context = this.this$0;
 if (attrs === this ) {
-this.attributes = context.getEmptySet();
+this.attributes=context.getEmptySet();
 } else {
-this.attributes = context.removeAttributes$javax_swing_text_AttributeSet$javax_swing_text_AttributeSet(this.attributes, attrs);
+this.attributes=context.removeAttributes$javax_swing_text_AttributeSet$javax_swing_text_AttributeSet(this.attributes, attrs);
 }this.fireStateChanged();
 });
 
@@ -734,4 +734,4 @@ this.removeAttribute$O((I$[1]||$incl$(1)).ResolveAttribute);
 }});
 })()
 })();
-//Created 2018-05-15 01:02:58
+//Created 2018-05-24 08:47:08

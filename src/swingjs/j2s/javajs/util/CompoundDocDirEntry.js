@@ -26,14 +26,14 @@ this.unused = Clazz.array(Byte.TYPE, [8]);
 
 Clazz.newMeth(C$, 'c$$javajs_util_CompoundDocument', function (compoundDocument) {
 C$.$init$.apply(this);
-this.cd = compoundDocument;
+this.cd=compoundDocument;
 }, 1);
 
 Clazz.newMeth(C$, 'readData', function () {
 try {
 this.cd.readByteArray$BA$I$I(this.unicodeName64, 0, 64);
-this.nBytesUnicodeName = this.cd.readShort();
-this.entryType = ($b$[0] = this.cd.readByte(), $b$[0]);
+this.nBytesUnicodeName=this.cd.readShort();
+this.entryType=($b$[0] = this.cd.readByte(), $b$[0]);
 this.cd.readByte();
 this.cd.readInt();
 this.cd.readInt();
@@ -42,8 +42,8 @@ this.cd.readByteArray$BA$I$I(this.uniqueID16, 0, 16);
 this.cd.readByteArray$BA$I$I(this.userflags4, 0, 4);
 this.cd.readByteArray$BA$I$I(this.unused, 0, 8);
 this.cd.readByteArray$BA$I$I(this.unused, 0, 8);
-this.SIDfirstSector = this.cd.readInt();
-this.lenStream = this.cd.readInt();
+this.SIDfirstSector=this.cd.readInt();
+this.lenStream=this.cd.readInt();
 this.cd.readByteArray$BA$I$I(this.unused, 0, 4);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
@@ -53,11 +53,11 @@ return false;
 throw e;
 }
 }
-this.entryName = "";
-for (var i = 0; i < this.nBytesUnicodeName - 2; i = i+(2)) this.entryName += String.fromCharCode(this.unicodeName64[i]);
+this.entryName="";
+for (var i = 0; i < this.nBytesUnicodeName - 2; i+=2) this.entryName += String.fromCharCode(this.unicodeName64[i]);
 
-this.isStandard = (this.entryType == 5 || this.lenStream >= this.cd.header.minBytesStandardStream );
-this.isEmpty = (this.entryType == 0 || this.lenStream <= 0 );
+this.isStandard=(this.entryType == 5 || this.lenStream >= this.cd.header.minBytesStandardStream );
+this.isEmpty=(this.entryType == 0 || this.lenStream <= 0 );
 return true;
 });
 
@@ -68,4 +68,4 @@ var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:18
+//Created 2018-05-24 08:45:55

@@ -29,8 +29,8 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'resetCyclicStatuses', function () {
-this.cyclicSprings = Clazz.new_((I$[7]||$incl$(7)));
-this.acyclicSprings = Clazz.new_((I$[7]||$incl$(7)));
+this.cyclicSprings=Clazz.new_((I$[7]||$incl$(7)));
+this.acyclicSprings=Clazz.new_((I$[7]||$incl$(7)));
 });
 
 Clazz.newMeth(C$, 'setParent$java_awt_Container', function (p) {
@@ -128,9 +128,9 @@ this.getConstraints$java_awt_Component(c).setConstraint$S$javax_swing_Spring(e, 
 
 Clazz.newMeth(C$, 'applyDefaults$java_awt_Component$javax_swing_SpringLayout_Constraints', function (c, constraints) {
 if (constraints == null ) {
-constraints = Clazz.new_((I$[9]||$incl$(9)));
+constraints=Clazz.new_((I$[9]||$incl$(9)));
 }if (constraints.c == null ) {
-constraints.c = c;
+constraints.c=c;
 }if (constraints.horizontalHistory.size() < 2) {
 p$.applyDefaults$javax_swing_SpringLayout_Constraints$S$javax_swing_Spring$S$javax_swing_Spring$java_util_List.apply(this, [constraints, "West", (I$[2]||$incl$(2)).constant$I(0), "Width", (I$[2]||$incl$(2)).width$java_awt_Component(c), constraints.horizontalHistory]);
 }if (constraints.verticalHistory.size() < 2) {
@@ -161,13 +161,13 @@ if (Clazz.instanceOf(c, "javax.swing.JComponent")) {
 var cp = (c).getClientProperty$O(Clazz.getClass(C$));
 if (Clazz.instanceOf(cp, "javax.swing.SpringLayout.Constraints")) {
 return p$.applyDefaults$java_awt_Component$javax_swing_SpringLayout_Constraints.apply(this, [c, cp]);
-}}result = Clazz.new_((I$[9]||$incl$(9)));
+}}result=Clazz.new_((I$[9]||$incl$(9)));
 p$.putConstraints$java_awt_Component$javax_swing_SpringLayout_Constraints.apply(this, [c, result]);
 }return result;
 });
 
 Clazz.newMeth(C$, 'getConstraint$S$java_awt_Component', function (edgeName, c) {
-edgeName = edgeName.intern();
+edgeName=edgeName.intern();
 return Clazz.new_((I$[11]||$incl$(11)).c$$S$java_awt_Component$javax_swing_SpringLayout,[edgeName, c, this]);
 });
 
@@ -241,7 +241,7 @@ this.setHeight$javax_swing_Spring(height);
 
 Clazz.newMeth(C$, 'c$$java_awt_Component', function (c) {
 C$.$init$.apply(this);
-this.c = c;
+this.c=c;
 this.setX$javax_swing_Spring((I$[2]||$incl$(2)).constant$I(c.getX()));
 this.setY$javax_swing_Spring((I$[2]||$incl$(2)).constant$I(c.getY()));
 this.setWidth$javax_swing_Spring((I$[2]||$incl$(2)).width$java_awt_Component(c));
@@ -253,10 +253,10 @@ var valid = true;
 var history = horizontal ? this.horizontalHistory : this.verticalHistory;
 if (history.contains$O(name)) {
 history.remove$O(name);
-valid = false;
+valid=false;
 } else if (history.size() == 2 && value != null  ) {
 history.removeItemAt$I(0);
-valid = false;
+valid=false;
 }if (value != null ) {
 history.addLast$TV(name);
 }if (!valid) {
@@ -350,128 +350,128 @@ return history.contains$O(s1) && history.contains$O(s2) ;
 });
 
 Clazz.newMeth(C$, 'setX$javax_swing_Spring', function (x) {
-this.x = x;
+this.x=x;
 p$.pushConstraint$S$javax_swing_Spring$Z.apply(this, ["West", x, true]);
 });
 
 Clazz.newMeth(C$, 'getX', function () {
 if (this.x == null ) {
 if (p$.defined$java_util_List$S$S.apply(this, [this.horizontalHistory, "East", "Width"])) {
-this.x = p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.east, this.width]);
+this.x=p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.east, this.width]);
 } else if (p$.defined$java_util_List$S$S.apply(this, [this.horizontalHistory, "HorizontalCenter", "Width"])) {
-this.x = p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.horizontalCenter, p$.scale$javax_swing_Spring$F.apply(this, [this.width, 0.5])]);
+this.x=p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.horizontalCenter, p$.scale$javax_swing_Spring$F.apply(this, [this.width, 0.5])]);
 } else if (p$.defined$java_util_List$S$S.apply(this, [this.horizontalHistory, "HorizontalCenter", "East"])) {
-this.x = p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [p$.scale$javax_swing_Spring$F.apply(this, [this.horizontalCenter, 2.0]), this.east]);
+this.x=p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [p$.scale$javax_swing_Spring$F.apply(this, [this.horizontalCenter, 2.0]), this.east]);
 }}return this.x;
 });
 
 Clazz.newMeth(C$, 'setY$javax_swing_Spring', function (y) {
-this.y = y;
+this.y=y;
 p$.pushConstraint$S$javax_swing_Spring$Z.apply(this, ["North", y, false]);
 });
 
 Clazz.newMeth(C$, 'getY', function () {
 if (this.y == null ) {
 if (p$.defined$java_util_List$S$S.apply(this, [this.verticalHistory, "South", "Height"])) {
-this.y = p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.south, this.height]);
+this.y=p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.south, this.height]);
 } else if (p$.defined$java_util_List$S$S.apply(this, [this.verticalHistory, "VerticalCenter", "Height"])) {
-this.y = p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.verticalCenter, p$.scale$javax_swing_Spring$F.apply(this, [this.height, 0.5])]);
+this.y=p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.verticalCenter, p$.scale$javax_swing_Spring$F.apply(this, [this.height, 0.5])]);
 } else if (p$.defined$java_util_List$S$S.apply(this, [this.verticalHistory, "VerticalCenter", "South"])) {
-this.y = p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [p$.scale$javax_swing_Spring$F.apply(this, [this.verticalCenter, 2.0]), this.south]);
+this.y=p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [p$.scale$javax_swing_Spring$F.apply(this, [this.verticalCenter, 2.0]), this.south]);
 } else if (p$.defined$java_util_List$S$S.apply(this, [this.verticalHistory, "Baseline", "Height"])) {
-this.y = p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.baseline, p$.heightToRelativeBaseline$javax_swing_Spring.apply(this, [this.height])]);
+this.y=p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.baseline, p$.heightToRelativeBaseline$javax_swing_Spring.apply(this, [this.height])]);
 } else if (p$.defined$java_util_List$S$S.apply(this, [this.verticalHistory, "Baseline", "South"])) {
-this.y = p$.scale$javax_swing_Spring$F.apply(this, [p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.baseline, p$.heightToRelativeBaseline$javax_swing_Spring.apply(this, [this.south])]), 2.0]);
+this.y=p$.scale$javax_swing_Spring$F.apply(this, [p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.baseline, p$.heightToRelativeBaseline$javax_swing_Spring.apply(this, [this.south])]), 2.0]);
 }}return this.y;
 });
 
 Clazz.newMeth(C$, 'setWidth$javax_swing_Spring', function (width) {
-this.width = width;
+this.width=width;
 p$.pushConstraint$S$javax_swing_Spring$Z.apply(this, ["Width", width, true]);
 });
 
 Clazz.newMeth(C$, 'getWidth', function () {
 if (this.width == null ) {
 if (this.horizontalHistory.contains$O("East")) {
-this.width = p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.east, this.getX()]);
+this.width=p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.east, this.getX()]);
 } else if (this.horizontalHistory.contains$O("HorizontalCenter")) {
-this.width = p$.scale$javax_swing_Spring$F.apply(this, [p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.horizontalCenter, this.getX()]), 2.0]);
+this.width=p$.scale$javax_swing_Spring$F.apply(this, [p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.horizontalCenter, this.getX()]), 2.0]);
 }}return this.width;
 });
 
 Clazz.newMeth(C$, 'setHeight$javax_swing_Spring', function (height) {
-this.height = height;
+this.height=height;
 p$.pushConstraint$S$javax_swing_Spring$Z.apply(this, ["Height", height, false]);
 });
 
 Clazz.newMeth(C$, 'getHeight', function () {
 if (this.height == null ) {
 if (this.verticalHistory.contains$O("South")) {
-this.height = p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.south, this.getY()]);
+this.height=p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.south, this.getY()]);
 } else if (this.verticalHistory.contains$O("VerticalCenter")) {
-this.height = p$.scale$javax_swing_Spring$F.apply(this, [p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.verticalCenter, this.getY()]), 2.0]);
+this.height=p$.scale$javax_swing_Spring$F.apply(this, [p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.verticalCenter, this.getY()]), 2.0]);
 } else if (this.verticalHistory.contains$O("Baseline")) {
-this.height = p$.relativeBaselineToHeight$javax_swing_Spring.apply(this, [p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.baseline, this.getY()])]);
+this.height=p$.relativeBaselineToHeight$javax_swing_Spring.apply(this, [p$.difference$javax_swing_Spring$javax_swing_Spring.apply(this, [this.baseline, this.getY()])]);
 }}return this.height;
 });
 
 Clazz.newMeth(C$, 'setEast$javax_swing_Spring', function (east) {
-this.east = east;
+this.east=east;
 p$.pushConstraint$S$javax_swing_Spring$Z.apply(this, ["East", east, true]);
 });
 
 Clazz.newMeth(C$, 'getEast', function () {
 if (this.east == null ) {
-this.east = p$.sum$javax_swing_Spring$javax_swing_Spring.apply(this, [this.getX(), this.getWidth()]);
+this.east=p$.sum$javax_swing_Spring$javax_swing_Spring.apply(this, [this.getX(), this.getWidth()]);
 }return this.east;
 });
 
 Clazz.newMeth(C$, 'setSouth$javax_swing_Spring', function (south) {
-this.south = south;
+this.south=south;
 p$.pushConstraint$S$javax_swing_Spring$Z.apply(this, ["South", south, false]);
 });
 
 Clazz.newMeth(C$, 'getSouth', function () {
 if (this.south == null ) {
-this.south = p$.sum$javax_swing_Spring$javax_swing_Spring.apply(this, [this.getY(), this.getHeight()]);
+this.south=p$.sum$javax_swing_Spring$javax_swing_Spring.apply(this, [this.getY(), this.getHeight()]);
 }return this.south;
 });
 
 Clazz.newMeth(C$, 'getHorizontalCenter', function () {
 if (this.horizontalCenter == null ) {
-this.horizontalCenter = p$.sum$javax_swing_Spring$javax_swing_Spring.apply(this, [this.getX(), p$.scale$javax_swing_Spring$F.apply(this, [this.getWidth(), 0.5])]);
+this.horizontalCenter=p$.sum$javax_swing_Spring$javax_swing_Spring.apply(this, [this.getX(), p$.scale$javax_swing_Spring$F.apply(this, [this.getWidth(), 0.5])]);
 }return this.horizontalCenter;
 });
 
 Clazz.newMeth(C$, 'setHorizontalCenter$javax_swing_Spring', function (horizontalCenter) {
-this.horizontalCenter = horizontalCenter;
+this.horizontalCenter=horizontalCenter;
 p$.pushConstraint$S$javax_swing_Spring$Z.apply(this, ["HorizontalCenter", horizontalCenter, true]);
 });
 
 Clazz.newMeth(C$, 'getVerticalCenter', function () {
 if (this.verticalCenter == null ) {
-this.verticalCenter = p$.sum$javax_swing_Spring$javax_swing_Spring.apply(this, [this.getY(), p$.scale$javax_swing_Spring$F.apply(this, [this.getHeight(), 0.5])]);
+this.verticalCenter=p$.sum$javax_swing_Spring$javax_swing_Spring.apply(this, [this.getY(), p$.scale$javax_swing_Spring$F.apply(this, [this.getHeight(), 0.5])]);
 }return this.verticalCenter;
 });
 
 Clazz.newMeth(C$, 'setVerticalCenter$javax_swing_Spring', function (verticalCenter) {
-this.verticalCenter = verticalCenter;
+this.verticalCenter=verticalCenter;
 p$.pushConstraint$S$javax_swing_Spring$Z.apply(this, ["VerticalCenter", verticalCenter, false]);
 });
 
 Clazz.newMeth(C$, 'getBaseline', function () {
 if (this.baseline == null ) {
-this.baseline = p$.sum$javax_swing_Spring$javax_swing_Spring.apply(this, [this.getY(), p$.heightToRelativeBaseline$javax_swing_Spring.apply(this, [this.getHeight()])]);
+this.baseline=p$.sum$javax_swing_Spring$javax_swing_Spring.apply(this, [this.getY(), p$.heightToRelativeBaseline$javax_swing_Spring.apply(this, [this.getHeight()])]);
 }return this.baseline;
 });
 
 Clazz.newMeth(C$, 'setBaseline$javax_swing_Spring', function (baseline) {
-this.baseline = baseline;
+this.baseline=baseline;
 p$.pushConstraint$S$javax_swing_Spring$Z.apply(this, ["Baseline", baseline, false]);
 });
 
 Clazz.newMeth(C$, 'setConstraint$S$javax_swing_Spring', function (edgeName, s) {
-edgeName = edgeName.intern();
+edgeName=edgeName.intern();
 if (edgeName == "West") {
 this.setX$javax_swing_Spring(s);
 } else if (edgeName == "North") {
@@ -493,7 +493,7 @@ p$.setBaseline$javax_swing_Spring.apply(this, [s]);
 }});
 
 Clazz.newMeth(C$, 'getConstraint$S', function (edgeName) {
-edgeName = edgeName.intern();
+edgeName=edgeName.intern();
 return (edgeName == "West") ? this.getX() : (edgeName == "North") ? this.getY() : (edgeName == "East") ? p$.getEast.apply(this, []) : (edgeName == "South") ? p$.getSouth.apply(this, []) : (edgeName == "Width") ? this.getWidth() : (edgeName == "Height") ? this.getHeight() : (edgeName == "HorizontalCenter") ? p$.getHorizontalCenter.apply(this, []) : (edgeName == "VerticalCenter") ? p$.getVerticalCenter.apply(this, []) : (edgeName == "Baseline") ? p$.getBaseline.apply(this, []) : null;
 });
 
@@ -527,9 +527,9 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S$java_awt_Component$javax_swing_SpringLayout', function (edgeName, c, l) {
 Clazz.super_(C$, this,1);
-this.edgeName = edgeName;
-this.c = c;
-this.l = l;
+this.edgeName=edgeName;
+this.c=c;
+this.l=l;
 }, 1);
 
 Clazz.newMeth(C$, 'getConstraint', function () {
@@ -567,4 +567,4 @@ return "SpringProxy for " + this.edgeName + " edge of " + this.c.getName() + "."
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:41
+//Created 2018-05-24 08:46:41

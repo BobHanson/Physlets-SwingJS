@@ -15,10 +15,10 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$sun_awt_geom_Curve$D$D$I', function (curve, ystart, yend, etag) {
 C$.$init$.apply(this);
-this.curve = curve;
-this.ytop = ystart;
-this.ybot = yend;
-this.etag = etag;
+this.curve=curve;
+this.ytop=ystart;
+this.ybot=yend;
+this.etag=etag;
 if (this.ytop < curve.getYTop()  || this.ybot > curve.getYBot()  ) {
 throw Clazz.new_((I$[1]||$incl$(1)).c$$S,["bad curvelink [" + new Double(this.ytop).toString() + "=>" + new Double(this.ybot).toString() + "] for " + curve ]);
 }}, 1);
@@ -32,8 +32,8 @@ if (this.curve !== curve  || this.etag != etag  || this.ybot < ystart   || this.
 return false;
 }if (ystart < curve.getYTop()  || yend > curve.getYBot()  ) {
 throw Clazz.new_((I$[1]||$incl$(1)).c$$S,["bad curvelink [" + new Double(ystart).toString() + "=>" + new Double(yend).toString() + "] for " + curve ]);
-}this.ytop = Math.min(this.ytop, ystart);
-this.ybot = Math.max(this.ybot, yend);
+}this.ytop=Math.min(this.ytop, ystart);
+this.ybot=Math.max(this.ybot, yend);
 return true;
 });
 
@@ -80,7 +80,7 @@ return this.etag;
 });
 
 Clazz.newMeth(C$, 'setNext$sun_awt_geom_CurveLink', function (link) {
-this.next = link;
+this.next=link;
 });
 
 Clazz.newMeth(C$, 'getNext', function () {
@@ -89,4 +89,4 @@ return this.next;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:07
+//Created 2018-05-24 08:47:25

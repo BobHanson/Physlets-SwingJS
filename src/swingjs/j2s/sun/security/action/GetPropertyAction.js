@@ -15,13 +15,13 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S', function (theProp) {
 C$.$init$.apply(this);
-this.theProp = theProp;
+this.theProp=theProp;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S', function (theProp, defaultVal) {
 C$.$init$.apply(this);
-this.theProp = theProp;
-this.defaultVal = defaultVal;
+this.theProp=theProp;
+this.defaultVal=defaultVal;
 }, 1);
 
 Clazz.newMeth(C$, 'run', function () {
@@ -31,4 +31,4 @@ return (value == null  ? this.defaultVal : value);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:10
+//Created 2018-05-24 08:47:33

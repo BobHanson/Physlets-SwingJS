@@ -13,7 +13,7 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'getSharedInstance', function () {
-if (C$.sharedCache == null ) C$.sharedCache = Clazz.new_(C$);
+if (C$.sharedCache == null ) C$.sharedCache=Clazz.new_(C$);
 return C$.sharedCache;
 }, 1);
 
@@ -27,7 +27,7 @@ C$.getSharedInstance().releaseSegment$javax_swing_text_Segment(segment);
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.segments = Clazz.new_((I$[1]||$incl$(1)));
+this.segments=Clazz.new_((I$[1]||$incl$(1)));
 }, 1);
 
 Clazz.newMeth(C$, 'getSegment', function () {
@@ -41,8 +41,8 @@ return this.segments.removeItemAt$I(size - 1);
 Clazz.newMeth(C$, 'releaseSegment$javax_swing_text_Segment', function (segment) {
 if (Clazz.instanceOf(segment, "javax.swing.text.SegmentCache.CachedSegment")) {
 {
-segment.array = null;
-segment.count = 0;
+segment.array=null;
+segment.count=0;
 this.segments.add$TE(segment);
 }}});
 ;
@@ -59,4 +59,4 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:57
+//Created 2018-05-24 08:47:07

@@ -16,7 +16,7 @@ Clazz.newMeth(C$, 'c$$S', function (s) {
 Clazz.super_(C$, this,1);
 if (null == s ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.s = s;
+}this.s=s;
 }, 1);
 
 Clazz.newMeth(C$, 'getFormatSpecifier', function () {
@@ -29,4 +29,4 @@ return this.s;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:14
+//Created 2018-05-24 08:45:48

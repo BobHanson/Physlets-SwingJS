@@ -58,10 +58,10 @@ var oldModel = this.getModel();
 C$.superclazz.prototype.setModel$javax_swing_ButtonModel.apply(this, [newModel]);
 if (oldModel != null  && this.menuChangeListener != null  ) {
 oldModel.removeChangeListener$javax_swing_event_ChangeListener(this.menuChangeListener);
-this.menuChangeListener = null;
-}this.model = newModel;
+this.menuChangeListener=null;
+}this.model=newModel;
 if (newModel != null ) {
-this.menuChangeListener = p$.createMenuChangeListener.apply(this, []);
+this.menuChangeListener=p$.createMenuChangeListener.apply(this, []);
 newModel.addChangeListener$javax_swing_event_ChangeListener(this.menuChangeListener);
 }});
 
@@ -87,7 +87,7 @@ p$.ensurePopupMenuCreated.apply(this, []);
 if ((b == true ) && this.isShowing() ) {
 var p = p$.getCustomMenuLocation.apply(this, []);
 if (p == null ) {
-p = this.getPopupMenuOrigin();
+p=this.getPopupMenuOrigin();
 }this.getPopupMenu().show$java_awt_Component$I$I(this, p.x, p.y);
 } else {
 this.getPopupMenu().setVisible$Z(false);
@@ -100,47 +100,47 @@ var pm = this.getPopupMenu();
 var s = this.getSize();
 var pmSize = pm.getSize();
 if (pmSize.width == 0) {
-pmSize = pm.getPreferredSize();
+pmSize=pm.getPreferredSize();
 }var position = this.getLocationOnScreen();
 var toolkit = (I$[2]||$incl$(2)).getDefaultToolkit();
 var gc = this.getGraphicsConfiguration();
 var screenBounds = Clazz.new_((I$[3]||$incl$(3)).c$$java_awt_Dimension,[toolkit.getScreenSize()]);
 if (gc != null ) {
-screenBounds = gc.getBounds();
+screenBounds=gc.getBounds();
 var screenInsets = toolkit.getScreenInsets$java_awt_GraphicsConfiguration(gc);
-screenBounds.width = screenBounds.width-(Math.abs(screenInsets.left + screenInsets.right));
-screenBounds.height = screenBounds.height-(Math.abs(screenInsets.top + screenInsets.bottom));
-position.x = position.x-(Math.abs(screenInsets.left));
-position.y = position.y-(Math.abs(screenInsets.top));
+screenBounds.width-=Math.abs(screenInsets.left + screenInsets.right);
+screenBounds.height-=Math.abs(screenInsets.top + screenInsets.bottom);
+position.x-=Math.abs(screenInsets.left);
+position.y-=Math.abs(screenInsets.top);
 }var parent = this.getParent();
 if (Clazz.instanceOf(parent, "javax.swing.JPopupMenu")) {
 var xOffset = (I$[1]||$incl$(1)).getInt$O("Menu.submenuPopupOffsetX");
 var yOffset = (I$[1]||$incl$(1)).getInt$O("Menu.submenuPopupOffsetY");
 if ((I$[4]||$incl$(4)).isLeftToRight$java_awt_Component(this)) {
-x = s.width + xOffset;
+x=s.width + xOffset;
 if (position.x + x + pmSize.width  >= screenBounds.width + screenBounds.x && screenBounds.width - s.width < 2 * (position.x - screenBounds.x) ) {
-x = 0 - xOffset - pmSize.width ;
+x=0 - xOffset - pmSize.width ;
 }} else {
-x = 0 - xOffset - pmSize.width ;
+x=0 - xOffset - pmSize.width ;
 if (position.x + x < screenBounds.x && screenBounds.width - s.width > 2 * (position.x - screenBounds.x) ) {
-x = s.width + xOffset;
-}}y = yOffset;
+x=s.width + xOffset;
+}}y=yOffset;
 if (position.y + y + pmSize.height  >= screenBounds.height + screenBounds.y && screenBounds.height - s.height < 2 * (position.y - screenBounds.y) ) {
-y = s.height - yOffset - pmSize.height ;
+y=s.height - yOffset - pmSize.height ;
 }} else {
 var xOffset = (I$[1]||$incl$(1)).getInt$O("Menu.menuPopupOffsetX");
 var yOffset = (I$[1]||$incl$(1)).getInt$O("Menu.menuPopupOffsetY");
 if ((I$[4]||$incl$(4)).isLeftToRight$java_awt_Component(this)) {
-x = xOffset;
+x=xOffset;
 if (position.x + x + pmSize.width  >= screenBounds.width + screenBounds.x && screenBounds.width - s.width < 2 * (position.x - screenBounds.x) ) {
-x = s.width - xOffset - pmSize.width ;
+x=s.width - xOffset - pmSize.width ;
 }} else {
-x = s.width - xOffset - pmSize.width ;
+x=s.width - xOffset - pmSize.width ;
 if (position.x + x < screenBounds.x && screenBounds.width - s.width > 2 * (position.x - screenBounds.x) ) {
-x = xOffset;
-}}y = s.height + yOffset;
+x=xOffset;
+}}y=s.height + yOffset;
 if (position.y + y + pmSize.height  >= screenBounds.height && screenBounds.height - s.height < 2 * (position.y - screenBounds.y) ) {
-y = 0 - yOffset - pmSize.height ;
+y=0 - yOffset - pmSize.height ;
 }}return Clazz.new_((I$[5]||$incl$(5)).c$$I$I,[x, y]);
 });
 
@@ -150,14 +150,14 @@ return this.delay;
 
 Clazz.newMeth(C$, 'setDelay$I', function (d) {
 if (d < 0) throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Delay must be a positive integer"]);
-this.delay = d;
+this.delay=d;
 });
 
 Clazz.newMeth(C$, 'ensurePopupMenuCreated', function () {
 if (this.$popupMenu == null ) {
-this.$popupMenu = Clazz.new_((I$[6]||$incl$(6)));
+this.$popupMenu=Clazz.new_((I$[6]||$incl$(6)));
 this.$popupMenu.setInvoker$java_awt_Component(this);
-this.popupListener = this.createWinListener$javax_swing_JPopupMenu(this.$popupMenu);
+this.popupListener=this.createWinListener$javax_swing_JPopupMenu(this.$popupMenu);
 }});
 
 Clazz.newMeth(C$, 'getCustomMenuLocation', function () {
@@ -165,7 +165,7 @@ return this.customMenuLocation;
 });
 
 Clazz.newMeth(C$, 'setMenuLocation$I$I', function (x, y) {
-this.customMenuLocation = Clazz.new_((I$[5]||$incl$(5)).c$$I$I,[x, y]);
+this.customMenuLocation=Clazz.new_((I$[5]||$incl$(5)).c$$I$I,[x, y]);
 if (this.$popupMenu != null ) this.$popupMenu.setLocation$I$I(x, y);
 });
 
@@ -210,7 +210,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'createActionPropertyChangeListener$javax_swing_Action', function (a) {
 var pcl = this.b$['javax.swing.JMenu'].createActionChangeListener$javax_swing_JMenuItem(this);
 if (pcl == null ) {
-pcl = C$.superclazz.prototype.createActionPropertyChangeListener$javax_swing_Action.apply(this, [a]);
+pcl=C$.superclazz.prototype.createActionPropertyChangeListener$javax_swing_Action.apply(this, [a]);
 }return pcl;
 });
 })()
@@ -303,7 +303,7 @@ if (this.$popupMenu != null ) this.$popupMenu.removeAll();
 
 Clazz.newMeth(C$, 'getMenuComponentCount', function () {
 var componentCount = 0;
-if (this.$popupMenu != null ) componentCount = this.$popupMenu.getComponentCount();
+if (this.$popupMenu != null ) componentCount=this.$popupMenu.getComponentCount();
 return componentCount;
 });
 
@@ -358,36 +358,36 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[11]||$incl$(11)),
 
 Clazz.newMeth(C$, 'fireMenuSelected', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[11]||$incl$(11)),['menuCanceled$javax_swing_event_MenuEvent','menuDeselected$javax_swing_event_MenuEvent','menuSelected$javax_swing_event_MenuEvent']) ) {
 if (listeners[i + 1] == null ) {
 throw Clazz.new_((I$[9]||$incl$(9)).c$$S,[this.getText() + " has a NULL Listener!! " + i ]);
 } else {
-if (this.menuEvent == null ) this.menuEvent = Clazz.new_((I$[12]||$incl$(12)).c$$O,[this]);
+if (this.menuEvent == null ) this.menuEvent=Clazz.new_((I$[12]||$incl$(12)).c$$O,[this]);
 (listeners[i + 1]).menuSelected$javax_swing_event_MenuEvent(this.menuEvent);
 }}}
 });
 
 Clazz.newMeth(C$, 'fireMenuDeselected', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[11]||$incl$(11)),['menuCanceled$javax_swing_event_MenuEvent','menuDeselected$javax_swing_event_MenuEvent','menuSelected$javax_swing_event_MenuEvent']) ) {
 if (listeners[i + 1] == null ) {
 throw Clazz.new_((I$[9]||$incl$(9)).c$$S,[this.getText() + " has a NULL Listener!! " + i ]);
 } else {
-if (this.menuEvent == null ) this.menuEvent = Clazz.new_((I$[12]||$incl$(12)).c$$O,[this]);
+if (this.menuEvent == null ) this.menuEvent=Clazz.new_((I$[12]||$incl$(12)).c$$O,[this]);
 (listeners[i + 1]).menuDeselected$javax_swing_event_MenuEvent(this.menuEvent);
 }}}
 });
 
 Clazz.newMeth(C$, 'fireMenuCanceled', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[11]||$incl$(11)),['menuCanceled$javax_swing_event_MenuEvent','menuDeselected$javax_swing_event_MenuEvent','menuSelected$javax_swing_event_MenuEvent']) ) {
 if (listeners[i + 1] == null ) {
 throw Clazz.new_((I$[9]||$incl$(9)).c$$S,[this.getText() + " has a NULL Listener!! " + i ]);
 } else {
-if (this.menuEvent == null ) this.menuEvent = Clazz.new_((I$[12]||$incl$(12)).c$$O,[this]);
+if (this.menuEvent == null ) this.menuEvent=Clazz.new_((I$[12]||$incl$(12)).c$$O,[this]);
 (listeners[i + 1]).menuCanceled$javax_swing_event_MenuEvent(this.menuEvent);
 }}}
 });
@@ -411,7 +411,7 @@ Clazz.newMeth(C$, 'getSubElements', function () {
 if (this.$popupMenu == null ) return Clazz.array((I$[15]||$incl$(15)), [0]);
  else {
 var result = Clazz.array((I$[15]||$incl$(15)), [1]);
-result[0] = this.$popupMenu;
+result[0]=this.$popupMenu;
 return result;
 }});
 
@@ -459,15 +459,15 @@ var menu;
 var bar;
 while (true){
 if (Clazz.instanceOf(current, "javax.swing.JPopupMenu")) {
-pop = current;
+pop=current;
 elements.insertElementAt$TE$I(pop, 0);
-current = pop.getInvoker();
+current=pop.getInvoker();
 } else if (Clazz.instanceOf(current, "javax.swing.JMenu")) {
-menu = current;
+menu=current;
 elements.insertElementAt$TE$I(menu, 0);
-current = menu.getParent();
+current=menu.getParent();
 } else if (Clazz.instanceOf(current, "javax.swing.JMenuBar")) {
-bar = current;
+bar=current;
 elements.insertElementAt$TE$I(bar, 0);
 var me = Clazz.array((I$[15]||$incl$(15)), [elements.size()]);
 elements.copyInto$OA(me);
@@ -505,7 +505,7 @@ if (modelSelected == true ) {
 this.this$0.fireMenuSelected();
 } else {
 this.this$0.fireMenuDeselected();
-}this.isSelected = modelSelected;
+}this.isSelected=modelSelected;
 }});
 
 Clazz.newMeth(C$);
@@ -528,7 +528,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_JPopupMenu', function (p) {
 Clazz.super_(C$, this,1);
-this.popupMenu = p;
+this.popupMenu=p;
 }, 1);
 
 Clazz.newMeth(C$, 'windowClosing$java_awt_event_WindowEvent', function (e) {
@@ -538,4 +538,4 @@ this.this$0.setSelected$Z(false);
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:30
+//Created 2018-05-24 08:46:18

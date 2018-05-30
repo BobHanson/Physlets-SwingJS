@@ -33,13 +33,13 @@ px -= x1;
 py -= y1;
 var ccw = px * y2 - py * x2;
 if (ccw == 0.0 ) {
-ccw = px * x2 + py * y2;
+ccw=px * x2 + py * y2;
 if (ccw > 0.0 ) {
 px -= x2;
 py -= y2;
-ccw = px * x2 + py * y2;
+ccw=px * x2 + py * y2;
 if (ccw < 0.0 ) {
-ccw = 0.0;
+ccw=0.0;
 }}}return (ccw < 0.0 ) ? -1 : ((ccw > 0.0 ) ? 1 : 0);
 }, 1);
 
@@ -71,18 +71,18 @@ py -= y1;
 var dotprod = px * x2 + py * y2;
 var projlenSq;
 if (dotprod <= 0.0 ) {
-projlenSq = 0.0;
+projlenSq=0.0;
 } else {
-px = x2 - px;
-py = y2 - py;
-dotprod = px * x2 + py * y2;
+px=x2 - px;
+py=y2 - py;
+dotprod=px * x2 + py * y2;
 if (dotprod <= 0.0 ) {
-projlenSq = 0.0;
+projlenSq=0.0;
 } else {
-projlenSq = dotprod * dotprod / (x2 * x2 + y2 * y2);
+projlenSq=dotprod * dotprod / (x2 * x2 + y2 * y2);
 }}var lenSq = px * px + py * py - projlenSq;
 if (lenSq < 0 ) {
-lenSq = 0;
+lenSq=0;
 }return lenSq;
 }, 1);
 
@@ -115,7 +115,7 @@ var dotprod = px * x2 + py * y2;
 var projlenSq = dotprod * dotprod / (x2 * x2 + y2 * y2);
 var lenSq = px * px + py * py - projlenSq;
 if (lenSq < 0 ) {
-lenSq = 0;
+lenSq=0;
 }return lenSq;
 }, 1);
 
@@ -244,17 +244,17 @@ return Clazz.new_((I$[1]||$incl$(1)).c$$F$F,[this.x2, this.y2]);
 });
 
 Clazz.newMeth(C$, 'setLine$D$D$D$D', function (x1, y1, x2, y2) {
-this.x1 = x1;
-this.y1 = y1;
-this.x2 = x2;
-this.y2 = y2;
+this.x1=x1;
+this.y1=y1;
+this.x2=x2;
+this.y2=y2;
 });
 
 Clazz.newMeth(C$, 'setLine$F$F$F$F', function (x1, y1, x2, y2) {
-this.x1 = x1;
-this.y1 = y1;
-this.x2 = x2;
-this.y2 = y2;
+this.x1=x1;
+this.y1=y1;
+this.x2=x2;
+this.y2=y2;
 });
 
 Clazz.newMeth(C$, 'getBounds2D', function () {
@@ -263,17 +263,17 @@ var y;
 var w;
 var h;
 if (this.x1 < this.x2 ) {
-x = this.x1;
-w = this.x2 - this.x1;
+x=this.x1;
+w=this.x2 - this.x1;
 } else {
-x = this.x2;
-w = this.x1 - this.x2;
+x=this.x2;
+w=this.x1 - this.x2;
 }if (this.y1 < this.y2 ) {
-y = this.y1;
-h = this.y2 - this.y1;
+y=this.y1;
+h=this.y2 - this.y1;
 } else {
-y = this.y2;
-h = this.y1 - this.y2;
+y=this.y2;
+h=this.y1 - this.y2;
 }return Clazz.new_((I$[2]||$incl$(2)).c$$F$F$F$F,[x, y, w, h]);
 });
 })()
@@ -335,10 +335,10 @@ return Clazz.new_((I$[3]||$incl$(3)).c$$D$D,[this.x2, this.y2]);
 });
 
 Clazz.newMeth(C$, 'setLine$D$D$D$D', function (x1, y1, x2, y2) {
-this.x1 = x1;
-this.y1 = y1;
-this.x2 = x2;
-this.y2 = y2;
+this.x1=x1;
+this.y1=y1;
+this.x2=x2;
+this.y2=y2;
 });
 
 Clazz.newMeth(C$, 'getBounds2D', function () {
@@ -347,19 +347,19 @@ var y;
 var w;
 var h;
 if (this.x1 < this.x2 ) {
-x = this.x1;
-w = this.x2 - this.x1;
+x=this.x1;
+w=this.x2 - this.x1;
 } else {
-x = this.x2;
-w = this.x1 - this.x2;
+x=this.x2;
+w=this.x1 - this.x2;
 }if (this.y1 < this.y2 ) {
-y = this.y1;
-h = this.y2 - this.y1;
+y=this.y1;
+h=this.y2 - this.y1;
 } else {
-y = this.y2;
-h = this.y1 - this.y2;
+y=this.y2;
+h=this.y1 - this.y2;
 }return Clazz.new_((I$[4]||$incl$(4)).c$$D$D$D$D,[x, y, w, h]);
 });
 })()
 })();
-//Created 2018-05-15 01:01:59
+//Created 2018-05-24 08:45:21

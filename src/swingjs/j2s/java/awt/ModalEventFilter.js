@@ -17,8 +17,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_Dialog', function (modalDialog) {
 C$.$init$.apply(this);
-this.modalDialog = modalDialog;
-this.disabled = false;
+this.modalDialog=modalDialog;
+this.disabled=false;
 }, 1);
 
 Clazz.newMeth(C$, 'getModalDialog', function () {
@@ -35,7 +35,7 @@ if (Clazz.instanceOf(o, "sun.awt.ModalExclude")) {
 } else if (Clazz.instanceOf(o, "java.awt.Component")) {
 var c = o;
 while ((c != null ) && !(Clazz.instanceOf(c, "java.awt.Window")) ){
-c = c.getParent_NoClientCode();
+c=c.getParent_NoClientCode();
 }
 if (c != null ) {
 return this.acceptWindow$java_awt_Window(c);
@@ -43,7 +43,7 @@ return this.acceptWindow$java_awt_Window(c);
 });
 
 Clazz.newMeth(C$, 'disable', function () {
-this.disabled = true;
+this.disabled=true;
 });
 
 Clazz.newMeth(C$, 'compareTo$java_awt_ModalEventFilter', function (another) {
@@ -52,25 +52,25 @@ var c = this.modalDialog;
 while (c != null ){
 if (c === anotherDialog ) {
 return 1;
-}c = c.getParent_NoClientCode();
+}c=c.getParent_NoClientCode();
 }
-c = anotherDialog;
+c=anotherDialog;
 while (c != null ){
 if (c === this.modalDialog ) {
 return -1;
-}c = c.getParent_NoClientCode();
+}c=c.getParent_NoClientCode();
 }
 var blocker = this.modalDialog.getModalBlocker();
 while (blocker != null ){
 if (blocker === anotherDialog ) {
 return -1;
-}blocker = blocker.getModalBlocker();
+}blocker=blocker.getModalBlocker();
 }
-blocker = anotherDialog.getModalBlocker();
+blocker=anotherDialog.getModalBlocker();
 while (blocker != null ){
 if (blocker === this.modalDialog ) {
 return 1;
-}blocker = blocker.getModalBlocker();
+}blocker=blocker.getModalBlocker();
 }
 return this.modalDialog.getModalityType().compareTo$TE(anotherDialog.getModalityType());
 });
@@ -105,7 +105,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_Dialog', function (modalDialog) {
 C$.superclazz.c$$java_awt_Dialog.apply(this, [modalDialog]);
 C$.$init$.apply(this);
-this.appContext = modalDialog.appContext;
+this.appContext=modalDialog.appContext;
 }, 1);
 
 Clazz.newMeth(C$, 'acceptWindow$java_awt_Window', function (w) {
@@ -116,7 +116,7 @@ return (I$[2]||$incl$(2)).REJECT;
 }while (w != null ){
 if (w === this.modalDialog ) {
 return (I$[2]||$incl$(2)).ACCEPT_IMMEDIATELY;
-}w = w.getOwner();
+}w=w.getOwner();
 }
 return (I$[2]||$incl$(2)).REJECT;
 });
@@ -142,7 +142,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_Dialog', function (modalDialog) {
 C$.superclazz.c$$java_awt_Dialog.apply(this, [modalDialog]);
 C$.$init$.apply(this);
-this.appContext = modalDialog.appContext;
+this.appContext=modalDialog.appContext;
 }, 1);
 
 Clazz.newMeth(C$, 'acceptWindow$java_awt_Window', function (w) {
@@ -152,7 +152,7 @@ return (I$[2]||$incl$(2)).ACCEPT;
 while (w != null ){
 if (w === this.modalDialog ) {
 return (I$[2]||$incl$(2)).ACCEPT_IMMEDIATELY;
-}w = w.getOwner();
+}w=w.getOwner();
 }
 return (I$[2]||$incl$(2)).REJECT;
 }return (I$[2]||$incl$(2)).ACCEPT;
@@ -179,7 +179,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_Dialog', function (modalDialog) {
 C$.superclazz.c$$java_awt_Dialog.apply(this, [modalDialog]);
 C$.$init$.apply(this);
-this.documentRoot = modalDialog.getDocumentRoot();
+this.documentRoot=modalDialog.getDocumentRoot();
 }, 1);
 
 Clazz.newMeth(C$, 'acceptWindow$java_awt_Window', function (w) {
@@ -188,7 +188,7 @@ var w1 = this.modalDialog.getOwner();
 while (w1 != null ){
 if (w1 === w ) {
 return (I$[2]||$incl$(2)).REJECT;
-}w1 = w1.getOwner();
+}w1=w1.getOwner();
 }
 return (I$[2]||$incl$(2)).ACCEPT;
 }while (w != null ){
@@ -196,7 +196,7 @@ if (w === this.modalDialog ) {
 return (I$[2]||$incl$(2)).ACCEPT_IMMEDIATELY;
 }if (w === this.documentRoot ) {
 return (I$[2]||$incl$(2)).REJECT;
-}w = w.getOwner();
+}w=w.getOwner();
 }
 return (I$[2]||$incl$(2)).ACCEPT;
 });
@@ -206,4 +206,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:52
+//Created 2018-05-24 08:45:11

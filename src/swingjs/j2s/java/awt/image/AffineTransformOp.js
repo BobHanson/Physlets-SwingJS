@@ -20,30 +20,30 @@ this.interpolationType = 1;
 Clazz.newMeth(C$, 'c$$java_awt_geom_AffineTransform$java_awt_RenderingHints', function (xform, hints) {
 C$.$init$.apply(this);
 this.validateTransform$java_awt_geom_AffineTransform(xform);
-this.xform = xform.clone();
-this.hints = hints;
+this.xform=xform.clone();
+this.hints=hints;
 if (hints != null ) {
 var value = hints.get$O((I$[1]||$incl$(1)).KEY_INTERPOLATION);
 if (value == null ) {
-value = hints.get$O((I$[1]||$incl$(1)).KEY_RENDERING);
+value=hints.get$O((I$[1]||$incl$(1)).KEY_RENDERING);
 if (value === (I$[1]||$incl$(1)).VALUE_RENDER_SPEED ) {
-this.interpolationType = 1;
+this.interpolationType=1;
 } else if (value === (I$[1]||$incl$(1)).VALUE_RENDER_QUALITY ) {
-this.interpolationType = 2;
+this.interpolationType=2;
 }} else if (value === (I$[1]||$incl$(1)).VALUE_INTERPOLATION_NEAREST_NEIGHBOR ) {
-this.interpolationType = 1;
+this.interpolationType=1;
 } else if (value === (I$[1]||$incl$(1)).VALUE_INTERPOLATION_BILINEAR ) {
-this.interpolationType = 2;
+this.interpolationType=2;
 } else if (value === (I$[1]||$incl$(1)).VALUE_INTERPOLATION_BICUBIC ) {
-this.interpolationType = 3;
+this.interpolationType=3;
 }} else {
-this.interpolationType = 1;
+this.interpolationType=1;
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_AffineTransform$I', function (xform, interpolationType) {
 C$.$init$.apply(this);
 this.validateTransform$java_awt_geom_AffineTransform(xform);
-this.xform = xform.clone();
+this.xform=xform.clone();
 switch (interpolationType) {
 case 1:
 case 2:
@@ -52,7 +52,7 @@ break;
 default:
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Unknown interpolation type: " + interpolationType]);
 }
-this.interpolationType = interpolationType;
+this.interpolationType=interpolationType;
 }, 1);
 
 Clazz.newMeth(C$, 'getInterpolationType', function () {
@@ -68,15 +68,15 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["src ima
 var dstCM;
 var origDst = dst;
 if (dst == null ) {
-dst = this.createCompatibleDestImage$java_awt_image_BufferedImage$java_awt_image_ColorModel(src, null);
-dstCM = srcCM;
-origDst = dst;
+dst=this.createCompatibleDestImage$java_awt_image_BufferedImage$java_awt_image_ColorModel(src, null);
+dstCM=srcCM;
+origDst=dst;
 } else {
-dstCM = dst.getColorModel();
+dstCM=dst.getColorModel();
 if (srcCM.getColorSpace().getType() != dstCM.getColorSpace().getType()) {
 throw Clazz.new_(Clazz.load('java.awt.image.ImagingOpException').c$$S,["SwingJS: Unable to transform src image"]);
 }}if ((I$[2]||$incl$(2)).filter$java_awt_image_BufferedImageOp$java_awt_image_BufferedImage$java_awt_image_BufferedImage(this, src, dst) == null ) {
-dst = src;
+dst=src;
 System.out.println$S("Unable to transform src image");
 }if (origDst !== dst ) {
 var g = origDst.createGraphics();
@@ -93,7 +93,7 @@ Clazz.newMeth(C$, 'filter$java_awt_image_Raster$java_awt_image_WritableRaster', 
 if (src == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["src image is null"]);
 }if (dst == null ) {
-dst = this.createCompatibleDestRaster$java_awt_image_Raster(src);
+dst=this.createCompatibleDestRaster$java_awt_image_Raster(src);
 }if (src === dst ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["src image cannot be the same as the dst image"]);
 }if (src.getNumBands() != dst.getNumBands()) {
@@ -116,15 +116,15 @@ var fmaxX = pts[0];
 var fmaxY = pts[1];
 var fminX = pts[0];
 var fminY = pts[1];
-for (var i = 2; i < 8; i = i+(2)) {
+for (var i = 2; i < 8; i+=2) {
 if (pts[i] > fmaxX ) {
-fmaxX = pts[i];
+fmaxX=pts[i];
 } else if (pts[i] < fminX ) {
-fminX = pts[i];
+fminX=pts[i];
 }if (pts[i + 1] > fmaxY ) {
-fmaxY = pts[i + 1];
+fmaxY=pts[i + 1];
 } else if (pts[i + 1] < fminY ) {
-fminY = pts[i + 1];
+fminY=pts[i + 1];
 }}
 return Clazz.new_((I$[4]||$incl$(4)).c$$F$F$F$F,[fminX, fminY, fmaxX - fminX, fmaxY - fminY]);
 });
@@ -141,11 +141,11 @@ throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["Trans
 }if (destCM == null ) {
 var cm = src.getColorModel();
 if (this.interpolationType != 1 && (cm.getTransparency() == 1) ) {
-image = Clazz.new_((I$[5]||$incl$(5)).c$$I$I$I,[w, h, 2]);
+image=Clazz.new_((I$[5]||$incl$(5)).c$$I$I$I,[w, h, 2]);
 } else {
-image = Clazz.new_((I$[5]||$incl$(5)).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[cm, src.getRaster().createCompatibleWritableRaster$I$I(w, h), cm.isAlphaPremultiplied(), null]);
+image=Clazz.new_((I$[5]||$incl$(5)).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[cm, src.getRaster().createCompatibleWritableRaster$I$I(w, h), cm.isAlphaPremultiplied(), null]);
 }} else {
-image = Clazz.new_((I$[5]||$incl$(5)).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[destCM, destCM.createCompatibleWritableRaster$I$I(w, h), destCM.isAlphaPremultiplied(), null]);
+image=Clazz.new_((I$[5]||$incl$(5)).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[destCM, destCM.createCompatibleWritableRaster$I$I(w, h), destCM.isAlphaPremultiplied(), null]);
 }return image;
 });
 
@@ -167,18 +167,18 @@ if (this.hints == null ) {
 var val;
 switch (this.interpolationType) {
 case 1:
-val = (I$[1]||$incl$(1)).VALUE_INTERPOLATION_NEAREST_NEIGHBOR;
+val=(I$[1]||$incl$(1)).VALUE_INTERPOLATION_NEAREST_NEIGHBOR;
 break;
 case 2:
-val = (I$[1]||$incl$(1)).VALUE_INTERPOLATION_BILINEAR;
+val=(I$[1]||$incl$(1)).VALUE_INTERPOLATION_BILINEAR;
 break;
 case 3:
-val = (I$[1]||$incl$(1)).VALUE_INTERPOLATION_BICUBIC;
+val=(I$[1]||$incl$(1)).VALUE_INTERPOLATION_BICUBIC;
 break;
 default:
 throw Clazz.new_((I$[6]||$incl$(6)).c$$S,["Unknown interpolation type " + this.interpolationType]);
 }
-this.hints = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_RenderingHints_Key$O,[(I$[1]||$incl$(1)).KEY_INTERPOLATION, val]);
+this.hints=Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_RenderingHints_Key$O,[(I$[1]||$incl$(1)).KEY_INTERPOLATION, val]);
 }return this.hints;
 });
 
@@ -189,4 +189,4 @@ throw Clazz.new_(Clazz.load('java.awt.image.ImagingOpException').c$$S,["Unable t
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:00
+//Created 2018-05-24 08:45:23

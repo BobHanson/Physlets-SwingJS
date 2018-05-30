@@ -96,9 +96,9 @@ throw Clazz.new_((I$[1]||$incl$(1)).c$$S,["Unrecognized alpha rule"]);
 
 Clazz.newMeth(C$, 'c$$sun_java2d_loops_CompositeType$S', function (parent, desc) {
 C$.$init$.apply(this);
-this.next = parent;
-this.desc = desc;
-this.uniqueID = C$.makeUniqueID();
+this.next=parent;
+this.desc=desc;
+this.uniqueID=C$.makeUniqueID();
 }, 1);
 
 Clazz.newMeth(C$, 'makeUniqueID', function () {
@@ -128,7 +128,7 @@ var comptype = this;
 do {
 if (comptype.desc == other.desc) {
 return true;
-}comptype = comptype.next;
+}comptype=comptype.next;
 } while (comptype != null );
 return false;
 });
@@ -145,4 +145,4 @@ return this.desc;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:10
+//Created 2018-05-24 08:47:32

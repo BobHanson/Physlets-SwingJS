@@ -40,9 +40,9 @@ Clazz.newMeth(C$, 'createDialog$java_awt_Component$S$Z$javax_swing_JColorChooser
 var window = (I$[5]||$incl$(5)).getWindowForComponent$java_awt_Component(c);
 var dialog;
 if (Clazz.instanceOf(window, "java.awt.Frame")) {
-dialog = Clazz.new_((I$[6]||$incl$(6)).c$$java_awt_Frame$S$Z$java_awt_Component$javax_swing_JColorChooser$java_awt_event_ActionListener$java_awt_event_ActionListener$Z,[window, title, modal, c, chooserPane, okListener, cancelListener, disposeOnHide]);
+dialog=Clazz.new_((I$[6]||$incl$(6)).c$$java_awt_Frame$S$Z$java_awt_Component$javax_swing_JColorChooser$java_awt_event_ActionListener$java_awt_event_ActionListener$Z,[window, title, modal, c, chooserPane, okListener, cancelListener, disposeOnHide]);
 } else {
-dialog = Clazz.new_((I$[6]||$incl$(6)).c$$java_awt_Dialog$S$Z$java_awt_Component$javax_swing_JColorChooser$java_awt_event_ActionListener$java_awt_event_ActionListener$Z,[window, title, modal, c, chooserPane, okListener, cancelListener, disposeOnHide]);
+dialog=Clazz.new_((I$[6]||$incl$(6)).c$$java_awt_Dialog$S$Z$java_awt_Component$javax_swing_JColorChooser$java_awt_event_ActionListener$java_awt_event_ActionListener$Z,[window, title, modal, c, chooserPane, okListener, cancelListener, disposeOnHide]);
 }return dialog;
 }, 1);
 
@@ -56,10 +56,10 @@ C$.c$$javax_swing_colorchooser_ColorSelectionModel.apply(this, [Clazz.new_((I$[7
 
 Clazz.newMeth(C$, 'c$$javax_swing_colorchooser_ColorSelectionModel', function (model) {
 Clazz.super_(C$, this,1);
-this.selectionModel = model;
-this.uiClassID = "ColorChooserUI";
+this.selectionModel=model;
+this.uiClassID="ColorChooserUI";
 this.updateUI();
-this.dragEnabled = false;
+this.dragEnabled=false;
 }, 1);
 
 Clazz.newMeth(C$, 'getColor', function () {
@@ -79,7 +79,7 @@ this.setColor$I$I$I((c >> 16) & 255, (c >> 8) & 255, c & 255);
 });
 
 Clazz.newMeth(C$, 'setDragEnabled$Z', function (b) {
-this.dragEnabled = b;
+this.dragEnabled=b;
 });
 
 Clazz.newMeth(C$, 'getDragEnabled', function () {
@@ -89,7 +89,7 @@ return this.dragEnabled;
 Clazz.newMeth(C$, 'setPreviewPanel$javax_swing_JComponent', function (preview) {
 if (this.previewPanel !== preview ) {
 var oldPreview = this.previewPanel;
-this.previewPanel = preview;
+this.previewPanel=preview;
 this.firePropertyChange$S$O$O("previewPanel", oldPreview, preview);
 }});
 
@@ -101,7 +101,7 @@ Clazz.newMeth(C$, 'addChooserPanel$javax_swing_colorchooser_AbstractColorChooser
 var oldPanels = this.getChooserPanels();
 var newPanels = Clazz.array((I$[2]||$incl$(2)), [oldPanels.length + 1]);
 System.arraycopy(oldPanels, 0, newPanels, 0, oldPanels.length);
-newPanels[newPanels.length - 1] = panel;
+newPanels[newPanels.length - 1]=panel;
 this.setChooserPanels$javax_swing_colorchooser_AbstractColorChooserPanelA(newPanels);
 });
 
@@ -109,7 +109,7 @@ Clazz.newMeth(C$, 'removeChooserPanel$javax_swing_colorchooser_AbstractColorChoo
 var containedAt = -1;
 for (var i = 0; i < this.chooserPanels.length; i++) {
 if (this.chooserPanels[i] === panel ) {
-containedAt = i;
+containedAt=i;
 break;
 }}
 if (containedAt == -1) {
@@ -128,7 +128,7 @@ return panel;
 
 Clazz.newMeth(C$, 'setChooserPanels$javax_swing_colorchooser_AbstractColorChooserPanelA', function (panels) {
 var oldValue = this.chooserPanels;
-this.chooserPanels = panels;
+this.chooserPanels=panels;
 this.firePropertyChange$S$O$O("chooserPanels", oldValue, panels);
 });
 
@@ -142,7 +142,7 @@ return this.selectionModel;
 
 Clazz.newMeth(C$, 'setSelectionModel$javax_swing_colorchooser_ColorSelectionModel', function (newModel) {
 var oldModel = this.selectionModel;
-this.selectionModel = newModel;
+this.selectionModel=newModel;
 this.firePropertyChange$S$O$O("selectionModel", oldModel, newModel);
 });
 
@@ -168,4 +168,4 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:26
+//Created 2018-05-24 08:46:13

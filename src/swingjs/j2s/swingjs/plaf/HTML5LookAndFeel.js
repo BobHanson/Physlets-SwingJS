@@ -41,10 +41,10 @@ this.loadSystemColors$javax_swing_UIDefaults$SA$Z(table, defaultSystemColors, th
 });
 
 Clazz.newMeth(C$, 'loadSystemColors$javax_swing_UIDefaults$SA$Z', function (table, systemColors, useNative) {
-for (var i = 0; i < systemColors.length; i = i+(2)) {
+for (var i = 0; i < systemColors.length; i+=2) {
 var color = (I$[2]||$incl$(2)).black;
 try {
-color = (I$[2]||$incl$(2)).decode$S(systemColors[i + 1]);
+color=(I$[2]||$incl$(2)).decode$S(systemColors[i + 1]);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.NumberFormatException")){
 e.printStackTrace();
@@ -143,4 +143,4 @@ Clazz.newMeth(C$, 'isSupportedLookAndFeel', function () {
 return true;
 });
 })();
-//Created 2018-05-15 01:03:20
+//Created 2018-05-24 08:47:51

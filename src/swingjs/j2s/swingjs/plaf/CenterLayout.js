@@ -34,8 +34,8 @@ var pref = c.getPreferredSize();
 var containerWidth = container.getWidth();
 var containerHeight = container.getHeight();
 var containerInsets = container.getInsets();
-containerWidth = containerWidth-(containerInsets.left + containerInsets.right);
-containerHeight = containerHeight-(containerInsets.top + containerInsets.bottom);
+containerWidth-=containerInsets.left + containerInsets.right;
+containerHeight-=containerInsets.top + containerInsets.bottom;
 var left = ((containerWidth - pref.width)/2|0) + containerInsets.left;
 var right = ((containerHeight - pref.height)/2|0) + containerInsets.top;
 c.setBounds$I$I$I$I(left, right, pref.width, pref.height);
@@ -43,4 +43,4 @@ c.setBounds$I$I$I$I(left, right, pref.width, pref.height);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:19
+//Created 2018-05-24 08:47:51

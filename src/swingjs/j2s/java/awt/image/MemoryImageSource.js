@@ -44,15 +44,15 @@ p$.initialize$I$I$java_awt_image_ColorModel$O$I$I$java_util_Hashtable.apply(this
 }, 1);
 
 Clazz.newMeth(C$, 'initialize$I$I$java_awt_image_ColorModel$O$I$I$java_util_Hashtable', function (w, h, cm, pix, off, scan, props) {
-this.width = w;
-this.height = h;
-this.model = cm;
-this.pixels = pix;
-this.pixeloffset = off;
-this.pixelscan = scan;
+this.width=w;
+this.height=h;
+this.model=cm;
+this.pixels=pix;
+this.pixeloffset=off;
+this.pixelscan=scan;
 if (props == null ) {
-props = Clazz.new_((I$[2]||$incl$(2)));
-}this.properties = props;
+props=Clazz.new_((I$[2]||$incl$(2)));
+}this.properties=props;
 });
 
 Clazz.newMeth(C$, 'c$$I$I$IA$I$I', function (w, h, pix, off, scan) {
@@ -103,7 +103,7 @@ Clazz.newMeth(C$, 'requestTopDownLeftRightResend$java_awt_image_ImageConsumer', 
 });
 
 Clazz.newMeth(C$, 'setAnimated$Z', function (animated) {
-this.animating = animated;
+this.animating=animated;
 if (!this.animating) {
 var enum_ = this.theConsumers.elements();
 while (enum_.hasMoreElements()){
@@ -118,7 +118,7 @@ this.theConsumers.removeAllElements();
 Clazz.newMeth(C$, 'setFullBufferUpdates$Z', function (fullbuffers) {
 if (this.fullbuffers == fullbuffers ) {
 return;
-}this.fullbuffers = fullbuffers;
+}this.fullbuffers=fullbuffers;
 if (this.animating) {
 var enum_ = this.theConsumers.elements();
 while (enum_.hasMoreElements()){
@@ -144,20 +144,20 @@ this.pixels.img._pix = null;
 }
 if (this.animating) {
 if (this.fullbuffers) {
-x = y = 0;
-w = this.width;
-h = this.height;
+x=y=0;
+w=this.width;
+h=this.height;
 } else {
 if (x < 0) {
-w = w+(x);
-x = 0;
+w+=x;
+x=0;
 }if (x + w > this.width) {
-w = this.width - x;
+w=this.width - x;
 }if (y < 0) {
-h = h+(y);
-y = 0;
+h+=y;
+y=0;
 }if (y + h > this.height) {
-h = this.height - y;
+h=this.height - y;
 }}if ((w <= 0 || h <= 0 ) && !framenotify ) {
 return;
 }var enum_ = this.theConsumers.elements();
@@ -171,18 +171,18 @@ ic.imageComplete$I(2);
 }});
 
 Clazz.newMeth(C$, 'newPixels$BA$java_awt_image_ColorModel$I$I', function (newpix, newmodel, offset, scansize) {
-this.pixels = newpix;
-this.model = newmodel;
-this.pixeloffset = offset;
-this.pixelscan = scansize;
+this.pixels=newpix;
+this.model=newmodel;
+this.pixeloffset=offset;
+this.pixelscan=scansize;
 this.newPixels();
 });
 
 Clazz.newMeth(C$, 'newPixels$IA$java_awt_image_ColorModel$I$I', function (newpix, newmodel, offset, scansize) {
-this.pixels = newpix;
-this.model = newmodel;
-this.pixeloffset = offset;
-this.pixelscan = scansize;
+this.pixels=newpix;
+this.model=newmodel;
+this.pixeloffset=offset;
+this.pixelscan=scansize;
 this.newPixels();
 });
 
@@ -209,4 +209,4 @@ ic.setPixels$I$I$I$I$java_awt_image_ColorModel$IA$I$I(x, y, w, h, this.model, th
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:01
+//Created 2018-05-24 08:45:26

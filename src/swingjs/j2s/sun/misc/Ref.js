@@ -12,7 +12,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'get', function () {
 var t = this.check();
 if (t == null ) {
-t = this.reconstitute();
+t=this.reconstitute();
 this.setThing$O(t);
 }return t;
 });
@@ -22,7 +22,7 @@ Clazz.newMeth(C$, 'flush', function () {
 
 Clazz.newMeth(C$, 'setThing$O', function (thing) {
 this.flush();
-this.soft = thing;
+this.soft=thing;
 });
 
 Clazz.newMeth(C$, 'check', function () {
@@ -38,4 +38,4 @@ C$.$init$.apply(this);
 this.setThing$O(thing);
 }, 1);
 })();
-//Created 2018-05-15 01:03:10
+//Created 2018-05-24 08:47:33

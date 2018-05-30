@@ -18,8 +18,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_AWTEvent', function (e) {
 C$.$init$.apply(this);
-this.target = e.getSource();
-this.e = C$.convertToOld$java_awt_AWTEvent(e);
+this.target=e.getSource();
+this.e=C$.convertToOld$java_awt_AWTEvent(e);
 }, 1);
 
 Clazz.newMeth(C$, 'run', function () {
@@ -50,7 +50,7 @@ case 401:
 case 402:
 var ke = e;
 if (ke.isActionKey()) {
-newid = (id == 401 ? 403 : 404);
+newid=(id == 401 ? 403 : 404);
 }var keyCode = ke.getKeyCode();
 if (keyCode == 16 || keyCode == 17  || keyCode == 18 ) {
 return null;
@@ -64,7 +64,7 @@ case 504:
 case 505:
 var me = e;
 var olde = Clazz.new_((I$[1]||$incl$(1)).c$$O$J$I$I$I$I$I,[src, me.getWhen(), newid, me.getX(), me.getY(), 0, (me.getModifiers() & -17)]);
-olde.clickCount = me.getClickCount();
+olde.clickCount=me.getClickCount();
 return olde;
 case 1004:
 return Clazz.new_((I$[1]||$incl$(1)).c$$O$I$O,[src, 1004, null]);
@@ -83,45 +83,45 @@ case 1001:
 var ae = e;
 var cmd;
 if (Clazz.instanceOf(src, "javax.swing.AbstractButton")) {
-cmd = (src).getText();
+cmd=(src).getText();
 } else if (Clazz.instanceOf(src, "a2s.MenuItem")) {
-cmd = (src).getText();
+cmd=(src).getText();
 } else {
-cmd = ae.getActionCommand();
+cmd=ae.getActionCommand();
 }return Clazz.new_((I$[1]||$incl$(1)).c$$O$J$I$I$I$I$I$O,[src, 0, newid, 0, 0, 0, ae.getModifiers(), cmd]);
 case 701:
 var ie = e;
 var arg;
 if (Clazz.instanceOf(src, "a2s.List")) {
-newid = (ie.getStateChange() == 1 ? 701 : 702);
-arg = ie.getItem();
+newid=(ie.getStateChange() == 1 ? 701 : 702);
+arg=ie.getItem();
 } else {
-newid = 1001;
+newid=1001;
 if (Clazz.instanceOf(src, "a2s.Choice")) {
-arg = ie.getItem();
+arg=ie.getItem();
 } else {
-arg = (I$[2]||$incl$(2)).$valueOf(ie.getStateChange() == 1);
+arg=(I$[2]||$incl$(2)).$valueOf(ie.getStateChange() == 1);
 }}return Clazz.new_((I$[1]||$incl$(1)).c$$O$I$O,[src, newid, arg]);
 case 601:
 var aje = e;
 switch (aje.getAdjustmentType()) {
 case 1:
-newid = 602;
+newid=602;
 break;
 case 2:
-newid = 601;
+newid=601;
 break;
 case 4:
-newid = 604;
+newid=604;
 break;
 case 3:
-newid = 603;
+newid=603;
 break;
 case 5:
 if (aje.getValueIsAdjusting()) {
-newid = 605;
+newid=605;
 } else {
-newid = 607;
+newid=607;
 }break;
 default:
 return null;
@@ -134,8 +134,8 @@ return null;
 
 Clazz.newMeth(C$, 'addListener$javax_swing_JComponent$java_awt_Component', function (container, comp) {
 var top = (container == null  ? null : (container.getTopLevelAncestor()));
-if (top == null ) top = ((comp).getTopLevelAncestor());
-if (top == null ) if (Clazz.instanceOf(comp, "a2s.A2SContainer")) top = comp;
+if (top == null ) top=((comp).getTopLevelAncestor());
+if (top == null ) if (Clazz.instanceOf(comp, "a2s.A2SContainer")) top=comp;
  else return comp;
 var listener = top.getA2SListener();
 if (Clazz.instanceOf(comp, "javax.swing.AbstractButton")) {
@@ -158,4 +158,4 @@ return false;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:41
+//Created 2018-05-24 08:44:57

@@ -29,7 +29,7 @@ C$.$init$.apply(this);
 
 Clazz.newMeth(C$, 'c$$reflect_InvocationHandler', function (h) {
 C$.$init$.apply(this);
-this.h = h;
+this.h=h;
 }, 1);
 
 Clazz.newMeth(C$, 'getProxyClass$ClassLoader$ClassA', function (loader, interfaces) {
@@ -44,16 +44,16 @@ var interfaceClass = Clazz.getClass(interfaces[i].$clazz$) ||null;
 if (interfaceSet.contains$O(interfaceClass)) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["repeated interface: " + interfaceClass.getName()]);
 }interfaceSet.add$TE(interfaceClass);
-interfaceNames[i] = interfaceName;
+interfaceNames[i]=interfaceName;
 }
 var key = (I$[5]||$incl$(5)).asList$TTA(interfaceNames);
 var cache;
 
 loader = "" + loader;
 {
-cache = C$.loaderToCache.get$O(loader);
+cache=C$.loaderToCache.get$O(loader);
 if (cache == null ) {
-cache = Clazz.new_((I$[2]||$incl$(2)));
+cache=Clazz.new_((I$[2]||$incl$(2)));
 C$.loaderToCache.put$TK$TV(loader, cache);
 }}{
 do {
@@ -65,14 +65,14 @@ break;
 }try {
 var proxyPkg = null;
 if (proxyPkg == null ) {
-proxyPkg = "";
+proxyPkg="";
 }{
 var num;
 {
-num = C$.nextUniqueNumber++;
+num=C$.nextUniqueNumber++;
 }var proxyName = proxyPkg + "$Proxy" + num ;
 try {
-proxyClass = C$.defineClass0$ClassLoader$S$ClassA(loader, proxyName, interfaces);
+proxyClass=C$.defineClass0$ClassLoader$S$ClassA(loader, proxyName, interfaces);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.ClassFormatError")){
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,[e.toString()]);
@@ -171,4 +171,4 @@ this.h.invoke$O$reflect_Method$OA(this, m, args);
 }
 }, 1);
 })();
-//Created 2018-05-15 01:02:09
+//Created 2018-05-24 08:45:40

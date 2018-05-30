@@ -15,7 +15,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S$I', function (s, errorOffset) {
 C$.superclazz.c$$S.apply(this, [s]);
 C$.$init$.apply(this);
-this.errorOffset = errorOffset;
+this.errorOffset=errorOffset;
 }, 1);
 
 Clazz.newMeth(C$, 'getErrorOffset', function () {
@@ -24,4 +24,4 @@ return this.errorOffset;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:44

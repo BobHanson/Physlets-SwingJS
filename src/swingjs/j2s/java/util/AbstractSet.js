@@ -26,7 +26,7 @@ var result = 0;
 var it = this.iterator();
 while (it.hasNext()){
 var next = it.next();
-result = result+(next == null  ? 0 : next.hashCode());
+result+=next == null  ? 0 : next.hashCode();
 }
 return result;
 });
@@ -38,14 +38,14 @@ var it = this.iterator();
 while (it.hasNext()){
 if (collection.contains$O(it.next())) {
 it.remove();
-result = true;
+result=true;
 }}
 } else {
 var it = collection.iterator();
 while (it.hasNext()){
-result = this.remove$O(it.next()) || result ;
+result=this.remove$O(it.next()) || result ;
 }
 }return result;
 });
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:44

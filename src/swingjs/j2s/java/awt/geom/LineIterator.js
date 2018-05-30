@@ -16,8 +16,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_Line2D$java_awt_geom_AffineTransform', function (l, at) {
 C$.$init$.apply(this);
-this.line = l;
-this.affine = at;
+this.line=l;
+this.affine=at;
 }, 1);
 
 Clazz.newMeth(C$, 'getWindingRule', function () {
@@ -37,13 +37,13 @@ if (this.isDone()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["line iterator out of bounds"]);
 }var type;
 if (this.index == 0) {
-coords[0] = this.line.getX1();
-coords[1] = this.line.getY1();
-type = 0;
+coords[0]=this.line.getX1();
+coords[1]=this.line.getY1();
+type=0;
 } else {
-coords[0] = this.line.getX2();
-coords[1] = this.line.getY2();
-type = 1;
+coords[0]=this.line.getX2();
+coords[1]=this.line.getY2();
+type=1;
 }if (this.affine != null ) {
 this.affine.transform$FA$I$FA$I$I(coords, 0, coords, 0, 1);
 }return type;
@@ -54,13 +54,13 @@ if (this.isDone()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["line iterator out of bounds"]);
 }var type;
 if (this.index == 0) {
-coords[0] = this.line.getX1();
-coords[1] = this.line.getY1();
-type = 0;
+coords[0]=this.line.getX1();
+coords[1]=this.line.getY1();
+type=0;
 } else {
-coords[0] = this.line.getX2();
-coords[1] = this.line.getY2();
-type = 1;
+coords[0]=this.line.getX2();
+coords[1]=this.line.getY2();
+type=1;
 }if (this.affine != null ) {
 this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, 1);
 }return type;
@@ -68,4 +68,4 @@ this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:59
+//Created 2018-05-24 08:45:21

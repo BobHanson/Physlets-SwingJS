@@ -28,16 +28,16 @@ this.consumed = false;
 
 Clazz.newMeth(C$, 'c$$O$J$I$I$I$I$I$O', function (target, when, id, x, y, key, modifiers, arg) {
 C$.$init$.apply(this);
-this.target = target;
-this.when = when;
-this.id = id;
-this.x = x;
-this.y = y;
-this.key = key;
-this.modifiers = modifiers;
-this.arg = arg;
-this.data = 0;
-this.clickCount = 0;
+this.target=target;
+this.when=when;
+this.id=id;
+this.x=x;
+this.y=y;
+this.key=key;
+this.modifiers=modifiers;
+this.arg=arg;
+this.data=0;
+this.clickCount=0;
 switch (id) {
 case 1001:
 case 201:
@@ -53,7 +53,7 @@ case 606:
 case 607:
 case 701:
 case 702:
-this.consumed = true;
+this.consumed=true;
 break;
 default:
 }
@@ -68,8 +68,8 @@ C$.c$$O$J$I$I$I$I$I$O.apply(this, [target, 0, id, 0, 0, 0, 0, arg]);
 }, 1);
 
 Clazz.newMeth(C$, 'translate$I$I', function (dx, dy) {
-this.x = this.x+(dx);
-this.y = this.y+(dy);
+this.x+=dx;
+this.y+=dy;
 });
 
 Clazz.newMeth(C$, 'shiftDown', function () {
@@ -90,7 +90,7 @@ case 401:
 case 402:
 case 403:
 case 404:
-this.consumed = true;
+this.consumed=true;
 break;
 default:
 }
@@ -140,4 +140,4 @@ return this.getClass().getName() + "[" + this.paramString() + "]" ;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:50
+//Created 2018-05-24 08:45:08

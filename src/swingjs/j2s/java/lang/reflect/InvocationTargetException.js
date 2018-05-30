@@ -20,13 +20,13 @@ C$.$init$.apply(this);
 Clazz.newMeth(C$, 'c$$Throwable', function (exception) {
 C$.superclazz.c$$S$Throwable.apply(this, [null, exception]);
 C$.$init$.apply(this);
-this.target = exception;
+this.target=exception;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Throwable$S', function (exception, detailMessage) {
 C$.superclazz.c$$S$Throwable.apply(this, [detailMessage, exception]);
 C$.$init$.apply(this);
-this.target = exception;
+this.target=exception;
 }, 1);
 
 Clazz.newMeth(C$, 'getTargetException', function () {
@@ -37,4 +37,4 @@ Clazz.newMeth(C$, 'getCause', function () {
 return this.target;
 });
 })();
-//Created 2018-05-15 01:02:09
+//Created 2018-05-24 08:45:40

@@ -20,9 +20,9 @@ this.pages = Clazz.new_((I$[1]||$incl$(1)));
 
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
-this.pagePanel = Clazz.new_((I$[2]||$incl$(2)));
+this.pagePanel=Clazz.new_((I$[2]||$incl$(2)));
 this.pagePanel.setLayout$java_awt_LayoutManager(Clazz.new_((I$[3]||$incl$(3)).c$$java_awt_Container$I,[this.pagePanel, 3]));
-this.tabs = Clazz.new_((I$[4]||$incl$(4)));
+this.tabs=Clazz.new_((I$[4]||$incl$(4)));
 this.tabs.setMaximumSize$java_awt_Dimension(Clazz.new_((I$[5]||$incl$(5)).c$$I$I,[150, 15]));
 this.tabs.addItemListener$java_awt_event_ItemListener(((
 (function(){var C$=Clazz.newClass(P$, "JComboPane$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
@@ -57,11 +57,11 @@ this.addTab$javax_swing_JComponent$S$I(panel, title, this.pages.size());
 
 Clazz.newMeth(C$, 'addTab$javax_swing_JComponent$S$I', function (panel, title, index) {
 var page = Clazz.new_((I$[7]||$incl$(7)), [this, null]);
-page.component = panel;
-page.tab = (title == null  ? "tab" + index : title);
+page.component=panel;
+page.tab=(title == null  ? "tab" + index : title);
 panel.setVisible$Z(true);
 if (index < this.pages.size()) {
-this.pages.get$I(index).component = panel;
+this.pages.get$I(index).component=panel;
 } else {
 this.pages.addLast$TV(page);
 p$.update$Z.apply(this, [true]);
@@ -85,7 +85,7 @@ this.repaint();
 
 Clazz.newMeth(C$, 'setComponentAt$I$javax_swing_JPanel', function (index, panel) {
 if (index < 0 || index >= this.pages.size() ) throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException'));
-this.pages.get$I(index).component = panel;
+this.pages.get$I(index).component=panel;
 p$.update$Z.apply(this, [false]);
 });
 
@@ -133,4 +133,4 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:03:20
+//Created 2018-05-24 08:47:51

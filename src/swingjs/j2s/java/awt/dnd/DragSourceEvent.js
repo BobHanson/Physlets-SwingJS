@@ -17,17 +17,17 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_dnd_DragSourceContext', function (dsc) {
 C$.superclazz.c$.apply(this, [dsc]);
 C$.$init$.apply(this);
-this.locationSpecified = false;
-this.x = 0;
-this.y = 0;
+this.locationSpecified=false;
+this.x=0;
+this.y=0;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_dnd_DragSourceContext$I$I', function (dsc, x, y) {
 C$.superclazz.c$.apply(this, [dsc]);
 C$.$init$.apply(this);
-this.locationSpecified = true;
-this.x = x;
-this.y = y;
+this.locationSpecified=true;
+this.x=x;
+this.y=y;
 }, 1);
 
 Clazz.newMeth(C$, 'getDragSourceContext', function () {
@@ -51,4 +51,4 @@ return this.y;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:56
+//Created 2018-05-24 08:45:16

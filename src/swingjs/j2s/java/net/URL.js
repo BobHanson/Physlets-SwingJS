@@ -40,27 +40,27 @@ C$.c$$S$S$I$S.apply(this, [protocol, host, -1, file]);
 
 Clazz.newMeth(C$, 'c$$S$S$I$S$java_net_URLStreamHandler', function (protocol, host, port, file, handler) {
 C$.$init$.apply(this);
-protocol = protocol.toLowerCase();
-this.protocol = protocol;
+protocol=protocol.toLowerCase();
+this.protocol=protocol;
 if (host != null ) {
 if (host.indexOf(":") >= 0 && !host.startsWith$S("[") ) {
-host = "[" + host + "]" ;
-}this.host = host;
+host="[" + host + "]" ;
+}this.host=host;
 if (port < -1) {
 throw Clazz.new_(Clazz.load('java.net.MalformedURLException').c$$S,["Invalid port number :" + port]);
-}this.port = port;
-this.authority = (port == -1) ? host : host + ":" + port ;
+}this.port=port;
+this.authority=(port == -1) ? host : host + ":" + port ;
 }var parts = Clazz.new_((I$[2]||$incl$(2)).c$$S,[file]);
-this.path = parts.getPath();
-this.query = parts.getQuery();
+this.path=parts.getPath();
+this.query=parts.getQuery();
 if (this.query != null ) {
-this.file = this.path + "?" + this.query ;
+this.file=this.path + "?" + this.query ;
 } else {
-this.file = this.path;
-}this.ref = parts.getRef();
-if (handler == null  && (handler = C$.getURLStreamHandler$S(protocol)) == null  ) {
+this.file=this.path;
+}this.ref=parts.getRef();
+if (handler == null  && (handler=C$.getURLStreamHandler$S(protocol)) == null  ) {
 throw Clazz.new_(Clazz.load('java.net.MalformedURLException').c$$S,["unknown protocol: " + protocol]);
-}this.handler = handler;
+}this.handler=handler;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (spec) {
@@ -82,7 +82,7 @@ var newProtocol = null;
 var aRef = false;
 var isRelative = false;
 try {
-limit = spec.length$();
+limit=spec.length$();
 while ((limit > 0) && (spec.charAt(limit - 1) <= " ") ){
 limit--;
 }
@@ -90,44 +90,44 @@ while ((start < limit) && (spec.charAt(start) <= " ") ){
 start++;
 }
 if (spec.regionMatches$Z$I$S$I$I(true, start, "url:", 0, 4)) {
-start = start+(4);
+start+=4;
 }if (start < spec.length$() && spec.charAt(start) == "#" ) {
-aRef = true;
-}for (i = start; !aRef && (i < limit) && ((c = spec.charAt(i).$c()) != 47 )  ; i++) {
+aRef=true;
+}for (i=start; !aRef && (i < limit) && ((c=spec.charAt(i).$c()) != 47 )  ; i++) {
 if (c == 58 ) {
 var s = spec.substring(start, i).toLowerCase();
 if (p$.isValidProtocol$S.apply(this, [s])) {
-newProtocol = s;
-start = i + 1;
+newProtocol=s;
+start=i + 1;
 }break;
 }}
-this.protocol = newProtocol;
+this.protocol=newProtocol;
 if ((context != null ) && ((newProtocol == null ) || newProtocol.equalsIgnoreCase$S(context.protocol) ) ) {
 if (handler == null ) {
-handler = context.handler;
-}if (context.path != null  && context.path.startsWith$S("/") ) newProtocol = null;
+handler=context.handler;
+}if (context.path != null  && context.path.startsWith$S("/") ) newProtocol=null;
 if (newProtocol == null ) {
-this.protocol = context.protocol;
-this.authority = context.authority;
-this.userInfo = context.userInfo;
-this.host = context.host;
-this.port = context.port;
-this.file = context.file;
-this.path = context.path;
-isRelative = true;
+this.protocol=context.protocol;
+this.authority=context.authority;
+this.userInfo=context.userInfo;
+this.host=context.host;
+this.port=context.port;
+this.file=context.file;
+this.path=context.path;
+isRelative=true;
 }}if (this.protocol == null ) {
 throw Clazz.new_(Clazz.load('java.net.MalformedURLException').c$$S,["no protocol: " + original]);
-}if (handler == null  && (handler = C$.getURLStreamHandler$S(this.protocol)) == null  ) {
+}if (handler == null  && (handler=C$.getURLStreamHandler$S(this.protocol)) == null  ) {
 throw Clazz.new_(Clazz.load('java.net.MalformedURLException').c$$S,["unknown protocol: " + this.protocol]);
-}this.handler = handler;
-i = spec.indexOf("#", start);
+}this.handler=handler;
+i=spec.indexOf("#", start);
 if (i >= 0) {
-this.ref = spec.substring(i + 1, limit);
-limit = i;
+this.ref=spec.substring(i + 1, limit);
+limit=i;
 }if (isRelative && start == limit ) {
-this.query = context.query;
+this.query=context.query;
 if (this.ref == null ) {
-this.ref = context.ref;
+this.ref=context.ref;
 }}handler.parseURL$java_net_URL$S$I$I(this, spec, start, limit);
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$, "java.net.MalformedURLException")){
@@ -154,7 +154,7 @@ if (len < 1) return false;
 var c = protocol.charAt(0);
 if (!Character.isLetter(c)) return false;
 for (var i = 1; i < len; i++) {
-c = protocol.charAt(i);
+c=protocol.charAt(i);
 if (!Character.isLetterOrDigit(c) && c != "."  && c != "+"  && c != "-" ) {
 return false;
 }}
@@ -163,32 +163,32 @@ return true;
 
 Clazz.newMeth(C$, 'set5$S$S$I$S$S', function (protocol, host, port, file, ref) {
 {
-this.protocol = protocol;
-this.host = host;
-this.authority = port == -1 ? host : host + ":" + port ;
-this.port = port;
-this.file = file;
-this.ref = ref;
-this.$hashCode = -1;
+this.protocol=protocol;
+this.host=host;
+this.authority=port == -1 ? host : host + ":" + port ;
+this.port=port;
+this.file=file;
+this.ref=ref;
+this.$hashCode=-1;
 var q = file.lastIndexOf("?");
 if (q != -1) {
-this.query = file.substring(q + 1);
-this.path = file.substring(0, q);
-} else this.path = file;
+this.query=file.substring(q + 1);
+this.path=file.substring(0, q);
+} else this.path=file;
 }});
 
 Clazz.newMeth(C$, 'set$S$S$I$S$S$S$S$S', function (protocol, host, port, authority, userInfo, path, query, ref) {
 {
-this.protocol = protocol;
-this.host = host;
-this.port = port;
-this.file = query == null  ? path : path + "?" + query ;
-this.userInfo = userInfo;
-this.path = path;
-this.ref = ref;
-this.$hashCode = -1;
-this.query = query;
-this.authority = authority;
+this.protocol=protocol;
+this.host=host;
+this.port=port;
+this.file=query == null  ? path : path + "?" + query ;
+this.userInfo=userInfo;
+this.path=path;
+this.ref=ref;
+this.$hashCode=-1;
+this.query=query;
+this.authority=authority;
 }});
 
 Clazz.newMeth(C$, 'getQuery', function () {
@@ -239,7 +239,7 @@ return this.handler.equals2$java_net_URL$java_net_URL(this, u2);
 
 Clazz.newMeth(C$, 'hashCode', function () {
 if (this.$hashCode != -1) return this.$hashCode;
-this.$hashCode = this.handler.hashCode$java_net_URL(this);
+this.$hashCode=this.handler.hashCode$java_net_URL(this);
 return this.$hashCode;
 });
 
@@ -276,7 +276,7 @@ throw Clazz.new_((I$[4]||$incl$(4)).c$$S,["factory already defined"]);
 if (security != null ) {
 security.checkSetFactory();
 }C$.handlers.clear();
-C$.factory = fac;
+C$.factory=fac;
 }}, 1);
 
 Clazz.newMeth(C$, 'getURLStreamHandler$S', function (protocol) {
@@ -292,10 +292,10 @@ throw e;
 }
 }
 }if (C$.factory != null ) {
-handler = C$.factory.createURLStreamHandler$S(protocol);
+handler=C$.factory.createURLStreamHandler$S(protocol);
 }}return handler;
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:09
+//Created 2018-05-24 08:45:41

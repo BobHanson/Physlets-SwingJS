@@ -28,7 +28,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$$javax_swing_text_Document$S$I.apply(this, [null, null, 0]);
 C$.$init$.apply(this);
-this.uiClassID = "FormattedTextFieldUI";
+this.uiClassID="FormattedTextFieldUI";
 this.updateUI();
 this.enableEvents$J(4);
 this.setFocusLostBehavior$I(1);
@@ -61,7 +61,7 @@ this.setFormatterFactory$javax_swing_JFormattedTextField_AbstractFormatterFactor
 Clazz.newMeth(C$, 'setFocusLostBehavior$I', function (behavior) {
 if (behavior != 0 && behavior != 1  && behavior != 3  && behavior != 2 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["setFocusLostBehavior must be one of: JFormattedTextField.COMMIT, JFormattedTextField.COMMIT_OR_REVERT, JFormattedTextField.PERSIST or JFormattedTextField.REVERT"]);
-}this.focusLostBehavior = behavior;
+}this.focusLostBehavior=behavior;
 });
 
 Clazz.newMeth(C$, 'getFocusLostBehavior', function () {
@@ -69,7 +69,7 @@ return this.focusLostBehavior;
 });
 
 Clazz.newMeth(C$, 'setFormatterFactory$javax_swing_JFormattedTextField_AbstractFormatterFactory', function (tf) {
-var oldFactory = this.factory = tf;
+var oldFactory = this.factory=tf;
 this.firePropertyChange$S$O$O("formatterFactory", oldFactory, tf);
 p$.setValue$O$Z$Z.apply(this, [this.getValue(), true, false]);
 });
@@ -83,7 +83,7 @@ var oldFormat = this.format;
 if (oldFormat != null ) {
 oldFormat.uninstall();
 }p$.setEditValid$Z.apply(this, [true]);
-this.format = format;
+this.format=format;
 if (format != null ) {
 format.install$javax_swing_JFormattedTextField(this);
 }p$.setEdited$Z.apply(this, [false]);
@@ -112,7 +112,7 @@ p$.setValue$O$Z$Z.apply(this, [format.stringToValue$S(this.getText()), false, tr
 
 Clazz.newMeth(C$, 'setEditValid$Z', function (isValid) {
 if (isValid != this.editValid ) {
-this.editValid = isValid;
+this.editValid=isValid;
 this.firePropertyChange$S$O$O("editValid", (I$[6]||$incl$(6)).$valueOf(!isValid), (I$[6]||$incl$(6)).$valueOf(isValid));
 }});
 
@@ -133,7 +133,7 @@ if (e.isTemporary()) {
 return;
 }if (p$.isEdited.apply(this, []) && e.getID() == 1005 ) {
 if (this.focusLostHandler == null ) {
-this.focusLostHandler = Clazz.new_((I$[7]||$incl$(7)), [this, null]);
+this.focusLostHandler=Clazz.new_((I$[7]||$incl$(7)), [this, null]);
 }this.focusLostHandler.run();
 } else if (!p$.isEdited.apply(this, [])) {
 p$.setValue$O$Z$Z.apply(this, [this.getValue(), true, true]);
@@ -148,7 +148,7 @@ if (this.documentListener != null  && this.getDocument() != null  ) {
 this.getDocument().removeDocumentListener$javax_swing_event_DocumentListener(this.documentListener);
 }C$.superclazz.prototype.setDocument$javax_swing_text_Document.apply(this, [doc]);
 if (this.documentListener == null ) {
-this.documentListener = Clazz.new_((I$[9]||$incl$(9)), [this, null]);
+this.documentListener=Clazz.new_((I$[9]||$incl$(9)), [this, null]);
 }doc.addDocumentListener$javax_swing_event_DocumentListener(this.documentListener);
 });
 
@@ -159,14 +159,14 @@ this.textFormatterActionMap.clear();
 }} else {
 if (this.textFormatterActionMap == null ) {
 var map = this.getActionMap();
-this.textFormatterActionMap = Clazz.new_((I$[10]||$incl$(10)));
+this.textFormatterActionMap=Clazz.new_((I$[10]||$incl$(10)));
 while (map != null ){
 var parent = map.getParent();
 if (Clazz.instanceOf(parent, "javax.swing.plaf.UIResource") || parent == null  ) {
 map.setParent$javax_swing_ActionMap(this.textFormatterActionMap);
 this.textFormatterActionMap.setParent$javax_swing_ActionMap(parent);
 break;
-}map = parent;
+}map=parent;
 }
 }for (var counter = actions.length - 1; counter >= 0; counter--) {
 var key = actions[counter].getValue$S("Name");
@@ -177,14 +177,14 @@ this.textFormatterActionMap.put$O$javax_swing_Action(key, actions[counter]);
 
 Clazz.newMeth(C$, 'setValue$O$Z$Z', function (value, createFormat, firePC) {
 var oldValue = this.value;
-this.value = value;
+this.value=value;
 if (createFormat) {
 var factory = this.getFormatterFactory();
 var atf;
 if (factory != null ) {
-atf = factory.getFormatter$javax_swing_JFormattedTextField(this);
+atf=factory.getFormatter$javax_swing_JFormattedTextField(this);
 } else {
-atf = null;
+atf=null;
 }this.setFormatter$javax_swing_JFormattedTextField_AbstractFormatter(atf);
 } else {
 p$.setEditValid$Z.apply(this, [true]);
@@ -194,7 +194,7 @@ this.firePropertyChange$S$O$O("value", oldValue, value);
 }});
 
 Clazz.newMeth(C$, 'setEdited$Z', function (edited) {
-this.edited = edited;
+this.edited=edited;
 });
 
 Clazz.newMeth(C$, 'isEdited', function () {
@@ -277,7 +277,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'install$javax_swing_JFormattedTextField', function (ftf) {
 if (this.ftf != null ) {
 this.uninstall();
-}this.ftf = ftf;
+}this.ftf=ftf;
 if (ftf != null ) {
 try {
 ftf.setText$S(this.valueToString$O(ftf.getValue()));
@@ -329,7 +329,7 @@ return null;
 
 Clazz.newMeth(C$, 'clone', function () {
 var formatter = Clazz.clone(this);
-formatter.ftf = null;
+formatter.ftf=null;
 return formatter;
 });
 
@@ -441,4 +441,4 @@ Clazz.newMeth(C$, 'changedUpdate$javax_swing_event_DocumentEvent', function (e) 
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:28
+//Created 2018-05-24 08:46:17

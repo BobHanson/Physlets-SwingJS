@@ -27,11 +27,11 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid keyCode"]);
 }if (keyLocation != 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid keyLocation"]);
-}}this.keyCode = keyCode;
-this.keyChar = keyChar;
+}}this.keyCode=keyCode;
+this.keyChar=keyChar;
 if ((keyLocation < 0) || (keyLocation > 4) ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid keyLocation"]);
-}this.keyLocation = keyLocation;
+}this.keyLocation=keyLocation;
 if ((this.getModifiers() != 0) && (this.getModifiersEx() == 0) ) {
 p$.setNewModifiers.apply(this, []);
 } else if ((this.getModifiers() == 0) && (this.getModifiersEx() != 0) ) {
@@ -56,7 +56,7 @@ return this.keyCode;
 });
 
 Clazz.newMeth(C$, 'setKeyCode$I', function (keyCode) {
-this.keyCode = keyCode;
+this.keyCode=keyCode;
 });
 
 Clazz.newMeth(C$, 'getKeyChar', function () {
@@ -64,11 +64,11 @@ return this.keyChar;
 });
 
 Clazz.newMeth(C$, 'setKeyChar$C', function (keyChar) {
-this.keyChar = keyChar;
+this.keyChar=keyChar;
 });
 
 Clazz.newMeth(C$, 'setModifiers$I', function (modifiers) {
-this.modifiers = modifiers;
+this.modifiers=modifiers;
 if ((this.getModifiers() != 0) && (this.getModifiersEx() == 0) ) {
 p$.setNewModifiers.apply(this, []);
 } else if ((this.getModifiers() == 0) && (this.getModifiersEx() != 0) ) {
@@ -557,32 +557,32 @@ return str.toString();
 
 Clazz.newMeth(C$, 'setNewModifiers', function () {
 if ((this.modifiers & 1) != 0) {
-this.modifiers = this.modifiers|(64);
+this.modifiers|=64;
 }if ((this.modifiers & 8) != 0) {
-this.modifiers = this.modifiers|(512);
+this.modifiers|=512;
 }if ((this.modifiers & 2) != 0) {
-this.modifiers = this.modifiers|(128);
+this.modifiers|=128;
 }if ((this.modifiers & 4) != 0) {
-this.modifiers = this.modifiers|(256);
+this.modifiers|=256;
 }if ((this.modifiers & 32) != 0) {
-this.modifiers = this.modifiers|(8192);
+this.modifiers|=8192;
 }if ((this.modifiers & 16) != 0) {
-this.modifiers = this.modifiers|(1024);
+this.modifiers|=1024;
 }});
 
 Clazz.newMeth(C$, 'setOldModifiers', function () {
 if ((this.modifiers & 64) != 0) {
-this.modifiers = this.modifiers|(1);
+this.modifiers|=1;
 }if ((this.modifiers & 512) != 0) {
-this.modifiers = this.modifiers|(8);
+this.modifiers|=8;
 }if ((this.modifiers & 128) != 0) {
-this.modifiers = this.modifiers|(2);
+this.modifiers|=2;
 }if ((this.modifiers & 256) != 0) {
-this.modifiers = this.modifiers|(4);
+this.modifiers|=4;
 }if ((this.modifiers & 8192) != 0) {
-this.modifiers = this.modifiers|(32);
+this.modifiers|=32;
 }if ((this.modifiers & 1024) != 0) {
-this.modifiers = this.modifiers|(16);
+this.modifiers|=16;
 }});
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:18

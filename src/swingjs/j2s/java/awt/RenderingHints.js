@@ -186,9 +186,9 @@ return this.hintmap.hashCode();
 Clazz.newMeth(C$, 'clone', function () {
 var rh;
 try {
-rh = Clazz.clone(this);
+rh=Clazz.clone(this);
 if (this.hintmap != null ) {
-rh.hintmap = this.hintmap.clone();
+rh.hintmap=this.hintmap.clone();
 }} catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.CloneNotSupportedException")){
 throw Clazz.new_((I$[2]||$incl$(2)));
@@ -239,7 +239,7 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,[identity
 
 Clazz.newMeth(C$, 'c$$I', function (privatekey) {
 C$.$init$.apply(this);
-this.privatekey = privatekey;
+this.privatekey=privatekey;
 p$.recordIdentity$java_awt_RenderingHints_Key.apply(this, [this]);
 }, 1);
 
@@ -276,7 +276,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$I$S', function (privatekey, description) {
 C$.superclazz.c$$I.apply(this, [privatekey]);
 C$.$init$.apply(this);
-this.description = description;
+this.description=description;
 }, 1);
 
 Clazz.newMeth(C$, 'getIndex', function () {
@@ -321,7 +321,7 @@ var kindex = key.getIndex();
 var vindex = value.getIndex();
 if (C$.ValueObjects[kindex][vindex] != null ) {
 throw Clazz.new_((I$[2]||$incl$(2)).c$$S,["duplicate index: " + vindex]);
-}C$.ValueObjects[kindex][vindex] = value;
+}C$.ValueObjects[kindex][vindex]=value;
 }, 1);
 
 Clazz.newMeth(C$, 'get$I$I', function (keyindex, valueindex) {
@@ -330,9 +330,9 @@ return C$.ValueObjects[keyindex][valueindex];
 
 Clazz.newMeth(C$, 'c$$java_awt_RenderingHints_SunKey$I$S', function (key, index, description) {
 C$.$init$.apply(this);
-this.myKey = key;
-this.index = index;
-this.description = description;
+this.myKey=key;
+this.index=index;
+this.description=description;
 C$.register$java_awt_RenderingHints_SunKey$java_awt_RenderingHints_Value(key, this);
 }, 1);
 
@@ -386,4 +386,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:53
+//Created 2018-05-24 08:45:12

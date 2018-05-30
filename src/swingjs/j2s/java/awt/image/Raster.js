@@ -21,17 +21,17 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'setImage$java_awt_image_BufferedImage', function (image) {
-this.image = image;
+this.image=image;
 });
 
 Clazz.newMeth(C$, 'createPackedRaster$I$I$I$IA$java_awt_Point', function (dataType, w, h, bandMasks, location) {
 var d;
 switch (dataType) {
 case 0:
-d = Clazz.new_((I$[1]||$incl$(1)).c$$I,[w * h]);
+d=Clazz.new_((I$[1]||$incl$(1)).c$$I,[w * h]);
 break;
 case 3:
-d = Clazz.new_((I$[2]||$incl$(2)).c$$I,[w * h]);
+d=Clazz.new_((I$[2]||$incl$(2)).c$$I,[w * h]);
 break;
 default:
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Unsupported data type " + dataType]);
@@ -59,18 +59,18 @@ default:
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Unsupported data type " + dataType]);
 }
 for (var i = 0; i < bands; i++) {
-masks[i] = mask << shift;
-shift = shift - bitsPerBand;
+masks[i]=mask << shift;
+shift=shift - bitsPerBand;
 }
 return C$.createPackedRaster$I$I$I$IA$java_awt_Point(dataType, w, h, masks, location);
 } else {
 var fw = w;
 switch (dataType) {
 case 0:
-d = Clazz.new_((I$[1]||$incl$(1)).c$$I,[((Math.ceil(fw / ((8/bitsPerBand|0))))|0) * h]);
+d=Clazz.new_((I$[1]||$incl$(1)).c$$I,[((Math.ceil(fw / ((8/bitsPerBand|0))))|0) * h]);
 break;
 case 3:
-d = Clazz.new_((I$[2]||$incl$(2)).c$$I,[((Math.ceil(fw / ((32/bitsPerBand|0))))|0) * h]);
+d=Clazz.new_((I$[2]||$incl$(2)).c$$I,[((Math.ceil(fw / ((32/bitsPerBand|0))))|0) * h]);
 break;
 default:
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Unsupported data type " + dataType]);
@@ -82,7 +82,7 @@ Clazz.newMeth(C$, 'createPackedRaster$java_awt_image_DataBuffer$I$I$I$IA$java_aw
 if (dataBuffer == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["DataBuffer cannot be null"]);
 }if (location == null ) {
-location = Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[0, 0]);
+location=Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[0, 0]);
 }var dataType = dataBuffer.getDataType();
 var sppsm = Clazz.new_((I$[5]||$incl$(5)).c$$I$I$I$I$IA,[dataType, w, h, scanlineStride, bandMasks]);
 switch (dataType) {
@@ -101,7 +101,7 @@ Clazz.newMeth(C$, 'createPackedRaster$java_awt_image_DataBuffer$I$I$I$java_awt_P
 if (dataBuffer == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["DataBuffer cannot be null"]);
 }if (location == null ) {
-location = Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[0, 0]);
+location=Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[0, 0]);
 }var dataType = dataBuffer.getDataType();
 if (dataType != 0 && dataType != 3 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Unsupported data type " + dataType]);
@@ -118,7 +118,7 @@ Clazz.newMeth(C$, 'createRaster$java_awt_image_SampleModel$java_awt_image_DataBu
 if ((sm == null ) || (db == null ) ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["SampleModel and DataBuffer cannot be null"]);
 }if (location == null ) {
-location = Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[0, 0]);
+location=Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[0, 0]);
 }var dataType = sm.getDataType();
 if (Clazz.instanceOf(sm, "java.awt.image.MultiPixelPackedSampleModel") && dataType == 0  && sm.getSampleSize$I(0) < 8 ) {
 return Clazz.new_((I$[8]||$incl$(8)).c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Point,[sm, db, location]);
@@ -127,7 +127,7 @@ return Clazz.new_((I$[8]||$incl$(8)).c$$java_awt_image_SampleModel$java_awt_imag
 
 Clazz.newMeth(C$, 'createWritableRaster$java_awt_image_SampleModel$java_awt_Point', function (sm, location) {
 if (location == null ) {
-location = Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[0, 0]);
+location=Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[0, 0]);
 }return C$.createWritableRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Point(sm, sm.createDataBuffer(), location);
 }, 1);
 
@@ -135,7 +135,7 @@ Clazz.newMeth(C$, 'createWritableRaster$java_awt_image_SampleModel$java_awt_imag
 if ((sm == null ) || (db == null ) ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["SampleModel and DataBuffer cannot be null"]);
 }if (location == null ) {
-location = Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[0, 0]);
+location=Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[0, 0]);
 }var dataType = sm.getDataType();
 if (Clazz.instanceOf(sm, "java.awt.image.MultiPixelPackedSampleModel") && dataType == 0  && sm.getSampleSize$I(0) < 8 ) {
 return Clazz.new_((I$[8]||$incl$(8)).c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Point,[sm, db, location]);
@@ -164,23 +164,23 @@ this.setRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rec
 Clazz.newMeth(C$, 'setRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_Raster', function (sampleModel, dataBuffer, aRegion, sampleModelTranslate, parent) {
 if ((sampleModel == null ) || (dataBuffer == null ) || (aRegion == null ) || (sampleModelTranslate == null )  ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["SampleModel, dataBuffer, aRegion and sampleModelTranslate cannot be null"]);
-}this.sampleModel = sampleModel;
-this.dataBuffer = dataBuffer;
-this.minX = aRegion.x;
-this.minY = aRegion.y;
-this.width = aRegion.width;
-this.height = aRegion.height;
+}this.sampleModel=sampleModel;
+this.dataBuffer=dataBuffer;
+this.minX=aRegion.x;
+this.minY=aRegion.y;
+this.width=aRegion.width;
+this.height=aRegion.height;
 if (this.width <= 0 || this.height <= 0 ) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["negative or zero " + ((this.width <= 0) ? "width" : "height")]);
 }if ((this.minX + this.width) < this.minX) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["overflow condition for X coordinates of Raster"]);
 }if ((this.minY + this.height) < this.minY) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["overflow condition for Y coordinates of Raster"]);
-}this.sampleModelTranslateX = sampleModelTranslate.x;
-this.sampleModelTranslateY = sampleModelTranslate.y;
-this.numBands = sampleModel.getNumBands();
-this.numDataElements = sampleModel.getNumDataElements();
-this.parent = parent;
+}this.sampleModelTranslateX=sampleModelTranslate.x;
+this.sampleModelTranslateY=sampleModelTranslate.y;
+this.numBands=sampleModel.getNumBands();
+this.numDataElements=sampleModel.getNumDataElements();
+this.parent=parent;
 });
 
 Clazz.newMeth(C$, 'getParent', function () {
@@ -232,9 +232,9 @@ throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["(pare
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["(parentY + height) is outside raster"]);
 }var subSampleModel;
 if (bandList == null ) {
-subSampleModel = this.sampleModel;
+subSampleModel=this.sampleModel;
 } else {
-subSampleModel = this.sampleModel.createSubsetSampleModel$IA(bandList);
+subSampleModel=this.sampleModel.createSubsetSampleModel$IA(bandList);
 }var deltaX = childMinX - parentX;
 var deltaY = childMinY - parentY;
 return Clazz.new_(C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_Raster,[subSampleModel, this.getDataBuffer(), Clazz.new_((I$[10]||$incl$(10)).c$$I$I$I$I,[childMinX, childMinY, width, height]), Clazz.new_((I$[4]||$incl$(4)).c$$I$I,[this.sampleModelTranslateX + deltaX, this.sampleModelTranslateY + deltaY]), this]);
@@ -336,4 +336,4 @@ Clazz.newMeth(C$, 'getSamples$I$I$I$I$I$DA', function (x, y, w, h, b, dArray) {
 return this.sampleModel.getSamples$I$I$I$I$I$DA$java_awt_image_DataBuffer(x - this.sampleModelTranslateX, y - this.sampleModelTranslateY, w, h, b, dArray, this.dataBuffer);
 });
 })();
-//Created 2018-05-15 01:02:02
+//Created 2018-05-24 08:45:27

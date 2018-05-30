@@ -22,7 +22,7 @@ Clazz.super_(C$, this,1);
 }, 1);
 
 Clazz.newMeth(C$, 'setStub$java_applet_AppletStub', function (stub) {
-this.stub = stub;
+this.stub=stub;
 });
 
 Clazz.newMeth(C$, 'isActive', function () {
@@ -140,4 +140,4 @@ Clazz.newMeth(C$, 'stop', function () {
 Clazz.newMeth(C$, 'destroy', function () {
 });
 })();
-//Created 2018-05-15 01:01:48
+//Created 2018-05-24 08:45:04

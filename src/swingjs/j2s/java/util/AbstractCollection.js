@@ -20,7 +20,7 @@ var result = false;
 var it = collection.iterator();
 while (it.hasNext()){
 if (this.add$TE(it.next())) {
-result = true;
+result=true;
 }}
 return result;
 });
@@ -84,7 +84,7 @@ var it = this.iterator();
 while (it.hasNext()){
 if (collection.contains$O(it.next())) {
 it.remove();
-result = true;
+result=true;
 }}
 return result;
 });
@@ -95,7 +95,7 @@ var it = this.iterator();
 while (it.hasNext()){
 if (!collection.contains$O(it.next())) {
 it.remove();
-result = true;
+result=true;
 }}
 return result;
 });
@@ -106,7 +106,7 @@ var index = 0;
 var it = this.iterator();
 var array = Clazz.array(java.lang.Object, [size]);
 while (index < size){
-array[index++] = it.next();
+array[index++]=it.next();
 }
 return array;
 });
@@ -116,12 +116,12 @@ var size = this.size();
 var index = 0;
 if (size > contents.length) {
 var ct = contents.getClass().getComponentType();
-contents = Clazz.array(ct, size);
+contents=Clazz.array(ct, size);
 }for (var entry, $entry = this.iterator(); $entry.hasNext()&&((entry=$entry.next()),1);) {
-contents[index++] = entry;
+contents[index++]=entry;
 }
 if (index < contents.length) {
-contents[index] = null;
+contents[index]=null;
 }return contents;
 });
 
@@ -144,4 +144,4 @@ buffer.append$C("]");
 return buffer.toString();
 });
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:44

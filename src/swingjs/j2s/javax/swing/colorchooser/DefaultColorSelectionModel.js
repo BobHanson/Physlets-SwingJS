@@ -18,12 +18,12 @@ this.listenerList = Clazz.new_((I$[1]||$incl$(1)));
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.selectedColor = (I$[2]||$incl$(2)).white;
+this.selectedColor=(I$[2]||$incl$(2)).white;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Color', function (color) {
 C$.$init$.apply(this);
-this.selectedColor = color;
+this.selectedColor=color;
 }, 1);
 
 Clazz.newMeth(C$, 'getSelectedColor', function () {
@@ -32,7 +32,7 @@ return this.selectedColor;
 
 Clazz.newMeth(C$, 'setSelectedColor$java_awt_Color', function (color) {
 if (color != null  && !this.selectedColor.equals$O(color) ) {
-this.selectedColor = color;
+this.selectedColor=color;
 this.fireStateChanged();
 }});
 
@@ -50,12 +50,12 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[3]||$incl$(3)),['
 
 Clazz.newMeth(C$, 'fireStateChanged', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[3]||$incl$(3)),['stateChanged$javax_swing_event_ChangeEvent']) ) {
 if (this.changeEvent == null ) {
-this.changeEvent = Clazz.new_((I$[4]||$incl$(4)).c$$O,[this]);
+this.changeEvent=Clazz.new_((I$[4]||$incl$(4)).c$$O,[this]);
 }(listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
 })();
-//Created 2018-05-15 01:02:44
+//Created 2018-05-24 08:46:46

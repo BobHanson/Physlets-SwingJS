@@ -57,12 +57,12 @@ throw e;
 });
 
 Clazz.newMeth(C$, 'set$java_awt_PageAttributes', function (obj) {
-this.color = obj.color;
-this.media = obj.media;
-this.orientationRequested = obj.orientationRequested;
-this.origin = obj.origin;
-this.printQuality = obj.printQuality;
-this.printerResolution = obj.printerResolution;
+this.color=obj.color;
+this.media=obj.media;
+this.orientationRequested=obj.orientationRequested;
+this.origin=obj.origin;
+this.printQuality=obj.printQuality;
+this.printerResolution=obj.printerResolution;
 });
 
 Clazz.newMeth(C$, 'getColor', function () {
@@ -72,7 +72,7 @@ return this.color;
 Clazz.newMeth(C$, 'setColor$java_awt_PageAttributes_ColorType', function (color) {
 if (color == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Invalid value for attribute color"]);
-}this.color = color;
+}this.color=color;
 });
 
 Clazz.newMeth(C$, 'getMedia', function () {
@@ -82,7 +82,7 @@ return this.media;
 Clazz.newMeth(C$, 'setMedia$java_awt_PageAttributes_MediaType', function (media) {
 if (media == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Invalid value for attribute media"]);
-}this.media = media;
+}this.media=media;
 });
 
 Clazz.newMeth(C$, 'setMediaToDefault', function () {
@@ -100,7 +100,7 @@ return this.orientationRequested;
 Clazz.newMeth(C$, 'setOrientationRequested$java_awt_PageAttributes_OrientationRequestedType', function (orientationRequested) {
 if (orientationRequested == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Invalid value for attribute orientationRequested"]);
-}this.orientationRequested = orientationRequested;
+}this.orientationRequested=orientationRequested;
 });
 
 Clazz.newMeth(C$, 'setOrientationRequested$I', function (orientationRequested) {
@@ -128,7 +128,7 @@ return this.origin;
 Clazz.newMeth(C$, 'setOrigin$java_awt_PageAttributes_OriginType', function (origin) {
 if (origin == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Invalid value for attribute origin"]);
-}this.origin = origin;
+}this.origin=origin;
 });
 
 Clazz.newMeth(C$, 'getPrintQuality', function () {
@@ -138,7 +138,7 @@ return this.printQuality;
 Clazz.newMeth(C$, 'setPrintQuality$java_awt_PageAttributes_PrintQualityType', function (printQuality) {
 if (printQuality == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Invalid value for attribute printQuality"]);
-}this.printQuality = printQuality;
+}this.printQuality=printQuality;
 });
 
 Clazz.newMeth(C$, 'setPrintQuality$I', function (printQuality) {
@@ -164,9 +164,9 @@ this.setPrintQuality$java_awt_PageAttributes_PrintQualityType((I$[7]||$incl$(7))
 
 Clazz.newMeth(C$, 'getPrinterResolution', function () {
 var copy = Clazz.array(Integer.TYPE, [3]);
-copy[0] = this.printerResolution[0];
-copy[1] = this.printerResolution[1];
-copy[2] = this.printerResolution[2];
+copy[0]=this.printerResolution[0];
+copy[1]=this.printerResolution[1];
+copy[2]=this.printerResolution[2];
 return copy;
 });
 
@@ -174,10 +174,10 @@ Clazz.newMeth(C$, 'setPrinterResolution$IA', function (printerResolution) {
 if (printerResolution == null  || printerResolution.length != 3  || printerResolution[0] <= 0  || printerResolution[1] <= 0  || (printerResolution[2] != 3 && printerResolution[2] != 4 ) ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Invalid value for attribute printerResolution"]);
 }var copy = Clazz.array(Integer.TYPE, [3]);
-copy[0] = printerResolution[0];
-copy[1] = printerResolution[1];
-copy[2] = printerResolution[2];
-this.printerResolution = copy;
+copy[0]=printerResolution[0];
+copy[1]=printerResolution[1];
+copy[2]=printerResolution[2];
+this.printerResolution=copy;
 });
 
 Clazz.newMeth(C$, 'setPrinterResolution$I', function (printerResolution) {
@@ -620,4 +620,4 @@ C$.$init$.apply(this);
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:01:53
+//Created 2018-05-24 08:45:11

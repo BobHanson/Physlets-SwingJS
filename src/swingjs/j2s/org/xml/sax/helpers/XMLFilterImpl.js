@@ -34,7 +34,7 @@ this.setParent$org_xml_sax_XMLReader(parent);
 }, 1);
 
 Clazz.newMeth(C$, 'setParent$org_xml_sax_XMLReader', function (parent) {
-this.parent = parent;
+this.parent=parent;
 });
 
 Clazz.newMeth(C$, 'getParent', function () {
@@ -70,7 +70,7 @@ throw Clazz.new_(Clazz.load('org.xml.sax.SAXNotRecognizedException').c$$S,["Prop
 }});
 
 Clazz.newMeth(C$, 'setEntityResolver$org_xml_sax_EntityResolver', function (resolver) {
-this.entityResolver = resolver;
+this.entityResolver=resolver;
 });
 
 Clazz.newMeth(C$, 'getEntityResolver', function () {
@@ -78,7 +78,7 @@ return this.entityResolver;
 });
 
 Clazz.newMeth(C$, 'setDTDHandler$org_xml_sax_DTDHandler', function (handler) {
-this.dtdHandler = handler;
+this.dtdHandler=handler;
 });
 
 Clazz.newMeth(C$, 'getDTDHandler', function () {
@@ -86,7 +86,7 @@ return this.dtdHandler;
 });
 
 Clazz.newMeth(C$, 'setContentHandler$org_xml_sax_ContentHandler', function (handler) {
-this.contentHandler = handler;
+this.contentHandler=handler;
 });
 
 Clazz.newMeth(C$, 'getContentHandler', function () {
@@ -94,7 +94,7 @@ return this.contentHandler;
 });
 
 Clazz.newMeth(C$, 'setErrorHandler$org_xml_sax_ErrorHandler', function (handler) {
-this.errorHandler = handler;
+this.errorHandler=handler;
 });
 
 Clazz.newMeth(C$, 'getErrorHandler', function () {
@@ -128,7 +128,7 @@ this.dtdHandler.unparsedEntityDecl$S$S$S$S(name, publicId, systemId, notationNam
 }});
 
 Clazz.newMeth(C$, 'setDocumentLocator$org_xml_sax_Locator', function (locator) {
-this.locator = locator;
+this.locator=locator;
 if (this.contentHandler != null ) {
 this.contentHandler.setDocumentLocator$org_xml_sax_Locator(locator);
 }});
@@ -207,4 +207,4 @@ this.parent.setContentHandler$org_xml_sax_ContentHandler(this);
 this.parent.setErrorHandler$org_xml_sax_ErrorHandler(this);
 });
 })();
-//Created 2018-05-15 01:03:04
+//Created 2018-05-24 08:47:19

@@ -15,12 +15,12 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.parameters = Clazz.new_((I$[1]||$incl$(1)));
+this.parameters=Clazz.new_((I$[1]||$incl$(1)));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (rawdata) {
 C$.$init$.apply(this);
-this.parameters = Clazz.new_((I$[1]||$incl$(1)));
+this.parameters=Clazz.new_((I$[1]||$incl$(1)));
 this.parse$S(rawdata);
 }, 1);
 
@@ -29,9 +29,9 @@ var code = 47721858;
 var paramName = null;
 var enum_ = this.getNames();
 while (enum_.hasMoreElements()){
-paramName = enum_.nextElement();
-code = code+(paramName.hashCode());
-code = code+(this.get$S(paramName).hashCode());
+paramName=enum_.nextElement();
+code+=paramName.hashCode();
+code+=this.get$S(paramName).hashCode();
 }
 return code;
 });
@@ -49,10 +49,10 @@ var entries = this.parameters.entrySet();
 var iterator = entries.iterator();
 var entry = null;
 while (iterator.hasNext()){
-entry = iterator.next();
-name = entry.getKey();
-thisValue = entry.getValue();
-thatValue = that.parameters.get$O(name);
+entry=iterator.next();
+name=entry.getKey();
+thisValue=entry.getValue();
+thatValue=that.parameters.get$O(name);
 if ((thisValue == null ) || (thatValue == null ) ) {
 if (thisValue != thatValue) {
 return false;
@@ -74,53 +74,53 @@ var name;
 var value;
 var foundit;
 ++currentIndex;
-currentIndex = C$.skipWhiteSpace$S$I(rawdata, currentIndex);
+currentIndex=C$.skipWhiteSpace$S$I(rawdata, currentIndex);
 if (currentIndex < length) {
-lastIndex = currentIndex;
-currentChar = rawdata.charAt(currentIndex);
+lastIndex=currentIndex;
+currentChar=rawdata.charAt(currentIndex);
 while ((currentIndex < length) && C$.isTokenChar$C(currentChar) ){
 ++currentIndex;
-currentChar = rawdata.charAt(currentIndex);
+currentChar=rawdata.charAt(currentIndex);
 }
-name = rawdata.substring(lastIndex, currentIndex).toLowerCase();
-currentIndex = C$.skipWhiteSpace$S$I(rawdata, currentIndex);
+name=rawdata.substring(lastIndex, currentIndex).toLowerCase();
+currentIndex=C$.skipWhiteSpace$S$I(rawdata, currentIndex);
 if ((currentIndex < length) && (rawdata.charAt(currentIndex) == "=") ) {
 ++currentIndex;
-currentIndex = C$.skipWhiteSpace$S$I(rawdata, currentIndex);
+currentIndex=C$.skipWhiteSpace$S$I(rawdata, currentIndex);
 if (currentIndex < length) {
-currentChar = rawdata.charAt(currentIndex);
+currentChar=rawdata.charAt(currentIndex);
 if (currentChar == "\"") {
 ++currentIndex;
-lastIndex = currentIndex;
+lastIndex=currentIndex;
 if (currentIndex < length) {
-foundit = false;
+foundit=false;
 while ((currentIndex < length) && !foundit ){
-currentChar = rawdata.charAt(currentIndex);
+currentChar=rawdata.charAt(currentIndex);
 if (currentChar == "\\") {
-currentIndex = currentIndex+(2);
+currentIndex+=2;
 } else if (currentChar == "\"") {
-foundit = true;
+foundit=true;
 } else {
 ++currentIndex;
 }}
 if (currentChar == "\"") {
-value = C$.unquote$S(rawdata.substring(lastIndex, currentIndex));
+value=C$.unquote$S(rawdata.substring(lastIndex, currentIndex));
 ++currentIndex;
 } else {
 throw Clazz.new_(Clazz.load('java.awt.datatransfer.MimeTypeParseException').c$$S,["Encountered unterminated quoted parameter value."]);
 }} else {
 throw Clazz.new_(Clazz.load('java.awt.datatransfer.MimeTypeParseException').c$$S,["Encountered unterminated quoted parameter value."]);
 }} else if (C$.isTokenChar$C(currentChar)) {
-lastIndex = currentIndex;
-foundit = false;
+lastIndex=currentIndex;
+foundit=false;
 while ((currentIndex < length) && !foundit ){
-currentChar = rawdata.charAt(currentIndex);
+currentChar=rawdata.charAt(currentIndex);
 if (C$.isTokenChar$C(currentChar)) {
 ++currentIndex;
 } else {
-foundit = true;
+foundit=true;
 }}
-value = rawdata.substring(lastIndex, currentIndex);
+value=rawdata.substring(lastIndex, currentIndex);
 } else {
 throw Clazz.new_(Clazz.load('java.awt.datatransfer.MimeTypeParseException').c$$S,["Unexpected character encountered at index " + currentIndex]);
 }this.parameters.put$TK$TV(name, value);
@@ -130,9 +130,9 @@ throw Clazz.new_(Clazz.load('java.awt.datatransfer.MimeTypeParseException').c$$S
 throw Clazz.new_(Clazz.load('java.awt.datatransfer.MimeTypeParseException').c$$S,["Couldn\'t find the \'=\' that separates a parameter name from its value."]);
 }} else {
 throw Clazz.new_(Clazz.load('java.awt.datatransfer.MimeTypeParseException').c$$S,["Couldn\'t find parameter name"]);
-}currentIndex = C$.skipWhiteSpace$S$I(rawdata, currentIndex);
+}currentIndex=C$.skipWhiteSpace$S$I(rawdata, currentIndex);
 if (currentIndex < length) {
-currentChar = rawdata.charAt(currentIndex);
+currentChar=rawdata.charAt(currentIndex);
 }}
 if (currentIndex < length) {
 throw Clazz.new_(Clazz.load('java.awt.datatransfer.MimeTypeParseException').c$$S,["More characters encountered in input than expected."]);
@@ -178,14 +178,14 @@ return buffer.toString();
 Clazz.newMeth(C$, 'clone', function () {
 var newObj = null;
 try {
-newObj = Clazz.clone(this);
+newObj=Clazz.clone(this);
 } catch (cannotHappen) {
 if (Clazz.exceptionOf(cannotHappen, "java.lang.CloneNotSupportedException")){
 } else {
 throw cannotHappen;
 }
 }
-newObj.parameters = this.parameters.clone();
+newObj.parameters=this.parameters.clone();
 return newObj;
 });
 
@@ -199,7 +199,7 @@ if (i < length) {
 var c = rawdata.charAt(i);
 while ((i < length) && Character.isWhitespace(c) ){
 ++i;
-c = rawdata.charAt(i);
+c=rawdata.charAt(i);
 }
 }return i;
 }, 1);
@@ -208,7 +208,7 @@ Clazz.newMeth(C$, 'quote$S', function (value) {
 var needsQuotes = false;
 var length = value.length$();
 for (var i = 0; (i < length) && !needsQuotes ; ++i) {
-needsQuotes = !C$.isTokenChar$C(value.charAt(i));
+needsQuotes=!C$.isTokenChar$C(value.charAt(i));
 }
 if (needsQuotes) {
 var buffer = Clazz.new_((I$[2]||$incl$(2)).c$$I,[((length * 1.5)|0)]);
@@ -235,11 +235,11 @@ if (!escaped && (currentChar != "\\") ) {
 buffer.append$C(currentChar);
 } else if (escaped) {
 buffer.append$C(currentChar);
-escaped = false;
+escaped=false;
 } else {
-escaped = true;
+escaped=true;
 }}
 return buffer.toString();
 }, 1);
 })();
-//Created 2018-05-15 01:01:55
+//Created 2018-05-24 08:45:14

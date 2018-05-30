@@ -12,16 +12,16 @@ var reader;
 if (args.length != 0) {
 System.err.println$S("Usage: java CharTest");
 System.exit(2);
-}parser = (I$[1]||$incl$(1)).makeParser();
-handler = Clazz.new_((I$[2]||$incl$(2)));
+}parser=(I$[1]||$incl$(1)).makeParser();
+handler=Clazz.new_((I$[2]||$incl$(2)));
 parser.setEntityResolver$org_xml_sax_EntityResolver(handler);
 parser.setDTDHandler$org_xml_sax_DTDHandler(handler);
 parser.setDocumentHandler$org_xml_sax_DocumentHandler(handler);
 parser.setErrorHandler$org_xml_sax_ErrorHandler(handler);
-reader = Clazz.new_((I$[3]||$incl$(3)).c$$S,["<?xml version=\"1.0\"?><doc>\u000a<title>Hello</title>\u000a<para>Hello, world!</para>\u000a</doc>\u000a"]);
+reader=Clazz.new_((I$[3]||$incl$(3)).c$$S,["<?xml version=\"1.0\"?><doc>\u000a<title>Hello</title>\u000a<para>Hello, world!</para>\u000a</doc>\u000a"]);
 parser.parse$org_xml_sax_InputSource(Clazz.new_((I$[4]||$incl$(4)).c$$java_io_Reader,[reader]));
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:03
+//Created 2018-05-24 08:47:17

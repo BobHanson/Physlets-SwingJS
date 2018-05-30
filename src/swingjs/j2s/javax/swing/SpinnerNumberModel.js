@@ -22,10 +22,10 @@ if ((value == null ) || (stepSize == null ) ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["value and stepSize must be non-null"]);
 }if (!(((minimum == null ) || (minimum.compareTo$TT(value) <= 0) ) && ((maximum == null ) || (maximum.compareTo$TT(value) >= 0) ) )) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["(minimum <= value <= maximum) is false"]);
-}this.value = value;
-this.minimum = minimum;
-this.maximum = maximum;
-this.stepSize = stepSize;
+}this.value=value;
+this.minimum=minimum;
+this.maximum=maximum;
+this.stepSize=stepSize;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I', function (value, minimum, maximum, stepSize) {
@@ -42,7 +42,7 @@ C$.c$$Number$Comparable$Comparable$Number.apply(this, [ new Integer(0), null, nu
 
 Clazz.newMeth(C$, 'setMinimum$Comparable', function (minimum) {
 if ((minimum == null ) ? (this.minimum != null ) : !minimum.equals$O(this.minimum)) {
-this.minimum = minimum;
+this.minimum=minimum;
 this.fireStateChanged();
 }});
 
@@ -52,7 +52,7 @@ return this.minimum;
 
 Clazz.newMeth(C$, 'setMaximum$Comparable', function (maximum) {
 if ((maximum == null ) ? (this.maximum != null ) : !maximum.equals$O(this.maximum)) {
-this.maximum = maximum;
+this.maximum=maximum;
 this.fireStateChanged();
 }});
 
@@ -64,7 +64,7 @@ Clazz.newMeth(C$, 'setStepSize$Number', function (stepSize) {
 if (stepSize == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["null stepSize"]);
 }if (!stepSize.equals$O(this.stepSize)) {
-this.stepSize = stepSize;
+this.stepSize=stepSize;
 this.fireStateChanged();
 }});
 
@@ -77,19 +77,19 @@ var newValue;
 if ((Clazz.instanceOf(this.value, "java.lang.Float")) || (Clazz.instanceOf(this.value, "java.lang.Double")) ) {
 var v = this.value.doubleValue() + (this.stepSize.doubleValue() * dir);
 if (Clazz.instanceOf(this.value, "java.lang.Double")) {
-newValue =  new Double(v);
+newValue= new Double(v);
 } else {
-newValue =  new Float(v);
+newValue= new Float(v);
 }} else {
 var v = this.value.longValue() + (this.stepSize.longValue() * dir);
 if (Clazz.instanceOf(this.value, "java.lang.Long")) {
-newValue =  new Long(v);
+newValue= new Long(v);
 } else if (Clazz.instanceOf(this.value, "java.lang.Integer")) {
-newValue =  new Integer((v|0));
+newValue= new Integer((v|0));
 } else if (Clazz.instanceOf(this.value, "java.lang.Short")) {
-newValue =  new Short(($s$[0] = v, $s$[0]));
+newValue= new Short(($s$[0] = v, $s$[0]));
 } else {
-newValue =  new Byte(($b$[0] = (v|0), $b$[0]));
+newValue= new Byte(($b$[0] = (v|0), $b$[0]));
 }}if ((this.maximum != null ) && (this.maximum.compareTo$TT(newValue) < 0) ) {
 return null;
 }if ((this.minimum != null ) && (this.minimum.compareTo$TT(newValue) > 0) ) {
@@ -118,10 +118,10 @@ Clazz.newMeth(C$, 'setValue$O', function (value) {
 if ((value == null ) || !(Clazz.instanceOf(value, "java.lang.Number")) ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["illegal value"]);
 }if (!value.equals$O(this.value)) {
-this.value = value;
+this.value=value;
 this.fireStateChanged();
 }});
 var $s$ = new Int16Array(1);
 var $b$ = new Int8Array(1);
 })();
-//Created 2018-05-15 01:02:40
+//Created 2018-05-24 08:46:40

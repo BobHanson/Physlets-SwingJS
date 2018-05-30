@@ -97,7 +97,7 @@ this.dropTarget = this;
 }, 1);
 
 Clazz.newMeth(C$, 'setDraggable$javajs_api_JSFunction', function (f) {
-this.draggable = true;
+this.draggable=true;
 (I$[2]||$incl$(2)).J2S._setDraggable(this.updateDOMNode(), f);
 });
 
@@ -110,7 +110,7 @@ Clazz.newMeth(C$, 'setDoc', function () {
 {
 this.document = document; this.body = document.body;
 }
-C$.debugging = (I$[2]||$incl$(2)).debugging;
+C$.debugging=(I$[2]||$incl$(2)).debugging;
 });
 
 Clazz.newMeth(C$, 'installJS', function () {
@@ -127,7 +127,7 @@ this.c && this.c.removePropertyChangeListener$java_beans_PropertyChangeListener(
 }
 if (this.outerNode != null ) {
 (I$[3]||$incl$(3)).remove(this.outerNode);
-this.outerNode = null;
+this.outerNode=null;
 }});
 
 Clazz.newMeth(C$, '$$O', function (node) {
@@ -135,9 +135,9 @@ return (I$[2]||$incl$(2)).getJQuery().$(node);
 });
 
 Clazz.newMeth(C$, 'set$javax_swing_JComponent', function (target) {
-this.c = target;
-this.jc = this.c;
-this.applet = (I$[4]||$incl$(4)).getHTML5Applet$java_awt_Component(this.c);
+this.c=target;
+this.jc=this.c;
+this.applet=(I$[4]||$incl$(4)).getHTML5Applet$java_awt_Component(this.c);
 this.newID$Z(false);
 this.installUI$javax_swing_JComponent(target);
 this.installJS();
@@ -146,15 +146,15 @@ return this;
 });
 
 Clazz.newMeth(C$, 'newID$Z', function (forceNew) {
-this.classID = this.c.getUIClassID();
+this.classID=this.c.getUIClassID();
 if (this.id == null  || forceNew ) {
-this.num = ++C$.incr;
-this.id = this.c.getHTMLName$S(this.classID) + "_" + this.num ;
+this.num=++C$.incr;
+this.id=this.c.getHTMLName$S(this.classID) + "_" + this.num ;
 }});
 
 Clazz.newMeth(C$, 'reInit', function () {
 this.setTainted();
-this.domNode = null;
+this.domNode=null;
 this.newID$Z(true);
 });
 
@@ -215,7 +215,7 @@ this.jc.revalidate();
 });
 
 Clazz.newMeth(C$, 'setTainted', function () {
-this.isTainted = true;
+this.isTainted=true;
 });
 
 Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
@@ -224,8 +224,13 @@ if (C$.debugging) System.out.println$S(this.id + " stateChange " + this.dumpEven
 
 Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
 var prop = e.getPropertyName();
-if (this.isDisposed && this.c.visible && prop == "ancestor"   && e.getNewValue() != null  ) this.setVisible$Z(true);
-this.propertyChangedCUI$S(prop);
+if (prop == "ancestor") {
+var parentui = this;
+
+parentui = this.jc.parent && this.jc.parent.getUI && this.jc.parent.getUI();
+if (parentui != null ) parentui.setTainted();
+if (this.isDisposed && this.c.visible && e.getNewValue() != null   ) this.setVisible$Z(true);
+}this.propertyChangedCUI$S(prop);
 });
 
 Clazz.newMeth(C$, 'propertyChangedFromListener$S', function (prop) {
@@ -235,7 +240,7 @@ this.propertyChangedCUI$S(prop);
 Clazz.newMeth(C$, 'propertyChangedCUI$S', function (prop) {
 if (!this.isMenu) this.updateDOMNode();
 if (prop == "preferredSize") {
-this.preferredSize = this.c.getPreferredSize();
+this.preferredSize=this.c.getPreferredSize();
 this.getPreferredSize();
 return;
 }if (prop == "background") {
@@ -271,39 +276,39 @@ return;
 });
 
 Clazz.newMeth(C$, 'setIconAndText$S$javax_swing_ImageIcon$I$S', function (prop, icon, gap, text) {
-this.actualWidth = this.actualHeight = 0;
-this.currentIcon = icon;
-this.currentText = text;
-this.currentGap = gap;
-this.canAlignText = false;
-this.canAlignIcon = false;
-this.imageNode = null;
+this.actualWidth=this.actualHeight=0;
+this.currentIcon=icon;
+this.currentText=text;
+this.currentGap=gap;
+this.canAlignText=false;
+this.canAlignIcon=false;
+this.imageNode=null;
 if (this.iconNode != null ) {
 (I$[3]||$incl$(3)).setAttr(this.iconNode, "innerHTML", "");
 if (icon != null ) {
-this.imageNode = (I$[3]||$incl$(3)).getImageNode(icon.getImage());
+this.imageNode=(I$[3]||$incl$(3)).getImageNode(icon.getImage());
 (I$[3]||$incl$(3)).setStyles(this.imageNode, ["vertical-align", "middle"]);
 this.iconNode.appendChild(this.imageNode);
-this.iconHeight = icon.getIconHeight();
+this.iconHeight=icon.getIconHeight();
 }}if (text == null  || text.length$() == 0 ) {
-text = "";
-if (icon != null ) this.canAlignIcon = true;
+text="";
+if (icon != null ) this.canAlignIcon=true;
 } else {
 if (icon == null ) {
-this.canAlignText = true;
+this.canAlignText=true;
 } else {
-if (gap == 2147483647) gap = this.getDefaultIconTextGap();
+if (gap == 2147483647) gap=this.getDefaultIconTextGap();
 if (gap != 0 && text != null  ) (I$[3]||$incl$(3)).addHorizontalGap(this.iconNode, gap);
 }if (text.indexOf("<html>") == 0) {
-text = (I$[5]||$incl$(5)).rep$S$S$S(text.substring(6, text.length$() - 7), "</br>", "");
+text=(I$[5]||$incl$(5)).rep$S$S$S(text.substring(6, text.length$() - 7), "</br>", "");
 }}var obj = null;
 if (this.textNode != null ) {
-prop = "innerHTML";
-obj = this.textNode;
-text = (I$[5]||$incl$(5)).rep$S$S$S(text, "<", "&lt;");
+prop="innerHTML";
+obj=this.textNode;
+text=(I$[5]||$incl$(5)).rep$S$S$S(text, "<", "&lt;");
 } else if (this.valueNode != null ) {
-prop = "value";
-obj = this.valueNode;
+prop="value";
+obj=this.valueNode;
 if (this.iconNode != null ) (I$[3]||$incl$(3)).setVisible(obj, text != null );
 }if (obj != null ) this.setProp$swingjs_api_js_DOMNode$S$S(obj, prop, text);
 if (this.centeringNode == null ) {
@@ -320,7 +325,7 @@ return 0;
 });
 
 Clazz.newMeth(C$, 'setAllowPaintedBackground$Z', function (TF) {
-this.allowPaintedBackground = TF;
+this.allowPaintedBackground=TF;
 });
 
 Clazz.newMeth(C$, 'getDOMNode', function () {
@@ -333,16 +338,16 @@ if (C$.debugging && this.createMsgs.indexOf(msg) < 0 ) {
 this.createMsgs += msg;
 (I$[2]||$incl$(2)).alert$O(msg);
 }System.out.println$S(msg);
-return (this.domNode == null  ? this.domNode = (I$[3]||$incl$(3)).createElement("div", this.id) : this.domNode);
+return (this.domNode == null  ? this.domNode=(I$[3]||$incl$(3)).createElement("div", this.id) : this.domNode);
 });
 
 Clazz.newMeth(C$, 'setCssFont$swingjs_api_js_DOMNode$java_awt_Font', function (obj, font) {
 if (font != null ) {
 var istyle = font.getStyle();
 var name = font.getFamily();
-if (name == "Dialog" || name == "SansSerif" ) name = "Arial";
+if (name == "Dialog" || name == "SansSerif" ) name="Arial";
 (I$[3]||$incl$(3)).setStyles(obj, ["font-family", name, "font-size", font.getSize() + "px", "font-style", ((istyle & 2) == 0 ? "normal" : "italic"), "font-weight", ((istyle & 1) == 0 ? "normal" : "bold")]);
-}this.enabled = !this.c.isEnabled();
+}this.enabled=!this.c.isEnabled();
 this.setEnabled$Z(this.c.isEnabled());
 return obj;
 });
@@ -377,7 +382,7 @@ return this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(obj, addCSS, true);
 
 Clazz.newMeth(C$, 'setHTMLSize1$swingjs_api_js_DOMNode$Z$Z', function (node, addCSS, usePreferred) {
 if (node == null ) return null;
-addCSS = (addCSS&!this.isMenuItem);
+addCSS&=!this.isMenuItem;
 var h;
 var w;
 var w0 = null;
@@ -386,15 +391,15 @@ var w0i = null;
 var h0i = null;
 var position = null;
 var parentNode = null;
-if (this.centeringNode != null  && node === this.domNode  ) node = this.centeringNode;
+if (this.centeringNode != null  && node === this.domNode  ) node=this.centeringNode;
 if (this.scrollPaneUI != null ) {
-w = this.scrollPaneUI.c.getWidth();
-h = this.scrollPaneUI.c.getHeight();
+w=this.scrollPaneUI.c.getWidth();
+h=this.scrollPaneUI.c.getHeight();
 } else if (usePreferred && this.preferredSize != null  ) {
-w = this.preferredSize.width;
-h = this.preferredSize.height;
+w=this.preferredSize.width;
+h=this.preferredSize.height;
 } else {
-parentNode = (I$[3]||$incl$(3)).remove(node);
+parentNode=(I$[3]||$incl$(3)).remove(node);
 if (!this.isMenuItem) {
 w0 = node.style.width; h0 = node.style.height; position = node.style.position;
 if (node == this.centeringNode && this.innerNode) { w0i = this.innerNode.style.width; h0i = this.innerNode.style.height; }
@@ -402,20 +407,20 @@ if (node == this.centeringNode && this.innerNode) { w0i = this.innerNode.style.w
 (I$[3]||$incl$(3)).setStyles(node, ["position", null, "width", null, "height", null]);
 if (this.innerNode != null ) (I$[3]||$incl$(3)).setStyles(this.innerNode, ["width", null, "height", null]);
 var div;
-if ((I$[3]||$incl$(3)).getAttr(node, "tagName") === "DIV" ) div = node;
- else div = this.wrap$S$S$swingjs_api_js_DOMNodeA("div", this.id + "_temp", [node]);
+if ((I$[3]||$incl$(3)).getAttr(node, "tagName") === "DIV" ) div=node;
+ else div=this.wrap$S$S$swingjs_api_js_DOMNodeA("div", this.id + "_temp", [node]);
 (I$[3]||$incl$(3)).setPositionAbsolute(div, -2147483648, 0);
 this.$$O(this.body).after(div);
 var r = div.getBoundingClientRect();
-w = (Math.max(0, Math.ceil(r.width))|0);
-h = (Math.max(0, Math.ceil(r.height))|0);
+w=(Math.max(0, Math.ceil(r.width))|0);
+h=(Math.max(0, Math.ceil(r.height))|0);
 if (!usePreferred) {
-this.actualWidth = w;
-this.actualHeight = h;
+this.actualWidth=w;
+this.actualHeight=h;
 }this.$$O(div).detach();
 }var size = this.getCSSAdjustment$Z(addCSS);
-size.width = size.width+(w);
-size.height = size.height+(h);
+size.width+=w;
+size.height+=h;
 if (addCSS) {
 (I$[3]||$incl$(3)).setPositionAbsolute(node, -2147483648, 0);
 (I$[3]||$incl$(3)).setSize(node, size.width, size.height);
@@ -442,19 +447,19 @@ return this.setHTMLElementCUI();
 
 Clazz.newMeth(C$, 'setHTMLElementCUI', function () {
 if (!this.isTainted) return this.outerNode;
-this.domNode = this.updateDOMNode();
+this.domNode=this.updateDOMNode();
 p$.checkTransparent$swingjs_api_js_DOMNode.apply(this, [this.domNode]);
 var children = this.getChildren();
 var n = children.length;
 if (this.isMenuItem) {
-this.outerNode = this.domNode;
+this.outerNode=this.domNode;
 if (n == 0) return this.outerNode;
-}if (this.outerNode == null ) this.outerNode = this.wrap$S$S$swingjs_api_js_DOMNodeA("div", this.id, [this.domNode]);
+}if (this.outerNode == null ) this.outerNode=this.wrap$S$S$swingjs_api_js_DOMNodeA("div", this.id, [this.domNode]);
 {
 this.outerNode.setAttribute("name", this.jc.__CLASS_NAME__);
 }
 p$.setOuterLocationFromComponent.apply(this, []);
-if (n > 0 && this.containerNode == null  ) this.containerNode = this.outerNode;
+if (n > 0 && this.containerNode == null  ) this.containerNode=this.outerNode;
 if (this.isContainer || n > 0 ) {
 if (this.isContainer && !this.isMenuItem ) {
 var w = this.getContainerWidth();
@@ -470,16 +475,16 @@ if (cdiv != null ) cdiv.appendChild(this.outerNode);
 if (this.isWindow) {
 (I$[3]||$incl$(3)).remove(this.outerNode);
 this.$$O(this.body).append(this.outerNode);
-}}this.isTainted = false;
+}}this.isTainted=false;
 if (this.jc.getDropTarget() != null ) p$.setDropTarget.apply(this, []);
 return this.outerNode;
 });
 
 Clazz.newMeth(C$, 'setOuterLocationFromComponent', function () {
 if (this.outerNode != null  && !this.isMenuItem ) {
-if (this.parent == null  && this.jc.getParent() != null   && (this.parent = this.jc.getParent().getUI()) != null   && this.parent.outerNode != null  ) this.parent.outerNode.appendChild(this.outerNode);
+if (this.parent == null  && this.jc.getParent() != null   && (this.parent=this.jc.getParent().getUI()) != null   && this.parent.outerNode != null  ) this.parent.outerNode.appendChild(this.outerNode);
 (I$[3]||$incl$(3)).setPositionAbsolute(this.outerNode, -2147483648, 0);
-(I$[3]||$incl$(3)).setStyles(this.outerNode, ["left", (this.x = this.c.getX()) + "px", "top", (this.y = this.c.getY()) + "px"]);
+(I$[3]||$incl$(3)).setStyles(this.outerNode, ["left", (this.x=this.c.getX()) + "px", "top", (this.y=this.c.getY()) + "px"]);
 }});
 
 Clazz.newMeth(C$, 'getChildren', function () {
@@ -492,7 +497,7 @@ for (var i = 0; i < n; i++) {
 var ui = (I$[4]||$incl$(4)).getUI$java_awt_Component$Z(children[i], false);
 if (ui == null  || ui.isNull ) {
 continue;
-}ui.parent = this;
+}ui.parent=this;
 if (ui.getOuterNode() == null ) {
 System.out.println$S("JSCUI could not add " + ui.c.getName() + " to " + this.c.getName() );
 } else {
@@ -502,11 +507,11 @@ this.containerNode.appendChild(ui.outerNode);
 });
 
 Clazz.newMeth(C$, 'getContainerWidth', function () {
-return this.width = this.c.getWidth();
+return this.width=this.c.getWidth();
 });
 
 Clazz.newMeth(C$, 'getContainerHeight', function () {
-return this.height = this.c.getHeight();
+return this.height=this.c.getHeight();
 });
 
 Clazz.newMeth(C$, 'getPreferredSize', function () {
@@ -616,7 +621,7 @@ return false;
 
 Clazz.newMeth(C$, 'setVisible$Z', function (b) {
 var node = this.getOuterNode();
-if (node == null ) node = this.domNode;
+if (node == null ) node=this.domNode;
 (I$[3]||$incl$(3)).setVisible(node, b);
 if (b) {
 if (this.isDisposed) p$.undisposeUI$swingjs_api_js_DOMNode.apply(this, [node]);
@@ -628,7 +633,7 @@ Clazz.newMeth(C$, 'toFront', function () {
 
 Clazz.newMeth(C$, 'setEnabled$Z', function (b) {
 if (b == this.enabled ) return;
-this.enabled = b;
+this.enabled=b;
 if (this.$enableNode != null ) p$.enableNode$swingjs_api_js_DOMNode$Z.apply(this, [this.$enableNode, b]);
  else if (this.enableNodes != null ) for (var i = 0; i < this.enableNodes.length; i++) p$.enableNode$swingjs_api_js_DOMNode$Z.apply(this, [this.enableNodes[i], b]);
 
@@ -651,31 +656,31 @@ return (this.inactiveForeground == null  ? fg : this.inactiveForeground);
 });
 
 Clazz.newMeth(C$, 'getDisabledColors$S', function (pp) {
-this.inactiveBackground = (I$[8]||$incl$(8)).getColor$O(pp + "inactiveBackground");
-this.inactiveForeground = (I$[8]||$incl$(8)).getColor$O(pp + "inactiveForeground");
+this.inactiveBackground=(I$[8]||$incl$(8)).getColor$O(pp + "inactiveBackground");
+this.inactiveForeground=(I$[8]||$incl$(8)).getColor$O(pp + "inactiveForeground");
 });
 
 Clazz.newMeth(C$, 'setBounds$I$I$I$I$I', function (x, y, width, height, op) {
 var isBounded = (width > 0 && height > 0 );
 if (isBounded && !this.boundsSet ) {
 if (this.c.visible) this.setVisible$Z(true);
-this.boundsSet = true;
+this.boundsSet=true;
 }if (C$.debugging) System.out.println$S("CUI << SetBounds >> [" + x + " " + y + " " + width + " " + height + "] op=" + op + " for " + this.id );
 switch (op) {
 case 3:
 case 1:
-x = this.c.getX();
-y = this.c.getY();
+x=this.c.getX();
+y=this.c.getY();
 if (this.x != x || this.y != y ) {
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 }p$.setOuterLocationFromComponent.apply(this, []);
 if (op == 1) break;
 case 4:
 case 2:
 if (this.scrollPaneUI != null ) {
-width = Math.min(width, this.scrollPaneUI.c.getWidth());
-height = Math.min(height, this.scrollPaneUI.c.getHeight());
+width=Math.min(width, this.scrollPaneUI.c.getWidth());
+height=Math.min(height, this.scrollPaneUI.c.getHeight());
 }if (width > 0 && height > 0 ) p$.setSizeFromComponent$I$I$I.apply(this, [width, height, op]);
 break;
 }
@@ -683,8 +688,8 @@ break;
 
 Clazz.newMeth(C$, 'setSizeFromComponent$I$I$I', function (width, height, op) {
 var size = this.getCSSAdjustment$Z(true);
-this.width = width;
-this.height = height;
+this.width=width;
+this.height=height;
 if (C$.debugging) System.out.println$S(this.id + " setBounds " + this.x + " " + this.y + " " + this.width + " " + this.height + " op=" + op + " createDOM?" + (this.domNode == null ) );
 if (this.domNode == null ) this.updateDOMNode();
 this.setJSDimensions$I$I(width + size.width, height + size.height);
@@ -692,8 +697,8 @@ this.setInnerComponentBounds$I$I(width, height);
 });
 
 Clazz.newMeth(C$, 'setJSDimensions$I$I', function (width, height) {
-if (this.jsActualWidth > 0) width = this.jsActualWidth;
-if (this.jsActualHeight > 0) height = this.jsActualHeight;
+if (this.jsActualWidth > 0) width=this.jsActualWidth;
+if (this.jsActualHeight > 0) height=this.jsActualHeight;
 (I$[3]||$incl$(3)).setSize(this.domNode, width, height);
 if (this.outerNode != null ) (I$[3]||$incl$(3)).setSize(this.outerNode, width, height);
 });
@@ -719,34 +724,34 @@ var prop = null;
 switch (type) {
 case 4:
 case 11:
-prop = "right";
+prop="right";
 break;
 case 2:
 case 10:
-prop = "left";
+prop="left";
 break;
 case 0:
-prop = "center";
+prop="center";
 break;
 default:
 return;
 }
-(I$[3]||$incl$(3)).setStyles(this.domNode, ["width", this.c.getWidth() + "px", "text-align", this.textAlign = prop]);
+(I$[3]||$incl$(3)).setStyles(this.domNode, ["width", this.c.getWidth() + "px", "text-align", this.textAlign=prop]);
 if (this.jc.uiClassID == "LabelUI" && this.centeringNode != null  ) {
 var left = 0;
 var w = this.actualWidth;
-if (w == 0) w = this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(this.centeringNode, false, false).width;
+if (w == 0) w=this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(this.centeringNode, false, false).width;
 switch (type) {
 case 2:
 case 10:
 break;
 case 4:
 case 11:
-prop = "right";
-left = this.c.getWidth() - w;
+prop="right";
+left=this.c.getWidth() - w;
 break;
 case 0:
-left = ((this.c.getWidth() - w)/2|0);
+left=((this.c.getWidth() - w)/2|0);
 break;
 default:
 return;
@@ -762,18 +767,18 @@ var h = this.actualHeight;
 if (h == 0) {
 if (isText) {
 if (this.c.getFont() == null ) return;
-h = this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(this.domNode, false, false).height;
-h = h-((this.c.getFont().getFontMetrics().getDescent()));
+h=this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(this.domNode, false, false).height;
+h-=(this.c.getFont().getFontMetrics().getDescent());
 } else {
-h = this.iconHeight;
+h=this.iconHeight;
 }}switch (type) {
 case 1:
 break;
 case 3:
-top = this.c.getHeight() - h;
+top=this.c.getHeight() - h;
 break;
 case 0:
-top = ((this.c.getHeight() - h)/2|0);
+top=((this.c.getHeight() - h)/2|0);
 break;
 default:
 return;
@@ -810,7 +815,7 @@ return this.c.getFontMetrics$java_awt_Font(font);
 });
 
 Clazz.newMeth(C$, 'dispose', function () {
-this.isDisposed = true;
+this.isDisposed=true;
 (I$[3]||$incl$(3)).remove(this.domNode);
 if (this.domNode !== this.outerNode ) (I$[3]||$incl$(3)).remove(this.outerNode);
 });
@@ -820,7 +825,7 @@ if (this.c.getParent() != null ) {
 var ui = this.c.getParent().getUI();
 if (ui.containerNode != null ) ui.containerNode.appendChild(node);
 }if (this.outerNode != null  && this.domNode !== this.outerNode  ) this.outerNode.appendChild(this.domNode);
-this.isDisposed = false;
+this.isDisposed=false;
 });
 
 Clazz.newMeth(C$, 'setForeground$java_awt_Color', function (color) {
@@ -858,22 +863,22 @@ Clazz.newMeth(C$, 'updateCursorImmediately', function () {
 var curs;
 switch (this.c.getCursor().getType()) {
 case 1:
-curs = "crosshair";
+curs="crosshair";
 break;
 case 3:
-curs = "wait";
+curs="wait";
 break;
 case 8:
-curs = "ns-resize";
+curs="ns-resize";
 break;
 case 12:
-curs = "grab";
+curs="grab";
 break;
 case 13:
-curs = "move";
+curs="move";
 break;
 default:
-curs = "default";
+curs="default";
 break;
 }
 (I$[3]||$incl$(3)).setStyles(this.getOuterNode(), ["cursor", curs]);
@@ -889,7 +894,7 @@ path = this.applet._j2sPath;
 }
 path += "/img/cursor_wait.gif";
 if (C$.debugging) System.out.println$S("loading wait cursor " + path);
-this.waitImage = this.newDOMObject$S$S$SA("image", this.id + "_waitImage", ["src", path]);
+this.waitImage=this.newDOMObject$S$S$SA("image", this.id + "_waitImage", ["src", path]);
 }if (doShow) this.$$O(this.waitImage).show();
  else this.$$O(this.waitImage).hide();
 });
@@ -975,10 +980,10 @@ return this.focusNode != null  && this.focusNode === (I$[3]||$incl$(3)).getAttr(
 Clazz.newMeth(C$, 'notifyFocus$Z', function (focusGained) {
 var e = Clazz.new_((I$[11]||$incl$(11)).c$$java_awt_Component$I,[this.c, focusGained ? 1004 : 1005]);
 if (focusGained) {
-C$.focusedUI = this;
+C$.focusedUI=this;
 (I$[10]||$incl$(10)).getEventQueue().postEvent$java_awt_AWTEvent(e);
 } else {
-C$.focusedUI = null;
+C$.focusedUI=null;
 {
 (I$[10]||$incl$(10)).getEventQueue().dispatchEventAndWait$java_awt_AWTEvent$O(e, this.c);
 }}});
@@ -1006,11 +1011,11 @@ Clazz.newMeth(C$, 'endValidate', function () {
 
 Clazz.newMeth(C$, 'beginLayout', function () {
 if (!this.boundsSet && !this.isContainer ) this.setVisible$Z(false);
-this.layingOut = true;
+this.layingOut=true;
 });
 
 Clazz.newMeth(C$, 'endLayout', function () {
-this.layingOut = false;
+this.layingOut=false;
 });
 
 Clazz.newMeth(C$, 'getId', function () {
@@ -1032,11 +1037,11 @@ Clazz.newMeth(C$, 'toRGBHexString$java_awt_Color', function (c) {
 var rgb = c.getRGB();
 if (rgb == 0) return "000000";
 var r = "00" + Integer.toHexString((rgb >> 16) & 255);
-r = r.substring(r.length$() - 2);
+r=r.substring(r.length$() - 2);
 var g = "00" + Integer.toHexString((rgb >> 8) & 255);
-g = g.substring(g.length$() - 2);
+g=g.substring(g.length$() - 2);
 var b = "00" + Integer.toHexString(rgb & 255);
-b = b.substring(b.length$() - 2);
+b=b.substring(b.length$() - 2);
 return r + g + b ;
 }, 1);
 
@@ -1064,19 +1069,19 @@ Clazz.newMeth(C$, 'setPadding$java_awt_Insets', function (padding) {
 });
 
 Clazz.newMeth(C$, 'addDropTarget$java_awt_dnd_DropTarget', function (t) {
-this.dropTarget = t;
+this.dropTarget=t;
 p$.setDropTarget.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'removeTarget', function () {
 if (this.dropTarget == null ) return;
-this.dropTarget = null;
+this.dropTarget=null;
 p$.setDropTarget.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'setDropTarget', function () {
 var node;
-if (this.dropTarget !== this  && ((node = this.outerNode) != null  || (node = this.domNode) != null  ) ) (I$[3]||$incl$(3)).setAttr(node, "data-dropComponent", this.jc);
+if (this.dropTarget !== this  && ((node=this.outerNode) != null  || (node=this.domNode) != null  ) ) (I$[3]||$incl$(3)).setAttr(node, "data-dropComponent", this.jc);
 });
 })();
-//Created 2018-05-15 01:03:21
+//Created 2018-05-29 23:16:35

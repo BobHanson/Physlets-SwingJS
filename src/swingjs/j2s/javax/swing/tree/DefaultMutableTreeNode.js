@@ -46,9 +46,9 @@ C$.c$$O$Z.apply(this, [userObject, true]);
 
 Clazz.newMeth(C$, 'c$$O$Z', function (userObject, allowsChildren) {
 C$.$init$.apply(this);
-this.parent = null;
-this.allowsChildren = allowsChildren;
-this.userObject = userObject;
+this.parent=null;
+this.allowsChildren=allowsChildren;
+this.userObject=userObject;
 }, 1);
 
 Clazz.newMeth(C$, 'insert$javax_swing_tree_MutableTreeNode$I', function (newChild, childIndex) {
@@ -63,7 +63,7 @@ if (oldParent != null ) {
 oldParent.remove$javax_swing_tree_MutableTreeNode(newChild);
 }newChild.setParent$javax_swing_tree_MutableTreeNode(this);
 if (this.$children == null ) {
-this.$children = Clazz.new_((I$[1]||$incl$(1)));
+this.$children=Clazz.new_((I$[1]||$incl$(1)));
 }this.$children.insertElementAt$TE$I(newChild, childIndex);
 });
 
@@ -74,7 +74,7 @@ child.setParent$javax_swing_tree_MutableTreeNode(null);
 });
 
 Clazz.newMeth(C$, 'setParent$javax_swing_tree_MutableTreeNode', function (newParent) {
-this.parent = newParent;
+this.parent=newParent;
 });
 
 Clazz.newMeth(C$, 'getParent', function () {
@@ -111,7 +111,7 @@ return this.$children.elements();
 
 Clazz.newMeth(C$, 'setAllowsChildren$Z', function (allows) {
 if (allows != this.allowsChildren ) {
-this.allowsChildren = allows;
+this.allowsChildren=allows;
 if (!this.allowsChildren) {
 this.removeAllChildren();
 }}});
@@ -121,7 +121,7 @@ return this.allowsChildren;
 });
 
 Clazz.newMeth(C$, 'setUserObject$O', function (userObject) {
-this.userObject = userObject;
+this.userObject=userObject;
 });
 
 Clazz.newMeth(C$, 'getUserObject', function () {
@@ -160,7 +160,7 @@ return false;
 do {
 if (ancestor === anotherNode ) {
 return true;
-}} while ((ancestor = ancestor.getParent()) != null );
+}} while ((ancestor=ancestor.getParent()) != null );
 return false;
 });
 
@@ -179,25 +179,25 @@ var level2;
 var diff;
 var node1;
 var node2;
-level1 = this.getLevel();
-level2 = aNode.getLevel();
+level1=this.getLevel();
+level2=aNode.getLevel();
 if (level2 > level1) {
-diff = level2 - level1;
-node1 = aNode;
-node2 = this;
+diff=level2 - level1;
+node1=aNode;
+node2=this;
 } else {
-diff = level1 - level2;
-node1 = this;
-node2 = aNode;
+diff=level1 - level2;
+node1=this;
+node2=aNode;
 }while (diff > 0){
-node1 = node1.getParent();
+node1=node1.getParent();
 diff--;
 }
 do {
 if (node1 === node2 ) {
 return node1;
-}node1 = node1.getParent();
-node2 = node2.getParent();
+}node1=node1.getParent();
+node2=node2.getParent();
 } while (node1 != null );
 if (node1 != null  || node2 != null  ) {
 throw Clazz.new_((I$[7]||$incl$(7)).c$$S,["nodes should be null"]);
@@ -212,7 +212,7 @@ Clazz.newMeth(C$, 'getDepth', function () {
 var last = null;
 var enum_ = this.breadthFirstEnumeration();
 while (enum_.hasMoreElements()){
-last = enum_.nextElement();
+last=enum_.nextElement();
 }
 if (last == null ) {
 throw Clazz.new_((I$[7]||$incl$(7)).c$$S,["nodes should be null"]);
@@ -222,8 +222,8 @@ throw Clazz.new_((I$[7]||$incl$(7)).c$$S,["nodes should be null"]);
 Clazz.newMeth(C$, 'getLevel', function () {
 var ancestor;
 var levels = 0;
-ancestor = this;
-while ((ancestor = ancestor.getParent()) != null ){
+ancestor=this;
+while ((ancestor=ancestor.getParent()) != null ){
 levels++;
 }
 return levels;
@@ -237,18 +237,18 @@ Clazz.newMeth(C$, 'getPathToRoot$javax_swing_tree_TreeNode$I', function (aNode, 
 var retNodes;
 if (aNode == null ) {
 if (depth == 0) return null;
- else retNodes = Clazz.array((I$[8]||$incl$(8)), [depth]);
+ else retNodes=Clazz.array((I$[8]||$incl$(8)), [depth]);
 } else {
 depth++;
-retNodes = this.getPathToRoot$javax_swing_tree_TreeNode$I(aNode.getParent(), depth);
-retNodes[retNodes.length - depth] = aNode;
+retNodes=this.getPathToRoot$javax_swing_tree_TreeNode$I(aNode.getParent(), depth);
+retNodes[retNodes.length - depth]=aNode;
 }return retNodes;
 });
 
 Clazz.newMeth(C$, 'getUserObjectPath', function () {
 var realPath = this.getPath();
 var retPath = Clazz.array(java.lang.Object, [realPath.length]);
-for (var counter = 0; counter < realPath.length; counter++) retPath[counter] = (realPath[counter]).getUserObject();
+for (var counter = 0; counter < realPath.length; counter++) retPath[counter]=(realPath[counter]).getUserObject();
 
 return retPath;
 });
@@ -257,8 +257,8 @@ Clazz.newMeth(C$, 'getRoot', function () {
 var ancestor = this;
 var previous;
 do {
-previous = ancestor;
-ancestor = ancestor.getParent();
+previous=ancestor;
+ancestor=ancestor.getParent();
 } while (ancestor != null );
 return previous;
 });
@@ -275,10 +275,10 @@ var aNode = this.getParent();
 do {
 if (aNode == null ) {
 return null;
-}nextSibling = aNode.getNextSibling();
+}nextSibling=aNode.getNextSibling();
 if (nextSibling != null ) {
 return nextSibling;
-}aNode = aNode.getParent();
+}aNode=aNode.getParent();
 } while (true);
 } else {
 return nextSibling;
@@ -291,7 +291,7 @@ var previousSibling;
 var myParent = this.getParent();
 if (myParent == null ) {
 return null;
-}previousSibling = this.getPreviousSibling();
+}previousSibling=this.getPreviousSibling();
 if (previousSibling != null ) {
 if (previousSibling.getChildCount() == 0) return previousSibling;
  else return previousSibling.getLastLeaf();
@@ -322,12 +322,12 @@ return Clazz.new_((I$[12]||$incl$(12)).c$$javax_swing_tree_TreeNode$javax_swing_
 Clazz.newMeth(C$, 'isNodeChild$javax_swing_tree_TreeNode', function (aNode) {
 var retval;
 if (aNode == null ) {
-retval = false;
+retval=false;
 } else {
 if (this.getChildCount() == 0) {
-retval = false;
+retval=false;
 } else {
-retval = (aNode.getParent() === this );
+retval=(aNode.getParent() === this );
 }}return retval;
 });
 
@@ -370,12 +370,12 @@ return null;
 Clazz.newMeth(C$, 'isNodeSibling$javax_swing_tree_TreeNode', function (anotherNode) {
 var retval;
 if (anotherNode == null ) {
-retval = false;
+retval=false;
 } else if (anotherNode === this ) {
-retval = true;
+retval=true;
 } else {
 var myParent = this.getParent();
-retval = (myParent != null  && myParent === anotherNode.getParent()  );
+retval=(myParent != null  && myParent === anotherNode.getParent()  );
 if (retval && !(this.getParent()).isNodeChild$javax_swing_tree_TreeNode(anotherNode) ) {
 throw Clazz.new_((I$[7]||$incl$(7)).c$$S,["sibling has different parent"]);
 }}return retval;
@@ -393,9 +393,9 @@ Clazz.newMeth(C$, 'getNextSibling', function () {
 var retval;
 var myParent = this.getParent();
 if (myParent == null ) {
-retval = null;
+retval=null;
 } else {
-retval = myParent.getChildAfter$javax_swing_tree_TreeNode(this);
+retval=myParent.getChildAfter$javax_swing_tree_TreeNode(this);
 }if (retval != null  && !this.isNodeSibling$javax_swing_tree_TreeNode(retval) ) {
 throw Clazz.new_((I$[7]||$incl$(7)).c$$S,["child of parent is not a sibling"]);
 }return retval;
@@ -405,9 +405,9 @@ Clazz.newMeth(C$, 'getPreviousSibling', function () {
 var retval;
 var myParent = this.getParent();
 if (myParent == null ) {
-retval = null;
+retval=null;
 } else {
-retval = myParent.getChildBefore$javax_swing_tree_TreeNode(this);
+retval=myParent.getChildBefore$javax_swing_tree_TreeNode(this);
 }if (retval != null  && !this.isNodeSibling$javax_swing_tree_TreeNode(retval) ) {
 throw Clazz.new_((I$[7]||$incl$(7)).c$$S,["child of parent is not a sibling"]);
 }return retval;
@@ -420,7 +420,7 @@ return (this.getChildCount() == 0);
 Clazz.newMeth(C$, 'getFirstLeaf', function () {
 var node = this;
 while (!node.isLeaf()){
-node = node.getFirstChild();
+node=node.getFirstChild();
 }
 return node;
 });
@@ -428,7 +428,7 @@ return node;
 Clazz.newMeth(C$, 'getLastLeaf', function () {
 var node = this;
 while (!node.isLeaf()){
-node = node.getLastChild();
+node=node.getLastChild();
 }
 return node;
 });
@@ -437,7 +437,7 @@ Clazz.newMeth(C$, 'getNextLeaf', function () {
 var nextSibling;
 var myParent = this.getParent();
 if (myParent == null ) return null;
-nextSibling = this.getNextSibling();
+nextSibling=this.getNextSibling();
 if (nextSibling != null ) return nextSibling.getFirstLeaf();
 return myParent.getNextLeaf();
 });
@@ -446,7 +446,7 @@ Clazz.newMeth(C$, 'getPreviousLeaf', function () {
 var previousSibling;
 var myParent = this.getParent();
 if (myParent == null ) return null;
-previousSibling = this.getPreviousSibling();
+previousSibling=this.getPreviousSibling();
 if (previousSibling != null ) return previousSibling.getLastLeaf();
 return myParent.getPreviousLeaf();
 });
@@ -456,7 +456,7 @@ var count = 0;
 var node;
 var enum_ = this.breadthFirstEnumeration();
 while (enum_.hasMoreElements()){
-node = enum_.nextElement();
+node=enum_.nextElement();
 if (node.isLeaf()) {
 count++;
 }}
@@ -475,9 +475,9 @@ return this.userObject.toString();
 Clazz.newMeth(C$, 'clone', function () {
 var newNode = null;
 try {
-newNode = Clazz.clone(this);
-newNode.$children = null;
-newNode.parent = null;
+newNode=Clazz.clone(this);
+newNode.$children=null;
+newNode.parent=null;
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.CloneNotSupportedException")){
 throw Clazz.new_((I$[7]||$incl$(7)).c$$S,[e.toString()]);
@@ -507,7 +507,7 @@ Clazz.newMeth(C$, 'c$$javax_swing_tree_TreeNode', function (rootNode) {
 C$.$init$.apply(this);
 var v = Clazz.new_((I$[1]||$incl$(1)).c$$I,[1]);
 v.addElement$TE(rootNode);
-this.stack = Clazz.new_((I$[2]||$incl$(2)));
+this.stack=Clazz.new_((I$[2]||$incl$(2)));
 this.stack.push$TE(v.elements());
 }, 1);
 
@@ -548,9 +548,9 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_tree_TreeNode', function (rootNode) {
 C$.$init$.apply(this);
-this.root = rootNode;
-this.children = this.root.children();
-this.subtree = (I$[3]||$incl$(3)).EMPTY_ENUMERATION;
+this.root=rootNode;
+this.children=this.root.children();
+this.subtree=(I$[3]||$incl$(3)).EMPTY_ENUMERATION;
 }, 1);
 
 Clazz.newMeth(C$, 'hasMoreElements', function () {
@@ -560,13 +560,13 @@ return this.root != null ;
 Clazz.newMeth(C$, 'nextElement', function () {
 var retval;
 if (this.subtree.hasMoreElements()) {
-retval = this.subtree.nextElement();
+retval=this.subtree.nextElement();
 } else if (this.children.hasMoreElements()) {
-this.subtree = Clazz.new_(C$.c$$javax_swing_tree_TreeNode, [this, null, this.children.nextElement()]);
-retval = this.subtree.nextElement();
+this.subtree=Clazz.new_(C$.c$$javax_swing_tree_TreeNode, [this, null, this.children.nextElement()]);
+retval=this.subtree.nextElement();
 } else {
-retval = this.root;
-this.root = null;
+retval=this.root;
+this.root=null;
 }return retval;
 });
 
@@ -592,7 +592,7 @@ Clazz.newMeth(C$, 'c$$javax_swing_tree_TreeNode', function (rootNode) {
 C$.$init$.apply(this);
 var v = Clazz.new_((I$[1]||$incl$(1)).c$$I,[1]);
 v.addElement$TE(rootNode);
-this.queue = Clazz.new_((I$[5]||$incl$(5)), [this, null]);
+this.queue=Clazz.new_((I$[5]||$incl$(5)), [this, null]);
 this.queue.enqueue$O(v.elements());
 }, 1);
 
@@ -626,10 +626,10 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'enqueue$O', function (anObject) {
 if (this.head == null ) {
-this.head = this.tail = Clazz.new_((I$[4]||$incl$(4)).c$$O$javax_swing_tree_DefaultMutableTreeNode_BreadthFirstEnumeration_Queue_QNode, [this, null, anObject, null]);
+this.head=this.tail=Clazz.new_((I$[4]||$incl$(4)).c$$O$javax_swing_tree_DefaultMutableTreeNode_BreadthFirstEnumeration_Queue_QNode, [this, null, anObject, null]);
 } else {
-this.tail.next = Clazz.new_((I$[4]||$incl$(4)).c$$O$javax_swing_tree_DefaultMutableTreeNode_BreadthFirstEnumeration_Queue_QNode, [this, null, anObject, null]);
-this.tail = this.tail.next;
+this.tail.next=Clazz.new_((I$[4]||$incl$(4)).c$$O$javax_swing_tree_DefaultMutableTreeNode_BreadthFirstEnumeration_Queue_QNode, [this, null, anObject, null]);
+this.tail=this.tail.next;
 }});
 
 Clazz.newMeth(C$, 'dequeue', function () {
@@ -637,11 +637,11 @@ if (this.head == null ) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["No more elements"]);
 }var retval = this.head.object;
 var oldHead = this.head;
-this.head = this.head.next;
+this.head=this.head.next;
 if (this.head == null ) {
-this.tail = null;
+this.tail=null;
 } else {
-oldHead.next = null;
+oldHead.next=null;
 }return retval;
 });
 
@@ -670,8 +670,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$O$javax_swing_tree_DefaultMutableTreeNode_BreadthFirstEnumeration_Queue_QNode', function (object, next) {
 C$.$init$.apply(this);
-this.object = object;
-this.next = next;
+this.object=object;
+this.next=next;
 }, 1);
 
 Clazz.newMeth(C$);
@@ -703,11 +703,11 @@ C$.$init$.apply(this);
 if (ancestor == null  || descendant == null  ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["argument is null"]);
 }var current;
-this.stack = Clazz.new_((I$[2]||$incl$(2)));
+this.stack=Clazz.new_((I$[2]||$incl$(2)));
 this.stack.push$TE(descendant);
-current = descendant;
+current=descendant;
 while (current !== ancestor ){
-current = current.getParent();
+current=current.getParent();
 if (current == null  && descendant !== ancestor  ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["node " + ancestor + " is not an ancestor of " + descendant ]);
 }this.stack.push$TE(current);
@@ -733,4 +733,4 @@ throw e;
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:59
+//Created 2018-05-24 08:47:10

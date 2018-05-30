@@ -18,15 +18,15 @@ this.swingJStype = "C".$c();
 
 Clazz.newMeth(C$, 'c$$java_awt_image_Kernel$I$java_awt_RenderingHints', function (kernel, edgeCondition, hints) {
 C$.$init$.apply(this);
-this.kernel = kernel;
-this.edgeHint = edgeCondition;
-this.hints = hints;
+this.kernel=kernel;
+this.edgeHint=edgeCondition;
+this.hints=hints;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_image_Kernel', function (kernel) {
 C$.$init$.apply(this);
-this.kernel = kernel;
-this.edgeHint = 0;
+this.kernel=kernel;
+this.edgeHint=0;
 }, 1);
 
 Clazz.newMeth(C$, 'getEdgeCondition', function () {
@@ -46,11 +46,11 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["src ima
 var dstCM;
 var origDst = dst;
 if (dst == null ) {
-dst = this.createCompatibleDestImage$java_awt_image_BufferedImage$java_awt_image_ColorModel(src, null);
-dstCM = srcCM;
-origDst = dst;
+dst=this.createCompatibleDestImage$java_awt_image_BufferedImage$java_awt_image_ColorModel(src, null);
+dstCM=srcCM;
+origDst=dst;
 } else {
-dstCM = dst.getColorModel();
+dstCM=dst.getColorModel();
 if (srcCM.getColorSpace().getType() != dstCM.getColorSpace().getType()) {
 throw Clazz.new_(Clazz.load('java.awt.image.ImagingOpException').c$$S,["SwingJS: Differing color spaces not allowed"]);
 }}if ((I$[1]||$incl$(1)).filter$java_awt_image_BufferedImageOp$java_awt_image_BufferedImage$java_awt_image_BufferedImage(this, src, dst) == null ) {
@@ -67,7 +67,7 @@ g.dispose();
 
 Clazz.newMeth(C$, 'filter$java_awt_image_Raster$java_awt_image_WritableRaster', function (src, dst) {
 if (dst == null ) {
-dst = this.createCompatibleDestRaster$java_awt_image_Raster(src);
+dst=this.createCompatibleDestRaster$java_awt_image_Raster(src);
 } else if (src === dst ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["src image cannot be the same as the dst image"]);
 } else if (src.getNumBands() != dst.getNumBands()) {
@@ -83,12 +83,12 @@ var w = src.getWidth();
 var h = src.getHeight();
 var wr = null;
 if (destCM == null ) {
-destCM = src.getColorModel();
+destCM=src.getColorModel();
 {
-wr = src.getData().createCompatibleWritableRaster$I$I(w, h);
+wr=src.getData().createCompatibleWritableRaster$I$I(w, h);
 }}if (wr == null ) {
-wr = destCM.createCompatibleWritableRaster$I$I(w, h);
-}image = Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[destCM, wr, destCM.isAlphaPremultiplied(), null]);
+wr=destCM.createCompatibleWritableRaster$I$I(w, h);
+}image=Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[destCM, wr, destCM.isAlphaPremultiplied(), null]);
 return image;
 });
 
@@ -106,7 +106,7 @@ return src.getBounds();
 
 Clazz.newMeth(C$, 'getPoint2D$java_awt_geom_Point2D$java_awt_geom_Point2D', function (srcPt, dstPt) {
 if (dstPt == null ) {
-dstPt = Clazz.new_((I$[3]||$incl$(3)));
+dstPt=Clazz.new_((I$[3]||$incl$(3)));
 }dstPt.setLocation$D$D(srcPt.getX(), srcPt.getY());
 return dstPt;
 });
@@ -117,4 +117,4 @@ return this.hints;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:01
+//Created 2018-05-24 08:45:25

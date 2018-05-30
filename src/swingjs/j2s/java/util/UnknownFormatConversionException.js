@@ -14,7 +14,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S', function (s) {
 Clazz.super_(C$, this,1);
-this.s = s;
+this.s=s;
 }, 1);
 
 Clazz.newMeth(C$, 'getConversion', function () {
@@ -27,4 +27,4 @@ return "Conversion = '" + this.s + "'" ;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:15
+//Created 2018-05-24 08:45:50

@@ -77,9 +77,9 @@ ang2 += 1.5707963267948966;
 } else {
 ang1 += 1.5707963267948966;
 ang2 -= 1.5707963267948966;
-}ang1 = Math.toDegrees(-ang1);
-ang2 = Math.toDegrees(-ang2);
-diff = ang2 - ang1;
+}ang1=Math.toDegrees(-ang1);
+ang2=Math.toDegrees(-ang2);
+diff=ang2 - ang1;
 if (diff < 0 ) {
 diff += 360;
 } else {
@@ -114,7 +114,7 @@ this.setAngles$D$D$D$D(p1.getX(), p1.getY(), p2.getX(), p2.getY());
 Clazz.newMeth(C$, 'setArcType$I', function (type) {
 if (type < 0 || type > 2 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid type for Arc: " + type]);
-}this.type = type;
+}this.type=type;
 });
 
 Clazz.newMeth(C$, 'setFrame$D$D$D$D', function (x, y, w, h) {
@@ -129,10 +129,10 @@ var y1;
 var x2;
 var y2;
 if (this.getArcType() == 2) {
-x1 = y1 = x2 = y2 = 0.0;
+x1=y1=x2=y2=0.0;
 } else {
-x1 = y1 = 1.0;
-x2 = y2 = -1.0;
+x1=y1=1.0;
+x2=y2=-1.0;
 }var angle = 0.0;
 for (var i = 0; i < 6; i++) {
 if (i < 4) {
@@ -140,41 +140,41 @@ angle += 90.0;
 if (!this.containsAngle$D(angle)) {
 continue;
 }} else if (i == 4) {
-angle = this.getAngleStart();
+angle=this.getAngleStart();
 } else {
 angle += this.getAngleExtent();
 }var rads = Math.toRadians(-angle);
 var xe = Math.cos(rads);
 var ye = Math.sin(rads);
-x1 = Math.min(x1, xe);
-y1 = Math.min(y1, ye);
-x2 = Math.max(x2, xe);
-y2 = Math.max(y2, ye);
+x1=Math.min(x1, xe);
+y1=Math.min(y1, ye);
+x2=Math.max(x2, xe);
+y2=Math.max(y2, ye);
 }
 var w = this.getWidth();
 var h = this.getHeight();
-x2 = (x2 - x1) * 0.5 * w ;
-y2 = (y2 - y1) * 0.5 * h ;
-x1 = this.getX() + (x1 * 0.5 + 0.5) * w;
-y1 = this.getY() + (y1 * 0.5 + 0.5) * h;
+x2=(x2 - x1) * 0.5 * w ;
+y2=(y2 - y1) * 0.5 * h ;
+x1=this.getX() + (x1 * 0.5 + 0.5) * w;
+y1=this.getY() + (y1 * 0.5 + 0.5) * h;
 return this.makeBounds$D$D$D$D(x1, y1, x2, y2);
 });
 
 Clazz.newMeth(C$, 'normalizeDegrees$D', function (angle) {
 if (angle > 180.0 ) {
 if (angle <= 540.0 ) {
-angle = angle - 360.0;
+angle=angle - 360.0;
 } else {
-angle = Math.IEEEremainder(angle, 360.0);
+angle=Math.IEEEremainder(angle, 360.0);
 if (angle == -180.0 ) {
-angle = 180.0;
+angle=180.0;
 }}} else if (angle <= -180.0 ) {
 if (angle > -540.0 ) {
-angle = angle + 360.0;
+angle=angle + 360.0;
 } else {
-angle = Math.IEEEremainder(angle, 360.0);
+angle=Math.IEEEremainder(angle, 360.0);
 if (angle == -180.0 ) {
-angle = 180.0;
+angle=180.0;
 }}}return angle;
 }, 1);
 
@@ -182,12 +182,12 @@ Clazz.newMeth(C$, 'containsAngle$D', function (angle) {
 var angExt = this.getAngleExtent();
 var backwards = (angExt < 0.0 );
 if (backwards) {
-angExt = -angExt;
+angExt=-angExt;
 }if (angExt >= 360.0 ) {
 return true;
-}angle = C$.normalizeDegrees$D(angle) - C$.normalizeDegrees$D(this.getAngleStart());
+}angle=C$.normalizeDegrees$D(angle) - C$.normalizeDegrees$D(this.getAngleStart());
 if (backwards) {
-angle = -angle;
+angle=-angle;
 }if (angle < 0.0 ) {
 angle += 360.0;
 }return (angle >= 0.0 ) && (angle < angExt ) ;
@@ -283,7 +283,7 @@ return false;
 }if (this.type != 2 || Math.abs(this.getAngleExtent()) <= 180.0  ) {
 return true;
 }if (origrect == null ) {
-origrect = Clazz.new_((I$[2]||$incl$(2)).c$$D$D$D$D,[x, y, w, h]);
+origrect=Clazz.new_((I$[2]||$incl$(2)).c$$D$D$D$D,[x, y, w, h]);
 }var halfW = this.getWidth() / 2.0;
 var halfH = this.getHeight() / 2.0;
 var xc = this.getX() + halfW;
@@ -294,8 +294,8 @@ var ye = yc + halfH * Math.sin(angle);
 if (origrect.intersectsLine$D$D$D$D(xc, yc, xe, ye)) {
 return false;
 }angle += Math.toRadians(-this.getAngleExtent());
-xe = xc + halfW * Math.cos(angle);
-ye = yc + halfH * Math.sin(angle);
+xe=xc + halfW * Math.cos(angle);
+ye=yc + halfH * Math.sin(angle);
 return !origrect.intersectsLine$D$D$D$D(xc, yc, xe, ye);
 });
 
@@ -305,12 +305,12 @@ return Clazz.new_((I$[5]||$incl$(5)).c$$java_awt_geom_Arc2D$java_awt_geom_Affine
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var bits = java.lang.Double.doubleToLongBits(this.getX());
-bits = bits+(java.lang.Double.doubleToLongBits(this.getY()) * 37);
-bits = bits+(java.lang.Double.doubleToLongBits(this.getWidth()) * 43);
-bits = bits+(java.lang.Double.doubleToLongBits(this.getHeight()) * 47);
-bits = bits+(java.lang.Double.doubleToLongBits(this.getAngleStart()) * 53);
-bits = bits+(java.lang.Double.doubleToLongBits(this.getAngleExtent()) * 59);
-bits = bits+(this.getArcType() * 61);
+bits+=java.lang.Double.doubleToLongBits(this.getY()) * 37;
+bits+=java.lang.Double.doubleToLongBits(this.getWidth()) * 43;
+bits+=java.lang.Double.doubleToLongBits(this.getHeight()) * 47;
+bits+=java.lang.Double.doubleToLongBits(this.getAngleStart()) * 53;
+bits+=java.lang.Double.doubleToLongBits(this.getAngleExtent()) * 59;
+bits+=this.getArcType() * 61;
 return (((bits|0)) ^ (((bits >> 32)|0)));
 });
 
@@ -356,23 +356,23 @@ C$.$init$.apply(this);
 Clazz.newMeth(C$, 'c$$F$F$F$F$F$F$I', function (x, y, w, h, start, extent, type) {
 C$.superclazz.c$$I.apply(this, [type]);
 C$.$init$.apply(this);
-this.x = x;
-this.y = y;
-this.width = w;
-this.height = h;
-this.start = start;
-this.extent = extent;
+this.x=x;
+this.y=y;
+this.width=w;
+this.height=h;
+this.start=start;
+this.extent=extent;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_Rectangle2D$F$F$I', function (ellipseBounds, start, extent, type) {
 C$.superclazz.c$$I.apply(this, [type]);
 C$.$init$.apply(this);
-this.x = ellipseBounds.getX();
-this.y = ellipseBounds.getY();
-this.width = ellipseBounds.getWidth();
-this.height = ellipseBounds.getHeight();
-this.start = start;
-this.extent = extent;
+this.x=ellipseBounds.getX();
+this.y=ellipseBounds.getY();
+this.width=ellipseBounds.getWidth();
+this.height=ellipseBounds.getHeight();
+this.start=start;
+this.extent=extent;
 }, 1);
 
 Clazz.newMeth(C$, 'getX', function () {
@@ -405,20 +405,20 @@ return (this.width <= 0.0  || this.height <= 0.0  );
 
 Clazz.newMeth(C$, 'setArc$D$D$D$D$D$D$I', function (x, y, w, h, angSt, angExt, closure) {
 this.setArcType$I(closure);
-this.x = x;
-this.y = y;
-this.width = w;
-this.height = h;
-this.start = angSt;
-this.extent = angExt;
+this.x=x;
+this.y=y;
+this.width=w;
+this.height=h;
+this.start=angSt;
+this.extent=angExt;
 });
 
 Clazz.newMeth(C$, 'setAngleStart$D', function (angSt) {
-this.start = angSt;
+this.start=angSt;
 });
 
 Clazz.newMeth(C$, 'setAngleExtent$D', function (angExt) {
-this.extent = angExt;
+this.extent=angExt;
 });
 
 Clazz.newMeth(C$, 'makeBounds$D$D$D$D', function (x, y, w, h) {
@@ -459,23 +459,23 @@ C$.$init$.apply(this);
 Clazz.newMeth(C$, 'c$$D$D$D$D$D$D$I', function (x, y, w, h, start, extent, type) {
 C$.superclazz.c$$I.apply(this, [type]);
 C$.$init$.apply(this);
-this.x = x;
-this.y = y;
-this.width = w;
-this.height = h;
-this.start = start;
-this.extent = extent;
+this.x=x;
+this.y=y;
+this.width=w;
+this.height=h;
+this.start=start;
+this.extent=extent;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_Rectangle2D$D$D$I', function (ellipseBounds, start, extent, type) {
 C$.superclazz.c$$I.apply(this, [type]);
 C$.$init$.apply(this);
-this.x = ellipseBounds.getX();
-this.y = ellipseBounds.getY();
-this.width = ellipseBounds.getWidth();
-this.height = ellipseBounds.getHeight();
-this.start = start;
-this.extent = extent;
+this.x=ellipseBounds.getX();
+this.y=ellipseBounds.getY();
+this.width=ellipseBounds.getWidth();
+this.height=ellipseBounds.getHeight();
+this.start=start;
+this.extent=extent;
 }, 1);
 
 Clazz.newMeth(C$, 'getX', function () {
@@ -508,20 +508,20 @@ return (this.width <= 0.0  || this.height <= 0.0  );
 
 Clazz.newMeth(C$, 'setArc$D$D$D$D$D$D$I', function (x, y, w, h, angSt, angExt, closure) {
 this.setArcType$I(closure);
-this.x = x;
-this.y = y;
-this.width = w;
-this.height = h;
-this.start = angSt;
-this.extent = angExt;
+this.x=x;
+this.y=y;
+this.width=w;
+this.height=h;
+this.start=angSt;
+this.extent=angExt;
 });
 
 Clazz.newMeth(C$, 'setAngleStart$D', function (angSt) {
-this.start = angSt;
+this.start=angSt;
 });
 
 Clazz.newMeth(C$, 'setAngleExtent$D', function (angExt) {
-this.extent = angExt;
+this.extent=angExt;
 });
 
 Clazz.newMeth(C$, 'makeBounds$D$D$D$D', function (x, y, w, h) {
@@ -529,4 +529,4 @@ return Clazz.new_((I$[2]||$incl$(2)).c$$D$D$D$D,[x, y, w, h]);
 });
 })()
 })();
-//Created 2018-05-15 01:01:59
+//Created 2018-05-24 08:45:19

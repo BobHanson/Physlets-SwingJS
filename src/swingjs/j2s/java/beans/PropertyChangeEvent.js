@@ -18,9 +18,9 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$O$S$O$O', function (source, propertyName, oldValue, newValue) {
 C$.superclazz.c$.apply(this, [source]);
 C$.$init$.apply(this);
-this.propertyName = propertyName;
-this.newValue = newValue;
-this.oldValue = oldValue;
+this.propertyName=propertyName;
+this.newValue=newValue;
+this.oldValue=oldValue;
 }, 1);
 
 Clazz.newMeth(C$, 'getPropertyName', function () {
@@ -36,7 +36,7 @@ return this.oldValue;
 });
 
 Clazz.newMeth(C$, 'setPropagationId$O', function (propagationId) {
-this.propagationId = propagationId;
+this.propagationId=propagationId;
 });
 
 Clazz.newMeth(C$, 'getPropagationId', function () {
@@ -45,4 +45,4 @@ return this.propagationId;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:03
+//Created 2018-05-24 08:45:31

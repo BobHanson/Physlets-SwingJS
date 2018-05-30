@@ -21,10 +21,10 @@ if (s == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["Source color model cannot be null"]);
 }if (d == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["Destination color model cannot be null"]);
-}this.srcCM = s;
-this.dstCM = d;
-this.composite = ac;
-this.comptype = (I$[1]||$incl$(1)).forAlphaComposite$java_awt_AlphaComposite(ac);
+}this.srcCM=s;
+this.dstCM=d;
+this.composite=ac;
+this.comptype=(I$[1]||$incl$(1)).forAlphaComposite$java_awt_AlphaComposite(ac);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$sun_java2d_loops_XORComposite$java_awt_image_ColorModel$java_awt_image_ColorModel', function (xc, s, d) {
@@ -33,10 +33,10 @@ if (s == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["Source color model cannot be null"]);
 }if (d == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["Destination color model cannot be null"]);
-}this.srcCM = s;
-this.dstCM = d;
-this.composite = xc;
-this.comptype = (I$[1]||$incl$(1)).Xor;
+}this.srcCM=s;
+this.dstCM=d;
+this.composite=xc;
+this.comptype=(I$[1]||$incl$(1)).Xor;
 }, 1);
 
 Clazz.newMeth(C$, 'dispose', function () {
@@ -49,16 +49,16 @@ var h;
 if (dstIn !== dstOut ) {
 dstOut.setDataElements$I$I$java_awt_image_Raster(0, 0, dstIn);
 }if (Clazz.instanceOf(srcArg, "java.awt.image.WritableRaster")) {
-src = srcArg;
+src=srcArg;
 } else {
-src = srcArg.createCompatibleWritableRaster();
+src=srcArg.createCompatibleWritableRaster();
 src.setDataElements$I$I$java_awt_image_Raster(0, 0, srcArg);
-}w = Math.min(src.getWidth(), dstIn.getWidth());
-h = Math.min(src.getHeight(), dstIn.getHeight());
+}w=Math.min(src.getWidth(), dstIn.getWidth());
+h=Math.min(src.getHeight(), dstIn.getHeight());
 var srcImg = Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[this.srcCM, src, this.srcCM.isAlphaPremultiplied(), null]);
 var dstImg = Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[this.dstCM, dstOut, this.dstCM.isAlphaPremultiplied(), null]);
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:10
+//Created 2018-05-24 08:47:31

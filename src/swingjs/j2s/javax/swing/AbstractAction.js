@@ -18,7 +18,7 @@ this.enabled = true;
 
 Clazz.newMeth(C$, 'shouldReconfigure$java_beans_PropertyChangeEvent', function (e) {
 if (e.getPropertyName() == null ) {
-C$.RECONFIGURE_ON_NULL = new Boolean(false);
+C$.RECONFIGURE_ON_NULL=new Boolean(false);
 }return false;
 }, 1);
 
@@ -64,13 +64,13 @@ Clazz.newMeth(C$, 'putValue$S$O', function (key, newValue) {
 var oldValue = null;
 if (key == "enabled") {
 if (newValue == null  || !(Clazz.instanceOf(newValue, "java.lang.Boolean")) ) {
-newValue = new Boolean(false);
-}oldValue = new Boolean(this.enabled);
-this.enabled = (newValue).booleanValue();
+newValue=new Boolean(false);
+}oldValue=new Boolean(this.enabled);
+this.enabled=(newValue).booleanValue();
 } else {
 if (this.arrayTable == null ) {
-this.arrayTable = Clazz.new_((I$[2]||$incl$(2)));
-}if (this.arrayTable.containsKey$O(key)) oldValue = this.arrayTable.get$O(key);
+this.arrayTable=Clazz.new_((I$[2]||$incl$(2)));
+}if (this.arrayTable.containsKey$O(key)) oldValue=this.arrayTable.get$O(key);
 if (newValue == null ) {
 this.arrayTable.remove$O(key);
 } else {
@@ -85,7 +85,7 @@ return this.enabled;
 Clazz.newMeth(C$, 'setEnabled$Z', function (newValue) {
 var oldValue = this.enabled;
 if (oldValue != newValue ) {
-this.enabled = newValue;
+this.enabled=newValue;
 this.firePropertyChange$S$O$O("enabled", (I$[3]||$incl$(3)).$valueOf(oldValue), (I$[3]||$incl$(3)).$valueOf(newValue));
 }});
 
@@ -105,7 +105,7 @@ return;
 
 Clazz.newMeth(C$, 'addPropertyChangeListener$java_beans_PropertyChangeListener', function (listener) {
 if (this.changeSupport == null ) {
-this.changeSupport = Clazz.new_((I$[4]||$incl$(4)).c$$O,[this]);
+this.changeSupport=Clazz.new_((I$[4]||$incl$(4)).c$$O,[this]);
 }this.changeSupport.addPropertyChangeListener$java_beans_PropertyChangeListener(listener);
 });
 
@@ -125,8 +125,8 @@ Clazz.newMeth(C$, 'clone', function () {
 var newAction = Clazz.clone(this);
 {
 if (this.arrayTable != null ) {
-newAction.arrayTable = this.arrayTable.clone();
+newAction.arrayTable=this.arrayTable.clone();
 }}return newAction;
 });
 })();
-//Created 2018-05-15 01:02:22
+//Created 2018-05-24 08:46:02

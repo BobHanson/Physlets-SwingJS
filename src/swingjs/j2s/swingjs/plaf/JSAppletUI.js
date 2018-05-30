@@ -9,10 +9,10 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.containerNode = this.domNode = this.newDOMObject$S$S$SA("div", this.id, []);
+this.containerNode=this.domNode=this.newDOMObject$S$S$SA("div", this.id, []);
 }return this.domNode;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:20
+//Created 2018-05-24 08:47:51

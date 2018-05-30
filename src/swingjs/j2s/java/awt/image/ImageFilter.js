@@ -14,7 +14,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'getFilterInstance$java_awt_image_ImageConsumer', function (ic) {
 var instance = this.clone();
-instance.consumer = ic;
+instance.consumer=ic;
 return instance;
 });
 
@@ -70,4 +70,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:01
+//Created 2018-05-24 08:45:25

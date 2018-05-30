@@ -17,31 +17,31 @@ Clazz.newMeth(C$, 'setDefaultLookup$sun_swing_DefaultLookup', function (lookup) 
 if (!C$.isLookupSet && lookup == null  ) {
 return;
 } else if (lookup == null ) {
-lookup = Clazz.new_(C$);
-}C$.isLookupSet = true;
+lookup=Clazz.new_(C$);
+}C$.isLookupSet=true;
 (I$[1]||$incl$(1)).getAppContext().put$O$O(C$.DEFAULT_LOOKUP_KEY, lookup);
-C$.currentDefaultThread = (I$[2]||$incl$(2)).currentThread();
-C$.currentDefaultLookup = lookup;
+C$.currentDefaultThread=(I$[2]||$incl$(2)).currentThread();
+C$.currentDefaultLookup=lookup;
 }}, 1);
 
 Clazz.newMeth(C$, 'get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S', function (c, ui, key) {
 var lookupSet;
 {
-lookupSet = C$.isLookupSet;
+lookupSet=C$.isLookupSet;
 }if (!lookupSet) {
 return (I$[3]||$incl$(3)).get$O$java_util_Locale(key, c.getLocale());
 }var thisThread = (I$[2]||$incl$(2)).currentThread();
 var lookup;
 {
 if (thisThread === C$.currentDefaultThread ) {
-lookup = C$.currentDefaultLookup;
+lookup=C$.currentDefaultLookup;
 } else {
-lookup = (I$[1]||$incl$(1)).getAppContext().get$O(C$.DEFAULT_LOOKUP_KEY);
+lookup=(I$[1]||$incl$(1)).getAppContext().get$O(C$.DEFAULT_LOOKUP_KEY);
 if (lookup == null ) {
-lookup = Clazz.new_(C$);
+lookup=Clazz.new_(C$);
 (I$[1]||$incl$(1)).getAppContext().put$O$O(C$.DEFAULT_LOOKUP_KEY, lookup);
-}C$.currentDefaultThread = thisThread;
-C$.currentDefaultLookup = lookup;
+}C$.currentDefaultThread=thisThread;
+C$.currentDefaultLookup=lookup;
 }}return lookup.getDefault$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(c, ui, key);
 }, 1);
 
@@ -117,4 +117,4 @@ return (I$[3]||$incl$(3)).get$O$java_util_Locale(key, c.getLocale());
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:11
+//Created 2018-05-24 08:47:34

@@ -15,7 +15,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_dnd_DropTargetContext', function (dtc) {
 C$.superclazz.c$.apply(this, [dtc.getDropTarget()]);
 C$.$init$.apply(this);
-this.context = dtc;
+this.context=dtc;
 }, 1);
 
 Clazz.newMeth(C$, 'getDropTargetContext', function () {
@@ -24,4 +24,4 @@ return this.context;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:56
+//Created 2018-05-24 08:45:16

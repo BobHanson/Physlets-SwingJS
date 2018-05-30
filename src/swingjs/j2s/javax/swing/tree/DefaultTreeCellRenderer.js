@@ -40,9 +40,9 @@ this.setTextNonSelectionColor$java_awt_Color((I$[1]||$incl$(1)).getColor$javax_s
 this.setBackgroundSelectionColor$java_awt_Color((I$[1]||$incl$(1)).getColor$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Tree.selectionBackground"));
 this.setBackgroundNonSelectionColor$java_awt_Color((I$[1]||$incl$(1)).getColor$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Tree.textBackground"));
 this.setBorderSelectionColor$java_awt_Color((I$[1]||$incl$(1)).getColor$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Tree.selectionBorderColor"));
-this.drawsFocusBorderAroundIcon = (I$[1]||$incl$(1)).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(this, this.ui, "Tree.drawsFocusBorderAroundIcon", false);
-this.drawDashedFocusIndicator = (I$[1]||$incl$(1)).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(this, this.ui, "Tree.drawDashedFocusIndicator", false);
-this.fillBackground = (I$[1]||$incl$(1)).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(this, this.ui, "Tree.rendererFillBackground", true);
+this.drawsFocusBorderAroundIcon=(I$[1]||$incl$(1)).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(this, this.ui, "Tree.drawsFocusBorderAroundIcon", false);
+this.drawDashedFocusIndicator=(I$[1]||$incl$(1)).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(this, this.ui, "Tree.drawDashedFocusIndicator", false);
+this.fillBackground=(I$[1]||$incl$(1)).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(this, this.ui, "Tree.rendererFillBackground", true);
 var margins = (I$[1]||$incl$(1)).getInsets$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Tree.rendererMargins");
 if (margins != null ) {
 this.setBorder$javax_swing_border_Border(Clazz.new_((I$[2]||$incl$(2)).c$$I$I$I$I,[margins.top, margins.left, margins.bottom, margins.right]));
@@ -62,7 +62,7 @@ return (I$[1]||$incl$(1)).getIcon$javax_swing_JComponent$javax_swing_plaf_Compon
 });
 
 Clazz.newMeth(C$, 'setOpenIcon$javax_swing_Icon', function (newIcon) {
-this.openIcon = newIcon;
+this.openIcon=newIcon;
 });
 
 Clazz.newMeth(C$, 'getOpenIcon', function () {
@@ -70,7 +70,7 @@ return this.openIcon;
 });
 
 Clazz.newMeth(C$, 'setClosedIcon$javax_swing_Icon', function (newIcon) {
-this.closedIcon = newIcon;
+this.closedIcon=newIcon;
 });
 
 Clazz.newMeth(C$, 'getClosedIcon', function () {
@@ -78,7 +78,7 @@ return this.closedIcon;
 });
 
 Clazz.newMeth(C$, 'setLeafIcon$javax_swing_Icon', function (newIcon) {
-this.leafIcon = newIcon;
+this.leafIcon=newIcon;
 });
 
 Clazz.newMeth(C$, 'getLeafIcon', function () {
@@ -86,7 +86,7 @@ return this.leafIcon;
 });
 
 Clazz.newMeth(C$, 'setTextSelectionColor$java_awt_Color', function (newColor) {
-this.textSelectionColor = newColor;
+this.textSelectionColor=newColor;
 });
 
 Clazz.newMeth(C$, 'getTextSelectionColor', function () {
@@ -94,7 +94,7 @@ return this.textSelectionColor;
 });
 
 Clazz.newMeth(C$, 'setTextNonSelectionColor$java_awt_Color', function (newColor) {
-this.textNonSelectionColor = newColor;
+this.textNonSelectionColor=newColor;
 });
 
 Clazz.newMeth(C$, 'getTextNonSelectionColor', function () {
@@ -102,7 +102,7 @@ return this.textNonSelectionColor;
 });
 
 Clazz.newMeth(C$, 'setBackgroundSelectionColor$java_awt_Color', function (newColor) {
-this.backgroundSelectionColor = newColor;
+this.backgroundSelectionColor=newColor;
 });
 
 Clazz.newMeth(C$, 'getBackgroundSelectionColor', function () {
@@ -110,7 +110,7 @@ return this.backgroundSelectionColor;
 });
 
 Clazz.newMeth(C$, 'setBackgroundNonSelectionColor$java_awt_Color', function (newColor) {
-this.backgroundNonSelectionColor = newColor;
+this.backgroundNonSelectionColor=newColor;
 });
 
 Clazz.newMeth(C$, 'getBackgroundNonSelectionColor', function () {
@@ -118,7 +118,7 @@ return this.backgroundNonSelectionColor;
 });
 
 Clazz.newMeth(C$, 'setBorderSelectionColor$java_awt_Color', function (newColor) {
-this.borderSelectionColor = newColor;
+this.borderSelectionColor=newColor;
 });
 
 Clazz.newMeth(C$, 'getBorderSelectionColor', function () {
@@ -126,41 +126,41 @@ return this.borderSelectionColor;
 });
 
 Clazz.newMeth(C$, 'setFont$java_awt_Font', function (font) {
-if (Clazz.instanceOf(font, "javax.swing.plaf.FontUIResource")) font = null;
+if (Clazz.instanceOf(font, "javax.swing.plaf.FontUIResource")) font=null;
 C$.superclazz.prototype.setFont$java_awt_Font.apply(this, [font]);
 });
 
 Clazz.newMeth(C$, 'getFont', function () {
 var font = C$.superclazz.prototype.getFont.apply(this, []);
 if (font == null  && this.tree != null  ) {
-font = this.tree.getFont();
+font=this.tree.getFont();
 }return font;
 });
 
 Clazz.newMeth(C$, 'setBackground$java_awt_Color', function (color) {
-if (Clazz.instanceOf(color, "javax.swing.plaf.ColorUIResource")) color = null;
+if (Clazz.instanceOf(color, "javax.swing.plaf.ColorUIResource")) color=null;
 C$.superclazz.prototype.setBackground$java_awt_Color.apply(this, [color]);
 });
 
 Clazz.newMeth(C$, 'getTreeCellRendererComponent$javax_swing_JTree$O$Z$Z$Z$I$Z', function (tree, value, sel, expanded, leaf, row, hasFocus) {
 var stringValue = tree.convertValueToText$O$Z$Z$Z$I$Z(value, sel, expanded, leaf, row, hasFocus);
-this.tree = tree;
-this.$hasFocus = hasFocus;
+this.tree=tree;
+this.$hasFocus=hasFocus;
 this.setText$S(stringValue);
 var fg = null;
-this.isDropCell = false;
+this.isDropCell=false;
 if (sel) {
-fg = this.getTextSelectionColor();
+fg=this.getTextSelectionColor();
 } else {
-fg = this.getTextNonSelectionColor();
+fg=this.getTextNonSelectionColor();
 }this.setForeground$java_awt_Color(fg);
 var icon = null;
 if (leaf) {
-icon = this.getLeafIcon();
+icon=this.getLeafIcon();
 } else if (expanded) {
-icon = this.getOpenIcon();
+icon=this.getOpenIcon();
 } else {
-icon = this.getClosedIcon();
+icon=this.getClosedIcon();
 }if (!tree.isEnabled()) {
 this.setEnabled$Z(false);
 this.setDisabledIcon$javax_swing_Icon(icon);
@@ -168,25 +168,25 @@ this.setDisabledIcon$javax_swing_Icon(icon);
 this.setEnabled$Z(true);
 this.setIcon$javax_swing_Icon(icon);
 }this.setComponentOrientation$java_awt_ComponentOrientation(tree.getComponentOrientation());
-this.selected = sel;
+this.selected=sel;
 return this;
 });
 
 Clazz.newMeth(C$, 'paint$java_awt_Graphics', function (g) {
 var bColor;
 if (this.isDropCell) {
-bColor = (I$[1]||$incl$(1)).getColor$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Tree.dropCellBackground");
+bColor=(I$[1]||$incl$(1)).getColor$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Tree.dropCellBackground");
 if (bColor == null ) {
-bColor = this.getBackgroundSelectionColor();
+bColor=this.getBackgroundSelectionColor();
 }} else if (this.selected) {
-bColor = this.getBackgroundSelectionColor();
+bColor=this.getBackgroundSelectionColor();
 } else {
-bColor = this.getBackgroundNonSelectionColor();
+bColor=this.getBackgroundNonSelectionColor();
 if (bColor == null ) {
-bColor = this.getBackground();
+bColor=this.getBackground();
 }}var imageOffset = -1;
 if (bColor != null  && this.fillBackground ) {
-imageOffset = p$.getLabelStart.apply(this, []);
+imageOffset=p$.getLabelStart.apply(this, []);
 g.setColor$java_awt_Color(bColor);
 if (this.getComponentOrientation().isLeftToRight()) {
 g.fillRect$I$I$I$I(imageOffset, 0, this.getWidth() - imageOffset, this.getHeight());
@@ -194,9 +194,9 @@ g.fillRect$I$I$I$I(imageOffset, 0, this.getWidth() - imageOffset, this.getHeight
 g.fillRect$I$I$I$I(0, 0, this.getWidth() - imageOffset, this.getHeight());
 }}if (this.$hasFocus) {
 if (this.drawsFocusBorderAroundIcon) {
-imageOffset = 0;
+imageOffset=0;
 } else if (imageOffset == -1) {
-imageOffset = p$.getLabelStart.apply(this, []);
+imageOffset=p$.getLabelStart.apply(this, []);
 }if (this.getComponentOrientation().isLeftToRight()) {
 p$.paintFocus$java_awt_Graphics$I$I$I$I$java_awt_Color.apply(this, [g, imageOffset, 0, this.getWidth() - imageOffset, this.getHeight(), bColor]);
 } else {
@@ -268,4 +268,4 @@ Clazz.newMeth(C$, 'firePropertyChange$S$D$D', function (propertyName, oldValue, 
 Clazz.newMeth(C$, 'firePropertyChange$S$Z$Z', function (propertyName, oldValue, newValue) {
 });
 })();
-//Created 2018-05-15 01:02:59
+//Created 2018-05-24 08:47:10

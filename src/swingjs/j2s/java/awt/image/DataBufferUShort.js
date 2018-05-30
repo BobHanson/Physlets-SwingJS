@@ -16,19 +16,19 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$I', function (size) {
 C$.superclazz.c$$sun_java2d_StateTrackable_State$I$I.apply(this, [(I$[1]||$incl$(1)).STABLE, 1, size]);
 C$.$init$.apply(this);
-this.data = Clazz.array(Short.TYPE, [size]);
-this.bankdata = Clazz.array(Short.TYPE, [1, null]);
-this.bankdata[0] = this.data;
+this.data=Clazz.array(Short.TYPE, [size]);
+this.bankdata=Clazz.array(Short.TYPE, [1, null]);
+this.bankdata[0]=this.data;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I', function (size, numBanks) {
 C$.superclazz.c$$sun_java2d_StateTrackable_State$I$I$I.apply(this, [(I$[1]||$incl$(1)).STABLE, 1, size, numBanks]);
 C$.$init$.apply(this);
-this.bankdata = Clazz.array(Short.TYPE, [numBanks, null]);
+this.bankdata=Clazz.array(Short.TYPE, [numBanks, null]);
 for (var i = 0; i < numBanks; i++) {
-this.bankdata[i] = Clazz.array(Short.TYPE, [size]);
+this.bankdata[i]=Clazz.array(Short.TYPE, [size]);
 }
-this.data = this.bankdata[0];
+this.data=this.bankdata[0];
 }, 1);
 
 Clazz.newMeth(C$, 'c$$HA$I', function (dataArray, size) {
@@ -36,9 +36,9 @@ C$.superclazz.c$$sun_java2d_StateTrackable_State$I$I.apply(this, [(I$[1]||$incl$
 C$.$init$.apply(this);
 if (dataArray == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["dataArray is null"]);
-}this.data = dataArray;
-this.bankdata = Clazz.array(Short.TYPE, [1, null]);
-this.bankdata[0] = this.data;
+}this.data=dataArray;
+this.bankdata=Clazz.array(Short.TYPE, [1, null]);
+this.bankdata[0]=this.data;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$HA$I$I', function (dataArray, size, offset) {
@@ -48,9 +48,9 @@ if (dataArray == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["dataArray is null"]);
 }if ((size + offset) > dataArray.length) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Length of dataArray is less  than size+offset."]);
-}this.data = dataArray;
-this.bankdata = Clazz.array(Short.TYPE, [1, null]);
-this.bankdata[0] = this.data;
+}this.data=dataArray;
+this.bankdata=Clazz.array(Short.TYPE, [1, null]);
+this.bankdata[0]=this.data;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$HAA$I', function (dataArray, size) {
@@ -60,8 +60,8 @@ for (var i = 0; i < dataArray.length; i++) {
 if (dataArray[i] == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["dataArray[" + i + "] is null" ]);
 }}
-this.bankdata = dataArray.clone();
-this.data = this.bankdata[0];
+this.bankdata=dataArray.clone();
+this.data=this.bankdata[0];
 }, 1);
 
 Clazz.newMeth(C$, 'c$$HAA$I$IA', function (dataArray, size, offsets) {
@@ -73,8 +73,8 @@ throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["dataArray["
 }if ((size + offsets[i]) > dataArray[i].length) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Length of dataArray[" + i + "] is less than size+" + "offsets[" + i + "]." ]);
 }}
-this.bankdata = dataArray.clone();
-this.data = this.bankdata[0];
+this.bankdata=dataArray.clone();
+this.data=this.bankdata[0];
 }, 1);
 
 Clazz.newMeth(C$, 'getData', function () {
@@ -101,15 +101,15 @@ return (this.bankdata[bank][i + this.offsets[bank]] & 65535);
 });
 
 Clazz.newMeth(C$, 'setElem$I$I', function (i, val) {
-this.data[i + this.offset] = ((val & 65535)|0);
+this.data[i + this.offset]=((val & 65535)|0);
 this.theTrackable.markDirty();
 });
 
 Clazz.newMeth(C$, 'setElem$I$I$I', function (bank, i, val) {
-this.bankdata[bank][i + this.offsets[bank]] = ((val & 65535)|0);
+this.bankdata[bank][i + this.offsets[bank]]=((val & 65535)|0);
 this.theTrackable.markDirty();
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:01
+//Created 2018-05-24 08:45:25

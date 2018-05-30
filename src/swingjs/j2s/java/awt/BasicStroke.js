@@ -35,19 +35,19 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["negativ
 for (var i = 0; i < dash.length; i++) {
 var d = dash[i];
 if (d > 0.0 ) {
-allzero = false;
+allzero=false;
 } else if (d < 0.0 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["negative dash length"]);
 }}
 if (allzero) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["dash lengths all zero"]);
-}}this.width = width;
-this.cap = cap;
-this.join = join;
-this.miterlimit = miterlimit;
+}}this.width=width;
+this.cap=cap;
+this.join=join;
+this.miterlimit=miterlimit;
 if (dash != null ) {
-this.dash = dash.clone();
-}this.dash_phase = dash_phase;
+this.dash=dash.clone();
+}this.dash_phase=dash_phase;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$F$I$I$F', function (width, cap, join, miterlimit) {
@@ -98,13 +98,13 @@ return this.dash_phase;
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var hash = Float.floatToIntBits(this.width);
-hash = hash * 31 + this.join;
-hash = hash * 31 + this.cap;
-hash = hash * 31 + Float.floatToIntBits(this.miterlimit);
+hash=hash * 31 + this.join;
+hash=hash * 31 + this.cap;
+hash=hash * 31 + Float.floatToIntBits(this.miterlimit);
 if (this.dash != null ) {
-hash = hash * 31 + Float.floatToIntBits(this.dash_phase);
+hash=hash * 31 + Float.floatToIntBits(this.dash_phase);
 for (var i = 0; i < this.dash.length; i++) {
-hash = hash * 31 + Float.floatToIntBits(this.dash[i]);
+hash=hash * 31 + Float.floatToIntBits(this.dash[i]);
 }
 }return hash;
 });
@@ -135,4 +135,4 @@ Clazz.newMeth(C$, 'clone', function () {
 return Clazz.new_(C$.c$$F$I$I$F$FA$F,[this.width, this.cap, this.join, this.miterlimit, this.dash, this.dash_phase]);
 });
 })();
-//Created 2018-05-15 01:01:48
+//Created 2018-05-24 08:45:05

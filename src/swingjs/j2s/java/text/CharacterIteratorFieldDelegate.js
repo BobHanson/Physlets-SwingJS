@@ -15,7 +15,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.attributedStrings = Clazz.new_((I$[1]||$incl$(1)));
+this.attributedStrings=Clazz.new_((I$[1]||$incl$(1)));
 }, 1);
 
 Clazz.newMeth(C$, 'formatted$java_text_Format_Field$O$I$I$StringBuffer', function (attr, value, start, end, buffer) {
@@ -28,17 +28,17 @@ var as = this.attributedStrings.get$I(asIndex--);
 var newIndex = index - as.length$();
 var aStart = Math.max(0, start - newIndex);
 as.addAttribute$java_text_AttributedCharacterIterator_Attribute$O$I$I(attr, value, aStart, Math.min(end - start, as.length$() - aStart) + aStart);
-index = newIndex;
+index=newIndex;
 }
 }if (this.size < start) {
 this.attributedStrings.add$TE(Clazz.new_((I$[2]||$incl$(2)).c$$S,[buffer.substring$I$I(this.size, start)]));
-this.size = start;
+this.size=start;
 }if (this.size < end) {
 var aStart = Math.max(start, this.size);
 var string = Clazz.new_((I$[2]||$incl$(2)).c$$S,[buffer.substring$I$I(aStart, end)]);
 string.addAttribute$java_text_AttributedCharacterIterator_Attribute$O(attr, value);
 this.attributedStrings.add$TE(string);
-this.size = end;
+this.size=end;
 }}});
 
 Clazz.newMeth(C$, 'formatted$I$java_text_Format_Field$O$I$I$StringBuffer', function (fieldID, attr, value, start, end, buffer) {
@@ -48,13 +48,13 @@ this.formatted$java_text_Format_Field$O$I$I$StringBuffer(attr, value, start, end
 Clazz.newMeth(C$, 'getIterator$S', function (string) {
 if (string.length$() > this.size) {
 this.attributedStrings.add$TE(Clazz.new_((I$[2]||$incl$(2)).c$$S,[string.substring(this.size)]));
-this.size = string.length$();
+this.size=string.length$();
 }var iCount = this.attributedStrings.size();
 var iterators = Clazz.array((I$[3]||$incl$(3)), [iCount]);
 for (var counter = 0; counter < iCount; counter++) {
-iterators[counter] = (this.attributedStrings.get$I(counter)).getIterator();
+iterators[counter]=(this.attributedStrings.get$I(counter)).getIterator();
 }
 return Clazz.new_((I$[2]||$incl$(2)).c$$java_text_AttributedCharacterIteratorA,[iterators]).getIterator();
 });
 })();
-//Created 2018-05-15 01:02:10
+//Created 2018-05-24 08:45:42

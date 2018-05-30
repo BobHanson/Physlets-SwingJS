@@ -29,8 +29,8 @@ C$.c$$I$I.apply(this, [0, 0]);
 
 Clazz.newMeth(C$, 'c$$I$I', function (hgap, vgap) {
 C$.$init$.apply(this);
-this.hgap = hgap;
-this.vgap = vgap;
+this.hgap=hgap;
+this.vgap=vgap;
 }, 1);
 
 Clazz.newMeth(C$, 'getHgap', function () {
@@ -38,7 +38,7 @@ return this.hgap;
 });
 
 Clazz.newMeth(C$, 'setHgap$I', function (hgap) {
-this.hgap = hgap;
+this.hgap=hgap;
 });
 
 Clazz.newMeth(C$, 'getVgap', function () {
@@ -46,7 +46,7 @@ return this.vgap;
 });
 
 Clazz.newMeth(C$, 'setVgap$I', function (vgap) {
-this.vgap = vgap;
+this.vgap=vgap;
 });
 
 Clazz.newMeth(C$, 'addLayoutComponent$java_awt_Component$O', function (comp, constraints) {
@@ -60,25 +60,25 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["cannot 
 Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (name, comp) {
 {
 if (name == null ) {
-name = "Center";
+name="Center";
 }if ("Center".equals$O(name)) {
-this.center = comp;
+this.center=comp;
 } else if ("North".equals$O(name)) {
-this.north = comp;
+this.north=comp;
 } else if ("South".equals$O(name)) {
-this.south = comp;
+this.south=comp;
 } else if ("East".equals$O(name)) {
-this.east = comp;
+this.east=comp;
 } else if ("West".equals$O(name)) {
-this.west = comp;
+this.west=comp;
 } else if ("First".equals$O(name)) {
-this.firstLine = comp;
+this.firstLine=comp;
 } else if ("Last".equals$O(name)) {
-this.lastLine = comp;
+this.lastLine=comp;
 } else if ("Before".equals$O(name)) {
-this.firstItem = comp;
+this.firstItem=comp;
 } else if ("After".equals$O(name)) {
-this.lastItem = comp;
+this.lastItem=comp;
 } else {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["cannot add to layout: unknown constraint: " + name]);
 }}});
@@ -86,23 +86,23 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["cannot 
 Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component', function (comp) {
 {
 if (comp === this.center ) {
-this.center = null;
+this.center=null;
 } else if (comp === this.north ) {
-this.north = null;
+this.north=null;
 } else if (comp === this.south ) {
-this.south = null;
+this.south=null;
 } else if (comp === this.east ) {
-this.east = null;
+this.east=null;
 } else if (comp === this.west ) {
-this.west = null;
+this.west=null;
 }if (comp === this.firstLine ) {
-this.firstLine = null;
+this.firstLine=null;
 } else if (comp === this.lastLine ) {
-this.lastLine = null;
+this.lastLine=null;
 } else if (comp === this.firstItem ) {
-this.firstItem = null;
+this.firstItem=null;
 } else if (comp === this.lastItem ) {
-this.lastItem = null;
+this.lastItem=null;
 }}});
 
 Clazz.newMeth(C$, 'getLayoutComponent$O', function (constraints) {
@@ -132,19 +132,19 @@ Clazz.newMeth(C$, 'getLayoutComponent$java_awt_Container$O', function (target, c
 var ltr = target.getComponentOrientation().isLeftToRight();
 var result = null;
 if ("North".equals$O(constraints)) {
-result = (this.firstLine != null ) ? this.firstLine : this.north;
+result=(this.firstLine != null ) ? this.firstLine : this.north;
 } else if ("South".equals$O(constraints)) {
-result = (this.lastLine != null ) ? this.lastLine : this.south;
+result=(this.lastLine != null ) ? this.lastLine : this.south;
 } else if ("West".equals$O(constraints)) {
-result = ltr ? this.firstItem : this.lastItem;
+result=ltr ? this.firstItem : this.lastItem;
 if (result == null ) {
-result = this.west;
+result=this.west;
 }} else if ("East".equals$O(constraints)) {
-result = ltr ? this.lastItem : this.firstItem;
+result=ltr ? this.lastItem : this.firstItem;
 if (result == null ) {
-result = this.east;
+result=this.east;
 }} else if ("Center".equals$O(constraints)) {
-result = this.center;
+result=this.center;
 } else {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["cannot get component: invalid constraint: " + constraints]);
 }return result;
@@ -179,29 +179,29 @@ Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container', function (target) {
 var dim = Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[0, 0]);
 var ltr = target.getComponentOrientation().isLeftToRight();
 var c = null;
-if ((c = p$.getChild$S$Z.apply(this, ["East", ltr])) != null ) {
+if ((c=p$.getChild$S$Z.apply(this, ["East", ltr])) != null ) {
 var d = c.getMinimumSize();
-dim.width = dim.width+(d.width + this.hgap);
-dim.height = Math.max(d.height, dim.height);
-}if ((c = p$.getChild$S$Z.apply(this, ["West", ltr])) != null ) {
+dim.width+=d.width + this.hgap;
+dim.height=Math.max(d.height, dim.height);
+}if ((c=p$.getChild$S$Z.apply(this, ["West", ltr])) != null ) {
 var d = c.getMinimumSize();
-dim.width = dim.width+(d.width + this.hgap);
-dim.height = Math.max(d.height, dim.height);
-}if ((c = p$.getChild$S$Z.apply(this, ["Center", ltr])) != null ) {
+dim.width+=d.width + this.hgap;
+dim.height=Math.max(d.height, dim.height);
+}if ((c=p$.getChild$S$Z.apply(this, ["Center", ltr])) != null ) {
 var d = c.getMinimumSize();
-dim.width = dim.width+(d.width);
-dim.height = Math.max(d.height, dim.height);
-}if ((c = p$.getChild$S$Z.apply(this, ["North", ltr])) != null ) {
+dim.width+=d.width;
+dim.height=Math.max(d.height, dim.height);
+}if ((c=p$.getChild$S$Z.apply(this, ["North", ltr])) != null ) {
 var d = c.getMinimumSize();
-dim.width = Math.max(d.width, dim.width);
-dim.height = dim.height+(d.height + this.vgap);
-}if ((c = p$.getChild$S$Z.apply(this, ["South", ltr])) != null ) {
+dim.width=Math.max(d.width, dim.width);
+dim.height+=d.height + this.vgap;
+}if ((c=p$.getChild$S$Z.apply(this, ["South", ltr])) != null ) {
 var d = c.getMinimumSize();
-dim.width = Math.max(d.width, dim.width);
-dim.height = dim.height+(d.height + this.vgap);
+dim.width=Math.max(d.width, dim.width);
+dim.height+=d.height + this.vgap;
 }var insets = target.getInsets();
-dim.width = dim.width+(insets.left + insets.right);
-dim.height = dim.height+(insets.top + insets.bottom);
+dim.width+=insets.left + insets.right;
+dim.height+=insets.top + insets.bottom;
 return dim;
 }});
 
@@ -210,29 +210,29 @@ Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container', function (target) {
 var dim = Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[0, 0]);
 var ltr = target.getComponentOrientation().isLeftToRight();
 var c = null;
-if ((c = p$.getChild$S$Z.apply(this, ["East", ltr])) != null ) {
+if ((c=p$.getChild$S$Z.apply(this, ["East", ltr])) != null ) {
 var d = c.getPreferredSize();
-dim.width = dim.width+(d.width + this.hgap);
-dim.height = Math.max(d.height, dim.height);
-}if ((c = p$.getChild$S$Z.apply(this, ["West", ltr])) != null ) {
+dim.width+=d.width + this.hgap;
+dim.height=Math.max(d.height, dim.height);
+}if ((c=p$.getChild$S$Z.apply(this, ["West", ltr])) != null ) {
 var d = c.getPreferredSize();
-dim.width = dim.width+(d.width + this.hgap);
-dim.height = Math.max(d.height, dim.height);
-}if ((c = p$.getChild$S$Z.apply(this, ["Center", ltr])) != null ) {
+dim.width+=d.width + this.hgap;
+dim.height=Math.max(d.height, dim.height);
+}if ((c=p$.getChild$S$Z.apply(this, ["Center", ltr])) != null ) {
 var d = c.getPreferredSize();
-dim.width = dim.width+(d.width);
-dim.height = Math.max(d.height, dim.height);
-}if ((c = p$.getChild$S$Z.apply(this, ["North", ltr])) != null ) {
+dim.width+=d.width;
+dim.height=Math.max(d.height, dim.height);
+}if ((c=p$.getChild$S$Z.apply(this, ["North", ltr])) != null ) {
 var d = c.getPreferredSize();
-dim.width = Math.max(d.width, dim.width);
-dim.height = dim.height+(d.height + this.vgap);
-}if ((c = p$.getChild$S$Z.apply(this, ["South", ltr])) != null ) {
+dim.width=Math.max(d.width, dim.width);
+dim.height+=d.height + this.vgap;
+}if ((c=p$.getChild$S$Z.apply(this, ["South", ltr])) != null ) {
 var d = c.getPreferredSize();
-dim.width = Math.max(d.width, dim.width);
-dim.height = dim.height+(d.height + this.vgap);
+dim.width=Math.max(d.width, dim.width);
+dim.height+=d.height + this.vgap;
 }var insets = target.getInsets();
-dim.width = dim.width+(insets.left + insets.right);
-dim.height = dim.height+(insets.top + insets.bottom);
+dim.width+=insets.left + insets.right;
+dim.height+=insets.top + insets.bottom;
 return dim;
 }});
 
@@ -260,48 +260,48 @@ var left = insets.left;
 var right = target.width - insets.right;
 var ltr = target.getComponentOrientation().isLeftToRight();
 var c = null;
-if ((c = p$.getChild$S$Z.apply(this, ["North", ltr])) != null ) {
+if ((c=p$.getChild$S$Z.apply(this, ["North", ltr])) != null ) {
 c.setSize$I$I(right - left, c.height);
 var d = c.getPreferredSize();
 c.setBounds$I$I$I$I(left, top, right - left, d.height);
-top = top+(d.height + this.vgap);
-}if ((c = p$.getChild$S$Z.apply(this, ["South", ltr])) != null ) {
+top+=d.height + this.vgap;
+}if ((c=p$.getChild$S$Z.apply(this, ["South", ltr])) != null ) {
 c.setSize$I$I(right - left, c.height);
 var d = c.getPreferredSize();
 c.setBounds$I$I$I$I(left, bottom - d.height, right - left, d.height);
-bottom = bottom-(d.height + this.vgap);
-}if ((c = p$.getChild$S$Z.apply(this, ["East", ltr])) != null ) {
+bottom-=d.height + this.vgap;
+}if ((c=p$.getChild$S$Z.apply(this, ["East", ltr])) != null ) {
 c.setSize$I$I(c.width, bottom - top);
 var d = c.getPreferredSize();
 c.setBounds$I$I$I$I(right - d.width, top, d.width, bottom - top);
-right = right-(d.width + this.hgap);
-}if ((c = p$.getChild$S$Z.apply(this, ["West", ltr])) != null ) {
+right-=d.width + this.hgap;
+}if ((c=p$.getChild$S$Z.apply(this, ["West", ltr])) != null ) {
 c.setSize$I$I(c.width, bottom - top);
 var d = c.getPreferredSize();
 c.setBounds$I$I$I$I(left, top, d.width, bottom - top);
-left = left+(d.width + this.hgap);
-}if ((c = p$.getChild$S$Z.apply(this, ["Center", ltr])) != null ) {
+left+=d.width + this.hgap;
+}if ((c=p$.getChild$S$Z.apply(this, ["Center", ltr])) != null ) {
 c.setBounds$I$I$I$I(left, top, right - left, bottom - top);
 }}});
 
 Clazz.newMeth(C$, 'getChild$S$Z', function (key, ltr) {
 var result = null;
 if (key == "North") {
-result = (this.firstLine != null ) ? this.firstLine : this.north;
+result=(this.firstLine != null ) ? this.firstLine : this.north;
 } else if (key == "South") {
-result = (this.lastLine != null ) ? this.lastLine : this.south;
+result=(this.lastLine != null ) ? this.lastLine : this.south;
 } else if (key == "West") {
-result = ltr ? this.firstItem : this.lastItem;
+result=ltr ? this.firstItem : this.lastItem;
 if (result == null ) {
-result = this.west;
+result=this.west;
 }} else if (key == "East") {
-result = ltr ? this.lastItem : this.firstItem;
+result=ltr ? this.lastItem : this.firstItem;
 if (result == null ) {
-result = this.east;
+result=this.east;
 }} else if (key == "Center") {
-result = this.center;
+result=this.center;
 }if (result != null  && !result.visible ) {
-result = null;
+result=null;
 }return result;
 });
 
@@ -309,4 +309,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.getClass().getName() + "[hgap=" + this.hgap + ",vgap=" + this.vgap + "]" ;
 });
 })();
-//Created 2018-05-15 01:01:48
+//Created 2018-05-24 08:45:06

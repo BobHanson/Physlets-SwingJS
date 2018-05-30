@@ -16,14 +16,14 @@ Clazz.newMeth(C$, 'paramString', function () {
 var typeStr;
 switch (this.id) {
 case 900:
-typeStr = "TEXT_VALUE_CHANGED";
+typeStr="TEXT_VALUE_CHANGED";
 break;
 default:
-typeStr = "unknown type";
+typeStr="unknown type";
 }
 return typeStr;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:19

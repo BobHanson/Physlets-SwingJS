@@ -28,8 +28,8 @@ Clazz.super_(C$, this,1);
 var file = null;
 var fileOutputStream = null;
 try {
-file = Clazz.new_((I$[2]||$incl$(2)).c$$S,[outputPdfFile]);
-fileOutputStream = Clazz.new_((I$[3]||$incl$(3)).c$$java_io_File,[file]);
+file=Clazz.new_((I$[2]||$incl$(2)).c$$S,[outputPdfFile]);
+fileOutputStream=Clazz.new_((I$[3]||$incl$(3)).c$$java_io_File,[file]);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
 System.err.println$S("Error!! - Invalid output file path: " + outputPdfFile);
@@ -56,16 +56,16 @@ System.exit(0);
 ), Clazz.new_((I$[4]||$incl$(4)), [this, null],P$.PDFTest$1)));
 var contentPane = this.getContentPane();
 this.pane.setLayout$java_awt_LayoutManager(Clazz.new_((I$[5]||$incl$(5))));
-this.menuBar = Clazz.new_((I$[6]||$incl$(6)).c$$java_awt_event_ActionListener,[this]);
+this.menuBar=Clazz.new_((I$[6]||$incl$(6)).c$$java_awt_event_ActionListener,[this]);
 this.setJMenuBar$javax_swing_JMenuBar(this.menuBar);
 var pdfGraphics = null;
-this.job = Clazz.new_((I$[7]||$incl$(7)).c$$java_io_OutputStream,[fileOutputStream]);
-pdfGraphics = this.job.getGraphics();
+this.job=Clazz.new_((I$[7]||$incl$(7)).c$$java_io_OutputStream,[fileOutputStream]);
+pdfGraphics=this.job.getGraphics();
 var d = this.job.getPageDimension();
-this.documentDimension = d;
+this.documentDimension=d;
 var w = (d.getWidth()|0);
 var h = (d.getHeight()|0);
-this.drawingArea = Clazz.new_((I$[8]||$incl$(8)));
+this.drawingArea=Clazz.new_((I$[8]||$incl$(8)));
 var scrollPane = Clazz.new_((I$[9]||$incl$(9)).c$$java_awt_Component$I$I,[this.drawingArea, 22, 32]);
 this.drawingArea.setPreferredSize$java_awt_Dimension(Clazz.new_((I$[10]||$incl$(10)).c$$I$I,[1000, 1000]));
 this.pane.add$java_awt_Component$O(scrollPane, "Center");
@@ -78,7 +78,7 @@ this.setSize$I$I(w, (h/2|0));
 this.setVisible$Z(true);
 this.toFront();
 p$.doFirstPage$java_awt_Graphics.apply(this, [pdfGraphics]);
-this.currentPage = 1;
+this.currentPage=1;
 if (fileOutputStream != null ) {
 try {
 fileOutputStream.close();
@@ -89,7 +89,7 @@ e.printStackTrace();
 throw e;
 }
 }
-fileOutputStream = null;
+fileOutputStream=null;
 }this.drawingArea.repaint();
 this.pane.revalidate();
 }, 1);
@@ -107,11 +107,11 @@ javaGraphics.dispose();
 if ((!this.pdfDocumentAlreadyDone) && (pdfGraphics != null ) ) {
 p$.doTest$java_awt_Graphics$java_awt_Dimension.apply(this, [pdfGraphics, d]);
 pdfGraphics.dispose();
-pdfGraphics = this.job.getGraphics();
+pdfGraphics=this.job.getGraphics();
 p$.doSecondPageTest$java_awt_Graphics.apply(this, [pdfGraphics]);
 pdfGraphics.dispose();
 this.job.end();
-}this.currentPage = 1;
+}this.currentPage=1;
 this.drawingArea.repaint();
 this.drawingArea.revalidate();
 });
@@ -182,7 +182,7 @@ var string = "Hello World! this is a really long string";
 var padding = 10;
 var child = null;
 try {
-child = box.getStringBounds$S$I$I$java_awt_FontMetrics$I(string, 3, 2, fm, padding);
+child=box.getStringBounds$S$I$I$java_awt_FontMetrics$I(string, 3, 2, fm, padding);
 } catch (stle) {
 if (Clazz.exceptionOf(stle, "gnu.jpdf.StringTooLongException")){
 stle.printStackTrace();
@@ -243,7 +243,7 @@ var line3 = "Line 3 realllllly loooooong   .h gkjhg kjh gkjh gkjhg kjhg kjhg kjh
 var padding = 5;
 var child = null;
 try {
-child = box.getStringBounds$S$I$I$java_awt_FontMetrics$I(line1, 4, 1, fm, padding);
+child=box.getStringBounds$S$I$I$java_awt_FontMetrics$I(line1, 4, 1, fm, padding);
 child.drawWrappedString$java_awt_Graphics$java_awt_FontMetrics$I$I(g, fm, padding, 4);
 } catch (stle) {
 if (Clazz.exceptionOf(stle, "gnu.jpdf.StringTooLongException")){
@@ -255,7 +255,7 @@ throw stle;
 }
 box.subtract$gnu_jpdf_BoundingBox$I(child, 7);
 try {
-child = box.getStringBounds$S$I$I$java_awt_FontMetrics$I(line2, 4, 1, fm, padding);
+child=box.getStringBounds$S$I$I$java_awt_FontMetrics$I(line2, 4, 1, fm, padding);
 child.drawWrappedString$java_awt_Graphics$java_awt_FontMetrics$I$I(g, fm, padding, 4);
 } catch (stle) {
 if (Clazz.exceptionOf(stle, "gnu.jpdf.StringTooLongException")){
@@ -267,7 +267,7 @@ throw stle;
 }
 box.subtract$gnu_jpdf_BoundingBox$I(child, 7);
 try {
-child = box.getStringBounds$S$I$I$java_awt_FontMetrics$I(line3, 4, 1, fm, padding);
+child=box.getStringBounds$S$I$I$java_awt_FontMetrics$I(line3, 4, 1, fm, padding);
 child.drawWrappedString$java_awt_Graphics$java_awt_FontMetrics$I$I(g, fm, padding, 4);
 } catch (stle) {
 if (Clazz.exceptionOf(stle, "gnu.jpdf.StringTooLongException")){
@@ -279,13 +279,13 @@ throw stle;
 }
 box.subtract$gnu_jpdf_BoundingBox$I(child, 7);
 try {
-child = box.getStringBounds$S$I$I$java_awt_FontMetrics$I(line1, 5, 2, fm, padding);
+child=box.getStringBounds$S$I$I$java_awt_FontMetrics$I(line1, 5, 2, fm, padding);
 child.drawWrappedString$java_awt_Graphics$java_awt_FontMetrics$I$I(g, fm, padding, 5);
 box.subtract$gnu_jpdf_BoundingBox$I(child, 6);
-child = box.getStringBounds$S$I$I$java_awt_FontMetrics$I(line2, 5, 2, fm, padding);
+child=box.getStringBounds$S$I$I$java_awt_FontMetrics$I(line2, 5, 2, fm, padding);
 child.drawWrappedString$java_awt_Graphics$java_awt_FontMetrics$I$I(g, fm, padding, 5);
 box.subtract$gnu_jpdf_BoundingBox$I(child, 6);
-child = box.getStringBounds$S$I$I$java_awt_FontMetrics$I(line3, 5, 2, fm, padding);
+child=box.getStringBounds$S$I$I$java_awt_FontMetrics$I(line3, 5, 2, fm, padding);
 child.drawWrappedString$java_awt_Graphics$java_awt_FontMetrics$I$I(g, fm, padding, 5);
 box.subtract$gnu_jpdf_BoundingBox$I(child, 6);
 } catch (stle) {
@@ -334,7 +334,7 @@ System.exit(1);
 var javaGraphics = img.getGraphics();
 p$.doSecondPageTest$java_awt_Graphics.apply(this, [javaGraphics]);
 javaGraphics.dispose();
-this.currentPage = 2;
+this.currentPage=2;
 this.drawingArea.repaint();
 this.drawingArea.revalidate();
 });
@@ -350,13 +350,13 @@ var xp = Clazz.array(Integer.TYPE, -1, [10, 10, 20, 15, 20]);
 var yp = Clazz.array(Integer.TYPE, -1, [50, 60, 60, 55, 50]);
 var np = xp.length;
 g.drawPolygon$IA$IA$I(xp, yp, np);
-xp = Clazz.array(Integer.TYPE, -1, [60, 60, 70, 65, 70]);
-yp = Clazz.array(Integer.TYPE, -1, [80, 90, 90, 85, 80]);
-np = xp.length;
+xp=Clazz.array(Integer.TYPE, -1, [60, 60, 70, 65, 70]);
+yp=Clazz.array(Integer.TYPE, -1, [80, 90, 90, 85, 80]);
+np=xp.length;
 g.drawPolyline$IA$IA$I(xp, yp, np);
-xp = Clazz.array(Integer.TYPE, -1, [60, 60, 70, 65, 70]);
-yp = Clazz.array(Integer.TYPE, -1, [50, 60, 60, 55, 50]);
-np = xp.length;
+xp=Clazz.array(Integer.TYPE, -1, [60, 60, 70, 65, 70]);
+yp=Clazz.array(Integer.TYPE, -1, [50, 60, 60, 55, 50]);
+np=xp.length;
 g.fillPolygon$IA$IA$I(xp, yp, np);
 g.setFont$java_awt_Font(Clazz.new_((I$[17]||$incl$(17)).c$$S$I$I,["SansSerif", 0, 12]));
 g.drawString$S$I$I("This is a simple string", 10, 120);
@@ -401,24 +401,24 @@ for (var j = 0; j < modes.length; j++) {
 g.setFont$java_awt_Font(Clazz.new_((I$[17]||$incl$(17)).c$$S$I$I,[fonts[i], imodes[j], 10]));
 g.drawString$S$I$I(modes[j], 100 + (50 * j), ty);
 }
-ty = ty+(12);
+ty+=12;
 }
 });
 
 Clazz.newMeth(C$, 'main', function (args) {
-args = Clazz.array(java.lang.String, -1, ["-pdf", "c:/temp/test/gnu-test.pdf", "-img", null]);
+args=Clazz.array(java.lang.String, -1, ["-pdf", "c:/temp/test/gnu-test.pdf", "-img", null]);
 if ((args != null ) && (args.length > 0) ) {
 var len = args.length;
 for (var i = 0; i < len; i++) {
 if (args[i] == null ) continue;
 if (args[i].equals$O("-nw")) {
-C$.noWindow = true;
+C$.noWindow=true;
 }if (args[i].equals$O("-pdf")) {
 if (len > (i + 1)) {
-C$.outputPdfFile = args[i + 1];
+C$.outputPdfFile=args[i + 1];
 }}if (args[i].equals$O("-img")) {
 if (len > (i + 1)) {
-C$.sampleImageFile = args[i + 1];
+C$.sampleImageFile=args[i + 1];
 }}}
 } else {
 C$.usage();
@@ -448,4 +448,4 @@ System.out.println();
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:47
+//Created 2018-05-24 08:45:04

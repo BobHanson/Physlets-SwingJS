@@ -110,7 +110,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_print_attribute_AttributeSet', function (attributeSet) {
 C$.$init$.apply(this);
-this.attrset = attributeSet;
+this.attrset=attributeSet;
 }, 1);
 
 Clazz.newMeth(C$, 'get$Class', function (key) {
@@ -257,7 +257,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_print_attribute_AttributeSet', function (attributeSet) {
 C$.$init$.apply(this);
-this.attrset = attributeSet;
+this.attrset=attributeSet;
 }, 1);
 
 Clazz.newMeth(C$, 'get$Class', function (category) {
@@ -387,4 +387,4 @@ C$.$init$.apply(this);
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:20
+//Created 2018-05-24 08:46:00

@@ -19,7 +19,7 @@ C$.c$$O$Z.apply(this, [sourceBean, false]);
 Clazz.newMeth(C$, 'c$$O$Z', function (sourceBean, notifyOnEDT) {
 C$.superclazz.c$$O.apply(this, [sourceBean]);
 C$.$init$.apply(this);
-this.notifyOnEDT = notifyOnEDT;
+this.notifyOnEDT=notifyOnEDT;
 }, 1);
 
 Clazz.newMeth(C$, 'firePropertyChange$java_beans_PropertyChangeEvent', function (evt) {
@@ -50,4 +50,4 @@ return this.notifyOnEDT;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:46
+//Created 2018-05-24 08:46:49

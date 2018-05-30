@@ -26,16 +26,16 @@ this.listenerList = Clazz.new_((I$[1]||$incl$(1)));
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.listSelectionModel = Clazz.new_((I$[2]||$incl$(2)));
-this.selectionMode = 4;
-this.leadIndex = this.leadRow = -1;
-this.uniquePaths = Clazz.new_((I$[3]||$incl$(3)));
-this.lastPaths = Clazz.new_((I$[3]||$incl$(3)));
-this.tempPaths = Clazz.array((I$[4]||$incl$(4)), [1]);
+this.listSelectionModel=Clazz.new_((I$[2]||$incl$(2)));
+this.selectionMode=4;
+this.leadIndex=this.leadRow=-1;
+this.uniquePaths=Clazz.new_((I$[3]||$incl$(3)));
+this.lastPaths=Clazz.new_((I$[3]||$incl$(3)));
+this.tempPaths=Clazz.array((I$[4]||$incl$(4)), [1]);
 }, 1);
 
 Clazz.newMeth(C$, 'setRowMapper$javax_swing_tree_RowMapper', function (newMapper) {
-this.rowMapper = newMapper;
+this.rowMapper=newMapper;
 this.resetRowSelection();
 });
 
@@ -45,8 +45,8 @@ return this.rowMapper;
 
 Clazz.newMeth(C$, 'setSelectionMode$I', function (mode) {
 var oldMode = this.selectionMode;
-this.selectionMode = mode;
-if (this.selectionMode != 1 && this.selectionMode != 2  && this.selectionMode != 4 ) this.selectionMode = 4;
+this.selectionMode=mode;
+if (this.selectionMode != 1 && this.selectionMode != 2  && this.selectionMode != 4 ) this.selectionMode=4;
 if (oldMode != this.selectionMode && this.changeSupport != null  ) this.changeSupport.firePropertyChange$S$O$O("selectionMode",  new Integer(oldMode),  new Integer(this.selectionMode));
 });
 
@@ -58,7 +58,7 @@ Clazz.newMeth(C$, 'setSelectionPath$javax_swing_tree_TreePath', function (path) 
 if (path == null ) this.setSelectionPaths$javax_swing_tree_TreePathA(null);
  else {
 var newPaths = Clazz.array((I$[4]||$incl$(4)), [1]);
-newPaths[0] = path;
+newPaths[0]=path;
 this.setSelectionPaths$javax_swing_tree_TreePathA(newPaths);
 }});
 
@@ -68,53 +68,53 @@ var newCounter;
 var oldCount;
 var oldCounter;
 var paths = pPaths;
-if (paths == null ) newCount = 0;
- else newCount = paths.length;
-if (this.selection == null ) oldCount = 0;
- else oldCount = this.selection.length;
+if (paths == null ) newCount=0;
+ else newCount=paths.length;
+if (this.selection == null ) oldCount=0;
+ else oldCount=this.selection.length;
 if ((newCount + oldCount) != 0) {
 if (this.selectionMode == 1) {
 if (newCount > 1) {
-paths = Clazz.array((I$[4]||$incl$(4)), [1]);
-paths[0] = pPaths[0];
-newCount = 1;
+paths=Clazz.array((I$[4]||$incl$(4)), [1]);
+paths[0]=pPaths[0];
+newCount=1;
 }} else if (this.selectionMode == 2) {
 if (newCount > 0 && !this.arePathsContiguous$javax_swing_tree_TreePathA(paths) ) {
-paths = Clazz.array((I$[4]||$incl$(4)), [1]);
-paths[0] = pPaths[0];
-newCount = 1;
+paths=Clazz.array((I$[4]||$incl$(4)), [1]);
+paths[0]=pPaths[0];
+newCount=1;
 }}var validCount = 0;
 var beginLeadPath = this.leadPath;
 var cPaths = Clazz.new_((I$[5]||$incl$(5)).c$$I,[newCount + oldCount]);
 this.lastPaths.clear();
-this.leadPath = null;
-for (newCounter = 0; newCounter < newCount; newCounter++) {
+this.leadPath=null;
+for (newCounter=0; newCounter < newCount; newCounter++) {
 if (paths[newCounter] != null  && this.lastPaths.get$O(paths[newCounter]) == null  ) {
 validCount++;
 this.lastPaths.put$TK$TV(paths[newCounter], (I$[6]||$incl$(6)).TRUE);
 if (this.uniquePaths.get$O(paths[newCounter]) == null ) {
 cPaths.addElement$TE(Clazz.new_((I$[7]||$incl$(7)).c$$javax_swing_tree_TreePath$Z,[paths[newCounter], true]));
-}this.leadPath = paths[newCounter];
+}this.leadPath=paths[newCounter];
 }}
 var newSelection;
 if (validCount == 0) {
-newSelection = null;
+newSelection=null;
 } else if (validCount != newCount) {
 var keys = this.lastPaths.keys();
-newSelection = Clazz.array((I$[4]||$incl$(4)), [validCount]);
-validCount = 0;
+newSelection=Clazz.array((I$[4]||$incl$(4)), [validCount]);
+validCount=0;
 while (keys.hasMoreElements()){
-newSelection[validCount++] = keys.nextElement();
+newSelection[validCount++]=keys.nextElement();
 }
 } else {
-newSelection = Clazz.array((I$[4]||$incl$(4)), [paths.length]);
+newSelection=Clazz.array((I$[4]||$incl$(4)), [paths.length]);
 System.arraycopy(paths, 0, newSelection, 0, paths.length);
-}for (oldCounter = 0; oldCounter < oldCount; oldCounter++) if (this.selection[oldCounter] != null  && this.lastPaths.get$O(this.selection[oldCounter]) == null  ) cPaths.addElement$TE(Clazz.new_((I$[7]||$incl$(7)).c$$javax_swing_tree_TreePath$Z,[this.selection[oldCounter], false]));
+}for (oldCounter=0; oldCounter < oldCount; oldCounter++) if (this.selection[oldCounter] != null  && this.lastPaths.get$O(this.selection[oldCounter]) == null  ) cPaths.addElement$TE(Clazz.new_((I$[7]||$incl$(7)).c$$javax_swing_tree_TreePath$Z,[this.selection[oldCounter], false]));
 
-this.selection = newSelection;
+this.selection=newSelection;
 var tempHT = this.uniquePaths;
-this.uniquePaths = this.lastPaths;
-this.lastPaths = tempHT;
+this.uniquePaths=this.lastPaths;
+this.lastPaths=tempHT;
 this.lastPaths.clear();
 if (this.selection != null ) this.insureUniqueness();
 this.updateLeadIndex();
@@ -125,7 +125,7 @@ if (cPaths.size() > 0) this.notifyPathChange$java_util_Vector$javax_swing_tree_T
 Clazz.newMeth(C$, 'addSelectionPath$javax_swing_tree_TreePath', function (path) {
 if (path != null ) {
 var toAdd = Clazz.array((I$[4]||$incl$(4)), [1]);
-toAdd[0] = path;
+toAdd[0]=path;
 this.addSelectionPaths$javax_swing_tree_TreePathA(toAdd);
 }});
 
@@ -139,7 +139,7 @@ if (this.arePathsContiguous$javax_swing_tree_TreePathA(paths)) {
 this.setSelectionPaths$javax_swing_tree_TreePathA(paths);
 } else {
 var newPaths = Clazz.array((I$[4]||$incl$(4)), [1]);
-newPaths[0] = paths[0];
+newPaths[0]=paths[0];
 this.setSelectionPaths$javax_swing_tree_TreePathA(newPaths);
 }} else {
 var counter;
@@ -147,45 +147,45 @@ var validCount;
 var oldCount;
 var beginLeadPath = this.leadPath;
 var cPaths = null;
-if (this.selection == null ) oldCount = 0;
- else oldCount = this.selection.length;
+if (this.selection == null ) oldCount=0;
+ else oldCount=this.selection.length;
 this.lastPaths.clear();
-for (counter = 0, validCount = 0; counter < newPathLength; counter++) {
+for (counter=0, validCount=0; counter < newPathLength; counter++) {
 if (paths[counter] != null ) {
 if (this.uniquePaths.get$O(paths[counter]) == null ) {
 validCount++;
-if (cPaths == null ) cPaths = Clazz.new_((I$[5]||$incl$(5)));
+if (cPaths == null ) cPaths=Clazz.new_((I$[5]||$incl$(5)));
 cPaths.addElement$TE(Clazz.new_((I$[7]||$incl$(7)).c$$javax_swing_tree_TreePath$Z,[paths[counter], true]));
 this.uniquePaths.put$TK$TV(paths[counter], (I$[6]||$incl$(6)).TRUE);
 this.lastPaths.put$TK$TV(paths[counter], (I$[6]||$incl$(6)).TRUE);
-}this.leadPath = paths[counter];
+}this.leadPath=paths[counter];
 }}
 if (this.leadPath == null ) {
-this.leadPath = beginLeadPath;
+this.leadPath=beginLeadPath;
 }if (validCount > 0) {
 var newSelection = Clazz.array((I$[4]||$incl$(4)), [oldCount + validCount]);
 if (oldCount > 0) System.arraycopy(this.selection, 0, newSelection, 0, oldCount);
 if (validCount != paths.length) {
 var newPaths = this.lastPaths.keys();
-counter = oldCount;
+counter=oldCount;
 while (newPaths.hasMoreElements()){
-newSelection[counter++] = newPaths.nextElement();
+newSelection[counter++]=newPaths.nextElement();
 }
 } else {
 System.arraycopy(paths, 0, newSelection, oldCount, validCount);
-}this.selection = newSelection;
+}this.selection=newSelection;
 this.insureUniqueness();
 this.updateLeadIndex();
 this.resetRowSelection();
 this.notifyPathChange$java_util_Vector$javax_swing_tree_TreePath(cPaths, beginLeadPath);
-} else this.leadPath = beginLeadPath;
+} else this.leadPath=beginLeadPath;
 this.lastPaths.clear();
 }}});
 
 Clazz.newMeth(C$, 'removeSelectionPath$javax_swing_tree_TreePath', function (path) {
 if (path != null ) {
 var rPath = Clazz.array((I$[4]||$incl$(4)), [1]);
-rPath[0] = path;
+rPath[0]=path;
 this.removeSelectionPaths$javax_swing_tree_TreePathA(rPath);
 }});
 
@@ -198,7 +198,7 @@ var pathsToRemove = null;
 for (var removeCounter = paths.length - 1; removeCounter >= 0; removeCounter--) {
 if (paths[removeCounter] != null ) {
 if (this.uniquePaths.get$O(paths[removeCounter]) != null ) {
-if (pathsToRemove == null ) pathsToRemove = Clazz.new_((I$[5]||$incl$(5)).c$$I,[paths.length]);
+if (pathsToRemove == null ) pathsToRemove=Clazz.new_((I$[5]||$incl$(5)).c$$I,[paths.length]);
 this.uniquePaths.remove$O(paths[removeCounter]);
 pathsToRemove.addElement$TE(Clazz.new_((I$[7]||$incl$(7)).c$$javax_swing_tree_TreePath$Z,[paths[removeCounter], false]));
 }}}
@@ -206,23 +206,23 @@ if (pathsToRemove != null ) {
 var removeCount = pathsToRemove.size();
 var beginLeadPath = this.leadPath;
 if (removeCount == this.selection.length) {
-this.selection = null;
+this.selection=null;
 } else {
 var pEnum = this.uniquePaths.keys();
 var validCount = 0;
-this.selection = Clazz.array((I$[4]||$incl$(4)), [this.selection.length - removeCount]);
+this.selection=Clazz.array((I$[4]||$incl$(4)), [this.selection.length - removeCount]);
 while (pEnum.hasMoreElements()){
-this.selection[validCount++] = pEnum.nextElement();
+this.selection[validCount++]=pEnum.nextElement();
 }
 }if (this.leadPath != null  && this.uniquePaths.get$O(this.leadPath) == null  ) {
 if (this.selection != null ) {
-this.leadPath = this.selection[this.selection.length - 1];
+this.leadPath=this.selection[this.selection.length - 1];
 } else {
-this.leadPath = null;
+this.leadPath=null;
 }} else if (this.selection != null ) {
-this.leadPath = this.selection[this.selection.length - 1];
+this.leadPath=this.selection[this.selection.length - 1];
 } else {
-this.leadPath = null;
+this.leadPath=null;
 }this.updateLeadIndex();
 this.resetRowSelection();
 this.notifyPathChange$java_util_Vector$javax_swing_tree_TreePath(pathsToRemove, beginLeadPath);
@@ -258,13 +258,13 @@ Clazz.newMeth(C$, 'clearSelection', function () {
 if (this.selection != null ) {
 var selSize = this.selection.length;
 var newness = Clazz.array(Boolean.TYPE, [selSize]);
-for (var counter = 0; counter < selSize; counter++) newness[counter] = false;
+for (var counter = 0; counter < selSize; counter++) newness[counter]=false;
 
 var event = Clazz.new_((I$[8]||$incl$(8)).c$$O$javax_swing_tree_TreePathA$ZA$javax_swing_tree_TreePath$javax_swing_tree_TreePath,[this, this.selection, newness, this.leadPath, null]);
-this.leadPath = null;
-this.leadIndex = this.leadRow = -1;
+this.leadPath=null;
+this.leadIndex=this.leadRow=-1;
 this.uniquePaths.clear();
-this.selection = null;
+this.selection=null;
 this.resetRowSelection();
 this.fireValueChanged$javax_swing_event_TreeSelectionEvent(event);
 }});
@@ -283,7 +283,7 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[9]||$incl$(9)),['
 
 Clazz.newMeth(C$, 'fireValueChanged$javax_swing_event_TreeSelectionEvent', function (e) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[9]||$incl$(9)),['valueChanged$javax_swing_event_TreeSelectionEvent']) ) {
 (listeners[i + 1]).valueChanged$javax_swing_event_TreeSelectionEvent(e);
 }}
@@ -304,14 +304,14 @@ invisCount++;
 }}
 if (invisCount > 0) {
 if (invisCount == rows.length) {
-rows = null;
+rows=null;
 } else {
 var tempRows = Clazz.array(Integer.TYPE, [rows.length - invisCount]);
 for (var counter = rows.length - 1, visCounter = 0; counter >= 0; counter--) {
 if (rows[counter] != -1) {
-tempRows[visCounter++] = rows[counter];
+tempRows[visCounter++]=rows[counter];
 }}
-rows = tempRows;
+rows=tempRows;
 }}}return rows;
 }return null;
 });
@@ -335,20 +335,20 @@ var aRow;
 var validCount = 0;
 var rows = this.rowMapper.getRowsForPaths$javax_swing_tree_TreePathA(this.selection);
 for (var counter = 0, maxCounter = this.selection.length; counter < maxCounter; counter++) {
-aRow = rows[counter];
+aRow=rows[counter];
 if (aRow != -1) {
 this.listSelectionModel.addSelectionInterval$I$I(aRow, aRow);
 }}
 if (this.leadIndex != -1 && rows != null  ) {
-this.leadRow = rows[this.leadIndex];
+this.leadRow=rows[this.leadIndex];
 } else if (this.leadPath != null ) {
-this.tempPaths[0] = this.leadPath;
-rows = this.rowMapper.getRowsForPaths$javax_swing_tree_TreePathA(this.tempPaths);
-this.leadRow = (rows != null ) ? rows[0] : -1;
+this.tempPaths[0]=this.leadPath;
+rows=this.rowMapper.getRowsForPaths$javax_swing_tree_TreePathA(this.tempPaths);
+this.leadRow=(rows != null ) ? rows[0] : -1;
 } else {
-this.leadRow = -1;
+this.leadRow=-1;
 }this.insureRowContinuity();
-} else this.leadRow = -1;
+} else this.leadRow=-1;
 });
 
 Clazz.newMeth(C$, 'getLeadSelectionRow', function () {
@@ -361,7 +361,7 @@ return this.leadPath;
 
 Clazz.newMeth(C$, 'addPropertyChangeListener$java_beans_PropertyChangeListener', function (listener) {
 if (this.changeSupport == null ) {
-this.changeSupport = Clazz.new_((I$[10]||$incl$(10)).c$$O,[this]);
+this.changeSupport=Clazz.new_((I$[10]||$incl$(10)).c$$O,[this]);
 }this.changeSupport.addPropertyChangeListener$java_beans_PropertyChangeListener(listener);
 });
 
@@ -391,7 +391,7 @@ var newSel = Clazz.array((I$[4]||$incl$(4)), [counter - min]);
 var selectionIndex = this.rowMapper.getRowsForPaths$javax_swing_tree_TreePathA(this.selection);
 for (var i = 0; i < selectionIndex.length; i++) {
 if (selectionIndex[i] < counter) {
-newSel[selectionIndex[i] - min] = this.selection[i];
+newSel[selectionIndex[i] - min]=this.selection[i];
 }}
 this.setSelectionPaths$javax_swing_tree_TreePathA(newSel);
 break;
@@ -410,23 +410,23 @@ var min;
 var pathCount = paths.length;
 var validCount = 0;
 var tempPath = Clazz.array((I$[4]||$incl$(4)), [1]);
-tempPath[0] = paths[0];
-min = this.rowMapper.getRowsForPaths$javax_swing_tree_TreePathA(tempPath)[0];
-for (counter = 0; counter < pathCount; counter++) {
+tempPath[0]=paths[0];
+min=this.rowMapper.getRowsForPaths$javax_swing_tree_TreePathA(tempPath)[0];
+for (counter=0; counter < pathCount; counter++) {
 if (paths[counter] != null ) {
-tempPath[0] = paths[counter];
+tempPath[0]=paths[counter];
 var rows = this.rowMapper.getRowsForPaths$javax_swing_tree_TreePathA(tempPath);
 if (rows == null ) {
 return false;
-}anIndex = rows[0];
+}anIndex=rows[0];
 if (anIndex == -1 || anIndex < (min - pathCount)  || anIndex > (min + pathCount) ) return false;
-if (anIndex < min) min = anIndex;
+if (anIndex < min) min=anIndex;
 if (!bitSet.get$I(anIndex)) {
 bitSet.set$I(anIndex);
 validCount++;
 }}}
 var maxCounter = validCount + min;
-for (counter = min; counter < maxCounter; counter++) if (!bitSet.get$I(counter)) return false;
+for (counter=min; counter < maxCounter; counter++) if (!bitSet.get$I(counter)) return false;
 
 }return true;
 });
@@ -442,25 +442,25 @@ var min = lModel.getMinSelectionIndex();
 var max = lModel.getMaxSelectionIndex();
 var tempPath = Clazz.array((I$[4]||$incl$(4)), [1]);
 if (min != -1) {
-for (counter = min; counter <= max; counter++) {
+for (counter=min; counter <= max; counter++) {
 if (lModel.isSelectedIndex$I(counter)) bitSet.set$I(counter);
 }
 } else {
-tempPath[0] = paths[0];
-min = max = this.rowMapper.getRowsForPaths$javax_swing_tree_TreePathA(tempPath)[0];
-}for (counter = paths.length - 1; counter >= 0; counter--) {
+tempPath[0]=paths[0];
+min=max=this.rowMapper.getRowsForPaths$javax_swing_tree_TreePathA(tempPath)[0];
+}for (counter=paths.length - 1; counter >= 0; counter--) {
 if (paths[counter] != null ) {
-tempPath[0] = paths[counter];
+tempPath[0]=paths[counter];
 var rows = this.rowMapper.getRowsForPaths$javax_swing_tree_TreePathA(tempPath);
 if (rows == null ) {
 return false;
-}anIndex = rows[0];
-min = Math.min(anIndex, min);
-max = Math.max(anIndex, max);
+}anIndex=rows[0];
+min=Math.min(anIndex, min);
+max=Math.max(anIndex, max);
 if (anIndex == -1) return false;
 bitSet.set$I(anIndex);
 }}
-for (counter = min; counter <= max; counter++) if (!bitSet.get$I(counter)) return false;
+for (counter=min; counter <= max; counter++) if (!bitSet.get$I(counter)) return false;
 
 }return true;
 });
@@ -477,23 +477,23 @@ var validCount = 0;
 var tempPath = Clazz.array((I$[4]||$incl$(4)), [1]);
 var rows;
 this.lastPaths.clear();
-for (counter = 0; counter < pathCount; counter++) {
+for (counter=0; counter < pathCount; counter++) {
 if (paths[counter] != null ) {
 this.lastPaths.put$TK$TV(paths[counter], (I$[6]||$incl$(6)).TRUE);
 }}
-for (counter = this.selection.length - 1; counter >= 0; counter--) {
+for (counter=this.selection.length - 1; counter >= 0; counter--) {
 if (this.lastPaths.get$O(this.selection[counter]) == null ) {
-tempPath[0] = this.selection[counter];
-rows = this.rowMapper.getRowsForPaths$javax_swing_tree_TreePathA(tempPath);
+tempPath[0]=this.selection[counter];
+rows=this.rowMapper.getRowsForPaths$javax_swing_tree_TreePathA(tempPath);
 if (rows != null  && rows[0] != -1  && !bitSet.get$I(rows[0]) ) {
 validCount++;
-if (min == -1) min = rows[0];
- else min = Math.min(min, rows[0]);
+if (min == -1) min=rows[0];
+ else min=Math.min(min, rows[0]);
 bitSet.set$I(rows[0]);
 }}}
 this.lastPaths.clear();
 if (validCount > 1) {
-for (counter = min + validCount - 1; counter >= min; counter--) if (!bitSet.get$I(counter)) return false;
+for (counter=min + validCount - 1; counter >= min; counter--) if (!bitSet.get$I(counter)) return false;
 
 }}return true;
 });
@@ -504,9 +504,9 @@ var newness = Clazz.array(Boolean.TYPE, [cPathCount]);
 var paths = Clazz.array((I$[4]||$incl$(4)), [cPathCount]);
 var placeholder;
 for (var counter = 0; counter < cPathCount; counter++) {
-placeholder = changedPaths.elementAt$I(counter);
-newness[counter] = placeholder.isNew;
-paths[counter] = placeholder.path;
+placeholder=changedPaths.elementAt$I(counter);
+newness[counter]=placeholder.isNew;
+paths[counter]=placeholder.path;
 }
 var event = Clazz.new_((I$[8]||$incl$(8)).c$$O$javax_swing_tree_TreePathA$ZA$javax_swing_tree_TreePath$javax_swing_tree_TreePath,[this, paths, newness, oldLeadSelection, this.leadPath]);
 this.fireValueChanged$javax_swing_event_TreeSelectionEvent(event);
@@ -515,17 +515,17 @@ this.fireValueChanged$javax_swing_event_TreeSelectionEvent(event);
 Clazz.newMeth(C$, 'updateLeadIndex', function () {
 if (this.leadPath != null ) {
 if (this.selection == null ) {
-this.leadPath = null;
-this.leadIndex = this.leadRow = -1;
+this.leadPath=null;
+this.leadIndex=this.leadRow=-1;
 } else {
-this.leadRow = this.leadIndex = -1;
+this.leadRow=this.leadIndex=-1;
 for (var counter = this.selection.length - 1; counter >= 0; counter--) {
 if (this.selection[counter] === this.leadPath ) {
-this.leadIndex = counter;
+this.leadIndex=counter;
 break;
 }}
 }} else {
-this.leadIndex = -1;
+this.leadIndex=-1;
 }});
 
 Clazz.newMeth(C$, 'insureUniqueness', function () {
@@ -535,8 +535,8 @@ Clazz.newMeth(C$, 'toString', function () {
 var selCount = this.getSelectionCount();
 var retBuffer = Clazz.new_((I$[13]||$incl$(13)));
 var rows;
-if (this.rowMapper != null ) rows = this.rowMapper.getRowsForPaths$javax_swing_tree_TreePathA(this.selection);
- else rows = null;
+if (this.rowMapper != null ) rows=this.rowMapper.getRowsForPaths$javax_swing_tree_TreePathA(this.selection);
+ else rows=null;
 retBuffer.append$S(this.getClass().getName() + " " + this.hashCode() + " [ " );
 for (var counter = 0; counter < selCount; counter++) {
 if (rows != null ) retBuffer.append$S(this.selection[counter].toString() + "@" + Integer.toString(rows[counter]) + " " );
@@ -548,17 +548,17 @@ return retBuffer.toString();
 
 Clazz.newMeth(C$, 'clone', function () {
 var clone = Clazz.clone(this);
-clone.changeSupport = null;
+clone.changeSupport=null;
 if (this.selection != null ) {
 var selLength = this.selection.length;
-clone.selection = Clazz.array((I$[4]||$incl$(4)), [selLength]);
+clone.selection=Clazz.array((I$[4]||$incl$(4)), [selLength]);
 System.arraycopy(this.selection, 0, clone.selection, 0, selLength);
-}clone.listenerList = Clazz.new_((I$[1]||$incl$(1)));
-clone.listSelectionModel = this.listSelectionModel.clone();
-clone.uniquePaths = Clazz.new_((I$[3]||$incl$(3)));
-clone.lastPaths = Clazz.new_((I$[3]||$incl$(3)));
-clone.tempPaths = Clazz.array((I$[4]||$incl$(4)), [1]);
+}clone.listenerList=Clazz.new_((I$[1]||$incl$(1)));
+clone.listSelectionModel=this.listSelectionModel.clone();
+clone.uniquePaths=Clazz.new_((I$[3]||$incl$(3)));
+clone.lastPaths=Clazz.new_((I$[3]||$incl$(3)));
+clone.tempPaths=Clazz.array((I$[4]||$incl$(4)), [1]);
 return clone;
 });
 })();
-//Created 2018-05-15 01:03:00
+//Created 2018-05-24 08:47:11

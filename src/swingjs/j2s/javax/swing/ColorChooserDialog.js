@@ -27,21 +27,21 @@ this.initColorChooserDialog$java_awt_Component$javax_swing_JColorChooser$java_aw
 Clazz.newMeth(C$, 'c$$java_awt_Dialog$S$Z$java_awt_Component$javax_swing_JColorChooser$java_awt_event_ActionListener$java_awt_event_ActionListener$Z', function (owner, title, modal, c, chooserPane, okListener, cancelListener, disposeOnHide) {
 C$.superclazz.c$$java_awt_Dialog$S$Z.apply(this, [owner, title, modal]);
 C$.$init$.apply(this);
-this.disposeOnHide = disposeOnHide;
+this.disposeOnHide=disposeOnHide;
 this.initColorChooserDialog$java_awt_Component$javax_swing_JColorChooser$java_awt_event_ActionListener$java_awt_event_ActionListener(c, chooserPane, okListener, cancelListener);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Frame$S$Z$java_awt_Component$javax_swing_JColorChooser$java_awt_event_ActionListener$java_awt_event_ActionListener', function (owner, title, modal, c, chooserPane, okListener, cancelListener) {
 C$.superclazz.c$$java_awt_Frame$S$Z.apply(this, [owner, title, modal]);
 C$.$init$.apply(this);
-this.disposeOnHide = false;
+this.disposeOnHide=false;
 this.initColorChooserDialog$java_awt_Component$javax_swing_JColorChooser$java_awt_event_ActionListener$java_awt_event_ActionListener(c, chooserPane, okListener, cancelListener);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Frame$S$Z$java_awt_Component$javax_swing_JColorChooser$java_awt_event_ActionListener$java_awt_event_ActionListener$Z', function (owner, title, modal, c, chooserPane, okListener, cancelListener, disposeOnHide) {
 C$.superclazz.c$$java_awt_Frame$S$Z.apply(this, [owner, title, modal]);
 C$.$init$.apply(this);
-this.disposeOnHide = disposeOnHide;
+this.disposeOnHide=disposeOnHide;
 this.initColorChooserDialog$java_awt_Component$javax_swing_JColorChooser$java_awt_event_ActionListener$java_awt_event_ActionListener(c, chooserPane, okListener, cancelListener);
 }, 1);
 
@@ -49,7 +49,7 @@ Clazz.newMeth(C$, 'initColorChooserDialog$java_awt_Component$javax_swing_JColorC
 if (!(Clazz.instanceOf(c, "java.beans.PropertyChangeListener"))) {
 System.out.println$S("JColorChooser: no onDialogReturn(Object) found in component " + c);
 }java.awt.JSComponent.ensurePropertyChangeListener$java_awt_Component$java_awt_Component(this, c);
-this.chooserPane = chooserPane;
+this.chooserPane=chooserPane;
 var contentPane = this.getContentPane();
 contentPane.setLayout$java_awt_LayoutManager(Clazz.new_((I$[9]||$incl$(9))));
 contentPane.add$java_awt_Component$O(chooserPane, "Center");
@@ -78,7 +78,7 @@ this.b$['javax.swing.ColorChooserDialog'].doCallback$Z(true);
 if (okListener != null ) {
 okButton.addActionListener$java_awt_event_ActionListener(okListener);
 }buttonPane.add$java_awt_Component(okButton);
-this.cancelButton = Clazz.new_((I$[12]||$incl$(12)).c$$S,[cancelString]);
+this.cancelButton=Clazz.new_((I$[12]||$incl$(12)).c$$S,[cancelString]);
 var cancelKeyAction = ((
 (function(){var C$=Clazz.newClass(P$, "ColorChooserDialog$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('javax.swing.AbstractAction'), null, 1);
 
@@ -155,7 +155,7 @@ if (this.disposeOnHide) this.dispose();
 });
 
 Clazz.newMeth(C$, 'show', function () {
-this.initialColor = this.chooserPane.getColor();
+this.initialColor=this.chooserPane.getColor();
 C$.superclazz.prototype.show.apply(this, []);
 });
 
@@ -185,4 +185,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:26
+//Created 2018-05-24 08:46:13

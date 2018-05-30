@@ -31,12 +31,12 @@ if (numparams == 0) {
 C$.addInstance$java_util_Vector$D$D$D$D$D$D$I(curves, x0, y0, cx0, cy0, x1, y1, direction);
 return;
 }var t = tmp[0];
-tmp[0] = x0;
-tmp[1] = y0;
-tmp[2] = cx0;
-tmp[3] = cy0;
-tmp[4] = x1;
-tmp[5] = y1;
+tmp[0]=x0;
+tmp[1]=y0;
+tmp[2]=cx0;
+tmp[3]=cy0;
+tmp[4]=x1;
+tmp[5]=y1;
 C$.split$DA$I$D(tmp, 0, t);
 var i0 = (direction == 1) ? 0 : 4;
 var i1 = 4 - i0;
@@ -62,7 +62,7 @@ return 0;
 }var t = c0 / denom;
 if (t <= 0  || t >= 1  ) {
 return 0;
-}ret[0] = t;
+}ret[0]=t;
 return 1;
 }, 1);
 
@@ -73,47 +73,47 @@ var cx;
 var cy;
 var x1;
 var y1;
-coords[pos + 8] = x1 = coords[pos + 4];
-coords[pos + 9] = y1 = coords[pos + 5];
-cx = coords[pos + 2];
-cy = coords[pos + 3];
-x1 = cx + (x1 - cx) * t;
-y1 = cy + (y1 - cy) * t;
-x0 = coords[pos + 0];
-y0 = coords[pos + 1];
-x0 = x0 + (cx - x0) * t;
-y0 = y0 + (cy - y0) * t;
-cx = x0 + (x1 - x0) * t;
-cy = y0 + (y1 - y0) * t;
-coords[pos + 2] = x0;
-coords[pos + 3] = y0;
-coords[pos + 4] = cx;
-coords[pos + 5] = cy;
-coords[pos + 6] = x1;
-coords[pos + 7] = y1;
+coords[pos + 8]=x1=coords[pos + 4];
+coords[pos + 9]=y1=coords[pos + 5];
+cx=coords[pos + 2];
+cy=coords[pos + 3];
+x1=cx + (x1 - cx) * t;
+y1=cy + (y1 - cy) * t;
+x0=coords[pos + 0];
+y0=coords[pos + 1];
+x0=x0 + (cx - x0) * t;
+y0=y0 + (cy - y0) * t;
+cx=x0 + (x1 - x0) * t;
+cy=y0 + (y1 - y0) * t;
+coords[pos + 2]=x0;
+coords[pos + 3]=y0;
+coords[pos + 4]=cx;
+coords[pos + 5]=cy;
+coords[pos + 6]=x1;
+coords[pos + 7]=y1;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$D$D$D$D$D$D$I', function (x0, y0, cx0, cy0, x1, y1, direction) {
 C$.superclazz.c$$I.apply(this, [direction]);
 C$.$init$.apply(this);
 if (cy0 < y0 ) {
-cy0 = y0;
+cy0=y0;
 } else if (cy0 > y1 ) {
-cy0 = y1;
-}this.x0 = x0;
-this.y0 = y0;
-this.cx0 = cx0;
-this.cy0 = cy0;
-this.x1 = x1;
-this.y1 = y1;
-this.xmin = Math.min(Math.min(x0, x1), cx0);
-this.xmax = Math.max(Math.max(x0, x1), cx0);
-this.xcoeff0 = x0;
-this.xcoeff1 = cx0 + cx0 - x0 - x0;
-this.xcoeff2 = x0 - cx0 - cx0  + x1;
-this.ycoeff0 = y0;
-this.ycoeff1 = cy0 + cy0 - y0 - y0;
-this.ycoeff2 = y0 - cy0 - cy0  + y1;
+cy0=y1;
+}this.x0=x0;
+this.y0=y0;
+this.cx0=cx0;
+this.cy0=cy0;
+this.x1=x1;
+this.y1=y1;
+this.xmin=Math.min(Math.min(x0, x1), cx0);
+this.xmax=Math.max(Math.max(x0, x1), cx0);
+this.xcoeff0=x0;
+this.xcoeff1=cx0 + cx0 - x0 - x0;
+this.xcoeff2=x0 - cx0 - cx0  + x1;
+this.ycoeff0=y0;
+this.ycoeff1=cy0 + cy0 - y0 - y0;
+this.ycoeff2=y0 - cy0 - cy0  + y1;
 }, 1);
 
 Clazz.newMeth(C$, 'getOrder', function () {
@@ -193,15 +193,15 @@ return root;
 }} else {
 var d = ycoeff1 * ycoeff1 - 4.0 * ycoeff2 * ycoeff0 ;
 if (d >= 0.0 ) {
-d = Math.sqrt(d);
+d=Math.sqrt(d);
 if (ycoeff1 < 0.0 ) {
-d = -d;
+d=-d;
 }var q = (ycoeff1 + d) / -2.0;
 var root = q / ycoeff2;
 if (root >= 0  && root <= 1  ) {
 return root;
 }if (q != 0.0 ) {
-root = ycoeff0 / q;
+root=ycoeff0 / q;
 if (root >= 0  && root <= 1  ) {
 return root;
 }}}}var y0 = ycoeff0;
@@ -264,28 +264,28 @@ var t1;
 if (ystart <= this.y0 ) {
 if (yend >= this.y1 ) {
 return this.getWithDirection$I(dir);
-}t0 = 0;
+}t0=0;
 } else {
-t0 = C$.TforY$D$D$D$D(ystart, this.ycoeff0, this.ycoeff1, this.ycoeff2);
+t0=C$.TforY$D$D$D$D(ystart, this.ycoeff0, this.ycoeff1, this.ycoeff2);
 }if (yend >= this.y1 ) {
-t1 = 1;
+t1=1;
 } else {
-t1 = C$.TforY$D$D$D$D(yend, this.ycoeff0, this.ycoeff1, this.ycoeff2);
+t1=C$.TforY$D$D$D$D(yend, this.ycoeff0, this.ycoeff1, this.ycoeff2);
 }var eqn = Clazz.array(Double.TYPE, [10]);
-eqn[0] = this.x0;
-eqn[1] = this.y0;
-eqn[2] = this.cx0;
-eqn[3] = this.cy0;
-eqn[4] = this.x1;
-eqn[5] = this.y1;
+eqn[0]=this.x0;
+eqn[1]=this.y0;
+eqn[2]=this.cx0;
+eqn[3]=this.cy0;
+eqn[4]=this.x1;
+eqn[5]=this.y1;
 if (t1 < 1 ) {
 C$.split$DA$I$D(eqn, 0, t1);
 }var i;
 if (t0 <= 0 ) {
-i = 0;
+i=0;
 } else {
 C$.split$DA$I$D(eqn, 0, t0 / t1);
-i = 4;
+i=4;
 }return Clazz.new_(C$.c$$D$D$D$D$D$D$I,[eqn[i + 0], ystart, eqn[i + 2], eqn[i + 3], eqn[i + 4], yend, dir]);
 });
 
@@ -294,14 +294,14 @@ return Clazz.new_(C$.c$$D$D$D$D$D$D$I,[this.x0, this.y0, this.cx0, this.cy0, thi
 });
 
 Clazz.newMeth(C$, 'getSegment$DA', function (coords) {
-coords[0] = this.cx0;
-coords[1] = this.cy0;
+coords[0]=this.cx0;
+coords[1]=this.cy0;
 if (this.direction == 1) {
-coords[2] = this.x1;
-coords[3] = this.y1;
+coords[2]=this.x1;
+coords[3]=this.y1;
 } else {
-coords[2] = this.x0;
-coords[3] = this.y0;
+coords[2]=this.x0;
+coords[3]=this.y0;
 }return 2;
 });
 
@@ -311,4 +311,4 @@ return ("(" + new Double(P$.Curve.round$D(this.cx0)).toString() + ", " + new Dou
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:07
+//Created 2018-05-24 08:47:26

@@ -59,7 +59,7 @@ switch (selectionMode) {
 case 0:
 case 1:
 case 2:
-this.selectionMode = selectionMode;
+this.selectionMode=selectionMode;
 break;
 default:
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid selectionMode"]);
@@ -91,8 +91,8 @@ if (this.lastChangedIndex == -1) {
 return;
 }var oldFirstChangedIndex = this.firstChangedIndex;
 var oldLastChangedIndex = this.lastChangedIndex;
-this.firstChangedIndex = 2147483647;
-this.lastChangedIndex = -1;
+this.firstChangedIndex=2147483647;
+this.lastChangedIndex=-1;
 this.fireValueChanged$I$I$Z(oldFirstChangedIndex, oldLastChangedIndex, isAdjusting);
 });
 
@@ -103,10 +103,10 @@ this.fireValueChanged$I$I$Z(firstIndex, lastIndex, this.getValueIsAdjusting());
 Clazz.newMeth(C$, 'fireValueChanged$I$I$Z', function (firstIndex, lastIndex, isAdjusting) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[3]||$incl$(3)),['valueChanged$javax_swing_event_ListSelectionEvent']) ) {
 if (e == null ) {
-e = Clazz.new_((I$[4]||$incl$(4)).c$$O$I$I$Z,[this, firstIndex, lastIndex, isAdjusting]);
+e=Clazz.new_((I$[4]||$incl$(4)).c$$O$I$I$Z,[this, firstIndex, lastIndex, isAdjusting]);
 }(listeners[i + 1]).valueChanged$javax_swing_event_ListSelectionEvent(e);
 }}
 });
@@ -115,12 +115,12 @@ Clazz.newMeth(C$, 'fireValueChanged', function () {
 if (this.lastAdjustedIndex == -1) {
 return;
 }if (this.getValueIsAdjusting()) {
-this.firstChangedIndex = Math.min(this.firstChangedIndex, this.firstAdjustedIndex);
-this.lastChangedIndex = Math.max(this.lastChangedIndex, this.lastAdjustedIndex);
+this.firstChangedIndex=Math.min(this.firstChangedIndex, this.firstAdjustedIndex);
+this.lastChangedIndex=Math.max(this.lastChangedIndex, this.lastAdjustedIndex);
 }var oldFirstAdjustedIndex = this.firstAdjustedIndex;
 var oldLastAdjustedIndex = this.lastAdjustedIndex;
-this.firstAdjustedIndex = 2147483647;
-this.lastAdjustedIndex = -1;
+this.firstAdjustedIndex=2147483647;
+this.lastAdjustedIndex=-1;
 this.fireValueChanged$I$I(oldFirstAdjustedIndex, oldLastAdjustedIndex);
 });
 
@@ -129,8 +129,8 @@ return this.listenerList.getListeners$Class(listenerType);
 });
 
 Clazz.newMeth(C$, 'markAsDirty$I', function (r) {
-this.firstAdjustedIndex = Math.min(this.firstAdjustedIndex, r);
-this.lastAdjustedIndex = Math.max(this.lastAdjustedIndex, r);
+this.firstAdjustedIndex=Math.min(this.firstAdjustedIndex, r);
+this.lastAdjustedIndex=Math.max(this.lastAdjustedIndex, r);
 });
 
 Clazz.newMeth(C$, 'set$I', function (r) {
@@ -138,8 +138,8 @@ if (this.value.get$I(r)) {
 return;
 }this.value.set$I(r);
 p$.markAsDirty$I.apply(this, [r]);
-this.minIndex = Math.min(this.minIndex, r);
-this.maxIndex = Math.max(this.maxIndex, r);
+this.minIndex=Math.min(this.minIndex, r);
+this.maxIndex=Math.max(this.maxIndex, r);
 });
 
 Clazz.newMeth(C$, 'clear$I', function (r) {
@@ -148,22 +148,22 @@ return;
 }this.value.clear$I(r);
 p$.markAsDirty$I.apply(this, [r]);
 if (r == this.minIndex) {
-for (this.minIndex = this.minIndex + 1; this.minIndex <= this.maxIndex; this.minIndex++) {
+for (this.minIndex=this.minIndex + 1; this.minIndex <= this.maxIndex; this.minIndex++) {
 if (this.value.get$I(this.minIndex)) {
 break;
 }}
 }if (r == this.maxIndex) {
-for (this.maxIndex = this.maxIndex - 1; this.minIndex <= this.maxIndex; this.maxIndex--) {
+for (this.maxIndex=this.maxIndex - 1; this.minIndex <= this.maxIndex; this.maxIndex--) {
 if (this.value.get$I(this.maxIndex)) {
 break;
 }}
 }if (this.isSelectionEmpty()) {
-this.minIndex = 2147483647;
-this.maxIndex = -1;
+this.minIndex=2147483647;
+this.maxIndex=-1;
 }});
 
 Clazz.newMeth(C$, 'setLeadAnchorNotificationEnabled$Z', function (flag) {
-this.leadAnchorNotificationEnabled = flag;
+this.leadAnchorNotificationEnabled=flag;
 });
 
 Clazz.newMeth(C$, 'isLeadAnchorNotificationEnabled', function () {
@@ -180,8 +180,8 @@ p$.markAsDirty$I.apply(this, [this.anchorIndex]);
 if (this.leadIndex != -1) {
 p$.markAsDirty$I.apply(this, [this.leadIndex]);
 }p$.markAsDirty$I.apply(this, [leadIndex]);
-}}this.anchorIndex = anchorIndex;
-this.leadIndex = leadIndex;
+}}this.anchorIndex=anchorIndex;
+this.leadIndex=leadIndex;
 });
 
 Clazz.newMeth(C$, 'contains$I$I$I', function (a, b, i) {
@@ -194,9 +194,9 @@ var shouldClear = p$.contains$I$I$I.apply(this, [clearMin, clearMax, i]);
 var shouldSet = p$.contains$I$I$I.apply(this, [setMin, setMax, i]);
 if (shouldSet && shouldClear ) {
 if (clearFirst) {
-shouldClear = false;
+shouldClear=false;
 } else {
-shouldSet = false;
+shouldSet=false;
 }}if (shouldSet) {
 p$.set$I.apply(this, [i]);
 }if (shouldClear) {
@@ -217,7 +217,7 @@ Clazz.newMeth(C$, 'setSelectionInterval$I$I', function (index0, index1) {
 if (index0 == -1 || index1 == -1 ) {
 return;
 }if (this.getSelectionMode() == 0) {
-index0 = index1;
+index0=index1;
 }p$.updateLeadAnchorIndices$I$I.apply(this, [index0, index1]);
 var clearMin = this.minIndex;
 var clearMax = this.maxIndex;
@@ -257,7 +257,7 @@ var clearMax = Math.max(index0, index1);
 var setMin = 2147483647;
 var setMax = -1;
 if (this.getSelectionMode() != 2 && clearMin > this.minIndex  && clearMax < this.maxIndex ) {
-clearMax = this.maxIndex;
+clearMax=this.maxIndex;
 }p$.changeSelection$I$I$I$I.apply(this, [clearMin, clearMax, setMin, setMax]);
 });
 
@@ -280,10 +280,10 @@ p$.setState$I$Z.apply(this, [i, setInsertedValues]);
 }
 var leadIndex = this.leadIndex;
 if (leadIndex > index || (before && leadIndex == index ) ) {
-leadIndex = this.leadIndex + length;
+leadIndex=this.leadIndex + length;
 }var anchorIndex = this.anchorIndex;
 if (anchorIndex > index || (before && anchorIndex == index ) ) {
-anchorIndex = this.anchorIndex + length;
+anchorIndex=this.anchorIndex + length;
 }if (leadIndex != this.leadIndex || anchorIndex != this.anchorIndex ) {
 p$.updateLeadAnchorIndices$I$I.apply(this, [anchorIndex, leadIndex]);
 }p$.fireValueChanged.apply(this, []);
@@ -299,15 +299,15 @@ p$.setState$I$Z.apply(this, [i, this.value.get$I(i + gapLength)]);
 var leadIndex = this.leadIndex;
 if (leadIndex == 0 && rmMinIndex == 0 ) {
 } else if (leadIndex > rmMaxIndex) {
-leadIndex = this.leadIndex - gapLength;
+leadIndex=this.leadIndex - gapLength;
 } else if (leadIndex >= rmMinIndex) {
-leadIndex = rmMinIndex - 1;
+leadIndex=rmMinIndex - 1;
 }var anchorIndex = this.anchorIndex;
 if (anchorIndex == 0 && rmMinIndex == 0 ) {
 } else if (anchorIndex > rmMaxIndex) {
-anchorIndex = this.anchorIndex - gapLength;
+anchorIndex=this.anchorIndex - gapLength;
 } else if (anchorIndex >= rmMinIndex) {
-anchorIndex = rmMinIndex - 1;
+anchorIndex=rmMinIndex - 1;
 }if (leadIndex != this.leadIndex || anchorIndex != this.anchorIndex ) {
 p$.updateLeadAnchorIndices$I$I.apply(this, [anchorIndex, leadIndex]);
 }p$.fireValueChanged.apply(this, []);
@@ -315,7 +315,7 @@ p$.updateLeadAnchorIndices$I$I.apply(this, [anchorIndex, leadIndex]);
 
 Clazz.newMeth(C$, 'setValueIsAdjusting$Z', function (isAdjusting) {
 if (isAdjusting != this.isAdjusting ) {
-this.isAdjusting = isAdjusting;
+this.isAdjusting=isAdjusting;
 this.fireValueChanged$Z(isAdjusting);
 }});
 
@@ -326,8 +326,8 @@ return this.getClass().getName() + " " + Integer.toString(this.hashCode()) + " "
 
 Clazz.newMeth(C$, 'clone', function () {
 var clone = Clazz.clone(this);
-clone.value = this.value.clone();
-clone.listenerList = Clazz.new_((I$[2]||$incl$(2)));
+clone.value=this.value.clone();
+clone.listenerList=Clazz.new_((I$[2]||$incl$(2)));
 return clone;
 });
 
@@ -362,11 +362,11 @@ p$.fireValueChanged.apply(this, []);
 } else if (anchorIndex == -1) {
 return;
 }if (this.leadIndex == -1) {
-this.leadIndex = leadIndex;
+this.leadIndex=leadIndex;
 }var shouldSelect = this.value.get$I(this.anchorIndex);
 if (this.getSelectionMode() == 0) {
-anchorIndex = leadIndex;
-shouldSelect = true;
+anchorIndex=leadIndex;
+shouldSelect=true;
 }var oldMin = Math.min(this.anchorIndex, this.leadIndex);
 var oldMax = Math.max(this.anchorIndex, this.leadIndex);
 var newMin = Math.min(anchorIndex, leadIndex);
@@ -380,4 +380,4 @@ p$.changeSelection$I$I$I$I$Z.apply(this, [newMin, newMax, oldMin, oldMax, false]
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:24
+//Created 2018-05-24 08:46:09

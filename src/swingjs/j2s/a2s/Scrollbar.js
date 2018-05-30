@@ -51,8 +51,8 @@ return C$.superclazz.prototype.getValue.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'getA2SListener', function () {
-if (this.listener == null ) this.listener = Clazz.new_((I$[2]||$incl$(2)));
+if (this.listener == null ) this.listener=Clazz.new_((I$[2]||$incl$(2)));
 return this.listener;
 });
 })();
-//Created 2018-05-15 01:01:45
+//Created 2018-05-24 08:45:01

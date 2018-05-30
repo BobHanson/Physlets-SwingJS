@@ -48,7 +48,7 @@ return true;
 }while (this.pEnum.hasMoreElements()){
 var next = this.pEnum.nextElement();
 if (!this.b$['java.util.ListResourceBundle'].table.containsKey$O(next)) {
-this.$nextElement = next;
+this.$nextElement=next;
 return true;
 }}
 return false;
@@ -65,7 +65,7 @@ if (this.local.hasMoreElements()) {
 return this.local.nextElement();
 }if (p$.findNext.apply(this, [])) {
 var result = this.$nextElement;
-this.$nextElement = null;
+this.$nextElement=null;
 return result;
 }return this.pEnum.nextElement();
 });
@@ -82,10 +82,10 @@ p$.initializeTable.apply(this, []);
 Clazz.newMeth(C$, 'initializeTable', function () {
 if (this.table == null ) {
 var contents = this.getContents();
-this.table = Clazz.new_((I$[2]||$incl$(2)).c$$I,[(contents.length/3|0) * 4 + 3]);
+this.table=Clazz.new_((I$[2]||$incl$(2)).c$$I,[(contents.length/3|0) * 4 + 3]);
 for (var i = 0; i < contents.length; i++) {
 this.table.put$TK$TV(contents[i][0], contents[i][1]);
 }
 }});
 })();
-//Created 2018-05-15 01:02:13
+//Created 2018-05-24 08:45:48

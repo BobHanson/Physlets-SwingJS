@@ -28,7 +28,7 @@ return this.eras[i];
 Clazz.newMeth(C$, 'getEras', function () {
 var e = null;
 if (this.eras != null ) {
-e = Clazz.array((I$[1]||$incl$(1)), [this.eras.length]);
+e=Clazz.array((I$[1]||$incl$(1)), [this.eras.length]);
 System.arraycopy(this.eras, 0, e, 0, this.eras.length);
 }return e;
 });
@@ -46,7 +46,7 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["unknown
 });
 
 Clazz.newMeth(C$, 'setEras$sun_util_calendar_EraA', function (eras) {
-this.eras = eras;
+this.eras=eras;
 });
 
 Clazz.newMeth(C$, 'getCalendarDate', function () {
@@ -71,27 +71,27 @@ var zi = date.getZone();
 if (zi != null ) {
 var offsets = Clazz.array(Integer.TYPE, [2]);
 if (Clazz.instanceOf(zi, "sun.util.calendar.ZoneInfo")) {
-zoneOffset = (zi).getOffsets$J$IA(millis, offsets);
+zoneOffset=(zi).getOffsets$J$IA(millis, offsets);
 } else {
-zoneOffset = zi.getOffset$J(millis);
-offsets[0] = zi.getRawOffset();
-offsets[1] = zoneOffset - offsets[0];
-}days = (zoneOffset/86400000|0);
-ms = zoneOffset % 86400000;
-saving = offsets[1];
+zoneOffset=zi.getOffset$J(millis);
+offsets[0]=zi.getRawOffset();
+offsets[1]=zoneOffset - offsets[0];
+}days=(zoneOffset/86400000|0);
+ms=zoneOffset % 86400000;
+saving=offsets[1];
 }date.setZoneOffset$I(zoneOffset);
 date.setDaylightSaving$I(saving);
-days = days+((millis/86400000|0));
-ms = ms+(((millis % 86400000)|0));
+days+=(millis/86400000|0);
+ms+=((millis % 86400000)|0);
 if (ms >= 86400000) {
-ms = ms-(86400000);
+ms-=86400000;
 ++days;
 } else {
 while (ms < 0){
-ms = ms+(86400000);
+ms+=86400000;
 --days;
 }
-}days = days+(719163);
+}days+=719163;
 this.getCalendarDateFromFixedDate$sun_util_calendar_CalendarDate$J(date, days);
 this.setTimeOfDay$sun_util_calendar_CalendarDate$I(date, ms);
 date.setLeapYear$Z(this.isLeapYear$sun_util_calendar_CalendarDate(date));
@@ -111,15 +111,15 @@ return ms - date.getZoneOffset();
 if (date.isStandardTime()) {
 if (Clazz.instanceOf(zi, "sun.util.calendar.ZoneInfo")) {
 (zi).getOffsetsByStandard$J$IA(ms, offsets);
-zoneOffset = offsets[0];
+zoneOffset=offsets[0];
 } else {
-zoneOffset = zi.getOffset$J(ms - zi.getRawOffset());
+zoneOffset=zi.getOffset$J(ms - zi.getRawOffset());
 }} else {
 if (Clazz.instanceOf(zi, "sun.util.calendar.ZoneInfo")) {
-zoneOffset = (zi).getOffsetsByWall$J$IA(ms, offsets);
+zoneOffset=(zi).getOffsetsByWall$J$IA(ms, offsets);
 } else {
-zoneOffset = zi.getOffset$J(ms - zi.getRawOffset());
-}}}ms = ms-(zoneOffset);
+zoneOffset=zi.getOffset$J(ms - zi.getRawOffset());
+}}}ms-=zoneOffset;
 this.getCalendarDate$J$sun_util_calendar_CalendarDate(ms, date);
 return ms;
 });
@@ -128,19 +128,19 @@ Clazz.newMeth(C$, 'getTimeOfDay$sun_util_calendar_CalendarDate', function (date)
 var fraction = date.getTimeOfDay();
 if (fraction != -9223372036854775808) {
 return fraction;
-}fraction = this.getTimeOfDayValue$sun_util_calendar_CalendarDate(date);
+}fraction=this.getTimeOfDayValue$sun_util_calendar_CalendarDate(date);
 date.setTimeOfDay$J(fraction);
 return fraction;
 });
 
 Clazz.newMeth(C$, 'getTimeOfDayValue$sun_util_calendar_CalendarDate', function (date) {
 var fraction = date.getHours();
-fraction = fraction*(60);
-fraction = fraction+(date.getMinutes());
-fraction = fraction*(60);
-fraction = fraction+(date.getSeconds());
-fraction = fraction*(1000);
-fraction = fraction+(date.getMillis());
+fraction*=60;
+fraction+=date.getMinutes();
+fraction*=60;
+fraction+=date.getSeconds();
+fraction*=1000;
+fraction+=date.getMillis();
 return fraction;
 });
 
@@ -150,11 +150,11 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
 }var normalizedState = cdate.isNormalized();
 var time = fraction;
 var hours = (time/3600000|0);
-time = time%(3600000);
+time%=3600000;
 var minutes = (time/60000|0);
-time = time%(60000);
+time%=60000;
 var seconds = (time/1000|0);
-time = time%(1000);
+time%=1000;
 cdate.setHours$I(hours);
 cdate.setMinutes$I(minutes);
 cdate.setSeconds$I(seconds);
@@ -175,9 +175,9 @@ this.normalize$sun_util_calendar_CalendarDate(ndate);
 var fd = this.getFixedDate$sun_util_calendar_CalendarDate(ndate);
 var nfd;
 if (nth > 0) {
-nfd = 7 * nth + C$.getDayOfWeekDateBefore$J$I(fd, dayOfWeek);
+nfd=7 * nth + C$.getDayOfWeekDateBefore$J$I(fd, dayOfWeek);
 } else {
-nfd = 7 * nth + C$.getDayOfWeekDateAfter$J$I(fd, dayOfWeek);
+nfd=7 * nth + C$.getDayOfWeekDateAfter$J$I(fd, dayOfWeek);
 }this.getCalendarDateFromFixedDate$sun_util_calendar_CalendarDate$J(ndate, nfd);
 return ndate;
 });
@@ -201,13 +201,13 @@ Clazz.newMeth(C$, 'validateTime$sun_util_calendar_CalendarDate', function (date)
 var t = date.getHours();
 if (t < 0 || t >= 24 ) {
 return false;
-}t = date.getMinutes();
+}t=date.getMinutes();
 if (t < 0 || t >= 60 ) {
 return false;
-}t = date.getSeconds();
+}t=date.getSeconds();
 if (t < 0 || t >= 60 ) {
 return false;
-}t = date.getMillis();
+}t=date.getMillis();
 if (t < 0 || t >= 1000 ) {
 return false;
 }return true;
@@ -217,21 +217,21 @@ Clazz.newMeth(C$, 'normalizeTime$sun_util_calendar_CalendarDate', function (date
 var fraction = this.getTimeOfDay$sun_util_calendar_CalendarDate(date);
 var days = 0;
 if (fraction >= 86400000) {
-days = (fraction/86400000|0);
-fraction = fraction%(86400000);
+days=(fraction/86400000|0);
+fraction%=86400000;
 } else if (fraction < 0) {
-days = (I$[2]||$incl$(2)).floorDivide$J$J(fraction, 86400000);
+days=(I$[2]||$incl$(2)).floorDivide$J$J(fraction, 86400000);
 if (days != 0) {
-fraction = fraction-(86400000 * days);
+fraction-=86400000 * days;
 }}if (days != 0) {
 date.setTimeOfDay$J(fraction);
 }date.setMillis$I(((fraction % 1000)|0));
-fraction = (fraction/1000|0);
+fraction=(fraction/1000|0);
 date.setSeconds$I(((fraction % 60)|0));
-fraction = (fraction/60|0);
+fraction=(fraction/60|0);
 date.setMinutes$I(((fraction % 60)|0));
 date.setHours$I((((fraction/60|0))|0));
 return (days|0);
 });
 })();
-//Created 2018-05-15 01:03:12
+//Created 2018-05-24 08:47:37

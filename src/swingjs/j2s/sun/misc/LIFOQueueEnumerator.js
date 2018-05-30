@@ -15,8 +15,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$sun_misc_Queue', function (q) {
 C$.$init$.apply(this);
-this.queue = q;
-this.cursor = q.head;
+this.queue=q;
+this.cursor=q.head;
 }, 1);
 
 Clazz.newMeth(C$, 'hasMoreElements', function () {
@@ -27,11 +27,11 @@ Clazz.newMeth(C$, 'nextElement', function () {
 {
 if (this.cursor != null ) {
 var result = this.cursor;
-this.cursor = this.cursor.next;
+this.cursor=this.cursor.next;
 return result.obj;
 }}throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["LIFOQueueEnumerator"]);
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:10
+//Created 2018-05-24 08:47:33

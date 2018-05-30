@@ -27,14 +27,14 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javajs_util_JSAudioThread_Owner$javax_sound_sampled_AudioFormat$BA', function (owner, audioFormat, audioByteBuffer) {
 Clazz.super_(C$, this,1);
-this.owner = owner;
+this.owner=owner;
 this.setFormat$javax_sound_sampled_AudioFormat(audioFormat);
 this.setBuffer$BA(audioByteBuffer);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javajs_util_JSAudioThread_Owner$I$I$I$BA', function (owner, rate, bitsPerSample, nChannels, audioByteBuffer) {
 Clazz.super_(C$, this,1);
-this.owner = owner;
+this.owner=owner;
 this.setFormat$javax_sound_sampled_AudioFormat(Clazz.new_((I$[1]||$incl$(1)).c$$F$I$I$Z$Z,[rate, bitsPerSample, nChannels, true, false]));
 this.setBuffer$BA(audioByteBuffer);
 }, 1);
@@ -54,15 +54,15 @@ Clazz.newMeth(C$, 'playULawData$BA', function (data) {
 
 Clazz.newMeth(C$, 'playOnce$BA$I$I', function (data, offset, length) {
 this.setBuffer$BA(data);
-this.myBufferOffset = offset;
-this.myBufferLength = length;
-this.playCount = 1;
+this.myBufferOffset=offset;
+this.myBufferLength=length;
+this.playCount=1;
 this.start();
 });
 
 Clazz.newMeth(C$, 'setBuffer$BA', function (audioByteBuffer) {
-this.audioByteBuffer = audioByteBuffer;
-this.audioBufferByteLength = audioByteBuffer.length;
+this.audioByteBuffer=audioByteBuffer;
+this.audioBufferByteLength=audioByteBuffer.length;
 });
 
 Clazz.newMeth(C$, 'getLine', function () {
@@ -74,24 +74,24 @@ return this.audioFormat;
 });
 
 Clazz.newMeth(C$, 'setFormat$javax_sound_sampled_AudioFormat', function (audioFormat) {
-this.audioFormat = audioFormat;
-this.rate = (audioFormat.getSampleRate()|0);
-this.bitsPerSample = audioFormat.getSampleSizeInBits();
-this.nChannels = audioFormat.getChannels();
+this.audioFormat=audioFormat;
+this.rate=(audioFormat.getSampleRate()|0);
+this.bitsPerSample=audioFormat.getSampleSizeInBits();
+this.nChannels=audioFormat.getChannels();
 });
 
 Clazz.newMeth(C$, 'resetAudio', function () {
 if (this.line == null ) return;
 this.line.flush();
 this.line.close();
-this.line = null;
+this.line=null;
 });
 
 Clazz.newMeth(C$, 'myInit', function () {
 try {
 var info = Clazz.new_((I$[5]||$incl$(5)).c$$Class$javax_sound_sampled_AudioFormat,[Clazz.getClass((I$[6]||$incl$(6)),['open$javax_sound_sampled_AudioFormat$I','open$javax_sound_sampled_AudioFormat','write$BA$I$I']), this.audioFormat]);
 if (this.line != null ) this.line.close();
-this.line = (I$[7]||$incl$(7)).getLine$javax_sound_sampled_Line_Info(info);
+this.line=(I$[7]||$incl$(7)).getLine$javax_sound_sampled_Line_Info(info);
 this.line.open$javax_sound_sampled_AudioFormat$I(this.audioFormat, this.audioBufferByteLength);
 this.line.start();
 } catch (e) {
@@ -111,14 +111,14 @@ return !this.done && (--this.playCount >= 0 || this.owner != null  && this.owner
 
 Clazz.newMeth(C$, 'myLoop', function () {
 if (!this.done) {
-if ((this.myBufferLength = (this.owner == null  ? this.myBufferLength : this.owner.fillAudioBuffer())) <= 0) return !(this.done = true);
+if ((this.myBufferLength=(this.owner == null  ? this.myBufferLength : this.owner.fillAudioBuffer())) <= 0) return !(this.done=true);
 try {
 if (this.line == null ) this.myInit();
 this.line.write$BA$I$I(this.audioByteBuffer, this.myBufferOffset, this.myBufferLength);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
 e.printStackTrace();
-this.done = true;
+this.done=true;
 } else {
 throw e;
 }
@@ -127,7 +127,7 @@ throw e;
 });
 
 Clazz.newMeth(C$, 'whenDone', function () {
-this.done = true;
+this.done=true;
 this.resetAudio();
 });
 
@@ -147,4 +147,4 @@ if (this.owner != null ) this.owner.audioThreadExiting();
 });
 })()
 })();
-//Created 2018-05-15 01:02:18
+//Created 2018-05-24 08:45:56

@@ -44,9 +44,9 @@ C$.superclazz.c$$S.apply(this, ["TextFieldUI"]);
 C$.$init$.apply(this);
 if (columns < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["columns less than zero."]);
-}this.columns = columns;
+}this.columns=columns;
 if (doc == null ) {
-doc = this.createDefaultModel();
+doc=this.createDefaultModel();
 }this.setDocument$javax_swing_text_Document(doc);
 if (text != null ) {
 this.setText$S(text);
@@ -73,7 +73,7 @@ Clazz.newMeth(C$, 'setHorizontalAlignment$I', function (alignment) {
 if (alignment == this.horizontalAlignment) return;
 var oldValue = this.horizontalAlignment;
 if ((alignment == 2) || (alignment == 0) || (alignment == 4) || (alignment == 10) || (alignment == 11)  ) {
-this.horizontalAlignment = alignment;
+this.horizontalAlignment=alignment;
 } else {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["horizontalAlignment"]);
 }this.firePropertyChange$S$I$I("horizontalAlignment", oldValue, this.horizontalAlignment);
@@ -94,14 +94,14 @@ var oldVal = this.columns;
 if (columns < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["columns less than zero."]);
 }if (columns != oldVal) {
-this.columns = columns;
+this.columns=columns;
 this.invalidate();
 }});
 
 Clazz.newMeth(C$, 'getColumnWidth', function () {
 if (this.columnWidth == 0) {
 var metrics = this.getFontMetrics$java_awt_Font(this.getFont());
-this.columnWidth = metrics.charWidth$C("m");
+this.columnWidth=metrics.charWidth$C("m");
 }return this.columnWidth;
 });
 
@@ -113,13 +113,13 @@ Clazz.newMeth(C$, 'getPrefSizeJTF', function () {
 var size = this.getPrefSizeJComp();
 if (this.columns != 0) {
 var insets = this.getInsets();
-size.width = this.columns * this.getColumnWidth() + insets.left + insets.right;
+size.width=this.columns * this.getColumnWidth() + insets.left + insets.right;
 }return size;
 });
 
 Clazz.newMeth(C$, 'setFont$java_awt_Font', function (f) {
 C$.superclazz.prototype.setFont$java_awt_Font.apply(this, [f]);
-this.columnWidth = 0;
+this.columnWidth=0;
 });
 
 Clazz.newMeth(C$, 'addActionListener$java_awt_event_ActionListener', function (l) {
@@ -142,33 +142,33 @@ var listeners = this.listenerList.getListenerList();
 var modifiers = 0;
 var currentEvent = (I$[7]||$incl$(7)).getCurrentEvent();
 if (Clazz.instanceOf(currentEvent, "java.awt.event.InputEvent")) {
-modifiers = (currentEvent).getModifiers();
+modifiers=(currentEvent).getModifiers();
 } else if (Clazz.instanceOf(currentEvent, "java.awt.event.ActionEvent")) {
-modifiers = (currentEvent).getModifiers();
+modifiers=(currentEvent).getModifiers();
 }var e = Clazz.new_((I$[8]||$incl$(8)).c$$O$I$S$J$I,[this, 1001, (this.command != null ) ? this.command : this.getText(), (I$[7]||$incl$(7)).getMostRecentEventTime(), modifiers]);
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[6]||$incl$(6)),['actionPerformed$java_awt_event_ActionEvent']) ) {
 (listeners[i + 1]).actionPerformed$java_awt_event_ActionEvent(e);
 }}
 });
 
 Clazz.newMeth(C$, 'setActionCommand$S', function (command) {
-this.command = command;
+this.command=command;
 });
 
 Clazz.newMeth(C$, 'setAction$javax_swing_Action', function (a) {
 var oldValue = this.getAction();
 if (this.$action == null  || !this.$action.equals$O(a) ) {
-this.$action = a;
+this.$action=a;
 if (oldValue != null ) {
 this.removeActionListener$java_awt_event_ActionListener(oldValue);
 oldValue.removePropertyChangeListener$java_beans_PropertyChangeListener(this.actionPropertyChangeListener);
-this.actionPropertyChangeListener = null;
+this.actionPropertyChangeListener=null;
 }this.configurePropertiesFromAction$javax_swing_Action(this.$action);
 if (this.$action != null ) {
 if (!p$.isListener$Class$java_awt_event_ActionListener.apply(this, [Clazz.getClass((I$[6]||$incl$(6)),['actionPerformed$java_awt_event_ActionEvent']), this.$action])) {
 this.addActionListener$java_awt_event_ActionListener(this.$action);
-}this.actionPropertyChangeListener = this.createActionPropertyChangeListener$javax_swing_Action(this.$action);
+}this.actionPropertyChangeListener=this.createActionPropertyChangeListener$javax_swing_Action(this.$action);
 this.$action.addPropertyChangeListener$java_beans_PropertyChangeListener(this.actionPropertyChangeListener);
 }this.firePropertyChange$S$O$O("action", oldValue, this.$action);
 }});
@@ -176,9 +176,9 @@ this.$action.addPropertyChangeListener$java_beans_PropertyChangeListener(this.ac
 Clazz.newMeth(C$, 'isListener$Class$java_awt_event_ActionListener', function (c, a) {
 var isListener = false;
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === c  && listeners[i + 1] === a  ) {
-isListener = true;
+isListener=true;
 }}
 return isListener;
 });
@@ -220,7 +220,7 @@ this.fireActionPerformed();
 
 Clazz.newMeth(C$, 'hasActionListener', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[6]||$incl$(6)),['actionPerformed$java_awt_event_ActionEvent']) ) {
 return true;
 }}
@@ -230,16 +230,16 @@ return false;
 Clazz.newMeth(C$, 'paramString', function () {
 var horizontalAlignmentString;
 if (this.horizontalAlignment == 2) {
-horizontalAlignmentString = "LEFT";
+horizontalAlignmentString="LEFT";
 } else if (this.horizontalAlignment == 0) {
-horizontalAlignmentString = "CENTER";
+horizontalAlignmentString="CENTER";
 } else if (this.horizontalAlignment == 4) {
-horizontalAlignmentString = "RIGHT";
+horizontalAlignmentString="RIGHT";
 } else if (this.horizontalAlignment == 10) {
-horizontalAlignmentString = "LEADING";
+horizontalAlignmentString="LEADING";
 } else if (this.horizontalAlignment == 11) {
-horizontalAlignmentString = "TRAILING";
-} else horizontalAlignmentString = "";
+horizontalAlignmentString="TRAILING";
+} else horizontalAlignmentString="";
 var commandString = (this.command != null  ? this.command : "");
 return C$.superclazz.prototype.paramString.apply(this, []) + ",columns=" + this.columns + ",columnWidth=" + this.columnWidth + ",command=" + commandString + ",horizontalAlignment=" + horizontalAlignmentString ;
 });
@@ -316,4 +316,4 @@ this.this$0.repaint();
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:35
+//Created 2018-05-24 08:46:28

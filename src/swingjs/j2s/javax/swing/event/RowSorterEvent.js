@@ -22,8 +22,8 @@ C$.superclazz.c$.apply(this, [source]);
 C$.$init$.apply(this);
 if (type == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["type must be non-null"]);
-}this.type = type;
-this.oldViewToModel = previousRowIndexToModel;
+}this.type=type;
+this.oldViewToModel=previousRowIndexToModel;
 }, 1);
 
 Clazz.newMeth(C$, 'getSource', function () {
@@ -62,4 +62,4 @@ Clazz.newMeth(C$, 'values', function() { return $vals }, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:45
+//Created 2018-05-24 08:46:49

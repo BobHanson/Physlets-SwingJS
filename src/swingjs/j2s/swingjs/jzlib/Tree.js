@@ -49,42 +49,42 @@ var bits;
 var xbits;
 var f;
 var overflow = 0;
-for (bits = 0; bits <= 15; bits++) s.bl_count[bits] = (0|0);
+for (bits=0; bits <= 15; bits++) s.bl_count[bits]=(0|0);
 
-tree[s.heap[s.heap_max] * 2 + 1] = (0|0);
-for (h = s.heap_max + 1; h < 573; h++) {
-n = s.heap[h];
-bits = tree[tree[n * 2 + 1] * 2 + 1] + 1;
+tree[s.heap[s.heap_max] * 2 + 1]=(0|0);
+for (h=s.heap_max + 1; h < 573; h++) {
+n=s.heap[h];
+bits=tree[tree[n * 2 + 1] * 2 + 1] + 1;
 if (bits > max_length) {
-bits = max_length;
+bits=max_length;
 overflow++;
-}tree[n * 2 + 1] = (bits|0);
+}tree[n * 2 + 1]=(bits|0);
 if (n > this.max_code) continue;
-s.bl_count[bits]++;
-xbits = 0;
-if (n >= base) xbits = extra[n - base];
-f = tree[n * 2];
-s.opt_len = s.opt_len+(f * (bits + xbits));
-if (stree != null ) s.static_len = s.static_len+(f * (stree[n * 2 + 1] + xbits));
+($s$[0]=s.bl_count[$k$=bits],s.bl_count[$k$]=(++$s$[0],$s$[0]));
+xbits=0;
+if (n >= base) xbits=extra[n - base];
+f=tree[n * 2];
+s.opt_len+=f * (bits + xbits);
+if (stree != null ) s.static_len+=f * (stree[n * 2 + 1] + xbits);
 }
 if (overflow == 0) return;
 do {
-bits = max_length - 1;
+bits=max_length - 1;
 while (s.bl_count[bits] == 0)bits--;
 
-s.bl_count[bits]--;
-s.bl_count[$j$=bits + 1] = (s.bl_count[$j$]+(2)|0);
-s.bl_count[max_length]--;
-overflow = overflow-(2);
+($s$[0]=s.bl_count[$k$=bits],s.bl_count[$k$]=(--$s$[0],$s$[0]));
+s.bl_count[$k$=bits + 1]=(s.bl_count[$k$]+(2)|0);
+($s$[0]=s.bl_count[$k$=max_length],s.bl_count[$k$]=(--$s$[0],$s$[0]));
+overflow-=2;
 } while (overflow > 0);
-for (bits = max_length; bits != 0; bits--) {
-n = s.bl_count[bits];
+for (bits=max_length; bits != 0; bits--) {
+n=s.bl_count[bits];
 while (n != 0){
-m = s.heap[--h];
+m=s.heap[--h];
 if (m > this.max_code) continue;
 if (tree[m * 2 + 1] != bits) {
-s.opt_len = s.opt_len+((bits - tree[m * 2 + 1]) * tree[m * 2]);
-tree[m * 2 + 1] = (bits|0);
+s.opt_len+=(bits - tree[m * 2 + 1]) * tree[m * 2];
+tree[m * 2 + 1]=(bits|0);
 }n--;
 }
 }
@@ -98,40 +98,40 @@ var n;
 var m;
 var max_code = -1;
 var node;
-s.heap_len = 0;
-s.heap_max = 573;
-for (n = 0; n < elems; n++) {
+s.heap_len=0;
+s.heap_max=573;
+for (n=0; n < elems; n++) {
 if (tree[n * 2] != 0) {
-s.heap[++s.heap_len] = max_code = n;
-s.depth[n] = (0|0);
+s.heap[++s.heap_len]=max_code=n;
+s.depth[n]=(0|0);
 } else {
-tree[n * 2 + 1] = (0|0);
+tree[n * 2 + 1]=(0|0);
 }}
 while (s.heap_len < 2){
-node = s.heap[++s.heap_len] = (max_code < 2 ? ++max_code : 0);
-tree[node * 2] = (1|0);
-s.depth[node] = (0|0);
+node=s.heap[++s.heap_len]=(max_code < 2 ? ++max_code : 0);
+tree[node * 2]=(1|0);
+s.depth[node]=(0|0);
 s.opt_len--;
-if (stree != null ) s.static_len = s.static_len-(stree[node * 2 + 1]);
+if (stree != null ) s.static_len-=stree[node * 2 + 1];
 }
-this.max_code = max_code;
-for (n = (s.heap_len/2|0); n >= 1; n--) s.pqdownheap$HA$I(tree, n);
+this.max_code=max_code;
+for (n=(s.heap_len/2|0); n >= 1; n--) s.pqdownheap$HA$I(tree, n);
 
-node = elems;
+node=elems;
 do {
-n = s.heap[1];
-s.heap[1] = s.heap[s.heap_len--];
+n=s.heap[1];
+s.heap[1]=s.heap[s.heap_len--];
 s.pqdownheap$HA$I(tree, 1);
-m = s.heap[1];
-s.heap[--s.heap_max] = n;
-s.heap[--s.heap_max] = m;
-tree[node * 2] = ((tree[n * 2] + tree[m * 2])|0);
-s.depth[node] = (((Math.max(s.depth[n], s.depth[m]) + 1)|0)|0);
-tree[n * 2 + 1] = tree[m * 2 + 1] = (node|0);
-s.heap[1] = node++;
+m=s.heap[1];
+s.heap[--s.heap_max]=n;
+s.heap[--s.heap_max]=m;
+tree[node * 2]=((tree[n * 2] + tree[m * 2])|0);
+s.depth[node]=(((Math.max(s.depth[n], s.depth[m]) + 1)|0)|0);
+tree[n * 2 + 1]=tree[m * 2 + 1]=(node|0);
+s.heap[1]=node++;
 s.pqdownheap$HA$I(tree, 1);
 } while (s.heap_len >= 2);
-s.heap[--s.heap_max] = s.heap[1];
+s.heap[--s.heap_max]=s.heap[1];
 this.gen_bitlen$swingjs_jzlib_Deflate(s);
 C$.gen_codes$HA$I$HA(tree, max_code, s.bl_count);
 });
@@ -140,30 +140,30 @@ Clazz.newMeth(C$, 'gen_codes$HA$I$HA', function (tree, max_code, bl_count) {
 var code = ($s$[0] = 0, $s$[0]);
 var bits;
 var n;
-C$.next_code[0] = (0|0);
-for (bits = 1; bits <= 15; bits++) {
-C$.next_code[bits] = code = ($s$[0] = ((code + bl_count[bits - 1]) << 1), $s$[0]);
+C$.next_code[0]=(0|0);
+for (bits=1; bits <= 15; bits++) {
+C$.next_code[bits]=code=($s$[0] = ((code + bl_count[bits - 1]) << 1), $s$[0]);
 }
-for (n = 0; n <= max_code; n++) {
+for (n=0; n <= max_code; n++) {
 var len = tree[n * 2 + 1];
 if (len == 0) continue;
-tree[n * 2] = ((C$.bi_reverse$I$I(C$.next_code[len]++, len))|0);
+tree[n * 2]=((C$.bi_reverse$I$I(($s$[0]=C$.next_code[$k$=len],C$.next_code[$k$]=(++$s$[0],$s$[0]),--$s$[0],$s$[0]), len))|0);
 }
 }, 1);
 
 Clazz.newMeth(C$, 'bi_reverse$I$I', function (code, len) {
 var res = 0;
 do {
-res = res|(code & 1);
-code = code>>>(1);
-res = res<<(1);
+res|=code & 1;
+code>>>=1;
+res<<=1;
 } while (--len > 0);
 return res >>> 1;
 }, 1);
 var $b$ = new Int8Array(1);
-var $j$;
 var $s$ = new Int16Array(1);
+var $k$;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:19
+//Created 2018-05-24 08:47:49

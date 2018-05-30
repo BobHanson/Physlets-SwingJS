@@ -13,8 +13,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javajs_api_GenericBinaryDocumentReader$Z', function (binaryDoc, isHomogeneousArrays) {
 C$.$init$.apply(this);
-this.isHomo = isHomogeneousArrays;
-this.doc = binaryDoc;
+this.isHomo=isHomogeneousArrays;
+this.doc=binaryDoc;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
@@ -22,7 +22,7 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getMapForStream$java_io_BufferedInputStream', function (is) {
-this.doc = Clazz.new_((I$[1]||$incl$(1))).setStream$java_io_BufferedInputStream$Z(is, true);
+this.doc=Clazz.new_((I$[1]||$incl$(1))).setStream$java_io_BufferedInputStream$Z(is, true);
 var map = this.readMap();
 is.close();
 return map;
@@ -37,21 +37,21 @@ var b = this.doc.readByte() & 255;
 var be0 = b & 224;
 if ((b & 128) == 0) {
 if (array != null ) {
-(array)[pt] = b;
+(array)[pt]=b;
 return null;
 }return Integer.$valueOf(b);
 }switch (be0) {
 case 224:
-b = (I$[2]||$incl$(2)).intToSignedInt$I(b | -256);
+b=(I$[2]||$incl$(2)).intToSignedInt$I(b | -256);
 if (array != null ) {
-(array)[pt] = b;
+(array)[pt]=b;
 return null;
 }return Integer.$valueOf(b);
 case 160:
 {
 var s = this.doc.readString$I(b & 31);
 if (array != null ) {
-(array)[pt] = s;
+(array)[pt]=s;
 return null;
 }return s;
 }case 128:
@@ -127,43 +127,43 @@ return this.doc.readString$I(this.doc.readInt());
 } else {
 switch (b) {
 case 202:
-(array)[pt] = this.doc.readFloat();
+(array)[pt]=this.doc.readFloat();
 break;
 case 203:
-(array)[pt] = this.doc.readDouble();
+(array)[pt]=this.doc.readDouble();
 break;
 case 204:
-(array)[pt] = this.doc.readUInt8();
+(array)[pt]=this.doc.readUInt8();
 break;
 case 205:
-(array)[pt] = this.doc.readUnsignedShort();
+(array)[pt]=this.doc.readUnsignedShort();
 break;
 case 206:
-(array)[pt] = this.doc.readInt();
+(array)[pt]=this.doc.readInt();
 break;
 case 207:
-(array)[pt] = (this.doc.readLong()|0);
+(array)[pt]=(this.doc.readLong()|0);
 break;
 case 208:
-(array)[pt] = this.doc.readByte();
+(array)[pt]=this.doc.readByte();
 break;
 case 209:
-(array)[pt] = this.doc.readShort();
+(array)[pt]=this.doc.readShort();
 break;
 case 210:
-(array)[pt] = this.doc.readInt();
+(array)[pt]=this.doc.readInt();
 break;
 case 211:
-(array)[pt] = (this.doc.readLong()|0);
+(array)[pt]=(this.doc.readLong()|0);
 break;
 case 217:
-(array)[pt] = this.doc.readString$I(this.doc.readUInt8());
+(array)[pt]=this.doc.readString$I(this.doc.readUInt8());
 break;
 case 218:
-(array)[pt] = this.doc.readString$I(this.doc.readShort());
+(array)[pt]=this.doc.readString$I(this.doc.readShort());
 break;
 case 219:
-(array)[pt] = this.doc.readString$I(this.doc.readInt());
+(array)[pt]=this.doc.readString$I(this.doc.readInt());
 break;
 }
 }}
@@ -180,27 +180,27 @@ if (n == 0) return null;
 var v = this.getNext$O$I(null, 0);
 if (Clazz.instanceOf(v, "java.lang.Integer")) {
 var a = Clazz.array(Integer.TYPE, [n]);
-a[0] = (v).intValue();
-v = a;
+a[0]=(v).intValue();
+v=a;
 } else if (Clazz.instanceOf(v, "java.lang.Float")) {
 var a = Clazz.array(Float.TYPE, [n]);
-a[0] = (v).floatValue();
-v = a;
+a[0]=(v).floatValue();
+v=a;
 } else if (Clazz.instanceOf(v, "java.lang.String")) {
 var a = Clazz.array(java.lang.String, [n]);
-a[0] = v;
-v = a;
+a[0]=v;
+v=a;
 } else {
 var o = Clazz.array(java.lang.Object, [n]);
-o[0] = v;
-for (var i = 1; i < n; i++) o[i] = this.getNext$O$I(null, 0);
+o[0]=v;
+for (var i = 1; i < n; i++) o[i]=this.getNext$O$I(null, 0);
 
 return o;
 }for (var i = 1; i < n; i++) this.getNext$O$I(v, i);
 
 return v;
 }var o = Clazz.array(java.lang.Object, [n]);
-for (var i = 0; i < n; i++) o[i] = this.getNext$O$I(null, 0);
+for (var i = 0; i < n; i++) o[i]=this.getNext$O$I(null, 0);
 
 return o;
 });
@@ -260,11 +260,11 @@ var a = Clazz.array(Float.TYPE, [n]);
 try {
 switch (((b.length - 12)/n|0)) {
 case 2:
-for (var i = 0, j = 12; i < n; i++, j = j+(2)) a[i] = (I$[2]||$incl$(2)).bytesToShort$BA$I$Z(b, j, false) / divisor;
+for (var i = 0, j = 12; i < n; i++, j+=2) a[i]=(I$[2]||$incl$(2)).bytesToShort$BA$I$Z(b, j, false) / divisor;
 
 break;
 case 4:
-for (var i = 0, j = 12; i < n; i++, j = j+(4)) a[i] = (I$[2]||$incl$(2)).bytesToFloat$BA$I$Z(b, j, false);
+for (var i = 0, j = 12; i < n; i++, j+=4) a[i]=(I$[2]||$incl$(2)).bytesToFloat$BA$I$Z(b, j, false);
 
 break;
 }
@@ -282,15 +282,15 @@ if (b == null ) return null;
 var a = Clazz.array(Integer.TYPE, [n]);
 switch (((b.length - 12)/n|0)) {
 case 1:
-for (var i = 0, j = 12; i < n; i++, j++) a[i] = b[j];
+for (var i = 0, j = 12; i < n; i++, j++) a[i]=b[j];
 
 break;
 case 2:
-for (var i = 0, j = 12; i < n; i++, j = j+(2)) a[i] = (I$[2]||$incl$(2)).bytesToShort$BA$I$Z(b, j, true);
+for (var i = 0, j = 12; i < n; i++, j+=2) a[i]=(I$[2]||$incl$(2)).bytesToShort$BA$I$Z(b, j, true);
 
 break;
 case 4:
-for (var i = 0, j = 12; i < n; i++, j = j+(4)) a[i] = (I$[2]||$incl$(2)).bytesToInt$BA$I$Z(b, j, true);
+for (var i = 0, j = 12; i < n; i++, j+=4) a[i]=(I$[2]||$incl$(2)).bytesToInt$BA$I$Z(b, j, true);
 
 break;
 }
@@ -304,12 +304,12 @@ var sb = Clazz.new_((I$[5]||$incl$(5)));
 for (var j = 0; j < 4; j++) {
 switch (b[pt]) {
 case 0:
-id[i] = sb.toString();
-pt = pt+(4 - j);
+id[i]=sb.toString();
+pt+=4 - j;
 continue out;
 default:
 sb.appendC$C(String.fromCharCode(b[pt++]));
-if (j == 3) id[i] = sb.toString();
+if (j == 3) id[i]=sb.toString();
 continue;
 }
 }
@@ -322,7 +322,7 @@ if (b == null ) return null;
 var ret = Clazz.array(Character.TYPE, [n]);
 for (var i = 0, pt = 3; i < n; ) {
 var val = String.fromCharCode(b[((pt++) << 2) + 3]);
-for (var j = (I$[2]||$incl$(2)).bytesToInt$BA$I$Z(b, (pt++) << 2, true); --j >= 0; ) ret[i++] = val;
+for (var j = (I$[2]||$incl$(2)).bytesToInt$BA$I$Z(b, (pt++) << 2, true); --j >= 0; ) ret[i++]=val;
 
 }
 return ret;
@@ -333,7 +333,7 @@ if (b == null ) return null;
 var ret = Clazz.array(Integer.TYPE, [n]);
 for (var i = 0, pt = 3; i < n; ) {
 var val = (I$[2]||$incl$(2)).bytesToInt$BA$I$Z(b, (pt++) << 2, true);
-for (var j = (I$[2]||$incl$(2)).bytesToInt$BA$I$Z(b, (pt++) << 2, true); --j >= 0; ) ret[i++] = val;
+for (var j = (I$[2]||$incl$(2)).bytesToInt$BA$I$Z(b, (pt++) << 2, true); --j >= 0; ) ret[i++]=val;
 
 }
 return ret;
@@ -344,7 +344,7 @@ if (b == null ) return null;
 var ret = Clazz.array(Integer.TYPE, [n]);
 for (var i = 0, pt = 3, val = 0; i < n; ) {
 var diff = (I$[2]||$incl$(2)).bytesToInt$BA$I$Z(b, (pt++) << 2, true);
-for (var j = (I$[2]||$incl$(2)).bytesToInt$BA$I$Z(b, (pt++) << 2, true); --j >= 0; ) ret[i++] = (val = val + diff);
+for (var j = (I$[2]||$incl$(2)).bytesToInt$BA$I$Z(b, (pt++) << 2, true); --j >= 0; ) ret[i++]=(val=val + diff);
 
 }
 return ret;
@@ -355,7 +355,7 @@ if (b == null ) return null;
 var ret = Clazz.array(Float.TYPE, [n]);
 for (var i = 0, pt = 3; i < n; ) {
 var val = (I$[2]||$incl$(2)).bytesToInt$BA$I$Z(b, (pt++) << 2, true);
-for (var j = (I$[2]||$incl$(2)).bytesToInt$BA$I$Z(b, (pt++) << 2, true); --j >= 0; ) ret[i++] = val / divisor;
+for (var j = (I$[2]||$incl$(2)).bytesToInt$BA$I$Z(b, (pt++) << 2, true); --j >= 0; ) ret[i++]=val / divisor;
 
 }
 return ret;
@@ -367,10 +367,10 @@ var ret = Clazz.array(Float.TYPE, [n]);
 for (var i = 0, pt = 6, val = 0, buf = 0; i < n; ) {
 var diff = (I$[2]||$incl$(2)).bytesToShort$BA$I$Z(b, (pt++) << 1, true);
 if (diff == 32767 || diff == -32768 ) {
-buf = buf+(diff);
+buf+=diff;
 } else {
-ret[i++] = (val = val + diff + buf ) / divisor;
-buf = 0;
+ret[i++]=(val=val + diff + buf ) / divisor;
+buf=0;
 }}
 return ret;
 }, 1);
@@ -383,20 +383,20 @@ case 1:
 for (var i = 0, pt = 12, offset = 0; i < n; ) {
 var val = b[pt++];
 if (val == 127 || val == -128 ) {
-offset = offset+(val);
+offset+=val;
 } else {
-ret[i++] = (val + offset) / divisor;
-offset = 0;
+ret[i++]=(val + offset) / divisor;
+offset=0;
 }}
 break;
 case 2:
 for (var i = 0, pt = 6, offset = 0; i < n; ) {
 var val = (I$[2]||$incl$(2)).bytesToShort$BA$I$Z(b, (pt++) << 1, true);
 if (val == 32767 || val == -32768 ) {
-offset = offset+(val);
+offset+=val;
 } else {
-ret[i++] = (val + offset) / divisor;
-offset = 0;
+ret[i++]=(val + offset) / divisor;
+offset=0;
 }}
 break;
 }
@@ -411,24 +411,24 @@ case 1:
 for (var i = 0, pt = 12, offset = 0; i < n; ) {
 var val = b[pt++];
 if (val == 127 || val == -128 ) {
-offset = offset+(val);
+offset+=val;
 } else {
-ret[i++] = val + offset;
-offset = 0;
+ret[i++]=val + offset;
+offset=0;
 }}
 break;
 case 2:
 for (var i = 0, pt = 6, offset = 0; i < n; ) {
 var val = (I$[2]||$incl$(2)).bytesToShort$BA$I$Z(b, (pt++) << 1, true);
 if (val == 32767 || val == -32768 ) {
-offset = offset+(val);
+offset+=val;
 } else {
-ret[i++] = val + offset;
-offset = 0;
+ret[i++]=val + offset;
+offset=0;
 }}
 break;
 }
 return ret;
 }, 1);
 })();
-//Created 2018-05-15 01:02:19
+//Created 2018-05-24 08:45:57

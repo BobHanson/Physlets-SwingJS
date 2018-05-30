@@ -41,17 +41,17 @@ var normy1 = normy0 + h / ellh;
 var nearx;
 var neary;
 if (normx0 > 0.0 ) {
-nearx = normx0;
+nearx=normx0;
 } else if (normx1 < 0.0 ) {
-nearx = normx1;
+nearx=normx1;
 } else {
-nearx = 0.0;
+nearx=0.0;
 }if (normy0 > 0.0 ) {
-neary = normy0;
+neary=normy0;
 } else if (normy1 < 0.0 ) {
-neary = normy1;
+neary=normy1;
 } else {
-neary = 0.0;
+neary=0.0;
 }return (nearx * nearx + neary * neary) < 0.25 ;
 });
 
@@ -65,9 +65,9 @@ return Clazz.new_((I$[3]||$incl$(3)).c$$java_awt_geom_Ellipse2D$java_awt_geom_Af
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var bits = java.lang.Double.doubleToLongBits(this.getX());
-bits = bits+(java.lang.Double.doubleToLongBits(this.getY()) * 37);
-bits = bits+(java.lang.Double.doubleToLongBits(this.getWidth()) * 43);
-bits = bits+(java.lang.Double.doubleToLongBits(this.getHeight()) * 47);
+bits+=java.lang.Double.doubleToLongBits(this.getY()) * 37;
+bits+=java.lang.Double.doubleToLongBits(this.getWidth()) * 43;
+bits+=java.lang.Double.doubleToLongBits(this.getHeight()) * 47;
 return (((bits|0)) ^ (((bits >> 32)|0)));
 });
 
@@ -128,17 +128,17 @@ return (this.width <= 0.0  || this.height <= 0.0  );
 });
 
 Clazz.newMeth(C$, 'setFrame$F$F$F$F', function (x, y, w, h) {
-this.x = x;
-this.y = y;
-this.width = w;
-this.height = h;
+this.x=x;
+this.y=y;
+this.width=w;
+this.height=h;
 });
 
 Clazz.newMeth(C$, 'setFrame$D$D$D$D', function (x, y, w, h) {
-this.x = x;
-this.y = y;
-this.width = w;
-this.height = h;
+this.x=x;
+this.y=y;
+this.width=w;
+this.height=h;
 });
 
 Clazz.newMeth(C$, 'getBounds2D', function () {
@@ -194,10 +194,10 @@ return (this.width <= 0.0  || this.height <= 0.0  );
 });
 
 Clazz.newMeth(C$, 'setFrame$D$D$D$D', function (x, y, w, h) {
-this.x = x;
-this.y = y;
-this.width = w;
-this.height = h;
+this.x=x;
+this.y=y;
+this.width=w;
+this.height=h;
 });
 
 Clazz.newMeth(C$, 'getBounds2D', function () {
@@ -205,4 +205,4 @@ return Clazz.new_((I$[2]||$incl$(2)).c$$D$D$D$D,[this.x, this.y, this.width, thi
 });
 })()
 })();
-//Created 2018-05-15 01:01:59
+//Created 2018-05-24 08:45:21

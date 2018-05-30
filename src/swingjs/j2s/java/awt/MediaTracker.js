@@ -16,7 +16,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_Component', function (comp) {
 C$.$init$.apply(this);
-this.target = comp;
+this.target=comp;
 }, 1);
 
 Clazz.newMeth(C$, 'addImage$java_awt_Image$I', function (image, id) {
@@ -24,7 +24,7 @@ this.addImage$java_awt_Image$I$I$I(image, id, -1, -1);
 });
 
 Clazz.newMeth(C$, 'addImage$java_awt_Image$I$I$I', function (image, id, w, h) {
-this.head = (I$[1]||$incl$(1)).insert$java_awt_MediaEntry$java_awt_MediaEntry(this.head, Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_MediaTracker$java_awt_Image$I$I$I,[this, image, id, w, h]));
+this.head=(I$[1]||$incl$(1)).insert$java_awt_MediaEntry$java_awt_MediaEntry(this.head, Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_MediaTracker$java_awt_Image$I$I$I,[this, image, id, w, h]));
 });
 
 Clazz.newMeth(C$, 'checkAll', function () {
@@ -40,8 +40,8 @@ var cur = this.head;
 var done = true;
 while (cur != null ){
 if ((cur.getStatus$Z$Z(load, verify) & 14) == 0) {
-done = false;
-}cur = cur.next;
+done=false;
+}cur=cur.next;
 }
 return done;
 });
@@ -107,13 +107,13 @@ while (cur != null ){
 var next = cur.next;
 if (cur.getID() == id && Clazz.instanceOf(cur, "java.awt.ImageMediaEntry")  && (cur).matches$java_awt_Image$I$I(image, width, height) ) {
 if (prev == null ) {
-this.head = next;
+this.head=next;
 } else {
-prev.next = next;
+prev.next=next;
 }cur.cancel();
 } else {
-prev = cur;
-}cur = next;
+prev=cur;
+}cur=next;
 }
 });
 
@@ -123,4 +123,4 @@ return;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:52
+//Created 2018-05-24 08:45:11

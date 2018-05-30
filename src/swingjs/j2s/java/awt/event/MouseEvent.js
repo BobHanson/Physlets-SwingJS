@@ -36,13 +36,13 @@ Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I$I$I$I$Z$I', function (source, id,
 C$.c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I.apply(this, [source, id, when, modifiers, x, y, 0, 0, clickCount, popupTrigger, button]);
 var eventLocationOnScreen = Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[0, 0]);
 try {
-eventLocationOnScreen = source.getLocationOnScreen();
-this.xAbs = eventLocationOnScreen.x + x;
-this.yAbs = eventLocationOnScreen.y + y;
+eventLocationOnScreen=source.getLocationOnScreen();
+this.xAbs=eventLocationOnScreen.x + x;
+this.yAbs=eventLocationOnScreen.y + y;
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.awt.IllegalComponentStateException")){
-this.xAbs = 0;
-this.yAbs = 0;
+this.xAbs=0;
+this.yAbs=0;
 } else {
 throw e;
 }
@@ -56,15 +56,15 @@ C$.c$$java_awt_Component$I$J$I$I$I$I$Z$I.apply(this, [source, id, when, modifier
 Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I', function (source, id, when, modifiers, x, y, xAbs, yAbs, clickCount, popupTrigger, button) {
 C$.superclazz.c$$java_awt_Component$I$J$I.apply(this, [source, id, when, modifiers]);
 C$.$init$.apply(this);
-this.x = x;
-this.y = y;
-this.xAbs = xAbs;
-this.yAbs = yAbs;
-this.clickCount = clickCount;
-this.popupTrigger = popupTrigger;
+this.x=x;
+this.y=y;
+this.xAbs=xAbs;
+this.yAbs=yAbs;
+this.clickCount=clickCount;
+this.popupTrigger=popupTrigger;
 if (button < 0 || button > 3 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Invalid button value"]);
-}this.button = button;
+}this.button=button;
 if ((this.getModifiers() != 0) && (this.getModifiersEx() == 0) ) {
 p$.setNewModifiers.apply(this, []);
 } else if ((this.getModifiers() == 0) && (this.getModifiersEx() != 0 || button != 0 ) ) {
@@ -83,14 +83,14 @@ Clazz.newMeth(C$, 'getPoint', function () {
 var x;
 var y;
 {
-x = this.x;
-y = this.y;
+x=this.x;
+y=this.y;
 }return Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[x, y]);
 });
 
 Clazz.newMeth(C$, 'translatePoint$I$I', function (x, y) {
-this.x = this.x+(x);
-this.y = this.y+(y);
+this.x+=x;
+this.y+=y;
 });
 
 Clazz.newMeth(C$, 'getClickCount', function () {
@@ -175,71 +175,71 @@ return "unknown type";
 
 Clazz.newMeth(C$, 'setNewModifiers', function () {
 if ((this.modifiers & 16) != 0) {
-this.modifiers = this.modifiers|(1024);
+this.modifiers|=1024;
 }if ((this.modifiers & 8) != 0) {
-this.modifiers = this.modifiers|(2048);
+this.modifiers|=2048;
 }if ((this.modifiers & 4) != 0) {
-this.modifiers = this.modifiers|(4096);
+this.modifiers|=4096;
 }if (this.id == 501 || this.id == 502  || this.id == 500 ) {
 if ((this.modifiers & 16) != 0) {
-this.button = 1;
-this.modifiers = this.modifiers&(-13);
+this.button=1;
+this.modifiers&=-13;
 if (this.id != 501) {
-this.modifiers = this.modifiers&(-1025);
+this.modifiers&=-1025;
 }} else if ((this.modifiers & 8) != 0) {
-this.button = 2;
-this.modifiers = this.modifiers&(-21);
+this.button=2;
+this.modifiers&=-21;
 if (this.id != 501) {
-this.modifiers = this.modifiers&(-2049);
+this.modifiers&=-2049;
 }} else if ((this.modifiers & 4) != 0) {
-this.button = 3;
-this.modifiers = this.modifiers&(-25);
+this.button=3;
+this.modifiers&=-25;
 if (this.id != 501) {
-this.modifiers = this.modifiers&(-4097);
+this.modifiers&=-4097;
 }}}if ((this.modifiers & 8) != 0) {
-this.modifiers = this.modifiers|(512);
+this.modifiers|=512;
 }if ((this.modifiers & 4) != 0) {
-this.modifiers = this.modifiers|(256);
+this.modifiers|=256;
 }if ((this.modifiers & 1) != 0) {
-this.modifiers = this.modifiers|(64);
+this.modifiers|=64;
 }if ((this.modifiers & 2) != 0) {
-this.modifiers = this.modifiers|(128);
+this.modifiers|=128;
 }if ((this.modifiers & 32) != 0) {
-this.modifiers = this.modifiers|(8192);
+this.modifiers|=8192;
 }});
 
 Clazz.newMeth(C$, 'setOldModifiers', function () {
 if (this.id == 501 || this.id == 502  || this.id == 500 ) {
 switch (this.button) {
 case 1:
-this.modifiers = this.modifiers|(16);
+this.modifiers|=16;
 break;
 case 2:
-this.modifiers = this.modifiers|(8);
+this.modifiers|=8;
 break;
 case 3:
-this.modifiers = this.modifiers|(4);
+this.modifiers|=4;
 break;
 }
 } else {
 if ((this.modifiers & 1024) != 0) {
-this.modifiers = this.modifiers|(16);
+this.modifiers|=16;
 }if ((this.modifiers & 2048) != 0) {
-this.modifiers = this.modifiers|(8);
+this.modifiers|=8;
 }if ((this.modifiers & 4096) != 0) {
-this.modifiers = this.modifiers|(4);
+this.modifiers|=4;
 }}if ((this.modifiers & 512) != 0) {
-this.modifiers = this.modifiers|(8);
+this.modifiers|=8;
 }if ((this.modifiers & 256) != 0) {
-this.modifiers = this.modifiers|(4);
+this.modifiers|=4;
 }if ((this.modifiers & 64) != 0) {
-this.modifiers = this.modifiers|(1);
+this.modifiers|=1;
 }if ((this.modifiers & 128) != 0) {
-this.modifiers = this.modifiers|(2);
+this.modifiers|=2;
 }if ((this.modifiers & 8192) != 0) {
-this.modifiers = this.modifiers|(32);
+this.modifiers|=32;
 }});
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:18

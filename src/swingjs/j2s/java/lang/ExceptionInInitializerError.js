@@ -27,7 +27,7 @@ this.initCause$Throwable(null);
 Clazz.newMeth(C$, 'c$$Throwable', function (exception) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.exception = exception;
+this.exception=exception;
 this.initCause$Throwable(exception);
 }, 1);
 
@@ -39,4 +39,4 @@ Clazz.newMeth(C$, 'getCause', function () {
 return this.exception;
 });
 })();
-//Created 2018-05-15 01:02:07
+//Created 2018-05-24 08:45:37

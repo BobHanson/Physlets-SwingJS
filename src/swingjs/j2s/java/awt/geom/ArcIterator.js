@@ -25,39 +25,39 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_Arc2D$java_awt_geom_AffineTransform', function (a, at) {
 C$.$init$.apply(this);
-this.w = a.getWidth() / 2;
-this.h = a.getHeight() / 2;
-this.x = a.getX() + this.w;
-this.y = a.getY() + this.h;
-this.angStRad = -Math.toRadians(a.getAngleStart());
-this.affine = at;
+this.w=a.getWidth() / 2;
+this.h=a.getHeight() / 2;
+this.x=a.getX() + this.w;
+this.y=a.getY() + this.h;
+this.angStRad=-Math.toRadians(a.getAngleStart());
+this.affine=at;
 var ext = -a.getAngleExtent();
 if (ext >= 360.0  || ext <= -360  ) {
-this.arcSegs = 4;
-this.increment = 1.5707963267948966;
-this.cv = 0.5522847498307933;
+this.arcSegs=4;
+this.increment=1.5707963267948966;
+this.cv=0.5522847498307933;
 if (ext < 0 ) {
-this.increment = -this.increment;
-this.cv = -this.cv;
+this.increment=-this.increment;
+this.cv=-this.cv;
 }} else {
-this.arcSegs = (Math.ceil(Math.abs(ext) / 90.0)|0);
-this.increment = Math.toRadians(ext / this.arcSegs);
-this.cv = C$.btan$D(this.increment);
+this.arcSegs=(Math.ceil(Math.abs(ext) / 90.0)|0);
+this.increment=Math.toRadians(ext / this.arcSegs);
+this.cv=C$.btan$D(this.increment);
 if (this.cv == 0 ) {
-this.arcSegs = 0;
+this.arcSegs=0;
 }}switch (a.getArcType()) {
 case 0:
-this.lineSegs = 0;
+this.lineSegs=0;
 break;
 case 1:
-this.lineSegs = 1;
+this.lineSegs=1;
 break;
 case 2:
-this.lineSegs = 2;
+this.lineSegs=2;
 break;
 }
 if (this.w < 0  || this.h < 0  ) {
-this.arcSegs = this.lineSegs = -1;
+this.arcSegs=this.lineSegs=-1;
 }}, 1);
 
 Clazz.newMeth(C$, 'getWindingRule', function () {
@@ -82,31 +82,31 @@ if (this.isDone()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["arc iterator out of bounds"]);
 }var angle = this.angStRad;
 if (this.index == 0) {
-coords[0] = (this.x + Math.cos(angle) * this.w);
-coords[1] = (this.y + Math.sin(angle) * this.h);
+coords[0]=(this.x + Math.cos(angle) * this.w);
+coords[1]=(this.y + Math.sin(angle) * this.h);
 if (this.affine != null ) {
 this.affine.transform$FA$I$FA$I$I(coords, 0, coords, 0, 1);
 }return 0;
 }if (this.index > this.arcSegs) {
 if (this.index == this.arcSegs + this.lineSegs) {
 return 4;
-}coords[0] = this.x;
-coords[1] = this.y;
+}coords[0]=this.x;
+coords[1]=this.y;
 if (this.affine != null ) {
 this.affine.transform$FA$I$FA$I$I(coords, 0, coords, 0, 1);
 }return 1;
 }angle += this.increment * (this.index - 1);
 var relx = Math.cos(angle);
 var rely = Math.sin(angle);
-coords[0] = (this.x + (relx - this.cv * rely) * this.w);
-coords[1] = (this.y + (rely + this.cv * relx) * this.h);
+coords[0]=(this.x + (relx - this.cv * rely) * this.w);
+coords[1]=(this.y + (rely + this.cv * relx) * this.h);
 angle += this.increment;
-relx = Math.cos(angle);
-rely = Math.sin(angle);
-coords[2] = (this.x + (relx + this.cv * rely) * this.w);
-coords[3] = (this.y + (rely - this.cv * relx) * this.h);
-coords[4] = (this.x + relx * this.w);
-coords[5] = (this.y + rely * this.h);
+relx=Math.cos(angle);
+rely=Math.sin(angle);
+coords[2]=(this.x + (relx + this.cv * rely) * this.w);
+coords[3]=(this.y + (rely - this.cv * relx) * this.h);
+coords[4]=(this.x + relx * this.w);
+coords[5]=(this.y + rely * this.h);
 if (this.affine != null ) {
 this.affine.transform$FA$I$FA$I$I(coords, 0, coords, 0, 3);
 }return 3;
@@ -117,31 +117,31 @@ if (this.isDone()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["arc iterator out of bounds"]);
 }var angle = this.angStRad;
 if (this.index == 0) {
-coords[0] = this.x + Math.cos(angle) * this.w;
-coords[1] = this.y + Math.sin(angle) * this.h;
+coords[0]=this.x + Math.cos(angle) * this.w;
+coords[1]=this.y + Math.sin(angle) * this.h;
 if (this.affine != null ) {
 this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, 1);
 }return 0;
 }if (this.index > this.arcSegs) {
 if (this.index == this.arcSegs + this.lineSegs) {
 return 4;
-}coords[0] = this.x;
-coords[1] = this.y;
+}coords[0]=this.x;
+coords[1]=this.y;
 if (this.affine != null ) {
 this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, 1);
 }return 1;
 }angle += this.increment * (this.index - 1);
 var relx = Math.cos(angle);
 var rely = Math.sin(angle);
-coords[0] = this.x + (relx - this.cv * rely) * this.w;
-coords[1] = this.y + (rely + this.cv * relx) * this.h;
+coords[0]=this.x + (relx - this.cv * rely) * this.w;
+coords[1]=this.y + (rely + this.cv * relx) * this.h;
 angle += this.increment;
-relx = Math.cos(angle);
-rely = Math.sin(angle);
-coords[2] = this.x + (relx + this.cv * rely) * this.w;
-coords[3] = this.y + (rely - this.cv * relx) * this.h;
-coords[4] = this.x + relx * this.w;
-coords[5] = this.y + rely * this.h;
+relx=Math.cos(angle);
+rely=Math.sin(angle);
+coords[2]=this.x + (relx + this.cv * rely) * this.w;
+coords[3]=this.y + (rely - this.cv * relx) * this.h;
+coords[4]=this.x + relx * this.w;
+coords[5]=this.y + rely * this.h;
 if (this.affine != null ) {
 this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, 3);
 }return 3;
@@ -149,4 +149,4 @@ this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, 3);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:59
+//Created 2018-05-24 08:45:20

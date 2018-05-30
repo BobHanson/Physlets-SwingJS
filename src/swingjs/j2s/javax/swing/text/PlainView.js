@@ -36,7 +36,7 @@ return size;
 
 Clazz.newMeth(C$, 'getLineBuffer', function () {
 if (this.lineBuffer == null ) {
-this.lineBuffer = Clazz.new_((I$[1]||$incl$(1)));
+this.lineBuffer=Clazz.new_((I$[1]||$incl$(1)));
 }return this.lineBuffer;
 });
 
@@ -45,7 +45,7 @@ var host = this.getContainer();
 var f = host.getFont();
 if (this.font !== f ) {
 p$.calculateLongestLine.apply(this, []);
-this.tabSize = this.getTabSize() * this.metrics.charWidth$C("m");
+this.tabSize=this.getTabSize() * this.metrics.charWidth$C("m");
 }});
 
 Clazz.newMeth(C$, 'getPreferredSpan$I', function (axis) {
@@ -74,21 +74,21 @@ var lineIndex = map.getElementIndex$I(pos);
 if (lineIndex < 0) {
 return this.lineToRect$java_awt_Shape$I(a, 0);
 }var lineArea = this.lineToRect$java_awt_Shape$I(a, lineIndex);
-this.tabBase = lineArea.x;
+this.tabBase=lineArea.x;
 var line = map.getElement$I(lineIndex);
 var p0 = line.getStartOffset();
 var s = (I$[2]||$incl$(2)).getSharedSegment();
 doc.getText$I$I$javax_swing_text_Segment(p0, pos - p0, s);
 var xOffs = (I$[3]||$incl$(3)).getTabbedTextWidth$javax_swing_text_Segment$java_awt_FontMetrics$I$javax_swing_text_TabExpander$I(s, this.metrics, this.tabBase, this, p0);
 (I$[2]||$incl$(2)).releaseSharedSegment$javax_swing_text_Segment(s);
-lineArea.x = lineArea.x+(xOffs);
-lineArea.width = 1;
-lineArea.height = this.metrics.getHeight();
+lineArea.x+=xOffs;
+lineArea.width=1;
+lineArea.height=this.metrics.getHeight();
 return lineArea;
 });
 
 Clazz.newMeth(C$, 'viewToModel$F$F$java_awt_Shape$javax_swing_text_Position_BiasA', function (fx, fy, a, bias) {
-bias[0] = (I$[4]||$incl$(4)).Forward;
+bias[0]=(I$[4]||$incl$(4)).Forward;
 var alloc = a.getBounds();
 var doc = this.getDocument();
 var x = (fx|0);
@@ -105,8 +105,8 @@ if (lineIndex >= map.getElementCount()) {
 return this.getEndOffset() - 1;
 }var line = map.getElement$I(lineIndex);
 if (lineIndex == 0) {
-alloc.x = alloc.x+(this.firstLineOffset);
-alloc.width = alloc.width-(this.firstLineOffset);
+alloc.x+=this.firstLineOffset;
+alloc.width-=this.firstLineOffset;
 }if (x < alloc.x) {
 return line.getStartOffset();
 } else if (x > alloc.x + alloc.width) {
@@ -117,7 +117,7 @@ var p0 = line.getStartOffset();
 var p1 = line.getEndOffset() - 1;
 var s = (I$[2]||$incl$(2)).getSharedSegment();
 doc.getText$I$I$javax_swing_text_Segment(p0, p1 - p0, s);
-this.tabBase = alloc.x;
+this.tabBase=alloc.x;
 var offs = p0 + (I$[3]||$incl$(3)).getTabbedTextOffset$javax_swing_text_Segment$java_awt_FontMetrics$I$I$javax_swing_text_TabExpander$I(s, this.metrics, this.tabBase, x, this, p0);
 (I$[2]||$incl$(2)).releaseSharedSegment$javax_swing_text_Segment(s);
 return offs;
@@ -167,8 +167,8 @@ var currWide = p$.getLineWidth$javax_swing_text_Element.apply(this, [this.longLi
 for (var i = 0; i < added.length; i++) {
 var w = p$.getLineWidth$javax_swing_text_Element.apply(this, [added[i]]);
 if (w > currWide) {
-currWide = w;
-this.longLine = added[i];
+currWide=w;
+this.longLine=added[i];
 }}
 }if (removed != null ) {
 for (var i = 0; i < removed.length; i++) {
@@ -188,7 +188,7 @@ var e = map.getElement$I(line);
 if (e === this.longLine ) {
 this.preferenceChanged$javax_swing_text_View$Z$Z(null, true, false);
 } else if (p$.getLineWidth$javax_swing_text_Element.apply(this, [e]) > w) {
-this.longLine = e;
+this.longLine=e;
 this.preferenceChanged$javax_swing_text_View$Z$Z(null, true, false);
 }} else if (changes.getType() === (I$[5]||$incl$(5)).REMOVE ) {
 if (map.getElement$I(line) === this.longLine ) {
@@ -213,16 +213,16 @@ this.updateMetrics();
 if (this.metrics != null ) {
 var alloc = a.getBounds();
 if (line == 0) {
-alloc.x = alloc.x+(this.firstLineOffset);
-alloc.width = alloc.width-(this.firstLineOffset);
-}r = Clazz.new_((I$[6]||$incl$(6)).c$$I$I$I$I,[alloc.x, alloc.y + (line * this.metrics.getHeight()), alloc.width, this.metrics.getHeight()]);
+alloc.x+=this.firstLineOffset;
+alloc.width-=this.firstLineOffset;
+}r=Clazz.new_((I$[6]||$incl$(6)).c$$I$I$I$I,[alloc.x, alloc.y + (line * this.metrics.getHeight()), alloc.width, this.metrics.getHeight()]);
 }return r;
 });
 
 Clazz.newMeth(C$, 'calculateLongestLine', function () {
 var c = this.getContainer();
-this.font = c.getFont();
-this.metrics = c.getFontMetrics$java_awt_Font(this.font);
+this.font=c.getFont();
+this.metrics=c.getFontMetrics$java_awt_Font(this.font);
 var lines = this.getElement();
 var n = lines.getElementCount();
 var maxWidth = -1;
@@ -230,8 +230,8 @@ for (var i = 0; i < n; i++) {
 var line = lines.getElement$I(i);
 var w = p$.getLineWidth$javax_swing_text_Element.apply(this, [line]);
 if (w > maxWidth) {
-maxWidth = w;
-this.longLine = line;
+maxWidth=w;
+this.longLine=line;
 }}
 });
 
@@ -244,10 +244,10 @@ var w;
 var s = (I$[2]||$incl$(2)).getSharedSegment();
 try {
 line.getDocument().getText$I$I$javax_swing_text_Segment(p0, p1 - p0, s);
-w = (I$[3]||$incl$(3)).getTabbedTextWidth$javax_swing_text_Segment$java_awt_FontMetrics$I$javax_swing_text_TabExpander$I(s, this.metrics, this.tabBase, this, p0);
+w=(I$[3]||$incl$(3)).getTabbedTextWidth$javax_swing_text_Segment$java_awt_FontMetrics$I$javax_swing_text_TabExpander$I(s, this.metrics, this.tabBase, this, p0);
 } catch (ble) {
 if (Clazz.exceptionOf(ble, "javax.swing.text.BadLocationException")){
-w = 0;
+w=0;
 } else {
 throw ble;
 }
@@ -258,4 +258,4 @@ return w;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:57
+//Created 2018-05-24 08:47:07

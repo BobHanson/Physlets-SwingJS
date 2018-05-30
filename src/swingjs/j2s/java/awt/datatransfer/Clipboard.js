@@ -16,7 +16,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
 C$.$init$.apply(this);
-this.name = name;
+this.name=name;
 }, 1);
 
 Clazz.newMeth(C$, 'getName', function () {
@@ -26,8 +26,8 @@ return this.name;
 Clazz.newMeth(C$, 'setContents$java_awt_datatransfer_Transferable$java_awt_datatransfer_ClipboardOwner', function (contents, owner) {
 var oldOwner = this.owner;
 var oldContents = this.contents;
-this.owner = owner;
-this.contents = contents;
+this.owner=owner;
+this.contents=contents;
 if (oldOwner != null  && oldOwner !== owner  ) {
 (I$[1]||$incl$(1)).invokeLater$Runnable(((
 (function(){var C$=Clazz.newClass(P$, "Clipboard$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
@@ -79,8 +79,8 @@ Clazz.newMeth(C$, 'addFlavorListener$java_awt_datatransfer_FlavorListener', func
 if (listener == null ) {
 return;
 }if (this.flavorListeners == null ) {
-this.currentDataFlavors = p$.getAvailableDataFlavorSet.apply(this, []);
-this.flavorListeners = Clazz.new_((I$[4]||$incl$(4)).c$$Class,[Clazz.getClass((I$[5]||$incl$(5)),['flavorsChanged$java_awt_datatransfer_FlavorEvent'])]);
+this.currentDataFlavors=p$.getAvailableDataFlavorSet.apply(this, []);
+this.flavorListeners=Clazz.new_((I$[4]||$incl$(4)).c$$Class,[Clazz.getClass((I$[5]||$incl$(5)),['flavorsChanged$java_awt_datatransfer_FlavorEvent'])]);
 }this.flavorListeners.add$java_util_EventListener(listener);
 });
 
@@ -98,7 +98,7 @@ Clazz.newMeth(C$, 'fireFlavorsChanged', function () {
 if (this.flavorListeners == null ) {
 return;
 }var prevDataFlavors = this.currentDataFlavors;
-this.currentDataFlavors = p$.getAvailableDataFlavorSet.apply(this, []);
+this.currentDataFlavors=p$.getAvailableDataFlavorSet.apply(this, []);
 if (prevDataFlavors.equals$O(this.currentDataFlavors)) {
 return;
 }var flavorListenerArray = this.flavorListeners.getListenersInternal();
@@ -133,4 +133,4 @@ set.addAll$java_util_Collection((I$[9]||$incl$(9)).asList$TTA(flavors));
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:54
+//Created 2018-05-24 08:45:14

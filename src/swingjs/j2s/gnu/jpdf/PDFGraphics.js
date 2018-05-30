@@ -69,37 +69,37 @@ var first = true;
 var ang1r = (ang1 % 360.0) * 0.017453292519943295;
 var sin0 = Math.sin(ang1r);
 var cos0 = Math.cos(ang1r);
-x0 = axc + width * cos0;
-y0 = ayc + height * sin0;
+x0=axc + width * cos0;
+y0=ayc + height * sin0;
 if (!clockwise) {
 while (ang1 < ang2 )ang2 -= 360.0;
 
-while ((adiff = ang2 - ang1) < -90.0 ){
+while ((adiff=ang2 - ang1) < -90.0 ){
 var w = sin0;
-sin0 = -cos0;
-cos0 = w;
-x3r = axc + width * cos0;
-y3r = ayc + height * sin0;
+sin0=-cos0;
+cos0=w;
+x3r=axc + width * cos0;
+y3r=ayc + height * sin0;
 p$.arc_add$Z$D$D$D$D$D$D$D$D.apply(this, [first, width, height, x0, y0, x3r, y3r, (x0 + width * cos0), (y0 + height * sin0)]);
-x0 = x3r;
-y0 = y3r;
+x0=x3r;
+y0=y3r;
 ang1 -= 90.0;
-first = false;
+first=false;
 }
 } else {
 while (ang2 < ang1 )ang2 += 360.0;
 
-while ((adiff = ang2 - ang1) > 90.0 ){
+while ((adiff=ang2 - ang1) > 90.0 ){
 var w = cos0;
-cos0 = -sin0;
-sin0 = w;
-x3r = axc + width * cos0;
-y3r = ayc + height * sin0;
+cos0=-sin0;
+sin0=w;
+x3r=axc + width * cos0;
+y3r=ayc + height * sin0;
 p$.arc_add$Z$D$D$D$D$D$D$D$D.apply(this, [first, width, height, x0, y0, x3r, y3r, (x0 + width * cos0), (y0 + height * sin0)]);
-x0 = x3r;
-y0 = y3r;
+x0=x3r;
+y0=y3r;
 ang1 += 90.0;
-first = false;
+first=false;
 }
 }var trad = Math.tan(adiff * 0.008726646259971648);
 var ang2r = ang2 * 0.017453292519943295;
@@ -118,13 +118,13 @@ var r2 = w2 + h2;
 var fw = 0.0;
 var fh = 0.0;
 if (dist < (r2 * 1.0E8) ) {
-fw = (w2 != 0.0 ) ? (1.3333333333333333 / (1 + Math.sqrt(1 + dist / w2))) : 0.0;
-fh = (h2 != 0.0 ) ? (1.3333333333333333 / (1 + Math.sqrt(1 + dist / h2))) : 0.0;
+fw=(w2 != 0.0 ) ? (1.3333333333333333 / (1 + Math.sqrt(1 + dist / w2))) : 0.0;
+fh=(h2 != 0.0 ) ? (1.3333333333333333 / (1 + Math.sqrt(1 + dist / h2))) : 0.0;
 }if (first) this.moveto$D$D(x0, y0);
 var x = x0 + ((xt - x0) * fw);
 var y = y0 + ((yt - y0) * fh);
-x0 = x3 + ((xt - x3) * fw);
-y0 = y3 + ((yt - y3) * fh);
+x0=x3 + ((xt - x3) * fw);
+y0=y3 + ((yt - y3) * fh);
 this.curveto$D$D$D$D$D$D(x, y, x0, y0, x3, y3);
 });
 
@@ -139,8 +139,8 @@ Clazz.newMeth(C$, 'clip$java_awt_Shape', function (s) {
 if (s == null ) {
 this.setClip$java_awt_Shape(null);
 return;
-}s = this.$transform.createTransformedShape$java_awt_Shape(s);
-if (this.$clip == null ) this.$clip = Clazz.new_((I$[6]||$incl$(6)).c$$java_awt_Shape,[s]);
+}s=this.$transform.createTransformedShape$java_awt_Shape(s);
+if (this.$clip == null ) this.$clip=Clazz.new_((I$[6]||$incl$(6)).c$$java_awt_Shape,[s]);
  else this.$clip.intersect$java_awt_geom_Area(Clazz.new_((I$[6]||$incl$(6)).c$$java_awt_Shape,[s]));
 });
 
@@ -148,7 +148,7 @@ Clazz.newMeth(C$, 'clipPolygon$java_awt_Polygon', function (p) {
 this.closeBlock();
 this.polygon$IA$IA$I(p.xpoints, p.ypoints, p.npoints);
 this.closeBlock$S("W");
-this.clipRectangle = p.getBounds();
+this.clipRectangle=p.getBounds();
 });
 
 Clazz.newMeth(C$, 'clipRect$I$I$I$I', function (x, y, w, h) {
@@ -164,7 +164,7 @@ if (this.inText) {
 this.pw.println$S("ET Q");
 }if (this.inStroke) {
 this.pw.println$S(code);
-}this.inStroke = this.inText = false;
+}this.inStroke=this.inText=false;
 });
 
 Clazz.newMeth(C$, 'copyArea$I$I$I$I$I$I', function (x, y, w, h, dx, dy) {
@@ -173,9 +173,9 @@ Clazz.newMeth(C$, 'copyArea$I$I$I$I$I$I', function (x, y, w, h, dx, dy) {
 Clazz.newMeth(C$, 'create', function () {
 this.closeBlock();
 var g = this.createGraphic$gnu_jpdf_PDFPage$java_io_PrintWriter(this.page, this.pw);
-g.trax = this.trax;
-g.tray = this.tray;
-g.clipRectangle = Clazz.new_((I$[7]||$incl$(7)).c$$java_awt_Rectangle,[this.clipRectangle]);
+g.trax=this.trax;
+g.tray=this.tray;
+g.clipRectangle=Clazz.new_((I$[7]||$incl$(7)).c$$java_awt_Rectangle,[this.clipRectangle]);
 return g;
 });
 
@@ -188,49 +188,49 @@ return g;
 Clazz.newMeth(C$, 'curveto$D$D$D$D', function (x1, y1, x2, y2) {
 this.newPath();
 this.pw.println$S(p$.cxy$D$D.apply(this, [x1, y1]) + p$.cxy$D$D.apply(this, [x2, y2]) + "v" );
-this.lx = x2;
-this.ly = y2;
+this.lx=x2;
+this.ly=y2;
 });
 
 Clazz.newMeth(C$, 'curveto$I$I$I$I', function (x1, y1, x2, y2) {
 this.newPath();
 this.pw.println$S(p$.cxy$D$D.apply(this, [x1, y1]) + p$.cxy$D$D.apply(this, [x2, y2]) + "v" );
-this.lx = x2;
-this.ly = y2;
+this.lx=x2;
+this.ly=y2;
 });
 
 Clazz.newMeth(C$, 'curveto$D$D$D$D$D$D', function (x1, y1, x2, y2, x3, y3) {
 this.newPath();
 this.pw.println$S(p$.cxy$D$D.apply(this, [x1, y1]) + p$.cxy$D$D.apply(this, [x2, y2]) + p$.cxy$D$D.apply(this, [x3, y3]) + "c" );
-this.lx = x3;
-this.ly = y3;
+this.lx=x3;
+this.ly=y3;
 });
 
 Clazz.newMeth(C$, 'curveto$I$I$I$I$I$I', function (x1, y1, x2, y2, x3, y3) {
 this.newPath();
 this.pw.println$S(p$.cxy$D$D.apply(this, [x1, y1]) + p$.cxy$D$D.apply(this, [x2, y2]) + p$.cxy$D$D.apply(this, [x3, y3]) + "c" );
-this.lx = x3;
-this.ly = y3;
+this.lx=x3;
+this.ly=y3;
 });
 
 Clazz.newMeth(C$, 'curveto2$D$D$D$D', function (x1, y1, x2, y2) {
 this.newPath();
 this.pw.println$S(p$.cxy$D$D.apply(this, [x1, y1]) + p$.cxy$D$D.apply(this, [x2, y2]) + "y" );
-this.lx = x2;
-this.ly = y2;
+this.lx=x2;
+this.ly=y2;
 });
 
 Clazz.newMeth(C$, 'curveto2$I$I$I$I', function (x1, y1, x2, y2) {
 this.newPath();
 this.pw.println$S(p$.cxy$D$D.apply(this, [x1, y1]) + p$.cxy$D$D.apply(this, [x2, y2]) + "y" );
-this.lx = x2;
-this.ly = y2;
+this.lx=x2;
+this.ly=y2;
 });
 
 Clazz.newMeth(C$, 'cwh$D$D', function (w, h) {
 var nw = w;
 var nh = h;
-nh = -h;
+nh=-h;
 return "" + C$.df.format$D(nw) + " " + C$.df.format$D(nh) + " " ;
 });
 
@@ -257,10 +257,10 @@ Clazz.newMeth(C$, 'draw3DRect$I$I$I$I$Z', function (x, y, width, height, raised)
 });
 
 Clazz.newMeth(C$, 'drawArc$I$I$I$I$I$I', function (x, y, w, h, sa, aa) {
-w = w >> 1;
-h = h >> 1;
-x = x+(w);
-y = y+(h);
+w=w >> 1;
+h=h >> 1;
+x+=w;
+y+=h;
 this.arc$D$D$D$D$D$D$Z(x, y, w, h, -sa, (-sa - aa), false);
 });
 
@@ -270,8 +270,8 @@ Clazz.newMeth(C$, 'drawBytes$BA$I$I$I$I', function (data, offset, length, x, y) 
 Clazz.newMeth(C$, 'drawImage$java_awt_image_BufferedImage$java_awt_image_BufferedImageOp$I$I', function (img, op, x, y) {
 var result = img;
 if (op != null ) {
-result = op.createCompatibleDestImage$java_awt_image_BufferedImage$java_awt_image_ColorModel(img, img.getColorModel());
-result = op.filter$java_awt_image_BufferedImage$java_awt_image_BufferedImage(img, result);
+result=op.createCompatibleDestImage$java_awt_image_BufferedImage$java_awt_image_ColorModel(img, img.getColorModel());
+result=op.filter$java_awt_image_BufferedImage$java_awt_image_BufferedImage(img, result);
 }this.drawImage$java_awt_Image$I$I$java_awt_image_ImageObserver(result, x, y, null);
 });
 
@@ -294,7 +294,7 @@ var c = this.getColor();
 this.setColor$java_awt_Color(bgcolor);
 this.drawRect$I$I$I$I(x, y, w, h);
 this.closeBlock$S("B Q");
-this.paint = c;
+this.paint=c;
 return this.drawImage$java_awt_Image$I$I$I$I$java_awt_image_ImageObserver(img, x, y, img.getWidth$java_awt_image_ImageObserver(obs), img.getHeight$java_awt_image_ImageObserver(obs), obs);
 });
 
@@ -338,8 +338,8 @@ this.polygon$IA$IA$I(xp, yp, np);
 Clazz.newMeth(C$, 'drawRect$I$I$I$I', function (x, y, w, h) {
 this.newPath();
 this.pw.print$S(p$.cxy$D$D.apply(this, [x, y]) + p$.cwh$D$D.apply(this, [w, h]) + "re " );
-this.lx = x;
-this.ly = y;
+this.lx=x;
+this.ly=y;
 });
 
 Clazz.newMeth(C$, 'drawRenderableImage$java_awt_image_renderable_RenderableImage$java_awt_geom_AffineTransform', function (img, xform) {
@@ -349,7 +349,7 @@ this.drawRenderedImage$java_awt_image_RenderedImage$java_awt_geom_AffineTransfor
 Clazz.newMeth(C$, 'drawRenderedImage$java_awt_image_RenderedImage$java_awt_geom_AffineTransform', function (img, xform) {
 var image = null;
 if (Clazz.instanceOf(img, "java.awt.image.BufferedImage")) {
-image = img;
+image=img;
 } else {
 var cm = img.getColorModel();
 var width = img.getWidth();
@@ -364,7 +364,7 @@ properties.put$TK$TV(keys[i], img.getProperty$S(keys[i]));
 }
 }var result = Clazz.new_((I$[4]||$incl$(4)).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[cm, raster, isAlphaPremultiplied, properties]);
 img.copyData$java_awt_image_WritableRaster(raster);
-image = result;
+image=result;
 }this.drawImage$java_awt_Image$java_awt_geom_AffineTransform$java_awt_image_ImageObserver(image, xform, null);
 });
 
@@ -425,10 +425,10 @@ var points;
 if (s == null ) return;
 if (drawType == 2) {
 if (!(Clazz.instanceOf(this.stroke, "java.awt.BasicStroke"))) {
-s = this.stroke.createStrokedShape$java_awt_Shape(s);
+s=this.stroke.createStrokedShape$java_awt_Shape(s);
 p$.followPath$java_awt_Shape$I.apply(this, [s, 1]);
 return;
-}}points = s.getPathIterator$java_awt_geom_AffineTransform(C$.IDENTITY);
+}}points=s.getPathIterator$java_awt_geom_AffineTransform(C$.IDENTITY);
 var segments = 0;
 var coords = Clazz.array(Float.TYPE, [6]);
 while (!points.isDone()){
@@ -537,8 +537,8 @@ return this.pw;
 
 Clazz.newMeth(C$, 'hit$java_awt_Rectangle$java_awt_Shape$Z', function (rect, s, onStroke) {
 if (onStroke) {
-s = this.stroke.createStrokedShape$java_awt_Shape(s);
-}s = this.$transform.createTransformedShape$java_awt_Shape(s);
+s=this.stroke.createStrokedShape$java_awt_Shape(s);
+}s=this.$transform.createTransformedShape$java_awt_Shape(s);
 var area = Clazz.new_((I$[6]||$incl$(6)).c$$java_awt_Shape,[s]);
 if (this.$clip != null ) area.intersect$java_awt_geom_Area(this.$clip);
 return area.intersects$D$D$D$D(rect.x, rect.y, rect.width, rect.height);
@@ -548,47 +548,47 @@ Clazz.newMeth(C$, 'init', function () {
 var pf = this.page.getPageFormat();
 if (this.child) {
 this.pw.print$S("q ");
-}this.paint = (I$[12]||$incl$(12)).black;
-this.oTransform = Clazz.new_((I$[1]||$incl$(1)));
-this.pTransform = Clazz.new_((I$[1]||$incl$(1)));
+}this.paint=(I$[12]||$incl$(12)).black;
+this.oTransform=Clazz.new_((I$[1]||$incl$(1)));
+this.pTransform=Clazz.new_((I$[1]||$incl$(1)));
 this.pTransform.translate$D$D(0, pf.getHeight());
 this.pTransform.scale$D$D(1.0, -1.0);
-this.$transform = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_geom_AffineTransform,[this.oTransform]);
+this.$transform=Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_geom_AffineTransform,[this.oTransform]);
 this.$transform.concatenate$java_awt_geom_AffineTransform(this.pTransform);
 this.setStroke$java_awt_Stroke(C$.DEF_STROKE);
 });
 
 Clazz.newMeth(C$, 'init$gnu_jpdf_PDFPage', function (page) {
-this.page = page;
-this.child = false;
+this.page=page;
+this.child=false;
 var stream = Clazz.new_((I$[15]||$incl$(15)));
 stream.setDeflate$Z(true);
 page.getPDFDocument().add$gnu_jpdf_PDFObject(stream);
 page.add$gnu_jpdf_PDFObject(stream);
-this.pw = stream.getWriter();
-this.clipRectangle = page.getImageableArea();
+this.pw=stream.getWriter();
+this.clipRectangle=page.getImageableArea();
 p$.init.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'init$gnu_jpdf_PDFPage$java_io_PrintWriter', function (page, pw) {
-this.page = page;
-this.pw = pw;
-this.child = true;
+this.page=page;
+this.pw=pw;
+this.child=true;
 p$.init.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'lineto$D$D', function (x, y) {
 this.newPath();
 if (x != (x|0)  || y != (y|0)   || this.lx != x   || this.ly != y  ) this.pw.print$S(p$.cxy$D$D.apply(this, [x, y]) + "l ");
-this.lx = x;
-this.ly = y;
+this.lx=x;
+this.ly=y;
 });
 
 Clazz.newMeth(C$, 'moveto$D$D', function (x, y) {
 this.newPath();
 if (x != (x|0)  || y != (y|0)   || this.lx != x   || this.ly != y  ) this.pw.print$S(p$.cxy$D$D.apply(this, [x, y]) + "m ");
-this.lx = x;
-this.ly = y;
+this.lx=x;
+this.ly=y;
 });
 
 Clazz.newMeth(C$, 'newPath', function () {
@@ -597,11 +597,11 @@ this.closeBlock();
 }if (!this.inStroke) {
 if (this.pre_np != null ) {
 this.pw.print$S(this.pre_np);
-this.pre_np = null;
+this.pre_np=null;
 }this.pw.print$S("n ");
-}this.inText = false;
-this.inStroke = true;
-this.lx = this.ly = -9999;
+}this.inText=false;
+this.inStroke=true;
+this.lx=this.ly=-9999;
 });
 
 Clazz.newMeth(C$, 'newTextBlock$F$F', function (x, y) {
@@ -610,15 +610,15 @@ this.closeBlock();
 }if (!this.inText) {
 this.getFont();
 this.pw.print$S("q BT ");
-this.tx = this.ty = 0;
+this.tx=this.ty=0;
 this.pw.print$S(p$.txy$F$F.apply(this, [x, y]) + "Td ");
 } else {
 this.pw.print$S(p$.twh$F$F$F$F.apply(this, [x, y, this.tx, this.ty]) + "Td ");
-}this.tx = x;
-this.ty = y;
+}this.tx=x;
+this.ty=y;
 if (this.newFont || !this.inText ) this.pw.print$S(this.pdffont.getName() + " " + this.font.getSize() + " Tf " );
-this.inStroke = this.newFont = false;
-this.inText = true;
+this.inStroke=this.newFont=false;
+this.inText=true;
 });
 
 Clazz.newMeth(C$, 'polygon$IA$IA$I', function (xp, yp, np) {
@@ -637,15 +637,15 @@ this.$transform.rotate$D$D$D(theta, x, y);
 
 Clazz.newMeth(C$, 'scale$D$D', function (sx, sy) {
 this.$transform.scale$D$D(sx, sy);
-this.stroke = p$.transformStroke$java_awt_Stroke.apply(this, [this.originalStroke]);
+this.stroke=p$.transformStroke$java_awt_Stroke.apply(this, [this.originalStroke]);
 });
 
 Clazz.newMeth(C$, 'setBackground$java_awt_Color', function (color) {
-this.background = color;
+this.background=color;
 });
 
 Clazz.newMeth(C$, 'setClip$I$I$I$I', function (x, y, w, h) {
-this.clipRectangle = Clazz.new_((I$[7]||$incl$(7)).c$$I$I$I$I,[x, y, w, h]);
+this.clipRectangle=Clazz.new_((I$[7]||$incl$(7)).c$$I$I$I$I,[x, y, w, h]);
 this.closeBlock();
 this.drawRect$I$I$I$I(x, y, w, h);
 this.closeBlock$S("W n");
@@ -661,7 +661,7 @@ this.setPaint$java_awt_Paint(c);
 });
 
 Clazz.newMeth(C$, 'setComposite$java_awt_Composite', function (comp) {
-this.composite = comp;
+this.composite=comp;
 });
 
 Clazz.newMeth(C$, 'setDefaultLineWidth', function () {
@@ -671,27 +671,27 @@ this.pw.println$S("1 w");
 
 Clazz.newMeth(C$, 'setFont$java_awt_Font', function (f) {
 if (this.font !== f ) {
-this.font = f;
-this.pdffont = this.page.getFont$S$S$I("/Type1", f.getName(), f.getStyle());
-this.newFont = true;
+this.font=f;
+this.pdffont=this.page.getFont$S$S$I("/Type1", f.getName(), f.getStyle());
+this.newFont=true;
 }});
 
 Clazz.newMeth(C$, 'setLineCap$I', function (cap) {
 var lineCap = 0;
 switch (cap) {
 case 0:
-lineCap = 0;
+lineCap=0;
 break;
 case 1:
-lineCap = 1;
+lineCap=1;
 break;
 case 2:
-lineCap = 2;
+lineCap=2;
 break;
 }
 if (this.lineCap != lineCap) {
 this.closeBlock();
-this.lineCap = lineCap;
+this.lineCap=lineCap;
 this.pw.println$S("" + lineCap + " J" );
 }});
 
@@ -699,37 +699,37 @@ Clazz.newMeth(C$, 'setLineJoin$I', function (join) {
 var lineJoin = 0;
 switch (join) {
 case 0:
-lineJoin = 0;
+lineJoin=0;
 break;
 case 1:
-lineJoin = 1;
+lineJoin=1;
 break;
 case 2:
-lineJoin = 2;
+lineJoin=2;
 break;
 }
 if (this.lineJoin != lineJoin) {
 this.closeBlock();
-this.lineJoin = lineJoin;
+this.lineJoin=lineJoin;
 this.pw.println$S("" + lineJoin + " j" );
 }});
 
 Clazz.newMeth(C$, 'setLineWidth$F', function (width) {
 if (width != this.lineWidth ) {
 this.closeBlock();
-this.lineWidth = width;
+this.lineWidth=width;
 this.pw.println$S("" + new Float(width).toString() + " w" );
 }});
 
 Clazz.newMeth(C$, 'setMiterLimit$F', function (limit) {
 if (limit != this.miterLimit ) {
 this.closeBlock();
-this.miterLimit = limit;
+this.miterLimit=limit;
 this.pw.println$S("" + new Float(limit).toString() + " M" );
 }});
 
 Clazz.newMeth(C$, 'setPaint$java_awt_Paint', function (paint) {
-this.paint = paint;
+this.paint=paint;
 if (Clazz.instanceOf(paint, "java.awt.Color")) {
 var c = paint;
 var r = (c.getRed()) / 255.0;
@@ -755,8 +755,8 @@ this.rhints.putAll$java_util_Map(hints);
 });
 
 Clazz.newMeth(C$, 'setStroke$java_awt_Stroke', function (s) {
-this.originalStroke = s;
-this.stroke = p$.transformStroke$java_awt_Stroke.apply(this, [s]);
+this.originalStroke=s;
+this.stroke=p$.transformStroke$java_awt_Stroke.apply(this, [s]);
 if (Clazz.instanceOf(this.stroke, "java.awt.BasicStroke")) {
 var bs = this.stroke;
 p$.setLineCap$I.apply(this, [bs.getEndCap()]);
@@ -766,10 +766,10 @@ p$.setMiterLimit$F.apply(this, [bs.getMiterLimit()]);
 }});
 
 Clazz.newMeth(C$, 'setTransform$java_awt_geom_AffineTransform', function (t) {
-this.oTransform = t;
-this.$transform = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_geom_AffineTransform,[t]);
+this.oTransform=t;
+this.$transform=Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_geom_AffineTransform,[t]);
 this.$transform.concatenate$java_awt_geom_AffineTransform(this.pTransform);
-this.stroke = p$.transformStroke$java_awt_Stroke.apply(this, [this.originalStroke]);
+this.stroke=p$.transformStroke$java_awt_Stroke.apply(this, [this.originalStroke]);
 });
 
 Clazz.newMeth(C$, 'setXORMode$java_awt_Color', function (c1) {
@@ -781,7 +781,7 @@ this.$transform.shear$D$D(shx, shy);
 
 Clazz.newMeth(C$, 'transform$java_awt_geom_AffineTransform', function (tx) {
 this.$transform.concatenate$java_awt_geom_AffineTransform(tx);
-this.stroke = p$.transformStroke$java_awt_Stroke.apply(this, [this.originalStroke]);
+this.stroke=p$.transformStroke$java_awt_Stroke.apply(this, [this.originalStroke]);
 });
 
 Clazz.newMeth(C$, 'transformStroke$java_awt_Stroke', function (stroke) {
@@ -797,8 +797,8 @@ for (var k = 0; k < dash.length; ++k) dash[k] *= scale;
 
 Clazz.newMeth(C$, 'translate$D$D', function (tx, ty) {
 this.$transform.translate$D$D(tx, ty);
-this.trax = tx;
-this.tray = ty;
+this.trax=tx;
+this.tray=ty;
 });
 
 Clazz.newMeth(C$, 'translate$I$I', function (x, y) {
@@ -813,10 +813,10 @@ var nty = ty;
 var mh = (this.page.getPageFormat().getHeight()|0);
 var sx = 1;
 var sy = 1;
-ny = mh - y;
-nty = mh - ty;
-nx = sx * (nx - ntx);
-ny = sy * (ny - nty);
+ny=mh - y;
+nty=mh - ty;
+nx=sx * (nx - ntx);
+ny=sy * (ny - nty);
 return "" + C$.df.format$D(nx) + " " + C$.df.format$D(ny) + " " ;
 });
 
@@ -829,4 +829,4 @@ return "" + C$.df.format$D(ptDst.getX()) + " " + C$.df.format$D(ptDst.getY()) + 
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:46
+//Created 2018-05-24 08:45:03

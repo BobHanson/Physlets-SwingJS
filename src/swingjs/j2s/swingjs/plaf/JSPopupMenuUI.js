@@ -21,15 +21,15 @@ Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
 if (C$.j2sSwingMenu == null ) {
 (I$[2]||$incl$(2)).loadStaticResource$S("swingjs/jquery/j2sMenu.js");
-C$.j2sSwingMenu = (I$[2]||$incl$(2)).J2S._getSwing();
-}this.isContainer = true;
-this.isMenuItem = true;
+C$.j2sSwingMenu=(I$[2]||$incl$(2)).J2S._getSwing();
+}this.isContainer=true;
+this.isMenuItem=true;
 this.setDoc();
 }, 1);
 
 Clazz.newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.domNode = this.containerNode = this.newDOMObject$S$S$SA("ul", this.id, []);
+this.domNode=this.containerNode=this.newDOMObject$S$S$SA("ul", this.id, []);
 }return this.domNode;
 });
 
@@ -46,7 +46,7 @@ return null;
 
 Clazz.newMeth(C$, 'setVisible$Z', function (b) {
 if (this.menu == null ) {
-this.menu = this.jc;
+this.menu=this.jc;
 C$.j2sSwingMenu.setMenu(this.menu);
 }if (b) {
 this.jc.addNotify();
@@ -72,4 +72,4 @@ Clazz.newMeth(C$, 'getPreferredSize', function () {
 return null;
 });
 })();
-//Created 2018-05-15 01:03:24
+//Created 2018-05-24 08:47:57

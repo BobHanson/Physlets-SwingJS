@@ -18,14 +18,14 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I$I$FA', function (width, height, data) {
 C$.$init$.apply(this);
-this.width = width;
-this.height = height;
-this.xOrigin = (width - 1) >> 1;
-this.yOrigin = (height - 1) >> 1;
+this.width=width;
+this.height=height;
+this.xOrigin=(width - 1) >> 1;
+this.yOrigin=(height - 1) >> 1;
 var len = width * height;
 if (data.length < len) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Data array too small (is " + data.length + " and should be " + len ]);
-}this.data = Clazz.array(Float.TYPE, [len]);
+}this.data=Clazz.array(Float.TYPE, [len]);
 System.arraycopy(data, 0, this.data, 0, len);
 }, 1);
 
@@ -47,7 +47,7 @@ return this.height;
 
 Clazz.newMeth(C$, 'getKernelData$FA', function (data) {
 if (data == null ) {
-data = Clazz.array(Float.TYPE, [this.data.length]);
+data=Clazz.array(Float.TYPE, [this.data.length]);
 } else if (data.length < this.data.length) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Data array too small (should be " + this.data.length + " but is " + data.length + " )" ]);
 }System.arraycopy(this.data, 0, data, 0, this.data.length);
@@ -68,4 +68,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:01
+//Created 2018-05-24 08:45:26

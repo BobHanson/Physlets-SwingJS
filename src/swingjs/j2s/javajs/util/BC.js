@@ -65,8 +65,8 @@ return s * (C$.shiftIEEE$D$I(b2, e) +C$.shiftIEEE$D$I(b3, e - 8) + C$.shiftIEEE$
 }}, 1);
 
 Clazz.newMeth(C$, 'setFracIEEE', function () {
-C$.fracIEEE = Clazz.array(Float.TYPE, [270]);
-for (var i = 0; i < 270; i++) C$.fracIEEE[i] = Math.pow(2, i - 141);
+C$.fracIEEE=Clazz.array(Float.TYPE, [270]);
+for (var i = 0; i < 270; i++) C$.fracIEEE[i]=Math.pow(2, i - 141);
 
 }, 1);
 
@@ -76,4 +76,4 @@ if (i > 128) return 3.4028235E38;
 return f * C$.fracIEEE[i + 140];
 }, 1);
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:55

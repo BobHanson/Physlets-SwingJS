@@ -84,26 +84,26 @@ p$.setup$org_xml_sax_Parser.apply(this, [parser]);
 Clazz.newMeth(C$, 'setup$org_xml_sax_Parser', function (parser) {
 if (parser == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["Parser argument must not be null"]);
-}this.parser = parser;
-this.atts = Clazz.new_((I$[2]||$incl$(2)));
-this.nsSupport = Clazz.new_((I$[3]||$incl$(3)));
-this.attAdapter = Clazz.new_((I$[4]||$incl$(4)), [this, null]);
+}this.parser=parser;
+this.atts=Clazz.new_((I$[2]||$incl$(2)));
+this.nsSupport=Clazz.new_((I$[3]||$incl$(3)));
+this.attAdapter=Clazz.new_((I$[4]||$incl$(4)), [this, null]);
 });
 
 Clazz.newMeth(C$, 'setFeature$S$Z', function (name, value) {
 if (name.equals$O("http://xml.org/sax/features/namespaces")) {
 p$.checkNotParsing$S$S.apply(this, ["feature", name]);
-this.namespaces = value;
+this.namespaces=value;
 if (!this.namespaces && !this.prefixes ) {
-this.prefixes = true;
+this.prefixes=true;
 }} else if (name.equals$O("http://xml.org/sax/features/namespace-prefixes")) {
 p$.checkNotParsing$S$S.apply(this, ["feature", name]);
-this.prefixes = value;
+this.prefixes=value;
 if (!this.prefixes && !this.namespaces ) {
-this.namespaces = true;
+this.namespaces=true;
 }} else if (name.equals$O("http://xml.org/sax/features/xmlns-uris")) {
 p$.checkNotParsing$S$S.apply(this, ["feature", name]);
-this.uris = value;
+this.uris=value;
 } else {
 throw Clazz.new_(Clazz.load('org.xml.sax.SAXNotRecognizedException').c$$S,["Feature: " + name]);
 }});
@@ -128,7 +128,7 @@ throw Clazz.new_(Clazz.load('org.xml.sax.SAXNotRecognizedException').c$$S,["Prop
 });
 
 Clazz.newMeth(C$, 'setEntityResolver$org_xml_sax_EntityResolver', function (resolver) {
-this.entityResolver = resolver;
+this.entityResolver=resolver;
 });
 
 Clazz.newMeth(C$, 'getEntityResolver', function () {
@@ -136,7 +136,7 @@ return this.entityResolver;
 });
 
 Clazz.newMeth(C$, 'setDTDHandler$org_xml_sax_DTDHandler', function (handler) {
-this.dtdHandler = handler;
+this.dtdHandler=handler;
 });
 
 Clazz.newMeth(C$, 'getDTDHandler', function () {
@@ -144,7 +144,7 @@ return this.dtdHandler;
 });
 
 Clazz.newMeth(C$, 'setContentHandler$org_xml_sax_ContentHandler', function (handler) {
-this.contentHandler = handler;
+this.contentHandler=handler;
 });
 
 Clazz.newMeth(C$, 'getContentHandler', function () {
@@ -152,7 +152,7 @@ return this.contentHandler;
 });
 
 Clazz.newMeth(C$, 'setErrorHandler$org_xml_sax_ErrorHandler', function (handler) {
-this.errorHandler = handler;
+this.errorHandler=handler;
 });
 
 Clazz.newMeth(C$, 'getErrorHandler', function () {
@@ -167,17 +167,17 @@ Clazz.newMeth(C$, 'parse$org_xml_sax_InputSource', function (input) {
 if (this.parsing) {
 throw Clazz.new_(Clazz.load('org.xml.sax.SAXException').c$$S,["Parser is already in use"]);
 }p$.setupParser.apply(this, []);
-this.parsing = true;
+this.parsing=true;
 try {
 this.parser.parse$org_xml_sax_InputSource(input);
 } finally {
-this.parsing = false;
+this.parsing=false;
 }
-this.parsing = false;
+this.parsing=false;
 });
 
 Clazz.newMeth(C$, 'setDocumentLocator$org_xml_sax_Locator', function (locator) {
-this.locator = locator;
+this.locator=locator;
 if (this.contentHandler != null ) {
 this.contentHandler.setDocumentLocator$org_xml_sax_Locator(locator);
 }});
@@ -207,10 +207,10 @@ if (!attQName.startsWith$S("xmlns")) continue;
 var prefix;
 var n = attQName.indexOf(":");
 if (n == -1 && attQName.length$() == 5 ) {
-prefix = "";
+prefix="";
 } else if (n != 5) {
 continue;
-} else prefix = attQName.substring(n + 1);
+} else prefix=attQName.substring(n + 1);
 var value = qAtts.getValue$I(i);
 if (!this.nsSupport.declarePrefix$S$S(prefix, value)) {
 this.reportError$S("Illegal Namespace prefix: " + prefix);
@@ -226,11 +226,11 @@ if (attQName.startsWith$S("xmlns")) {
 var prefix;
 var n = attQName.indexOf(":");
 if (n == -1 && attQName.length$() == 5 ) {
-prefix = "";
+prefix="";
 } else if (n != 5) {
-prefix = null;
+prefix=null;
 } else {
-prefix = attQName.substring(6);
+prefix=attQName.substring(6);
 }if (prefix != null ) {
 if (this.prefixes) {
 if (this.uris) this.atts.addAttribute$S$S$S$S$S((I$[3]||$incl$(3)).XMLNS, prefix, attQName.intern(), type, value);
@@ -241,7 +241,7 @@ var attName = p$.processName$S$Z$Z.apply(this, [attQName, true, true]);
 this.atts.addAttribute$S$S$S$S$S(attName[0], attName[1], attName[2], type, value);
 } catch (e) {
 if (Clazz.exceptionOf(e, "org.xml.sax.SAXException")){
-if (exceptions == null ) exceptions = Clazz.new_((I$[6]||$incl$(6)));
+if (exceptions == null ) exceptions=Clazz.new_((I$[6]||$incl$(6)));
 exceptions.addElement$TE(e);
 this.atts.addAttribute$S$S$S$S$S("", attQName, attQName, type, value);
 } else {
@@ -299,7 +299,7 @@ this.parser.setDTDHandler$org_xml_sax_DTDHandler(this.dtdHandler);
 }if (this.errorHandler != null ) {
 this.parser.setErrorHandler$org_xml_sax_ErrorHandler(this.errorHandler);
 }this.parser.setDocumentHandler$org_xml_sax_DocumentHandler(this);
-this.locator = null;
+this.locator=null;
 });
 
 Clazz.newMeth(C$, 'processName$S$Z$Z', function (qName, isAttribute, useException) {
@@ -307,9 +307,9 @@ var parts = this.nsSupport.processName$S$SA$Z(qName, this.nameParts, isAttribute
 if (parts == null ) {
 if (useException) throw p$.makeException$S.apply(this, ["Undeclared prefix: " + qName]);
 this.reportError$S("Undeclared prefix: " + qName);
-parts = Clazz.array(java.lang.String, [3]);
-parts[0] = parts[1] = "";
-parts[2] = qName.intern();
+parts=Clazz.array(java.lang.String, [3]);
+parts[0]=parts[1]="";
+parts[2]=qName.intern();
 }return parts;
 });
 
@@ -349,7 +349,7 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setAttributeList$org_xml_sax_AttributeList', function (qAtts) {
-this.qAtts = qAtts;
+this.qAtts=qAtts;
 });
 
 Clazz.newMeth(C$, 'getLength', function () {
@@ -406,4 +406,4 @@ return this.qAtts.getValue$S(qName);
 });
 })()
 })();
-//Created 2018-05-15 01:03:04
+//Created 2018-05-24 08:47:18

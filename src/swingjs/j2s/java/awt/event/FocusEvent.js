@@ -16,8 +16,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_Component$I$Z$java_awt_Component', function (source, id, temporary, opposite) {
 C$.superclazz.c$$java_awt_Component$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.temporary = temporary;
-this.opposite = opposite;
+this.temporary=temporary;
+this.opposite=opposite;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Component$I$Z', function (source, id, temporary) {
@@ -42,17 +42,17 @@ Clazz.newMeth(C$, 'paramString', function () {
 var typeStr;
 switch (this.id) {
 case 1004:
-typeStr = "FOCUS_GAINED";
+typeStr="FOCUS_GAINED";
 break;
 case 1005:
-typeStr = "FOCUS_LOST";
+typeStr="FOCUS_LOST";
 break;
 default:
-typeStr = "unknown type";
+typeStr="unknown type";
 }
 return typeStr + (this.temporary ? ",temporary" : ",permanent") + ",opposite=" + this.getOppositeComponent() ;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:17

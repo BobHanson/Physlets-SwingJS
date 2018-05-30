@@ -15,28 +15,28 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$I$I', function (rows, cols) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.setViewportView$java_awt_Component(this.ta = Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[rows, cols]));
+this.setViewportView$java_awt_Component(this.ta=Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[rows, cols]));
 this.awtDefaults();
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.setViewportView$java_awt_Component(this.ta = Clazz.new_((I$[1]||$incl$(1))));
+this.setViewportView$java_awt_Component(this.ta=Clazz.new_((I$[1]||$incl$(1))));
 this.awtDefaults();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (text) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.setViewportView$java_awt_Component(this.ta = Clazz.new_((I$[1]||$incl$(1)).c$$S$I$I,[text, 0, 9]));
+this.setViewportView$java_awt_Component(this.ta=Clazz.new_((I$[1]||$incl$(1)).c$$S$I$I,[text, 0, 9]));
 this.awtDefaults();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$I$I', function (text, rows, cols) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.setViewportView$java_awt_Component(this.ta = Clazz.new_((I$[1]||$incl$(1)).c$$S$I$I,[text, rows, cols]));
+this.setViewportView$java_awt_Component(this.ta=Clazz.new_((I$[1]||$incl$(1)).c$$S$I$I,[text, rows, cols]));
 this.awtDefaults();
 }, 1);
 
@@ -99,4 +99,4 @@ Clazz.newMeth(C$, 'getRows', function () {
 return this.ta.getRows();
 });
 })();
-//Created 2018-05-15 01:01:45
+//Created 2018-05-24 08:45:01

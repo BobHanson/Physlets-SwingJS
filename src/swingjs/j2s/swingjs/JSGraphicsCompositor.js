@@ -15,31 +15,31 @@ var s = null;
 switch (alphaRule) {
 default:
 case 3:
-s = "source-over";
+s="source-over";
 break;
 case 5:
-s = "source-in";
+s="source-in";
 break;
 case 7:
-s = "source-out";
+s="source-out";
 break;
 case 10:
-s = "source-atop";
+s="source-atop";
 break;
 case 12:
-s = "xor";
+s="xor";
 break;
 case 4:
-s = "destination-over";
+s="destination-over";
 break;
 case 6:
-s = "destination-in";
+s="destination-in";
 break;
 case 8:
-s = "destination-out";
+s="destination-out";
 break;
 case 11:
-s = "destination-atop";
+s="destination-atop";
 break;
 }
 {
@@ -60,7 +60,7 @@ var offsets = rop.getOffsets$FA(null);
 var scaleFactors = rop.getScaleFactors$FA(null);
 var canDo = (offsets.length == 4 && offsets[3] == 0  );
 if (canDo) for (var i = 0; i < 3; i++) if (offsets[i] != 0  || scaleFactors[i] != 1  ) {
-canDo = false;
+canDo=false;
 break;
 }
 if (canDo) {
@@ -81,7 +81,7 @@ return false;
 
 Clazz.newMeth(C$, 'filterRaster$java_awt_image_Raster$java_awt_image_WritableRaster$java_awt_image_RasterOp', function (src, dst, op) {
 if (dst == null ) {
-dst = op.createCompatibleDestRaster$java_awt_image_Raster(src);
+dst=op.createCompatibleDestRaster$java_awt_image_Raster(src);
 }var retRaster = null;
 var type = 0;
 {
@@ -93,19 +93,19 @@ var table = (op).getTable();
 if (Clazz.instanceOf(table, "java.awt.image.ByteLookupTable")) {
 var bt = table;
 if (C$.lookupByteRaster$java_awt_image_Raster$java_awt_image_WritableRaster$BAA(src, dst, bt.getTable()) > 0) {
-retRaster = dst;
+retRaster=dst;
 }}break;
 case 65:
 var bOp = op;
-var matrix = (C$.mat6 == null  ? C$.mat6 = Clazz.array(Double.TYPE, [6]) : C$.mat6);
+var matrix = (C$.mat6 == null  ? C$.mat6=Clazz.array(Double.TYPE, [6]) : C$.mat6);
 bOp.getTransform().getMatrix$DA(matrix);
 if (C$.transformRaster$java_awt_image_Raster$java_awt_image_WritableRaster$DA$I(src, dst, matrix, bOp.getInterpolationType()) > 0) {
-retRaster = dst;
+retRaster=dst;
 }break;
 case 67:
 var cOp = op;
 if (C$.convolveRaster$java_awt_image_Raster$java_awt_image_WritableRaster$java_awt_image_Kernel$I(src, dst, cOp.getKernel(), cOp.getEdgeCondition()) > 0) {
-retRaster = dst;
+retRaster=dst;
 }break;
 default:
 break;
@@ -135,7 +135,7 @@ type = op.swingJStype;
 }
 switch (type) {
 default:
-retBI = op.filter$java_awt_image_BufferedImage$java_awt_image_BufferedImage(src, dst);
+retBI=op.filter$java_awt_image_BufferedImage$java_awt_image_BufferedImage(src, dst);
 break;
 case 65:
 var g = null;
@@ -143,7 +143,7 @@ var g = null;
 g = dst.getImageGraphic()
 }
 g.drawImage$java_awt_Image$java_awt_geom_AffineTransform$java_awt_image_ImageObserver(src, (op).getTransform(), null);
-retBI = dst;
+retBI=dst;
 break;
 case 76:
 var table = (op).getTable();
@@ -152,12 +152,12 @@ return null;
 }if (Clazz.instanceOf(table, "java.awt.image.ByteLookupTable")) {
 var bt = table;
 if (C$.lookupByteBI$java_awt_image_BufferedImage$java_awt_image_BufferedImage$BAA(src, dst, bt.getTable()) > 0) {
-retBI = dst;
+retBI=dst;
 }}break;
 case 67:
 var cOp = op;
 if (C$.convolveBI$java_awt_image_BufferedImage$java_awt_image_BufferedImage$java_awt_image_Kernel$I(src, dst, cOp.getKernel(), cOp.getEdgeCondition()) > 0) {
-retBI = dst;
+retBI=dst;
 }break;
 }
 return retBI;
@@ -188,4 +188,4 @@ imgNode.style.height = img.getHeight()	 	+ "px";
 }return imgNode;
 }, 1);
 })();
-//Created 2018-05-15 01:03:15
+//Created 2018-05-24 08:47:44

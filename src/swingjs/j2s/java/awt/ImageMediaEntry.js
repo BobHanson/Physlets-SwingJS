@@ -17,9 +17,9 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_MediaTracker$java_awt_Image$I$I$I', function (mt, img, c, w, h) {
 C$.superclazz.c$$java_awt_MediaTracker$I.apply(this, [mt, c]);
 C$.$init$.apply(this);
-this.image = img;
-this.width = w;
-this.height = h;
+this.image=img;
+this.width=w;
+this.height=h;
 }, 1);
 
 Clazz.newMeth(C$, 'matches$java_awt_Image$I$I', function (img, w, h) {
@@ -67,4 +67,4 @@ this.setStatus$I(s);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:52
+//Created 2018-05-24 08:45:11

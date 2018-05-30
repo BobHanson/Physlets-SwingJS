@@ -14,13 +14,13 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.lock = this;
+this.lock=this;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$O', function (lock) {
 C$.$init$.apply(this);
 if (lock != null ) {
-this.lock = lock;
+this.lock=lock;
 } else {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
 }}, 1);
@@ -32,7 +32,7 @@ this.write$CA$I$I(buf, 0, buf.length);
 Clazz.newMeth(C$, 'write$I', function (oneChar) {
 {
 var oneCharArray = Clazz.array(Character.TYPE, [1]);
-oneCharArray[0] = String.fromCharCode(oneChar);
+oneCharArray[0]=String.fromCharCode(oneChar);
 this.write$CA(oneCharArray);
 }});
 
@@ -74,4 +74,4 @@ this.write$S(csq.subSequence$I$I(start, end).toString());
 }return this;
 });
 })();
-//Created 2018-05-15 01:02:06
+//Created 2018-05-24 08:45:35

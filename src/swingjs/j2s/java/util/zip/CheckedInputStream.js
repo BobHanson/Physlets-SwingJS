@@ -15,7 +15,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_io_InputStream$swingjs_jzlib_Checksum', function ($in, cksum) {
 C$.superclazz.c$$java_io_InputStream.apply(this, [$in]);
 C$.$init$.apply(this);
-this.cksum = cksum;
+this.cksum=cksum;
 }, 1);
 
 Clazz.newMeth(C$, 'read', function () {
@@ -26,7 +26,7 @@ this.cksum.updateByteAsInt$I(b);
 });
 
 Clazz.newMeth(C$, 'read$BA$I$I', function (buf, off, len) {
-len = this.$in.read$BA$I$I(buf, off, len);
+len=this.$in.read$BA$I$I(buf, off, len);
 if (len != -1) {
 this.cksum.update$BA$I$I(buf, off, len);
 }return len;
@@ -37,10 +37,10 @@ var buf = Clazz.array(Byte.TYPE, [512]);
 var total = 0;
 while (total < n){
 var len = n - total;
-len = this.read$BA$I$I(buf, 0, len < buf.length ? (len|0) : buf.length);
+len=this.read$BA$I$I(buf, 0, len < buf.length ? (len|0) : buf.length);
 if (len == -1) {
 return total;
-}total = total+(len);
+}total+=len;
 }
 return total;
 });
@@ -51,4 +51,4 @@ return this.cksum;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:16
+//Created 2018-05-24 08:45:51

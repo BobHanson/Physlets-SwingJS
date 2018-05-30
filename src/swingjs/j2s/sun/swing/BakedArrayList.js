@@ -26,9 +26,9 @@ this.cacheHashCode();
 }, 1);
 
 Clazz.newMeth(C$, 'cacheHashCode', function () {
-this._hashCode = 1;
+this._hashCode=1;
 for (var counter = this.size() - 1; counter >= 0; counter--) {
-this._hashCode = 31 * this._hashCode + this.get$I(counter).hashCode();
+this._hashCode=31 * this._hashCode + this.get$I(counter).hashCode();
 }
 });
 
@@ -50,4 +50,4 @@ return true;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:10
+//Created 2018-05-24 08:47:33

@@ -28,13 +28,13 @@ this.directory = Clazz.new_((I$[2]||$incl$(2)));
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.isBigEndian = true;
+this.isBigEndian=true;
 }, 1);
 
 Clazz.newMeth(C$, 'setDocStream$javajs_api_GenericZipTools$java_io_BufferedInputStream', function (jzt, bis) {
-this.jzt = jzt;
+this.jzt=jzt;
 if (!this.isRandom) {
-this.stream = Clazz.new_((I$[3]||$incl$(3)).c$$java_io_InputStream,[bis]);
+this.stream=Clazz.new_((I$[3]||$incl$(3)).c$$java_io_InputStream,[bis]);
 }this.stream.mark$I(2147483647);
 if (!p$.readHeader.apply(this, [])) return;
 p$.getSectorAllocationTable.apply(this, []);
@@ -61,7 +61,7 @@ return this.getAllDataFiles$S$S(null, null);
 
 Clazz.newMeth(C$, 'getAllDataMapped$S$S$java_util_Map', function (prefix, binaryFileList, fileData) {
 fileData.put$TK$TV("#Directory_Listing", this.getDirectoryListing$S("|"));
-binaryFileList = "|" + binaryFileList + "|" ;
+binaryFileList="|" + binaryFileList + "|" ;
 for (var i = 0; i < this.directory.size(); i++) {
 var thisEntry = this.directory.get$I(i);
 if (!thisEntry.isEmpty && thisEntry.entryType != 5 ) {
@@ -80,9 +80,9 @@ data.append$S("Compound Document File Directory: ");
 data.append$S(this.getDirectoryListing$S("|"));
 data.append$S("\u000a");
 var thisEntry;
-binaryFileList = "|" + binaryFileList + "|" ;
+binaryFileList="|" + binaryFileList + "|" ;
 for (var i = 0, n = this.directory.size(); i < n; i++) {
-thisEntry = this.directory.get$I(i);
+thisEntry=this.directory.get$I(i);
 var name = thisEntry.entryName;
 switch (thisEntry.entryType) {
 case 5:
@@ -91,7 +91,7 @@ case 1:
 data.append$S("NEW Directory ").append$S(name).append$S("\u000a");
 break;
 case 2:
-if (name.endsWith$S(".gz")) name = name.substring(0, name.length$() - 3);
+if (name.endsWith$S(".gz")) name=name.substring(0, name.length$() - 3);
 p$.appendData$javajs_util_SB$S$javajs_util_CompoundDocDirEntry$Z.apply(this, [data, name, thisEntry, binaryFileList.indexOf("|" + thisEntry.entryName + "|" ) >= 0]);
 break;
 }
@@ -125,42 +125,42 @@ this.seek$J(p$.getOffset$I.apply(this, [SID]));
 
 Clazz.newMeth(C$, 'readHeader', function () {
 if (!this.header.readData()) return false;
-this.sectorSize = 1 << this.header.sectorPower;
-this.shortSectorSize = 1 << this.header.shortSectorPower;
-this.nShortSectorsPerStandardSector = (this.sectorSize/this.shortSectorSize|0);
-this.nIntPerSector = (this.sectorSize/4|0);
-this.nDirEntriesperSector = (this.sectorSize/128|0);
+this.sectorSize=1 << this.header.sectorPower;
+this.shortSectorSize=1 << this.header.shortSectorPower;
+this.nShortSectorsPerStandardSector=(this.sectorSize/this.shortSectorSize|0);
+this.nIntPerSector=(this.sectorSize/4|0);
+this.nDirEntriesperSector=(this.sectorSize/128|0);
 return true;
 });
 
 Clazz.newMeth(C$, 'getSectorAllocationTable', function () {
 var nSID = 0;
 var thisSID;
-this.SAT = Clazz.array(Integer.TYPE, [this.header.nSATsectors * this.nIntPerSector + 109]);
+this.SAT=Clazz.array(Integer.TYPE, [this.header.nSATsectors * this.nIntPerSector + 109]);
 try {
 for (var i = 0; i < 109; i++) {
-thisSID = this.header.MSAT0[i];
+thisSID=this.header.MSAT0[i];
 if (thisSID < 0) break;
 p$.gotoSector$I.apply(this, [thisSID]);
 for (var j = 0; j < this.nIntPerSector; j++) {
-this.SAT[nSID++] = this.readInt();
+this.SAT[nSID++]=this.readInt();
 }
 }
 var nMaster = this.header.nAdditionalMATsectors;
-thisSID = this.header.SID_MSAT_next;
+thisSID=this.header.SID_MSAT_next;
 var MSAT = Clazz.array(Integer.TYPE, [this.nIntPerSector]);
 out : while (nMaster-- > 0 && thisSID >= 0 ){
 p$.gotoSector$I.apply(this, [thisSID]);
-for (var i = 0; i < this.nIntPerSector; i++) MSAT[i] = this.readInt();
+for (var i = 0; i < this.nIntPerSector; i++) MSAT[i]=this.readInt();
 
 for (var i = 0; i < this.nIntPerSector - 1; i++) {
-thisSID = MSAT[i];
+thisSID=MSAT[i];
 if (thisSID < 0) break out;
 p$.gotoSector$I.apply(this, [thisSID]);
-for (var j = this.nIntPerSector; --j >= 0; ) this.SAT[nSID++] = this.readInt();
+for (var j = this.nIntPerSector; --j >= 0; ) this.SAT[nSID++]=this.readInt();
 
 }
-thisSID = MSAT[this.nIntPerSector - 1];
+thisSID=MSAT[this.nIntPerSector - 1];
 }
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
@@ -175,14 +175,14 @@ Clazz.newMeth(C$, 'getShortSectorAllocationTable', function () {
 var nSSID = 0;
 var thisSID = this.header.SID_SSAT_start;
 var nMax = this.header.nSSATsectors * this.nIntPerSector;
-this.SSAT = Clazz.array(Integer.TYPE, [nMax]);
+this.SSAT=Clazz.array(Integer.TYPE, [nMax]);
 try {
 while (thisSID > 0 && nSSID < nMax ){
 p$.gotoSector$I.apply(this, [thisSID]);
 for (var j = 0; j < this.nIntPerSector; j++) {
-this.SSAT[nSSID++] = this.readInt();
+this.SSAT[nSSID++]=this.readInt();
 }
-thisSID = this.SAT[thisSID];
+thisSID=this.SAT[thisSID];
 }
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
@@ -196,17 +196,17 @@ throw e;
 Clazz.newMeth(C$, 'getDirectoryTable', function () {
 var thisSID = this.header.SID_DIR_start;
 var thisEntry;
-this.rootEntry = null;
+this.rootEntry=null;
 try {
 while (thisSID > 0){
 p$.gotoSector$I.apply(this, [thisSID]);
 for (var j = this.nDirEntriesperSector; --j >= 0; ) {
-thisEntry = Clazz.new_((I$[5]||$incl$(5)).c$$javajs_util_CompoundDocument,[this]);
+thisEntry=Clazz.new_((I$[5]||$incl$(5)).c$$javajs_util_CompoundDocument,[this]);
 thisEntry.readData();
 this.directory.addLast$TV(thisEntry);
-if (thisEntry.entryType == 5) this.rootEntry = thisEntry;
+if (thisEntry.entryType == 5) this.rootEntry=thisEntry;
 }
-thisSID = this.SAT[thisSID];
+thisSID=this.SAT[thisSID];
 }
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
@@ -229,8 +229,8 @@ var gzipData = Clazz.new_((I$[6]||$incl$(6)).c$$I,[nBytes]);
 try {
 while (thisSID > 0 && nBytes > 0 ){
 p$.gotoSector$I.apply(this, [thisSID]);
-nBytes = p$.getSectorData$javajs_util_SB$BA$I$I$Z$javajs_util_ZipData.apply(this, [data, byteBuf, this.sectorSize, nBytes, asBinaryString, gzipData]);
-thisSID = this.SAT[thisSID];
+nBytes=p$.getSectorData$javajs_util_SB$BA$I$I$Z$javajs_util_ZipData.apply(this, [data, byteBuf, this.sectorSize, nBytes, asBinaryString, gzipData]);
+thisSID=this.SAT[thisSID];
 }
 if (nBytes == -9999) return Clazz.new_((I$[4]||$incl$(4)));
 } catch (e) {
@@ -272,12 +272,12 @@ var gzipData = Clazz.new_((I$[6]||$incl$(6)).c$$I,[nBytes]);
 try {
 while (thisSID >= 0 && shortSID >= 0  && nBytes > 0 ){
 while (shortSID - ptShort >= this.nShortSectorsPerStandardSector){
-ptShort = ptShort+(this.nShortSectorsPerStandardSector);
-thisSID = this.SAT[thisSID];
+ptShort+=this.nShortSectorsPerStandardSector;
+thisSID=this.SAT[thisSID];
 }
 this.seek$J(p$.getOffset$I.apply(this, [thisSID]) + (shortSID - ptShort) * this.shortSectorSize);
-nBytes = p$.getSectorData$javajs_util_SB$BA$I$I$Z$javajs_util_ZipData.apply(this, [data, byteBuf, this.shortSectorSize, nBytes, asBinaryString, gzipData]);
-shortSID = this.SSAT[shortSID];
+nBytes=p$.getSectorData$javajs_util_SB$BA$I$I$Z$javajs_util_ZipData.apply(this, [data, byteBuf, this.shortSectorSize, nBytes, asBinaryString, gzipData]);
+shortSID=this.SSAT[shortSID];
 }
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
@@ -291,4 +291,4 @@ if (gzipData.isEnabled) gzipData.addTo$javajs_api_GenericZipTools$javajs_util_SB
 return data;
 });
 })();
-//Created 2018-05-15 01:02:18
+//Created 2018-05-24 08:45:55

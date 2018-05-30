@@ -12,15 +12,15 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$O$O', function (k, v) {
 C$.$init$.apply(this);
-this.key = k;
-this.value = v;
+this.key=k;
+this.value=v;
 }, 1);
 
 Clazz.newMeth(C$, 'setPair$O$O', function (k, v) {
-this.key = k;
-this.value = v;
+this.key=k;
+this.value=v;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:21

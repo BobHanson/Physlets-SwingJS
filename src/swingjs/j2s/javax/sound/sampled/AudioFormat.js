@@ -20,19 +20,19 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_sound_sampled_AudioFormat_Encoding$F$I$I$I$F$Z', function (encoding, sampleRate, sampleSizeInBits, channels, frameSize, frameRate, bigEndian) {
 C$.$init$.apply(this);
-this.encoding = encoding;
-this.sampleRate = sampleRate;
-this.sampleSizeInBits = sampleSizeInBits;
-this.channels = channels;
-this.frameSize = frameSize;
-this.frameRate = frameRate;
-this.bigEndian = bigEndian;
-this.$properties = null;
+this.encoding=encoding;
+this.sampleRate=sampleRate;
+this.sampleSizeInBits=sampleSizeInBits;
+this.channels=channels;
+this.frameSize=frameSize;
+this.frameRate=frameRate;
+this.bigEndian=bigEndian;
+this.$properties=null;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_sound_sampled_AudioFormat_Encoding$F$I$I$I$F$Z$java_util_Map', function (encoding, sampleRate, sampleSizeInBits, channels, frameSize, frameRate, bigEndian, properties) {
 C$.c$$javax_sound_sampled_AudioFormat_Encoding$F$I$I$I$F$Z.apply(this, [encoding, sampleRate, sampleSizeInBits, channels, frameSize, frameRate, bigEndian]);
-this.$properties = Clazz.new_((I$[1]||$incl$(1)).c$$java_util_Map,[properties]);
+this.$properties=Clazz.new_((I$[1]||$incl$(1)).c$$java_util_Map,[properties]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$F$I$I$Z$Z', function (sampleRate, sampleSizeInBits, channels, signed, bigEndian) {
@@ -70,9 +70,9 @@ return this.bigEndian;
 Clazz.newMeth(C$, 'properties', function () {
 var ret;
 if (this.$properties == null ) {
-ret = Clazz.new_((I$[1]||$incl$(1)).c$$I,[0]);
+ret=Clazz.new_((I$[1]||$incl$(1)).c$$I,[0]);
 } else {
-ret = (this.$properties.clone());
+ret=(this.$properties.clone());
 }return (I$[3]||$incl$(3)).unmodifiableMap$java_util_Map(ret);
 });
 
@@ -90,44 +90,44 @@ return false;
 Clazz.newMeth(C$, 'toString', function () {
 var sEncoding = "";
 if (this.getEncoding() != null ) {
-sEncoding = this.getEncoding().toString() + " ";
+sEncoding=this.getEncoding().toString() + " ";
 }var sSampleRate;
 if (this.getSampleRate() == -1.0 ) {
-sSampleRate = "unknown sample rate, ";
+sSampleRate="unknown sample rate, ";
 } else {
-sSampleRate = "" + new Float(this.getSampleRate()).toString() + " Hz, " ;
+sSampleRate="" + new Float(this.getSampleRate()).toString() + " Hz, " ;
 }var sSampleSizeInBits;
 if (this.getSampleSizeInBits() == -1.0 ) {
-sSampleSizeInBits = "unknown bits per sample, ";
+sSampleSizeInBits="unknown bits per sample, ";
 } else {
-sSampleSizeInBits = "" + this.getSampleSizeInBits() + " bit, " ;
+sSampleSizeInBits="" + this.getSampleSizeInBits() + " bit, " ;
 }var sChannels;
 if (this.getChannels() == 1) {
-sChannels = "mono, ";
+sChannels="mono, ";
 } else if (this.getChannels() == 2) {
-sChannels = "stereo, ";
+sChannels="stereo, ";
 } else {
 if (this.getChannels() == -1) {
-sChannels = " unknown number of channels, ";
+sChannels=" unknown number of channels, ";
 } else {
-sChannels = "" + this.getChannels() + " channels, " ;
+sChannels="" + this.getChannels() + " channels, " ;
 }}var sFrameSize;
 if (this.getFrameSize() == -1.0 ) {
-sFrameSize = "unknown frame size, ";
+sFrameSize="unknown frame size, ";
 } else {
-sFrameSize = "" + this.getFrameSize() + " bytes/frame, " ;
+sFrameSize="" + this.getFrameSize() + " bytes/frame, " ;
 }var sFrameRate = "";
 if (Math.abs(this.getSampleRate() - this.getFrameRate()) > 1.0E-5 ) {
 if (this.getFrameRate() == -1.0 ) {
-sFrameRate = "unknown frame rate, ";
+sFrameRate="unknown frame rate, ";
 } else {
-sFrameRate = new Float(this.getFrameRate()).toString() + " frames/second, ";
+sFrameRate=new Float(this.getFrameRate()).toString() + " frames/second, ";
 }}var sEndian = "";
 if ((this.getEncoding().equals$O((I$[2]||$incl$(2)).PCM_SIGNED) || this.getEncoding().equals$O((I$[2]||$incl$(2)).PCM_UNSIGNED) ) && ((this.getSampleSizeInBits() > 8) || (this.getSampleSizeInBits() == -1) ) ) {
 if (this.isBigEndian()) {
-sEndian = "big-endian";
+sEndian="big-endian";
 } else {
-sEndian = "little-endian";
+sEndian="little-endian";
 }}return sEncoding + sSampleRate + sSampleSizeInBits + sChannels + sFrameSize + sFrameRate + sEndian ;
 });
 ;
@@ -156,7 +156,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
 C$.$init$.apply(this);
-this.name = name;
+this.name=name;
 }, 1);
 
 Clazz.newMeth(C$, 'equals$O', function (obj) {
@@ -182,4 +182,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:21
+//Created 2018-05-24 08:46:01

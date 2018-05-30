@@ -66,7 +66,7 @@ return this.getBorderInsets$java_awt_Component$java_awt_Insets(c, Clazz.new_((I$
 });
 
 Clazz.newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
-insets.top = insets.left = insets.bottom = insets.right = 3;
+insets.top=insets.left=insets.bottom=insets.right=3;
 return insets;
 });
 
@@ -76,4 +76,4 @@ return false;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:43
+//Created 2018-05-24 08:46:45

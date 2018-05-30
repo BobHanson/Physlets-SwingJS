@@ -14,14 +14,14 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$S', function (file) {
 C$.$init$.apply(this);
 var ind = file.indexOf("#");
-this.ref = ind < 0 ? null : file.substring(ind + 1);
-file = ind < 0 ? file : file.substring(0, ind);
+this.ref=ind < 0 ? null : file.substring(ind + 1);
+file=ind < 0 ? file : file.substring(0, ind);
 var q = file.lastIndexOf("?");
 if (q != -1) {
-this.query = file.substring(q + 1);
-this.path = file.substring(0, q);
+this.query=file.substring(q + 1);
+this.path=file.substring(0, q);
 } else {
-this.path = file;
+this.path=file;
 }}, 1);
 
 Clazz.newMeth(C$, 'getPath', function () {
@@ -38,4 +38,4 @@ return this.ref;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:09
+//Created 2018-05-24 08:45:41

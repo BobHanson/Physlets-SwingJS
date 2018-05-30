@@ -58,22 +58,22 @@ return ((modifiers & 64) != 0);
 
 Clazz.newMeth(C$, 'toString$I', function (modifiers) {
 var sb = Clazz.array(java.lang.String, [0]);
-if (C$.isPublic$I(modifiers)) sb[sb.length] = "public";
-if (C$.isProtected$I(modifiers)) sb[sb.length] = "protected";
-if (C$.isPrivate$I(modifiers)) sb[sb.length] = "private";
-if (C$.isAbstract$I(modifiers)) sb[sb.length] = "abstract";
-if (C$.isStatic$I(modifiers)) sb[sb.length] = "static";
-if (C$.isFinal$I(modifiers)) sb[sb.length] = "final";
-if (C$.isTransient$I(modifiers)) sb[sb.length] = "transient";
-if (C$.isVolatile$I(modifiers)) sb[sb.length] = "volatile";
-if (C$.isSynchronized$I(modifiers)) sb[sb.length] = "synchronized";
-if (C$.isNative$I(modifiers)) sb[sb.length] = "native";
-if (C$.isStrict$I(modifiers)) sb[sb.length] = "strictfp";
-if (C$.isInterface$I(modifiers)) sb[sb.length] = "interface";
+if (C$.isPublic$I(modifiers)) sb[sb.length]="public";
+if (C$.isProtected$I(modifiers)) sb[sb.length]="protected";
+if (C$.isPrivate$I(modifiers)) sb[sb.length]="private";
+if (C$.isAbstract$I(modifiers)) sb[sb.length]="abstract";
+if (C$.isStatic$I(modifiers)) sb[sb.length]="static";
+if (C$.isFinal$I(modifiers)) sb[sb.length]="final";
+if (C$.isTransient$I(modifiers)) sb[sb.length]="transient";
+if (C$.isVolatile$I(modifiers)) sb[sb.length]="volatile";
+if (C$.isSynchronized$I(modifiers)) sb[sb.length]="synchronized";
+if (C$.isNative$I(modifiers)) sb[sb.length]="native";
+if (C$.isStrict$I(modifiers)) sb[sb.length]="strictfp";
+if (C$.isInterface$I(modifiers)) sb[sb.length]="interface";
 if (sb.length > 0) {
 return sb.join (" ");
 }
 return "";
 }, 1);
 })();
-//Created 2018-05-15 01:02:09
+//Created 2018-05-24 08:45:40

@@ -19,8 +19,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element$I', function (elem, axis) {
 C$.superclazz.c$$javax_swing_text_Element$I.apply(this, [elem, axis]);
 C$.$init$.apply(this);
-this.layoutSpan = 2147483647;
-this.strategy = Clazz.new_((I$[5]||$incl$(5)));
+this.layoutSpan=2147483647;
+this.strategy=Clazz.new_((I$[5]||$incl$(5)));
 }, 1);
 
 Clazz.newMeth(C$, 'getFlowAxis', function () {
@@ -39,7 +39,7 @@ return 0;
 
 Clazz.newMeth(C$, 'loadChildren$javax_swing_text_ViewFactory', function (f) {
 if (this.layoutPool == null ) {
-this.layoutPool = Clazz.new_((I$[6]||$incl$(6)).c$$javax_swing_text_Element,[this.getElement()]);
+this.layoutPool=Clazz.new_((I$[6]||$incl$(6)).c$$javax_swing_text_Element,[this.getElement()]);
 }this.layoutPool.setParent$javax_swing_text_View(this);
 this.strategy.insertUpdate$javax_swing_text_FlowView$javax_swing_event_DocumentEvent$java_awt_Rectangle(this, null, null);
 });
@@ -58,13 +58,13 @@ Clazz.newMeth(C$, 'layout$I$I', function (width, height) {
 var faxis = this.getFlowAxis();
 var newSpan;
 if (faxis == 0) {
-newSpan = width;
+newSpan=width;
 } else {
-newSpan = height;
+newSpan=height;
 }if (this.layoutSpan != newSpan) {
 this.layoutChanged$I(faxis);
 this.layoutChanged$I(this.getAxis());
-this.layoutSpan = newSpan;
+this.layoutSpan=newSpan;
 }if (!this.isLayoutValid$I(faxis)) {
 var heightAxis = this.getAxis();
 var oldFlowHeight = ((heightAxis == 0) ? this.getWidth() : this.getHeight());
@@ -82,13 +82,13 @@ host.repaint();
 
 Clazz.newMeth(C$, 'calculateMinorAxisRequirements$I$javax_swing_SizeRequirements', function (axis, r) {
 if (r == null ) {
-r = Clazz.new_((I$[7]||$incl$(7)));
+r=Clazz.new_((I$[7]||$incl$(7)));
 }var pref = this.layoutPool.getPreferredSpan$I(axis);
 var min = this.layoutPool.getMinimumSpan$I(axis);
-r.minimum = (min|0);
-r.preferred = Math.max(r.minimum, (pref|0));
-r.maximum = 2147483647;
-r.alignment = 0.5;
+r.minimum=(min|0);
+r.preferred=Math.max(r.minimum, (pref|0));
+r.maximum=2147483647;
+r.alignment=0.5;
 return r;
 });
 
@@ -129,11 +129,11 @@ this.damageStart = 2147483647;
 
 Clazz.newMeth(C$, 'addDamage$javax_swing_text_FlowView$I', function (fv, offset) {
 if (offset >= fv.getStartOffset() && offset < fv.getEndOffset() ) {
-this.damageStart = Math.min(this.damageStart, offset);
+this.damageStart=Math.min(this.damageStart, offset);
 }});
 
 Clazz.newMeth(C$, 'unsetDamage', function () {
-this.damageStart = 2147483647;
+this.damageStart=2147483647;
 });
 
 Clazz.newMeth(C$, 'insertUpdate$javax_swing_text_FlowView$javax_swing_event_DocumentEvent$java_awt_Rectangle', function (fv, e, alloc) {
@@ -179,29 +179,29 @@ var p1 = fv.getEndOffset();
 if (fv.majorAllocValid) {
 if (this.damageStart == 2147483647) {
 return;
-}while ((rowIndex = fv.getViewIndexAtPosition$I(this.damageStart)) < 0){
+}while ((rowIndex=fv.getViewIndexAtPosition$I(this.damageStart)) < 0){
 this.damageStart--;
 }
 if (rowIndex > 0) {
 rowIndex--;
-}p0 = fv.getView$I(rowIndex).getStartOffset();
+}p0=fv.getView$I(rowIndex).getStartOffset();
 } else {
-rowIndex = 0;
-p0 = fv.getStartOffset();
+rowIndex=0;
+p0=fv.getStartOffset();
 }this.reparentViews$javax_swing_text_View$I(pool, p0);
-this.viewBuffer = Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[10, 10]);
+this.viewBuffer=Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[10, 10]);
 var rowCount = fv.getViewCount();
 while (p0 < p1){
 var row;
 if (rowIndex >= rowCount) {
-row = fv.createRow();
+row=fv.createRow();
 fv.append$javax_swing_text_View(row);
 } else {
-row = fv.getView$I(rowIndex);
-}p0 = this.layoutRow$javax_swing_text_FlowView$I$I(fv, rowIndex, p0);
+row=fv.getView$I(rowIndex);
+}p0=this.layoutRow$javax_swing_text_FlowView$I$I(fv, rowIndex, p0);
 rowIndex++;
 }
-this.viewBuffer = null;
+this.viewBuffer=null;
 if (rowIndex < rowCount) {
 fv.replace$I$I$javax_swing_text_ViewA(rowIndex, rowCount - rowIndex, null);
 }this.unsetDamage();
@@ -233,26 +233,26 @@ this.viewBuffer.add$TE(w);
 this.viewBuffer.add$TE(v);
 }break;
 } else if (bw >= breakWeight && bw > 0 ) {
-breakWeight = bw;
-breakX = x;
-breakSpan = spanLeft;
-breakIndex = n;
+breakWeight=bw;
+breakX=x;
+breakSpan=spanLeft;
+breakIndex=n;
 }var chunkSpan;
 if (flowAxis == 0 && Clazz.instanceOf(v, "javax.swing.text.TabableView") ) {
-chunkSpan = (v).getTabbedSpan$F$javax_swing_text_TabExpander(x, te);
+chunkSpan=(v).getTabbedSpan$F$javax_swing_text_TabExpander(x, te);
 } else {
-chunkSpan = v.getPreferredSpan$I(flowAxis);
+chunkSpan=v.getPreferredSpan$I(flowAxis);
 }if (chunkSpan > spanLeft  && breakIndex >= 0 ) {
 if (breakIndex < n) {
-v = this.viewBuffer.get$I(breakIndex);
+v=this.viewBuffer.get$I(breakIndex);
 }for (var i = n - 1; i >= breakIndex; i--) {
 this.viewBuffer.remove$I(i);
 }
-v = v.breakView$I$I$F$F(flowAxis, v.getStartOffset(), breakX, breakSpan);
+v=v.breakView$I$I$F$F(flowAxis, v.getStartOffset(), breakX, breakSpan);
 }spanLeft -= chunkSpan;
 x += chunkSpan;
 this.viewBuffer.add$TE(v);
-pos = v.getEndOffset();
+pos=v.getEndOffset();
 n++;
 }
 var views = Clazz.array((I$[2]||$incl$(2)), [this.viewBuffer.size()]);
@@ -271,24 +271,24 @@ var bestSpan = 0;
 var bestIndex = -1;
 var v;
 for (var i = 0; i < n; i++) {
-v = r.getView$I(i);
+v=r.getView$I(i);
 var spanLeft = desiredSpan - span;
 var w = v.getBreakWeight$I$F$F(flowAxis, x + span, spanLeft);
 if ((w >= bestWeight) && (w > 0) ) {
-bestWeight = w;
-bestIndex = i;
-bestSpan = span;
+bestWeight=w;
+bestIndex=i;
+bestSpan=span;
 if (w >= 3000) {
 break;
-}}span = (span+(v.getPreferredSpan$I(flowAxis))|0);
+}}span=(span+(v.getPreferredSpan$I(flowAxis))|0);
 }
 if (bestIndex < 0) {
 return;
 }var spanLeft = desiredSpan - bestSpan;
-v = r.getView$I(bestIndex);
-v = v.breakView$I$I$F$F(flowAxis, v.getStartOffset(), x + bestSpan, spanLeft);
+v=r.getView$I(bestIndex);
+v=v.breakView$I$I$F$F(flowAxis, v.getStartOffset(), x + bestSpan, spanLeft);
 var va = Clazz.array((I$[2]||$incl$(2)), [1]);
-va[0] = v;
+va[0]=v;
 var lv = this.getLogicalView$javax_swing_text_FlowView(fv);
 var p0 = r.getView$I(bestIndex).getStartOffset();
 var p1 = r.getEndOffset();
@@ -316,7 +316,7 @@ var childIndex = lv.getViewIndex$I$javax_swing_text_Position_Bias(startOffset, (
 var v = lv.getView$I(childIndex);
 if (startOffset == v.getStartOffset()) {
 return v;
-}v = v.createFragment$I$I(startOffset, v.getEndOffset());
+}v=v.createFragment$I$I(startOffset, v.getEndOffset());
 return v;
 });
 
@@ -367,10 +367,10 @@ for (var i = 0; i < n; i++) {
 var v = this.getView$I(i);
 pref += v.getPreferredSpan$I(axis);
 if (v.getBreakWeight$I$F$F(axis, 0, 2147483647) >= 3000) {
-maxpref = Math.max(maxpref, pref);
-pref = 0;
+maxpref=Math.max(maxpref, pref);
+pref=0;
 }}
-maxpref = Math.max(maxpref, pref);
+maxpref=Math.max(maxpref, pref);
 return maxpref;
 });
 
@@ -383,15 +383,15 @@ for (var i = 0; i < n; i++) {
 var v = this.getView$I(i);
 if (v.getBreakWeight$I$F$F(axis, 0, 2147483647) == 0) {
 min += v.getPreferredSpan$I(axis);
-nowrap = true;
+nowrap=true;
 } else if (nowrap) {
-maxmin = Math.max(min, maxmin);
-nowrap = false;
-min = 0;
+maxmin=Math.max(min, maxmin);
+nowrap=false;
+min=0;
 }if (Clazz.instanceOf(v, "javax.swing.text.ComponentView")) {
-maxmin = Math.max(maxmin, v.getMinimumSpan$I(axis));
+maxmin=Math.max(maxmin, v.getMinimumSpan$I(axis));
 }}
-maxmin = Math.max(maxmin, min);
+maxmin=Math.max(maxmin, min);
 return maxmin;
 });
 
@@ -425,4 +425,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:54
+//Created 2018-05-24 08:47:04

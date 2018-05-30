@@ -25,20 +25,20 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setOutputStream$java_io_OutputStream', function (os) {
-this.os = os;
+this.os=os;
 });
 
 Clazz.newMeth(C$, 'newDocument$I$I$Z', function (paperWidth, paperHeight, isLandscape) {
-this.width = (isLandscape ? paperHeight : paperWidth);
-this.height = (isLandscape ? paperWidth : paperHeight);
+this.width=(isLandscape ? paperHeight : paperWidth);
+this.height=(isLandscape ? paperWidth : paperHeight);
 System.out.println$S("Creating PDF with width=" + this.width + " and height=" + this.height );
-this.fonts = Clazz.new_((I$[1]||$incl$(1)));
-this.indirectObjects = Clazz.new_((I$[2]||$incl$(2)));
-this.root = p$.newObject$S.apply(this, ["Catalog"]);
+this.fonts=Clazz.new_((I$[1]||$incl$(1)));
+this.indirectObjects=Clazz.new_((I$[2]||$incl$(2)));
+this.root=p$.newObject$S.apply(this, ["Catalog"]);
 var pages = p$.newObject$S.apply(this, ["Pages"]);
 var page = p$.newObject$S.apply(this, ["Page"]);
 var pageContents = p$.newObject$S.apply(this, [null]);
-this.graphics = p$.newObject$S.apply(this, ["XObject"]);
+this.graphics=p$.newObject$S.apply(this, ["XObject"]);
 this.root.addDef$S$O("Pages", pages.getRef());
 pages.addDef$S$O("Count", "1");
 pages.addDef$S$O("Kids", "[ " + page.getRef() + " ]" );
@@ -108,7 +108,7 @@ return f;
 
 Clazz.newMeth(C$, 'addImageResource$O$I$I$IA$Z', function (newImage, width, height, buffer, isRGB) {
 var imageObj = p$.newObject$S.apply(this, ["XObject"]);
-if (this.images == null ) this.images = Clazz.new_((I$[1]||$incl$(1)));
+if (this.images == null ) this.images=Clazz.new_((I$[1]||$incl$(1)));
 this.images.put$TK$TV(newImage, imageObj);
 imageObj.addDef$S$O("Subtype", "/Image");
 imageObj.addDef$S$O("Length", "?");
@@ -121,12 +121,12 @@ var n = buffer.length;
 var stream = Clazz.array(Byte.TYPE, [n * (isRGB ? 3 : 1)]);
 if (isRGB) {
 for (var i = 0, pt = 0; i < n; i++) {
-stream[pt++] = ((((buffer[i] >> 16) & 255)|0)|0);
-stream[pt++] = ((((buffer[i] >> 8) & 255)|0)|0);
-stream[pt++] = (((buffer[i] & 255)|0)|0);
+stream[pt++]=((((buffer[i] >> 16) & 255)|0)|0);
+stream[pt++]=((((buffer[i] >> 8) & 255)|0)|0);
+stream[pt++]=(((buffer[i] & 255)|0)|0);
 }
 } else {
-for (var i = 0; i < n; i++) stream[i] = ((buffer[i]|0)|0);
+for (var i = 0; i < n; i++) stream[i]=((buffer[i]|0)|0);
 
 }imageObj.setStream$BA(stream);
 this.graphics.addResource$S$S$S("XObject", imageObj.getID(), imageObj.getRef());
@@ -139,7 +139,7 @@ this.graphics.append$S(cmd).appendC$C("\u000a");
 Clazz.newMeth(C$, 'output$S', function (s) {
 var b = s.getBytes();
 this.os.write$BA$I$I(b, 0, b.length);
-this.pt = this.pt+(b.length);
+this.pt+=b.length;
 });
 
 Clazz.newMeth(C$, 'closeDocument', function () {
@@ -156,7 +156,7 @@ Clazz.newMeth(C$, 'outputHeader', function () {
 p$.output$S.apply(this, ["%PDF-1.3\u000a%"]);
 var b = Clazz.array(Byte.TYPE, -1, [-1, -1, -1, -1]);
 this.os.write$BA$I$I(b, 0, b.length);
-this.pt = this.pt+(4);
+this.pt+=4;
 p$.output$S.apply(this, ["\u000a"]);
 });
 
@@ -176,19 +176,19 @@ var nObj = this.indirectObjects.size();
 for (var i = 0; i < nObj; i++) {
 var o = this.indirectObjects.get$I(i);
 if (!o.isFont()) continue;
-o.pt = this.pt;
-this.pt = this.pt+(o.output$java_io_OutputStream(this.os));
+o.pt=this.pt;
+this.pt+=o.output$java_io_OutputStream(this.os);
 }
 for (var i = 0; i < nObj; i++) {
 var o = this.indirectObjects.get$I(i);
 if (o.isFont()) continue;
-o.pt = this.pt;
-this.pt = this.pt+(o.output$java_io_OutputStream(this.os));
+o.pt=this.pt;
+this.pt+=o.output$java_io_OutputStream(this.os);
 }
 });
 
 Clazz.newMeth(C$, 'writeXRefTable', function () {
-this.xrefPt = this.pt;
+this.xrefPt=this.pt;
 var nObj = this.indirectObjects.size();
 var sb = Clazz.new_((I$[4]||$incl$(4)));
 sb.append$S("xref\n0 " + (nObj + 1) + "\n0000000000 65535 f\r\n" );
@@ -265,23 +265,23 @@ var cos = 0;
 var sin = 0;
 switch (angle) {
 case 0:
-cos = 1;
+cos=1;
 break;
 case 90:
-sin = 1;
+sin=1;
 break;
 case -90:
-sin = -1;
+sin=-1;
 break;
 case 180:
-cos = -1;
+cos=-1;
 break;
 default:
 var a = (angle * 0.017453292519943295);
-cos = Math.cos(a);
-sin = Math.sin(a);
-if (Math.abs(cos) < 1.0E-4 ) cos = 0;
-if (Math.abs(sin) < 1.0E-4 ) sin = 0;
+cos=Math.cos(a);
+sin=Math.sin(a);
+if (Math.abs(cos) < 1.0E-4 ) cos=0;
+if (Math.abs(sin) < 1.0E-4 ) sin=0;
 }
 return new Float(cos).toString() + " " + new Float(sin).toString() + " " + new Float(sin).toString() + " " + new Float(-cos).toString() ;
 });
@@ -292,7 +292,7 @@ this.g$S(new Float(rgb[0]).toString() + " " + new Float(rgb[1]).toString() + " "
 
 Clazz.newMeth(C$, 'setFont$S$F', function (fname, size) {
 var f = this.fonts.get$O(fname);
-if (f == null ) f = p$.addFontResource$S.apply(this, [fname]);
+if (f == null ) f=p$.addFontResource$S.apply(this, [fname]);
 this.g$S("/" + f.getID() + " " + new Float(size).toString() + " Tf" );
 });
 
@@ -304,4 +304,4 @@ Clazz.newMeth(C$, 'translateScale$F$F$F', function (x, y, scale) {
 this.g$S(new Float(scale).toString() + " 0 0 " + new Float(scale).toString() + " " + new Float(x).toString() + " " + new Float(y).toString() + " cm" );
 });
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:53

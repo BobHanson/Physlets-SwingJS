@@ -310,12 +310,12 @@ public class Poisson extends SApplet {
   /**
    *    Add a circular charge distribution. Alternative to addObject method.
    *
-   *    @param x        x postion of center
-   *    @param y        y postion of center
+   *    @param x        x position of center
+   *    @param y        y position of center
    *    @param r        radius in pixels
    *    @param q        charge
    *
-   * @return the integer indentifier for the object
+   * @return the integer identifier for the object
    */
   public int addCircleCharge(double x, double y, int r, double q) {
     CircleObject c = poissonPanel.addPotCircle(r, x, y, q);
@@ -354,6 +354,7 @@ public class Poisson extends SApplet {
     int    width  = 20;
     int    height = 20;
     int    r      = 10;
+    poissonPanel.stopThread();
     name = name.toLowerCase().trim();
     name = SUtil.removeWhitespace(name);
     String parList2 = parList.trim();

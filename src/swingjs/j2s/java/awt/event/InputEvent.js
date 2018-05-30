@@ -17,9 +17,9 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I', function (source, id, when, modifiers) {
 C$.superclazz.c$$java_awt_Component$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.when = when;
-this.modifiers = modifiers;
-this.canAccessSystemClipboard = false;
+this.when=when;
+this.modifiers=modifiers;
+this.canAccessSystemClipboard=false;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
@@ -65,7 +65,7 @@ if (this.bdata && this.bdata.jqevent) { this.bdata.jqevent.stopPropagation();
 this.bdata.jqevent.preventDefault();
 }
 }
-this.consumed = true;
+this.consumed=true;
 });
 
 Clazz.newMeth(C$, 'isConsumed', function () {
@@ -103,4 +103,4 @@ buf.setLength$I(buf.length$() - 1);
 }return buf.toString();
 }, 1);
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:18

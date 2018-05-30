@@ -24,76 +24,76 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$D$D$D$D$D$D$I', function (m00, m10, m01, m11, m02, m12, state) {
 C$.$init$.apply(this);
-this.m00 = m00;
-this.m10 = m10;
-this.m01 = m01;
-this.m11 = m11;
-this.m02 = m02;
-this.m12 = m12;
-this.state = state;
-this.type = -1;
+this.m00=m00;
+this.m10=m10;
+this.m01=m01;
+this.m11=m11;
+this.m02=m02;
+this.m12=m12;
+this.state=state;
+this.type=-1;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.m00 = this.m11 = 1.0;
+this.m00=this.m11=1.0;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_AffineTransform', function (Tx) {
 C$.$init$.apply(this);
-this.m00 = Tx.m00;
-this.m10 = Tx.m10;
-this.m01 = Tx.m01;
-this.m11 = Tx.m11;
-this.m02 = Tx.m02;
-this.m12 = Tx.m12;
-this.state = Tx.state;
-this.type = Tx.type;
+this.m00=Tx.m00;
+this.m10=Tx.m10;
+this.m01=Tx.m01;
+this.m11=Tx.m11;
+this.m02=Tx.m02;
+this.m12=Tx.m12;
+this.state=Tx.state;
+this.type=Tx.type;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$F$F$F$F$F$F', function (m00, m10, m01, m11, m02, m12) {
 C$.$init$.apply(this);
-this.m00 = m00;
-this.m10 = m10;
-this.m01 = m01;
-this.m11 = m11;
-this.m02 = m02;
-this.m12 = m12;
+this.m00=m00;
+this.m10=m10;
+this.m01=m01;
+this.m11=m11;
+this.m02=m02;
+this.m12=m12;
 this.updateState();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$FA', function (flatmatrix) {
 C$.$init$.apply(this);
-this.m00 = flatmatrix[0];
-this.m10 = flatmatrix[1];
-this.m01 = flatmatrix[2];
-this.m11 = flatmatrix[3];
+this.m00=flatmatrix[0];
+this.m10=flatmatrix[1];
+this.m01=flatmatrix[2];
+this.m11=flatmatrix[3];
 if (flatmatrix.length > 5) {
-this.m02 = flatmatrix[4];
-this.m12 = flatmatrix[5];
+this.m02=flatmatrix[4];
+this.m12=flatmatrix[5];
 }this.updateState();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$D$D$D$D$D$D', function (m00, m10, m01, m11, m02, m12) {
 C$.$init$.apply(this);
-this.m00 = m00;
-this.m10 = m10;
-this.m01 = m01;
-this.m11 = m11;
-this.m02 = m02;
-this.m12 = m12;
+this.m00=m00;
+this.m10=m10;
+this.m01=m01;
+this.m11=m11;
+this.m02=m02;
+this.m12=m12;
 this.updateState();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$DA', function (flatmatrix) {
 C$.$init$.apply(this);
-this.m00 = flatmatrix[0];
-this.m10 = flatmatrix[1];
-this.m01 = flatmatrix[2];
-this.m11 = flatmatrix[3];
+this.m00=flatmatrix[0];
+this.m10=flatmatrix[1];
+this.m01=flatmatrix[2];
+this.m11=flatmatrix[3];
 if (flatmatrix.length > 5) {
-this.m02 = flatmatrix[4];
-this.m12 = flatmatrix[5];
+this.m02=flatmatrix[4];
+this.m12=flatmatrix[5];
 }this.updateState();
 }, 1);
 
@@ -170,80 +170,80 @@ switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-ret = 1;
+ret=1;
 case (6):
-if ((M0 = this.m00) * (M2 = this.m01) + (M3 = this.m10) * (M1 = this.m11) != 0 ) {
-this.type = 32;
+if ((M0=this.m00) * (M2=this.m01) + (M3=this.m10) * (M1=this.m11) != 0 ) {
+this.type=32;
 return;
-}sgn0 = (M0 >= 0.0 );
-sgn1 = (M1 >= 0.0 );
+}sgn0=(M0 >= 0.0 );
+sgn1=(M1 >= 0.0 );
 if (sgn0 == sgn1 ) {
 if (M0 != M1  || M2 != -M3  ) {
-ret = ret|(20);
+ret|=20;
 } else if (M0 * M1 - M2 * M3 != 1.0 ) {
-ret = ret|(18);
+ret|=18;
 } else {
-ret = ret|(16);
+ret|=16;
 }} else {
 if (M0 != -M1  || M2 != M3  ) {
-ret = ret|(84);
+ret|=84;
 } else if (M0 * M1 - M2 * M3 != 1.0 ) {
-ret = ret|(82);
+ret|=82;
 } else {
-ret = ret|(80);
+ret|=80;
 }}break;
 case (5):
-ret = 1;
+ret=1;
 case (4):
-sgn0 = ((M0 = this.m01) >= 0.0 );
-sgn1 = ((M1 = this.m10) >= 0.0 );
+sgn0=((M0=this.m01) >= 0.0 );
+sgn1=((M1=this.m10) >= 0.0 );
 if (sgn0 != sgn1 ) {
 if (M0 != -M1 ) {
-ret = ret|(12);
+ret|=12;
 } else if (M0 != 1.0  && M0 != -1.0  ) {
-ret = ret|(10);
+ret|=10;
 } else {
-ret = ret|(8);
+ret|=8;
 }} else {
 if (M0 == M1 ) {
-ret = ret|(74);
+ret|=74;
 } else {
-ret = ret|(76);
+ret|=76;
 }}break;
 case (3):
-ret = 1;
+ret=1;
 case (2):
-sgn0 = ((M0 = this.m00) >= 0.0 );
-sgn1 = ((M1 = this.m11) >= 0.0 );
+sgn0=((M0=this.m00) >= 0.0 );
+sgn1=((M1=this.m11) >= 0.0 );
 if (sgn0 == sgn1 ) {
 if (sgn0) {
 if (M0 == M1 ) {
-ret = ret|(2);
+ret|=2;
 } else {
-ret = ret|(4);
+ret|=4;
 }} else {
 if (M0 != M1 ) {
-ret = ret|(12);
+ret|=12;
 } else if (M0 != -1.0 ) {
-ret = ret|(10);
+ret|=10;
 } else {
-ret = ret|(8);
+ret|=8;
 }}} else {
 if (M0 == -M1 ) {
 if (M0 == 1.0  || M0 == -1.0  ) {
-ret = ret|(64);
+ret|=64;
 } else {
-ret = ret|(66);
+ret|=66;
 }} else {
-ret = ret|(68);
+ret|=68;
 }}break;
 case (1):
-ret = 1;
+ret=1;
 break;
 case (0):
 break;
 }
-this.type = ret;
+this.type=ret;
 });
 
 Clazz.newMeth(C$, 'getDeterminant', function () {
@@ -269,33 +269,33 @@ Clazz.newMeth(C$, 'updateState', function () {
 if (this.m01 == 0.0  && this.m10 == 0.0  ) {
 if (this.m00 == 1.0  && this.m11 == 1.0  ) {
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 0;
-this.type = 0;
+this.state=0;
+this.type=0;
 } else {
-this.state = 1;
-this.type = 1;
+this.state=1;
+this.type=1;
 }} else {
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 2;
-this.type = -1;
+this.state=2;
+this.type=-1;
 } else {
-this.state = 3;
-this.type = -1;
+this.state=3;
+this.type=-1;
 }}} else {
 if (this.m00 == 0.0  && this.m11 == 0.0  ) {
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 4;
-this.type = -1;
+this.state=4;
+this.type=-1;
 } else {
-this.state = 5;
-this.type = -1;
+this.state=5;
+this.type=-1;
 }} else {
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 6;
-this.type = -1;
+this.state=6;
+this.type=-1;
 } else {
-this.state = 7;
-this.type = -1;
+this.state=7;
+this.type=-1;
 }}}});
 
 Clazz.newMeth(C$, 'stateError', function () {
@@ -303,13 +303,13 @@ throw Clazz.new_((I$[1]||$incl$(1)).c$$S,["missing case in transform state switc
 });
 
 Clazz.newMeth(C$, 'getMatrix$DA', function (flatmatrix) {
-flatmatrix[0] = this.m00;
-flatmatrix[1] = this.m10;
-flatmatrix[2] = this.m01;
-flatmatrix[3] = this.m11;
+flatmatrix[0]=this.m00;
+flatmatrix[1]=this.m10;
+flatmatrix[2]=this.m01;
+flatmatrix[3]=this.m11;
 if (flatmatrix.length > 5) {
-flatmatrix[4] = this.m02;
-flatmatrix[5] = this.m12;
+flatmatrix[4]=this.m02;
+flatmatrix[5]=this.m12;
 }});
 
 Clazz.newMeth(C$, 'getScaleX', function () {
@@ -341,108 +341,108 @@ switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-this.m02 = tx * this.m00 + ty * this.m01 + this.m02;
-this.m12 = tx * this.m10 + ty * this.m11 + this.m12;
+this.m02=tx * this.m00 + ty * this.m01 + this.m02;
+this.m12=tx * this.m10 + ty * this.m11 + this.m12;
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 6;
+this.state=6;
 if (this.type != -1) {
-this.type = this.type-(1);
+this.type-=1;
 }}return;
 case (6):
-this.m02 = tx * this.m00 + ty * this.m01;
-this.m12 = tx * this.m10 + ty * this.m11;
+this.m02=tx * this.m00 + ty * this.m01;
+this.m12=tx * this.m10 + ty * this.m11;
 if (this.m02 != 0.0  || this.m12 != 0.0  ) {
-this.state = 7;
-this.type = this.type|(1);
+this.state=7;
+this.type|=1;
 }return;
 case (5):
-this.m02 = ty * this.m01 + this.m02;
-this.m12 = tx * this.m10 + this.m12;
+this.m02=ty * this.m01 + this.m02;
+this.m12=tx * this.m10 + this.m12;
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 4;
+this.state=4;
 if (this.type != -1) {
-this.type = this.type-(1);
+this.type-=1;
 }}return;
 case (4):
-this.m02 = ty * this.m01;
-this.m12 = tx * this.m10;
+this.m02=ty * this.m01;
+this.m12=tx * this.m10;
 if (this.m02 != 0.0  || this.m12 != 0.0  ) {
-this.state = 5;
-this.type = this.type|(1);
+this.state=5;
+this.type|=1;
 }return;
 case (3):
-this.m02 = tx * this.m00 + this.m02;
-this.m12 = ty * this.m11 + this.m12;
+this.m02=tx * this.m00 + this.m02;
+this.m12=ty * this.m11 + this.m12;
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 2;
+this.state=2;
 if (this.type != -1) {
-this.type = this.type-(1);
+this.type-=1;
 }}return;
 case (2):
-this.m02 = tx * this.m00;
-this.m12 = ty * this.m11;
+this.m02=tx * this.m00;
+this.m12=ty * this.m11;
 if (this.m02 != 0.0  || this.m12 != 0.0  ) {
-this.state = 3;
-this.type = this.type|(1);
+this.state=3;
+this.type|=1;
 }return;
 case (1):
-this.m02 = tx + this.m02;
-this.m12 = ty + this.m12;
+this.m02=tx + this.m02;
+this.m12=ty + this.m12;
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 0;
-this.type = 0;
+this.state=0;
+this.type=0;
 }return;
 case (0):
-this.m02 = tx;
-this.m12 = ty;
+this.m02=tx;
+this.m12=ty;
 if (tx != 0.0  || ty != 0.0  ) {
-this.state = 1;
-this.type = 1;
+this.state=1;
+this.type=1;
 }return;
 }
 });
 
 Clazz.newMeth(C$, 'rotate90', function () {
 var M0 = this.m00;
-this.m00 = this.m01;
-this.m01 = -M0;
-M0 = this.m10;
-this.m10 = this.m11;
-this.m11 = -M0;
+this.m00=this.m01;
+this.m01=-M0;
+M0=this.m10;
+this.m10=this.m11;
+this.m11=-M0;
 var state = C$.rot90conversion[this.state];
 if ((state & 6) == 2 && this.m00 == 1.0   && this.m11 == 1.0  ) {
-state = state-(2);
-}this.state = state;
-this.type = -1;
+state-=2;
+}this.state=state;
+this.type=-1;
 });
 
 Clazz.newMeth(C$, 'rotate180', function () {
-this.m00 = -this.m00;
-this.m11 = -this.m11;
+this.m00=-this.m00;
+this.m11=-this.m11;
 var state = this.state;
 if ((state & 4) != 0) {
-this.m01 = -this.m01;
-this.m10 = -this.m10;
+this.m01=-this.m01;
+this.m10=-this.m10;
 } else {
 if (this.m00 == 1.0  && this.m11 == 1.0  ) {
-this.state = state & -3;
+this.state=state & -3;
 } else {
-this.state = state | 2;
-}}this.type = -1;
+this.state=state | 2;
+}}this.type=-1;
 });
 
 Clazz.newMeth(C$, 'rotate270', function () {
 var M0 = this.m00;
-this.m00 = -this.m01;
-this.m01 = M0;
-M0 = this.m10;
-this.m10 = -this.m11;
-this.m11 = M0;
+this.m00=-this.m01;
+this.m01=M0;
+M0=this.m10;
+this.m10=-this.m11;
+this.m11=M0;
 var state = C$.rot90conversion[this.state];
 if ((state & 6) == 2 && this.m00 == 1.0   && this.m11 == 1.0  ) {
-state = state-(2);
-}this.state = state;
-this.type = -1;
+state-=2;
+}this.state=state;
+this.type=-1;
 });
 
 Clazz.newMeth(C$, 'rotate$D', function (theta) {
@@ -458,14 +458,14 @@ p$.rotate180.apply(this, []);
 } else if (cos != 1.0 ) {
 var M0;
 var M1;
-M0 = this.m00;
-M1 = this.m01;
-this.m00 = cos * M0 + sin * M1;
-this.m01 = -sin * M0 + cos * M1;
-M0 = this.m10;
-M1 = this.m11;
-this.m10 = cos * M0 + sin * M1;
-this.m11 = -sin * M0 + cos * M1;
+M0=this.m00;
+M1=this.m01;
+this.m00=cos * M0 + sin * M1;
+this.m01=-sin * M0 + cos * M1;
+M0=this.m10;
+M1=this.m11;
+this.m10=cos * M0 + sin * M1;
+this.m11=-sin * M0 + cos * M1;
 this.updateState();
 }}});
 
@@ -490,14 +490,14 @@ var sin = vecy / len;
 var cos = vecx / len;
 var M0;
 var M1;
-M0 = this.m00;
-M1 = this.m01;
-this.m00 = cos * M0 + sin * M1;
-this.m01 = -sin * M0 + cos * M1;
-M0 = this.m10;
-M1 = this.m11;
-this.m10 = cos * M0 + sin * M1;
-this.m11 = -sin * M0 + cos * M1;
+M0=this.m00;
+M1=this.m01;
+this.m00=cos * M0 + sin * M1;
+this.m01=-sin * M0 + cos * M1;
+M0=this.m10;
+M1=this.m11;
+this.m10=cos * M0 + sin * M1;
+this.m11=-sin * M0 + cos * M1;
 this.updateState();
 }});
 
@@ -544,9 +544,9 @@ p$.rotate270.apply(this, []);
 break;
 }
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = this.state&(-2);
+this.state&=-2;
 } else {
-this.state = this.state|(1);
+this.state|=1;
 }});
 
 Clazz.newMeth(C$, 'scale$D$D', function (sx, sy) {
@@ -563,31 +563,31 @@ case (4):
 this.m01 *= sy;
 this.m10 *= sx;
 if (this.m01 == 0  && this.m10 == 0  ) {
-state = state&(1);
+state&=1;
 if (this.m00 == 1.0  && this.m11 == 1.0  ) {
-this.type = (state == 0 ? 0 : 1);
+this.type=(state == 0 ? 0 : 1);
 } else {
-state = state|(2);
-this.type = -1;
-}this.state = state;
+state|=2;
+this.type=-1;
+}this.state=state;
 }return;
 case (3):
 case (2):
 this.m00 *= sx;
 this.m11 *= sy;
 if (this.m00 == 1.0  && this.m11 == 1.0  ) {
-this.state = (state = state&(1));
-this.type = (state == 0 ? 0 : 1);
+this.state=(state&=1);
+this.type=(state == 0 ? 0 : 1);
 } else {
-this.type = -1;
+this.type=-1;
 }return;
 case (1):
 case (0):
-this.m00 = sx;
-this.m11 = sy;
+this.m00=sx;
+this.m11=sy;
 if (sx != 1.0  || sy != 1.0  ) {
-this.state = state | 2;
-this.type = -1;
+this.state=state | 2;
+this.type=-1;
 }return;
 }
 });
@@ -601,63 +601,63 @@ case (7):
 case (6):
 var M0;
 var M1;
-M0 = this.m00;
-M1 = this.m01;
-this.m00 = M0 + M1 * shy;
-this.m01 = M0 * shx + M1;
-M0 = this.m10;
-M1 = this.m11;
-this.m10 = M0 + M1 * shy;
-this.m11 = M0 * shx + M1;
+M0=this.m00;
+M1=this.m01;
+this.m00=M0 + M1 * shy;
+this.m01=M0 * shx + M1;
+M0=this.m10;
+M1=this.m11;
+this.m10=M0 + M1 * shy;
+this.m11=M0 * shx + M1;
 this.updateState();
 return;
 case (5):
 case (4):
-this.m00 = this.m01 * shy;
-this.m11 = this.m10 * shx;
+this.m00=this.m01 * shy;
+this.m11=this.m10 * shx;
 if (this.m00 != 0.0  || this.m11 != 0.0  ) {
-this.state = state | 2;
-}this.type = -1;
+this.state=state | 2;
+}this.type=-1;
 return;
 case (3):
 case (2):
-this.m01 = this.m00 * shx;
-this.m10 = this.m11 * shy;
+this.m01=this.m00 * shx;
+this.m10=this.m11 * shy;
 if (this.m01 != 0.0  || this.m10 != 0.0  ) {
-this.state = state | 4;
-}this.type = -1;
+this.state=state | 4;
+}this.type=-1;
 return;
 case (1):
 case (0):
-this.m01 = shx;
-this.m10 = shy;
+this.m01=shx;
+this.m10=shy;
 if (this.m01 != 0.0  || this.m10 != 0.0  ) {
-this.state = state | 2 | 4 ;
-this.type = -1;
+this.state=state | 2 | 4 ;
+this.type=-1;
 }return;
 }
 });
 
 Clazz.newMeth(C$, 'setToIdentity', function () {
-this.m00 = this.m11 = 1.0;
-this.m10 = this.m01 = this.m02 = this.m12 = 0.0;
-this.state = 0;
-this.type = 0;
+this.m00=this.m11=1.0;
+this.m10=this.m01=this.m02=this.m12=0.0;
+this.state=0;
+this.type=0;
 });
 
 Clazz.newMeth(C$, 'setToTranslation$D$D', function (tx, ty) {
-this.m00 = 1.0;
-this.m10 = 0.0;
-this.m01 = 0.0;
-this.m11 = 1.0;
-this.m02 = tx;
-this.m12 = ty;
+this.m00=1.0;
+this.m10=0.0;
+this.m01=0.0;
+this.m11=1.0;
+this.m02=tx;
+this.m12=ty;
 if (tx != 0.0  || ty != 0.0  ) {
-this.state = 1;
-this.type = 1;
+this.state=1;
+this.type=1;
 } else {
-this.state = 0;
-this.type = 0;
+this.state=0;
+this.type=0;
 }});
 
 Clazz.newMeth(C$, 'setToRotation$D', function (theta) {
@@ -668,28 +668,28 @@ Clazz.newMeth(C$, 'setToRotationTheta$D', function (theta) {
 var sin = Math.sin(theta);
 var cos;
 if (sin == 1.0  || sin == -1.0  ) {
-cos = 0.0;
-this.state = 4;
-this.type = 8;
+cos=0.0;
+this.state=4;
+this.type=8;
 } else {
-cos = Math.cos(theta);
+cos=Math.cos(theta);
 if (cos == -1.0 ) {
-sin = 0.0;
-this.state = 2;
-this.type = 8;
+sin=0.0;
+this.state=2;
+this.type=8;
 } else if (cos == 1.0 ) {
-sin = 0.0;
-this.state = 0;
-this.type = 0;
+sin=0.0;
+this.state=0;
+this.type=0;
 } else {
-this.state = 6;
-this.type = 16;
-}}this.m00 = cos;
-this.m10 = sin;
-this.m01 = -sin;
-this.m11 = cos;
-this.m02 = 0.0;
-this.m12 = 0.0;
+this.state=6;
+this.type=16;
+}}this.m00=cos;
+this.m10=sin;
+this.m01=-sin;
+this.m11=cos;
+this.m02=0.0;
+this.m12=0.0;
 });
 
 Clazz.newMeth(C$, 'setToRotation$D$D$D', function (theta, anchorx, anchory) {
@@ -700,11 +700,11 @@ Clazz.newMeth(C$, 'setToRotationThetaXY$D$D$D', function (theta, anchorx, anchor
 p$.setToRotationTheta$D.apply(this, [theta]);
 var sin = this.m10;
 var oneMinusCos = 1.0 - this.m00;
-this.m02 = anchorx * oneMinusCos + anchory * sin;
-this.m12 = anchory * oneMinusCos - anchorx * sin;
+this.m02=anchorx * oneMinusCos + anchory * sin;
+this.m12=anchory * oneMinusCos - anchorx * sin;
 if (this.m02 != 0.0  || this.m12 != 0.0  ) {
-this.state = this.state|(1);
-this.type = this.type|(1);
+this.state|=1;
+this.type|=1;
 }});
 
 Clazz.newMeth(C$, 'setToRotation$D$D', function (vecx, vecy) {
@@ -715,32 +715,32 @@ Clazz.newMeth(C$, 'setToRotationXY$D$D', function (vecx, vecy) {
 var sin;
 var cos;
 if (vecy == 0 ) {
-sin = 0.0;
+sin=0.0;
 if (vecx < 0.0 ) {
-cos = -1.0;
-this.state = 2;
-this.type = 8;
+cos=-1.0;
+this.state=2;
+this.type=8;
 } else {
-cos = 1.0;
-this.state = 0;
-this.type = 0;
+cos=1.0;
+this.state=0;
+this.type=0;
 }} else if (vecx == 0 ) {
-cos = 0.0;
-sin = (vecy > 0.0 ) ? 1.0 : -1.0;
-this.state = 4;
-this.type = 8;
+cos=0.0;
+sin=(vecy > 0.0 ) ? 1.0 : -1.0;
+this.state=4;
+this.type=8;
 } else {
 var len = Math.sqrt(vecx * vecx + vecy * vecy);
-cos = vecx / len;
-sin = vecy / len;
-this.state = 6;
-this.type = 16;
-}this.m00 = cos;
-this.m10 = sin;
-this.m01 = -sin;
-this.m11 = cos;
-this.m02 = 0.0;
-this.m12 = 0.0;
+cos=vecx / len;
+sin=vecy / len;
+this.state=6;
+this.type=16;
+}this.m00=cos;
+this.m10=sin;
+this.m01=-sin;
+this.m11=cos;
+this.m02=0.0;
+this.m12=0.0;
 });
 
 Clazz.newMeth(C$, 'setToRotation$D$D$D$D', function (vecx, vecy, anchorx, anchory) {
@@ -751,54 +751,54 @@ Clazz.newMeth(C$, 'setToRotationV2XY$D$D$D$D', function (vecx, vecy, anchorx, an
 p$.setToRotationXY$D$D.apply(this, [vecx, vecy]);
 var sin = this.m10;
 var oneMinusCos = 1.0 - this.m00;
-this.m02 = anchorx * oneMinusCos + anchory * sin;
-this.m12 = anchory * oneMinusCos - anchorx * sin;
+this.m02=anchorx * oneMinusCos + anchory * sin;
+this.m12=anchory * oneMinusCos - anchorx * sin;
 if (this.m02 != 0.0  || this.m12 != 0.0  ) {
-this.state = this.state|(1);
-this.type = this.type|(1);
+this.state|=1;
+this.type|=1;
 }});
 
 Clazz.newMeth(C$, 'setToQuadrantRotation$I', function (numquadrants) {
 switch (numquadrants & 3) {
 case 0:
-this.m00 = 1.0;
-this.m10 = 0.0;
-this.m01 = 0.0;
-this.m11 = 1.0;
-this.m02 = 0.0;
-this.m12 = 0.0;
-this.state = 0;
-this.type = 0;
+this.m00=1.0;
+this.m10=0.0;
+this.m01=0.0;
+this.m11=1.0;
+this.m02=0.0;
+this.m12=0.0;
+this.state=0;
+this.type=0;
 break;
 case 1:
-this.m00 = 0.0;
-this.m10 = 1.0;
-this.m01 = -1.0;
-this.m11 = 0.0;
-this.m02 = 0.0;
-this.m12 = 0.0;
-this.state = 4;
-this.type = 8;
+this.m00=0.0;
+this.m10=1.0;
+this.m01=-1.0;
+this.m11=0.0;
+this.m02=0.0;
+this.m12=0.0;
+this.state=4;
+this.type=8;
 break;
 case 2:
-this.m00 = -1.0;
-this.m10 = 0.0;
-this.m01 = 0.0;
-this.m11 = -1.0;
-this.m02 = 0.0;
-this.m12 = 0.0;
-this.state = 2;
-this.type = 8;
+this.m00=-1.0;
+this.m10=0.0;
+this.m01=0.0;
+this.m11=-1.0;
+this.m02=0.0;
+this.m12=0.0;
+this.state=2;
+this.type=8;
 break;
 case 3:
-this.m00 = 0.0;
-this.m10 = -1.0;
-this.m01 = 1.0;
-this.m11 = 0.0;
-this.m02 = 0.0;
-this.m12 = 0.0;
-this.state = 4;
-this.type = 8;
+this.m00=0.0;
+this.m10=-1.0;
+this.m01=1.0;
+this.m11=0.0;
+this.m02=0.0;
+this.m12=0.0;
+this.state=4;
+this.type=8;
 break;
 }
 });
@@ -806,108 +806,108 @@ break;
 Clazz.newMeth(C$, 'setToQuadrantRotation$I$D$D', function (numquadrants, anchorx, anchory) {
 switch (numquadrants & 3) {
 case 0:
-this.m00 = 1.0;
-this.m10 = 0.0;
-this.m01 = 0.0;
-this.m11 = 1.0;
-this.m02 = 0.0;
-this.m12 = 0.0;
-this.state = 0;
-this.type = 0;
+this.m00=1.0;
+this.m10=0.0;
+this.m01=0.0;
+this.m11=1.0;
+this.m02=0.0;
+this.m12=0.0;
+this.state=0;
+this.type=0;
 break;
 case 1:
-this.m00 = 0.0;
-this.m10 = 1.0;
-this.m01 = -1.0;
-this.m11 = 0.0;
-this.m02 = anchorx + anchory;
-this.m12 = anchory - anchorx;
+this.m00=0.0;
+this.m10=1.0;
+this.m01=-1.0;
+this.m11=0.0;
+this.m02=anchorx + anchory;
+this.m12=anchory - anchorx;
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 4;
-this.type = 8;
+this.state=4;
+this.type=8;
 } else {
-this.state = 5;
-this.type = 9;
+this.state=5;
+this.type=9;
 }break;
 case 2:
-this.m00 = -1.0;
-this.m10 = 0.0;
-this.m01 = 0.0;
-this.m11 = -1.0;
-this.m02 = anchorx + anchorx;
-this.m12 = anchory + anchory;
+this.m00=-1.0;
+this.m10=0.0;
+this.m01=0.0;
+this.m11=-1.0;
+this.m02=anchorx + anchorx;
+this.m12=anchory + anchory;
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 2;
-this.type = 8;
+this.state=2;
+this.type=8;
 } else {
-this.state = 3;
-this.type = 9;
+this.state=3;
+this.type=9;
 }break;
 case 3:
-this.m00 = 0.0;
-this.m10 = -1.0;
-this.m01 = 1.0;
-this.m11 = 0.0;
-this.m02 = anchorx - anchory;
-this.m12 = anchory + anchorx;
+this.m00=0.0;
+this.m10=-1.0;
+this.m01=1.0;
+this.m11=0.0;
+this.m02=anchorx - anchory;
+this.m12=anchory + anchorx;
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 4;
-this.type = 8;
+this.state=4;
+this.type=8;
 } else {
-this.state = 5;
-this.type = 9;
+this.state=5;
+this.type=9;
 }break;
 }
 });
 
 Clazz.newMeth(C$, 'setToScale$D$D', function (sx, sy) {
-this.m00 = sx;
-this.m10 = 0.0;
-this.m01 = 0.0;
-this.m11 = sy;
-this.m02 = 0.0;
-this.m12 = 0.0;
+this.m00=sx;
+this.m10=0.0;
+this.m01=0.0;
+this.m11=sy;
+this.m02=0.0;
+this.m12=0.0;
 if (sx != 1.0  || sy != 1.0  ) {
-this.state = 2;
-this.type = -1;
+this.state=2;
+this.type=-1;
 } else {
-this.state = 0;
-this.type = 0;
+this.state=0;
+this.type=0;
 }});
 
 Clazz.newMeth(C$, 'setToShear$D$D', function (shx, shy) {
-this.m00 = 1.0;
-this.m01 = shx;
-this.m10 = shy;
-this.m11 = 1.0;
-this.m02 = 0.0;
-this.m12 = 0.0;
+this.m00=1.0;
+this.m01=shx;
+this.m10=shy;
+this.m11=1.0;
+this.m02=0.0;
+this.m12=0.0;
 if (shx != 0.0  || shy != 0.0  ) {
-this.state = 6;
-this.type = -1;
+this.state=6;
+this.type=-1;
 } else {
-this.state = 0;
-this.type = 0;
+this.state=0;
+this.type=0;
 }});
 
 Clazz.newMeth(C$, 'setTransform$java_awt_geom_AffineTransform', function (t) {
-this.m00 = t.m00;
-this.m10 = t.m10;
-this.m01 = t.m01;
-this.m11 = t.m11;
-this.m02 = t.m02;
-this.m12 = t.m12;
-this.state = t.state;
-this.type = t.type;
+this.m00=t.m00;
+this.m10=t.m10;
+this.m01=t.m01;
+this.m11=t.m11;
+this.m02=t.m02;
+this.m12=t.m12;
+this.state=t.state;
+this.type=t.type;
 });
 
 Clazz.newMeth(C$, 'setTransform$D$D$D$D$D$D', function (m00, m10, m01, m11, m02, m12) {
-this.m00 = m00;
-this.m10 = m10;
-this.m01 = m01;
-this.m11 = m11;
-this.m02 = m02;
-this.m12 = m12;
+this.m00=m00;
+this.m10=m10;
+this.m01=m01;
+this.m11=m11;
+this.m02=m02;
+this.m12=m12;
 this.updateState();
 });
 
@@ -933,35 +933,35 @@ case (6):
 case (7):
 return;
 case (56):
-this.m01 = Tx.m01;
-this.m10 = Tx.m10;
+this.m01=Tx.m01;
+this.m10=Tx.m10;
 case (24):
-this.m00 = Tx.m00;
-this.m11 = Tx.m11;
+this.m00=Tx.m00;
+this.m11=Tx.m11;
 case (8):
-this.m02 = Tx.m02;
-this.m12 = Tx.m12;
-this.state = txstate;
-this.type = Tx.type;
+this.m02=Tx.m02;
+this.m12=Tx.m12;
+this.state=txstate;
+this.type=Tx.type;
 return;
 case (48):
-this.m01 = Tx.m01;
-this.m10 = Tx.m10;
+this.m01=Tx.m01;
+this.m10=Tx.m10;
 case (16):
-this.m00 = Tx.m00;
-this.m11 = Tx.m11;
-this.state = txstate;
-this.type = Tx.type;
+this.m00=Tx.m00;
+this.m11=Tx.m11;
+this.state=txstate;
+this.type=Tx.type;
 return;
 case (40):
-this.m02 = Tx.m02;
-this.m12 = Tx.m12;
+this.m02=Tx.m02;
+this.m12=Tx.m12;
 case (32):
-this.m01 = Tx.m01;
-this.m10 = Tx.m10;
-this.m00 = this.m11 = 0.0;
-this.state = txstate;
-this.type = Tx.type;
+this.m01=Tx.m01;
+this.m10=Tx.m10;
+this.m00=this.m11=0.0;
+this.state=txstate;
+this.type=Tx.type;
 return;
 case (15):
 case (14):
@@ -983,98 +983,98 @@ this.scale$D$D(Tx.m00, Tx.m11);
 return;
 case (39):
 case (38):
-T01 = Tx.m01;
-T10 = Tx.m10;
-M0 = this.m00;
-this.m00 = this.m01 * T10;
-this.m01 = M0 * T01;
-M0 = this.m10;
-this.m10 = this.m11 * T10;
-this.m11 = M0 * T01;
-this.type = -1;
+T01=Tx.m01;
+T10=Tx.m10;
+M0=this.m00;
+this.m00=this.m01 * T10;
+this.m01=M0 * T01;
+M0=this.m10;
+this.m10=this.m11 * T10;
+this.m11=M0 * T01;
+this.type=-1;
 return;
 case (37):
 case (36):
-this.m00 = this.m01 * Tx.m10;
-this.m01 = 0.0;
-this.m11 = this.m10 * Tx.m01;
-this.m10 = 0.0;
-this.state = mystate ^ 6;
-this.type = -1;
+this.m00=this.m01 * Tx.m10;
+this.m01=0.0;
+this.m11=this.m10 * Tx.m01;
+this.m10=0.0;
+this.state=mystate ^ 6;
+this.type=-1;
 return;
 case (35):
 case (34):
-this.m01 = this.m00 * Tx.m01;
-this.m00 = 0.0;
-this.m10 = this.m11 * Tx.m10;
-this.m11 = 0.0;
-this.state = mystate ^ 6;
-this.type = -1;
+this.m01=this.m00 * Tx.m01;
+this.m00=0.0;
+this.m10=this.m11 * Tx.m10;
+this.m11=0.0;
+this.state=mystate ^ 6;
+this.type=-1;
 return;
 case (33):
-this.m00 = 0.0;
-this.m01 = Tx.m01;
-this.m10 = Tx.m10;
-this.m11 = 0.0;
-this.state = 5;
-this.type = -1;
+this.m00=0.0;
+this.m01=Tx.m01;
+this.m10=Tx.m10;
+this.m11=0.0;
+this.state=5;
+this.type=-1;
 return;
 }
-T00 = Tx.m00;
-T01 = Tx.m01;
-T02 = Tx.m02;
-T10 = Tx.m10;
-T11 = Tx.m11;
-T12 = Tx.m12;
+T00=Tx.m00;
+T01=Tx.m01;
+T02=Tx.m02;
+T10=Tx.m10;
+T11=Tx.m11;
+T12=Tx.m12;
 switch (mystate) {
 default:
 p$.stateError.apply(this, []);
 case (6):
-this.state = mystate | txstate;
+this.state=mystate | txstate;
 case (7):
-M0 = this.m00;
-M1 = this.m01;
-this.m00 = T00 * M0 + T10 * M1;
-this.m01 = T01 * M0 + T11 * M1;
+M0=this.m00;
+M1=this.m01;
+this.m00=T00 * M0 + T10 * M1;
+this.m01=T01 * M0 + T11 * M1;
 this.m02 += T02 * M0 + T12 * M1;
-M0 = this.m10;
-M1 = this.m11;
-this.m10 = T00 * M0 + T10 * M1;
-this.m11 = T01 * M0 + T11 * M1;
+M0=this.m10;
+M1=this.m11;
+this.m10=T00 * M0 + T10 * M1;
+this.m11=T01 * M0 + T11 * M1;
 this.m12 += T02 * M0 + T12 * M1;
-this.type = -1;
+this.type=-1;
 return;
 case (5):
 case (4):
-M0 = this.m01;
-this.m00 = T10 * M0;
-this.m01 = T11 * M0;
+M0=this.m01;
+this.m00=T10 * M0;
+this.m01=T11 * M0;
 this.m02 += T12 * M0;
-M0 = this.m10;
-this.m10 = T00 * M0;
-this.m11 = T01 * M0;
+M0=this.m10;
+this.m10=T00 * M0;
+this.m11=T01 * M0;
 this.m12 += T02 * M0;
 break;
 case (3):
 case (2):
-M0 = this.m00;
-this.m00 = T00 * M0;
-this.m01 = T01 * M0;
+M0=this.m00;
+this.m00=T00 * M0;
+this.m01=T01 * M0;
 this.m02 += T02 * M0;
-M0 = this.m11;
-this.m10 = T10 * M0;
-this.m11 = T11 * M0;
+M0=this.m11;
+this.m10=T10 * M0;
+this.m11=T11 * M0;
 this.m12 += T12 * M0;
 break;
 case (1):
-this.m00 = T00;
-this.m01 = T01;
+this.m00=T00;
+this.m01=T01;
 this.m02 += T02;
-this.m10 = T10;
-this.m11 = T11;
+this.m10=T10;
+this.m11=T11;
 this.m12 += T12;
-this.state = txstate | 1;
-this.type = -1;
+this.state=txstate | 1;
+this.type=-1;
 return;
 }
 this.updateState();
@@ -1105,137 +1105,137 @@ case (8):
 case (10):
 case (12):
 case (14):
-this.m02 = Tx.m02;
-this.m12 = Tx.m12;
-this.state = mystate | 1;
-this.type = this.type|(1);
+this.m02=Tx.m02;
+this.m12=Tx.m12;
+this.state=mystate | 1;
+this.type|=1;
 return;
 case (9):
 case (11):
 case (13):
 case (15):
-this.m02 = this.m02 + Tx.m02;
-this.m12 = this.m12 + Tx.m12;
+this.m02=this.m02 + Tx.m02;
+this.m12=this.m12 + Tx.m12;
 return;
 case (17):
 case (16):
-this.state = mystate | 2;
+this.state=mystate | 2;
 case (23):
 case (22):
 case (21):
 case (20):
 case (19):
 case (18):
-T00 = Tx.m00;
-T11 = Tx.m11;
+T00=Tx.m00;
+T11=Tx.m11;
 if ((mystate & 4) != 0) {
-this.m01 = this.m01 * T00;
-this.m10 = this.m10 * T11;
+this.m01=this.m01 * T00;
+this.m10=this.m10 * T11;
 if ((mystate & 2) != 0) {
-this.m00 = this.m00 * T00;
-this.m11 = this.m11 * T11;
+this.m00=this.m00 * T00;
+this.m11=this.m11 * T11;
 }} else {
-this.m00 = this.m00 * T00;
-this.m11 = this.m11 * T11;
+this.m00=this.m00 * T00;
+this.m11=this.m11 * T11;
 }if ((mystate & 1) != 0) {
-this.m02 = this.m02 * T00;
-this.m12 = this.m12 * T11;
-}this.type = -1;
+this.m02=this.m02 * T00;
+this.m12=this.m12 * T11;
+}this.type=-1;
 return;
 case (37):
 case (36):
-mystate = mystate | 2;
+mystate=mystate | 2;
 case (33):
 case (32):
 case (35):
 case (34):
-this.state = mystate ^ 4;
+this.state=mystate ^ 4;
 case (39):
 case (38):
-T01 = Tx.m01;
-T10 = Tx.m10;
-M0 = this.m00;
-this.m00 = this.m10 * T01;
-this.m10 = M0 * T10;
-M0 = this.m01;
-this.m01 = this.m11 * T01;
-this.m11 = M0 * T10;
-M0 = this.m02;
-this.m02 = this.m12 * T01;
-this.m12 = M0 * T10;
-this.type = -1;
+T01=Tx.m01;
+T10=Tx.m10;
+M0=this.m00;
+this.m00=this.m10 * T01;
+this.m10=M0 * T10;
+M0=this.m01;
+this.m01=this.m11 * T01;
+this.m11=M0 * T10;
+M0=this.m02;
+this.m02=this.m12 * T01;
+this.m12=M0 * T10;
+this.type=-1;
 return;
 }
-T00 = Tx.m00;
-T01 = Tx.m01;
-T02 = Tx.m02;
-T10 = Tx.m10;
-T11 = Tx.m11;
-T12 = Tx.m12;
+T00=Tx.m00;
+T01=Tx.m01;
+T02=Tx.m02;
+T10=Tx.m10;
+T11=Tx.m11;
+T12=Tx.m12;
 switch (mystate) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-M0 = this.m02;
-M1 = this.m12;
+M0=this.m02;
+M1=this.m12;
 T02 += M0 * T00 + M1 * T01;
 T12 += M0 * T10 + M1 * T11;
 case (6):
-this.m02 = T02;
-this.m12 = T12;
-M0 = this.m00;
-M1 = this.m10;
-this.m00 = M0 * T00 + M1 * T01;
-this.m10 = M0 * T10 + M1 * T11;
-M0 = this.m01;
-M1 = this.m11;
-this.m01 = M0 * T00 + M1 * T01;
-this.m11 = M0 * T10 + M1 * T11;
+this.m02=T02;
+this.m12=T12;
+M0=this.m00;
+M1=this.m10;
+this.m00=M0 * T00 + M1 * T01;
+this.m10=M0 * T10 + M1 * T11;
+M0=this.m01;
+M1=this.m11;
+this.m01=M0 * T00 + M1 * T01;
+this.m11=M0 * T10 + M1 * T11;
 break;
 case (5):
-M0 = this.m02;
-M1 = this.m12;
+M0=this.m02;
+M1=this.m12;
 T02 += M0 * T00 + M1 * T01;
 T12 += M0 * T10 + M1 * T11;
 case (4):
-this.m02 = T02;
-this.m12 = T12;
-M0 = this.m10;
-this.m00 = M0 * T01;
-this.m10 = M0 * T11;
-M0 = this.m01;
-this.m01 = M0 * T00;
-this.m11 = M0 * T10;
+this.m02=T02;
+this.m12=T12;
+M0=this.m10;
+this.m00=M0 * T01;
+this.m10=M0 * T11;
+M0=this.m01;
+this.m01=M0 * T00;
+this.m11=M0 * T10;
 break;
 case (3):
-M0 = this.m02;
-M1 = this.m12;
+M0=this.m02;
+M1=this.m12;
 T02 += M0 * T00 + M1 * T01;
 T12 += M0 * T10 + M1 * T11;
 case (2):
-this.m02 = T02;
-this.m12 = T12;
-M0 = this.m00;
-this.m00 = M0 * T00;
-this.m10 = M0 * T10;
-M0 = this.m11;
-this.m01 = M0 * T01;
-this.m11 = M0 * T11;
+this.m02=T02;
+this.m12=T12;
+M0=this.m00;
+this.m00=M0 * T00;
+this.m10=M0 * T10;
+M0=this.m11;
+this.m01=M0 * T01;
+this.m11=M0 * T11;
 break;
 case (1):
-M0 = this.m02;
-M1 = this.m12;
+M0=this.m02;
+M1=this.m12;
 T02 += M0 * T00 + M1 * T01;
 T12 += M0 * T10 + M1 * T11;
 case (0):
-this.m02 = T02;
-this.m12 = T12;
-this.m00 = T00;
-this.m10 = T10;
-this.m01 = T01;
-this.m11 = T11;
-this.state = mystate | txstate;
-this.type = -1;
+this.m02=T02;
+this.m12=T12;
+this.m00=T00;
+this.m10=T10;
+this.m01=T01;
+this.m11=T11;
+this.state=mystate | txstate;
+this.type=-1;
 return;
 }
 this.updateState();
@@ -1247,12 +1247,12 @@ switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-det = this.m00 * this.m11 - this.m01 * this.m10;
+det=this.m00 * this.m11 - this.m01 * this.m10;
 if (Math.abs(det) <= 4.9E-324 ) {
 throw Clazz.new_(Clazz.load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is " + new Double(det).toString()]);
 }return Clazz.new_(C$.c$$D$D$D$D$D$D$I,[this.m11 / det, -this.m10 / det, -this.m01 / det, this.m00 / det, (this.m01 * this.m12 - this.m11 * this.m02) / det, (this.m10 * this.m02 - this.m00 * this.m12) / det, 7]);
 case (6):
-det = this.m00 * this.m11 - this.m01 * this.m10;
+det=this.m00 * this.m11 - this.m01 * this.m10;
 if (Math.abs(det) <= 4.9E-324 ) {
 throw Clazz.new_(Clazz.load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is " + new Double(det).toString()]);
 }return Clazz.new_(C$.c$$D$D$D$D$D$D$I,[this.m11 / det, -this.m10 / det, -this.m01 / det, this.m00 / det, 0.0, 0.0, 6]);
@@ -1291,78 +1291,78 @@ switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-M00 = this.m00;
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M11 = this.m11;
-M12 = this.m12;
-det = M00 * M11 - M01 * M10;
+M00=this.m00;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M11=this.m11;
+M12=this.m12;
+det=M00 * M11 - M01 * M10;
 if (Math.abs(det) <= 4.9E-324 ) {
 throw Clazz.new_(Clazz.load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is " + new Double(det).toString()]);
-}this.m00 = M11 / det;
-this.m10 = -M10 / det;
-this.m01 = -M01 / det;
-this.m11 = M00 / det;
-this.m02 = (M01 * M12 - M11 * M02) / det;
-this.m12 = (M10 * M02 - M00 * M12) / det;
+}this.m00=M11 / det;
+this.m10=-M10 / det;
+this.m01=-M01 / det;
+this.m11=M00 / det;
+this.m02=(M01 * M12 - M11 * M02) / det;
+this.m12=(M10 * M02 - M00 * M12) / det;
 break;
 case (6):
-M00 = this.m00;
-M01 = this.m01;
-M10 = this.m10;
-M11 = this.m11;
-det = M00 * M11 - M01 * M10;
+M00=this.m00;
+M01=this.m01;
+M10=this.m10;
+M11=this.m11;
+det=M00 * M11 - M01 * M10;
 if (Math.abs(det) <= 4.9E-324 ) {
 throw Clazz.new_(Clazz.load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is " + new Double(det).toString()]);
-}this.m00 = M11 / det;
-this.m10 = -M10 / det;
-this.m01 = -M01 / det;
-this.m11 = M00 / det;
+}this.m00=M11 / det;
+this.m10=-M10 / det;
+this.m01=-M01 / det;
+this.m11=M00 / det;
 break;
 case (5):
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M12 = this.m12;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M12=this.m12;
 if (M01 == 0.0  || M10 == 0.0  ) {
 throw Clazz.new_(Clazz.load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
-}this.m10 = 1.0 / M01;
-this.m01 = 1.0 / M10;
-this.m02 = -M12 / M10;
-this.m12 = -M02 / M01;
+}this.m10=1.0 / M01;
+this.m01=1.0 / M10;
+this.m02=-M12 / M10;
+this.m12=-M02 / M01;
 break;
 case (4):
-M01 = this.m01;
-M10 = this.m10;
+M01=this.m01;
+M10=this.m10;
 if (M01 == 0.0  || M10 == 0.0  ) {
 throw Clazz.new_(Clazz.load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
-}this.m10 = 1.0 / M01;
-this.m01 = 1.0 / M10;
+}this.m10=1.0 / M01;
+this.m01=1.0 / M10;
 break;
 case (3):
-M00 = this.m00;
-M02 = this.m02;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M02=this.m02;
+M11=this.m11;
+M12=this.m12;
 if (M00 == 0.0  || M11 == 0.0  ) {
 throw Clazz.new_(Clazz.load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
-}this.m00 = 1.0 / M00;
-this.m11 = 1.0 / M11;
-this.m02 = -M02 / M00;
-this.m12 = -M12 / M11;
+}this.m00=1.0 / M00;
+this.m11=1.0 / M11;
+this.m02=-M02 / M00;
+this.m12=-M12 / M11;
 break;
 case (2):
-M00 = this.m00;
-M11 = this.m11;
+M00=this.m00;
+M11=this.m11;
 if (M00 == 0.0  || M11 == 0.0  ) {
 throw Clazz.new_(Clazz.load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
-}this.m00 = 1.0 / M00;
-this.m11 = 1.0 / M11;
+}this.m00=1.0 / M00;
+this.m11=1.0 / M11;
 break;
 case (1):
-this.m02 = -this.m02;
-this.m12 = -this.m12;
+this.m02=-this.m02;
+this.m12=-this.m12;
 break;
 case (0):
 break;
@@ -1372,9 +1372,9 @@ break;
 Clazz.newMeth(C$, 'transform$java_awt_geom_Point2D$java_awt_geom_Point2D', function (ptSrc, ptDst) {
 if (ptDst == null ) {
 if (Clazz.instanceOf(ptSrc, "java.awt.geom.Point2D.Double")) {
-ptDst = Clazz.new_((I$[2]||$incl$(2)));
+ptDst=Clazz.new_((I$[2]||$incl$(2)));
 } else {
-ptDst = Clazz.new_((I$[3]||$incl$(3)));
+ptDst=Clazz.new_((I$[3]||$incl$(3)));
 }}var x = ptSrc.getX();
 var y = ptSrc.getY();
 switch (this.state) {
@@ -1420,10 +1420,10 @@ var y = src.getY();
 var dst = ptDst[dstOff++];
 if (dst == null ) {
 if (Clazz.instanceOf(src, "java.awt.geom.Point2D.Double")) {
-dst = Clazz.new_((I$[2]||$incl$(2)));
+dst=Clazz.new_((I$[2]||$incl$(2)));
 } else {
-dst = Clazz.new_((I$[3]||$incl$(3)));
-}ptDst[dstOff - 1] = dst;
+dst=Clazz.new_((I$[3]||$incl$(3)));
+}ptDst[dstOff - 1]=dst;
 }switch (state) {
 default:
 p$.stateError.apply(this, []);
@@ -1464,80 +1464,80 @@ var M11;
 var M12;
 if (dstPts === srcPts  && dstOff > srcOff  && dstOff < srcOff + numPts * 2 ) {
 System.arraycopy(srcPts, srcOff, dstPts, dstOff, numPts * 2);
-srcOff = dstOff;
+srcOff=dstOff;
 }switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-M00 = this.m00;
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M11=this.m11;
+M12=this.m12;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = (M00 * x + M01 * y + M02);
-dstPts[dstOff++] = (M10 * x + M11 * y + M12);
+dstPts[dstOff++]=(M00 * x + M01 * y + M02);
+dstPts[dstOff++]=(M10 * x + M11 * y + M12);
 }
 return;
 case (6):
-M00 = this.m00;
-M01 = this.m01;
-M10 = this.m10;
-M11 = this.m11;
+M00=this.m00;
+M01=this.m01;
+M10=this.m10;
+M11=this.m11;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = (M00 * x + M01 * y);
-dstPts[dstOff++] = (M10 * x + M11 * y);
+dstPts[dstOff++]=(M00 * x + M01 * y);
+dstPts[dstOff++]=(M10 * x + M11 * y);
 }
 return;
 case (5):
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M12 = this.m12;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M12=this.m12;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = (M01 * srcPts[srcOff++] + M02);
-dstPts[dstOff++] = (M10 * x + M12);
+dstPts[dstOff++]=(M01 * srcPts[srcOff++] + M02);
+dstPts[dstOff++]=(M10 * x + M12);
 }
 return;
 case (4):
-M01 = this.m01;
-M10 = this.m10;
+M01=this.m01;
+M10=this.m10;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = (M01 * srcPts[srcOff++]);
-dstPts[dstOff++] = (M10 * x);
+dstPts[dstOff++]=(M01 * srcPts[srcOff++]);
+dstPts[dstOff++]=(M10 * x);
 }
 return;
 case (3):
-M00 = this.m00;
-M02 = this.m02;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M02=this.m02;
+M11=this.m11;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = (M00 * srcPts[srcOff++] + M02);
-dstPts[dstOff++] = (M11 * srcPts[srcOff++] + M12);
+dstPts[dstOff++]=(M00 * srcPts[srcOff++] + M02);
+dstPts[dstOff++]=(M11 * srcPts[srcOff++] + M12);
 }
 return;
 case (2):
-M00 = this.m00;
-M11 = this.m11;
+M00=this.m00;
+M11=this.m11;
 while (--numPts >= 0){
-dstPts[dstOff++] = (M00 * srcPts[srcOff++]);
-dstPts[dstOff++] = (M11 * srcPts[srcOff++]);
+dstPts[dstOff++]=(M00 * srcPts[srcOff++]);
+dstPts[dstOff++]=(M11 * srcPts[srcOff++]);
 }
 return;
 case (1):
-M02 = this.m02;
-M12 = this.m12;
+M02=this.m02;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = (srcPts[srcOff++] + M02);
-dstPts[dstOff++] = (srcPts[srcOff++] + M12);
+dstPts[dstOff++]=(srcPts[srcOff++] + M02);
+dstPts[dstOff++]=(srcPts[srcOff++] + M12);
 }
 return;
 case (0):
@@ -1562,80 +1562,80 @@ var M11;
 var M12;
 if (dstPts === srcPts  && dstOff > srcOff  && dstOff < srcOff + numPts * 2 ) {
 System.arraycopy(srcPts, srcOff, dstPts, dstOff, numPts * 2);
-srcOff = dstOff;
+srcOff=dstOff;
 }switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-M00 = this.m00;
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M11=this.m11;
+M12=this.m12;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = M00 * x + M01 * y + M02;
-dstPts[dstOff++] = M10 * x + M11 * y + M12;
+dstPts[dstOff++]=M00 * x + M01 * y + M02;
+dstPts[dstOff++]=M10 * x + M11 * y + M12;
 }
 return;
 case (6):
-M00 = this.m00;
-M01 = this.m01;
-M10 = this.m10;
-M11 = this.m11;
+M00=this.m00;
+M01=this.m01;
+M10=this.m10;
+M11=this.m11;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = M00 * x + M01 * y;
-dstPts[dstOff++] = M10 * x + M11 * y;
+dstPts[dstOff++]=M00 * x + M01 * y;
+dstPts[dstOff++]=M10 * x + M11 * y;
 }
 return;
 case (5):
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M12 = this.m12;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M12=this.m12;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = M01 * srcPts[srcOff++] + M02;
-dstPts[dstOff++] = M10 * x + M12;
+dstPts[dstOff++]=M01 * srcPts[srcOff++] + M02;
+dstPts[dstOff++]=M10 * x + M12;
 }
 return;
 case (4):
-M01 = this.m01;
-M10 = this.m10;
+M01=this.m01;
+M10=this.m10;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = M01 * srcPts[srcOff++];
-dstPts[dstOff++] = M10 * x;
+dstPts[dstOff++]=M01 * srcPts[srcOff++];
+dstPts[dstOff++]=M10 * x;
 }
 return;
 case (3):
-M00 = this.m00;
-M02 = this.m02;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M02=this.m02;
+M11=this.m11;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = M00 * srcPts[srcOff++] + M02;
-dstPts[dstOff++] = M11 * srcPts[srcOff++] + M12;
+dstPts[dstOff++]=M00 * srcPts[srcOff++] + M02;
+dstPts[dstOff++]=M11 * srcPts[srcOff++] + M12;
 }
 return;
 case (2):
-M00 = this.m00;
-M11 = this.m11;
+M00=this.m00;
+M11=this.m11;
 while (--numPts >= 0){
-dstPts[dstOff++] = M00 * srcPts[srcOff++];
-dstPts[dstOff++] = M11 * srcPts[srcOff++];
+dstPts[dstOff++]=M00 * srcPts[srcOff++];
+dstPts[dstOff++]=M11 * srcPts[srcOff++];
 }
 return;
 case (1):
-M02 = this.m02;
-M12 = this.m12;
+M02=this.m02;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = srcPts[srcOff++] + M02;
-dstPts[dstOff++] = srcPts[srcOff++] + M12;
+dstPts[dstOff++]=srcPts[srcOff++] + M02;
+dstPts[dstOff++]=srcPts[srcOff++] + M12;
 }
 return;
 case (0):
@@ -1656,81 +1656,81 @@ switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-M00 = this.m00;
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M11=this.m11;
+M12=this.m12;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = M00 * x + M01 * y + M02;
-dstPts[dstOff++] = M10 * x + M11 * y + M12;
+dstPts[dstOff++]=M00 * x + M01 * y + M02;
+dstPts[dstOff++]=M10 * x + M11 * y + M12;
 }
 return;
 case (6):
-M00 = this.m00;
-M01 = this.m01;
-M10 = this.m10;
-M11 = this.m11;
+M00=this.m00;
+M01=this.m01;
+M10=this.m10;
+M11=this.m11;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = M00 * x + M01 * y;
-dstPts[dstOff++] = M10 * x + M11 * y;
+dstPts[dstOff++]=M00 * x + M01 * y;
+dstPts[dstOff++]=M10 * x + M11 * y;
 }
 return;
 case (5):
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M12 = this.m12;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M12=this.m12;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = M01 * srcPts[srcOff++] + M02;
-dstPts[dstOff++] = M10 * x + M12;
+dstPts[dstOff++]=M01 * srcPts[srcOff++] + M02;
+dstPts[dstOff++]=M10 * x + M12;
 }
 return;
 case (4):
-M01 = this.m01;
-M10 = this.m10;
+M01=this.m01;
+M10=this.m10;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = M01 * srcPts[srcOff++];
-dstPts[dstOff++] = M10 * x;
+dstPts[dstOff++]=M01 * srcPts[srcOff++];
+dstPts[dstOff++]=M10 * x;
 }
 return;
 case (3):
-M00 = this.m00;
-M02 = this.m02;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M02=this.m02;
+M11=this.m11;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = M00 * srcPts[srcOff++] + M02;
-dstPts[dstOff++] = M11 * srcPts[srcOff++] + M12;
+dstPts[dstOff++]=M00 * srcPts[srcOff++] + M02;
+dstPts[dstOff++]=M11 * srcPts[srcOff++] + M12;
 }
 return;
 case (2):
-M00 = this.m00;
-M11 = this.m11;
+M00=this.m00;
+M11=this.m11;
 while (--numPts >= 0){
-dstPts[dstOff++] = M00 * srcPts[srcOff++];
-dstPts[dstOff++] = M11 * srcPts[srcOff++];
+dstPts[dstOff++]=M00 * srcPts[srcOff++];
+dstPts[dstOff++]=M11 * srcPts[srcOff++];
 }
 return;
 case (1):
-M02 = this.m02;
-M12 = this.m12;
+M02=this.m02;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = srcPts[srcOff++] + M02;
-dstPts[dstOff++] = srcPts[srcOff++] + M12;
+dstPts[dstOff++]=srcPts[srcOff++] + M02;
+dstPts[dstOff++]=srcPts[srcOff++] + M12;
 }
 return;
 case (0):
 while (--numPts >= 0){
-dstPts[dstOff++] = srcPts[srcOff++];
-dstPts[dstOff++] = srcPts[srcOff++];
+dstPts[dstOff++]=srcPts[srcOff++];
+dstPts[dstOff++]=srcPts[srcOff++];
 }
 return;
 }
@@ -1747,81 +1747,81 @@ switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-M00 = this.m00;
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M11=this.m11;
+M12=this.m12;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = (M00 * x + M01 * y + M02);
-dstPts[dstOff++] = (M10 * x + M11 * y + M12);
+dstPts[dstOff++]=(M00 * x + M01 * y + M02);
+dstPts[dstOff++]=(M10 * x + M11 * y + M12);
 }
 return;
 case (6):
-M00 = this.m00;
-M01 = this.m01;
-M10 = this.m10;
-M11 = this.m11;
+M00=this.m00;
+M01=this.m01;
+M10=this.m10;
+M11=this.m11;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = (M00 * x + M01 * y);
-dstPts[dstOff++] = (M10 * x + M11 * y);
+dstPts[dstOff++]=(M00 * x + M01 * y);
+dstPts[dstOff++]=(M10 * x + M11 * y);
 }
 return;
 case (5):
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M12 = this.m12;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M12=this.m12;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = (M01 * srcPts[srcOff++] + M02);
-dstPts[dstOff++] = (M10 * x + M12);
+dstPts[dstOff++]=(M01 * srcPts[srcOff++] + M02);
+dstPts[dstOff++]=(M10 * x + M12);
 }
 return;
 case (4):
-M01 = this.m01;
-M10 = this.m10;
+M01=this.m01;
+M10=this.m10;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = (M01 * srcPts[srcOff++]);
-dstPts[dstOff++] = (M10 * x);
+dstPts[dstOff++]=(M01 * srcPts[srcOff++]);
+dstPts[dstOff++]=(M10 * x);
 }
 return;
 case (3):
-M00 = this.m00;
-M02 = this.m02;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M02=this.m02;
+M11=this.m11;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = (M00 * srcPts[srcOff++] + M02);
-dstPts[dstOff++] = (M11 * srcPts[srcOff++] + M12);
+dstPts[dstOff++]=(M00 * srcPts[srcOff++] + M02);
+dstPts[dstOff++]=(M11 * srcPts[srcOff++] + M12);
 }
 return;
 case (2):
-M00 = this.m00;
-M11 = this.m11;
+M00=this.m00;
+M11=this.m11;
 while (--numPts >= 0){
-dstPts[dstOff++] = (M00 * srcPts[srcOff++]);
-dstPts[dstOff++] = (M11 * srcPts[srcOff++]);
+dstPts[dstOff++]=(M00 * srcPts[srcOff++]);
+dstPts[dstOff++]=(M11 * srcPts[srcOff++]);
 }
 return;
 case (1):
-M02 = this.m02;
-M12 = this.m12;
+M02=this.m02;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = (srcPts[srcOff++] + M02);
-dstPts[dstOff++] = (srcPts[srcOff++] + M12);
+dstPts[dstOff++]=(srcPts[srcOff++] + M02);
+dstPts[dstOff++]=(srcPts[srcOff++] + M12);
 }
 return;
 case (0):
 while (--numPts >= 0){
-dstPts[dstOff++] = (srcPts[srcOff++]);
-dstPts[dstOff++] = (srcPts[srcOff++]);
+dstPts[dstOff++]=(srcPts[srcOff++]);
+dstPts[dstOff++]=(srcPts[srcOff++]);
 }
 return;
 }
@@ -1830,9 +1830,9 @@ return;
 Clazz.newMeth(C$, 'inverseTransform$java_awt_geom_Point2D$java_awt_geom_Point2D', function (ptSrc, ptDst) {
 if (ptDst == null ) {
 if (Clazz.instanceOf(ptSrc, "java.awt.geom.Point2D.Double")) {
-ptDst = Clazz.new_((I$[2]||$incl$(2)));
+ptDst=Clazz.new_((I$[2]||$incl$(2)));
 } else {
-ptDst = Clazz.new_((I$[3]||$incl$(3)));
+ptDst=Clazz.new_((I$[3]||$incl$(3)));
 }}var x = ptSrc.getX();
 var y = ptSrc.getY();
 switch (this.state) {
@@ -1882,94 +1882,94 @@ var M12;
 var det;
 if (dstPts === srcPts  && dstOff > srcOff  && dstOff < srcOff + numPts * 2 ) {
 System.arraycopy(srcPts, srcOff, dstPts, dstOff, numPts * 2);
-srcOff = dstOff;
+srcOff=dstOff;
 }switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-M00 = this.m00;
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M11 = this.m11;
-M12 = this.m12;
-det = M00 * M11 - M01 * M10;
+M00=this.m00;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M11=this.m11;
+M12=this.m12;
+det=M00 * M11 - M01 * M10;
 if (Math.abs(det) <= 4.9E-324 ) {
 throw Clazz.new_(Clazz.load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is " + new Double(det).toString()]);
 }while (--numPts >= 0){
 var x = srcPts[srcOff++] - M02;
 var y = srcPts[srcOff++] - M12;
-dstPts[dstOff++] = (x * M11 - y * M01) / det;
-dstPts[dstOff++] = (y * M00 - x * M10) / det;
+dstPts[dstOff++]=(x * M11 - y * M01) / det;
+dstPts[dstOff++]=(y * M00 - x * M10) / det;
 }
 return;
 case (6):
-M00 = this.m00;
-M01 = this.m01;
-M10 = this.m10;
-M11 = this.m11;
-det = M00 * M11 - M01 * M10;
+M00=this.m00;
+M01=this.m01;
+M10=this.m10;
+M11=this.m11;
+det=M00 * M11 - M01 * M10;
 if (Math.abs(det) <= 4.9E-324 ) {
 throw Clazz.new_(Clazz.load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is " + new Double(det).toString()]);
 }while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = (x * M11 - y * M01) / det;
-dstPts[dstOff++] = (y * M00 - x * M10) / det;
+dstPts[dstOff++]=(x * M11 - y * M01) / det;
+dstPts[dstOff++]=(y * M00 - x * M10) / det;
 }
 return;
 case (5):
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M12 = this.m12;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M12=this.m12;
 if (M01 == 0.0  || M10 == 0.0  ) {
 throw Clazz.new_(Clazz.load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
 }while (--numPts >= 0){
 var x = srcPts[srcOff++] - M02;
-dstPts[dstOff++] = (srcPts[srcOff++] - M12) / M10;
-dstPts[dstOff++] = x / M01;
+dstPts[dstOff++]=(srcPts[srcOff++] - M12) / M10;
+dstPts[dstOff++]=x / M01;
 }
 return;
 case (4):
-M01 = this.m01;
-M10 = this.m10;
+M01=this.m01;
+M10=this.m10;
 if (M01 == 0.0  || M10 == 0.0  ) {
 throw Clazz.new_(Clazz.load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
 }while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = srcPts[srcOff++] / M10;
-dstPts[dstOff++] = x / M01;
+dstPts[dstOff++]=srcPts[srcOff++] / M10;
+dstPts[dstOff++]=x / M01;
 }
 return;
 case (3):
-M00 = this.m00;
-M02 = this.m02;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M02=this.m02;
+M11=this.m11;
+M12=this.m12;
 if (M00 == 0.0  || M11 == 0.0  ) {
 throw Clazz.new_(Clazz.load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
 }while (--numPts >= 0){
-dstPts[dstOff++] = (srcPts[srcOff++] - M02) / M00;
-dstPts[dstOff++] = (srcPts[srcOff++] - M12) / M11;
+dstPts[dstOff++]=(srcPts[srcOff++] - M02) / M00;
+dstPts[dstOff++]=(srcPts[srcOff++] - M12) / M11;
 }
 return;
 case (2):
-M00 = this.m00;
-M11 = this.m11;
+M00=this.m00;
+M11=this.m11;
 if (M00 == 0.0  || M11 == 0.0  ) {
 throw Clazz.new_(Clazz.load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
 }while (--numPts >= 0){
-dstPts[dstOff++] = srcPts[srcOff++] / M00;
-dstPts[dstOff++] = srcPts[srcOff++] / M11;
+dstPts[dstOff++]=srcPts[srcOff++] / M00;
+dstPts[dstOff++]=srcPts[srcOff++] / M11;
 }
 return;
 case (1):
-M02 = this.m02;
-M12 = this.m12;
+M02=this.m02;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = srcPts[srcOff++] - M02;
-dstPts[dstOff++] = srcPts[srcOff++] - M12;
+dstPts[dstOff++]=srcPts[srcOff++] - M02;
+dstPts[dstOff++]=srcPts[srcOff++] - M12;
 }
 return;
 case (0):
@@ -1982,9 +1982,9 @@ System.arraycopy(srcPts, srcOff, dstPts, dstOff, numPts * 2);
 Clazz.newMeth(C$, 'deltaTransform$java_awt_geom_Point2D$java_awt_geom_Point2D', function (ptSrc, ptDst) {
 if (ptDst == null ) {
 if (Clazz.instanceOf(ptSrc, "java.awt.geom.Point2D.Double")) {
-ptDst = Clazz.new_((I$[2]||$incl$(2)));
+ptDst=Clazz.new_((I$[2]||$incl$(2)));
 } else {
-ptDst = Clazz.new_((I$[3]||$incl$(3)));
+ptDst=Clazz.new_((I$[3]||$incl$(3)));
 }}var x = ptSrc.getX();
 var y = ptSrc.getY();
 switch (this.state) {
@@ -2016,40 +2016,40 @@ var M10;
 var M11;
 if (dstPts === srcPts  && dstOff > srcOff  && dstOff < srcOff + numPts * 2 ) {
 System.arraycopy(srcPts, srcOff, dstPts, dstOff, numPts * 2);
-srcOff = dstOff;
+srcOff=dstOff;
 }switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
 case (6):
-M00 = this.m00;
-M01 = this.m01;
-M10 = this.m10;
-M11 = this.m11;
+M00=this.m00;
+M01=this.m01;
+M10=this.m10;
+M11=this.m11;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = x * M00 + y * M01;
-dstPts[dstOff++] = x * M10 + y * M11;
+dstPts[dstOff++]=x * M00 + y * M01;
+dstPts[dstOff++]=x * M10 + y * M11;
 }
 return;
 case (5):
 case (4):
-M01 = this.m01;
-M10 = this.m10;
+M01=this.m01;
+M10=this.m10;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = srcPts[srcOff++] * M01;
-dstPts[dstOff++] = x * M10;
+dstPts[dstOff++]=srcPts[srcOff++] * M01;
+dstPts[dstOff++]=x * M10;
 }
 return;
 case (3):
 case (2):
-M00 = this.m00;
-M11 = this.m11;
+M00=this.m00;
+M11=this.m11;
 while (--numPts >= 0){
-dstPts[dstOff++] = srcPts[srcOff++] * M00;
-dstPts[dstOff++] = srcPts[srcOff++] * M11;
+dstPts[dstOff++]=srcPts[srcOff++] * M00;
+dstPts[dstOff++]=srcPts[srcOff++] * M11;
 }
 return;
 case (1):
@@ -2092,11 +2092,11 @@ throw e;
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var bits = Double.doubleToLongBits(this.m00);
-bits = bits * 31 + Double.doubleToLongBits(this.m01);
-bits = bits * 31 + Double.doubleToLongBits(this.m02);
-bits = bits * 31 + Double.doubleToLongBits(this.m10);
-bits = bits * 31 + Double.doubleToLongBits(this.m11);
-bits = bits * 31 + Double.doubleToLongBits(this.m12);
+bits=bits * 31 + Double.doubleToLongBits(this.m01);
+bits=bits * 31 + Double.doubleToLongBits(this.m02);
+bits=bits * 31 + Double.doubleToLongBits(this.m10);
+bits=bits * 31 + Double.doubleToLongBits(this.m11);
+bits=bits * 31 + Double.doubleToLongBits(this.m12);
 return (((bits|0)) ^ (((bits >> 32)|0)));
 });
 
@@ -2107,4 +2107,4 @@ return false;
 return ((this.m00 == a.m00 ) && (this.m01 == a.m01 ) && (this.m02 == a.m02 ) && (this.m10 == a.m10 ) && (this.m11 == a.m11 ) && (this.m12 == a.m12 )  );
 });
 })();
-//Created 2018-05-15 01:01:59
+//Created 2018-05-24 08:45:19

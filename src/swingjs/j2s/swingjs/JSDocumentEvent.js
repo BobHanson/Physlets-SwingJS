@@ -17,10 +17,10 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$swingjs_JSAbstractDocument$I$I$javax_swing_event_DocumentEvent_EventType', function (doc, offs, len, eventType) {
 C$.$init$.apply(this);
-this.off = offs;
-this.len = len;
-this.type = eventType;
-this.doc = doc;
+this.off=offs;
+this.len=len;
+this.type=eventType;
+this.doc=doc;
 }, 1);
 
 Clazz.newMeth(C$, 'getOffset', function () {
@@ -46,4 +46,4 @@ return null;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:14
+//Created 2018-05-24 08:47:42

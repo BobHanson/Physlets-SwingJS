@@ -14,7 +14,7 @@ Clazz.newMeth(C$, 'getCache$O', function (key) {
 {
 var cache = C$.cacheMap.get$O(key);
 if (cache == null ) {
-cache = Clazz.new_((I$[2]||$incl$(2)).c$$I,[1]);
+cache=Clazz.new_((I$[2]||$incl$(2)).c$$I,[1]);
 C$.cacheMap.put$TK$TV(key, cache);
 }return cache;
 }}, 1);
@@ -45,16 +45,16 @@ if (Clazz.instanceOf(image, "java.awt.image.VolatileImage")) {
 switch ((image).validate$java_awt_GraphicsConfiguration(config)) {
 case 2:
 (image).flush();
-image = null;
+image=null;
 break;
 case 1:
-draw = true;
+draw=true;
 break;
 }
 }if (image == null ) {
-image = this.createImage$java_awt_Component$I$I$java_awt_GraphicsConfiguration$OA(c, w, h, config, args);
+image=this.createImage$java_awt_Component$I$I$java_awt_GraphicsConfiguration$OA(c, w, h, config, args);
 cache.setImage$O$java_awt_GraphicsConfiguration$I$I$OA$java_awt_Image(key, config, w, h, args, image);
-draw = true;
+draw=true;
 }if (draw) {
 var g2 = image.getGraphics();
 this.paintToImage$java_awt_Component$java_awt_Image$java_awt_Graphics$I$I$OA(c, image, g2, w, h, args);
@@ -86,4 +86,4 @@ return null;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:10
+//Created 2018-05-24 08:47:33

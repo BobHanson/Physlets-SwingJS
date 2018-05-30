@@ -15,8 +15,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_MediaTracker$I', function (mt, id) {
 C$.$init$.apply(this);
-this.tracker = mt;
-this.ID = id;
+this.tracker=mt;
+this.ID=id;
 }, 1);
 
 Clazz.newMeth(C$, 'insert$java_awt_MediaEntry$java_awt_MediaEntry', function (head, me) {
@@ -25,14 +25,14 @@ var prev = null;
 while (cur != null ){
 if (cur.ID > me.ID) {
 break;
-}prev = cur;
-cur = cur.next;
+}prev=cur;
+cur=cur.next;
 }
-me.next = cur;
+me.next=cur;
 if (prev == null ) {
-head = me;
+head=me;
 } else {
-prev.next = me;
+prev.next=me;
 }return head;
 }, 1);
 
@@ -41,22 +41,22 @@ return this.ID;
 });
 
 Clazz.newMeth(C$, 'cancel', function () {
-this.cancelled = true;
+this.cancelled=true;
 });
 
 Clazz.newMeth(C$, 'getStatus$Z$Z', function (doLoad, doVerify) {
 if (doLoad && ((this.status & 13) == 0) ) {
-this.status = (this.status & -3) | 1;
+this.status=(this.status & -3) | 1;
 this.startLoad();
 }return this.status;
 });
 
 Clazz.newMeth(C$, 'setStatus$I', function (flag) {
 {
-this.status = flag;
+this.status=flag;
 }this.tracker.setDone();
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:52
+//Created 2018-05-24 08:45:11

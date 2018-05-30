@@ -15,7 +15,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$O$javax_swing_tree_TreePath', function (source, path) {
 C$.superclazz.c$.apply(this, [source]);
 C$.$init$.apply(this);
-this.path = path;
+this.path=path;
 }, 1);
 
 Clazz.newMeth(C$, 'getPath', function () {
@@ -24,4 +24,4 @@ return this.path;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:46
+//Created 2018-05-24 08:46:49

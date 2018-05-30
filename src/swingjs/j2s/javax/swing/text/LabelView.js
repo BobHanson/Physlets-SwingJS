@@ -29,23 +29,23 @@ this.setPropertiesFromAttributes();
 }});
 
 Clazz.newMeth(C$, 'setUnderline$Z', function (u) {
-this.underline = u;
+this.underline=u;
 });
 
 Clazz.newMeth(C$, 'setStrikeThrough$Z', function (s) {
-this.strike = s;
+this.strike=s;
 });
 
 Clazz.newMeth(C$, 'setSuperscript$Z', function (s) {
-this.superscript = s;
+this.superscript=s;
 });
 
 Clazz.newMeth(C$, 'setSubscript$Z', function (s) {
-this.subscript = s;
+this.subscript=s;
 });
 
 Clazz.newMeth(C$, 'setBackground$java_awt_Color', function (bg) {
-this.bg = bg;
+this.bg=bg;
 });
 
 Clazz.newMeth(C$, 'setPropertiesFromAttributes', function () {
@@ -54,12 +54,12 @@ if (attr != null ) {
 var d = this.getDocument();
 if (Clazz.instanceOf(d, "javax.swing.text.StyledDocument")) {
 var doc = d;
-this.font = doc.getFont$javax_swing_text_AttributeSet(attr);
-this.fg = doc.getForeground$javax_swing_text_AttributeSet(attr);
+this.font=doc.getFont$javax_swing_text_AttributeSet(attr);
+this.fg=doc.getForeground$javax_swing_text_AttributeSet(attr);
 if (attr.isDefined$O((I$[1]||$incl$(1)).Background)) {
-this.bg = doc.getBackground$javax_swing_text_AttributeSet(attr);
+this.bg=doc.getBackground$javax_swing_text_AttributeSet(attr);
 } else {
-this.bg = null;
+this.bg=null;
 }this.setUnderline$Z((I$[1]||$incl$(1)).isUnderline$javax_swing_text_AttributeSet(attr));
 this.setStrikeThrough$Z((I$[1]||$incl$(1)).isStrikeThrough$javax_swing_text_AttributeSet(attr));
 this.setSuperscript$Z((I$[1]||$incl$(1)).isSuperscript$javax_swing_text_AttributeSet(attr));
@@ -110,10 +110,10 @@ return this.superscript;
 });
 
 Clazz.newMeth(C$, 'changedUpdate$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory', function (e, a, f) {
-this.font = null;
+this.font=null;
 C$.superclazz.prototype.changedUpdate$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory.apply(this, [e, a, f]);
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:56
+//Created 2018-05-24 08:47:06

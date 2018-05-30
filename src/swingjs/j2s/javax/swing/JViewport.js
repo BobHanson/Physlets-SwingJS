@@ -41,7 +41,7 @@ C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
 this.setLayout$java_awt_LayoutManager(this.createLayoutManager());
 this.setOpaque$Z(true);
-this.uiClassID = "ViewportUI";
+this.uiClassID="ViewportUI";
 this.updateUI();
 this.setInheritsPopupMenu$Z(true);
 }, 1);
@@ -65,53 +65,53 @@ if (!view.isValid()) {
 p$.validateView.apply(this, []);
 }var dx = 0;
 var dy = 0;
-dx = p$.positionAdjustment$I$I$I.apply(this, [this.getWidth(), contentRect.width, contentRect.x]);
-dy = p$.positionAdjustment$I$I$I.apply(this, [this.getHeight(), contentRect.height, contentRect.y]);
+dx=p$.positionAdjustment$I$I$I.apply(this, [this.getWidth(), contentRect.width, contentRect.x]);
+dy=p$.positionAdjustment$I$I$I.apply(this, [this.getHeight(), contentRect.height, contentRect.y]);
 if (dx != 0 || dy != 0 ) {
 var viewPosition = this.getViewPosition();
 var viewSize = view.getSize();
 var startX = viewPosition.x;
 var startY = viewPosition.y;
 var extent = this.getExtentSize();
-viewPosition.x = viewPosition.x-(dx);
-viewPosition.y = viewPosition.y-(dy);
+viewPosition.x-=dx;
+viewPosition.y-=dy;
 if (view.isValid()) {
 if (this.getParent().getComponentOrientation().isLeftToRight()) {
 if (viewPosition.x + extent.width > viewSize.width) {
-viewPosition.x = Math.max(0, viewSize.width - extent.width);
+viewPosition.x=Math.max(0, viewSize.width - extent.width);
 } else if (viewPosition.x < 0) {
-viewPosition.x = 0;
+viewPosition.x=0;
 }} else {
 if (extent.width > viewSize.width) {
-viewPosition.x = viewSize.width - extent.width;
+viewPosition.x=viewSize.width - extent.width;
 } else {
-viewPosition.x = Math.max(0, Math.min(viewSize.width - extent.width, viewPosition.x));
+viewPosition.x=Math.max(0, Math.min(viewSize.width - extent.width, viewPosition.x));
 }}if (viewPosition.y + extent.height > viewSize.height) {
-viewPosition.y = Math.max(0, viewSize.height - extent.height);
+viewPosition.y=Math.max(0, viewSize.height - extent.height);
 } else if (viewPosition.y < 0) {
-viewPosition.y = 0;
+viewPosition.y=0;
 }}if (viewPosition.x != startX || viewPosition.y != startY ) {
 this.setViewPosition$java_awt_Point(viewPosition);
-this.scrollUnderway = false;
+this.scrollUnderway=false;
 }}}});
 
 Clazz.newMeth(C$, 'validateView', function () {
 var validateRoot = null;
-for (var c = this; c != null ; c = c.getParent()) {
+for (var c = this; c != null ; c=c.getParent()) {
 if ((Clazz.instanceOf(c, "javax.swing.CellRendererPane")) || !c.isLightweight() ) {
 return;
 }if ((Clazz.instanceOf(c, "javax.swing.JComponent")) && ((c).isValidateRoot()) ) {
-validateRoot = c;
+validateRoot=c;
 break;
 }}
 if (validateRoot == null ) {
 return;
 }var root = null;
-for (var c = validateRoot; c != null ; c = c.getParent()) {
+for (var c = validateRoot; c != null ; c=c.getParent()) {
 if (!c.isLightweight()) {
 return;
 }if ((Clazz.instanceOf(c, "java.awt.Window")) || (Clazz.instanceOf(c, "java.applet.Applet")) ) {
-root = c;
+root=c;
 break;
 }}
 if (root == null ) {
@@ -148,7 +148,7 @@ return (I$[2]||$incl$(2)).NULL_INSETS;
 });
 
 Clazz.newMeth(C$, 'getInsets$java_awt_Insets', function (insets) {
-insets.left = insets.top = insets.right = insets.bottom = 0;
+insets.left=insets.top=insets.right=insets.bottom=0;
 return insets;
 });
 
@@ -208,20 +208,20 @@ return;
 C$.superclazz.prototype.paint$java_awt_Graphics.apply(this, [g]);
 return;
 }if (this.repaintAll) {
-this.repaintAll = false;
+this.repaintAll=false;
 } else if (this.waitingForRepaint) {
 var clipB = g.getClipBounds();
 if (clipB.width >= this.getWidth() && clipB.height >= this.getHeight() ) {
-this.waitingForRepaint = false;
+this.waitingForRepaint=false;
 }}if (!this.backingStore || p$.isBlitting.apply(this, []) || this.getView() == null   ) {
 C$.superclazz.prototype.paint$java_awt_Graphics.apply(this, [g]);
-this.lastPaintPosition = p$.getViewLocation.apply(this, []);
+this.lastPaintPosition=p$.getViewLocation.apply(this, []);
 return;
 }var viewBounds = this.getView().getBounds();
 if (!this.isOpaque()) {
 g.clipRect$I$I$I$I(0, 0, viewBounds.width, viewBounds.height);
 }if (this.backingStoreImage == null ) {
-this.backingStoreImage = this.createImage$I$I(width, height);
+this.backingStoreImage=this.createImage$I$I(width, height);
 var clip = g.getClipBounds();
 if (clip.width != width || clip.height != height ) {
 if (!this.isOpaque()) {
@@ -261,25 +261,25 @@ C$.superclazz.prototype.paint$java_awt_Graphics.apply(this, [bsg]);
 } finally {
 bsg.dispose();
 }
-}}}this.lastPaintPosition = p$.getViewLocation.apply(this, []);
-this.scrollUnderway = false;
+}}}this.lastPaintPosition=p$.getViewLocation.apply(this, []);
+this.scrollUnderway=false;
 });
 
 Clazz.newMeth(C$, 'reshape$I$I$I$I', function (x, y, w, h) {
 var sizeChanged = (this.getWidth() != w) || (this.getHeight() != h) ;
 if (sizeChanged) {
-this.backingStoreImage = null;
+this.backingStoreImage=null;
 }C$.superclazz.prototype.reshape$I$I$I$I.apply(this, [x, y, w, h]);
 if (sizeChanged) {
 this.fireStateChanged();
 }});
 
 Clazz.newMeth(C$, 'setScrollMode$I', function (mode) {
-this.scrollMode = mode;
+this.scrollMode=mode;
 if (mode == 2) {
-this.backingStore = true;
+this.backingStore=true;
 } else {
-this.backingStore = false;
+this.backingStore=false;
 }});
 
 Clazz.newMeth(C$, 'getScrollMode', function () {
@@ -311,15 +311,15 @@ var n = this.getComponentCount();
 for (var i = n - 1; i >= 0; i--) {
 this.remove$java_awt_Component(this.getComponent$I(i));
 }
-this.isViewSizeSet = false;
+this.isViewSizeSet=false;
 if (view != null ) {
 this.addImplCont$java_awt_Component$O$I(view, null, -1);
-this.viewListener = this.createViewListener();
+this.viewListener=this.createViewListener();
 view.addComponentListener$java_awt_event_ComponentListener(this.viewListener);
 }if (this.hasHadValidView) {
 this.fireStateChanged();
 } else if (view != null ) {
-this.hasHadValidView = true;
+this.hasHadValidView=true;
 }this.revalidate();
 this.repaint();
 });
@@ -339,9 +339,9 @@ var view = this.getView();
 if (view != null ) {
 var oldSize = view.getSize();
 if (!newSize.equals$O(oldSize)) {
-this.scrollUnderway = false;
+this.scrollUnderway=false;
 view.setSize$java_awt_Dimension(newSize);
-this.isViewSizeSet = true;
+this.isViewSizeSet=true;
 this.fireStateChanged();
 }}});
 
@@ -349,8 +349,8 @@ Clazz.newMeth(C$, 'getViewPosition', function () {
 var view = this.getView();
 if (view != null ) {
 var p = view.getLocation();
-p.x = -p.x;
-p.y = -p.y;
+p.x=-p.x;
+p.y=-p.y;
 return p;
 } else {
 return Clazz.new_((I$[3]||$incl$(3)).c$$I$I,[0, 0]);
@@ -366,12 +366,12 @@ var x = p.x;
 var y = p.y;
 if (Clazz.instanceOf(view, "javax.swing.JComponent")) {
 var c = view;
-oldX = c.getX();
-oldY = c.getY();
+oldX=c.getX();
+oldY=c.getY();
 } else {
 var r = view.getBounds();
-oldX = r.x;
-oldY = r.y;
+oldX=r.x;
+oldY=r.y;
 }var newX = -x;
 var newY = -y;
 if ((oldX != newX) || (oldY != newY) ) {
@@ -386,7 +386,7 @@ var g = (I$[6]||$incl$(6)).safelyGetGraphics$java_awt_Component$java_awt_Compone
 p$.flushViewDirtyRegion$java_awt_Graphics$java_awt_Rectangle.apply(this, [g, dirty]);
 view.setLocation$I$I(newX, newY);
 g.setClip$I$I$I$I(0, 0, this.getWidth(), Math.min(this.getHeight(), jview.getHeight()));
-this.repaintAll = (p$.windowBlitPaint$java_awt_Graphics.apply(this, [g]) && p$.needsRepaintAfterBlit.apply(this, []) );
+this.repaintAll=(p$.windowBlitPaint$java_awt_Graphics.apply(this, [g]) && p$.needsRepaintAfterBlit.apply(this, []) );
 g.dispose();
 rm.markCompletelyClean$javax_swing_JComponent(this.getParent());
 rm.markCompletelyClean$javax_swing_JComponent(this);
@@ -396,11 +396,11 @@ rm.endPaint();
 }
 } else {
 view.setLocation$I$I(newX, newY);
-this.repaintAll = false;
+this.repaintAll=false;
 }} else {
-this.scrollUnderway = true;
+this.scrollUnderway=true;
 view.setLocation$I$I(newX, newY);
-this.repaintAll = false;
+this.repaintAll=false;
 }this.fireStateChanged();
 }});
 
@@ -454,10 +454,10 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[10]||$incl$(10)),
 
 Clazz.newMeth(C$, 'fireStateChanged', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[10]||$incl$(10)),['stateChanged$javax_swing_event_ChangeEvent']) ) {
 if (this.changeEvent == null ) {
-this.changeEvent = Clazz.new_((I$[11]||$incl$(11)).c$$O,[this]);
+this.changeEvent=Clazz.new_((I$[11]||$incl$(11)).c$$O,[this]);
 }(listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -487,7 +487,7 @@ this.setScrollMode$I(0);
 Clazz.newMeth(C$, 'needsRepaintAfterBlit', function () {
 var heavyParent = this.getParent();
 while (heavyParent != null  && heavyParent.isLightweight() ){
-heavyParent = heavyParent.getParent();
+heavyParent=heavyParent.getParent();
 }
 if (heavyParent != null ) {
 }return true;
@@ -496,13 +496,13 @@ if (heavyParent != null ) {
 Clazz.newMeth(C$, 'flushViewDirtyRegion$java_awt_Graphics$java_awt_Rectangle', function (g, dirty) {
 var view = this.getView();
 if (dirty != null  && dirty.width > 0  && dirty.height > 0 ) {
-dirty.x = dirty.x+(view.getX());
-dirty.y = dirty.y+(view.getY());
+dirty.x+=view.getX();
+dirty.y+=view.getY();
 var clip = g.getClipBounds();
 if (clip == null ) {
 g.setClip$I$I$I$I(0, 0, this.getWidth(), this.getHeight());
 }g.clipRect$I$I$I$I(dirty.x, dirty.y, dirty.width, dirty.height);
-clip = g.getClipBounds();
+clip=g.getClipBounds();
 if (clip.width > 0 && clip.height > 0 ) {
 p$.paintView$java_awt_Graphics.apply(this, [g]);
 }}});
@@ -516,7 +516,7 @@ return false;
 var view = this.getView();
 if (this.lastPaintPosition == null  || this.lastPaintPosition.equals$O(p$.getViewLocation.apply(this, [])) ) {
 p$.paintView$java_awt_Graphics.apply(this, [g]);
-retValue = false;
+retValue=false;
 } else {
 var blitFrom = Clazz.new_((I$[3]||$incl$(3)));
 var blitTo = Clazz.new_((I$[3]||$incl$(3)));
@@ -528,14 +528,14 @@ var dy = newLocation.y - this.lastPaintPosition.y;
 var canBlit = this.computeBlit$I$I$java_awt_Point$java_awt_Point$java_awt_Dimension$java_awt_Rectangle(dx, dy, blitFrom, blitTo, blitSize, blitPaint);
 if (!canBlit) {
 p$.paintView$java_awt_Graphics.apply(this, [g]);
-retValue = false;
+retValue=false;
 } else {
 var r = view.getBounds().intersection$java_awt_Rectangle(blitPaint);
-r.x = r.x-(view.getX());
-r.y = r.y-(view.getY());
+r.x-=view.getX();
+r.y-=view.getY();
 p$.blitDoubleBuffered$javax_swing_JComponent$java_awt_Graphics$I$I$I$I$I$I$I$I$I$I.apply(this, [view, g, r.x, r.y, r.width, r.height, blitFrom.x, blitFrom.y, blitTo.x, blitTo.y, blitSize.width, blitSize.height]);
-retValue = true;
-}}this.lastPaintPosition = p$.getViewLocation.apply(this, []);
+retValue=true;
+}}this.lastPaintPosition=p$.getViewLocation.apply(this, []);
 return retValue;
 });
 
@@ -561,10 +561,10 @@ g.translate$I$I(-x, -y);
 g.setClip$I$I$I$I(clip.x, clip.y, clip.width, clip.height);
 } else {
 try {
-this.inBlitPaint = true;
+this.inBlitPaint=true;
 this.paintForceDoubleBuffered$java_awt_Graphics(g);
 } finally {
-this.inBlitPaint = false;
+this.inBlitPaint=false;
 }
 }});
 
@@ -585,11 +585,11 @@ var x;
 var y;
 var w;
 var h;
-for (parent = this; parent != null  && P$.JComponent.isLightweightComponent$java_awt_Component(parent) ; parent = parent.getParent()) {
-x = parent.getX();
-y = parent.getY();
-w = parent.getWidth();
-h = parent.getHeight();
+for (parent=this; parent != null  && P$.JComponent.isLightweightComponent$java_awt_Component(parent) ; parent=parent.getParent()) {
+x=parent.getX();
+y=parent.getY();
+w=parent.getWidth();
+h=parent.getHeight();
 oldClip.setBounds$java_awt_Rectangle(clip);
 (I$[7]||$incl$(7)).computeIntersection$I$I$I$I$java_awt_Rectangle(0, 0, w, h, clip);
 if (!clip.equals$O(oldClip)) return false;
@@ -598,17 +598,17 @@ var comps = parent.getComponents();
 var index = 0;
 for (var i = comps.length - 1; i >= 0; i--) {
 if (comps[i] === lastParent ) {
-index = i - 1;
+index=i - 1;
 break;
 }}
 while (index >= 0){
-tmp2 = comps[index].getBounds$java_awt_Rectangle(tmp2);
+tmp2=comps[index].getBounds$java_awt_Rectangle(tmp2);
 if (tmp2.intersects$java_awt_Rectangle(clip)) return false;
 index--;
 }
-}clip.x = clip.x+(x);
-clip.y = clip.y+(y);
-lastParent = parent;
+}clip.x+=x;
+clip.y+=y;
+lastParent=parent;
 }
 if (parent == null ) {
 return false;
@@ -633,4 +633,4 @@ this.this$0.revalidate();
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:37
+//Created 2018-05-24 08:46:31

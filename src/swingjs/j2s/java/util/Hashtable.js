@@ -52,10 +52,10 @@ C$.c$$I.apply(this, [11]);
 Clazz.newMeth(C$, 'c$$I', function (capacity) {
 Clazz.super_(C$, this,1);
 if (capacity >= 0) {
-this.elementCount = 0;
-this.elementData = p$.newElementArray$I.apply(this, [capacity == 0 ? 1 : capacity]);
-this.firstSlot = this.elementData.length;
-this.loadFactor = 0.75;
+this.elementCount=0;
+this.elementData=p$.newElementArray$I.apply(this, [capacity == 0 ? 1 : capacity]);
+this.firstSlot=this.elementData.length;
+this.loadFactor=0.75;
 p$.computeMaxSize.apply(this, []);
 } else {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
@@ -64,10 +64,10 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
 Clazz.newMeth(C$, 'c$$I$F', function (capacity, loadFactor) {
 Clazz.super_(C$, this,1);
 if (capacity >= 0 && loadFactor > 0  ) {
-this.elementCount = 0;
-this.firstSlot = capacity;
-this.elementData = p$.newElementArray$I.apply(this, [capacity == 0 ? 1 : capacity]);
-this.loadFactor = loadFactor;
+this.elementCount=0;
+this.firstSlot=capacity;
+this.elementData=p$.newElementArray$I.apply(this, [capacity == 0 ? 1 : capacity]);
+this.loadFactor=loadFactor;
 p$.computeMaxSize.apply(this, []);
 } else {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
@@ -83,7 +83,7 @@ return Clazz.array((I$[2]||$incl$(2)), [size]);
 });
 
 Clazz.newMeth(C$, 'clear', function () {
-this.elementCount = 0;
+this.elementCount=0;
 (I$[3]||$incl$(3)).fill$OA$O(this.elementData, null);
 this.modCount++;
 });
@@ -91,11 +91,11 @@ this.modCount++;
 Clazz.newMeth(C$, 'clone', function () {
 try {
 var hashtable = Clazz.clone(this);
-hashtable.elementData = this.elementData.clone();
+hashtable.elementData=this.elementData.clone();
 var entry;
 for (var i = this.elementData.length; --i >= 0; ) {
-if ((entry = this.elementData[i]) != null ) {
-hashtable.elementData[i] = entry.clone();
+if ((entry=this.elementData[i]) != null ) {
+hashtable.elementData[i]=entry.clone();
 }}
 return hashtable;
 } catch (e) {
@@ -108,7 +108,7 @@ throw e;
 });
 
 Clazz.newMeth(C$, 'computeMaxSize', function () {
-this.threshold = ((this.elementData.length * this.loadFactor)|0);
+this.threshold=((this.elementData.length * this.loadFactor)|0);
 });
 
 Clazz.newMeth(C$, 'contains$O', function (value) {
@@ -119,7 +119,7 @@ var entry = this.elementData[i];
 while (entry != null ){
 if (value.equals$O(entry.value)) {
 return true;
-}entry = entry.next;
+}entry=entry.next;
 }
 }
 return false;
@@ -212,7 +212,7 @@ var entry = this.elementData[index];
 while (entry != null ){
 if (entry.equalsKey$O$I(key, hash)) {
 return entry.value;
-}entry = entry.next;
+}entry=entry.next;
 }
 return null;
 });
@@ -224,7 +224,7 @@ var entry = this.elementData[index];
 while (entry != null ){
 if (entry.equalsKey$O$I(key, hash)) {
 return entry;
-}entry = entry.next;
+}entry=entry.next;
 }
 return null;
 });
@@ -237,7 +237,7 @@ var entry = it.next();
 var key = entry.getKey();
 var value = entry.getValue();
 var hash = (key !== this  ? key.hashCode() : 0) ^ (value !== this  ? (value != null  ? value.hashCode() : 0) : 0);
-result = result+(hash);
+result+=hash;
 }
 return result;
 });
@@ -307,23 +307,23 @@ var hash = key.hashCode();
 var index = (hash & 2147483647) % this.elementData.length;
 var entry = this.elementData[index];
 while (entry != null  && !entry.equalsKey$O$I(key, hash) ){
-entry = entry.next;
+entry=entry.next;
 }
 if (entry == null ) {
 this.modCount++;
 if (++this.elementCount > this.threshold) {
 this.rehash();
-index = (hash & 2147483647) % this.elementData.length;
+index=(hash & 2147483647) % this.elementData.length;
 }if (index < this.firstSlot) {
-this.firstSlot = index;
+this.firstSlot=index;
 }if (index > this.lastSlot) {
-this.lastSlot = index;
-}entry = C$.newEntry$TK$TV$I(key, value, hash);
-entry.next = this.elementData[index];
-this.elementData[index] = entry;
+this.lastSlot=index;
+}entry=C$.newEntry$TK$TV$I(key, value, hash);
+entry.next=this.elementData[index];
+this.elementData[index]=entry;
 return null;
 }var result = entry.value;
-entry.value = value;
+entry.value=value;
 return result;
 }throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
 });
@@ -337,7 +337,7 @@ this.put$TK$TV(entry.getKey(), entry.getValue());
 Clazz.newMeth(C$, 'rehash', function () {
 var length = (this.elementData.length << 1) + 1;
 if (length == 0) {
-length = 1;
+length=1;
 }var newFirst = length;
 var newLast = -1;
 var newData = p$.newElementArray$I.apply(this, [length]);
@@ -346,18 +346,18 @@ var entry = this.elementData[i];
 while (entry != null ){
 var index = (entry.getKeyHash() & 2147483647) % length;
 if (index < newFirst) {
-newFirst = index;
+newFirst=index;
 }if (index > newLast) {
-newLast = index;
+newLast=index;
 }var next = entry.next;
-entry.next = newData[index];
-newData[index] = entry;
-entry = next;
+entry.next=newData[index];
+newData[index]=entry;
+entry=next;
 }
 }
-this.firstSlot = newFirst;
-this.lastSlot = newLast;
-this.elementData = newData;
+this.firstSlot=newFirst;
+this.lastSlot=newLast;
+this.elementData=newData;
 p$.computeMaxSize.apply(this, []);
 });
 
@@ -367,18 +367,18 @@ var index = (hash & 2147483647) % this.elementData.length;
 var last = null;
 var entry = this.elementData[index];
 while (entry != null  && !entry.equalsKey$O$I(key, hash) ){
-last = entry;
-entry = entry.next;
+last=entry;
+entry=entry.next;
 }
 if (entry != null ) {
 this.modCount++;
 if (last == null ) {
-this.elementData[index] = entry.next;
+this.elementData[index]=entry.next;
 } else {
-last.next = entry.next;
+last.next=entry.next;
 }this.elementCount--;
 var result = entry.value;
-entry.value = null;
+entry.value=null;
 return result;
 }return null;
 });
@@ -405,7 +405,7 @@ buffer.append$O(entry.value);
 } else {
 buffer.append$S("(this Map)");
 }buffer.append$S(", ");
-entry = entry.next;
+entry=entry.next;
 }
 }
 if (this.elementCount > 0) {
@@ -465,7 +465,7 @@ var entry = this.elementData[i];
 while (entry != null ){
 stream.writeObject$O(entry.key);
 stream.writeObject$O(entry.value);
-entry = entry.next;
+entry=entry.next;
 }
 }
 });
@@ -473,19 +473,19 @@ entry = entry.next;
 Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream', function (stream) {
 stream.defaultReadObject();
 var length = stream.readInt();
-this.elementData = p$.newElementArray$I.apply(this, [length]);
-this.elementCount = stream.readInt();
+this.elementData=p$.newElementArray$I.apply(this, [length]);
+this.elementCount=stream.readInt();
 for (var i = this.elementCount; --i >= 0; ) {
 var key = stream.readObject();
 var hash = key.hashCode();
 var index = (hash & 2147483647) % length;
 if (index < this.firstSlot) {
-this.firstSlot = index;
+this.firstSlot=index;
 }if (index > this.lastSlot) {
-this.lastSlot = index;
+this.lastSlot=index;
 }var entry = C$.newEntry$TK$TV$I(key, stream.readObject(), hash);
-entry.next = this.elementData[index];
-this.elementData[index] = entry;
+entry.next=this.elementData[index];
+this.elementData[index]=entry;
 }
 });
 ;
@@ -508,13 +508,13 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, ['c$$TK$TV'], function (theKey, theValue) {
 C$.superclazz.c$$TK$TV.apply(this, [theKey, theValue]);
 C$.$init$.apply(this);
-this.hashcode = theKey.hashCode();
+this.hashcode=theKey.hashCode();
 }, 1);
 
 Clazz.newMeth(C$, 'clone', function () {
 var entry = Clazz.clone(this);
 if (this.next != null ) {
-entry.next = this.next.clone();
+entry.next=this.next.clone();
 }return entry;
 });
 
@@ -522,7 +522,7 @@ Clazz.newMeth(C$, ['setValue$TV'], function (object) {
 if (object == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
 }var result = this.value;
-this.value = object;
+this.value=object;
 return result;
 });
 
@@ -564,9 +564,9 @@ this.canRemove = false;
 
 Clazz.newMeth(C$, ['c$$java_util_MapEntry_Type'], function (value) {
 C$.$init$.apply(this);
-this.type = value;
-this.position = this.this$0.lastSlot;
-this.expectedModCount = this.this$0.modCount;
+this.type=value;
+this.position=this.this$0.lastSlot;
+this.expectedModCount=this.this$0.modCount;
 }, 1);
 
 Clazz.newMeth(C$, 'hasNext', function () {
@@ -584,16 +584,16 @@ return false;
 Clazz.newMeth(C$, 'next', function () {
 if (this.expectedModCount == this.this$0.modCount) {
 if (this.lastEntry != null ) {
-this.lastEntry = this.lastEntry.next;
+this.lastEntry=this.lastEntry.next;
 }if (this.lastEntry == null ) {
-while (this.position >= this.this$0.firstSlot && (this.lastEntry = this.this$0.elementData[this.position]) == null  ){
+while (this.position >= this.this$0.firstSlot && (this.lastEntry=this.this$0.elementData[this.position]) == null  ){
 this.position--;
 }
 if (this.lastEntry != null ) {
-this.lastPosition = this.position;
+this.lastPosition=this.position;
 this.position--;
 }}if (this.lastEntry != null ) {
-this.canRemove = true;
+this.canRemove=true;
 return this.type.get$java_util_MapEntry(this.lastEntry);
 }throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 }throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
@@ -602,20 +602,20 @@ return this.type.get$java_util_MapEntry(this.lastEntry);
 Clazz.newMeth(C$, 'remove', function () {
 if (this.expectedModCount == this.this$0.modCount) {
 if (this.canRemove) {
-this.canRemove = false;
+this.canRemove=false;
 {
 var removed = false;
 var entry = this.this$0.elementData[this.lastPosition];
 if (entry === this.lastEntry ) {
-this.this$0.elementData[this.lastPosition] = entry.next;
-removed = true;
+this.this$0.elementData[this.lastPosition]=entry.next;
+removed=true;
 } else {
 while (entry != null  && entry.next !== this.lastEntry  ){
-entry = entry.next;
+entry=entry.next;
 }
 if (entry != null ) {
-entry.next = this.lastEntry.next;
-removed = true;
+entry.next=this.lastEntry.next;
+removed=true;
 }}if (removed) {
 this.this$0.modCount++;
 this.this$0.elementCount--;
@@ -648,8 +648,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$Z', function (isKey) {
 C$.$init$.apply(this);
-this.key = isKey;
-this.start = this.this$0.lastSlot + 1;
+this.key=isKey;
+this.start=this.this$0.lastSlot + 1;
 }, 1);
 
 Clazz.newMeth(C$, 'hasMoreElements', function () {
@@ -657,7 +657,7 @@ if (this.entry != null ) {
 return true;
 }while (--this.start >= this.this$0.firstSlot){
 if (this.this$0.elementData[this.start] != null ) {
-this.entry = this.this$0.elementData[this.start];
+this.entry=this.this$0.elementData[this.start];
 return true;
 }}
 return false;
@@ -666,7 +666,7 @@ return false;
 Clazz.newMeth(C$, 'nextElement', function () {
 if (this.hasMoreElements()) {
 var result = this.key ? this.entry.key : this.entry.value;
-this.entry = this.entry.next;
+this.entry=this.entry.next;
 return result;
 }throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 });
@@ -674,4 +674,4 @@ return result;
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:13
+//Created 2018-05-24 08:45:47

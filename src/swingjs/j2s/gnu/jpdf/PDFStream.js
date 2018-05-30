@@ -21,12 +21,12 @@ C$.c$$S.apply(this, [null]);
 Clazz.newMeth(C$, 'c$$S', function (type) {
 C$.superclazz.c$$S.apply(this, [type]);
 C$.$init$.apply(this);
-this.buf = Clazz.new_((I$[1]||$incl$(1)));
-this.deflate = false;
+this.buf=Clazz.new_((I$[1]||$incl$(1)));
+this.deflate=false;
 }, 1);
 
 Clazz.newMeth(C$, 'setDeflate$Z', function (mode) {
-this.deflate = mode;
+this.deflate=mode;
 });
 
 Clazz.newMeth(C$, 'getDeflate', function () {
@@ -85,8 +85,8 @@ Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream', function ($in) {
 var l = $in.readInt();
 var b = Clazz.array(Byte.TYPE, [l]);
 $in.read$BA$I$I(b, 0, l);
-this.buf = Clazz.new_((I$[1]||$incl$(1)).c$$I,[l]);
+this.buf=Clazz.new_((I$[1]||$incl$(1)).c$$I,[l]);
 this.buf.write$BA(b);
 });
 })();
-//Created 2018-05-15 01:01:47
+//Created 2018-05-24 08:45:03

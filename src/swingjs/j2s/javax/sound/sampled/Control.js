@@ -13,7 +13,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_sound_sampled_Control_Type', function (type) {
 C$.$init$.apply(this);
-this.type = type;
+this.type=type;
 }, 1);
 
 Clazz.newMeth(C$, 'getType', function () {
@@ -38,7 +38,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
 C$.$init$.apply(this);
-this.name = name;
+this.name=name;
 }, 1);
 
 Clazz.newMeth(C$, 'equals$O', function (obj) {
@@ -58,4 +58,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:21
+//Created 2018-05-24 08:46:02

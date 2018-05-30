@@ -46,7 +46,7 @@ throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["charset is 
 throw e;
 }
 }
-this.zc = charset;
+this.zc=charset;
 }, 1);
 
 Clazz.newMeth(C$, 'newInflater', function () {
@@ -58,12 +58,12 @@ p$.ensureOpen.apply(this, []);
 if (this.entry != null ) {
 this.closeEntry();
 }this.crc.reset();
-this.inflater = this.inf = C$.newInflater();
-if ((this.entry = p$.readLOC.apply(this, [])) == null ) {
+this.inflater=this.inf=C$.newInflater();
+if ((this.entry=p$.readLOC.apply(this, [])) == null ) {
 return null;
 }if (this.entry.method == 0) {
-this.remaining = this.entry.size;
-}this.entryEOF = false;
+this.remaining=this.entry.size;
+}this.entryEOF=false;
 return this.entry;
 });
 
@@ -71,7 +71,7 @@ Clazz.newMeth(C$, 'closeEntry', function () {
 p$.ensureOpen.apply(this, []);
 while (this.read$BA$I$I(this.tmpbuf, 0, this.tmpbuf.length) != -1){
 }
-this.entryEOF = true;
+this.entryEOF=true;
 });
 
 Clazz.newMeth(C$, 'available', function () {
@@ -89,26 +89,26 @@ return 0;
 return -1;
 }switch (this.entry.method) {
 case 8:
-len = this.readInf$BA$I$I(b, off, len);
+len=this.readInf$BA$I$I(b, off, len);
 if (len == -1) {
 p$.readEnd$java_util_zip_ZipEntry.apply(this, [this.entry]);
-this.entryEOF = true;
-this.entry = null;
+this.entryEOF=true;
+this.entry=null;
 } else {
 this.crc.update$BA$I$I(b, off, len);
 }return len;
 case 0:
 if (this.remaining <= 0) {
-this.entryEOF = true;
-this.entry = null;
+this.entryEOF=true;
+this.entry=null;
 return -1;
 }if (len > this.remaining) {
-len = (this.remaining|0);
-}len = this.$in.read$BA$I$I(b, off, len);
+len=(this.remaining|0);
+}len=this.$in.read$BA$I$I(b, off, len);
 if (len == -1) {
 throw Clazz.new_(Clazz.load('java.util.zip.ZipException').c$$S,["unexpected EOF"]);
 }this.crc.update$BA$I$I(b, off, len);
-this.remaining = this.remaining-(len);
+this.remaining-=len;
 if (this.remaining == 0 && this.entry.crc != this.crc.getValue() ) {
 throw Clazz.new_(Clazz.load('java.util.zip.ZipException').c$$S,["invalid entry CRC (expected 0x" + Long.toHexString(this.entry.crc) + " but got 0x" + Long.toHexString(this.crc.getValue()) + ")" ]);
 }return len;
@@ -126,12 +126,12 @@ var total = 0;
 while (total < max){
 var len = max - total;
 if (len > this.tmpbuf.length) {
-len = this.tmpbuf.length;
-}len = this.read$BA$I$I(this.tmpbuf, 0, len);
+len=this.tmpbuf.length;
+}len=this.read$BA$I$I(this.tmpbuf, 0, len);
 if (len == -1) {
-this.entryEOF = true;
+this.entryEOF=true;
 break;
-}total = total+(len);
+}total+=len;
 }
 return total;
 });
@@ -139,7 +139,7 @@ return total;
 Clazz.newMeth(C$, 'close', function () {
 if (!this.$closed) {
 C$.superclazz.prototype.close.apply(this, []);
-this.$closed = true;
+this.$closed=true;
 }});
 
 Clazz.newMeth(C$, 'readLOC', function () {
@@ -154,27 +154,27 @@ throw e;
 }
 if (C$.get32$BA$I(this.tmpbuf, 0) != 67324752) {
 return null;
-}this.flag = C$.get16$BA$I(this.tmpbuf, 6);
+}this.flag=C$.get16$BA$I(this.tmpbuf, 6);
 var len = C$.get16$BA$I(this.tmpbuf, 26);
 var blen = this.$b.length;
 if (len > blen) {
-do blen = blen * 2;
+do blen=blen * 2;
  while (len > blen);
-this.$b = Clazz.array(Byte.TYPE, [blen]);
+this.$b=Clazz.array(Byte.TYPE, [blen]);
 }p$.readFully$BA$I$I.apply(this, [this.$b, 0, len]);
 var e = this.createZipEntry$S(((this.flag & 2048) != 0) ? p$.toStringUTF8$BA$I.apply(this, [this.$b, len]) : p$.toStringb2$BA$I.apply(this, [this.$b, len]));
 if ((this.flag & 1) == 1) {
 throw Clazz.new_(Clazz.load('java.util.zip.ZipException').c$$S,["encrypted ZIP entry not supported"]);
-}e.method = C$.get16$BA$I(this.tmpbuf, 8);
-e.time = C$.get32$BA$I(this.tmpbuf, 10);
+}e.method=C$.get16$BA$I(this.tmpbuf, 8);
+e.time=C$.get32$BA$I(this.tmpbuf, 10);
 if ((this.flag & 8) == 8) {
 if (e.method != 8) {
 throw Clazz.new_(Clazz.load('java.util.zip.ZipException').c$$S,["only DEFLATED entries can have EXT descriptor"]);
 }} else {
-e.crc = C$.get32$BA$I(this.tmpbuf, 14);
-e.csize = C$.get32$BA$I(this.tmpbuf, 18);
-e.size = C$.get32$BA$I(this.tmpbuf, 22);
-}len = C$.get16$BA$I(this.tmpbuf, 28);
+e.crc=C$.get32$BA$I(this.tmpbuf, 14);
+e.csize=C$.get32$BA$I(this.tmpbuf, 18);
+e.size=C$.get32$BA$I(this.tmpbuf, 22);
+}len=C$.get16$BA$I(this.tmpbuf, 28);
 if (len > 0) {
 var bb = Clazz.array(Byte.TYPE, [len]);
 p$.readFully$BA$I$I.apply(this, [bb, 0, len]);
@@ -184,13 +184,13 @@ var off = 0;
 while (off + 4 < len){
 var sz = C$.get16$BA$I(bb, off + 2);
 if (C$.get16$BA$I(bb, off) == 1) {
-off = off+(4);
+off+=4;
 if (sz < 16 || (off + sz) > len ) {
 return e;
-}e.size = C$.get64$BA$I(bb, off);
-e.csize = C$.get64$BA$I(bb, off + 8);
+}e.size=C$.get64$BA$I(bb, off);
+e.csize=C$.get64$BA$I(bb, off + 8);
 break;
-}off = off+((sz + 4));
+}off+=(sz + 4);
 }
 }}return e;
 });
@@ -219,32 +219,32 @@ Clazz.newMeth(C$, 'readEnd$java_util_zip_ZipEntry', function (e) {
 var n = this.inf.getAvailIn();
 if (n > 0) {
 (this.$in).unread$BA$I$I(this.buf, this.len - n, n);
-this.eof = false;
+this.eof=false;
 }if ((this.flag & 8) == 8) {
 if (this.inf.getTotalOut() > 4294967295 || this.inf.getTotalIn() > 4294967295 ) {
 p$.readFully$BA$I$I.apply(this, [this.tmpbuf, 0, 24]);
 var sig = C$.get32$BA$I(this.tmpbuf, 0);
 if (sig != 134695760) {
-e.crc = sig;
-e.csize = C$.get64$BA$I(this.tmpbuf, 4);
-e.size = C$.get64$BA$I(this.tmpbuf, 12);
+e.crc=sig;
+e.csize=C$.get64$BA$I(this.tmpbuf, 4);
+e.size=C$.get64$BA$I(this.tmpbuf, 12);
 (this.$in).unread$BA$I$I(this.tmpbuf, 19, 4);
 } else {
-e.crc = C$.get32$BA$I(this.tmpbuf, 4);
-e.csize = C$.get64$BA$I(this.tmpbuf, 8);
-e.size = C$.get64$BA$I(this.tmpbuf, 16);
+e.crc=C$.get32$BA$I(this.tmpbuf, 4);
+e.csize=C$.get64$BA$I(this.tmpbuf, 8);
+e.size=C$.get64$BA$I(this.tmpbuf, 16);
 }} else {
 p$.readFully$BA$I$I.apply(this, [this.tmpbuf, 0, 16]);
 var sig = C$.get32$BA$I(this.tmpbuf, 0);
 if (sig != 134695760) {
-e.crc = sig;
-e.csize = C$.get32$BA$I(this.tmpbuf, 4);
-e.size = C$.get32$BA$I(this.tmpbuf, 8);
+e.crc=sig;
+e.csize=C$.get32$BA$I(this.tmpbuf, 4);
+e.size=C$.get32$BA$I(this.tmpbuf, 8);
 (this.$in).unread$BA$I$I(this.tmpbuf, 11, 4);
 } else {
-e.crc = C$.get32$BA$I(this.tmpbuf, 4);
-e.csize = C$.get32$BA$I(this.tmpbuf, 8);
-e.size = C$.get32$BA$I(this.tmpbuf, 12);
+e.crc=C$.get32$BA$I(this.tmpbuf, 4);
+e.csize=C$.get32$BA$I(this.tmpbuf, 8);
+e.size=C$.get32$BA$I(this.tmpbuf, 12);
 }}}if (e.size != this.inf.getTotalOut()) {
 throw Clazz.new_(Clazz.load('java.util.zip.ZipException').c$$S,["invalid entry size (expected " + e.size + " but got " + this.inf.getTotalOut() + " bytes)" ]);
 }if (e.csize != this.inf.getTotalIn()) {
@@ -258,8 +258,8 @@ while (len > 0){
 var n = this.$in.read$BA$I$I(b, off, len);
 if (n == -1) {
 throw Clazz.new_(Clazz.load('java.io.EOFException'));
-}off = off+(n);
-len = len-(n);
+}off+=n;
+len-=n;
 }
 });
 
@@ -277,4 +277,4 @@ return C$.get32$BA$I(b, off) | (C$.get32$BA$I(b, off + 4) << 32);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:16
+//Created 2018-05-24 08:45:52

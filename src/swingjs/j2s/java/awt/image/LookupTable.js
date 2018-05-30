@@ -17,8 +17,8 @@ if (offset < 0) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Offset must be greater than 0"]);
 }if (numComponents < 1) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Number of components must  be at least 1"]);
-}this.numComponents = numComponents;
-this.offset = offset;
+}this.numComponents=numComponents;
+this.offset=offset;
 }, 1);
 
 Clazz.newMeth(C$, 'getNumComponents', function () {
@@ -31,4 +31,4 @@ return this.offset;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:01
+//Created 2018-05-24 08:45:26

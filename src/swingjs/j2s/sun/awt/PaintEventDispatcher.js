@@ -7,13 +7,13 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'setPaintEventDispatcher$sun_awt_PaintEventDispatcher', function (dispatcher) {
 {
-C$.dispatcher = dispatcher;
+C$.dispatcher=dispatcher;
 }}, 1);
 
 Clazz.newMeth(C$, 'getPaintEventDispatcher', function () {
 {
 if (C$.dispatcher == null ) {
-C$.dispatcher = Clazz.new_(C$);
+C$.dispatcher=Clazz.new_(C$);
 }return C$.dispatcher;
 }}, 1);
 
@@ -31,4 +31,4 @@ return false;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:22

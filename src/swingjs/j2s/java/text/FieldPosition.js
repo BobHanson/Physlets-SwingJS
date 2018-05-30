@@ -20,7 +20,7 @@ this.beginIndex = 0;
 
 Clazz.newMeth(C$, 'c$$I', function (field) {
 C$.$init$.apply(this);
-this.field = field;
+this.field=field;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_text_Format_Field', function (attribute) {
@@ -29,8 +29,8 @@ C$.c$$java_text_Format_Field$I.apply(this, [attribute, -1]);
 
 Clazz.newMeth(C$, 'c$$java_text_Format_Field$I', function (attribute, fieldID) {
 C$.$init$.apply(this);
-this.attribute = attribute;
-this.field = fieldID;
+this.attribute=attribute;
+this.field=fieldID;
 }, 1);
 
 Clazz.newMeth(C$, 'getFieldAttribute', function () {
@@ -50,11 +50,11 @@ return this.endIndex;
 });
 
 Clazz.newMeth(C$, 'setBeginIndex$I', function (bi) {
-this.beginIndex = bi;
+this.beginIndex=bi;
 });
 
 Clazz.newMeth(C$, 'setEndIndex$I', function (ei) {
-this.endIndex = ei;
+this.endIndex=ei;
 });
 
 Clazz.newMeth(C$, 'getFieldDelegate', function () {
@@ -112,14 +112,14 @@ Clazz.newMeth(C$, 'formatted$java_text_Format_Field$O$I$I$StringBuffer', functio
 if (!this.encounteredField && this.this$0.matchesField$java_text_Format_Field.apply(this.this$0, [attr]) ) {
 this.this$0.setBeginIndex$I(start);
 this.this$0.setEndIndex$I(end);
-this.encounteredField = (start != end);
+this.encounteredField=(start != end);
 }});
 
 Clazz.newMeth(C$, 'formatted$I$java_text_Format_Field$O$I$I$StringBuffer', function (fieldID, attr, value, start, end, buffer) {
 if (!this.encounteredField && this.this$0.matchesField$java_text_Format_Field$I.apply(this.this$0, [attr, fieldID]) ) {
 this.this$0.setBeginIndex$I(start);
 this.this$0.setEndIndex$I(end);
-this.encounteredField = (start != end);
+this.encounteredField=(start != end);
 }});
 
 Clazz.newMeth(C$);
@@ -127,4 +127,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:43

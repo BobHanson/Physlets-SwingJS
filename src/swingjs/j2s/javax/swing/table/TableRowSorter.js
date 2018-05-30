@@ -25,12 +25,12 @@ this.setModel$TM(model);
 }, 1);
 
 Clazz.newMeth(C$, ['setModel$TM'], function (model) {
-this.tableModel = model;
+this.tableModel=model;
 this.setModelWrapper$javax_swing_DefaultRowSorter_ModelWrapper(Clazz.new_((I$[1]||$incl$(1)), [this, null]));
 });
 
 Clazz.newMeth(C$, 'setStringConverter$javax_swing_table_TableStringConverter', function (stringConverter) {
-this.stringConverter = stringConverter;
+this.stringConverter=stringConverter;
 });
 
 Clazz.newMeth(C$, 'getStringConverter', function () {
@@ -105,4 +105,4 @@ return new Integer(index);
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:52
+//Created 2018-05-24 08:47:00

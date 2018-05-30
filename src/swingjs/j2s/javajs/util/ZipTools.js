@@ -24,14 +24,14 @@ Clazz.newMeth(C$, 'getAllZipData$java_io_InputStream$SA$S$S$S$java_util_Map', fu
 var zis = C$.newZIS$java_io_InputStream(is);
 var ze;
 var listing = Clazz.new_((I$[3]||$incl$(3)));
-binaryFileList = "|" + binaryFileList + "|" ;
+binaryFileList="|" + binaryFileList + "|" ;
 var prefix = (I$[4]||$incl$(4)).join$SA$C$I(subfileList, "/", 1);
 var prefixd = null;
 if (prefix != null ) {
-prefixd = prefix.substring(0, prefix.indexOf("/") + 1);
-if (prefixd.length$() == 0) prefixd = null;
+prefixd=prefix.substring(0, prefix.indexOf("/") + 1);
+if (prefixd.length$() == 0) prefixd=null;
 }try {
-while ((ze = zis.getNextEntry()) != null ){
+while ((ze=zis.getNextEntry()) != null ){
 var name = ze.getName();
 if (prefix != null  && prefixd != null   && !(name.equals$O(prefix) || name.startsWith$S(prefixd) )  || exclude != null  && name.contains$CharSequence(exclude)  ) continue;
 listing.append$S(name).appendC$C("\u000a");
@@ -40,11 +40,11 @@ var asBinaryString = (binaryFileList.indexOf(sname) >= 0);
 var bytes = (I$[5]||$incl$(5)).getLimitedStreamBytes$java_io_InputStream$J(zis, ze.getSize());
 var str;
 if (asBinaryString) {
-str = p$.getBinaryStringForBytes$BA.apply(this, [bytes]);
+str=p$.getBinaryStringForBytes$BA.apply(this, [bytes]);
 name += ":asBinaryString";
 } else {
-str = (I$[5]||$incl$(5)).fixUTF$BA(bytes);
-}str = "BEGIN Directory Entry " + name + "\n" + str + "\nEND Directory Entry " + name + "\n" ;
+str=(I$[5]||$incl$(5)).fixUTF$BA(bytes);
+}str="BEGIN Directory Entry " + name + "\n" + str + "\nEND Directory Entry " + name + "\n" ;
 var key = name0 + "|" + name ;
 fileData.put$TK$TV(key, str);
 }
@@ -67,15 +67,15 @@ return ret.toString();
 Clazz.newMeth(C$, 'getZipFileDirectory$java_io_BufferedInputStream$SA$I$Z', function (bis, list, listPtr, asBufferedInputStream) {
 var ret;
 if (list == null  || listPtr >= list.length ) return this.getZipDirectoryAsStringAndClose$java_io_BufferedInputStream(bis);
-bis = (I$[5]||$incl$(5)).getPngZipStream$java_io_BufferedInputStream$Z(bis, true);
+bis=(I$[5]||$incl$(5)).getPngZipStream$java_io_BufferedInputStream$Z(bis, true);
 var fileName = list[listPtr];
 var zis = Clazz.new_((I$[6]||$incl$(6)).c$$java_io_InputStream,[bis]);
 var ze;
 try {
 var isAll = (fileName.equals$O("."));
 if (isAll || fileName.lastIndexOf("/") == fileName.length$() - 1 ) {
-ret = Clazz.new_((I$[3]||$incl$(3)));
-while ((ze = zis.getNextEntry()) != null ){
+ret=Clazz.new_((I$[3]||$incl$(3)));
+while ((ze=zis.getNextEntry()) != null ){
 var name = ze.getName();
 if (isAll || name.startsWith$S(fileName) ) ret.append$S(name).appendC$C("\u000a");
 }
@@ -83,22 +83,22 @@ var str = ret.toString();
 return (asBufferedInputStream ? (I$[5]||$incl$(5)).getBIS$BA(str.getBytes()) : str);
 }var pt = fileName.indexOf(":asBinaryString");
 var asBinaryString = (pt > 0);
-if (asBinaryString) fileName = fileName.substring(0, pt);
-fileName = fileName.$replace("\\", "/");
-while ((ze = zis.getNextEntry()) != null  && !fileName.equals$O(ze.getName()) ){
+if (asBinaryString) fileName=fileName.substring(0, pt);
+fileName=fileName.$replace("\\", "/");
+while ((ze=zis.getNextEntry()) != null  && !fileName.equals$O(ze.getName()) ){
 }
 var bytes = (ze == null  ? null : (I$[5]||$incl$(5)).getLimitedStreamBytes$java_io_InputStream$J(zis, ze.getSize()));
-ze = null;
+ze=null;
 zis.close();
 if (bytes == null ) return "";
 if ((I$[5]||$incl$(5)).isZipB$BA(bytes) || (I$[5]||$incl$(5)).isPngZipB$BA(bytes) ) return this.getZipFileDirectory$java_io_BufferedInputStream$SA$I$Z((I$[5]||$incl$(5)).getBIS$BA(bytes), list, ++listPtr, asBufferedInputStream);
 if (asBufferedInputStream) return (I$[5]||$incl$(5)).getBIS$BA(bytes);
 if (asBinaryString) {
-ret = Clazz.new_((I$[3]||$incl$(3)));
+ret=Clazz.new_((I$[3]||$incl$(3)));
 for (var i = 0; i < bytes.length; i++) ret.append$S(Integer.toHexString(bytes[i] & 255)).appendC$C(" ");
 
 return ret.toString();
-}if ((I$[5]||$incl$(5)).isGzipB$BA(bytes)) bytes = (I$[5]||$incl$(5)).getLimitedStreamBytes$java_io_InputStream$J(this.getUnGzippedInputStream$BA(bytes), -1);
+}if ((I$[5]||$incl$(5)).isGzipB$BA(bytes)) bytes=(I$[5]||$incl$(5)).getLimitedStreamBytes$java_io_InputStream$J(this.getUnGzippedInputStream$BA(bytes), -1);
 return (I$[5]||$incl$(5)).fixUTF$BA(bytes);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
@@ -114,10 +114,10 @@ var ret = Clazz.array(Byte.TYPE, [0]);
 var fileName = list[listPtr];
 if (fileName.lastIndexOf("/") == fileName.length$() - 1) return ret;
 try {
-bis = (I$[5]||$incl$(5)).getPngZipStream$java_io_BufferedInputStream$Z(bis, true);
+bis=(I$[5]||$incl$(5)).getPngZipStream$java_io_BufferedInputStream$Z(bis, true);
 var zis = Clazz.new_((I$[6]||$incl$(6)).c$$java_io_InputStream,[bis]);
 var ze;
-while ((ze = zis.getNextEntry()) != null ){
+while ((ze=zis.getNextEntry()) != null ){
 if (!fileName.equals$O(ze.getName())) continue;
 var bytes = (I$[5]||$incl$(5)).getLimitedStreamBytes$java_io_InputStream$J(zis, ze.getSize());
 return (((I$[5]||$incl$(5)).isZipB$BA(bytes) || (I$[5]||$incl$(5)).isPngZipB$BA(bytes) ) && ++listPtr < list.length  ? this.getZipFileContentsAsBytes$java_io_BufferedInputStream$SA$I((I$[5]||$incl$(5)).getBIS$BA(bytes), list, listPtr) : bytes);
@@ -135,7 +135,7 @@ Clazz.newMeth(C$, 'getZipDirectoryAsStringAndClose$java_io_BufferedInputStream',
 var sb = Clazz.new_((I$[3]||$incl$(3)));
 var s = Clazz.array(java.lang.String, [0]);
 try {
-s = p$.getZipDirectoryOrErrorAndClose$java_io_BufferedInputStream$S.apply(this, [bis, null]);
+s=p$.getZipDirectoryOrErrorAndClose$java_io_BufferedInputStream$S.apply(this, [bis, null]);
 bis.close();
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
@@ -152,7 +152,7 @@ return sb.toString();
 Clazz.newMeth(C$, 'getZipDirectoryAndClose$java_io_BufferedInputStream$S', function (bis, manifestID) {
 var s = Clazz.array(java.lang.String, [0]);
 try {
-s = p$.getZipDirectoryOrErrorAndClose$java_io_BufferedInputStream$S.apply(this, [bis, manifestID]);
+s=p$.getZipDirectoryOrErrorAndClose$java_io_BufferedInputStream$S.apply(this, [bis, manifestID]);
 bis.close();
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
@@ -165,14 +165,14 @@ return s;
 });
 
 Clazz.newMeth(C$, 'getZipDirectoryOrErrorAndClose$java_io_BufferedInputStream$S', function (bis, manifestID) {
-bis = (I$[5]||$incl$(5)).getPngZipStream$java_io_BufferedInputStream$Z(bis, true);
+bis=(I$[5]||$incl$(5)).getPngZipStream$java_io_BufferedInputStream$Z(bis, true);
 var v = Clazz.new_((I$[7]||$incl$(7)));
 var zis = Clazz.new_((I$[6]||$incl$(6)).c$$java_io_InputStream,[bis]);
 var ze;
 var manifest = null;
-while ((ze = zis.getNextEntry()) != null ){
+while ((ze=zis.getNextEntry()) != null ){
 var fileName = ze.getName();
-if (manifestID != null  && fileName.startsWith$S(manifestID) ) manifest = C$.getStreamAsString$java_io_InputStream(zis);
+if (manifestID != null  && fileName.startsWith$S(manifestID) ) manifest=C$.getStreamAsString$java_io_InputStream(zis);
  else if (!fileName.startsWith$S("__MACOS")) v.addLast$TV(fileName);
 }
 zis.close();
@@ -228,7 +228,7 @@ C$.readFileAsMapStatic$java_io_BufferedInputStream$java_util_Map$S(bis, bdata, n
 
 Clazz.newMeth(C$, 'readFileAsMapStatic$java_io_BufferedInputStream$java_util_Map$S', function (bis, bdata, name) {
 var pt = (name == null  ? -1 : name.indexOf("|"));
-name = (pt >= 0 ? name.substring(pt + 1) : null);
+name=(pt >= 0 ? name.substring(pt + 1) : null);
 try {
 if ((I$[5]||$incl$(5)).isPngZipStream$java_io_InputStream(bis)) {
 var isImage = "_IMAGE_".equals$O(name);
@@ -264,10 +264,10 @@ var isPath = (fileName != null  && fileName.endsWith$S("/") );
 var oneFile = (asByteArray && !isPath && fileName != null   );
 var pt = (oneFile ? fileName.indexOf("|") : -1);
 var file0 = (pt >= 0 ? fileName : null);
-if (pt >= 0) fileName = fileName.substring(0, pt);
+if (pt >= 0) fileName=fileName.substring(0, pt);
 var prefix = (fileName == null  ? "" : isPath ? fileName : fileName + "|");
 try {
-while ((ze = zis.getNextEntry()) != null ){
+while ((ze=zis.getNextEntry()) != null ){
 var name = ze.getName();
 if (fileName != null ) {
 if (oneFile) {
@@ -279,7 +279,7 @@ var bytes = (I$[5]||$incl$(5)).getLimitedStreamBytes$java_io_InputStream$J(zis, 
 if (file0 != null ) {
 C$.readFileAsMapStatic$java_io_BufferedInputStream$java_util_Map$S((I$[5]||$incl$(5)).getBIS$BA(bytes), cache, file0);
 return null;
-}n = n+(bytes.length);
+}n+=bytes.length;
 var o = (asByteArray ? Clazz.new_((I$[13]||$incl$(13)).c$$BA,[bytes]) : bytes);
 cache.put$TK$TV((oneFile ? "_DATA_" : prefix + name), o);
 if (oneFile) break;
@@ -322,8 +322,8 @@ throw e;
 }, 1);
 
 Clazz.newMeth(C$, 'deActivatePngZipB$BA', function (bytes) {
-if ((I$[5]||$incl$(5)).isPngZipB$BA(bytes)) bytes[51] = (32|0);
+if ((I$[5]||$incl$(5)).isPngZipB$BA(bytes)) bytes[51]=(32|0);
 return bytes;
 }, 1);
 })();
-//Created 2018-05-15 01:02:20
+//Created 2018-05-24 08:45:58

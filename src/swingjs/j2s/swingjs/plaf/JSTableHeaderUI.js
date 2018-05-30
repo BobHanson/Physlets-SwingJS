@@ -60,20 +60,20 @@ this.selectedColumnIndex = 0;
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.isContainer = true;
+this.isContainer=true;
 }, 1);
 
 Clazz.newMeth(C$, 'updateDOMNode', function () {
-this.table = this.tableHeader.getTable();
+this.table=this.tableHeader.getTable();
 var rc = this.table.getRowCount();
 var rh = this.table.getRowHeight();
 var rebuild = (rc != this.oldrc || rh != this.oldrh );
-this.oldrh = rh;
-this.oldrc = rc;
+this.oldrh=rh;
+this.oldrc=rc;
 var thh = this.tableHeader.getHeight();
 var w = this.table.getWidth();
 if (this.domNode == null ) {
-this.domNode = this.newDOMObject$S$S$SA("div", this.id, []);
+this.domNode=this.newDOMObject$S$S$SA("div", this.id, []);
 }(I$[5]||$incl$(5)).setStyles(this.domNode, ["width", w + "px", "height", thh + "px"]);
 if (rebuild) p$.createChildren.apply(this, []);
 return this.setCssFont$swingjs_api_js_DOMNode$java_awt_Font(this.domNode, this.c.getFont());
@@ -82,18 +82,18 @@ return this.setCssFont$swingjs_api_js_DOMNode$java_awt_Font(this.domNode, this.c
 Clazz.newMeth(C$, 'createChildren', function () {
 var nrows = this.table.getRowCount();
 var ncols = this.table.getColumnCount();
-this.children = Clazz.array((I$[6]||$incl$(6)), [nrows * ncols]);
+this.children=Clazz.array((I$[6]||$incl$(6)), [nrows * ncols]);
 });
 
 Clazz.newMeth(C$, 'addChildrenToDOM$java_awt_ComponentA', function (children) {
 var ncols = this.table.getColumnCount();
 var thh = this.tableHeader.getHeight();
 var cw = Clazz.array(Integer.TYPE, [ncols]);
-for (var col = 0; col < ncols; col++) cw[col] = this.table.getColumnModel().getColumn$I(col).getWidth();
+for (var col = 0; col < ncols; col++) cw[col]=this.table.getColumnModel().getColumn$I(col).getWidth();
 
 var rid = this.id + "_tab_header";
 if (this.headdiv != null ) (I$[5]||$incl$(5)).remove(this.headdiv);
-this.headdiv = (I$[5]||$incl$(5)).createElement("div", rid);
+this.headdiv=(I$[5]||$incl$(5)).createElement("div", rid);
 (I$[5]||$incl$(5)).setStyles(this.headdiv, ["height", thh + "px"]);
 this.domNode.appendChild(this.headdiv);
 for (var col = 0, tx = 0; col < ncols; col++) {
@@ -103,7 +103,7 @@ var td = (I$[7]||$incl$(7)).createCellNode$swingjs_plaf_JSComponentUI$I$I(this, 
 (I$[5]||$incl$(5)).setStyles(td, ["left", tx + "px"]);
 (I$[5]||$incl$(5)).setStyles(td, ["top", "0px"]);
 (I$[5]||$incl$(5)).setStyles(td, ["position", "absolute"]);
-tx = tx+(cw[col]);
+tx+=cw[col];
 this.headdiv.appendChild(td);
 (I$[7]||$incl$(7)).updateCellNode$swingjs_api_js_DOMNode$java_awt_JSComponent$I$I(td, p$.getHeaderRenderer$I.apply(this, [col]), cw[col], thh);
 }
@@ -118,8 +118,8 @@ return Clazz.new_(C$);
 }, 1);
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (c) {
-this.tableHeader = c;
-this.rendererPane = Clazz.new_((I$[9]||$incl$(9)));
+this.tableHeader=c;
+this.rendererPane=Clazz.new_((I$[9]||$incl$(9)));
 this.tableHeader.add$java_awt_Component(this.rendererPane);
 this.installDefaults();
 this.installListeners();
@@ -132,7 +132,7 @@ Clazz.newMeth(C$, 'installDefaults', function () {
 });
 
 Clazz.newMeth(C$, 'installListeners', function () {
-this.mouseInputListener = this.createMouseInputListener();
+this.mouseInputListener=this.createMouseInputListener();
 this.tableHeader.addMouseListener$java_awt_event_MouseListener(this.mouseInputListener);
 this.tableHeader.addMouseMotionListener$java_awt_event_MouseMotionListener(this.mouseInputListener);
 this.tableHeader.addFocusListener$java_awt_event_FocusListener(C$.focusListener);
@@ -149,8 +149,8 @@ this.uninstallDefaults();
 this.uninstallListeners();
 this.uninstallKeyboardActions();
 this.tableHeader.remove$java_awt_Component(this.rendererPane);
-this.rendererPane = null;
-this.tableHeader = null;
+this.rendererPane=null;
+this.tableHeader=null;
 });
 
 Clazz.newMeth(C$, 'uninstallDefaults', function () {
@@ -159,7 +159,7 @@ Clazz.newMeth(C$, 'uninstallDefaults', function () {
 Clazz.newMeth(C$, 'uninstallListeners', function () {
 this.tableHeader.removeMouseListener$java_awt_event_MouseListener(this.mouseInputListener);
 this.tableHeader.removeMouseMotionListener$java_awt_event_MouseMotionListener(this.mouseInputListener);
-this.mouseInputListener = null;
+this.mouseInputListener=null;
 });
 
 Clazz.newMeth(C$, 'uninstallKeyboardActions', function () {
@@ -190,7 +190,7 @@ if (this.tableHeader.getDraggedColumn() == null  && this.tableHeader.contains$ja
 var col = this.tableHeader.columnAtPoint$java_awt_Point(e.getPoint());
 if (col != this.rolloverColumn) {
 var oldRolloverColumn = this.rolloverColumn;
-this.rolloverColumn = col;
+this.rolloverColumn=col;
 this.rolloverColumnUpdated$I$I(oldRolloverColumn, this.rolloverColumn);
 }}});
 
@@ -219,8 +219,8 @@ this.selectColumn$I$Z(newColIndex, true);
 Clazz.newMeth(C$, 'selectColumn$I$Z', function (newColIndex, doScroll) {
 var repaintRect = this.tableHeader.getHeaderRect$I(this.selectedColumnIndex);
 this.tableHeader.repaint$java_awt_Rectangle(repaintRect);
-this.selectedColumnIndex = newColIndex;
-repaintRect = this.tableHeader.getHeaderRect$I(newColIndex);
+this.selectedColumnIndex=newColIndex;
+repaintRect=this.tableHeader.getHeaderRect$I(newColIndex);
 this.tableHeader.repaint$java_awt_Rectangle(repaintRect);
 if (doScroll) {
 p$.scrollToColumn$I.apply(this, [newColIndex]);
@@ -230,19 +230,19 @@ p$.scrollToColumn$I.apply(this, [newColIndex]);
 Clazz.newMeth(C$, 'scrollToColumn$I', function (col) {
 var container;
 var table;
-if ((this.tableHeader.getParent() == null ) || ((container = this.tableHeader.getParent().getParent()) == null ) || !(Clazz.instanceOf(container, "javax.swing.JScrollPane")) || ((table = this.tableHeader.getTable()) == null )  ) {
+if ((this.tableHeader.getParent() == null ) || ((container=this.tableHeader.getParent().getParent()) == null ) || !(Clazz.instanceOf(container, "javax.swing.JScrollPane")) || ((table=this.tableHeader.getTable()) == null )  ) {
 return;
 }var vis = table.getVisibleRect();
 var cellBounds = table.getCellRect$I$I$Z(0, col, true);
-vis.x = cellBounds.x;
-vis.width = cellBounds.width;
+vis.x=cellBounds.x;
+vis.width=cellBounds.width;
 table.scrollRectToVisible$java_awt_Rectangle(vis);
 });
 
 Clazz.newMeth(C$, 'getSelectedColumnIndex', function () {
 var numCols = this.tableHeader.getColumnModel().getColumnCount();
 if (this.selectedColumnIndex >= numCols && numCols > 0 ) {
-this.selectedColumnIndex = numCols - 1;
+this.selectedColumnIndex=numCols - 1;
 }return this.selectedColumnIndex;
 });
 
@@ -254,7 +254,7 @@ Clazz.newMeth(C$, 'changeColumnWidth$javax_swing_table_TableColumn$javax_swing_t
 resizingColumn.setWidth$I(newWidth);
 var container;
 var table;
-if ((th.getParent() == null ) || ((container = th.getParent().getParent()) == null ) || !(Clazz.instanceOf(container, "javax.swing.JScrollPane")) || ((table = th.getTable()) == null )  ) {
+if ((th.getParent() == null ) || ((container=th.getParent().getParent()) == null ) || !(Clazz.instanceOf(container, "javax.swing.JScrollPane")) || ((table=th.getTable()) == null )  ) {
 return 0;
 }if (!container.getComponentOrientation().isLeftToRight() && !th.getComponentOrientation().isLeftToRight() ) {
 var viewport = (container).getViewport();
@@ -262,11 +262,11 @@ var viewportWidth = viewport.getWidth();
 var diff = newWidth - oldWidth;
 var newHeaderWidth = table.getWidth() + diff;
 var tableSize = table.getSize();
-tableSize.width = tableSize.width+(diff);
+tableSize.width+=diff;
 table.setSize$java_awt_Dimension(tableSize);
 if ((newHeaderWidth >= viewportWidth) && (table.getAutoResizeMode() == 0) ) {
 var p = viewport.getViewPosition();
-p.x = Math.max(0, Math.min(newHeaderWidth - viewportWidth, p.x + diff));
+p.x=Math.max(0, Math.min(newHeaderWidth - viewportWidth, p.x + diff));
 viewport.setViewPosition$java_awt_Point(p);
 return diff;
 }}return 0;
@@ -283,9 +283,9 @@ var pref = comp.getPreferredSize();
 var columnBaseline = comp.getBaseline$I$I(pref.width, height);
 if (columnBaseline >= 0) {
 if (baseline == -1) {
-baseline = columnBaseline;
+baseline=columnBaseline;
 } else if (baseline != columnBaseline) {
-baseline = -1;
+baseline=-1;
 break;
 }}}
 return baseline;
@@ -302,37 +302,37 @@ var cm = this.tableHeader.getColumnModel();
 var cMin = this.tableHeader.columnAtPoint$java_awt_Point(ltr ? left : right);
 var cMax = this.tableHeader.columnAtPoint$java_awt_Point(ltr ? right : left);
 if (cMin == -1) {
-cMin = 0;
+cMin=0;
 }if (cMax == -1) {
-cMax = cm.getColumnCount() - 1;
+cMax=cm.getColumnCount() - 1;
 }var draggedColumn = this.tableHeader.getDraggedColumn();
 var columnWidth;
 var cellRect = this.tableHeader.getHeaderRect$I(ltr ? cMin : cMax);
 var aColumn;
 if (ltr) {
 for (var column = cMin; column <= cMax; column++) {
-aColumn = cm.getColumn$I(column);
-columnWidth = aColumn.getWidth();
-cellRect.width = columnWidth;
+aColumn=cm.getColumn$I(column);
+columnWidth=aColumn.getWidth();
+cellRect.width=columnWidth;
 if (aColumn !== draggedColumn ) {
 p$.paintCell$java_awt_Graphics$java_awt_Rectangle$I.apply(this, [g, cellRect, column]);
-}cellRect.x = cellRect.x+(columnWidth);
+}cellRect.x+=columnWidth;
 }
 } else {
 for (var column = cMax; column >= cMin; column--) {
-aColumn = cm.getColumn$I(column);
-columnWidth = aColumn.getWidth();
-cellRect.width = columnWidth;
+aColumn=cm.getColumn$I(column);
+columnWidth=aColumn.getWidth();
+cellRect.width=columnWidth;
 if (aColumn !== draggedColumn ) {
 p$.paintCell$java_awt_Graphics$java_awt_Rectangle$I.apply(this, [g, cellRect, column]);
-}cellRect.x = cellRect.x+(columnWidth);
+}cellRect.x+=columnWidth;
 }
 }if (draggedColumn != null ) {
 var draggedColumnIndex = p$.viewIndexForColumn$javax_swing_table_TableColumn.apply(this, [draggedColumn]);
 var draggedCellRect = this.tableHeader.getHeaderRect$I(draggedColumnIndex);
 g.setColor$java_awt_Color(this.tableHeader.getParent().getBackground());
 g.fillRect$I$I$I$I(draggedCellRect.x, draggedCellRect.y, draggedCellRect.width, draggedCellRect.height);
-draggedCellRect.x = draggedCellRect.x+(this.tableHeader.getDraggedDistance());
+draggedCellRect.x+=this.tableHeader.getDraggedDistance();
 g.setColor$java_awt_Color(this.tableHeader.getBackground());
 g.fillRect$I$I$I$I(draggedCellRect.x, draggedCellRect.y, draggedCellRect.width, draggedCellRect.height);
 p$.paintCell$java_awt_Graphics$java_awt_Rectangle$I.apply(this, [g, draggedCellRect, draggedColumnIndex]);
@@ -343,7 +343,7 @@ Clazz.newMeth(C$, 'getHeaderRenderer$I', function (columnIndex) {
 var aColumn = this.tableHeader.getColumnModel().getColumn$I(columnIndex);
 var renderer = aColumn.getHeaderRenderer();
 if (renderer == null ) {
-renderer = this.tableHeader.getDefaultRenderer();
+renderer=this.tableHeader.getDefaultRenderer();
 }var hasFocus = !this.tableHeader.isPaintingForPrint() && (columnIndex == p$.getSelectedColumnIndex.apply(this, [])) && this.tableHeader.hasFocus()  ;
 return renderer.getTableCellRendererComponent$javax_swing_JTable$O$Z$Z$I$I(this.tableHeader.getTable(), aColumn.getHeaderValue(), false, hasFocus, -1, columnIndex);
 });
@@ -372,13 +372,13 @@ var isDefault = (aColumn.getHeaderRenderer() == null );
 if (!isDefault || !accomodatedDefault ) {
 var comp = p$.getHeaderRenderer$I.apply(this, [column]);
 var rendererHeight = comp.getPreferredSize().height;
-height = Math.max(height, rendererHeight);
+height=Math.max(height, rendererHeight);
 if (isDefault && rendererHeight > 0 ) {
 var headerValue = aColumn.getHeaderValue();
 if (headerValue != null ) {
-headerValue = headerValue.toString();
+headerValue=headerValue.toString();
 if (headerValue != null  && !headerValue.equals$O("") ) {
-accomodatedDefault = true;
+accomodatedDefault=true;
 }}}}}
 return height;
 });
@@ -386,7 +386,7 @@ return height;
 Clazz.newMeth(C$, 'createHeaderSize$J', function (width) {
 var columnModel = this.tableHeader.getColumnModel();
 if (width > 2147483647) {
-width = 2147483647;
+width=2147483647;
 }return Clazz.new_((I$[16]||$incl$(16)).c$$I$I,[(width|0), p$.getHeaderHeight.apply(this, [])]);
 });
 
@@ -395,7 +395,7 @@ var width = 0;
 var enumeration = this.tableHeader.getColumnModel().getColumns();
 while (enumeration.hasMoreElements()){
 var aColumn = enumeration.nextElement();
-width = width + aColumn.getMinWidth();
+width=width + aColumn.getMinWidth();
 }
 return p$.createHeaderSize$J.apply(this, [width]);
 });
@@ -405,7 +405,7 @@ var width = 0;
 var enumeration = this.tableHeader.getColumnModel().getColumns();
 while (enumeration.hasMoreElements()){
 var aColumn = enumeration.nextElement();
-width = width + aColumn.getPreferredWidth();
+width=width + aColumn.getPreferredWidth();
 }
 return p$.createHeaderSize$J.apply(this, [width]);
 });
@@ -415,7 +415,7 @@ var width = 0;
 var enumeration = this.tableHeader.getColumnModel().getColumns();
 while (enumeration.hasMoreElements()){
 var aColumn = enumeration.nextElement();
-width = width + aColumn.getMaxWidth();
+width=width + aColumn.getMaxWidth();
 }
 return p$.createHeaderSize$J.apply(this, [width]);
 });
@@ -442,10 +442,10 @@ Clazz.newMeth(C$, 'mouseClicked$java_awt_event_MouseEvent', function (e) {
 if (e.getClickCount() % 2 == 1 && (I$[2]||$incl$(2)).isLeftMouseButton$java_awt_event_MouseEvent(e) ) {
 var table = this.this$0.tableHeader.getTable();
 var sorter;
-if (table != null  && (sorter = table.getRowSorter()) != null  ) {
+if (table != null  && (sorter=table.getRowSorter()) != null  ) {
 var columnIndex = this.this$0.tableHeader.columnAtPoint$java_awt_Point(e.getPoint());
 if (columnIndex != -1) {
-columnIndex = table.convertColumnIndexToModel$I(columnIndex);
+columnIndex=table.convertColumnIndexToModel$I(columnIndex);
 sorter.toggleSortOrder$I(columnIndex);
 }}}});
 
@@ -463,9 +463,9 @@ return null;
 }var midPoint = r.x + (r.width/2|0);
 var columnIndex;
 if (this.this$0.tableHeader.getComponentOrientation().isLeftToRight()) {
-columnIndex = (p.x < midPoint) ? column - 1 : column;
+columnIndex=(p.x < midPoint) ? column - 1 : column;
 } else {
-columnIndex = (p.x < midPoint) ? column : column - 1;
+columnIndex=(p.x < midPoint) ? column : column - 1;
 }if (columnIndex == -1) {
 return null;
 }return this.this$0.tableHeader.getColumnModel().getColumn$I(columnIndex);
@@ -483,23 +483,23 @@ var resizingColumn = p$.getResizingColumn$java_awt_Point$I.apply(this, [p, index
 if (P$.JSTableHeaderUI.canResize$javax_swing_table_TableColumn$javax_swing_table_JTableHeader(resizingColumn, this.this$0.tableHeader)) {
 this.this$0.tableHeader.setResizingColumn$javax_swing_table_TableColumn(resizingColumn);
 if (this.this$0.tableHeader.getComponentOrientation().isLeftToRight()) {
-this.mouseXOffset = p.x - resizingColumn.getWidth();
+this.mouseXOffset=p.x - resizingColumn.getWidth();
 } else {
-this.mouseXOffset = p.x + resizingColumn.getWidth();
+this.mouseXOffset=p.x + resizingColumn.getWidth();
 }} else if (this.this$0.tableHeader.getReorderingAllowed()) {
 var hitColumn = columnModel.getColumn$I(index);
 this.this$0.tableHeader.setDraggedColumn$javax_swing_table_TableColumn(hitColumn);
-this.mouseXOffset = p.x;
+this.mouseXOffset=p.x;
 }}if (this.this$0.tableHeader.getReorderingAllowed()) {
 var oldRolloverColumn = this.this$0.rolloverColumn;
-this.this$0.rolloverColumn = -1;
+this.this$0.rolloverColumn=-1;
 this.this$0.rolloverColumnUpdated$I$I(oldRolloverColumn, this.this$0.rolloverColumn);
 }});
 
 Clazz.newMeth(C$, 'swapCursor', function () {
 var tmp = this.this$0.tableHeader.getCursor();
 this.this$0.tableHeader.setCursor$java_awt_Cursor(this.otherCursor);
-this.otherCursor = tmp;
+this.otherCursor=tmp;
 });
 
 Clazz.newMeth(C$, 'mouseMoved$java_awt_event_MouseEvent', function (e) {
@@ -517,10 +517,10 @@ if (resizingColumn != null ) {
 var oldWidth = resizingColumn.getWidth();
 var newWidth;
 if (headerLeftToRight) {
-newWidth = mouseX - this.mouseXOffset;
+newWidth=mouseX - this.mouseXOffset;
 } else {
-newWidth = this.mouseXOffset - mouseX;
-}this.mouseXOffset = this.mouseXOffset+(this.this$0.changeColumnWidth$javax_swing_table_TableColumn$javax_swing_table_JTableHeader$I$I.apply(this.this$0, [resizingColumn, this.this$0.tableHeader, oldWidth, newWidth]));
+newWidth=this.mouseXOffset - mouseX;
+}this.mouseXOffset+=this.this$0.changeColumnWidth$javax_swing_table_TableColumn$javax_swing_table_JTableHeader$I$I.apply(this.this$0, [resizingColumn, this.this$0.tableHeader, oldWidth, newWidth]);
 } else if (draggedColumn != null ) {
 var cm = this.this$0.tableHeader.getColumnModel();
 var draggedDistance = mouseX - this.mouseXOffset;
@@ -531,7 +531,7 @@ if (0 <= newColumnIndex && newColumnIndex < cm.getColumnCount() ) {
 var width = cm.getColumn$I(newColumnIndex).getWidth();
 if (Math.abs(draggedDistance) > ((width/2|0))) {
 var table = this.this$0.tableHeader.getTable();
-this.mouseXOffset = this.mouseXOffset + direction * width;
+this.mouseXOffset=this.mouseXOffset + direction * width;
 this.this$0.tableHeader.setDraggedDistance$I(draggedDistance - direction * width);
 var selectedIndex = table.convertColumnIndexToModel$I(this.this$0.getSelectedColumnIndex.apply(this.this$0, []));
 cm.moveColumn$I$I(columnIndex, newColumnIndex);
@@ -554,7 +554,7 @@ this.this$0.updateRolloverColumn$java_awt_event_MouseEvent.apply(this.this$0, [e
 
 Clazz.newMeth(C$, 'mouseExited$java_awt_event_MouseEvent', function (e) {
 var oldRolloverColumn = this.this$0.rolloverColumn;
-this.this$0.rolloverColumn = -1;
+this.this$0.rolloverColumn=-1;
 this.this$0.rolloverColumnUpdated$I$I(oldRolloverColumn, this.this$0.rolloverColumn);
 });
 
@@ -614,7 +614,7 @@ var table = th.getTable();
 var sorter = table.getRowSorter();
 if (sorter != null ) {
 var columnIndex = ui.getSelectedColumnIndex();
-columnIndex = table.convertColumnIndexToModel$I(columnIndex);
+columnIndex=table.convertColumnIndexToModel$I(columnIndex);
 sorter.toggleSortOrder$I(columnIndex);
 }} else if ("selectColumnToLeft" == name) {
 if (th.getComponentOrientation().isLeftToRight()) {
@@ -648,9 +648,9 @@ Clazz.newMeth(C$, 'maybeMoveColumn$Z$javax_swing_table_JTableHeader$swingjs_plaf
 var oldIndex = ui.getSelectedColumnIndex();
 var newIndex;
 if (th.getComponentOrientation().isLeftToRight()) {
-newIndex = leftArrow ? ui.selectPreviousColumn$Z(doIt) : ui.selectNextColumn$Z(doIt);
+newIndex=leftArrow ? ui.selectPreviousColumn$Z(doIt) : ui.selectNextColumn$Z(doIt);
 } else {
-newIndex = leftArrow ? ui.selectNextColumn$Z(doIt) : ui.selectPreviousColumn$Z(doIt);
+newIndex=leftArrow ? ui.selectNextColumn$Z(doIt) : ui.selectPreviousColumn$Z(doIt);
 }if (newIndex != oldIndex) {
 if (doIt) {
 th.getColumnModel().moveColumn$I$I(oldIndex, newIndex);
@@ -666,13 +666,13 @@ th.setResizingColumn$javax_swing_table_TableColumn(resizingColumn);
 var oldWidth = resizingColumn.getWidth();
 var newWidth = oldWidth;
 if (th.getComponentOrientation().isLeftToRight()) {
-newWidth = newWidth + (leftArrow ? -1 : 1);
+newWidth=newWidth + (leftArrow ? -1 : 1);
 } else {
-newWidth = newWidth + (leftArrow ? 1 : -1);
+newWidth=newWidth + (leftArrow ? 1 : -1);
 }ui.changeColumnWidth$javax_swing_table_TableColumn$javax_swing_table_JTableHeader$I$I(resizingColumn, th, oldWidth, newWidth);
 });
 
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:03:26
+//Created 2018-05-24 08:47:59

@@ -64,19 +64,19 @@ C$.c$$I$I$I$I.apply(this, [0, min, max, value]);
 Clazz.newMeth(C$, 'c$$I$I$I$I', function (orientation, min, max, value) {
 Clazz.super_(C$, this,1);
 p$.checkOrientation$I.apply(this, [orientation]);
-this.orientation = orientation;
-this.sliderModel = Clazz.new_((I$[3]||$incl$(3)).c$$I$I$I$I,[value, 0, min, max]);
+this.orientation=orientation;
+this.sliderModel=Clazz.new_((I$[3]||$incl$(3)).c$$I$I$I$I,[value, 0, min, max]);
 this.sliderModel.addChangeListener$javax_swing_event_ChangeListener(this.changeListener);
-this.uiClassID = "SliderUI";
+this.uiClassID="SliderUI";
 this.updateUI();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_BoundedRangeModel', function (brm) {
 Clazz.super_(C$, this,1);
-this.orientation = 0;
+this.orientation=0;
 this.setModel$javax_swing_BoundedRangeModel(brm);
 this.sliderModel.addChangeListener$javax_swing_event_ChangeListener(this.changeListener);
-this.uiClassID = "SliderUI";
+this.uiClassID="SliderUI";
 this.updateUI();
 }, 1);
 
@@ -103,10 +103,10 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[5]||$incl$(5)),['
 
 Clazz.newMeth(C$, 'fireStateChanged', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[5]||$incl$(5)),['stateChanged$javax_swing_event_ChangeEvent']) ) {
 if (this.changeEvent == null ) {
-this.changeEvent = Clazz.new_((I$[6]||$incl$(6)).c$$O,[this]);
+this.changeEvent=Clazz.new_((I$[6]||$incl$(6)).c$$O,[this]);
 }(listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -119,7 +119,7 @@ Clazz.newMeth(C$, 'setModel$javax_swing_BoundedRangeModel', function (newModel) 
 var oldModel = this.getModel();
 if (oldModel != null ) {
 oldModel.removeChangeListener$javax_swing_event_ChangeListener(this.changeListener);
-}this.sliderModel = newModel;
+}this.sliderModel=newModel;
 if (newModel != null ) {
 newModel.addChangeListener$javax_swing_event_ChangeListener(this.changeListener);
 }this.firePropertyChange$S$O$O("model", oldModel, this.sliderModel);
@@ -181,7 +181,7 @@ return this.orientation;
 Clazz.newMeth(C$, 'setOrientation$I', function (orientation) {
 p$.checkOrientation$I.apply(this, [orientation]);
 var oldValue = this.orientation;
-this.orientation = orientation;
+this.orientation=orientation;
 this.firePropertyChange$S$I$I("orientation", oldValue, orientation);
 if (orientation != oldValue) {
 this.revalidate();
@@ -198,7 +198,7 @@ return this.labelTable;
 
 Clazz.newMeth(C$, 'setLabelTable$java_util_Dictionary', function (labels) {
 var oldTable = this.labelTable;
-this.labelTable = labels;
+this.labelTable=labels;
 this.updateLabelUIs();
 this.firePropertyChange$S$O$O("labelTable", oldTable, this.labelTable);
 if (labels !== oldTable ) {
@@ -253,7 +253,7 @@ return this.isInverted;
 
 Clazz.newMeth(C$, 'setInverted$Z', function (b) {
 var oldValue = this.isInverted;
-this.isInverted = b;
+this.isInverted=b;
 this.firePropertyChange$S$Z$Z("inverted", oldValue, this.isInverted);
 if (b != oldValue ) {
 this.repaint();
@@ -265,7 +265,7 @@ return this.majorTickSpacing;
 
 Clazz.newMeth(C$, 'setMajorTickSpacing$I', function (n) {
 var oldValue = this.majorTickSpacing;
-this.majorTickSpacing = n;
+this.majorTickSpacing=n;
 if (this.labelTable == null  && this.getMajorTickSpacing() > 0  && this.getPaintLabels() ) {
 this.setLabelTable$java_util_Dictionary(this.createStandardLabels$I(this.getMajorTickSpacing()));
 }this.firePropertyChange$S$I$I("majorTickSpacing", oldValue, this.majorTickSpacing);
@@ -279,7 +279,7 @@ return this.minorTickSpacing;
 
 Clazz.newMeth(C$, 'setMinorTickSpacing$I', function (n) {
 var oldValue = this.minorTickSpacing;
-this.minorTickSpacing = n;
+this.minorTickSpacing=n;
 this.firePropertyChange$S$I$I("minorTickSpacing", oldValue, this.minorTickSpacing);
 if (this.minorTickSpacing != oldValue && this.getPaintTicks() ) {
 this.repaint();
@@ -295,13 +295,13 @@ return this.snapToValue;
 
 Clazz.newMeth(C$, 'setSnapToTicks$Z', function (b) {
 var oldValue = this.snapToTicks;
-this.snapToTicks = b;
+this.snapToTicks=b;
 this.firePropertyChange$S$Z$Z("snapToTicks", oldValue, this.snapToTicks);
 });
 
 Clazz.newMeth(C$, 'setSnapToValue$Z', function (b) {
 var oldValue = this.snapToValue;
-this.snapToValue = b;
+this.snapToValue=b;
 this.firePropertyChange$S$Z$Z("snapToValue", oldValue, this.snapToValue);
 });
 
@@ -311,7 +311,7 @@ return this.paintTicks;
 
 Clazz.newMeth(C$, 'setPaintTicks$Z', function (b) {
 var oldValue = this.paintTicks;
-this.paintTicks = b;
+this.paintTicks=b;
 this.firePropertyChange$S$Z$Z("paintTicks", oldValue, this.paintTicks);
 if (this.paintTicks != oldValue ) {
 this.revalidate();
@@ -324,7 +324,7 @@ return this.paintTrack;
 
 Clazz.newMeth(C$, 'setPaintTrack$Z', function (b) {
 var oldValue = this.paintTrack;
-this.paintTrack = b;
+this.paintTrack=b;
 this.firePropertyChange$S$Z$Z("paintTrack", oldValue, this.paintTrack);
 if (this.paintTrack != oldValue ) {
 this.repaint();
@@ -336,7 +336,7 @@ return this.paintLabels;
 
 Clazz.newMeth(C$, 'setPaintLabels$Z', function (b) {
 var oldValue = this.paintLabels;
-this.paintLabels = b;
+this.paintLabels=b;
 if (this.labelTable == null  && this.getMajorTickSpacing() > 0 ) {
 this.setLabelTable$java_util_Dictionary(this.createStandardLabels$I(this.getMajorTickSpacing()));
 }this.firePropertyChange$S$Z$Z("paintLabels", oldValue, this.paintLabels);
@@ -396,37 +396,37 @@ this.startAtMin = false;
 Clazz.newMeth(C$, 'c$$I$I', function (increment, start) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.increment = increment;
-this.start = start;
-this.startAtMin = start == this.this$0.getMinimum();
+this.increment=increment;
+this.start=start;
+this.startAtMin=start == this.this$0.getMinimum();
 this.createLabels();
 }, 1);
 
 Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
 if (e.getPropertyName().equals$O("minimum") && this.startAtMin ) {
-this.start = this.this$0.getMinimum();
+this.start=this.this$0.getMinimum();
 }if (e.getPropertyName().equals$O("minimum") || e.getPropertyName().equals$O("maximum") ) {
 var keys = this.this$0.getLabelTable().keys();
 var key = null;
 var hashtable = Clazz.new_((I$[1]||$incl$(1)));
 while (keys.hasMoreElements()){
-key = keys.nextElement();
+key=keys.nextElement();
 var value = this.this$0.getLabelTable().get$O(key);
 if (!(Clazz.instanceOf(value, "javax.swing.JSlider.JSliderLabelUIResource"))) {
 hashtable.put$TK$TV(key, value);
 }}
 this.clear();
 this.createLabels();
-keys = hashtable.keys();
+keys=hashtable.keys();
 while (keys.hasMoreElements()){
-key = keys.nextElement();
+key=keys.nextElement();
 this.put$TK$TV(key, hashtable.get$O(key));
 }
 (e.getSource()).setLabelTable$java_util_Dictionary(this);
 }});
 
 Clazz.newMeth(C$, 'createLabels', function () {
-for (var labelIndex = this.start; labelIndex <= this.this$0.getMaximum(); labelIndex = labelIndex+(this.increment)) {
+for (var labelIndex = this.start; labelIndex <= this.this$0.getMaximum(); labelIndex+=this.increment) {
 this.put$TK$TV( new Integer(labelIndex), Clazz.new_((I$[2]||$incl$(2)).c$$S$I, [this, null, "" + labelIndex, 0]));
 }
 });
@@ -469,4 +469,4 @@ return this.this$0.getForeground();
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:33
+//Created 2018-05-24 08:46:23

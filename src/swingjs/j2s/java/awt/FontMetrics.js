@@ -17,7 +17,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_Font', function (font) {
 C$.$init$.apply(this);
-this.font = font;
+this.font=font;
 }, 1);
 
 Clazz.newMeth(C$, 'getFont', function () {
@@ -78,4 +78,4 @@ return this.getClass().getName() + "[font=" + this.getFont() + "ascent=" + this.
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:51
+//Created 2018-05-24 08:45:09

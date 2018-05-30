@@ -37,7 +37,7 @@ return C$.pasteAction;
 
 Clazz.newMeth(C$, 'c$$S', function (property) {
 C$.$init$.apply(this);
-this.propertyName = property;
+this.propertyName=property;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
@@ -47,10 +47,10 @@ C$.c$$S.apply(this, [null]);
 Clazz.newMeth(C$, 'exportAsDrag$javax_swing_JComponent$java_awt_event_InputEvent$I', function (comp, e, action) {
 var srcActions = this.getSourceActions$javax_swing_JComponent(comp);
 if (!(Clazz.instanceOf(e, "java.awt.event.MouseEvent")) || !(action == 1 || action == 2  || action == 1073741824 ) || (srcActions & action) == 0  ) {
-action = 0;
+action=0;
 }if (action != 0 && !(I$[14]||$incl$(14)).isHeadless() ) {
 if (C$.recognizer == null ) {
-C$.recognizer = Clazz.new_((I$[15]||$incl$(15)).c$$java_awt_dnd_DragGestureListener,[Clazz.new_((I$[16]||$incl$(16)))]);
+C$.recognizer=Clazz.new_((I$[15]||$incl$(15)).c$$java_awt_dnd_DragGestureListener,[Clazz.new_((I$[16]||$incl$(16)))]);
 }C$.recognizer.gestured$javax_swing_JComponent$java_awt_event_MouseEvent$I$I(comp, e, srcActions, action);
 } else {
 this.exportDone$javax_swing_JComponent$java_awt_datatransfer_Transferable$I(comp, null, 0);
@@ -164,7 +164,7 @@ Clazz.newMeth(C$, 'getDropTargetListener', function () {
 {
 var handler = (I$[18]||$incl$(18)).getAppContext().get$O(Clazz.getClass((I$[19]||$incl$(19))));
 if (handler == null ) {
-handler = Clazz.new_((I$[19]||$incl$(19)));
+handler=Clazz.new_((I$[19]||$incl$(19)));
 (I$[18]||$incl$(18)).getAppContext().put$O$O(Clazz.getClass((I$[19]||$incl$(19))), handler);
 }return handler;
 }}, 1);
@@ -189,7 +189,7 @@ Clazz.newMeth(C$, 'c$$java_awt_Point', function (dropPoint) {
 C$.$init$.apply(this);
 if (dropPoint == null ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Point cannot be null"]);
-}this.dropPoint = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Point,[dropPoint]);
+}this.dropPoint=Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Point,[dropPoint]);
 }, 1);
 
 Clazz.newMeth(C$, 'getDropPoint', function () {
@@ -225,7 +225,7 @@ this.dropAction = -1;
 
 Clazz.newMeth(C$, 'c$$java_awt_Component$java_awt_dnd_DropTargetEvent', function (component, event) {
 C$.$init$.apply(this);
-this.$isDrop = true;
+this.$isDrop=true;
 p$.setDNDVariables$java_awt_Component$java_awt_dnd_DropTargetEvent.apply(this, [component, event]);
 }, 1);
 
@@ -235,23 +235,23 @@ if (component == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["component is null"]);
 }if (transferable == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["transferable is null"]);
-}this.$isDrop = false;
-this.component = component;
-this.source = transferable;
+}this.$isDrop=false;
+this.component=component;
+this.source=transferable;
 }, 1);
 
 Clazz.newMeth(C$, 'setDNDVariables$java_awt_Component$java_awt_dnd_DropTargetEvent', function (component, event) {
 Clazz.assert(C$, this, function(){return this.$isDrop});
-this.component = component;
-this.source = event;
-this.dropLocation = null;
-this.dropAction = -1;
-this.showDropLocationIsSet = false;
+this.component=component;
+this.source=event;
+this.dropLocation=null;
+this.dropAction=-1;
+this.showDropLocationIsSet=false;
 if (this.source == null ) {
 return;
 }Clazz.assert(C$, this, function(){return Clazz.instanceOf(this.source, "java.awt.dnd.DropTargetDragEvent") || Clazz.instanceOf(this.source, "java.awt.dnd.DropTargetDropEvent") });
 var p = Clazz.instanceOf(this.source, "java.awt.dnd.DropTargetDragEvent") ? (this.source).getLocation() : (this.source).getLocation();
-this.dropLocation = (component).dropLocationForPoint$java_awt_Point(p);
+this.dropLocation=(component).dropLocationForPoint$java_awt_Point(p);
 });
 
 Clazz.newMeth(C$, 'isDrop', function () {
@@ -271,14 +271,14 @@ Clazz.newMeth(C$, 'getDropLocation', function () {
 p$.assureIsDrop.apply(this, []);
 if (this.dropLocation == null ) {
 var p = Clazz.instanceOf(this.source, "java.awt.dnd.DropTargetDragEvent") ? (this.source).getLocation() : (this.source).getLocation();
-this.dropLocation = Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_Point,[p]);
+this.dropLocation=Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_Point,[p]);
 }return this.dropLocation;
 });
 
 Clazz.newMeth(C$, 'setShowDropLocation$Z', function (showDropLocation) {
 p$.assureIsDrop.apply(this, []);
-this.showDropLocation = showDropLocation;
-this.showDropLocationIsSet = true;
+this.showDropLocation=showDropLocation;
+this.showDropLocationIsSet=true;
 });
 
 Clazz.newMeth(C$, 'setDropAction$I', function (dropAction) {
@@ -286,7 +286,7 @@ p$.assureIsDrop.apply(this, []);
 var action = dropAction & this.getSourceDropActions();
 if (!(action == 1 || action == 2  || action == 1073741824 )) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["unsupported drop action: " + dropAction]);
-}this.dropAction = dropAction;
+}this.dropAction=dropAction;
 });
 
 Clazz.newMeth(C$, 'getDropAction', function () {
@@ -352,8 +352,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_beans_PropertyDescriptor$javax_swing_JComponent', function (p, c) {
 C$.$init$.apply(this);
-this.property = p;
-this.component = c;
+this.property=p;
+this.component=c;
 }, 1);
 
 Clazz.newMeth(C$, 'getTransferDataFlavors', function () {
@@ -361,10 +361,10 @@ var flavors = Clazz.array((I$[3]||$incl$(3)), [1]);
 var propertyType = this.property.getPropertyType();
 var mimeType = "application/x-java-jvm-local-objectref" + ";class=" + propertyType.getName() ;
 try {
-flavors[0] = Clazz.new_((I$[3]||$incl$(3)).c$$S,[mimeType]);
+flavors[0]=Clazz.new_((I$[3]||$incl$(3)).c$$S,[mimeType]);
 } catch (cnfe) {
 if (Clazz.exceptionOf(cnfe, "java.lang.ClassNotFoundException")){
-flavors = Clazz.array((I$[3]||$incl$(3)), [0]);
+flavors=Clazz.array((I$[3]||$incl$(3)), [0]);
 } else {
 throw cnfe;
 }
@@ -428,7 +428,7 @@ throw tmle;
 
 Clazz.newMeth(C$, 'addDropTargetListener$java_awt_dnd_DropTargetListener', function (dtl) {
 if (this.listenerList == null ) {
-this.listenerList = Clazz.new_((I$[4]||$incl$(4)));
+this.listenerList=Clazz.new_((I$[4]||$incl$(4)));
 }this.listenerList.add$Class$TT(Clazz.getClass((I$[5]||$incl$(5)),['dragEnter$java_awt_dnd_DropTargetDragEvent','dragExit$java_awt_dnd_DropTargetEvent','dragOver$java_awt_dnd_DropTargetDragEvent','drop$java_awt_dnd_DropTargetDropEvent','dropActionChanged$java_awt_dnd_DropTargetDragEvent']), dtl);
 });
 
@@ -441,7 +441,7 @@ Clazz.newMeth(C$, 'dragEnter$java_awt_dnd_DropTargetDragEvent', function (e) {
 C$.superclazz.prototype.dragEnter$java_awt_dnd_DropTargetDragEvent.apply(this, [e]);
 if (this.listenerList != null ) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[5]||$incl$(5)),['dragEnter$java_awt_dnd_DropTargetDragEvent','dragExit$java_awt_dnd_DropTargetEvent','dragOver$java_awt_dnd_DropTargetDragEvent','drop$java_awt_dnd_DropTargetDropEvent','dropActionChanged$java_awt_dnd_DropTargetDragEvent']) ) {
 (listeners[i + 1]).dragEnter$java_awt_dnd_DropTargetDragEvent(e);
 }}
@@ -451,7 +451,7 @@ Clazz.newMeth(C$, 'dragOver$java_awt_dnd_DropTargetDragEvent', function (e) {
 C$.superclazz.prototype.dragOver$java_awt_dnd_DropTargetDragEvent.apply(this, [e]);
 if (this.listenerList != null ) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[5]||$incl$(5)),['dragEnter$java_awt_dnd_DropTargetDragEvent','dragExit$java_awt_dnd_DropTargetEvent','dragOver$java_awt_dnd_DropTargetDragEvent','drop$java_awt_dnd_DropTargetDropEvent','dropActionChanged$java_awt_dnd_DropTargetDragEvent']) ) {
 (listeners[i + 1]).dragOver$java_awt_dnd_DropTargetDragEvent(e);
 }}
@@ -461,7 +461,7 @@ Clazz.newMeth(C$, 'dragExit$java_awt_dnd_DropTargetEvent', function (e) {
 C$.superclazz.prototype.dragExit$java_awt_dnd_DropTargetEvent.apply(this, [e]);
 if (this.listenerList != null ) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[5]||$incl$(5)),['dragEnter$java_awt_dnd_DropTargetDragEvent','dragExit$java_awt_dnd_DropTargetEvent','dragOver$java_awt_dnd_DropTargetDragEvent','drop$java_awt_dnd_DropTargetDropEvent','dropActionChanged$java_awt_dnd_DropTargetDragEvent']) ) {
 (listeners[i + 1]).dragExit$java_awt_dnd_DropTargetEvent(e);
 }}
@@ -471,7 +471,7 @@ Clazz.newMeth(C$, 'drop$java_awt_dnd_DropTargetDropEvent', function (e) {
 C$.superclazz.prototype.drop$java_awt_dnd_DropTargetDropEvent.apply(this, [e]);
 if (this.listenerList != null ) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[5]||$incl$(5)),['dragEnter$java_awt_dnd_DropTargetDragEvent','dragExit$java_awt_dnd_DropTargetEvent','dragOver$java_awt_dnd_DropTargetDragEvent','drop$java_awt_dnd_DropTargetDropEvent','dropActionChanged$java_awt_dnd_DropTargetDragEvent']) ) {
 (listeners[i + 1]).drop$java_awt_dnd_DropTargetDropEvent(e);
 }}
@@ -481,7 +481,7 @@ Clazz.newMeth(C$, 'dropActionChanged$java_awt_dnd_DropTargetDragEvent', function
 C$.superclazz.prototype.dropActionChanged$java_awt_dnd_DropTargetDragEvent.apply(this, [e]);
 if (this.listenerList != null ) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[5]||$incl$(5)),['dragEnter$java_awt_dnd_DropTargetDragEvent','dragExit$java_awt_dnd_DropTargetEvent','dragOver$java_awt_dnd_DropTargetDragEvent','drop$java_awt_dnd_DropTargetDropEvent','dropActionChanged$java_awt_dnd_DropTargetDragEvent']) ) {
 (listeners[i + 1]).dropActionChanged$java_awt_dnd_DropTargetDragEvent(e);
 }}
@@ -524,9 +524,9 @@ var i = Clazz.new_((I$[8]||$incl$(8)).c$$I$I$I$I,[0, 0, 0, 0]);
 if (Clazz.instanceOf(c, "javax.swing.Scrollable")) {
 var minSize = 20;
 if (visible.width >= minSize) {
-i.left = i.right = 10;
+i.left=i.right=10;
 }if (visible.height >= minSize) {
-i.top = i.bottom = 10;
+i.top=i.bottom=10;
 }}this.inner.setBounds$I$I$I$I(visible.x + i.left, visible.y + i.top, visible.width - (i.left + i.right), visible.height - (i.top + i.bottom));
 });
 
@@ -555,13 +555,13 @@ Clazz.newMeth(C$, 'initPropertiesIfNecessary', function () {
 if (this.timer == null ) {
 var t = (I$[9]||$incl$(9)).getDefaultToolkit();
 var prop;
-prop = t.getDesktopProperty$S("DnD.Autoscroll.interval");
-this.timer = Clazz.new_((I$[10]||$incl$(10)).c$$I$java_awt_event_ActionListener,[prop == null  ? 100 : prop.intValue(), this]);
-prop = t.getDesktopProperty$S("DnD.Autoscroll.initialDelay");
+prop=t.getDesktopProperty$S("DnD.Autoscroll.interval");
+this.timer=Clazz.new_((I$[10]||$incl$(10)).c$$I$java_awt_event_ActionListener,[prop == null  ? 100 : prop.intValue(), this]);
+prop=t.getDesktopProperty$S("DnD.Autoscroll.initialDelay");
 this.timer.setInitialDelay$I(prop == null  ? 100 : prop.intValue());
-prop = t.getDesktopProperty$S("DnD.Autoscroll.cursorHysteresis");
+prop=t.getDesktopProperty$S("DnD.Autoscroll.cursorHysteresis");
 if (prop != null ) {
-this.hysteresis = prop.intValue();
+this.hysteresis=prop.intValue();
 }}});
 
 Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -574,7 +574,7 @@ Clazz.newMeth(C$, 'setComponentDropLocation$javax_swing_TransferHandler_Transfer
 var dropLocation = (support == null ) ? null : support.getDropLocation();
 if (Clazz.instanceOf(this.component, "javax.swing.text.JTextComponent")) {
 } else if (Clazz.instanceOf(this.component, "javax.swing.JComponent")) {
-this.state = (this.component).setDropLocation$javax_swing_TransferHandler_DropLocation$O$Z(dropLocation, this.state, forDrop);
+this.state=(this.component).setDropLocation$javax_swing_TransferHandler_DropLocation$O$Z(dropLocation, this.state, forDrop);
 }});
 
 Clazz.newMeth(C$, 'handleDrag$java_awt_dnd_DropTargetDragEvent', function (e) {
@@ -594,11 +594,11 @@ p$.setComponentDropLocation$javax_swing_TransferHandler_TransferSupport$Z.apply(
 });
 
 Clazz.newMeth(C$, 'dragEnter$java_awt_dnd_DropTargetDragEvent', function (e) {
-this.state = null;
-this.component = e.getDropTargetContext().getComponent();
+this.state=null;
+this.component=e.getDropTargetContext().getComponent();
 p$.handleDrag$java_awt_dnd_DropTargetDragEvent.apply(this, [e]);
 if (Clazz.instanceOf(this.component, "javax.swing.JComponent")) {
-this.lastPosition = e.getLocation();
+this.lastPosition=e.getLocation();
 p$.updateAutoscrollRegion$javax_swing_JComponent.apply(this, [this.component]);
 p$.initPropertiesIfNecessary.apply(this, []);
 }});
@@ -612,7 +612,7 @@ if (Math.abs(p.x - this.lastPosition.x) > this.hysteresis || Math.abs(p.y - this
 if (this.timer.isRunning()) this.timer.stop();
 } else {
 if (!this.timer.isRunning()) this.timer.start();
-}this.lastPosition = p;
+}this.lastPosition=p;
 });
 
 Clazz.newMeth(C$, 'dragExit$java_awt_dnd_DropTargetEvent', function (e) {
@@ -633,10 +633,10 @@ var showLocation = this.support.showDropLocationIsSet ? this.support.showDropLoc
 p$.setComponentDropLocation$javax_swing_TransferHandler_TransferSupport$Z.apply(this, [showLocation ? this.support : null, false]);
 var success;
 try {
-success = importer.importData$javax_swing_TransferHandler_TransferSupport(this.support);
+success=importer.importData$javax_swing_TransferHandler_TransferSupport(this.support);
 } catch (re) {
 if (Clazz.exceptionOf(re, "java.lang.RuntimeException")){
-success = false;
+success=false;
 } else {
 throw re;
 }
@@ -660,9 +660,9 @@ if (Clazz.instanceOf(this.component, "javax.swing.JComponent")) {
 (this.component).dndDone();
 }if (this.timer != null ) {
 this.timer.stop();
-}this.state = null;
-this.component = null;
-this.lastPosition = null;
+}this.state=null;
+this.component=null;
+this.lastPosition=null;
 });
 
 Clazz.newMeth(C$);
@@ -688,7 +688,7 @@ var c = dge.getComponent();
 var th = c.getTransferHandler();
 var t = th.createTransferable$javax_swing_JComponent(c);
 if (t != null ) {
-this.scrolls = c.getAutoscrolls();
+this.scrolls=c.getAutoscrolls();
 c.setAutoscrolls$Z(false);
 try {
 dge.startDrag$java_awt_Cursor$java_awt_datatransfer_Transferable$java_awt_dnd_DragSourceListener(null, t, this);
@@ -803,7 +803,7 @@ th.exportToClipboard$javax_swing_JComponent$java_awt_datatransfer_Clipboard$I(c,
 } else if ("copy".equals$O(name)) {
 th.exportToClipboard$javax_swing_JComponent$java_awt_datatransfer_Clipboard$I(c, clipboard, 1);
 } else if ("paste".equals$O(name)) {
-trans = clipboard.getContents$O(null);
+trans=clipboard.getContents$O(null);
 }}} catch (ise) {
 if (Clazz.exceptionOf(ise, "java.lang.IllegalStateException")){
 (I$[12]||$incl$(12)).getLookAndFeel().provideErrorFeedback$java_awt_Component(c);
@@ -823,4 +823,4 @@ return c.getToolkit().getSystemClipboard();
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:42
+//Created 2018-05-24 08:46:44

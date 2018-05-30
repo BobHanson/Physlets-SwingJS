@@ -32,22 +32,22 @@ while (ich < ichMax && C$.isWhiteSpace$S$I(str, ich) )++ich;
 
 var negative = false;
 if (ich < ichMax && (str.charCodeAt(ich)) == 45  ) {
-negative = true;
+negative=true;
 ++ich;
-}while (ich < ichMax && (ch = str.charAt(ich).$c()) >= 48  && ch <= 57 ){
-value = value * 10 + (ch - 48);
-digitSeen = true;
+}while (ich < ichMax && (ch=str.charAt(ich).$c()) >= 48  && ch <= 57 ){
+value=value * 10 + (ch - 48);
+digitSeen=true;
 ++ich;
 }
-if (!digitSeen) value = -2147483648;
- else if (negative) value = -value;
-next[0] = ich;
+if (!digitSeen) value=-2147483648;
+ else if (negative) value=-value;
+next[0]=ich;
 return value;
 }, 1);
 
 Clazz.newMeth(C$, 'isWhiteSpace$S$I', function (str, ich) {
 var ch;
-return (ich >= 0 && ((ch = str.charAt(ich)) == " " || ch == "\u0009"  || ch == "\u000a" ) );
+return (ich >= 0 && ((ch=str.charAt(ich)) == " " || ch == "\u0009"  || ch == "\u000a" ) );
 }, 1);
 
 Clazz.newMeth(C$, 'parseFloatChecked$S$I$IA$Z', function (str, ichMax, next, isStrict) {
@@ -59,36 +59,36 @@ while (ich < ichMax && C$.isWhiteSpace$S$I(str, ich) )++ich;
 var negative = false;
 if (ich < ichMax && str.charAt(ich) == "-" ) {
 ++ich;
-negative = true;
+negative=true;
 }var ch = 0;
 var ival = 0.0;
 var ival2 = 0.0;
-while (ich < ichMax && (ch = str.charAt(ich).$c()) >= 48  && ch <= 57 ){
-ival = (ival * 10.0) + (ch - 48) * 1.0;
+while (ich < ichMax && (ch=str.charAt(ich).$c()) >= 48  && ch <= 57 ){
+ival=(ival * 10.0) + (ch - 48) * 1.0;
 ++ich;
-digitSeen = true;
+digitSeen=true;
 }
 var isDecimal = false;
 var iscale = 0;
 var nzero = (ival == 0  ? -1 : 0);
 if (ch == 46 ) {
-isDecimal = true;
-while (++ich < ichMax && (ch = str.charAt(ich).$c()) >= 48  && ch <= 57 ){
-digitSeen = true;
+isDecimal=true;
+while (++ich < ichMax && (ch=str.charAt(ich).$c()) >= 48  && ch <= 57 ){
+digitSeen=true;
 if (nzero < 0) {
 if (ch == 48) {
 nzero--;
 continue;
-}nzero = -nzero;
+}nzero=-nzero;
 }if (iscale < C$.decimalScale.length) {
-ival2 = (ival2 * 10.0) + (ch - 48) * 1.0;
+ival2=(ival2 * 10.0) + (ch - 48) * 1.0;
 iscale++;
 }}
 }var value;
 if (!digitSeen) {
-value = NaN;
+value=NaN;
 } else if (ival2 > 0 ) {
-value = ival2 * C$.decimalScale[iscale - 1];
+value=ival2 * C$.decimalScale[iscale - 1];
 if (nzero > 1) {
 if (nzero - 2 < C$.decimalScale.length) {
 value *= C$.decimalScale[nzero - 2];
@@ -97,29 +97,29 @@ value *= Math.pow(10, 1 - nzero);
 }} else {
 value += ival;
 }} else {
-value = ival;
+value=ival;
 }var isExponent = false;
 if (ich < ichMax && (ch == 69 || ch == 101  || ch == 68 ) ) {
-isExponent = true;
+isExponent=true;
 if (++ich >= ichMax) return NaN;
-ch = str.charAt(ich).$c();
+ch=str.charAt(ich).$c();
 if ((ch == 43 ) && (++ich >= ichMax) ) return NaN;
-next[0] = ich;
+next[0]=ich;
 var exponent = C$.parseIntChecked$S$I$IA(str, ichMax, next);
 if (exponent == -2147483648) return NaN;
 if (exponent > 0 && exponent <= C$.tensScale.length ) value *= C$.tensScale[exponent - 1];
  else if (exponent < 0 && -exponent <= C$.decimalScale.length ) value *= C$.decimalScale[-exponent - 1];
  else if (exponent != 0) value *= Math.pow(10, exponent);
 } else {
-next[0] = ich;
-}if (negative) value = -value;
-if (value == Infinity ) value = 3.4028235E38;
+next[0]=ich;
+}if (negative) value=-value;
+if (value == Infinity ) value=3.4028235E38;
 return (!isStrict || (!isExponent || isDecimal ) && C$.checkTrailingText$S$I$I(str, next[0], ichMax)   ? value : NaN);
 }, 1);
 
 Clazz.newMeth(C$, 'checkTrailingText$S$I$I', function (str, ich, ichMax) {
 var ch;
-while (ich < ichMax && (C$.isWhitespace$C(ch = str.charAt(ich)) || ch == ";" ) )++ich;
+while (ich < ichMax && (C$.isWhitespace$C(ch=str.charAt(ich)) || ch == ";" ) )++ich;
 
 return (ich == ichMax);
 }, 1);
@@ -135,9 +135,9 @@ var n = 0;
 var max = 0;
 for (var i = 0; i >= 0 && i < len  && n < nTokens ; i++) {
 var f;
-while (Float.isNaN(f = C$.parseFloat$S(tokens[n++])) && n < nTokens ){
+while (Float.isNaN(f=C$.parseFloat$S(tokens[n++])) && n < nTokens ){
 }
-if (!Float.isNaN(f)) data[(max = i)] = f;
+if (!Float.isNaN(f)) data[(max=i)]=f;
 if (n == nTokens) break;
 }
 return max + 1;
@@ -149,24 +149,24 @@ var pt = next[0];
 if (pt >= 0) {
 if (strStart != null ) {
 var p = str.indexOf(strStart, pt);
-if (p >= 0) next[0] = p + strStart.length$();
-}str = str.substring(next[0]);
-pt = (strEnd == null  ? -1 : str.indexOf(strEnd));
-if (pt < 0) pt = str.length$();
- else str = str.substring(0, pt);
-next[0] = next[0]+(pt + 1);
+if (p >= 0) next[0]=p + strStart.length$();
+}str=str.substring(next[0]);
+pt=(strEnd == null  ? -1 : str.indexOf(strEnd));
+if (pt < 0) pt=str.length$();
+ else str=str.substring(0, pt);
+next[0]+=pt + 1;
 var tokens = C$.getTokens$S(str);
-if (f == null ) f = Clazz.array(Float.TYPE, [tokens.length]);
-n = C$.parseFloatArrayInfested$SA$FA(tokens, f);
+if (f == null ) f=Clazz.array(Float.TYPE, [tokens.length]);
+n=C$.parseFloatArrayInfested$SA$FA(tokens, f);
 }if (f == null ) return Clazz.array(Float.TYPE, [0]);
-for (var i = n; i < f.length; i++) f[i] = NaN;
+for (var i = n; i < f.length; i++) f[i]=NaN;
 
 return f;
 }, 1);
 
 Clazz.newMeth(C$, 'parseFloatRange$S$I$IA', function (str, ichMax, next) {
 var cch = str.length$();
-if (ichMax > cch) ichMax = cch;
+if (ichMax > cch) ichMax=cch;
 if (next[0] < 0 || next[0] >= ichMax ) return NaN;
 return C$.parseFloatChecked$S$I$IA$Z(str, ichMax, next, false);
 }, 1);
@@ -210,7 +210,7 @@ return C$.parseTrimmedRange$S$I$I(str, ichStart, str.length$());
 
 Clazz.newMeth(C$, 'parseTrimmedRange$S$I$I', function (str, ichStart, ichMax) {
 var cch = str.length$();
-if (ichMax < cch) cch = ichMax;
+if (ichMax < cch) cch=ichMax;
 if (cch < ichStart) return "";
 return C$.parseTrimmedChecked$S$I$I(str, ichStart, cch);
 }, 1);
@@ -222,8 +222,8 @@ if (ich < 0 || ich > cchLine ) return null;
 var tokenCount = C$.countTokens$S$I(line, ich);
 var tokens = Clazz.array(java.lang.String, [tokenCount]);
 var next = Clazz.array(Integer.TYPE, [1]);
-next[0] = ich;
-for (var i = 0; i < tokenCount; ++i) tokens[i] = C$.parseTokenChecked$S$I$IA(line, cchLine, next);
+next[0]=ich;
+for (var i = 0; i < tokenCount; ++i) tokens[i]=C$.parseTokenChecked$S$I$IA(line, cchLine, next);
 
 return tokens;
 }, 1);
@@ -258,7 +258,7 @@ return (next[0] < 0 || next[0] >= cch  ? null : C$.parseTokenChecked$S$I$IA(str,
 
 Clazz.newMeth(C$, 'parseTokenRange$S$I$IA', function (str, ichMax, next) {
 var cch = str.length$();
-if (ichMax > cch) ichMax = cch;
+if (ichMax > cch) ichMax=cch;
 return (next[0] < 0 || next[0] >= ichMax  ? null : C$.parseTokenChecked$S$I$IA(str, ichMax, next));
 }, 1);
 
@@ -269,7 +269,7 @@ while (ich < ichMax && C$.isWhiteSpace$S$I(str, ich) )++ich;
 var ichNonWhite = ich;
 while (ich < ichMax && !C$.isWhiteSpace$S$I(str, ich) )++ich;
 
-next[0] = ich;
+next[0]=ich;
 return (ichNonWhite == ich ? null : str.substring(ichNonWhite, ich));
 }, 1);
 
@@ -284,7 +284,7 @@ return (ichLast < ich ? "" : str.substring(ich, ichLast + 1));
 
 Clazz.newMeth(C$, 'parseIntRange$S$I$IA', function (str, ichMax, next) {
 var cch = str.length$();
-if (ichMax > cch) ichMax = cch;
+if (ichMax > cch) ichMax=cch;
 return (next[0] < 0 || next[0] >= ichMax  ? -2147483648 : C$.parseIntChecked$S$I$IA(str, ichMax, next));
 }, 1);
 
@@ -293,7 +293,7 @@ C$.parseFloatArrayDataN$SA$FA$I(tokens, data, data.length);
 }, 1);
 
 Clazz.newMeth(C$, 'parseFloatArrayDataN$SA$FA$I', function (tokens, data, nData) {
-for (var i = nData; --i >= 0; ) data[i] = (i >= tokens.length ? NaN : C$.parseFloat$S(tokens[i]));
+for (var i = nData; --i >= 0; ) data[i]=(i >= tokens.length ? NaN : C$.parseFloat$S(tokens[i]));
 
 }, 1);
 
@@ -304,22 +304,22 @@ var i = text.indexOf(run);
 var lines;
 var runLen = run.length$();
 if (i < 0 || runLen == 0 ) {
-lines = Clazz.array(java.lang.String, [1]);
-lines[0] = text;
+lines=Clazz.array(java.lang.String, [1]);
+lines[0]=text;
 return lines;
 }var len = text.length$() - runLen;
-for (; i >= 0 && i < len ; n++) i = text.indexOf(run, i + runLen);
+for (; i >= 0 && i < len ; n++) i=text.indexOf(run, i + runLen);
 
-lines = Clazz.array(java.lang.String, [n]);
-i = 0;
+lines=Clazz.array(java.lang.String, [n]);
+i=0;
 var ipt = 0;
 var pt = 0;
-for (; (ipt = text.indexOf(run, i)) >= 0 && pt + 1 < n ; ) {
-lines[pt++] = text.substring(i, ipt);
-i = ipt + runLen;
+for (; (ipt=text.indexOf(run, i)) >= 0 && pt + 1 < n ; ) {
+lines[pt++]=text.substring(i, ipt);
+i=ipt + runLen;
 }
-if (text.indexOf(run, len) != len) len = len+(runLen);
-lines[pt] = text.substring(i, len);
+if (text.indexOf(run, len) != len) len+=runLen;
+lines[pt]=text.substring(i, len);
 return lines;
 }, 1);
 
@@ -330,19 +330,19 @@ return C$.getQuotedStringNext$S$IA(line, next);
 
 Clazz.newMeth(C$, 'getQuotedStringNext$S$IA', function (line, next) {
 var i = next[0];
-if (i < 0 || (i = line.indexOf("\"", i)) < 0 ) return "";
+if (i < 0 || (i=line.indexOf("\"", i)) < 0 ) return "";
 var pt = i + 1;
 var len = line.length$();
 while (++i < len && line.charAt(i) != "\"" )if (line.charAt(i) == "\\") i++;
 
-next[0] = i + 1;
+next[0]=i + 1;
 return line.substring(pt, i);
 }, 1);
 
 Clazz.newMeth(C$, 'getQuotedOrUnquotedAttribute$S$S', function (line, key) {
 if (line == null  || key == null  ) return null;
 var pt = line.toLowerCase().indexOf(key.toLowerCase() + "=");
-if (pt < 0 || (pt = pt + key.length$() + 1 ) >= line.length$() ) return "";
+if (pt < 0 || (pt=pt + key.length$() + 1 ) >= line.length$() ) return "";
 var c = line.charAt(pt);
 switch (c.$c()) {
 case 39:
@@ -350,7 +350,7 @@ case 34:
 pt++;
 break;
 default:
-c = " ";
+c=" ";
 line += " ";
 }
 var pt1 = line.indexOf(c, pt);
@@ -359,27 +359,27 @@ return (pt1 < 0 ? null : line.substring(pt, pt1));
 
 Clazz.newMeth(C$, 'getCSVString$S$IA', function (line, next) {
 var i = next[1];
-if (i < 0 || (i = line.indexOf("\"", i)) < 0 ) return null;
-var pt = next[0] = i;
+if (i < 0 || (i=line.indexOf("\"", i)) < 0 ) return null;
+var pt = next[0]=i;
 var len = line.length$();
 var escaped = false;
 var haveEscape = false;
-while (++i < len && (line.charAt(i) != "\"" || (escaped = (i + 1 < len && line.charAt(i + 1) == "\"" )) ) )if (escaped) {
-escaped = false;
-haveEscape = true;
+while (++i < len && (line.charAt(i) != "\"" || (escaped=(i + 1 < len && line.charAt(i + 1) == "\"" )) ) )if (escaped) {
+escaped=false;
+haveEscape=true;
 i++;
 }
 if (i >= len) {
-next[1] = -1;
+next[1]=-1;
 return null;
-}next[1] = i + 1;
+}next[1]=i + 1;
 var s = line.substring(pt + 1, i);
 return (haveEscape ? C$.rep$S$S$S(C$.rep$S$S$S(s, "\"\"", "\u0000"), "\u0000", "\"") : s);
 }, 1);
 
 Clazz.newMeth(C$, 'isOneOf$S$S', function (key, semiList) {
 if (semiList.length$() == 0) return false;
-if (semiList.charAt(0) != ";") semiList = ";" + semiList + ";" ;
+if (semiList.charAt(0) != ";") semiList=";" + semiList + ";" ;
 return key.indexOf(";") < 0 && semiList.indexOf(';' + key + ';' ) >= 0 ;
 }, 1);
 
@@ -396,7 +396,7 @@ Clazz.newMeth(C$, 'rep$S$S$S', function (str, strFrom, strTo) {
 if (str == null  || strFrom.length$() == 0  || str.indexOf(strFrom) < 0 ) return str;
 var isOnce = (strTo.indexOf(strFrom) >= 0);
 do {
-str = str.$replace(strFrom, strTo);
+str=str.$replace(strFrom, strTo);
 } while (!isOnce && str.indexOf(strFrom) >= 0 );
 return str;
 }, 1);
@@ -412,8 +412,8 @@ return C$.formatS$S$I$I$Z$Z((I$[1]||$incl$(1)).formatDecimal$F$I(value, -1 - pre
 Clazz.newMeth(C$, 'formatS$S$I$I$Z$Z', function (value, width, precision, alignLeft, zeroPad) {
 if (value == null ) return "";
 var len = value.length$();
-if (precision != 2147483647 && precision > 0  && precision < len ) value = value.substring(0, precision);
- else if (precision < 0 && len + precision >= 0 ) value = value.substring(len + precision + 1 );
+if (precision != 2147483647 && precision > 0  && precision < len ) value=value.substring(0, precision);
+ else if (precision < 0 && len + precision >= 0 ) value=value.substring(len + precision + 1 );
 var padLength = width - value.length$();
 if (padLength <= 0) return value;
 var isNeg = (zeroPad && !alignLeft && value.charAt(0) == "-"  );
@@ -430,7 +430,7 @@ return sb.toString();
 
 Clazz.newMeth(C$, 'replaceWithCharacter$S$S$C', function (str, strFrom, chTo) {
 if (str == null ) return null;
-for (var i = strFrom.length$(); --i >= 0; ) str = str.$replace(strFrom.charAt(i), chTo);
+for (var i = strFrom.length$(); --i >= 0; ) str=str.$replace(strFrom.charAt(i), chTo);
 
 return str;
 }, 1);
@@ -438,7 +438,7 @@ return str;
 Clazz.newMeth(C$, 'replaceAllCharacters$S$S$S', function (str, strFrom, strTo) {
 for (var i = strFrom.length$(); --i >= 0; ) {
 var chFrom = strFrom.substring(i, i + 1);
-str = C$.rep$S$S$S(str, chFrom, strTo);
+str=C$.rep$S$S$S(str, chFrom, strTo);
 }
 return str;
 }, 1);
@@ -471,23 +471,23 @@ var s = null;
 var sb = null;
 while (true){
 if (Clazz.instanceOf(info, "java.lang.String")) {
-s = info;
+s=info;
 {
 if (typeof s == "undefined") s = "null"
 }
 if (s.indexOf("{\"") != 0) {
-s = C$.esc$S(s);
+s=C$.esc$S(s);
 }break;
 }if (Clazz.instanceOf(info, "javajs.api.JSONEncodable")) {
-if ((s = (info).toJSON()) == null ) s = "null";
+if ((s=(info).toJSON()) == null ) s="null";
 break;
-}sb = Clazz.new_((I$[2]||$incl$(2)));
+}sb=Clazz.new_((I$[2]||$incl$(2)));
 if (Clazz.instanceOf(info, "java.util.Map")) {
 sb.append$S("{ ");
 var sep = "";
 for (var key, $key = (info).keySet().iterator(); $key.hasNext()&&((key=$key.next()),1);) {
 sb.append$S(sep).append$S(C$.packageJSON$S$S(key, C$.toJSON$S$O(null, (info).get$O(key))));
-sep = ",";
+sep=",";
 }
 sb.append$S(" }");
 break;
@@ -512,7 +512,7 @@ sb.append$S(C$.toJSON$S$O(null, x));
 }
 sb.appendC$C("]");
 break;
-}s = C$.nonArrayString$O(info);
+}s=C$.nonArrayString$O(info);
 if (s == null ) {
 sb.append$S("[");
 var n = (I$[3]||$incl$(3)).getLength$O(info);
@@ -522,7 +522,7 @@ sb.append$S(C$.toJSON$S$O(null, (I$[4]||$incl$(4)).get(info, i)));
 }
 sb.append$S("]");
 break;
-}info = info.toString();
+}info=info.toString();
 }
 return C$.packageJSON$S$S(infoType, (s == null  ? sb.toString() : s));
 }, 1);
@@ -550,13 +550,13 @@ return (infoType == null  ? info : "\"" + infoType + "\": " + info );
 }, 1);
 
 Clazz.newMeth(C$, 'escapeUrl$S', function (url) {
-url = C$.rep$S$S$S(url, "\u000a", "");
-url = C$.rep$S$S$S(url, "%", "%25");
-url = C$.rep$S$S$S(url, "#", "%23");
-url = C$.rep$S$S$S(url, "[", "%5B");
-url = C$.rep$S$S$S(url, "\\", "%5C");
-url = C$.rep$S$S$S(url, "]", "%5D");
-url = C$.rep$S$S$S(url, " ", "%20");
+url=C$.rep$S$S$S(url, "\u000a", "");
+url=C$.rep$S$S$S(url, "%", "%25");
+url=C$.rep$S$S$S(url, "#", "%23");
+url=C$.rep$S$S$S(url, "[", "%5B");
+url=C$.rep$S$S$S(url, "\\", "%5C");
+url=C$.rep$S$S$S(url, "]", "%5D");
+url=C$.rep$S$S$S(url, " ", "%20");
 return url;
 }, 1);
 
@@ -564,8 +564,8 @@ Clazz.newMeth(C$, 'esc$S', function (str) {
 if (str == null  || str.length$() == 0 ) return "\"\"";
 var haveEscape = false;
 var i = 0;
-for (; i < "\\\\\u0009t\u000dr\u000an\"\"".length$(); i = i+(2)) if (str.indexOf("\\\\\u0009t\u000dr\u000an\"\"".charAt(i)) >= 0) {
-haveEscape = true;
+for (; i < "\\\\\u0009t\u000dr\u000an\"\"".length$(); i+=2) if (str.indexOf("\\\\\u0009t\u000dr\u000an\"\"".charAt(i)) >= 0) {
+haveEscape=true;
 break;
 }
 if (haveEscape) while (i < "\\\\\u0009t\u000dr\u000an\"\"".length$()){
@@ -574,12 +574,12 @@ var ch = "\\\\\u0009t\u000dr\u000an\"\"".charAt(i++);
 var ch2 = "\\\\\u0009t\u000dr\u000an\"\"".charAt(i++);
 var sb = Clazz.new_((I$[2]||$incl$(2)));
 var pt0 = 0;
-while ((pt = str.indexOf(ch, pt + 1)) >= 0){
+while ((pt=str.indexOf(ch, pt + 1)) >= 0){
 sb.append$S(str.substring(pt0, pt)).appendC$C("\\").appendC$C(ch2);
-pt0 = pt + 1;
+pt0=pt + 1;
 }
 sb.append$S(str.substring(pt0, str.length$()));
-str = sb.toString();
+str=sb.toString();
 }
 return "\"" + C$.escUnicode$S(str) + "\"" ;
 }, 1);
@@ -587,7 +587,7 @@ return "\"" + C$.escUnicode$S(str) + "\"" ;
 Clazz.newMeth(C$, 'escUnicode$S', function (str) {
 for (var i = str.length$(); --i >= 0; ) if ((str.charCodeAt(i)) > 127 ) {
 var s = "0000" + Integer.toHexString(str.charAt(i).$c());
-str = str.substring(0, i) + "\\u" + s.substring(s.length$() - 4) + str.substring(i + 1) ;
+str=str.substring(0, i) + "\\u" + s.substring(s.length$() - 4) + str.substring(i + 1) ;
 }
 return str;
 }, 1);
@@ -633,7 +633,7 @@ Clazz.newMeth(C$, 'fdup$S$I$I', function (f, pt, n) {
 var ch;
 var count = 0;
 for (var i = pt; --i >= 1; ) {
-if (C$.isDigit$C(ch = f.charAt(i))) continue;
+if (C$.isDigit$C(ch=f.charAt(i))) continue;
 switch (ch.$c()) {
 case 46:
 if (count++ != 0) return f;
@@ -662,51 +662,51 @@ var strLabel = "";
 var ich;
 var ichPercent;
 var ichKey;
-for (ich = 0; (ichPercent = strFormat.indexOf("%", ich)) >= 0 && (ichKey = strFormat.indexOf(key, ichPercent + 1)) >= 0 ; ) {
+for (ich=0; (ichPercent=strFormat.indexOf("%", ich)) >= 0 && (ichKey=strFormat.indexOf(key, ichPercent + 1)) >= 0 ; ) {
 if (ich != ichPercent) strLabel += strFormat.substring(ich, ichPercent);
-ich = ichPercent + 1;
+ich=ichPercent + 1;
 if (ichKey > ichPercent + 6) {
 strLabel += "%";
 continue;
 }try {
 var alignLeft = false;
 if (strFormat.charAt(ich) == "-") {
-alignLeft = true;
+alignLeft=true;
 ++ich;
 }var zeroPad = false;
 if (strFormat.charAt(ich) == "0") {
-zeroPad = true;
+zeroPad=true;
 ++ich;
 }var ch;
 var width = 0;
-while ((ch = strFormat.charAt(ich)) >= "0" && (ch <= "9") ){
-width = (10 * width) + (ch.$c() - 48);
+while ((ch=strFormat.charAt(ich)) >= "0" && (ch <= "9") ){
+width=(10 * width) + (ch.$c() - 48);
 ++ich;
 }
 var precision = 2147483647;
 var isExponential = false;
 if (strFormat.charAt(ich) == ".") {
 ++ich;
-if ((ch = strFormat.charAt(ich)) == "-") {
-isExponential = (strT == null );
+if ((ch=strFormat.charAt(ich)) == "-") {
+isExponential=(strT == null );
 ++ich;
-}if ((ch = strFormat.charAt(ich)) >= "0" && ch <= "9" ) {
-precision = ch.$c() - 48;
+}if ((ch=strFormat.charAt(ich)) >= "0" && ch <= "9" ) {
+precision=ch.$c() - 48;
 ++ich;
-}if (isExponential) precision = -precision;
+}if (isExponential) precision=-precision;
 }var st = strFormat.substring(ich, ich + len);
 if (!st.equals$O(key)) {
-ich = ichPercent + 1;
+ich=ichPercent + 1;
 strLabel += "%";
 continue;
-}ich = ich+(len);
+}ich+=len;
 if (!Float.isNaN(floatT)) strLabel += C$.formatF$F$I$I$Z$Z(floatT, width, precision, alignLeft, zeroPad);
  else if (strT != null ) strLabel += C$.formatS$S$I$I$Z$Z(strT, width, precision, alignLeft, zeroPad);
  else if (!Double.isNaN(doubleT)) strLabel += C$.formatD$D$I$I$Z$Z$Z(doubleT, width, precision - 1, alignLeft, zeroPad, true);
 if (doOne) break;
 } catch (ioobe) {
 if (Clazz.exceptionOf(ioobe, "java.lang.IndexOutOfBoundsException")){
-ich = ichPercent;
+ich=ichPercent;
 break;
 } else {
 throw ioobe;
@@ -737,51 +737,51 @@ for (var o = 0; o < n; o++) {
 if (values[o] == null ) continue;
 switch ((list.charCodeAt(o))) {
 case 115:
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "s", values[o], NaN, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "s", values[o], NaN, NaN, true);
 break;
 case 102:
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "f", null, (values[o]).floatValue(), NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "f", null, (values[o]).floatValue(), NaN, true);
 break;
 case 105:
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "d", "" + values[o], NaN, NaN, true);
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "i", "" + values[o], NaN, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "d", "" + values[o], NaN, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "i", "" + values[o], NaN, NaN, true);
 break;
 case 100:
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "e", null, NaN, (values[o]).doubleValue(), true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "e", null, NaN, (values[o]).doubleValue(), true);
 break;
 case 112:
 var pVal = values[o];
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "p", null, pVal.x, NaN, true);
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "p", null, pVal.y, NaN, true);
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "p", null, pVal.z, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "p", null, pVal.x, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "p", null, pVal.y, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "p", null, pVal.z, NaN, true);
 break;
 case 113:
 var qVal = values[o];
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "q", null, qVal.x, NaN, true);
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "q", null, qVal.y, NaN, true);
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "q", null, qVal.z, NaN, true);
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "q", null, qVal.w, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "q", null, qVal.x, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "q", null, qVal.y, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "q", null, qVal.z, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "q", null, qVal.w, NaN, true);
 break;
 case 83:
 var sVal = values[o];
-for (var i = 0; i < sVal.length; i++) strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "s", sVal[i], NaN, NaN, true);
+for (var i = 0; i < sVal.length; i++) strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "s", sVal[i], NaN, NaN, true);
 
 break;
 case 70:
 var fVal = values[o];
-for (var i = 0; i < fVal.length; i++) strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "f", null, fVal[i], NaN, true);
+for (var i = 0; i < fVal.length; i++) strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "f", null, fVal[i], NaN, true);
 
 break;
 case 73:
 var iVal = values[o];
-for (var i = 0; i < iVal.length; i++) strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "d", "" + iVal[i], NaN, NaN, true);
+for (var i = 0; i < iVal.length; i++) strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "d", "" + iVal[i], NaN, NaN, true);
 
-for (var i = 0; i < iVal.length; i++) strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "i", "" + iVal[i], NaN, NaN, true);
+for (var i = 0; i < iVal.length; i++) strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "i", "" + iVal[i], NaN, NaN, true);
 
 break;
 case 68:
 var dVal = values[o];
-for (var i = 0; i < dVal.length; i++) strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "e", null, NaN, dVal[i], true);
+for (var i = 0; i < dVal.length; i++) strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "e", null, NaN, dVal[i], true);
 
 }
 }
@@ -798,9 +798,9 @@ return C$.rep$S$S$S(strFormat, "%", "?");
 
 Clazz.newMeth(C$, 'formatCheck$S', function (strFormat) {
 if (strFormat == null  || strFormat.indexOf("p") < 0 && strFormat.indexOf("q") < 0  ) return strFormat;
-strFormat = C$.rep$S$S$S(strFormat, "%%", "\u0001");
-strFormat = C$.rep$S$S$S(strFormat, "%p", "%6.2p");
-strFormat = C$.rep$S$S$S(strFormat, "%q", "%6.2q");
+strFormat=C$.rep$S$S$S(strFormat, "%%", "\u0001");
+strFormat=C$.rep$S$S$S(strFormat, "%p", "%6.2p");
+strFormat=C$.rep$S$S$S(strFormat, "%q", "%6.2q");
 var format = C$.split$S$S(strFormat, "%");
 var sb = Clazz.new_((I$[2]||$incl$(2)));
 sb.append$S(format[0]);
@@ -808,8 +808,8 @@ for (var i = 1; i < format.length; i++) {
 var f = "%" + format[i];
 var pt;
 if (f.length$() >= 3) {
-if ((pt = f.indexOf("p")) >= 0) f = C$.fdup$S$I$I(f, pt, 3);
-if ((pt = f.indexOf("q")) >= 0) f = C$.fdup$S$I$I(f, pt, 4);
+if ((pt=f.indexOf("p")) >= 0) f=C$.fdup$S$I$I(f, pt, 3);
+if ((pt=f.indexOf("q")) >= 0) f=C$.fdup$S$I$I(f, pt, 4);
 }sb.append$S(f);
 }
 return sb.toString().$replace("\u0001", "%");
@@ -828,7 +828,7 @@ s.append$S(s2);
 }, 1);
 
 Clazz.newMeth(C$, 'safeTruncate$F$I', function (f, n) {
-if (f > -0.001  && f < 0.001  ) f = 0;
+if (f > -0.001  && f < 0.001  ) f=0;
 return (new Float(f).toString() + "         ").substring(0, n);
 }, 1);
 
@@ -852,15 +852,15 @@ var qqqq = "????";
 var nq = 4;
 while (nq < sLen){
 qqqq += qqqq;
-nq = nq+(4);
+nq+=4;
 }
 if (checkStar) {
 if (isStar0) {
-match = qqqq + match.substring(1);
-mLen = mLen+(nq - 1);
+match=qqqq + match.substring(1);
+mLen+=nq - 1;
 }if (isStar1) {
-match = match.substring(0, mLen - 1) + qqqq;
-mLen = mLen+(nq - 1);
+match=match.substring(0, mLen - 1) + qqqq;
+mLen+=nq - 1;
 }}if (mLen < sLen) return false;
 var ich = 0;
 while (mLen > sLen){
@@ -884,7 +884,7 @@ var n = list.size();
 for (var i = 0; i < n; i++) {
 var name = list.get$I(i);
 var newName = newList.get$I(i);
-if (!newName.equals$O(name)) s = C$.rep$S$S$S(s, "\"" + name + "\"" , "\"" + newName + "\"" );
+if (!newName.equals$O(name)) s=C$.rep$S$S$S(s, "\"" + name + "\"" , "\"" + newName + "\"" );
 }
 return s;
 }, 1);
@@ -894,7 +894,7 @@ var n = list.size();
 for (var i = 0; i < n; i++) {
 var name = list.get$I(i);
 var newName = newList.get$I(i);
-if (!newName.equals$O(name)) s = C$.rep$S$S$S(s, name, newName);
+if (!newName.equals$O(name)) s=C$.rep$S$S$S(s, name, newName);
 }
 return s;
 }, 1);
@@ -930,9 +930,9 @@ return (c >= 28 && c <= 32  || c >= 9 && c <= 13  );
 }, 1);
 
 Clazz.newMeth(C$, 'fixPtFloats$javajs_util_T3$F', function (pt, f) {
-pt.x = Math.round(pt.x * f) / f;
-pt.y = Math.round(pt.y * f) / f;
-pt.z = Math.round(pt.z * f) / f;
+pt.x=Math.round(pt.x * f) / f;
+pt.y=Math.round(pt.y * f) / f;
+pt.z=Math.round(pt.z * f) / f;
 }, 1);
 
 Clazz.newMeth(C$, 'fixDouble$D$D', function (d, f) {
@@ -946,4 +946,4 @@ return (pt < 0 ? C$.parseFloat$S(s) : C$.parseFloat$S(s.substring(0, pt)) / C$.p
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:19
+//Created 2018-05-24 08:45:57

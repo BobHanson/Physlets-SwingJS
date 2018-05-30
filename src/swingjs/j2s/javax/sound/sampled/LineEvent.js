@@ -18,8 +18,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$javax_sound_sampled_Line$javax_sound_sampled_LineEvent_Type$J', function (line, type, position) {
 C$.superclazz.c$.apply(this, [line]);
 C$.$init$.apply(this);
-this.type = type;
-this.position = position;
+this.type=type;
+this.position=position;
 }, 1);
 
 Clazz.newMeth(C$, 'getLine', function () {
@@ -36,12 +36,12 @@ return this.position;
 
 Clazz.newMeth(C$, 'toString', function () {
 var sType = "";
-if (this.type != null ) sType = this.type.toString() + " ";
+if (this.type != null ) sType=this.type.toString() + " ";
 var sLine;
 if (this.getLine() == null ) {
-sLine = "null";
+sLine="null";
 } else {
-sLine = this.getLine().toString();
+sLine=this.getLine().toString();
 }return  String.instantialize(sType + "event from line " + sLine );
 });
 ;
@@ -70,7 +70,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
 C$.$init$.apply(this);
-this.name = name;
+this.name=name;
 }, 1);
 
 Clazz.newMeth(C$, 'equals$O', function (obj) {
@@ -90,4 +90,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:21
+//Created 2018-05-24 08:46:02

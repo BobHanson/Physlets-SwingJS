@@ -16,8 +16,8 @@ this.leftToRight = true;
 }, 1);
 
 Clazz.newMeth(C$, 'setComponentOrientation$java_awt_ComponentOrientation', function (orientation) {
-this.horizontal = orientation.isHorizontal();
-this.leftToRight = orientation.isLeftToRight();
+this.horizontal=orientation.isHorizontal();
+this.leftToRight=orientation.isLeftToRight();
 });
 
 Clazz.newMeth(C$, ['compare$O$O','compare$TT$TT'], function (o1, o2) {
@@ -28,14 +28,14 @@ return 0;
 }if (a.getParent() !== b.getParent() ) {
 var aAncestory;
 var bAncestory;
-for (aAncestory = Clazz.new_((I$[1]||$incl$(1))); a != null ; a = a.getParent()) {
+for (aAncestory=Clazz.new_((I$[1]||$incl$(1))); a != null ; a=a.getParent()) {
 aAncestory.add$TE(a);
 if (Clazz.instanceOf(a, "java.awt.Window")) {
 break;
 }}
 if (a == null ) {
 throw Clazz.new_(Clazz.load('java.lang.ClassCastException'));
-}for (bAncestory = Clazz.new_((I$[1]||$incl$(1))); b != null ; b = b.getParent()) {
+}for (bAncestory=Clazz.new_((I$[1]||$incl$(1))); b != null ; b=b.getParent()) {
 bAncestory.add$TE(b);
 if (Clazz.instanceOf(b, "java.awt.Window")) {
 break;
@@ -44,11 +44,11 @@ if (b == null ) {
 throw Clazz.new_(Clazz.load('java.lang.ClassCastException'));
 }for (var aIter = aAncestory.listIterator$I(aAncestory.size()), bIter = bAncestory.listIterator$I(bAncestory.size()); ; ) {
 if (aIter.hasPrevious()) {
-a = aIter.previous();
+a=aIter.previous();
 } else {
 return -1;
 }if (bIter.hasPrevious()) {
-b = bIter.previous();
+b=bIter.previous();
 } else {
 return 1;
 }if (a !== b ) {
@@ -85,4 +85,4 @@ return (ax > bx) ? -1 : 1;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:37
+//Created 2018-05-24 08:46:32

@@ -17,21 +17,21 @@ this.dropAction = 0;
 Clazz.newMeth(C$, 'c$$java_awt_dnd_DragSourceContext$I$Z', function (dsc, action, success) {
 C$.superclazz.c$$java_awt_dnd_DragSourceContext.apply(this, [dsc]);
 C$.$init$.apply(this);
-this.dropSuccess = success;
-this.dropAction = action;
+this.dropSuccess=success;
+this.dropAction=action;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_dnd_DragSourceContext$I$Z$I$I', function (dsc, action, success, x, y) {
 C$.superclazz.c$$java_awt_dnd_DragSourceContext$I$I.apply(this, [dsc, x, y]);
 C$.$init$.apply(this);
-this.dropSuccess = success;
-this.dropAction = action;
+this.dropSuccess=success;
+this.dropAction=action;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_dnd_DragSourceContext', function (dsc) {
 C$.superclazz.c$$java_awt_dnd_DragSourceContext.apply(this, [dsc]);
 C$.$init$.apply(this);
-this.dropSuccess = false;
+this.dropSuccess=false;
 }, 1);
 
 Clazz.newMeth(C$, 'getDropSuccess', function () {
@@ -44,4 +44,4 @@ return this.dropAction;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:56
+//Created 2018-05-24 08:45:16

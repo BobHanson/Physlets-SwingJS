@@ -10,7 +10,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, ['runMain$S$SA','runMain'], function (className, args) {
 var theClass = null;
 try {
-theClass = Clazz.forName(className);
+theClass=Clazz.forName(className);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.ClassNotFoundException")){
 System.out.println$S("Running main but cannot find class " + className);
@@ -30,4 +30,4 @@ return theClass;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:13
+//Created 2018-05-24 08:47:40

@@ -15,8 +15,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_datatransfer_Transferable$Z', function (t, local) {
 C$.$init$.apply(this);
-this.transferable = t;
-this.isLocal = local;
+this.transferable=t;
+this.isLocal=local;
 }, 1);
 
 Clazz.newMeth(C$, 'getTransferDataFlavors', function () {
@@ -34,4 +34,4 @@ return data;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:06
+//Created 2018-05-24 08:47:25

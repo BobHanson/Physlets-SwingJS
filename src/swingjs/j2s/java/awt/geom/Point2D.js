@@ -55,7 +55,7 @@ return Math.sqrt(px * px + py * py);
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var bits = java.lang.Double.doubleToLongBits(this.getX());
-bits = bits^(java.lang.Double.doubleToLongBits(this.getY()) * 31);
+bits^=java.lang.Double.doubleToLongBits(this.getY()) * 31;
 return (((bits|0)) ^ (((bits >> 32)|0)));
 });
 
@@ -93,8 +93,8 @@ Clazz.super_(C$, this,1);
 
 Clazz.newMeth(C$, 'c$$F$F', function (x, y) {
 Clazz.super_(C$, this,1);
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 }, 1);
 
 Clazz.newMeth(C$, 'getX', function () {
@@ -106,13 +106,13 @@ return this.y;
 });
 
 Clazz.newMeth(C$, 'setLocation$D$D', function (x, y) {
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 });
 
 Clazz.newMeth(C$, 'setLocation$F$F', function (x, y) {
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -142,8 +142,8 @@ Clazz.super_(C$, this,1);
 
 Clazz.newMeth(C$, 'c$$D$D', function (x, y) {
 Clazz.super_(C$, this,1);
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 }, 1);
 
 Clazz.newMeth(C$, 'getX', function () {
@@ -155,8 +155,8 @@ return this.y;
 });
 
 Clazz.newMeth(C$, 'setLocation$D$D', function (x, y) {
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -164,4 +164,4 @@ return "Point2D.Double[" + new Double(this.x).toString() + ", " + new Double(thi
 });
 })()
 })();
-//Created 2018-05-15 01:02:00
+//Created 2018-05-24 08:45:22

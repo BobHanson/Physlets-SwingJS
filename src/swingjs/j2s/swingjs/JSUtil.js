@@ -16,8 +16,8 @@ var j2sself = null;
 j2sself = self.J2S;
 j2sdebug = J2S._checkLoad || J2S._debugCode
 }
-C$.debugging = j2sdebug;
-C$.J2S = j2sself;
+C$.debugging=j2sdebug;
+C$.J2S=j2sself;
 }
 ;
 C$.useCache = true;
@@ -32,8 +32,8 @@ System.out.println$S("JSUtil initialized");
 }, 1);
 
 Clazz.newMeth(C$, 'getFileCache', function () {
-if (C$.fileCache == null  && (C$.fileCache = C$.J2S._getSetJavaFileCache(null)) == null  ) {
-C$.fileCache = Clazz.new_((I$[1]||$incl$(1)));
+if (C$.fileCache == null  && (C$.fileCache=C$.J2S._getSetJavaFileCache(null)) == null  ) {
+C$.fileCache=Clazz.new_((I$[1]||$incl$(1)));
 C$.J2S._getSetJavaFileCache(C$.fileCache);
 }return C$.fileCache;
 }, 1);
@@ -52,14 +52,14 @@ if (data == null ) {
 
 
 try {
-data = (I$[2]||$incl$(2)).streamToUTF8String$java_io_BufferedInputStream(Clazz.new_((I$[3]||$incl$(3)).c$$S,[uri]).getContent());
+data=(I$[2]||$incl$(2)).streamToUTF8String$java_io_BufferedInputStream(Clazz.new_((I$[3]||$incl$(3)).c$$S,[uri]).getContent());
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
 } else {
 throw e;
 }
 }
-data = C$.J2S._getFileData(uri, null, false, false);
+data=C$.J2S._getFileData(uri, null, false, false);
 }return data;
 }, 1);
 
@@ -71,11 +71,11 @@ return C$.ensureString$O(data);
 Clazz.newMeth(C$, 'getFileAsBytes$O', function (file) {
 var data = C$.getFileContents$O(file);
 var b = null;
-if ((I$[4]||$incl$(4)).isAB$O(data)) b = data;
- else if (Clazz.instanceOf(data, "java.lang.String")) b = (data).getBytes();
- else if (Clazz.instanceOf(data, "javajs.util.SB")) b = (I$[2]||$incl$(2)).getBytesFromSB$javajs_util_SB(data);
+if ((I$[4]||$incl$(4)).isAB$O(data)) b=data;
+ else if (Clazz.instanceOf(data, "java.lang.String")) b=(data).getBytes();
+ else if (Clazz.instanceOf(data, "javajs.util.SB")) b=(I$[2]||$incl$(2)).getBytesFromSB$javajs_util_SB(data);
  else if (Clazz.instanceOf(data, "java.io.InputStream")) try {
-b = (I$[2]||$incl$(2)).getLimitedStreamBytes$java_io_InputStream$J(data, -1);
+b=(I$[2]||$incl$(2)).getLimitedStreamBytes$java_io_InputStream$J(data, -1);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.io.IOException")){
 } else {
@@ -95,7 +95,7 @@ System.out.println$S("JSUtil getting Java resource " + resourceName);
 var path = C$.J2S._getResourcePath(resourceName, isJavaPath);
 if (path == null ) return null;
 var data = C$.getCachedFileData$S(path);
-if (data == null  && (data = C$.J2S._getFileData(path, null, false, false)) != null   && C$.useCache  && doCache ) C$.cacheFileData$S$O(path, data);
+if (data == null  && (data=C$.J2S._getFileData(path, null, false, false)) != null   && C$.useCache  && doCache ) C$.cacheFileData$S$O(path, data);
 var sdata = C$.ensureString$O(data);
 var ok = (sdata != null  && sdata.indexOf("[Exception") != 0 );
 System.out.println$S("Processing " + path + " [" + (ok ? "" + sdata.length$() : sdata) + "]" );
@@ -107,12 +107,12 @@ C$.getFileCache().put$TK$TV(path, data);
 }, 1);
 
 Clazz.newMeth(C$, 'loadJavaResourcesFromZip$ClassLoader$S$java_util_Map', function (cl, zipFileName, mapByteData) {
-if (mapByteData == null ) mapByteData = C$.getFileCache();
+if (mapByteData == null ) mapByteData=C$.getFileCache();
 var fileList = "";
 try {
 var bis = Clazz.new_((I$[5]||$incl$(5)).c$$java_io_InputStream,[cl.getResourceAsStream$S(zipFileName)]);
 var prefix = C$.J2S._getResourcePath(null, true);
-fileList = C$.getZipTools().cacheZipContentsStatic$java_io_BufferedInputStream$S$java_util_Map$Z(bis, prefix, mapByteData, false);
+fileList=C$.getZipTools().cacheZipContentsStatic$java_io_BufferedInputStream$S$java_util_Map$Z(bis, prefix, mapByteData, false);
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.Exception")){
 System.out.println$S("JSUtil could not cache files from " + zipFileName);
@@ -125,21 +125,21 @@ if (C$.debugging) System.out.println$S("JSUtil loaded resources from " + zipFile
 }, 1);
 
 Clazz.newMeth(C$, 'getZipTools', function () {
-return (C$.zipTools == null  ? (C$.zipTools = (I$[6]||$incl$(6)).getInstance$S$Z("javajs.util.ZipTools", true)) : C$.zipTools);
+return (C$.zipTools == null  ? (C$.zipTools=(I$[6]||$incl$(6)).getInstance$S$Z("javajs.util.ZipTools", true)) : C$.zipTools);
 }, 1);
 
 Clazz.newMeth(C$, 'loadStaticResource$S', function (file) {
 var s = "alert('" + file + "' was not found)" ;
 if (!C$.J2S._isResourceLoaded(file, false)) {
-s = C$.getJavaResource$S$Z$Z$Z(file, true, false, true);
+s=C$.getJavaResource$S$Z$Z$Z(file, true, false, true);
 C$.J2S._isResourceLoaded(file, true);
 }return s;
 }, 1);
 
 Clazz.newMeth(C$, 'processCSS$S$S', function (css, path) {
 if (path != null  && css.indexOf("images/") >= 0 ) {
-path = path.substring(0, path.lastIndexOf("/") + 1) + "images/";
-css = (I$[7]||$incl$(7)).rep$S$S$S(css, "images/", path);
+path=path.substring(0, path.lastIndexOf("/") + 1) + "images/";
+css=(I$[7]||$incl$(7)).rep$S$S$S(css, "images/", path);
 }var jq = C$.getJQuery();
 jq.$("head").append(jq.$("<style type='text/css'>" + css + "</style>" ));
 return css;
@@ -185,7 +185,7 @@ return Clazz._getStackTrace();
 
 Clazz.newMeth(C$, 'notImplemented$S', function (msg) {
 var s = null;
-if (C$.mapNotImpl == null ) C$.mapNotImpl = Clazz.new_((I$[1]||$incl$(1)));
+if (C$.mapNotImpl == null ) C$.mapNotImpl=Clazz.new_((I$[1]||$incl$(1)));
 {
 s = arguments.callee.caller;
 var cl = s.claxxOwner || s.exClazz;
@@ -255,23 +255,23 @@ Clazz.newMeth(C$, 'getDefaultLocale$S', function (language) {
 var region;
 var country;
 var variant;
-if (language == null ) language = C$.J2S._getDefaultLanguage(true);
-language = language.$replace("-", "_");
-if (language == null  || language.length$() == 0  || language.equalsIgnoreCase$S("en") ) language = "en_US";
+if (language == null ) language=C$.J2S._getDefaultLanguage(true);
+language=language.$replace("-", "_");
+if (language == null  || language.length$() == 0  || language.equalsIgnoreCase$S("en") ) language="en_US";
 var i = language.indexOf("_");
 if (i > 0) {
-region = language.substring(i + 1);
-language = language.substring(0, i);
+region=language.substring(i + 1);
+language=language.substring(0, i);
 } else {
-region = "";
-}region = region.toUpperCase();
-i = region.indexOf("_");
+region="";
+}region=region.toUpperCase();
+i=region.indexOf("_");
 if (i > 0) {
-country = region.substring(0, i);
-variant = region.substring(i + 1);
+country=region.substring(0, i);
+variant=region.substring(i + 1);
 } else {
-country = region;
-variant = "";
+country=region;
+variant="";
 }return Clazz.new_((I$[10]||$incl$(10)).c$$S$S$S,[language, country, variant]);
 }, 1);
 
@@ -317,4 +317,4 @@ return prompt(msg, defaultRet);
 }
 }, 1);
 })();
-//Created 2018-05-15 01:03:17
+//Created 2018-05-24 08:47:47

@@ -22,14 +22,14 @@ C$.c$$CA$I$I.apply(this, [null, 0, 0]);
 
 Clazz.newMeth(C$, 'c$$CA$I$I', function (array, offset, count) {
 C$.$init$.apply(this);
-this.array = array;
-this.offset = offset;
-this.count = count;
-this.partialReturn = false;
+this.array=array;
+this.offset=offset;
+this.count=count;
+this.partialReturn=false;
 }, 1);
 
 Clazz.newMeth(C$, 'setPartialReturn$Z', function (p) {
-this.partialReturn = p;
+this.partialReturn=p;
 });
 
 Clazz.newMeth(C$, 'isPartialReturn', function () {
@@ -43,16 +43,16 @@ return  String.instantialize(this.array, this.offset, this.count);
 });
 
 Clazz.newMeth(C$, 'first', function () {
-this.pos = this.offset;
+this.pos=this.offset;
 if (this.count != 0) {
 return this.array[this.pos];
 }return "\uffff";
 });
 
 Clazz.newMeth(C$, 'last', function () {
-this.pos = this.offset + this.count;
+this.pos=this.offset + this.count;
 if (this.count != 0) {
-this.pos = this.pos-(1);
+this.pos-=1;
 return this.array[this.pos];
 }return "\uffff";
 });
@@ -64,10 +64,10 @@ return this.array[this.pos];
 });
 
 Clazz.newMeth(C$, 'next', function () {
-this.pos = this.pos+(1);
+this.pos+=1;
 var end = this.offset + this.count;
 if (this.pos >= end) {
-this.pos = end;
+this.pos=end;
 return "\uffff";
 }return this.current();
 });
@@ -75,7 +75,7 @@ return "\uffff";
 Clazz.newMeth(C$, 'previous', function () {
 if (this.pos == this.offset) {
 return "\uffff";
-}this.pos = this.pos-(1);
+}this.pos-=1;
 return this.current();
 });
 
@@ -83,7 +83,7 @@ Clazz.newMeth(C$, 'setIndex$I', function (position) {
 var end = this.offset + this.count;
 if ((position < this.offset) || (position > end) ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["bad position: " + position]);
-}this.pos = position;
+}this.pos=position;
 if ((this.pos != end) && (this.count != 0) ) {
 return this.array[this.pos];
 }return "\uffff";
@@ -119,19 +119,19 @@ throw Clazz.new_(Clazz.load('java.lang.StringIndexOutOfBoundsException').c$$I,[e
 }if (start > end) {
 throw Clazz.new_(Clazz.load('java.lang.StringIndexOutOfBoundsException').c$$I,[end - start]);
 }var segment = Clazz.new_(C$);
-segment.array = this.array;
-segment.offset = this.offset + start;
-segment.count = end - start;
+segment.array=this.array;
+segment.offset=this.offset + start;
+segment.count=end - start;
 return segment;
 });
 
 Clazz.newMeth(C$, 'clone', function () {
 var o;
 try {
-o = Clazz.clone(this);
+o=Clazz.clone(this);
 } catch (cnse) {
 if (Clazz.exceptionOf(cnse, "java.lang.CloneNotSupportedException")){
-o = null;
+o=null;
 } else {
 throw cnse;
 }
@@ -139,4 +139,4 @@ throw cnse;
 return o;
 });
 })();
-//Created 2018-05-15 01:02:57
+//Created 2018-05-24 08:47:07

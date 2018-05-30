@@ -16,8 +16,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S$java_util_Locale', function (value, locale) {
 C$.$init$.apply(this);
-this.value = C$.verify$S(value);
-this.locale = C$.verify$java_util_Locale(locale);
+this.value=C$.verify$S(value);
+this.locale=C$.verify$java_util_Locale(locale);
 }, 1);
 
 Clazz.newMeth(C$, 'verify$S', function (value) {
@@ -54,4 +54,4 @@ return this.value;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:21
+//Created 2018-05-24 08:46:01

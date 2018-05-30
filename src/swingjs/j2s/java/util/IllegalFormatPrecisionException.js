@@ -14,7 +14,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I', function (p) {
 Clazz.super_(C$, this,1);
-this.p = p;
+this.p=p;
 }, 1);
 
 Clazz.newMeth(C$, 'getPrecision', function () {
@@ -27,4 +27,4 @@ return String.valueOf(this.p);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:13
+//Created 2018-05-24 08:45:47

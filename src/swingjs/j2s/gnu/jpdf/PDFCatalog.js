@@ -17,12 +17,12 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$gnu_jpdf_PDFPageList$I', function (pdfPageList, pagemode) {
 C$.superclazz.c$$S.apply(this, ["/Catalog"]);
 C$.$init$.apply(this);
-this.pdfPageList = pdfPageList;
-this.pagemode = pagemode;
+this.pdfPageList=pdfPageList;
+this.pagemode=pagemode;
 }, 1);
 
 Clazz.newMeth(C$, 'setOutline$gnu_jpdf_PDFOutline', function (outline) {
-this.outlines = outline;
+this.outlines=outline;
 });
 
 Clazz.newMeth(C$, 'write$java_io_OutputStream', function (os) {
@@ -42,4 +42,4 @@ this.writeEnd$java_io_OutputStream(os);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:46
+//Created 2018-05-24 08:45:02

@@ -46,13 +46,13 @@ var denom = ai * ci;
 var cross = ax * cx + ay * cy + az * cz;
 var cosang = cross * denom;
 if (cosang > 1 ) {
-cosang = 1;
+cosang=1;
 }if (cosang < -1 ) {
-cosang = -1;
+cosang=-1;
 }var torsion = Math.acos(cosang);
 var dot = ijx * cx + ijy * cy + ijz * cz;
 var absDot = Math.abs(dot);
-torsion = (dot / absDot > 0 ) ? torsion : -torsion;
+torsion=(dot / absDot > 0 ) ? torsion : -torsion;
 return (asDegrees ? torsion / 0.017453292 : torsion);
 }, 1);
 
@@ -62,13 +62,13 @@ vab.sub2$javajs_util_T3$javajs_util_T3(b, a);
 var theta = dq.getTheta();
 var n = dq.getNormal();
 var v_dot_n = vab.dot$javajs_util_T3(n);
-if (Math.abs(v_dot_n) < 1.0E-4 ) v_dot_n = 0;
+if (Math.abs(v_dot_n) < 1.0E-4 ) v_dot_n=0;
 var va_prime_d = Clazz.new_((I$[1]||$incl$(1)));
 va_prime_d.cross$javajs_util_T3$javajs_util_T3(vab, n);
 if (va_prime_d.dot$javajs_util_T3(va_prime_d) != 0 ) va_prime_d.normalize();
 var vda = Clazz.new_((I$[1]||$incl$(1)));
 var vcb = (I$[1]||$incl$(1)).newV$javajs_util_T3(n);
-if (v_dot_n == 0 ) v_dot_n = 1.4E-45;
+if (v_dot_n == 0 ) v_dot_n=1.4E-45;
 vcb.scale$F(v_dot_n);
 vda.sub2$javajs_util_T3$javajs_util_T3(vcb, vab);
 vda.scale$F(0.5);
@@ -80,8 +80,8 @@ pt_a_prime.sub$javajs_util_T3(r);
 if (v_dot_n != 1.4E-45 ) n.scale$F(v_dot_n);
 var pt_b_prime = (I$[2]||$incl$(2)).newP$javajs_util_T3(pt_a_prime);
 pt_b_prime.add$javajs_util_T3(n);
-theta = C$.computeTorsion$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z(a, pt_a_prime, pt_b_prime, b, true);
-if (Float.isNaN(theta) || r.length$() < 1.0E-4  ) theta = dq.getThetaDirectedV$javajs_util_V3(n);
+theta=C$.computeTorsion$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z(a, pt_a_prime, pt_b_prime, b, true);
+if (Float.isNaN(theta) || r.length$() < 1.0E-4  ) theta=dq.getThetaDirectedV$javajs_util_V3(n);
 var residuesPerTurn = Math.abs(theta == 0  ? 0 : 360.0 / theta);
 var pitch = Math.abs(v_dot_n == 1.4E-45  ? 0 : n.length$() * (theta == 0  ? 1 : 360.0 / theta));
 return Clazz.array((I$[3]||$incl$(3)), -1, [pt_a_prime, n, r, (I$[2]||$incl$(2)).new3$F$F$F(theta, pitch, residuesPerTurn), pt_b_prime]);
@@ -131,7 +131,7 @@ var d = pt0.distance$javajs_util_T3(ptRef);
 pt0.sub2$javajs_util_T3$javajs_util_T3(pointA, vNorm);
 if (d > pt0.distance$javajs_util_T3(ptRef) ) {
 vNorm.scale$F(-1);
-nd = -nd;
+nd=-nd;
 }}return nd;
 }, 1);
 
@@ -272,26 +272,26 @@ var diff;
 var type = (ax > ay  ? (ax > az  ? 1 : 3) : ay > az  ? 2 : 3);
 switch (type) {
 case 1:
-x = 0;
-diff = (b1 * c2 - b2 * c1);
+x=0;
+diff=(b1 * c2 - b2 * c1);
 if (Math.abs(diff) < 0.01 ) return null;
-y = (c1 * d2 - c2 * d1) / diff;
-z = (b2 * d1 - d2 * b1) / diff;
+y=(c1 * d2 - c2 * d1) / diff;
+z=(b2 * d1 - d2 * b1) / diff;
 break;
 case 2:
-diff = (a1 * c2 - a2 * c1);
+diff=(a1 * c2 - a2 * c1);
 if (Math.abs(diff) < 0.01 ) return null;
-x = (c1 * d2 - c2 * d1) / diff;
-y = 0;
-z = (a2 * d1 - d2 * a1) / diff;
+x=(c1 * d2 - c2 * d1) / diff;
+y=0;
+z=(a2 * d1 - d2 * a1) / diff;
 break;
 case 3:
 default:
-diff = (a1 * b2 - a2 * b1);
+diff=(a1 * b2 - a2 * b1);
 if (Math.abs(diff) < 0.01 ) return null;
-x = (b1 * d2 - b2 * d1) / diff;
-y = (a2 * d1 - d2 * a1) / diff;
-z = 0;
+x=(b1 * d2 - b2 * d1) / diff;
+y=(a2 * d1 - d2 * a1) / diff;
+z=0;
 }
 var list = Clazz.new_((I$[4]||$incl$(4)));
 list.addLast$TV((I$[2]||$incl$(2)).new3$F$F$F(x, y, z));
@@ -304,7 +304,7 @@ Clazz.newMeth(C$, 'getIntersection$javajs_util_P3$javajs_util_V3$javajs_util_P4$
 C$.getPlaneProjection$javajs_util_P3$javajs_util_P4$javajs_util_P3$javajs_util_V3(pt1, plane, ptRet, tempNorm);
 tempNorm.set$F$F$F(plane.x, plane.y, plane.z);
 tempNorm.normalize();
-if (v == null ) v = (I$[1]||$incl$(1)).newV$javajs_util_T3(tempNorm);
+if (v == null ) v=(I$[1]||$incl$(1)).newV$javajs_util_T3(tempNorm);
 var l_dot_n = v.dot$javajs_util_T3(tempNorm);
 if (Math.abs(l_dot_n) < 0.01 ) return null;
 vTemp.sub2$javajs_util_T3$javajs_util_T3(ptRet, pt1);
@@ -313,7 +313,7 @@ return ptRet;
 }, 1);
 
 Clazz.newMeth(C$, 'calculateQuaternionRotation$javajs_util_P3AA$FA', function (centerAndPoints, retStddev) {
-retStddev[1] = NaN;
+retStddev[1]=NaN;
 var q = Clazz.new_((I$[5]||$incl$(5)));
 var ptsA = centerAndPoints[0];
 var ptsB = centerAndPoints[1];
@@ -345,21 +345,21 @@ Szx += ptA.z * ptB.x;
 Szy += ptA.z * ptB.y;
 Szz += ptA.z * ptB.z;
 }
-retStddev[0] = C$.getRmsd$javajs_util_P3AA$javajs_util_Quat(centerAndPoints, q);
+retStddev[0]=C$.getRmsd$javajs_util_P3AA$javajs_util_Quat(centerAndPoints, q);
 var N = Clazz.array(Double.TYPE, [4, 4]);
-N[0][0] = Sxx + Syy + Szz ;
-N[0][1] = N[1][0] = Syz - Szy;
-N[0][2] = N[2][0] = Szx - Sxz;
-N[0][3] = N[3][0] = Sxy - Syx;
-N[1][1] = Sxx - Syy - Szz ;
-N[1][2] = N[2][1] = Sxy + Syx;
-N[1][3] = N[3][1] = Szx + Sxz;
-N[2][2] = -Sxx + Syy - Szz;
-N[2][3] = N[3][2] = Syz + Szy;
-N[3][3] = -Sxx - Syy + Szz;
+N[0][0]=Sxx + Syy + Szz ;
+N[0][1]=N[1][0]=Syz - Szy;
+N[0][2]=N[2][0]=Szx - Sxz;
+N[0][3]=N[3][0]=Sxy - Syx;
+N[1][1]=Sxx - Syy - Szz ;
+N[1][2]=N[2][1]=Sxy + Syx;
+N[1][3]=N[3][1]=Szx + Sxz;
+N[2][2]=-Sxx + Syy - Szz;
+N[2][3]=N[3][2]=Syz + Szy;
+N[3][3]=-Sxx - Syy + Szz;
 var v = ((I$[6]||$incl$(6)).getInterface$S("javajs.util.Eigen")).setM$DAA(N).getEigenvectorsFloatTransposed()[3];
-q = (I$[5]||$incl$(5)).newP4$javajs_util_P4((I$[7]||$incl$(7)).new4$F$F$F$F(v[1], v[2], v[3], v[0]));
-retStddev[1] = C$.getRmsd$javajs_util_P3AA$javajs_util_Quat(centerAndPoints, q);
+q=(I$[5]||$incl$(5)).newP4$javajs_util_P4((I$[7]||$incl$(7)).new4$F$F$F$F(v[1], v[2], v[3], v[0]));
+retStddev[1]=C$.getRmsd$javajs_util_P3AA$javajs_util_Quat(centerAndPoints, q);
 return q;
 }, 1);
 
@@ -379,10 +379,10 @@ return retStddev[1];
 Clazz.newMeth(C$, 'getCenterAndPoints$javajs_util_Lst', function (vPts) {
 var n = vPts.size();
 var pts = Clazz.array((I$[2]||$incl$(2)), [n + 1]);
-pts[0] = Clazz.new_((I$[2]||$incl$(2)));
+pts[0]=Clazz.new_((I$[2]||$incl$(2)));
 if (n > 0) {
 for (var i = 0; i < n; i++) {
-pts[0].add$javajs_util_T3(pts[i + 1] = vPts.get$I(i));
+pts[0].add$javajs_util_T3(pts[i + 1]=vPts.get$I(i));
 }
 pts[0].scale$F(1.0 / n);
 }return pts;
@@ -406,4 +406,4 @@ return Math.sqrt(sum2 / n);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:19
+//Created 2018-05-24 08:45:57

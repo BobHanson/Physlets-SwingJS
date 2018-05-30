@@ -26,9 +26,9 @@ return holder.$$O("#" + rcID).get(0);
 
 Clazz.newMeth(C$, 'updateCellNode$swingjs_api_js_DOMNode$java_awt_JSComponent$I$I', function (td, renderer, width, height) {
 var ui;
-if (renderer != null  && !(ui = renderer.getUI()).isNull ) {
+if (renderer != null  && !(ui=renderer.getUI()).isNull ) {
 if (width > 0) renderer.setSize$I$I(width, height);
-ui.outerNode = null;
+ui.outerNode=null;
 ui.reInit();
 ui.updateDOMNode();
 (I$[1]||$incl$(1)).setAttr(ui.domNode, "data-source", renderer);
@@ -38,9 +38,9 @@ ui.updateDOMNode();
 td.appendChild(ui.domNode);
 (I$[1]||$incl$(1)).setStyles(ui.domNode, ["width", "unset"]);
 (I$[1]||$incl$(1)).setStyles(ui.domNode, ["height", "unset"]);
-ui.domNode = ui.outerNode = null;
+ui.domNode=ui.outerNode=null;
 }}, 1);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:19
+//Created 2018-05-24 08:47:50

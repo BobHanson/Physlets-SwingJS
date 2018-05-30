@@ -27,8 +27,8 @@ C$.c$$I$I.apply(this, [0, 0]);
 
 Clazz.newMeth(C$, 'c$$I$I', function (hgap, vgap) {
 C$.$init$.apply(this);
-this.hgap = hgap;
-this.vgap = vgap;
+this.hgap=hgap;
+this.vgap=vgap;
 }, 1);
 
 Clazz.newMeth(C$, 'getHgap', function () {
@@ -36,7 +36,7 @@ return this.hgap;
 });
 
 Clazz.newMeth(C$, 'setHgap$I', function (hgap) {
-this.hgap = hgap;
+this.hgap=hgap;
 });
 
 Clazz.newMeth(C$, 'getVgap', function () {
@@ -44,13 +44,13 @@ return this.vgap;
 });
 
 Clazz.newMeth(C$, 'setVgap$I', function (vgap) {
-this.vgap = vgap;
+this.vgap=vgap;
 });
 
 Clazz.newMeth(C$, 'addLayoutComponent$java_awt_Component$O', function (comp, constraints) {
 {
 if (constraints == null ) {
-constraints = "";
+constraints="";
 }if (Clazz.instanceOf(constraints, "java.lang.String")) {
 this.addLayoutComponent$S$java_awt_Component(constraints, comp);
 } else {
@@ -63,7 +63,7 @@ if (!this.vector.isEmpty()) {
 comp.setVisible$Z(false);
 }for (var i = 0; i < this.vector.size(); i++) {
 if ((this.vector.get$I(i)).name.equals$O(name)) {
-(this.vector.get$I(i)).comp = comp;
+(this.vector.get$I(i)).comp=comp;
 return;
 }}
 this.vector.add$TE(Clazz.new_((I$[5]||$incl$(5)).c$$S$java_awt_Component, [this, null, name, comp]));
@@ -92,9 +92,9 @@ for (var i = 0; i < ncomponents; i++) {
 var comp = parent.getComponent$I(i);
 var d = comp.getPreferredSize();
 if (d.width > w) {
-w = d.width;
+w=d.width;
 }if (d.height > h) {
-h = d.height;
+h=d.height;
 }}
 return Clazz.new_((I$[6]||$incl$(6)).c$$I$I,[insets.left + insets.right + w + this.hgap * 2 , insets.top + insets.bottom + h + this.vgap * 2 ]);
 }});
@@ -109,9 +109,9 @@ for (var i = 0; i < ncomponents; i++) {
 var comp = parent.getComponent$I(i);
 var d = comp.getMinimumSize();
 if (d.width > w) {
-w = d.width;
+w=d.width;
 }if (d.height > h) {
-h = d.height;
+h=d.height;
 }}
 return Clazz.new_((I$[6]||$incl$(6)).c$$I$I,[insets.left + insets.right + w + this.hgap * 2 , insets.top + insets.bottom + h + this.vgap * 2 ]);
 }});
@@ -138,10 +138,10 @@ var ncomponents = parent.getComponentCount();
 var comp = null;
 var currentFound = false;
 for (var i = 0; i < ncomponents; i++) {
-comp = parent.getComponent$I(i);
+comp=parent.getComponent$I(i);
 comp.setBounds$I$I$I$I(this.hgap + insets.left, this.vgap + insets.top, parent.width - (this.hgap * 2 + insets.left + insets.right), parent.height - (this.vgap * 2 + insets.top + insets.bottom));
 if (comp.isVisible()) {
-currentFound = true;
+currentFound=true;
 }}
 if (!currentFound && ncomponents > 0 ) {
 parent.getComponent$I(0).setVisible$Z(true);
@@ -163,7 +163,7 @@ comp.setVisible$Z(false);
 break;
 }}
 if (ncomponents > 0) {
-this.currentCard = 0;
+this.currentCard=0;
 parent.getComponent$I(0).setVisible$Z(true);
 parent.validate();
 }}});
@@ -176,8 +176,8 @@ for (var i = 0; i < ncomponents; i++) {
 var comp = parent.getComponent$I(i);
 if (comp.isVisible()) {
 comp.setVisible$Z(false);
-this.currentCard = (i + 1) % ncomponents;
-comp = parent.getComponent$I(this.currentCard);
+this.currentCard=(i + 1) % ncomponents;
+comp=parent.getComponent$I(this.currentCard);
 comp.setVisible$Z(true);
 parent.validate();
 return;
@@ -193,8 +193,8 @@ for (var i = 0; i < ncomponents; i++) {
 var comp = parent.getComponent$I(i);
 if (comp.isVisible()) {
 comp.setVisible$Z(false);
-this.currentCard = ((i > 0) ? i - 1 : ncomponents - 1);
-comp = parent.getComponent$I(this.currentCard);
+this.currentCard=((i > 0) ? i - 1 : ncomponents - 1);
+comp=parent.getComponent$I(this.currentCard);
 comp.setVisible$Z(true);
 parent.validate();
 return;
@@ -204,7 +204,7 @@ this.showDefaultComponent$java_awt_Container(parent);
 
 Clazz.newMeth(C$, 'showDefaultComponent$java_awt_Container', function (parent) {
 if (parent.getComponentCount() > 0) {
-this.currentCard = 0;
+this.currentCard=0;
 parent.getComponent$I(0).setVisible$Z(true);
 parent.validate();
 }});
@@ -220,7 +220,7 @@ comp.setVisible$Z(false);
 break;
 }}
 if (ncomponents > 0) {
-this.currentCard = ncomponents - 1;
+this.currentCard=ncomponents - 1;
 parent.getComponent$I(this.currentCard).setVisible$Z(true);
 parent.validate();
 }}});
@@ -233,12 +233,12 @@ var ncomponents = this.vector.size();
 for (var i = 0; i < ncomponents; i++) {
 var card = this.vector.get$I(i);
 if (card.name.equals$O(name)) {
-next = card.comp;
-this.currentCard = i;
+next=card.comp;
+this.currentCard=i;
 break;
 }}
 if ((next != null ) && !next.isVisible() ) {
-ncomponents = parent.getComponentCount();
+ncomponents=parent.getComponentCount();
 for (var i = 0; i < ncomponents; i++) {
 var comp = parent.getComponent$I(i);
 if (comp.isVisible()) {
@@ -271,11 +271,11 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S$java_awt_Component', function (cardName, cardComponent) {
 C$.$init$.apply(this);
-this.name = cardName;
-this.comp = cardComponent;
+this.name=cardName;
+this.comp=cardComponent;
 }, 1);
 
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:01:49
+//Created 2018-05-24 08:45:06

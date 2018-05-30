@@ -16,7 +16,7 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$TT$javax_swing_Action', function (c, a) {
 C$.$init$.apply(this);
 p$.setTarget$TT.apply(this, [c]);
-this.action = a;
+this.action=a;
 }, 1);
 
 Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
@@ -40,4 +40,4 @@ return this.action;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:22
+//Created 2018-05-24 08:46:06

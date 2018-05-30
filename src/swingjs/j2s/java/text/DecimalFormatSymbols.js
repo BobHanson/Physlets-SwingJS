@@ -55,7 +55,7 @@ return this.zeroDigit;
 });
 
 Clazz.newMeth(C$, 'setZeroDigit$C', function (zeroDigit) {
-this.zeroDigit = zeroDigit;
+this.zeroDigit=zeroDigit;
 });
 
 Clazz.newMeth(C$, 'getGroupingSeparator', function () {
@@ -63,7 +63,7 @@ return this.groupingSeparator;
 });
 
 Clazz.newMeth(C$, 'setGroupingSeparator$C', function (groupingSeparator) {
-this.groupingSeparator = groupingSeparator;
+this.groupingSeparator=groupingSeparator;
 });
 
 Clazz.newMeth(C$, 'getDecimalSeparator', function () {
@@ -71,7 +71,7 @@ return this.decimalSeparator;
 });
 
 Clazz.newMeth(C$, 'setDecimalSeparator$C', function (decimalSeparator) {
-this.decimalSeparator = decimalSeparator;
+this.decimalSeparator=decimalSeparator;
 });
 
 Clazz.newMeth(C$, 'getPerMill', function () {
@@ -79,7 +79,7 @@ return this.perMill;
 });
 
 Clazz.newMeth(C$, 'setPerMill$C', function (perMill) {
-this.perMill = perMill;
+this.perMill=perMill;
 });
 
 Clazz.newMeth(C$, 'getPercent', function () {
@@ -87,7 +87,7 @@ return this.percent;
 });
 
 Clazz.newMeth(C$, 'setPercent$C', function (percent) {
-this.percent = percent;
+this.percent=percent;
 });
 
 Clazz.newMeth(C$, 'getDigit', function () {
@@ -95,7 +95,7 @@ return this.digit;
 });
 
 Clazz.newMeth(C$, 'setDigit$C', function (digit) {
-this.digit = digit;
+this.digit=digit;
 });
 
 Clazz.newMeth(C$, 'getPatternSeparator', function () {
@@ -103,7 +103,7 @@ return this.patternSeparator;
 });
 
 Clazz.newMeth(C$, 'setPatternSeparator$C', function (patternSeparator) {
-this.patternSeparator = patternSeparator;
+this.patternSeparator=patternSeparator;
 });
 
 Clazz.newMeth(C$, 'getInfinity', function () {
@@ -111,7 +111,7 @@ return this.infinity;
 });
 
 Clazz.newMeth(C$, 'setInfinity$S', function (infinity) {
-this.infinity = infinity;
+this.infinity=infinity;
 });
 
 Clazz.newMeth(C$, 'getNaN', function () {
@@ -119,7 +119,7 @@ return this.NaN;
 });
 
 Clazz.newMeth(C$, 'setNaN$S', function (NaN) {
-this.NaN = NaN;
+this.NaN=NaN;
 });
 
 Clazz.newMeth(C$, 'getMinusSign', function () {
@@ -127,7 +127,7 @@ return this.minusSign;
 });
 
 Clazz.newMeth(C$, 'setMinusSign$C', function (minusSign) {
-this.minusSign = minusSign;
+this.minusSign=minusSign;
 });
 
 Clazz.newMeth(C$, 'getCurrencySymbol', function () {
@@ -135,7 +135,7 @@ return this.currencySymbol;
 });
 
 Clazz.newMeth(C$, 'setCurrencySymbol$S', function (currency) {
-this.currencySymbol = currency;
+this.currencySymbol=currency;
 });
 
 Clazz.newMeth(C$, 'getInternationalCurrencySymbol', function () {
@@ -143,7 +143,7 @@ return this.intlCurrencySymbol;
 });
 
 Clazz.newMeth(C$, 'setInternationalCurrencySymbol$S', function (currencyCode) {
-this.intlCurrencySymbol = currencyCode;
+this.intlCurrencySymbol=currencyCode;
 });
 
 Clazz.newMeth(C$, 'getMonetaryDecimalSeparator', function () {
@@ -151,7 +151,7 @@ return this.monetarySeparator;
 });
 
 Clazz.newMeth(C$, 'setMonetaryDecimalSeparator$C', function (sep) {
-this.monetarySeparator = sep;
+this.monetarySeparator=sep;
 });
 
 Clazz.newMeth(C$, 'getExponentialSymbol', function () {
@@ -163,13 +163,13 @@ return this.exponentialSeparator;
 });
 
 Clazz.newMeth(C$, 'setExponentialSymbol$C', function (exp) {
-this.exponential = exp;
+this.exponential=exp;
 });
 
 Clazz.newMeth(C$, 'setExponentSeparator$S', function (exp) {
 if (exp == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.exponentialSeparator = exp;
+}this.exponentialSeparator=exp;
 });
 
 Clazz.newMeth(C$, 'clone', function () {
@@ -194,38 +194,38 @@ return (this.zeroDigit == other.zeroDigit && this.groupingSeparator == other.gro
 
 Clazz.newMeth(C$, 'hashCode', function () {
 var result = this.zeroDigit.$c();
-result = result * 37 + this.groupingSeparator.$c();
-result = result * 37 + this.decimalSeparator.$c();
+result=result * 37 + this.groupingSeparator.$c();
+result=result * 37 + this.decimalSeparator.$c();
 return result;
 });
 
 Clazz.newMeth(C$, 'initialize$java_util_Locale', function (locale) {
-this.locale = locale;
+this.locale=locale;
 var needCacheUpdate = false;
 var data = C$.cachedLocaleData.get$O(locale);
 if (data == null ) {
-data = Clazz.array(java.lang.Object, [3]);
+data=Clazz.array(java.lang.Object, [3]);
 var rb = (I$[4]||$incl$(4)).getNumberFormatData$java_util_Locale(locale);
-data[0] = rb.getStringArray$S("NumberElements");
-needCacheUpdate = true;
+data[0]=rb.getStringArray$S("NumberElements");
+needCacheUpdate=true;
 }var numberElements = data[0];
-this.decimalSeparator = numberElements[0].charAt(0);
-this.groupingSeparator = numberElements[1].charAt(0);
-this.patternSeparator = numberElements[2].charAt(0);
-this.percent = numberElements[3].charAt(0);
-this.zeroDigit = numberElements[4].charAt(0);
-this.digit = numberElements[5].charAt(0);
-this.minusSign = numberElements[6].charAt(0);
-this.exponential = numberElements[7].charAt(0);
-this.exponentialSeparator = numberElements[7];
-this.perMill = numberElements[8].charAt(0);
-this.infinity = numberElements[9];
-this.NaN = numberElements[10];
-this.intlCurrencySymbol = "\u00a4";
-this.currencySymbol = "$";
-this.monetarySeparator = this.decimalSeparator;
+this.decimalSeparator=numberElements[0].charAt(0);
+this.groupingSeparator=numberElements[1].charAt(0);
+this.patternSeparator=numberElements[2].charAt(0);
+this.percent=numberElements[3].charAt(0);
+this.zeroDigit=numberElements[4].charAt(0);
+this.digit=numberElements[5].charAt(0);
+this.minusSign=numberElements[6].charAt(0);
+this.exponential=numberElements[7].charAt(0);
+this.exponentialSeparator=numberElements[7];
+this.perMill=numberElements[8].charAt(0);
+this.infinity=numberElements[9];
+this.NaN=numberElements[10];
+this.intlCurrencySymbol="\u00a4";
+this.currencySymbol="$";
+this.monetarySeparator=this.decimalSeparator;
 if (needCacheUpdate) {
 C$.cachedLocaleData.put$TK$TV(locale, data);
 }});
 })();
-//Created 2018-05-15 01:02:10
+//Created 2018-05-24 08:45:43

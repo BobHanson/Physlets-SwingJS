@@ -30,10 +30,10 @@ C$.c$$O$I$Runnable$O$Z.apply(this, [source, 1200, runnable, notifier, catchThrow
 Clazz.newMeth(C$, 'c$$O$I$Runnable$O$Z', function (source, id, runnable, notifier, catchThrowables) {
 C$.superclazz.c$$O$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.runnable = runnable;
-this.notifier = notifier;
-this.catchExceptions = catchThrowables;
-this.when = System.currentTimeMillis();
+this.runnable=runnable;
+this.notifier=notifier;
+this.catchExceptions=catchThrowables;
+this.when=System.currentTimeMillis();
 }, 1);
 
 Clazz.newMeth(C$, 'dispatch', function () {
@@ -42,8 +42,8 @@ try {
 this.runnable.run();
 } catch (t) {
 if (Clazz.instanceOf(t, "java.lang.Exception")) {
-this.exception = t;
-}this.throwable = t;
+this.exception=t;
+}this.throwable=t;
 }
 } else {
 this.runnable.run();
@@ -68,14 +68,14 @@ Clazz.newMeth(C$, 'paramString', function () {
 var typeStr;
 switch (this.id) {
 case 1200:
-typeStr = "INVOCATION_DEFAULT";
+typeStr="INVOCATION_DEFAULT";
 break;
 default:
-typeStr = "unknown type";
+typeStr="unknown type";
 }
 return typeStr + ",runnable=" + this.runnable + ",notifier=" + this.notifier + ",catchExceptions=" + this.catchExceptions + ",when=" + this.when ;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:18

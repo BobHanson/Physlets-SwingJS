@@ -17,7 +17,7 @@ var i = 0;
 var j = 0;
 while (i < 512){
 var entry = (data[i++]).$c() << 16;
-CharacterDataLatin1.A[j++] = entry | data[i++];
+CharacterDataLatin1.A[j++]=entry | data[i++];
 }
 }}
 ;
@@ -67,7 +67,7 @@ var mapChar = ch;
 var val = this.getProperties$I(ch);
 if (((val & 131072) != 0) && ((val & 133955584) != 133955584) ) {
 var offset = val << 5 >> 23;
-mapChar = ch + offset;
+mapChar=ch + offset;
 }return mapChar;
 });
 
@@ -77,9 +77,9 @@ var val = this.getProperties$I(ch);
 if ((val & 65536) != 0) {
 if ((val & 133955584) != 133955584) {
 var offset = val << 5 >> 23;
-mapChar = ch - offset;
+mapChar=ch - offset;
 } else if (ch == 181) {
-mapChar = 924;
+mapChar=924;
 }}return mapChar;
 });
 
@@ -93,9 +93,9 @@ if (radix >= 2 && radix <= 36 ) {
 var val = this.getProperties$I(ch);
 var kind = val & 31;
 if (kind == 9) {
-value = ch + ((val & 992) >> 5) & 31;
+value=ch + ((val & 992) >> 5) & 31;
 } else if ((val & 3072) == 3072) {
-value = (ch + ((val & 992) >> 5) & 31) + 10;
+value=(ch + ((val & 992) >> 5) & 31) + 10;
 }}return (value < radix) ? value : -1;
 });
 
@@ -105,16 +105,16 @@ var retval = -1;
 switch (val & 3072) {
 default:
 case (0x00000000):
-retval = -1;
+retval=-1;
 break;
 case (0x00000400):
-retval = ch + ((val & 992) >> 5) & 31;
+retval=ch + ((val & 992) >> 5) & 31;
 break;
 case (0x00000800):
-retval = -2;
+retval=-2;
 break;
 case (0x00000C00):
-retval = (ch + ((val & 992) >> 5) & 31) + 10;
+retval=(ch + ((val & 992) >> 5) & 31) + 10;
 break;
 }
 return retval;
@@ -129,7 +129,7 @@ Clazz.newMeth(C$, 'getDirectionality$I', function (ch) {
 var val = this.getProperties$I(ch);
 var directionality = ($b$[0] = (((val & 2013265920) >> 27)|0), $b$[0]);
 if (directionality == 15) {
-directionality = ($b$[0] = -1, $b$[0]);
+directionality=($b$[0] = -1, $b$[0]);
 }return $b$[0] = directionality, $b$[0];
 });
 
@@ -144,14 +144,14 @@ var val = this.getProperties$I(ch);
 if ((val & 65536) != 0) {
 if ((val & 133955584) != 133955584) {
 var offset = val << 5 >> 23;
-mapChar = ch - offset;
+mapChar=ch - offset;
 } else {
 switch (ch) {
 case 0x00B5:
-mapChar = 924;
+mapChar=924;
 break;
 default:
-mapChar = -1;
+mapChar=-1;
 break;
 }
 }}return mapChar;
@@ -160,7 +160,7 @@ break;
 Clazz.newMeth(C$, 'toUpperCaseCharArray$I', function (ch) {
 var upperMap = Clazz.array(Character.TYPE, -1, [String.fromCharCode(ch)]);
 if (ch == 223) {
-upperMap = CharacterDataLatin1.sharpsMap;
+upperMap=CharacterDataLatin1.sharpsMap;
 }return upperMap;
 });
 
@@ -170,4 +170,4 @@ Clazz.super_(C$, this,1);
 C$.$_ASSERT_ENABLED_ = ClassLoader.$getClassAssertionStatus(C$);
 var $b$ = new Int8Array(1);
 })();
-//Created 2018-05-15 01:02:06
+//Created 2018-05-24 08:45:36

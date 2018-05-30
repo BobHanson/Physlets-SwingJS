@@ -64,7 +64,7 @@ var result = 1;
 var it = this.iterator();
 while (it.hasNext()){
 var object = it.next();
-result = (31 * result) + (object == null  ? 0 : object.hashCode());
+result=(31 * result) + (object == null  ? 0 : object.hashCode());
 }
 return result;
 });
@@ -158,7 +158,7 @@ this.lastPosition = -1;
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.expectedModCount = this.this$0.modCount;
+this.expectedModCount=this.this$0.modCount;
 }, 1);
 
 Clazz.newMeth(C$, 'hasNext', function () {
@@ -169,7 +169,7 @@ Clazz.newMeth(C$, 'next', function () {
 if (this.expectedModCount == this.this$0.modCount) {
 try {
 var result = this.this$0.get$I(this.pos + 1);
-this.lastPosition = ++this.pos;
+this.lastPosition=++this.pos;
 return result;
 } catch (e) {
 if (Clazz.exceptionOf(e, "java.lang.IndexOutOfBoundsException")){
@@ -196,7 +196,7 @@ if (this.this$0.modCount != this.expectedModCount) {
 this.expectedModCount++;
 }if (this.pos == this.lastPosition) {
 this.pos--;
-}this.lastPosition = -1;
+}this.lastPosition=-1;
 } else {
 throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
 }});
@@ -216,7 +216,7 @@ Clazz.newMeth(C$, 'c$$I', function (start) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
 if (0 <= start && start <= this.this$0.size() ) {
-this.pos = start - 1;
+this.pos=start - 1;
 } else {
 throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException'));
 }}, 1);
@@ -233,7 +233,7 @@ throw e;
 }
 }
 this.pos++;
-this.lastPosition = -1;
+this.lastPosition=-1;
 if (this.this$0.modCount != this.expectedModCount) {
 this.expectedModCount++;
 }} else {
@@ -252,7 +252,7 @@ Clazz.newMeth(C$, 'previous', function () {
 if (this.expectedModCount == this.this$0.modCount) {
 try {
 var result = this.this$0.get$I(this.pos);
-this.lastPosition = this.pos;
+this.lastPosition=this.pos;
 this.pos--;
 return result;
 } catch (e) {
@@ -325,10 +325,10 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_util_AbstractList$I$I', function (list, start, end) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.fullList = list;
-this.modCount = this.fullList.modCount;
-this.offset = start;
-this.$size = end - start;
+this.fullList=list;
+this.modCount=this.fullList.modCount;
+this.offset=start;
+this.$size=end - start;
 }, 1);
 
 Clazz.newMeth(C$, 'add$I$TE', function (location, object) {
@@ -336,7 +336,7 @@ if (this.modCount == this.fullList.modCount) {
 if (0 <= location && location <= this.$size ) {
 this.fullList.add$I$TE(location + this.offset, object);
 this.$size++;
-this.modCount = this.fullList.modCount;
+this.modCount=this.fullList.modCount;
 } else {
 throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException'));
 }} else {
@@ -348,8 +348,8 @@ if (this.modCount == this.fullList.modCount) {
 if (0 <= location && location <= this.$size ) {
 var result = this.fullList.addAll$I$java_util_Collection(location + this.offset, collection);
 if (result) {
-this.$size = this.$size+(collection.size());
-this.modCount = this.fullList.modCount;
+this.$size+=collection.size();
+this.modCount=this.fullList.modCount;
 }return result;
 }throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException'));
 }throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
@@ -359,8 +359,8 @@ Clazz.newMeth(C$, 'addAll$java_util_Collection', function (collection) {
 if (this.modCount == this.fullList.modCount) {
 var result = this.fullList.addAll$I$java_util_Collection(this.offset + this.$size, collection);
 if (result) {
-this.$size = this.$size+(collection.size());
-this.modCount = this.fullList.modCount;
+this.$size+=collection.size();
+this.modCount=this.fullList.modCount;
 }return result;
 }throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
 });
@@ -390,7 +390,7 @@ if (this.modCount == this.fullList.modCount) {
 if (0 <= location && location < this.$size ) {
 var result = this.fullList.remove$I(location + this.offset);
 this.$size--;
-this.modCount = this.fullList.modCount;
+this.modCount=this.fullList.modCount;
 return result;
 }throw Clazz.new_(Clazz.load('java.lang.IndexOutOfBoundsException'));
 }throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
@@ -400,8 +400,8 @@ Clazz.newMeth(C$, 'removeRange$I$I', function (start, end) {
 if (start != end) {
 if (this.modCount == this.fullList.modCount) {
 this.fullList.removeRange$I$I(start + this.offset, end + this.offset);
-this.$size = this.$size-(end - start);
-this.modCount = this.fullList.modCount;
+this.$size-=end - start;
+this.modCount=this.fullList.modCount;
 } else {
 throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
 }}});
@@ -423,7 +423,7 @@ if (increment) {
 this.$size++;
 } else {
 this.$size--;
-}this.modCount = this.fullList.modCount;
+}this.modCount=this.fullList.modCount;
 });
 ;
 (function(){var C$=Clazz.newClass(P$.AbstractList.SubAbstractList, "SubAbstractListIterator", function(){
@@ -446,10 +446,10 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_util_ListIterator$java_util_AbstractList_SubAbstractList$I$I', function (it, list, offset, length) {
 C$.$init$.apply(this);
-this.iterator = it;
-this.subList = list;
-this.start = offset;
-this.end = this.start + length;
+this.iterator=it;
+this.subList=list;
+this.start=offset;
+this.end=this.start + length;
 }, 1);
 
 Clazz.newMeth(C$, ['add$TE'], function (object) {
@@ -505,4 +505,4 @@ Clazz.newMeth(C$);
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:44

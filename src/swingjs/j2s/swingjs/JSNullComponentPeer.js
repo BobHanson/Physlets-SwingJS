@@ -16,7 +16,7 @@ this.isNull = true;
 
 Clazz.newMeth(C$, 'c$$java_awt_Component', function (target) {
 C$.$init$.apply(this);
-this.target = target;
+this.target=target;
 }, 1);
 
 Clazz.newMeth(C$, 'isObscured', function () {
@@ -169,4 +169,4 @@ Clazz.newMeth(C$, 'endLayout', function () {
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:16
+//Created 2018-05-24 08:47:45

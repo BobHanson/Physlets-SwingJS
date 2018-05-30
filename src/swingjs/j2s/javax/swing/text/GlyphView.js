@@ -27,21 +27,21 @@ this.justificationInfo = null;
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
 C$.superclazz.c$$javax_swing_text_Element.apply(this, [elem]);
 C$.$init$.apply(this);
-this.offset = 0;
-this.length = 0;
+this.offset=0;
+this.length=0;
 var parent = elem.getParentElement();
 var attr = elem.getAttributes();
-this.impliedCR = (attr != null  && attr.getAttribute$O("CR") != null   && parent != null   && parent.getElementCount() > 1 );
-this.skipWidth = elem.getName().equals$O("br");
+this.impliedCR=(attr != null  && attr.getAttribute$O("CR") != null   && parent != null   && parent.getElementCount() > 1 );
+this.skipWidth=elem.getName().equals$O("br");
 }, 1);
 
 Clazz.newMeth(C$, 'clone', function () {
 var o;
 try {
-o = Clazz.clone(this);
+o=Clazz.clone(this);
 } catch (cnse) {
 if (Clazz.exceptionOf(cnse, "java.lang.CloneNotSupportedException")){
-o = null;
+o=null;
 } else {
 throw cnse;
 }
@@ -54,7 +54,7 @@ return this.painter;
 });
 
 Clazz.newMeth(C$, 'setGlyphPainter$javax_swing_text_GlyphView_GlyphPainter', function (p) {
-this.painter = p;
+this.painter=p;
 });
 
 Clazz.newMeth(C$, 'getText$I$I', function (p0, p1) {
@@ -135,12 +135,12 @@ try {
 var c;
 var loader = this.getClass().getClassLoader();
 if (loader != null ) {
-c = loader.loadClass$S(classname);
+c=loader.loadClass$S(classname);
 } else {
-c = Clazz.forName(classname);
+c=Clazz.forName(classname);
 }var o = c.newInstance();
 if (Clazz.instanceOf(o, "javax.swing.text.GlyphView.GlyphPainter")) {
-C$.defaultPainter = o;
+C$.defaultPainter=o;
 }} catch (e) {
 throw Clazz.new_((I$[3]||$incl$(3)).c$$S,["GlyphView: Can't load glyph painter: " + classname]);
 }
@@ -150,10 +150,10 @@ throw Clazz.new_((I$[3]||$incl$(3)).c$$S,["GlyphView: Can't load glyph painter: 
 Clazz.newMeth(C$, 'getTabbedSpan$F$javax_swing_text_TabExpander', function (x, e) {
 this.checkPainter();
 var old = this.expander;
-this.expander = e;
+this.expander=e;
 if (this.expander !== old ) {
 this.preferenceChanged$javax_swing_text_View$Z$Z(null, true, false);
-}this.x = (x|0);
+}this.x=(x|0);
 var p0 = this.getStartOffset();
 var p1 = this.getEndOffset();
 var width = this.painter.getSpan$javax_swing_text_GlyphView$I$I$javax_swing_text_TabExpander$F(this, p0, p1, this.expander, x);
@@ -190,14 +190,14 @@ var parent = this.getParent();
 if ((parent != null ) && (parent.getEndOffset() == p1) ) {
 var s = this.getText$I$I(p0, p1);
 while (Character.isWhitespace(s.last())){
-p1 = p1-(1);
-s.count = s.count-(1);
+p1-=1;
+s.count-=1;
 }
 (I$[2]||$incl$(2)).releaseSharedSegment$javax_swing_text_Segment(s);
 }var x0 = alloc.x;
 var p = this.getStartOffset();
 if (p != p0) {
-x0 = x0+((this.painter.getSpan$javax_swing_text_GlyphView$I$I$javax_swing_text_TabExpander$F(this, p, p0, this.getTabExpander(), x0)|0));
+x0+=(this.painter.getSpan$javax_swing_text_GlyphView$I$I$javax_swing_text_TabExpander$F(this, p, p0, this.getTabExpander(), x0)|0);
 }var x1 = x0 + (this.painter.getSpan$javax_swing_text_GlyphView$I$I$javax_swing_text_TabExpander$F(this, p0, p1, this.getTabExpander(), x0)|0);
 var y = alloc.y + alloc.height - (this.painter.getDescent$javax_swing_text_GlyphView(this)|0);
 if (underline) {
@@ -239,11 +239,11 @@ var d = this.painter.getDescent$javax_swing_text_GlyphView(this);
 var a = this.painter.getAscent$javax_swing_text_GlyphView(this);
 var align;
 if (sup) {
-align = 1.0;
+align=1.0;
 } else if (sub) {
-align = (h > 0 ) ? (h - (d + (a / 2))) / h : 0;
+align=(h > 0 ) ? (h - (d + (a / 2))) / h : 0;
 } else {
-align = (h > 0 ) ? (h - d) / h : 0;
+align=(h > 0 ) ? (h - d) / h : 0;
 }return align;
 }return C$.superclazz.prototype.getAlignment$I.apply(this, [axis]);
 });
@@ -280,11 +280,11 @@ this.checkPainter();
 var p1 = this.painter.getBoundedPosition$javax_swing_text_GlyphView$I$F$F(this, p0, pos, len);
 var breakSpot = p$.getBreakSpot$I$I.apply(this, [p0, p1]);
 if (breakSpot != -1) {
-p1 = breakSpot;
+p1=breakSpot;
 }if (p0 == this.getStartOffset() && p1 == this.getEndOffset() ) {
 return this;
 }var v = this.createFragment$I$I(p0, p1);
-v.x = (pos|0);
+v.x=(pos|0);
 return v;
 }return this;
 });
@@ -298,7 +298,7 @@ return p$.getBreakSpotUseBreakIterator$I$I.apply(this, [p0, p1]);
 
 Clazz.newMeth(C$, 'getBreakSpotUseWhitespace$I$I', function (p0, p1) {
 var s = this.getText$I$I(p0, p1);
-for (var ch = s.last(); ch != "\uffff"; ch = s.previous()) {
+for (var ch = s.last(); ch != "\uffff"; ch=s.previous()) {
 if (Character.isWhitespace(ch)) {
 (I$[2]||$incl$(2)).releaseSharedSegment$javax_swing_text_Segment(s);
 return s.getIndex() - s.getBeginIndex() + 1 + p0;
@@ -315,10 +315,10 @@ Clazz.newMeth(C$, 'createFragment$I$I', function (p0, p1) {
 this.checkPainter();
 var elem = this.getElement();
 var v = this.clone();
-v.offset = p0 - elem.getStartOffset();
-v.length = p1 - p0;
-v.painter = this.painter.getPainter$javax_swing_text_GlyphView$I$I(v, p0, p1);
-v.justificationInfo = null;
+v.offset=p0 - elem.getStartOffset();
+v.length=p1 - p0;
+v.painter=this.painter.getPainter$javax_swing_text_GlyphView$I$I(v, p0, p1);
+v.justificationInfo=null;
 return v;
 });
 
@@ -327,13 +327,13 @@ return this.painter.getNextVisualPositionFrom$javax_swing_text_GlyphView$I$javax
 });
 
 Clazz.newMeth(C$, 'insertUpdate$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory', function (e, a, f) {
-this.justificationInfo = null;
+this.justificationInfo=null;
 p$.syncCR.apply(this, []);
 this.preferenceChanged$javax_swing_text_View$Z$Z(null, true, false);
 });
 
 Clazz.newMeth(C$, 'removeUpdate$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory', function (e, a, f) {
-this.justificationInfo = null;
+this.justificationInfo=null;
 p$.syncCR.apply(this, []);
 this.preferenceChanged$javax_swing_text_View$Z$Z(null, true, false);
 });
@@ -346,7 +346,7 @@ this.preferenceChanged$javax_swing_text_View$Z$Z(null, true, true);
 Clazz.newMeth(C$, 'syncCR', function () {
 if (this.impliedCR) {
 var parent = this.getElement().getParentElement();
-this.impliedCR = (parent != null  && parent.getElementCount() > 1 );
+this.impliedCR=(parent != null  && parent.getElementCount() > 1 );
 }});
 
 Clazz.newMeth(C$, 'getJustificationInfo$I', function (rowStartOffset) {
@@ -373,32 +373,32 @@ spaceMap.set$I(i - txtOffset);
 if (state == 0) {
 trailingSpaces++;
 } else if (state == 1) {
-state = 2;
-leadingSpaces = 1;
+state=2;
+leadingSpaces=1;
 } else if (state == 2) {
 leadingSpaces++;
 }} else if ("\u0009" == segment.array[i]) {
-hasTab = true;
+hasTab=true;
 break;
 } else {
 if (state == 0) {
 if ("\u000a" != segment.array[i] && "\u000d" != segment.array[i] ) {
-state = 1;
-endContentPosition = i;
+state=1;
+endContentPosition=i;
 }} else if (state == 1) {
 } else if (state == 2) {
-contentSpaces = contentSpaces+(leadingSpaces);
-leadingSpaces = 0;
-}startContentPosition = i;
+contentSpaces+=leadingSpaces;
+leadingSpaces=0;
+}startContentPosition=i;
 }}
 (I$[2]||$incl$(2)).releaseSharedSegment$javax_swing_text_Segment(segment);
 var startJustifiableContent = -1;
 if (startContentPosition < txtEnd) {
-startJustifiableContent = startContentPosition - txtOffset;
+startJustifiableContent=startContentPosition - txtOffset;
 }var endJustifiableContent = -1;
 if (endContentPosition > txtOffset) {
-endJustifiableContent = endContentPosition - txtOffset;
-}this.justificationInfo = Clazz.new_((I$[8]||$incl$(8)).c$$I$I$I$I$I$Z$java_util_BitSet,[startJustifiableContent, endJustifiableContent, leadingSpaces, contentSpaces, trailingSpaces, hasTab, spaceMap]);
+endJustifiableContent=endContentPosition - txtOffset;
+}this.justificationInfo=Clazz.new_((I$[8]||$incl$(8)).c$$I$I$I$I$I$Z$java_util_BitSet,[startJustifiableContent, endJustifiableContent, leadingSpaces, contentSpaces, trailingSpaces, hasTab, spaceMap]);
 return this.justificationInfo;
 });
 ;
@@ -422,13 +422,13 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I$I$I$I$I$Z$java_util_BitSet', function (start, end, leadingSpaces, contentSpaces, trailingSpaces, hasTab, spaceMap) {
 C$.$init$.apply(this);
-this.start = start;
-this.end = end;
-this.leadingSpaces = leadingSpaces;
-this.contentSpaces = contentSpaces;
-this.trailingSpaces = trailingSpaces;
-this.hasTab = hasTab;
-this.spaceMap = spaceMap;
+this.start=start;
+this.end=end;
+this.leadingSpaces=leadingSpaces;
+this.contentSpaces=contentSpaces;
+this.trailingSpaces=trailingSpaces;
+this.hasTab=hasTab;
+this.spaceMap=spaceMap;
 }, 1);
 
 Clazz.newMeth(C$);
@@ -457,9 +457,9 @@ return -1;
 if (Clazz.instanceOf(container, "javax.swing.text.JTextComponent")) {
 var c = (container).getCaret();
 var magicPoint;
-magicPoint = (c != null ) ? c.getMagicCaretPosition() : null;
+magicPoint=(c != null ) ? c.getMagicCaretPosition() : null;
 if (magicPoint == null ) {
-biasRet[0] = (I$[1]||$incl$(1)).Forward;
+biasRet[0]=(I$[1]||$incl$(1)).Forward;
 return startOffset;
 }var value = v.viewToModel$F$F$java_awt_Shape$javax_swing_text_Position_BiasA(magicPoint.x, 0.0, a, biasRet);
 return value;
@@ -467,31 +467,31 @@ return value;
 case 3:
 if (startOffset == v.getDocument().getLength()) {
 if (pos == -1) {
-biasRet[0] = (I$[1]||$incl$(1)).Forward;
+biasRet[0]=(I$[1]||$incl$(1)).Forward;
 return startOffset;
 }return -1;
 }if (pos == -1) {
-biasRet[0] = (I$[1]||$incl$(1)).Forward;
+biasRet[0]=(I$[1]||$incl$(1)).Forward;
 return startOffset;
 }if (pos == endOffset) {
 return -1;
 }if (++pos == endOffset) {
 return -1;
 } else {
-biasRet[0] = (I$[1]||$incl$(1)).Forward;
+biasRet[0]=(I$[1]||$incl$(1)).Forward;
 }return pos;
 case 7:
 if (startOffset == v.getDocument().getLength()) {
 if (pos == -1) {
-biasRet[0] = (I$[1]||$incl$(1)).Forward;
+biasRet[0]=(I$[1]||$incl$(1)).Forward;
 return startOffset;
 }return -1;
 }if (pos == -1) {
-biasRet[0] = (I$[1]||$incl$(1)).Forward;
+biasRet[0]=(I$[1]||$incl$(1)).Forward;
 return endOffset - 1;
 }if (pos == startOffset) {
 return -1;
-}biasRet[0] = (I$[1]||$incl$(1)).Forward;
+}biasRet[0]=(I$[1]||$incl$(1)).Forward;
 return (pos - 1);
 default:
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Bad direction: " + direction]);
@@ -504,4 +504,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:55
+//Created 2018-05-24 08:47:05

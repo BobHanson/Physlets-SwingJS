@@ -15,12 +15,12 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$I', function (maxCount) {
 C$.$init$.apply(this);
-this.maxCount = maxCount;
-this.entries = Clazz.new_((I$[1]||$incl$(1)));
+this.maxCount=maxCount;
+this.entries=Clazz.new_((I$[1]||$incl$(1)));
 }, 1);
 
 Clazz.newMeth(C$, 'setMaxCount$I', function (maxCount) {
-this.maxCount = maxCount;
+this.maxCount=maxCount;
 });
 
 Clazz.newMeth(C$, 'flush', function () {
@@ -32,7 +32,7 @@ var entry;
 var iter = this.entries.listIterator();
 while (iter.hasNext()){
 var ref = iter.next();
-entry = ref;
+entry=ref;
 if (entry == null ) {
 iter.remove();
 } else if (entry.equals$java_awt_GraphicsConfiguration$I$I$OA(config, w, h, args)) {
@@ -40,7 +40,7 @@ iter.remove();
 this.entries.addFirst$TE(ref);
 return entry;
 }}
-entry = Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_GraphicsConfiguration$I$I$OA,[config, w, h, args]);
+entry=Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_GraphicsConfiguration$I$I$OA,[config, w, h, args]);
 if (this.entries.size() >= this.maxCount) {
 this.entries.removeLast();
 }this.entries.addFirst$TE(entry);
@@ -75,14 +75,14 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_GraphicsConfiguration$I$I$OA', function (config, w, h, args) {
 C$.$init$.apply(this);
-this.config = config;
-this.args = args;
-this.w = w;
-this.h = h;
+this.config=config;
+this.args=args;
+this.w=w;
+this.h=h;
 }, 1);
 
 Clazz.newMeth(C$, 'setImage$java_awt_Image', function (image) {
-this.image = image;
+this.image=image;
 });
 
 Clazz.newMeth(C$, 'getImage', function () {
@@ -119,4 +119,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:11
+//Created 2018-05-24 08:47:35

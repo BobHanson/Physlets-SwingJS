@@ -17,13 +17,13 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, ['c$$TK'], function (theKey) {
 C$.$init$.apply(this);
-this.key = theKey;
+this.key=theKey;
 }, 1);
 
 Clazz.newMeth(C$, ['c$$TK$TV'], function (theKey, theValue) {
 C$.$init$.apply(this);
-this.key = theKey;
-this.value = theValue;
+this.key=theKey;
+this.value=theValue;
 }, 1);
 
 Clazz.newMeth(C$, 'clone', function () {
@@ -61,7 +61,7 @@ return (this.key == null  ? 0 : this.key.hashCode()) ^ (this.value == null  ? 0 
 
 Clazz.newMeth(C$, ['setValue$TV'], function (object) {
 var result = this.value;
-this.value = object;
+this.value=object;
 return result;
 });
 
@@ -75,4 +75,4 @@ return this.key + "=" + this.value ;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:14
+//Created 2018-05-24 08:45:48

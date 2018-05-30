@@ -22,8 +22,8 @@ var c1 = (o1).getCurve();
 var c2 = (o2).getCurve();
 var v1;
 var v2;
-if ((v1 = c1.getYTop()) == (v2 = c2.getYTop()) ) {
-if ((v1 = c1.getXTop()) == (v2 = c2.getXTop()) ) {
+if ((v1=c1.getYTop()) == (v2=c2.getYTop()) ) {
+if ((v1=c1.getXTop()) == (v2=c2.getXTop()) ) {
 return 0;
 }}if (v1 < v2 ) {
 return -1;
@@ -46,7 +46,7 @@ Clazz.newMeth(C$, 'calculate$java_util_Vector$java_util_Vector', function (left,
 var edges = Clazz.new_((I$[4]||$incl$(4)));
 C$.addEdges$java_util_Vector$java_util_Vector$I(edges, left, 0);
 C$.addEdges$java_util_Vector$java_util_Vector$I(edges, right, 1);
-edges = p$.pruneEdges$java_util_Vector.apply(this, [edges]);
+edges=p$.pruneEdges$java_util_Vector.apply(this, [edges]);
 if (false) {
 System.out.println$S("result: ");
 var numcurves = edges.size();
@@ -88,42 +88,42 @@ var chains = Clazz.new_((I$[4]||$incl$(4)));
 var links = Clazz.new_((I$[4]||$incl$(4)));
 while (left < numedges){
 var y = yrange[0];
-for (cur = next = right - 1; cur >= left; cur--) {
-e = edgelist[cur];
+for (cur=next=right - 1; cur >= left; cur--) {
+e=edgelist[cur];
 if (e.getCurve().getYBot() > y ) {
 if (next > cur) {
-edgelist[next] = e;
+edgelist[next]=e;
 }next--;
 }}
-left = next + 1;
+left=next + 1;
 if (left >= right) {
 if (right >= numedges) {
 break;
-}y = edgelist[right].getCurve().getYTop();
+}y=edgelist[right].getCurve().getYTop();
 if (y > yrange[0] ) {
 C$.finalizeSubCurves$java_util_Vector$java_util_Vector(subcurves, chains);
-}yrange[0] = y;
+}yrange[0]=y;
 }while (right < numedges){
-e = edgelist[right];
+e=edgelist[right];
 if (e.getCurve().getYTop() > y ) {
 break;
 }right++;
 }
-yrange[1] = edgelist[left].getCurve().getYBot();
+yrange[1]=edgelist[left].getCurve().getYBot();
 if (right < numedges) {
-y = edgelist[right].getCurve().getYTop();
+y=edgelist[right].getCurve().getYTop();
 if (yrange[1] > y ) {
-yrange[1] = y;
+yrange[1]=y;
 }}if (false) {
 System.out.println$S("current line: y = [" + new Double(yrange[0]).toString() + ", " + new Double(yrange[1]).toString() + "]" );
-for (cur = left; cur < right; cur++) {
+for (cur=left; cur < right; cur++) {
 System.out.println$S("  " + edgelist[cur]);
 }
 }var nexteq = 1;
-for (cur = left; cur < right; cur++) {
-e = edgelist[cur];
+for (cur=left; cur < right; cur++) {
+e=edgelist[cur];
 e.setEquivalence$I(0);
-for (next = cur; next > left; next--) {
+for (next=cur; next > left; next--) {
 var prevedge = edgelist[next - 1];
 var ordering = e.compareTo$sun_awt_geom_Edge$DA(prevedge, yrange);
 if (yrange[1] <= yrange[0] ) {
@@ -132,48 +132,48 @@ throw Clazz.new_((I$[8]||$incl$(8)).c$$S,["backstepping to " + new Double(yrange
 if (ordering == 0) {
 var eq = prevedge.getEquivalence();
 if (eq == 0) {
-eq = nexteq++;
+eq=nexteq++;
 prevedge.setEquivalence$I(eq);
 }e.setEquivalence$I(eq);
 }break;
-}edgelist[next] = prevedge;
+}edgelist[next]=prevedge;
 }
-edgelist[next] = e;
+edgelist[next]=e;
 }
 if (false) {
 System.out.println$S("current sorted line: y = [" + new Double(yrange[0]).toString() + ", " + new Double(yrange[1]).toString() + "]" );
-for (cur = left; cur < right; cur++) {
+for (cur=left; cur < right; cur++) {
 System.out.println$S("  " + edgelist[cur]);
 }
 }this.newRow();
 var ystart = yrange[0];
 var yend = yrange[1];
-for (cur = left; cur < right; cur++) {
-e = edgelist[cur];
+for (cur=left; cur < right; cur++) {
+e=edgelist[cur];
 var etag;
 var eq = e.getEquivalence();
 if (eq != 0) {
 var origstate = this.getState();
-etag = (origstate == 1 ? -1 : 1);
+etag=(origstate == 1 ? -1 : 1);
 var activematch = null;
 var longestmatch = e;
 var furthesty = yend;
 do {
 this.classify$sun_awt_geom_Edge(e);
 if (activematch == null  && e.isActiveFor$D$I(ystart, etag) ) {
-activematch = e;
-}y = e.getCurve().getYBot();
+activematch=e;
+}y=e.getCurve().getYBot();
 if (y > furthesty ) {
-longestmatch = e;
-furthesty = y;
-}} while (++cur < right && (e = edgelist[cur]).getEquivalence() == eq );
+longestmatch=e;
+furthesty=y;
+}} while (++cur < right && (e=edgelist[cur]).getEquivalence() == eq );
 --cur;
 if (this.getState() == origstate) {
-etag = 0;
+etag=0;
 } else {
-e = (activematch != null  ? activematch : longestmatch);
+e=(activematch != null  ? activematch : longestmatch);
 }} else {
-etag = this.classify$sun_awt_geom_Edge(e);
+etag=this.classify$sun_awt_geom_Edge(e);
 }if (etag != 0) {
 e.record$D$I(yend, etag);
 links.add$TE(Clazz.new_((I$[2]||$incl$(2)).c$$sun_awt_geom_Curve$D$D$I,[e.getCurve(), ystart, yend, etag]));
@@ -187,8 +187,8 @@ if (right < numedges) {
 System.out.println$S("y top of next curve = " + new Double(edgelist[right].getCurve().getYTop()).toString());
 } else {
 System.out.println$S("no more curves");
-}for (cur = left; cur < right; cur++) {
-e = edgelist[cur];
+}for (cur=left; cur < right; cur++) {
+e=edgelist[cur];
 System.out.println$O(e);
 var eq = e.getEquivalence();
 if (eq != 0) {
@@ -202,7 +202,7 @@ System.out.println$S("  " + link.getSubCurve());
 }
 }C$.resolveLinks$java_util_Vector$java_util_Vector$java_util_Vector(subcurves, chains, links);
 links.clear();
-yrange[0] = yend;
+yrange[0]=yend;
 }
 C$.finalizeSubCurves$java_util_Vector$java_util_Vector(subcurves, chains);
 var ret = Clazz.new_((I$[4]||$incl$(4)));
@@ -211,10 +211,10 @@ while (enum_.hasMoreElements()){
 var link = enum_.nextElement();
 ret.add$TE(link.getMoveto());
 var nextlink = link;
-while ((nextlink = nextlink.getNext()) != null ){
+while ((nextlink=nextlink.getNext()) != null ){
 if (!link.absorb$sun_awt_geom_CurveLink(nextlink)) {
 ret.add$TE(link.getSubCurve());
-link = nextlink;
+link=nextlink;
 }}
 ret.add$TE(link.getSubCurve());
 }
@@ -229,7 +229,7 @@ return;
 throw Clazz.new_((I$[8]||$incl$(8)).c$$S,["Odd number of chains!"]);
 }var endlist = Clazz.array((I$[3]||$incl$(3)), [numchains]);
 chains.toArray$TTA(endlist);
-for (var i = 1; i < numchains; i = i+(2)) {
+for (var i = 1; i < numchains; i+=2) {
 var open = endlist[i - 1];
 var close = endlist[i];
 var subcurve = open.linkTo$sun_awt_geom_ChainEnd(close);
@@ -243,20 +243,20 @@ Clazz.newMeth(C$, 'resolveLinks$java_util_Vector$java_util_Vector$java_util_Vect
 var numlinks = links.size();
 var linklist;
 if (numlinks == 0) {
-linklist = C$.EmptyLinkList;
+linklist=C$.EmptyLinkList;
 } else {
 if ((numlinks & 1) != 0) {
 throw Clazz.new_((I$[8]||$incl$(8)).c$$S,["Odd number of new curves!"]);
-}linklist = Clazz.array((I$[2]||$incl$(2)), [numlinks + 2]);
+}linklist=Clazz.array((I$[2]||$incl$(2)), [numlinks + 2]);
 links.toArray$TTA(linklist);
 }var numchains = chains.size();
 var endlist;
 if (numchains == 0) {
-endlist = C$.EmptyChainList;
+endlist=C$.EmptyChainList;
 } else {
 if ((numchains & 1) != 0) {
 throw Clazz.new_((I$[8]||$incl$(8)).c$$S,["Odd number of chains!"]);
-}endlist = Clazz.array((I$[3]||$incl$(3)), [numchains + 2]);
+}endlist=Clazz.array((I$[3]||$incl$(3)), [numchains + 2]);
 chains.toArray$TTA(endlist);
 }var curchain = 0;
 var curlink = 0;
@@ -269,38 +269,38 @@ while (chain != null  || link != null  ){
 var connectchains = (link == null );
 var connectlinks = (chain == null );
 if (!connectchains && !connectlinks ) {
-connectchains = ((curchain & 1) == 0 && chain.getX() == nextchain.getX()  );
-connectlinks = ((curlink & 1) == 0 && link.getX() == nextlink.getX()  );
+connectchains=((curchain & 1) == 0 && chain.getX() == nextchain.getX()  );
+connectlinks=((curlink & 1) == 0 && link.getX() == nextlink.getX()  );
 if (!connectchains && !connectlinks ) {
 var cx = chain.getX();
 var lx = link.getX();
-connectchains = (nextchain != null  && cx < lx   && C$.obstructs$D$D$I(nextchain.getX(), lx, curchain) );
-connectlinks = (nextlink != null  && lx < cx   && C$.obstructs$D$D$I(nextlink.getX(), cx, curlink) );
+connectchains=(nextchain != null  && cx < lx   && C$.obstructs$D$D$I(nextchain.getX(), lx, curchain) );
+connectlinks=(nextlink != null  && lx < cx   && C$.obstructs$D$D$I(nextlink.getX(), cx, curlink) );
 }}if (connectchains) {
 var subcurve = chain.linkTo$sun_awt_geom_ChainEnd(nextchain);
 if (subcurve != null ) {
 subcurves.add$TE(subcurve);
-}curchain = curchain+(2);
-chain = endlist[curchain];
-nextchain = endlist[curchain + 1];
+}curchain+=2;
+chain=endlist[curchain];
+nextchain=endlist[curchain + 1];
 }if (connectlinks) {
 var openend = Clazz.new_((I$[3]||$incl$(3)).c$$sun_awt_geom_CurveLink$sun_awt_geom_ChainEnd,[link, null]);
 var closeend = Clazz.new_((I$[3]||$incl$(3)).c$$sun_awt_geom_CurveLink$sun_awt_geom_ChainEnd,[nextlink, openend]);
 openend.setOtherEnd$sun_awt_geom_ChainEnd(closeend);
 chains.add$TE(openend);
 chains.add$TE(closeend);
-curlink = curlink+(2);
-link = linklist[curlink];
-nextlink = linklist[curlink + 1];
+curlink+=2;
+link=linklist[curlink];
+nextlink=linklist[curlink + 1];
 }if (!connectchains && !connectlinks ) {
 chain.addLink$sun_awt_geom_CurveLink(link);
 chains.add$TE(chain);
 curchain++;
-chain = nextchain;
-nextchain = endlist[curchain + 1];
+chain=nextchain;
+nextchain=endlist[curchain + 1];
 curlink++;
-link = nextlink;
-nextlink = linklist[curlink + 1];
+link=nextlink;
+nextlink=linklist[curlink + 1];
 }}
 if ((chains.size() & 1) != 0) {
 System.out.println$S("Odd number of chains!");
@@ -328,20 +328,20 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'newRow', function () {
-this.inLeft = false;
-this.inRight = false;
-this.inResult = false;
+this.inLeft=false;
+this.inRight=false;
+this.inResult=false;
 });
 
 Clazz.newMeth(C$, 'classify$sun_awt_geom_Edge', function (e) {
 if (e.getCurveTag() == 0) {
-this.inLeft = !this.inLeft;
+this.inLeft=!this.inLeft;
 } else {
-this.inRight = !this.inRight;
+this.inRight=!this.inRight;
 }var newClass = this.newClassification$Z$Z(this.inLeft, this.inRight);
 if (this.inResult == newClass ) {
 return 0;
-}this.inResult = newClass;
+}this.inResult=newClass;
 return (newClass ? 1 : -1);
 });
 
@@ -436,14 +436,14 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'newRow', function () {
-this.count = 0;
+this.count=0;
 });
 
 Clazz.newMeth(C$, 'classify$sun_awt_geom_Edge', function (e) {
 var newCount = this.count;
 var type = (newCount == 0 ? 1 : 0);
-newCount = newCount+(e.getCurve().getDirection());
-this.count = newCount;
+newCount+=e.getCurve().getDirection();
+this.count=newCount;
 return (newCount == 0 ? -1 : type);
 });
 
@@ -470,12 +470,12 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'newRow', function () {
-this.inside = false;
+this.inside=false;
 });
 
 Clazz.newMeth(C$, 'classify$sun_awt_geom_Edge', function (e) {
 var newInside = !this.inside;
-this.inside = newInside;
+this.inside=newInside;
 return (newInside ? 1 : -1);
 });
 
@@ -486,4 +486,4 @@ return (this.inside ? 1 : -1);
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:03:06
+//Created 2018-05-24 08:47:25

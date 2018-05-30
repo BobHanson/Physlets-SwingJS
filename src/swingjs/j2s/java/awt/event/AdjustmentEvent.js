@@ -22,10 +22,10 @@ C$.c$$java_awt_Adjustable$I$I$I$Z.apply(this, [source, id, type, value, false]);
 Clazz.newMeth(C$, 'c$$java_awt_Adjustable$I$I$I$Z', function (source, id, type, value, isAdjusting) {
 C$.superclazz.c$$O$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.adjustable = source;
-this.adjustmentType = type;
-this.value = value;
-this.isAdjusting = isAdjusting;
+this.adjustable=source;
+this.adjustmentType=type;
+this.value=value;
+this.isAdjusting=isAdjusting;
 }, 1);
 
 Clazz.newMeth(C$, 'getAdjustable', function () {
@@ -48,34 +48,34 @@ Clazz.newMeth(C$, 'paramString', function () {
 var typeStr;
 switch (this.id) {
 case 601:
-typeStr = "ADJUSTMENT_VALUE_CHANGED";
+typeStr="ADJUSTMENT_VALUE_CHANGED";
 break;
 default:
-typeStr = "unknown type";
+typeStr="unknown type";
 }
 var adjTypeStr;
 switch (this.adjustmentType) {
 case 1:
-adjTypeStr = "UNIT_INCREMENT";
+adjTypeStr="UNIT_INCREMENT";
 break;
 case 2:
-adjTypeStr = "UNIT_DECREMENT";
+adjTypeStr="UNIT_DECREMENT";
 break;
 case 4:
-adjTypeStr = "BLOCK_INCREMENT";
+adjTypeStr="BLOCK_INCREMENT";
 break;
 case 3:
-adjTypeStr = "BLOCK_DECREMENT";
+adjTypeStr="BLOCK_DECREMENT";
 break;
 case 5:
-adjTypeStr = "TRACK";
+adjTypeStr="TRACK";
 break;
 default:
-adjTypeStr = "unknown type";
+adjTypeStr="unknown type";
 }
 return typeStr + ",adjType=" + adjTypeStr + ",value=" + this.value + ",isAdjusting=" + this.isAdjusting ;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:56
+//Created 2018-05-24 08:45:17

@@ -18,8 +18,8 @@ this.swingJStype = "L".$c();
 
 Clazz.newMeth(C$, 'c$$java_awt_image_LookupTable$java_awt_RenderingHints', function (lookup, hints) {
 C$.$init$.apply(this);
-this.ltable = lookup;
-this.hints = hints;
+this.ltable=lookup;
+this.hints=hints;
 }, 1);
 
 Clazz.newMeth(C$, 'getTable', function () {
@@ -36,14 +36,14 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Number 
 }var width = src.getWidth();
 var height = src.getHeight();
 if (dst == null ) {
-dst = this.createCompatibleDestImage$java_awt_image_BufferedImage$java_awt_image_ColorModel(src, null);
-dstCM = srcCM;
+dst=this.createCompatibleDestImage$java_awt_image_BufferedImage$java_awt_image_ColorModel(src, null);
+dstCM=srcCM;
 } else {
 if (width != dst.getWidth()) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Src width (" + width + ") not equal to dst width (" + dst.getWidth() + ")" ]);
 }if (height != dst.getHeight()) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Src height (" + height + ") not equal to dst height (" + dst.getHeight() + ")" ]);
-}dstCM = dst.getColorModel();
+}dstCM=dst.getColorModel();
 if (srcCM.getColorSpace().getType() != dstCM.getColorSpace().getType()) {
 throw Clazz.new_(Clazz.load('java.awt.image.ImagingOpException').c$$S,["SwingJS: Only RGB color space is supported"]);
 }}var origDst = dst;
@@ -55,9 +55,9 @@ var minx = srcRaster.getMinX();
 var miny = srcRaster.getMinY();
 var bands = Clazz.array(Integer.TYPE, [numBands - 1]);
 for (var i = 0; i < numBands - 1; i++) {
-bands[i] = i;
+bands[i]=i;
 }
-srcRaster = srcRaster.createWritableChild$I$I$I$I$I$I$IA(minx, miny, srcRaster.getWidth(), srcRaster.getHeight(), minx, miny, bands);
+srcRaster=srcRaster.createWritableChild$I$I$I$I$I$I$IA(minx, miny, srcRaster.getWidth(), srcRaster.getHeight(), minx, miny, bands);
 }}if (dstCM.hasAlpha()) {
 var dstNumBands = dstRaster.getNumBands();
 if (dstNumBands - 1 == numComponents || numComponents == 1 ) {
@@ -65,9 +65,9 @@ var minx = dstRaster.getMinX();
 var miny = dstRaster.getMinY();
 var bands = Clazz.array(Integer.TYPE, [numBands - 1]);
 for (var i = 0; i < numBands - 1; i++) {
-bands[i] = i;
+bands[i]=i;
 }
-dstRaster = dstRaster.createWritableChild$I$I$I$I$I$I$IA(minx, miny, dstRaster.getWidth(), dstRaster.getHeight(), minx, miny, bands);
+dstRaster=dstRaster.createWritableChild$I$I$I$I$I$I$IA(minx, miny, dstRaster.getWidth(), dstRaster.getHeight(), minx, miny, bands);
 }}this.filter$java_awt_image_Raster$java_awt_image_WritableRaster(srcRaster, dstRaster);
 return origDst;
 });
@@ -80,7 +80,7 @@ var width = src.getWidth();
 var srcPix = Clazz.array(Integer.TYPE, [numBands]);
 if (height != dst.getHeight() || width != dst.getWidth() ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Width or height of Rasters do not match"]);
-}dstLength = dst.getNumBands();
+}dstLength=dst.getNumBands();
 if (numBands != dstLength) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["Number of channels in the src (" + numBands + ") does not match number of channels" + " in the destination (" + dstLength + ")" ]);
 }var numComponents = this.ltable.getNumComponents();
@@ -121,9 +121,9 @@ var w = src.getWidth();
 var h = src.getHeight();
 if (destCM == null ) {
 var cm = src.getColorModel();
-image = Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[cm, cm.createCompatibleWritableRaster$I$I(w, h), cm.isAlphaPremultiplied(), null]);
+image=Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[cm, cm.createCompatibleWritableRaster$I$I(w, h), cm.isAlphaPremultiplied(), null]);
 } else {
-image = Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[destCM, destCM.createCompatibleWritableRaster$I$I(w, h), destCM.isAlphaPremultiplied(), null]);
+image=Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[destCM, destCM.createCompatibleWritableRaster$I$I(w, h), destCM.isAlphaPremultiplied(), null]);
 }return image;
 });
 
@@ -133,7 +133,7 @@ return src.createCompatibleWritableRaster();
 
 Clazz.newMeth(C$, 'getPoint2D$java_awt_geom_Point2D$java_awt_geom_Point2D', function (srcPt, dstPt) {
 if (dstPt == null ) {
-dstPt = Clazz.new_((I$[3]||$incl$(3)));
+dstPt=Clazz.new_((I$[3]||$incl$(3)));
 }dstPt.setLocation$D$D(srcPt.getX(), srcPt.getY());
 return dstPt;
 });
@@ -149,20 +149,20 @@ var offset = lookup.getOffset();
 var tidx;
 var step = 1;
 if (table.length == 1) {
-step = 0;
+step=0;
 }var x;
 var y;
 var band;
 var len = table[0].length;
-for (y = 0; y < height; y++) {
-tidx = 0;
-for (band = 0; band < numBands; band++, tidx = tidx+(step)) {
-srcPix = src.getSamples$I$I$I$I$I$IA(0, y, width, 1, band, srcPix);
-for (x = 0; x < width; x++) {
+for (y=0; y < height; y++) {
+tidx=0;
+for (band=0; band < numBands; band++, tidx+=step) {
+srcPix=src.getSamples$I$I$I$I$I$IA(0, y, width, 1, band, srcPix);
+for (x=0; x < width; x++) {
 var index = srcPix[x] - offset;
 if (index < 0 || index > len ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["index (" + index + "(out of range: " + " srcPix[" + x + "]=" + srcPix[x] + " offset=" + offset ]);
-}srcPix[x] = table[tidx][index];
+}srcPix[x]=table[tidx][index];
 }
 dst.setSamples$I$I$I$I$I$IA(0, y, width, 1, band, srcPix);
 }
@@ -171,4 +171,4 @@ dst.setSamples$I$I$I$I$I$IA(0, y, width, 1, band, srcPix);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:01
+//Created 2018-05-24 08:45:26

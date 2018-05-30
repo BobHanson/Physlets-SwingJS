@@ -22,19 +22,19 @@ return ((n >= 0) ? ((n/d|0)) : ((((n + 1)/d|0)) - 1));
 
 Clazz.newMeth(C$, 'floorDivide$I$I$IA', function (n, d, r) {
 if (n >= 0) {
-r[0] = n % d;
+r[0]=n % d;
 return (n/d|0);
 }var q = (((n + 1)/d|0)) - 1;
-r[0] = n - (q * d);
+r[0]=n - (q * d);
 return q;
 }, 1);
 
 Clazz.newMeth(C$, 'floorDivide$J$I$IA', function (n, d, r) {
 if (n >= 0) {
-r[0] = ((n % d)|0);
+r[0]=((n % d)|0);
 return (((n/d|0))|0);
 }var q = (((((n + 1)/d|0)) - 1)|0);
-r[0] = ((n - (q * d))|0);
+r[0]=((n - (q * d))|0);
 return q;
 }, 1);
 
@@ -60,15 +60,15 @@ Clazz.newMeth(C$, 'sprintf0d$StringBuilder$I$I', function (sb, value, width) {
 var d = value;
 if (d < 0) {
 sb.append$C("-");
-d = -d;
+d=-d;
 --width;
 }var n = 10;
 for (var i = 2; i < width; i++) {
-n = n*(10);
+n*=10;
 }
 for (var i = 1; i < width && d < n ; i++) {
 sb.append$C("0");
-n = (n/10|0);
+n=(n/10|0);
 }
 sb.append$S("" + d);
 return sb;
@@ -78,15 +78,15 @@ Clazz.newMeth(C$, 'sprintf0d$StringBuffer$I$I', function (sb, value, width) {
 var d = value;
 if (d < 0) {
 sb.append$C("-");
-d = -d;
+d=-d;
 --width;
 }var n = 10;
 for (var i = 2; i < width; i++) {
-n = n*(10);
+n*=10;
 }
 for (var i = 1; i < width && d < n ; i++) {
 sb.append$C("0");
-n = (n/10|0);
+n=(n/10|0);
 }
 sb.append$S("" + d);
 return sb;
@@ -94,4 +94,4 @@ return sb;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:12
+//Created 2018-05-24 08:47:38

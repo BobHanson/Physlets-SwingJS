@@ -145,7 +145,7 @@ this.setSeed$J(seed);
 }, 1);
 
 Clazz.newMeth(C$, 'next$I', function (bits) {
-this.seed = (this.seed * 25214903917 + 11) & 281474976710655;
+this.seed=(this.seed * 25214903917 + 11) & 281474976710655;
 return ((this.seed >>> (48 - bits))|0);
 });
 
@@ -172,19 +172,19 @@ return Math.random ();
 
 Clazz.newMeth(C$, 'nextGaussian', function () {
 if (this.haveNextNextGaussian) {
-this.haveNextNextGaussian = false;
+this.haveNextNextGaussian=false;
 return this.nextNextGaussian;
 }var v1;
 var v2;
 var s;
 do {
-v1 = 2 * this.nextDouble() - 1;
-v2 = 2 * this.nextDouble() - 1;
-s = v1 * v1 + v2 * v2;
+v1=2 * this.nextDouble() - 1;
+v2=2 * this.nextDouble() - 1;
+s=v1 * v1 + v2 * v2;
 } while (s >= 1 );
 var norm = Math.sqrt(-2 * Math.log(s) / s);
-this.nextNextGaussian = v2 * norm;
-this.haveNextNextGaussian = true;
+this.nextNextGaussian=v2 * norm;
+this.haveNextNextGaussian=true;
 return v1 * norm;
 });
 
@@ -197,7 +197,7 @@ Clazz.newMeth(C$, 'nextInt$I', function (n) {
 
 
 if (n > 0) {
-n = Math.min(n, 31);
+n=Math.min(n, 31);
 return (Math.floor((2 << (n - 1)) * Math.random())|0);
 }throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException'));
 });
@@ -212,4 +212,4 @@ Clazz.newMeth(C$, 'setSeed$J', function (seed) {
 Math.seedrandom(seed);
 });
 })();
-//Created 2018-05-15 01:02:14
+//Created 2018-05-24 08:45:49

@@ -42,7 +42,7 @@ eventQueue.removeSourceEvents$O$Z(source, removeAllEvents);
 Clazz.newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
 for (var i = 0; i < 4; i++) {
-this.queues[i] = Clazz.new_((I$[1]||$incl$(1)));
+this.queues[i]=Clazz.new_((I$[1]||$incl$(1)));
 }
 }, 1);
 
@@ -52,7 +52,7 @@ this.postEventPrivate$java_awt_AWTEvent(event);
 });
 
 Clazz.newMeth(C$, 'postEventPrivate$java_awt_AWTEvent', function (theEvent) {
-theEvent.isPosted = true;
+theEvent.isPosted=true;
 {
 if (this.dispatchThread == null  && this.nextQueue == null  ) {
 if (theEvent.getSource() === (I$[4]||$incl$(4)).getInstance() ) {
@@ -88,13 +88,13 @@ return;
 p$.cacheEQItem$java_awt_EventQueueItem.apply(this, [newItem]);
 if (this.queues[priority].head == null ) {
 var shouldNotify = p$.noEvents.apply(this, []);
-this.queues[priority].head = this.queues[priority].tail = newItem;
+this.queues[priority].head=this.queues[priority].tail=newItem;
 if (shouldNotify) {
 if (theEvent.getSource() !== (I$[4]||$incl$(4)).getInstance() ) {
 (I$[4]||$incl$(4)).getInstance().notifyThreadBusy$Thread(this.dispatchThread);
 }}} else {
-this.queues[priority].tail.next = newItem;
-this.queues[priority].tail = newItem;
+this.queues[priority].tail.next=newItem;
+this.queues[priority].tail=newItem;
 }});
 
 Clazz.newMeth(C$, 'coalescePaintEvent$java_awt_event_PaintEvent', function (e) {
@@ -108,7 +108,7 @@ return false;
 if (index != -1 && cache[index] != null  ) {
 var merged = p$.mergePaintEvents$java_awt_event_PaintEvent$java_awt_event_PaintEvent.apply(this, [e, cache[index].event]);
 if (merged != null ) {
-cache[index].event = merged;
+cache[index].event=merged;
 return true;
 }}return false;
 });
@@ -129,7 +129,7 @@ if (cache == null ) {
 return false;
 }var index = C$.eventToCacheIndex$java_awt_AWTEvent(e);
 if (index != -1 && cache[index] != null  ) {
-cache[index].event = e;
+cache[index].event=e;
 return true;
 }return false;
 });
@@ -140,23 +140,23 @@ if (cache == null ) {
 return false;
 }var index = C$.eventToCacheIndex$java_awt_AWTEvent(e);
 if (index != -1 && cache[index] != null  ) {
-e = e.coalesceEvents$sun_awt_PeerEvent(cache[index].event);
+e=e.coalesceEvents$sun_awt_PeerEvent(cache[index].event);
 if (e != null ) {
-cache[index].event = e;
+cache[index].event=e;
 return true;
 } else {
-cache[index] = null;
+cache[index]=null;
 }}return false;
 });
 
 Clazz.newMeth(C$, 'coalesceOtherEvent$java_awt_AWTEvent$I', function (e, priority) {
 var id = e.getID();
 var source = e.getSource();
-for (var entry = this.queues[priority].head; entry != null ; entry = entry.next) {
+for (var entry = this.queues[priority].head; entry != null ; entry=entry.next) {
 if (entry.event.getSource() === source  && entry.id == id ) {
 var coalescedEvent = source.coalesceEvents$java_awt_AWTEvent$java_awt_AWTEvent(entry.event, e);
 if (coalescedEvent != null ) {
-entry.event = coalescedEvent;
+entry.event=coalescedEvent;
 return true;
 }}}
 return false;
@@ -181,8 +181,8 @@ var index = C$.eventToCacheIndex$java_awt_AWTEvent(entry.event);
 if (index != -1 && Clazz.instanceOf(entry.event.getSource(), "java.awt.Component") ) {
 var source = entry.event.getSource();
 if (source.eventCache == null ) {
-source.eventCache = Clazz.array((I$[5]||$incl$(5)), [5]);
-}source.eventCache[index] = entry;
+source.eventCache=Clazz.array((I$[5]||$incl$(5)), [5]);
+}source.eventCache[index]=entry;
 }});
 
 Clazz.newMeth(C$, 'uncacheEQItem$java_awt_EventQueueItem', function (entry) {
@@ -191,7 +191,7 @@ if (index != -1 && Clazz.instanceOf(entry.event.getSource(), "java.awt.Component
 var source = entry.event.getSource();
 if (source.eventCache == null ) {
 return;
-}source.eventCache[index] = null;
+}source.eventCache[index]=null;
 }});
 
 Clazz.newMeth(C$, 'eventToCacheIndex$java_awt_AWTEvent', function (e) {
@@ -223,9 +223,9 @@ Clazz.newMeth(C$, 'getNextEvent', function () {
 for (var i = 3; i >= 0; i--) {
 if (this.queues[i].head != null ) {
 var entry = this.queues[i].head;
-this.queues[i].head = entry.next;
+this.queues[i].head=entry.next;
 if (entry.next == null ) {
-this.queues[i].tail = null;
+this.queues[i].tail=null;
 }p$.uncacheEQItem$java_awt_EventQueueItem.apply(this, [entry]);
 return entry.event;
 }}
@@ -237,20 +237,20 @@ Clazz.newMeth(C$, 'getNextEventForID$I', function (id) {
 (I$[3]||$incl$(3)).flushPendingEvents();
 {
 for (var i = 0; i < 4; i++) {
-for (var entry = this.queues[i].head, prev = null; entry != null ; prev = entry, entry = entry.next) {
+for (var entry = this.queues[i].head, prev = null; entry != null ; prev=entry, entry=entry.next) {
 if (entry.id == id) {
 if (prev == null ) {
-this.queues[i].head = entry.next;
+this.queues[i].head=entry.next;
 } else {
-prev.next = entry.next;
+prev.next=entry.next;
 }if (this.queues[i].tail === entry ) {
-this.queues[i].tail = prev;
+this.queues[i].tail=prev;
 }p$.uncacheEQItem$java_awt_EventQueueItem.apply(this, [entry]);
 return entry.event;
 }}
 }
-this.waitForID = id;
-this.waitForID = 0;
+this.waitForID=id;
+this.waitForID=0;
 }return null;
 });
 
@@ -265,7 +265,7 @@ return null;
 Clazz.newMeth(C$, 'peekEvent$I', function (id) {
 for (var i = 3; i >= 0; i--) {
 var q = this.queues[i].head;
-for (; q != null ; q = q.next) {
+for (; q != null ; q=q.next) {
 if (q.id == id) {
 return q.event;
 }}
@@ -283,7 +283,7 @@ p$.dispatchEventImpl$java_awt_AWTEvent$O$Z.apply(this, [event, src, true]);
 });
 
 Clazz.newMeth(C$, 'dispatchEventImpl$java_awt_AWTEvent$O$Z', function (event, src, andWait) {
-event.isPosted = true;
+event.isPosted=true;
 if (Clazz.instanceOf(event, "java.awt.ActiveEvent")) {
 p$.setCurrentEventAndMostRecentTimeImpl$java_awt_AWTEvent.apply(this, [event]);
 (I$[6]||$incl$(6)).dispatchEvent$java_awt_AWTEvent$O$Z(event, null, andWait);
@@ -328,10 +328,10 @@ throw ie;
 }
 }
 }
-newEventQueue.previousQueue = this;
+newEventQueue.previousQueue=this;
 }if (this.dispatchThread != null ) {
 this.dispatchThread.stopDispatchingLater();
-}this.nextQueue = newEventQueue;
+}this.nextQueue=newEventQueue;
 var appContext = (I$[8]||$incl$(8)).getAppContext();
 if (appContext.get$O((I$[8]||$incl$(8)).EVENT_QUEUE_KEY) === this ) {
 appContext.put$O$O((I$[8]||$incl$(8)).EVENT_QUEUE_KEY, newEventQueue);
@@ -346,7 +346,7 @@ this.nextQueue.pop();
 return;
 }if (this.previousQueue == null ) {
 throw Clazz.new_(Clazz.load('java.util.EmptyStackException'));
-}this.previousQueue.nextQueue = null;
+}this.previousQueue.nextQueue=null;
 while (this.peekEvent() != null ){
 try {
 this.previousQueue.postEventPrivate$java_awt_AWTEvent(this.getNextEvent());
@@ -360,7 +360,7 @@ throw ie;
 var appContext = (I$[8]||$incl$(8)).getAppContext();
 if (appContext.get$O((I$[8]||$incl$(8)).EVENT_QUEUE_KEY) === this ) {
 appContext.put$O$O((I$[8]||$incl$(8)).EVENT_QUEUE_KEY, this.previousQueue);
-}this.previousQueue = null;
+}this.previousQueue=null;
 }}var dt = this.dispatchThread;
 if (dt != null ) {
 dt.stopDispatching();
@@ -375,12 +375,12 @@ Clazz.newMeth(C$, 'initDispatchThread', function () {
 if (this.dispatchThread == null ) {
 var t = Clazz.new_((I$[9]||$incl$(9)).c$$ThreadGroup$S$java_awt_EventQueue,[this.threadGroup, this.name, this]);
 (I$[4]||$incl$(4)).getInstance().notifyThreadBusy$Thread(t);
-this.dispatchThread = t;
+this.dispatchThread=t;
 this.dispatchThread.start();
 }}});
 
 Clazz.newMeth(C$, 'detachDispatchThread', function () {
-this.dispatchThread = null;
+this.dispatchThread=null;
 });
 
 Clazz.newMeth(C$, 'getDispatchThread', function () {
@@ -400,15 +400,15 @@ if (Clazz.instanceOf(entry.event, "java.awt.SequencedEvent")) {
 }if (Clazz.instanceOf(entry.event, "java.awt.SentEvent")) {
 (entry.event).dispose();
 }if (prev == null ) {
-this.queues[i].head = entry.next;
+this.queues[i].head=entry.next;
 } else {
-prev.next = entry.next;
+prev.next=entry.next;
 }p$.uncacheEQItem$java_awt_EventQueueItem.apply(this, [entry]);
 } else {
-prev = entry;
-}entry = entry.next;
+prev=entry;
+}entry=entry.next;
 }
-this.queues[i].tail = prev;
+this.queues[i].tail=prev;
 }
 }});
 
@@ -419,21 +419,21 @@ Clazz.newMeth(C$, 'setCurrentEventAndMostRecentTime$java_awt_AWTEvent', function
 Clazz.newMeth(C$, 'setCurrentEventAndMostRecentTimeImpl$java_awt_AWTEvent', function (e) {
 if ((I$[6]||$incl$(6)).isDispatchThread()) {
 return;
-}this.currentEvent = e;
+}this.currentEvent=e;
 var mostRecentEventTime2 = -9223372036854775808;
 if (Clazz.instanceOf(e, "java.awt.event.InputEvent")) {
 var ie = e;
-mostRecentEventTime2 = ie.getWhen();
+mostRecentEventTime2=ie.getWhen();
 } else if (Clazz.instanceOf(e, "java.awt.event.InputMethodEvent")) {
 var ime = e;
-mostRecentEventTime2 = ime.getWhen();
+mostRecentEventTime2=ime.getWhen();
 } else if (Clazz.instanceOf(e, "java.awt.event.ActionEvent")) {
 var ae = e;
-mostRecentEventTime2 = ae.getWhen();
+mostRecentEventTime2=ae.getWhen();
 } else if (Clazz.instanceOf(e, "java.awt.event.InvocationEvent")) {
 var ie = e;
-mostRecentEventTime2 = ie.getWhen();
-}this.mostRecentEventTime = Math.max(this.mostRecentEventTime, mostRecentEventTime2);
+mostRecentEventTime2=ie.getWhen();
+}this.mostRecentEventTime=Math.max(this.mostRecentEventTime, mostRecentEventTime2);
 });
 
 Clazz.newMeth(C$, 'invokeLater$Runnable', function (runnable) {
@@ -472,4 +472,4 @@ throw e;
 this.initDispatchThread();
 }}});
 })();
-//Created 2018-05-15 01:01:50
+//Created 2018-05-24 08:45:08

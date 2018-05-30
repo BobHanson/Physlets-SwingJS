@@ -20,14 +20,14 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_AWTEvent', function (nested) {
 C$.superclazz.c$$O$I.apply(this, [nested.getSource(), 1006]);
 C$.$init$.apply(this);
-this.nested = nested;
+this.nested=nested;
 {
 C$.list.add$TE(this);
 }}, 1);
 
 Clazz.newMeth(C$, 'dispatch', function () {
 try {
-this.appContext = (I$[2]||$incl$(2)).getAppContext();
+this.appContext=(I$[2]||$incl$(2)).getAppContext();
 if (C$.getFirst() !== this ) {
 if ((I$[3]||$incl$(3)).isDispatchThread()) {
 var edt = (I$[4]||$incl$(4)).currentThread();
@@ -88,7 +88,7 @@ Clazz.newMeth(C$, 'getFirstWithContext', function () {
 var first = C$.getFirst();
 while (C$.isOwnerAppContextDisposed$java_awt_SequencedEvent(first)){
 first.dispose();
-first = C$.getFirst();
+first=C$.getFirst();
 }
 return first;
 }, 1);
@@ -97,7 +97,7 @@ Clazz.newMeth(C$, 'dispose', function () {
 {
 if (this.disposed) {
 return;
-}this.disposed = true;
+}this.disposed=true;
 }if (this.appContext != null ) {
 (I$[8]||$incl$(8)).postEvent$sun_awt_AppContext$java_awt_AWTEvent(this.appContext, Clazz.new_((I$[9]||$incl$(9))));
 }var next = null;
@@ -106,7 +106,7 @@ Clazz.getClass(C$).notifyAll();
 if (C$.list.getFirst() === this ) {
 C$.list.removeFirst();
 if (!C$.list.isEmpty()) {
-next = C$.list.getFirst();
+next=C$.list.getFirst();
 }} else {
 C$.list.remove$O(this);
 }}if (next != null  && next.appContext != null  ) {
@@ -115,4 +115,4 @@ C$.list.remove$O(this);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:54
+//Created 2018-05-24 08:45:12

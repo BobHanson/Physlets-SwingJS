@@ -28,10 +28,10 @@ return this.name;
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
 C$.$init$.apply(this);
-this.name = name;
+this.name=name;
 }, 1);
 
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:57
+//Created 2018-05-24 08:47:07

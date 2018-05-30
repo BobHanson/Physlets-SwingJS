@@ -17,16 +17,16 @@ Clazz.newMeth(C$, 'c$$java_util_List', function (values) {
 Clazz.super_(C$, this,1);
 if (values == null  || values.size() == 0 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["SpinnerListModel(List) expects non-null non-empty List"]);
-}this.list = values;
-this.index = 0;
+}this.list=values;
+this.index=0;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$OA', function (values) {
 Clazz.super_(C$, this,1);
 if (values == null  || values.length == 0 ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["SpinnerListModel(Object[]) expects non-null non-empty Object[]"]);
-}this.list = (I$[1]||$incl$(1)).asList$TTA(values);
-this.index = 0;
+}this.list=(I$[1]||$incl$(1)).asList$TTA(values);
+this.index=0;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
@@ -41,8 +41,8 @@ Clazz.newMeth(C$, 'setList$java_util_List', function (list) {
 if ((list == null ) || (list.size() == 0) ) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid list"]);
 }if (!list.equals$O(this.list)) {
-this.list = list;
-this.index = 0;
+this.list=list;
+this.index=0;
 this.fireStateChanged();
 }});
 
@@ -55,7 +55,7 @@ var index = this.list.indexOf$O(elt);
 if (index == -1) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid sequence element"]);
 } else if (index != this.index) {
-this.index = index;
+this.index=index;
 this.fireStateChanged();
 }});
 
@@ -77,9 +77,9 @@ var value = this.list.get$I(counter);
 var string = value.toString();
 if (string != null  && string.startsWith$S(substring) ) {
 return value;
-}counter = (counter + 1) % max;
+}counter=(counter + 1) % max;
 } while (counter != this.index);
 return null;
 });
 })();
-//Created 2018-05-15 01:02:40
+//Created 2018-05-24 08:46:40

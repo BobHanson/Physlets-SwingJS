@@ -26,13 +26,13 @@ C$.c$$I$F.apply(this, [700, 0.75]);
 Clazz.newMeth(C$, 'c$$I$F', function (initialCapacity, loadFactor) {
 C$.superclazz.c$$I$F.apply(this, [initialCapacity, loadFactor]);
 C$.$init$.apply(this);
-this.resourceCache = Clazz.new_((I$[3]||$incl$(3)));
+this.resourceCache=Clazz.new_((I$[3]||$incl$(3)));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$OA', function (keyValueList) {
 C$.superclazz.c$$I.apply(this, [(keyValueList.length/2|0)]);
 C$.$init$.apply(this);
-for (var i = 0; i < keyValueList.length; i = i+(2)) {
+for (var i = 0; i < keyValueList.length; i+=2) {
 C$.superclazz.prototype.put$TK$TV.apply(this, [keyValueList[i], keyValueList[i + 1]]);
 }
 }, 1);
@@ -46,12 +46,12 @@ Clazz.newMeth(C$, 'getFromHashtable$O', function (key) {
 var value = C$.superclazz.prototype.get$O.apply(this, [key]);
 if (value == null  && (Clazz.instanceOf(key, "java.lang.String")) ) {
 var skey = key;
-if (skey.endsWith$S(".font") || skey.endsWith$S(".background") || skey.endsWith$S(".foreground")  ) value = C$.superclazz.prototype.get$O.apply(this, ["*" + skey.substring(skey.lastIndexOf("."))]);
+if (skey.endsWith$S(".font") || skey.endsWith$S(".background") || skey.endsWith$S(".foreground")  ) value=C$.superclazz.prototype.get$O.apply(this, ["*" + skey.substring(skey.lastIndexOf("."))]);
 }if (!(Clazz.instanceOf(value, "javax.swing.UIDefaults.ActiveValue")) && !(Clazz.instanceOf(value, "javax.swing.UIDefaults.LazyValue")) ) {
 return value;
 }if (Clazz.instanceOf(value, "javax.swing.UIDefaults.LazyValue")) {
 try {
-value = (value).createValue$javax_swing_UIDefaults(this);
+value=(value).createValue$javax_swing_UIDefaults(this);
 } finally {
 if (value == null ) {
 C$.superclazz.prototype.remove$O.apply(this, [key]);
@@ -59,7 +59,7 @@ C$.superclazz.prototype.remove$O.apply(this, [key]);
 C$.superclazz.prototype.put$TK$TV.apply(this, [key, value]);
 }}
 } else {
-value = (value).createValue$javax_swing_UIDefaults(this);
+value=(value).createValue$javax_swing_UIDefaults(this);
 }return value;
 });
 
@@ -73,7 +73,7 @@ if (this.resourceBundles == null  || this.resourceBundles.isEmpty()  || !(Clazz.
 return null;
 }if (l == null ) {
 if (this.defaultLocale == null ) return null;
- else l = this.defaultLocale;
+ else l=this.defaultLocale;
 }{
 return p$.getResourceCache$java_util_Locale.apply(this, [l]).get$O(key);
 }});
@@ -90,7 +90,7 @@ this.firePropertyChange$S$O$O(key, oldValue, value);
 });
 
 Clazz.newMeth(C$, 'putDefaults$OA', function (keyValueList) {
-for (var i = 0, max = keyValueList.length; i < max; i = i+(2)) {
+for (var i = 0, max = keyValueList.length; i < max; i+=2) {
 var value = keyValueList[i + 1];
 if (value == null ) {
 C$.superclazz.prototype.remove$O.apply(this, [keyValueList[i]]);
@@ -197,9 +197,9 @@ if (className != null ) {
 var cls = this.get$O(className);
 if (cls == null ) {
 if (uiClassLoader == null ) {
-cls = (I$[4]||$incl$(4)).loadSystemClass$S(className);
+cls=(I$[4]||$incl$(4)).loadSystemClass$S(className);
 } else {
-cls = uiClassLoader.loadClass$S(className);
+cls=uiClassLoader.loadClass$S(className);
 }if (cls != null ) {
 this.put$O$O(className, cls);
 }}return cls;
@@ -240,7 +240,7 @@ return (I$[6]||$incl$(6)).getComponentUI$javax_swing_JComponent(target);
 
 Clazz.newMeth(C$, 'addPropertyChangeListener$java_beans_PropertyChangeListener', function (listener) {
 if (this.changeSupport == null ) {
-this.changeSupport = Clazz.new_((I$[7]||$incl$(7)).c$$O,[this]);
+this.changeSupport=Clazz.new_((I$[7]||$incl$(7)).c$$O,[this]);
 }this.changeSupport.addPropertyChangeListener$java_beans_PropertyChangeListener(listener);
 });
 
@@ -264,7 +264,7 @@ Clazz.newMeth(C$, 'addResourceBundle$S', function (bundleName) {
 if (bundleName == null ) {
 return;
 }if (this.resourceBundles == null ) {
-this.resourceBundles = Clazz.new_((I$[9]||$incl$(9)).c$$I,[5]);
+this.resourceBundles=Clazz.new_((I$[9]||$incl$(9)).c$$I,[5]);
 }if (!this.resourceBundles.contains$O(bundleName)) {
 this.resourceBundles.add$TE(bundleName);
 this.resourceCache.clear();
@@ -277,7 +277,7 @@ this.resourceBundles.remove$O(bundleName);
 });
 
 Clazz.newMeth(C$, 'setDefaultLocale$java_util_Locale', function (l) {
-this.defaultLocale = l;
+this.defaultLocale=l;
 });
 
 Clazz.newMeth(C$, 'getDefaultLocale', function () {
@@ -309,7 +309,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$OA', function (bindings) {
 C$.$init$.apply(this);
-this.bindings = bindings;
+this.bindings=bindings;
 }, 1);
 
 Clazz.newMeth(C$, 'createValue$javax_swing_UIDefaults', function (table) {
@@ -322,4 +322,4 @@ return km;
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:42
+//Created 2018-05-24 08:46:44

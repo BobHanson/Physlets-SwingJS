@@ -16,8 +16,8 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$reflect_Method$S', function (element, foundType) {
 C$.superclazz.c$$S.apply(this, [(I$[1]||$incl$(1)).getString$S$O$O("annotation.1", element, foundType)]);
 C$.$init$.apply(this);
-this.$element = element;
-this.$foundType = foundType;
+this.$element=element;
+this.$foundType=foundType;
 }, 1);
 
 Clazz.newMeth(C$, 'element', function () {
@@ -30,4 +30,4 @@ return this.$foundType;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:08
+//Created 2018-05-24 08:45:39

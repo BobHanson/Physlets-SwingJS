@@ -57,11 +57,11 @@ this.setFont$java_awt_Font(list.getFont());
 var border = null;
 if (cellHasFocus) {
 if (isSelected) {
-border = (I$[2]||$incl$(2)).getBorder$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "List.focusSelectedCellHighlightBorder");
+border=(I$[2]||$incl$(2)).getBorder$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "List.focusSelectedCellHighlightBorder");
 }if (border == null ) {
-border = (I$[2]||$incl$(2)).getBorder$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "List.focusCellHighlightBorder");
+border=(I$[2]||$incl$(2)).getBorder$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "List.focusCellHighlightBorder");
 }} else {
-border = p$.getNoFocusBorder.apply(this, []);
+border=p$.getNoFocusBorder.apply(this, []);
 }this.setBorder$javax_swing_border_Border(border);
 return this;
 });
@@ -128,4 +128,4 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:24
+//Created 2018-05-24 08:46:09

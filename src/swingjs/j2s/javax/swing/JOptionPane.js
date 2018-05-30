@@ -56,10 +56,10 @@ var value;
 if (!(Clazz.instanceOf(parentComponent, "java.beans.PropertyChangeListener"))) {
 if (!(Clazz.instanceOf(message, "java.lang.String"))) {
 C$.warnJSDeveloper();
-message = "?";
+message="?";
 }if (!(Clazz.instanceOf(initialSelectionValue, "java.lang.String"))) {
 C$.warnJSDeveloper();
-initialSelectionValue = (initialSelectionValue == null  ? "" : initialSelectionValue.toString());
+initialSelectionValue=(initialSelectionValue == null  ? "" : initialSelectionValue.toString());
 }var jsReturn = (I$[1]||$incl$(1)).prompt$S$S(message, initialSelectionValue);
 return (jsReturn == null  ? null : jsReturn);
 }var pane = Clazz.new_(C$.c$$O$I$I$javax_swing_Icon$OA$O,[message, messageType, 2, icon, null, null]);
@@ -113,21 +113,21 @@ Clazz.newMeth(C$, 'showConfirmDialog$java_awt_Component$O$S$I$I$javax_swing_Icon
 var options = Clazz.array(java.lang.String, -1, ["ok"]);
 switch (optionType) {
 case 2:
-options = Clazz.array(java.lang.String, -1, ["ok", "cancel"]);
+options=Clazz.array(java.lang.String, -1, ["ok", "cancel"]);
 break;
 case 1:
-options = Clazz.array(java.lang.String, -1, ["yes", "no", "cancel"]);
+options=Clazz.array(java.lang.String, -1, ["yes", "no", "cancel"]);
 break;
 case 0:
-options = Clazz.array(java.lang.String, -1, ["yes", "no"]);
+options=Clazz.array(java.lang.String, -1, ["yes", "no"]);
 break;
 }
 var jsReturn = true;
 if (!(Clazz.instanceOf(parentComponent, "java.beans.PropertyChangeListener"))) {
 if (!(Clazz.instanceOf(message, "java.lang.String"))) {
 C$.warnJSDeveloper();
-message = "?";
-}jsReturn = (I$[1]||$incl$(1)).confirm$S(message);
+message="?";
+}jsReturn=(I$[1]||$incl$(1)).confirm$S(message);
 switch (optionType) {
 case 2:
 default:
@@ -156,7 +156,7 @@ return (I$[2]||$incl$(2)).ASYNCHRONOUS_INTEGER;
 
 Clazz.newMeth(C$, 'createDialog$java_awt_Component$S', function (parentComponent, title) {
 var style = C$.styleFromMessageType$I(this.getMessageType());
-this.disposeOnHide = false;
+this.disposeOnHide=false;
 return p$.createDialog$java_awt_Component$S$I.apply(this, [parentComponent, title, style]);
 });
 
@@ -171,9 +171,9 @@ Clazz.newMeth(C$, 'createDialog$java_awt_Component$S$I', function (parentCompone
 var dialog;
 var window = C$.getWindowForComponent$java_awt_Component(parentComponent);
 if (Clazz.instanceOf(window, "java.awt.Frame")) {
-dialog = Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_Frame$S$Z,[window, title, true]);
+dialog=Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_Frame$S$Z,[window, title, true]);
 } else {
-dialog = Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_Dialog$S$Z,[window, title, true]);
+dialog=Clazz.new_((I$[2]||$incl$(2)).c$$java_awt_Dialog$S$Z,[window, title, true]);
 }if (Clazz.instanceOf(window, "javax.swing.SwingUtilities.SharedOwnerFrame")) {
 var ownerShutdownListener = (I$[3]||$incl$(3)).getSharedOwnerFrameShutdownListener();
 dialog.addWindowListener$java_awt_event_WindowListener(ownerShutdownListener);
@@ -219,7 +219,7 @@ this.$finals.dialog.dispose();
 Clazz.newMeth(C$, 'windowGainedFocus$java_awt_event_WindowEvent', function (we) {
 if (!this.gotFocus) {
 this.b$['javax.swing.JOptionPane'].selectInitialValue();
-this.gotFocus = true;
+this.gotFocus=true;
 }});
 })()
 ), Clazz.new_((I$[6]||$incl$(6)), [this, {dialog: dialog}],P$.JOptionPane$1));
@@ -264,16 +264,16 @@ Clazz.newMeth(C$, 'getReturnIndex$O', function (value) {
 var selectedValue = this.getValue();
 var ret = -1;
 if (selectedValue == null ) {
-ret = -1;
+ret=-1;
 } else if (this.options == null ) {
 if (Clazz.instanceOf(selectedValue, "java.lang.Integer")) {
-ret = (selectedValue).intValue();
+ret=(selectedValue).intValue();
 } else {
-ret = -1;
+ret=-1;
 }} else {
 for (var counter = 0, maxCounter = this.options.length; counter < maxCounter; counter++) {
 if (this.options[counter].equals$O(selectedValue)) {
-ret = counter;
+ret=counter;
 break;
 }}
 }return ret;
@@ -301,7 +301,7 @@ if (newRootFrame != null ) {
 Clazz.newMeth(C$, 'getRootFrame', function () {
 var sharedFrame = (I$[3]||$incl$(3)).appContextGet$O(C$.sharedFrameKey);
 if (sharedFrame == null ) {
-sharedFrame = (I$[3]||$incl$(3)).getSharedOwnerFrame();
+sharedFrame=(I$[3]||$incl$(3)).getSharedOwnerFrame();
 (I$[3]||$incl$(3)).appContextPut$O$O(C$.sharedFrameKey, sharedFrame);
 }return sharedFrame;
 }, 1);
@@ -332,15 +332,15 @@ C$.c$$O$I$I$javax_swing_Icon$OA$O.apply(this, [message, messageType, optionType,
 
 Clazz.newMeth(C$, 'c$$O$I$I$javax_swing_Icon$OA$O', function (message, messageType, optionType, icon, options, initialValue) {
 Clazz.super_(C$, this,1);
-this.message = message;
-this.options = options;
-this.initialValue = initialValue;
-this.icon = icon;
+this.message=message;
+this.options=options;
+this.initialValue=initialValue;
+this.icon=icon;
 this.setMessageType$I(messageType);
 this.setOptionType$I(optionType);
-this.value = C$.UNINITIALIZED_VALUE;
-this.inputValue = C$.UNINITIALIZED_VALUE;
-this.uiClassID = "OptionPaneUI";
+this.value=C$.UNINITIALIZED_VALUE;
+this.inputValue=C$.UNINITIALIZED_VALUE;
+this.uiClassID="OptionPaneUI";
 this.updateUI();
 }, 1);
 
@@ -352,7 +352,7 @@ this.invalidate();
 
 Clazz.newMeth(C$, 'setMessage$O', function (newMessage) {
 var oldMessage = this.message;
-this.message = newMessage;
+this.message=newMessage;
 this.firePropertyChange$S$O$O("message", oldMessage, this.message);
 });
 
@@ -362,7 +362,7 @@ return this.message;
 
 Clazz.newMeth(C$, 'setIcon$javax_swing_Icon', function (newIcon) {
 var oldIcon = this.icon;
-this.icon = newIcon;
+this.icon=newIcon;
 this.firePropertyChange$S$O$O("icon", oldIcon, this.icon);
 });
 
@@ -372,7 +372,7 @@ return this.icon;
 
 Clazz.newMeth(C$, 'setValue$O', function (newValue) {
 var oldValue = this.value;
-this.value = newValue;
+this.value=newValue;
 this.firePropertyChange$S$O$O("value", oldValue, this.value);
 });
 
@@ -382,7 +382,7 @@ return this.value;
 
 Clazz.newMeth(C$, 'setOptions$OA', function (newOptions) {
 var oldOptions = this.options;
-this.options = newOptions;
+this.options=newOptions;
 this.firePropertyChange$S$O$O("options", oldOptions, this.options);
 });
 
@@ -397,7 +397,7 @@ return retOptions;
 
 Clazz.newMeth(C$, 'setInitialValue$O', function (newInitialValue) {
 var oldIV = this.initialValue;
-this.initialValue = newInitialValue;
+this.initialValue=newInitialValue;
 this.firePropertyChange$S$O$O("initialValue", oldIV, this.initialValue);
 });
 
@@ -408,7 +408,7 @@ return this.initialValue;
 Clazz.newMeth(C$, 'setMessageType$I', function (newType) {
 if (newType != 0 && newType != 1  && newType != 2  && newType != 3  && newType != -1 ) throw Clazz.new_(Clazz.load('java.lang.RuntimeException').c$$S,["JOptionPane: type must be one of JOptionPane.ERROR_MESSAGE, JOptionPane.INFORMATION_MESSAGE, JOptionPane.WARNING_MESSAGE, JOptionPane.QUESTION_MESSAGE or JOptionPane.PLAIN_MESSAGE"]);
 var oldType = this.messageType;
-this.messageType = newType;
+this.messageType=newType;
 this.firePropertyChange$S$I$I("messageType", oldType, this.messageType);
 });
 
@@ -419,7 +419,7 @@ return this.messageType;
 Clazz.newMeth(C$, 'setOptionType$I', function (newType) {
 if (newType != -1 && newType != 0  && newType != 1  && newType != 2 ) throw Clazz.new_(Clazz.load('java.lang.RuntimeException').c$$S,["JOptionPane: option type must be one of JOptionPane.DEFAULT_OPTION, JOptionPane.YES_NO_OPTION, JOptionPane.YES_NO_CANCEL_OPTION or JOptionPane.OK_CANCEL_OPTION"]);
 var oldType = this.optionType;
-this.optionType = newType;
+this.optionType=newType;
 this.firePropertyChange$S$I$I("optionType", oldType, this.optionType);
 });
 
@@ -429,7 +429,7 @@ return this.optionType;
 
 Clazz.newMeth(C$, 'setSelectionValues$OA', function (newValues) {
 var oldValues = this.selectionValues;
-this.selectionValues = newValues;
+this.selectionValues=newValues;
 this.firePropertyChange$S$O$O("selectionValues", oldValues, newValues);
 if (this.selectionValues != null ) this.setWantsInput$Z(true);
 });
@@ -440,7 +440,7 @@ return this.selectionValues;
 
 Clazz.newMeth(C$, 'setInitialSelectionValue$O', function (newValue) {
 var oldValue = this.initialSelectionValue;
-this.initialSelectionValue = newValue;
+this.initialSelectionValue=newValue;
 this.firePropertyChange$S$O$O("initialSelectionValue", oldValue, newValue);
 });
 
@@ -450,7 +450,7 @@ return this.initialSelectionValue;
 
 Clazz.newMeth(C$, 'setInputValue$O', function (newValue) {
 var oldValue = this.inputValue;
-this.inputValue = newValue;
+this.inputValue=newValue;
 this.firePropertyChange$S$O$O("inputValue", oldValue, newValue);
 });
 
@@ -464,7 +464,7 @@ return 2147483647;
 
 Clazz.newMeth(C$, 'setWantsInput$Z', function (newValue) {
 var oldValue = this.wantsInput;
-this.wantsInput = newValue;
+this.wantsInput=newValue;
 this.firePropertyChange$S$Z$Z("wantsInput", oldValue, newValue);
 });
 
@@ -501,14 +501,14 @@ var messageString = (this.message != null  ? this.message.toString() : "");
 var messageTypeString = C$.getMessageTypeString$I$S(this.messageType, "_MESSAGE");
 var optionTypeString;
 if (this.optionType == -1) {
-optionTypeString = "DEFAULT_OPTION";
+optionTypeString="DEFAULT_OPTION";
 } else if (this.optionType == 0) {
-optionTypeString = "YES_NO_OPTION";
+optionTypeString="YES_NO_OPTION";
 } else if (this.optionType == 1) {
-optionTypeString = "YES_NO_CANCEL_OPTION";
+optionTypeString="YES_NO_CANCEL_OPTION";
 } else if (this.optionType == 2) {
-optionTypeString = "OK_CANCEL_OPTION";
-} else optionTypeString = "";
+optionTypeString="OK_CANCEL_OPTION";
+} else optionTypeString="";
 var wantsInputString = (this.wantsInput ? "true" : "false");
 return C$.superclazz.prototype.paramString.apply(this, []) + ",icon=" + iconString + ",initialValue=" + initialValueString + ",message=" + messageString + ",messageType=" + messageTypeString + ",optionType=" + optionTypeString + ",wantsInput=" + wantsInputString ;
 });
@@ -517,25 +517,25 @@ Clazz.newMeth(C$, 'getMessageTypeString$I$S', function (messageType, trailer) {
 var s;
 switch (messageType) {
 case 0:
-s = "ERROR";
+s="ERROR";
 break;
 case 1:
-s = (trailer == "_MESSAGE" ? "INFORMATION" : "");
+s=(trailer == "_MESSAGE" ? "INFORMATION" : "");
 break;
 case 2:
-s = "WARNING";
+s="WARNING";
 break;
 case 3:
-s = (trailer == "_MESSAGE" ? "QUESTION" : "");
+s=(trailer == "_MESSAGE" ? "QUESTION" : "");
 break;
 case -1:
-s = (trailer == "_MESSAGE" ? "PLAIN" : "");
+s=(trailer == "_MESSAGE" ? "PLAIN" : "");
 break;
 default:
-s = "";
+s="";
 break;
 }
 return (s == "" ? "" : s + trailer);
 }, 1);
 })();
-//Created 2018-05-15 01:02:31
+//Created 2018-05-24 08:46:19

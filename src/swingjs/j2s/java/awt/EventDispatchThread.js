@@ -30,7 +30,7 @@ return true;
 });
 
 Clazz.newMeth(C$, 'isLooping', function () {
-return (this.doDispatch && (this.cond == null  || this.cond.evaluate() ) && !this.isInterrupted()   || (this.doDispatch = false) );
+return (this.doDispatch && (this.cond == null  || this.cond.evaluate() ) && !this.isInterrupted()   || (this.doDispatch=false) );
 });
 
 Clazz.newMeth(C$, 'myLoop', function () {
@@ -56,7 +56,7 @@ var mode = 1;
 f = function() {r.run();me.run1$I(mode)};
 }
 (I$[6]||$incl$(6)).dispatch$O$I$I(f, 0, 0);
-return (this.doDispatch = false);
+return (this.doDispatch=false);
 });
 
 Clazz.newMeth(C$, 'getDelayMillis', function () {
@@ -76,7 +76,7 @@ Clazz.newMeth(C$, 'onException$Exception', function (e) {
 Clazz.newMeth(C$, 'c$$ThreadGroup$S$java_awt_EventQueue', function (group, name, queue) {
 C$.superclazz.c$$ThreadGroup$S.apply(this, [group, name]);
 C$.$init$.apply(this);
-this.theQueue = queue;
+this.theQueue=queue;
 }, 1);
 
 Clazz.newMeth(C$, 'stopDispatchingImpl$Z', function (wait) {
@@ -124,9 +124,9 @@ this.pumpEventsForFilter$I$java_awt_Conditional$java_awt_EventFilter(id, cond, C
 });
 
 Clazz.newMeth(C$, 'pumpEventsForFilter$I$java_awt_Conditional$java_awt_EventFilter', function (id, cond, filter) {
-this.filter = filter;
-this.cond = cond;
-this.id = id;
+this.filter=filter;
+this.cond=cond;
+this.id=id;
 this.run1$I(0);
 });
 
@@ -140,7 +140,7 @@ f = function() {r.run();me.run1$I(mode) };
 });
 
 Clazz.newMeth(C$, 'finish', function () {
-this.doDispatch = false;
+this.doDispatch=false;
 this.removeEventFilter$java_awt_EventFilter(this.filter);
 {
 if (this.theQueue.getDispatchThread() === this ) {
@@ -156,7 +156,7 @@ if (!this.eventFilters.contains$O(filter)) {
 if (Clazz.instanceOf(filter, "java.awt.ModalEventFilter")) {
 var newFilter = filter;
 var k = 0;
-for (k = 0; k < this.eventFilters.size(); k++) {
+for (k=0; k < this.eventFilters.size(); k++) {
 var f = this.eventFilters.get$I(k);
 if (Clazz.instanceOf(f, "java.awt.ModalEventFilter")) {
 var cf = f;
@@ -182,15 +182,15 @@ try {
 var event;
 var eventOK;
 do {
-event = (id == -1) ? this.theQueue.getNextEvent() : this.theQueue.getNextEventForID$I(id);
-if (event == null ) return (this.doDispatch = false);
-eventOK = true;
+event=(id == -1) ? this.theQueue.getNextEvent() : this.theQueue.getNextEventForID$I(id);
+if (event == null ) return (this.doDispatch=false);
+eventOK=true;
 {
 for (var i = this.eventFilters.size() - 1; i >= 0; i--) {
 var f = this.eventFilters.get$I(i);
 var accept = f.acceptEvent$java_awt_AWTEvent(event);
 if (accept === (I$[2]||$incl$(2)).REJECT ) {
-eventOK = false;
+eventOK=false;
 break;
 } else if (accept === (I$[2]||$incl$(2)).ACCEPT_IMMEDIATELY ) {
 break;
@@ -199,17 +199,17 @@ break;
 event.consume();
 }} while (eventOK == false );
 this.theQueue.dispatchEvent$java_awt_AWTEvent(event);
-return this.doDispatch = true;
+return this.doDispatch=true;
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$, "java.lang.ThreadDeath")){
 var death = e$$;
 {
-return this.doDispatch = false;
+return this.doDispatch=false;
 }
 } else if (Clazz.exceptionOf(e$$, "java.lang.InterruptedException")){
 var interruptedException = e$$;
 {
-return this.doDispatch = false;
+return this.doDispatch=false;
 }
 } else {
 var e = e$$;
@@ -218,7 +218,7 @@ p$.processException$Throwable$Z.apply(this, [e, this.modalFiltersCount > 0]);
 }
 }
 }
-return this.doDispatch = true;
+return this.doDispatch=true;
 });
 
 Clazz.newMeth(C$, 'processException$Throwable$Z', function (e, isModal) {
@@ -260,7 +260,7 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'dispatch', function () {
-this.this$0.doDispatch = false;
+this.this$0.doDispatch=false;
 });
 })()
 ;
@@ -281,7 +281,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_Component', function (modalComponent) {
 C$.$init$.apply(this);
-this.modalComponent = modalComponent;
+this.modalComponent=modalComponent;
 }, 1);
 
 Clazz.newMeth(C$, 'acceptEvent$java_awt_AWTEvent', function (event) {
@@ -302,9 +302,9 @@ var modalExcluded = false;
 if (Clazz.instanceOf(this.modalComponent, "java.awt.Container")) {
 while (c !== this.modalComponent  && c != null  ){
 if ((Clazz.instanceOf(c, "java.awt.Window")) && ((I$[3]||$incl$(3)).isModalExcluded$java_awt_Window(c)) ) {
-modalExcluded = true;
+modalExcluded=true;
 break;
-}c = c.getParent();
+}c=c.getParent();
 }
 }if (!modalExcluded && (c !== this.modalComponent ) ) {
 return (I$[2]||$incl$(2)).REJECT;
@@ -316,4 +316,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:50
+//Created 2018-05-24 08:45:08

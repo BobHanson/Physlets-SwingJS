@@ -20,16 +20,16 @@ return this.prefixLength;
 
 Clazz.newMeth(C$, 'c$$S$I', function (pathname, prefixLength) {
 C$.$init$.apply(this);
-this.path = pathname;
-this.prefixLength = prefixLength;
+this.path=pathname;
+this.prefixLength=prefixLength;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$java_io_File', function (child, parent) {
 C$.$init$.apply(this);
 Clazz.assert(C$, this, function(){return parent.path != null });
 Clazz.assert(C$, this, function(){return (!parent.path.equals$O(""))});
-this.path = p$.resolve$S$S.apply(this, [parent.path, child]);
-this.prefixLength = parent.prefixLength;
+this.path=p$.resolve$S$S.apply(this, [parent.path, child]);
+this.prefixLength=parent.prefixLength;
 }, 1);
 
 Clazz.newMeth(C$, 'resolve$S$S', function (path, child) {
@@ -47,12 +47,12 @@ if (child == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
 }if (parent != null ) {
 if (parent.equals$O("")) {
-this.path = p$.resolve$S$S.apply(this, [".", child]);
+this.path=p$.resolve$S$S.apply(this, [".", child]);
 } else {
-this.path = p$.resolve$S$S.apply(this, [parent, child]);
+this.path=p$.resolve$S$S.apply(this, [parent, child]);
 }} else {
-this.path = p$.resolve$S$S.apply(this, [".", child]);
-}this.prefixLength = this.path.lastIndexOf("/") + 1;
+this.path=p$.resolve$S$S.apply(this, [".", child]);
+}this.prefixLength=this.path.lastIndexOf("/") + 1;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_File$S', function (parent, child) {
@@ -111,9 +111,9 @@ return this;
 
 Clazz.newMeth(C$, 'slashify$S$Z', function (path, isDirectory) {
 var p = path;
-p = p.$replace("\\", "/");
-if (!p.startsWith$S("/")) p = "/" + p;
-if (!p.endsWith$S("/") && isDirectory ) p = p + "/";
+p=p.$replace("\\", "/");
+if (!p.startsWith$S("/")) p="/" + p;
+if (!p.endsWith$S("/") && isDirectory ) p=p + "/";
 return p;
 }, 1);
 
@@ -121,7 +121,7 @@ Clazz.newMeth(C$, 'toURI', function () {
 try {
 var f = this.getAbsoluteFile();
 var sp = C$.slashify$S$Z(f.getPath(), f.isDirectory());
-if (sp.startsWith$S("//")) sp = "//" + sp;
+if (sp.startsWith$S("//")) sp="//" + sp;
 return Clazz.new_((I$[1]||$incl$(1)).c$$S$S$S$S,["file", null, sp, null]);
 } catch (x) {
 if (Clazz.exceptionOf(x, "java.net.URISyntaxException")){
@@ -174,7 +174,7 @@ if (ss == null ) return null;
 var n = ss.length;
 var fs = Clazz.array(C$, [n]);
 for (var i = 0; i < n; i++) {
-fs[i] = Clazz.new_(C$.c$$S$java_io_File,[ss[i], this]);
+fs[i]=Clazz.new_(C$.c$$S$java_io_File,[ss[i], this]);
 }
 return fs;
 });
@@ -196,4 +196,4 @@ C$.$_ASSERT_ENABLED_ = ClassLoader.$getClassAssertionStatus(C$);
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:04
+//Created 2018-05-24 08:45:33

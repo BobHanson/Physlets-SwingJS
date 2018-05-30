@@ -41,16 +41,16 @@ return ((c1Label || c2Label ) && (c1Label != c2Label ) );
 });
 
 Clazz.newMeth(C$, 'getButtonGap$javax_swing_JComponent$javax_swing_JComponent$I$I', function (source, target, position, offset) {
-offset = offset-(this.getButtonGap$javax_swing_JComponent$I(source, position));
+offset-=this.getButtonGap$javax_swing_JComponent$I(source, position);
 if (offset > 0) {
-offset = offset-(this.getButtonGap$javax_swing_JComponent$I(target, this.flipDirection$I(position)));
+offset-=this.getButtonGap$javax_swing_JComponent$I(target, this.flipDirection$I(position));
 }if (offset < 0) {
 return 0;
 }return offset;
 });
 
 Clazz.newMeth(C$, 'getButtonGap$javax_swing_JComponent$I$I', function (source, position, offset) {
-offset = offset-(this.getButtonGap$javax_swing_JComponent$I(source, position));
+offset-=this.getButtonGap$javax_swing_JComponent$I(source, position);
 return Math.max(offset, 0);
 });
 
@@ -102,9 +102,9 @@ if (icon != null ) {
 return icon;
 }var key = null;
 if (Clazz.instanceOf(button, "javax.swing.JCheckBox")) {
-key = "CheckBox.icon";
+key="CheckBox.icon";
 } else if (Clazz.instanceOf(button, "javax.swing.JRadioButton")) {
-key = "RadioButton.icon";
+key="RadioButton.icon";
 }if (key != null ) {
 var oIcon = (I$[2]||$incl$(2)).get$O(key);
 if (Clazz.instanceOf(oIcon, "javax.swing.Icon")) {
@@ -150,4 +150,4 @@ return 0;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:11
+//Created 2018-05-24 08:47:34

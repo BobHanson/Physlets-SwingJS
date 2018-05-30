@@ -30,7 +30,7 @@ this.optimizedDrawingPossible = true;
 Clazz.newMeth(C$, 'c$', function () {
 Clazz.super_(C$, this,1);
 this.setLayout$java_awt_LayoutManager(null);
-this.uiClassID = "LayeredPaneUI";
+this.uiClassID="LayeredPaneUI";
 this.updateUI();
 }, 1);
 
@@ -39,24 +39,24 @@ var layeredComponentFound = false;
 {
 var layer = null;
 for (var c, $c = 0, $$c = this.getComponents(); $c<$$c.length&&((c=$$c[$c]),1);$c++) {
-layer = null;
-if ((Clazz.instanceOf(c, "javax.swing.JComponent") && (layer = (c).getClientProperty$O("layeredContainerLayer")) != null  )) {
+layer=null;
+if ((Clazz.instanceOf(c, "javax.swing.JComponent") && (layer=(c).getClientProperty$O("layeredContainerLayer")) != null  )) {
 if (layer != null  && layer.equals(C$.FRAME_CONTENT_LAYER) ) continue;
-layeredComponentFound = true;
+layeredComponentFound=true;
 break;
 }}
-}if (layeredComponentFound) this.optimizedDrawingPossible = false;
- else this.optimizedDrawingPossible = true;
+}if (layeredComponentFound) this.optimizedDrawingPossible=false;
+ else this.optimizedDrawingPossible=true;
 });
 
 Clazz.newMeth(C$, 'addImpl$java_awt_Component$O$I', function (comp, constraints, index) {
 var layer = C$.DEFAULT_LAYER.intValue();
 var pos;
 if (Clazz.instanceOf(constraints, "java.lang.Integer")) {
-layer = (constraints).intValue();
+layer=(constraints).intValue();
 this.setLayer$java_awt_Component$I(comp, layer);
-} else layer = this.getLayer$java_awt_Component(comp);
-pos = this.insertIndexForLayer$I$I(layer, index);
+} else layer=this.getLayer$java_awt_Component(comp);
+pos=this.insertIndexForLayer$I$I(layer, index);
 this.addImplCont$java_awt_Component$O$I(comp, constraints, pos);
 comp.validate();
 comp.repaint();
@@ -89,20 +89,20 @@ return this.optimizedDrawingPossible;
 
 Clazz.newMeth(C$, 'putLayer$javax_swing_JComponent$I', function (c, layer) {
 var layerObj;
-layerObj =  new Integer(layer);
+layerObj= new Integer(layer);
 c.putClientProperty$O$O("layeredContainerLayer", layerObj);
 }, 1);
 
 Clazz.newMeth(C$, 'getLayer$javax_swing_JComponent', function (c) {
 var i;
-if ((i = c.getClientProperty$O("layeredContainerLayer")) != null ) return i.intValue();
+if ((i=c.getClientProperty$O("layeredContainerLayer")) != null ) return i.intValue();
 return C$.DEFAULT_LAYER.intValue();
 }, 1);
 
 Clazz.newMeth(C$, 'getLayeredPaneAbove$java_awt_Component', function (c) {
 if (c == null ) return null;
 var parent = c.getParent();
-while (parent != null  && !(Clazz.instanceOf(parent, "javax.swing.JLayeredPane")) )parent = parent.getParent();
+while (parent != null  && !(Clazz.instanceOf(parent, "javax.swing.JLayeredPane")) )parent=parent.getParent();
 
 return parent;
 }, 1);
@@ -113,7 +113,7 @@ this.setLayer$java_awt_Component$I$I(c, layer, -1);
 
 Clazz.newMeth(C$, 'setLayer$java_awt_Component$I$I', function (c, layer, position) {
 var layerObj;
-layerObj = this.getObjectForLayer$I(layer);
+layerObj=this.getObjectForLayer$I(layer);
 if (layer == this.getLayer$java_awt_Component(c) && position == this.getPosition$java_awt_Component(c) ) {
 this.repaint$java_awt_Rectangle(c.getBounds());
 return;
@@ -129,8 +129,8 @@ this.repaint$java_awt_Rectangle(c.getBounds());
 
 Clazz.newMeth(C$, 'getLayer$java_awt_Component', function (c) {
 var i;
-if (Clazz.instanceOf(c, "javax.swing.JComponent")) i = (c).getClientProperty$O("layeredContainerLayer");
- else i = this.getComponentToLayer().get$O(c);
+if (Clazz.instanceOf(c, "javax.swing.JComponent")) i=(c).getClientProperty$O("layeredContainerLayer");
+ else i=this.getComponentToLayer().get$O(c);
 if (i == null ) return C$.DEFAULT_LAYER.intValue();
 return i.intValue();
 });
@@ -138,8 +138,8 @@ return i.intValue();
 Clazz.newMeth(C$, 'getIndexOf$java_awt_Component', function (c) {
 var i;
 var count;
-count = this.getComponentCount();
-for (i = 0; i < count; i++) {
+count=this.getComponentCount();
+for (i=0; i < count; i++) {
 if (c === this.getComponent$I(i) ) return i;
 }
 return -1;
@@ -164,12 +164,12 @@ var startLayer;
 var curLayer;
 var startLocation;
 var pos = 0;
-count = this.getComponentCount();
-startLocation = this.getIndexOf$java_awt_Component(c);
+count=this.getComponentCount();
+startLocation=this.getIndexOf$java_awt_Component(c);
 if (startLocation == -1) return -1;
-startLayer = this.getLayer$java_awt_Component(c);
-for (i = startLocation - 1; i >= 0; i--) {
-curLayer = this.getLayer$java_awt_Component(this.getComponent$I(i));
+startLayer=this.getLayer$java_awt_Component(c);
+for (i=startLocation - 1; i >= 0; i--) {
+curLayer=this.getLayer$java_awt_Component(this.getComponent$I(i));
 if (curLayer == startLayer) pos++;
  else return pos;
 }
@@ -192,9 +192,9 @@ var i;
 var count;
 var curLayer;
 var layerCount = 0;
-count = this.getComponentCount();
-for (i = 0; i < count; i++) {
-curLayer = this.getLayer$java_awt_Component(this.getComponent$I(i));
+count=this.getComponentCount();
+for (i=0; i < count; i++) {
+curLayer=this.getLayer$java_awt_Component(this.getComponent$I(i));
 if (curLayer == layer) {
 layerCount++;
 } else if (layerCount > 0 || curLayer < layer ) {
@@ -209,12 +209,12 @@ var count;
 var curLayer;
 var layerCount = 0;
 var results;
-results = Clazz.array((I$[1]||$incl$(1)), [this.getComponentCountInLayer$I(layer)]);
-count = this.getComponentCount();
-for (i = 0; i < count; i++) {
-curLayer = this.getLayer$java_awt_Component(this.getComponent$I(i));
+results=Clazz.array((I$[1]||$incl$(1)), [this.getComponentCountInLayer$I(layer)]);
+count=this.getComponentCount();
+for (i=0; i < count; i++) {
+curLayer=this.getLayer$java_awt_Component(this.getComponent$I(i));
 if (curLayer == layer) {
-results[layerCount++] = this.getComponent$I(i);
+results[layerCount++]=this.getComponent$I(i);
 } else if (layerCount > 0 || curLayer < layer ) {
 break;
 }}
@@ -225,7 +225,7 @@ Clazz.newMeth(C$, 'paint$java_awt_Graphics', function (g) {
 if (this.isOpaque()) {
 var r = g.getClipBounds();
 var c = this.getBackground();
-if (c == null ) c = (I$[2]||$incl$(2)).lightGray;
+if (c == null ) c=(I$[2]||$incl$(2)).lightGray;
 g.setColor$java_awt_Color(c);
 if (r != null ) {
 g.fillRect$I$I$I$I(r.x, r.y, r.width, r.height);
@@ -235,7 +235,7 @@ g.fillRect$I$I$I$I(0, 0, this.getWidth(), this.getHeight());
 });
 
 Clazz.newMeth(C$, 'getComponentToLayer', function () {
-if (this.componentToLayer == null ) this.componentToLayer = Clazz.new_((I$[3]||$incl$(3)).c$$I,[4]);
+if (this.componentToLayer == null ) this.componentToLayer=Clazz.new_((I$[3]||$incl$(3)).c$$I,[4]);
 return this.componentToLayer;
 });
 
@@ -243,22 +243,22 @@ Clazz.newMeth(C$, 'getObjectForLayer$I', function (layer) {
 var layerObj;
 switch (layer) {
 case 0:
-layerObj = C$.DEFAULT_LAYER;
+layerObj=C$.DEFAULT_LAYER;
 break;
 case 100:
-layerObj = C$.PALETTE_LAYER;
+layerObj=C$.PALETTE_LAYER;
 break;
 case 200:
-layerObj = C$.MODAL_LAYER;
+layerObj=C$.MODAL_LAYER;
 break;
 case 300:
-layerObj = C$.POPUP_LAYER;
+layerObj=C$.POPUP_LAYER;
 break;
 case 400:
-layerObj = C$.DRAG_LAYER;
+layerObj=C$.DRAG_LAYER;
 break;
 default:
-layerObj =  new Integer(layer);
+layerObj= new Integer(layer);
 }
 return layerObj;
 });
@@ -279,22 +279,22 @@ for (var index = 0; index < componentCount; index++) {
 if (this.getComponent$I(index) !== comp ) {
 compList.add$TE(this.getComponent$I(index));
 }}
-count = compList.size();
-for (i = 0; i < count; i++) {
-curLayer = this.getLayer$java_awt_Component(compList.get$I(i));
+count=compList.size();
+for (i=0; i < count; i++) {
+curLayer=this.getLayer$java_awt_Component(compList.get$I(i));
 if (layerStart == -1 && curLayer == layer ) {
-layerStart = i;
+layerStart=i;
 }if (curLayer < layer) {
 if (i == 0) {
-layerStart = 0;
-layerEnd = 0;
+layerStart=0;
+layerEnd=0;
 } else {
-layerEnd = i;
+layerEnd=i;
 }break;
 }}
 if (layerStart == -1 && layerEnd == -1 ) return count;
-if (layerStart != -1 && layerEnd == -1 ) layerEnd = count;
-if (layerEnd != -1 && layerStart == -1 ) layerStart = layerEnd;
+if (layerStart != -1 && layerEnd == -1 ) layerEnd=count;
+if (layerEnd != -1 && layerStart == -1 ) layerStart=layerEnd;
 if (position == -1) return layerEnd;
 if (position > -1 && layerStart + position <= layerEnd ) return layerStart + position;
 return layerEnd;
@@ -305,4 +305,4 @@ var optimizedDrawingPossibleString = (this.optimizedDrawingPossible ? "true" : "
 return C$.superclazz.prototype.paramString.apply(this, []) + ",optimizedDrawingPossible=" + optimizedDrawingPossibleString ;
 });
 })();
-//Created 2018-05-15 01:02:29
+//Created 2018-05-24 08:46:17

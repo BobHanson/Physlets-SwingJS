@@ -47,10 +47,10 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["value i
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid calendarField"]);
 }if (!(((start == null ) || (start.compareTo$TT(value) <= 0) ) && ((end == null ) || (end.compareTo$TT(value) >= 0) ) )) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["(start <= value <= end) is false"]);
-}this.value = (I$[1]||$incl$(1)).getInstance();
-this.start = start;
-this.end = end;
-this.calendarField = calendarField;
+}this.value=(I$[1]||$incl$(1)).getInstance();
+this.start=start;
+this.end=end;
+this.calendarField=calendarField;
 this.value.setTime$java_util_Date(value);
 }, 1);
 
@@ -60,7 +60,7 @@ C$.c$$java_util_Date$Comparable$Comparable$I.apply(this, [Clazz.new_((I$[2]||$in
 
 Clazz.newMeth(C$, 'setStart$Comparable', function (start) {
 if ((start == null ) ? (this.start != null ) : !start.equals$O(this.start)) {
-this.start = start;
+this.start=start;
 this.fireStateChanged();
 }});
 
@@ -70,7 +70,7 @@ return this.start;
 
 Clazz.newMeth(C$, 'setEnd$Comparable', function (end) {
 if ((end == null ) ? (this.end != null ) : !end.equals$O(this.end)) {
-this.end = end;
+this.end=end;
 this.fireStateChanged();
 }});
 
@@ -82,7 +82,7 @@ Clazz.newMeth(C$, 'setCalendarField$I', function (calendarField) {
 if (!p$.calendarFieldOK$I.apply(this, [calendarField])) {
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["invalid calendarField"]);
 }if (calendarField != this.calendarField) {
-this.calendarField = calendarField;
+this.calendarField=calendarField;
 this.fireStateChanged();
 }});
 
@@ -122,4 +122,4 @@ this.value.setTime$java_util_Date(value);
 this.fireStateChanged();
 }});
 })();
-//Created 2018-05-15 01:02:40
+//Created 2018-05-24 08:46:40

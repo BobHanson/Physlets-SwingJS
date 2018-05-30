@@ -21,13 +21,13 @@ C$.$init$.apply(this);
 Clazz.newMeth(C$, 'enqueue$O', function (obj) {
 var newElt = Clazz.new_((I$[1]||$incl$(1)).c$$O,[obj]);
 if (this.head == null ) {
-this.head = newElt;
-this.tail = newElt;
-this.length = 1;
+this.head=newElt;
+this.tail=newElt;
+this.length=1;
 } else {
-newElt.next = this.head;
-this.head.prev = newElt;
-this.head = newElt;
+newElt.next=this.head;
+this.head.prev=newElt;
+this.head=newElt;
 this.length++;
 }this.notify();
 });
@@ -42,11 +42,11 @@ while (this.tail == null ){
 this.wait$J(timeOut);
 }
 var elt = this.tail;
-this.tail = elt.prev;
+this.tail=elt.prev;
 if (this.tail == null ) {
-this.head = null;
+this.head=null;
 } else {
-this.tail.next = null;
+this.tail.next=null;
 }this.length--;
 return elt.obj;
 });
@@ -70,12 +70,12 @@ var cursor = this.head;
 var last = null;
 while (cursor != null ){
 System.err.println$S("  " + cursor);
-last = cursor;
-cursor = cursor.next;
+last=cursor;
+cursor=cursor.next;
 }
 if (last !== this.tail ) {
 System.err.println$S("  tail != last: " + this.tail + ", " + last );
 }System.err.println$S("]");
 });
 })();
-//Created 2018-05-15 01:03:10
+//Created 2018-05-24 08:47:33

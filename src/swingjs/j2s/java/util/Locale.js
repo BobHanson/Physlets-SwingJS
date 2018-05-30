@@ -29,9 +29,9 @@ this.hashCodeValue = 0;
 
 Clazz.newMeth(C$, 'c$$S$S$S', function (language, country, variant) {
 C$.$init$.apply(this);
-this.language = language.toLowerCase().intern();
-this.country = country.toUpperCase().intern();
-this.variant = variant.toUpperCase().intern();
+this.language=language.toLowerCase().intern();
+this.country=country.toUpperCase().intern();
+this.variant=variant.toUpperCase().intern();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S', function (language, country) {
@@ -44,9 +44,9 @@ C$.c$$S$S$S.apply(this, [language, "", ""]);
 
 Clazz.newMeth(C$, 'c$$S$S$Z', function (language, country, flag) {
 C$.$init$.apply(this);
-this.language = language;
-this.country = country;
-this.variant = "";
+this.language=language;
+this.country=country;
+this.variant="";
 }, 1);
 
 Clazz.newMeth(C$, 'createSingleton$S$S$S', function (key, language, country) {
@@ -63,22 +63,22 @@ sb.append$S(language).append$C("_").append$S(country).append$C("_").append$S(var
 var key = sb.toString();
 var locale = C$.cache.get$O(key);
 if (locale == null ) {
-locale = Clazz.new_(C$.c$$S$S$S,[language, country, variant]);
+locale=Clazz.new_(C$.c$$S$S$S,[language, country, variant]);
 var l = C$.cache.put$TK$TV(key, locale);
 if (l != null ) {
-locale = l;
+locale=l;
 }}return locale;
 }, 1);
 
 Clazz.newMeth(C$, 'getDefault', function () {
 if (C$.defaultLocale == null ) {
-C$.defaultLocale = Clazz.new_(C$.c$$S$S$S,["en", "US", ""]);
+C$.defaultLocale=Clazz.new_(C$.c$$S$S$S,["en", "US", ""]);
 }return C$.defaultLocale;
 }, 1);
 
 Clazz.newMeth(C$, 'setDefault$java_util_Locale', function (newLocale) {
 if (newLocale == null ) throw Clazz.new_(Clazz.load('java.lang.NullPointerException').c$$S,["Can\'t set default locale to NULL"]);
-C$.defaultLocale = newLocale;
+C$.defaultLocale=newLocale;
 }, 1);
 
 Clazz.newMeth(C$, 'getLanguage', function () {
@@ -162,8 +162,8 @@ throw e;
 Clazz.newMeth(C$, 'hashCode', function () {
 var hc = this.hashCodeValue;
 if (hc == 0) {
-hc = (this.language.hashCode() << 8) ^ this.country.hashCode() ^ (this.variant.hashCode() << 4) ;
-this.hashCodeValue = hc;
+hc=(this.language.hashCode() << 8) ^ this.country.hashCode() ^ (this.variant.hashCode() << 4) ;
+this.hashCodeValue=hc;
 }return hc;
 });
 
@@ -176,4 +176,4 @@ return this.language == other.language && this.country == other.country  && this
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:14
+//Created 2018-05-24 08:45:48

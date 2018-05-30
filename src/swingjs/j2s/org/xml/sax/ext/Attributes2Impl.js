@@ -59,18 +59,18 @@ return this.specified[index];
 Clazz.newMeth(C$, 'setAttributes$org_xml_sax_Attributes', function (atts) {
 var length = atts.getLength();
 C$.superclazz.prototype.setAttributes$org_xml_sax_Attributes.apply(this, [atts]);
-this.declared = Clazz.array(Boolean.TYPE, [length]);
-this.specified = Clazz.array(Boolean.TYPE, [length]);
+this.declared=Clazz.array(Boolean.TYPE, [length]);
+this.specified=Clazz.array(Boolean.TYPE, [length]);
 if (Clazz.instanceOf(atts, "org.xml.sax.ext.Attributes2")) {
 var a2 = atts;
 for (var i = 0; i < length; i++) {
-this.declared[i] = a2.isDeclared$I(i);
-this.specified[i] = a2.isSpecified$I(i);
+this.declared[i]=a2.isDeclared$I(i);
+this.specified[i]=a2.isSpecified$I(i);
 }
 } else {
 for (var i = 0; i < length; i++) {
-this.declared[i] = !"CDATA".equals$O(atts.getType$I(i));
-this.specified[i] = true;
+this.declared[i]=!"CDATA".equals$O(atts.getType$I(i));
+this.specified[i]=true;
 }
 }});
 
@@ -79,14 +79,14 @@ C$.superclazz.prototype.addAttribute$S$S$S$S$S.apply(this, [uri, localName, qNam
 var length = this.getLength();
 if (length < this.specified.length) {
 var newFlags;
-newFlags = Clazz.array(Boolean.TYPE, [length]);
+newFlags=Clazz.array(Boolean.TYPE, [length]);
 System.arraycopy(this.declared, 0, newFlags, 0, this.declared.length);
-this.declared = newFlags;
-newFlags = Clazz.array(Boolean.TYPE, [length]);
+this.declared=newFlags;
+newFlags=Clazz.array(Boolean.TYPE, [length]);
 System.arraycopy(this.specified, 0, newFlags, 0, this.specified.length);
-this.specified = newFlags;
-}this.specified[length - 1] = true;
-this.declared[length - 1] = !"CDATA".equals$O(type);
+this.specified=newFlags;
+}this.specified[length - 1]=true;
+this.declared[length - 1]=!"CDATA".equals$O(type);
 });
 
 Clazz.newMeth(C$, 'removeAttribute$I', function (index) {
@@ -99,12 +99,12 @@ System.arraycopy(this.specified, index + 1, this.specified, index, origMax - ind
 
 Clazz.newMeth(C$, 'setDeclared$I$Z', function (index, value) {
 if (index < 0 || index >= this.getLength() ) throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["No attribute at index: " + index]);
-this.declared[index] = value;
+this.declared[index]=value;
 });
 
 Clazz.newMeth(C$, 'setSpecified$I$Z', function (index, value) {
 if (index < 0 || index >= this.getLength() ) throw Clazz.new_(Clazz.load('java.lang.ArrayIndexOutOfBoundsException').c$$S,["No attribute at index: " + index]);
-this.specified[index] = value;
+this.specified[index]=value;
 });
 })();
-//Created 2018-05-15 01:03:03
+//Created 2018-05-24 08:47:18

@@ -17,13 +17,13 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$javax_swing_UIDefaultsA', function (defaults) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.tables = defaults;
+this.tables=defaults;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.tables = Clazz.array((I$[2]||$incl$(2)), [0]);
+this.tables=Clazz.array((I$[2]||$incl$(2)), [0]);
 }, 1);
 
 Clazz.newMeth(C$, 'get$O', function (key) {
@@ -32,7 +32,7 @@ if (value != null ) {
 return value;
 }for (var i = 0; i < this.tables.length; i++) {
 var table = this.tables[i];
-value = (table != null ) ? table.get$O(key) : null;
+value=(table != null ) ? table.get$O(key) : null;
 if (value != null ) {
 return value;
 }}
@@ -45,7 +45,7 @@ if (value != null ) {
 return value;
 }for (var i = 0; i < this.tables.length; i++) {
 var table = this.tables[i];
-value = (table != null ) ? table.get$O$java_util_Locale(key, l) : null;
+value=(table != null ) ? table.get$O$java_util_Locale(key, l) : null;
 if (value != null ) {
 return value;
 }}
@@ -91,11 +91,11 @@ for (var i = this.tables.length - 1; i >= 0; i--) {
 if (this.tables[i] != null ) {
 var v = this.tables[i].remove$O(key);
 if (v != null ) {
-value = v;
+value=v;
 }}}
 var v = C$.superclazz.prototype.remove$O.apply(this, [key]);
 if (v != null ) {
-value = v;
+value=v;
 }return value;
 });
 
@@ -141,8 +141,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_MultiUIDefaults_MultiUIDefaultsEnumerator_Type$java_util_Set', function (type, entries) {
 C$.$init$.apply(this);
-this.type = type;
-this.iterator = entries.iterator();
+this.type=type;
+this.iterator=entries.iterator();
 }, 1);
 
 Clazz.newMeth(C$, 'hasMoreElements', function () {
@@ -179,4 +179,4 @@ Clazz.newMeth(C$, 'values', function() { return $vals }, 1);
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:38
+//Created 2018-05-24 08:46:35

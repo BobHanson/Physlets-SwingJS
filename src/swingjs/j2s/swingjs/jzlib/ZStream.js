@@ -22,7 +22,7 @@ Clazz.newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz.newMeth(C$, 'setAdler32', function () {
-this.checksum = Clazz.new_((I$[1]||$incl$(1)));
+this.checksum=Clazz.new_((I$[1]||$incl$(1)));
 });
 
 Clazz.newMeth(C$, 'inflate$I', function (f) {
@@ -38,28 +38,28 @@ return -2;
 
 Clazz.newMeth(C$, 'flush_pending', function () {
 var len = this.dstate.pending;
-if (len > this.avail_out) len = this.avail_out;
+if (len > this.avail_out) len=this.avail_out;
 if (len == 0) return;
 System.arraycopy(this.dstate.pending_buf, this.dstate.pending_out, this.next_out, this.next_out_index, len);
-this.next_out_index = this.next_out_index+(len);
-this.dstate.pending_out = this.dstate.pending_out+(len);
-this.total_out = this.total_out+(len);
-this.avail_out = this.avail_out-(len);
-this.dstate.pending = this.dstate.pending-(len);
+this.next_out_index+=len;
+this.dstate.pending_out+=len;
+this.total_out+=len;
+this.avail_out-=len;
+this.dstate.pending-=len;
 if (this.dstate.pending == 0) {
-this.dstate.pending_out = 0;
+this.dstate.pending_out=0;
 }});
 
 Clazz.newMeth(C$, 'read_buf$BA$I$I', function (buf, start, size) {
 var len = this.avail_in;
-if (len > size) len = size;
+if (len > size) len=size;
 if (len == 0) return 0;
-this.avail_in = this.avail_in-(len);
+this.avail_in-=len;
 if (this.dstate.wrap != 0) {
 this.checksum.update$BA$I$I(this.next_in, this.next_in_index, len);
 }System.arraycopy(this.next_in, this.next_in_index, buf, start, len);
-this.next_in_index = this.next_in_index+(len);
-this.total_in = this.total_in+(len);
+this.next_in_index+=len;
+this.total_in+=len;
 return len;
 });
 
@@ -68,15 +68,15 @@ return this.checksum.getValue();
 });
 
 Clazz.newMeth(C$, 'free', function () {
-this.next_in = null;
-this.next_out = null;
-this.msg = null;
+this.next_in=null;
+this.next_out=null;
+this.msg=null;
 });
 
 Clazz.newMeth(C$, 'setOutput$BA$I$I', function (buf, off, len) {
-this.next_out = buf;
-this.next_out_index = off;
-this.avail_out = len;
+this.next_out=buf;
+this.next_out_index=off;
+this.avail_out=len;
 });
 
 Clazz.newMeth(C$, 'setInput$BA$I$I$Z', function (buf, off, len, append) {
@@ -85,13 +85,13 @@ if (this.avail_in > 0 && append ) {
 var tmp = Clazz.array(Byte.TYPE, [this.avail_in + len]);
 System.arraycopy(this.next_in, this.next_in_index, tmp, 0, this.avail_in);
 System.arraycopy(buf, off, tmp, this.avail_in, len);
-this.next_in = tmp;
-this.next_in_index = 0;
-this.avail_in = this.avail_in+(len);
+this.next_in=tmp;
+this.next_in_index=0;
+this.avail_in+=len;
 } else {
-this.next_in = buf;
-this.next_in_index = off;
-this.avail_in = len;
+this.next_in=buf;
+this.next_in_index=off;
+this.avail_in=len;
 }});
 
 Clazz.newMeth(C$, 'getAvailIn', function () {
@@ -120,4 +120,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:03:19
+//Created 2018-05-24 08:47:50

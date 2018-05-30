@@ -17,16 +17,16 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$$java_awt_Component$I$java_awt_Component$java_awt_Container', function (source, id, changed, changedParent) {
 C$.superclazz.c$$O$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.changed = changed;
-this.changedParent = changedParent;
+this.changed=changed;
+this.changedParent=changedParent;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Component$I$java_awt_Component$java_awt_Container$J', function (source, id, changed, changedParent, changeFlags) {
 C$.superclazz.c$$O$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.changed = changed;
-this.changedParent = changedParent;
-this.changeFlags = changeFlags;
+this.changed=changed;
+this.changedParent=changedParent;
+this.changeFlags=changeFlags;
 }, 1);
 
 Clazz.newMeth(C$, 'getComponent', function () {
@@ -49,27 +49,27 @@ Clazz.newMeth(C$, 'paramString', function () {
 var typeStr;
 switch (this.id) {
 case 1401:
-typeStr = "ANCESTOR_MOVED (" + this.changed + "," + this.changedParent + ")" ;
+typeStr="ANCESTOR_MOVED (" + this.changed + "," + this.changedParent + ")" ;
 break;
 case 1402:
-typeStr = "ANCESTOR_RESIZED (" + this.changed + "," + this.changedParent + ")" ;
+typeStr="ANCESTOR_RESIZED (" + this.changed + "," + this.changedParent + ")" ;
 break;
 case 1400:
 {
-typeStr = "HIERARCHY_CHANGED (";
+typeStr="HIERARCHY_CHANGED (";
 var first = true;
 if ((this.changeFlags & 1) != 0) {
-first = false;
+first=false;
 typeStr += "PARENT_CHANGED";
 }if ((this.changeFlags & 2) != 0) {
 if (first) {
-first = false;
+first=false;
 } else {
 typeStr += ",";
 }typeStr += "DISPLAYABILITY_CHANGED";
 }if ((this.changeFlags & 4) != 0) {
 if (first) {
-first = false;
+first=false;
 } else {
 typeStr += ",";
 }typeStr += "SHOWING_CHANGED";
@@ -78,11 +78,11 @@ typeStr += ",";
 }typeStr += this.changed + "," + this.changedParent + ")" ;
 break;
 }default:
-typeStr = "unknown type";
+typeStr="unknown type";
 }
 return typeStr;
 });
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:18

@@ -101,14 +101,14 @@ for (; ; ) {
 var first = this.q.peek();
 if (first == null ) {
 if (nanos <= 0) return null;
- else nanos = this.available.awaitNanos$J(nanos);
+ else nanos=this.available.awaitNanos$J(nanos);
 } else {
 var delay = first.getDelay$java_util_concurrent_TimeUnit((I$[3]||$incl$(3)).NANOSECONDS);
 if (delay > 0) {
 if (nanos <= 0) return null;
-if (delay > nanos) delay = nanos;
+if (delay > nanos) delay=nanos;
 var timeLeft = this.available.awaitNanos$J(delay);
-nanos = nanos-(delay - timeLeft);
+nanos-=delay - timeLeft;
 } else {
 var x = this.q.poll();
 Clazz.assert(C$, this, function(){return x != null });
@@ -249,8 +249,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$OA', function (array) {
 C$.$init$.apply(this);
-this.lastRet = -1;
-this.array = array;
+this.lastRet=-1;
+this.array=array;
 }, 1);
 
 Clazz.newMeth(C$, 'hasNext', function () {
@@ -259,14 +259,14 @@ return this.cursor < this.array.length;
 
 Clazz.newMeth(C$, 'next', function () {
 if (this.cursor >= this.array.length) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
-this.lastRet = this.cursor;
+this.lastRet=this.cursor;
 return this.array[this.cursor++];
 });
 
 Clazz.newMeth(C$, 'remove', function () {
 if (this.lastRet < 0) throw Clazz.new_(Clazz.load('java.lang.IllegalStateException'));
 var x = this.array[this.lastRet];
-this.lastRet = -1;
+this.lastRet=-1;
 this.this$0.lock.lock();
 try {
 for (var it = this.this$0.q.iterator(); it.hasNext(); ) {
@@ -282,4 +282,4 @@ this.this$0.lock.unlock();
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:15
+//Created 2018-05-24 08:45:51

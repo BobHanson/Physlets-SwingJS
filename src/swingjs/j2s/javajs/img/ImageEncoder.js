@@ -24,14 +24,14 @@ this.doClose = true;
 }, 1);
 
 Clazz.newMeth(C$, 'createImage$S$javajs_util_OC$java_util_Map', function (type, out, params) {
-this.out = out;
-this.logging = ((I$[1]||$incl$(1)).TRUE === params.get$O("logging") );
-this.width = (params.get$O("imageWidth")).intValue();
-this.height = (params.get$O("imageHeight")).intValue();
-this.pixels = params.get$O("imagePixels");
-this.date = params.get$O("date");
+this.out=out;
+this.logging=((I$[1]||$incl$(1)).TRUE === params.get$O("logging") );
+this.width=(params.get$O("imageWidth")).intValue();
+this.height=(params.get$O("imageHeight")).intValue();
+this.pixels=params.get$O("imagePixels");
+this.date=params.get$O("date");
 var q = params.get$O("quality");
-this.quality = (q == null  ? -1 : q.intValue());
+this.quality=(q == null  ? -1 : q.intValue());
 this.setParams$java_util_Map(params);
 this.generate();
 this.close();
@@ -52,4 +52,4 @@ Clazz.newMeth(C$, 'close', function () {
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:54

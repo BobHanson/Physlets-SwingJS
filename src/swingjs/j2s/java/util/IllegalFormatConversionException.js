@@ -15,10 +15,10 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$C$Class', function (c, arg) {
 Clazz.super_(C$, this,1);
-this.c = c;
+this.c=c;
 if (arg == null ) {
 throw Clazz.new_(Clazz.load('java.lang.NullPointerException'));
-}this.arg = arg;
+}this.arg=arg;
 }, 1);
 
 Clazz.newMeth(C$, 'getArgumentClass', function () {
@@ -35,4 +35,4 @@ return "" + this.c + " is incompatible with " + this.arg.getName() ;
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:02:13
+//Created 2018-05-24 08:45:47

@@ -16,7 +16,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S', function (data) {
 C$.$init$.apply(this);
-this.data = data;
+this.data=data;
 }, 1);
 
 Clazz.newMeth(C$, 'getTransferDataFlavors', function () {
@@ -45,4 +45,4 @@ Clazz.newMeth(C$, 'lostOwnership$java_awt_datatransfer_Clipboard$java_awt_datatr
 
 Clazz.newMeth(C$);
 })();
-//Created 2018-05-15 01:01:55
+//Created 2018-05-24 08:45:15

@@ -49,13 +49,13 @@ Clazz.newMeth(C$, 'c$$S', function (uid) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
 this.enableEvents$J(2056);
-this.caretEvent = Clazz.new_((I$[10]||$incl$(10)).c$$javax_swing_text_JTextComponent,[this]);
+this.caretEvent=Clazz.new_((I$[10]||$incl$(10)).c$$javax_swing_text_JTextComponent,[this]);
 this.addMouseListener$java_awt_event_MouseListener(this.caretEvent);
 this.addFocusListener$java_awt_event_FocusListener(this.caretEvent);
 this.setEditable$Z(true);
 this.setDragEnabled$Z(false);
 this.setLayout$java_awt_LayoutManager(null);
-this.uiClassID = uid;
+this.uiClassID=uid;
 this.updateUI();
 this.setOpaque$Z(true);
 }, 1);
@@ -79,7 +79,7 @@ return this.listenerList.getListeners$Class(Clazz.getClass((I$[11]||$incl$(11)),
 
 Clazz.newMeth(C$, 'fireCaretUpdate$javax_swing_event_CaretEvent', function (e) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass((I$[11]||$incl$(11)),['caretUpdate$javax_swing_event_CaretEvent']) ) {
 (listeners[i + 1]).caretUpdate$javax_swing_event_CaretEvent(e);
 }}
@@ -88,7 +88,7 @@ if (listeners[i] === Clazz.getClass((I$[11]||$incl$(11)),['caretUpdate$javax_swi
 Clazz.newMeth(C$, 'setDocument$javax_swing_text_Document', function (doc) {
 var old = this.model;
 try {
-this.model = doc;
+this.model=doc;
 this.firePropertyChange$S$O$O("document", old, doc);
 } finally {
 }
@@ -111,7 +111,7 @@ return (this.getUI()).getEditorKit$javax_swing_text_JTextComponent(this).getActi
 
 Clazz.newMeth(C$, 'setMargin$java_awt_Insets', function (m) {
 var old = this.margin;
-this.margin = m;
+this.margin=m;
 this.firePropertyChange$S$O$O("margin", old, m);
 this.invalidate();
 });
@@ -121,7 +121,7 @@ return this.margin;
 });
 
 Clazz.newMeth(C$, 'setNavigationFilter$javax_swing_text_NavigationFilter', function (filter) {
-this.navigationFilter = filter;
+this.navigationFilter=filter;
 });
 
 Clazz.newMeth(C$, 'getNavigationFilter', function () {
@@ -137,7 +137,7 @@ if (this.caret != null ) {
 this.caret.removeChangeListener$javax_swing_event_ChangeListener(this.caretEvent);
 this.caret.deinstall$javax_swing_text_JTextComponent(this);
 }var old = this.caret;
-this.caret = c;
+this.caret=c;
 if (this.caret != null ) {
 this.caret.install$javax_swing_text_JTextComponent(this);
 this.caret.addChangeListener$javax_swing_event_ChangeListener(this.caretEvent);
@@ -152,7 +152,7 @@ Clazz.newMeth(C$, 'setHighlighter$javax_swing_text_Highlighter', function (h) {
 if (this.highlighter != null ) {
 this.highlighter.deinstall$javax_swing_text_JTextComponent(this);
 }var old = this.highlighter;
-this.highlighter = h;
+this.highlighter=h;
 if (this.highlighter != null ) {
 this.highlighter.install$javax_swing_text_JTextComponent(this);
 }this.firePropertyChange$S$O$O("highlighter", old, h);
@@ -160,13 +160,13 @@ this.highlighter.install$javax_swing_text_JTextComponent(this);
 
 Clazz.newMeth(C$, 'setKeymap$javax_swing_text_Keymap', function (map) {
 var old = this.keymap;
-this.keymap = map;
+this.keymap=map;
 this.firePropertyChange$S$O$O("keymap", old, this.keymap);
 this.updateInputMap$javax_swing_text_Keymap$javax_swing_text_Keymap(old, map);
 });
 
 Clazz.newMeth(C$, 'setDragEnabled$Z', function (b) {
-this.dragEnabled = b;
+this.dragEnabled=b;
 });
 
 Clazz.newMeth(C$, 'getDragEnabled', function () {
@@ -178,7 +178,7 @@ if (dropMode != null ) {
 switch (dropMode) {
 case (I$[9]||$incl$(9)).USE_SELECTION:
 case (I$[9]||$incl$(9)).INSERT:
-this.dropMode = dropMode;
+this.dropMode=dropMode;
 return;
 }
 }throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,[dropMode + ": Unsupported drop mode for text"]);
@@ -192,7 +192,7 @@ Clazz.newMeth(C$, 'dropLocationForPoint$java_awt_Point', function (p) {
 var bias = Clazz.array((I$[12]||$incl$(12)), [1]);
 var index = (this.getUI()).viewToModel$javax_swing_text_JTextComponent$java_awt_Point$javax_swing_text_Position_BiasA(this, p, bias);
 if (bias[0] == null ) {
-bias[0] = (I$[12]||$incl$(12)).Forward;
+bias[0]=(I$[12]||$incl$(12)).Forward;
 }return Clazz.new_((I$[13]||$incl$(13)).c$$java_awt_Point$I$javax_swing_text_Position_Bias,[p, index, bias[0]]);
 });
 
@@ -216,14 +216,14 @@ if (this.dropLocation == null ) {
 var visible;
 if (Clazz.instanceOf(this.caret, "javax.swing.text.DefaultCaret")) {
 var dc = this.caret;
-visible = dc.isActive();
-retVal = Clazz.array(java.lang.Object, -1, [Integer.$valueOf(dc.getMark()), Integer.$valueOf(dc.getDot()), (I$[14]||$incl$(14)).$valueOf(visible), dc.getMarkBias(), dc.getDotBias()]);
+visible=dc.isActive();
+retVal=Clazz.array(java.lang.Object, -1, [Integer.$valueOf(dc.getMark()), Integer.$valueOf(dc.getDot()), (I$[14]||$incl$(14)).$valueOf(visible), dc.getMarkBias(), dc.getDotBias()]);
 } else {
-visible = this.caret.isVisible();
-retVal = Clazz.array(java.lang.Object, -1, [Integer.$valueOf(this.caret.getMark()), Integer.$valueOf(this.caret.getDot()), (I$[14]||$incl$(14)).$valueOf(visible)]);
+visible=this.caret.isVisible();
+retVal=Clazz.array(java.lang.Object, -1, [Integer.$valueOf(this.caret.getMark()), Integer.$valueOf(this.caret.getDot()), (I$[14]||$incl$(14)).$valueOf(visible)]);
 }this.caret.setVisible$Z(true);
 } else {
-retVal = state;
+retVal=state;
 }if (Clazz.instanceOf(this.caret, "javax.swing.text.DefaultCaret")) {
 (this.caret).setDot$I$javax_swing_text_Position_Bias(textLocation.getIndex(), textLocation.getBias());
 } else {
@@ -235,12 +235,12 @@ this.caret.setVisible$Z((state).booleanValue());
 }} else {
 if (this.dropLocation == null ) {
 var visible = Clazz.instanceOf(this.caret, "javax.swing.text.DefaultCaret") ? (this.caret).isActive() : this.caret.isVisible();
-retVal = (I$[14]||$incl$(14)).$valueOf(visible);
+retVal=(I$[14]||$incl$(14)).$valueOf(visible);
 this.caret.setVisible$Z(false);
 } else {
-retVal = state;
+retVal=state;
 }}}var old = this.dropLocation;
-this.dropLocation = textLocation;
+this.dropLocation=textLocation;
 this.firePropertyChange$S$O$O("dropLocation", old, this.dropLocation);
 return retVal;
 });
@@ -253,8 +253,8 @@ Clazz.newMeth(C$, 'updateInputMap$javax_swing_text_Keymap$javax_swing_text_Keyma
 var km = this.getInputMap$I(0);
 var last = km;
 while (km != null  && !(Clazz.instanceOf(km, "javax.swing.text.JTextComponent.KeymapWrapper")) ){
-last = km;
-km = km.getParent();
+last=km;
+km=km.getParent();
 }
 if (km != null ) {
 if (newKm == null ) {
@@ -268,7 +268,7 @@ last.setParent$javax_swing_InputMap(newKM);
 if (last !== km ) {
 newKM.setParent$javax_swing_InputMap(km.getParent());
 }}} else if (newKm != null ) {
-km = this.getInputMap$I(0);
+km=this.getInputMap$I(0);
 if (km != null ) {
 var newKM = Clazz.new_((I$[6]||$incl$(6)).c$$javax_swing_text_Keymap,[newKm]);
 newKM.setParent$javax_swing_InputMap(km.getParent());
@@ -276,8 +276,8 @@ km.setParent$javax_swing_InputMap(newKM);
 }}var am = this.getActionMap();
 var lastAM = am;
 while (am != null  && !(Clazz.instanceOf(am, "javax.swing.text.JTextComponent.KeymapActionMap")) ){
-lastAM = am;
-am = am.getParent();
+lastAM=am;
+am=am.getParent();
 }
 if (am != null ) {
 if (newKm == null ) {
@@ -291,7 +291,7 @@ lastAM.setParent$javax_swing_ActionMap(newAM);
 if (lastAM !== am ) {
 newAM.setParent$javax_swing_ActionMap(am.getParent());
 }}} else if (newKm != null ) {
-am = this.getActionMap();
+am=this.getActionMap();
 if (am != null ) {
 var newAM = Clazz.new_((I$[15]||$incl$(15)).c$$javax_swing_text_Keymap,[newKm]);
 newAM.setParent$javax_swing_ActionMap(am.getParent());
@@ -322,7 +322,7 @@ Clazz.newMeth(C$, 'getKeymapTable', function () {
 var appContext = (I$[7]||$incl$(7)).getAppContext();
 var keymapTable = appContext.get$O(C$.KEYMAP_TABLE);
 if (keymapTable == null ) {
-keymapTable = Clazz.new_((I$[17]||$incl$(17)).c$$I,[17]);
+keymapTable=Clazz.new_((I$[17]||$incl$(17)).c$$I,[17]);
 appContext.put$O$O(C$.KEYMAP_TABLE, keymapTable);
 var binding = C$.addKeymap$S$javax_swing_text_Keymap("default", null);
 binding.setDefaultAction$javax_swing_Action(Clazz.new_((I$[18]||$incl$(18))));
@@ -349,7 +349,7 @@ return this.caretColor;
 
 Clazz.newMeth(C$, 'setCaretColor$java_awt_Color', function (c) {
 var old = this.caretColor;
-this.caretColor = c;
+this.caretColor=c;
 this.firePropertyChange$S$O$O("caretColor", old, this.caretColor);
 });
 
@@ -359,7 +359,7 @@ return this.selectionColor;
 
 Clazz.newMeth(C$, 'setSelectionColor$java_awt_Color', function (c) {
 var old = this.selectionColor;
-this.selectionColor = c;
+this.selectionColor=c;
 this.firePropertyChange$S$O$O("selectionColor", old, this.selectionColor);
 });
 
@@ -369,7 +369,7 @@ return this.selectedTextColor;
 
 Clazz.newMeth(C$, 'setSelectedTextColor$java_awt_Color', function (c) {
 var old = this.selectedTextColor;
-this.selectedTextColor = c;
+this.selectedTextColor=c;
 this.firePropertyChange$S$O$O("selectedTextColor", old, this.selectedTextColor);
 });
 
@@ -379,7 +379,7 @@ return this.disabledTextColor;
 
 Clazz.newMeth(C$, 'setDisabledTextColor$java_awt_Color', function (c) {
 var old = this.disabledTextColor;
-this.disabledTextColor = c;
+this.disabledTextColor=c;
 this.firePropertyChange$S$O$O("disabledTextColor", old, this.disabledTextColor);
 });
 
@@ -438,9 +438,9 @@ throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,["bad pos
 }});
 
 Clazz.newMeth(C$, 'setFocusAccelerator$C', function (aKey) {
-aKey = Character.toUpperCase(aKey);
+aKey=Character.toUpperCase(aKey);
 var old = this.focusAccelerator;
-this.focusAccelerator = aKey;
+this.focusAccelerator=aKey;
 this.firePropertyChange$S$C$C("focusAcceleratorKey", old, this.focusAccelerator);
 this.firePropertyChange$S$C$C("focusAccelerator", old, this.focusAccelerator);
 });
@@ -518,10 +518,10 @@ Clazz.newMeth(C$, 'getText', function () {
 var doc = this.getDocument();
 var txt;
 try {
-txt = doc.getText$I$I(0, doc.getLength());
+txt=doc.getText$I$I(0, doc.getLength());
 } catch (e) {
 if (Clazz.exceptionOf(e, "javax.swing.text.BadLocationException")){
-txt = null;
+txt=null;
 } else {
 throw e;
 }
@@ -536,7 +536,7 @@ var p1 = Math.max(this.caret.getDot(), this.caret.getMark());
 if (p0 != p1) {
 try {
 var doc = this.getDocument();
-txt = doc.getText$I$I(p0, p1 - p0);
+txt=doc.getText$I$I(p0, p1 - p0);
 } catch (e) {
 if (Clazz.exceptionOf(e, "javax.swing.text.BadLocationException")){
 throw Clazz.new_(Clazz.load('java.lang.IllegalArgumentException').c$$S,[e.getMessage()]);
@@ -554,7 +554,7 @@ return this.editable;
 Clazz.newMeth(C$, 'setEditable$Z', function (b) {
 if (b != this.editable ) {
 var oldVal = this.editable;
-this.editable = b;
+this.editable=b;
 this.firePropertyChange$S$O$O("editable", (I$[14]||$incl$(14)).$valueOf(oldVal), (I$[14]||$incl$(14)).$valueOf(this.editable));
 this.repaint();
 }});
@@ -580,13 +580,13 @@ this.select$I$I(this.getSelectionStart(), selectionEnd);
 Clazz.newMeth(C$, 'select$I$I', function (selectionStart, selectionEnd) {
 var docLength = this.getDocument().getLength();
 if (selectionStart < 0) {
-selectionStart = 0;
+selectionStart=0;
 }if (selectionStart > docLength) {
-selectionStart = docLength;
+selectionStart=docLength;
 }if (selectionEnd > docLength) {
-selectionEnd = docLength;
+selectionEnd=docLength;
 }if (selectionEnd < selectionStart) {
-selectionEnd = selectionStart;
+selectionEnd=selectionStart;
 }this.setCaretPosition$I(selectionStart);
 this.moveCaretPosition$I(selectionEnd);
 });
@@ -603,7 +603,7 @@ var retValue = C$.superclazz.prototype.getToolTipText$java_awt_event_MouseEvent.
 if (retValue == null ) {
 var ui = (this.getUI());
 if (ui != null ) {
-retValue = ui.getToolTipText$javax_swing_text_JTextComponent$java_awt_Point(this, Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[event.getX(), event.getY()]));
+retValue=ui.getToolTipText$javax_swing_text_JTextComponent$java_awt_Point(this, Clazz.new_((I$[1]||$incl$(1)).c$$I$I,[event.getX(), event.getY()]));
 }}return retValue;
 });
 
@@ -685,8 +685,8 @@ Clazz.newMeth(C$, 'restoreComposedText', function () {
 var doc = this.getDocument();
 try {
 doc.insertString$I$S$javax_swing_text_AttributeSet(this.caret.getDot(), this.composedTextContent, this.composedTextAttribute);
-this.composedTextStart = doc.createPosition$I(this.caret.getDot() - this.composedTextContent.length$());
-this.composedTextEnd = doc.createPosition$I(this.caret.getDot());
+this.composedTextStart=doc.createPosition$I(this.caret.getDot() - this.composedTextContent.length$());
+this.composedTextEnd=doc.createPosition$I(this.caret.getDot());
 } catch (ble) {
 if (Clazz.exceptionOf(ble, "javax.swing.text.BadLocationException")){
 } else {
@@ -714,8 +714,8 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_KeyStroke$S', function (key, actionName) {
 C$.$init$.apply(this);
-this.key = key;
-this.actionName = actionName;
+this.key=key;
+this.actionName=actionName;
 }, 1);
 
 Clazz.newMeth(C$);
@@ -738,9 +738,9 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$java_awt_Point$I$javax_swing_text_Position_Bias', function (p, index, bias) {
 C$.$init$.apply(this);
-this.dropPoint = Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Point,[p]);
-this.index = index;
-this.bias = bias;
+this.dropPoint=Clazz.new_((I$[1]||$incl$(1)).c$$java_awt_Point,[p]);
+this.index=index;
+this.bias=bias;
 }, 1);
 
 Clazz.newMeth(C$, 'getIndex', function () {
@@ -795,9 +795,9 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$S$javax_swing_text_Keymap', function (nm, parent) {
 C$.$init$.apply(this);
-this.nm = nm;
-this.parent = parent;
-this.bindings = Clazz.new_((I$[2]||$incl$(2)));
+this.nm=nm;
+this.parent=parent;
+this.bindings=Clazz.new_((I$[2]||$incl$(2)));
 }, 1);
 
 Clazz.newMeth(C$, 'getDefaultAction', function () {
@@ -807,7 +807,7 @@ return this.defaultAction;
 });
 
 Clazz.newMeth(C$, 'setDefaultAction$javax_swing_Action', function (a) {
-this.defaultAction = a;
+this.defaultAction=a;
 });
 
 Clazz.newMeth(C$, 'getName', function () {
@@ -817,7 +817,7 @@ return this.nm;
 Clazz.newMeth(C$, 'getAction$javax_swing_KeyStroke', function (key) {
 var a = this.bindings.get$O(key);
 if ((a == null ) && (this.parent != null ) ) {
-a = this.parent.getAction$javax_swing_KeyStroke(key);
+a=this.parent.getAction$javax_swing_KeyStroke(key);
 }return a;
 });
 
@@ -825,7 +825,7 @@ Clazz.newMeth(C$, 'getBoundKeyStrokes', function () {
 var keys = Clazz.array((I$[3]||$incl$(3)), [this.bindings.size()]);
 var i = 0;
 for (var e = this.bindings.keys(); e.hasMoreElements(); ) {
-keys[i++] = e.nextElement();
+keys[i++]=e.nextElement();
 }
 return keys;
 });
@@ -834,7 +834,7 @@ Clazz.newMeth(C$, 'getBoundActions', function () {
 var actions = Clazz.array((I$[4]||$incl$(4)), [this.bindings.size()]);
 var i = 0;
 for (var e = this.bindings.elements(); e.hasMoreElements(); ) {
-actions[i++] = e.nextElement();
+actions[i++]=e.nextElement();
 }
 return actions;
 });
@@ -848,7 +848,7 @@ for (var enum_ = this.bindings.keys(); enum_.hasMoreElements(); ) {
 var key = enum_.nextElement();
 if (this.bindings.get$O(key) === a ) {
 if (keyStrokes == null ) {
-keyStrokes = Clazz.new_((I$[5]||$incl$(5)));
+keyStrokes=Clazz.new_((I$[5]||$incl$(5)));
 }keyStrokes.addElement$TE(key);
 }}
 if (this.parent != null ) {
@@ -857,26 +857,26 @@ if (pStrokes != null ) {
 var rCount = 0;
 for (var counter = pStrokes.length - 1; counter >= 0; counter--) {
 if (this.isLocallyDefined$javax_swing_KeyStroke(pStrokes[counter])) {
-pStrokes[counter] = null;
+pStrokes[counter]=null;
 rCount++;
 }}
 if (rCount > 0 && rCount < pStrokes.length ) {
 if (keyStrokes == null ) {
-keyStrokes = Clazz.new_((I$[5]||$incl$(5)));
+keyStrokes=Clazz.new_((I$[5]||$incl$(5)));
 }for (var counter = pStrokes.length - 1; counter >= 0; counter--) {
 if (pStrokes[counter] != null ) {
 keyStrokes.addElement$TE(pStrokes[counter]);
 }}
 } else if (rCount == 0) {
 if (keyStrokes == null ) {
-retValue = pStrokes;
+retValue=pStrokes;
 } else {
-retValue = Clazz.array((I$[3]||$incl$(3)), [keyStrokes.size() + pStrokes.length]);
+retValue=Clazz.array((I$[3]||$incl$(3)), [keyStrokes.size() + pStrokes.length]);
 keyStrokes.copyInto$OA(retValue);
 System.arraycopy(pStrokes, 0, retValue, keyStrokes.size(), pStrokes.length);
-keyStrokes = null;
+keyStrokes=null;
 }}}}if (keyStrokes != null ) {
-retValue = Clazz.array((I$[3]||$incl$(3)), [keyStrokes.size()]);
+retValue=Clazz.array((I$[3]||$incl$(3)), [keyStrokes.size()]);
 keyStrokes.copyInto$OA(retValue);
 }return retValue;
 });
@@ -902,7 +902,7 @@ return this.parent;
 });
 
 Clazz.newMeth(C$, 'setResolveParent$javax_swing_text_Keymap', function (parent) {
-this.parent = parent;
+this.parent=parent;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -931,7 +931,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Keymap', function (keymap) {
 Clazz.super_(C$, this,1);
-this.keymap = keymap;
+this.keymap=keymap;
 }, 1);
 
 Clazz.newMeth(C$, 'keys', function () {
@@ -958,9 +958,9 @@ return C$.superclazz.prototype.size.apply(this, []) + keymapCount;
 Clazz.newMeth(C$, 'get$javax_swing_KeyStroke', function (keyStroke) {
 var retValue = this.keymap.getAction$javax_swing_KeyStroke(keyStroke);
 if (retValue == null ) {
-retValue = C$.superclazz.prototype.get$javax_swing_KeyStroke.apply(this, [keyStroke]);
+retValue=C$.superclazz.prototype.get$javax_swing_KeyStroke.apply(this, [keyStroke]);
 if (retValue == null  && keyStroke.getKeyChar() != "\uffff"  && this.keymap.getDefaultAction() != null  ) {
-retValue = C$.DefaultActionKey;
+retValue=C$.DefaultActionKey;
 }}return retValue;
 });
 
@@ -984,7 +984,7 @@ Clazz.newMeth(C$, '$init$', function () {
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Keymap', function (keymap) {
 Clazz.super_(C$, this,1);
-this.keymap = keymap;
+this.keymap=keymap;
 }, 1);
 
 Clazz.newMeth(C$, 'keys', function () {
@@ -1000,7 +1000,7 @@ if (hasDefault) {
 var retValue = Clazz.array(java.lang.Object, [keymapCount]);
 if (keymapCount > 1) {
 System.arraycopy(keymapKeys, 0, retValue, 0, keymapCount - 1);
-}retValue[keymapCount - 1] = (I$[6]||$incl$(6)).DefaultActionKey;
+}retValue[keymapCount - 1]=(I$[6]||$incl$(6)).DefaultActionKey;
 return retValue;
 }return keymapKeys;
 }if (keymapCount == 0) {
@@ -1010,7 +1010,7 @@ System.arraycopy(sKeys, 0, retValue, 0, sCount);
 if (hasDefault) {
 if (keymapCount > 1) {
 System.arraycopy(keymapKeys, 0, retValue, sCount, keymapCount - 1);
-}retValue[sCount + keymapCount - 1] = (I$[6]||$incl$(6)).DefaultActionKey;
+}retValue[sCount + keymapCount - 1]=(I$[6]||$incl$(6)).DefaultActionKey;
 } else {
 System.arraycopy(keymapKeys, 0, retValue, sCount, keymapCount);
 }return retValue;
@@ -1028,9 +1028,9 @@ Clazz.newMeth(C$, 'get$O', function (key) {
 var retValue = C$.superclazz.prototype.get$O.apply(this, [key]);
 if (retValue == null ) {
 if (key === (I$[6]||$incl$(6)).DefaultActionKey ) {
-retValue = this.keymap.getDefaultAction();
+retValue=this.keymap.getDefaultAction();
 } else if (Clazz.instanceOf(key, "javax.swing.Action")) {
-retValue = key;
+retValue=key;
 }}return retValue;
 });
 
@@ -1064,8 +1064,8 @@ var c = this.getSource();
 if (c != null ) {
 var caret = c.getCaret();
 if (caret != null ) {
-this.dot = caret.getDot();
-this.mark = caret.getMark();
+this.dot=caret.getDot();
+this.mark=caret.getMark();
 c.fireCaretUpdate$javax_swing_event_CaretEvent(this);
 }}});
 
@@ -1094,11 +1094,11 @@ Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent', function (fe) {
 });
 
 Clazz.newMeth(C$, 'mousePressed$java_awt_event_MouseEvent', function (e) {
-this.dragActive = true;
+this.dragActive=true;
 });
 
 Clazz.newMeth(C$, 'mouseReleased$java_awt_event_MouseEvent', function (e) {
-this.dragActive = false;
+this.dragActive=false;
 this.fire();
 });
 
@@ -1114,4 +1114,4 @@ Clazz.newMeth(C$, 'mouseExited$java_awt_event_MouseEvent', function (e) {
 Clazz.newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:56
+//Created 2018-05-24 08:47:06

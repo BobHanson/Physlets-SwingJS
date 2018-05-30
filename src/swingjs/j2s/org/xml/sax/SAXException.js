@@ -15,25 +15,25 @@ Clazz.newMeth(C$, '$init$', function () {
 Clazz.newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.exception = null;
+this.exception=null;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (message) {
 C$.superclazz.c$$S.apply(this, [message]);
 C$.$init$.apply(this);
-this.exception = null;
+this.exception=null;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Exception', function (e) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.exception = e;
+this.exception=e;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$Exception', function (message, e) {
 C$.superclazz.c$$S.apply(this, [message]);
 C$.$init$.apply(this);
-this.exception = e;
+this.exception=e;
 }, 1);
 
 Clazz.newMeth(C$, 'getMessage', function () {
@@ -55,4 +55,4 @@ return this.exception.toString();
 return C$.superclazz.prototype.toString.apply(this, []);
 }});
 })();
-//Created 2018-05-15 01:03:03
+//Created 2018-05-24 08:47:17

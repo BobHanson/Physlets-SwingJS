@@ -22,7 +22,7 @@ Clazz_super_(C$, this,1);
 }, 1);
 
 Clazz_newMeth(C$, 'setStub$java_applet_AppletStub', function (stub) {
-this.stub = stub;
+this.stub=stub;
 });
 
 Clazz_newMeth(C$, 'isActive', function () {
@@ -140,23 +140,23 @@ Clazz_newMeth(C$, 'stop', function () {
 Clazz_newMeth(C$, 'destroy', function () {
 });
 })();
-//Created 2018-05-15 01:01:48
+//Created 2018-05-24 08:45:04
 (function(){var P$=Clazz_newPackage("java.applet"),I$=[];
 var C$=Clazz_newInterface(P$, "AppletContext");
 })();
-//Created 2018-05-15 01:01:48
+//Created 2018-05-24 08:45:04
 (function(){var P$=Clazz_newPackage("java.applet"),I$=[];
 var C$=Clazz_newInterface(P$, "AppletStub");
 })();
-//Created 2018-05-15 01:01:48
+//Created 2018-05-24 08:45:05
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "ActiveEvent");
 })();
-//Created 2018-05-15 01:01:48
+//Created 2018-05-24 08:45:05
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "Adjustable");
 })();
-//Created 2018-05-15 01:01:48
+//Created 2018-05-24 08:45:05
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newClass(P$, "AWTEvent", null, 'java.util.EventObject');
 C$.idnum = 0;
@@ -184,7 +184,7 @@ return this.bdata;
 });
 
 Clazz_newMeth(C$, 'setBData$BA', function (bdata) {
-this.bdata = bdata;
+this.bdata=bdata;
 });
 
 Clazz_newMeth(C$, 'c$$java_awt_Event', function (event) {
@@ -194,14 +194,14 @@ C$.c$$O$I.apply(this, [event.target, event.id]);
 Clazz_newMeth(C$, 'c$$O$I', function (source, id) {
 C$.superclazz.c$.apply(this, [source]);
 C$.$init$.apply(this);
-this.id = id;
-this.num = ++C$.idnum;
+this.id=id;
+this.num=++C$.idnum;
 switch (id) {
 case 1001:
 case 701:
 case 601:
 case 900:
-this.consumed = true;
+this.consumed=true;
 break;
 default:
 }
@@ -217,11 +217,11 @@ if (this.source === newSource ) {
 return;
 }var comp = null;
 if (Clazz_instanceOf(newSource, "java.awt.Component")) {
-comp = newSource;
+comp=newSource;
 while (comp != null  && comp.peer != null   && (Clazz_instanceOf(comp.peer, "java.awt.peer.LightweightPeer")) ){
-comp = comp.parent;
+comp=comp.parent;
 }
-}this.source = newSource;
+}this.source=newSource;
 });
 
 Clazz_newMeth(C$, 'getID', function () {
@@ -231,7 +231,7 @@ return this.id;
 Clazz_newMeth(C$, 'toString', function () {
 var srcName = null;
 if (Clazz_instanceOf(this.source, "java.awt.Component")) {
-srcName = (this.source).getName();
+srcName=(this.source).getName();
 }return this.getClass().getName() + "[" + this.paramString() + "] on " + (srcName != null  ? srcName : this.source) ;
 });
 
@@ -252,7 +252,7 @@ case 505:
 case 507:
 case 1100:
 case 1101:
-this.consumed = true;
+this.consumed=true;
 break;
 default:
 }
@@ -263,13 +263,13 @@ return this.consumed;
 });
 
 Clazz_newMeth(C$, 'copyPrivateDataInto$java_awt_AWTEvent', function (that) {
-that.bdata = this.bdata;
+that.bdata=this.bdata;
 });
 
 Clazz_newMeth(C$, 'dispatched', function () {
 });
 })();
-//Created 2018-05-15 01:01:48
+//Created 2018-05-24 08:45:05
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newClass(P$, "AWTEventMulticaster", null, null, ['java.awt.event.ComponentListener', 'java.awt.event.ContainerListener', 'java.awt.event.FocusListener', 'java.awt.event.KeyListener', 'java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'java.awt.event.WindowListener', 'java.awt.event.WindowFocusListener', 'java.awt.event.WindowStateListener', 'java.awt.event.ActionListener', 'java.awt.event.ItemListener', 'java.awt.event.AdjustmentListener', 'java.awt.event.TextListener', 'java.awt.event.InputMethodListener', 'java.awt.event.HierarchyListener', 'java.awt.event.HierarchyBoundsListener', 'java.awt.event.MouseWheelListener']);
 var p$=C$.prototype;
@@ -288,8 +288,8 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$java_util_EventListener$java_util_EventListener', function (a, b) {
 C$.$init$.apply(this);
-this.a = a;
-this.b = b;
+this.a=a;
+this.b=b;
 }, 1);
 
 Clazz_newMeth(C$, 'remove$java_util_EventListener', function (oldl) {
@@ -657,7 +657,7 @@ var mc = l;
 var lhs = C$.populateListenerArray$java_util_EventListenerA$java_util_EventListener$I(a, mc.a, index);
 return C$.populateListenerArray$java_util_EventListenerA$java_util_EventListener$I(a, mc.b, lhs);
 } else if (a.getClass().getComponentType().isInstance$O(l)) {
-a[index] = l;
+a[index]=l;
 return index + 1;
 } else {
 return index;
@@ -674,7 +674,7 @@ return result;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:48
+//Created 2018-05-24 08:45:05
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.util.Arrays']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "BasicStroke", null, null, ['java.awt.Stroke', 'Cloneable']);
 
@@ -712,19 +712,19 @@ throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["negativ
 for (var i = 0; i < dash.length; i++) {
 var d = dash[i];
 if (d > 0.0 ) {
-allzero = false;
+allzero=false;
 } else if (d < 0.0 ) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["negative dash length"]);
 }}
 if (allzero) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["dash lengths all zero"]);
-}}this.width = width;
-this.cap = cap;
-this.join = join;
-this.miterlimit = miterlimit;
+}}this.width=width;
+this.cap=cap;
+this.join=join;
+this.miterlimit=miterlimit;
 if (dash != null ) {
-this.dash = dash.clone();
-}this.dash_phase = dash_phase;
+this.dash=dash.clone();
+}this.dash_phase=dash_phase;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$F$I$I$F', function (width, cap, join, miterlimit) {
@@ -775,13 +775,13 @@ return this.dash_phase;
 
 Clazz_newMeth(C$, 'hashCode', function () {
 var hash = Float.floatToIntBits(this.width);
-hash = hash * 31 + this.join;
-hash = hash * 31 + this.cap;
-hash = hash * 31 + Float.floatToIntBits(this.miterlimit);
+hash=hash * 31 + this.join;
+hash=hash * 31 + this.cap;
+hash=hash * 31 + Float.floatToIntBits(this.miterlimit);
 if (this.dash != null ) {
-hash = hash * 31 + Float.floatToIntBits(this.dash_phase);
+hash=hash * 31 + Float.floatToIntBits(this.dash_phase);
 for (var i = 0; i < this.dash.length; i++) {
-hash = hash * 31 + Float.floatToIntBits(this.dash[i]);
+hash=hash * 31 + Float.floatToIntBits(this.dash[i]);
 }
 }return hash;
 });
@@ -812,7 +812,7 @@ Clazz_newMeth(C$, 'clone', function () {
 return Clazz_new_(C$.c$$F$I$I$F$FA$F,[this.width, this.cap, this.join, this.miterlimit, this.dash, this.dash_phase]);
 });
 })();
-//Created 2018-05-15 01:01:48
+//Created 2018-05-24 08:45:05
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Dimension']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "BorderLayout", null, null, ['java.awt.LayoutManager2', 'java.io.Serializable']);
 var p$=C$.prototype;
@@ -844,8 +844,8 @@ C$.c$$I$I.apply(this, [0, 0]);
 
 Clazz_newMeth(C$, 'c$$I$I', function (hgap, vgap) {
 C$.$init$.apply(this);
-this.hgap = hgap;
-this.vgap = vgap;
+this.hgap=hgap;
+this.vgap=vgap;
 }, 1);
 
 Clazz_newMeth(C$, 'getHgap', function () {
@@ -853,7 +853,7 @@ return this.hgap;
 });
 
 Clazz_newMeth(C$, 'setHgap$I', function (hgap) {
-this.hgap = hgap;
+this.hgap=hgap;
 });
 
 Clazz_newMeth(C$, 'getVgap', function () {
@@ -861,7 +861,7 @@ return this.vgap;
 });
 
 Clazz_newMeth(C$, 'setVgap$I', function (vgap) {
-this.vgap = vgap;
+this.vgap=vgap;
 });
 
 Clazz_newMeth(C$, 'addLayoutComponent$java_awt_Component$O', function (comp, constraints) {
@@ -875,25 +875,25 @@ throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["cannot 
 Clazz_newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (name, comp) {
 {
 if (name == null ) {
-name = "Center";
+name="Center";
 }if ("Center".equals$O(name)) {
-this.center = comp;
+this.center=comp;
 } else if ("North".equals$O(name)) {
-this.north = comp;
+this.north=comp;
 } else if ("South".equals$O(name)) {
-this.south = comp;
+this.south=comp;
 } else if ("East".equals$O(name)) {
-this.east = comp;
+this.east=comp;
 } else if ("West".equals$O(name)) {
-this.west = comp;
+this.west=comp;
 } else if ("First".equals$O(name)) {
-this.firstLine = comp;
+this.firstLine=comp;
 } else if ("Last".equals$O(name)) {
-this.lastLine = comp;
+this.lastLine=comp;
 } else if ("Before".equals$O(name)) {
-this.firstItem = comp;
+this.firstItem=comp;
 } else if ("After".equals$O(name)) {
-this.lastItem = comp;
+this.lastItem=comp;
 } else {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["cannot add to layout: unknown constraint: " + name]);
 }}});
@@ -901,23 +901,23 @@ throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["cannot 
 Clazz_newMeth(C$, 'removeLayoutComponent$java_awt_Component', function (comp) {
 {
 if (comp === this.center ) {
-this.center = null;
+this.center=null;
 } else if (comp === this.north ) {
-this.north = null;
+this.north=null;
 } else if (comp === this.south ) {
-this.south = null;
+this.south=null;
 } else if (comp === this.east ) {
-this.east = null;
+this.east=null;
 } else if (comp === this.west ) {
-this.west = null;
+this.west=null;
 }if (comp === this.firstLine ) {
-this.firstLine = null;
+this.firstLine=null;
 } else if (comp === this.lastLine ) {
-this.lastLine = null;
+this.lastLine=null;
 } else if (comp === this.firstItem ) {
-this.firstItem = null;
+this.firstItem=null;
 } else if (comp === this.lastItem ) {
-this.lastItem = null;
+this.lastItem=null;
 }}});
 
 Clazz_newMeth(C$, 'getLayoutComponent$O', function (constraints) {
@@ -947,19 +947,19 @@ Clazz_newMeth(C$, 'getLayoutComponent$java_awt_Container$O', function (target, c
 var ltr = target.getComponentOrientation().isLeftToRight();
 var result = null;
 if ("North".equals$O(constraints)) {
-result = (this.firstLine != null ) ? this.firstLine : this.north;
+result=(this.firstLine != null ) ? this.firstLine : this.north;
 } else if ("South".equals$O(constraints)) {
-result = (this.lastLine != null ) ? this.lastLine : this.south;
+result=(this.lastLine != null ) ? this.lastLine : this.south;
 } else if ("West".equals$O(constraints)) {
-result = ltr ? this.firstItem : this.lastItem;
+result=ltr ? this.firstItem : this.lastItem;
 if (result == null ) {
-result = this.west;
+result=this.west;
 }} else if ("East".equals$O(constraints)) {
-result = ltr ? this.lastItem : this.firstItem;
+result=ltr ? this.lastItem : this.firstItem;
 if (result == null ) {
-result = this.east;
+result=this.east;
 }} else if ("Center".equals$O(constraints)) {
-result = this.center;
+result=this.center;
 } else {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["cannot get component: invalid constraint: " + constraints]);
 }return result;
@@ -994,29 +994,29 @@ Clazz_newMeth(C$, 'minimumLayoutSize$java_awt_Container', function (target) {
 var dim = Clazz_new_((I$[1]||$incl$(1)).c$$I$I,[0, 0]);
 var ltr = target.getComponentOrientation().isLeftToRight();
 var c = null;
-if ((c = p$.getChild$S$Z.apply(this, ["East", ltr])) != null ) {
+if ((c=p$.getChild$S$Z.apply(this, ["East", ltr])) != null ) {
 var d = c.getMinimumSize();
-dim.width = dim.width+(d.width + this.hgap);
-dim.height = Math.max(d.height, dim.height);
-}if ((c = p$.getChild$S$Z.apply(this, ["West", ltr])) != null ) {
+dim.width+=d.width + this.hgap;
+dim.height=Math.max(d.height, dim.height);
+}if ((c=p$.getChild$S$Z.apply(this, ["West", ltr])) != null ) {
 var d = c.getMinimumSize();
-dim.width = dim.width+(d.width + this.hgap);
-dim.height = Math.max(d.height, dim.height);
-}if ((c = p$.getChild$S$Z.apply(this, ["Center", ltr])) != null ) {
+dim.width+=d.width + this.hgap;
+dim.height=Math.max(d.height, dim.height);
+}if ((c=p$.getChild$S$Z.apply(this, ["Center", ltr])) != null ) {
 var d = c.getMinimumSize();
-dim.width = dim.width+(d.width);
-dim.height = Math.max(d.height, dim.height);
-}if ((c = p$.getChild$S$Z.apply(this, ["North", ltr])) != null ) {
+dim.width+=d.width;
+dim.height=Math.max(d.height, dim.height);
+}if ((c=p$.getChild$S$Z.apply(this, ["North", ltr])) != null ) {
 var d = c.getMinimumSize();
-dim.width = Math.max(d.width, dim.width);
-dim.height = dim.height+(d.height + this.vgap);
-}if ((c = p$.getChild$S$Z.apply(this, ["South", ltr])) != null ) {
+dim.width=Math.max(d.width, dim.width);
+dim.height+=d.height + this.vgap;
+}if ((c=p$.getChild$S$Z.apply(this, ["South", ltr])) != null ) {
 var d = c.getMinimumSize();
-dim.width = Math.max(d.width, dim.width);
-dim.height = dim.height+(d.height + this.vgap);
+dim.width=Math.max(d.width, dim.width);
+dim.height+=d.height + this.vgap;
 }var insets = target.getInsets();
-dim.width = dim.width+(insets.left + insets.right);
-dim.height = dim.height+(insets.top + insets.bottom);
+dim.width+=insets.left + insets.right;
+dim.height+=insets.top + insets.bottom;
 return dim;
 }});
 
@@ -1025,29 +1025,29 @@ Clazz_newMeth(C$, 'preferredLayoutSize$java_awt_Container', function (target) {
 var dim = Clazz_new_((I$[1]||$incl$(1)).c$$I$I,[0, 0]);
 var ltr = target.getComponentOrientation().isLeftToRight();
 var c = null;
-if ((c = p$.getChild$S$Z.apply(this, ["East", ltr])) != null ) {
+if ((c=p$.getChild$S$Z.apply(this, ["East", ltr])) != null ) {
 var d = c.getPreferredSize();
-dim.width = dim.width+(d.width + this.hgap);
-dim.height = Math.max(d.height, dim.height);
-}if ((c = p$.getChild$S$Z.apply(this, ["West", ltr])) != null ) {
+dim.width+=d.width + this.hgap;
+dim.height=Math.max(d.height, dim.height);
+}if ((c=p$.getChild$S$Z.apply(this, ["West", ltr])) != null ) {
 var d = c.getPreferredSize();
-dim.width = dim.width+(d.width + this.hgap);
-dim.height = Math.max(d.height, dim.height);
-}if ((c = p$.getChild$S$Z.apply(this, ["Center", ltr])) != null ) {
+dim.width+=d.width + this.hgap;
+dim.height=Math.max(d.height, dim.height);
+}if ((c=p$.getChild$S$Z.apply(this, ["Center", ltr])) != null ) {
 var d = c.getPreferredSize();
-dim.width = dim.width+(d.width);
-dim.height = Math.max(d.height, dim.height);
-}if ((c = p$.getChild$S$Z.apply(this, ["North", ltr])) != null ) {
+dim.width+=d.width;
+dim.height=Math.max(d.height, dim.height);
+}if ((c=p$.getChild$S$Z.apply(this, ["North", ltr])) != null ) {
 var d = c.getPreferredSize();
-dim.width = Math.max(d.width, dim.width);
-dim.height = dim.height+(d.height + this.vgap);
-}if ((c = p$.getChild$S$Z.apply(this, ["South", ltr])) != null ) {
+dim.width=Math.max(d.width, dim.width);
+dim.height+=d.height + this.vgap;
+}if ((c=p$.getChild$S$Z.apply(this, ["South", ltr])) != null ) {
 var d = c.getPreferredSize();
-dim.width = Math.max(d.width, dim.width);
-dim.height = dim.height+(d.height + this.vgap);
+dim.width=Math.max(d.width, dim.width);
+dim.height+=d.height + this.vgap;
 }var insets = target.getInsets();
-dim.width = dim.width+(insets.left + insets.right);
-dim.height = dim.height+(insets.top + insets.bottom);
+dim.width+=insets.left + insets.right;
+dim.height+=insets.top + insets.bottom;
 return dim;
 }});
 
@@ -1075,48 +1075,48 @@ var left = insets.left;
 var right = target.width - insets.right;
 var ltr = target.getComponentOrientation().isLeftToRight();
 var c = null;
-if ((c = p$.getChild$S$Z.apply(this, ["North", ltr])) != null ) {
+if ((c=p$.getChild$S$Z.apply(this, ["North", ltr])) != null ) {
 c.setSize$I$I(right - left, c.height);
 var d = c.getPreferredSize();
 c.setBounds$I$I$I$I(left, top, right - left, d.height);
-top = top+(d.height + this.vgap);
-}if ((c = p$.getChild$S$Z.apply(this, ["South", ltr])) != null ) {
+top+=d.height + this.vgap;
+}if ((c=p$.getChild$S$Z.apply(this, ["South", ltr])) != null ) {
 c.setSize$I$I(right - left, c.height);
 var d = c.getPreferredSize();
 c.setBounds$I$I$I$I(left, bottom - d.height, right - left, d.height);
-bottom = bottom-(d.height + this.vgap);
-}if ((c = p$.getChild$S$Z.apply(this, ["East", ltr])) != null ) {
+bottom-=d.height + this.vgap;
+}if ((c=p$.getChild$S$Z.apply(this, ["East", ltr])) != null ) {
 c.setSize$I$I(c.width, bottom - top);
 var d = c.getPreferredSize();
 c.setBounds$I$I$I$I(right - d.width, top, d.width, bottom - top);
-right = right-(d.width + this.hgap);
-}if ((c = p$.getChild$S$Z.apply(this, ["West", ltr])) != null ) {
+right-=d.width + this.hgap;
+}if ((c=p$.getChild$S$Z.apply(this, ["West", ltr])) != null ) {
 c.setSize$I$I(c.width, bottom - top);
 var d = c.getPreferredSize();
 c.setBounds$I$I$I$I(left, top, d.width, bottom - top);
-left = left+(d.width + this.hgap);
-}if ((c = p$.getChild$S$Z.apply(this, ["Center", ltr])) != null ) {
+left+=d.width + this.hgap;
+}if ((c=p$.getChild$S$Z.apply(this, ["Center", ltr])) != null ) {
 c.setBounds$I$I$I$I(left, top, right - left, bottom - top);
 }}});
 
 Clazz_newMeth(C$, 'getChild$S$Z', function (key, ltr) {
 var result = null;
 if (key == "North") {
-result = (this.firstLine != null ) ? this.firstLine : this.north;
+result=(this.firstLine != null ) ? this.firstLine : this.north;
 } else if (key == "South") {
-result = (this.lastLine != null ) ? this.lastLine : this.south;
+result=(this.lastLine != null ) ? this.lastLine : this.south;
 } else if (key == "West") {
-result = ltr ? this.firstItem : this.lastItem;
+result=ltr ? this.firstItem : this.lastItem;
 if (result == null ) {
-result = this.west;
+result=this.west;
 }} else if (key == "East") {
-result = ltr ? this.lastItem : this.firstItem;
+result=ltr ? this.lastItem : this.firstItem;
 if (result == null ) {
-result = this.east;
+result=this.east;
 }} else if (key == "Center") {
-result = this.center;
+result=this.center;
 }if (result != null  && !result.visible ) {
-result = null;
+result=null;
 }return result;
 });
 
@@ -1124,7 +1124,7 @@ Clazz_newMeth(C$, 'toString', function () {
 return this.getClass().getName() + "[hgap=" + this.hgap + ",vgap=" + this.vgap + "]" ;
 });
 })();
-//Created 2018-05-15 01:01:48
+//Created 2018-05-24 08:45:06
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.ColorPaintContext']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Color", null, null, 'java.awt.Paint');
 C$.white = null;
@@ -1201,17 +1201,17 @@ Clazz_newMeth(C$, 'testColorValueRange$I$I$I$I', function (r, g, b, a) {
 var rangeError = false;
 var badComponentString = "";
 if (a < 0 || a > 255 ) {
-rangeError = true;
-badComponentString = badComponentString + " Alpha";
+rangeError=true;
+badComponentString=badComponentString + " Alpha";
 }if (r < 0 || r > 255 ) {
-rangeError = true;
-badComponentString = badComponentString + " Red";
+rangeError=true;
+badComponentString=badComponentString + " Red";
 }if (g < 0 || g > 255 ) {
-rangeError = true;
-badComponentString = badComponentString + " Green";
+rangeError=true;
+badComponentString=badComponentString + " Green";
 }if (b < 0 || b > 255 ) {
-rangeError = true;
-badComponentString = badComponentString + " Blue";
+rangeError=true;
+badComponentString=badComponentString + " Blue";
 }if (rangeError == true ) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["Color parameter outside of expected range:" + badComponentString]);
 }}, 1);
@@ -1226,21 +1226,21 @@ C$.c$$I$I$I$I.apply(this, [r, g, b, 255]);
 
 Clazz_newMeth(C$, 'c$$I$I$I$I', function (r, g, b, a) {
 C$.$init$.apply(this);
-this.value = ((a & 255) << 24) | ((r & 255) << 16) | ((g & 255) << 8) | ((b & 255) << 0) ;
+this.value=((a & 255) << 24) | ((r & 255) << 16) | ((g & 255) << 8) | ((b & 255) << 0) ;
 C$.testColorValueRange$I$I$I$I(r, g, b, a);
 }, 1);
 
 Clazz_newMeth(C$, 'c$$I', function (rgb) {
 C$.$init$.apply(this);
-this.value = -16777216 | rgb;
+this.value=-16777216 | rgb;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$I$Z', function (rgba, hasalpha) {
 C$.$init$.apply(this);
 if (hasalpha) {
-this.value = rgba;
+this.value=rgba;
 } else {
-this.value = -16777216 | rgba;
+this.value=-16777216 | rgba;
 }}, 1);
 
 Clazz_newMeth(C$, 'c$$F$F$F', function (r, g, b) {
@@ -1249,11 +1249,11 @@ C$.c$$F$F$F$F.apply(this, [r, g, b, 1.0]);
 
 Clazz_newMeth(C$, 'c$$F$F$F$F', function (r, g, b, a) {
 C$.c$$I$I$I$I.apply(this, [((r * 255 + 0.5)|0), ((g * 255 + 0.5)|0), ((b * 255 + 0.5)|0), ((a * 255 + 0.5)|0)]);
-this.frgbvalue = Clazz_array(Float.TYPE, [3]);
-this.frgbvalue[0] = r;
-this.frgbvalue[1] = g;
-this.frgbvalue[2] = b;
-this.falpha = a;
+this.frgbvalue=Clazz_array(Float.TYPE, [3]);
+this.frgbvalue[0]=r;
+this.frgbvalue[1]=g;
+this.frgbvalue[2]=b;
+this.falpha=a;
 }, 1);
 
 Clazz_newMeth(C$, 'getRed', function () {
@@ -1283,9 +1283,9 @@ var b = this.getBlue();
 var i = 3;
 if (r == 0 && g == 0  && b == 0 ) {
 return Clazz_new_(C$.c$$I$I$I,[i, i, i]);
-}if (r > 0 && r < i ) r = i;
-if (g > 0 && g < i ) g = i;
-if (b > 0 && b < i ) b = i;
+}if (r > 0 && r < i ) r=i;
+if (g > 0 && g < i ) g=i;
+if (b > 0 && b < i ) b=i;
 return Clazz_new_(C$.c$$I$I$I,[Math.min(((r / 0.7)|0), 255), Math.min(((g / 0.7)|0), 255), Math.min(((b / 0.7)|0), 255)]);
 });
 
@@ -1339,7 +1339,7 @@ var r = 0;
 var g = 0;
 var b = 0;
 if (saturation == 0 ) {
-r = g = b = ((brightness * 255.0 + 0.5)|0);
+r=g=b=((brightness * 255.0 + 0.5)|0);
 } else {
 var h = (hue - Math.floor(hue)) * 6.0;
 var f = h - java.lang.Math.floor(h);
@@ -1348,34 +1348,34 @@ var q = brightness * (1.0 - saturation * f);
 var t = brightness * (1.0 - (saturation * (1.0 - f)));
 switch ((h|0)) {
 case 0:
-r = ((brightness * 255.0 + 0.5)|0);
-g = ((t * 255.0 + 0.5)|0);
-b = ((p * 255.0 + 0.5)|0);
+r=((brightness * 255.0 + 0.5)|0);
+g=((t * 255.0 + 0.5)|0);
+b=((p * 255.0 + 0.5)|0);
 break;
 case 1:
-r = ((q * 255.0 + 0.5)|0);
-g = ((brightness * 255.0 + 0.5)|0);
-b = ((p * 255.0 + 0.5)|0);
+r=((q * 255.0 + 0.5)|0);
+g=((brightness * 255.0 + 0.5)|0);
+b=((p * 255.0 + 0.5)|0);
 break;
 case 2:
-r = ((p * 255.0 + 0.5)|0);
-g = ((brightness * 255.0 + 0.5)|0);
-b = ((t * 255.0 + 0.5)|0);
+r=((p * 255.0 + 0.5)|0);
+g=((brightness * 255.0 + 0.5)|0);
+b=((t * 255.0 + 0.5)|0);
 break;
 case 3:
-r = ((p * 255.0 + 0.5)|0);
-g = ((q * 255.0 + 0.5)|0);
-b = ((brightness * 255.0 + 0.5)|0);
+r=((p * 255.0 + 0.5)|0);
+g=((q * 255.0 + 0.5)|0);
+b=((brightness * 255.0 + 0.5)|0);
 break;
 case 4:
-r = ((t * 255.0 + 0.5)|0);
-g = ((p * 255.0 + 0.5)|0);
-b = ((brightness * 255.0 + 0.5)|0);
+r=((t * 255.0 + 0.5)|0);
+g=((p * 255.0 + 0.5)|0);
+b=((brightness * 255.0 + 0.5)|0);
 break;
 case 5:
-r = ((brightness * 255.0 + 0.5)|0);
-g = ((p * 255.0 + 0.5)|0);
-b = ((q * 255.0 + 0.5)|0);
+r=((brightness * 255.0 + 0.5)|0);
+g=((p * 255.0 + 0.5)|0);
+b=((q * 255.0 + 0.5)|0);
 break;
 }
 }return -16777216 | (r << 16) | (g << 8) | (b << 0) ;
@@ -1386,27 +1386,27 @@ var hue;
 var saturation;
 var brightness;
 if (hsbvals == null ) {
-hsbvals = Clazz_array(Float.TYPE, [3]);
+hsbvals=Clazz_array(Float.TYPE, [3]);
 }var cmax = (r > g) ? r : g;
-if (b > cmax) cmax = b;
+if (b > cmax) cmax=b;
 var cmin = (r < g) ? r : g;
-if (b < cmin) cmin = b;
-brightness = (cmax) / 255.0;
-if (cmax != 0) saturation = ((cmax - cmin)) / (cmax);
- else saturation = 0;
-if (saturation == 0 ) hue = 0;
+if (b < cmin) cmin=b;
+brightness=(cmax) / 255.0;
+if (cmax != 0) saturation=((cmax - cmin)) / (cmax);
+ else saturation=0;
+if (saturation == 0 ) hue=0;
  else {
 var redc = ((cmax - r)) / ((cmax - cmin));
 var greenc = ((cmax - g)) / ((cmax - cmin));
 var bluec = ((cmax - b)) / ((cmax - cmin));
-if (r == cmax) hue = bluec - greenc;
- else if (g == cmax) hue = 2.0 + redc - bluec;
- else hue = 4.0 + greenc - redc;
-hue = hue / 6.0;
-if (hue < 0 ) hue = hue + 1.0;
-}hsbvals[0] = hue;
-hsbvals[1] = saturation;
-hsbvals[2] = brightness;
+if (r == cmax) hue=bluec - greenc;
+ else if (g == cmax) hue=2.0 + redc - bluec;
+ else hue=4.0 + greenc - redc;
+hue=hue / 6.0;
+if (hue < 0 ) hue=hue + 1.0;
+}hsbvals[0]=hue;
+hsbvals[1]=saturation;
+hsbvals[2]=brightness;
 return hsbvals;
 }, 1);
 
@@ -1417,36 +1417,36 @@ return Clazz_new_(C$.c$$I,[C$.HSBtoRGB$F$F$F(h, s, b)]);
 Clazz_newMeth(C$, 'getRGBComponents$FA', function (compArray) {
 var f;
 if (compArray == null ) {
-f = Clazz_array(Float.TYPE, [4]);
+f=Clazz_array(Float.TYPE, [4]);
 } else {
-f = compArray;
+f=compArray;
 }if (this.frgbvalue == null ) {
-f[0] = (this.getRed()) / 255.0;
-f[1] = (this.getGreen()) / 255.0;
-f[2] = (this.getBlue()) / 255.0;
-f[3] = (this.getAlpha()) / 255.0;
+f[0]=(this.getRed()) / 255.0;
+f[1]=(this.getGreen()) / 255.0;
+f[2]=(this.getBlue()) / 255.0;
+f[3]=(this.getAlpha()) / 255.0;
 } else {
-f[0] = this.frgbvalue[0];
-f[1] = this.frgbvalue[1];
-f[2] = this.frgbvalue[2];
-f[3] = this.falpha;
+f[0]=this.frgbvalue[0];
+f[1]=this.frgbvalue[1];
+f[2]=this.frgbvalue[2];
+f[3]=this.falpha;
 }return f;
 });
 
 Clazz_newMeth(C$, 'getRGBColorComponents$FA', function (compArray) {
 var f;
 if (compArray == null ) {
-f = Clazz_array(Float.TYPE, [3]);
+f=Clazz_array(Float.TYPE, [3]);
 } else {
-f = compArray;
+f=compArray;
 }if (this.frgbvalue == null ) {
-f[0] = (this.getRed()) / 255.0;
-f[1] = (this.getGreen()) / 255.0;
-f[2] = (this.getBlue()) / 255.0;
+f[0]=(this.getRed()) / 255.0;
+f[1]=(this.getGreen()) / 255.0;
+f[2]=(this.getBlue()) / 255.0;
 } else {
-f[0] = this.frgbvalue[0];
-f[1] = this.frgbvalue[1];
-f[2] = this.frgbvalue[2];
+f[0]=this.frgbvalue[0];
+f[1]=this.frgbvalue[1];
+f[2]=this.frgbvalue[2];
 }return f;
 });
 
@@ -1455,19 +1455,19 @@ if (this.frgbvalue == null ) return this.getRGBComponents$FA(compArray);
 var f;
 var n = this.frgbvalue.length;
 if (compArray == null ) {
-f = Clazz_array(Float.TYPE, [n + 1]);
+f=Clazz_array(Float.TYPE, [n + 1]);
 } else {
-f = compArray;
+f=compArray;
 }for (var i = 0; i < n; i++) {
-f[i] = this.frgbvalue[i];
+f[i]=this.frgbvalue[i];
 }
-f[n] = this.falpha;
+f[n]=this.falpha;
 return f;
 });
 
 Clazz_newMeth(C$, 'createContext$java_awt_image_ColorModel$java_awt_Rectangle$java_awt_geom_Rectangle2D$java_awt_geom_AffineTransform$java_awt_RenderingHints', function (cm, r, r2d, xform, hints) {
 if (this.context == null  || this.context.getRGB() != this.getRGB() ) {
-this.context = Clazz_new_((I$[1]||$incl$(1)).c$$I$java_awt_image_ColorModel,[this.getRGB(), cm]);
+this.context=Clazz_new_((I$[1]||$incl$(1)).c$$I$java_awt_image_ColorModel,[this.getRGB(), cm]);
 }return this.context;
 });
 
@@ -1481,7 +1481,7 @@ return 2;
 return 3;
 }});
 })();
-//Created 2018-05-15 01:01:49
+//Created 2018-05-24 08:45:06
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.util.HashMap','java.awt.ComponentOrientation','sun.awt.AppContext','swingjs.JSToolkit','java.awt.Toolkit','java.awt.Point','java.awt.event.ComponentEvent','java.util.Locale','java.awt.Dimension','java.awt.Rectangle',['java.awt.Component','.BaselineResizeBehavior'],'java.awt.Cursor','java.awt.event.PaintEvent','java.awt.EventQueue','java.awt.event.MouseWheelEvent','java.awt.AWTEventMulticaster','java.awt.event.ComponentListener','java.awt.event.FocusListener','java.awt.event.HierarchyListener','java.awt.event.HierarchyEvent','java.awt.event.HierarchyBoundsListener','java.awt.event.KeyListener','java.awt.event.MouseListener','java.awt.event.MouseMotionListener','java.awt.event.MouseWheelListener','java.awt.event.InputMethodListener','java.beans.PropertyChangeListener','Boolean','java.beans.PropertyChangeSupport','sun.awt.SunToolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Component", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -1585,9 +1585,9 @@ return this.boundsOp;
 
 Clazz_newMeth(C$, 'setBoundsOp$I', function (op) {
 if (op == 5) {
-this.boundsOp = 3;
+this.boundsOp=3;
 } else if (this.boundsOp == 3) {
-this.boundsOp = op;
+this.boundsOp=op;
 }});
 
 Clazz_newMeth(C$, 'c$', function () {
@@ -1596,7 +1596,7 @@ this.setAppContext();
 }, 1);
 
 Clazz_newMeth(C$, 'setAppContext', function () {
-this.appContext = (I$[3]||$incl$(3)).getAppContext();
+this.appContext=(I$[3]||$incl$(3)).getAppContext();
 });
 
 Clazz_newMeth(C$, 'constructComponentName', function () {
@@ -1606,16 +1606,16 @@ return null;
 Clazz_newMeth(C$, 'getName', function () {
 if (this.name == null  && !this.nameExplicitlySet ) {
 {
-if (this.name == null  && !this.nameExplicitlySet ) this.name = this.constructComponentName();
+if (this.name == null  && !this.nameExplicitlySet ) this.name=this.constructComponentName();
 }}return this.name;
 });
 
 Clazz_newMeth(C$, 'setName$S', function (name) {
 var oldName;
 {
-oldName = this.name;
-this.name = name;
-this.nameExplicitlySet = true;
+oldName=this.name;
+this.name=name;
+this.nameExplicitlySet=true;
 }this.firePropertyChange$S$O$O("name", oldName, name);
 });
 
@@ -1638,10 +1638,10 @@ return this.peer;
 Clazz_newMeth(C$, 'setDropTarget$java_awt_dnd_DropTarget', function (dt) {
 if (dt === this.dropTarget  || (this.dropTarget != null  && this.dropTarget.equals$O(dt) ) ) return;
 var old;
-if ((old = this.dropTarget) != null ) {
+if ((old=this.dropTarget) != null ) {
 if (this.peer != null ) this.dropTarget.removeNotify$java_awt_peer_ComponentPeer(this.peer);
 var t = this.dropTarget;
-this.dropTarget = null;
+this.dropTarget=null;
 try {
 t.setComponent$java_awt_Component(null);
 } catch (iae) {
@@ -1650,7 +1650,7 @@ if (Clazz_exceptionOf(iae, "java.lang.IllegalArgumentException")){
 throw iae;
 }
 }
-}if ((this.dropTarget = dt) != null ) {
+}if ((this.dropTarget=dt) != null ) {
 try {
 this.dropTarget.setComponent$java_awt_Component(this);
 if (this.peer != null ) this.dropTarget.addNotify$java_awt_peer_ComponentPeer(this.peer);
@@ -1751,7 +1751,7 @@ this.enable$Z(b);
 
 Clazz_newMeth(C$, 'enable', function () {
 if (!this.enabled) {
-this.enabled = true;
+this.enabled=true;
 var peer = this.getOrCreatePeer();
 if (peer != null ) {
 peer.setEnabled$Z(true);
@@ -1768,7 +1768,7 @@ this.disable();
 
 Clazz_newMeth(C$, 'disable', function () {
 if (this.enabled) {
-this.enabled = false;
+this.enabled=false;
 var peer = this.getOrCreatePeer();
 if (peer != null ) {
 peer.setEnabled$Z(false);
@@ -1793,7 +1793,7 @@ this.setVisible$Z(b);
 
 Clazz_newMeth(C$, 'show', function () {
 if (!this.visible) {
-this.visible = true;
+this.visible=true;
 this.updatePeerVisibility$Z(true);
 if (this.componentListener != null  || (this.eventMask & 1) != 0  || (I$[5]||$incl$(5)).enabledOnToolkit$J(1) ) {
 var e = Clazz_new_((I$[7]||$incl$(7)).c$$java_awt_Component$I,[this, 102]);
@@ -1827,10 +1827,10 @@ Clazz_newMeth(C$, 'clearCurrentFocusCycleRootOnHide', function () {
 });
 
 Clazz_newMeth(C$, 'hide', function () {
-this.isPacked = false;
+this.isPacked=false;
 if (this.visible) {
 this.clearCurrentFocusCycleRootOnHide();
-this.visible = false;
+this.visible=false;
 this.mixOnHiding$Z(this.isLightweight());
 this.updatePeerVisibility$Z(false);
 if (this.componentListener != null  || (this.eventMask & 1) != 0  || (I$[5]||$incl$(5)).enabledOnToolkit$J(1) ) {
@@ -1852,9 +1852,9 @@ return (parent != null ) ? parent.getForeground() : null;
 Clazz_newMeth(C$, 'setForeground$java_awt_Color', function (c) {
 var oldColor = this.foreground;
 var peer = this.getOrCreatePeer();
-this.foreground = c;
+this.foreground=c;
 if (peer != null ) {
-c = this.getForeground();
+c=this.getForeground();
 if (c != null ) {
 peer.setForeground$java_awt_Color(c);
 }}this.firePropertyChange$S$O$O("foreground", oldColor, c);
@@ -1875,9 +1875,9 @@ return (parent != null ) ? parent.getBackground() : null;
 Clazz_newMeth(C$, 'setBackground$java_awt_Color', function (c) {
 var oldColor = this.background;
 var peer = this.getOrCreatePeer();
-this.background = c;
+this.background=c;
 if (peer != null ) {
-c = this.getBackground();
+c=this.getBackground();
 if (c != null ) {
 peer.setBackground$java_awt_Color(c);
 }}this.firePropertyChange$S$O$O("background", oldColor, c);
@@ -1903,16 +1903,16 @@ return null;
 Clazz_newMeth(C$, 'setFont$java_awt_Font', function (f) {
 var oldFont;
 var newFont;
-oldFont = this.font;
-newFont = this.font = f;
+oldFont=this.font;
+newFont=this.font=f;
 {
 {
 }var peer = this.getOrCreatePeer();
 if (peer != null ) {
-f = this.getFont();
+f=this.getFont();
 if (f != null ) {
 peer.setFont$java_awt_Font(f);
-this.peerFont = f;
+this.peerFont=f;
 }}}this.firePropertyChange$S$O$O("font", oldFont, newFont);
 if (f !== oldFont  && (oldFont == null  || !oldFont.equals$O(f) ) ) {
 this.invalidateIfValid();
@@ -1931,7 +1931,7 @@ return locale;
 
 Clazz_newMeth(C$, 'setLocale$java_util_Locale', function (l) {
 var oldValue = this.locale;
-this.locale = l;
+this.locale=l;
 this.firePropertyChange$S$O$O("locale", oldValue, l);
 this.invalidateIfValid();
 });
@@ -1949,9 +1949,9 @@ if (this.isShowing()) {
 if (this.isLightweight()) {
 var host = this.getNativeContainer();
 var pt = host.peer.getLocationOnScreen();
-for (var c = this; c !== host ; c = c.getParent()) {
-pt.x = pt.x+(c.x);
-pt.y = pt.y+(c.y);
+for (var c = this; c !== host ; c=c.getParent()) {
+pt.x+=c.x;
+pt.y+=c.y;
 }
 return pt;
 } else {
@@ -2014,8 +2014,8 @@ this.setBounds$I$I$I$I(r.x, r.y, r.width, r.height);
 Clazz_newMeth(C$, 'reshape$I$I$I$I', function (x, y, width, height) {
 try {
 this.setBoundsOp$I(3);
-width = Math.max(0, width);
-height = Math.max(0, height);
+width=Math.max(0, width);
+height=Math.max(0, height);
 var resized = (this.width != width) || (this.height != height) ;
 var moved = (this.x != x) || (this.y != y) ;
 if (!resized && !moved ) {
@@ -2024,20 +2024,20 @@ return;
 var oldY = this.y;
 var oldWidth = this.width;
 var oldHeight = this.height;
-this.x = x;
-this.y = y;
-this.width = width;
-this.height = height;
+this.x=x;
+this.y=y;
+this.width=width;
+this.height=height;
 if (resized) {
-this.isPacked = false;
+this.isPacked=false;
 }var needNotify = true;
 this.mixOnReshaping();
 if (this.getOrCreatePeer() != null ) {
 p$.reshapeNativePeer$I$I$I$I$I.apply(this, [x, y, width, height, this.getBoundsOp()]);
-resized = (oldWidth != this.width) || (oldHeight != this.height) ;
-moved = (oldX != this.x) || (oldY != this.y) ;
+resized=(oldWidth != this.width) || (oldHeight != this.height) ;
+moved=(oldX != this.x) || (oldY != this.y) ;
 if (Clazz_instanceOf(this, "java.awt.Window")) {
-needNotify = false;
+needNotify=false;
 }if (resized) {
 this.invalidate();
 }if (this.parent != null ) {
@@ -2059,9 +2059,9 @@ this.repaint();
 Clazz_newMeth(C$, 'reshapeNativePeer$I$I$I$I$I', function (x, y, width, height, op) {
 var nativeX = x;
 var nativeY = y;
-for (var c = this.parent; (c != null ) && (Clazz_instanceOf(c.peer, "java.awt.peer.LightweightPeer")) ; c = c.parent) {
-nativeX = nativeX+(c.x);
-nativeY = nativeY+(c.y);
+for (var c = this.parent; (c != null ) && (Clazz_instanceOf(c.peer, "java.awt.peer.LightweightPeer")) ; c=c.parent) {
+nativeX+=c.x;
+nativeY+=c.y;
 }
 this.peer.setBounds$I$I$I$I$I(nativeX, nativeY, width, height, op);
 });
@@ -2139,8 +2139,8 @@ this.setPrefSizeComp$java_awt_Dimension(preferredSize);
 
 Clazz_newMeth(C$, 'setPrefSizeComp$java_awt_Dimension', function (preferredSize) {
 var old = (this.prefSizeSet ? this.prefSize : null);
-this.prefSize = preferredSize;
-this.prefSizeSet = (preferredSize != null );
+this.prefSize=preferredSize;
+this.prefSizeSet=(preferredSize != null );
 this.firePropertyChange$S$O$O("preferredSize", old, preferredSize);
 });
 
@@ -2159,19 +2159,19 @@ return this.prefSizeComp();
 Clazz_newMeth(C$, 'prefSizeComp', function () {
 var dim = this.prefSize;
 if (dim == null  || !(this.isPreferredSizeSet() || this.isValid() ) ) {
-this.prefSize = this.getMinimumSize();
-dim = this.prefSize;
+this.prefSize=this.getMinimumSize();
+dim=this.prefSize;
 }return Clazz_new_((I$[9]||$incl$(9)).c$$java_awt_Dimension,[dim]);
 });
 
 Clazz_newMeth(C$, 'setMinimumSize$java_awt_Dimension', function (minimumSize) {
 var old;
 if (this.minSizeSet) {
-old = this.minSize;
+old=this.minSize;
 } else {
-old = null;
-}this.minSize = minimumSize;
-this.minSizeSet = (minimumSize != null );
+old=null;
+}this.minSize=minimumSize;
+this.minSizeSet=(minimumSize != null );
 this.firePropertyChange$S$O$O("minimumSize", old, minimumSize);
 });
 
@@ -2186,19 +2186,19 @@ return this.minimumSize();
 Clazz_newMeth(C$, 'minimumSize', function () {
 var dim = this.minSize;
 if (dim == null  || !(this.isMinimumSizeSet() || this.isValid() ) ) {
-this.minSize = this.getSize();
-dim = this.minSize;
+this.minSize=this.getSize();
+dim=this.minSize;
 }return Clazz_new_((I$[9]||$incl$(9)).c$$java_awt_Dimension,[dim]);
 });
 
 Clazz_newMeth(C$, 'setMaximumSize$java_awt_Dimension', function (maximumSize) {
 var old;
 if (this.maxSizeSet) {
-old = this.maxSize;
+old=this.maxSize;
 } else {
-old = null;
-}this.maxSize = maximumSize;
-this.maxSizeSet = (maximumSize != null );
+old=null;
+}this.maxSize=maximumSize;
+this.maxSizeSet=(maximumSize != null );
 this.firePropertyChange$S$O$O("maximumSize", old, maximumSize);
 });
 
@@ -2262,9 +2262,9 @@ var newfont = this.getFont();
 var oldfont = this.peerFont;
 if (newfont !== oldfont  && (oldfont == null  || !oldfont.equals$O(newfont) ) ) {
 peer.setFont$java_awt_Font(newfont);
-this.peerFont = newfont;
+this.peerFont=newfont;
 }peer.layout();
-}this.valid = true;
+}this.valid=true;
 if (!wasValid) {
 this.mixOnValidating();
 }}});
@@ -2274,13 +2274,13 @@ this.invalidateComp();
 });
 
 Clazz_newMeth(C$, 'invalidateComp', function () {
-this.valid = false;
+this.valid=false;
 if (!this.isPreferredSizeSet()) {
-this.prefSize = null;
+this.prefSize=null;
 }if (!this.isMinimumSizeSet()) {
-this.minSize = null;
+this.minSize=null;
 }if (!this.isMaximumSizeSet()) {
-this.maxSize = null;
+this.maxSize=null;
 }if (this.parent != null ) {
 this.parent.invalidateIfValid();
 }});
@@ -2292,7 +2292,7 @@ this.invalidate();
 
 Clazz_newMeth(C$, 'getGraphics', function () {
 var g;
-if ((g = (this.parent == null  ? null : this.parent.getGraphics())) != null ) g.setFont$java_awt_Font(this.getFont());
+if ((g=(this.parent == null  ? null : this.parent.getGraphics())) != null ) g.setFont$java_awt_Font(this.getFont());
 return g;
 });
 
@@ -2305,7 +2305,7 @@ return font.getFontMetrics();
 });
 
 Clazz_newMeth(C$, 'setCursor$java_awt_Cursor', function (cursor) {
-this.cursor = cursor;
+this.cursor=cursor;
 this.updateCursorImmediately();
 });
 
@@ -2479,7 +2479,7 @@ var id = e.getID();
 (I$[14]||$incl$(14)).setCurrentEventAndMostRecentTime$java_awt_AWTEvent(e);
 if (!e.focusManagerIsDispatching) {
 if (e.isPosted) {
-e.isPosted = true;
+e.isPosted=true;
 }}if (!e.isConsumed()) {
 if (Clazz_instanceOf(e, "java.awt.event.KeyEvent")) {
 if (e.isConsumed()) {
@@ -2516,21 +2516,21 @@ Clazz_newMeth(C$, 'autoProcessMouseWheel$java_awt_event_MouseWheelEvent', functi
 Clazz_newMeth(C$, 'dispatchMouseWheelToAncestor$java_awt_event_MouseWheelEvent', function (e) {
 var newX;
 var newY;
-newX = e.getX() + this.getX();
-newY = e.getY() + this.getY();
+newX=e.getX() + this.getX();
+newY=e.getY() + this.getY();
 var newMWE;
 {
 var anc = this.getParent();
 while (anc != null  && !anc.eventEnabled$java_awt_AWTEvent(e) ){
-newX = newX+(anc.getX());
-newY = newY+(anc.getY());
+newX+=anc.getX();
+newY+=anc.getY();
 if (!(Clazz_instanceOf(anc, "java.awt.Window"))) {
-anc = anc.getParent();
+anc=anc.getParent();
 } else {
 break;
 }}
 if (anc != null  && anc.eventEnabled$java_awt_AWTEvent(e) ) {
-newMWE = Clazz_new_((I$[15]||$incl$(15)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I$I$I,[anc, e.getID(), e.getWhen(), e.getModifiers(), newX, newY, e.getXOnScreen(), e.getYOnScreen(), e.getClickCount(), e.isPopupTrigger(), e.getScrollType(), e.getScrollAmount(), e.getWheelRotation()]);
+newMWE=Clazz_new_((I$[15]||$incl$(15)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I$I$I,[anc, e.getID(), e.getWhen(), e.getModifiers(), newX, newY, e.getXOnScreen(), e.getYOnScreen(), e.getClickCount(), e.isPopupTrigger(), e.getScrollType(), e.getScrollAmount(), e.getWheelRotation()]);
 (e).copyPrivateDataInto$java_awt_AWTEvent(newMWE);
 anc.dispatchEventToSelf$java_awt_AWTEvent(newMWE);
 }}return true;
@@ -2543,7 +2543,7 @@ if (Clazz_instanceOf(this, "java.awt.Dialog")) {
 } else {
 this.windowClosingException.fillInStackTrace();
 this.windowClosingException.printStackTrace();
-this.windowClosingException = null;
+this.windowClosingException=null;
 }return true;
 }return false;
 });
@@ -2643,22 +2643,22 @@ e.translate$I$I(this.x, this.y);
 if (parent.postEvent$java_awt_Event(e)) {
 e.consume();
 return true;
-}e.x = eventx;
-e.y = eventy;
+}e.x=eventx;
+e.y=eventy;
 }return false;
 });
 
 Clazz_newMeth(C$, 'addComponentListener$java_awt_event_ComponentListener', function (l) {
 if (l == null ) {
 return;
-}this.componentListener = (I$[16]||$incl$(16)).add$java_awt_event_ComponentListener$java_awt_event_ComponentListener(this.componentListener, l);
-this.newEventsOnly = true;
+}this.componentListener=(I$[16]||$incl$(16)).add$java_awt_event_ComponentListener$java_awt_event_ComponentListener(this.componentListener, l);
+this.newEventsOnly=true;
 });
 
 Clazz_newMeth(C$, 'removeComponentListener$java_awt_event_ComponentListener', function (l) {
 if (l == null ) {
 return;
-}this.componentListener = (I$[16]||$incl$(16)).remove$java_awt_event_ComponentListener$java_awt_event_ComponentListener(this.componentListener, l);
+}this.componentListener=(I$[16]||$incl$(16)).remove$java_awt_event_ComponentListener$java_awt_event_ComponentListener(this.componentListener, l);
 });
 
 Clazz_newMeth(C$, 'getComponentListeners', function () {
@@ -2668,14 +2668,14 @@ return (this.getListeners$Class(Clazz_getClass((I$[17]||$incl$(17)),['componentH
 Clazz_newMeth(C$, 'addFocusListener$java_awt_event_FocusListener', function (l) {
 if (l == null ) {
 return;
-}this.focusListener = (I$[16]||$incl$(16)).add$java_awt_event_FocusListener$java_awt_event_FocusListener(this.focusListener, l);
-this.newEventsOnly = true;
+}this.focusListener=(I$[16]||$incl$(16)).add$java_awt_event_FocusListener$java_awt_event_FocusListener(this.focusListener, l);
+this.newEventsOnly=true;
 });
 
 Clazz_newMeth(C$, 'removeFocusListener$java_awt_event_FocusListener', function (l) {
 if (l == null ) {
 return;
-}this.focusListener = (I$[16]||$incl$(16)).remove$java_awt_event_FocusListener$java_awt_event_FocusListener(this.focusListener, l);
+}this.focusListener=(I$[16]||$incl$(16)).remove$java_awt_event_FocusListener$java_awt_event_FocusListener(this.focusListener, l);
 });
 
 Clazz_newMeth(C$, 'getFocusListeners', function () {
@@ -2697,10 +2697,10 @@ if (l == null ) {
 return;
 }var notifyAncestors;
 {
-notifyAncestors = (this.hierarchyBoundsListener == null  && (this.eventMask & 65536) == 0 );
-this.hierarchyBoundsListener = (I$[16]||$incl$(16)).add$java_awt_event_HierarchyBoundsListener$java_awt_event_HierarchyBoundsListener(this.hierarchyBoundsListener, l);
-notifyAncestors = (notifyAncestors && this.hierarchyBoundsListener != null  );
-this.newEventsOnly = true;
+notifyAncestors=(this.hierarchyBoundsListener == null  && (this.eventMask & 65536) == 0 );
+this.hierarchyBoundsListener=(I$[16]||$incl$(16)).add$java_awt_event_HierarchyBoundsListener$java_awt_event_HierarchyBoundsListener(this.hierarchyBoundsListener, l);
+notifyAncestors=(notifyAncestors && this.hierarchyBoundsListener != null  );
+this.newEventsOnly=true;
 }if (notifyAncestors) {
 {
 this.adjustListeningChildrenOnParent$J$I(65536, 1);
@@ -2711,9 +2711,9 @@ if (l == null ) {
 return;
 }var notifyAncestors;
 {
-notifyAncestors = (this.hierarchyBoundsListener != null  && (this.eventMask & 65536) == 0 );
-this.hierarchyBoundsListener = (I$[16]||$incl$(16)).remove$java_awt_event_HierarchyBoundsListener$java_awt_event_HierarchyBoundsListener(this.hierarchyBoundsListener, l);
-notifyAncestors = (notifyAncestors && this.hierarchyBoundsListener == null  );
+notifyAncestors=(this.hierarchyBoundsListener != null  && (this.eventMask & 65536) == 0 );
+this.hierarchyBoundsListener=(I$[16]||$incl$(16)).remove$java_awt_event_HierarchyBoundsListener$java_awt_event_HierarchyBoundsListener(this.hierarchyBoundsListener, l);
+notifyAncestors=(notifyAncestors && this.hierarchyBoundsListener == null  );
 }if (notifyAncestors) {
 {
 this.adjustListeningChildrenOnParent$J$I(65536, -1);
@@ -2771,14 +2771,14 @@ this.parent.adjustListeningChildren$J$I(mask, num);
 Clazz_newMeth(C$, 'addKeyListener$java_awt_event_KeyListener', function (l) {
 if (l == null ) {
 return;
-}this.keyListener = (I$[16]||$incl$(16)).add$java_awt_event_KeyListener$java_awt_event_KeyListener(this.keyListener, l);
-this.newEventsOnly = true;
+}this.keyListener=(I$[16]||$incl$(16)).add$java_awt_event_KeyListener$java_awt_event_KeyListener(this.keyListener, l);
+this.newEventsOnly=true;
 });
 
 Clazz_newMeth(C$, 'removeKeyListener$java_awt_event_KeyListener', function (l) {
 if (l == null ) {
 return;
-}this.keyListener = (I$[16]||$incl$(16)).remove$java_awt_event_KeyListener$java_awt_event_KeyListener(this.keyListener, l);
+}this.keyListener=(I$[16]||$incl$(16)).remove$java_awt_event_KeyListener$java_awt_event_KeyListener(this.keyListener, l);
 });
 
 Clazz_newMeth(C$, 'getKeyListeners', function () {
@@ -2788,14 +2788,14 @@ return (this.getListeners$Class(Clazz_getClass((I$[22]||$incl$(22)),['keyPressed
 Clazz_newMeth(C$, 'addMouseListener$java_awt_event_MouseListener', function (l) {
 if (l == null ) {
 return;
-}this.mouseListener = (I$[16]||$incl$(16)).add$java_awt_event_MouseListener$java_awt_event_MouseListener(this.mouseListener, l);
-this.newEventsOnly = true;
+}this.mouseListener=(I$[16]||$incl$(16)).add$java_awt_event_MouseListener$java_awt_event_MouseListener(this.mouseListener, l);
+this.newEventsOnly=true;
 });
 
 Clazz_newMeth(C$, 'removeMouseListener$java_awt_event_MouseListener', function (l) {
 if (l == null ) {
 return;
-}this.mouseListener = (I$[16]||$incl$(16)).remove$java_awt_event_MouseListener$java_awt_event_MouseListener(this.mouseListener, l);
+}this.mouseListener=(I$[16]||$incl$(16)).remove$java_awt_event_MouseListener$java_awt_event_MouseListener(this.mouseListener, l);
 });
 
 Clazz_newMeth(C$, 'getMouseListeners', function () {
@@ -2805,14 +2805,14 @@ return (this.getListeners$Class(Clazz_getClass((I$[23]||$incl$(23)),['mouseClick
 Clazz_newMeth(C$, 'addMouseMotionListener$java_awt_event_MouseMotionListener', function (l) {
 if (l == null ) {
 return;
-}this.mouseMotionListener = (I$[16]||$incl$(16)).add$java_awt_event_MouseMotionListener$java_awt_event_MouseMotionListener(this.mouseMotionListener, l);
-this.newEventsOnly = true;
+}this.mouseMotionListener=(I$[16]||$incl$(16)).add$java_awt_event_MouseMotionListener$java_awt_event_MouseMotionListener(this.mouseMotionListener, l);
+this.newEventsOnly=true;
 });
 
 Clazz_newMeth(C$, 'removeMouseMotionListener$java_awt_event_MouseMotionListener', function (l) {
 if (l == null ) {
 return;
-}this.mouseMotionListener = (I$[16]||$incl$(16)).remove$java_awt_event_MouseMotionListener$java_awt_event_MouseMotionListener(this.mouseMotionListener, l);
+}this.mouseMotionListener=(I$[16]||$incl$(16)).remove$java_awt_event_MouseMotionListener$java_awt_event_MouseMotionListener(this.mouseMotionListener, l);
 });
 
 Clazz_newMeth(C$, 'getMouseMotionListeners', function () {
@@ -2822,14 +2822,14 @@ return (this.getListeners$Class(Clazz_getClass((I$[24]||$incl$(24)),['mouseDragg
 Clazz_newMeth(C$, 'addMouseWheelListener$java_awt_event_MouseWheelListener', function (l) {
 if (l == null ) {
 return;
-}this.mouseWheelListener = (I$[16]||$incl$(16)).add$java_awt_event_MouseWheelListener$java_awt_event_MouseWheelListener(this.mouseWheelListener, l);
-this.newEventsOnly = true;
+}this.mouseWheelListener=(I$[16]||$incl$(16)).add$java_awt_event_MouseWheelListener$java_awt_event_MouseWheelListener(this.mouseWheelListener, l);
+this.newEventsOnly=true;
 });
 
 Clazz_newMeth(C$, 'removeMouseWheelListener$java_awt_event_MouseWheelListener', function (l) {
 if (l == null ) {
 return;
-}this.mouseWheelListener = (I$[16]||$incl$(16)).remove$java_awt_event_MouseWheelListener$java_awt_event_MouseWheelListener(this.mouseWheelListener, l);
+}this.mouseWheelListener=(I$[16]||$incl$(16)).remove$java_awt_event_MouseWheelListener$java_awt_event_MouseWheelListener(this.mouseWheelListener, l);
 });
 
 Clazz_newMeth(C$, 'getMouseWheelListeners', function () {
@@ -2839,14 +2839,14 @@ return (this.getListeners$Class(Clazz_getClass((I$[25]||$incl$(25)),['mouseWheel
 Clazz_newMeth(C$, 'addInputMethodListener$java_awt_event_InputMethodListener', function (l) {
 if (l == null ) {
 return;
-}this.inputMethodListener = (I$[16]||$incl$(16)).add$java_awt_event_InputMethodListener$java_awt_event_InputMethodListener(this.inputMethodListener, l);
-this.newEventsOnly = true;
+}this.inputMethodListener=(I$[16]||$incl$(16)).add$java_awt_event_InputMethodListener$java_awt_event_InputMethodListener(this.inputMethodListener, l);
+this.newEventsOnly=true;
 });
 
 Clazz_newMeth(C$, 'removeInputMethodListener$java_awt_event_InputMethodListener', function (l) {
 if (l == null ) {
 return;
-}this.inputMethodListener = (I$[16]||$incl$(16)).remove$java_awt_event_InputMethodListener$java_awt_event_InputMethodListener(this.inputMethodListener, l);
+}this.inputMethodListener=(I$[16]||$incl$(16)).remove$java_awt_event_InputMethodListener$java_awt_event_InputMethodListener(this.inputMethodListener, l);
 });
 
 Clazz_newMeth(C$, 'getInputMethodListeners', function () {
@@ -2860,23 +2860,23 @@ return this.getListenersComp$Class(listenerType);
 Clazz_newMeth(C$, 'getListenersComp$Class', function (listenerType) {
 var l = null;
 if (listenerType === Clazz_getClass((I$[17]||$incl$(17)),['componentHidden$java_awt_event_ComponentEvent','componentMoved$java_awt_event_ComponentEvent','componentResized$java_awt_event_ComponentEvent','componentShown$java_awt_event_ComponentEvent']) ) {
-l = this.componentListener;
+l=this.componentListener;
 } else if (listenerType === Clazz_getClass((I$[18]||$incl$(18)),['focusGained$java_awt_event_FocusEvent','focusLost$java_awt_event_FocusEvent']) ) {
-l = this.focusListener;
+l=this.focusListener;
 } else if (listenerType === Clazz_getClass((I$[19]||$incl$(19)),['hierarchyChanged$java_awt_event_HierarchyEvent']) ) {
-l = this.hierarchyListener;
+l=this.hierarchyListener;
 } else if (listenerType === Clazz_getClass((I$[21]||$incl$(21)),['ancestorMoved$java_awt_event_HierarchyEvent','ancestorResized$java_awt_event_HierarchyEvent']) ) {
-l = this.hierarchyBoundsListener;
+l=this.hierarchyBoundsListener;
 } else if (listenerType === Clazz_getClass((I$[22]||$incl$(22)),['keyPressed$java_awt_event_KeyEvent','keyReleased$java_awt_event_KeyEvent','keyTyped$java_awt_event_KeyEvent']) ) {
-l = this.keyListener;
+l=this.keyListener;
 } else if (listenerType === Clazz_getClass((I$[23]||$incl$(23)),['mouseClicked$java_awt_event_MouseEvent','mouseEntered$java_awt_event_MouseEvent','mouseExited$java_awt_event_MouseEvent','mousePressed$java_awt_event_MouseEvent','mouseReleased$java_awt_event_MouseEvent']) ) {
-l = this.mouseListener;
+l=this.mouseListener;
 } else if (listenerType === Clazz_getClass((I$[24]||$incl$(24)),['mouseDragged$java_awt_event_MouseEvent','mouseMoved$java_awt_event_MouseEvent']) ) {
-l = this.mouseMotionListener;
+l=this.mouseMotionListener;
 } else if (listenerType === Clazz_getClass((I$[25]||$incl$(25)),['mouseWheelMoved$java_awt_event_MouseWheelEvent']) ) {
-l = this.mouseWheelListener;
+l=this.mouseWheelListener;
 } else if (listenerType === Clazz_getClass((I$[26]||$incl$(26)),['caretPositionChanged$java_awt_event_InputMethodEvent','inputMethodTextChanged$java_awt_event_InputMethodEvent']) ) {
-l = this.inputMethodListener;
+l=this.inputMethodListener;
 } else if (listenerType === Clazz_getClass((I$[27]||$incl$(27)),['propertyChange$java_beans_PropertyChangeEvent']) ) {
 return this.getPropertyChangeListeners();
 }return (I$[16]||$incl$(16)).getListeners$java_util_EventListener$Class(l, listenerType);
@@ -2886,11 +2886,11 @@ Clazz_newMeth(C$, 'enableEvents$J', function (eventsToEnable) {
 var notifyAncestors = 0;
 {
 if ((eventsToEnable & 32768) != 0 && this.hierarchyListener == null   && (this.eventMask & 32768) == 0 ) {
-notifyAncestors = notifyAncestors|(32768);
+notifyAncestors|=32768;
 }if ((eventsToEnable & 65536) != 0 && this.hierarchyBoundsListener == null   && (this.eventMask & 65536) == 0 ) {
-notifyAncestors = notifyAncestors|(65536);
-}this.eventMask = this.eventMask|(eventsToEnable);
-this.newEventsOnly = true;
+notifyAncestors|=65536;
+}this.eventMask|=eventsToEnable;
+this.newEventsOnly=true;
 }if (this.parent != null  && Clazz_instanceOf(this.peer, "java.awt.peer.LightweightPeer") ) {
 this.parent.proxyEnableEvents$J(this.eventMask);
 }if (notifyAncestors != 0) {
@@ -2902,10 +2902,10 @@ Clazz_newMeth(C$, 'disableEvents$J', function (eventsToDisable) {
 var notifyAncestors = 0;
 {
 if ((eventsToDisable & 32768) != 0 && this.hierarchyListener == null   && (this.eventMask & 32768) != 0 ) {
-notifyAncestors = notifyAncestors|(32768);
+notifyAncestors|=32768;
 }if ((eventsToDisable & 65536) != 0 && this.hierarchyBoundsListener == null   && (this.eventMask & 65536) != 0 ) {
-notifyAncestors = notifyAncestors|(65536);
-}this.eventMask = this.eventMask&(~eventsToDisable);
+notifyAncestors|=65536;
+}this.eventMask&=~eventsToDisable;
 }if (notifyAncestors != 0) {
 {
 this.adjustListeningChildrenOnParent$J$I(notifyAncestors, -1);
@@ -3198,24 +3198,24 @@ var peer = this.getOrCreatePeer();
 if (this.parent != null ) {
 var mask = 0;
 if ((this.mouseListener != null ) || ((this.eventMask & 16) != 0) ) {
-mask = mask|(16);
+mask|=16;
 }if ((this.mouseMotionListener != null ) || ((this.eventMask & 32) != 0) ) {
-mask = mask|(32);
+mask|=32;
 }if ((this.mouseWheelListener != null ) || ((this.eventMask & 131072) != 0) ) {
-mask = mask|(131072);
+mask|=131072;
 }if (this.focusListener != null  || (this.eventMask & 4) != 0 ) {
-mask = mask|(4);
+mask|=4;
 }if (this.keyListener != null  || (this.eventMask & 8) != 0 ) {
-mask = mask|(8);
+mask|=8;
 }if (mask != 0) {
 this.parent.proxyEnableEvents$J(mask);
 }}this.invalidate();
-this.peerFont = this.getFont();
+this.peerFont=this.getFont();
 if (this.getContainer() != null  && !this.isAddNotifyComplete ) {
 this.getContainer().increaseComponentCount$java_awt_Component(this);
 }if (this.parent != null  && this.parent.peer != null  ) {
 var parentContPeer = this.parent.peer;
-}this.isAddNotifyComplete = true;
+}this.isAddNotifyComplete=true;
 if (this.visible && peer != null  ) {
 var isDisposed = false;
 
@@ -3229,7 +3229,7 @@ this.dispatchEvent$java_awt_AWTEvent(e);
 Clazz_newMeth(C$, 'getNativeContainer', function () {
 var p = this.parent;
 while (p != null  && Clazz_instanceOf(p.peer, "java.awt.peer.LightweightPeer") ){
-p = p.getParent();
+p=p.getParent();
 }
 return p;
 });
@@ -3248,7 +3248,7 @@ if (this.visible) {
 p.setVisible$Z(false);
 }(I$[5]||$incl$(5)).getEventQueue().removeSourceEvents$O$Z(this, false);
 p.dispose();
-this.isAddNotifyComplete = false;
+this.isAddNotifyComplete=false;
 }if (this.hierarchyListener != null  || (this.eventMask & 32768) != 0  || (I$[5]||$incl$(5)).enabledOnToolkit$J(32768) ) {
 var e = Clazz_new_((I$[20]||$incl$(20)).c$$java_awt_Component$I$java_awt_Component$java_awt_Container$J,[this, 1400, this, this.parent, 2 | ((this.isRecursivelyVisible()) ? 4 : 0)]);
 this.dispatchEvent$java_awt_AWTEvent(e);
@@ -3264,7 +3264,7 @@ return false;
 
 Clazz_newMeth(C$, 'isFocusTraversable', function () {
 if (this.$isFocusTraversableOverridden == 0) {
-this.$isFocusTraversableOverridden = 1;
+this.$isFocusTraversableOverridden=1;
 }return this.focusable;
 });
 
@@ -3275,9 +3275,9 @@ return this.isFocusTraversable();
 Clazz_newMeth(C$, 'setFocusable$Z', function (focusable) {
 var oldFocusable;
 {
-oldFocusable = this.focusable;
-this.focusable = focusable;
-}this.$isFocusTraversableOverridden = 2;
+oldFocusable=this.focusable;
+this.focusable=focusable;
+}this.$isFocusTraversableOverridden=2;
 this.firePropertyChange$S$O$O("focusable", (I$[28]||$incl$(28)).$valueOf(oldFocusable), (I$[28]||$incl$(28)).$valueOf(focusable));
 });
 
@@ -3308,7 +3308,7 @@ return (I$[4]||$incl$(4)).requestFocus$java_awt_Component(this);
 Clazz_newMeth(C$, 'getFocusCycleRootAncestor', function () {
 var rootAncestor = this.parent;
 while (rootAncestor != null  && !rootAncestor.isFocusCycleRoot() ){
-rootAncestor = rootAncestor.parent;
+rootAncestor=rootAncestor.parent;
 }
 return rootAncestor;
 });
@@ -3331,7 +3331,7 @@ return this.hasFocus();
 });
 
 Clazz_newMeth(C$, 'setAutoFocusTransferOnDisposal$Z', function (value) {
-this.autoFocusTransferOnDisposal = value;
+this.autoFocusTransferOnDisposal=value;
 });
 
 Clazz_newMeth(C$, 'isAutoFocusTransferOnDisposal', function () {
@@ -3368,7 +3368,7 @@ Clazz_newMeth(C$, 'addPropChangeListenerComp$java_beans_PropertyChangeListener',
 if (listener == null ) {
 return;
 }if (this.changeSupport == null ) {
-this.changeSupport = Clazz_new_((I$[29]||$incl$(29)).c$$O,[this]);
+this.changeSupport=Clazz_new_((I$[29]||$incl$(29)).c$$O,[this]);
 }this.changeSupport.addPropertyChangeListener$java_beans_PropertyChangeListener(listener);
 }});
 
@@ -3395,7 +3395,7 @@ Clazz_newMeth(C$, 'addPropChangeListComp$S$java_beans_PropertyChangeListener', f
 if (listener == null ) {
 return;
 }if (this.changeSupport == null ) {
-this.changeSupport = Clazz_new_((I$[29]||$incl$(29)).c$$O,[this]);
+this.changeSupport=Clazz_new_((I$[29]||$incl$(29)).c$$O,[this]);
 }this.changeSupport.addPropertyChangeListener$S$java_beans_PropertyChangeListener(propertyName, listener);
 }});
 
@@ -3416,7 +3416,7 @@ return Clazz_array((I$[27]||$incl$(27)), [0]);
 Clazz_newMeth(C$, 'firePropertyChange$S$O$O', function (propertyName, oldValue, newValue) {
 var changeSupport;
 {
-changeSupport = this.changeSupport;
+changeSupport=this.changeSupport;
 }if (changeSupport == null  || (oldValue != null  && newValue != null   && oldValue.equals$O(newValue) ) ) {
 return;
 }changeSupport.firePropertyChange$S$O$O(propertyName, oldValue, newValue);
@@ -3474,7 +3474,7 @@ return;
 
 Clazz_newMeth(C$, 'setComponentOrientation$java_awt_ComponentOrientation', function (o) {
 var oldValue = this.componentOrientation;
-this.componentOrientation = o;
+this.componentOrientation=o;
 this.firePropertyChange$S$O$O("componentOrientation", oldValue, o);
 this.invalidateIfValid();
 });
@@ -3521,7 +3521,7 @@ var cls = obj.getClass();
 while (cls != null ){
 if (cls.getName().equals$O(className)) {
 return true;
-}cls = cls.getSuperclass();
+}cls=cls.getSuperclass();
 }
 return false;
 }, 1);
@@ -3533,9 +3533,9 @@ return cont == null  || cont.isValid()  || cont.getLayout() == null  ;
 
 Clazz_newMeth(C$, 'getLocationOnWindow', function () {
 var curLocation = this.getLocation();
-for (var parent = this.getContainer(); parent != null  && !(Clazz_instanceOf(parent, "java.awt.Window")) ; parent = parent.getContainer()) {
-curLocation.x = curLocation.x+(parent.getX());
-curLocation.y = curLocation.y+(parent.getY());
+for (var parent = this.getContainer(); parent != null  && !(Clazz_instanceOf(parent, "java.awt.Window")) ; parent=parent.getContainer()) {
+curLocation.x+=parent.getX();
+curLocation.y+=parent.getY();
 }
 return curLocation;
 });
@@ -3616,7 +3616,7 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:01:49
+//Created 2018-05-24 08:45:06
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.util.Locale']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "ComponentOrientation");
 C$.LEFT_TO_RIGHT = null;
@@ -3657,7 +3657,7 @@ return C$.LEFT_TO_RIGHT;
 Clazz_newMeth(C$, 'getOrientation$java_util_ResourceBundle', function (bdl) {
 var result = null;
 try {
-result = bdl.getObject$S("Orientation");
+result=bdl.getObject$S("Orientation");
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.Exception")){
 } else {
@@ -3665,20 +3665,20 @@ throw e;
 }
 }
 if (result == null ) {
-result = C$.getOrientation$java_util_Locale(bdl.getLocale());
+result=C$.getOrientation$java_util_Locale(bdl.getLocale());
 }if (result == null ) {
-result = C$.getOrientation$java_util_Locale((I$[1]||$incl$(1)).getDefault());
+result=C$.getOrientation$java_util_Locale((I$[1]||$incl$(1)).getDefault());
 }return result;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$I', function (value) {
 C$.$init$.apply(this);
-this.orientation = value;
+this.orientation=value;
 }, 1);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:49
+//Created 2018-05-24 08:45:07
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Component','java.awt.Insets','javajs.util.Lst','java.awt.Toolkit','java.awt.event.ContainerEvent','java.awt.Dimension',['java.awt.GraphicsCallback','.PaintCallback'],['java.awt.GraphicsCallback','.PaintAllCallback'],['java.awt.GraphicsCallback','.PaintHeavyweightComponentsCallback'],'java.awt.AWTEventMulticaster','java.awt.event.ContainerListener',['java.awt.Container','.MouseEventTargetFilter'],'java.awt.LightweightDispatcher','java.awt.event.MouseEvent','java.awt.event.MouseWheelEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Container", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -3719,7 +3719,7 @@ this.numOfLWComponents = 0;
 
 Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
-this.children = Clazz_new_((I$[3]||$incl$(3)));
+this.children=Clazz_new_((I$[3]||$incl$(3)));
 }, 1);
 
 Clazz_newMeth(C$, 'initializeFocusTraversalKeys', function () {
@@ -3770,7 +3770,7 @@ return this.addImpl$java_awt_Component$O$I(comp, null, index);
 
 Clazz_newMeth(C$, 'checkAddToSelf$java_awt_Component', function (comp) {
 if (Clazz_instanceOf(comp, "java.awt.Container")) {
-for (var cn = this; cn != null ; cn = cn.parent) {
+for (var cn = this; cn != null ; cn=cn.parent) {
 if (cn === comp ) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["adding container\'s parent to itself"]);
 }}
@@ -3792,7 +3792,7 @@ this.layoutMgr.removeLayoutComponent$java_awt_Component(comp);
 }this.adjustListeningChildren$J$I(32768, -comp.numListening$J(32768));
 this.adjustListeningChildren$J$I(65536, -comp.numListening$J(65536));
 this.adjustDescendants$I(-(comp.countHierarchyMembers()));
-comp.parent = null;
+comp.parent=null;
 this.children.removeItemAt$I(index);
 this.invalidateIfValid();
 } else {
@@ -3877,7 +3877,7 @@ if (index == -1) {
 this.children.add$TE(comp);
 } else {
 this.children.add$I$TE(index, comp);
-}comp.parent = this;
+}comp.parent=this;
 this.adjustListeningChildren$J$I(32768, comp.numListening$J(32768));
 this.adjustListeningChildren$J$I(65536, comp.numListening$J(65536));
 this.adjustDescendants$I(comp.countHierarchyMembers());
@@ -3949,7 +3949,7 @@ throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["illegal
 this.children.add$TE(comp);
 } else {
 this.children.add$I$TE(index, comp);
-}comp.parent = this;
+}comp.parent=this;
 this.adjustListeningChildren$J$I(32768, comp.numListening$J(32768));
 this.adjustListeningChildren$J$I(65536, comp.numListening$J(65536));
 this.adjustDescendants$I(comp.countHierarchyMembers());
@@ -3985,7 +3985,7 @@ this.layoutMgr.removeLayoutComponent$java_awt_Component(comp);
 }this.adjustListeningChildren$J$I(32768, -comp.numListening$J(32768));
 this.adjustListeningChildren$J$I(65536, -comp.numListening$J(65536));
 this.adjustDescendants$I(-(comp.countHierarchyMembers()));
-comp.parent = null;
+comp.parent=null;
 this.children.removeItemAt$I(index);
 this.invalidateIfValid();
 if (this.containerListener != null  || (this.eventMask & 2) != 0  || (I$[4]||$incl$(4)).enabledOnToolkit$J(2) ) {
@@ -4015,7 +4015,7 @@ if (this.peer != null ) {
 comp.removeNotify();
 }if (this.layoutMgr != null ) {
 this.layoutMgr.removeLayoutComponent$java_awt_Component(comp);
-}comp.parent = null;
+}comp.parent=null;
 if (this.containerListener != null  || (this.eventMask & 2) != 0  || (I$[4]||$incl$(4)).enabledOnToolkit$J(2) ) {
 var e = Clazz_new_((I$[5]||$incl$(5)).c$$java_awt_Component$I$java_awt_Component,[this, 301, comp]);
 this.dispatchEvent$java_awt_AWTEvent(e);
@@ -4039,15 +4039,15 @@ return superListening;
 Clazz_newMeth(C$, 'adjustListeningChildren$J$I', function (mask, num) {
 if (num == 0) return;
 if ((mask & 32768) != 0) {
-this.listeningChildren = this.listeningChildren+(num);
+this.listeningChildren+=num;
 }if ((mask & 65536) != 0) {
-this.listeningBoundsChildren = this.listeningBoundsChildren+(num);
+this.listeningBoundsChildren+=num;
 }this.adjustListeningChildrenOnParent$J$I(mask, num);
 });
 
 Clazz_newMeth(C$, 'adjustDescendants$I', function (num) {
 if (num == 0) return;
-this.descendantsCount = this.descendantsCount+(num);
+this.descendantsCount+=num;
 this.adjustDecendantsOnParent$I(num);
 });
 
@@ -4077,7 +4077,7 @@ return 0;
 Clazz_newMeth(C$, 'createHierarchyEvents$I$java_awt_Component$java_awt_Container$J$Z', function (id, changed, changedParent, changeFlags, enabledOnToolkit) {
 var listeners = p$.getListenersCount$I$Z.apply(this, [id, enabledOnToolkit]);
 for (var count = listeners, i = 0; count > 0; i++) {
-count = count-(this.children.get$I(i).createHierarchyEvents$I$java_awt_Component$java_awt_Container$J$Z(id, changed, changedParent, changeFlags, enabledOnToolkit));
+count-=this.children.get$I(i).createHierarchyEvents$I$java_awt_Component$java_awt_Container$J$Z(id, changed, changedParent, changeFlags, enabledOnToolkit);
 }
 return listeners + this.createHierEventsComp$I$java_awt_Component$java_awt_Container$J$Z(id, changed, changedParent, changeFlags, enabledOnToolkit);
 });
@@ -4087,7 +4087,7 @@ if (this.children.isEmpty()) {
 return;
 }var listeners = p$.getListenersCount$I$Z.apply(this, [id, enabledOnToolkit]);
 for (var count = listeners, i = 0; count > 0; i++) {
-count = count-(this.children.get$I(i).createHierarchyEvents$I$java_awt_Component$java_awt_Container$J$Z(id, this, this.parent, changeFlags, enabledOnToolkit));
+count-=this.children.get$I(i).createHierarchyEvents$I$java_awt_Component$java_awt_Container$J$Z(id, this, this.parent, changeFlags, enabledOnToolkit);
 }
 });
 
@@ -4096,7 +4096,7 @@ return this.layoutMgr;
 });
 
 Clazz_newMeth(C$, 'setLayout$java_awt_LayoutManager', function (mgr) {
-this.layoutMgr = mgr;
+this.layoutMgr=mgr;
 this.invalidateIfValid();
 });
 
@@ -4120,11 +4120,11 @@ lm.invalidateLayout$java_awt_Container(this);
 Clazz_newMeth(C$, 'validate', function () {
 if (!this.isValid()) {
 {
-if (this.peer == null ) this.peer = this.getToolkit().createComponent$java_awt_Component(this);
+if (this.peer == null ) this.peer=this.getToolkit().createComponent$java_awt_Component(this);
 var n = this.children.size();
 if (!this.isValid() && this.peer != null   && n > 0 ) {
 var p = null;
-if (Clazz_instanceOf(this.peer, "java.awt.peer.ContainerPeer")) p = this.peer;
+if (Clazz_instanceOf(this.peer, "java.awt.peer.ContainerPeer")) p=this.peer;
 if (p != null ) p.beginValidate();
 this.validateTree();
 if (p != null ) {
@@ -4190,8 +4190,8 @@ Clazz_newMeth(C$, 'preferredSize', function () {
 var dim = this.prefSize;
 if (dim == null  || !(this.isPreferredSizeSet() || this.isValid() ) ) {
 {
-this.prefSize = (this.layoutMgr != null ) ? this.layoutMgr.preferredLayoutSize$java_awt_Container(this) : this.prefSizeComp();
-dim = this.prefSize;
+this.prefSize=(this.layoutMgr != null ) ? this.layoutMgr.preferredLayoutSize$java_awt_Container(this) : this.prefSizeComp();
+dim=this.prefSize;
 }}return (dim == null  ? null : Clazz_new_((I$[6]||$incl$(6)).c$$java_awt_Dimension,[dim]));
 });
 
@@ -4199,8 +4199,8 @@ Clazz_newMeth(C$, 'getMinimumSize', function () {
 var dim = this.minSize;
 if (dim == null  || !(this.isMinimumSizeSet() || this.isValid() ) ) {
 {
-this.minSize = (this.layoutMgr != null ) ? this.layoutMgr.minimumLayoutSize$java_awt_Container(this) : this.minimumSize();
-dim = this.minSize;
+this.minSize=(this.layoutMgr != null ) ? this.layoutMgr.minimumLayoutSize$java_awt_Container(this) : this.minimumSize();
+dim=this.minSize;
 }}if (dim != null ) {
 return Clazz_new_((I$[6]||$incl$(6)).c$$java_awt_Dimension,[dim]);
 } else {
@@ -4213,10 +4213,10 @@ if (dim == null  || !(this.isMaximumSizeSet() || this.isValid() ) ) {
 {
 if (Clazz_instanceOf(this.layoutMgr, "java.awt.LayoutManager2")) {
 var lm = this.layoutMgr;
-this.maxSize = lm.maximumLayoutSize$java_awt_Container(this);
+this.maxSize=lm.maximumLayoutSize$java_awt_Container(this);
 } else {
-this.maxSize = this.getMaxSizeComp();
-}dim = this.maxSize;
+this.maxSize=this.getMaxSizeComp();
+}dim=this.maxSize;
 }}if (dim != null ) {
 return Clazz_new_((I$[6]||$incl$(6)).c$$java_awt_Dimension,[dim]);
 } else {
@@ -4228,9 +4228,9 @@ var xAlign;
 if (Clazz_instanceOf(this.layoutMgr, "java.awt.LayoutManager2")) {
 {
 var lm = this.layoutMgr;
-xAlign = lm.getLayoutAlignmentX$java_awt_Container(this);
+xAlign=lm.getLayoutAlignmentX$java_awt_Container(this);
 }} else {
-xAlign = this.getAlignmentXComp();
+xAlign=this.getAlignmentXComp();
 }return xAlign;
 });
 
@@ -4239,9 +4239,9 @@ var yAlign;
 if (Clazz_instanceOf(this.layoutMgr, "java.awt.LayoutManager2")) {
 {
 var lm = this.layoutMgr;
-yAlign = lm.getLayoutAlignmentY$java_awt_Container(this);
+yAlign=lm.getLayoutAlignmentY$java_awt_Container(this);
 }} else {
-yAlign = this.getAlignmentYComp();
+yAlign=this.getAlignmentYComp();
 }return yAlign;
 });
 
@@ -4273,14 +4273,14 @@ if (this.isShowing()) {
 Clazz_newMeth(C$, 'addContainerListener$java_awt_event_ContainerListener', function (l) {
 if (l == null ) {
 return;
-}this.containerListener = (I$[10]||$incl$(10)).add$java_awt_event_ContainerListener$java_awt_event_ContainerListener(this.containerListener, l);
-this.newEventsOnly = true;
+}this.containerListener=(I$[10]||$incl$(10)).add$java_awt_event_ContainerListener$java_awt_event_ContainerListener(this.containerListener, l);
+this.newEventsOnly=true;
 });
 
 Clazz_newMeth(C$, 'removeContainerListener$java_awt_event_ContainerListener', function (l) {
 if (l == null ) {
 return;
-}this.containerListener = (I$[10]||$incl$(10)).remove$java_awt_event_ContainerListener$java_awt_event_ContainerListener(this.containerListener, l);
+}this.containerListener=(I$[10]||$incl$(10)).remove$java_awt_event_ContainerListener$java_awt_event_ContainerListener(this.containerListener, l);
 });
 
 Clazz_newMeth(C$, 'getContainerListeners', function () {
@@ -4290,7 +4290,7 @@ return (this.getListeners$Class(Clazz_getClass((I$[11]||$incl$(11)),['componentA
 Clazz_newMeth(C$, 'getListeners$Class', function (listenerType) {
 var l = null;
 if (listenerType === Clazz_getClass((I$[11]||$incl$(11)),['componentAdded$java_awt_event_ContainerEvent','componentRemoved$java_awt_event_ContainerEvent']) ) {
-l = this.containerListener;
+l=this.containerListener;
 } else {
 return this.getListenersComp$Class(listenerType);
 }return (I$[10]||$incl$(10)).getListeners$java_util_EventListener$Class(l, listenerType);
@@ -4358,7 +4358,7 @@ return p$.getMouseEventTarget$I$I$Z$java_awt_Container_EventTargetFilter$Z.apply
 Clazz_newMeth(C$, 'getMouseEventTarget$I$I$Z$java_awt_Container_EventTargetFilter$Z', function (x, y, includeSelf, filter, searchHeavyweights) {
 var comp = null;
 if (comp == null  || comp === this  ) {
-comp = p$.getMouseEventTargetImpl$I$I$Z$java_awt_Container_EventTargetFilter$Z$Z.apply(this, [x, y, includeSelf, filter, false, searchHeavyweights]);
+comp=p$.getMouseEventTargetImpl$I$I$Z$java_awt_Container_EventTargetFilter$Z$Z.apply(this, [x, y, includeSelf, filter, false, searchHeavyweights]);
 }return comp;
 });
 
@@ -4378,8 +4378,8 @@ return comp;
 }}}}
 var isPeerOK;
 var isMouseOverMe;
-isPeerOK = includeSelf;
-isMouseOverMe = this.contains$I$I(x, y);
+isPeerOK=includeSelf;
+isMouseOverMe=this.contains$I$I(x, y);
 if (isMouseOverMe && isPeerOK && filter.accept$java_awt_Component(this)  ) {
 return this;
 }return null;
@@ -4445,7 +4445,7 @@ this.children.get$I(i).addNotify();
 }});
 
 Clazz_newMeth(C$, 'setDispatcher', function () {
-this.dispatcher = Clazz_new_((I$[13]||$incl$(13)).c$$java_awt_Container,[this]);
+this.dispatcher=Clazz_new_((I$[13]||$incl$(13)).c$$java_awt_Container,[this]);
 });
 
 Clazz_newMeth(C$, 'removeNotify', function () {
@@ -4458,18 +4458,18 @@ comp.setAutoFocusTransferOnDisposal$Z(true);
 }}
 if (this.dispatcher != null ) {
 this.dispatcher.dispose();
-this.dispatcher = null;
+this.dispatcher=null;
 }this.removeNotifyComp();
 });
 
 Clazz_newMeth(C$, 'isAncestorOf$java_awt_Component', function (c) {
 var p;
-if (c == null  || ((p = c.getParent()) == null ) ) {
+if (c == null  || ((p=c.getParent()) == null ) ) {
 return false;
 }while (p != null ){
 if (p === this ) {
 return true;
-}p = p.getParent();
+}p=p.getParent();
 }
 return false;
 });
@@ -4507,7 +4507,7 @@ return false;
 Clazz_newMeth(C$, 'isParentOf$java_awt_Component', function (comp) {
 {
 while (comp != null  && comp !== this   && !(Clazz_instanceOf(comp, "java.awt.Window")) ){
-comp = comp.getParent();
+comp=comp.getParent();
 }
 return (comp === this );
 }});
@@ -4529,8 +4529,8 @@ return this.focusCycleRoot;
 Clazz_newMeth(C$, 'setFocusTraversalPolicyProvider$Z', function (provider) {
 var oldProvider;
 {
-oldProvider = this.focusTraversalPolicyProvider;
-this.focusTraversalPolicyProvider = provider;
+oldProvider=this.focusTraversalPolicyProvider;
+this.focusTraversalPolicyProvider=provider;
 }this.firePropertyChange$S$Z$Z("focusTraversalPolicyProvider", oldProvider, provider);
 });
 
@@ -4580,15 +4580,15 @@ throw Clazz_new_(Clazz_load('java.lang.IllegalStateException').c$$S,["Peer does 
 }var addHW = 0;
 var addLW = 0;
 if (Clazz_instanceOf(c, "java.awt.Container")) {
-addLW = (c).numOfLWComponents;
-addHW = (c).numOfHWComponents;
+addLW=(c).numOfLWComponents;
+addHW=(c).numOfHWComponents;
 }if (c.isLightweight()) {
 addLW++;
 } else {
 addHW++;
-}for (var cont = this; cont != null ; cont = cont.getContainer()) {
-cont.numOfLWComponents = cont.numOfLWComponents+(addLW);
-cont.numOfHWComponents = cont.numOfHWComponents+(addHW);
+}for (var cont = this; cont != null ; cont=cont.getContainer()) {
+cont.numOfLWComponents+=addLW;
+cont.numOfHWComponents+=addHW;
 }
 });
 
@@ -4598,15 +4598,15 @@ throw Clazz_new_(Clazz_load('java.lang.IllegalStateException').c$$S,["Peer does 
 }var subHW = 0;
 var subLW = 0;
 if (Clazz_instanceOf(c, "java.awt.Container")) {
-subLW = (c).numOfLWComponents;
-subHW = (c).numOfHWComponents;
+subLW=(c).numOfLWComponents;
+subHW=(c).numOfHWComponents;
 }if (c.isLightweight()) {
 subLW++;
 } else {
 subHW++;
-}for (var cont = this; cont != null ; cont = cont.getContainer()) {
-cont.numOfLWComponents = cont.numOfLWComponents-(subLW);
-cont.numOfHWComponents = cont.numOfHWComponents-(subHW);
+}for (var cont = this; cont != null ; cont=cont.getContainer()) {
+cont.numOfLWComponents-=subLW;
+cont.numOfHWComponents-=subHW;
 }
 });
 ;
@@ -4636,7 +4636,7 @@ return (comp.eventMask & 32) != 0 || (comp.eventMask & 16) != 0  || (comp.eventM
 });
 })()
 })();
-//Created 2018-05-15 01:01:49
+//Created 2018-05-24 08:45:07
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newClass(P$, "Dimension", null, 'java.awt.geom.Dimension2D');
 
@@ -4662,8 +4662,8 @@ C$.c$$I$I.apply(this, [d.width, d.height]);
 
 Clazz_newMeth(C$, 'c$$I$I', function (width, height) {
 Clazz_super_(C$, this,1);
-this.width = width;
-this.height = height;
+this.width=width;
+this.height=height;
 }, 1);
 
 Clazz_newMeth(C$, 'getWidth', function () {
@@ -4679,18 +4679,18 @@ return Clazz_new_(C$.c$$I$I,[this.width, this.height]);
 });
 
 Clazz_newMeth(C$, 'setSize$java_awt_Dimension', function (d) {
-this.width = d.width;
-this.height = d.height;
+this.width=d.width;
+this.height=d.height;
 });
 
 Clazz_newMeth(C$, 'setSize$I$I', function (width, height) {
-this.width = width;
-this.height = height;
+this.width=width;
+this.height=height;
 });
 
 Clazz_newMeth(C$, 'setSize$D$D', function (width, height) {
-this.width = (Math.ceil(width)|0);
-this.height = (Math.ceil(height)|0);
+this.width=(Math.ceil(width)|0);
+this.height=(Math.ceil(height)|0);
 });
 
 Clazz_newMeth(C$, 'equals$O', function (obj) {
@@ -4709,28 +4709,28 @@ Clazz_newMeth(C$, 'toString', function () {
 return this.getClass().getName() + "[width=" + this.width + ",height=" + this.height + "]" ;
 });
 })();
-//Created 2018-05-15 01:01:50
+//Created 2018-05-24 08:45:08
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "ActionListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:56
+//Created 2018-05-24 08:45:17
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "AdjustmentListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:56
+//Created 2018-05-24 08:45:17
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "AWTEventListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:56
+//Created 2018-05-24 08:45:17
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newClass(P$, "ComponentEvent", null, 'java.awt.AWTEvent');
 
@@ -4759,59 +4759,59 @@ var typeStr;
 var b = (this.source != null  ? (this.source).getBounds() : null);
 switch (this.id) {
 case 102:
-typeStr = "COMPONENT_SHOWN";
+typeStr="COMPONENT_SHOWN";
 break;
 case 103:
-typeStr = "COMPONENT_HIDDEN";
+typeStr="COMPONENT_HIDDEN";
 break;
 case 100:
-typeStr = "COMPONENT_MOVED (" + b.x + "," + b.y + " " + b.width + "x" + b.height + ")" ;
+typeStr="COMPONENT_MOVED (" + b.x + "," + b.y + " " + b.width + "x" + b.height + ")" ;
 break;
 case 101:
-typeStr = "COMPONENT_RESIZED (" + b.x + "," + b.y + " " + b.width + "x" + b.height + ")" ;
+typeStr="COMPONENT_RESIZED (" + b.x + "," + b.y + " " + b.width + "x" + b.height + ")" ;
 break;
 default:
-typeStr = "unknown type";
+typeStr="unknown type";
 }
 return typeStr;
 });
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:17
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "ComponentListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:17
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "ContainerListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:17
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "FocusListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:17
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "HierarchyBoundsListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:18
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "HierarchyListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:18
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[['java.lang.StringBuilder','java.awt.Toolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "InputEvent", null, 'java.awt.event.ComponentEvent');
 
@@ -4831,9 +4831,9 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$$java_awt_Component$I$J$I', function (source, id, when, modifiers) {
 C$.superclazz.c$$java_awt_Component$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.when = when;
-this.modifiers = modifiers;
-this.canAccessSystemClipboard = false;
+this.when=when;
+this.modifiers=modifiers;
+this.canAccessSystemClipboard=false;
 }, 1);
 
 Clazz_newMeth(C$, 'c$', function () {
@@ -4879,7 +4879,7 @@ if (this.bdata && this.bdata.jqevent) { this.bdata.jqevent.stopPropagation();
 this.bdata.jqevent.preventDefault();
 }
 }
-this.consumed = true;
+this.consumed=true;
 });
 
 Clazz_newMeth(C$, 'isConsumed', function () {
@@ -4917,14 +4917,14 @@ buf.setLength$I(buf.length$() - 1);
 }return buf.toString();
 }, 1);
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:18
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "InputMethodListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:18
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newClass(P$, "InvocationEvent", null, 'java.awt.AWTEvent', 'java.awt.ActiveEvent');
 
@@ -4957,10 +4957,10 @@ C$.c$$O$I$Runnable$O$Z.apply(this, [source, 1200, runnable, notifier, catchThrow
 Clazz_newMeth(C$, 'c$$O$I$Runnable$O$Z', function (source, id, runnable, notifier, catchThrowables) {
 C$.superclazz.c$$O$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.runnable = runnable;
-this.notifier = notifier;
-this.catchExceptions = catchThrowables;
-this.when = System.currentTimeMillis();
+this.runnable=runnable;
+this.notifier=notifier;
+this.catchExceptions=catchThrowables;
+this.when=System.currentTimeMillis();
 }, 1);
 
 Clazz_newMeth(C$, 'dispatch', function () {
@@ -4969,8 +4969,8 @@ try {
 this.runnable.run();
 } catch (t) {
 if (Clazz_instanceOf(t, "java.lang.Exception")) {
-this.exception = t;
-}this.throwable = t;
+this.exception=t;
+}this.throwable=t;
 }
 } else {
 this.runnable.run();
@@ -4995,31 +4995,31 @@ Clazz_newMeth(C$, 'paramString', function () {
 var typeStr;
 switch (this.id) {
 case 1200:
-typeStr = "INVOCATION_DEFAULT";
+typeStr="INVOCATION_DEFAULT";
 break;
 default:
-typeStr = "unknown type";
+typeStr="unknown type";
 }
 return typeStr + ",runnable=" + this.runnable + ",notifier=" + this.notifier + ",catchExceptions=" + this.catchExceptions + ",when=" + this.when ;
 });
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:18
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "ItemListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:18
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "KeyListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:18
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[['java.awt.Point','java.lang.StringBuilder','java.awt.Toolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "MouseEvent", null, 'java.awt.event.InputEvent');
 var p$=C$.prototype;
@@ -5058,13 +5058,13 @@ Clazz_newMeth(C$, 'c$$java_awt_Component$I$J$I$I$I$I$Z$I', function (source, id,
 C$.c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I.apply(this, [source, id, when, modifiers, x, y, 0, 0, clickCount, popupTrigger, button]);
 var eventLocationOnScreen = Clazz_new_((I$[1]||$incl$(1)).c$$I$I,[0, 0]);
 try {
-eventLocationOnScreen = source.getLocationOnScreen();
-this.xAbs = eventLocationOnScreen.x + x;
-this.yAbs = eventLocationOnScreen.y + y;
+eventLocationOnScreen=source.getLocationOnScreen();
+this.xAbs=eventLocationOnScreen.x + x;
+this.yAbs=eventLocationOnScreen.y + y;
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.awt.IllegalComponentStateException")){
-this.xAbs = 0;
-this.yAbs = 0;
+this.xAbs=0;
+this.yAbs=0;
 } else {
 throw e;
 }
@@ -5078,15 +5078,15 @@ C$.c$$java_awt_Component$I$J$I$I$I$I$Z$I.apply(this, [source, id, when, modifier
 Clazz_newMeth(C$, 'c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I', function (source, id, when, modifiers, x, y, xAbs, yAbs, clickCount, popupTrigger, button) {
 C$.superclazz.c$$java_awt_Component$I$J$I.apply(this, [source, id, when, modifiers]);
 C$.$init$.apply(this);
-this.x = x;
-this.y = y;
-this.xAbs = xAbs;
-this.yAbs = yAbs;
-this.clickCount = clickCount;
-this.popupTrigger = popupTrigger;
+this.x=x;
+this.y=y;
+this.xAbs=xAbs;
+this.yAbs=yAbs;
+this.clickCount=clickCount;
+this.popupTrigger=popupTrigger;
 if (button < 0 || button > 3 ) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["Invalid button value"]);
-}this.button = button;
+}this.button=button;
 if ((this.getModifiers() != 0) && (this.getModifiersEx() == 0) ) {
 p$.setNewModifiers.apply(this, []);
 } else if ((this.getModifiers() == 0) && (this.getModifiersEx() != 0 || button != 0 ) ) {
@@ -5105,14 +5105,14 @@ Clazz_newMeth(C$, 'getPoint', function () {
 var x;
 var y;
 {
-x = this.x;
-y = this.y;
+x=this.x;
+y=this.y;
 }return Clazz_new_((I$[1]||$incl$(1)).c$$I$I,[x, y]);
 });
 
 Clazz_newMeth(C$, 'translatePoint$I$I', function (x, y) {
-this.x = this.x+(x);
-this.y = this.y+(y);
+this.x+=x;
+this.y+=y;
 });
 
 Clazz_newMeth(C$, 'getClickCount', function () {
@@ -5197,123 +5197,123 @@ return "unknown type";
 
 Clazz_newMeth(C$, 'setNewModifiers', function () {
 if ((this.modifiers & 16) != 0) {
-this.modifiers = this.modifiers|(1024);
+this.modifiers|=1024;
 }if ((this.modifiers & 8) != 0) {
-this.modifiers = this.modifiers|(2048);
+this.modifiers|=2048;
 }if ((this.modifiers & 4) != 0) {
-this.modifiers = this.modifiers|(4096);
+this.modifiers|=4096;
 }if (this.id == 501 || this.id == 502  || this.id == 500 ) {
 if ((this.modifiers & 16) != 0) {
-this.button = 1;
-this.modifiers = this.modifiers&(-13);
+this.button=1;
+this.modifiers&=-13;
 if (this.id != 501) {
-this.modifiers = this.modifiers&(-1025);
+this.modifiers&=-1025;
 }} else if ((this.modifiers & 8) != 0) {
-this.button = 2;
-this.modifiers = this.modifiers&(-21);
+this.button=2;
+this.modifiers&=-21;
 if (this.id != 501) {
-this.modifiers = this.modifiers&(-2049);
+this.modifiers&=-2049;
 }} else if ((this.modifiers & 4) != 0) {
-this.button = 3;
-this.modifiers = this.modifiers&(-25);
+this.button=3;
+this.modifiers&=-25;
 if (this.id != 501) {
-this.modifiers = this.modifiers&(-4097);
+this.modifiers&=-4097;
 }}}if ((this.modifiers & 8) != 0) {
-this.modifiers = this.modifiers|(512);
+this.modifiers|=512;
 }if ((this.modifiers & 4) != 0) {
-this.modifiers = this.modifiers|(256);
+this.modifiers|=256;
 }if ((this.modifiers & 1) != 0) {
-this.modifiers = this.modifiers|(64);
+this.modifiers|=64;
 }if ((this.modifiers & 2) != 0) {
-this.modifiers = this.modifiers|(128);
+this.modifiers|=128;
 }if ((this.modifiers & 32) != 0) {
-this.modifiers = this.modifiers|(8192);
+this.modifiers|=8192;
 }});
 
 Clazz_newMeth(C$, 'setOldModifiers', function () {
 if (this.id == 501 || this.id == 502  || this.id == 500 ) {
 switch (this.button) {
 case 1:
-this.modifiers = this.modifiers|(16);
+this.modifiers|=16;
 break;
 case 2:
-this.modifiers = this.modifiers|(8);
+this.modifiers|=8;
 break;
 case 3:
-this.modifiers = this.modifiers|(4);
+this.modifiers|=4;
 break;
 }
 } else {
 if ((this.modifiers & 1024) != 0) {
-this.modifiers = this.modifiers|(16);
+this.modifiers|=16;
 }if ((this.modifiers & 2048) != 0) {
-this.modifiers = this.modifiers|(8);
+this.modifiers|=8;
 }if ((this.modifiers & 4096) != 0) {
-this.modifiers = this.modifiers|(4);
+this.modifiers|=4;
 }}if ((this.modifiers & 512) != 0) {
-this.modifiers = this.modifiers|(8);
+this.modifiers|=8;
 }if ((this.modifiers & 256) != 0) {
-this.modifiers = this.modifiers|(4);
+this.modifiers|=4;
 }if ((this.modifiers & 64) != 0) {
-this.modifiers = this.modifiers|(1);
+this.modifiers|=1;
 }if ((this.modifiers & 128) != 0) {
-this.modifiers = this.modifiers|(2);
+this.modifiers|=2;
 }if ((this.modifiers & 8192) != 0) {
-this.modifiers = this.modifiers|(32);
+this.modifiers|=32;
 }});
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:18
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "MouseListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:18
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "MouseMotionListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:18
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "MouseWheelListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:18
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "TextListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:19
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "WindowFocusListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:19
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "WindowListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:19
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newInterface(P$, "WindowStateListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:19
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Component',['java.awt.EventFilter','.FilterAction'],'sun.awt.SunToolkit','javajs.util.Lst','java.awt.EventDispatchThread$1','swingjs.JSToolkit',['java.awt.EventDispatchThread','.StopDispatchEvent'],'Thread',['java.awt.EventDispatchThread','.HierarchyEventFilter'],'sun.awt.AWTAutoShutdown']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "EventDispatchThread", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -5346,7 +5346,7 @@ return true;
 });
 
 Clazz_newMeth(C$, 'isLooping', function () {
-return (this.doDispatch && (this.cond == null  || this.cond.evaluate() ) && !this.isInterrupted()   || (this.doDispatch = false) );
+return (this.doDispatch && (this.cond == null  || this.cond.evaluate() ) && !this.isInterrupted()   || (this.doDispatch=false) );
 });
 
 Clazz_newMeth(C$, 'myLoop', function () {
@@ -5372,7 +5372,7 @@ var mode = 1;
 f = function() {r.run();me.run1$I(mode)};
 }
 (I$[6]||$incl$(6)).dispatch$O$I$I(f, 0, 0);
-return (this.doDispatch = false);
+return (this.doDispatch=false);
 });
 
 Clazz_newMeth(C$, 'getDelayMillis', function () {
@@ -5392,7 +5392,7 @@ Clazz_newMeth(C$, 'onException$Exception', function (e) {
 Clazz_newMeth(C$, 'c$$ThreadGroup$S$java_awt_EventQueue', function (group, name, queue) {
 C$.superclazz.c$$ThreadGroup$S.apply(this, [group, name]);
 C$.$init$.apply(this);
-this.theQueue = queue;
+this.theQueue=queue;
 }, 1);
 
 Clazz_newMeth(C$, 'stopDispatchingImpl$Z', function (wait) {
@@ -5440,9 +5440,9 @@ this.pumpEventsForFilter$I$java_awt_Conditional$java_awt_EventFilter(id, cond, C
 });
 
 Clazz_newMeth(C$, 'pumpEventsForFilter$I$java_awt_Conditional$java_awt_EventFilter', function (id, cond, filter) {
-this.filter = filter;
-this.cond = cond;
-this.id = id;
+this.filter=filter;
+this.cond=cond;
+this.id=id;
 this.run1$I(0);
 });
 
@@ -5456,7 +5456,7 @@ f = function() {r.run();me.run1$I(mode) };
 });
 
 Clazz_newMeth(C$, 'finish', function () {
-this.doDispatch = false;
+this.doDispatch=false;
 this.removeEventFilter$java_awt_EventFilter(this.filter);
 {
 if (this.theQueue.getDispatchThread() === this ) {
@@ -5472,7 +5472,7 @@ if (!this.eventFilters.contains$O(filter)) {
 if (Clazz_instanceOf(filter, "java.awt.ModalEventFilter")) {
 var newFilter = filter;
 var k = 0;
-for (k = 0; k < this.eventFilters.size(); k++) {
+for (k=0; k < this.eventFilters.size(); k++) {
 var f = this.eventFilters.get$I(k);
 if (Clazz_instanceOf(f, "java.awt.ModalEventFilter")) {
 var cf = f;
@@ -5498,15 +5498,15 @@ try {
 var event;
 var eventOK;
 do {
-event = (id == -1) ? this.theQueue.getNextEvent() : this.theQueue.getNextEventForID$I(id);
-if (event == null ) return (this.doDispatch = false);
-eventOK = true;
+event=(id == -1) ? this.theQueue.getNextEvent() : this.theQueue.getNextEventForID$I(id);
+if (event == null ) return (this.doDispatch=false);
+eventOK=true;
 {
 for (var i = this.eventFilters.size() - 1; i >= 0; i--) {
 var f = this.eventFilters.get$I(i);
 var accept = f.acceptEvent$java_awt_AWTEvent(event);
 if (accept === (I$[2]||$incl$(2)).REJECT ) {
-eventOK = false;
+eventOK=false;
 break;
 } else if (accept === (I$[2]||$incl$(2)).ACCEPT_IMMEDIATELY ) {
 break;
@@ -5515,17 +5515,17 @@ break;
 event.consume();
 }} while (eventOK == false );
 this.theQueue.dispatchEvent$java_awt_AWTEvent(event);
-return this.doDispatch = true;
+return this.doDispatch=true;
 } catch (e$$) {
 if (Clazz_exceptionOf(e$$, "java.lang.ThreadDeath")){
 var death = e$$;
 {
-return this.doDispatch = false;
+return this.doDispatch=false;
 }
 } else if (Clazz_exceptionOf(e$$, "java.lang.InterruptedException")){
 var interruptedException = e$$;
 {
-return this.doDispatch = false;
+return this.doDispatch=false;
 }
 } else {
 var e = e$$;
@@ -5534,7 +5534,7 @@ p$.processException$Throwable$Z.apply(this, [e, this.modalFiltersCount > 0]);
 }
 }
 }
-return this.doDispatch = true;
+return this.doDispatch=true;
 });
 
 Clazz_newMeth(C$, 'processException$Throwable$Z', function (e, isModal) {
@@ -5576,7 +5576,7 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz_newMeth(C$, 'dispatch', function () {
-this.this$0.doDispatch = false;
+this.this$0.doDispatch=false;
 });
 })()
 ;
@@ -5597,7 +5597,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$java_awt_Component', function (modalComponent) {
 C$.$init$.apply(this);
-this.modalComponent = modalComponent;
+this.modalComponent=modalComponent;
 }, 1);
 
 Clazz_newMeth(C$, 'acceptEvent$java_awt_AWTEvent', function (event) {
@@ -5618,9 +5618,9 @@ var modalExcluded = false;
 if (Clazz_instanceOf(this.modalComponent, "java.awt.Container")) {
 while (c !== this.modalComponent  && c != null  ){
 if ((Clazz_instanceOf(c, "java.awt.Window")) && ((I$[3]||$incl$(3)).isModalExcluded$java_awt_Window(c)) ) {
-modalExcluded = true;
+modalExcluded=true;
 break;
-}c = c.getParent();
+}c=c.getParent();
 }
 }if (!modalExcluded && (c !== this.modalComponent ) ) {
 return (I$[2]||$incl$(2)).REJECT;
@@ -5632,7 +5632,7 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:50
+//Created 2018-05-24 08:45:08
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "EventFilter");
 ;
@@ -5653,7 +5653,7 @@ var $vals=[];
 Clazz_newMeth(C$, 'values', function() { return $vals }, 1);
 })()
 })();
-//Created 2018-05-15 01:01:50
+//Created 2018-05-24 08:45:08
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Queue','Thread','sun.awt.SunToolkit','sun.awt.AWTAutoShutdown','java.awt.EventQueueItem','swingjs.JSToolkit','java.awt.Toolkit','sun.awt.AppContext','java.awt.EventDispatchThread','java.awt.event.InvocationEvent','java.lang.Error']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "EventQueue");
 C$.threadInitNumber = 0;
@@ -5698,7 +5698,7 @@ eventQueue.removeSourceEvents$O$Z(source, removeAllEvents);
 Clazz_newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
 for (var i = 0; i < 4; i++) {
-this.queues[i] = Clazz_new_((I$[1]||$incl$(1)));
+this.queues[i]=Clazz_new_((I$[1]||$incl$(1)));
 }
 }, 1);
 
@@ -5708,7 +5708,7 @@ this.postEventPrivate$java_awt_AWTEvent(event);
 });
 
 Clazz_newMeth(C$, 'postEventPrivate$java_awt_AWTEvent', function (theEvent) {
-theEvent.isPosted = true;
+theEvent.isPosted=true;
 {
 if (this.dispatchThread == null  && this.nextQueue == null  ) {
 if (theEvent.getSource() === (I$[4]||$incl$(4)).getInstance() ) {
@@ -5744,13 +5744,13 @@ return;
 p$.cacheEQItem$java_awt_EventQueueItem.apply(this, [newItem]);
 if (this.queues[priority].head == null ) {
 var shouldNotify = p$.noEvents.apply(this, []);
-this.queues[priority].head = this.queues[priority].tail = newItem;
+this.queues[priority].head=this.queues[priority].tail=newItem;
 if (shouldNotify) {
 if (theEvent.getSource() !== (I$[4]||$incl$(4)).getInstance() ) {
 (I$[4]||$incl$(4)).getInstance().notifyThreadBusy$Thread(this.dispatchThread);
 }}} else {
-this.queues[priority].tail.next = newItem;
-this.queues[priority].tail = newItem;
+this.queues[priority].tail.next=newItem;
+this.queues[priority].tail=newItem;
 }});
 
 Clazz_newMeth(C$, 'coalescePaintEvent$java_awt_event_PaintEvent', function (e) {
@@ -5764,7 +5764,7 @@ return false;
 if (index != -1 && cache[index] != null  ) {
 var merged = p$.mergePaintEvents$java_awt_event_PaintEvent$java_awt_event_PaintEvent.apply(this, [e, cache[index].event]);
 if (merged != null ) {
-cache[index].event = merged;
+cache[index].event=merged;
 return true;
 }}return false;
 });
@@ -5785,7 +5785,7 @@ if (cache == null ) {
 return false;
 }var index = C$.eventToCacheIndex$java_awt_AWTEvent(e);
 if (index != -1 && cache[index] != null  ) {
-cache[index].event = e;
+cache[index].event=e;
 return true;
 }return false;
 });
@@ -5796,23 +5796,23 @@ if (cache == null ) {
 return false;
 }var index = C$.eventToCacheIndex$java_awt_AWTEvent(e);
 if (index != -1 && cache[index] != null  ) {
-e = e.coalesceEvents$sun_awt_PeerEvent(cache[index].event);
+e=e.coalesceEvents$sun_awt_PeerEvent(cache[index].event);
 if (e != null ) {
-cache[index].event = e;
+cache[index].event=e;
 return true;
 } else {
-cache[index] = null;
+cache[index]=null;
 }}return false;
 });
 
 Clazz_newMeth(C$, 'coalesceOtherEvent$java_awt_AWTEvent$I', function (e, priority) {
 var id = e.getID();
 var source = e.getSource();
-for (var entry = this.queues[priority].head; entry != null ; entry = entry.next) {
+for (var entry = this.queues[priority].head; entry != null ; entry=entry.next) {
 if (entry.event.getSource() === source  && entry.id == id ) {
 var coalescedEvent = source.coalesceEvents$java_awt_AWTEvent$java_awt_AWTEvent(entry.event, e);
 if (coalescedEvent != null ) {
-entry.event = coalescedEvent;
+entry.event=coalescedEvent;
 return true;
 }}}
 return false;
@@ -5837,8 +5837,8 @@ var index = C$.eventToCacheIndex$java_awt_AWTEvent(entry.event);
 if (index != -1 && Clazz_instanceOf(entry.event.getSource(), "java.awt.Component") ) {
 var source = entry.event.getSource();
 if (source.eventCache == null ) {
-source.eventCache = Clazz_array((I$[5]||$incl$(5)), [5]);
-}source.eventCache[index] = entry;
+source.eventCache=Clazz_array((I$[5]||$incl$(5)), [5]);
+}source.eventCache[index]=entry;
 }});
 
 Clazz_newMeth(C$, 'uncacheEQItem$java_awt_EventQueueItem', function (entry) {
@@ -5847,7 +5847,7 @@ if (index != -1 && Clazz_instanceOf(entry.event.getSource(), "java.awt.Component
 var source = entry.event.getSource();
 if (source.eventCache == null ) {
 return;
-}source.eventCache[index] = null;
+}source.eventCache[index]=null;
 }});
 
 Clazz_newMeth(C$, 'eventToCacheIndex$java_awt_AWTEvent', function (e) {
@@ -5879,9 +5879,9 @@ Clazz_newMeth(C$, 'getNextEvent', function () {
 for (var i = 3; i >= 0; i--) {
 if (this.queues[i].head != null ) {
 var entry = this.queues[i].head;
-this.queues[i].head = entry.next;
+this.queues[i].head=entry.next;
 if (entry.next == null ) {
-this.queues[i].tail = null;
+this.queues[i].tail=null;
 }p$.uncacheEQItem$java_awt_EventQueueItem.apply(this, [entry]);
 return entry.event;
 }}
@@ -5893,20 +5893,20 @@ Clazz_newMeth(C$, 'getNextEventForID$I', function (id) {
 (I$[3]||$incl$(3)).flushPendingEvents();
 {
 for (var i = 0; i < 4; i++) {
-for (var entry = this.queues[i].head, prev = null; entry != null ; prev = entry, entry = entry.next) {
+for (var entry = this.queues[i].head, prev = null; entry != null ; prev=entry, entry=entry.next) {
 if (entry.id == id) {
 if (prev == null ) {
-this.queues[i].head = entry.next;
+this.queues[i].head=entry.next;
 } else {
-prev.next = entry.next;
+prev.next=entry.next;
 }if (this.queues[i].tail === entry ) {
-this.queues[i].tail = prev;
+this.queues[i].tail=prev;
 }p$.uncacheEQItem$java_awt_EventQueueItem.apply(this, [entry]);
 return entry.event;
 }}
 }
-this.waitForID = id;
-this.waitForID = 0;
+this.waitForID=id;
+this.waitForID=0;
 }return null;
 });
 
@@ -5921,7 +5921,7 @@ return null;
 Clazz_newMeth(C$, 'peekEvent$I', function (id) {
 for (var i = 3; i >= 0; i--) {
 var q = this.queues[i].head;
-for (; q != null ; q = q.next) {
+for (; q != null ; q=q.next) {
 if (q.id == id) {
 return q.event;
 }}
@@ -5939,7 +5939,7 @@ p$.dispatchEventImpl$java_awt_AWTEvent$O$Z.apply(this, [event, src, true]);
 });
 
 Clazz_newMeth(C$, 'dispatchEventImpl$java_awt_AWTEvent$O$Z', function (event, src, andWait) {
-event.isPosted = true;
+event.isPosted=true;
 if (Clazz_instanceOf(event, "java.awt.ActiveEvent")) {
 p$.setCurrentEventAndMostRecentTimeImpl$java_awt_AWTEvent.apply(this, [event]);
 (I$[6]||$incl$(6)).dispatchEvent$java_awt_AWTEvent$O$Z(event, null, andWait);
@@ -5984,10 +5984,10 @@ throw ie;
 }
 }
 }
-newEventQueue.previousQueue = this;
+newEventQueue.previousQueue=this;
 }if (this.dispatchThread != null ) {
 this.dispatchThread.stopDispatchingLater();
-}this.nextQueue = newEventQueue;
+}this.nextQueue=newEventQueue;
 var appContext = (I$[8]||$incl$(8)).getAppContext();
 if (appContext.get$O((I$[8]||$incl$(8)).EVENT_QUEUE_KEY) === this ) {
 appContext.put$O$O((I$[8]||$incl$(8)).EVENT_QUEUE_KEY, newEventQueue);
@@ -6002,7 +6002,7 @@ this.nextQueue.pop();
 return;
 }if (this.previousQueue == null ) {
 throw Clazz_new_(Clazz_load('java.util.EmptyStackException'));
-}this.previousQueue.nextQueue = null;
+}this.previousQueue.nextQueue=null;
 while (this.peekEvent() != null ){
 try {
 this.previousQueue.postEventPrivate$java_awt_AWTEvent(this.getNextEvent());
@@ -6016,7 +6016,7 @@ throw ie;
 var appContext = (I$[8]||$incl$(8)).getAppContext();
 if (appContext.get$O((I$[8]||$incl$(8)).EVENT_QUEUE_KEY) === this ) {
 appContext.put$O$O((I$[8]||$incl$(8)).EVENT_QUEUE_KEY, this.previousQueue);
-}this.previousQueue = null;
+}this.previousQueue=null;
 }}var dt = this.dispatchThread;
 if (dt != null ) {
 dt.stopDispatching();
@@ -6031,12 +6031,12 @@ Clazz_newMeth(C$, 'initDispatchThread', function () {
 if (this.dispatchThread == null ) {
 var t = Clazz_new_((I$[9]||$incl$(9)).c$$ThreadGroup$S$java_awt_EventQueue,[this.threadGroup, this.name, this]);
 (I$[4]||$incl$(4)).getInstance().notifyThreadBusy$Thread(t);
-this.dispatchThread = t;
+this.dispatchThread=t;
 this.dispatchThread.start();
 }}});
 
 Clazz_newMeth(C$, 'detachDispatchThread', function () {
-this.dispatchThread = null;
+this.dispatchThread=null;
 });
 
 Clazz_newMeth(C$, 'getDispatchThread', function () {
@@ -6056,15 +6056,15 @@ if (Clazz_instanceOf(entry.event, "java.awt.SequencedEvent")) {
 }if (Clazz_instanceOf(entry.event, "java.awt.SentEvent")) {
 (entry.event).dispose();
 }if (prev == null ) {
-this.queues[i].head = entry.next;
+this.queues[i].head=entry.next;
 } else {
-prev.next = entry.next;
+prev.next=entry.next;
 }p$.uncacheEQItem$java_awt_EventQueueItem.apply(this, [entry]);
 } else {
-prev = entry;
-}entry = entry.next;
+prev=entry;
+}entry=entry.next;
 }
-this.queues[i].tail = prev;
+this.queues[i].tail=prev;
 }
 }});
 
@@ -6075,21 +6075,21 @@ Clazz_newMeth(C$, 'setCurrentEventAndMostRecentTime$java_awt_AWTEvent', function
 Clazz_newMeth(C$, 'setCurrentEventAndMostRecentTimeImpl$java_awt_AWTEvent', function (e) {
 if ((I$[6]||$incl$(6)).isDispatchThread()) {
 return;
-}this.currentEvent = e;
+}this.currentEvent=e;
 var mostRecentEventTime2 = -9223372036854775808;
 if (Clazz_instanceOf(e, "java.awt.event.InputEvent")) {
 var ie = e;
-mostRecentEventTime2 = ie.getWhen();
+mostRecentEventTime2=ie.getWhen();
 } else if (Clazz_instanceOf(e, "java.awt.event.InputMethodEvent")) {
 var ime = e;
-mostRecentEventTime2 = ime.getWhen();
+mostRecentEventTime2=ime.getWhen();
 } else if (Clazz_instanceOf(e, "java.awt.event.ActionEvent")) {
 var ae = e;
-mostRecentEventTime2 = ae.getWhen();
+mostRecentEventTime2=ae.getWhen();
 } else if (Clazz_instanceOf(e, "java.awt.event.InvocationEvent")) {
 var ie = e;
-mostRecentEventTime2 = ie.getWhen();
-}this.mostRecentEventTime = Math.max(this.mostRecentEventTime, mostRecentEventTime2);
+mostRecentEventTime2=ie.getWhen();
+}this.mostRecentEventTime=Math.max(this.mostRecentEventTime, mostRecentEventTime2);
 });
 
 Clazz_newMeth(C$, 'invokeLater$Runnable', function (runnable) {
@@ -6128,7 +6128,7 @@ throw e;
 this.initDispatchThread();
 }}});
 })();
-//Created 2018-05-15 01:01:50
+//Created 2018-05-24 08:45:08
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newClass(P$, "EventQueueItem");
 
@@ -6144,13 +6144,13 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$java_awt_AWTEvent', function (evt) {
 C$.$init$.apply(this);
-this.event = evt;
-this.id = evt.getID();
+this.event=evt;
+this.id=evt.getID();
 }, 1);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:50
+//Created 2018-05-24 08:45:08
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Dimension']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "FlowLayout", null, null, ['java.awt.LayoutManager', 'java.io.Serializable']);
 var p$=C$.prototype;
@@ -6180,8 +6180,8 @@ C$.c$$I$I$I.apply(this, [align, 5, 5]);
 
 Clazz_newMeth(C$, 'c$$I$I$I', function (align, hgap, vgap) {
 C$.$init$.apply(this);
-this.hgap = hgap;
-this.vgap = vgap;
+this.hgap=hgap;
+this.vgap=vgap;
 this.setAlignment$I(align);
 }, 1);
 
@@ -6190,16 +6190,16 @@ return this.newAlign;
 });
 
 Clazz_newMeth(C$, 'setAlignment$I', function (align) {
-this.newAlign = align;
+this.newAlign=align;
 switch (align) {
 case 3:
-this.align = 0;
+this.align=0;
 break;
 case 4:
-this.align = 2;
+this.align=2;
 break;
 default:
-this.align = align;
+this.align=align;
 break;
 }
 });
@@ -6209,7 +6209,7 @@ return this.hgap;
 });
 
 Clazz_newMeth(C$, 'setHgap$I', function (hgap) {
-this.hgap = hgap;
+this.hgap=hgap;
 });
 
 Clazz_newMeth(C$, 'getVgap', function () {
@@ -6217,11 +6217,11 @@ return this.vgap;
 });
 
 Clazz_newMeth(C$, 'setVgap$I', function (vgap) {
-this.vgap = vgap;
+this.vgap=vgap;
 });
 
 Clazz_newMeth(C$, 'setAlignOnBaseline$Z', function (alignOnBaseline) {
-this.alignOnBaseline = alignOnBaseline;
+this.alignOnBaseline=alignOnBaseline;
 });
 
 Clazz_newMeth(C$, 'getAlignOnBaseline', function () {
@@ -6246,23 +6246,23 @@ for (var i = 0; i < nmembers; i++) {
 var m = target.getComponent$I(i);
 if (m.isVisible()) {
 var d = m.getPreferredSize();
-dim.height = Math.max(dim.height, d.height);
+dim.height=Math.max(dim.height, d.height);
 if (firstVisibleComponent) {
-firstVisibleComponent = false;
+firstVisibleComponent=false;
 } else {
-dim.width = dim.width+(this.hgap);
-}dim.width = dim.width+(d.width);
+dim.width+=this.hgap;
+}dim.width+=d.width;
 if (useBaseline) {
 var baseline = m.getBaseline$I$I(d.width, d.height);
 if (baseline >= 0) {
-maxAscent = Math.max(maxAscent, baseline);
-maxDescent = Math.max(maxDescent, d.height - baseline);
+maxAscent=Math.max(maxAscent, baseline);
+maxDescent=Math.max(maxDescent, d.height - baseline);
 }}}}
 if (useBaseline) {
-dim.height = Math.max(maxAscent + maxDescent, dim.height);
+dim.height=Math.max(maxAscent + maxDescent, dim.height);
 }var insets = target.getInsets();
-dim.width = dim.width+(insets.left + insets.right + this.hgap * 2 );
-dim.height = dim.height+(insets.top + insets.bottom + this.vgap * 2 );
+dim.width+=insets.left + insets.right + this.hgap * 2 ;
+dim.height+=insets.top + insets.bottom + this.vgap * 2 ;
 return dim;
 }});
 
@@ -6278,41 +6278,41 @@ for (var i = 0; i < nmembers; i++) {
 var m = target.getComponent$I(i);
 if (m.visible) {
 var d = m.getMinimumSize();
-dim.height = Math.max(dim.height, d.height);
+dim.height=Math.max(dim.height, d.height);
 if (firstVisibleComponent) {
-firstVisibleComponent = false;
+firstVisibleComponent=false;
 } else {
-dim.width = dim.width+(this.hgap);
-}dim.width = dim.width+(d.width);
+dim.width+=this.hgap;
+}dim.width+=d.width;
 if (useBaseline) {
 var baseline = m.getBaseline$I$I(d.width, d.height);
 if (baseline >= 0) {
-maxAscent = Math.max(maxAscent, baseline);
-maxDescent = Math.max(maxDescent, dim.height - baseline);
+maxAscent=Math.max(maxAscent, baseline);
+maxDescent=Math.max(maxDescent, dim.height - baseline);
 }}}}
 if (useBaseline) {
-dim.height = Math.max(maxAscent + maxDescent, dim.height);
+dim.height=Math.max(maxAscent + maxDescent, dim.height);
 }var insets = target.getInsets();
-dim.width = dim.width+(insets.left + insets.right + this.hgap * 2 );
-dim.height = dim.height+(insets.top + insets.bottom + this.vgap * 2 );
+dim.width+=insets.left + insets.right + this.hgap * 2 ;
+dim.height+=insets.top + insets.bottom + this.vgap * 2 ;
 return dim;
 }});
 
 Clazz_newMeth(C$, 'moveComponents$java_awt_Container$I$I$I$I$I$I$Z$Z$IA$IA', function (target, x, y, width, height, rowStart, rowEnd, ltr, useBaseline, ascent, descent) {
 switch (this.newAlign) {
 case 0:
-x = x+(ltr ? 0 : width);
+x+=ltr ? 0 : width;
 break;
 case 1:
-x = x+((width/2|0));
+x+=(width/2|0);
 break;
 case 2:
-x = x+(ltr ? width : 0);
+x+=ltr ? width : 0;
 break;
 case 3:
 break;
 case 4:
-x = x+(width);
+x+=width;
 break;
 }
 var maxAscent = 0;
@@ -6324,26 +6324,26 @@ for (var i = rowStart; i < rowEnd; i++) {
 var m = target.getComponent$I(i);
 if (m.visible) {
 if (ascent[i] >= 0) {
-maxAscent = Math.max(maxAscent, ascent[i]);
-maxDescent = Math.max(maxDescent, descent[i]);
+maxAscent=Math.max(maxAscent, ascent[i]);
+maxDescent=Math.max(maxDescent, descent[i]);
 } else {
-nonbaselineHeight = Math.max(m.getHeight(), nonbaselineHeight);
+nonbaselineHeight=Math.max(m.getHeight(), nonbaselineHeight);
 }}}
-height = Math.max(maxAscent + maxDescent, nonbaselineHeight);
-baselineOffset = ((height - maxAscent - maxDescent )/2|0);
+height=Math.max(maxAscent + maxDescent, nonbaselineHeight);
+baselineOffset=((height - maxAscent - maxDescent )/2|0);
 }for (var i = rowStart; i < rowEnd; i++) {
 var m = target.getComponent$I(i);
 if (m.isVisible()) {
 var cy;
 if (useBaseline && ascent[i] >= 0 ) {
-cy = y + baselineOffset + maxAscent  - ascent[i];
+cy=y + baselineOffset + maxAscent  - ascent[i];
 } else {
-cy = y + ((height - m.height)/2|0);
+cy=y + ((height - m.height)/2|0);
 }if (ltr) {
 m.setLocation$I$I(x, cy);
 } else {
 m.setLocation$I$I(target.width - x - m.width , cy);
-}x = x+(m.width + this.hgap);
+}x+=m.width + this.hgap;
 }}
 return height;
 });
@@ -6362,8 +6362,8 @@ var useBaseline = this.getAlignOnBaseline();
 var ascent = null;
 var descent = null;
 if (useBaseline) {
-ascent = Clazz_array(Integer.TYPE, [nmembers]);
-descent = Clazz_array(Integer.TYPE, [nmembers]);
+ascent=Clazz_array(Integer.TYPE, [nmembers]);
+descent=Clazz_array(Integer.TYPE, [nmembers]);
 }for (var i = 0; i < nmembers; i++) {
 var m = target.getComponent$I(i);
 if (m.isVisible()) {
@@ -6372,21 +6372,21 @@ m.setSize$I$I(d.width, d.height);
 if (useBaseline) {
 var baseline = m.getBaseline$I$I(d.width, d.height);
 if (baseline >= 0) {
-ascent[i] = baseline;
-descent[i] = d.height - baseline;
+ascent[i]=baseline;
+descent[i]=d.height - baseline;
 } else {
-ascent[i] = -1;
+ascent[i]=-1;
 }}if ((x == 0) || ((x + d.width) <= maxwidth) ) {
 if (x > 0) {
-x = x+(this.hgap);
-}x = x+(d.width);
-rowh = Math.max(rowh, d.height);
+x+=this.hgap;
+}x+=d.width;
+rowh=Math.max(rowh, d.height);
 } else {
-rowh = p$.moveComponents$java_awt_Container$I$I$I$I$I$I$Z$Z$IA$IA.apply(this, [target, insets.left + this.hgap, y, maxwidth - x, rowh, start, i, ltr, useBaseline, ascent, descent]);
-x = d.width;
-y = y+(this.vgap + rowh);
-rowh = d.height;
-start = i;
+rowh=p$.moveComponents$java_awt_Container$I$I$I$I$I$I$Z$Z$IA$IA.apply(this, [target, insets.left + this.hgap, y, maxwidth - x, rowh, start, i, ltr, useBaseline, ascent, descent]);
+x=d.width;
+y+=this.vgap + rowh;
+rowh=d.height;
+start=i;
 }}}
 p$.moveComponents$java_awt_Container$I$I$I$I$I$I$Z$Z$IA$IA.apply(this, [target, insets.left + this.hgap, y, maxwidth - x, rowh, start, nmembers, ltr, useBaseline, ascent, descent]);
 }});
@@ -6395,25 +6395,25 @@ Clazz_newMeth(C$, 'toString', function () {
 var str = "";
 switch (this.align) {
 case 0:
-str = ",align=left";
+str=",align=left";
 break;
 case 1:
-str = ",align=center";
+str=",align=center";
 break;
 case 2:
-str = ",align=right";
+str=",align=right";
 break;
 case 3:
-str = ",align=leading";
+str=",align=leading";
 break;
 case 4:
-str = ",align=trailing";
+str=",align=trailing";
 break;
 }
 return this.getClass().getName() + "[hgap=" + this.hgap + ",vgap=" + this.vgap + str + "]" ;
 });
 })();
-//Created 2018-05-15 01:01:50
+//Created 2018-05-24 08:45:08
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['swingjs.JSFontMetrics','java.awt.geom.AffineTransform','swingjs.JSToolkit',['java.text.AttributedCharacterIterator','.Attribute'],'java.awt.font.TextAttribute','javajs.util.SB',['java.awt.geom.Rectangle2D','.Float']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Font");
 
@@ -6434,28 +6434,28 @@ Clazz_newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz_newMeth(C$, 'getFontMetrics', function () {
-if (this.fm == null ) ((this.fm = Clazz_new_((I$[1]||$incl$(1))))).setFont$java_awt_Font(this);
+if (this.fm == null ) ((this.fm=Clazz_new_((I$[1]||$incl$(1))))).setFont$java_awt_Font(this);
 return this.fm;
 });
 
 Clazz_newMeth(C$, 'setFontMetrics$java_awt_FontMetrics', function (fm) {
-this.fm = fm;
+this.fm=fm;
 });
 
 Clazz_newMeth(C$, 'c$$S$I$I', function (name, style, size) {
 C$.$init$.apply(this);
-this.name = (name != null ) ? name : "Default";
-this.style = (style & -4) == 0 ? style : 0;
-this.size = size;
-this.pointSize = size;
+this.name=(name != null ) ? name : "Default";
+this.style=(style & -4) == 0 ? style : 0;
+this.size=size;
+this.pointSize=size;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$java_awt_Font', function (font) {
 C$.$init$.apply(this);
-this.name = font.name;
-this.style = font.style;
-this.size = font.size;
-this.pointSize = font.pointSize;
+this.name=font.name;
+this.style=font.style;
+this.size=font.size;
+this.pointSize=font.pointSize;
 }, 1);
 
 Clazz_newMeth(C$, 'getTransform', function () {
@@ -6463,7 +6463,7 @@ return Clazz_new_((I$[2]||$incl$(2)));
 });
 
 Clazz_newMeth(C$, 'getFamily', function () {
-return (this.family == null  ? this.family = (I$[3]||$incl$(3)).getFontFamily$java_awt_Font(this) : this.family);
+return (this.family == null  ? this.family=(I$[3]||$incl$(3)).getFontFamily$java_awt_Font(this) : this.family);
 });
 
 Clazz_newMeth(C$, 'getName', function () {
@@ -6525,13 +6525,13 @@ var styleIndex = str.lastIndexOf(sepChar, sizeIndex - 1);
 var strlen = str.length$();
 if (sizeIndex > 0 && sizeIndex + 1 < strlen ) {
 try {
-fontSize = Integer.$valueOf(str.substring(sizeIndex + 1)).intValue();
+fontSize=Integer.$valueOf(str.substring(sizeIndex + 1)).intValue();
 if (fontSize <= 0) {
-fontSize = 12;
+fontSize=12;
 }} catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.NumberFormatException")){
-styleIndex = sizeIndex;
-sizeIndex = strlen;
+styleIndex=sizeIndex;
+sizeIndex=strlen;
 if (str.charAt(sizeIndex - 1) == sepChar) {
 sizeIndex--;
 }} else {
@@ -6539,37 +6539,37 @@ throw e;
 }
 }
 }if (styleIndex >= 0 && styleIndex + 1 < strlen ) {
-styleName = str.substring(styleIndex + 1, sizeIndex);
-styleName = styleName.toLowerCase();
+styleName=str.substring(styleIndex + 1, sizeIndex);
+styleName=styleName.toLowerCase();
 if (styleName.equals$O("bolditalic")) {
-fontStyle = 3;
+fontStyle=3;
 } else if (styleName.equals$O("italic")) {
-fontStyle = 2;
+fontStyle=2;
 } else if (styleName.equals$O("bold")) {
-fontStyle = 1;
+fontStyle=1;
 } else if (styleName.equals$O("plain")) {
-fontStyle = 0;
+fontStyle=0;
 } else {
-styleIndex = sizeIndex;
+styleIndex=sizeIndex;
 if (str.charAt(styleIndex - 1) == sepChar) {
 styleIndex--;
-}}fontName = str.substring(0, styleIndex);
+}}fontName=str.substring(0, styleIndex);
 } else {
 var fontEnd = strlen;
 if (styleIndex > 0) {
-fontEnd = styleIndex;
+fontEnd=styleIndex;
 } else if (sizeIndex > 0) {
-fontEnd = sizeIndex;
+fontEnd=sizeIndex;
 }if (fontEnd > 0 && str.charAt(fontEnd - 1) == sepChar ) {
 fontEnd--;
-}fontName = str.substring(0, fontEnd);
+}fontName=str.substring(0, fontEnd);
 }return Clazz_new_(C$.c$$S$I$I,[fontName, fontStyle, fontSize]);
 }, 1);
 
 Clazz_newMeth(C$, 'getFont$S$java_awt_Font', function (nm, font) {
 var str = null;
 try {
-str = System.getProperty(nm);
+str=System.getProperty(nm);
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.SecurityException")){
 } else {
@@ -6583,7 +6583,7 @@ return font;
 
 Clazz_newMeth(C$, 'hashCode', function () {
 if (this.hash == 0) {
-this.hash = this.name.hashCode() ^ this.style ^ this.size ;
+this.hash=this.name.hashCode() ^ this.style ^ this.size ;
 }return this.hash;
 });
 
@@ -6607,9 +6607,9 @@ throw e;
 Clazz_newMeth(C$, 'toString', function () {
 var strStyle;
 if (this.isBold()) {
-strStyle = this.isItalic() ? "bolditalic" : "bold";
+strStyle=this.isItalic() ? "bolditalic" : "bold";
 } else {
-strStyle = this.isItalic() ? "italic" : "plain";
+strStyle=this.isItalic() ? "italic" : "plain";
 }return this.getClass().getName() + "[family=" + this.getFamily() + ",name=" + this.name + ",style=" + strStyle + ",size=" + this.size + "]" ;
 });
 
@@ -6620,13 +6620,13 @@ return attributes;
 
 Clazz_newMeth(C$, 'deriveFont$I$F', function (style, sizePts) {
 var f = Clazz_new_(C$.c$$S$I$I,[this.name, style, ((sizePts + 0.5)|0)]);
-f.pointSize = sizePts;
+f.pointSize=sizePts;
 return f;
 });
 
 Clazz_newMeth(C$, 'deriveFont$F', function (sizePts) {
 var f = Clazz_new_(C$.c$$S$I$I,[this.name, this.style, ((sizePts + 0.5)|0)]);
-f.pointSize = sizePts;
+f.pointSize=sizePts;
 return f;
 });
 
@@ -6653,7 +6653,7 @@ return this.getStringBoundsStr$S$I$I(sb.toString(), 0, -1);
 });
 
 Clazz_newMeth(C$, 'getStringBoundsStr$S$I$I', function (s, i, j) {
-if (j >= i) s = s.substring(i, j);
+if (j >= i) s=s.substring(i, j);
 var fm = this.getFontMetrics();
 var dec = fm.getDescent();
 var asc = fm.getAscent();
@@ -6666,7 +6666,7 @@ Clazz_newMeth(C$, 'finalize', function () {
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:50
+//Created 2018-05-24 08:45:09
 (function(){var P$=Clazz_newPackage("java.awt.font"),I$=[['java.awt.geom.AffineTransform','java.awt.RenderingHints']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "FontRenderContext");
 
@@ -6683,21 +6683,21 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.defaulting = true;
+this.defaulting=true;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$java_awt_geom_AffineTransform$Z$Z', function (tx, isAntiAliased, usesFractionalMetrics) {
 C$.$init$.apply(this);
 if (tx != null  && !tx.isIdentity() ) {
-this.tx = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_geom_AffineTransform,[tx]);
+this.tx=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_geom_AffineTransform,[tx]);
 }}, 1);
 
 Clazz_newMeth(C$, 'c$$java_awt_geom_AffineTransform$O$O', function (tx, aaHint, fmHint) {
 C$.$init$.apply(this);
 if (tx != null  && !tx.isIdentity() ) {
-this.tx = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_geom_AffineTransform,[tx]);
-}this.aaHintValue = aaHint;
-this.fmHintValue = fmHint;
+this.tx=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_geom_AffineTransform,[tx]);
+}this.aaHintValue=aaHint;
+this.fmHintValue=fmHint;
 }, 1);
 
 Clazz_newMeth(C$, 'isTransformed', function () {
@@ -6775,15 +6775,15 @@ return rhs.getAntiAliasingHint() === this.getAntiAliasingHint()  && rhs.getFract
 Clazz_newMeth(C$, 'hashCode', function () {
 var hash = this.tx == null  ? 0 : this.tx.hashCode();
 if (this.defaulting) {
-hash = hash+(this.getAntiAliasingHint().hashCode());
-hash = hash+(this.getFractionalMetricsHint().hashCode());
+hash+=this.getAntiAliasingHint().hashCode();
+hash+=this.getFractionalMetricsHint().hashCode();
 } else {
-hash = hash+(this.aaHintValue.hashCode());
-hash = hash+(this.fmHintValue.hashCode());
+hash+=this.aaHintValue.hashCode();
+hash+=this.fmHintValue.hashCode();
 }return hash;
 });
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:19
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.font.FontRenderContext']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "FontMetrics");
 C$.DEFAULT_FRC = null;
@@ -6803,7 +6803,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$java_awt_Font', function (font) {
 C$.$init$.apply(this);
-this.font = font;
+this.font=font;
 }, 1);
 
 Clazz_newMeth(C$, 'getFont', function () {
@@ -6864,7 +6864,7 @@ return this.getClass().getName() + "[font=" + this.getFont() + "ascent=" + this.
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:51
+//Created 2018-05-24 08:45:09
 (function(){var P$=Clazz_newPackage("java.awt.geom"),I$=[['java.lang.InternalError',['java.awt.geom.Point2D','.Double'],['java.awt.geom.Point2D','.Float'],'javajs.util.AU',['java.awt.geom.Path2D','.Double']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AffineTransform", null, null, ['Cloneable', 'java.io.Serializable']);
 var p$=C$.prototype;
@@ -6891,76 +6891,76 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$D$D$D$D$D$D$I', function (m00, m10, m01, m11, m02, m12, state) {
 C$.$init$.apply(this);
-this.m00 = m00;
-this.m10 = m10;
-this.m01 = m01;
-this.m11 = m11;
-this.m02 = m02;
-this.m12 = m12;
-this.state = state;
-this.type = -1;
+this.m00=m00;
+this.m10=m10;
+this.m01=m01;
+this.m11=m11;
+this.m02=m02;
+this.m12=m12;
+this.state=state;
+this.type=-1;
 }, 1);
 
 Clazz_newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.m00 = this.m11 = 1.0;
+this.m00=this.m11=1.0;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$java_awt_geom_AffineTransform', function (Tx) {
 C$.$init$.apply(this);
-this.m00 = Tx.m00;
-this.m10 = Tx.m10;
-this.m01 = Tx.m01;
-this.m11 = Tx.m11;
-this.m02 = Tx.m02;
-this.m12 = Tx.m12;
-this.state = Tx.state;
-this.type = Tx.type;
+this.m00=Tx.m00;
+this.m10=Tx.m10;
+this.m01=Tx.m01;
+this.m11=Tx.m11;
+this.m02=Tx.m02;
+this.m12=Tx.m12;
+this.state=Tx.state;
+this.type=Tx.type;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$F$F$F$F$F$F', function (m00, m10, m01, m11, m02, m12) {
 C$.$init$.apply(this);
-this.m00 = m00;
-this.m10 = m10;
-this.m01 = m01;
-this.m11 = m11;
-this.m02 = m02;
-this.m12 = m12;
+this.m00=m00;
+this.m10=m10;
+this.m01=m01;
+this.m11=m11;
+this.m02=m02;
+this.m12=m12;
 this.updateState();
 }, 1);
 
 Clazz_newMeth(C$, 'c$$FA', function (flatmatrix) {
 C$.$init$.apply(this);
-this.m00 = flatmatrix[0];
-this.m10 = flatmatrix[1];
-this.m01 = flatmatrix[2];
-this.m11 = flatmatrix[3];
+this.m00=flatmatrix[0];
+this.m10=flatmatrix[1];
+this.m01=flatmatrix[2];
+this.m11=flatmatrix[3];
 if (flatmatrix.length > 5) {
-this.m02 = flatmatrix[4];
-this.m12 = flatmatrix[5];
+this.m02=flatmatrix[4];
+this.m12=flatmatrix[5];
 }this.updateState();
 }, 1);
 
 Clazz_newMeth(C$, 'c$$D$D$D$D$D$D', function (m00, m10, m01, m11, m02, m12) {
 C$.$init$.apply(this);
-this.m00 = m00;
-this.m10 = m10;
-this.m01 = m01;
-this.m11 = m11;
-this.m02 = m02;
-this.m12 = m12;
+this.m00=m00;
+this.m10=m10;
+this.m01=m01;
+this.m11=m11;
+this.m02=m02;
+this.m12=m12;
 this.updateState();
 }, 1);
 
 Clazz_newMeth(C$, 'c$$DA', function (flatmatrix) {
 C$.$init$.apply(this);
-this.m00 = flatmatrix[0];
-this.m10 = flatmatrix[1];
-this.m01 = flatmatrix[2];
-this.m11 = flatmatrix[3];
+this.m00=flatmatrix[0];
+this.m10=flatmatrix[1];
+this.m01=flatmatrix[2];
+this.m11=flatmatrix[3];
 if (flatmatrix.length > 5) {
-this.m02 = flatmatrix[4];
-this.m12 = flatmatrix[5];
+this.m02=flatmatrix[4];
+this.m12=flatmatrix[5];
 }this.updateState();
 }, 1);
 
@@ -7037,80 +7037,80 @@ switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-ret = 1;
+ret=1;
 case (6):
-if ((M0 = this.m00) * (M2 = this.m01) + (M3 = this.m10) * (M1 = this.m11) != 0 ) {
-this.type = 32;
+if ((M0=this.m00) * (M2=this.m01) + (M3=this.m10) * (M1=this.m11) != 0 ) {
+this.type=32;
 return;
-}sgn0 = (M0 >= 0.0 );
-sgn1 = (M1 >= 0.0 );
+}sgn0=(M0 >= 0.0 );
+sgn1=(M1 >= 0.0 );
 if (sgn0 == sgn1 ) {
 if (M0 != M1  || M2 != -M3  ) {
-ret = ret|(20);
+ret|=20;
 } else if (M0 * M1 - M2 * M3 != 1.0 ) {
-ret = ret|(18);
+ret|=18;
 } else {
-ret = ret|(16);
+ret|=16;
 }} else {
 if (M0 != -M1  || M2 != M3  ) {
-ret = ret|(84);
+ret|=84;
 } else if (M0 * M1 - M2 * M3 != 1.0 ) {
-ret = ret|(82);
+ret|=82;
 } else {
-ret = ret|(80);
+ret|=80;
 }}break;
 case (5):
-ret = 1;
+ret=1;
 case (4):
-sgn0 = ((M0 = this.m01) >= 0.0 );
-sgn1 = ((M1 = this.m10) >= 0.0 );
+sgn0=((M0=this.m01) >= 0.0 );
+sgn1=((M1=this.m10) >= 0.0 );
 if (sgn0 != sgn1 ) {
 if (M0 != -M1 ) {
-ret = ret|(12);
+ret|=12;
 } else if (M0 != 1.0  && M0 != -1.0  ) {
-ret = ret|(10);
+ret|=10;
 } else {
-ret = ret|(8);
+ret|=8;
 }} else {
 if (M0 == M1 ) {
-ret = ret|(74);
+ret|=74;
 } else {
-ret = ret|(76);
+ret|=76;
 }}break;
 case (3):
-ret = 1;
+ret=1;
 case (2):
-sgn0 = ((M0 = this.m00) >= 0.0 );
-sgn1 = ((M1 = this.m11) >= 0.0 );
+sgn0=((M0=this.m00) >= 0.0 );
+sgn1=((M1=this.m11) >= 0.0 );
 if (sgn0 == sgn1 ) {
 if (sgn0) {
 if (M0 == M1 ) {
-ret = ret|(2);
+ret|=2;
 } else {
-ret = ret|(4);
+ret|=4;
 }} else {
 if (M0 != M1 ) {
-ret = ret|(12);
+ret|=12;
 } else if (M0 != -1.0 ) {
-ret = ret|(10);
+ret|=10;
 } else {
-ret = ret|(8);
+ret|=8;
 }}} else {
 if (M0 == -M1 ) {
 if (M0 == 1.0  || M0 == -1.0  ) {
-ret = ret|(64);
+ret|=64;
 } else {
-ret = ret|(66);
+ret|=66;
 }} else {
-ret = ret|(68);
+ret|=68;
 }}break;
 case (1):
-ret = 1;
+ret=1;
 break;
 case (0):
 break;
 }
-this.type = ret;
+this.type=ret;
 });
 
 Clazz_newMeth(C$, 'getDeterminant', function () {
@@ -7136,33 +7136,33 @@ Clazz_newMeth(C$, 'updateState', function () {
 if (this.m01 == 0.0  && this.m10 == 0.0  ) {
 if (this.m00 == 1.0  && this.m11 == 1.0  ) {
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 0;
-this.type = 0;
+this.state=0;
+this.type=0;
 } else {
-this.state = 1;
-this.type = 1;
+this.state=1;
+this.type=1;
 }} else {
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 2;
-this.type = -1;
+this.state=2;
+this.type=-1;
 } else {
-this.state = 3;
-this.type = -1;
+this.state=3;
+this.type=-1;
 }}} else {
 if (this.m00 == 0.0  && this.m11 == 0.0  ) {
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 4;
-this.type = -1;
+this.state=4;
+this.type=-1;
 } else {
-this.state = 5;
-this.type = -1;
+this.state=5;
+this.type=-1;
 }} else {
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 6;
-this.type = -1;
+this.state=6;
+this.type=-1;
 } else {
-this.state = 7;
-this.type = -1;
+this.state=7;
+this.type=-1;
 }}}});
 
 Clazz_newMeth(C$, 'stateError', function () {
@@ -7170,13 +7170,13 @@ throw Clazz_new_((I$[1]||$incl$(1)).c$$S,["missing case in transform state switc
 });
 
 Clazz_newMeth(C$, 'getMatrix$DA', function (flatmatrix) {
-flatmatrix[0] = this.m00;
-flatmatrix[1] = this.m10;
-flatmatrix[2] = this.m01;
-flatmatrix[3] = this.m11;
+flatmatrix[0]=this.m00;
+flatmatrix[1]=this.m10;
+flatmatrix[2]=this.m01;
+flatmatrix[3]=this.m11;
 if (flatmatrix.length > 5) {
-flatmatrix[4] = this.m02;
-flatmatrix[5] = this.m12;
+flatmatrix[4]=this.m02;
+flatmatrix[5]=this.m12;
 }});
 
 Clazz_newMeth(C$, 'getScaleX', function () {
@@ -7208,108 +7208,108 @@ switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-this.m02 = tx * this.m00 + ty * this.m01 + this.m02;
-this.m12 = tx * this.m10 + ty * this.m11 + this.m12;
+this.m02=tx * this.m00 + ty * this.m01 + this.m02;
+this.m12=tx * this.m10 + ty * this.m11 + this.m12;
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 6;
+this.state=6;
 if (this.type != -1) {
-this.type = this.type-(1);
+this.type-=1;
 }}return;
 case (6):
-this.m02 = tx * this.m00 + ty * this.m01;
-this.m12 = tx * this.m10 + ty * this.m11;
+this.m02=tx * this.m00 + ty * this.m01;
+this.m12=tx * this.m10 + ty * this.m11;
 if (this.m02 != 0.0  || this.m12 != 0.0  ) {
-this.state = 7;
-this.type = this.type|(1);
+this.state=7;
+this.type|=1;
 }return;
 case (5):
-this.m02 = ty * this.m01 + this.m02;
-this.m12 = tx * this.m10 + this.m12;
+this.m02=ty * this.m01 + this.m02;
+this.m12=tx * this.m10 + this.m12;
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 4;
+this.state=4;
 if (this.type != -1) {
-this.type = this.type-(1);
+this.type-=1;
 }}return;
 case (4):
-this.m02 = ty * this.m01;
-this.m12 = tx * this.m10;
+this.m02=ty * this.m01;
+this.m12=tx * this.m10;
 if (this.m02 != 0.0  || this.m12 != 0.0  ) {
-this.state = 5;
-this.type = this.type|(1);
+this.state=5;
+this.type|=1;
 }return;
 case (3):
-this.m02 = tx * this.m00 + this.m02;
-this.m12 = ty * this.m11 + this.m12;
+this.m02=tx * this.m00 + this.m02;
+this.m12=ty * this.m11 + this.m12;
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 2;
+this.state=2;
 if (this.type != -1) {
-this.type = this.type-(1);
+this.type-=1;
 }}return;
 case (2):
-this.m02 = tx * this.m00;
-this.m12 = ty * this.m11;
+this.m02=tx * this.m00;
+this.m12=ty * this.m11;
 if (this.m02 != 0.0  || this.m12 != 0.0  ) {
-this.state = 3;
-this.type = this.type|(1);
+this.state=3;
+this.type|=1;
 }return;
 case (1):
-this.m02 = tx + this.m02;
-this.m12 = ty + this.m12;
+this.m02=tx + this.m02;
+this.m12=ty + this.m12;
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 0;
-this.type = 0;
+this.state=0;
+this.type=0;
 }return;
 case (0):
-this.m02 = tx;
-this.m12 = ty;
+this.m02=tx;
+this.m12=ty;
 if (tx != 0.0  || ty != 0.0  ) {
-this.state = 1;
-this.type = 1;
+this.state=1;
+this.type=1;
 }return;
 }
 });
 
 Clazz_newMeth(C$, 'rotate90', function () {
 var M0 = this.m00;
-this.m00 = this.m01;
-this.m01 = -M0;
-M0 = this.m10;
-this.m10 = this.m11;
-this.m11 = -M0;
+this.m00=this.m01;
+this.m01=-M0;
+M0=this.m10;
+this.m10=this.m11;
+this.m11=-M0;
 var state = C$.rot90conversion[this.state];
 if ((state & 6) == 2 && this.m00 == 1.0   && this.m11 == 1.0  ) {
-state = state-(2);
-}this.state = state;
-this.type = -1;
+state-=2;
+}this.state=state;
+this.type=-1;
 });
 
 Clazz_newMeth(C$, 'rotate180', function () {
-this.m00 = -this.m00;
-this.m11 = -this.m11;
+this.m00=-this.m00;
+this.m11=-this.m11;
 var state = this.state;
 if ((state & 4) != 0) {
-this.m01 = -this.m01;
-this.m10 = -this.m10;
+this.m01=-this.m01;
+this.m10=-this.m10;
 } else {
 if (this.m00 == 1.0  && this.m11 == 1.0  ) {
-this.state = state & -3;
+this.state=state & -3;
 } else {
-this.state = state | 2;
-}}this.type = -1;
+this.state=state | 2;
+}}this.type=-1;
 });
 
 Clazz_newMeth(C$, 'rotate270', function () {
 var M0 = this.m00;
-this.m00 = -this.m01;
-this.m01 = M0;
-M0 = this.m10;
-this.m10 = -this.m11;
-this.m11 = M0;
+this.m00=-this.m01;
+this.m01=M0;
+M0=this.m10;
+this.m10=-this.m11;
+this.m11=M0;
 var state = C$.rot90conversion[this.state];
 if ((state & 6) == 2 && this.m00 == 1.0   && this.m11 == 1.0  ) {
-state = state-(2);
-}this.state = state;
-this.type = -1;
+state-=2;
+}this.state=state;
+this.type=-1;
 });
 
 Clazz_newMeth(C$, 'rotate$D', function (theta) {
@@ -7325,14 +7325,14 @@ p$.rotate180.apply(this, []);
 } else if (cos != 1.0 ) {
 var M0;
 var M1;
-M0 = this.m00;
-M1 = this.m01;
-this.m00 = cos * M0 + sin * M1;
-this.m01 = -sin * M0 + cos * M1;
-M0 = this.m10;
-M1 = this.m11;
-this.m10 = cos * M0 + sin * M1;
-this.m11 = -sin * M0 + cos * M1;
+M0=this.m00;
+M1=this.m01;
+this.m00=cos * M0 + sin * M1;
+this.m01=-sin * M0 + cos * M1;
+M0=this.m10;
+M1=this.m11;
+this.m10=cos * M0 + sin * M1;
+this.m11=-sin * M0 + cos * M1;
 this.updateState();
 }}});
 
@@ -7357,14 +7357,14 @@ var sin = vecy / len;
 var cos = vecx / len;
 var M0;
 var M1;
-M0 = this.m00;
-M1 = this.m01;
-this.m00 = cos * M0 + sin * M1;
-this.m01 = -sin * M0 + cos * M1;
-M0 = this.m10;
-M1 = this.m11;
-this.m10 = cos * M0 + sin * M1;
-this.m11 = -sin * M0 + cos * M1;
+M0=this.m00;
+M1=this.m01;
+this.m00=cos * M0 + sin * M1;
+this.m01=-sin * M0 + cos * M1;
+M0=this.m10;
+M1=this.m11;
+this.m10=cos * M0 + sin * M1;
+this.m11=-sin * M0 + cos * M1;
 this.updateState();
 }});
 
@@ -7411,9 +7411,9 @@ p$.rotate270.apply(this, []);
 break;
 }
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = this.state&(-2);
+this.state&=-2;
 } else {
-this.state = this.state|(1);
+this.state|=1;
 }});
 
 Clazz_newMeth(C$, 'scale$D$D', function (sx, sy) {
@@ -7430,31 +7430,31 @@ case (4):
 this.m01 *= sy;
 this.m10 *= sx;
 if (this.m01 == 0  && this.m10 == 0  ) {
-state = state&(1);
+state&=1;
 if (this.m00 == 1.0  && this.m11 == 1.0  ) {
-this.type = (state == 0 ? 0 : 1);
+this.type=(state == 0 ? 0 : 1);
 } else {
-state = state|(2);
-this.type = -1;
-}this.state = state;
+state|=2;
+this.type=-1;
+}this.state=state;
 }return;
 case (3):
 case (2):
 this.m00 *= sx;
 this.m11 *= sy;
 if (this.m00 == 1.0  && this.m11 == 1.0  ) {
-this.state = (state = state&(1));
-this.type = (state == 0 ? 0 : 1);
+this.state=(state&=1);
+this.type=(state == 0 ? 0 : 1);
 } else {
-this.type = -1;
+this.type=-1;
 }return;
 case (1):
 case (0):
-this.m00 = sx;
-this.m11 = sy;
+this.m00=sx;
+this.m11=sy;
 if (sx != 1.0  || sy != 1.0  ) {
-this.state = state | 2;
-this.type = -1;
+this.state=state | 2;
+this.type=-1;
 }return;
 }
 });
@@ -7468,63 +7468,63 @@ case (7):
 case (6):
 var M0;
 var M1;
-M0 = this.m00;
-M1 = this.m01;
-this.m00 = M0 + M1 * shy;
-this.m01 = M0 * shx + M1;
-M0 = this.m10;
-M1 = this.m11;
-this.m10 = M0 + M1 * shy;
-this.m11 = M0 * shx + M1;
+M0=this.m00;
+M1=this.m01;
+this.m00=M0 + M1 * shy;
+this.m01=M0 * shx + M1;
+M0=this.m10;
+M1=this.m11;
+this.m10=M0 + M1 * shy;
+this.m11=M0 * shx + M1;
 this.updateState();
 return;
 case (5):
 case (4):
-this.m00 = this.m01 * shy;
-this.m11 = this.m10 * shx;
+this.m00=this.m01 * shy;
+this.m11=this.m10 * shx;
 if (this.m00 != 0.0  || this.m11 != 0.0  ) {
-this.state = state | 2;
-}this.type = -1;
+this.state=state | 2;
+}this.type=-1;
 return;
 case (3):
 case (2):
-this.m01 = this.m00 * shx;
-this.m10 = this.m11 * shy;
+this.m01=this.m00 * shx;
+this.m10=this.m11 * shy;
 if (this.m01 != 0.0  || this.m10 != 0.0  ) {
-this.state = state | 4;
-}this.type = -1;
+this.state=state | 4;
+}this.type=-1;
 return;
 case (1):
 case (0):
-this.m01 = shx;
-this.m10 = shy;
+this.m01=shx;
+this.m10=shy;
 if (this.m01 != 0.0  || this.m10 != 0.0  ) {
-this.state = state | 2 | 4 ;
-this.type = -1;
+this.state=state | 2 | 4 ;
+this.type=-1;
 }return;
 }
 });
 
 Clazz_newMeth(C$, 'setToIdentity', function () {
-this.m00 = this.m11 = 1.0;
-this.m10 = this.m01 = this.m02 = this.m12 = 0.0;
-this.state = 0;
-this.type = 0;
+this.m00=this.m11=1.0;
+this.m10=this.m01=this.m02=this.m12=0.0;
+this.state=0;
+this.type=0;
 });
 
 Clazz_newMeth(C$, 'setToTranslation$D$D', function (tx, ty) {
-this.m00 = 1.0;
-this.m10 = 0.0;
-this.m01 = 0.0;
-this.m11 = 1.0;
-this.m02 = tx;
-this.m12 = ty;
+this.m00=1.0;
+this.m10=0.0;
+this.m01=0.0;
+this.m11=1.0;
+this.m02=tx;
+this.m12=ty;
 if (tx != 0.0  || ty != 0.0  ) {
-this.state = 1;
-this.type = 1;
+this.state=1;
+this.type=1;
 } else {
-this.state = 0;
-this.type = 0;
+this.state=0;
+this.type=0;
 }});
 
 Clazz_newMeth(C$, 'setToRotation$D', function (theta) {
@@ -7535,28 +7535,28 @@ Clazz_newMeth(C$, 'setToRotationTheta$D', function (theta) {
 var sin = Math.sin(theta);
 var cos;
 if (sin == 1.0  || sin == -1.0  ) {
-cos = 0.0;
-this.state = 4;
-this.type = 8;
+cos=0.0;
+this.state=4;
+this.type=8;
 } else {
-cos = Math.cos(theta);
+cos=Math.cos(theta);
 if (cos == -1.0 ) {
-sin = 0.0;
-this.state = 2;
-this.type = 8;
+sin=0.0;
+this.state=2;
+this.type=8;
 } else if (cos == 1.0 ) {
-sin = 0.0;
-this.state = 0;
-this.type = 0;
+sin=0.0;
+this.state=0;
+this.type=0;
 } else {
-this.state = 6;
-this.type = 16;
-}}this.m00 = cos;
-this.m10 = sin;
-this.m01 = -sin;
-this.m11 = cos;
-this.m02 = 0.0;
-this.m12 = 0.0;
+this.state=6;
+this.type=16;
+}}this.m00=cos;
+this.m10=sin;
+this.m01=-sin;
+this.m11=cos;
+this.m02=0.0;
+this.m12=0.0;
 });
 
 Clazz_newMeth(C$, 'setToRotation$D$D$D', function (theta, anchorx, anchory) {
@@ -7567,11 +7567,11 @@ Clazz_newMeth(C$, 'setToRotationThetaXY$D$D$D', function (theta, anchorx, anchor
 p$.setToRotationTheta$D.apply(this, [theta]);
 var sin = this.m10;
 var oneMinusCos = 1.0 - this.m00;
-this.m02 = anchorx * oneMinusCos + anchory * sin;
-this.m12 = anchory * oneMinusCos - anchorx * sin;
+this.m02=anchorx * oneMinusCos + anchory * sin;
+this.m12=anchory * oneMinusCos - anchorx * sin;
 if (this.m02 != 0.0  || this.m12 != 0.0  ) {
-this.state = this.state|(1);
-this.type = this.type|(1);
+this.state|=1;
+this.type|=1;
 }});
 
 Clazz_newMeth(C$, 'setToRotation$D$D', function (vecx, vecy) {
@@ -7582,32 +7582,32 @@ Clazz_newMeth(C$, 'setToRotationXY$D$D', function (vecx, vecy) {
 var sin;
 var cos;
 if (vecy == 0 ) {
-sin = 0.0;
+sin=0.0;
 if (vecx < 0.0 ) {
-cos = -1.0;
-this.state = 2;
-this.type = 8;
+cos=-1.0;
+this.state=2;
+this.type=8;
 } else {
-cos = 1.0;
-this.state = 0;
-this.type = 0;
+cos=1.0;
+this.state=0;
+this.type=0;
 }} else if (vecx == 0 ) {
-cos = 0.0;
-sin = (vecy > 0.0 ) ? 1.0 : -1.0;
-this.state = 4;
-this.type = 8;
+cos=0.0;
+sin=(vecy > 0.0 ) ? 1.0 : -1.0;
+this.state=4;
+this.type=8;
 } else {
 var len = Math.sqrt(vecx * vecx + vecy * vecy);
-cos = vecx / len;
-sin = vecy / len;
-this.state = 6;
-this.type = 16;
-}this.m00 = cos;
-this.m10 = sin;
-this.m01 = -sin;
-this.m11 = cos;
-this.m02 = 0.0;
-this.m12 = 0.0;
+cos=vecx / len;
+sin=vecy / len;
+this.state=6;
+this.type=16;
+}this.m00=cos;
+this.m10=sin;
+this.m01=-sin;
+this.m11=cos;
+this.m02=0.0;
+this.m12=0.0;
 });
 
 Clazz_newMeth(C$, 'setToRotation$D$D$D$D', function (vecx, vecy, anchorx, anchory) {
@@ -7618,54 +7618,54 @@ Clazz_newMeth(C$, 'setToRotationV2XY$D$D$D$D', function (vecx, vecy, anchorx, an
 p$.setToRotationXY$D$D.apply(this, [vecx, vecy]);
 var sin = this.m10;
 var oneMinusCos = 1.0 - this.m00;
-this.m02 = anchorx * oneMinusCos + anchory * sin;
-this.m12 = anchory * oneMinusCos - anchorx * sin;
+this.m02=anchorx * oneMinusCos + anchory * sin;
+this.m12=anchory * oneMinusCos - anchorx * sin;
 if (this.m02 != 0.0  || this.m12 != 0.0  ) {
-this.state = this.state|(1);
-this.type = this.type|(1);
+this.state|=1;
+this.type|=1;
 }});
 
 Clazz_newMeth(C$, 'setToQuadrantRotation$I', function (numquadrants) {
 switch (numquadrants & 3) {
 case 0:
-this.m00 = 1.0;
-this.m10 = 0.0;
-this.m01 = 0.0;
-this.m11 = 1.0;
-this.m02 = 0.0;
-this.m12 = 0.0;
-this.state = 0;
-this.type = 0;
+this.m00=1.0;
+this.m10=0.0;
+this.m01=0.0;
+this.m11=1.0;
+this.m02=0.0;
+this.m12=0.0;
+this.state=0;
+this.type=0;
 break;
 case 1:
-this.m00 = 0.0;
-this.m10 = 1.0;
-this.m01 = -1.0;
-this.m11 = 0.0;
-this.m02 = 0.0;
-this.m12 = 0.0;
-this.state = 4;
-this.type = 8;
+this.m00=0.0;
+this.m10=1.0;
+this.m01=-1.0;
+this.m11=0.0;
+this.m02=0.0;
+this.m12=0.0;
+this.state=4;
+this.type=8;
 break;
 case 2:
-this.m00 = -1.0;
-this.m10 = 0.0;
-this.m01 = 0.0;
-this.m11 = -1.0;
-this.m02 = 0.0;
-this.m12 = 0.0;
-this.state = 2;
-this.type = 8;
+this.m00=-1.0;
+this.m10=0.0;
+this.m01=0.0;
+this.m11=-1.0;
+this.m02=0.0;
+this.m12=0.0;
+this.state=2;
+this.type=8;
 break;
 case 3:
-this.m00 = 0.0;
-this.m10 = -1.0;
-this.m01 = 1.0;
-this.m11 = 0.0;
-this.m02 = 0.0;
-this.m12 = 0.0;
-this.state = 4;
-this.type = 8;
+this.m00=0.0;
+this.m10=-1.0;
+this.m01=1.0;
+this.m11=0.0;
+this.m02=0.0;
+this.m12=0.0;
+this.state=4;
+this.type=8;
 break;
 }
 });
@@ -7673,108 +7673,108 @@ break;
 Clazz_newMeth(C$, 'setToQuadrantRotation$I$D$D', function (numquadrants, anchorx, anchory) {
 switch (numquadrants & 3) {
 case 0:
-this.m00 = 1.0;
-this.m10 = 0.0;
-this.m01 = 0.0;
-this.m11 = 1.0;
-this.m02 = 0.0;
-this.m12 = 0.0;
-this.state = 0;
-this.type = 0;
+this.m00=1.0;
+this.m10=0.0;
+this.m01=0.0;
+this.m11=1.0;
+this.m02=0.0;
+this.m12=0.0;
+this.state=0;
+this.type=0;
 break;
 case 1:
-this.m00 = 0.0;
-this.m10 = 1.0;
-this.m01 = -1.0;
-this.m11 = 0.0;
-this.m02 = anchorx + anchory;
-this.m12 = anchory - anchorx;
+this.m00=0.0;
+this.m10=1.0;
+this.m01=-1.0;
+this.m11=0.0;
+this.m02=anchorx + anchory;
+this.m12=anchory - anchorx;
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 4;
-this.type = 8;
+this.state=4;
+this.type=8;
 } else {
-this.state = 5;
-this.type = 9;
+this.state=5;
+this.type=9;
 }break;
 case 2:
-this.m00 = -1.0;
-this.m10 = 0.0;
-this.m01 = 0.0;
-this.m11 = -1.0;
-this.m02 = anchorx + anchorx;
-this.m12 = anchory + anchory;
+this.m00=-1.0;
+this.m10=0.0;
+this.m01=0.0;
+this.m11=-1.0;
+this.m02=anchorx + anchorx;
+this.m12=anchory + anchory;
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 2;
-this.type = 8;
+this.state=2;
+this.type=8;
 } else {
-this.state = 3;
-this.type = 9;
+this.state=3;
+this.type=9;
 }break;
 case 3:
-this.m00 = 0.0;
-this.m10 = -1.0;
-this.m01 = 1.0;
-this.m11 = 0.0;
-this.m02 = anchorx - anchory;
-this.m12 = anchory + anchorx;
+this.m00=0.0;
+this.m10=-1.0;
+this.m01=1.0;
+this.m11=0.0;
+this.m02=anchorx - anchory;
+this.m12=anchory + anchorx;
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
-this.state = 4;
-this.type = 8;
+this.state=4;
+this.type=8;
 } else {
-this.state = 5;
-this.type = 9;
+this.state=5;
+this.type=9;
 }break;
 }
 });
 
 Clazz_newMeth(C$, 'setToScale$D$D', function (sx, sy) {
-this.m00 = sx;
-this.m10 = 0.0;
-this.m01 = 0.0;
-this.m11 = sy;
-this.m02 = 0.0;
-this.m12 = 0.0;
+this.m00=sx;
+this.m10=0.0;
+this.m01=0.0;
+this.m11=sy;
+this.m02=0.0;
+this.m12=0.0;
 if (sx != 1.0  || sy != 1.0  ) {
-this.state = 2;
-this.type = -1;
+this.state=2;
+this.type=-1;
 } else {
-this.state = 0;
-this.type = 0;
+this.state=0;
+this.type=0;
 }});
 
 Clazz_newMeth(C$, 'setToShear$D$D', function (shx, shy) {
-this.m00 = 1.0;
-this.m01 = shx;
-this.m10 = shy;
-this.m11 = 1.0;
-this.m02 = 0.0;
-this.m12 = 0.0;
+this.m00=1.0;
+this.m01=shx;
+this.m10=shy;
+this.m11=1.0;
+this.m02=0.0;
+this.m12=0.0;
 if (shx != 0.0  || shy != 0.0  ) {
-this.state = 6;
-this.type = -1;
+this.state=6;
+this.type=-1;
 } else {
-this.state = 0;
-this.type = 0;
+this.state=0;
+this.type=0;
 }});
 
 Clazz_newMeth(C$, 'setTransform$java_awt_geom_AffineTransform', function (t) {
-this.m00 = t.m00;
-this.m10 = t.m10;
-this.m01 = t.m01;
-this.m11 = t.m11;
-this.m02 = t.m02;
-this.m12 = t.m12;
-this.state = t.state;
-this.type = t.type;
+this.m00=t.m00;
+this.m10=t.m10;
+this.m01=t.m01;
+this.m11=t.m11;
+this.m02=t.m02;
+this.m12=t.m12;
+this.state=t.state;
+this.type=t.type;
 });
 
 Clazz_newMeth(C$, 'setTransform$D$D$D$D$D$D', function (m00, m10, m01, m11, m02, m12) {
-this.m00 = m00;
-this.m10 = m10;
-this.m01 = m01;
-this.m11 = m11;
-this.m02 = m02;
-this.m12 = m12;
+this.m00=m00;
+this.m10=m10;
+this.m01=m01;
+this.m11=m11;
+this.m02=m02;
+this.m12=m12;
 this.updateState();
 });
 
@@ -7800,35 +7800,35 @@ case (6):
 case (7):
 return;
 case (56):
-this.m01 = Tx.m01;
-this.m10 = Tx.m10;
+this.m01=Tx.m01;
+this.m10=Tx.m10;
 case (24):
-this.m00 = Tx.m00;
-this.m11 = Tx.m11;
+this.m00=Tx.m00;
+this.m11=Tx.m11;
 case (8):
-this.m02 = Tx.m02;
-this.m12 = Tx.m12;
-this.state = txstate;
-this.type = Tx.type;
+this.m02=Tx.m02;
+this.m12=Tx.m12;
+this.state=txstate;
+this.type=Tx.type;
 return;
 case (48):
-this.m01 = Tx.m01;
-this.m10 = Tx.m10;
+this.m01=Tx.m01;
+this.m10=Tx.m10;
 case (16):
-this.m00 = Tx.m00;
-this.m11 = Tx.m11;
-this.state = txstate;
-this.type = Tx.type;
+this.m00=Tx.m00;
+this.m11=Tx.m11;
+this.state=txstate;
+this.type=Tx.type;
 return;
 case (40):
-this.m02 = Tx.m02;
-this.m12 = Tx.m12;
+this.m02=Tx.m02;
+this.m12=Tx.m12;
 case (32):
-this.m01 = Tx.m01;
-this.m10 = Tx.m10;
-this.m00 = this.m11 = 0.0;
-this.state = txstate;
-this.type = Tx.type;
+this.m01=Tx.m01;
+this.m10=Tx.m10;
+this.m00=this.m11=0.0;
+this.state=txstate;
+this.type=Tx.type;
 return;
 case (15):
 case (14):
@@ -7850,98 +7850,98 @@ this.scale$D$D(Tx.m00, Tx.m11);
 return;
 case (39):
 case (38):
-T01 = Tx.m01;
-T10 = Tx.m10;
-M0 = this.m00;
-this.m00 = this.m01 * T10;
-this.m01 = M0 * T01;
-M0 = this.m10;
-this.m10 = this.m11 * T10;
-this.m11 = M0 * T01;
-this.type = -1;
+T01=Tx.m01;
+T10=Tx.m10;
+M0=this.m00;
+this.m00=this.m01 * T10;
+this.m01=M0 * T01;
+M0=this.m10;
+this.m10=this.m11 * T10;
+this.m11=M0 * T01;
+this.type=-1;
 return;
 case (37):
 case (36):
-this.m00 = this.m01 * Tx.m10;
-this.m01 = 0.0;
-this.m11 = this.m10 * Tx.m01;
-this.m10 = 0.0;
-this.state = mystate ^ 6;
-this.type = -1;
+this.m00=this.m01 * Tx.m10;
+this.m01=0.0;
+this.m11=this.m10 * Tx.m01;
+this.m10=0.0;
+this.state=mystate ^ 6;
+this.type=-1;
 return;
 case (35):
 case (34):
-this.m01 = this.m00 * Tx.m01;
-this.m00 = 0.0;
-this.m10 = this.m11 * Tx.m10;
-this.m11 = 0.0;
-this.state = mystate ^ 6;
-this.type = -1;
+this.m01=this.m00 * Tx.m01;
+this.m00=0.0;
+this.m10=this.m11 * Tx.m10;
+this.m11=0.0;
+this.state=mystate ^ 6;
+this.type=-1;
 return;
 case (33):
-this.m00 = 0.0;
-this.m01 = Tx.m01;
-this.m10 = Tx.m10;
-this.m11 = 0.0;
-this.state = 5;
-this.type = -1;
+this.m00=0.0;
+this.m01=Tx.m01;
+this.m10=Tx.m10;
+this.m11=0.0;
+this.state=5;
+this.type=-1;
 return;
 }
-T00 = Tx.m00;
-T01 = Tx.m01;
-T02 = Tx.m02;
-T10 = Tx.m10;
-T11 = Tx.m11;
-T12 = Tx.m12;
+T00=Tx.m00;
+T01=Tx.m01;
+T02=Tx.m02;
+T10=Tx.m10;
+T11=Tx.m11;
+T12=Tx.m12;
 switch (mystate) {
 default:
 p$.stateError.apply(this, []);
 case (6):
-this.state = mystate | txstate;
+this.state=mystate | txstate;
 case (7):
-M0 = this.m00;
-M1 = this.m01;
-this.m00 = T00 * M0 + T10 * M1;
-this.m01 = T01 * M0 + T11 * M1;
+M0=this.m00;
+M1=this.m01;
+this.m00=T00 * M0 + T10 * M1;
+this.m01=T01 * M0 + T11 * M1;
 this.m02 += T02 * M0 + T12 * M1;
-M0 = this.m10;
-M1 = this.m11;
-this.m10 = T00 * M0 + T10 * M1;
-this.m11 = T01 * M0 + T11 * M1;
+M0=this.m10;
+M1=this.m11;
+this.m10=T00 * M0 + T10 * M1;
+this.m11=T01 * M0 + T11 * M1;
 this.m12 += T02 * M0 + T12 * M1;
-this.type = -1;
+this.type=-1;
 return;
 case (5):
 case (4):
-M0 = this.m01;
-this.m00 = T10 * M0;
-this.m01 = T11 * M0;
+M0=this.m01;
+this.m00=T10 * M0;
+this.m01=T11 * M0;
 this.m02 += T12 * M0;
-M0 = this.m10;
-this.m10 = T00 * M0;
-this.m11 = T01 * M0;
+M0=this.m10;
+this.m10=T00 * M0;
+this.m11=T01 * M0;
 this.m12 += T02 * M0;
 break;
 case (3):
 case (2):
-M0 = this.m00;
-this.m00 = T00 * M0;
-this.m01 = T01 * M0;
+M0=this.m00;
+this.m00=T00 * M0;
+this.m01=T01 * M0;
 this.m02 += T02 * M0;
-M0 = this.m11;
-this.m10 = T10 * M0;
-this.m11 = T11 * M0;
+M0=this.m11;
+this.m10=T10 * M0;
+this.m11=T11 * M0;
 this.m12 += T12 * M0;
 break;
 case (1):
-this.m00 = T00;
-this.m01 = T01;
+this.m00=T00;
+this.m01=T01;
 this.m02 += T02;
-this.m10 = T10;
-this.m11 = T11;
+this.m10=T10;
+this.m11=T11;
 this.m12 += T12;
-this.state = txstate | 1;
-this.type = -1;
+this.state=txstate | 1;
+this.type=-1;
 return;
 }
 this.updateState();
@@ -7972,137 +7972,137 @@ case (8):
 case (10):
 case (12):
 case (14):
-this.m02 = Tx.m02;
-this.m12 = Tx.m12;
-this.state = mystate | 1;
-this.type = this.type|(1);
+this.m02=Tx.m02;
+this.m12=Tx.m12;
+this.state=mystate | 1;
+this.type|=1;
 return;
 case (9):
 case (11):
 case (13):
 case (15):
-this.m02 = this.m02 + Tx.m02;
-this.m12 = this.m12 + Tx.m12;
+this.m02=this.m02 + Tx.m02;
+this.m12=this.m12 + Tx.m12;
 return;
 case (17):
 case (16):
-this.state = mystate | 2;
+this.state=mystate | 2;
 case (23):
 case (22):
 case (21):
 case (20):
 case (19):
 case (18):
-T00 = Tx.m00;
-T11 = Tx.m11;
+T00=Tx.m00;
+T11=Tx.m11;
 if ((mystate & 4) != 0) {
-this.m01 = this.m01 * T00;
-this.m10 = this.m10 * T11;
+this.m01=this.m01 * T00;
+this.m10=this.m10 * T11;
 if ((mystate & 2) != 0) {
-this.m00 = this.m00 * T00;
-this.m11 = this.m11 * T11;
+this.m00=this.m00 * T00;
+this.m11=this.m11 * T11;
 }} else {
-this.m00 = this.m00 * T00;
-this.m11 = this.m11 * T11;
+this.m00=this.m00 * T00;
+this.m11=this.m11 * T11;
 }if ((mystate & 1) != 0) {
-this.m02 = this.m02 * T00;
-this.m12 = this.m12 * T11;
-}this.type = -1;
+this.m02=this.m02 * T00;
+this.m12=this.m12 * T11;
+}this.type=-1;
 return;
 case (37):
 case (36):
-mystate = mystate | 2;
+mystate=mystate | 2;
 case (33):
 case (32):
 case (35):
 case (34):
-this.state = mystate ^ 4;
+this.state=mystate ^ 4;
 case (39):
 case (38):
-T01 = Tx.m01;
-T10 = Tx.m10;
-M0 = this.m00;
-this.m00 = this.m10 * T01;
-this.m10 = M0 * T10;
-M0 = this.m01;
-this.m01 = this.m11 * T01;
-this.m11 = M0 * T10;
-M0 = this.m02;
-this.m02 = this.m12 * T01;
-this.m12 = M0 * T10;
-this.type = -1;
+T01=Tx.m01;
+T10=Tx.m10;
+M0=this.m00;
+this.m00=this.m10 * T01;
+this.m10=M0 * T10;
+M0=this.m01;
+this.m01=this.m11 * T01;
+this.m11=M0 * T10;
+M0=this.m02;
+this.m02=this.m12 * T01;
+this.m12=M0 * T10;
+this.type=-1;
 return;
 }
-T00 = Tx.m00;
-T01 = Tx.m01;
-T02 = Tx.m02;
-T10 = Tx.m10;
-T11 = Tx.m11;
-T12 = Tx.m12;
+T00=Tx.m00;
+T01=Tx.m01;
+T02=Tx.m02;
+T10=Tx.m10;
+T11=Tx.m11;
+T12=Tx.m12;
 switch (mystate) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-M0 = this.m02;
-M1 = this.m12;
+M0=this.m02;
+M1=this.m12;
 T02 += M0 * T00 + M1 * T01;
 T12 += M0 * T10 + M1 * T11;
 case (6):
-this.m02 = T02;
-this.m12 = T12;
-M0 = this.m00;
-M1 = this.m10;
-this.m00 = M0 * T00 + M1 * T01;
-this.m10 = M0 * T10 + M1 * T11;
-M0 = this.m01;
-M1 = this.m11;
-this.m01 = M0 * T00 + M1 * T01;
-this.m11 = M0 * T10 + M1 * T11;
+this.m02=T02;
+this.m12=T12;
+M0=this.m00;
+M1=this.m10;
+this.m00=M0 * T00 + M1 * T01;
+this.m10=M0 * T10 + M1 * T11;
+M0=this.m01;
+M1=this.m11;
+this.m01=M0 * T00 + M1 * T01;
+this.m11=M0 * T10 + M1 * T11;
 break;
 case (5):
-M0 = this.m02;
-M1 = this.m12;
+M0=this.m02;
+M1=this.m12;
 T02 += M0 * T00 + M1 * T01;
 T12 += M0 * T10 + M1 * T11;
 case (4):
-this.m02 = T02;
-this.m12 = T12;
-M0 = this.m10;
-this.m00 = M0 * T01;
-this.m10 = M0 * T11;
-M0 = this.m01;
-this.m01 = M0 * T00;
-this.m11 = M0 * T10;
+this.m02=T02;
+this.m12=T12;
+M0=this.m10;
+this.m00=M0 * T01;
+this.m10=M0 * T11;
+M0=this.m01;
+this.m01=M0 * T00;
+this.m11=M0 * T10;
 break;
 case (3):
-M0 = this.m02;
-M1 = this.m12;
+M0=this.m02;
+M1=this.m12;
 T02 += M0 * T00 + M1 * T01;
 T12 += M0 * T10 + M1 * T11;
 case (2):
-this.m02 = T02;
-this.m12 = T12;
-M0 = this.m00;
-this.m00 = M0 * T00;
-this.m10 = M0 * T10;
-M0 = this.m11;
-this.m01 = M0 * T01;
-this.m11 = M0 * T11;
+this.m02=T02;
+this.m12=T12;
+M0=this.m00;
+this.m00=M0 * T00;
+this.m10=M0 * T10;
+M0=this.m11;
+this.m01=M0 * T01;
+this.m11=M0 * T11;
 break;
 case (1):
-M0 = this.m02;
-M1 = this.m12;
+M0=this.m02;
+M1=this.m12;
 T02 += M0 * T00 + M1 * T01;
 T12 += M0 * T10 + M1 * T11;
 case (0):
-this.m02 = T02;
-this.m12 = T12;
-this.m00 = T00;
-this.m10 = T10;
-this.m01 = T01;
-this.m11 = T11;
-this.state = mystate | txstate;
-this.type = -1;
+this.m02=T02;
+this.m12=T12;
+this.m00=T00;
+this.m10=T10;
+this.m01=T01;
+this.m11=T11;
+this.state=mystate | txstate;
+this.type=-1;
 return;
 }
 this.updateState();
@@ -8114,12 +8114,12 @@ switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-det = this.m00 * this.m11 - this.m01 * this.m10;
+det=this.m00 * this.m11 - this.m01 * this.m10;
 if (Math.abs(det) <= 4.9E-324 ) {
 throw Clazz_new_(Clazz_load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is " + new Double(det).toString()]);
 }return Clazz_new_(C$.c$$D$D$D$D$D$D$I,[this.m11 / det, -this.m10 / det, -this.m01 / det, this.m00 / det, (this.m01 * this.m12 - this.m11 * this.m02) / det, (this.m10 * this.m02 - this.m00 * this.m12) / det, 7]);
 case (6):
-det = this.m00 * this.m11 - this.m01 * this.m10;
+det=this.m00 * this.m11 - this.m01 * this.m10;
 if (Math.abs(det) <= 4.9E-324 ) {
 throw Clazz_new_(Clazz_load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is " + new Double(det).toString()]);
 }return Clazz_new_(C$.c$$D$D$D$D$D$D$I,[this.m11 / det, -this.m10 / det, -this.m01 / det, this.m00 / det, 0.0, 0.0, 6]);
@@ -8158,78 +8158,78 @@ switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-M00 = this.m00;
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M11 = this.m11;
-M12 = this.m12;
-det = M00 * M11 - M01 * M10;
+M00=this.m00;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M11=this.m11;
+M12=this.m12;
+det=M00 * M11 - M01 * M10;
 if (Math.abs(det) <= 4.9E-324 ) {
 throw Clazz_new_(Clazz_load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is " + new Double(det).toString()]);
-}this.m00 = M11 / det;
-this.m10 = -M10 / det;
-this.m01 = -M01 / det;
-this.m11 = M00 / det;
-this.m02 = (M01 * M12 - M11 * M02) / det;
-this.m12 = (M10 * M02 - M00 * M12) / det;
+}this.m00=M11 / det;
+this.m10=-M10 / det;
+this.m01=-M01 / det;
+this.m11=M00 / det;
+this.m02=(M01 * M12 - M11 * M02) / det;
+this.m12=(M10 * M02 - M00 * M12) / det;
 break;
 case (6):
-M00 = this.m00;
-M01 = this.m01;
-M10 = this.m10;
-M11 = this.m11;
-det = M00 * M11 - M01 * M10;
+M00=this.m00;
+M01=this.m01;
+M10=this.m10;
+M11=this.m11;
+det=M00 * M11 - M01 * M10;
 if (Math.abs(det) <= 4.9E-324 ) {
 throw Clazz_new_(Clazz_load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is " + new Double(det).toString()]);
-}this.m00 = M11 / det;
-this.m10 = -M10 / det;
-this.m01 = -M01 / det;
-this.m11 = M00 / det;
+}this.m00=M11 / det;
+this.m10=-M10 / det;
+this.m01=-M01 / det;
+this.m11=M00 / det;
 break;
 case (5):
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M12 = this.m12;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M12=this.m12;
 if (M01 == 0.0  || M10 == 0.0  ) {
 throw Clazz_new_(Clazz_load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
-}this.m10 = 1.0 / M01;
-this.m01 = 1.0 / M10;
-this.m02 = -M12 / M10;
-this.m12 = -M02 / M01;
+}this.m10=1.0 / M01;
+this.m01=1.0 / M10;
+this.m02=-M12 / M10;
+this.m12=-M02 / M01;
 break;
 case (4):
-M01 = this.m01;
-M10 = this.m10;
+M01=this.m01;
+M10=this.m10;
 if (M01 == 0.0  || M10 == 0.0  ) {
 throw Clazz_new_(Clazz_load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
-}this.m10 = 1.0 / M01;
-this.m01 = 1.0 / M10;
+}this.m10=1.0 / M01;
+this.m01=1.0 / M10;
 break;
 case (3):
-M00 = this.m00;
-M02 = this.m02;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M02=this.m02;
+M11=this.m11;
+M12=this.m12;
 if (M00 == 0.0  || M11 == 0.0  ) {
 throw Clazz_new_(Clazz_load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
-}this.m00 = 1.0 / M00;
-this.m11 = 1.0 / M11;
-this.m02 = -M02 / M00;
-this.m12 = -M12 / M11;
+}this.m00=1.0 / M00;
+this.m11=1.0 / M11;
+this.m02=-M02 / M00;
+this.m12=-M12 / M11;
 break;
 case (2):
-M00 = this.m00;
-M11 = this.m11;
+M00=this.m00;
+M11=this.m11;
 if (M00 == 0.0  || M11 == 0.0  ) {
 throw Clazz_new_(Clazz_load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
-}this.m00 = 1.0 / M00;
-this.m11 = 1.0 / M11;
+}this.m00=1.0 / M00;
+this.m11=1.0 / M11;
 break;
 case (1):
-this.m02 = -this.m02;
-this.m12 = -this.m12;
+this.m02=-this.m02;
+this.m12=-this.m12;
 break;
 case (0):
 break;
@@ -8239,9 +8239,9 @@ break;
 Clazz_newMeth(C$, 'transform$java_awt_geom_Point2D$java_awt_geom_Point2D', function (ptSrc, ptDst) {
 if (ptDst == null ) {
 if (Clazz_instanceOf(ptSrc, "java.awt.geom.Point2D.Double")) {
-ptDst = Clazz_new_((I$[2]||$incl$(2)));
+ptDst=Clazz_new_((I$[2]||$incl$(2)));
 } else {
-ptDst = Clazz_new_((I$[3]||$incl$(3)));
+ptDst=Clazz_new_((I$[3]||$incl$(3)));
 }}var x = ptSrc.getX();
 var y = ptSrc.getY();
 switch (this.state) {
@@ -8287,10 +8287,10 @@ var y = src.getY();
 var dst = ptDst[dstOff++];
 if (dst == null ) {
 if (Clazz_instanceOf(src, "java.awt.geom.Point2D.Double")) {
-dst = Clazz_new_((I$[2]||$incl$(2)));
+dst=Clazz_new_((I$[2]||$incl$(2)));
 } else {
-dst = Clazz_new_((I$[3]||$incl$(3)));
-}ptDst[dstOff - 1] = dst;
+dst=Clazz_new_((I$[3]||$incl$(3)));
+}ptDst[dstOff - 1]=dst;
 }switch (state) {
 default:
 p$.stateError.apply(this, []);
@@ -8331,80 +8331,80 @@ var M11;
 var M12;
 if (dstPts === srcPts  && dstOff > srcOff  && dstOff < srcOff + numPts * 2 ) {
 System.arraycopy(srcPts, srcOff, dstPts, dstOff, numPts * 2);
-srcOff = dstOff;
+srcOff=dstOff;
 }switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-M00 = this.m00;
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M11=this.m11;
+M12=this.m12;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = (M00 * x + M01 * y + M02);
-dstPts[dstOff++] = (M10 * x + M11 * y + M12);
+dstPts[dstOff++]=(M00 * x + M01 * y + M02);
+dstPts[dstOff++]=(M10 * x + M11 * y + M12);
 }
 return;
 case (6):
-M00 = this.m00;
-M01 = this.m01;
-M10 = this.m10;
-M11 = this.m11;
+M00=this.m00;
+M01=this.m01;
+M10=this.m10;
+M11=this.m11;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = (M00 * x + M01 * y);
-dstPts[dstOff++] = (M10 * x + M11 * y);
+dstPts[dstOff++]=(M00 * x + M01 * y);
+dstPts[dstOff++]=(M10 * x + M11 * y);
 }
 return;
 case (5):
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M12 = this.m12;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M12=this.m12;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = (M01 * srcPts[srcOff++] + M02);
-dstPts[dstOff++] = (M10 * x + M12);
+dstPts[dstOff++]=(M01 * srcPts[srcOff++] + M02);
+dstPts[dstOff++]=(M10 * x + M12);
 }
 return;
 case (4):
-M01 = this.m01;
-M10 = this.m10;
+M01=this.m01;
+M10=this.m10;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = (M01 * srcPts[srcOff++]);
-dstPts[dstOff++] = (M10 * x);
+dstPts[dstOff++]=(M01 * srcPts[srcOff++]);
+dstPts[dstOff++]=(M10 * x);
 }
 return;
 case (3):
-M00 = this.m00;
-M02 = this.m02;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M02=this.m02;
+M11=this.m11;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = (M00 * srcPts[srcOff++] + M02);
-dstPts[dstOff++] = (M11 * srcPts[srcOff++] + M12);
+dstPts[dstOff++]=(M00 * srcPts[srcOff++] + M02);
+dstPts[dstOff++]=(M11 * srcPts[srcOff++] + M12);
 }
 return;
 case (2):
-M00 = this.m00;
-M11 = this.m11;
+M00=this.m00;
+M11=this.m11;
 while (--numPts >= 0){
-dstPts[dstOff++] = (M00 * srcPts[srcOff++]);
-dstPts[dstOff++] = (M11 * srcPts[srcOff++]);
+dstPts[dstOff++]=(M00 * srcPts[srcOff++]);
+dstPts[dstOff++]=(M11 * srcPts[srcOff++]);
 }
 return;
 case (1):
-M02 = this.m02;
-M12 = this.m12;
+M02=this.m02;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = (srcPts[srcOff++] + M02);
-dstPts[dstOff++] = (srcPts[srcOff++] + M12);
+dstPts[dstOff++]=(srcPts[srcOff++] + M02);
+dstPts[dstOff++]=(srcPts[srcOff++] + M12);
 }
 return;
 case (0):
@@ -8429,80 +8429,80 @@ var M11;
 var M12;
 if (dstPts === srcPts  && dstOff > srcOff  && dstOff < srcOff + numPts * 2 ) {
 System.arraycopy(srcPts, srcOff, dstPts, dstOff, numPts * 2);
-srcOff = dstOff;
+srcOff=dstOff;
 }switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-M00 = this.m00;
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M11=this.m11;
+M12=this.m12;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = M00 * x + M01 * y + M02;
-dstPts[dstOff++] = M10 * x + M11 * y + M12;
+dstPts[dstOff++]=M00 * x + M01 * y + M02;
+dstPts[dstOff++]=M10 * x + M11 * y + M12;
 }
 return;
 case (6):
-M00 = this.m00;
-M01 = this.m01;
-M10 = this.m10;
-M11 = this.m11;
+M00=this.m00;
+M01=this.m01;
+M10=this.m10;
+M11=this.m11;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = M00 * x + M01 * y;
-dstPts[dstOff++] = M10 * x + M11 * y;
+dstPts[dstOff++]=M00 * x + M01 * y;
+dstPts[dstOff++]=M10 * x + M11 * y;
 }
 return;
 case (5):
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M12 = this.m12;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M12=this.m12;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = M01 * srcPts[srcOff++] + M02;
-dstPts[dstOff++] = M10 * x + M12;
+dstPts[dstOff++]=M01 * srcPts[srcOff++] + M02;
+dstPts[dstOff++]=M10 * x + M12;
 }
 return;
 case (4):
-M01 = this.m01;
-M10 = this.m10;
+M01=this.m01;
+M10=this.m10;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = M01 * srcPts[srcOff++];
-dstPts[dstOff++] = M10 * x;
+dstPts[dstOff++]=M01 * srcPts[srcOff++];
+dstPts[dstOff++]=M10 * x;
 }
 return;
 case (3):
-M00 = this.m00;
-M02 = this.m02;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M02=this.m02;
+M11=this.m11;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = M00 * srcPts[srcOff++] + M02;
-dstPts[dstOff++] = M11 * srcPts[srcOff++] + M12;
+dstPts[dstOff++]=M00 * srcPts[srcOff++] + M02;
+dstPts[dstOff++]=M11 * srcPts[srcOff++] + M12;
 }
 return;
 case (2):
-M00 = this.m00;
-M11 = this.m11;
+M00=this.m00;
+M11=this.m11;
 while (--numPts >= 0){
-dstPts[dstOff++] = M00 * srcPts[srcOff++];
-dstPts[dstOff++] = M11 * srcPts[srcOff++];
+dstPts[dstOff++]=M00 * srcPts[srcOff++];
+dstPts[dstOff++]=M11 * srcPts[srcOff++];
 }
 return;
 case (1):
-M02 = this.m02;
-M12 = this.m12;
+M02=this.m02;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = srcPts[srcOff++] + M02;
-dstPts[dstOff++] = srcPts[srcOff++] + M12;
+dstPts[dstOff++]=srcPts[srcOff++] + M02;
+dstPts[dstOff++]=srcPts[srcOff++] + M12;
 }
 return;
 case (0):
@@ -8523,81 +8523,81 @@ switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-M00 = this.m00;
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M11=this.m11;
+M12=this.m12;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = M00 * x + M01 * y + M02;
-dstPts[dstOff++] = M10 * x + M11 * y + M12;
+dstPts[dstOff++]=M00 * x + M01 * y + M02;
+dstPts[dstOff++]=M10 * x + M11 * y + M12;
 }
 return;
 case (6):
-M00 = this.m00;
-M01 = this.m01;
-M10 = this.m10;
-M11 = this.m11;
+M00=this.m00;
+M01=this.m01;
+M10=this.m10;
+M11=this.m11;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = M00 * x + M01 * y;
-dstPts[dstOff++] = M10 * x + M11 * y;
+dstPts[dstOff++]=M00 * x + M01 * y;
+dstPts[dstOff++]=M10 * x + M11 * y;
 }
 return;
 case (5):
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M12 = this.m12;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M12=this.m12;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = M01 * srcPts[srcOff++] + M02;
-dstPts[dstOff++] = M10 * x + M12;
+dstPts[dstOff++]=M01 * srcPts[srcOff++] + M02;
+dstPts[dstOff++]=M10 * x + M12;
 }
 return;
 case (4):
-M01 = this.m01;
-M10 = this.m10;
+M01=this.m01;
+M10=this.m10;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = M01 * srcPts[srcOff++];
-dstPts[dstOff++] = M10 * x;
+dstPts[dstOff++]=M01 * srcPts[srcOff++];
+dstPts[dstOff++]=M10 * x;
 }
 return;
 case (3):
-M00 = this.m00;
-M02 = this.m02;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M02=this.m02;
+M11=this.m11;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = M00 * srcPts[srcOff++] + M02;
-dstPts[dstOff++] = M11 * srcPts[srcOff++] + M12;
+dstPts[dstOff++]=M00 * srcPts[srcOff++] + M02;
+dstPts[dstOff++]=M11 * srcPts[srcOff++] + M12;
 }
 return;
 case (2):
-M00 = this.m00;
-M11 = this.m11;
+M00=this.m00;
+M11=this.m11;
 while (--numPts >= 0){
-dstPts[dstOff++] = M00 * srcPts[srcOff++];
-dstPts[dstOff++] = M11 * srcPts[srcOff++];
+dstPts[dstOff++]=M00 * srcPts[srcOff++];
+dstPts[dstOff++]=M11 * srcPts[srcOff++];
 }
 return;
 case (1):
-M02 = this.m02;
-M12 = this.m12;
+M02=this.m02;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = srcPts[srcOff++] + M02;
-dstPts[dstOff++] = srcPts[srcOff++] + M12;
+dstPts[dstOff++]=srcPts[srcOff++] + M02;
+dstPts[dstOff++]=srcPts[srcOff++] + M12;
 }
 return;
 case (0):
 while (--numPts >= 0){
-dstPts[dstOff++] = srcPts[srcOff++];
-dstPts[dstOff++] = srcPts[srcOff++];
+dstPts[dstOff++]=srcPts[srcOff++];
+dstPts[dstOff++]=srcPts[srcOff++];
 }
 return;
 }
@@ -8614,81 +8614,81 @@ switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-M00 = this.m00;
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M11=this.m11;
+M12=this.m12;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = (M00 * x + M01 * y + M02);
-dstPts[dstOff++] = (M10 * x + M11 * y + M12);
+dstPts[dstOff++]=(M00 * x + M01 * y + M02);
+dstPts[dstOff++]=(M10 * x + M11 * y + M12);
 }
 return;
 case (6):
-M00 = this.m00;
-M01 = this.m01;
-M10 = this.m10;
-M11 = this.m11;
+M00=this.m00;
+M01=this.m01;
+M10=this.m10;
+M11=this.m11;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = (M00 * x + M01 * y);
-dstPts[dstOff++] = (M10 * x + M11 * y);
+dstPts[dstOff++]=(M00 * x + M01 * y);
+dstPts[dstOff++]=(M10 * x + M11 * y);
 }
 return;
 case (5):
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M12 = this.m12;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M12=this.m12;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = (M01 * srcPts[srcOff++] + M02);
-dstPts[dstOff++] = (M10 * x + M12);
+dstPts[dstOff++]=(M01 * srcPts[srcOff++] + M02);
+dstPts[dstOff++]=(M10 * x + M12);
 }
 return;
 case (4):
-M01 = this.m01;
-M10 = this.m10;
+M01=this.m01;
+M10=this.m10;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = (M01 * srcPts[srcOff++]);
-dstPts[dstOff++] = (M10 * x);
+dstPts[dstOff++]=(M01 * srcPts[srcOff++]);
+dstPts[dstOff++]=(M10 * x);
 }
 return;
 case (3):
-M00 = this.m00;
-M02 = this.m02;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M02=this.m02;
+M11=this.m11;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = (M00 * srcPts[srcOff++] + M02);
-dstPts[dstOff++] = (M11 * srcPts[srcOff++] + M12);
+dstPts[dstOff++]=(M00 * srcPts[srcOff++] + M02);
+dstPts[dstOff++]=(M11 * srcPts[srcOff++] + M12);
 }
 return;
 case (2):
-M00 = this.m00;
-M11 = this.m11;
+M00=this.m00;
+M11=this.m11;
 while (--numPts >= 0){
-dstPts[dstOff++] = (M00 * srcPts[srcOff++]);
-dstPts[dstOff++] = (M11 * srcPts[srcOff++]);
+dstPts[dstOff++]=(M00 * srcPts[srcOff++]);
+dstPts[dstOff++]=(M11 * srcPts[srcOff++]);
 }
 return;
 case (1):
-M02 = this.m02;
-M12 = this.m12;
+M02=this.m02;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = (srcPts[srcOff++] + M02);
-dstPts[dstOff++] = (srcPts[srcOff++] + M12);
+dstPts[dstOff++]=(srcPts[srcOff++] + M02);
+dstPts[dstOff++]=(srcPts[srcOff++] + M12);
 }
 return;
 case (0):
 while (--numPts >= 0){
-dstPts[dstOff++] = (srcPts[srcOff++]);
-dstPts[dstOff++] = (srcPts[srcOff++]);
+dstPts[dstOff++]=(srcPts[srcOff++]);
+dstPts[dstOff++]=(srcPts[srcOff++]);
 }
 return;
 }
@@ -8697,9 +8697,9 @@ return;
 Clazz_newMeth(C$, 'inverseTransform$java_awt_geom_Point2D$java_awt_geom_Point2D', function (ptSrc, ptDst) {
 if (ptDst == null ) {
 if (Clazz_instanceOf(ptSrc, "java.awt.geom.Point2D.Double")) {
-ptDst = Clazz_new_((I$[2]||$incl$(2)));
+ptDst=Clazz_new_((I$[2]||$incl$(2)));
 } else {
-ptDst = Clazz_new_((I$[3]||$incl$(3)));
+ptDst=Clazz_new_((I$[3]||$incl$(3)));
 }}var x = ptSrc.getX();
 var y = ptSrc.getY();
 switch (this.state) {
@@ -8749,94 +8749,94 @@ var M12;
 var det;
 if (dstPts === srcPts  && dstOff > srcOff  && dstOff < srcOff + numPts * 2 ) {
 System.arraycopy(srcPts, srcOff, dstPts, dstOff, numPts * 2);
-srcOff = dstOff;
+srcOff=dstOff;
 }switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
-M00 = this.m00;
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M11 = this.m11;
-M12 = this.m12;
-det = M00 * M11 - M01 * M10;
+M00=this.m00;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M11=this.m11;
+M12=this.m12;
+det=M00 * M11 - M01 * M10;
 if (Math.abs(det) <= 4.9E-324 ) {
 throw Clazz_new_(Clazz_load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is " + new Double(det).toString()]);
 }while (--numPts >= 0){
 var x = srcPts[srcOff++] - M02;
 var y = srcPts[srcOff++] - M12;
-dstPts[dstOff++] = (x * M11 - y * M01) / det;
-dstPts[dstOff++] = (y * M00 - x * M10) / det;
+dstPts[dstOff++]=(x * M11 - y * M01) / det;
+dstPts[dstOff++]=(y * M00 - x * M10) / det;
 }
 return;
 case (6):
-M00 = this.m00;
-M01 = this.m01;
-M10 = this.m10;
-M11 = this.m11;
-det = M00 * M11 - M01 * M10;
+M00=this.m00;
+M01=this.m01;
+M10=this.m10;
+M11=this.m11;
+det=M00 * M11 - M01 * M10;
 if (Math.abs(det) <= 4.9E-324 ) {
 throw Clazz_new_(Clazz_load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is " + new Double(det).toString()]);
 }while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = (x * M11 - y * M01) / det;
-dstPts[dstOff++] = (y * M00 - x * M10) / det;
+dstPts[dstOff++]=(x * M11 - y * M01) / det;
+dstPts[dstOff++]=(y * M00 - x * M10) / det;
 }
 return;
 case (5):
-M01 = this.m01;
-M02 = this.m02;
-M10 = this.m10;
-M12 = this.m12;
+M01=this.m01;
+M02=this.m02;
+M10=this.m10;
+M12=this.m12;
 if (M01 == 0.0  || M10 == 0.0  ) {
 throw Clazz_new_(Clazz_load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
 }while (--numPts >= 0){
 var x = srcPts[srcOff++] - M02;
-dstPts[dstOff++] = (srcPts[srcOff++] - M12) / M10;
-dstPts[dstOff++] = x / M01;
+dstPts[dstOff++]=(srcPts[srcOff++] - M12) / M10;
+dstPts[dstOff++]=x / M01;
 }
 return;
 case (4):
-M01 = this.m01;
-M10 = this.m10;
+M01=this.m01;
+M10=this.m10;
 if (M01 == 0.0  || M10 == 0.0  ) {
 throw Clazz_new_(Clazz_load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
 }while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = srcPts[srcOff++] / M10;
-dstPts[dstOff++] = x / M01;
+dstPts[dstOff++]=srcPts[srcOff++] / M10;
+dstPts[dstOff++]=x / M01;
 }
 return;
 case (3):
-M00 = this.m00;
-M02 = this.m02;
-M11 = this.m11;
-M12 = this.m12;
+M00=this.m00;
+M02=this.m02;
+M11=this.m11;
+M12=this.m12;
 if (M00 == 0.0  || M11 == 0.0  ) {
 throw Clazz_new_(Clazz_load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
 }while (--numPts >= 0){
-dstPts[dstOff++] = (srcPts[srcOff++] - M02) / M00;
-dstPts[dstOff++] = (srcPts[srcOff++] - M12) / M11;
+dstPts[dstOff++]=(srcPts[srcOff++] - M02) / M00;
+dstPts[dstOff++]=(srcPts[srcOff++] - M12) / M11;
 }
 return;
 case (2):
-M00 = this.m00;
-M11 = this.m11;
+M00=this.m00;
+M11=this.m11;
 if (M00 == 0.0  || M11 == 0.0  ) {
 throw Clazz_new_(Clazz_load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
 }while (--numPts >= 0){
-dstPts[dstOff++] = srcPts[srcOff++] / M00;
-dstPts[dstOff++] = srcPts[srcOff++] / M11;
+dstPts[dstOff++]=srcPts[srcOff++] / M00;
+dstPts[dstOff++]=srcPts[srcOff++] / M11;
 }
 return;
 case (1):
-M02 = this.m02;
-M12 = this.m12;
+M02=this.m02;
+M12=this.m12;
 while (--numPts >= 0){
-dstPts[dstOff++] = srcPts[srcOff++] - M02;
-dstPts[dstOff++] = srcPts[srcOff++] - M12;
+dstPts[dstOff++]=srcPts[srcOff++] - M02;
+dstPts[dstOff++]=srcPts[srcOff++] - M12;
 }
 return;
 case (0):
@@ -8849,9 +8849,9 @@ System.arraycopy(srcPts, srcOff, dstPts, dstOff, numPts * 2);
 Clazz_newMeth(C$, 'deltaTransform$java_awt_geom_Point2D$java_awt_geom_Point2D', function (ptSrc, ptDst) {
 if (ptDst == null ) {
 if (Clazz_instanceOf(ptSrc, "java.awt.geom.Point2D.Double")) {
-ptDst = Clazz_new_((I$[2]||$incl$(2)));
+ptDst=Clazz_new_((I$[2]||$incl$(2)));
 } else {
-ptDst = Clazz_new_((I$[3]||$incl$(3)));
+ptDst=Clazz_new_((I$[3]||$incl$(3)));
 }}var x = ptSrc.getX();
 var y = ptSrc.getY();
 switch (this.state) {
@@ -8883,40 +8883,40 @@ var M10;
 var M11;
 if (dstPts === srcPts  && dstOff > srcOff  && dstOff < srcOff + numPts * 2 ) {
 System.arraycopy(srcPts, srcOff, dstPts, dstOff, numPts * 2);
-srcOff = dstOff;
+srcOff=dstOff;
 }switch (this.state) {
 default:
 p$.stateError.apply(this, []);
 case (7):
 case (6):
-M00 = this.m00;
-M01 = this.m01;
-M10 = this.m10;
-M11 = this.m11;
+M00=this.m00;
+M01=this.m01;
+M10=this.m10;
+M11=this.m11;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
 var y = srcPts[srcOff++];
-dstPts[dstOff++] = x * M00 + y * M01;
-dstPts[dstOff++] = x * M10 + y * M11;
+dstPts[dstOff++]=x * M00 + y * M01;
+dstPts[dstOff++]=x * M10 + y * M11;
 }
 return;
 case (5):
 case (4):
-M01 = this.m01;
-M10 = this.m10;
+M01=this.m01;
+M10=this.m10;
 while (--numPts >= 0){
 var x = srcPts[srcOff++];
-dstPts[dstOff++] = srcPts[srcOff++] * M01;
-dstPts[dstOff++] = x * M10;
+dstPts[dstOff++]=srcPts[srcOff++] * M01;
+dstPts[dstOff++]=x * M10;
 }
 return;
 case (3):
 case (2):
-M00 = this.m00;
-M11 = this.m11;
+M00=this.m00;
+M11=this.m11;
 while (--numPts >= 0){
-dstPts[dstOff++] = srcPts[srcOff++] * M00;
-dstPts[dstOff++] = srcPts[srcOff++] * M11;
+dstPts[dstOff++]=srcPts[srcOff++] * M00;
+dstPts[dstOff++]=srcPts[srcOff++] * M11;
 }
 return;
 case (1):
@@ -8959,11 +8959,11 @@ throw e;
 
 Clazz_newMeth(C$, 'hashCode', function () {
 var bits = Double.doubleToLongBits(this.m00);
-bits = bits * 31 + Double.doubleToLongBits(this.m01);
-bits = bits * 31 + Double.doubleToLongBits(this.m02);
-bits = bits * 31 + Double.doubleToLongBits(this.m10);
-bits = bits * 31 + Double.doubleToLongBits(this.m11);
-bits = bits * 31 + Double.doubleToLongBits(this.m12);
+bits=bits * 31 + Double.doubleToLongBits(this.m01);
+bits=bits * 31 + Double.doubleToLongBits(this.m02);
+bits=bits * 31 + Double.doubleToLongBits(this.m10);
+bits=bits * 31 + Double.doubleToLongBits(this.m11);
+bits=bits * 31 + Double.doubleToLongBits(this.m12);
 return (((bits|0)) ^ (((bits >> 32)|0)));
 });
 
@@ -8974,7 +8974,7 @@ return false;
 return ((this.m00 == a.m00 ) && (this.m01 == a.m01 ) && (this.m02 == a.m02 ) && (this.m10 == a.m10 ) && (this.m11 == a.m11 ) && (this.m12 == a.m12 )  );
 });
 })();
-//Created 2018-05-15 01:01:59
+//Created 2018-05-24 08:45:19
 (function(){var P$=Clazz_newPackage("java.awt.geom"),I$=[['java.lang.InternalError']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Dimension2D", null, null, 'Cloneable');
 
@@ -9004,7 +9004,7 @@ throw e;
 }
 });
 })();
-//Created 2018-05-15 01:01:59
+//Created 2018-05-24 08:45:21
 (function(){var P$=Clazz_newPackage("java.awt.geom"),I$=[[['java.awt.geom.Rectangle2D','.Double'],'java.awt.geom.Rectangle2D','java.awt.geom.RectIterator']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Rectangle2D", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -9032,23 +9032,23 @@ this.setRect$D$D$D$D(r.getX(), r.getY(), r.getWidth(), r.getHeight());
 Clazz_newMeth(C$, 'intersectsLine$D$D$D$D', function (x1, y1, x2, y2) {
 var out1;
 var out2;
-if ((out2 = this.outcode$D$D(x2, y2)) == 0) {
+if ((out2=this.outcode$D$D(x2, y2)) == 0) {
 return true;
-}while ((out1 = this.outcode$D$D(x1, y1)) != 0){
+}while ((out1=this.outcode$D$D(x1, y1)) != 0){
 if ((out1 & out2) != 0) {
 return false;
 }if ((out1 & 5) != 0) {
 var x = this.getX();
 if ((out1 & 4) != 0) {
 x += this.getWidth();
-}y1 = y1 + (x - x1) * (y2 - y1) / (x2 - x1);
-x1 = x;
+}y1=y1 + (x - x1) * (y2 - y1) / (x2 - x1);
+x1=x;
 } else {
 var y = this.getY();
 if ((out1 & 8) != 0) {
 y += this.getHeight();
-}x1 = x1 + (y - y1) * (x2 - x1) / (y2 - y1);
-y1 = y;
+}x1=x1 + (y - y1) * (x2 - x1) / (y2 - y1);
+y1=y;
 }}
 return true;
 });
@@ -9124,18 +9124,18 @@ this.setRect$D$D$D$D(x1, y1, x2 - x1, y2 - y1);
 });
 
 Clazz_newMeth(C$, 'getPathIterator$java_awt_geom_AffineTransform', function (at) {
-return (this.iterator == null  ? this.iterator = Clazz_new_((I$[3]||$incl$(3))) : this.iterator).set$java_awt_geom_Rectangle2D$java_awt_geom_AffineTransform(this, at);
+return (this.iterator == null  ? this.iterator=Clazz_new_((I$[3]||$incl$(3))) : this.iterator).set$java_awt_geom_Rectangle2D$java_awt_geom_AffineTransform(this, at);
 });
 
 Clazz_newMeth(C$, 'getPathIterator$java_awt_geom_AffineTransform$D', function (at, flatness) {
-return (this.iterator == null  ? this.iterator = Clazz_new_((I$[3]||$incl$(3))) : this.iterator).set$java_awt_geom_Rectangle2D$java_awt_geom_AffineTransform(this, at);
+return (this.iterator == null  ? this.iterator=Clazz_new_((I$[3]||$incl$(3))) : this.iterator).set$java_awt_geom_Rectangle2D$java_awt_geom_AffineTransform(this, at);
 });
 
 Clazz_newMeth(C$, 'hashCode', function () {
 var bits = java.lang.Double.doubleToLongBits(this.getX());
-bits = bits+(java.lang.Double.doubleToLongBits(this.getY()) * 37);
-bits = bits+(java.lang.Double.doubleToLongBits(this.getWidth()) * 43);
-bits = bits+(java.lang.Double.doubleToLongBits(this.getHeight()) * 47);
+bits+=java.lang.Double.doubleToLongBits(this.getY()) * 37;
+bits+=java.lang.Double.doubleToLongBits(this.getWidth()) * 43;
+bits+=java.lang.Double.doubleToLongBits(this.getHeight()) * 47;
 return (((bits|0)) ^ (((bits >> 32)|0)));
 });
 
@@ -9196,40 +9196,40 @@ return (this.width <= 0.0 ) || (this.height <= 0.0 ) ;
 });
 
 Clazz_newMeth(C$, 'setRect$F$F$F$F', function (x, y, w, h) {
-this.x = x;
-this.y = y;
-this.width = w;
-this.height = h;
+this.x=x;
+this.y=y;
+this.width=w;
+this.height=h;
 });
 
 Clazz_newMeth(C$, 'setRect$D$D$D$D', function (x, y, w, h) {
-this.x = x;
-this.y = y;
-this.width = w;
-this.height = h;
+this.x=x;
+this.y=y;
+this.width=w;
+this.height=h;
 });
 
 Clazz_newMeth(C$, 'setRect$java_awt_geom_Rectangle2D', function (r) {
-this.x = r.getX();
-this.y = r.getY();
-this.width = r.getWidth();
-this.height = r.getHeight();
+this.x=r.getX();
+this.y=r.getY();
+this.width=r.getWidth();
+this.height=r.getHeight();
 });
 
 Clazz_newMeth(C$, 'outcode$D$D', function (x, y) {
 var out = 0;
 if (this.width <= 0 ) {
-out = out|(5);
+out|=5;
 } else if (x < this.x ) {
-out = out|(1);
+out|=1;
 } else if (x > this.x + this.width ) {
-out = out|(4);
+out|=4;
 }if (this.height <= 0 ) {
-out = out|(10);
+out|=10;
 } else if (y < this.y ) {
-out = out|(2);
+out|=2;
 } else if (y > this.y + this.height ) {
-out = out|(8);
+out|=8;
 }return out;
 });
 
@@ -9240,9 +9240,9 @@ return Clazz_new_(C$.c$$F$F$F$F,[this.x, this.y, this.width, this.height]);
 Clazz_newMeth(C$, 'createIntersection$java_awt_geom_Rectangle2D', function (r) {
 var dest;
 if (Clazz_instanceOf(r, "java.awt.geom.Rectangle2D.Float")) {
-dest = Clazz_new_(C$);
+dest=Clazz_new_(C$);
 } else {
-dest = Clazz_new_((I$[1]||$incl$(1)));
+dest=Clazz_new_((I$[1]||$incl$(1)));
 }(I$[2]||$incl$(2)).intersect$java_awt_geom_Rectangle2D$java_awt_geom_Rectangle2D$java_awt_geom_Rectangle2D(this, r, dest);
 return dest;
 });
@@ -9250,9 +9250,9 @@ return dest;
 Clazz_newMeth(C$, 'createUnion$java_awt_geom_Rectangle2D', function (r) {
 var dest;
 if (Clazz_instanceOf(r, "java.awt.geom.Rectangle2D.Float")) {
-dest = Clazz_new_(C$);
+dest=Clazz_new_(C$);
 } else {
-dest = Clazz_new_((I$[1]||$incl$(1)));
+dest=Clazz_new_((I$[1]||$incl$(1)));
 }(I$[2]||$incl$(2)).union$java_awt_geom_Rectangle2D$java_awt_geom_Rectangle2D$java_awt_geom_Rectangle2D(this, r, dest);
 return dest;
 });
@@ -9310,33 +9310,33 @@ return (this.width <= 0.0 ) || (this.height <= 0.0 ) ;
 });
 
 Clazz_newMeth(C$, 'setRect$D$D$D$D', function (x, y, w, h) {
-this.x = x;
-this.y = y;
-this.width = w;
-this.height = h;
+this.x=x;
+this.y=y;
+this.width=w;
+this.height=h;
 });
 
 Clazz_newMeth(C$, 'setRect$java_awt_geom_Rectangle2D', function (r) {
-this.x = r.getX();
-this.y = r.getY();
-this.width = r.getWidth();
-this.height = r.getHeight();
+this.x=r.getX();
+this.y=r.getY();
+this.width=r.getWidth();
+this.height=r.getHeight();
 });
 
 Clazz_newMeth(C$, 'outcode$D$D', function (x, y) {
 var out = 0;
 if (this.width <= 0 ) {
-out = out|(5);
+out|=5;
 } else if (x < this.x ) {
-out = out|(1);
+out|=1;
 } else if (x > this.x + this.width ) {
-out = out|(4);
+out|=4;
 }if (this.height <= 0 ) {
-out = out|(10);
+out|=10;
 } else if (y < this.y ) {
-out = out|(2);
+out|=2;
 } else if (y > this.y + this.height ) {
-out = out|(8);
+out|=8;
 }return out;
 });
 
@@ -9361,7 +9361,7 @@ return this.getClass().getName() + "[x=" + new Double(this.x).toString() + ",y="
 });
 })()
 })();
-//Created 2018-05-15 01:02:00
+//Created 2018-05-24 08:45:22
 (function(){var P$=Clazz_newPackage("java.awt.geom"),I$=[[['java.awt.geom.Rectangle2D','.Double'],'java.awt.Rectangle','java.awt.geom.FlatteningPathIterator','java.lang.InternalError']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "RectangularShape", null, null, ['java.awt.Shape', 'Cloneable']);
 
@@ -9414,12 +9414,12 @@ this.setFrame$D$D$D$D(r.getX(), r.getY(), r.getWidth(), r.getHeight());
 Clazz_newMeth(C$, 'setFrameFromDiagonal$D$D$D$D', function (x1, y1, x2, y2) {
 if (x2 < x1 ) {
 var t = x1;
-x1 = x2;
-x2 = t;
+x1=x2;
+x2=t;
 }if (y2 < y1 ) {
 var t = y1;
-y1 = y2;
-y2 = t;
+y1=y2;
+y2=t;
 }this.setFrame$D$D$D$D(x1, y1, x2 - x1, y2 - y1);
 });
 
@@ -9479,7 +9479,7 @@ throw e;
 }
 });
 })();
-//Created 2018-05-15 01:02:00
+//Created 2018-05-24 08:45:22
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['swingjs.api.Interface','java.awt.image.ColorModel','java.awt.image.WritableRaster','java.lang.Boolean','java.util.Hashtable']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "GraphicsConfiguration");
 
@@ -9507,7 +9507,7 @@ return (I$[1]||$incl$(1)).getInstanceWithParams$S$ClassA$OA("java.awt.image.Buff
 Clazz_newMeth(C$, 'createCompatibleVolatileImage$I$I', function (width, height) {
 var vi = null;
 try {
-vi = this.createCompatibleVolatileImage$I$I$java_awt_ImageCapabilities$I(width, height, null, 1);
+vi=this.createCompatibleVolatileImage$I$I$java_awt_ImageCapabilities$I(width, height, null, 1);
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.awt.AWTException")){
 Clazz_assert(C$, this, function(){return false});
@@ -9521,7 +9521,7 @@ return vi;
 Clazz_newMeth(C$, 'createCompatibleVolatileImage$I$I$I', function (width, height, transparency) {
 var vi = null;
 try {
-vi = this.createCompatibleVolatileImage$I$I$java_awt_ImageCapabilities$I(width, height, null, transparency);
+vi=this.createCompatibleVolatileImage$I$I$java_awt_ImageCapabilities$I(width, height, null, transparency);
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.awt.AWTException")){
 Clazz_assert(C$, this, function(){return false});
@@ -9544,7 +9544,7 @@ return false;
 });
 C$.$_ASSERT_ENABLED_ = ClassLoader.$getClassAssertionStatus(C$);
 })();
-//Created 2018-05-15 01:01:51
+//Created 2018-05-24 08:45:09
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.DisplayMode',['java.awt.GraphicsDevice','.WindowTranslucency']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "GraphicsDevice");
 
@@ -9652,7 +9652,7 @@ var $vals=[];
 Clazz_newMeth(C$, 'values', function() { return $vals }, 1);
 })()
 })();
-//Created 2018-05-15 01:01:51
+//Created 2018-05-24 08:45:09
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['swingjs.JSUtil']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "GraphicsEnvironment");
 C$.localEnv = null;
@@ -9667,7 +9667,7 @@ C$.$init$.apply(this);
 
 Clazz_newMeth(C$, 'getLocalGraphicsEnvironment', function () {
 if (C$.localEnv == null ) {
-C$.localEnv = (I$[1]||$incl$(1)).getInstance$S("swingjs.JSGraphicsEnvironment");
+C$.localEnv=(I$[1]||$incl$(1)).getInstance$S("swingjs.JSGraphicsEnvironment");
 }return C$.localEnv;
 }, 1);
 
@@ -9700,11 +9700,11 @@ Clazz_newMeth(C$, 'getCenterPoint', function () {
 return null;
 });
 })();
-//Created 2018-05-15 01:01:51
+//Created 2018-05-24 08:45:09
 (function(){var P$=Clazz_newPackage("java.awt.image"),I$=[];
 var C$=Clazz_newInterface(P$, "ImageObserver");
 })();
-//Created 2018-05-15 01:02:01
+//Created 2018-05-24 08:45:25
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.lang.InternalError']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Insets", null, null, ['Cloneable', 'java.io.Serializable']);
 
@@ -9724,17 +9724,17 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$I$I$I$I', function (top, left, bottom, right) {
 C$.$init$.apply(this);
-this.top = top;
-this.left = left;
-this.bottom = bottom;
-this.right = right;
+this.top=top;
+this.left=left;
+this.bottom=bottom;
+this.right=right;
 }, 1);
 
 Clazz_newMeth(C$, 'set$I$I$I$I', function (top, left, bottom, right) {
-this.top = top;
-this.left = left;
-this.bottom = bottom;
-this.right = right;
+this.top=top;
+this.left=left;
+this.bottom=bottom;
+this.right=right;
 });
 
 Clazz_newMeth(C$, 'equals$O', function (obj) {
@@ -9771,11 +9771,11 @@ throw e;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:52
+//Created 2018-05-24 08:45:10
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "ItemSelectable");
 })();
-//Created 2018-05-15 01:01:52
+//Created 2018-05-24 08:45:10
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['Thread','swingjs.JSFrameViewer','java.lang.Boolean','javax.swing.UIManager']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSComponent", null, 'java.awt.Component');
 C$.incr = 0;
@@ -9821,7 +9821,7 @@ System.err.println$S("JSComponent: " + listener + " is not a PropertyChangeListe
 Clazz_newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.num = ++C$.incr;
+this.num=++C$.incr;
 }, 1);
 
 Clazz_newMeth(C$, 'getGraphics', function () {
@@ -9838,16 +9838,16 @@ return g;
 });
 
 Clazz_newMeth(C$, 'setFrameViewer$swingjs_JSFrameViewer', function (viewer) {
-return this.frameViewer = (viewer == null  ? viewer = Clazz_new_((I$[2]||$incl$(2))).setForWindow$java_awt_Container(this) : viewer);
+return this.frameViewer=(viewer == null  ? viewer=Clazz_new_((I$[2]||$incl$(2))).setForWindow$java_awt_Container(this) : viewer);
 });
 
 Clazz_newMeth(C$, 'getFrameViewer', function () {
 var parent = null;
-return (this.topFrameViewer != null  ? this.topFrameViewer : this.frameViewer != null  ? this.topFrameViewer = this.frameViewer : (parent = this.getParent()) == null  ? null : (this.topFrameViewer = parent.getFrameViewer()));
+return (this.topFrameViewer != null  ? this.topFrameViewer : this.frameViewer != null  ? this.topFrameViewer=this.frameViewer : (parent=this.getParent()) == null  ? null : (this.topFrameViewer=parent.getFrameViewer()));
 });
 
 Clazz_newMeth(C$, 'getHTMLName$S', function (uid) {
-return (this.htmlName == null  ? this.htmlName = this.appContext.getThreadGroup().getName() + "_" + uid + "_" + this.num  : this.htmlName);
+return (this.htmlName == null  ? this.htmlName=this.appContext.getThreadGroup().getName() + "_" + uid + "_" + this.num  : this.htmlName);
 });
 
 Clazz_newMeth(C$, 'getUIClassID', function () {
@@ -9855,7 +9855,7 @@ return this.uiClassID;
 });
 
 Clazz_newMeth(C$, 'setUI$javax_swing_plaf_ComponentUI', function (ui) {
-this.ui = ui;
+this.ui=ui;
 if (ui != null ) {
 ui.installJS();
 }});
@@ -9865,12 +9865,12 @@ return this.ui;
 });
 
 Clazz_newMeth(C$, 'updatePeerVisibility$Z', function (isVisible) {
-if (this.getOrCreatePeer() == null ) this.peerVis = (isVisible ? (I$[3]||$incl$(3)).TRUE : (I$[3]||$incl$(3)).FALSE);
+if (this.getOrCreatePeer() == null ) this.peerVis=(isVisible ? (I$[3]||$incl$(3)).TRUE : (I$[3]||$incl$(3)).FALSE);
  else this.updatePeerVisibilityOrig$Z(isVisible);
 });
 
 Clazz_newMeth(C$, 'getOrCreatePeer', function () {
-return (this.ui == null  ? null : this.ui == null  ? null : this.peer == null  ? (this.peer = this.getToolkit().createComponent$java_awt_Component(this)) : this.peer);
+return (this.ui == null  ? null : this.ui == null  ? null : this.peer == null  ? (this.peer=this.getToolkit().createComponent$java_awt_Component(this)) : this.peer);
 });
 
 Clazz_newMeth(C$, 'updateUI', function () {
@@ -9885,9 +9885,9 @@ return (g.mark ? g : null);
 
 Clazz_newMeth(C$, 'checkBackgroundPainted$swingjs_JSGraphics2D', function (jsg) {
 if (jsg == null ) {
-this.isBackgroundPainted = false;
+this.isBackgroundPainted=false;
 return;
-}this.isBackgroundPainted = jsg.isBackgroundPainted();
+}this.isBackgroundPainted=jsg.isBackgroundPainted();
 if (this.isBackgroundPainted) {
 this.ui.setBackgroundPainted();
 (this).getRootPane().getUI().setBackgroundPainted();
@@ -9897,7 +9897,7 @@ Clazz_newMeth(C$, 'selfOrParentBackgroundPainted', function () {
 var c = this;
 while (c != null ){
 if (c.isBackgroundPainted) return true;
-c = c.getParent();
+c=c.getParent();
 }
 return false;
 });
@@ -9906,18 +9906,18 @@ Clazz_newMeth(C$, 'isBackgroundSet', function () {
 return this.background != null ;
 });
 })();
-//Created 2018-05-15 01:01:52
+//Created 2018-05-24 08:45:11
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "LayoutManager");
 })();
-//Created 2018-05-15 01:01:52
+//Created 2018-05-24 08:45:11
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "LayoutManager2", null, null, 'java.awt.LayoutManager');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:52
+//Created 2018-05-24 08:45:11
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Component','java.awt.Insets','javajs.util.Lst','java.awt.Toolkit','java.awt.event.ContainerEvent','java.awt.Dimension',['java.awt.GraphicsCallback','.PaintCallback'],['java.awt.GraphicsCallback','.PaintAllCallback'],['java.awt.GraphicsCallback','.PaintHeavyweightComponentsCallback'],'java.awt.AWTEventMulticaster','java.awt.event.ContainerListener',['java.awt.Container','.MouseEventTargetFilter'],'java.awt.LightweightDispatcher','java.awt.event.MouseEvent','java.awt.event.MouseWheelEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "LightweightDispatcher", null, null, 'java.awt.event.AWTEventListener');
 var p$=C$.prototype;
@@ -9940,25 +9940,25 @@ this.isMouseInNativeContainer = false;
 
 Clazz_newMeth(C$, 'c$$java_awt_Container', function (nativeContainer) {
 C$.$init$.apply(this);
-this.nativeContainer = nativeContainer;
-this.mouseEventTarget = null;
-this.eventMask = 0;
+this.nativeContainer=nativeContainer;
+this.mouseEventTarget=null;
+this.eventMask=0;
 }, 1);
 
 Clazz_newMeth(C$, 'dispose', function () {
 p$.stopListeningForOtherDrags.apply(this, []);
-this.mouseEventTarget = null;
+this.mouseEventTarget=null;
 });
 
 Clazz_newMeth(C$, 'enableEvents$J', function (events) {
-this.eventMask = this.eventMask|(events);
+this.eventMask|=events;
 });
 
 Clazz_newMeth(C$, 'dispatchEvent$java_awt_AWTEvent', function (e) {
 var ret = false;
 if (Clazz_instanceOf(e, "java.awt.event.MouseEvent") && (this.eventMask & 131120) != 0 ) {
 var me = e;
-ret = p$.processMouseEvent$java_awt_event_MouseEvent.apply(this, [me]);
+ret=p$.processMouseEvent$java_awt_event_MouseEvent.apply(this, [me]);
 }return ret;
 });
 
@@ -9967,13 +9967,13 @@ var modifiers = e.getModifiersEx();
 if (e.getID() == 501 || e.getID() == 502 ) {
 switch (e.getButton()) {
 case 1:
-modifiers = modifiers^(1024);
+modifiers^=1024;
 break;
 case 2:
-modifiers = modifiers^(2048);
+modifiers^=2048;
 break;
 case 3:
-modifiers = modifiers^(4096);
+modifiers^=4096;
 break;
 }
 }return ((modifiers & 7168) != 0);
@@ -9985,10 +9985,10 @@ var mouseOver = null;
 {
 mouseOver = e.bdata.jqevent && e.bdata.jqevent.target["data-component"];
 }
-if (mouseOver == null ) mouseOver = this.nativeContainer.getMouseEventTarget$I$I$Z(e.getX(), e.getY(), true);
+if (mouseOver == null ) mouseOver=this.nativeContainer.getMouseEventTarget$I$I$Z(e.getX(), e.getY(), true);
 p$.trackMouseEnterExit$java_awt_Component$java_awt_event_MouseEvent.apply(this, [mouseOver, e]);
 if (!p$.isMouseGrab$java_awt_event_MouseEvent.apply(this, [e]) && id != 500 ) {
-this.mouseEventTarget = (mouseOver !== this.nativeContainer ) ? mouseOver : null;
+this.mouseEventTarget=(mouseOver !== this.nativeContainer ) ? mouseOver : null;
 }if (this.mouseEventTarget != null ) {
 switch (id) {
 case 504:
@@ -10023,13 +10023,13 @@ Clazz_newMeth(C$, 'trackMouseEnterExit$java_awt_Component$java_awt_event_MouseEv
 var targetEnter = null;
 var id = e.getID();
 if (id != 505 && id != 506  && id != 1500  && this.isMouseInNativeContainer == false  ) {
-this.isMouseInNativeContainer = true;
+this.isMouseInNativeContainer=true;
 p$.startListeningForOtherDrags.apply(this, []);
 } else if (id == 505) {
-this.isMouseInNativeContainer = false;
+this.isMouseInNativeContainer=false;
 p$.stopListeningForOtherDrags.apply(this, []);
 }if (this.isMouseInNativeContainer) {
-targetEnter = targetOver;
+targetEnter=targetOver;
 }if (this.targetLastEntered === targetEnter ) {
 return;
 }if (this.targetLastEntered != null ) {
@@ -10040,7 +10040,7 @@ e.consume();
 this.retargetMouseEvent$java_awt_Component$I$java_awt_event_MouseEvent(targetEnter, 504, e);
 }if (id == 504) {
 e.consume();
-}this.targetLastEntered = targetEnter;
+}this.targetLastEntered=targetEnter;
 });
 
 Clazz_newMeth(C$, 'startListeningForOtherDrags', function () {
@@ -10061,11 +10061,11 @@ if (!srcComponent.isShowing()) {
 return;
 }var c = this.nativeContainer;
 while ((c != null ) && !(Clazz_instanceOf(c, "java.awt.Window")) ){
-c = c.getParent_NoClientCode();
+c=c.getParent_NoClientCode();
 }
 if ((c == null ) || (c).isModalBlocked() ) {
 return;
-}me = Clazz_new_((I$[14]||$incl$(14)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,[this.nativeContainer, 1500, srcEvent.getWhen(), srcEvent.getModifiersEx() | srcEvent.getModifiers(), srcEvent.getX(), srcEvent.getY(), srcEvent.getXOnScreen(), srcEvent.getYOnScreen(), srcEvent.getClickCount(), srcEvent.isPopupTrigger(), srcEvent.getButton()]);
+}me=Clazz_new_((I$[14]||$incl$(14)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,[this.nativeContainer, 1500, srcEvent.getWhen(), srcEvent.getModifiersEx() | srcEvent.getModifiers(), srcEvent.getX(), srcEvent.getY(), srcEvent.getXOnScreen(), srcEvent.getYOnScreen(), srcEvent.getClickCount(), srcEvent.isPopupTrigger(), srcEvent.getButton()]);
 (srcEvent).copyPrivateDataInto$java_awt_AWTEvent(me);
 }var targetOver = this.nativeContainer.getMouseEventTarget$I$I$Z(me.getX(), me.getY(), true);
 p$.trackMouseEnterExit$java_awt_Component$java_awt_event_MouseEvent.apply(this, [targetOver, me]);
@@ -10077,17 +10077,17 @@ return;
 }var x = e.getX();
 var y = e.getY();
 var component;
-for (component = target; component != null  && component !== this.nativeContainer  ; component = component.getParent()) {
-x = x-(component.x);
-y = y-(component.y);
+for (component=target; component != null  && component !== this.nativeContainer  ; component=component.getParent()) {
+x-=component.x;
+y-=component.y;
 if ((component).uiClassID == "PopupMenuUI") break;
 }
 var retargeted;
 if (component != null ) {
 if (id == 507) {
-retargeted = Clazz_new_((I$[15]||$incl$(15)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I$I$I,[target, id, e.getWhen(), e.getModifiersEx() | e.getModifiers(), x, y, e.getXOnScreen(), e.getYOnScreen(), e.getClickCount(), e.isPopupTrigger(), (e).getScrollType(), (e).getScrollAmount(), (e).getWheelRotation()]);
+retargeted=Clazz_new_((I$[15]||$incl$(15)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I$I$I,[target, id, e.getWhen(), e.getModifiersEx() | e.getModifiers(), x, y, e.getXOnScreen(), e.getYOnScreen(), e.getClickCount(), e.isPopupTrigger(), (e).getScrollType(), (e).getScrollAmount(), (e).getWheelRotation()]);
 } else {
-retargeted = Clazz_new_((I$[14]||$incl$(14)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,[target, id, e.getWhen(), e.getModifiersEx() | e.getModifiers(), x, y, e.getXOnScreen(), e.getYOnScreen(), e.getClickCount(), e.isPopupTrigger(), e.getButton()]);
+retargeted=Clazz_new_((I$[14]||$incl$(14)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,[target, id, e.getWhen(), e.getModifiersEx() | e.getModifiers(), x, y, e.getXOnScreen(), e.getYOnScreen(), e.getClickCount(), e.isPopupTrigger(), e.getButton()]);
 }(e).copyPrivateDataInto$java_awt_AWTEvent(retargeted);
 if (target === this.nativeContainer ) {
 (target).dispatchEventToSelf$java_awt_AWTEvent(retargeted);
@@ -10103,14 +10103,14 @@ target.dispatchEvent$java_awt_AWTEvent(retargeted);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:49
+//Created 2018-05-24 08:45:07
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "Paint", null, null, 'java.awt.Transparency');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:01:53
+//Created 2018-05-24 08:45:11
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.FlowLayout']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Panel", null, 'java.awt.Container');
 C$.nameCounter = 0;
@@ -10147,28 +10147,28 @@ C$.superclazz.prototype.addNotify.apply(this, []);
 });
 
 Clazz_newMeth(C$, 'getOrCreatePeer', function () {
-return (this.ui == null  ? null : this.peer == null  ? (this.peer = this.getToolkit().createPanel$java_awt_Panel(this)) : this.peer);
+return (this.ui == null  ? null : this.peer == null  ? (this.peer=this.getToolkit().createPanel$java_awt_Panel(this)) : this.peer);
 });
 })();
-//Created 2018-05-15 01:01:53
+//Created 2018-05-24 08:45:12
 (function(){var P$=Clazz_newPackage("java.awt.peer"),I$=[];
 var C$=Clazz_newInterface(P$, "ComponentPeer");
 })();
-//Created 2018-05-15 01:02:02
+//Created 2018-05-24 08:45:28
 (function(){var P$=Clazz_newPackage("java.awt.peer"),I$=[];
 var C$=Clazz_newInterface(P$, "ContainerPeer", null, null, 'java.awt.peer.ComponentPeer');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:02:02
+//Created 2018-05-24 08:45:28
 (function(){var P$=Clazz_newPackage("java.awt.peer"),I$=[];
 var C$=Clazz_newInterface(P$, "LightweightPeer", null, null, 'java.awt.peer.ContainerPeer');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:02:02
+//Created 2018-05-24 08:45:29
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newClass(P$, "Queue");
 
@@ -10183,7 +10183,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:50
+//Created 2018-05-24 08:45:08
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Point','java.awt.Dimension',['java.awt.geom.Rectangle2D','.Double'],'java.awt.geom.Rectangle2D']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Rectangle", null, 'java.awt.geom.Rectangle2D', 'java.awt.Shape');
 var p$=C$.prototype;
@@ -10212,10 +10212,10 @@ C$.c$$I$I$I$I.apply(this, [r.x, r.y, r.width, r.height]);
 
 Clazz_newMeth(C$, 'c$$I$I$I$I', function (x, y, width, height) {
 Clazz_super_(C$, this,1);
-this.x = x;
-this.y = y;
-this.width = width;
-this.height = height;
+this.x=x;
+this.y=y;
+this.width=width;
+this.height=height;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$I$I', function (width, height) {
@@ -10272,19 +10272,19 @@ var newy;
 var neww;
 var newh;
 if (x > 4.294967294E9 ) {
-newx = 2147483647;
-neww = -1;
+newx=2147483647;
+neww=-1;
 } else {
-newx = C$.clip$D$Z(x, false);
+newx=C$.clip$D$Z(x, false);
 if (width >= 0 ) width += x - newx;
-neww = C$.clip$D$Z(width, width >= 0 );
+neww=C$.clip$D$Z(width, width >= 0 );
 }if (y > 4.294967294E9 ) {
-newy = 2147483647;
-newh = -1;
+newy=2147483647;
+newh=-1;
 } else {
-newy = C$.clip$D$Z(y, false);
+newy=C$.clip$D$Z(y, false);
 if (height >= 0 ) height += y - newy;
-newh = C$.clip$D$Z(height, height >= 0 );
+newh=C$.clip$D$Z(height, height >= 0 );
 }this.reshape$I$I$I$I(newx, newy, neww, newh);
 });
 
@@ -10297,10 +10297,10 @@ return 2147483647;
 }, 1);
 
 Clazz_newMeth(C$, 'reshape$I$I$I$I', function (x, y, width, height) {
-this.x = x;
-this.y = y;
-this.width = width;
-this.height = height;
+this.x=x;
+this.y=y;
+this.width=width;
+this.height=height;
 });
 
 Clazz_newMeth(C$, 'getLocation', function () {
@@ -10316,8 +10316,8 @@ this.move$I$I(x, y);
 });
 
 Clazz_newMeth(C$, 'move$I$I', function (x, y) {
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 });
 
 Clazz_newMeth(C$, 'translate$I$I', function (dx, dy) {
@@ -10326,29 +10326,29 @@ var newv = oldv + dx;
 if (dx < 0) {
 if (newv > oldv) {
 if (this.width >= 0) {
-this.width = this.width+(newv - -2147483648);
-}newv = -2147483648;
+this.width+=newv - -2147483648;
+}newv=-2147483648;
 }} else {
 if (newv < oldv) {
 if (this.width >= 0) {
-this.width = this.width+(newv - 2147483647);
-if (this.width < 0) this.width = 2147483647;
-}newv = 2147483647;
-}}this.x = newv;
-oldv = this.y;
-newv = oldv + dy;
+this.width+=newv - 2147483647;
+if (this.width < 0) this.width=2147483647;
+}newv=2147483647;
+}}this.x=newv;
+oldv=this.y;
+newv=oldv + dy;
 if (dy < 0) {
 if (newv > oldv) {
 if (this.height >= 0) {
-this.height = this.height+(newv - -2147483648);
-}newv = -2147483648;
+this.height+=newv - -2147483648;
+}newv=-2147483648;
 }} else {
 if (newv < oldv) {
 if (this.height >= 0) {
-this.height = this.height+(newv - 2147483647);
-if (this.height < 0) this.height = 2147483647;
-}newv = 2147483647;
-}}this.y = newv;
+this.height+=newv - 2147483647;
+if (this.height < 0) this.height=2147483647;
+}newv=2147483647;
+}}this.y=newv;
 });
 
 Clazz_newMeth(C$, 'getSize', function () {
@@ -10364,8 +10364,8 @@ this.resize$I$I(width, height);
 });
 
 Clazz_newMeth(C$, 'resize$I$I', function (width, height) {
-this.width = width;
-this.height = height;
+this.width=width;
+this.height=height;
 });
 
 Clazz_newMeth(C$, 'contains$java_awt_Point', function (p) {
@@ -10389,14 +10389,14 @@ return false;
 var y = this.y;
 if (X < x || Y < y ) {
 return false;
-}w = w+(x);
-W = W+(X);
+}w+=x;
+W+=X;
 if (W <= X) {
 if (w >= x || W > w ) return false;
 } else {
 if (w >= x && W > w ) return false;
-}h = h+(y);
-H = H+(Y);
+}h+=y;
+H+=Y;
 if (H <= Y) {
 if (h >= y || H > h ) return false;
 } else {
@@ -10413,8 +10413,8 @@ return false;
 var y = this.y;
 if (X < x || Y < y ) {
 return false;
-}w = w+(x);
-h = h+(y);
+}w+=x;
+h+=y;
 return ((w < x || w > X ) && (h < y || h > Y ) );
 });
 
@@ -10429,10 +10429,10 @@ return false;
 var ty = this.y;
 var rx = r.x;
 var ry = r.y;
-rw = rw+(rx);
-rh = rh+(ry);
-tw = tw+(tx);
-th = th+(ty);
+rw+=rx;
+rh+=ry;
+tw+=tx;
+th+=ty;
 return ((rw < rx || rw > tx ) && (rh < ry || rh > ty ) && (tw < tx || tw > rx ) && (th < ty || th > ry )  );
 });
 
@@ -10442,21 +10442,21 @@ var ty1 = this.y;
 var rx1 = r.x;
 var ry1 = r.y;
 var tx2 = tx1;
-tx2 = tx2+(this.width);
+tx2+=this.width;
 var ty2 = ty1;
-ty2 = ty2+(this.height);
+ty2+=this.height;
 var rx2 = rx1;
-rx2 = rx2+(r.width);
+rx2+=r.width;
 var ry2 = ry1;
-ry2 = ry2+(r.height);
-if (tx1 < rx1) tx1 = rx1;
-if (ty1 < ry1) ty1 = ry1;
-if (tx2 > rx2) tx2 = rx2;
-if (ty2 > ry2) ty2 = ry2;
-tx2 = tx2-(tx1);
-ty2 = ty2-(ty1);
-if (tx2 < -2147483648) tx2 = -2147483648;
-if (ty2 < -2147483648) ty2 = -2147483648;
+ry2+=r.height;
+if (tx1 < rx1) tx1=rx1;
+if (ty1 < ry1) ty1=ry1;
+if (tx2 > rx2) tx2=rx2;
+if (ty2 > ry2) ty2=ry2;
+tx2-=tx1;
+ty2-=ty1;
+if (tx2 < -2147483648) tx2=-2147483648;
+if (ty2 < -2147483648) ty2=-2147483648;
 return Clazz_new_(C$.c$$I$I$I$I,[tx1, ty1, (tx2|0), (ty2|0)]);
 });
 
@@ -10471,43 +10471,43 @@ if ((rx2 | ry2) < 0) {
 return Clazz_new_(C$.c$$java_awt_Rectangle,[this]);
 }var tx1 = this.x;
 var ty1 = this.y;
-tx2 = tx2+(tx1);
-ty2 = ty2+(ty1);
+tx2+=tx1;
+ty2+=ty1;
 var rx1 = r.x;
 var ry1 = r.y;
-rx2 = rx2+(rx1);
-ry2 = ry2+(ry1);
-if (tx1 > rx1) tx1 = rx1;
-if (ty1 > ry1) ty1 = ry1;
-if (tx2 < rx2) tx2 = rx2;
-if (ty2 < ry2) ty2 = ry2;
-tx2 = tx2-(tx1);
-ty2 = ty2-(ty1);
-if (tx2 > 2147483647) tx2 = 2147483647;
-if (ty2 > 2147483647) ty2 = 2147483647;
+rx2+=rx1;
+ry2+=ry1;
+if (tx1 > rx1) tx1=rx1;
+if (ty1 > ry1) ty1=ry1;
+if (tx2 < rx2) tx2=rx2;
+if (ty2 < ry2) ty2=ry2;
+tx2-=tx1;
+ty2-=ty1;
+if (tx2 > 2147483647) tx2=2147483647;
+if (ty2 > 2147483647) ty2=2147483647;
 return Clazz_new_(C$.c$$I$I$I$I,[tx1, ty1, (tx2|0), (ty2|0)]);
 });
 
 Clazz_newMeth(C$, 'add$I$I', function (newx, newy) {
 if ((this.width | this.height) < 0) {
-this.x = newx;
-this.y = newy;
-this.width = this.height = 0;
+this.x=newx;
+this.y=newy;
+this.width=this.height=0;
 return;
 }var x1 = this.x;
 var y1 = this.y;
 var x2 = this.width;
 var y2 = this.height;
-x2 = x2+(x1);
-y2 = y2+(y1);
-if (x1 > newx) x1 = newx;
-if (y1 > newy) y1 = newy;
-if (x2 < newx) x2 = newx;
-if (y2 < newy) y2 = newy;
-x2 = x2-(x1);
-y2 = y2-(y1);
-if (x2 > 2147483647) x2 = 2147483647;
-if (y2 > 2147483647) y2 = 2147483647;
+x2+=x1;
+y2+=y1;
+if (x1 > newx) x1=newx;
+if (y1 > newy) y1=newy;
+if (x2 < newx) x2=newx;
+if (y2 < newy) y2=newy;
+x2-=x1;
+y2-=y1;
+if (x2 > 2147483647) x2=2147483647;
+if (y2 > 2147483647) y2=2147483647;
 this.reshape$I$I$I$I(x1, y1, (x2|0), (y2|0));
 });
 
@@ -10526,20 +10526,20 @@ if ((rx2 | ry2) < 0) {
 return;
 }var tx1 = this.x;
 var ty1 = this.y;
-tx2 = tx2+(tx1);
-ty2 = ty2+(ty1);
+tx2+=tx1;
+ty2+=ty1;
 var rx1 = r.x;
 var ry1 = r.y;
-rx2 = rx2+(rx1);
-ry2 = ry2+(ry1);
-if (tx1 > rx1) tx1 = rx1;
-if (ty1 > ry1) ty1 = ry1;
-if (tx2 < rx2) tx2 = rx2;
-if (ty2 < ry2) ty2 = ry2;
-tx2 = tx2-(tx1);
-ty2 = ty2-(ty1);
-if (tx2 > 2147483647) tx2 = 2147483647;
-if (ty2 > 2147483647) ty2 = 2147483647;
+rx2+=rx1;
+ry2+=ry1;
+if (tx1 > rx1) tx1=rx1;
+if (ty1 > ry1) ty1=ry1;
+if (tx2 < rx2) tx2=rx2;
+if (ty2 < ry2) ty2=ry2;
+tx2-=tx1;
+ty2-=ty1;
+if (tx2 > 2147483647) tx2=2147483647;
+if (ty2 > 2147483647) ty2=2147483647;
 this.reshape$I$I$I$I(tx1, ty1, (tx2|0), (ty2|0));
 });
 
@@ -10548,34 +10548,34 @@ var x0 = this.x;
 var y0 = this.y;
 var x1 = this.width;
 var y1 = this.height;
-x1 = x1+(x0);
-y1 = y1+(y0);
-x0 = x0-(h);
-y0 = y0-(v);
-x1 = x1+(h);
-y1 = y1+(v);
+x1+=x0;
+y1+=y0;
+x0-=h;
+y0-=v;
+x1+=h;
+y1+=v;
 if (x1 < x0) {
-x1 = x1-(x0);
-if (x1 < -2147483648) x1 = -2147483648;
-if (x0 < -2147483648) x0 = -2147483648;
- else if (x0 > 2147483647) x0 = 2147483647;
+x1-=x0;
+if (x1 < -2147483648) x1=-2147483648;
+if (x0 < -2147483648) x0=-2147483648;
+ else if (x0 > 2147483647) x0=2147483647;
 } else {
-if (x0 < -2147483648) x0 = -2147483648;
- else if (x0 > 2147483647) x0 = 2147483647;
-x1 = x1-(x0);
-if (x1 < -2147483648) x1 = -2147483648;
- else if (x1 > 2147483647) x1 = 2147483647;
+if (x0 < -2147483648) x0=-2147483648;
+ else if (x0 > 2147483647) x0=2147483647;
+x1-=x0;
+if (x1 < -2147483648) x1=-2147483648;
+ else if (x1 > 2147483647) x1=2147483647;
 }if (y1 < y0) {
-y1 = y1-(y0);
-if (y1 < -2147483648) y1 = -2147483648;
-if (y0 < -2147483648) y0 = -2147483648;
- else if (y0 > 2147483647) y0 = 2147483647;
+y1-=y0;
+if (y1 < -2147483648) y1=-2147483648;
+if (y0 < -2147483648) y0=-2147483648;
+ else if (y0 > 2147483647) y0=2147483647;
 } else {
-if (y0 < -2147483648) y0 = -2147483648;
- else if (y0 > 2147483647) y0 = 2147483647;
-y1 = y1-(y0);
-if (y1 < -2147483648) y1 = -2147483648;
- else if (y1 > 2147483647) y1 = 2147483647;
+if (y0 < -2147483648) y0=-2147483648;
+ else if (y0 > 2147483647) y0=2147483647;
+y1-=y0;
+if (y1 < -2147483648) y1=-2147483648;
+ else if (y1 > 2147483647) y1=2147483647;
 }this.reshape$I$I$I$I((x0|0), (y0|0), (x1|0), (y1|0));
 });
 
@@ -10586,17 +10586,17 @@ return (this.width <= 0) || (this.height <= 0) ;
 Clazz_newMeth(C$, 'outcode$D$D', function (x, y) {
 var out = 0;
 if (this.width <= 0) {
-out = out|(5);
+out|=5;
 } else if (x < this.x ) {
-out = out|(1);
+out|=1;
 } else if (x > this.x + this.width ) {
-out = out|(4);
+out|=4;
 }if (this.height <= 0) {
-out = out|(10);
+out|=10;
 } else if (y < this.y ) {
-out = out|(2);
+out|=2;
 } else if (y > this.y + this.height ) {
-out = out|(8);
+out|=8;
 }return out;
 });
 
@@ -10627,7 +10627,7 @@ Clazz_newMeth(C$, 'toString', function () {
 return this.getClass().getName() + "[x=" + this.x + ",y=" + this.y + ",width=" + this.width + ",height=" + this.height + "]" ;
 });
 })();
-//Created 2018-05-15 01:01:53
+//Created 2018-05-24 08:45:12
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.util.HashMap','java.lang.InternalError',['java.awt.RenderingHints','.SunKey'],['java.awt.RenderingHints','.Value'],['java.awt.RenderingHints','.LCDContrastKey'],'java.util.Collections']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "RenderingHints", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -10816,9 +10816,9 @@ return this.hintmap.hashCode();
 Clazz_newMeth(C$, 'clone', function () {
 var rh;
 try {
-rh = Clazz_clone(this);
+rh=Clazz_clone(this);
 if (this.hintmap != null ) {
-rh.hintmap = this.hintmap.clone();
+rh.hintmap=this.hintmap.clone();
 }} catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.CloneNotSupportedException")){
 throw Clazz_new_((I$[2]||$incl$(2)));
@@ -10869,7 +10869,7 @@ throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,[identity
 
 Clazz_newMeth(C$, 'c$$I', function (privatekey) {
 C$.$init$.apply(this);
-this.privatekey = privatekey;
+this.privatekey=privatekey;
 p$.recordIdentity$java_awt_RenderingHints_Key.apply(this, [this]);
 }, 1);
 
@@ -10906,7 +10906,7 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$$I$S', function (privatekey, description) {
 C$.superclazz.c$$I.apply(this, [privatekey]);
 C$.$init$.apply(this);
-this.description = description;
+this.description=description;
 }, 1);
 
 Clazz_newMeth(C$, 'getIndex', function () {
@@ -10951,7 +10951,7 @@ var kindex = key.getIndex();
 var vindex = value.getIndex();
 if (C$.ValueObjects[kindex][vindex] != null ) {
 throw Clazz_new_((I$[2]||$incl$(2)).c$$S,["duplicate index: " + vindex]);
-}C$.ValueObjects[kindex][vindex] = value;
+}C$.ValueObjects[kindex][vindex]=value;
 }, 1);
 
 Clazz_newMeth(C$, 'get$I$I', function (keyindex, valueindex) {
@@ -10960,9 +10960,9 @@ return C$.ValueObjects[keyindex][valueindex];
 
 Clazz_newMeth(C$, 'c$$java_awt_RenderingHints_SunKey$I$S', function (key, index, description) {
 C$.$init$.apply(this);
-this.myKey = key;
-this.index = index;
-this.description = description;
+this.myKey=key;
+this.index=index;
+this.description=description;
 C$.register$java_awt_RenderingHints_SunKey$java_awt_RenderingHints_Value(key, this);
 }, 1);
 
@@ -11016,15 +11016,15 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:53
+//Created 2018-05-24 08:45:12
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "Shape");
 })();
-//Created 2018-05-15 01:01:54
+//Created 2018-05-24 08:45:13
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "Stroke");
 })();
-//Created 2018-05-15 01:01:54
+//Created 2018-05-24 08:45:13
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.util.HashMap','sun.awt.NullComponentPeer','java.awt.Insets','swingjs.JSToolkit','java.awt.GraphicsEnvironment','java.awt.Cursor',['java.awt.Toolkit','.SelectiveAWTEventListener'],['java.awt.Toolkit','.ToolkitEventMulticaster'],'java.awt.AWTEventMulticaster','java.awt.event.AWTEventListener','java.awt.event.AWTEventListenerProxy','java.util.ArrayList','java.beans.PropertyChangeSupport']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Toolkit", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -11054,7 +11054,7 @@ this.listener2SelectiveListener = Clazz_new_((I$[1]||$incl$(1)));
 
 Clazz_newMeth(C$, 'createComponent$java_awt_Component', function (target) {
 if (C$.lightweightMarker == null ) {
-C$.lightweightMarker = Clazz_new_((I$[2]||$incl$(2)));
+C$.lightweightMarker=Clazz_new_((I$[2]||$incl$(2)));
 }return C$.lightweightMarker;
 });
 
@@ -11086,7 +11086,7 @@ return Clazz_new_((I$[3]||$incl$(3)).c$$I$I$I$I,[0, 0, 0, 0]);
 }});
 
 Clazz_newMeth(C$, 'getDefaultToolkit', function () {
-return (C$.toolkit == null  ? C$.toolkit = Clazz_new_((I$[4]||$incl$(4))) : C$.toolkit);
+return (C$.toolkit == null  ? C$.toolkit=Clazz_new_((I$[4]||$incl$(4))) : C$.toolkit);
 }, 1);
 
 Clazz_newMeth(C$, 'createImage$BA', function (imagedata) {
@@ -11154,22 +11154,22 @@ if (this.desktopProperties.isEmpty()) {
 this.initializeDesktopProperties();
 }var value;
 if (propertyName.equals$O("awt.dynamicLayoutSupported")) {
-value = this.lazilyLoadDesktopProperty$S(propertyName);
+value=this.lazilyLoadDesktopProperty$S(propertyName);
 return value;
-}value = this.desktopProperties.get$O(propertyName);
+}value=this.desktopProperties.get$O(propertyName);
 if (value == null ) {
-value = this.lazilyLoadDesktopProperty$S(propertyName);
+value=this.lazilyLoadDesktopProperty$S(propertyName);
 if (value != null ) {
 this.setDesktopProperty$S$O(propertyName, value);
 }}if (Clazz_instanceOf(value, "java.awt.RenderingHints")) {
-value = (value).clone();
+value=(value).clone();
 }return value;
 });
 
 Clazz_newMeth(C$, 'setDesktopProperty$S$O', function (name, newValue) {
 var oldValue;
 {
-oldValue = this.desktopProperties.get$O(name);
+oldValue=this.desktopProperties.get$O(name);
 this.desktopProperties.put$TK$TV(name, newValue);
 }this.desktopPropsSupport.firePropertyChange$S$O$O(name, oldValue, newValue);
 });
@@ -11206,7 +11206,7 @@ var localL = l;
 if (localL == null ) {
 return null;
 }if (Clazz_instanceOf(l, "java.awt.event.AWTEventListenerProxy")) {
-localL = (l).getListener();
+localL=(l).getListener();
 }return localL;
 }, 1);
 
@@ -11217,18 +11217,18 @@ return;
 }{
 var selectiveListener = this.listener2SelectiveListener.get$O(localL);
 if (selectiveListener == null ) {
-selectiveListener = Clazz_new_((I$[7]||$incl$(7)).c$$java_awt_event_AWTEventListener$J, [this, null, localL, eventMask]);
+selectiveListener=Clazz_new_((I$[7]||$incl$(7)).c$$java_awt_event_AWTEventListener$J, [this, null, localL, eventMask]);
 this.listener2SelectiveListener.put$TK$TV(localL, selectiveListener);
-this.eventListener = (I$[8]||$incl$(8)).add$java_awt_event_AWTEventListener$java_awt_event_AWTEventListener(this.eventListener, selectiveListener);
+this.eventListener=(I$[8]||$incl$(8)).add$java_awt_event_AWTEventListener$java_awt_event_AWTEventListener(this.eventListener, selectiveListener);
 }selectiveListener.orEventMasks$J(eventMask);
-C$.enabledOnToolkitMask = C$.enabledOnToolkitMask|(eventMask);
+C$.enabledOnToolkitMask|=eventMask;
 var mask = eventMask;
 for (var i = 0; i < 32; i++) {
 if (mask == 0) {
 break;
 }if ((mask & 1) != 0) {
 this.calls[i]++;
-}mask = mask>>>(1);
+}mask>>>=1;
 }
 }});
 
@@ -11242,11 +11242,11 @@ if (selectiveListener != null ) {
 this.listener2SelectiveListener.remove$O(localL);
 var listenerCalls = selectiveListener.getCalls();
 for (var i = 0; i < 32; i++) {
-this.calls[i] = this.calls[i]-(listenerCalls[i]);
+this.calls[i]-=listenerCalls[i];
 if (this.calls[i] == 0) {
-C$.enabledOnToolkitMask = C$.enabledOnToolkitMask&(~(1 << i));
+C$.enabledOnToolkitMask&=~(1 << i);
 }}
-}this.eventListener = (I$[8]||$incl$(8)).remove$java_awt_event_AWTEventListener$java_awt_event_AWTEventListener(this.eventListener, (selectiveListener == null ) ? localL : selectiveListener);
+}this.eventListener=(I$[8]||$incl$(8)).remove$java_awt_event_AWTEventListener$java_awt_event_AWTEventListener(this.eventListener, (selectiveListener == null ) ? localL : selectiveListener);
 }});
 
 Clazz_newMeth(C$, 'enabledOnToolkit$J', function (eventMask) {
@@ -11255,7 +11255,7 @@ return (C$.enabledOnToolkitMask & eventMask) != 0;
 
 Clazz_newMeth(C$, 'countAWTEventListeners$J', function (eventMask) {
 var ci = 0;
-for (; eventMask != 0; eventMask = eventMask>>>(1), ci++) {
+for (; eventMask != 0; eventMask>>>=1, ci++) {
 }
 ci--;
 return this.calls[ci];
@@ -11268,7 +11268,7 @@ var ret = Clazz_array((I$[10]||$incl$(10)), [la.length]);
 for (var i = 0; i < la.length; i++) {
 var sael = la[i];
 var tempL = sael.getListener();
-ret[i] = Clazz_new_((I$[11]||$incl$(11)).c$$J$java_awt_event_AWTEventListener,[sael.getEventMask(), tempL]);
+ret[i]=Clazz_new_((I$[11]||$incl$(11)).c$$J$java_awt_event_AWTEventListener,[sael.getEventMask(), tempL]);
 }
 return ret;
 }});
@@ -11369,27 +11369,27 @@ return this.calls;
 });
 
 Clazz_newMeth(C$, 'orEventMasks$J', function (mask) {
-this.eventMask = this.eventMask|(mask);
+this.eventMask|=mask;
 for (var i = 0; i < 32; i++) {
 if (mask == 0) {
 break;
 }if ((mask & 1) != 0) {
 this.calls[i]++;
-}mask = mask>>>(1);
+}mask>>>=1;
 }
 });
 
 Clazz_newMeth(C$, 'c$$java_awt_event_AWTEventListener$J', function (l, mask) {
 C$.$init$.apply(this);
-this.listener = l;
-this.eventMask = mask;
+this.listener=l;
+this.eventMask=mask;
 }, 1);
 
 Clazz_newMeth(C$, 'eventDispatched$java_awt_AWTEvent', function (event) {
 var eventBit = 0;
-if (((eventBit = this.eventMask & 1) != 0 && event.id >= 100  && event.id <= 103 ) || ((eventBit = this.eventMask & 2) != 0 && event.id >= 300  && event.id <= 301 ) || ((eventBit = this.eventMask & 4) != 0 && event.id >= 1004  && event.id <= 1005 ) || ((eventBit = this.eventMask & 8) != 0 && event.id >= 400  && event.id <= 402 ) || ((eventBit = this.eventMask & 131072) != 0 && event.id == 507 ) || ((eventBit = this.eventMask & 32) != 0 && (event.id == 503 || event.id == 506 ) ) || ((eventBit = this.eventMask & 16) != 0 && event.id != 503  && event.id != 506  && event.id != 507  && event.id >= 500  && event.id <= 507 ) || ((eventBit = this.eventMask & 64) != 0 && (event.id >= 200 && event.id <= 209 ) ) || ((eventBit = this.eventMask & 128) != 0 && event.id >= 1001  && event.id <= 1001 ) || ((eventBit = this.eventMask & 256) != 0 && event.id >= 601  && event.id <= 601 ) || ((eventBit = this.eventMask & 512) != 0 && event.id >= 701  && event.id <= 701 ) || ((eventBit = this.eventMask & 1024) != 0 && event.id >= 900  && event.id <= 900 ) || ((eventBit = this.eventMask & 2048) != 0 && event.id >= 1100  && event.id <= 1101 ) || ((eventBit = this.eventMask & 8192) != 0 && event.id >= 800  && event.id <= 801 ) || ((eventBit = this.eventMask & 16384) != 0 && event.id >= 1200  && event.id <= 1201 ) || ((eventBit = this.eventMask & 32768) != 0 && event.id == 1400 ) || ((eventBit = this.eventMask & 65536) != 0 && (event.id == 1401 || event.id == 1402 ) ) || ((eventBit = this.eventMask & 262144) != 0 && event.id == 209 ) || ((eventBit = this.eventMask & 524288) != 0 && (event.id == 207 || event.id == 208 ) )  ) {
+if (((eventBit=this.eventMask & 1) != 0 && event.id >= 100  && event.id <= 103 ) || ((eventBit=this.eventMask & 2) != 0 && event.id >= 300  && event.id <= 301 ) || ((eventBit=this.eventMask & 4) != 0 && event.id >= 1004  && event.id <= 1005 ) || ((eventBit=this.eventMask & 8) != 0 && event.id >= 400  && event.id <= 402 ) || ((eventBit=this.eventMask & 131072) != 0 && event.id == 507 ) || ((eventBit=this.eventMask & 32) != 0 && (event.id == 503 || event.id == 506 ) ) || ((eventBit=this.eventMask & 16) != 0 && event.id != 503  && event.id != 506  && event.id != 507  && event.id >= 500  && event.id <= 507 ) || ((eventBit=this.eventMask & 64) != 0 && (event.id >= 200 && event.id <= 209 ) ) || ((eventBit=this.eventMask & 128) != 0 && event.id >= 1001  && event.id <= 1001 ) || ((eventBit=this.eventMask & 256) != 0 && event.id >= 601  && event.id <= 601 ) || ((eventBit=this.eventMask & 512) != 0 && event.id >= 701  && event.id <= 701 ) || ((eventBit=this.eventMask & 1024) != 0 && event.id >= 900  && event.id <= 900 ) || ((eventBit=this.eventMask & 2048) != 0 && event.id >= 1100  && event.id <= 1101 ) || ((eventBit=this.eventMask & 8192) != 0 && event.id >= 800  && event.id <= 801 ) || ((eventBit=this.eventMask & 16384) != 0 && event.id >= 1200  && event.id <= 1201 ) || ((eventBit=this.eventMask & 32768) != 0 && event.id == 1400 ) || ((eventBit=this.eventMask & 65536) != 0 && (event.id == 1401 || event.id == 1402 ) ) || ((eventBit=this.eventMask & 262144) != 0 && event.id == 209 ) || ((eventBit=this.eventMask & 524288) != 0 && (event.id == 207 || event.id == 208 ) )  ) {
 var ci = 0;
-for (var eMask = eventBit; eMask != 0; eMask = eMask>>>(1), ci++) {
+for (var eMask = eventBit; eMask != 0; eMask>>>=1, ci++) {
 }
 ci--;
 for (var i = 0; i < this.calls[ci]; i++) {
@@ -11402,11 +11402,11 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:54
+//Created 2018-05-24 08:45:13
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "Transparency");
 })();
-//Created 2018-05-15 01:01:54
+//Created 2018-05-24 08:45:13
 (function(){var P$=Clazz_newPackage("java.beans"),I$=[['java.util.HashMap','java.util.ArrayList','java.util.Collections']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "ChangeListenerMap");
 
@@ -11420,11 +11420,11 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'add$S$TL', function (name, listener) {
 if (this.map == null ) {
-this.map = Clazz_new_((I$[1]||$incl$(1)));
+this.map=Clazz_new_((I$[1]||$incl$(1)));
 }var array = this.map.get$O(name);
 var size = (array != null ) ? array.length : 0;
 var clone = this.newArray$I(size + 1);
-clone[size] = listener;
+clone[size]=listener;
 if (array != null ) {
 System.arraycopy(array, 0, clone, 0, size);
 }this.map.put$TK$TV(name, clone);
@@ -11445,7 +11445,7 @@ this.map.put$TK$TV(name, clone);
 } else {
 this.map.remove$O(name);
 if (this.map.isEmpty()) {
-this.map = null;
+this.map=null;
 }}break;
 }}
 }}});
@@ -11457,12 +11457,12 @@ return (this.map != null ) ? this.map.get$O(name) : null;
 Clazz_newMeth(C$, 'set$S$TLA', function (name, listeners) {
 if (listeners != null ) {
 if (this.map == null ) {
-this.map = Clazz_new_((I$[1]||$incl$(1)));
+this.map=Clazz_new_((I$[1]||$incl$(1)));
 }this.map.put$TK$TV(name, listeners);
 } else if (this.map != null ) {
 this.map.remove$O(name);
 if (this.map.isEmpty()) {
-this.map = null;
+this.map=null;
 }}});
 
 Clazz_newMeth(C$, 'getListeners', function () {
@@ -11506,14 +11506,14 @@ return (this.map != null ) ? this.map.entrySet() : (I$[3]||$incl$(3)).emptySet()
 Clazz_newMeth(C$, 'extract$TL', function (listener) {
 while (Clazz_instanceOf(listener, "java.util.EventListenerProxy")){
 var proxy = listener;
-listener = proxy.getListener();
+listener=proxy.getListener();
 }
 return listener;
 });
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:03
+//Created 2018-05-24 08:45:30
 (function(){var P$=Clazz_newPackage("java.beans"),I$=[];
 var C$=Clazz_newClass(P$, "PropertyChangeEvent", null, 'java.util.EventObject');
 
@@ -11534,9 +11534,9 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$$O$S$O$O', function (source, propertyName, oldValue, newValue) {
 C$.superclazz.c$.apply(this, [source]);
 C$.$init$.apply(this);
-this.propertyName = propertyName;
-this.newValue = newValue;
-this.oldValue = oldValue;
+this.propertyName=propertyName;
+this.newValue=newValue;
+this.oldValue=oldValue;
 }, 1);
 
 Clazz_newMeth(C$, 'getPropertyName', function () {
@@ -11552,7 +11552,7 @@ return this.oldValue;
 });
 
 Clazz_newMeth(C$, 'setPropagationId$O', function (propagationId) {
-this.propagationId = propagationId;
+this.propagationId=propagationId;
 });
 
 Clazz_newMeth(C$, 'getPropagationId', function () {
@@ -11561,14 +11561,14 @@ return this.propagationId;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:03
+//Created 2018-05-24 08:45:31
 (function(){var P$=Clazz_newPackage("java.beans"),I$=[];
 var C$=Clazz_newInterface(P$, "PropertyChangeListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:02:03
+//Created 2018-05-24 08:45:31
 (function(){var P$=Clazz_newPackage("java.beans"),I$=[['java.beans.PropertyChangeListener','java.beans.PropertyChangeListenerProxy',['java.beans.PropertyChangeSupport','.PropertyChangeListenerMap'],'java.beans.PropertyChangeEvent','Boolean','java.beans.IndexedPropertyChangeEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "PropertyChangeSupport", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -11589,7 +11589,7 @@ Clazz_newMeth(C$, 'c$$O', function (sourceBean) {
 C$.$init$.apply(this);
 if (sourceBean == null ) {
 throw Clazz_new_(Clazz_load('java.lang.NullPointerException'));
-}this.source = sourceBean;
+}this.source=sourceBean;
 }, 1);
 
 Clazz_newMeth(C$, 'addPropertyChangeListener$java_beans_PropertyChangeListener', function (listener) {
@@ -11619,7 +11619,7 @@ return this.map.getListeners();
 Clazz_newMeth(C$, 'addPropertyChangeListener$S$java_beans_PropertyChangeListener', function (propertyName, listener) {
 if (listener == null  || propertyName == null  ) {
 return;
-}listener = this.map.extract$TL(listener);
+}listener=this.map.extract$TL(listener);
 if (listener != null ) {
 this.map.add$S$TL(propertyName, listener);
 }});
@@ -11627,7 +11627,7 @@ this.map.add$S$TL(propertyName, listener);
 Clazz_newMeth(C$, 'removePropertyChangeListener$S$java_beans_PropertyChangeListener', function (propertyName, listener) {
 if (listener == null  || propertyName == null  ) {
 return;
-}listener = this.map.extract$TL(listener);
+}listener=this.map.extract$TL(listener);
 if (listener != null ) {
 this.map.remove$S$TL(propertyName, listener);
 }});
@@ -11718,7 +11718,7 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:03
+//Created 2018-05-24 08:45:31
 (function(){var P$=java.lang,I$=[['org.apache.harmony.luni.util.Msg']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(java.lang, "AbstractStringBuilder");
 var p$=C$.prototype;
@@ -11738,35 +11738,35 @@ return this.value;
 });
 
 Clazz_newMeth(C$, 'shareValue', function () {
-this.shared = true;
+this.shared=true;
 return this.value;
 });
 
 Clazz_newMeth(C$, 'set$CA$I', function (val, len) {
-if (val == null ) val = Clazz_array(Character.TYPE, [0]);
+if (val == null ) val=Clazz_array(Character.TYPE, [0]);
 if (val.length < len) throw Clazz_new_(Clazz_load('java.io.InvalidObjectException').c$$S,[(I$[1]||$incl$(1)).getString$S("K0199")]);
-this.shared = false;
-this.value = val;
-this.count = len;
+this.shared=false;
+this.value=val;
+this.count=len;
 });
 
 Clazz_newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.value = Clazz_array(Character.TYPE, [16]);
+this.value=Clazz_array(Character.TYPE, [16]);
 }, 1);
 
 Clazz_newMeth(C$, 'c$$I', function (capacity) {
 C$.$init$.apply(this);
 if (capacity < 0) throw Clazz_new_(Clazz_load('java.lang.NegativeArraySizeException'));
-this.value = Clazz_array(Character.TYPE, [capacity]);
+this.value=Clazz_array(Character.TYPE, [capacity]);
 }, 1);
 
 Clazz_newMeth(C$, 'c$$S', function (string) {
 C$.$init$.apply(this);
 if (string == null ) throw Clazz_new_(Clazz_load('java.lang.NullPointerException'));
-this.count = string.length$();
-this.shared = false;
-this.value = Clazz_array(Character.TYPE, [this.count + 16]);
+this.count=string.length$();
+this.shared=false;
+this.value=Clazz_array(Character.TYPE, [this.count + 16]);
 string.getChars$I$I$CA$I(0, this.count, this.value, 0);
 }, 1);
 
@@ -11774,8 +11774,8 @@ Clazz_newMeth(C$, 'enlargeBuffer$I', function (min) {
 var twice = (this.value.length << 1) + 2;
 var newData = Clazz_array(Character.TYPE, [min > twice ? min : twice]);
 System.arraycopy(this.value, 0, newData, 0, this.count);
-this.value = newData;
-this.shared = false;
+this.value=newData;
+this.shared=false;
 });
 
 Clazz_newMeth(C$, 'appendNull', function () {
@@ -11783,12 +11783,12 @@ var newSize = this.count + 4;
 if (newSize > this.value.length) {
 p$.enlargeBuffer$I.apply(this, [newSize]);
 } else if (this.shared) {
-this.value = this.value.clone();
-this.shared = false;
-}this.value[this.count++] = "n";
-this.value[this.count++] = "u";
-this.value[this.count++] = "l";
-this.value[this.count++] = "l";
+this.value=this.value.clone();
+this.shared=false;
+}this.value[this.count++]="n";
+this.value[this.count++]="u";
+this.value[this.count++]="l";
+this.value[this.count++]="l";
 });
 
 Clazz_newMeth(C$, 'append0$CA', function (chars) {
@@ -11796,10 +11796,10 @@ var newSize = this.count + chars.length;
 if (newSize > this.value.length) {
 p$.enlargeBuffer$I.apply(this, [newSize]);
 } else if (this.shared) {
-this.value = this.value.clone();
-this.shared = false;
+this.value=this.value.clone();
+this.shared=false;
 }System.arraycopy(chars, 0, this.value, this.count, chars.length);
-this.count = newSize;
+this.count=newSize;
 });
 
 Clazz_newMeth(C$, 'append0$CA$I$I', function (chars, start, length) {
@@ -11810,10 +11810,10 @@ var newSize = this.count + length;
 if (newSize > this.value.length) {
 p$.enlargeBuffer$I.apply(this, [newSize]);
 } else if (this.shared) {
-this.value = this.value.clone();
-this.shared = false;
+this.value=this.value.clone();
+this.shared=false;
 }System.arraycopy(chars, start, this.value, this.count, length);
-this.count = newSize;
+this.count=newSize;
 } else {
 throw Clazz_new_(Clazz_load('java.lang.ArrayIndexOutOfBoundsException'));
 }});
@@ -11822,9 +11822,9 @@ Clazz_newMeth(C$, 'append0$C', function (ch) {
 if (this.count == this.value.length) {
 p$.enlargeBuffer$I.apply(this, [this.count + 1]);
 }if (this.shared) {
-this.value = this.value.clone();
-this.shared = false;
-}this.value[this.count++] = ch;
+this.value=this.value.clone();
+this.shared=false;
+}this.value[this.count++]=ch;
 });
 
 Clazz_newMeth(C$, 'append0$S', function (string) {
@@ -11836,14 +11836,14 @@ var newSize = this.count + adding;
 if (newSize > this.value.length) {
 p$.enlargeBuffer$I.apply(this, [newSize]);
 } else if (this.shared) {
-this.value = this.value.clone();
-this.shared = false;
+this.value=this.value.clone();
+this.shared=false;
 }string.getChars$I$I$CA$I(0, adding, this.value, this.count);
-this.count = newSize;
+this.count=newSize;
 });
 
 Clazz_newMeth(C$, 'append0$CharSequence$I$I', function (s, start, end) {
-if (s == null ) s = "null";
+if (s == null ) s="null";
 if (start < 0 || end < 0  || start > end  || end > s.length$() ) throw Clazz_new_(Clazz_load('java.lang.IndexOutOfBoundsException'));
 this.append0$S(s.subSequence$I$I(start, end).toString());
 });
@@ -11860,7 +11860,7 @@ return this.value[index];
 Clazz_newMeth(C$, 'delete0$I$I', function (start, end) {
 if (start >= 0) {
 if (end > this.count) {
-end = this.count;
+end=this.count;
 }if (end == start) {
 return;
 }if (end > start) {
@@ -11872,9 +11872,9 @@ System.arraycopy(this.value, end, this.value, start, length);
 var newData = Clazz_array(Character.TYPE, [this.value.length]);
 System.arraycopy(this.value, 0, newData, 0, start);
 System.arraycopy(this.value, end, newData, start, length);
-this.value = newData;
-this.shared = false;
-}}this.count = this.count-(end - start);
+this.value=newData;
+this.shared=false;
+}}this.count-=end - start;
 return;
 }}throw Clazz_new_(Clazz_load('java.lang.StringIndexOutOfBoundsException'));
 });
@@ -11889,8 +11889,8 @@ System.arraycopy(this.value, location + 1, this.value, location, length);
 var newData = Clazz_array(Character.TYPE, [this.value.length]);
 System.arraycopy(this.value, 0, newData, 0, location);
 System.arraycopy(this.value, location + 1, newData, location, length);
-this.value = newData;
-this.shared = false;
+this.value=newData;
+this.shared=false;
 }}this.count--;
 });
 
@@ -11911,7 +11911,7 @@ throw Clazz_new_(Clazz_load('java.lang.StringIndexOutOfBoundsException').c$$I,[i
 }if (chars.length != 0) {
 p$.move$I$I.apply(this, [chars.length, index]);
 System.arraycopy(chars, 0, this.value, index, chars.length);
-this.count = this.count+(chars.length);
+this.count+=chars.length;
 }});
 
 Clazz_newMeth(C$, 'insert0$I$CA$I$I', function (index, chars, start, length) {
@@ -11920,7 +11920,7 @@ if (start >= 0 && 0 <= length  && length <= chars.length - start ) {
 if (length != 0) {
 p$.move$I$I.apply(this, [length, index]);
 System.arraycopy(chars, start, this.value, index, length);
-this.count = this.count+(length);
+this.count+=length;
 }return;
 }throw Clazz_new_(Clazz_load('java.lang.StringIndexOutOfBoundsException').c$$S,["offset " + start + ", len " + length + ", array.length " + chars.length ]);
 }throw Clazz_new_(Clazz_load('java.lang.StringIndexOutOfBoundsException').c$$I,[index]);
@@ -11930,24 +11930,24 @@ Clazz_newMeth(C$, 'insert0$I$C', function (index, ch) {
 if (0 > index || index > this.count ) {
 throw Clazz_new_(Clazz_load('java.lang.ArrayIndexOutOfBoundsException').c$$I,[index]);
 }p$.move$I$I.apply(this, [1, index]);
-this.value[index] = ch;
+this.value[index]=ch;
 this.count++;
 });
 
 Clazz_newMeth(C$, 'insert0$I$S', function (index, string) {
 if (0 <= index && index <= this.count ) {
-if (string == null ) string = "null";
+if (string == null ) string="null";
 var min = string.length$();
 if (min != 0) {
 p$.move$I$I.apply(this, [min, index]);
 string.getChars$I$I$CA$I(0, min, this.value, index);
-this.count = this.count+(min);
+this.count+=min;
 }} else {
 throw Clazz_new_(Clazz_load('java.lang.StringIndexOutOfBoundsException').c$$I,[index]);
 }});
 
 Clazz_newMeth(C$, 'insert0$I$CharSequence$I$I', function (index, s, start, end) {
-if (s == null ) s = "null";
+if (s == null ) s="null";
 if (index < 0 || index > this.count  || start < 0  || end < 0  || start > end  || end > s.length$() ) throw Clazz_new_(Clazz_load('java.lang.IndexOutOfBoundsException'));
 this.insert0$I$S(index, s.subSequence$I$I(start, end).toString());
 });
@@ -11962,21 +11962,21 @@ if (this.value.length - this.count >= size) {
 if (!this.shared) {
 System.arraycopy(this.value, index, this.value, index + size, this.count - index);
 return;
-}newSize = this.value.length;
+}newSize=this.value.length;
 } else {
 var a = this.count + size;
 var b = (this.value.length << 1) + 2;
-newSize = a > b ? a : b;
+newSize=a > b ? a : b;
 }var newData = Clazz_array(Character.TYPE, [newSize]);
 System.arraycopy(this.value, 0, newData, 0, index);
 System.arraycopy(this.value, index, newData, index + size, this.count - index);
-this.value = newData;
-this.shared = false;
+this.value=newData;
+this.shared=false;
 });
 
 Clazz_newMeth(C$, 'replace0$I$I$S', function (start, end, string) {
 if (start >= 0) {
-if (end > this.count) end = this.count;
+if (end > this.count) end=this.count;
 if (end > start) {
 var stringLength = string.length$();
 var diff = end - start - stringLength ;
@@ -11987,15 +11987,15 @@ System.arraycopy(this.value, end, this.value, start + stringLength, this.count -
 var newData = Clazz_array(Character.TYPE, [this.value.length]);
 System.arraycopy(this.value, 0, newData, 0, start);
 System.arraycopy(this.value, end, newData, start + stringLength, this.count - end);
-this.value = newData;
-this.shared = false;
+this.value=newData;
+this.shared=false;
 }} else if (diff < 0) {
 p$.move$I$I.apply(this, [-diff, end]);
 } else if (this.shared) {
-this.value = this.value.clone();
-this.shared = false;
+this.value=this.value.clone();
+this.shared=false;
 }string.getChars$I$I$CA$I(0, stringLength, this.value, start);
-this.count = this.count-(diff);
+this.count-=diff;
 return;
 }if (start == end) {
 if (string == null ) throw Clazz_new_(Clazz_load('java.lang.NullPointerException'));
@@ -12010,25 +12010,25 @@ return;
 }if (!this.shared) {
 for (var i = 0, end = this.count, mid = (this.count/2|0); i < mid; i++) {
 var temp = this.value[--end];
-this.value[end] = this.value[i];
-this.value[i] = temp;
+this.value[end]=this.value[i];
+this.value[i]=temp;
 }
 } else {
 var newData = Clazz_array(Character.TYPE, [this.value.length]);
 for (var i = 0, end = this.count; i < this.count; i++) {
-newData[--end] = this.value[i];
+newData[--end]=this.value[i];
 }
-this.value = newData;
-this.shared = false;
+this.value=newData;
+this.shared=false;
 }});
 
 Clazz_newMeth(C$, 'setCharAt$I$C', function (index, ch) {
 if (0 > index || index >= this.count ) {
 throw Clazz_new_(Clazz_load('java.lang.StringIndexOutOfBoundsException').c$$I,[index]);
 }if (this.shared) {
-this.value = this.value.clone();
-this.shared = false;
-}this.value[index] = ch;
+this.value=this.value.clone();
+this.shared=false;
+}this.value[index]=ch;
 });
 
 Clazz_newMeth(C$, 'setLength$I', function (length) {
@@ -12040,19 +12040,19 @@ p$.enlargeBuffer$I.apply(this, [length]);
 if (this.shared) {
 var newData = Clazz_array(Character.TYPE, [this.value.length]);
 System.arraycopy(this.value, 0, newData, 0, this.count);
-this.value = newData;
-this.shared = false;
+this.value=newData;
+this.shared=false;
 } else {
 for (var i = this.count; i < length; i++) {
-this.value[i] = String.fromCharCode(0);
+this.value[i]=String.fromCharCode(0);
 }
-}}}this.count = length;
+}}}this.count=length;
 });
 
 Clazz_newMeth(C$, 'substring$I', function (start) {
 if (0 <= start && start <= this.count ) {
 if (start == this.count) return "";
-this.shared = true;
+this.shared=true;
 return  String.instantialize(this.value, start, this.count - start);
 }throw Clazz_new_(Clazz_load('java.lang.StringIndexOutOfBoundsException').c$$I,[start]);
 });
@@ -12060,7 +12060,7 @@ return  String.instantialize(this.value, start, this.count - start);
 Clazz_newMeth(C$, 'substring$I$I', function (start, end) {
 if (0 <= start && start <= end  && end <= this.count ) {
 if (start == end) return "";
-this.shared = true;
+this.shared=true;
 return  String.instantialize(this.value, start, end - start);
 }throw Clazz_new_(Clazz_load('java.lang.StringIndexOutOfBoundsException'));
 });
@@ -12068,7 +12068,7 @@ return  String.instantialize(this.value, start, end - start);
 Clazz_newMeth(C$, 'toString', function () {
 if (this.count == 0) return "";
 if (this.count >= 256 && this.count <= (this.value.length >> 1) ) return  String.instantialize(this.value, 0, this.count);
-this.shared = true;
+this.shared=true;
 return  String.instantialize(this.value, 0, this.count);
 });
 
@@ -12081,7 +12081,7 @@ return this.indexOf$S$I(string, 0);
 });
 
 Clazz_newMeth(C$, 'indexOf$S$I', function (subString, start) {
-if (start < 0) start = 0;
+if (start < 0) start=0;
 var subCount = subString.length$();
 if (subCount > 0) {
 if (subCount + start > this.count) return -1;
@@ -12090,7 +12090,7 @@ while (true){
 var i = start;
 var found = false;
 for (; i < this.count; i++) if (this.value[i] == firstChar) {
-found = true;
+found=true;
 break;
 }
 if (!found || subCount + i > this.count ) return -1;
@@ -12099,7 +12099,7 @@ var o2 = 0;
 while (++o2 < subCount && this.value[++o1] == subString.charAt(o2) ){
 }
 if (o2 == subCount) return i;
-start = i + 1;
+start=i + 1;
 }
 }return (start < this.count || start == 0 ) ? start : this.count;
 });
@@ -12112,13 +12112,13 @@ Clazz_newMeth(C$, 'lastIndexOf$S$I', function (subString, start) {
 var subCount = subString.length$();
 if (subCount <= this.count && start >= 0 ) {
 if (subCount > 0) {
-if (start > this.count - subCount) start = this.count - subCount;
+if (start > this.count - subCount) start=this.count - subCount;
 var firstChar = subString.charAt(0);
 while (true){
 var i = start;
 var found = false;
 for (; i >= 0; --i) if (this.value[i] == firstChar) {
-found = true;
+found=true;
 break;
 }
 if (!found) return -1;
@@ -12127,7 +12127,7 @@ var o2 = 0;
 while (++o2 < subCount && this.value[++o1] == subString.charAt(o2) ){
 }
 if (o2 == subCount) return i;
-start = i - 1;
+start=i - 1;
 }
 }return start < this.count ? start : this.count;
 }return -1;
@@ -12137,8 +12137,8 @@ Clazz_newMeth(C$, 'trimToSize', function () {
 if (this.count < this.value.length) {
 var newValue = Clazz_array(Character.TYPE, [this.count]);
 System.arraycopy(this.value, 0, newValue, 0, this.count);
-this.value = newValue;
-this.shared = false;
+this.value=newValue;
+this.shared=false;
 }});
 
 Clazz_newMeth(C$, 'codePointAt$I', function (index) {
@@ -12160,7 +12160,7 @@ Clazz_newMeth(C$, 'offsetByCodePoints$I$I', function (index, codePointOffset) {
 return Character.offsetByCodePoints(this.value, 0, this.count, index, codePointOffset);
 });
 })();
-//Created 2018-05-15 01:02:06
+//Created 2018-05-24 08:45:35
 (function(){var P$=java.lang,I$=[['java.lang.reflect.Method','java.util.Arrays','java.lang.reflect.TypeVariable','java.lang.Boolean','java.lang.Void','java.lang.Enum','java.util.HashMap']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(java.lang, "Class", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -12257,7 +12257,7 @@ return (this.getModifiers() & 4096) != 0;
 });
 
 Clazz_newMeth(C$, 'getName', function () {
-if (this.name == null ) this.name = p$.getName0.apply(this, []);
+if (this.name == null ) this.name=p$.getName0.apply(this, []);
 return this.name;
 });
 
@@ -12499,12 +12499,12 @@ return null;
 Clazz_newMeth(C$, 'privateGetPublicMethods', function () {
 var ms;
 if (this.$methodList$ != null ) {
-ms = Clazz_array((I$[1]||$incl$(1)), [this.$methodList$.length]);
+ms=Clazz_array((I$[1]||$incl$(1)), [this.$methodList$.length]);
 for (var i = ms.length; --i >= 0; ) {
-ms[i] = Clazz_new_((I$[1]||$incl$(1)).c$$Class$S$ClassA$Class$ClassA$I,[this, this.$methodList$[i], null, Clazz_getClass((I$[5]||$incl$(5))), null, 1]);
+ms[i]=Clazz_new_((I$[1]||$incl$(1)).c$$Class$S$ClassA$Class$ClassA$I,[this, this.$methodList$[i], null, Clazz_getClass((I$[5]||$incl$(5))), null, 1]);
 }
 return ms;
-}ms = Clazz_array((I$[1]||$incl$(1)), [0]);
+}ms=Clazz_array((I$[1]||$incl$(1)), [0]);
 {
 var p = this.$clazz$.prototype;
 for (var attr in p) { if (typeof p[attr] == "function" && !p[attr].__CLASS_NAME__ && p[attr] != this.$clazz$[attr] && p[attr].exClazz == this.$clazz$) { // there are polynormical methods.
@@ -12544,7 +12544,7 @@ if (this.enumConstants == null ) {
 if (!this.isEnum()) return null;
 try {
 var values = this.getMethod$S$ClassA("values", []);
-this.enumConstants = values.invoke$O$OA(null, null);
+this.enumConstants=values.invoke$O$OA(null, null);
 } catch (e$$) {
 if (Clazz_exceptionOf(e$$, "java.lang.reflect.InvocationTargetException")){
 var ex = e$$;
@@ -12575,7 +12575,7 @@ if (universe == null ) throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentExc
 var m = Clazz_new_((I$[7]||$incl$(7)).c$$I,[2 * universe.length]);
 for (var constant, $constant = 0, $$constant = universe; $constant<$$constant.length&&((constant=$$constant[$constant]),1);$constant++) m.put$TK$TV((constant).name(), constant);
 
-this.$enumConstantDirectory = m;
+this.$enumConstantDirectory=m;
 }return this.$enumConstantDirectory;
 });
 
@@ -12631,14 +12631,14 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.methods = Clazz_array((I$[1]||$incl$(1)), [20]);
-this.$length = 0;
+this.methods=Clazz_array((I$[1]||$incl$(1)), [20]);
+this.$length=0;
 }, 1);
 
 Clazz_newMeth(C$, 'add$reflect_Method', function (m) {
 if (this.$length == this.methods.length) {
-this.methods = (I$[2]||$incl$(2)).copyOf$TTA$I(this.methods, 2 * this.methods.length);
-}this.methods[this.$length++] = m;
+this.methods=(I$[2]||$incl$(2)).copyOf$TTA$I(this.methods, 2 * this.methods.length);
+}this.methods[this.$length++]=m;
 });
 
 Clazz_newMeth(C$, 'addAll$reflect_MethodA', function (ma) {
@@ -12682,7 +12682,7 @@ Clazz_newMeth(C$, 'removeByNameAndSignature$reflect_Method', function (toRemove)
 for (var i = 0; i < this.$length; i++) {
 var m = this.methods[i];
 if (m != null  && m.getReturnType() === toRemove.getReturnType()   && m.getName() == toRemove.getName()  && Class.arrayContentsEq$OA$OA(m.getParameterTypes(), toRemove.getParameterTypes()) ) {
-this.methods[i] = null;
+this.methods[i]=null;
 }}
 });
 
@@ -12692,11 +12692,11 @@ for (var pos = 0; pos < this.$length; pos++) {
 var m = this.methods[pos];
 if (m != null ) {
 if (pos != newPos) {
-this.methods[newPos] = m;
+this.methods[newPos]=m;
 }newPos++;
 }}
 if (newPos != this.methods.length) {
-this.methods = (I$[2]||$incl$(2)).copyOf$TTA$I(this.methods, newPos);
+this.methods=(I$[2]||$incl$(2)).copyOf$TTA$I(this.methods, newPos);
 }});
 
 Clazz_newMeth(C$, 'getArray', function () {
@@ -12704,7 +12704,7 @@ return this.methods;
 });
 })()
 })();
-//Created 2018-05-15 01:02:06
+//Created 2018-05-24 08:45:37
 (function(){var P$=java.lang,I$=[['java.lang.Enum']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(java.lang, "Enum", null, null, ['Comparable', 'java.io.Serializable']);
 
@@ -12730,8 +12730,8 @@ return this.$ordinal;
 
 Clazz_newMeth(C$, 'c$$S$I', function (name, ordinal) {
 C$.$init$.apply(this);
-this.$name = name;
-this.$ordinal = ordinal;
+this.$name=name;
+this.$ordinal=ordinal;
 }, 1);
 
 Clazz_newMeth(C$, 'toString', function () {
@@ -12778,7 +12778,7 @@ Clazz_newMeth(C$, 'finalize', function () {
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:07
+//Created 2018-05-24 08:45:37
 (function(){var P$=java.lang,I$=[];
 var C$=Clazz_newClass(java.lang, "StringBuffer", null, 'AbstractStringBuilder', ['Appendable', 'java.io.Serializable', 'CharSequence']);
 var p$=C$.prototype;
@@ -13036,7 +13036,7 @@ var value = fields.get$S$O("value", null);
 this.set$CA$I(value, count);
 });
 })();
-//Created 2018-05-15 01:02:08
+//Created 2018-05-24 08:45:38
 (function(){var P$=java.lang,I$=[['java.lang.ThreadGroup','swingjs.JSToolkit','java.lang.ThreadDeath','java.lang.NoSuchMethodError','swingjs.JSUtil','java.util.HashMap',['java.lang.Thread','.State']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(java.lang, "Thread", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -13121,19 +13121,19 @@ Clazz_newMeth(C$, 'init$ThreadGroup$Runnable$S$J$O', function (g, target, name, 
 var parent = (Thread.thisThread == null  ? null : Thread.thisThread);
 if (g == null ) {
 if (g == null  && parent != null   && !parent.equals$O("working") ) {
-g = parent.getThreadGroup();
+g=parent.getThreadGroup();
 }}if (g == null ) {
-g = this.newThreadGroup$ThreadGroup$S(null, name);
-parent = this;
+g=this.newThreadGroup$ThreadGroup$S(null, name);
+parent=this;
 }g.checkAccess();
 g.addUnstarted();
-this.group = g;
-this.priority = parent.getPriority();
-this.name = name;
-this.target = target;
+this.group=g;
+this.priority=parent.getPriority();
+this.name=name;
+this.target=target;
 this.setPriority$I(this.priority);
-this.tid = Thread.nextThreadID();
-this.me = this;
+this.tid=Thread.nextThreadID();
+this.me=this;
 });
 
 Clazz_newMeth(C$, 'newThreadGroup$ThreadGroup$S', function (group, name) {
@@ -13189,7 +13189,7 @@ p$.stop0$O.apply(this, [this.throwableFromStop]);
 }});
 
 Clazz_newMeth(C$, 'start0', function () {
-this.started = true;
+this.started=true;
 (I$[2]||$incl$(2)).dispatch$O$I$I(this, 0, 0);
 });
 
@@ -13215,8 +13215,8 @@ p$.stop0$O.apply(this, [th]);
 } else {
 if (th == null ) {
 throw Clazz_new_(Clazz_load('java.lang.NullPointerException'));
-}this.stopBeforeStart = true;
-this.throwableFromStop = th;
+}this.stopBeforeStart=true;
+this.throwableFromStop=th;
 }});
 
 Clazz_newMeth(C$, 'interrupt', function () {
@@ -13233,7 +13233,7 @@ return p$.isInterruptedB$Z.apply(this, [false]);
 
 Clazz_newMeth(C$, 'isInterruptedB$Z', function (clearInterrupted) {
 var wasInt = this.$interrupted;
-if (clearInterrupted) this.$interrupted = false;
+if (clearInterrupted) this.$interrupted=false;
 return wasInt;
 });
 
@@ -13260,10 +13260,10 @@ var g;
 this.checkAccess();
 if (newPriority > 10 || newPriority < 1 ) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException'));
-}if ((g = this.getThreadGroup()) != null ) {
+}if ((g=this.getThreadGroup()) != null ) {
 if (newPriority > g.getMaxPriority()) {
-newPriority = g.getMaxPriority();
-}p$.setPriority0$I.apply(this, [this.priority = newPriority]);
+newPriority=g.getMaxPriority();
+}p$.setPriority0$I.apply(this, [this.priority=newPriority]);
 }});
 
 Clazz_newMeth(C$, 'getPriority', function () {
@@ -13272,7 +13272,7 @@ return this.priority;
 
 Clazz_newMeth(C$, 'setName$S', function (name) {
 this.checkAccess();
-this.name = name;
+this.name=name;
 });
 
 Clazz_newMeth(C$, 'getName', function () {
@@ -13311,7 +13311,7 @@ var delay = millis - now;
 if (delay <= 0) {
 break;
 }this.wait$J(delay);
-now = System.currentTimeMillis() - base;
+now=System.currentTimeMillis() - base;
 }
 }});
 
@@ -13337,7 +13337,7 @@ Clazz_newMeth(C$, 'setDaemon$Z', function (on) {
 this.checkAccess();
 if (this.isAlive()) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalThreadStateException'));
-}this.daemon = on;
+}this.daemon=on;
 });
 
 Clazz_newMeth(C$, 'isDaemon', function () {
@@ -13411,7 +13411,7 @@ return (I$[7]||$incl$(7)).WAITING;
 });
 
 Clazz_newMeth(C$, 'setDefaultUncaughtExceptionHandler$Thread_UncaughtExceptionHandler', function (eh) {
-Thread.defaultUncaughtExceptionHandler = eh;
+Thread.defaultUncaughtExceptionHandler=eh;
 }, 1);
 
 Clazz_newMeth(C$, 'getDefaultUncaughtExceptionHandler', function () {
@@ -13424,14 +13424,14 @@ return this.uncaughtExceptionHandler != null  ? this.uncaughtExceptionHandler : 
 
 Clazz_newMeth(C$, 'setUncaughtExceptionHandler$Thread_UncaughtExceptionHandler', function (eh) {
 this.checkAccess();
-this.uncaughtExceptionHandler = eh;
+this.uncaughtExceptionHandler=eh;
 });
 
 Clazz_newMeth(C$, 'setPriority0$I', function (newPriority) {
 });
 
 Clazz_newMeth(C$, 'stop0$O', function (o) {
-this.stopped = true;
+this.stopped=true;
 });
 
 Clazz_newMeth(C$, 'suspend0', function () {
@@ -13441,7 +13441,7 @@ Clazz_newMeth(C$, 'resume0', function () {
 });
 
 Clazz_newMeth(C$, 'interrupt0', function () {
-this.$interrupted = true;
+this.$interrupted=true;
 });
 ;
 (function(){var C$=Clazz_newClass(Thread, "State", null, 'Enum');
@@ -13468,7 +13468,7 @@ Clazz_newMeth(C$, 'values', function() { return $vals }, 1);
 });
 })()
 })();
-//Created 2018-05-15 01:02:08
+//Created 2018-05-24 08:45:39
 (function(){var P$=java.lang,I$=[['Thread','java.util.Arrays','java.lang.ThreadGroup','java.lang.Thread']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(java.lang, "ThreadGroup", null, null, [['Thread','Thread.UncaughtExceptionHandler']]);
 var p$=C$.prototype;
@@ -13503,12 +13503,12 @@ C$.c$$ThreadGroup$S.apply(this, [(I$[1]||$incl$(1)).currentThread().getThreadGro
 
 Clazz_newMeth(C$, 'c$$ThreadGroup$S', function (parent, name) {
 C$.$init$.apply(this);
-this.name = name;
-this.parent = parent;
+this.name=name;
+this.parent=parent;
 if (parent != null ) {
-this.maxPriority = parent.maxPriority;
-this.daemon = parent.daemon;
-this.vmAllowSuspension = parent.vmAllowSuspension;
+this.maxPriority=parent.maxPriority;
+this.daemon=parent.daemon;
+this.vmAllowSuspension=parent.vmAllowSuspension;
 parent.add$ThreadGroup(this);
 }}, 1);
 
@@ -13535,7 +13535,7 @@ return this.destroyed;
 
 Clazz_newMeth(C$, 'setDaemon$Z', function (daemon) {
 this.checkAccess();
-this.daemon = daemon;
+this.daemon=daemon;
 });
 
 Clazz_newMeth(C$, 'setMaxPriority$I', function (pri) {
@@ -13545,19 +13545,19 @@ var groupsSnapshot;
 this.checkAccess();
 if (pri < 1 || pri > 10 ) {
 return;
-}this.maxPriority = (this.parent != null ) ? Math.min(pri, this.parent.maxPriority) : pri;
-ngroupsSnapshot = this.ngroups;
+}this.maxPriority=(this.parent != null ) ? Math.min(pri, this.parent.maxPriority) : pri;
+ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
 } else {
-groupsSnapshot = null;
+groupsSnapshot=null;
 }}for (var i = 0; i < ngroupsSnapshot; i++) {
 groupsSnapshot[i].setMaxPriority$I(pri);
 }
 });
 
 Clazz_newMeth(C$, 'parentOf$ThreadGroup', function (g) {
-for (; g != null ; g = g.parent) {
+for (; g != null ; g=g.parent) {
 if (g === this ) {
 return true;
 }}
@@ -13574,14 +13574,14 @@ var groupsSnapshot;
 {
 if (this.destroyed) {
 return 0;
-}result = this.nthreads;
-ngroupsSnapshot = this.ngroups;
+}result=this.nthreads;
+ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
 } else {
-groupsSnapshot = null;
+groupsSnapshot=null;
 }}for (var i = 0; i < ngroupsSnapshot; i++) {
-result = result+(groupsSnapshot[i].activeCount());
+result+=groupsSnapshot[i].activeCount();
 }
 return result;
 });
@@ -13604,20 +13604,20 @@ if (this.destroyed) {
 return 0;
 }var nt = this.nthreads;
 if (nt > list.length - n) {
-nt = list.length - n;
+nt=list.length - n;
 }for (var i = 0; i < nt; i++) {
 if (this.threads[i].isAlive()) {
-list[n++] = this.threads[i];
+list[n++]=this.threads[i];
 }}
 if (recurse) {
-ngroupsSnapshot = this.ngroups;
+ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
 } else {
-groupsSnapshot = null;
+groupsSnapshot=null;
 }}}if (recurse) {
 for (var i = 0; i < ngroupsSnapshot; i++) {
-n = groupsSnapshot[i].enumerate$ThreadA$I$Z(list, n, true);
+n=groupsSnapshot[i].enumerate$ThreadA$I$Z(list, n, true);
 }
 }return n;
 });
@@ -13628,14 +13628,14 @@ var groupsSnapshot;
 {
 if (this.destroyed) {
 return 0;
-}ngroupsSnapshot = this.ngroups;
+}ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
 } else {
-groupsSnapshot = null;
+groupsSnapshot=null;
 }}var n = ngroupsSnapshot;
 for (var i = 0; i < ngroupsSnapshot; i++) {
-n = n+(groupsSnapshot[i].activeGroupCount());
+n+=groupsSnapshot[i].activeGroupCount();
 }
 return n;
 });
@@ -13658,19 +13658,19 @@ if (this.destroyed) {
 return 0;
 }var ng = this.ngroups;
 if (ng > list.length - n) {
-ng = list.length - n;
+ng=list.length - n;
 }if (ng > 0) {
 System.arraycopy(this.groups, 0, list, n, ng);
-n = n+(ng);
+n+=ng;
 }if (recurse) {
-ngroupsSnapshot = this.ngroups;
+ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
 } else {
-groupsSnapshot = null;
+groupsSnapshot=null;
 }}}if (recurse) {
 for (var i = 0; i < ngroupsSnapshot; i++) {
-n = groupsSnapshot[i].enumerate$ThreadGroupA$I$Z(list, n, true);
+n=groupsSnapshot[i].enumerate$ThreadGroupA$I$Z(list, n, true);
 }
 }return n;
 });
@@ -13687,11 +13687,11 @@ this.checkAccess();
 for (var i = 0; i < this.nthreads; i++) {
 this.threads[i].interrupt();
 }
-ngroupsSnapshot = this.ngroups;
+ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
 } else {
-groupsSnapshot = null;
+groupsSnapshot=null;
 }}for (var i = 0; i < ngroupsSnapshot; i++) {
 groupsSnapshot[i].interrupt();
 }
@@ -13709,14 +13709,14 @@ var groupsSnapshot = null;
 {
 this.checkAccess();
 for (var i = 0; i < this.nthreads; i++) {
-if (this.threads[i] === us ) suicide = true;
+if (this.threads[i] === us ) suicide=true;
  else if (suspend) this.threads[i].suspend();
  else this.threads[i].stop();
 }
-ngroupsSnapshot = this.ngroups;
+ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
-}}for (var i = 0; i < ngroupsSnapshot; i++) suicide = groupsSnapshot[i].stopOrSuspend$Z(suspend) || suicide ;
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+}}for (var i = 0; i < ngroupsSnapshot; i++) suicide=groupsSnapshot[i].stopOrSuspend$Z(suspend) || suicide ;
 
 return suicide;
 });
@@ -13729,11 +13729,11 @@ this.checkAccess();
 for (var i = 0; i < this.nthreads; i++) {
 this.threads[i].resume();
 }
-ngroupsSnapshot = this.ngroups;
+ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
 } else {
-groupsSnapshot = null;
+groupsSnapshot=null;
 }}for (var i = 0; i < ngroupsSnapshot; i++) {
 groupsSnapshot[i].resume();
 }
@@ -13746,18 +13746,18 @@ var groupsSnapshot;
 this.checkAccess();
 if (this.destroyed || (this.nthreads > 0) ) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalThreadStateException'));
-}ngroupsSnapshot = this.ngroups;
+}ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, ngroupsSnapshot);
 } else {
-groupsSnapshot = null;
+groupsSnapshot=null;
 }if (this.parent != null ) {
-this.destroyed = true;
-this.ngroups = 0;
-this.groups = null;
-this.nthreads = 0;
-this.threads = null;
-}}for (var i = 0; i < ngroupsSnapshot; i = i+(1)) {
+this.destroyed=true;
+this.ngroups=0;
+this.groups=null;
+this.nthreads=0;
+this.threads=null;
+}}for (var i = 0; i < ngroupsSnapshot; i+=1) {
 groupsSnapshot[i].destroy();
 }
 if (this.parent != null ) {
@@ -13769,10 +13769,10 @@ Clazz_newMeth(C$, 'add$ThreadGroup', function (g) {
 if (this.destroyed) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalThreadStateException'));
 }if (this.groups == null ) {
-this.groups = Clazz_array((I$[3]||$incl$(3)), [4]);
+this.groups=Clazz_array((I$[3]||$incl$(3)), [4]);
 } else if (this.ngroups == this.groups.length) {
-this.groups = (I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, this.ngroups * 2);
-}this.groups[this.ngroups] = g;
+this.groups=(I$[2]||$incl$(2)).copyOf$TTA$I(this.groups, this.ngroups * 2);
+}this.groups[this.ngroups]=g;
 this.ngroups++;
 }});
 
@@ -13782,9 +13782,9 @@ if (this.destroyed) {
 return;
 }for (var i = 0; i < this.ngroups; i++) {
 if (this.groups[i] === g ) {
-this.ngroups = this.ngroups-(1);
+this.ngroups-=1;
 System.arraycopy(this.groups, i + 1, this.groups, i, this.ngroups - i);
-this.groups[this.ngroups] = null;
+this.groups[this.ngroups]=null;
 break;
 }}
 if (this.nthreads == 0) {
@@ -13805,10 +13805,10 @@ Clazz_newMeth(C$, 'add$Thread', function (t) {
 if (this.destroyed) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalThreadStateException'));
 }if (this.threads == null ) {
-this.threads = Clazz_array((I$[4]||$incl$(4)), [4]);
+this.threads=Clazz_array((I$[4]||$incl$(4)), [4]);
 } else if (this.nthreads == this.threads.length) {
-this.threads = (I$[2]||$incl$(2)).copyOf$TTA$I(this.threads, this.nthreads * 2);
-}this.threads[this.nthreads] = t;
+this.threads=(I$[2]||$incl$(2)).copyOf$TTA$I(this.threads, this.nthreads * 2);
+}this.threads[this.nthreads]=t;
 this.nthreads++;
 this.nUnstartedThreads--;
 }});
@@ -13820,7 +13820,7 @@ return;
 }for (var i = 0; i < this.nthreads; i++) {
 if (this.threads[i] === t ) {
 System.arraycopy(this.threads, i + 1, this.threads, i, --this.nthreads - i);
-this.threads[this.nthreads] = null;
+this.threads[this.nthreads]=null;
 break;
 }}
 if (this.nthreads == 0) {
@@ -13847,7 +13847,7 @@ return this.getClass().getName() + "[name=" + this.getName() + ",maxpri=" + this
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:08
+//Created 2018-05-24 08:45:39
 (function(){var P$=Clazz_newPackage("java.net"),I$=[['java.util.Hashtable','java.net.Parts','javajs.util.AjaxURLConnection','java.lang.Error']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "URL");
 var p$=C$.prototype;
@@ -13890,27 +13890,27 @@ C$.c$$S$S$I$S.apply(this, [protocol, host, -1, file]);
 
 Clazz_newMeth(C$, 'c$$S$S$I$S$java_net_URLStreamHandler', function (protocol, host, port, file, handler) {
 C$.$init$.apply(this);
-protocol = protocol.toLowerCase();
-this.protocol = protocol;
+protocol=protocol.toLowerCase();
+this.protocol=protocol;
 if (host != null ) {
 if (host.indexOf(":") >= 0 && !host.startsWith$S("[") ) {
-host = "[" + host + "]" ;
-}this.host = host;
+host="[" + host + "]" ;
+}this.host=host;
 if (port < -1) {
 throw Clazz_new_(Clazz_load('java.net.MalformedURLException').c$$S,["Invalid port number :" + port]);
-}this.port = port;
-this.authority = (port == -1) ? host : host + ":" + port ;
+}this.port=port;
+this.authority=(port == -1) ? host : host + ":" + port ;
 }var parts = Clazz_new_((I$[2]||$incl$(2)).c$$S,[file]);
-this.path = parts.getPath();
-this.query = parts.getQuery();
+this.path=parts.getPath();
+this.query=parts.getQuery();
 if (this.query != null ) {
-this.file = this.path + "?" + this.query ;
+this.file=this.path + "?" + this.query ;
 } else {
-this.file = this.path;
-}this.ref = parts.getRef();
-if (handler == null  && (handler = C$.getURLStreamHandler$S(protocol)) == null  ) {
+this.file=this.path;
+}this.ref=parts.getRef();
+if (handler == null  && (handler=C$.getURLStreamHandler$S(protocol)) == null  ) {
 throw Clazz_new_(Clazz_load('java.net.MalformedURLException').c$$S,["unknown protocol: " + protocol]);
-}this.handler = handler;
+}this.handler=handler;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$S', function (spec) {
@@ -13932,7 +13932,7 @@ var newProtocol = null;
 var aRef = false;
 var isRelative = false;
 try {
-limit = spec.length$();
+limit=spec.length$();
 while ((limit > 0) && (spec.charAt(limit - 1) <= " ") ){
 limit--;
 }
@@ -13940,44 +13940,44 @@ while ((start < limit) && (spec.charAt(start) <= " ") ){
 start++;
 }
 if (spec.regionMatches$Z$I$S$I$I(true, start, "url:", 0, 4)) {
-start = start+(4);
+start+=4;
 }if (start < spec.length$() && spec.charAt(start) == "#" ) {
-aRef = true;
-}for (i = start; !aRef && (i < limit) && ((c = spec.charAt(i).$c()) != 47 )  ; i++) {
+aRef=true;
+}for (i=start; !aRef && (i < limit) && ((c=spec.charAt(i).$c()) != 47 )  ; i++) {
 if (c == 58 ) {
 var s = spec.substring(start, i).toLowerCase();
 if (p$.isValidProtocol$S.apply(this, [s])) {
-newProtocol = s;
-start = i + 1;
+newProtocol=s;
+start=i + 1;
 }break;
 }}
-this.protocol = newProtocol;
+this.protocol=newProtocol;
 if ((context != null ) && ((newProtocol == null ) || newProtocol.equalsIgnoreCase$S(context.protocol) ) ) {
 if (handler == null ) {
-handler = context.handler;
-}if (context.path != null  && context.path.startsWith$S("/") ) newProtocol = null;
+handler=context.handler;
+}if (context.path != null  && context.path.startsWith$S("/") ) newProtocol=null;
 if (newProtocol == null ) {
-this.protocol = context.protocol;
-this.authority = context.authority;
-this.userInfo = context.userInfo;
-this.host = context.host;
-this.port = context.port;
-this.file = context.file;
-this.path = context.path;
-isRelative = true;
+this.protocol=context.protocol;
+this.authority=context.authority;
+this.userInfo=context.userInfo;
+this.host=context.host;
+this.port=context.port;
+this.file=context.file;
+this.path=context.path;
+isRelative=true;
 }}if (this.protocol == null ) {
 throw Clazz_new_(Clazz_load('java.net.MalformedURLException').c$$S,["no protocol: " + original]);
-}if (handler == null  && (handler = C$.getURLStreamHandler$S(this.protocol)) == null  ) {
+}if (handler == null  && (handler=C$.getURLStreamHandler$S(this.protocol)) == null  ) {
 throw Clazz_new_(Clazz_load('java.net.MalformedURLException').c$$S,["unknown protocol: " + this.protocol]);
-}this.handler = handler;
-i = spec.indexOf("#", start);
+}this.handler=handler;
+i=spec.indexOf("#", start);
 if (i >= 0) {
-this.ref = spec.substring(i + 1, limit);
-limit = i;
+this.ref=spec.substring(i + 1, limit);
+limit=i;
 }if (isRelative && start == limit ) {
-this.query = context.query;
+this.query=context.query;
 if (this.ref == null ) {
-this.ref = context.ref;
+this.ref=context.ref;
 }}handler.parseURL$java_net_URL$S$I$I(this, spec, start, limit);
 } catch (e$$) {
 if (Clazz_exceptionOf(e$$, "java.net.MalformedURLException")){
@@ -14004,7 +14004,7 @@ if (len < 1) return false;
 var c = protocol.charAt(0);
 if (!Character.isLetter(c)) return false;
 for (var i = 1; i < len; i++) {
-c = protocol.charAt(i);
+c=protocol.charAt(i);
 if (!Character.isLetterOrDigit(c) && c != "."  && c != "+"  && c != "-" ) {
 return false;
 }}
@@ -14013,32 +14013,32 @@ return true;
 
 Clazz_newMeth(C$, 'set5$S$S$I$S$S', function (protocol, host, port, file, ref) {
 {
-this.protocol = protocol;
-this.host = host;
-this.authority = port == -1 ? host : host + ":" + port ;
-this.port = port;
-this.file = file;
-this.ref = ref;
-this.$hashCode = -1;
+this.protocol=protocol;
+this.host=host;
+this.authority=port == -1 ? host : host + ":" + port ;
+this.port=port;
+this.file=file;
+this.ref=ref;
+this.$hashCode=-1;
 var q = file.lastIndexOf("?");
 if (q != -1) {
-this.query = file.substring(q + 1);
-this.path = file.substring(0, q);
-} else this.path = file;
+this.query=file.substring(q + 1);
+this.path=file.substring(0, q);
+} else this.path=file;
 }});
 
 Clazz_newMeth(C$, 'set$S$S$I$S$S$S$S$S', function (protocol, host, port, authority, userInfo, path, query, ref) {
 {
-this.protocol = protocol;
-this.host = host;
-this.port = port;
-this.file = query == null  ? path : path + "?" + query ;
-this.userInfo = userInfo;
-this.path = path;
-this.ref = ref;
-this.$hashCode = -1;
-this.query = query;
-this.authority = authority;
+this.protocol=protocol;
+this.host=host;
+this.port=port;
+this.file=query == null  ? path : path + "?" + query ;
+this.userInfo=userInfo;
+this.path=path;
+this.ref=ref;
+this.$hashCode=-1;
+this.query=query;
+this.authority=authority;
 }});
 
 Clazz_newMeth(C$, 'getQuery', function () {
@@ -14089,7 +14089,7 @@ return this.handler.equals2$java_net_URL$java_net_URL(this, u2);
 
 Clazz_newMeth(C$, 'hashCode', function () {
 if (this.$hashCode != -1) return this.$hashCode;
-this.$hashCode = this.handler.hashCode$java_net_URL(this);
+this.$hashCode=this.handler.hashCode$java_net_URL(this);
 return this.$hashCode;
 });
 
@@ -14126,7 +14126,7 @@ throw Clazz_new_((I$[4]||$incl$(4)).c$$S,["factory already defined"]);
 if (security != null ) {
 security.checkSetFactory();
 }C$.handlers.clear();
-C$.factory = fac;
+C$.factory=fac;
 }}, 1);
 
 Clazz_newMeth(C$, 'getURLStreamHandler$S', function (protocol) {
@@ -14142,17 +14142,17 @@ throw e;
 }
 }
 }if (C$.factory != null ) {
-handler = C$.factory.createURLStreamHandler$S(protocol);
+handler=C$.factory.createURLStreamHandler$S(protocol);
 }}return handler;
 }, 1);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:09
+//Created 2018-05-24 08:45:41
 (function(){var P$=Clazz_newPackage("java.net"),I$=[];
 var C$=Clazz_newInterface(P$, "URLStreamHandlerFactory");
 })();
-//Created 2018-05-15 01:02:10
+//Created 2018-05-24 08:45:41
 (function(){var P$=java.util,I$=[['java.lang.reflect.Array','java.lang.StringBuilder']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AbstractCollection", null, null, 'java.util.Collection');
 
@@ -14175,7 +14175,7 @@ var result = false;
 var it = collection.iterator();
 while (it.hasNext()){
 if (this.add$TE(it.next())) {
-result = true;
+result=true;
 }}
 return result;
 });
@@ -14239,7 +14239,7 @@ var it = this.iterator();
 while (it.hasNext()){
 if (collection.contains$O(it.next())) {
 it.remove();
-result = true;
+result=true;
 }}
 return result;
 });
@@ -14250,7 +14250,7 @@ var it = this.iterator();
 while (it.hasNext()){
 if (!collection.contains$O(it.next())) {
 it.remove();
-result = true;
+result=true;
 }}
 return result;
 });
@@ -14261,7 +14261,7 @@ var index = 0;
 var it = this.iterator();
 var array = Clazz_array(java.lang.Object, [size]);
 while (index < size){
-array[index++] = it.next();
+array[index++]=it.next();
 }
 return array;
 });
@@ -14271,12 +14271,12 @@ var size = this.size();
 var index = 0;
 if (size > contents.length) {
 var ct = contents.getClass().getComponentType();
-contents = Clazz_array(ct, size);
+contents=Clazz_array(ct, size);
 }for (var entry, $entry = this.iterator(); $entry.hasNext()&&((entry=$entry.next()),1);) {
-contents[index++] = entry;
+contents[index++]=entry;
 }
 if (index < contents.length) {
-contents[index] = null;
+contents[index]=null;
 }return contents;
 });
 
@@ -14299,7 +14299,7 @@ buffer.append$C("]");
 return buffer.toString();
 });
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:44
 (function(){var P$=java.util,I$=[[['java.util.AbstractList','.SubAbstractList','.SubAbstractListIterator'],['java.util.AbstractList','.SimpleListIterator'],['java.util.AbstractList','.FullListIterator'],['java.util.AbstractList','.SubAbstractListRandomAccess'],['java.util.AbstractList','.SubAbstractList']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AbstractList", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -14366,7 +14366,7 @@ var result = 1;
 var it = this.iterator();
 while (it.hasNext()){
 var object = it.next();
-result = (31 * result) + (object == null  ? 0 : object.hashCode());
+result=(31 * result) + (object == null  ? 0 : object.hashCode());
 }
 return result;
 });
@@ -14460,7 +14460,7 @@ this.lastPosition = -1;
 
 Clazz_newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.expectedModCount = this.this$0.modCount;
+this.expectedModCount=this.this$0.modCount;
 }, 1);
 
 Clazz_newMeth(C$, 'hasNext', function () {
@@ -14471,7 +14471,7 @@ Clazz_newMeth(C$, 'next', function () {
 if (this.expectedModCount == this.this$0.modCount) {
 try {
 var result = this.this$0.get$I(this.pos + 1);
-this.lastPosition = ++this.pos;
+this.lastPosition=++this.pos;
 return result;
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.IndexOutOfBoundsException")){
@@ -14498,7 +14498,7 @@ if (this.this$0.modCount != this.expectedModCount) {
 this.expectedModCount++;
 }if (this.pos == this.lastPosition) {
 this.pos--;
-}this.lastPosition = -1;
+}this.lastPosition=-1;
 } else {
 throw Clazz_new_(Clazz_load('java.util.ConcurrentModificationException'));
 }});
@@ -14518,7 +14518,7 @@ Clazz_newMeth(C$, 'c$$I', function (start) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
 if (0 <= start && start <= this.this$0.size() ) {
-this.pos = start - 1;
+this.pos=start - 1;
 } else {
 throw Clazz_new_(Clazz_load('java.lang.IndexOutOfBoundsException'));
 }}, 1);
@@ -14535,7 +14535,7 @@ throw e;
 }
 }
 this.pos++;
-this.lastPosition = -1;
+this.lastPosition=-1;
 if (this.this$0.modCount != this.expectedModCount) {
 this.expectedModCount++;
 }} else {
@@ -14554,7 +14554,7 @@ Clazz_newMeth(C$, 'previous', function () {
 if (this.expectedModCount == this.this$0.modCount) {
 try {
 var result = this.this$0.get$I(this.pos);
-this.lastPosition = this.pos;
+this.lastPosition=this.pos;
 this.pos--;
 return result;
 } catch (e) {
@@ -14627,10 +14627,10 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$$java_util_AbstractList$I$I', function (list, start, end) {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.fullList = list;
-this.modCount = this.fullList.modCount;
-this.offset = start;
-this.$size = end - start;
+this.fullList=list;
+this.modCount=this.fullList.modCount;
+this.offset=start;
+this.$size=end - start;
 }, 1);
 
 Clazz_newMeth(C$, 'add$I$TE', function (location, object) {
@@ -14638,7 +14638,7 @@ if (this.modCount == this.fullList.modCount) {
 if (0 <= location && location <= this.$size ) {
 this.fullList.add$I$TE(location + this.offset, object);
 this.$size++;
-this.modCount = this.fullList.modCount;
+this.modCount=this.fullList.modCount;
 } else {
 throw Clazz_new_(Clazz_load('java.lang.IndexOutOfBoundsException'));
 }} else {
@@ -14650,8 +14650,8 @@ if (this.modCount == this.fullList.modCount) {
 if (0 <= location && location <= this.$size ) {
 var result = this.fullList.addAll$I$java_util_Collection(location + this.offset, collection);
 if (result) {
-this.$size = this.$size+(collection.size());
-this.modCount = this.fullList.modCount;
+this.$size+=collection.size();
+this.modCount=this.fullList.modCount;
 }return result;
 }throw Clazz_new_(Clazz_load('java.lang.IndexOutOfBoundsException'));
 }throw Clazz_new_(Clazz_load('java.util.ConcurrentModificationException'));
@@ -14661,8 +14661,8 @@ Clazz_newMeth(C$, 'addAll$java_util_Collection', function (collection) {
 if (this.modCount == this.fullList.modCount) {
 var result = this.fullList.addAll$I$java_util_Collection(this.offset + this.$size, collection);
 if (result) {
-this.$size = this.$size+(collection.size());
-this.modCount = this.fullList.modCount;
+this.$size+=collection.size();
+this.modCount=this.fullList.modCount;
 }return result;
 }throw Clazz_new_(Clazz_load('java.util.ConcurrentModificationException'));
 });
@@ -14692,7 +14692,7 @@ if (this.modCount == this.fullList.modCount) {
 if (0 <= location && location < this.$size ) {
 var result = this.fullList.remove$I(location + this.offset);
 this.$size--;
-this.modCount = this.fullList.modCount;
+this.modCount=this.fullList.modCount;
 return result;
 }throw Clazz_new_(Clazz_load('java.lang.IndexOutOfBoundsException'));
 }throw Clazz_new_(Clazz_load('java.util.ConcurrentModificationException'));
@@ -14702,8 +14702,8 @@ Clazz_newMeth(C$, 'removeRange$I$I', function (start, end) {
 if (start != end) {
 if (this.modCount == this.fullList.modCount) {
 this.fullList.removeRange$I$I(start + this.offset, end + this.offset);
-this.$size = this.$size-(end - start);
-this.modCount = this.fullList.modCount;
+this.$size-=end - start;
+this.modCount=this.fullList.modCount;
 } else {
 throw Clazz_new_(Clazz_load('java.util.ConcurrentModificationException'));
 }}});
@@ -14725,7 +14725,7 @@ if (increment) {
 this.$size++;
 } else {
 this.$size--;
-}this.modCount = this.fullList.modCount;
+}this.modCount=this.fullList.modCount;
 });
 ;
 (function(){var C$=Clazz_newClass(P$.AbstractList.SubAbstractList, "SubAbstractListIterator", function(){
@@ -14748,10 +14748,10 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$java_util_ListIterator$java_util_AbstractList_SubAbstractList$I$I', function (it, list, offset, length) {
 C$.$init$.apply(this);
-this.iterator = it;
-this.subList = list;
-this.start = offset;
-this.end = this.start + length;
+this.iterator=it;
+this.subList=list;
+this.start=offset;
+this.end=this.start + length;
 }, 1);
 
 Clazz_newMeth(C$, ['add$TE'], function (object) {
@@ -14807,7 +14807,7 @@ Clazz_newMeth(C$);
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:44
 (function(){var P$=java.util,I$=[['java.util.AbstractMap$1$1','java.util.AbstractSet','java.util.AbstractMap$2$1','java.util.AbstractCollection','java.lang.StringBuilder']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AbstractMap", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -14895,16 +14895,16 @@ var correctEntry = null;
 if (key == null ) {
 while (correctEntry == null  && i.hasNext() ){
 var e = i.next();
-if (e.getKey() == null ) correctEntry = e;
+if (e.getKey() == null ) correctEntry=e;
 }
 } else {
 while (correctEntry == null  && i.hasNext() ){
 var e = i.next();
-if (key.equals$O(e.getKey())) correctEntry = e;
+if (key.equals$O(e.getKey())) correctEntry=e;
 }
 }var oldValue = null;
 if (correctEntry != null ) {
-oldValue = correctEntry.getValue();
+oldValue=correctEntry.getValue();
 i.remove();
 }return oldValue;
 });
@@ -14920,7 +14920,7 @@ this.entrySet().clear();
 
 Clazz_newMeth(C$, 'keySet', function () {
 if (this.$keySet == null ) {
-this.$keySet = ((
+this.$keySet=((
 (function(){var C$=Clazz_newClass(P$, "AbstractMap$1", function(){Clazz_newInstance(this, arguments[0],1,C$);}, Clazz_load('java.util.AbstractSet'), null, 1);
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
@@ -14982,7 +14982,7 @@ return this.b$['java.util.AbstractMap'].containsKey$O(k);
 
 Clazz_newMeth(C$, 'values', function () {
 if (this.$values == null ) {
-this.$values = ((
+this.$values=((
 (function(){var C$=Clazz_newClass(P$, "AbstractMap$2", function(){Clazz_newInstance(this, arguments[0],1,C$);}, Clazz_load('java.util.AbstractCollection'), null, 1);
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
@@ -15079,7 +15079,7 @@ return true;
 Clazz_newMeth(C$, 'hashCode', function () {
 var h = 0;
 var i = this.entrySet().iterator();
-while (i.hasNext())h = h+(i.next().hashCode());
+while (i.hasNext())h+=i.next().hashCode();
 
 return h;
 });
@@ -15103,8 +15103,8 @@ sb.append$S(", ");
 
 Clazz_newMeth(C$, 'clone', function () {
 var result = Clazz_clone(this);
-result.$keySet = null;
-result.$values = null;
+result.$keySet=null;
+result.$values=null;
 return result;
 });
 
@@ -15130,14 +15130,14 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, ['c$$TK$TV'], function (key, value) {
 C$.$init$.apply(this);
-this.key = key;
-this.value = value;
+this.key=key;
+this.value=value;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$java_util_Map_Entry', function (entry) {
 C$.$init$.apply(this);
-this.key = entry.getKey();
-this.value = entry.getValue();
+this.key=entry.getKey();
+this.value=entry.getValue();
 }, 1);
 
 Clazz_newMeth(C$, 'getKey', function () {
@@ -15150,7 +15150,7 @@ return this.value;
 
 Clazz_newMeth(C$, ['setValue$TV'], function (value) {
 var oldValue = this.value;
-this.value = value;
+this.value=value;
 return oldValue;
 });
 
@@ -15189,14 +15189,14 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, ['c$$TK$TV'], function (key, value) {
 C$.$init$.apply(this);
-this.key = key;
-this.value = value;
+this.key=key;
+this.value=value;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$java_util_Map_Entry', function (entry) {
 C$.$init$.apply(this);
-this.key = entry.getKey();
-this.value = entry.getValue();
+this.key=entry.getKey();
+this.value=entry.getValue();
 }, 1);
 
 Clazz_newMeth(C$, 'getKey', function () {
@@ -15228,7 +15228,7 @@ return this.key + "=" + this.value ;
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:44
 (function(){var P$=java.util,I$=[];
 var C$=Clazz_newClass(P$, "AbstractSet", null, 'java.util.AbstractCollection', 'java.util.Set');
 
@@ -15257,7 +15257,7 @@ var result = 0;
 var it = this.iterator();
 while (it.hasNext()){
 var next = it.next();
-result = result+(next == null  ? 0 : next.hashCode());
+result+=next == null  ? 0 : next.hashCode();
 }
 return result;
 });
@@ -15269,17 +15269,17 @@ var it = this.iterator();
 while (it.hasNext()){
 if (collection.contains$O(it.next())) {
 it.remove();
-result = true;
+result=true;
 }}
 } else {
 var it = collection.iterator();
 while (it.hasNext()){
-result = this.remove$O(it.next()) || result ;
+result=this.remove$O(it.next()) || result ;
 }
 }return result;
 });
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:44
 (function(){var P$=java.util,I$=[['java.util.Arrays','java.lang.reflect.Array']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "ArrayList", null, 'java.util.AbstractList', ['java.util.List', 'Cloneable', 'java.io.Serializable', 'java.util.RandomAccess']);
 var p$=C$.prototype;
@@ -15303,9 +15303,9 @@ C$.c$$I.apply(this, [0]);
 
 Clazz_newMeth(C$, 'c$$I', function (capacity) {
 Clazz_super_(C$, this,1);
-this.firstIndex = this.lastIndex = 0;
+this.firstIndex=this.lastIndex=0;
 try {
-this.array = p$.newElementArray$I.apply(this, [capacity]);
+this.array=p$.newElementArray$I.apply(this, [capacity]);
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.NegativeArraySizeException")){
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException'));
@@ -15318,8 +15318,8 @@ throw e;
 Clazz_newMeth(C$, 'c$$java_util_Collection', function (collection) {
 Clazz_super_(C$, this,1);
 var size = collection.size();
-this.firstIndex = this.lastIndex = 0;
-this.array = p$.newElementArray$I.apply(this, [size + ((size/10|0))]);
+this.firstIndex=this.lastIndex=0;
+this.array=p$.newElementArray$I.apply(this, [size + ((size/10|0))]);
 this.addAll$java_util_Collection(collection);
 }, 1);
 
@@ -15338,15 +15338,15 @@ System.arraycopy(this.array, this.firstIndex, this.array, --this.firstIndex, loc
 var index = location + this.firstIndex;
 System.arraycopy(this.array, index, this.array, index + 1, size - location);
 this.lastIndex++;
-}this.array[location + this.firstIndex] = object;
+}this.array[location + this.firstIndex]=object;
 } else if (location == 0) {
 if (this.firstIndex == 0) {
 p$.growAtFront$I.apply(this, [1]);
-}this.array[--this.firstIndex] = object;
+}this.array[--this.firstIndex]=object;
 } else if (location == size) {
 if (this.lastIndex == this.array.length) {
 p$.growAtEnd$I.apply(this, [1]);
-}this.array[this.lastIndex++] = object;
+}this.array[this.lastIndex++]=object;
 } else {
 throw Clazz_new_(Clazz_load('java.lang.IndexOutOfBoundsException'));
 }this.modCount++;
@@ -15355,7 +15355,7 @@ throw Clazz_new_(Clazz_load('java.lang.IndexOutOfBoundsException'));
 Clazz_newMeth(C$, ['add$TE'], function (object) {
 if (this.lastIndex == this.array.length) {
 p$.growAtEnd$I.apply(this, [1]);
-}this.array[this.lastIndex++] = object;
+}this.array[this.lastIndex++]=object;
 this.modCount++;
 return true;
 });
@@ -15373,27 +15373,27 @@ var newFirst = this.firstIndex - growSize;
 if (newFirst < 0) {
 var index = location + this.firstIndex;
 System.arraycopy(this.array, index, this.array, index - newFirst, size - location);
-this.lastIndex = this.lastIndex-(newFirst);
-newFirst = 0;
+this.lastIndex-=newFirst;
+newFirst=0;
 }System.arraycopy(this.array, this.firstIndex, this.array, newFirst, location);
-this.firstIndex = newFirst;
+this.firstIndex=newFirst;
 } else {
 var index = location + this.firstIndex;
 System.arraycopy(this.array, index, this.array, index + growSize, size - location);
-this.lastIndex = this.lastIndex+(growSize);
+this.lastIndex+=growSize;
 }} else if (location == 0) {
 p$.growAtFront$I.apply(this, [growSize]);
-this.firstIndex = this.firstIndex-(growSize);
+this.firstIndex-=growSize;
 } else if (location == size) {
 if (this.lastIndex > this.array.length - growSize) {
 p$.growAtEnd$I.apply(this, [growSize]);
-}this.lastIndex = this.lastIndex+(growSize);
+}this.lastIndex+=growSize;
 }if (growSize > 0) {
 var it = collection.iterator();
 var index = location + this.firstIndex;
 var end = index + growSize;
 while (index < end){
-this.array[index++] = it.next();
+this.array[index++]=it.next();
 }
 this.modCount++;
 return true;
@@ -15408,7 +15408,7 @@ p$.growAtEnd$I.apply(this, [growSize]);
 }var it = collection.iterator();
 var end = this.lastIndex + growSize;
 while (this.lastIndex < end){
-this.array[this.lastIndex++] = it.next();
+this.array[this.lastIndex++]=it.next();
 }
 this.modCount++;
 return true;
@@ -15418,14 +15418,14 @@ return true;
 Clazz_newMeth(C$, 'clear', function () {
 if (this.firstIndex != this.lastIndex) {
 (I$[1]||$incl$(1)).fill$OA$I$I$O(this.array, this.firstIndex, this.lastIndex, null);
-this.firstIndex = this.lastIndex = 0;
+this.firstIndex=this.lastIndex=0;
 this.modCount++;
 }});
 
 Clazz_newMeth(C$, 'clone', function () {
 try {
 var newList = Clazz_clone(this);
-newList.array = this.array.clone();
+newList.array=this.array.clone();
 return newList;
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.CloneNotSupportedException")){
@@ -15472,18 +15472,18 @@ if (size > 0) {
 System.arraycopy(this.array, this.firstIndex, this.array, 0, size);
 var start = newLast < this.firstIndex ? this.firstIndex : newLast;
 (I$[1]||$incl$(1)).fill$OA$I$I$O(this.array, start, this.array.length, null);
-}this.firstIndex = 0;
-this.lastIndex = newLast;
+}this.firstIndex=0;
+this.lastIndex=newLast;
 } else {
 var increment = (size/2|0);
 if (required > increment) {
-increment = required;
+increment=required;
 }if (increment < 12) {
-increment = 12;
+increment=12;
 }var newArray = p$.newElementArray$I.apply(this, [size + increment]);
 if (size > 0) {
 System.arraycopy(this.array, this.firstIndex, newArray, this.firstIndex, size);
-}this.array = newArray;
+}this.array=newArray;
 }});
 
 Clazz_newMeth(C$, 'growAtFront$I', function (required) {
@@ -15494,42 +15494,42 @@ if (size > 0) {
 System.arraycopy(this.array, this.firstIndex, this.array, newFirst, size);
 var length = this.firstIndex + size > newFirst ? newFirst : this.firstIndex + size;
 (I$[1]||$incl$(1)).fill$OA$I$I$O(this.array, this.firstIndex, length, null);
-}this.firstIndex = newFirst;
-this.lastIndex = this.array.length;
+}this.firstIndex=newFirst;
+this.lastIndex=this.array.length;
 } else {
 var increment = (size/2|0);
 if (required > increment) {
-increment = required;
+increment=required;
 }if (increment < 12) {
-increment = 12;
+increment=12;
 }var newArray = p$.newElementArray$I.apply(this, [size + increment]);
 if (size > 0) {
 System.arraycopy(this.array, this.firstIndex, newArray, newArray.length - size, size);
-}this.firstIndex = newArray.length - size;
-this.lastIndex = newArray.length;
-this.array = newArray;
+}this.firstIndex=newArray.length - size;
+this.lastIndex=newArray.length;
+this.array=newArray;
 }});
 
 Clazz_newMeth(C$, 'growForInsert$I$I', function (location, required) {
 var size = this.size();
 var increment = (size/2|0);
 if (required > increment) {
-increment = required;
+increment=required;
 }if (increment < 12) {
-increment = 12;
+increment=12;
 }var newArray = p$.newElementArray$I.apply(this, [size + increment]);
 if (location < (size/2|0)) {
 var newFirst = newArray.length - (size + required);
 System.arraycopy(this.array, location, newArray, location + increment, size - location);
 System.arraycopy(this.array, this.firstIndex, newArray, newFirst, location);
-this.firstIndex = newFirst;
-this.lastIndex = newArray.length;
+this.firstIndex=newFirst;
+this.lastIndex=newArray.length;
 } else {
 System.arraycopy(this.array, this.firstIndex, newArray, 0, location);
 System.arraycopy(this.array, location, newArray, location + required, size - location);
-this.firstIndex = 0;
-this.lastIndex = this.lastIndex+(required);
-}this.array = newArray;
+this.firstIndex=0;
+this.lastIndex+=required;
+}this.array=newArray;
 });
 
 Clazz_newMeth(C$, 'indexOf$O', function (object) {
@@ -15569,20 +15569,20 @@ var result;
 var size = this.size();
 if (0 <= location && location < size ) {
 if (location == size - 1) {
-result = this.array[--this.lastIndex];
-this.array[this.lastIndex] = null;
+result=this.array[--this.lastIndex];
+this.array[this.lastIndex]=null;
 } else if (location == 0) {
-result = this.array[this.firstIndex];
-this.array[this.firstIndex++] = null;
+result=this.array[this.firstIndex];
+this.array[this.firstIndex++]=null;
 } else {
 var elementIndex = this.firstIndex + location;
-result = this.array[elementIndex];
+result=this.array[elementIndex];
 if (location < (size/2|0)) {
 System.arraycopy(this.array, this.firstIndex, this.array, this.firstIndex + 1, location);
-this.array[this.firstIndex++] = null;
+this.array[this.firstIndex++]=null;
 } else {
 System.arraycopy(this.array, elementIndex + 1, this.array, elementIndex, size - location - 1 );
-this.array[--this.lastIndex] = null;
+this.array[--this.lastIndex]=null;
 }}} else {
 throw Clazz_new_(Clazz_load('java.lang.IndexOutOfBoundsException'));
 }this.modCount++;
@@ -15596,15 +15596,15 @@ return;
 }var size = this.size();
 if (end == size) {
 (I$[1]||$incl$(1)).fill$OA$I$I$O(this.array, this.firstIndex + start, this.lastIndex, null);
-this.lastIndex = this.firstIndex + start;
+this.lastIndex=this.firstIndex + start;
 } else if (start == 0) {
 (I$[1]||$incl$(1)).fill$OA$I$I$O(this.array, this.firstIndex, this.firstIndex + end, null);
-this.firstIndex = this.firstIndex+(end);
+this.firstIndex+=end;
 } else {
 System.arraycopy(this.array, this.firstIndex + end, this.array, this.firstIndex + start, size - end);
 var newLast = this.lastIndex + start - end;
 (I$[1]||$incl$(1)).fill$OA$I$I$O(this.array, newLast, this.lastIndex, null);
-this.lastIndex = newLast;
+this.lastIndex=newLast;
 }this.modCount++;
 } else {
 throw Clazz_new_(Clazz_load('java.lang.IndexOutOfBoundsException'));
@@ -15613,7 +15613,7 @@ throw Clazz_new_(Clazz_load('java.lang.IndexOutOfBoundsException'));
 Clazz_newMeth(C$, 'set$I$TE', function (location, object) {
 if (0 <= location && location < this.size() ) {
 var result = this.array[this.firstIndex + location];
-this.array[this.firstIndex + location] = object;
+this.array[this.firstIndex + location]=object;
 return result;
 }throw Clazz_new_(Clazz_load('java.lang.IndexOutOfBoundsException'));
 });
@@ -15633,10 +15633,10 @@ Clazz_newMeth(C$, 'toArray$TTA', function (contents) {
 var size = this.size();
 if (size > contents.length) {
 var ct = contents.getClass().getComponentType();
-contents = Clazz_array(ct, size);
+contents=Clazz_array(ct, size);
 }System.arraycopy(this.array, this.firstIndex, contents, 0, size);
 if (size < contents.length) {
-contents[size] = null;
+contents[size]=null;
 }return contents;
 });
 
@@ -15644,9 +15644,9 @@ Clazz_newMeth(C$, 'trimToSize', function () {
 var size = this.size();
 var newArray = p$.newElementArray$I.apply(this, [size]);
 System.arraycopy(this.array, this.firstIndex, newArray, 0, size);
-this.array = newArray;
-this.firstIndex = 0;
-this.lastIndex = this.array.length;
+this.array=newArray;
+this.firstIndex=0;
+this.lastIndex=this.array.length;
 });
 
 Clazz_newMeth(C$, 'writeObject$java_io_ObjectOutputStream', function (stream) {
@@ -15662,14 +15662,14 @@ stream.writeObject$O(it.next());
 
 Clazz_newMeth(C$, 'readObject$java_io_ObjectInputStream', function (stream) {
 var fields = stream.readFields();
-this.lastIndex = fields.get$S$I("size", 0);
-this.array = p$.newElementArray$I.apply(this, [stream.readInt()]);
+this.lastIndex=fields.get$S$I("size", 0);
+this.array=p$.newElementArray$I.apply(this, [stream.readInt()]);
 for (var i = 0; i < this.lastIndex; i++) {
-this.array[i] = stream.readObject();
+this.array[i]=stream.readObject();
 }
 });
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:44
 (function(){var P$=java.util,I$=[['java.util.Arrays','java.lang.reflect.Array',['java.util.Arrays','.ArrayList'],'java.lang.StringBuilder','java.util.HashSet']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Arrays", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -15756,7 +15756,7 @@ if (a[i] != a[i] ) {
 C$.swap$DA$I$I(a, i, --n);
 } else {
 if (a[i] == 0  && Double.doubleToLongBits(a[i]) == NEG_ZERO_BITS ) {
-a[i] = 0.0;
+a[i]=0.0;
 numNegZeros++;
 }i++;
 }}
@@ -15766,7 +15766,7 @@ var j = C$.binarySearch0$DA$I$I$D(a, fromIndex, n, 0.0);
 do {
 j--;
 } while (j >= fromIndex && a[j] == 0.0  );
-for (var k = 0; k < numNegZeros; k++) a[++j] = -0.0;
+for (var k = 0; k < numNegZeros; k++) a[++j]=-0.0;
 
 }}, 1);
 
@@ -15780,7 +15780,7 @@ if (a[i] != a[i] ) {
 C$.swap$FA$I$I(a, i, --n);
 } else {
 if (a[i] == 0  && Float.floatToIntBits(a[i]) == NEG_ZERO_BITS ) {
-a[i] = 0.0;
+a[i]=0.0;
 numNegZeros++;
 }i++;
 }}
@@ -15790,7 +15790,7 @@ var j = C$.binarySearch0$FA$I$I$F(a, fromIndex, n, 0.0);
 do {
 j--;
 } while (j >= fromIndex && a[j] == 0.0  );
-for (var k = 0; k < numNegZeros; k++) a[++j] = -0.0;
+for (var k = 0; k < numNegZeros; k++) a[++j]=-0.0;
 
 }}, 1);
 
@@ -15806,10 +15806,10 @@ var l = off;
 var n = off + len - 1;
 if (len > 40) {
 var s = (len/8|0);
-l = C$.med3$JA$I$I$I(x, l, l + s, l + 2 * s);
-m = C$.med3$JA$I$I$I(x, m - s, m, m + s);
-n = C$.med3$JA$I$I$I(x, n - 2 * s, n - s, n);
-}m = C$.med3$JA$I$I$I(x, l, m, n);
+l=C$.med3$JA$I$I$I(x, l, l + s, l + 2 * s);
+m=C$.med3$JA$I$I$I(x, m - s, m, m + s);
+n=C$.med3$JA$I$I$I(x, n - 2 * s, n - s, n);
+}m=C$.med3$JA$I$I$I(x, l, m, n);
 }var v = x[m];
 var a = off;
 var b = a;
@@ -15829,18 +15829,18 @@ C$.swap$JA$I$I(x, b++, c--);
 }
 var s;
 var n = off + len;
-s = Math.min(a - off, b - a);
+s=Math.min(a - off, b - a);
 C$.vecswap$JA$I$I$I(x, off, b - s, s);
-s = Math.min(d - c, n - d - 1 );
+s=Math.min(d - c, n - d - 1 );
 C$.vecswap$JA$I$I$I(x, b, n - s, s);
-if ((s = b - a) > 1) C$.sort1$JA$I$I(x, off, s);
-if ((s = d - c) > 1) C$.sort1$JA$I$I(x, n - s, s);
+if ((s=b - a) > 1) C$.sort1$JA$I$I(x, off, s);
+if ((s=d - c) > 1) C$.sort1$JA$I$I(x, n - s, s);
 }, 1);
 
 Clazz_newMeth(C$, 'swap$JA$I$I', function (x, a, b) {
 var t = x[a];
-x[a] = x[b];
-x[b] = t;
+x[a]=x[b];
+x[b]=t;
 }, 1);
 
 Clazz_newMeth(C$, 'vecswap$JA$I$I$I', function (x, a, b, n) {
@@ -15864,10 +15864,10 @@ var l = off;
 var n = off + len - 1;
 if (len > 40) {
 var s = (len/8|0);
-l = C$.med3$IA$I$I$I(x, l, l + s, l + 2 * s);
-m = C$.med3$IA$I$I$I(x, m - s, m, m + s);
-n = C$.med3$IA$I$I$I(x, n - 2 * s, n - s, n);
-}m = C$.med3$IA$I$I$I(x, l, m, n);
+l=C$.med3$IA$I$I$I(x, l, l + s, l + 2 * s);
+m=C$.med3$IA$I$I$I(x, m - s, m, m + s);
+n=C$.med3$IA$I$I$I(x, n - 2 * s, n - s, n);
+}m=C$.med3$IA$I$I$I(x, l, m, n);
 }var v = x[m];
 var a = off;
 var b = a;
@@ -15887,18 +15887,18 @@ C$.swap$IA$I$I(x, b++, c--);
 }
 var s;
 var n = off + len;
-s = Math.min(a - off, b - a);
+s=Math.min(a - off, b - a);
 C$.vecswap$IA$I$I$I(x, off, b - s, s);
-s = Math.min(d - c, n - d - 1 );
+s=Math.min(d - c, n - d - 1 );
 C$.vecswap$IA$I$I$I(x, b, n - s, s);
-if ((s = b - a) > 1) C$.sort1$IA$I$I(x, off, s);
-if ((s = d - c) > 1) C$.sort1$IA$I$I(x, n - s, s);
+if ((s=b - a) > 1) C$.sort1$IA$I$I(x, off, s);
+if ((s=d - c) > 1) C$.sort1$IA$I$I(x, n - s, s);
 }, 1);
 
 Clazz_newMeth(C$, 'swap$IA$I$I', function (x, a, b) {
 var t = x[a];
-x[a] = x[b];
-x[b] = t;
+x[a]=x[b];
+x[b]=t;
 }, 1);
 
 Clazz_newMeth(C$, 'vecswap$IA$I$I$I', function (x, a, b, n) {
@@ -15922,10 +15922,10 @@ var l = off;
 var n = off + len - 1;
 if (len > 40) {
 var s = (len/8|0);
-l = C$.med3$HA$I$I$I(x, l, l + s, l + 2 * s);
-m = C$.med3$HA$I$I$I(x, m - s, m, m + s);
-n = C$.med3$HA$I$I$I(x, n - 2 * s, n - s, n);
-}m = C$.med3$HA$I$I$I(x, l, m, n);
+l=C$.med3$HA$I$I$I(x, l, l + s, l + 2 * s);
+m=C$.med3$HA$I$I$I(x, m - s, m, m + s);
+n=C$.med3$HA$I$I$I(x, n - 2 * s, n - s, n);
+}m=C$.med3$HA$I$I$I(x, l, m, n);
 }var v = x[m];
 var a = off;
 var b = a;
@@ -15945,18 +15945,18 @@ C$.swap$HA$I$I(x, b++, c--);
 }
 var s;
 var n = off + len;
-s = Math.min(a - off, b - a);
+s=Math.min(a - off, b - a);
 C$.vecswap$HA$I$I$I(x, off, b - s, s);
-s = Math.min(d - c, n - d - 1 );
+s=Math.min(d - c, n - d - 1 );
 C$.vecswap$HA$I$I$I(x, b, n - s, s);
-if ((s = b - a) > 1) C$.sort1$HA$I$I(x, off, s);
-if ((s = d - c) > 1) C$.sort1$HA$I$I(x, n - s, s);
+if ((s=b - a) > 1) C$.sort1$HA$I$I(x, off, s);
+if ((s=d - c) > 1) C$.sort1$HA$I$I(x, n - s, s);
 }, 1);
 
 Clazz_newMeth(C$, 'swap$HA$I$I', function (x, a, b) {
 var t = x[a];
-x[a] = x[b];
-x[b] = t;
+x[a]=x[b];
+x[b]=t;
 }, 1);
 
 Clazz_newMeth(C$, 'vecswap$HA$I$I$I', function (x, a, b, n) {
@@ -15980,10 +15980,10 @@ var l = off;
 var n = off + len - 1;
 if (len > 40) {
 var s = (len/8|0);
-l = C$.med3$CA$I$I$I(x, l, l + s, l + 2 * s);
-m = C$.med3$CA$I$I$I(x, m - s, m, m + s);
-n = C$.med3$CA$I$I$I(x, n - 2 * s, n - s, n);
-}m = C$.med3$CA$I$I$I(x, l, m, n);
+l=C$.med3$CA$I$I$I(x, l, l + s, l + 2 * s);
+m=C$.med3$CA$I$I$I(x, m - s, m, m + s);
+n=C$.med3$CA$I$I$I(x, n - 2 * s, n - s, n);
+}m=C$.med3$CA$I$I$I(x, l, m, n);
 }var v = x[m];
 var a = off;
 var b = a;
@@ -16003,18 +16003,18 @@ C$.swap$CA$I$I(x, b++, c--);
 }
 var s;
 var n = off + len;
-s = Math.min(a - off, b - a);
+s=Math.min(a - off, b - a);
 C$.vecswap$CA$I$I$I(x, off, b - s, s);
-s = Math.min(d - c, n - d - 1 );
+s=Math.min(d - c, n - d - 1 );
 C$.vecswap$CA$I$I$I(x, b, n - s, s);
-if ((s = b - a) > 1) C$.sort1$CA$I$I(x, off, s);
-if ((s = d - c) > 1) C$.sort1$CA$I$I(x, n - s, s);
+if ((s=b - a) > 1) C$.sort1$CA$I$I(x, off, s);
+if ((s=d - c) > 1) C$.sort1$CA$I$I(x, n - s, s);
 }, 1);
 
 Clazz_newMeth(C$, 'swap$CA$I$I', function (x, a, b) {
 var t = x[a];
-x[a] = x[b];
-x[b] = t;
+x[a]=x[b];
+x[b]=t;
 }, 1);
 
 Clazz_newMeth(C$, 'vecswap$CA$I$I$I', function (x, a, b, n) {
@@ -16038,10 +16038,10 @@ var l = off;
 var n = off + len - 1;
 if (len > 40) {
 var s = (len/8|0);
-l = C$.med3$BA$I$I$I(x, l, l + s, l + 2 * s);
-m = C$.med3$BA$I$I$I(x, m - s, m, m + s);
-n = C$.med3$BA$I$I$I(x, n - 2 * s, n - s, n);
-}m = C$.med3$BA$I$I$I(x, l, m, n);
+l=C$.med3$BA$I$I$I(x, l, l + s, l + 2 * s);
+m=C$.med3$BA$I$I$I(x, m - s, m, m + s);
+n=C$.med3$BA$I$I$I(x, n - 2 * s, n - s, n);
+}m=C$.med3$BA$I$I$I(x, l, m, n);
 }var v = ($b$[0] = x[m], $b$[0]);
 var a = off;
 var b = a;
@@ -16061,18 +16061,18 @@ C$.swap$BA$I$I(x, b++, c--);
 }
 var s;
 var n = off + len;
-s = Math.min(a - off, b - a);
+s=Math.min(a - off, b - a);
 C$.vecswap$BA$I$I$I(x, off, b - s, s);
-s = Math.min(d - c, n - d - 1 );
+s=Math.min(d - c, n - d - 1 );
 C$.vecswap$BA$I$I$I(x, b, n - s, s);
-if ((s = b - a) > 1) C$.sort1$BA$I$I(x, off, s);
-if ((s = d - c) > 1) C$.sort1$BA$I$I(x, n - s, s);
+if ((s=b - a) > 1) C$.sort1$BA$I$I(x, off, s);
+if ((s=d - c) > 1) C$.sort1$BA$I$I(x, n - s, s);
 }, 1);
 
 Clazz_newMeth(C$, 'swap$BA$I$I', function (x, a, b) {
 var t = ($b$[0] = x[a], $b$[0]);
-x[a] = (x[b]|0);
-x[b] = (t|0);
+x[a]=(x[b]|0);
+x[b]=(t|0);
 }, 1);
 
 Clazz_newMeth(C$, 'vecswap$BA$I$I$I', function (x, a, b, n) {
@@ -16096,10 +16096,10 @@ var l = off;
 var n = off + len - 1;
 if (len > 40) {
 var s = (len/8|0);
-l = C$.med3$DA$I$I$I(x, l, l + s, l + 2 * s);
-m = C$.med3$DA$I$I$I(x, m - s, m, m + s);
-n = C$.med3$DA$I$I$I(x, n - 2 * s, n - s, n);
-}m = C$.med3$DA$I$I$I(x, l, m, n);
+l=C$.med3$DA$I$I$I(x, l, l + s, l + 2 * s);
+m=C$.med3$DA$I$I$I(x, m - s, m, m + s);
+n=C$.med3$DA$I$I$I(x, n - 2 * s, n - s, n);
+}m=C$.med3$DA$I$I$I(x, l, m, n);
 }var v = x[m];
 var a = off;
 var b = a;
@@ -16119,18 +16119,18 @@ C$.swap$DA$I$I(x, b++, c--);
 }
 var s;
 var n = off + len;
-s = Math.min(a - off, b - a);
+s=Math.min(a - off, b - a);
 C$.vecswap$DA$I$I$I(x, off, b - s, s);
-s = Math.min(d - c, n - d - 1 );
+s=Math.min(d - c, n - d - 1 );
 C$.vecswap$DA$I$I$I(x, b, n - s, s);
-if ((s = b - a) > 1) C$.sort1$DA$I$I(x, off, s);
-if ((s = d - c) > 1) C$.sort1$DA$I$I(x, n - s, s);
+if ((s=b - a) > 1) C$.sort1$DA$I$I(x, off, s);
+if ((s=d - c) > 1) C$.sort1$DA$I$I(x, n - s, s);
 }, 1);
 
 Clazz_newMeth(C$, 'swap$DA$I$I', function (x, a, b) {
 var t = x[a];
-x[a] = x[b];
-x[b] = t;
+x[a]=x[b];
+x[b]=t;
 }, 1);
 
 Clazz_newMeth(C$, 'vecswap$DA$I$I$I', function (x, a, b, n) {
@@ -16154,10 +16154,10 @@ var l = off;
 var n = off + len - 1;
 if (len > 40) {
 var s = (len/8|0);
-l = C$.med3$FA$I$I$I(x, l, l + s, l + 2 * s);
-m = C$.med3$FA$I$I$I(x, m - s, m, m + s);
-n = C$.med3$FA$I$I$I(x, n - 2 * s, n - s, n);
-}m = C$.med3$FA$I$I$I(x, l, m, n);
+l=C$.med3$FA$I$I$I(x, l, l + s, l + 2 * s);
+m=C$.med3$FA$I$I$I(x, m - s, m, m + s);
+n=C$.med3$FA$I$I$I(x, n - 2 * s, n - s, n);
+}m=C$.med3$FA$I$I$I(x, l, m, n);
 }var v = x[m];
 var a = off;
 var b = a;
@@ -16177,18 +16177,18 @@ C$.swap$FA$I$I(x, b++, c--);
 }
 var s;
 var n = off + len;
-s = Math.min(a - off, b - a);
+s=Math.min(a - off, b - a);
 C$.vecswap$FA$I$I$I(x, off, b - s, s);
-s = Math.min(d - c, n - d - 1 );
+s=Math.min(d - c, n - d - 1 );
 C$.vecswap$FA$I$I$I(x, b, n - s, s);
-if ((s = b - a) > 1) C$.sort1$FA$I$I(x, off, s);
-if ((s = d - c) > 1) C$.sort1$FA$I$I(x, n - s, s);
+if ((s=b - a) > 1) C$.sort1$FA$I$I(x, off, s);
+if ((s=d - c) > 1) C$.sort1$FA$I$I(x, n - s, s);
 }, 1);
 
 Clazz_newMeth(C$, 'swap$FA$I$I', function (x, a, b) {
 var t = x[a];
-x[a] = x[b];
-x[b] = t;
+x[a]=x[b];
+x[b]=t;
 }, 1);
 
 Clazz_newMeth(C$, 'vecswap$FA$I$I$I', function (x, a, b, n) {
@@ -16220,8 +16220,8 @@ for (var i = low; i < high; i++) for (var j = i; j > low && (dest[j - 1]).compar
 return;
 }var destLow = low;
 var destHigh = high;
-low = low+(off);
-high = high+(off);
+low+=off;
+high+=off;
 var mid = (low + high) >>> 1;
 C$.mergeSort$OA$OA$I$I$I(dest, src, low, mid, -off);
 C$.mergeSort$OA$OA$I$I$I(dest, src, mid, high, -off);
@@ -16229,15 +16229,15 @@ if ((src[mid - 1]).compareTo$TT(src[mid]) <= 0) {
 System.arraycopy(src, low, dest, destLow, length);
 return;
 }for (var i = destLow, p = low, q = mid; i < destHigh; i++) {
-if (q >= high || p < mid && (src[p]).compareTo$TT(src[q]) <= 0  ) dest[i] = src[p++];
- else dest[i] = src[q++];
+if (q >= high || p < mid && (src[p]).compareTo$TT(src[q]) <= 0  ) dest[i]=src[p++];
+ else dest[i]=src[q++];
 }
 }, 1);
 
 Clazz_newMeth(C$, 'swap$OA$I$I', function (x, a, b) {
 var t = x[a];
-x[a] = x[b];
-x[b] = t;
+x[a]=x[b];
+x[b]=t;
 }, 1);
 
 Clazz_newMeth(C$, 'sort$TTA$java_util_Comparator', function (a, c) {
@@ -16262,8 +16262,8 @@ for (var i = low; i < high; i++) for (var j = i; j > low && c.compare$TT$TT(dest
 return;
 }var destLow = low;
 var destHigh = high;
-low = low+(off);
-high = high+(off);
+low+=off;
+high+=off;
 var mid = (low + high) >>> 1;
 C$.mergeSort$OA$OA$I$I$I$java_util_Comparator(dest, src, low, mid, -off, c);
 C$.mergeSort$OA$OA$I$I$I$java_util_Comparator(dest, src, mid, high, -off, c);
@@ -16271,8 +16271,8 @@ if (c.compare$TT$TT(src[mid - 1], src[mid]) <= 0) {
 System.arraycopy(src, low, dest, destLow, length);
 return;
 }for (var i = destLow, p = low, q = mid; i < destHigh; i++) {
-if (q >= high || p < mid && c.compare$TT$TT(src[p], src[q]) <= 0  ) dest[i] = src[p++];
- else dest[i] = src[q++];
+if (q >= high || p < mid && c.compare$TT$TT(src[p], src[q]) <= 0  ) dest[i]=src[p++];
+ else dest[i]=src[q++];
 }
 }, 1);
 
@@ -16297,8 +16297,8 @@ var high = toIndex - 1;
 while (low <= high){
 var mid = (low + high) >>> 1;
 var midVal = a[mid];
-if (midVal < key) low = mid + 1;
- else if (midVal > key) high = mid - 1;
+if (midVal < key) low=mid + 1;
+ else if (midVal > key) high=mid - 1;
  else return mid;
 }
 return -(low + 1);
@@ -16319,8 +16319,8 @@ var high = toIndex - 1;
 while (low <= high){
 var mid = (low + high) >>> 1;
 var midVal = a[mid];
-if (midVal < key) low = mid + 1;
- else if (midVal > key) high = mid - 1;
+if (midVal < key) low=mid + 1;
+ else if (midVal > key) high=mid - 1;
  else return mid;
 }
 return -(low + 1);
@@ -16341,8 +16341,8 @@ var high = toIndex - 1;
 while (low <= high){
 var mid = (low + high) >>> 1;
 var midVal = a[mid];
-if (midVal < key) low = mid + 1;
- else if (midVal > key) high = mid - 1;
+if (midVal < key) low=mid + 1;
+ else if (midVal > key) high=mid - 1;
  else return mid;
 }
 return -(low + 1);
@@ -16363,8 +16363,8 @@ var high = toIndex - 1;
 while (low <= high){
 var mid = (low + high) >>> 1;
 var midVal = a[mid];
-if (midVal < key) low = mid + 1;
- else if (midVal > key) high = mid - 1;
+if (midVal < key) low=mid + 1;
+ else if (midVal > key) high=mid - 1;
  else return mid;
 }
 return -(low + 1);
@@ -16385,8 +16385,8 @@ var high = toIndex - 1;
 while (low <= high){
 var mid = (low + high) >>> 1;
 var midVal = ($b$[0] = a[mid], $b$[0]);
-if (midVal < key) low = mid + 1;
- else if (midVal > key) high = mid - 1;
+if (midVal < key) low=mid + 1;
+ else if (midVal > key) high=mid - 1;
  else return mid;
 }
 return -(low + 1);
@@ -16407,14 +16407,14 @@ var high = toIndex - 1;
 while (low <= high){
 var mid = (low + high) >>> 1;
 var midVal = a[mid];
-if (midVal < key ) low = mid + 1;
- else if (midVal > key ) high = mid - 1;
+if (midVal < key ) low=mid + 1;
+ else if (midVal > key ) high=mid - 1;
  else {
 var midBits = Double.doubleToLongBits(midVal);
 var keyBits = Double.doubleToLongBits(key);
 if (midBits == keyBits) return mid;
- else if (midBits < keyBits) low = mid + 1;
- else high = mid - 1;
+ else if (midBits < keyBits) low=mid + 1;
+ else high=mid - 1;
 }}
 return -(low + 1);
 }, 1);
@@ -16434,14 +16434,14 @@ var high = toIndex - 1;
 while (low <= high){
 var mid = (low + high) >>> 1;
 var midVal = a[mid];
-if (midVal < key ) low = mid + 1;
- else if (midVal > key ) high = mid - 1;
+if (midVal < key ) low=mid + 1;
+ else if (midVal > key ) high=mid - 1;
  else {
 var midBits = Float.floatToIntBits(midVal);
 var keyBits = Float.floatToIntBits(key);
 if (midBits == keyBits) return mid;
- else if (midBits < keyBits) low = mid + 1;
- else high = mid - 1;
+ else if (midBits < keyBits) low=mid + 1;
+ else high=mid - 1;
 }}
 return -(low + 1);
 }, 1);
@@ -16462,8 +16462,8 @@ while (low <= high){
 var mid = (low + high) >>> 1;
 var midVal = a[mid];
 var cmp = midVal.compareTo$TT(key);
-if (cmp < 0) low = mid + 1;
- else if (cmp > 0) high = mid - 1;
+if (cmp < 0) low=mid + 1;
+ else if (cmp > 0) high=mid - 1;
  else return mid;
 }
 return -(low + 1);
@@ -16487,8 +16487,8 @@ while (low <= high){
 var mid = (low + high) >>> 1;
 var midVal = a[mid];
 var cmp = c.compare$TT$TT(midVal, key);
-if (cmp < 0) low = mid + 1;
- else if (cmp > 0) high = mid - 1;
+if (cmp < 0) low=mid + 1;
+ else if (cmp > 0) high=mid - 1;
  else return mid;
 }
 return -(low + 1);
@@ -16588,101 +16588,101 @@ return true;
 }, 1);
 
 Clazz_newMeth(C$, 'fill$JA$J', function (a, val) {
-for (var i = 0, len = a.length; i < len; i++) a[i] = val;
+for (var i = 0, len = a.length; i < len; i++) a[i]=val;
 
 }, 1);
 
 Clazz_newMeth(C$, 'fill$JA$I$I$J', function (a, fromIndex, toIndex, val) {
 C$.rangeCheck$I$I$I(a.length, fromIndex, toIndex);
-for (var i = fromIndex; i < toIndex; i++) a[i] = val;
+for (var i = fromIndex; i < toIndex; i++) a[i]=val;
 
 }, 1);
 
 Clazz_newMeth(C$, 'fill$IA$I', function (a, val) {
-for (var i = 0, len = a.length; i < len; i++) a[i] = val;
+for (var i = 0, len = a.length; i < len; i++) a[i]=val;
 
 }, 1);
 
 Clazz_newMeth(C$, 'fill$IA$I$I$I', function (a, fromIndex, toIndex, val) {
 C$.rangeCheck$I$I$I(a.length, fromIndex, toIndex);
-for (var i = fromIndex; i < toIndex; i++) a[i] = val;
+for (var i = fromIndex; i < toIndex; i++) a[i]=val;
 
 }, 1);
 
 Clazz_newMeth(C$, 'fill$HA$H', function (a, val) {
-for (var i = 0, len = a.length; i < len; i++) a[i] = val;
+for (var i = 0, len = a.length; i < len; i++) a[i]=val;
 
 }, 1);
 
 Clazz_newMeth(C$, 'fill$HA$I$I$H', function (a, fromIndex, toIndex, val) {
 C$.rangeCheck$I$I$I(a.length, fromIndex, toIndex);
-for (var i = fromIndex; i < toIndex; i++) a[i] = val;
+for (var i = fromIndex; i < toIndex; i++) a[i]=val;
 
 }, 1);
 
 Clazz_newMeth(C$, 'fill$CA$C', function (a, val) {
-for (var i = 0, len = a.length; i < len; i++) a[i] = val;
+for (var i = 0, len = a.length; i < len; i++) a[i]=val;
 
 }, 1);
 
 Clazz_newMeth(C$, 'fill$CA$I$I$C', function (a, fromIndex, toIndex, val) {
 C$.rangeCheck$I$I$I(a.length, fromIndex, toIndex);
-for (var i = fromIndex; i < toIndex; i++) a[i] = val;
+for (var i = fromIndex; i < toIndex; i++) a[i]=val;
 
 }, 1);
 
 Clazz_newMeth(C$, 'fill$BA$B', function (a, val) {
-for (var i = 0, len = a.length; i < len; i++) a[i] = (val|0);
+for (var i = 0, len = a.length; i < len; i++) a[i]=(val|0);
 
 }, 1);
 
 Clazz_newMeth(C$, 'fill$BA$I$I$B', function (a, fromIndex, toIndex, val) {
 C$.rangeCheck$I$I$I(a.length, fromIndex, toIndex);
-for (var i = fromIndex; i < toIndex; i++) a[i] = (val|0);
+for (var i = fromIndex; i < toIndex; i++) a[i]=(val|0);
 
 }, 1);
 
 Clazz_newMeth(C$, 'fill$ZA$Z', function (a, val) {
-for (var i = 0, len = a.length; i < len; i++) a[i] = val;
+for (var i = 0, len = a.length; i < len; i++) a[i]=val;
 
 }, 1);
 
 Clazz_newMeth(C$, 'fill$ZA$I$I$Z', function (a, fromIndex, toIndex, val) {
 C$.rangeCheck$I$I$I(a.length, fromIndex, toIndex);
-for (var i = fromIndex; i < toIndex; i++) a[i] = val;
+for (var i = fromIndex; i < toIndex; i++) a[i]=val;
 
 }, 1);
 
 Clazz_newMeth(C$, 'fill$DA$D', function (a, val) {
-for (var i = 0, len = a.length; i < len; i++) a[i] = val;
+for (var i = 0, len = a.length; i < len; i++) a[i]=val;
 
 }, 1);
 
 Clazz_newMeth(C$, 'fill$DA$I$I$D', function (a, fromIndex, toIndex, val) {
 C$.rangeCheck$I$I$I(a.length, fromIndex, toIndex);
-for (var i = fromIndex; i < toIndex; i++) a[i] = val;
+for (var i = fromIndex; i < toIndex; i++) a[i]=val;
 
 }, 1);
 
 Clazz_newMeth(C$, 'fill$FA$F', function (a, val) {
-for (var i = 0, len = a.length; i < len; i++) a[i] = val;
+for (var i = 0, len = a.length; i < len; i++) a[i]=val;
 
 }, 1);
 
 Clazz_newMeth(C$, 'fill$FA$I$I$F', function (a, fromIndex, toIndex, val) {
 C$.rangeCheck$I$I$I(a.length, fromIndex, toIndex);
-for (var i = fromIndex; i < toIndex; i++) a[i] = val;
+for (var i = fromIndex; i < toIndex; i++) a[i]=val;
 
 }, 1);
 
 Clazz_newMeth(C$, 'fill$OA$O', function (a, val) {
-for (var i = 0, len = a.length; i < len; i++) a[i] = val;
+for (var i = 0, len = a.length; i < len; i++) a[i]=val;
 
 }, 1);
 
 Clazz_newMeth(C$, 'fill$OA$I$I$O', function (a, fromIndex, toIndex, val) {
 C$.rangeCheck$I$I$I(a.length, fromIndex, toIndex);
-for (var i = fromIndex; i < toIndex; i++) a[i] = val;
+for (var i = fromIndex; i < toIndex; i++) a[i]=val;
 
 }, 1);
 
@@ -16829,7 +16829,7 @@ if (a == null ) return 0;
 var result = 1;
 for (var element, $element = 0, $$element = a; $element<$$element.length&&((element=$$element[$element]),1);$element++) {
 var elementHash = ((element ^ (element >>> 32))|0);
-result = 31 * result + elementHash;
+result=31 * result + elementHash;
 }
 return result;
 }, 1);
@@ -16837,7 +16837,7 @@ return result;
 Clazz_newMeth(C$, 'hashCode$IA', function (a) {
 if (a == null ) return 0;
 var result = 1;
-for (var element, $element = 0, $$element = a; $element<$$element.length&&((element=$$element[$element]),1);$element++) result = 31 * result + element;
+for (var element, $element = 0, $$element = a; $element<$$element.length&&((element=$$element[$element]),1);$element++) result=31 * result + element;
 
 return result;
 }, 1);
@@ -16845,7 +16845,7 @@ return result;
 Clazz_newMeth(C$, 'hashCode$HA', function (a) {
 if (a == null ) return 0;
 var result = 1;
-for (var element, $element = 0, $$element = a; $element<$$element.length&&((element=$$element[$element]),1);$element++) result = 31 * result + element;
+for (var element, $element = 0, $$element = a; $element<$$element.length&&((element=$$element[$element]),1);$element++) result=31 * result + element;
 
 return result;
 }, 1);
@@ -16853,7 +16853,7 @@ return result;
 Clazz_newMeth(C$, 'hashCode$CA', function (a) {
 if (a == null ) return 0;
 var result = 1;
-for (var element, $element = 0, $$element = a; $element<$$element.length&&((element=$$element[$element]),1);$element++) result = 31 * result + element.$c();
+for (var element, $element = 0, $$element = a; $element<$$element.length&&((element=$$element[$element]),1);$element++) result=31 * result + element.$c();
 
 return result;
 }, 1);
@@ -16861,7 +16861,7 @@ return result;
 Clazz_newMeth(C$, 'hashCode$BA', function (a) {
 if (a == null ) return 0;
 var result = 1;
-for (var element, $element = 0, $$element = a; $element<$$element.length&&((element=$$element[$element]),1);$element++) result = 31 * result + element;
+for (var element, $element = 0, $$element = a; $element<$$element.length&&((element=$$element[$element]),1);$element++) result=31 * result + element;
 
 return result;
 }, 1);
@@ -16869,7 +16869,7 @@ return result;
 Clazz_newMeth(C$, 'hashCode$ZA', function (a) {
 if (a == null ) return 0;
 var result = 1;
-for (var element, $element = 0, $$element = a; $element<$$element.length&&((element=$$element[$element]),1);$element++) result = 31 * result + (element ? 1231 : 1237);
+for (var element, $element = 0, $$element = a; $element<$$element.length&&((element=$$element[$element]),1);$element++) result=31 * result + (element ? 1231 : 1237);
 
 return result;
 }, 1);
@@ -16877,7 +16877,7 @@ return result;
 Clazz_newMeth(C$, 'hashCode$FA', function (a) {
 if (a == null ) return 0;
 var result = 1;
-for (var element, $element = 0, $$element = a; $element<$$element.length&&((element=$$element[$element]),1);$element++) result = 31 * result + Float.floatToIntBits(element);
+for (var element, $element = 0, $$element = a; $element<$$element.length&&((element=$$element[$element]),1);$element++) result=31 * result + Float.floatToIntBits(element);
 
 return result;
 }, 1);
@@ -16887,7 +16887,7 @@ if (a == null ) return 0;
 var result = 1;
 for (var element, $element = 0, $$element = a; $element<$$element.length&&((element=$$element[$element]),1);$element++) {
 var bits = Double.doubleToLongBits(element);
-result = 31 * result + ((bits ^ (bits >>> 32))|0);
+result=31 * result + ((bits ^ (bits >>> 32))|0);
 }
 return result;
 }, 1);
@@ -16895,7 +16895,7 @@ return result;
 Clazz_newMeth(C$, 'hashCode$OA', function (a) {
 if (a == null ) return 0;
 var result = 1;
-for (var element, $element = 0, $$element = a; $element<$$element.length&&((element=$$element[$element]),1);$element++) result = 31 * result + (element == null  ? 0 : element.hashCode());
+for (var element, $element = 0, $$element = a; $element<$$element.length&&((element=$$element[$element]),1);$element++) result=31 * result + (element == null  ? 0 : element.hashCode());
 
 return result;
 }, 1);
@@ -16905,17 +16905,17 @@ if (a == null ) return 0;
 var result = 1;
 for (var element, $element = 0, $$element = a; $element<$$element.length&&((element=$$element[$element]),1);$element++) {
 var elementHash = 0;
-if (Clazz_instanceOf(element, Clazz_array(java.lang.Object, -1))) elementHash = C$.deepHashCode$OA(element);
- else if (Clazz_instanceOf(element, Clazz_array(Byte.TYPE, -1))) elementHash = C$.hashCode$BA(element);
- else if (Clazz_instanceOf(element, Clazz_array(Short.TYPE, -1))) elementHash = C$.hashCode$HA(element);
- else if (Clazz_instanceOf(element, Clazz_array(Integer.TYPE, -1))) elementHash = C$.hashCode$IA(element);
- else if (Clazz_instanceOf(element, Clazz_array(Long.TYPE, -1))) elementHash = C$.hashCode$JA(element);
- else if (Clazz_instanceOf(element, Clazz_array(Character.TYPE, -1))) elementHash = C$.hashCode$CA(element);
- else if (Clazz_instanceOf(element, Clazz_array(Float.TYPE, -1))) elementHash = C$.hashCode$FA(element);
- else if (Clazz_instanceOf(element, Clazz_array(Double.TYPE, -1))) elementHash = C$.hashCode$DA(element);
- else if (Clazz_instanceOf(element, Clazz_array(Boolean.TYPE, -1))) elementHash = C$.hashCode$ZA(element);
- else if (element != null ) elementHash = element.hashCode();
-result = 31 * result + elementHash;
+if (Clazz_instanceOf(element, Clazz_array(java.lang.Object, -1))) elementHash=C$.deepHashCode$OA(element);
+ else if (Clazz_instanceOf(element, Clazz_array(Byte.TYPE, -1))) elementHash=C$.hashCode$BA(element);
+ else if (Clazz_instanceOf(element, Clazz_array(Short.TYPE, -1))) elementHash=C$.hashCode$HA(element);
+ else if (Clazz_instanceOf(element, Clazz_array(Integer.TYPE, -1))) elementHash=C$.hashCode$IA(element);
+ else if (Clazz_instanceOf(element, Clazz_array(Long.TYPE, -1))) elementHash=C$.hashCode$JA(element);
+ else if (Clazz_instanceOf(element, Clazz_array(Character.TYPE, -1))) elementHash=C$.hashCode$CA(element);
+ else if (Clazz_instanceOf(element, Clazz_array(Float.TYPE, -1))) elementHash=C$.hashCode$FA(element);
+ else if (Clazz_instanceOf(element, Clazz_array(Double.TYPE, -1))) elementHash=C$.hashCode$DA(element);
+ else if (Clazz_instanceOf(element, Clazz_array(Boolean.TYPE, -1))) elementHash=C$.hashCode$ZA(element);
+ else if (element != null ) elementHash=element.hashCode();
+result=31 * result + elementHash;
 }
 return result;
 }, 1);
@@ -16931,16 +16931,16 @@ var e2 = a2[i];
 if (e1 === e2 ) continue;
 if (e1 == null ) return false;
 var eq;
-if (Clazz_instanceOf(e1, Clazz_array(java.lang.Object, -1)) && Clazz_instanceOf(e2, Clazz_array(java.lang.Object, -1)) ) eq = C$.deepEquals$OA$OA(e1, e2);
- else if (Clazz_instanceOf(e1, Clazz_array(Byte.TYPE, -1)) && Clazz_instanceOf(e2, Clazz_array(Byte.TYPE, -1)) ) eq = C$.equals$BA$BA(e1, e2);
- else if (Clazz_instanceOf(e1, Clazz_array(Short.TYPE, -1)) && Clazz_instanceOf(e2, Clazz_array(Short.TYPE, -1)) ) eq = C$.equals$HA$HA(e1, e2);
- else if (Clazz_instanceOf(e1, Clazz_array(Integer.TYPE, -1)) && Clazz_instanceOf(e2, Clazz_array(Integer.TYPE, -1)) ) eq = C$.equals$IA$IA(e1, e2);
- else if (Clazz_instanceOf(e1, Clazz_array(Long.TYPE, -1)) && Clazz_instanceOf(e2, Clazz_array(Long.TYPE, -1)) ) eq = C$.equals$JA$JA(e1, e2);
- else if (Clazz_instanceOf(e1, Clazz_array(Character.TYPE, -1)) && Clazz_instanceOf(e2, Clazz_array(Character.TYPE, -1)) ) eq = C$.equals$CA$CA(e1, e2);
- else if (Clazz_instanceOf(e1, Clazz_array(Float.TYPE, -1)) && Clazz_instanceOf(e2, Clazz_array(Float.TYPE, -1)) ) eq = C$.equals$FA$FA(e1, e2);
- else if (Clazz_instanceOf(e1, Clazz_array(Double.TYPE, -1)) && Clazz_instanceOf(e2, Clazz_array(Double.TYPE, -1)) ) eq = C$.equals$DA$DA(e1, e2);
- else if (Clazz_instanceOf(e1, Clazz_array(Boolean.TYPE, -1)) && Clazz_instanceOf(e2, Clazz_array(Boolean.TYPE, -1)) ) eq = C$.equals$ZA$ZA(e1, e2);
- else eq = e1.equals$O(e2);
+if (Clazz_instanceOf(e1, Clazz_array(java.lang.Object, -1)) && Clazz_instanceOf(e2, Clazz_array(java.lang.Object, -1)) ) eq=C$.deepEquals$OA$OA(e1, e2);
+ else if (Clazz_instanceOf(e1, Clazz_array(Byte.TYPE, -1)) && Clazz_instanceOf(e2, Clazz_array(Byte.TYPE, -1)) ) eq=C$.equals$BA$BA(e1, e2);
+ else if (Clazz_instanceOf(e1, Clazz_array(Short.TYPE, -1)) && Clazz_instanceOf(e2, Clazz_array(Short.TYPE, -1)) ) eq=C$.equals$HA$HA(e1, e2);
+ else if (Clazz_instanceOf(e1, Clazz_array(Integer.TYPE, -1)) && Clazz_instanceOf(e2, Clazz_array(Integer.TYPE, -1)) ) eq=C$.equals$IA$IA(e1, e2);
+ else if (Clazz_instanceOf(e1, Clazz_array(Long.TYPE, -1)) && Clazz_instanceOf(e2, Clazz_array(Long.TYPE, -1)) ) eq=C$.equals$JA$JA(e1, e2);
+ else if (Clazz_instanceOf(e1, Clazz_array(Character.TYPE, -1)) && Clazz_instanceOf(e2, Clazz_array(Character.TYPE, -1)) ) eq=C$.equals$CA$CA(e1, e2);
+ else if (Clazz_instanceOf(e1, Clazz_array(Float.TYPE, -1)) && Clazz_instanceOf(e2, Clazz_array(Float.TYPE, -1)) ) eq=C$.equals$FA$FA(e1, e2);
+ else if (Clazz_instanceOf(e1, Clazz_array(Double.TYPE, -1)) && Clazz_instanceOf(e2, Clazz_array(Double.TYPE, -1)) ) eq=C$.equals$DA$DA(e1, e2);
+ else if (Clazz_instanceOf(e1, Clazz_array(Boolean.TYPE, -1)) && Clazz_instanceOf(e2, Clazz_array(Boolean.TYPE, -1)) ) eq=C$.equals$ZA$ZA(e1, e2);
+ else eq=e1.equals$O(e2);
 if (!eq) return false;
 }
 return true;
@@ -17066,7 +17066,7 @@ b.append$S(", ");
 Clazz_newMeth(C$, 'deepToString$OA', function (a) {
 if (a == null ) return "null";
 var bufLen = 20 * a.length;
-if (a.length != 0 && bufLen <= 0 ) bufLen = 2147483647;
+if (a.length != 0 && bufLen <= 0 ) bufLen=2147483647;
 var buf = Clazz_new_((I$[4]||$incl$(4)).c$$I,[bufLen]);
 C$.deepToString$OA$StringBuilder$java_util_Set(a, buf, Clazz_new_((I$[5]||$incl$(5))));
 return buf.toString();
@@ -17128,7 +17128,7 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$$TEA', function (array) {
 Clazz_super_(C$, this,1);
 if (array == null ) throw Clazz_new_(Clazz_load('java.lang.NullPointerException'));
-this.a = array;
+this.a=array;
 }, 1);
 
 Clazz_newMeth(C$, 'size', function () {
@@ -17143,7 +17143,7 @@ Clazz_newMeth(C$, 'toArray$TTA', function (a) {
 var size = this.size();
 if (a.length < size) return (I$[1]||$incl$(1)).copyOf$TUA$I$Class(this.a, size, a.getClass());
 System.arraycopy(this.a, 0, a, 0, size);
-if (a.length > size) a[size] = null;
+if (a.length > size) a[size]=null;
 return a;
 });
 
@@ -17153,7 +17153,7 @@ return this.a[index];
 
 Clazz_newMeth(C$, 'set$I$TE', function (index, element) {
 var oldValue = this.a[index];
-this.a[index] = element;
+this.a[index]=element;
 return oldValue;
 });
 
@@ -17174,7 +17174,7 @@ return this.indexOf$O(o) != -1;
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:11
+//Created 2018-05-24 08:45:44
 (function(){var P$=java.util,I$=[['java.util.Collections','java.util.Collections$EmptySet$1','java.util.Collections$SingletonSet$1','java.util.Collections$SingletonMap$1$1$1','java.util.Collections$SingletonMap$1$1','java.util.AbstractSet',['java.util.Collections','.SynchronizedList'],['java.util.Collections','.SynchronizedRandomAccessList'],['java.util.Collections','.SynchronizedSet'],['java.util.Collections','.SynchronizedCollection'],'java.util.Collections$UnmodifiableCollection$1','java.util.Collections$UnmodifiableList$1',['java.util.Collections','.UnmodifiableRandomAccessList'],['java.util.Collections','.UnmodifiableList'],['java.util.Collections','.UnmodifiableMap','.UnmodifiableEntrySet','.UnmodifiableMapEntry'],'java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet$1','java.lang.reflect.Array',['java.util.Collections','.UnmodifiableMap','.UnmodifiableEntrySet'],['java.util.Collections','.UnmodifiableSet'],['java.util.Collections','.UnmodifiableCollection'],['java.util.Collections','.CheckedListIterator'],'java.util.Arrays',['java.util.Collections','.CheckedMap','.CheckedEntry'],['java.util.Collections','.CheckedMap','.CheckedEntrySet','.CheckedEntryIterator'],['java.util.Map','.Entry'],['java.util.Collections','.CheckedMap','.CheckedEntrySet'],['java.util.Collections','.EmptyList'],['java.util.Collections','.EmptySet'],['java.util.Collections','.EmptyMap'],'java.util.Collections$1',['java.util.Collections','.CopiesList'],['java.util.Collections','.ReverseComparator'],['java.util.Collections','.ReverseComparatorWithComparator'],'java.util.Random',['java.util.Collections','.SingletonSet'],['java.util.Collections','.SingletonList'],['java.util.Collections','.SingletonMap'],'java.util.ArrayList',['java.util.Collections','.SynchronizedMap'],['java.util.Collections','.SynchronizedSortedMap'],['java.util.Collections','.SynchronizedSortedSet'],['java.util.Collections','.UnmodifiableMap'],['java.util.Collections','.UnmodifiableSortedMap'],['java.util.Collections','.UnmodifiableSortedSet'],['java.util.Collections','.CheckedCollection'],['java.util.Collections','.CheckedMap'],['java.util.Collections','.CheckedRandomAccessList'],['java.util.Collections','.CheckedList'],['java.util.Collections','.CheckedSet'],['java.util.Collections','.CheckedSortedMap'],['java.util.Collections','.CheckedSortedSet']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Collections", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -17207,7 +17207,7 @@ if (!(Clazz_instanceOf(list, "java.util.RandomAccess"))) {
 var it = list.listIterator();
 while (it.hasNext()){
 var result;
-if ((result = key.compareTo$TT(it.next())) <= 0) {
+if ((result=key.compareTo$TT(it.next())) <= 0) {
 if (result == 0) {
 return it.previousIndex();
 }return -it.previousIndex() - 1;
@@ -17218,13 +17218,13 @@ var mid = list.size();
 var high = mid - 1;
 var result = -1;
 while (low <= high){
-mid = (low + high) >> 1;
-if ((result = key.compareTo$TT(list.get$I(mid))) > 0) {
-low = mid + 1;
+mid=(low + high) >> 1;
+if ((result=key.compareTo$TT(list.get$I(mid))) > 0) {
+low=mid + 1;
 } else if (result == 0) {
 return mid;
 } else {
-high = mid - 1;
+high=mid - 1;
 }}
 return -mid - (result < 0 ? 1 : 2);
 }, 1);
@@ -17236,7 +17236,7 @@ return C$.binarySearch$java_util_List$TT(list, object);
 var it = list.listIterator();
 while (it.hasNext()){
 var result;
-if ((result = comparator.compare$TT$TT(object, it.next())) <= 0) {
+if ((result=comparator.compare$TT$TT(object, it.next())) <= 0) {
 if (result == 0) {
 return it.previousIndex();
 }return -it.previousIndex() - 1;
@@ -17247,13 +17247,13 @@ var mid = list.size();
 var high = mid - 1;
 var result = -1;
 while (low <= high){
-mid = (low + high) >> 1;
-if ((result = comparator.compare$TT$TT(object, list.get$I(mid))) > 0) {
-low = mid + 1;
+mid=(low + high) >> 1;
+if ((result=comparator.compare$TT$TT(object, list.get$I(mid))) > 0) {
+low=mid + 1;
 } else if (result == 0) {
 return mid;
 } else {
-high = mid - 1;
+high=mid - 1;
 }}
 return -mid - (result < 0 ? 1 : 2);
 }, 1);
@@ -17319,7 +17319,7 @@ var max = it.next();
 while (it.hasNext()){
 var next = it.next();
 if (max.compareTo$TT(next) < 0) {
-max = next;
+max=next;
 }}
 return max;
 }, 1);
@@ -17330,7 +17330,7 @@ var max = it.next();
 while (it.hasNext()){
 var next = it.next();
 if (comparator.compare$TT$TT(max, next) < 0) {
-max = next;
+max=next;
 }}
 return max;
 }, 1);
@@ -17341,7 +17341,7 @@ var min = it.next();
 while (it.hasNext()){
 var next = it.next();
 if (min.compareTo$TT(next) > 0) {
-min = next;
+min=next;
 }}
 return min;
 }, 1);
@@ -17352,7 +17352,7 @@ var min = it.next();
 while (it.hasNext()){
 var next = it.next();
 if (comparator.compare$TT$TT(min, next) > 0) {
-min = next;
+min=next;
 }}
 return min;
 }, 1);
@@ -17393,10 +17393,10 @@ var array = list.toArray();
 for (var i = array.length - 1; i > 0; i--) {
 var index = random.nextInt() % (i + 1);
 if (index < 0) {
-index = -index;
+index=-index;
 }var temp = array[i];
-array[i] = array[index];
-array[index] = temp;
+array[i]=array[index];
+array[index]=temp;
 }
 var i = 0;
 var it = list.listIterator();
@@ -17409,7 +17409,7 @@ var rawList = list;
 for (var i = rawList.size() - 1; i > 0; i--) {
 var index = random.nextInt() % (i + 1);
 if (index < 0) {
-index = -index;
+index=-index;
 }rawList.set$I$TE(index, rawList.set$I$TE(i, rawList.get$I(index)));
 }
 }}, 1);
@@ -17460,8 +17460,8 @@ rawList.set$I$TE(index2, rawList.set$I$TE(index1, rawList.get$I(index2)));
 Clazz_newMeth(C$, 'replaceAll$java_util_List$TT$TT', function (list, obj, obj2) {
 var index;
 var found = false;
-while ((index = list.indexOf$O(obj)) > -1){
-found = true;
+while ((index=list.indexOf$O(obj)) > -1){
+found=true;
 list.set$I$TE(index, obj2);
 }
 return found;
@@ -17474,9 +17474,9 @@ if (size == 0) {
 return;
 }var normdist;
 if (dist > 0) {
-normdist = dist % size;
+normdist=dist % size;
 } else {
-normdist = size - ((dist % size) * -1);
+normdist=size - ((dist % size) * -1);
 }if (normdist == 0 || normdist == size ) {
 return;
 }if (Clazz_instanceOf(list, "java.util.RandomAccess")) {
@@ -17484,11 +17484,11 @@ var temp = list.get$I(0);
 var index = 0;
 var beginIndex = 0;
 for (var i = 0; i < size; i++) {
-index = (index + normdist) % size;
-temp = list.set$I$TE(index, temp);
+index=(index + normdist) % size;
+temp=list.set$I$TE(index, temp);
 if (index == beginIndex) {
-index = ++beginIndex;
-temp = list.get$I(beginIndex);
+index=++beginIndex;
+temp=list.get$I(beginIndex);
 }}
 } else {
 var divideIndex = (size - normdist) % size;
@@ -17520,7 +17520,7 @@ var element = sublistIt.next();
 if (!listIt.hasNext()) {
 return -1;
 }if ((element == null ) ? listIt.next() != null  : !element.equals$O(listIt.next())) {
-difFound = true;
+difFound=true;
 break;
 }}
 if (!difFound) {
@@ -17549,7 +17549,7 @@ var element = sublistIt.previous();
 if (!listIt.hasPrevious()) {
 return -1;
 }if ((element == null ) ? listIt.previous() != null  : !element.equals$O(listIt.previous())) {
-difFound = true;
+difFound=true;
 break;
 }}
 if (!difFound) {
@@ -17699,7 +17699,7 @@ return Clazz_new_((I$[51]||$incl$(51)).c$$java_util_SortedSet$Class,[s, type]);
 Clazz_newMeth(C$, 'addAll$java_util_Collection$TTA', function (c, a) {
 var modified = false;
 for (var i = 0; i < a.length; i++) {
-modified = (modified|c.add$TE(a[i]));
+modified|=c.add$TE(a[i]);
 }
 return modified;
 }, 1);
@@ -17707,8 +17707,8 @@ return modified;
 Clazz_newMeth(C$, 'disjoint$java_util_Collection$java_util_Collection', function (c1, c2) {
 if ((Clazz_instanceOf(c1, "java.util.Set")) && !(Clazz_instanceOf(c2, "java.util.Set"))  || (c2.size()) > c1.size() ) {
 var tmp = c1;
-c1 = c2;
-c2 = tmp;
+c1=c2;
+c2=tmp;
 }var it = c1.iterator();
 while (it.hasNext()){
 if (c2.contains$O(it.next())) {
@@ -17743,8 +17743,8 @@ Clazz_newMeth(C$, 'c$$I$TE', function (length, object) {
 Clazz_super_(C$, this,1);
 if (length < 0) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException'));
-}this.n = length;
-this.element = object;
+}this.n=length;
+this.element=object;
 }, 1);
 
 Clazz_newMeth(C$, 'contains$O', function (object) {
@@ -17922,7 +17922,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$java_util_Comparator', function (comparator) {
 C$.$init$.apply(this);
-this.comparator = comparator;
+this.comparator=comparator;
 }, 1);
 
 Clazz_newMeth(C$, ['compare$TT$TT'], function (o1, o2) {
@@ -17949,7 +17949,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, ['c$$TE'], function (object) {
 Clazz_super_(C$, this,1);
-this.element = object;
+this.element=object;
 }, 1);
 
 Clazz_newMeth(C$, 'contains$O', function (object) {
@@ -17982,7 +17982,7 @@ return this.$hasNext;
 
 Clazz_newMeth(C$, 'next', function () {
 if (this.$hasNext) {
-this.$hasNext = false;
+this.$hasNext=false;
 return this.b$['java.util.Collections.SingletonSet'].element;
 }throw Clazz_new_(Clazz_load('java.util.NoSuchElementException'));
 });
@@ -18014,7 +18014,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, ['c$$TE'], function (object) {
 Clazz_super_(C$, this,1);
-this.element = object;
+this.element=object;
 }, 1);
 
 Clazz_newMeth(C$, 'contains$O', function (object) {
@@ -18052,8 +18052,8 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, ['c$$TK$TV'], function (key, value) {
 Clazz_super_(C$, this,1);
-this.k = key;
-this.v = value;
+this.k=key;
+this.v=value;
 }, 1);
 
 Clazz_newMeth(C$, 'containsKey$O', function (key) {
@@ -18117,7 +18117,7 @@ return this.$hasNext;
 
 Clazz_newMeth(C$, 'next', function () {
 if (this.$hasNext) {
-this.$hasNext = false;
+this.$hasNext=false;
 return ((
 (function(){var C$=Clazz_newClass(P$, "Collections$SingletonMap$1$1$1", function(){Clazz_newInstance(this, arguments[0],1,C$);}, null, [['java.util.Map','java.util.Map.Entry']], 1);
 
@@ -18183,14 +18183,14 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$java_util_Collection', function (collection) {
 C$.$init$.apply(this);
-this.c = collection;
-this.mutex = this;
+this.c=collection;
+this.mutex=this;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$java_util_Collection$O', function (collection, mutex) {
 C$.$init$.apply(this);
-this.c = collection;
-this.mutex = mutex;
+this.c=collection;
+this.mutex=mutex;
 }, 1);
 
 Clazz_newMeth(C$, ['add$TE'], function (object) {
@@ -18323,13 +18323,13 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$$java_util_List', function (l) {
 C$.superclazz.c$$java_util_Collection.apply(this, [l]);
 C$.$init$.apply(this);
-this.list = l;
+this.list=l;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$java_util_List$O', function (l, mutex) {
 C$.superclazz.c$$java_util_Collection$O.apply(this, [l, mutex]);
 C$.$init$.apply(this);
-this.list = l;
+this.list=l;
 }, 1);
 
 Clazz_newMeth(C$, 'add$I$TE', function (location, object) {
@@ -18425,14 +18425,14 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, ['c$$java_util_Map'], function (map) {
 C$.$init$.apply(this);
-this.m = map;
-this.mutex = this;
+this.m=map;
+this.mutex=this;
 }, 1);
 
 Clazz_newMeth(C$, ['c$$java_util_Map$O'], function (map, mutex) {
 C$.$init$.apply(this);
-this.m = map;
-this.mutex = mutex;
+this.m=map;
+this.mutex=mutex;
 }, 1);
 
 Clazz_newMeth(C$, 'clear', function () {
@@ -18576,13 +18576,13 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, ['c$$java_util_SortedMap'], function (map) {
 C$.superclazz.c$$java_util_Map.apply(this, [map]);
 C$.$init$.apply(this);
-this.sm = map;
+this.sm=map;
 }, 1);
 
 Clazz_newMeth(C$, ['c$$java_util_SortedMap$O'], function (map, mutex) {
 C$.superclazz.c$$java_util_Map$O.apply(this, [map, mutex]);
 C$.$init$.apply(this);
-this.sm = map;
+this.sm=map;
 }, 1);
 
 Clazz_newMeth(C$, 'comparator', function () {
@@ -18642,13 +18642,13 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$$java_util_SortedSet', function (set) {
 C$.superclazz.c$$java_util_Set.apply(this, [set]);
 C$.$init$.apply(this);
-this.ss = set;
+this.ss=set;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$java_util_SortedSet$O', function (set, mutex) {
 C$.superclazz.c$$java_util_Set$O.apply(this, [set, mutex]);
 C$.$init$.apply(this);
-this.ss = set;
+this.ss=set;
 }, 1);
 
 Clazz_newMeth(C$, 'comparator', function () {
@@ -18706,7 +18706,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$java_util_Collection', function (collection) {
 C$.$init$.apply(this);
-this.c = collection;
+this.c=collection;
 }, 1);
 
 Clazz_newMeth(C$, ['add$TE'], function (object) {
@@ -18814,7 +18814,7 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$$java_util_List', function (l) {
 C$.superclazz.c$$java_util_Collection.apply(this, [l]);
 C$.$init$.apply(this);
-this.list = l;
+this.list=l;
 }, 1);
 
 Clazz_newMeth(C$, 'add$I$TE', function (location, object) {
@@ -18995,7 +18995,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, ['c$$java_util_Map'], function (map) {
 C$.$init$.apply(this);
-this.m = map;
+this.m=map;
 }, 1);
 
 Clazz_newMeth(C$, 'clear', function () {
@@ -19109,7 +19109,7 @@ var length = this.c.size();
 var result = Clazz_array(java.lang.Object, [length]);
 var it = this.iterator();
 for (var i = length; --i >= 0; ) {
-result[i] = it.next();
+result[i]=it.next();
 }
 return result;
 });
@@ -19120,12 +19120,12 @@ var index = 0;
 var it = this.iterator();
 if (size > contents.length) {
 var ct = contents.getClass().getComponentType();
-contents = Clazz_array(ct, size);
+contents=Clazz_array(ct, size);
 }while (index < size){
-contents[index++] = it.next();
+contents[index++]=it.next();
 }
 if (index < contents.length) {
-contents[index] = null;
+contents[index]=null;
 }return contents;
 });
 ;
@@ -19146,7 +19146,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, ['c$$java_util_Map_Entry'], function (entry) {
 C$.$init$.apply(this);
-this.mapEntry = entry;
+this.mapEntry=entry;
 }, 1);
 
 Clazz_newMeth(C$, 'equals$O', function (object) {
@@ -19200,7 +19200,7 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, ['c$$java_util_SortedMap'], function (map) {
 C$.superclazz.c$$java_util_Map.apply(this, [map]);
 C$.$init$.apply(this);
-this.sm = map;
+this.sm=map;
 }, 1);
 
 Clazz_newMeth(C$, 'comparator', function () {
@@ -19248,7 +19248,7 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$$java_util_SortedSet', function (set) {
 C$.superclazz.c$$java_util_Set.apply(this, [set]);
 C$.$init$.apply(this);
-this.ss = set;
+this.ss=set;
 }, 1);
 
 Clazz_newMeth(C$, 'comparator', function () {
@@ -19298,8 +19298,8 @@ Clazz_newMeth(C$, 'c$$java_util_Collection$Class', function (c, type) {
 C$.$init$.apply(this);
 if (c == null  || type == null  ) {
 throw Clazz_new_(Clazz_load('java.lang.NullPointerException'));
-}this.c = c;
-this.type = type;
+}this.c=c;
+this.type=type;
 }, 1);
 
 Clazz_newMeth(C$, 'size', function () {
@@ -19317,7 +19317,7 @@ return this.c.contains$O(obj);
 Clazz_newMeth(C$, 'iterator', function () {
 var i = this.c.iterator();
 if (Clazz_instanceOf(i, "java.util.ListIterator")) {
-i = Clazz_new_((I$[21]||$incl$(21)).c$$java_util_ListIterator$Class,[i, this.type]);
+i=Clazz_new_((I$[21]||$incl$(21)).c$$java_util_ListIterator$Class,[i, this.type]);
 }return i;
 });
 
@@ -19348,11 +19348,11 @@ return false;
 }var arr = Clazz_array(java.lang.Object, [size]);
 var it = c1.iterator();
 for (var i = 0; i < size; i++) {
-arr[i] = P$.Collections.checkType$TE$Class(it.next(), this.type);
+arr[i]=P$.Collections.checkType$TE$Class(it.next(), this.type);
 }
 var added = false;
 for (var i = 0; i < size; i++) {
-added = (added|this.c.add$TE(arr[i]));
+added|=this.c.add$TE(arr[i]);
 }
 return added;
 });
@@ -19394,8 +19394,8 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$java_util_ListIterator$Class', function (i, type) {
 C$.$init$.apply(this);
-this.i = i;
-this.type = type;
+this.i=i;
+this.type=type;
 }, 1);
 
 Clazz_newMeth(C$, 'hasNext', function () {
@@ -19455,7 +19455,7 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$$java_util_List$Class', function (l, type) {
 C$.superclazz.c$$java_util_Collection$Class.apply(this, [l, type]);
 C$.$init$.apply(this);
-this.l = l;
+this.l=l;
 }, 1);
 
 Clazz_newMeth(C$, 'addAll$I$java_util_Collection', function (index, c1) {
@@ -19465,7 +19465,7 @@ return false;
 }var arr = Clazz_array(java.lang.Object, [size]);
 var it = c1.iterator();
 for (var i = 0; i < size; i++) {
-arr[i] = P$.Collections.checkType$TE$Class(it.next(), this.type);
+arr[i]=P$.Collections.checkType$TE$Class(it.next(), this.type);
 }
 return this.l.addAll$I$java_util_Collection(index, (I$[22]||$incl$(22)).asList$TTA(arr));
 });
@@ -19583,9 +19583,9 @@ Clazz_newMeth(C$, ['c$$java_util_Map$Class$Class'], function (m, keyType, valueT
 C$.$init$.apply(this);
 if (m == null  || keyType == null   || valueType == null  ) {
 throw Clazz_new_(Clazz_load('java.lang.NullPointerException'));
-}this.m = m;
-this.keyType = keyType;
-this.valueType = valueType;
+}this.m=m;
+this.keyType=keyType;
+this.valueType=valueType;
 }, 1);
 
 Clazz_newMeth(C$, 'size', function () {
@@ -19626,7 +19626,7 @@ for (var i = 0; i < size; i++) {
 var e = it.next();
 P$.Collections.checkType$TE$Class(e.getKey(), this.keyType);
 P$.Collections.checkType$TE$Class(e.getValue(), this.valueType);
-entries[i] = e;
+entries[i]=e;
 }
 for (var i = 0; i < size; i++) {
 this.m.put$TK$TV(entries[i].getKey(), entries[i].getValue());
@@ -19681,8 +19681,8 @@ Clazz_newMeth(C$, ['c$$java_util_Map_Entry$Class'], function (e, valueType) {
 C$.$init$.apply(this);
 if (e == null ) {
 throw Clazz_new_(Clazz_load('java.lang.NullPointerException'));
-}this.e = e;
-this.valueType = valueType;
+}this.e=e;
+this.valueType=valueType;
 }, 1);
 
 Clazz_newMeth(C$, 'getKey', function () {
@@ -19726,8 +19726,8 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, ['c$$java_util_Set$Class'], function (s, valueType) {
 C$.$init$.apply(this);
-this.s = s;
-this.valueType = valueType;
+this.s=s;
+this.valueType=valueType;
 }, 1);
 
 Clazz_newMeth(C$, 'iterator', function () {
@@ -19739,7 +19739,7 @@ var thisSize = this.size();
 var array = Clazz_array(java.lang.Object, [thisSize]);
 var it = this.iterator();
 for (var i = 0; i < thisSize; i++) {
-array[i] = it.next();
+array[i]=it.next();
 }
 return array;
 });
@@ -19748,13 +19748,13 @@ Clazz_newMeth(C$, 'toArray$TTA', function (array) {
 var thisSize = this.size();
 if (array.length < thisSize) {
 var ct = array.getClass().getComponentType();
-array = Clazz_array(ct, thisSize);
+array=Clazz_array(ct, thisSize);
 }var it = this.iterator();
 for (var i = 0; i < thisSize; i++) {
-array[i] = it.next();
+array[i]=it.next();
 }
 if (thisSize < array.length) {
-array[thisSize] = null;
+array[thisSize]=null;
 }return array;
 });
 
@@ -19824,8 +19824,8 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, ['c$$java_util_Iterator$Class'], function (i, valueType) {
 C$.$init$.apply(this);
-this.i = i;
-this.valueType = valueType;
+this.i=i;
+this.valueType=valueType;
 }, 1);
 
 Clazz_newMeth(C$, 'hasNext', function () {
@@ -19867,7 +19867,7 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$$java_util_SortedSet$Class', function (s, type) {
 C$.superclazz.c$$java_util_Set$Class.apply(this, [s, type]);
 C$.$init$.apply(this);
-this.ss = s;
+this.ss=s;
 }, 1);
 
 Clazz_newMeth(C$, 'comparator', function () {
@@ -19915,7 +19915,7 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, ['c$$java_util_SortedMap$Class$Class'], function (m, keyType, valueType) {
 C$.superclazz.c$$java_util_Map$Class$Class.apply(this, [m, keyType, valueType]);
 C$.$init$.apply(this);
-this.sm = m;
+this.sm=m;
 }, 1);
 
 Clazz_newMeth(C$, 'comparator', function () {
@@ -19945,7 +19945,7 @@ return this.sm.lastKey();
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:12
+//Created 2018-05-24 08:45:45
 (function(){var P$=java.util,I$=[];
 var C$=Clazz_newClass(P$, "Dictionary");
 
@@ -19956,11 +19956,11 @@ Clazz_newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
 }, 1);
 })();
-//Created 2018-05-15 01:02:12
+//Created 2018-05-24 08:45:45
 (function(){var P$=java.util,I$=[];
 var C$=Clazz_newInterface(P$, "EventListener");
 })();
-//Created 2018-05-15 01:02:12
+//Created 2018-05-24 08:45:45
 (function(){var P$=java.util,I$=[];
 var C$=Clazz_newClass(P$, "EventObject", null, null, 'java.io.Serializable');
 
@@ -19977,7 +19977,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$', function (source) {
 C$.$init$.apply(this);
-if (source != null ) this.source = source;
+if (source != null ) this.source=source;
 }, 1);
 
 Clazz_newMeth(C$, 'getSource', function () {
@@ -19988,7 +19988,7 @@ Clazz_newMeth(C$, 'toString', function () {
 return this.getClass().getName() + "[source=" + String.valueOf(this.source) + ']' ;
 });
 })();
-//Created 2018-05-15 01:02:12
+//Created 2018-05-24 08:45:45
 (function(){var P$=java.util,I$=[[['java.util.HashMap','.Entry'],['java.util.HashMap','.KeyIterator'],['java.util.HashMap','.ValueIterator'],['java.util.HashMap','.EntryIterator'],['java.util.HashMap','.KeySet'],['java.util.HashMap','.Values'],['java.util.HashMap','.EntrySet']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "HashMap", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -20015,14 +20015,14 @@ this.$entrySet = null;
 Clazz_newMeth(C$, 'c$$I$F', function (initialCapacity, loadFactor) {
 Clazz_super_(C$, this,1);
 if (initialCapacity < 0) throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["Illegal initial capacity: " + initialCapacity]);
-if (initialCapacity > 1073741824) initialCapacity = 1073741824;
+if (initialCapacity > 1073741824) initialCapacity=1073741824;
 if (loadFactor <= 0  || Float.isNaN(loadFactor) ) throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["Illegal load factor: " + new Float(loadFactor).toString()]);
 var capacity = 1;
-while (capacity < initialCapacity)capacity = capacity<<(1);
+while (capacity < initialCapacity)capacity<<=1;
 
-this.$loadFactor = loadFactor;
-this.threshold = ((capacity * loadFactor)|0);
-this.table = Clazz_array((I$[1]||$incl$(1)), [capacity]);
+this.$loadFactor=loadFactor;
+this.threshold=((capacity * loadFactor)|0);
+this.table=Clazz_array((I$[1]||$incl$(1)), [capacity]);
 this.init();
 }, 1);
 
@@ -20032,9 +20032,9 @@ C$.c$$I$F.apply(this, [initialCapacity, 0.75]);
 
 Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
-this.$loadFactor = 0.75;
-this.threshold = 12;
-this.table = Clazz_array((I$[1]||$incl$(1)), [16]);
+this.$loadFactor=0.75;
+this.threshold=12;
+this.table=Clazz_array((I$[1]||$incl$(1)), [16]);
 this.init();
 }, 1);
 
@@ -20047,7 +20047,7 @@ Clazz_newMeth(C$, 'init', function () {
 });
 
 Clazz_newMeth(C$, 'hash$I', function (h) {
-h = h^((h >>> 20) ^ (h >>> 12));
+h^=(h >>> 20) ^ (h >>> 12);
 return h ^ (h >>> 7) ^ (h >>> 4) ;
 }, 1);
 
@@ -20066,15 +20066,15 @@ return this.$size == 0;
 Clazz_newMeth(C$, 'get$O', function (key) {
 if (key == null ) return p$.getForNullKey.apply(this, []);
 var hash = C$.hash$I(key.hashCode());
-for (var e = this.table[C$.indexFor$I$I(hash, this.table.length)]; e != null ; e = e.next) {
+for (var e = this.table[C$.indexFor$I$I(hash, this.table.length)]; e != null ; e=e.next) {
 var k;
-if (e.hash == hash && ((k = e.key) === key  || key.equals$O(k) ) ) return e.value;
+if (e.hash == hash && ((k=e.key) === key  || key.equals$O(k) ) ) return e.value;
 }
 return null;
 });
 
 Clazz_newMeth(C$, 'getForNullKey', function () {
-for (var e = this.table[0]; e != null ; e = e.next) {
+for (var e = this.table[0]; e != null ; e=e.next) {
 if (e.key == null ) return e.value;
 }
 return null;
@@ -20086,9 +20086,9 @@ return this.getEntry$O(key) != null ;
 
 Clazz_newMeth(C$, ['getEntry$O'], function (key) {
 var hash = (key == null ) ? 0 : C$.hash$I(key.hashCode());
-for (var e = this.table[C$.indexFor$I$I(hash, this.table.length)]; e != null ; e = e.next) {
+for (var e = this.table[C$.indexFor$I$I(hash, this.table.length)]; e != null ; e=e.next) {
 var k;
-if (e.hash == hash && ((k = e.key) === key  || (key != null  && key.equals$O(k) ) ) ) return e;
+if (e.hash == hash && ((k=e.key) === key  || (key != null  && key.equals$O(k) ) ) ) return e;
 }
 return null;
 });
@@ -20097,11 +20097,11 @@ Clazz_newMeth(C$, ['put$TK$TV'], function (key, value) {
 if (key == null ) return p$.putForNullKey$TV.apply(this, [value]);
 var hash = C$.hash$I(key.hashCode());
 var i = C$.indexFor$I$I(hash, this.table.length);
-for (var e = this.table[i]; e != null ; e = e.next) {
+for (var e = this.table[i]; e != null ; e=e.next) {
 var k;
-if (e.hash == hash && ((k = e.key) === key  || key.equals$O(k) ) ) {
+if (e.hash == hash && ((k=e.key) === key  || key.equals$O(k) ) ) {
 var oldValue = e.value;
-e.value = value;
+e.value=value;
 e.recordAccess$java_util_HashMap(this);
 return oldValue;
 }}
@@ -20111,10 +20111,10 @@ return null;
 });
 
 Clazz_newMeth(C$, ['putForNullKey$TV'], function (value) {
-for (var e = this.table[0]; e != null ; e = e.next) {
+for (var e = this.table[0]; e != null ; e=e.next) {
 if (e.key == null ) {
 var oldValue = e.value;
-e.value = value;
+e.value=value;
 e.recordAccess$java_util_HashMap(this);
 return oldValue;
 }}
@@ -20126,10 +20126,10 @@ return null;
 Clazz_newMeth(C$, ['putForCreate$TK$TV'], function (key, value) {
 var hash = (key == null ) ? 0 : C$.hash$I(key.hashCode());
 var i = C$.indexFor$I$I(hash, this.table.length);
-for (var e = this.table[i]; e != null ; e = e.next) {
+for (var e = this.table[i]; e != null ; e=e.next) {
 var k;
-if (e.hash == hash && ((k = e.key) === key  || (key != null  && key.equals$O(k) ) ) ) {
-e.value = value;
+if (e.hash == hash && ((k=e.key) === key  || (key != null  && key.equals$O(k) ) ) ) {
+e.value=value;
 return;
 }}
 this.createEntry$I$TK$TV$I(hash, key, value, i);
@@ -20146,12 +20146,12 @@ Clazz_newMeth(C$, 'resize$I', function (newCapacity) {
 var oldTable = this.table;
 var oldCapacity = oldTable.length;
 if (oldCapacity == 1073741824) {
-this.threshold = 2147483647;
+this.threshold=2147483647;
 return;
 }var newTable = Clazz_array((I$[1]||$incl$(1)), [newCapacity]);
 this.transfer$java_util_HashMap_EntryA(newTable);
-this.table = newTable;
-this.threshold = ((newCapacity * this.$loadFactor)|0);
+this.table=newTable;
+this.threshold=((newCapacity * this.$loadFactor)|0);
 });
 
 Clazz_newMeth(C$, 'transfer$java_util_HashMap_EntryA', function (newTable) {
@@ -20160,13 +20160,13 @@ var newCapacity = newTable.length;
 for (var j = 0; j < src.length; j++) {
 var e = src[j];
 if (e != null ) {
-src[j] = null;
+src[j]=null;
 do {
 var next = e.next;
 var i = C$.indexFor$I$I(e.hash, newCapacity);
-e.next = newTable[i];
-newTable[i] = e;
-e = next;
+e.next=newTable[i];
+newTable[i]=e;
+e=next;
 } while (e != null );
 }}
 });
@@ -20176,9 +20176,9 @@ var numKeysToBeAdded = m.size();
 if (numKeysToBeAdded == 0) return;
 if (numKeysToBeAdded > this.threshold) {
 var targetCapacity = ((numKeysToBeAdded / this.$loadFactor + 1)|0);
-if (targetCapacity > 1073741824) targetCapacity = 1073741824;
+if (targetCapacity > 1073741824) targetCapacity=1073741824;
 var newCapacity = this.table.length;
-while (newCapacity < targetCapacity)newCapacity = newCapacity<<(1);
+while (newCapacity < targetCapacity)newCapacity<<=1;
 
 if (newCapacity > this.table.length) this.resize$I(newCapacity);
 }for (var i = m.entrySet().iterator(); i.hasNext(); ) {
@@ -20200,15 +20200,15 @@ var e = prev;
 while (e != null ){
 var next = e.next;
 var k;
-if (e.hash == hash && ((k = e.key) === key  || (key != null  && key.equals$O(k) ) ) ) {
+if (e.hash == hash && ((k=e.key) === key  || (key != null  && key.equals$O(k) ) ) ) {
 this.modCount++;
 this.$size--;
-if (prev === e ) this.table[i] = next;
- else prev.next = next;
+if (prev === e ) this.table[i]=next;
+ else prev.next=next;
 e.recordRemoval$java_util_HashMap(this);
 return e;
-}prev = e;
-e = next;
+}prev=e;
+e=next;
 }
 return e;
 });
@@ -20226,12 +20226,12 @@ var next = e.next;
 if (e.hash == hash && e.equals$O(entry) ) {
 this.modCount++;
 this.$size--;
-if (prev === e ) this.table[i] = next;
- else prev.next = next;
+if (prev === e ) this.table[i]=next;
+ else prev.next=next;
 e.recordRemoval$java_util_HashMap(this);
 return e;
-}prev = e;
-e = next;
+}prev=e;
+e=next;
 }
 return e;
 });
@@ -20239,15 +20239,15 @@ return e;
 Clazz_newMeth(C$, 'clear', function () {
 this.modCount++;
 var tab = this.table;
-for (var i = 0; i < tab.length; i++) tab[i] = null;
+for (var i = 0; i < tab.length; i++) tab[i]=null;
 
-this.$size = 0;
+this.$size=0;
 });
 
 Clazz_newMeth(C$, 'containsValue$O', function (value) {
 if (value == null ) return p$.containsNullValue.apply(this, []);
 var tab = this.table;
-for (var i = 0; i < tab.length; i++) for (var e = tab[i]; e != null ; e = e.next) if (value.equals$O(e.value)) return true;
+for (var i = 0; i < tab.length; i++) for (var e = tab[i]; e != null ; e=e.next) if (value.equals$O(e.value)) return true;
 
 
 return false;
@@ -20255,7 +20255,7 @@ return false;
 
 Clazz_newMeth(C$, 'containsNullValue', function () {
 var tab = this.table;
-for (var i = 0; i < tab.length; i++) for (var e = tab[i]; e != null ; e = e.next) if (e.value == null ) return true;
+for (var i = 0; i < tab.length; i++) for (var e = tab[i]; e != null ; e=e.next) if (e.value == null ) return true;
 
 
 return false;
@@ -20264,17 +20264,17 @@ return false;
 Clazz_newMeth(C$, 'clone', function () {
 var result = null;
 try {
-result = Clazz_clone(this);
+result=Clazz_clone(this);
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.CloneNotSupportedException")){
 } else {
 throw e;
 }
 }
-result.table = Clazz_array((I$[1]||$incl$(1)), [this.table.length]);
-result.$entrySet = null;
-result.modCount = 0;
-result.$size = 0;
+result.table=Clazz_array((I$[1]||$incl$(1)), [this.table.length]);
+result.$entrySet=null;
+result.modCount=0;
+result.$size=0;
 result.init();
 result.putAllForCreate$java_util_Map(this);
 return result;
@@ -20282,13 +20282,13 @@ return result;
 
 Clazz_newMeth(C$, ['addEntry$I$TK$TV$I'], function (hash, key, value, bucketIndex) {
 var e = this.table[bucketIndex];
-this.table[bucketIndex] = Clazz_new_((I$[1]||$incl$(1)).c$$I$TK$TV$java_util_HashMap_Entry,[hash, key, value, e]);
+this.table[bucketIndex]=Clazz_new_((I$[1]||$incl$(1)).c$$I$TK$TV$java_util_HashMap_Entry,[hash, key, value, e]);
 if (this.$size++ >= this.threshold) this.resize$I(2 * this.table.length);
 });
 
 Clazz_newMeth(C$, ['createEntry$I$TK$TV$I'], function (hash, key, value, bucketIndex) {
 var e = this.table[bucketIndex];
-this.table[bucketIndex] = Clazz_new_((I$[1]||$incl$(1)).c$$I$TK$TV$java_util_HashMap_Entry,[hash, key, value, e]);
+this.table[bucketIndex]=Clazz_new_((I$[1]||$incl$(1)).c$$I$TK$TV$java_util_HashMap_Entry,[hash, key, value, e]);
 this.$size++;
 });
 
@@ -20306,12 +20306,12 @@ return Clazz_new_((I$[4]||$incl$(4)), [this, null]);
 
 Clazz_newMeth(C$, 'keySet', function () {
 var ks = this.$keySet;
-return (ks != null  ? ks : (this.$keySet = Clazz_new_((I$[5]||$incl$(5)), [this, null])));
+return (ks != null  ? ks : (this.$keySet=Clazz_new_((I$[5]||$incl$(5)), [this, null])));
 });
 
 Clazz_newMeth(C$, 'values', function () {
 var vs = this.$values;
-return (vs != null  ? vs : (this.$values = Clazz_new_((I$[6]||$incl$(6)), [this, null])));
+return (vs != null  ? vs : (this.$values=Clazz_new_((I$[6]||$incl$(6)), [this, null])));
 });
 
 Clazz_newMeth(C$, 'entrySet', function () {
@@ -20320,7 +20320,7 @@ return p$.entrySet0.apply(this, []);
 
 Clazz_newMeth(C$, 'entrySet0', function () {
 var es = this.$entrySet;
-return es != null  ? es : (this.$entrySet = Clazz_new_((I$[7]||$incl$(7)), [this, null]));
+return es != null  ? es : (this.$entrySet=Clazz_new_((I$[7]||$incl$(7)), [this, null]));
 });
 
 Clazz_newMeth(C$, 'writeObject$java_io_ObjectOutputStream', function (s) {
@@ -20339,7 +20339,7 @@ s.writeObject$O(e.getValue());
 Clazz_newMeth(C$, 'readObject$java_io_ObjectInputStream', function (s) {
 s.defaultReadObject();
 var numBuckets = s.readInt();
-this.table = Clazz_array((I$[1]||$incl$(1)), [numBuckets]);
+this.table=Clazz_array((I$[1]||$incl$(1)), [numBuckets]);
 this.init();
 var size = s.readInt();
 for (var i = 0; i < size; i++) {
@@ -20377,10 +20377,10 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, ['c$$I$TK$TV$java_util_HashMap_Entry'], function (h, k, v, n) {
 C$.$init$.apply(this);
-this.value = v;
-this.next = n;
-this.key = k;
-this.hash = h;
+this.value=v;
+this.next=n;
+this.key=k;
+this.hash=h;
 }, 1);
 
 Clazz_newMeth(C$, 'getKey', function () {
@@ -20393,7 +20393,7 @@ return this.value;
 
 Clazz_newMeth(C$, ['setValue$TV'], function (newValue) {
 var oldValue = this.value;
-this.value = newValue;
+this.value=newValue;
 return oldValue;
 });
 
@@ -20446,10 +20446,10 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.expectedModCount = this.this$0.modCount;
+this.expectedModCount=this.this$0.modCount;
 if (this.this$0.$size > 0) {
 var t = this.this$0.table;
-while (this.index < t.length && (this.$next = t[this.index++]) == null  );
+while (this.index < t.length && (this.$next=t[this.index++]) == null  );
 }}, 1);
 
 Clazz_newMeth(C$, 'hasNext', function () {
@@ -20460,10 +20460,10 @@ Clazz_newMeth(C$, 'nextEntry', function () {
 if (this.this$0.modCount != this.expectedModCount) throw Clazz_new_(Clazz_load('java.util.ConcurrentModificationException'));
 var e = this.$next;
 if (e == null ) throw Clazz_new_(Clazz_load('java.util.NoSuchElementException'));
-if ((this.$next = e.next) == null ) {
+if ((this.$next=e.next) == null ) {
 var t = this.this$0.table;
-while (this.index < t.length && (this.$next = t[this.index++]) == null  );
-}this.current = e;
+while (this.index < t.length && (this.$next=t[this.index++]) == null  );
+}this.current=e;
 return e;
 });
 
@@ -20471,9 +20471,9 @@ Clazz_newMeth(C$, 'remove', function () {
 if (this.current == null ) throw Clazz_new_(Clazz_load('java.lang.IllegalStateException'));
 if (this.this$0.modCount != this.expectedModCount) throw Clazz_new_(Clazz_load('java.util.ConcurrentModificationException'));
 var k = this.current.key;
-this.current = null;
+this.current=null;
 this.b$['java.util.HashMap'].removeEntryForKey$O(k);
-this.expectedModCount = this.this$0.modCount;
+this.expectedModCount=this.this$0.modCount;
 });
 })()
 ;
@@ -20626,7 +20626,7 @@ this.b$['java.util.HashMap'].clear();
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:12
+//Created 2018-05-24 08:45:46
 (function(){var P$=java.util,I$=[['java.util.HashMap','java.util.LinkedHashMap','java.lang.InternalError']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "HashSet", null, 'java.util.AbstractSet', ['java.util.Set', 'Cloneable', 'java.io.Serializable']);
 C$.PRESENT = null;
@@ -20646,28 +20646,28 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
-this.map = Clazz_new_((I$[1]||$incl$(1)));
+this.map=Clazz_new_((I$[1]||$incl$(1)));
 }, 1);
 
 Clazz_newMeth(C$, 'c$$java_util_Collection', function (c) {
 Clazz_super_(C$, this,1);
-this.map = Clazz_new_((I$[1]||$incl$(1)).c$$I,[Math.max(((c.size() / 0.75)|0) + 1, 16)]);
+this.map=Clazz_new_((I$[1]||$incl$(1)).c$$I,[Math.max(((c.size() / 0.75)|0) + 1, 16)]);
 this.addAll$java_util_Collection(c);
 }, 1);
 
 Clazz_newMeth(C$, 'c$$I$F', function (initialCapacity, loadFactor) {
 Clazz_super_(C$, this,1);
-this.map = Clazz_new_((I$[1]||$incl$(1)).c$$I$F,[initialCapacity, loadFactor]);
+this.map=Clazz_new_((I$[1]||$incl$(1)).c$$I$F,[initialCapacity, loadFactor]);
 }, 1);
 
 Clazz_newMeth(C$, 'c$$I', function (initialCapacity) {
 Clazz_super_(C$, this,1);
-this.map = Clazz_new_((I$[1]||$incl$(1)).c$$I,[initialCapacity]);
+this.map=Clazz_new_((I$[1]||$incl$(1)).c$$I,[initialCapacity]);
 }, 1);
 
 Clazz_newMeth(C$, 'c$$I$F$Z', function (initialCapacity, loadFactor, dummy) {
 Clazz_super_(C$, this,1);
-this.map = Clazz_new_((I$[2]||$incl$(2)).c$$I$F,[initialCapacity, loadFactor]);
+this.map=Clazz_new_((I$[2]||$incl$(2)).c$$I$F,[initialCapacity, loadFactor]);
 }, 1);
 
 Clazz_newMeth(C$, 'iterator', function () {
@@ -20701,7 +20701,7 @@ this.map.clear();
 Clazz_newMeth(C$, 'clone', function () {
 try {
 var newSet = Clazz_clone(this);
-newSet.map = this.map.clone();
+newSet.map=this.map.clone();
 return newSet;
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.CloneNotSupportedException")){
@@ -20725,7 +20725,7 @@ Clazz_newMeth(C$, 'readObject$java_io_ObjectInputStream', function (s) {
 s.defaultReadObject();
 var capacity = s.readInt();
 var loadFactor = s.readFloat();
-this.map = (Clazz_instanceOf((this), "java.util.LinkedHashSet") ? Clazz_new_((I$[2]||$incl$(2)).c$$I$F,[capacity, loadFactor]) : Clazz_new_((I$[1]||$incl$(1)).c$$I$F,[capacity, loadFactor]));
+this.map=(Clazz_instanceOf((this), "java.util.LinkedHashSet") ? Clazz_new_((I$[2]||$incl$(2)).c$$I$F,[capacity, loadFactor]) : Clazz_new_((I$[1]||$incl$(1)).c$$I$F,[capacity, loadFactor]));
 var size = s.readInt();
 for (var i = 0; i < size; i++) {
 var e = s.readObject();
@@ -20733,7 +20733,7 @@ this.map.put$TK$TV(e, C$.PRESENT);
 }
 });
 })();
-//Created 2018-05-15 01:02:13
+//Created 2018-05-24 08:45:47
 (function(){var P$=java.util,I$=[['java.util.Hashtable$1',['java.util.Hashtable','.Entry'],'java.util.Arrays',['java.util.Hashtable','.HashEnumerator'],['java.util.Collections','.SynchronizedSet'],['java.util.Hashtable','.HashIterator'],'java.util.Hashtable$2$1','java.util.AbstractSet','java.util.Hashtable$3$1','java.lang.StringBuilder',['java.util.Collections','.SynchronizedCollection'],'java.util.Hashtable$4$1','java.util.AbstractCollection']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Hashtable", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -20788,10 +20788,10 @@ C$.c$$I.apply(this, [11]);
 Clazz_newMeth(C$, 'c$$I', function (capacity) {
 Clazz_super_(C$, this,1);
 if (capacity >= 0) {
-this.elementCount = 0;
-this.elementData = p$.newElementArray$I.apply(this, [capacity == 0 ? 1 : capacity]);
-this.firstSlot = this.elementData.length;
-this.loadFactor = 0.75;
+this.elementCount=0;
+this.elementData=p$.newElementArray$I.apply(this, [capacity == 0 ? 1 : capacity]);
+this.firstSlot=this.elementData.length;
+this.loadFactor=0.75;
 p$.computeMaxSize.apply(this, []);
 } else {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException'));
@@ -20800,10 +20800,10 @@ throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException'));
 Clazz_newMeth(C$, 'c$$I$F', function (capacity, loadFactor) {
 Clazz_super_(C$, this,1);
 if (capacity >= 0 && loadFactor > 0  ) {
-this.elementCount = 0;
-this.firstSlot = capacity;
-this.elementData = p$.newElementArray$I.apply(this, [capacity == 0 ? 1 : capacity]);
-this.loadFactor = loadFactor;
+this.elementCount=0;
+this.firstSlot=capacity;
+this.elementData=p$.newElementArray$I.apply(this, [capacity == 0 ? 1 : capacity]);
+this.loadFactor=loadFactor;
 p$.computeMaxSize.apply(this, []);
 } else {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException'));
@@ -20819,7 +20819,7 @@ return Clazz_array((I$[2]||$incl$(2)), [size]);
 });
 
 Clazz_newMeth(C$, 'clear', function () {
-this.elementCount = 0;
+this.elementCount=0;
 (I$[3]||$incl$(3)).fill$OA$O(this.elementData, null);
 this.modCount++;
 });
@@ -20827,11 +20827,11 @@ this.modCount++;
 Clazz_newMeth(C$, 'clone', function () {
 try {
 var hashtable = Clazz_clone(this);
-hashtable.elementData = this.elementData.clone();
+hashtable.elementData=this.elementData.clone();
 var entry;
 for (var i = this.elementData.length; --i >= 0; ) {
-if ((entry = this.elementData[i]) != null ) {
-hashtable.elementData[i] = entry.clone();
+if ((entry=this.elementData[i]) != null ) {
+hashtable.elementData[i]=entry.clone();
 }}
 return hashtable;
 } catch (e) {
@@ -20844,7 +20844,7 @@ throw e;
 });
 
 Clazz_newMeth(C$, 'computeMaxSize', function () {
-this.threshold = ((this.elementData.length * this.loadFactor)|0);
+this.threshold=((this.elementData.length * this.loadFactor)|0);
 });
 
 Clazz_newMeth(C$, 'contains$O', function (value) {
@@ -20855,7 +20855,7 @@ var entry = this.elementData[i];
 while (entry != null ){
 if (value.equals$O(entry.value)) {
 return true;
-}entry = entry.next;
+}entry=entry.next;
 }
 }
 return false;
@@ -20948,7 +20948,7 @@ var entry = this.elementData[index];
 while (entry != null ){
 if (entry.equalsKey$O$I(key, hash)) {
 return entry.value;
-}entry = entry.next;
+}entry=entry.next;
 }
 return null;
 });
@@ -20960,7 +20960,7 @@ var entry = this.elementData[index];
 while (entry != null ){
 if (entry.equalsKey$O$I(key, hash)) {
 return entry;
-}entry = entry.next;
+}entry=entry.next;
 }
 return null;
 });
@@ -20973,7 +20973,7 @@ var entry = it.next();
 var key = entry.getKey();
 var value = entry.getValue();
 var hash = (key !== this  ? key.hashCode() : 0) ^ (value !== this  ? (value != null  ? value.hashCode() : 0) : 0);
-result = result+(hash);
+result+=hash;
 }
 return result;
 });
@@ -21043,23 +21043,23 @@ var hash = key.hashCode();
 var index = (hash & 2147483647) % this.elementData.length;
 var entry = this.elementData[index];
 while (entry != null  && !entry.equalsKey$O$I(key, hash) ){
-entry = entry.next;
+entry=entry.next;
 }
 if (entry == null ) {
 this.modCount++;
 if (++this.elementCount > this.threshold) {
 this.rehash();
-index = (hash & 2147483647) % this.elementData.length;
+index=(hash & 2147483647) % this.elementData.length;
 }if (index < this.firstSlot) {
-this.firstSlot = index;
+this.firstSlot=index;
 }if (index > this.lastSlot) {
-this.lastSlot = index;
-}entry = C$.newEntry$TK$TV$I(key, value, hash);
-entry.next = this.elementData[index];
-this.elementData[index] = entry;
+this.lastSlot=index;
+}entry=C$.newEntry$TK$TV$I(key, value, hash);
+entry.next=this.elementData[index];
+this.elementData[index]=entry;
 return null;
 }var result = entry.value;
-entry.value = value;
+entry.value=value;
 return result;
 }throw Clazz_new_(Clazz_load('java.lang.NullPointerException'));
 });
@@ -21073,7 +21073,7 @@ this.put$TK$TV(entry.getKey(), entry.getValue());
 Clazz_newMeth(C$, 'rehash', function () {
 var length = (this.elementData.length << 1) + 1;
 if (length == 0) {
-length = 1;
+length=1;
 }var newFirst = length;
 var newLast = -1;
 var newData = p$.newElementArray$I.apply(this, [length]);
@@ -21082,18 +21082,18 @@ var entry = this.elementData[i];
 while (entry != null ){
 var index = (entry.getKeyHash() & 2147483647) % length;
 if (index < newFirst) {
-newFirst = index;
+newFirst=index;
 }if (index > newLast) {
-newLast = index;
+newLast=index;
 }var next = entry.next;
-entry.next = newData[index];
-newData[index] = entry;
-entry = next;
+entry.next=newData[index];
+newData[index]=entry;
+entry=next;
 }
 }
-this.firstSlot = newFirst;
-this.lastSlot = newLast;
-this.elementData = newData;
+this.firstSlot=newFirst;
+this.lastSlot=newLast;
+this.elementData=newData;
 p$.computeMaxSize.apply(this, []);
 });
 
@@ -21103,18 +21103,18 @@ var index = (hash & 2147483647) % this.elementData.length;
 var last = null;
 var entry = this.elementData[index];
 while (entry != null  && !entry.equalsKey$O$I(key, hash) ){
-last = entry;
-entry = entry.next;
+last=entry;
+entry=entry.next;
 }
 if (entry != null ) {
 this.modCount++;
 if (last == null ) {
-this.elementData[index] = entry.next;
+this.elementData[index]=entry.next;
 } else {
-last.next = entry.next;
+last.next=entry.next;
 }this.elementCount--;
 var result = entry.value;
-entry.value = null;
+entry.value=null;
 return result;
 }return null;
 });
@@ -21141,7 +21141,7 @@ buffer.append$O(entry.value);
 } else {
 buffer.append$S("(this Map)");
 }buffer.append$S(", ");
-entry = entry.next;
+entry=entry.next;
 }
 }
 if (this.elementCount > 0) {
@@ -21201,7 +21201,7 @@ var entry = this.elementData[i];
 while (entry != null ){
 stream.writeObject$O(entry.key);
 stream.writeObject$O(entry.value);
-entry = entry.next;
+entry=entry.next;
 }
 }
 });
@@ -21209,19 +21209,19 @@ entry = entry.next;
 Clazz_newMeth(C$, 'readObject$java_io_ObjectInputStream', function (stream) {
 stream.defaultReadObject();
 var length = stream.readInt();
-this.elementData = p$.newElementArray$I.apply(this, [length]);
-this.elementCount = stream.readInt();
+this.elementData=p$.newElementArray$I.apply(this, [length]);
+this.elementCount=stream.readInt();
 for (var i = this.elementCount; --i >= 0; ) {
 var key = stream.readObject();
 var hash = key.hashCode();
 var index = (hash & 2147483647) % length;
 if (index < this.firstSlot) {
-this.firstSlot = index;
+this.firstSlot=index;
 }if (index > this.lastSlot) {
-this.lastSlot = index;
+this.lastSlot=index;
 }var entry = C$.newEntry$TK$TV$I(key, stream.readObject(), hash);
-entry.next = this.elementData[index];
-this.elementData[index] = entry;
+entry.next=this.elementData[index];
+this.elementData[index]=entry;
 }
 });
 ;
@@ -21244,13 +21244,13 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, ['c$$TK$TV'], function (theKey, theValue) {
 C$.superclazz.c$$TK$TV.apply(this, [theKey, theValue]);
 C$.$init$.apply(this);
-this.hashcode = theKey.hashCode();
+this.hashcode=theKey.hashCode();
 }, 1);
 
 Clazz_newMeth(C$, 'clone', function () {
 var entry = Clazz_clone(this);
 if (this.next != null ) {
-entry.next = this.next.clone();
+entry.next=this.next.clone();
 }return entry;
 });
 
@@ -21258,7 +21258,7 @@ Clazz_newMeth(C$, ['setValue$TV'], function (object) {
 if (object == null ) {
 throw Clazz_new_(Clazz_load('java.lang.NullPointerException'));
 }var result = this.value;
-this.value = object;
+this.value=object;
 return result;
 });
 
@@ -21300,9 +21300,9 @@ this.canRemove = false;
 
 Clazz_newMeth(C$, ['c$$java_util_MapEntry_Type'], function (value) {
 C$.$init$.apply(this);
-this.type = value;
-this.position = this.this$0.lastSlot;
-this.expectedModCount = this.this$0.modCount;
+this.type=value;
+this.position=this.this$0.lastSlot;
+this.expectedModCount=this.this$0.modCount;
 }, 1);
 
 Clazz_newMeth(C$, 'hasNext', function () {
@@ -21320,16 +21320,16 @@ return false;
 Clazz_newMeth(C$, 'next', function () {
 if (this.expectedModCount == this.this$0.modCount) {
 if (this.lastEntry != null ) {
-this.lastEntry = this.lastEntry.next;
+this.lastEntry=this.lastEntry.next;
 }if (this.lastEntry == null ) {
-while (this.position >= this.this$0.firstSlot && (this.lastEntry = this.this$0.elementData[this.position]) == null  ){
+while (this.position >= this.this$0.firstSlot && (this.lastEntry=this.this$0.elementData[this.position]) == null  ){
 this.position--;
 }
 if (this.lastEntry != null ) {
-this.lastPosition = this.position;
+this.lastPosition=this.position;
 this.position--;
 }}if (this.lastEntry != null ) {
-this.canRemove = true;
+this.canRemove=true;
 return this.type.get$java_util_MapEntry(this.lastEntry);
 }throw Clazz_new_(Clazz_load('java.util.NoSuchElementException'));
 }throw Clazz_new_(Clazz_load('java.util.ConcurrentModificationException'));
@@ -21338,20 +21338,20 @@ return this.type.get$java_util_MapEntry(this.lastEntry);
 Clazz_newMeth(C$, 'remove', function () {
 if (this.expectedModCount == this.this$0.modCount) {
 if (this.canRemove) {
-this.canRemove = false;
+this.canRemove=false;
 {
 var removed = false;
 var entry = this.this$0.elementData[this.lastPosition];
 if (entry === this.lastEntry ) {
-this.this$0.elementData[this.lastPosition] = entry.next;
-removed = true;
+this.this$0.elementData[this.lastPosition]=entry.next;
+removed=true;
 } else {
 while (entry != null  && entry.next !== this.lastEntry  ){
-entry = entry.next;
+entry=entry.next;
 }
 if (entry != null ) {
-entry.next = this.lastEntry.next;
-removed = true;
+entry.next=this.lastEntry.next;
+removed=true;
 }}if (removed) {
 this.this$0.modCount++;
 this.this$0.elementCount--;
@@ -21384,8 +21384,8 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$Z', function (isKey) {
 C$.$init$.apply(this);
-this.key = isKey;
-this.start = this.this$0.lastSlot + 1;
+this.key=isKey;
+this.start=this.this$0.lastSlot + 1;
 }, 1);
 
 Clazz_newMeth(C$, 'hasMoreElements', function () {
@@ -21393,7 +21393,7 @@ if (this.entry != null ) {
 return true;
 }while (--this.start >= this.this$0.firstSlot){
 if (this.this$0.elementData[this.start] != null ) {
-this.entry = this.this$0.elementData[this.start];
+this.entry=this.this$0.elementData[this.start];
 return true;
 }}
 return false;
@@ -21402,7 +21402,7 @@ return false;
 Clazz_newMeth(C$, 'nextElement', function () {
 if (this.hasMoreElements()) {
 var result = this.key ? this.entry.key : this.entry.value;
-this.entry = this.entry.next;
+this.entry=this.entry.next;
 return result;
 }throw Clazz_new_(Clazz_load('java.util.NoSuchElementException'));
 });
@@ -21410,7 +21410,7 @@ return result;
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:13
+//Created 2018-05-24 08:45:47
 (function(){var P$=java.util,I$=[[['java.util.IdentityHashMap','.KeyIterator'],['java.util.IdentityHashMap','.ValueIterator'],['java.util.IdentityHashMap','.EntryIterator'],['java.util.AbstractMap','.SimpleEntry'],'java.lang.reflect.Array','java.lang.InternalError',['java.util.IdentityHashMap','.KeySet'],['java.util.IdentityHashMap','.Values'],['java.util.IdentityHashMap','.EntrySet']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "IdentityHashMap", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -21458,17 +21458,17 @@ Clazz_newMeth(C$, 'capacity$I', function (expectedMaxSize) {
 var minCapacity = ((3 * expectedMaxSize)/2|0);
 var result;
 if (minCapacity > 536870912 || minCapacity < 0 ) {
-result = 536870912;
+result=536870912;
 } else {
-result = 4;
-while (result < minCapacity)result = result<<(1);
+result=4;
+while (result < minCapacity)result<<=1;
 
 }return result;
 });
 
 Clazz_newMeth(C$, 'init$I', function (initCapacity) {
-this.threshold = ((initCapacity * 2)/3|0);
-this.table = Clazz_array(java.lang.Object, [2 * initCapacity]);
+this.threshold=((initCapacity * 2)/3|0);
+this.table=Clazz_array(java.lang.Object, [2 * initCapacity]);
 });
 
 Clazz_newMeth(C$, 'c$$java_util_Map', function (m) {
@@ -21502,7 +21502,7 @@ while (true){
 var item = tab[i];
 if (item === k ) return tab[i + 1];
 if (item == null ) return null;
-i = C$.nextKeyIndex$I$I(i, len);
+i=C$.nextKeyIndex$I$I(i, len);
 }
 });
 
@@ -21515,13 +21515,13 @@ while (true){
 var item = tab[i];
 if (item === k ) return true;
 if (item == null ) return false;
-i = C$.nextKeyIndex$I$I(i, len);
+i=C$.nextKeyIndex$I$I(i, len);
 }
 });
 
 Clazz_newMeth(C$, 'containsValue$O', function (value) {
 var tab = this.table;
-for (var i = 1; i < tab.length; i = i+(2)) if (tab[i] === value  && tab[i - 1] != null  ) return true;
+for (var i = 1; i < tab.length; i+=2) if (tab[i] === value  && tab[i - 1] != null  ) return true;
 
 return false;
 });
@@ -21535,7 +21535,7 @@ while (true){
 var item = tab[i];
 if (item === k ) return tab[i + 1] === value ;
 if (item == null ) return false;
-i = C$.nextKeyIndex$I$I(i, len);
+i=C$.nextKeyIndex$I$I(i, len);
 }
 });
 
@@ -21545,16 +21545,16 @@ var tab = this.table;
 var len = tab.length;
 var i = C$.hash$O$I(k, len);
 var item;
-while ((item = tab[i]) != null ){
+while ((item=tab[i]) != null ){
 if (item === k ) {
 var oldValue = tab[i + 1];
-tab[i + 1] = value;
+tab[i + 1]=value;
 return oldValue;
-}i = C$.nextKeyIndex$I$I(i, len);
+}i=C$.nextKeyIndex$I$I(i, len);
 }
 this.modCount++;
-tab[i] = k;
-tab[i + 1] = value;
+tab[i]=k;
+tab[i + 1]=value;
 if (++this.$size >= this.threshold) p$.resize$I.apply(this, [len]);
 return null;
 });
@@ -21565,24 +21565,24 @@ var oldTable = this.table;
 var oldLength = oldTable.length;
 if (oldLength == 1073741824) {
 if (this.threshold == 536870911) throw Clazz_new_(Clazz_load('java.lang.IllegalStateException').c$$S,["Capacity exhausted."]);
-this.threshold = 536870911;
+this.threshold=536870911;
 return;
 }if (oldLength >= newLength) return;
 var newTable = Clazz_array(java.lang.Object, [newLength]);
-this.threshold = (newLength/3|0);
-for (var j = 0; j < oldLength; j = j+(2)) {
+this.threshold=(newLength/3|0);
+for (var j = 0; j < oldLength; j+=2) {
 var key = oldTable[j];
 if (key != null ) {
 var value = oldTable[j + 1];
-oldTable[j] = null;
-oldTable[j + 1] = null;
+oldTable[j]=null;
+oldTable[j + 1]=null;
 var i = C$.hash$O$I(key, newLength);
-while (newTable[i] != null )i = C$.nextKeyIndex$I$I(i, newLength);
+while (newTable[i] != null )i=C$.nextKeyIndex$I$I(i, newLength);
 
-newTable[i] = key;
-newTable[i + 1] = value;
+newTable[i]=key;
+newTable[i + 1]=value;
 }}
-this.table = newTable;
+this.table=newTable;
 });
 
 Clazz_newMeth(C$, 'putAll$java_util_Map', function (m) {
@@ -21604,12 +21604,12 @@ if (item === k ) {
 this.modCount++;
 this.$size--;
 var oldValue = tab[i + 1];
-tab[i + 1] = null;
-tab[i] = null;
+tab[i + 1]=null;
+tab[i]=null;
 p$.closeDeletion$I.apply(this, [i]);
 return oldValue;
 }if (item == null ) return null;
-i = C$.nextKeyIndex$I$I(i, len);
+i=C$.nextKeyIndex$I$I(i, len);
 }
 });
 
@@ -21624,12 +21624,12 @@ if (item === k ) {
 if (tab[i + 1] !== value ) return false;
 this.modCount++;
 this.$size--;
-tab[i] = null;
-tab[i + 1] = null;
+tab[i]=null;
+tab[i + 1]=null;
 p$.closeDeletion$I.apply(this, [i]);
 return true;
 }if (item == null ) return false;
-i = C$.nextKeyIndex$I$I(i, len);
+i=C$.nextKeyIndex$I$I(i, len);
 }
 });
 
@@ -21637,23 +21637,23 @@ Clazz_newMeth(C$, 'closeDeletion$I', function (d) {
 var tab = this.table;
 var len = tab.length;
 var item;
-for (var i = C$.nextKeyIndex$I$I(d, len); (item = tab[i]) != null ; i = C$.nextKeyIndex$I$I(i, len)) {
+for (var i = C$.nextKeyIndex$I$I(d, len); (item=tab[i]) != null ; i=C$.nextKeyIndex$I$I(i, len)) {
 var r = C$.hash$O$I(item, len);
 if ((i < r && (r <= d || d <= i ) ) || (r <= d && d <= i ) ) {
-tab[d] = item;
-tab[d + 1] = tab[i + 1];
-tab[i] = null;
-tab[i + 1] = null;
-d = i;
+tab[d]=item;
+tab[d + 1]=tab[i + 1];
+tab[i]=null;
+tab[i + 1]=null;
+d=i;
 }}
 });
 
 Clazz_newMeth(C$, 'clear', function () {
 this.modCount++;
 var tab = this.table;
-for (var i = 0; i < tab.length; i++) tab[i] = null;
+for (var i = 0; i < tab.length; i++) tab[i]=null;
 
-this.$size = 0;
+this.$size=0;
 });
 
 Clazz_newMeth(C$, 'equals$O', function (o) {
@@ -21663,7 +21663,7 @@ return true;
 var m = o;
 if (m.size() != this.$size) return false;
 var tab = m.table;
-for (var i = 0; i < tab.length; i = i+(2)) {
+for (var i = 0; i < tab.length; i+=2) {
 var k = tab[i];
 if (k != null  && !p$.containsMapping$O$O.apply(this, [k, tab[i + 1]]) ) return false;
 }
@@ -21678,11 +21678,11 @@ return false;
 Clazz_newMeth(C$, 'hashCode', function () {
 var result = 0;
 var tab = this.table;
-for (var i = 0; i < tab.length; i = i+(2)) {
+for (var i = 0; i < tab.length; i+=2) {
 var key = tab[i];
 if (key != null ) {
 var k = C$.unmaskNull$O(key);
-result = result+(System.identityHashCode(k) ^ System.identityHashCode(tab[i + 1]));
+result+=System.identityHashCode(k) ^ System.identityHashCode(tab[i + 1]);
 }}
 return result;
 });
@@ -21690,8 +21690,8 @@ return result;
 Clazz_newMeth(C$, 'clone', function () {
 try {
 var m = Clazz_clone(this);
-m.$entrySet = null;
-m.table = this.table.clone();
+m.$entrySet=null;
+m.table=this.table.clone();
 return m;
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.CloneNotSupportedException")){
@@ -21705,26 +21705,26 @@ throw e;
 Clazz_newMeth(C$, 'keySet', function () {
 var ks = this.$keySet;
 if (ks != null ) return ks;
- else return this.$keySet = Clazz_new_((I$[7]||$incl$(7)), [this, null]);
+ else return this.$keySet=Clazz_new_((I$[7]||$incl$(7)), [this, null]);
 });
 
 Clazz_newMeth(C$, 'values', function () {
 var vs = this.$values;
 if (vs != null ) return vs;
- else return this.$values = Clazz_new_((I$[8]||$incl$(8)), [this, null]);
+ else return this.$values=Clazz_new_((I$[8]||$incl$(8)), [this, null]);
 });
 
 Clazz_newMeth(C$, 'entrySet', function () {
 var es = this.$entrySet;
 if (es != null ) return es;
- else return this.$entrySet = Clazz_new_((I$[9]||$incl$(9)), [this, null]);
+ else return this.$entrySet=Clazz_new_((I$[9]||$incl$(9)), [this, null]);
 });
 
 Clazz_newMeth(C$, 'writeObject$java_io_ObjectOutputStream', function (s) {
 s.defaultWriteObject();
 s.writeInt$I(this.$size);
 var tab = this.table;
-for (var i = 0; i < tab.length; i = i+(2)) {
+for (var i = 0; i < tab.length; i+=2) {
 var key = tab[i];
 if (key != null ) {
 s.writeObject$O(C$.unmaskNull$O(key));
@@ -21749,12 +21749,12 @@ var tab = this.table;
 var len = tab.length;
 var i = C$.hash$O$I(k, len);
 var item;
-while ((item = tab[i]) != null ){
+while ((item=tab[i]) != null ){
 if (item === k ) throw Clazz_new_(Clazz_load('java.io.StreamCorruptedException'));
-i = C$.nextKeyIndex$I$I(i, len);
+i=C$.nextKeyIndex$I$I(i, len);
 }
-tab[i] = k;
-tab[i + 1] = value;
+tab[i]=k;
+tab[i + 1]=value;
 });
 ;
 (function(){var C$=Clazz_newClass(P$.IdentityHashMap, "IdentityHashMapIterator", function(){
@@ -21782,59 +21782,59 @@ this.traversalTable = this.this$0.table;
 
 Clazz_newMeth(C$, 'hasNext', function () {
 var tab = this.traversalTable;
-for (var i = this.index; i < tab.length; i = i+(2)) {
+for (var i = this.index; i < tab.length; i+=2) {
 var key = tab[i];
 if (key != null ) {
-this.index = i;
-return this.indexValid = true;
+this.index=i;
+return this.indexValid=true;
 }}
-this.index = tab.length;
+this.index=tab.length;
 return false;
 });
 
 Clazz_newMeth(C$, 'nextIndex', function () {
 if (this.this$0.modCount != this.expectedModCount) throw Clazz_new_(Clazz_load('java.util.ConcurrentModificationException'));
 if (!this.indexValid && !this.hasNext() ) throw Clazz_new_(Clazz_load('java.util.NoSuchElementException'));
-this.indexValid = false;
-this.lastReturnedIndex = this.index;
-this.index = this.index+(2);
+this.indexValid=false;
+this.lastReturnedIndex=this.index;
+this.index+=2;
 return this.lastReturnedIndex;
 });
 
 Clazz_newMeth(C$, 'remove', function () {
 if (this.lastReturnedIndex == -1) throw Clazz_new_(Clazz_load('java.lang.IllegalStateException'));
 if (this.this$0.modCount != this.expectedModCount) throw Clazz_new_(Clazz_load('java.util.ConcurrentModificationException'));
-this.expectedModCount = ++this.this$0.modCount;
+this.expectedModCount=++this.this$0.modCount;
 var deletedSlot = this.lastReturnedIndex;
-this.lastReturnedIndex = -1;
+this.lastReturnedIndex=-1;
 this.this$0.$size--;
-this.index = deletedSlot;
-this.indexValid = false;
+this.index=deletedSlot;
+this.indexValid=false;
 var tab = this.traversalTable;
 var len = tab.length;
 var d = deletedSlot;
 var key = tab[d];
-tab[d] = null;
-tab[d + 1] = null;
+tab[d]=null;
+tab[d + 1]=null;
 if (tab !== this.b$['java.util.IdentityHashMap'].table ) {
 this.b$['java.util.IdentityHashMap'].remove$O(key);
-this.expectedModCount = this.this$0.modCount;
+this.expectedModCount=this.this$0.modCount;
 return;
 }var item;
-for (var i = P$.IdentityHashMap.nextKeyIndex$I$I(d, len); (item = tab[i]) != null ; i = P$.IdentityHashMap.nextKeyIndex$I$I(i, len)) {
+for (var i = P$.IdentityHashMap.nextKeyIndex$I$I(d, len); (item=tab[i]) != null ; i=P$.IdentityHashMap.nextKeyIndex$I$I(i, len)) {
 var r = P$.IdentityHashMap.hash$O$I(item, len);
 if ((i < r && (r <= d || d <= i ) ) || (r <= d && d <= i ) ) {
 if (i < deletedSlot && d >= deletedSlot  && this.traversalTable === this.b$['java.util.IdentityHashMap'].table  ) {
 var remaining = len - deletedSlot;
 var newTable = Clazz_array(java.lang.Object, [remaining]);
 System.arraycopy(tab, deletedSlot, newTable, 0, remaining);
-this.traversalTable = newTable;
-this.index = 0;
-}tab[d] = item;
-tab[d + 1] = tab[i + 1];
-tab[i] = null;
-tab[i + 1] = null;
-d = i;
+this.traversalTable=newTable;
+this.index=0;
+}tab[d]=item;
+tab[d + 1]=tab[i + 1];
+tab[i]=null;
+tab[i + 1]=null;
+d=i;
 }}
 });
 
@@ -21903,7 +21903,7 @@ return this.traversalTable[this.lastReturnedIndex + 1];
 Clazz_newMeth(C$, ['setValue$TV'], function (value) {
 if (this.lastReturnedIndex < 0) throw Clazz_new_(Clazz_load('java.lang.IllegalStateException').c$$S,["Entry was removed"]);
 var oldValue = this.traversalTable[this.lastReturnedIndex + 1];
-this.traversalTable[this.lastReturnedIndex + 1] = value;
+this.traversalTable[this.lastReturnedIndex + 1]=value;
 if (this.traversalTable !== this.b$['java.util.IdentityHashMap'].table ) this.this$0.put$TK$TV(this.traversalTable[this.lastReturnedIndex], value);
 return oldValue;
 });
@@ -21961,7 +21961,7 @@ var modified = false;
 for (var i = this.iterator(); i.hasNext(); ) {
 if (c.contains$O(i.next())) {
 i.remove();
-modified = true;
+modified=true;
 }}
 return modified;
 });
@@ -21972,7 +21972,7 @@ this.b$['java.util.IdentityHashMap'].clear();
 
 Clazz_newMeth(C$, 'hashCode', function () {
 var result = 0;
-for (var key, $key = this.iterator(); $key.hasNext()&&((key=$key.next()),1);) result = result+(System.identityHashCode(key));
+for (var key, $key = this.iterator(); $key.hasNext()&&((key=$key.next()),1);) result+=System.identityHashCode(key);
 
 return result;
 });
@@ -22057,7 +22057,7 @@ var modified = false;
 for (var i = this.iterator(); i.hasNext(); ) {
 if (c.contains$O(i.next())) {
 i.remove();
-modified = true;
+modified=true;
 }}
 return modified;
 });
@@ -22066,25 +22066,25 @@ Clazz_newMeth(C$, 'toArray', function () {
 var size = this.size();
 var result = Clazz_array(java.lang.Object, [size]);
 var it = this.iterator();
-for (var i = 0; i < size; i++) result[i] = Clazz_new_((I$[4]||$incl$(4)).c$$java_util_Map_Entry,[it.next()]);
+for (var i = 0; i < size; i++) result[i]=Clazz_new_((I$[4]||$incl$(4)).c$$java_util_Map_Entry,[it.next()]);
 
 return result;
 });
 
 Clazz_newMeth(C$, 'toArray$TTA', function (a) {
 var size = this.size();
-if (a.length < size) a = Clazz_array(a.getClass().getComponentType(), size);
+if (a.length < size) a=Clazz_array(a.getClass().getComponentType(), size);
 var it = this.iterator();
-for (var i = 0; i < size; i++) a[i] = Clazz_new_((I$[4]||$incl$(4)).c$$java_util_Map_Entry,[it.next()]);
+for (var i = 0; i < size; i++) a[i]=Clazz_new_((I$[4]||$incl$(4)).c$$java_util_Map_Entry,[it.next()]);
 
-if (a.length > size) a[size] = null;
+if (a.length > size) a[size]=null;
 return a;
 });
 
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:13
+//Created 2018-05-24 08:45:47
 (function(){var P$=java.util,I$=[['java.util.HashMap','java.lang.StringBuilder','java.lang.InternalError']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Locale", null, null, ['Cloneable', 'java.io.Serializable']);
 C$.cache = null;
@@ -22116,9 +22116,9 @@ this.hashCodeValue = 0;
 
 Clazz_newMeth(C$, 'c$$S$S$S', function (language, country, variant) {
 C$.$init$.apply(this);
-this.language = language.toLowerCase().intern();
-this.country = country.toUpperCase().intern();
-this.variant = variant.toUpperCase().intern();
+this.language=language.toLowerCase().intern();
+this.country=country.toUpperCase().intern();
+this.variant=variant.toUpperCase().intern();
 }, 1);
 
 Clazz_newMeth(C$, 'c$$S$S', function (language, country) {
@@ -22131,9 +22131,9 @@ C$.c$$S$S$S.apply(this, [language, "", ""]);
 
 Clazz_newMeth(C$, 'c$$S$S$Z', function (language, country, flag) {
 C$.$init$.apply(this);
-this.language = language;
-this.country = country;
-this.variant = "";
+this.language=language;
+this.country=country;
+this.variant="";
 }, 1);
 
 Clazz_newMeth(C$, 'createSingleton$S$S$S', function (key, language, country) {
@@ -22150,22 +22150,22 @@ sb.append$S(language).append$C("_").append$S(country).append$C("_").append$S(var
 var key = sb.toString();
 var locale = C$.cache.get$O(key);
 if (locale == null ) {
-locale = Clazz_new_(C$.c$$S$S$S,[language, country, variant]);
+locale=Clazz_new_(C$.c$$S$S$S,[language, country, variant]);
 var l = C$.cache.put$TK$TV(key, locale);
 if (l != null ) {
-locale = l;
+locale=l;
 }}return locale;
 }, 1);
 
 Clazz_newMeth(C$, 'getDefault', function () {
 if (C$.defaultLocale == null ) {
-C$.defaultLocale = Clazz_new_(C$.c$$S$S$S,["en", "US", ""]);
+C$.defaultLocale=Clazz_new_(C$.c$$S$S$S,["en", "US", ""]);
 }return C$.defaultLocale;
 }, 1);
 
 Clazz_newMeth(C$, 'setDefault$java_util_Locale', function (newLocale) {
 if (newLocale == null ) throw Clazz_new_(Clazz_load('java.lang.NullPointerException').c$$S,["Can\'t set default locale to NULL"]);
-C$.defaultLocale = newLocale;
+C$.defaultLocale=newLocale;
 }, 1);
 
 Clazz_newMeth(C$, 'getLanguage', function () {
@@ -22249,8 +22249,8 @@ throw e;
 Clazz_newMeth(C$, 'hashCode', function () {
 var hc = this.hashCodeValue;
 if (hc == 0) {
-hc = (this.language.hashCode() << 8) ^ this.country.hashCode() ^ (this.variant.hashCode() << 4) ;
-this.hashCodeValue = hc;
+hc=(this.language.hashCode() << 8) ^ this.country.hashCode() ^ (this.variant.hashCode() << 4) ;
+this.hashCodeValue=hc;
 }return hc;
 });
 
@@ -22263,7 +22263,7 @@ return this.language == other.language && this.country == other.country  && this
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:14
+//Created 2018-05-24 08:45:48
 (function(){var P$=java.util,I$=[];
 var C$=Clazz_newClass(P$, "MapEntry", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -22283,13 +22283,13 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, ['c$$TK'], function (theKey) {
 C$.$init$.apply(this);
-this.key = theKey;
+this.key=theKey;
 }, 1);
 
 Clazz_newMeth(C$, ['c$$TK$TV'], function (theKey, theValue) {
 C$.$init$.apply(this);
-this.key = theKey;
-this.value = theValue;
+this.key=theKey;
+this.value=theValue;
 }, 1);
 
 Clazz_newMeth(C$, 'clone', function () {
@@ -22327,7 +22327,7 @@ return (this.key == null  ? 0 : this.key.hashCode()) ^ (this.value == null  ? 0 
 
 Clazz_newMeth(C$, ['setValue$TV'], function (object) {
 var result = this.value;
-this.value = object;
+this.value=object;
 return result;
 });
 
@@ -22341,11 +22341,11 @@ return this.key + "=" + this.value ;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:14
+//Created 2018-05-24 08:45:48
 (function(){var P$=Clazz_newPackage("javajs.api"),I$=[];
 var C$=Clazz_newInterface(P$, "JSFunction");
 })();
-//Created 2018-05-15 01:02:16
+//Created 2018-05-24 08:45:53
 (function(){var P$=Clazz_newPackage("javajs.util"),I$=[['javajs.util.Rdr']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AjaxURLConnection", null, 'java.net.URLConnection');
 var p$=C$.prototype;
@@ -22380,11 +22380,11 @@ Clazz_newMeth(C$, 'connect', function () {
 });
 
 Clazz_newMeth(C$, 'outputBytes$BA', function (bytes) {
-this.bytesOut = bytes;
+this.bytesOut=bytes;
 });
 
 Clazz_newMeth(C$, 'outputString$S', function (post) {
-this.postOut = post;
+this.postOut=post;
 });
 
 Clazz_newMeth(C$, 'getInputStream', function () {
@@ -22413,7 +22413,7 @@ return p$.doAjax$Z.apply(this, [false]);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:55
 (function(){var P$=Clazz_newPackage("javajs.util"),I$=[['java.util.Hashtable','javajs.util.AjaxURLStreamHandler']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AjaxURLStreamHandlerFactory", null, null, 'java.net.URLStreamHandlerFactory');
 
@@ -22435,11 +22435,11 @@ C$.$init$.apply(this);
 
 Clazz_newMeth(C$, 'createURLStreamHandler$S', function (protocol) {
 var fac = this.htFactories.get$O(protocol);
-if (fac == null ) this.htFactories.put$TK$TV(protocol, fac = Clazz_new_((I$[2]||$incl$(2)).c$$S,[protocol]));
+if (fac == null ) this.htFactories.put$TK$TV(protocol, fac=Clazz_new_((I$[2]||$incl$(2)).c$$S,[protocol]));
 return (fac.protocol == null  ? null : fac);
 });
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:55
 (function(){var P$=Clazz_newPackage("javajs.util"),I$=[['java.lang.reflect.Array','javajs.util.T3','java.util.Arrays','javajs.util.Lst','java.util.Hashtable']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AU");
 var p$=C$.prototype;
@@ -22504,7 +22504,7 @@ if (nElements == 0 || array == null  ) return array;
 var oldLength = C$.getLength$O(array);
 if (firstElement >= oldLength) return array;
 var n = oldLength - (firstElement + nElements);
-if (n < 0) n = 0;
+if (n < 0) n=0;
 var t = C$.newInstanceO$O$I(array, firstElement + n);
 if (firstElement > 0) System.arraycopy(array, 0, t, 0, firstElement);
 if (n > 0) System.arraycopy(array, firstElement + nElements, t, firstElement, n);
@@ -22513,7 +22513,7 @@ return t;
 
 Clazz_newMeth(C$, 'arrayCopyObject$O$I', function (array, newLength) {
 var oldLength = (array == null  ? -1 : C$.getLength$O(array));
-if (newLength < 0) newLength = oldLength;
+if (newLength < 0) newLength=oldLength;
 if (newLength == oldLength) return array;
 {
 if (newLength < oldLength) return Clazz_array(-1, array, 0, newLength);
@@ -22535,7 +22535,7 @@ return array.length
 
 Clazz_newMeth(C$, 'arrayCopyS$SA$I', function (array, newLength) {
 var oldLength = (array == null  ? -1 : array.length);
-if (newLength < 0) newLength = oldLength;
+if (newLength < 0) newLength=oldLength;
 {
 if (newLength < oldLength) return Clazz_array(-1, array, 0, newLength);
 }
@@ -22554,7 +22554,7 @@ System.arraycopy(array, 0, t, 0, oldLength < newLength ? oldLength : newLength);
 }, 1);
 
 Clazz_newMeth(C$, 'arrayCopyPt$javajs_util_T3A$I', function (array, newLength) {
-if (newLength < 0) newLength = array.length;
+if (newLength < 0) newLength=array.length;
 var t = Clazz_array((I$[2]||$incl$(2)), [newLength]);
 if (array != null ) {
 var oldLength = array.length;
@@ -22564,7 +22564,7 @@ System.arraycopy(array, 0, t, 0, oldLength < newLength ? oldLength : newLength);
 
 Clazz_newMeth(C$, 'arrayCopyF$FA$I', function (array, newLength) {
 var oldLength = (array == null  ? -1 : array.length);
-if (newLength < 0) newLength = oldLength;
+if (newLength < 0) newLength=oldLength;
 {
 if (newLength < oldLength) return Clazz_array(-1, array, 0, newLength);
 }
@@ -22576,7 +22576,7 @@ System.arraycopy(array, 0, t, 0, oldLength < newLength ? oldLength : newLength);
 
 Clazz_newMeth(C$, 'arrayCopyI$IA$I', function (array, newLength) {
 var oldLength = (array == null  ? -1 : array.length);
-if (newLength < 0) newLength = oldLength;
+if (newLength < 0) newLength=oldLength;
 {
 if (newLength < oldLength) return Clazz_array(-1, array, 0, newLength);
 }
@@ -22589,12 +22589,12 @@ System.arraycopy(array, 0, t, 0, oldLength < newLength ? oldLength : newLength);
 Clazz_newMeth(C$, 'arrayCopyRangeI$IA$I$I', function (array, i0, n) {
 if (array == null ) return null;
 var oldLength = array.length;
-if (n == -1) n = oldLength;
-if (n == -2) n = (oldLength/2|0);
+if (n == -1) n=oldLength;
+if (n == -2) n=(oldLength/2|0);
 {
 return Clazz_array(-1, array, i0, n);
 }
-n = n-(i0);
+n-=i0;
 var t = Clazz_array(Integer.TYPE, [n]);
 System.arraycopy(array, i0, t, 0, n);
 return t;
@@ -22606,7 +22606,7 @@ if (array == null ) return null;
 return Clazz_array(-1, array, i0, n).reverse();
 }
 var t = C$.arrayCopyRangeI$IA$I$I(array, i0, n);
-if (n < 0) n = array.length;
+if (n < 0) n=array.length;
 for (var i = (n/2|0); --i >= 0; ) C$.swapInt$IA$I$I(t, i, n - 1 - i );
 
 return t;
@@ -22614,7 +22614,7 @@ return t;
 
 Clazz_newMeth(C$, 'arrayCopyShort$HA$I', function (array, newLength) {
 var oldLength = (array == null  ? -1 : array.length);
-if (newLength < 0) newLength = oldLength;
+if (newLength < 0) newLength=oldLength;
 {
 if (newLength < oldLength) return Clazz_array(-1, array, 0, newLength);
 }
@@ -22626,7 +22626,7 @@ System.arraycopy(array, 0, t, 0, oldLength < newLength ? oldLength : newLength);
 
 Clazz_newMeth(C$, 'arrayCopyByte$BA$I', function (array, newLength) {
 var oldLength = (array == null  ? -1 : array.length);
-if (newLength < 0) newLength = oldLength;
+if (newLength < 0) newLength=oldLength;
 {
 if (newLength < oldLength) return Clazz_array(-1, array, 0, newLength);
 }
@@ -22638,7 +22638,7 @@ System.arraycopy(array, 0, t, 0, oldLength < newLength ? oldLength : newLength);
 
 Clazz_newMeth(C$, 'arrayCopyBool$ZA$I', function (array, newLength) {
 var oldLength = (array == null  ? -1 : array.length);
-if (newLength < 0) newLength = oldLength;
+if (newLength < 0) newLength=oldLength;
 {
 if (newLength < oldLength) return Clazz_array(-1, array, 0, newLength);
 }
@@ -22650,8 +22650,8 @@ System.arraycopy(array, 0, t, 0, oldLength < newLength ? oldLength : newLength);
 
 Clazz_newMeth(C$, 'swapInt$IA$I$I', function (array, indexA, indexB) {
 var t = array[indexA];
-array[indexA] = array[indexB];
-array[indexB] = t;
+array[indexA]=array[indexB];
+array[indexB]=t;
 }, 1);
 
 Clazz_newMeth(C$, 'dumpArray$S$FAA$I$I$I$I', function (msg, A, x1, x2, y1, y2) {
@@ -22691,8 +22691,8 @@ return Clazz_array((I$[5]||$incl$(5)), [size]);
 
 Clazz_newMeth(C$, 'swap$OA$I$I', function (o, i, j) {
 var oi = o[i];
-o[i] = o[j];
-o[j] = oi;
+o[i]=o[j];
+o[j]=oi;
 }, 1);
 
 Clazz_newMeth(C$, 'newFloat2$I', function (n) {
@@ -22798,7 +22798,7 @@ for (var i = b.length; --i >= 0;) { var j = b[i] & 0xFF; if (j >= 0x80) j -= 0x1
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:17
+//Created 2018-05-24 08:45:55
 (function(){var P$=Clazz_newPackage("javajs.util"),I$=[['javajs.util.JSThread$1']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSThread", null, 'Thread', 'javajs.api.JSFunction');
 C$.threadCount = 0;
@@ -22848,14 +22848,14 @@ while (!Thread.interrupted()){
 switch (state) {
 case 0:
 if (!this.myInit()) return;
-state = 1;
+state=1;
 continue;
 case 1:
 if (!this.isLooping()) {
-state = 2;
+state=2;
 continue;
 }if (this.myLoop() && this.sleepAndReturn$I$I(this.getDelayMillis(), state) ) {
-executeFinally = false;
+executeFinally=false;
 return;
 }continue;
 case 2:
@@ -22866,7 +22866,7 @@ return;
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.Exception")){
 this.onException$Exception(e);
-state = 2;
+state=2;
 } else {
 throw e;
 }
@@ -22900,7 +22900,7 @@ setTimeout( function() { java.awt.Toolkit.getDefaultToolkit().getSystemEventQueu
 return true;
 });
 })();
-//Created 2018-05-15 01:02:18
+//Created 2018-05-24 08:45:56
 (function(){var P$=Clazz_newPackage("javajs.util"),I$=[];
 var C$=Clazz_newClass(P$, "Lst", null, 'java.util.ArrayList');
 
@@ -22927,7 +22927,7 @@ Clazz_newMeth(C$, 'removeObj$O', function (v) {
 return C$.superclazz.prototype.remove$O.apply(this, [v]);
 });
 })();
-//Created 2018-05-15 01:02:18
+//Created 2018-05-24 08:45:56
 (function(){var P$=Clazz_newPackage("javajs.util"),I$=[['javajs.util.DF','javajs.util.SB','javajs.util.AU','java.lang.reflect.Array']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "PT");
 C$.tensScale = null;
@@ -22962,22 +22962,22 @@ while (ich < ichMax && C$.isWhiteSpace$S$I(str, ich) )++ich;
 
 var negative = false;
 if (ich < ichMax && (str.charCodeAt(ich)) == 45  ) {
-negative = true;
+negative=true;
 ++ich;
-}while (ich < ichMax && (ch = str.charAt(ich).$c()) >= 48  && ch <= 57 ){
-value = value * 10 + (ch - 48);
-digitSeen = true;
+}while (ich < ichMax && (ch=str.charAt(ich).$c()) >= 48  && ch <= 57 ){
+value=value * 10 + (ch - 48);
+digitSeen=true;
 ++ich;
 }
-if (!digitSeen) value = -2147483648;
- else if (negative) value = -value;
-next[0] = ich;
+if (!digitSeen) value=-2147483648;
+ else if (negative) value=-value;
+next[0]=ich;
 return value;
 }, 1);
 
 Clazz_newMeth(C$, 'isWhiteSpace$S$I', function (str, ich) {
 var ch;
-return (ich >= 0 && ((ch = str.charAt(ich)) == " " || ch == "\u0009"  || ch == "\u000a" ) );
+return (ich >= 0 && ((ch=str.charAt(ich)) == " " || ch == "\u0009"  || ch == "\u000a" ) );
 }, 1);
 
 Clazz_newMeth(C$, 'parseFloatChecked$S$I$IA$Z', function (str, ichMax, next, isStrict) {
@@ -22989,36 +22989,36 @@ while (ich < ichMax && C$.isWhiteSpace$S$I(str, ich) )++ich;
 var negative = false;
 if (ich < ichMax && str.charAt(ich) == "-" ) {
 ++ich;
-negative = true;
+negative=true;
 }var ch = 0;
 var ival = 0.0;
 var ival2 = 0.0;
-while (ich < ichMax && (ch = str.charAt(ich).$c()) >= 48  && ch <= 57 ){
-ival = (ival * 10.0) + (ch - 48) * 1.0;
+while (ich < ichMax && (ch=str.charAt(ich).$c()) >= 48  && ch <= 57 ){
+ival=(ival * 10.0) + (ch - 48) * 1.0;
 ++ich;
-digitSeen = true;
+digitSeen=true;
 }
 var isDecimal = false;
 var iscale = 0;
 var nzero = (ival == 0  ? -1 : 0);
 if (ch == 46 ) {
-isDecimal = true;
-while (++ich < ichMax && (ch = str.charAt(ich).$c()) >= 48  && ch <= 57 ){
-digitSeen = true;
+isDecimal=true;
+while (++ich < ichMax && (ch=str.charAt(ich).$c()) >= 48  && ch <= 57 ){
+digitSeen=true;
 if (nzero < 0) {
 if (ch == 48) {
 nzero--;
 continue;
-}nzero = -nzero;
+}nzero=-nzero;
 }if (iscale < C$.decimalScale.length) {
-ival2 = (ival2 * 10.0) + (ch - 48) * 1.0;
+ival2=(ival2 * 10.0) + (ch - 48) * 1.0;
 iscale++;
 }}
 }var value;
 if (!digitSeen) {
-value = NaN;
+value=NaN;
 } else if (ival2 > 0 ) {
-value = ival2 * C$.decimalScale[iscale - 1];
+value=ival2 * C$.decimalScale[iscale - 1];
 if (nzero > 1) {
 if (nzero - 2 < C$.decimalScale.length) {
 value *= C$.decimalScale[nzero - 2];
@@ -23027,29 +23027,29 @@ value *= Math.pow(10, 1 - nzero);
 }} else {
 value += ival;
 }} else {
-value = ival;
+value=ival;
 }var isExponent = false;
 if (ich < ichMax && (ch == 69 || ch == 101  || ch == 68 ) ) {
-isExponent = true;
+isExponent=true;
 if (++ich >= ichMax) return NaN;
-ch = str.charAt(ich).$c();
+ch=str.charAt(ich).$c();
 if ((ch == 43 ) && (++ich >= ichMax) ) return NaN;
-next[0] = ich;
+next[0]=ich;
 var exponent = C$.parseIntChecked$S$I$IA(str, ichMax, next);
 if (exponent == -2147483648) return NaN;
 if (exponent > 0 && exponent <= C$.tensScale.length ) value *= C$.tensScale[exponent - 1];
  else if (exponent < 0 && -exponent <= C$.decimalScale.length ) value *= C$.decimalScale[-exponent - 1];
  else if (exponent != 0) value *= Math.pow(10, exponent);
 } else {
-next[0] = ich;
-}if (negative) value = -value;
-if (value == Infinity ) value = 3.4028235E38;
+next[0]=ich;
+}if (negative) value=-value;
+if (value == Infinity ) value=3.4028235E38;
 return (!isStrict || (!isExponent || isDecimal ) && C$.checkTrailingText$S$I$I(str, next[0], ichMax)   ? value : NaN);
 }, 1);
 
 Clazz_newMeth(C$, 'checkTrailingText$S$I$I', function (str, ich, ichMax) {
 var ch;
-while (ich < ichMax && (C$.isWhitespace$C(ch = str.charAt(ich)) || ch == ";" ) )++ich;
+while (ich < ichMax && (C$.isWhitespace$C(ch=str.charAt(ich)) || ch == ";" ) )++ich;
 
 return (ich == ichMax);
 }, 1);
@@ -23065,9 +23065,9 @@ var n = 0;
 var max = 0;
 for (var i = 0; i >= 0 && i < len  && n < nTokens ; i++) {
 var f;
-while (Float.isNaN(f = C$.parseFloat$S(tokens[n++])) && n < nTokens ){
+while (Float.isNaN(f=C$.parseFloat$S(tokens[n++])) && n < nTokens ){
 }
-if (!Float.isNaN(f)) data[(max = i)] = f;
+if (!Float.isNaN(f)) data[(max=i)]=f;
 if (n == nTokens) break;
 }
 return max + 1;
@@ -23079,24 +23079,24 @@ var pt = next[0];
 if (pt >= 0) {
 if (strStart != null ) {
 var p = str.indexOf(strStart, pt);
-if (p >= 0) next[0] = p + strStart.length$();
-}str = str.substring(next[0]);
-pt = (strEnd == null  ? -1 : str.indexOf(strEnd));
-if (pt < 0) pt = str.length$();
- else str = str.substring(0, pt);
-next[0] = next[0]+(pt + 1);
+if (p >= 0) next[0]=p + strStart.length$();
+}str=str.substring(next[0]);
+pt=(strEnd == null  ? -1 : str.indexOf(strEnd));
+if (pt < 0) pt=str.length$();
+ else str=str.substring(0, pt);
+next[0]+=pt + 1;
 var tokens = C$.getTokens$S(str);
-if (f == null ) f = Clazz_array(Float.TYPE, [tokens.length]);
-n = C$.parseFloatArrayInfested$SA$FA(tokens, f);
+if (f == null ) f=Clazz_array(Float.TYPE, [tokens.length]);
+n=C$.parseFloatArrayInfested$SA$FA(tokens, f);
 }if (f == null ) return Clazz_array(Float.TYPE, [0]);
-for (var i = n; i < f.length; i++) f[i] = NaN;
+for (var i = n; i < f.length; i++) f[i]=NaN;
 
 return f;
 }, 1);
 
 Clazz_newMeth(C$, 'parseFloatRange$S$I$IA', function (str, ichMax, next) {
 var cch = str.length$();
-if (ichMax > cch) ichMax = cch;
+if (ichMax > cch) ichMax=cch;
 if (next[0] < 0 || next[0] >= ichMax ) return NaN;
 return C$.parseFloatChecked$S$I$IA$Z(str, ichMax, next, false);
 }, 1);
@@ -23140,7 +23140,7 @@ return C$.parseTrimmedRange$S$I$I(str, ichStart, str.length$());
 
 Clazz_newMeth(C$, 'parseTrimmedRange$S$I$I', function (str, ichStart, ichMax) {
 var cch = str.length$();
-if (ichMax < cch) cch = ichMax;
+if (ichMax < cch) cch=ichMax;
 if (cch < ichStart) return "";
 return C$.parseTrimmedChecked$S$I$I(str, ichStart, cch);
 }, 1);
@@ -23152,8 +23152,8 @@ if (ich < 0 || ich > cchLine ) return null;
 var tokenCount = C$.countTokens$S$I(line, ich);
 var tokens = Clazz_array(java.lang.String, [tokenCount]);
 var next = Clazz_array(Integer.TYPE, [1]);
-next[0] = ich;
-for (var i = 0; i < tokenCount; ++i) tokens[i] = C$.parseTokenChecked$S$I$IA(line, cchLine, next);
+next[0]=ich;
+for (var i = 0; i < tokenCount; ++i) tokens[i]=C$.parseTokenChecked$S$I$IA(line, cchLine, next);
 
 return tokens;
 }, 1);
@@ -23188,7 +23188,7 @@ return (next[0] < 0 || next[0] >= cch  ? null : C$.parseTokenChecked$S$I$IA(str,
 
 Clazz_newMeth(C$, 'parseTokenRange$S$I$IA', function (str, ichMax, next) {
 var cch = str.length$();
-if (ichMax > cch) ichMax = cch;
+if (ichMax > cch) ichMax=cch;
 return (next[0] < 0 || next[0] >= ichMax  ? null : C$.parseTokenChecked$S$I$IA(str, ichMax, next));
 }, 1);
 
@@ -23199,7 +23199,7 @@ while (ich < ichMax && C$.isWhiteSpace$S$I(str, ich) )++ich;
 var ichNonWhite = ich;
 while (ich < ichMax && !C$.isWhiteSpace$S$I(str, ich) )++ich;
 
-next[0] = ich;
+next[0]=ich;
 return (ichNonWhite == ich ? null : str.substring(ichNonWhite, ich));
 }, 1);
 
@@ -23214,7 +23214,7 @@ return (ichLast < ich ? "" : str.substring(ich, ichLast + 1));
 
 Clazz_newMeth(C$, 'parseIntRange$S$I$IA', function (str, ichMax, next) {
 var cch = str.length$();
-if (ichMax > cch) ichMax = cch;
+if (ichMax > cch) ichMax=cch;
 return (next[0] < 0 || next[0] >= ichMax  ? -2147483648 : C$.parseIntChecked$S$I$IA(str, ichMax, next));
 }, 1);
 
@@ -23223,7 +23223,7 @@ C$.parseFloatArrayDataN$SA$FA$I(tokens, data, data.length);
 }, 1);
 
 Clazz_newMeth(C$, 'parseFloatArrayDataN$SA$FA$I', function (tokens, data, nData) {
-for (var i = nData; --i >= 0; ) data[i] = (i >= tokens.length ? NaN : C$.parseFloat$S(tokens[i]));
+for (var i = nData; --i >= 0; ) data[i]=(i >= tokens.length ? NaN : C$.parseFloat$S(tokens[i]));
 
 }, 1);
 
@@ -23234,22 +23234,22 @@ var i = text.indexOf(run);
 var lines;
 var runLen = run.length$();
 if (i < 0 || runLen == 0 ) {
-lines = Clazz_array(java.lang.String, [1]);
-lines[0] = text;
+lines=Clazz_array(java.lang.String, [1]);
+lines[0]=text;
 return lines;
 }var len = text.length$() - runLen;
-for (; i >= 0 && i < len ; n++) i = text.indexOf(run, i + runLen);
+for (; i >= 0 && i < len ; n++) i=text.indexOf(run, i + runLen);
 
-lines = Clazz_array(java.lang.String, [n]);
-i = 0;
+lines=Clazz_array(java.lang.String, [n]);
+i=0;
 var ipt = 0;
 var pt = 0;
-for (; (ipt = text.indexOf(run, i)) >= 0 && pt + 1 < n ; ) {
-lines[pt++] = text.substring(i, ipt);
-i = ipt + runLen;
+for (; (ipt=text.indexOf(run, i)) >= 0 && pt + 1 < n ; ) {
+lines[pt++]=text.substring(i, ipt);
+i=ipt + runLen;
 }
-if (text.indexOf(run, len) != len) len = len+(runLen);
-lines[pt] = text.substring(i, len);
+if (text.indexOf(run, len) != len) len+=runLen;
+lines[pt]=text.substring(i, len);
 return lines;
 }, 1);
 
@@ -23260,19 +23260,19 @@ return C$.getQuotedStringNext$S$IA(line, next);
 
 Clazz_newMeth(C$, 'getQuotedStringNext$S$IA', function (line, next) {
 var i = next[0];
-if (i < 0 || (i = line.indexOf("\"", i)) < 0 ) return "";
+if (i < 0 || (i=line.indexOf("\"", i)) < 0 ) return "";
 var pt = i + 1;
 var len = line.length$();
 while (++i < len && line.charAt(i) != "\"" )if (line.charAt(i) == "\\") i++;
 
-next[0] = i + 1;
+next[0]=i + 1;
 return line.substring(pt, i);
 }, 1);
 
 Clazz_newMeth(C$, 'getQuotedOrUnquotedAttribute$S$S', function (line, key) {
 if (line == null  || key == null  ) return null;
 var pt = line.toLowerCase().indexOf(key.toLowerCase() + "=");
-if (pt < 0 || (pt = pt + key.length$() + 1 ) >= line.length$() ) return "";
+if (pt < 0 || (pt=pt + key.length$() + 1 ) >= line.length$() ) return "";
 var c = line.charAt(pt);
 switch (c.$c()) {
 case 39:
@@ -23280,7 +23280,7 @@ case 34:
 pt++;
 break;
 default:
-c = " ";
+c=" ";
 line += " ";
 }
 var pt1 = line.indexOf(c, pt);
@@ -23289,27 +23289,27 @@ return (pt1 < 0 ? null : line.substring(pt, pt1));
 
 Clazz_newMeth(C$, 'getCSVString$S$IA', function (line, next) {
 var i = next[1];
-if (i < 0 || (i = line.indexOf("\"", i)) < 0 ) return null;
-var pt = next[0] = i;
+if (i < 0 || (i=line.indexOf("\"", i)) < 0 ) return null;
+var pt = next[0]=i;
 var len = line.length$();
 var escaped = false;
 var haveEscape = false;
-while (++i < len && (line.charAt(i) != "\"" || (escaped = (i + 1 < len && line.charAt(i + 1) == "\"" )) ) )if (escaped) {
-escaped = false;
-haveEscape = true;
+while (++i < len && (line.charAt(i) != "\"" || (escaped=(i + 1 < len && line.charAt(i + 1) == "\"" )) ) )if (escaped) {
+escaped=false;
+haveEscape=true;
 i++;
 }
 if (i >= len) {
-next[1] = -1;
+next[1]=-1;
 return null;
-}next[1] = i + 1;
+}next[1]=i + 1;
 var s = line.substring(pt + 1, i);
 return (haveEscape ? C$.rep$S$S$S(C$.rep$S$S$S(s, "\"\"", "\u0000"), "\u0000", "\"") : s);
 }, 1);
 
 Clazz_newMeth(C$, 'isOneOf$S$S', function (key, semiList) {
 if (semiList.length$() == 0) return false;
-if (semiList.charAt(0) != ";") semiList = ";" + semiList + ";" ;
+if (semiList.charAt(0) != ";") semiList=";" + semiList + ";" ;
 return key.indexOf(";") < 0 && semiList.indexOf(';' + key + ';' ) >= 0 ;
 }, 1);
 
@@ -23326,7 +23326,7 @@ Clazz_newMeth(C$, 'rep$S$S$S', function (str, strFrom, strTo) {
 if (str == null  || strFrom.length$() == 0  || str.indexOf(strFrom) < 0 ) return str;
 var isOnce = (strTo.indexOf(strFrom) >= 0);
 do {
-str = str.$replace(strFrom, strTo);
+str=str.$replace(strFrom, strTo);
 } while (!isOnce && str.indexOf(strFrom) >= 0 );
 return str;
 }, 1);
@@ -23342,8 +23342,8 @@ return C$.formatS$S$I$I$Z$Z((I$[1]||$incl$(1)).formatDecimal$F$I(value, -1 - pre
 Clazz_newMeth(C$, 'formatS$S$I$I$Z$Z', function (value, width, precision, alignLeft, zeroPad) {
 if (value == null ) return "";
 var len = value.length$();
-if (precision != 2147483647 && precision > 0  && precision < len ) value = value.substring(0, precision);
- else if (precision < 0 && len + precision >= 0 ) value = value.substring(len + precision + 1 );
+if (precision != 2147483647 && precision > 0  && precision < len ) value=value.substring(0, precision);
+ else if (precision < 0 && len + precision >= 0 ) value=value.substring(len + precision + 1 );
 var padLength = width - value.length$();
 if (padLength <= 0) return value;
 var isNeg = (zeroPad && !alignLeft && value.charAt(0) == "-"  );
@@ -23360,7 +23360,7 @@ return sb.toString();
 
 Clazz_newMeth(C$, 'replaceWithCharacter$S$S$C', function (str, strFrom, chTo) {
 if (str == null ) return null;
-for (var i = strFrom.length$(); --i >= 0; ) str = str.$replace(strFrom.charAt(i), chTo);
+for (var i = strFrom.length$(); --i >= 0; ) str=str.$replace(strFrom.charAt(i), chTo);
 
 return str;
 }, 1);
@@ -23368,7 +23368,7 @@ return str;
 Clazz_newMeth(C$, 'replaceAllCharacters$S$S$S', function (str, strFrom, strTo) {
 for (var i = strFrom.length$(); --i >= 0; ) {
 var chFrom = strFrom.substring(i, i + 1);
-str = C$.rep$S$S$S(str, chFrom, strTo);
+str=C$.rep$S$S$S(str, chFrom, strTo);
 }
 return str;
 }, 1);
@@ -23401,23 +23401,23 @@ var s = null;
 var sb = null;
 while (true){
 if (Clazz_instanceOf(info, "java.lang.String")) {
-s = info;
+s=info;
 {
 if (typeof s == "undefined") s = "null"
 }
 if (s.indexOf("{\"") != 0) {
-s = C$.esc$S(s);
+s=C$.esc$S(s);
 }break;
 }if (Clazz_instanceOf(info, "javajs.api.JSONEncodable")) {
-if ((s = (info).toJSON()) == null ) s = "null";
+if ((s=(info).toJSON()) == null ) s="null";
 break;
-}sb = Clazz_new_((I$[2]||$incl$(2)));
+}sb=Clazz_new_((I$[2]||$incl$(2)));
 if (Clazz_instanceOf(info, "java.util.Map")) {
 sb.append$S("{ ");
 var sep = "";
 for (var key, $key = (info).keySet().iterator(); $key.hasNext()&&((key=$key.next()),1);) {
 sb.append$S(sep).append$S(C$.packageJSON$S$S(key, C$.toJSON$S$O(null, (info).get$O(key))));
-sep = ",";
+sep=",";
 }
 sb.append$S(" }");
 break;
@@ -23442,7 +23442,7 @@ sb.append$S(C$.toJSON$S$O(null, x));
 }
 sb.appendC$C("]");
 break;
-}s = C$.nonArrayString$O(info);
+}s=C$.nonArrayString$O(info);
 if (s == null ) {
 sb.append$S("[");
 var n = (I$[3]||$incl$(3)).getLength$O(info);
@@ -23452,7 +23452,7 @@ sb.append$S(C$.toJSON$S$O(null, (I$[4]||$incl$(4)).get(info, i)));
 }
 sb.append$S("]");
 break;
-}info = info.toString();
+}info=info.toString();
 }
 return C$.packageJSON$S$S(infoType, (s == null  ? sb.toString() : s));
 }, 1);
@@ -23480,13 +23480,13 @@ return (infoType == null  ? info : "\"" + infoType + "\": " + info );
 }, 1);
 
 Clazz_newMeth(C$, 'escapeUrl$S', function (url) {
-url = C$.rep$S$S$S(url, "\u000a", "");
-url = C$.rep$S$S$S(url, "%", "%25");
-url = C$.rep$S$S$S(url, "#", "%23");
-url = C$.rep$S$S$S(url, "[", "%5B");
-url = C$.rep$S$S$S(url, "\\", "%5C");
-url = C$.rep$S$S$S(url, "]", "%5D");
-url = C$.rep$S$S$S(url, " ", "%20");
+url=C$.rep$S$S$S(url, "\u000a", "");
+url=C$.rep$S$S$S(url, "%", "%25");
+url=C$.rep$S$S$S(url, "#", "%23");
+url=C$.rep$S$S$S(url, "[", "%5B");
+url=C$.rep$S$S$S(url, "\\", "%5C");
+url=C$.rep$S$S$S(url, "]", "%5D");
+url=C$.rep$S$S$S(url, " ", "%20");
 return url;
 }, 1);
 
@@ -23494,8 +23494,8 @@ Clazz_newMeth(C$, 'esc$S', function (str) {
 if (str == null  || str.length$() == 0 ) return "\"\"";
 var haveEscape = false;
 var i = 0;
-for (; i < "\\\\\u0009t\u000dr\u000an\"\"".length$(); i = i+(2)) if (str.indexOf("\\\\\u0009t\u000dr\u000an\"\"".charAt(i)) >= 0) {
-haveEscape = true;
+for (; i < "\\\\\u0009t\u000dr\u000an\"\"".length$(); i+=2) if (str.indexOf("\\\\\u0009t\u000dr\u000an\"\"".charAt(i)) >= 0) {
+haveEscape=true;
 break;
 }
 if (haveEscape) while (i < "\\\\\u0009t\u000dr\u000an\"\"".length$()){
@@ -23504,12 +23504,12 @@ var ch = "\\\\\u0009t\u000dr\u000an\"\"".charAt(i++);
 var ch2 = "\\\\\u0009t\u000dr\u000an\"\"".charAt(i++);
 var sb = Clazz_new_((I$[2]||$incl$(2)));
 var pt0 = 0;
-while ((pt = str.indexOf(ch, pt + 1)) >= 0){
+while ((pt=str.indexOf(ch, pt + 1)) >= 0){
 sb.append$S(str.substring(pt0, pt)).appendC$C("\\").appendC$C(ch2);
-pt0 = pt + 1;
+pt0=pt + 1;
 }
 sb.append$S(str.substring(pt0, str.length$()));
-str = sb.toString();
+str=sb.toString();
 }
 return "\"" + C$.escUnicode$S(str) + "\"" ;
 }, 1);
@@ -23517,7 +23517,7 @@ return "\"" + C$.escUnicode$S(str) + "\"" ;
 Clazz_newMeth(C$, 'escUnicode$S', function (str) {
 for (var i = str.length$(); --i >= 0; ) if ((str.charCodeAt(i)) > 127 ) {
 var s = "0000" + Integer.toHexString(str.charAt(i).$c());
-str = str.substring(0, i) + "\\u" + s.substring(s.length$() - 4) + str.substring(i + 1) ;
+str=str.substring(0, i) + "\\u" + s.substring(s.length$() - 4) + str.substring(i + 1) ;
 }
 return str;
 }, 1);
@@ -23563,7 +23563,7 @@ Clazz_newMeth(C$, 'fdup$S$I$I', function (f, pt, n) {
 var ch;
 var count = 0;
 for (var i = pt; --i >= 1; ) {
-if (C$.isDigit$C(ch = f.charAt(i))) continue;
+if (C$.isDigit$C(ch=f.charAt(i))) continue;
 switch (ch.$c()) {
 case 46:
 if (count++ != 0) return f;
@@ -23592,51 +23592,51 @@ var strLabel = "";
 var ich;
 var ichPercent;
 var ichKey;
-for (ich = 0; (ichPercent = strFormat.indexOf("%", ich)) >= 0 && (ichKey = strFormat.indexOf(key, ichPercent + 1)) >= 0 ; ) {
+for (ich=0; (ichPercent=strFormat.indexOf("%", ich)) >= 0 && (ichKey=strFormat.indexOf(key, ichPercent + 1)) >= 0 ; ) {
 if (ich != ichPercent) strLabel += strFormat.substring(ich, ichPercent);
-ich = ichPercent + 1;
+ich=ichPercent + 1;
 if (ichKey > ichPercent + 6) {
 strLabel += "%";
 continue;
 }try {
 var alignLeft = false;
 if (strFormat.charAt(ich) == "-") {
-alignLeft = true;
+alignLeft=true;
 ++ich;
 }var zeroPad = false;
 if (strFormat.charAt(ich) == "0") {
-zeroPad = true;
+zeroPad=true;
 ++ich;
 }var ch;
 var width = 0;
-while ((ch = strFormat.charAt(ich)) >= "0" && (ch <= "9") ){
-width = (10 * width) + (ch.$c() - 48);
+while ((ch=strFormat.charAt(ich)) >= "0" && (ch <= "9") ){
+width=(10 * width) + (ch.$c() - 48);
 ++ich;
 }
 var precision = 2147483647;
 var isExponential = false;
 if (strFormat.charAt(ich) == ".") {
 ++ich;
-if ((ch = strFormat.charAt(ich)) == "-") {
-isExponential = (strT == null );
+if ((ch=strFormat.charAt(ich)) == "-") {
+isExponential=(strT == null );
 ++ich;
-}if ((ch = strFormat.charAt(ich)) >= "0" && ch <= "9" ) {
-precision = ch.$c() - 48;
+}if ((ch=strFormat.charAt(ich)) >= "0" && ch <= "9" ) {
+precision=ch.$c() - 48;
 ++ich;
-}if (isExponential) precision = -precision;
+}if (isExponential) precision=-precision;
 }var st = strFormat.substring(ich, ich + len);
 if (!st.equals$O(key)) {
-ich = ichPercent + 1;
+ich=ichPercent + 1;
 strLabel += "%";
 continue;
-}ich = ich+(len);
+}ich+=len;
 if (!Float.isNaN(floatT)) strLabel += C$.formatF$F$I$I$Z$Z(floatT, width, precision, alignLeft, zeroPad);
  else if (strT != null ) strLabel += C$.formatS$S$I$I$Z$Z(strT, width, precision, alignLeft, zeroPad);
  else if (!Double.isNaN(doubleT)) strLabel += C$.formatD$D$I$I$Z$Z$Z(doubleT, width, precision - 1, alignLeft, zeroPad, true);
 if (doOne) break;
 } catch (ioobe) {
 if (Clazz_exceptionOf(ioobe, "java.lang.IndexOutOfBoundsException")){
-ich = ichPercent;
+ich=ichPercent;
 break;
 } else {
 throw ioobe;
@@ -23667,51 +23667,51 @@ for (var o = 0; o < n; o++) {
 if (values[o] == null ) continue;
 switch ((list.charCodeAt(o))) {
 case 115:
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "s", values[o], NaN, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "s", values[o], NaN, NaN, true);
 break;
 case 102:
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "f", null, (values[o]).floatValue(), NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "f", null, (values[o]).floatValue(), NaN, true);
 break;
 case 105:
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "d", "" + values[o], NaN, NaN, true);
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "i", "" + values[o], NaN, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "d", "" + values[o], NaN, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "i", "" + values[o], NaN, NaN, true);
 break;
 case 100:
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "e", null, NaN, (values[o]).doubleValue(), true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "e", null, NaN, (values[o]).doubleValue(), true);
 break;
 case 112:
 var pVal = values[o];
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "p", null, pVal.x, NaN, true);
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "p", null, pVal.y, NaN, true);
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "p", null, pVal.z, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "p", null, pVal.x, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "p", null, pVal.y, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "p", null, pVal.z, NaN, true);
 break;
 case 113:
 var qVal = values[o];
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "q", null, qVal.x, NaN, true);
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "q", null, qVal.y, NaN, true);
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "q", null, qVal.z, NaN, true);
-strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "q", null, qVal.w, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "q", null, qVal.x, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "q", null, qVal.y, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "q", null, qVal.z, NaN, true);
+strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "q", null, qVal.w, NaN, true);
 break;
 case 83:
 var sVal = values[o];
-for (var i = 0; i < sVal.length; i++) strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "s", sVal[i], NaN, NaN, true);
+for (var i = 0; i < sVal.length; i++) strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "s", sVal[i], NaN, NaN, true);
 
 break;
 case 70:
 var fVal = values[o];
-for (var i = 0; i < fVal.length; i++) strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "f", null, fVal[i], NaN, true);
+for (var i = 0; i < fVal.length; i++) strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "f", null, fVal[i], NaN, true);
 
 break;
 case 73:
 var iVal = values[o];
-for (var i = 0; i < iVal.length; i++) strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "d", "" + iVal[i], NaN, NaN, true);
+for (var i = 0; i < iVal.length; i++) strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "d", "" + iVal[i], NaN, NaN, true);
 
-for (var i = 0; i < iVal.length; i++) strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "i", "" + iVal[i], NaN, NaN, true);
+for (var i = 0; i < iVal.length; i++) strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "i", "" + iVal[i], NaN, NaN, true);
 
 break;
 case 68:
 var dVal = values[o];
-for (var i = 0; i < dVal.length; i++) strFormat = C$.formatString$S$S$S$F$D$Z(strFormat, "e", null, NaN, dVal[i], true);
+for (var i = 0; i < dVal.length; i++) strFormat=C$.formatString$S$S$S$F$D$Z(strFormat, "e", null, NaN, dVal[i], true);
 
 }
 }
@@ -23728,9 +23728,9 @@ return C$.rep$S$S$S(strFormat, "%", "?");
 
 Clazz_newMeth(C$, 'formatCheck$S', function (strFormat) {
 if (strFormat == null  || strFormat.indexOf("p") < 0 && strFormat.indexOf("q") < 0  ) return strFormat;
-strFormat = C$.rep$S$S$S(strFormat, "%%", "\u0001");
-strFormat = C$.rep$S$S$S(strFormat, "%p", "%6.2p");
-strFormat = C$.rep$S$S$S(strFormat, "%q", "%6.2q");
+strFormat=C$.rep$S$S$S(strFormat, "%%", "\u0001");
+strFormat=C$.rep$S$S$S(strFormat, "%p", "%6.2p");
+strFormat=C$.rep$S$S$S(strFormat, "%q", "%6.2q");
 var format = C$.split$S$S(strFormat, "%");
 var sb = Clazz_new_((I$[2]||$incl$(2)));
 sb.append$S(format[0]);
@@ -23738,8 +23738,8 @@ for (var i = 1; i < format.length; i++) {
 var f = "%" + format[i];
 var pt;
 if (f.length$() >= 3) {
-if ((pt = f.indexOf("p")) >= 0) f = C$.fdup$S$I$I(f, pt, 3);
-if ((pt = f.indexOf("q")) >= 0) f = C$.fdup$S$I$I(f, pt, 4);
+if ((pt=f.indexOf("p")) >= 0) f=C$.fdup$S$I$I(f, pt, 3);
+if ((pt=f.indexOf("q")) >= 0) f=C$.fdup$S$I$I(f, pt, 4);
 }sb.append$S(f);
 }
 return sb.toString().$replace("\u0001", "%");
@@ -23758,7 +23758,7 @@ s.append$S(s2);
 }, 1);
 
 Clazz_newMeth(C$, 'safeTruncate$F$I', function (f, n) {
-if (f > -0.001  && f < 0.001  ) f = 0;
+if (f > -0.001  && f < 0.001  ) f=0;
 return (new Float(f).toString() + "         ").substring(0, n);
 }, 1);
 
@@ -23782,15 +23782,15 @@ var qqqq = "????";
 var nq = 4;
 while (nq < sLen){
 qqqq += qqqq;
-nq = nq+(4);
+nq+=4;
 }
 if (checkStar) {
 if (isStar0) {
-match = qqqq + match.substring(1);
-mLen = mLen+(nq - 1);
+match=qqqq + match.substring(1);
+mLen+=nq - 1;
 }if (isStar1) {
-match = match.substring(0, mLen - 1) + qqqq;
-mLen = mLen+(nq - 1);
+match=match.substring(0, mLen - 1) + qqqq;
+mLen+=nq - 1;
 }}if (mLen < sLen) return false;
 var ich = 0;
 while (mLen > sLen){
@@ -23814,7 +23814,7 @@ var n = list.size();
 for (var i = 0; i < n; i++) {
 var name = list.get$I(i);
 var newName = newList.get$I(i);
-if (!newName.equals$O(name)) s = C$.rep$S$S$S(s, "\"" + name + "\"" , "\"" + newName + "\"" );
+if (!newName.equals$O(name)) s=C$.rep$S$S$S(s, "\"" + name + "\"" , "\"" + newName + "\"" );
 }
 return s;
 }, 1);
@@ -23824,7 +23824,7 @@ var n = list.size();
 for (var i = 0; i < n; i++) {
 var name = list.get$I(i);
 var newName = newList.get$I(i);
-if (!newName.equals$O(name)) s = C$.rep$S$S$S(s, name, newName);
+if (!newName.equals$O(name)) s=C$.rep$S$S$S(s, name, newName);
 }
 return s;
 }, 1);
@@ -23860,9 +23860,9 @@ return (c >= 28 && c <= 32  || c >= 9 && c <= 13  );
 }, 1);
 
 Clazz_newMeth(C$, 'fixPtFloats$javajs_util_T3$F', function (pt, f) {
-pt.x = Math.round(pt.x * f) / f;
-pt.y = Math.round(pt.y * f) / f;
-pt.z = Math.round(pt.z * f) / f;
+pt.x=Math.round(pt.x * f) / f;
+pt.y=Math.round(pt.y * f) / f;
+pt.z=Math.round(pt.z * f) / f;
 }, 1);
 
 Clazz_newMeth(C$, 'fixDouble$D$D', function (d, f) {
@@ -23876,7 +23876,7 @@ return (pt < 0 ? C$.parseFloat$S(s) : C$.parseFloat$S(s.substring(0, pt)) / C$.p
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:19
+//Created 2018-05-24 08:45:57
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.AbstractAction','javax.swing.UIManager','java.awt.event.ActionListener',['javax.swing.AbstractButton','.ButtonActionPropertyChangeListener'],'javax.swing.SwingUtilities','javax.swing.OverlayLayout','javax.swing.event.ChangeListener','javax.swing.event.ChangeEvent','java.awt.event.ActionEvent','java.awt.event.ItemListener','java.awt.event.ItemEvent',['javax.swing.AbstractButton','.Handler']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AbstractButton", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -23964,7 +23964,7 @@ this.hideActionText = false;
 
 Clazz_newMeth(C$, 'setHideActionText$Z', function (hideActionText) {
 if (hideActionText != this.hideActionText ) {
-this.hideActionText = hideActionText;
+this.hideActionText=hideActionText;
 if (this.getAction() != null ) {
 p$.setTextFromAction$javax_swing_Action$Z.apply(this, [this.getAction(), false]);
 }this.firePropertyChange$S$Z$Z("hideActionText", !hideActionText, hideActionText);
@@ -23980,7 +23980,7 @@ return this.text;
 
 Clazz_newMeth(C$, 'setText$S', function (text) {
 var oldValue = this.text;
-this.text = text;
+this.text=text;
 this.firePropertyChange$S$O$O("text", oldValue, text);
 p$.updateDisplayedMnemonicIndex$S$I.apply(this, [text, this.getMnemonic()]);
 if (text == null  || oldValue == null   || !text.equals$O(oldValue) ) {
@@ -24016,13 +24016,13 @@ this.model.setArmed$Z(false);
 
 Clazz_newMeth(C$, 'setMargin$java_awt_Insets', function (m) {
 if (Clazz_instanceOf(m, "javax.swing.plaf.UIResource")) {
-this.defaultMargin = m;
+this.defaultMargin=m;
 } else if (Clazz_instanceOf(this.margin, "javax.swing.plaf.UIResource")) {
-this.defaultMargin = this.margin;
+this.defaultMargin=this.margin;
 }if (m == null  && this.defaultMargin != null  ) {
-m = this.defaultMargin;
+m=this.defaultMargin;
 }var old = this.margin;
-this.margin = m;
+this.margin=m;
 this.firePropertyChange$S$O$O("margin", old, m);
 if (old == null  || !old.equals$O(m) ) {
 this.revalidate();
@@ -24039,9 +24039,9 @@ return this.defaultIcon;
 
 Clazz_newMeth(C$, 'setIcon$javax_swing_Icon', function (defaultIcon) {
 var oldValue = this.defaultIcon;
-this.defaultIcon = defaultIcon;
+this.defaultIcon=defaultIcon;
 if (defaultIcon !== oldValue  && (Clazz_instanceOf(this.disabledIcon, "javax.swing.plaf.UIResource")) ) {
-this.disabledIcon = null;
+this.disabledIcon=null;
 }this.firePropertyChange$S$O$O("icon", oldValue, defaultIcon);
 if (defaultIcon !== oldValue ) {
 if (defaultIcon == null  || oldValue == null   || defaultIcon.getIconWidth() != oldValue.getIconWidth()  || defaultIcon.getIconHeight() != oldValue.getIconHeight() ) {
@@ -24055,7 +24055,7 @@ return this.pressedIcon;
 
 Clazz_newMeth(C$, 'setPressedIcon$javax_swing_Icon', function (pressedIcon) {
 var oldValue = this.pressedIcon;
-this.pressedIcon = pressedIcon;
+this.pressedIcon=pressedIcon;
 this.firePropertyChange$S$O$O("pressedIcon", oldValue, pressedIcon);
 if (pressedIcon !== oldValue ) {
 if (this.getModel().isPressed()) {
@@ -24068,9 +24068,9 @@ return this.selectedIcon;
 
 Clazz_newMeth(C$, 'setSelectedIcon$javax_swing_Icon', function (selectedIcon) {
 var oldValue = this.selectedIcon;
-this.selectedIcon = selectedIcon;
+this.selectedIcon=selectedIcon;
 if (selectedIcon !== oldValue  && Clazz_instanceOf(this.disabledSelectedIcon, "javax.swing.plaf.UIResource") ) {
-this.disabledSelectedIcon = null;
+this.disabledSelectedIcon=null;
 }this.firePropertyChange$S$O$O("selectedIcon", oldValue, selectedIcon);
 if (selectedIcon !== oldValue ) {
 if (this.isSelected()) {
@@ -24083,7 +24083,7 @@ return this.rolloverIcon;
 
 Clazz_newMeth(C$, 'setRolloverIcon$javax_swing_Icon', function (rolloverIcon) {
 var oldValue = this.rolloverIcon;
-this.rolloverIcon = rolloverIcon;
+this.rolloverIcon=rolloverIcon;
 this.firePropertyChange$S$O$O("rolloverIcon", oldValue, rolloverIcon);
 this.setRolloverEnabled$Z(true);
 if (rolloverIcon !== oldValue ) {
@@ -24096,7 +24096,7 @@ return this.rolloverSelectedIcon;
 
 Clazz_newMeth(C$, 'setRolloverSelectedIcon$javax_swing_Icon', function (rolloverSelectedIcon) {
 var oldValue = this.rolloverSelectedIcon;
-this.rolloverSelectedIcon = rolloverSelectedIcon;
+this.rolloverSelectedIcon=rolloverSelectedIcon;
 this.firePropertyChange$S$O$O("rolloverSelectedIcon", oldValue, rolloverSelectedIcon);
 this.setRolloverEnabled$Z(true);
 if (rolloverSelectedIcon !== oldValue ) {
@@ -24106,7 +24106,7 @@ this.repaint();
 
 Clazz_newMeth(C$, 'getDisabledIcon', function () {
 if (this.disabledIcon == null ) {
-this.disabledIcon = (I$[2]||$incl$(2)).getLookAndFeel().getDisabledIcon$javax_swing_JComponent$javax_swing_Icon(this, this.getIcon());
+this.disabledIcon=(I$[2]||$incl$(2)).getLookAndFeel().getDisabledIcon$javax_swing_JComponent$javax_swing_Icon(this, this.getIcon());
 if (this.disabledIcon != null ) {
 this.firePropertyChange$S$O$O("disabledIcon", null, this.disabledIcon);
 }}return this.disabledIcon;
@@ -24114,7 +24114,7 @@ this.firePropertyChange$S$O$O("disabledIcon", null, this.disabledIcon);
 
 Clazz_newMeth(C$, 'setDisabledIcon$javax_swing_Icon', function (disabledIcon) {
 var oldValue = this.disabledIcon;
-this.disabledIcon = disabledIcon;
+this.disabledIcon=disabledIcon;
 this.firePropertyChange$S$O$O("disabledIcon", oldValue, disabledIcon);
 if (disabledIcon !== oldValue ) {
 if (!this.isEnabled()) {
@@ -24124,7 +24124,7 @@ this.repaint();
 Clazz_newMeth(C$, 'getDisabledSelectedIcon', function () {
 if (this.disabledSelectedIcon == null ) {
 if (this.selectedIcon != null ) {
-this.disabledSelectedIcon = (I$[2]||$incl$(2)).getLookAndFeel().getDisabledSelectedIcon$javax_swing_JComponent$javax_swing_Icon(this, this.getSelectedIcon());
+this.disabledSelectedIcon=(I$[2]||$incl$(2)).getLookAndFeel().getDisabledSelectedIcon$javax_swing_JComponent$javax_swing_Icon(this, this.getSelectedIcon());
 } else {
 return this.getDisabledIcon();
 }}return this.disabledSelectedIcon;
@@ -24132,7 +24132,7 @@ return this.getDisabledIcon();
 
 Clazz_newMeth(C$, 'setDisabledSelectedIcon$javax_swing_Icon', function (disabledSelectedIcon) {
 var oldValue = this.disabledSelectedIcon;
-this.disabledSelectedIcon = disabledSelectedIcon;
+this.disabledSelectedIcon=disabledSelectedIcon;
 this.firePropertyChange$S$O$O("disabledSelectedIcon", oldValue, disabledSelectedIcon);
 if (disabledSelectedIcon !== oldValue ) {
 if (disabledSelectedIcon == null  || oldValue == null   || disabledSelectedIcon.getIconWidth() != oldValue.getIconWidth()  || disabledSelectedIcon.getIconHeight() != oldValue.getIconHeight() ) {
@@ -24148,7 +24148,7 @@ return this.verticalAlignment;
 Clazz_newMeth(C$, 'setVerticalAlignment$I', function (alignment) {
 if (alignment == this.verticalAlignment) return;
 var oldValue = this.verticalAlignment;
-this.verticalAlignment = this.checkVerticalKey$I$S(alignment, "verticalAlignment");
+this.verticalAlignment=this.checkVerticalKey$I$S(alignment, "verticalAlignment");
 this.firePropertyChange$S$I$I("verticalAlignment", oldValue, this.verticalAlignment);
 this.repaint();
 });
@@ -24160,7 +24160,7 @@ return this.horizontalAlignment;
 Clazz_newMeth(C$, 'setHorizontalAlignment$I', function (alignment) {
 if (alignment == this.horizontalAlignment) return;
 var oldValue = this.horizontalAlignment;
-this.horizontalAlignment = this.checkHorizontalKey$I$S(alignment, "horizontalAlignment");
+this.horizontalAlignment=this.checkHorizontalKey$I$S(alignment, "horizontalAlignment");
 this.firePropertyChange$S$I$I("horizontalAlignment", oldValue, this.horizontalAlignment);
 this.repaint();
 });
@@ -24172,7 +24172,7 @@ return this.verticalTextPosition;
 Clazz_newMeth(C$, 'setVerticalTextPosition$I', function (textPosition) {
 if (textPosition == this.verticalTextPosition) return;
 var oldValue = this.verticalTextPosition;
-this.verticalTextPosition = this.checkVerticalKey$I$S(textPosition, "verticalTextPosition");
+this.verticalTextPosition=this.checkVerticalKey$I$S(textPosition, "verticalTextPosition");
 this.firePropertyChange$S$I$I("verticalTextPosition", oldValue, this.verticalTextPosition);
 this.revalidate();
 this.repaint();
@@ -24185,7 +24185,7 @@ return this.horizontalTextPosition;
 Clazz_newMeth(C$, 'setHorizontalTextPosition$I', function (textPosition) {
 if (textPosition == this.horizontalTextPosition) return;
 var oldValue = this.horizontalTextPosition;
-this.horizontalTextPosition = this.checkHorizontalKey$I$S(textPosition, "horizontalTextPosition");
+this.horizontalTextPosition=this.checkHorizontalKey$I$S(textPosition, "horizontalTextPosition");
 this.firePropertyChange$S$I$I("horizontalTextPosition", oldValue, this.horizontalTextPosition);
 this.revalidate();
 this.repaint();
@@ -24197,8 +24197,8 @@ return this.iconTextGap;
 
 Clazz_newMeth(C$, 'setIconTextGap$I', function (iconTextGap) {
 var oldValue = this.iconTextGap;
-this.iconTextGap = iconTextGap;
-this.iconTextGapSet = true;
+this.iconTextGap=iconTextGap;
+this.iconTextGapSet=true;
 this.firePropertyChange$S$I$I("iconTextGap", oldValue, iconTextGap);
 if (iconTextGap != oldValue) {
 this.revalidate();
@@ -24232,23 +24232,23 @@ this.getModel().setActionCommand$S(actionCommand);
 Clazz_newMeth(C$, 'getActionCommand', function () {
 var ac = this.getModel().getActionCommand();
 if (ac == null ) {
-ac = this.getText();
+ac=this.getText();
 }return ac;
 });
 
 Clazz_newMeth(C$, 'setAction$javax_swing_Action', function (a) {
 var oldValue = this.getAction();
 if (this.$action == null  || !this.$action.equals$O(a) ) {
-this.$action = a;
+this.$action=a;
 if (oldValue != null ) {
 this.removeActionListener$java_awt_event_ActionListener(oldValue);
 oldValue.removePropertyChangeListener$java_beans_PropertyChangeListener(this.actionPropertyChangeListener);
-this.actionPropertyChangeListener = null;
+this.actionPropertyChangeListener=null;
 }this.configurePropertiesFromAction$javax_swing_Action(this.$action);
 if (this.$action != null ) {
 if (!p$.isListener$Class$java_awt_event_ActionListener.apply(this, [Clazz_getClass((I$[3]||$incl$(3)),['actionPerformed$java_awt_event_ActionEvent']), this.$action])) {
 this.addActionListener$java_awt_event_ActionListener(this.$action);
-}this.actionPropertyChangeListener = this.createActionPropertyChangeListener$javax_swing_Action(this.$action);
+}this.actionPropertyChangeListener=this.createActionPropertyChangeListener$javax_swing_Action(this.$action);
 this.$action.addPropertyChangeListener$java_beans_PropertyChangeListener(this.actionPropertyChangeListener);
 }this.firePropertyChange$S$O$O("action", oldValue, this.$action);
 }});
@@ -24256,9 +24256,9 @@ this.$action.addPropertyChangeListener$java_beans_PropertyChangeListener(this.ac
 Clazz_newMeth(C$, 'isListener$Class$java_awt_event_ActionListener', function (c, a) {
 var isListener = false;
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === c  && listeners[i + 1] === a  ) {
-isListener = true;
+isListener=true;
 }}
 return isListener;
 });
@@ -24316,12 +24316,12 @@ var iValue = (a == null ) ? null : a.getValue$S("SwingDisplayedMnemonicIndexKey"
 if (fromPropertyChange || iValue != null  ) {
 var value;
 if (iValue == null ) {
-value = -1;
+value=-1;
 } else {
-value = (iValue).intValue();
+value=(iValue).intValue();
 var text = this.getText();
 if (text == null  || value >= text.length$() ) {
-value = -1;
+value=-1;
 }}this.setDisplayedMnemonicIndex$I(value);
 }});
 
@@ -24341,9 +24341,9 @@ this.setText$S(a.getValue$S("Name"));
 Clazz_newMeth(C$, 'setIconFromAction$javax_swing_Action', function (a) {
 var icon = null;
 if (a != null ) {
-icon = a.getValue$S("SwingLargeIconKey");
+icon=a.getValue$S("SwingLargeIconKey");
 if (icon == null ) {
-icon = a.getValue$S("SmallIcon");
+icon=a.getValue$S("SmallIcon");
 }}this.setIcon$javax_swing_Icon(icon);
 });
 
@@ -24363,7 +24363,7 @@ this.setActionCommand$S((a != null ) ? a.getValue$S("ActionCommandKey") : null);
 Clazz_newMeth(C$, 'setSelectedFromAction$javax_swing_Action', function (a) {
 var selected = false;
 if (a != null ) {
-selected = (I$[1]||$incl$(1)).isSelected$javax_swing_Action(a);
+selected=(I$[1]||$incl$(1)).isSelected$javax_swing_Action(a);
 }if (selected != this.isSelected() ) {
 this.setSelected$Z(selected);
 if (!selected && this.isSelected() ) {
@@ -24387,8 +24387,8 @@ return this.$paintBorder;
 
 Clazz_newMeth(C$, 'setBorderPainted$Z', function (b) {
 var oldValue = this.$paintBorder;
-this.$paintBorder = b;
-this.borderPaintedSet = true;
+this.$paintBorder=b;
+this.borderPaintedSet=true;
 this.firePropertyChange$S$Z$Z("borderPainted", oldValue, this.$paintBorder);
 if (b != oldValue ) {
 this.revalidate();
@@ -24406,7 +24406,7 @@ return this.paintFocus;
 
 Clazz_newMeth(C$, 'setFocusPainted$Z', function (b) {
 var oldValue = this.paintFocus;
-this.paintFocus = b;
+this.paintFocus=b;
 this.firePropertyChange$S$Z$Z("focusPainted", oldValue, this.paintFocus);
 if (b != oldValue  && this.isFocusOwner() ) {
 this.revalidate();
@@ -24419,8 +24419,8 @@ return this.contentAreaFilled;
 
 Clazz_newMeth(C$, 'setContentAreaFilled$Z', function (b) {
 var oldValue = this.contentAreaFilled;
-this.contentAreaFilled = b;
-this.contentAreaFilledSet = true;
+this.contentAreaFilled=b;
+this.contentAreaFilledSet=true;
 this.firePropertyChange$S$Z$Z("contentAreaFilled", oldValue, this.contentAreaFilled);
 if (b != oldValue ) {
 this.repaint();
@@ -24432,8 +24432,8 @@ return this.rolloverEnabled;
 
 Clazz_newMeth(C$, 'setRolloverEnabled$Z', function (b) {
 var oldValue = this.rolloverEnabled;
-this.rolloverEnabled = b;
-this.rolloverEnabledSet = true;
+this.rolloverEnabled=b;
+this.rolloverEnabledSet=true;
 this.firePropertyChange$S$Z$Z("rolloverEnabled", oldValue, this.rolloverEnabled);
 if (b != oldValue ) {
 this.repaint();
@@ -24450,20 +24450,20 @@ p$.updateMnemonicProperties.apply(this, []);
 
 Clazz_newMeth(C$, 'setMnemonic$C', function (mnemonic) {
 var vk = mnemonic.$c();
-if (vk >= 97  && vk <= 122  ) vk = vk-(32);
+if (vk >= 97  && vk <= 122  ) vk-=32;
 this.setMnemonic$I(vk);
 });
 
 Clazz_newMeth(C$, 'setDisplayedMnemonicIndex$I', function (index) {
 var oldValue = this.mnemonicIndex;
 if (index == -1) {
-this.mnemonicIndex = -1;
+this.mnemonicIndex=-1;
 } else {
 var text = this.getText();
 var textLength = (text == null ) ? 0 : text.length$();
 if (index < -1 || index >= textLength ) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["index == " + index]);
-}}this.mnemonicIndex = index;
+}}this.mnemonicIndex=index;
 this.firePropertyChange$S$I$I("displayedMnemonicIndex", oldValue, index);
 if (index != oldValue) {
 this.revalidate();
@@ -24482,7 +24482,7 @@ Clazz_newMeth(C$, 'updateMnemonicProperties', function () {
 var newMnemonic = this.model.getMnemonic();
 if (this.mnemonic != newMnemonic) {
 var oldValue = this.mnemonic;
-this.mnemonic = newMnemonic;
+this.mnemonic=newMnemonic;
 this.firePropertyChange$S$I$I("mnemonic", oldValue, this.mnemonic);
 p$.updateDisplayedMnemonicIndex$S$I.apply(this, [this.getText(), this.mnemonic]);
 this.revalidate();
@@ -24492,7 +24492,7 @@ this.repaint();
 Clazz_newMeth(C$, 'setMultiClickThreshhold$J', function (threshhold) {
 if (threshhold < 0) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["threshhold must be >= 0"]);
-}this.multiClickThreshhold = threshhold;
+}this.multiClickThreshhold=threshhold;
 });
 
 Clazz_newMeth(C$, 'getMultiClickThreshhold', function () {
@@ -24509,21 +24509,21 @@ if (oldModel != null ) {
 oldModel.removeChangeListener$javax_swing_event_ChangeListener(this.changeListener);
 oldModel.removeActionListener$java_awt_event_ActionListener(this.actionListener);
 oldModel.removeItemListener$java_awt_event_ItemListener(this.itemListener);
-this.changeListener = null;
-this.actionListener = null;
-this.itemListener = null;
-}this.model = newModel;
+this.changeListener=null;
+this.actionListener=null;
+this.itemListener=null;
+}this.model=newModel;
 if (newModel != null ) {
-this.changeListener = this.createChangeListener();
-this.actionListener = this.createActionListener();
-this.itemListener = this.createItemListener();
+this.changeListener=this.createChangeListener();
+this.actionListener=this.createActionListener();
+this.itemListener=this.createItemListener();
 newModel.addChangeListener$javax_swing_event_ChangeListener(this.changeListener);
 newModel.addActionListener$java_awt_event_ActionListener(this.actionListener);
 newModel.addItemListener$java_awt_event_ItemListener(this.itemListener);
 p$.updateMnemonicProperties.apply(this, []);
 C$.superclazz.prototype.setEnabled$Z.apply(this, [newModel.isEnabled()]);
 } else {
-this.mnemonic = "\u0000".$c();
+this.mnemonic="\u0000".$c();
 }p$.updateDisplayedMnemonicIndex$S$I.apply(this, [this.getText(), this.mnemonic]);
 this.firePropertyChange$S$O$O("model", oldModel, newModel);
 if (newModel !== oldModel ) {
@@ -24550,7 +24550,7 @@ this.setLayout$java_awt_LayoutManager(Clazz_new_((I$[6]||$incl$(6)).c$$java_awt_
 });
 
 Clazz_newMeth(C$, 'setLayout$java_awt_LayoutManager', function (mgr) {
-this.$setLayout = true;
+this.$setLayout=true;
 C$.superclazz.prototype.setLayout$java_awt_LayoutManager.apply(this, [mgr]);
 });
 
@@ -24568,9 +24568,9 @@ return (this.listenerList.getListeners$Class(Clazz_getClass((I$[7]||$incl$(7)),[
 
 Clazz_newMeth(C$, 'fireStateChanged', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[7]||$incl$(7)),['stateChanged$javax_swing_event_ChangeEvent']) ) {
-if (this.changeEvent == null ) this.changeEvent = Clazz_new_((I$[8]||$incl$(8)).c$$O,[this]);
+if (this.changeEvent == null ) this.changeEvent=Clazz_new_((I$[8]||$incl$(8)).c$$O,[this]);
 (listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -24597,13 +24597,13 @@ return p$.getHandler.apply(this, []);
 Clazz_newMeth(C$, 'fireActionPerformed$java_awt_event_ActionEvent', function (event) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[3]||$incl$(3)),['actionPerformed$java_awt_event_ActionEvent']) ) {
 if (e == null ) {
 var actionCommand = event.getActionCommand();
 if (actionCommand == null ) {
-actionCommand = this.getActionCommand();
-}e = Clazz_new_((I$[9]||$incl$(9)).c$$O$I$S$J$I,[this, 1001, actionCommand, event.getWhen(), event.getModifiers()]);
+actionCommand=this.getActionCommand();
+}e=Clazz_new_((I$[9]||$incl$(9)).c$$O$I$S$J$I,[this, 1001, actionCommand, event.getWhen(), event.getModifiers()]);
 }(listeners[i + 1]).actionPerformed$java_awt_event_ActionEvent(e);
 }}
 });
@@ -24611,10 +24611,10 @@ actionCommand = this.getActionCommand();
 Clazz_newMeth(C$, 'fireItemStateChanged$java_awt_event_ItemEvent', function (event) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[10]||$incl$(10)),['itemStateChanged$java_awt_event_ItemEvent']) ) {
 if (e == null ) {
-e = Clazz_new_((I$[11]||$incl$(11)).c$$java_awt_ItemSelectable$I$O$I,[this, 701, this, event.getStateChange()]);
+e=Clazz_new_((I$[11]||$incl$(11)).c$$java_awt_ItemSelectable$I$O$I,[this, 701, this, event.getStateChange()]);
 }(listeners[i + 1]).itemStateChanged$java_awt_event_ItemEvent(e);
 }}
 });
@@ -24658,7 +24658,7 @@ Clazz_newMeth(C$, 'getSelectedObjects', function () {
 if (this.isSelected() == false ) {
 return null;
 }var selectedObjects = Clazz_array(java.lang.Object, [1]);
-selectedObjects[0] = this.getText();
+selectedObjects[0]=this.getText();
 return selectedObjects;
 });
 
@@ -24667,7 +24667,7 @@ if (text != null ) {
 this.setText$S(text);
 }if (icon != null ) {
 this.setIcon$javax_swing_Icon(icon);
-}this.uiClassID = uid;
+}this.uiClassID=uid;
 this.updateUI();
 this.setAlignmentX$F(0.0);
 this.setAlignmentY$F(0.5);
@@ -24679,18 +24679,18 @@ if (iconDisplayed == null ) {
 return false;
 }if (!this.model.isEnabled()) {
 if (this.model.isSelected()) {
-iconDisplayed = this.getDisabledSelectedIcon();
+iconDisplayed=this.getDisabledSelectedIcon();
 } else {
-iconDisplayed = this.getDisabledIcon();
+iconDisplayed=this.getDisabledIcon();
 }} else if (this.model.isPressed() && this.model.isArmed() ) {
-iconDisplayed = this.getPressedIcon();
+iconDisplayed=this.getPressedIcon();
 } else if (this.isRolloverEnabled() && this.model.isRollover() ) {
 if (this.model.isSelected()) {
-iconDisplayed = this.getRolloverSelectedIcon();
+iconDisplayed=this.getRolloverSelectedIcon();
 } else {
-iconDisplayed = this.getRolloverIcon();
+iconDisplayed=this.getRolloverIcon();
 }} else if (this.model.isSelected()) {
-iconDisplayed = this.getSelectedIcon();
+iconDisplayed=this.getSelectedIcon();
 }if (!(I$[5]||$incl$(5)).doesIconReferenceImage$javax_swing_Icon$java_awt_Image(iconDisplayed, img)) {
 return false;
 }return C$.superclazz.prototype.imageUpdate$java_awt_Image$I$I$I$I$I.apply(this, [img, infoflags, x, y, w, h]);
@@ -24700,19 +24700,19 @@ Clazz_newMeth(C$, 'setUIProperty$S$O', function (propertyName, value) {
 if (propertyName == "borderPainted") {
 if (!this.borderPaintedSet) {
 this.setBorderPainted$Z((value).booleanValue());
-this.borderPaintedSet = false;
+this.borderPaintedSet=false;
 }} else if (propertyName == "rolloverEnabled") {
 if (!this.rolloverEnabledSet) {
 this.setRolloverEnabled$Z((value).booleanValue());
-this.rolloverEnabledSet = false;
+this.rolloverEnabledSet=false;
 }} else if (propertyName == "iconTextGap") {
 if (!this.iconTextGapSet) {
 this.setIconTextGap$I((value).intValue());
-this.iconTextGapSet = false;
+this.iconTextGapSet=false;
 }} else if (propertyName == "contentAreaFilled") {
 if (!this.contentAreaFilledSet) {
 this.setContentAreaFilled$Z((value).booleanValue());
-this.contentAreaFilledSet = false;
+this.contentAreaFilledSet=false;
 }} else {
 C$.superclazz.prototype.setUIProperty$S$O.apply(this, [propertyName, value]);
 }});
@@ -24733,7 +24733,7 @@ return C$.superclazz.prototype.paramString.apply(this, []) + ",defaultIcon=" + d
 
 Clazz_newMeth(C$, 'getHandler', function () {
 if (this.handler == null ) {
-this.handler = Clazz_new_((I$[12]||$incl$(12)), [this, null]);
+this.handler=Clazz_new_((I$[12]||$incl$(12)), [this, null]);
 }return this.handler;
 });
 ;
@@ -24819,7 +24819,7 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:22
+//Created 2018-05-24 08:46:05
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.ArrayTable','java.util.HashMap']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "ActionMap");
 
@@ -24837,7 +24837,7 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz_newMeth(C$, 'setParent$javax_swing_ActionMap', function (map) {
-this.parent = map;
+this.parent=map;
 });
 
 Clazz_newMeth(C$, 'getParent', function () {
@@ -24851,7 +24851,7 @@ return;
 this.remove$O(key);
 } else {
 if (this.arrayTable == null ) {
-this.arrayTable = Clazz_new_((I$[1]||$incl$(1)));
+this.arrayTable=Clazz_new_((I$[1]||$incl$(1)));
 }this.arrayTable.put$O$O(key, action);
 }});
 
@@ -24903,16 +24903,16 @@ return keys;
 return pKeys;
 }var keyMap = Clazz_new_((I$[2]||$incl$(2)));
 var counter;
-for (counter = keys.length - 1; counter >= 0; counter--) {
+for (counter=keys.length - 1; counter >= 0; counter--) {
 keyMap.put$TK$TV(keys[counter], keys[counter]);
 }
-for (counter = pKeys.length - 1; counter >= 0; counter--) {
+for (counter=pKeys.length - 1; counter >= 0; counter--) {
 keyMap.put$TK$TV(pKeys[counter], pKeys[counter]);
 }
 return keyMap.keySet().toArray();
 });
 })();
-//Created 2018-05-15 01:02:22
+//Created 2018-05-24 08:46:06
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.util.Hashtable']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "ArrayTable", null, null, 'Cloneable');
 var p$=C$.prototype;
@@ -24935,15 +24935,15 @@ C$.$init$.apply(this);
 
 Clazz_newMeth(C$, 'put$O$O', function (key, value) {
 if (this.table == null ) {
-this.table = Clazz_array(java.lang.Object, -1, [key, value]);
+this.table=Clazz_array(java.lang.Object, -1, [key, value]);
 } else {
 var size = this.size();
 if (size < 8) {
 if (this.containsKey$O(key)) {
 var tmp = this.table;
-for (var i = 0; i < tmp.length - 1; i = i+(2)) {
+for (var i = 0; i < tmp.length - 1; i+=2) {
 if (tmp[i].equals$O(key)) {
-tmp[i + 1] = value;
+tmp[i + 1]=value;
 break;
 }}
 } else {
@@ -24951,9 +24951,9 @@ var array = this.table;
 var i = array.length;
 var tmp = Clazz_array(java.lang.Object, [i + 2]);
 System.arraycopy(array, 0, tmp, 0, i);
-tmp[i] = key;
-tmp[i + 1] = value;
-this.table = tmp;
+tmp[i]=key;
+tmp[i + 1]=value;
+this.table=tmp;
 }} else {
 if ((size == 8) && p$.isArray.apply(this, []) ) {
 p$.grow.apply(this, []);
@@ -24965,13 +24965,13 @@ var value = null;
 if (this.table != null ) {
 if (p$.isArray.apply(this, [])) {
 var array = this.table;
-for (var i = 0; i < array.length - 1; i = i+(2)) {
+for (var i = 0; i < array.length - 1; i+=2) {
 if (array[i].equals$O(key)) {
-value = array[i + 1];
+value=array[i + 1];
 break;
 }}
 } else {
-value = (this.table).get$O(key);
+value=(this.table).get$O(key);
 }}return value;
 });
 
@@ -24979,9 +24979,9 @@ Clazz_newMeth(C$, 'size', function () {
 var size;
 if (this.table == null ) return 0;
 if (p$.isArray.apply(this, [])) {
-size = ((this.table).length/2|0);
+size=((this.table).length/2|0);
 } else {
-size = (this.table).size();
+size=(this.table).size();
 }return size;
 });
 
@@ -24990,13 +24990,13 @@ var contains = false;
 if (this.table != null ) {
 if (p$.isArray.apply(this, [])) {
 var array = this.table;
-for (var i = 0; i < array.length - 1; i = i+(2)) {
+for (var i = 0; i < array.length - 1; i+=2) {
 if (array[i].equals$O(key)) {
-contains = true;
+contains=true;
 break;
 }}
 } else {
-contains = (this.table).containsKey$O(key);
+contains=(this.table).containsKey$O(key);
 }}return contains;
 });
 
@@ -25008,33 +25008,33 @@ return null;
 if (p$.isArray.apply(this, [])) {
 var index = -1;
 var array = this.table;
-for (var i = array.length - 2; i >= 0; i = i-(2)) {
+for (var i = array.length - 2; i >= 0; i-=2) {
 if (array[i].equals$O(key)) {
-index = i;
-value = array[i + 1];
+index=i;
+value=array[i + 1];
 break;
 }}
 if (index != -1) {
 var tmp = Clazz_array(java.lang.Object, [array.length - 2]);
 System.arraycopy(array, 0, tmp, 0, index);
 if (index < tmp.length) System.arraycopy(array, index + 2, tmp, index, tmp.length - index);
-this.table = (tmp.length == 0) ? null : tmp;
+this.table=(tmp.length == 0) ? null : tmp;
 }} else {
-value = (this.table).remove$O(key);
+value=(this.table).remove$O(key);
 }if (this.size() == 7 && !p$.isArray.apply(this, []) ) {
 p$.shrink.apply(this, []);
 }}return value;
 });
 
 Clazz_newMeth(C$, 'clear', function () {
-this.table = null;
+this.table=null;
 });
 
 Clazz_newMeth(C$, 'clone', function () {
 var newArrayTable = Clazz_new_(C$);
 if (p$.isArray.apply(this, [])) {
 var array = this.table;
-for (var i = 0; i < array.length - 1; i = i+(2)) {
+for (var i = 0; i < array.length - 1; i+=2) {
 newArrayTable.put$O$O(array[i], array[i + 1]);
 }
 } else {
@@ -25053,18 +25053,18 @@ return null;
 }if (p$.isArray.apply(this, [])) {
 var array = this.table;
 if (keys == null ) {
-keys = Clazz_array(java.lang.Object, [(array.length/2|0)]);
-}for (var i = 0, index = 0; i < array.length - 1; i = i+(2), index++) {
-keys[index] = array[i];
+keys=Clazz_array(java.lang.Object, [(array.length/2|0)]);
+}for (var i = 0, index = 0; i < array.length - 1; i+=2, index++) {
+keys[index]=array[i];
 }
 } else {
 var tmp = this.table;
 var enum_ = tmp.keys();
 var counter = tmp.size();
 if (keys == null ) {
-keys = Clazz_array(java.lang.Object, [counter]);
+keys=Clazz_array(java.lang.Object, [counter]);
 }while (counter > 0){
-keys[--counter] = enum_.nextElement();
+keys[--counter]=enum_.nextElement();
 }
 }return keys;
 });
@@ -25076,10 +25076,10 @@ return (Clazz_instanceOf(this.table, Clazz_array(java.lang.Object, -1)));
 Clazz_newMeth(C$, 'grow', function () {
 var array = this.table;
 var tmp = Clazz_new_((I$[1]||$incl$(1)).c$$I,[(array.length/2|0)]);
-for (var i = 0; i < array.length; i = i+(2)) {
+for (var i = 0; i < array.length; i+=2) {
 tmp.put$TK$TV(array[i], array[i + 1]);
 }
-this.table = tmp;
+this.table=tmp;
 });
 
 Clazz_newMeth(C$, 'shrink', function () {
@@ -25089,14 +25089,14 @@ var keys = tmp.keys();
 var j = 0;
 while (keys.hasMoreElements()){
 var o = keys.nextElement();
-array[j] = o;
-array[j + 1] = tmp.get$O(o);
-j = j+(2);
+array[j]=o;
+array[j + 1]=tmp.get$O(o);
+j+=2;
 }
-this.table = array;
+this.table=array;
 });
 })();
-//Created 2018-05-15 01:02:22
+//Created 2018-05-24 08:46:06
 (function(){var P$=Clazz_newPackage("javax.swing.border"),I$=[['java.awt.Insets','java.awt.Rectangle',['java.awt.Component','.BaselineResizeBehavior']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AbstractBorder", null, null, 'javax.swing.border.Border');
 
@@ -25114,7 +25114,7 @@ return Clazz_new_((I$[1]||$incl$(1)).c$$I$I$I$I,[0, 0, 0, 0]);
 });
 
 Clazz_newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
-insets.left = insets.top = insets.right = insets.bottom = 0;
+insets.left=insets.top=insets.right=insets.bottom=0;
 return insets;
 });
 
@@ -25128,8 +25128,8 @@ return C$.getInteriorRectangle$java_awt_Component$javax_swing_border_Border$I$I$
 
 Clazz_newMeth(C$, 'getInteriorRectangle$java_awt_Component$javax_swing_border_Border$I$I$I$I', function (c, b, x, y, width, height) {
 var insets;
-if (b != null ) insets = b.getBorderInsets$java_awt_Component(c);
- else insets = Clazz_new_((I$[1]||$incl$(1)).c$$I$I$I$I,[0, 0, 0, 0]);
+if (b != null ) insets=b.getBorderInsets$java_awt_Component(c);
+ else insets=Clazz_new_((I$[1]||$incl$(1)).c$$I$I$I$I,[0, 0, 0, 0]);
 return Clazz_new_((I$[2]||$incl$(2)).c$$I$I$I$I,[x + insets.left, y + insets.top, width - insets.right - insets.left , height - insets.top - insets.bottom ]);
 }, 1);
 
@@ -25151,7 +25151,7 @@ return c.getComponentOrientation().isLeftToRight();
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:42
+//Created 2018-05-24 08:46:45
 (function(){var P$=Clazz_newPackage("javax.swing.border"),I$=[['java.awt.Insets']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "BevelBorder", null, 'javax.swing.border.AbstractBorder');
 
@@ -25172,7 +25172,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$I', function (bevelType) {
 Clazz_super_(C$, this,1);
-this.bevelType = bevelType;
+this.bevelType=bevelType;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$I$java_awt_Color$java_awt_Color', function (bevelType, highlight, shadow) {
@@ -25181,10 +25181,10 @@ C$.c$$I$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color.apply(this, 
 
 Clazz_newMeth(C$, 'c$$I$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color', function (bevelType, highlightOuterColor, highlightInnerColor, shadowOuterColor, shadowInnerColor) {
 C$.c$$I.apply(this, [bevelType]);
-this.highlightOuter = highlightOuterColor;
-this.highlightInner = highlightInnerColor;
-this.shadowOuter = shadowOuterColor;
-this.shadowInner = shadowInnerColor;
+this.highlightOuter=highlightOuterColor;
+this.highlightInner=highlightInnerColor;
+this.shadowOuter=shadowOuterColor;
+this.shadowInner=shadowInnerColor;
 }, 1);
 
 Clazz_newMeth(C$, 'paintBorder$java_awt_Component$java_awt_Graphics$I$I$I$I', function (c, g, x, y, width, height) {
@@ -25199,7 +25199,7 @@ return Clazz_new_((I$[1]||$incl$(1)).c$$I$I$I$I,[2, 2, 2, 2]);
 });
 
 Clazz_newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
-insets.left = insets.top = insets.right = insets.bottom = 2;
+insets.left=insets.top=insets.right=insets.bottom=2;
 return insets;
 });
 
@@ -25291,11 +25291,11 @@ g.setColor$java_awt_Color(oldColor);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:42
+//Created 2018-05-24 08:46:45
 (function(){var P$=Clazz_newPackage("javax.swing.border"),I$=[];
 var C$=Clazz_newInterface(P$, "Border");
 })();
-//Created 2018-05-15 01:02:42
+//Created 2018-05-24 08:46:45
 (function(){var P$=Clazz_newPackage("javax.swing.border"),I$=[['java.awt.Insets']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "EmptyBorder", null, 'javax.swing.border.AbstractBorder');
 
@@ -25315,18 +25315,18 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$I$I$I$I', function (top, left, bottom, right) {
 Clazz_super_(C$, this,1);
-this.top = top;
-this.right = right;
-this.bottom = bottom;
-this.left = left;
+this.top=top;
+this.right=right;
+this.bottom=bottom;
+this.left=left;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$java_awt_Insets', function (borderInsets) {
 Clazz_super_(C$, this,1);
-this.top = borderInsets.top;
-this.right = borderInsets.right;
-this.bottom = borderInsets.bottom;
-this.left = borderInsets.left;
+this.top=borderInsets.top;
+this.right=borderInsets.right;
+this.bottom=borderInsets.bottom;
+this.left=borderInsets.left;
 }, 1);
 
 Clazz_newMeth(C$, 'paintBorder$java_awt_Component$java_awt_Graphics$I$I$I$I', function (c, g, x, y, width, height) {
@@ -25337,10 +25337,10 @@ return this.getBorderInsets();
 });
 
 Clazz_newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
-insets.left = this.left;
-insets.top = this.top;
-insets.right = this.right;
-insets.bottom = this.bottom;
+insets.left=this.left;
+insets.top=this.top;
+insets.right=this.right;
+insets.bottom=this.bottom;
 return insets;
 });
 
@@ -25354,7 +25354,7 @@ return false;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:42
+//Created 2018-05-24 08:46:45
 (function(){var P$=Clazz_newPackage("javax.swing.border"),I$=[['java.awt.Insets']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "EtchedBorder", null, 'javax.swing.border.AbstractBorder');
 
@@ -25385,9 +25385,9 @@ C$.c$$I$java_awt_Color$java_awt_Color.apply(this, [1, highlight, shadow]);
 
 Clazz_newMeth(C$, 'c$$I$java_awt_Color$java_awt_Color', function (etchType, highlight, shadow) {
 Clazz_super_(C$, this,1);
-this.etchType = etchType;
-this.highlight = highlight;
-this.shadow = shadow;
+this.etchType=etchType;
+this.highlight=highlight;
+this.shadow=shadow;
 }, 1);
 
 Clazz_newMeth(C$, 'paintBorder$java_awt_Component$java_awt_Graphics$I$I$I$I', function (c, g, x, y, width, height) {
@@ -25409,7 +25409,7 @@ return Clazz_new_((I$[1]||$incl$(1)).c$$I$I$I$I,[2, 2, 2, 2]);
 });
 
 Clazz_newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
-insets.left = insets.top = insets.right = insets.bottom = 2;
+insets.left=insets.top=insets.right=insets.bottom=2;
 return insets;
 });
 
@@ -25437,7 +25437,7 @@ Clazz_newMeth(C$, 'getShadowColor', function () {
 return this.shadow;
 });
 })();
-//Created 2018-05-15 01:02:43
+//Created 2018-05-24 08:46:45
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.border.BevelBorder','javax.swing.border.EtchedBorder','javax.swing.border.EmptyBorder','javax.swing.border.LineBorder','javax.swing.border.TitledBorder','javax.swing.border.CompoundBorder','javax.swing.border.MatteBorder']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "BorderFactory");
 var p$=C$.prototype;
@@ -25511,7 +25511,7 @@ Clazz_newMeth(C$, 'createEtchedBorder$I', function (type) {
 switch (type) {
 case 0:
 if (C$.sharedRaisedEtchedBorder == null ) {
-C$.sharedRaisedEtchedBorder = Clazz_new_((I$[2]||$incl$(2)).c$$I,[0]);
+C$.sharedRaisedEtchedBorder=Clazz_new_((I$[2]||$incl$(2)).c$$I,[0]);
 }return C$.sharedRaisedEtchedBorder;
 case 1:
 return C$.sharedEtchedBorder;
@@ -25576,18 +25576,18 @@ Clazz_newMeth(C$, 'createMatteBorder$I$I$I$I$javax_swing_Icon', function (top, l
 return Clazz_new_((I$[7]||$incl$(7)).c$$I$I$I$I$javax_swing_Icon,[top, left, bottom, right, tileIcon]);
 }, 1);
 })();
-//Created 2018-05-15 01:02:23
+//Created 2018-05-24 08:46:06
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "BoundedRangeModel");
 })();
-//Created 2018-05-15 01:02:23
+//Created 2018-05-24 08:46:06
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "ButtonModel", null, null, 'java.awt.ItemSelectable');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:02:23
+//Created 2018-05-24 08:46:07
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.event.EventListenerList','javax.swing.event.ChangeListener','javax.swing.event.ChangeEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "DefaultBoundedRangeModel", null, null, 'javax.swing.BoundedRangeModel');
 
@@ -25622,10 +25622,10 @@ C$.$init$.apply(this);
 Clazz_newMeth(C$, 'c$$I$I$I$I', function (value, extent, min, max) {
 C$.$init$.apply(this);
 if ((max >= min) && (value >= min) && ((value + extent) >= value) && ((value + extent) <= max)  ) {
-this.value = value;
-this.extent = extent;
-this.min = min;
-this.max = max;
+this.value=value;
+this.extent=extent;
+this.min=min;
+this.max=max;
 } else {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["invalid range properties"]);
 }}, 1);
@@ -25647,17 +25647,17 @@ return this.max;
 });
 
 Clazz_newMeth(C$, 'setValue$I', function (n) {
-n = Math.min(n, 2147483647 - this.extent);
+n=Math.min(n, 2147483647 - this.extent);
 var newValue = Math.max(n, this.min);
 if (newValue + this.extent > this.max) {
-newValue = this.max - this.extent;
+newValue=this.max - this.extent;
 }this.setRangeProperties$I$I$I$I$Z(newValue, this.extent, this.min, this.max, this.isAdjusting);
 });
 
 Clazz_newMeth(C$, 'setExtent$I', function (n) {
 var newExtent = Math.max(0, n);
 if (this.value + newExtent > this.max) {
-newExtent = this.max - this.value;
+newExtent=this.max - this.value;
 }this.setRangeProperties$I$I$I$I$Z(this.value, newExtent, this.min, this.max, this.isAdjusting);
 });
 
@@ -25685,22 +25685,22 @@ return this.isAdjusting;
 
 Clazz_newMeth(C$, 'setRangeProperties$I$I$I$I$Z', function (newValue, newExtent, newMin, newMax, adjusting) {
 if (newMin > newMax) {
-newMin = newMax;
+newMin=newMax;
 }if (newValue > newMax) {
-newMax = newValue;
+newMax=newValue;
 }if (newValue < newMin) {
-newMin = newValue;
+newMin=newValue;
 }if ((newExtent + newValue) > newMax) {
-newExtent = newMax - newValue;
+newExtent=newMax - newValue;
 }if (newExtent < 0) {
-newExtent = 0;
+newExtent=0;
 }var isChange = (newValue != this.value) || (newExtent != this.extent) || (newMin != this.min) || (newMax != this.max) || (adjusting != this.isAdjusting )  ;
 if (isChange) {
-this.value = newValue;
-this.extent = newExtent;
-this.min = newMin;
-this.max = newMax;
-this.isAdjusting = adjusting;
+this.value=newValue;
+this.extent=newExtent;
+this.min=newMin;
+this.max=newMax;
+this.isAdjusting=adjusting;
 this.fireStateChanged();
 }});
 
@@ -25718,10 +25718,10 @@ return this.listenerList.getListeners$Class(Clazz_getClass((I$[2]||$incl$(2)),['
 
 Clazz_newMeth(C$, 'fireStateChanged', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[2]||$incl$(2)),['stateChanged$javax_swing_event_ChangeEvent']) ) {
 if (this.changeEvent == null ) {
-this.changeEvent = Clazz_new_((I$[3]||$incl$(3)).c$$O,[this]);
+this.changeEvent=Clazz_new_((I$[3]||$incl$(3)).c$$O,[this]);
 }(listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -25735,7 +25735,7 @@ Clazz_newMeth(C$, 'getListeners$Class', function (listenerType) {
 return this.listenerList.getListeners$Class(listenerType);
 });
 })();
-//Created 2018-05-15 01:02:24
+//Created 2018-05-24 08:46:07
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.event.EventListenerList','javax.swing.UIManager','java.awt.event.ItemEvent','java.awt.EventQueue','java.awt.event.ActionEvent','javax.swing.event.ChangeListener','javax.swing.event.ChangeEvent','java.awt.event.ActionListener','java.awt.event.ItemListener']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "DefaultButtonModel", null, null, 'javax.swing.ButtonModel');
 
@@ -25765,12 +25765,12 @@ this.menuItem = false;
 
 Clazz_newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.stateMask = 0;
+this.stateMask=0;
 this.setEnabled$Z(true);
 }, 1);
 
 Clazz_newMeth(C$, 'setActionCommand$S', function (actionCommand) {
-this.actionCommand = actionCommand;
+this.actionCommand=actionCommand;
 });
 
 Clazz_newMeth(C$, 'getActionCommand', function () {
@@ -25805,9 +25805,9 @@ return;
 if ((this.isArmed() == b ) || !this.isEnabled() ) {
 return;
 }}if (b) {
-this.stateMask = this.stateMask|(1);
+this.stateMask|=1;
 } else {
-this.stateMask = this.stateMask&(-2);
+this.stateMask&=-2;
 }this.fireStateChanged();
 });
 
@@ -25815,11 +25815,11 @@ Clazz_newMeth(C$, 'setEnabled$Z', function (b) {
 if (this.isEnabled() == b ) {
 return;
 }if (b) {
-this.stateMask = this.stateMask|(8);
+this.stateMask|=8;
 } else {
-this.stateMask = this.stateMask&(-9);
-this.stateMask = this.stateMask&(-2);
-this.stateMask = this.stateMask&(-5);
+this.stateMask&=-9;
+this.stateMask&=-2;
+this.stateMask&=-5;
 }this.fireStateChanged();
 });
 
@@ -25827,9 +25827,9 @@ Clazz_newMeth(C$, 'setSelected$Z', function (b) {
 if (this.isSelected() == b ) {
 return;
 }if (b) {
-this.stateMask = this.stateMask|(2);
+this.stateMask|=2;
 } else {
-this.stateMask = this.stateMask&(-3);
+this.stateMask&=-3;
 }this.fireItemStateChanged$java_awt_event_ItemEvent(Clazz_new_((I$[3]||$incl$(3)).c$$java_awt_ItemSelectable$I$O$I,[this, 701, this, b ? 1 : 2]));
 this.fireStateChanged();
 });
@@ -25838,16 +25838,16 @@ Clazz_newMeth(C$, 'setPressed$Z', function (b) {
 if ((this.isPressed() == b ) || !this.isEnabled() ) {
 return;
 }if (b) {
-this.stateMask = this.stateMask|(4);
+this.stateMask|=4;
 } else {
-this.stateMask = this.stateMask&(-5);
+this.stateMask&=-5;
 }if (!this.isPressed() && this.isArmed() ) {
 var modifiers = 0;
 var currentEvent = (I$[4]||$incl$(4)).getCurrentEvent();
 if (Clazz_instanceOf(currentEvent, "java.awt.event.InputEvent")) {
-modifiers = (currentEvent).getModifiers();
+modifiers=(currentEvent).getModifiers();
 } else if (Clazz_instanceOf(currentEvent, "java.awt.event.ActionEvent")) {
-modifiers = (currentEvent).getModifiers();
+modifiers=(currentEvent).getModifiers();
 }this.fireActionPerformed$java_awt_event_ActionEvent(Clazz_new_((I$[5]||$incl$(5)).c$$O$I$S$J$I,[this, 1001, this.getActionCommand(), (I$[4]||$incl$(4)).getMostRecentEventTime(), modifiers]));
 }this.fireStateChanged();
 });
@@ -25856,14 +25856,14 @@ Clazz_newMeth(C$, 'setRollover$Z', function (b) {
 if ((this.isRollover() == b ) || !this.isEnabled() ) {
 return;
 }if (b) {
-this.stateMask = this.stateMask|(16);
+this.stateMask|=16;
 } else {
-this.stateMask = this.stateMask&(-17);
+this.stateMask&=-17;
 }this.fireStateChanged();
 });
 
 Clazz_newMeth(C$, 'setMnemonic$I', function (key) {
-this.mnemonic = key;
+this.mnemonic=key;
 this.fireStateChanged();
 });
 
@@ -25885,9 +25885,9 @@ return this.listenerList.getListeners$Class(Clazz_getClass((I$[6]||$incl$(6)),['
 
 Clazz_newMeth(C$, 'fireStateChanged', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[6]||$incl$(6)),['stateChanged$javax_swing_event_ChangeEvent']) ) {
-if (this.changeEvent == null ) this.changeEvent = Clazz_new_((I$[7]||$incl$(7)).c$$O,[this]);
+if (this.changeEvent == null ) this.changeEvent=Clazz_new_((I$[7]||$incl$(7)).c$$O,[this]);
 (listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -25906,7 +25906,7 @@ return this.listenerList.getListeners$Class(Clazz_getClass((I$[8]||$incl$(8)),['
 
 Clazz_newMeth(C$, 'fireActionPerformed$java_awt_event_ActionEvent', function (e) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[8]||$incl$(8)),['actionPerformed$java_awt_event_ActionEvent']) ) {
 (listeners[i + 1]).actionPerformed$java_awt_event_ActionEvent(e);
 }}
@@ -25926,7 +25926,7 @@ return this.listenerList.getListeners$Class(Clazz_getClass((I$[9]||$incl$(9)),['
 
 Clazz_newMeth(C$, 'fireItemStateChanged$java_awt_event_ItemEvent', function (e) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[9]||$incl$(9)),['itemStateChanged$java_awt_event_ItemEvent']) ) {
 (listeners[i + 1]).itemStateChanged$java_awt_event_ItemEvent(e);
 }}
@@ -25941,7 +25941,7 @@ return null;
 });
 
 Clazz_newMeth(C$, 'setGroup$javax_swing_ButtonGroup', function (group) {
-this.group = group;
+this.group=group;
 });
 
 Clazz_newMeth(C$, 'getGroup', function () {
@@ -25953,24 +25953,24 @@ return this.menuItem;
 });
 
 Clazz_newMeth(C$, 'setMenuItem$Z', function (menuItem) {
-this.menuItem = menuItem;
+this.menuItem=menuItem;
 });
 })();
-//Created 2018-05-15 01:02:24
+//Created 2018-05-24 08:46:07
 (function(){var P$=Clazz_newPackage("javax.swing.event"),I$=[];
 var C$=Clazz_newInterface(P$, "AncestorListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:02:45
+//Created 2018-05-24 08:46:48
 (function(){var P$=Clazz_newPackage("javax.swing.event"),I$=[];
 var C$=Clazz_newInterface(P$, "ChangeListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:02:45
+//Created 2018-05-24 08:46:48
 (function(){var P$=Clazz_newPackage("javax.swing.event"),I$=[];
 var C$=Clazz_newClass(P$, "EventListenerList");
 C$.NULL_ARRAY = null;
@@ -25998,9 +25998,9 @@ var lList = this.listenerList;
 var n = p$.getListenerCount$OA$Class.apply(this, [lList, t]);
 var result = Clazz_array(t, n);
 var j = 0;
-for (var i = lList.length - 2; i >= 0; i = i-(2)) {
+for (var i = lList.length - 2; i >= 0; i-=2) {
 if (lList[i] === t ) {
-result[j++] = lList[i + 1];
+result[j++]=lList[i + 1];
 }}
 return result;
 });
@@ -26016,7 +26016,7 @@ return p$.getListenerCount$OA$Class.apply(this, [lList, t]);
 
 Clazz_newMeth(C$, 'getListenerCount$OA$Class', function (list, t) {
 var count = 0;
-for (var i = 0; i < list.length; i = i+(2)) {
+for (var i = 0; i < list.length; i+=2) {
 if (t === list[i] ) count++;
 }
 return count;
@@ -26026,37 +26026,37 @@ Clazz_newMeth(C$, 'add$Class$TT', function (t, l) {
 if (l == null ) {
 return;
 }if (this.listenerList === C$.NULL_ARRAY ) {
-this.listenerList = Clazz_array(java.lang.Object, -1, [t, l]);
+this.listenerList=Clazz_array(java.lang.Object, -1, [t, l]);
 } else {
 var i = this.listenerList.length;
 var tmp = Clazz_array(java.lang.Object, [i + 2]);
 System.arraycopy(this.listenerList, 0, tmp, 0, i);
-tmp[i] = t;
-tmp[i + 1] = l;
-this.listenerList = tmp;
+tmp[i]=t;
+tmp[i + 1]=l;
+this.listenerList=tmp;
 }});
 
 Clazz_newMeth(C$, 'remove$Class$TT', function (t, l) {
 if (l == null ) {
 return;
 }var index = -1;
-for (var i = this.listenerList.length - 2; i >= 0; i = i-(2)) {
+for (var i = this.listenerList.length - 2; i >= 0; i-=2) {
 if ((this.listenerList[i] === t ) && (this.listenerList[i + 1].equals$O(l) == true ) ) {
-index = i;
+index=i;
 break;
 }}
 if (index != -1) {
 var tmp = Clazz_array(java.lang.Object, [this.listenerList.length - 2]);
 System.arraycopy(this.listenerList, 0, tmp, 0, index);
 if (index < tmp.length) System.arraycopy(this.listenerList, index + 2, tmp, index, tmp.length - index);
-this.listenerList = (tmp.length == 0) ? C$.NULL_ARRAY : tmp;
+this.listenerList=(tmp.length == 0) ? C$.NULL_ARRAY : tmp;
 }});
 
 Clazz_newMeth(C$, 'toString', function () {
 var lList = this.listenerList;
 var s = "EventListenerList: ";
 s += (lList.length/2|0) + " listeners: ";
-for (var i = 0; i <= lList.length - 2; i = i+(2)) {
+for (var i = 0; i <= lList.length - 2; i+=2) {
 s += " type " + (lList[i]).getName();
 s += " listener " + lList[i + 1];
 }
@@ -26065,7 +26065,7 @@ return s;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:45
+//Created 2018-05-24 08:46:48
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.awt.Color','javax.swing.JComponent','java.awt.BorderLayout','javax.swing.JRootPane','javax.swing.SwingUtilities','javax.swing.RepaintManager']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JApplet", null, 'java.applet.Applet', 'javax.swing.RootPaneContainer');
 var p$=C$.prototype;
@@ -26087,7 +26087,7 @@ this.rootPaneCheckingEnabled = false;
 Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
 this.setFrameViewer$swingjs_JSFrameViewer(this.appletViewer);
-this.uiClassID = "AppletUI";
+this.uiClassID="AppletUI";
 p$.setJApplet.apply(this, []);
 this.updateUI();
 }, 1);
@@ -26112,7 +26112,7 @@ return rp;
 
 Clazz_newMeth(C$, 'setTransferHandler$javax_swing_TransferHandler', function (newHandler) {
 var oldHandler = this.transferHandler;
-this.transferHandler = newHandler;
+this.transferHandler=newHandler;
 (I$[5]||$incl$(5)).installSwingDropTargetAsNecessary$java_awt_Component$javax_swing_TransferHandler(this, this.transferHandler);
 this.firePropertyChange$S$O$O("transferHandler", oldHandler, newHandler);
 });
@@ -26144,7 +26144,7 @@ return this.rootPaneCheckingEnabled;
 });
 
 Clazz_newMeth(C$, 'setRootPaneCheckingEnabled$Z', function (enabled) {
-this.rootPaneCheckingEnabled = enabled;
+this.rootPaneCheckingEnabled=enabled;
 });
 
 Clazz_newMeth(C$, 'addImpl$java_awt_Component$O$I', function (comp, constraints, index) {
@@ -26174,7 +26174,7 @@ return this.rootPane;
 Clazz_newMeth(C$, 'setRootPane$javax_swing_JRootPane', function (root) {
 if (this.rootPane != null ) {
 this.remove$java_awt_Component(this.rootPane);
-}this.rootPane = root;
+}this.rootPane=root;
 if (this.rootPane != null ) {
 var checkingEnabled = this.isRootPaneCheckingEnabled();
 try {
@@ -26231,7 +26231,7 @@ var rootPaneCheckingEnabledString = (this.rootPaneCheckingEnabled ? "true" : "fa
 return C$.superclazz.prototype.paramString.apply(this, []) + ",rootPane=" + rootPaneString + ",rootPaneCheckingEnabled=" + rootPaneCheckingEnabledString ;
 });
 })();
-//Created 2018-05-15 01:02:25
+//Created 2018-05-24 08:46:11
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.DefaultButtonModel','javax.swing.SwingUtilities']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JButton", null, 'javax.swing.AbstractButton');
 
@@ -26278,7 +26278,7 @@ return this.defaultCapable;
 
 Clazz_newMeth(C$, 'setDefaultCapable$Z', function (defaultCapable) {
 var oldDefaultCapable = this.defaultCapable;
-this.defaultCapable = defaultCapable;
+this.defaultCapable=defaultCapable;
 this.firePropertyChange$S$Z$Z("defaultCapable", oldDefaultCapable, defaultCapable);
 });
 
@@ -26294,7 +26294,7 @@ var defaultCapableString = (this.defaultCapable ? "true" : "false");
 return C$.superclazz.prototype.paramString.apply(this, []) + ",defaultCapable=" + defaultCapableString ;
 });
 })();
-//Created 2018-05-15 01:02:25
+//Created 2018-05-24 08:46:11
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.SwingUtilities',['javax.swing.JComponent','.IntVector'],'javajs.util.Lst','javax.swing.JComponent','javax.swing.JComponent$1','javax.swing.event.EventListenerList','java.util.HashSet','javax.swing.KeyStroke','java.awt.Rectangle','javax.swing.RepaintManager','sun.font.FontDesignMetrics','java.awt.Insets','javax.swing.ClientPropertyKey',['javax.swing.JComponent','.ActionStandin'],'java.util.Hashtable','javax.swing.KeyboardManager','javax.swing.InputMap','javax.swing.ComponentInputMap','javax.swing.ActionMap',['java.awt.Component','.BaselineResizeBehavior'],'java.util.Locale',['javax.swing.JComponent','.KeyboardState'],'javax.swing.Popup','javax.swing.JToolTip','javax.swing.Autoscroller','javax.swing.ArrayTable','swingjs.JSToolkit','swingjs.JSUtil','javax.swing.AncestorNotifier','javax.swing.event.AncestorListener','java.beans.PropertyChangeListener','javax.swing.JComponent$2','java.util.ArrayList']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JComponent", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -26383,9 +26383,9 @@ return C$.safelyGetGraphics$java_awt_Component$java_awt_Component(c, (I$[1]||$in
 
 Clazz_newMeth(C$, 'safelyGetGraphics$java_awt_Component$java_awt_Component', function (c, root) {
 {
-C$.componentObtainingGraphicsFrom = root;
+C$.componentObtainingGraphicsFrom=root;
 var g = c.getGraphics();
-C$.componentObtainingGraphicsFrom = null;
+C$.componentObtainingGraphicsFrom=null;
 return g;
 }}, 1);
 
@@ -26404,7 +26404,7 @@ return (C$.componentObtainingGraphicsFrom === c );
 Clazz_newMeth(C$, 'getManagingFocusForwardTraversalKeys', function () {
 {
 if (C$.managingFocusForwardTraversalKeys == null ) {
-C$.managingFocusForwardTraversalKeys = Clazz_new_((I$[7]||$incl$(7)).c$$I,[1]);
+C$.managingFocusForwardTraversalKeys=Clazz_new_((I$[7]||$incl$(7)).c$$I,[1]);
 C$.managingFocusForwardTraversalKeys.add$TE((I$[8]||$incl$(8)).getKeyStroke$I$I(9, 2));
 }}return C$.managingFocusForwardTraversalKeys;
 }, 1);
@@ -26412,7 +26412,7 @@ C$.managingFocusForwardTraversalKeys.add$TE((I$[8]||$incl$(8)).getKeyStroke$I$I(
 Clazz_newMeth(C$, 'getManagingFocusBackwardTraversalKeys', function () {
 {
 if (C$.managingFocusBackwardTraversalKeys == null ) {
-C$.managingFocusBackwardTraversalKeys = Clazz_new_((I$[7]||$incl$(7)).c$$I,[1]);
+C$.managingFocusBackwardTraversalKeys=Clazz_new_((I$[7]||$incl$(7)).c$$I,[1]);
 C$.managingFocusBackwardTraversalKeys.add$TE((I$[8]||$incl$(8)).getKeyStroke$I$I(9, 3));
 }}return C$.managingFocusBackwardTraversalKeys;
 }, 1);
@@ -26422,9 +26422,9 @@ Clazz_newMeth(C$, 'fetchRectangle', function () {
 var rect;
 var size = C$.tempRectangles.size();
 if (size > 0) {
-rect = C$.tempRectangles.removeItemAt$I(size - 1);
+rect=C$.tempRectangles.removeItemAt$I(size - 1);
 } else {
-rect = Clazz_new_((I$[9]||$incl$(9)).c$$I$I$I$I,[0, 0, 0, 0]);
+rect=Clazz_new_((I$[9]||$incl$(9)).c$$I$I$I$I,[0, 0, 0, 0]);
 }return rect;
 }}, 1);
 
@@ -26447,7 +26447,7 @@ Clazz_newMeth(C$, 'setComponentPopupMenu$javax_swing_JPopupMenu', function (popu
 if (popup != null ) {
 this.enableEvents$J(16);
 }var oldPopup = this.popupMenu;
-this.popupMenu = popup;
+this.popupMenu=popup;
 this.firePropertyChange$S$O$O("componentPopupMenu", oldPopup, popup);
 });
 
@@ -26461,7 +26461,7 @@ if (Clazz_instanceOf(parent, "javax.swing.JComponent")) {
 return (parent).getComponentPopupMenu();
 }if (Clazz_instanceOf(parent, "java.awt.Window") || Clazz_instanceOf(parent, "java.applet.Applet") ) {
 break;
-}parent = parent.getParent();
+}parent=parent.getParent();
 }
 return null;
 }return this.popupMenu;
@@ -26485,10 +26485,10 @@ Clazz_newMeth(C$, 'paintComponent$java_awt_Graphics', function (g) {
 if (this.ui != null ) {
 var scratchGraphics = (g == null ) ? null : g.create();
 try {
-this.isBackgroundPainted = false;
+this.isBackgroundPainted=false;
 this.ui.update$java_awt_Graphics$javax_swing_JComponent(scratchGraphics, this);
 var jsg = this.getJSGraphic2D$java_awt_Graphics(scratchGraphics);
-this.isBackgroundPainted = (jsg != null  && jsg.isBackgroundPainted() );
+this.isBackgroundPainted=(jsg != null  && jsg.isBackgroundPainted() );
 } finally {
 scratchGraphics.dispose();
 }
@@ -26547,7 +26547,7 @@ var cg = componentGraphics.create();
 try {
 if (this.getParent() != null  && !(Clazz_instanceOf(this.getParent(), "javax.swing.JComponent")) ) {
 p$.adjustPaintFlags.apply(this, []);
-shouldClearPaintFlags = true;
+shouldClearPaintFlags=true;
 }var printing = p$.getFlag$I.apply(this, [11]);
 if (!printing) {
 p$.paintComponentSafely$java_awt_Graphics.apply(this, [cg]);
@@ -26587,7 +26587,7 @@ var component = this;
 while (component != null ){
 if (Clazz_instanceOf(component, "javax.swing.JComponent") && (component).getFlag$I(1) ) {
 return true;
-}component = component.getParent();
+}component=component.getParent();
 }
 return false;
 });
@@ -26595,9 +26595,9 @@ return false;
 Clazz_newMeth(C$, 'adjustPaintFlags', function () {
 var jparent = null;
 var parent;
-for (parent = this.getParent(); parent != null ; parent = parent.getParent()) {
+for (parent=this.getParent(); parent != null ; parent=parent.getParent()) {
 if (Clazz_instanceOf(parent, "javax.swing.JComponent")) {
-jparent = parent;
+jparent=parent;
 if (jparent.getFlag$I(1)) p$.setFlag$I$Z.apply(this, [1, true]);
 if (jparent.getFlag$I(2)) p$.setFlag$I$Z.apply(this, [2, true]);
 if (jparent.getFlag$I(11)) p$.setFlag$I$Z.apply(this, [11, true]);
@@ -26712,7 +26712,7 @@ this.requestFocus();
 
 Clazz_newMeth(C$, 'setVerifyInputWhenFocusTarget$Z', function (verifyInputWhenFocusTarget) {
 var oldVerifyInputWhenFocusTarget = this.verifyInputWhenFocusTarget;
-this.verifyInputWhenFocusTarget = verifyInputWhenFocusTarget;
+this.verifyInputWhenFocusTarget=verifyInputWhenFocusTarget;
 this.firePropertyChange$S$Z$Z("verifyInputWhenFocusTarget", oldVerifyInputWhenFocusTarget, verifyInputWhenFocusTarget);
 });
 
@@ -26746,7 +26746,7 @@ if (this.isMaximumSizeSet()) {
 return C$.superclazz.prototype.getMaximumSize.apply(this, []);
 }var size = null;
 if (this.ui != null ) {
-size = this.ui.getMaximumSize();
+size=this.ui.getMaximumSize();
 }return (size != null ) ? size : C$.superclazz.prototype.getMaximumSize.apply(this, []);
 });
 
@@ -26759,7 +26759,7 @@ if (this.isMinimumSizeSet()) {
 return C$.superclazz.prototype.getMinimumSize.apply(this, []);
 }var size = null;
 if (this.ui != null ) {
-size = this.ui.getMinimumSize();
+size=this.ui.getMinimumSize();
 }return (size != null ) ? size : C$.superclazz.prototype.getMinimumSize.apply(this, []);
 });
 
@@ -26769,7 +26769,7 @@ return (this.ui != null ) ? this.ui.contains$javax_swing_JComponent$I$I(this, x,
 
 Clazz_newMeth(C$, 'setBorder$javax_swing_border_Border', function (border) {
 var oldBorder = this.border;
-this.border = border;
+this.border=border;
 this.firePropertyChange$S$O$O("border", oldBorder, border);
 if (border !== oldBorder ) {
 if (border == null  || oldBorder == null   || !(border.getBorderInsets$java_awt_Component(this).equals$O(oldBorder.getBorderInsets$java_awt_Component(this))) ) {
@@ -26789,14 +26789,14 @@ return this.border.getBorderInsets$java_awt_Component(this);
 
 Clazz_newMeth(C$, 'getInsets$java_awt_Insets', function (insets) {
 if (insets == null ) {
-insets = Clazz_new_((I$[12]||$incl$(12)).c$$I$I$I$I,[0, 0, 0, 0]);
+insets=Clazz_new_((I$[12]||$incl$(12)).c$$I$I$I$I,[0, 0, 0, 0]);
 }if (this.border != null ) {
 if (Clazz_instanceOf(this.border, "javax.swing.border.AbstractBorder")) {
 return (this.border).getBorderInsets$java_awt_Component$java_awt_Insets(this, insets);
 } else {
 return this.border.getBorderInsets$java_awt_Component(this);
 }} else {
-insets.left = insets.top = insets.right = insets.bottom = 0;
+insets.left=insets.top=insets.right=insets.bottom=0;
 return insets;
 }});
 
@@ -26807,8 +26807,8 @@ return this.alignmentY;
 });
 
 Clazz_newMeth(C$, 'setAlignmentY$F', function (alignmentY) {
-this.alignmentY = alignmentY > 1.0  ? 1.0 : alignmentY < 0.0  ? 0.0 : alignmentY;
-this.isAlignmentYSet = true;
+this.alignmentY=alignmentY > 1.0  ? 1.0 : alignmentY < 0.0  ? 0.0 : alignmentY;
+this.isAlignmentYSet=true;
 });
 
 Clazz_newMeth(C$, 'getAlignmentX', function () {
@@ -26818,8 +26818,8 @@ return this.alignmentX;
 });
 
 Clazz_newMeth(C$, 'setAlignmentX$F', function (alignmentX) {
-this.alignmentX = alignmentX > 1.0  ? 1.0 : alignmentX < 0.0  ? 0.0 : alignmentX;
-this.isAlignmentXSet = true;
+this.alignmentX=alignmentX > 1.0  ? 1.0 : alignmentX < 0.0  ? 0.0 : alignmentX;
+this.isAlignmentXSet=true;
 });
 
 Clazz_newMeth(C$, 'setInputVerifier$javax_swing_InputVerifier', function (inputVerifier) {
@@ -26851,7 +26851,7 @@ var inputMap = this.getInputMap$I$Z(2, false);
 var strokes;
 var registered = this.getClientProperty$O("_WhenInFocusedWindow");
 if (inputMap != null ) {
-strokes = inputMap.allKeys();
+strokes=inputMap.allKeys();
 if (strokes != null ) {
 for (var counter = strokes.length - 1; counter >= 0; counter--) {
 if (!onlyIfNew || registered == null   || registered.get$O(strokes[counter]) == null  ) {
@@ -26860,7 +26860,7 @@ p$.registerWithKeyboardManager$javax_swing_KeyStroke.apply(this, [strokes[counte
 registered.remove$O(strokes[counter]);
 }}
 }} else {
-strokes = null;
+strokes=null;
 }if (registered != null  && registered.size() > 0 ) {
 var keys = registered.keys();
 while (keys.hasMoreElements()){
@@ -26870,7 +26870,7 @@ p$.unregisterWithKeyboardManager$javax_swing_KeyStroke.apply(this, [ks]);
 registered.clear();
 }if (strokes != null  && strokes.length > 0 ) {
 if (registered == null ) {
-registered = Clazz_new_((I$[15]||$incl$(15)).c$$I,[strokes.length]);
+registered=Clazz_new_((I$[15]||$incl$(15)).c$$I,[strokes.length]);
 this.putClientProperty$O$O("_WhenInFocusedWindow", registered);
 }for (var counter = strokes.length - 1; counter >= 0; counter--) {
 registered.put$TK$TV(strokes[counter], strokes[counter]);
@@ -26893,7 +26893,7 @@ p$.unregisterWithKeyboardManager$javax_swing_KeyStroke.apply(this, [ks]);
 Clazz_newMeth(C$, 'componentInputMapChanged$javax_swing_ComponentInputMap', function (inputMap) {
 var km = this.getInputMap$I$Z(2, false);
 while (km !== inputMap  && km != null  ){
-km = km.getParent();
+km=km.getParent();
 }
 if (km != null ) {
 p$.registerWithKeyboardManager$Z.apply(this, [false]);
@@ -26928,14 +26928,14 @@ var counts = Clazz_array(Integer.TYPE, [3]);
 var strokes = Clazz_array((I$[8]||$incl$(8)), [3, null]);
 for (var counter = 0; counter < 3; counter++) {
 var km = this.getInputMap$I$Z(counter, false);
-strokes[counter] = (km != null ) ? km.allKeys() : null;
-counts[counter] = (strokes[counter] != null ) ? strokes[counter].length : 0;
+strokes[counter]=(km != null ) ? km.allKeys() : null;
+counts[counter]=(strokes[counter] != null ) ? strokes[counter].length : 0;
 }
 var retValue = Clazz_array((I$[8]||$incl$(8)), [counts[0] + counts[1] + counts[2] ]);
 for (var counter = 0, last = 0; counter < 3; counter++) {
 if (counts[counter] > 0) {
 System.arraycopy(strokes[counter], 0, retValue, last, counts[counter]);
-last = last+(counts[counter]);
+last+=counts[counter];
 }}
 return retValue;
 });
@@ -26982,16 +26982,16 @@ switch (condition) {
 case 2:
 if (map != null  && !(Clazz_instanceOf(map, "javax.swing.ComponentInputMap")) ) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["WHEN_IN_FOCUSED_WINDOW InputMaps must be of type ComponentInputMap"]);
-}this.windowInputMap = map;
+}this.windowInputMap=map;
 p$.setFlag$I$Z.apply(this, [7, true]);
 p$.registerWithKeyboardManager$Z.apply(this, [false]);
 break;
 case 1:
-this.ancestorInputMap = map;
+this.ancestorInputMap=map;
 p$.setFlag$I$Z.apply(this, [6, true]);
 break;
 case 0:
-this.focusInputMap = map;
+this.focusInputMap=map;
 p$.setFlag$I$Z.apply(this, [5, true]);
 break;
 default:
@@ -27008,7 +27008,7 @@ return this.getInputMap$I$Z(0, true);
 });
 
 Clazz_newMeth(C$, 'setActionMap$javax_swing_ActionMap', function (am) {
-this.actionMap = am;
+this.actionMap=am;
 p$.setFlag$I$Z.apply(this, [8, true]);
 });
 
@@ -27121,7 +27121,7 @@ this.repaint();
 Clazz_newMeth(C$, 'getDefaultLocale', function () {
 var l = (I$[1]||$incl$(1)).appContextGet$O("JComponent.defaultLocale");
 if (l == null ) {
-l = (I$[21]||$incl$(21)).getDefault();
+l=(I$[21]||$incl$(21)).getDefault();
 C$.setDefaultLocale$java_util_Locale(l);
 }return l;
 }, 1);
@@ -27138,7 +27138,7 @@ var shouldProcessKey;
 C$.superclazz.prototype.processKeyEvent$java_awt_event_KeyEvent.apply(this, [e]);
 if (!e.isConsumed()) {
 this.processComponentKeyEvent$java_awt_event_KeyEvent(e);
-}shouldProcessKey = (I$[22]||$incl$(22)).shouldProcess$java_awt_event_KeyEvent(e);
+}shouldProcessKey=(I$[22]||$incl$(22)).shouldProcess$java_awt_event_KeyEvent(e);
 if (e.isConsumed()) {
 return;
 }if (shouldProcessKey && this.processKeyBindings$java_awt_event_KeyEvent$Z(e, e.getID() == 401) ) {
@@ -27161,15 +27161,15 @@ if (!(I$[1]||$incl$(1)).isValidKeyEventForKeyBindings$java_awt_event_KeyEvent(e)
 return false;
 }var ks;
 if (e.getID() == 400) {
-ks = (I$[8]||$incl$(8)).getKeyStroke$C(e.getKeyChar());
+ks=(I$[8]||$incl$(8)).getKeyStroke$C(e.getKeyChar());
 } else {
-ks = (I$[8]||$incl$(8)).getKeyStroke$I$I$Z(e.getKeyCode(), e.getModifiers(), (pressed ? false : true));
+ks=(I$[8]||$incl$(8)).getKeyStroke$I$I$Z(e.getKeyCode(), e.getModifiers(), (pressed ? false : true));
 }if (this.processKeyBinding$javax_swing_KeyStroke$java_awt_event_KeyEvent$I$Z(ks, e, 0, pressed)) return true;
 var parent = this;
 while (parent != null  && !(Clazz_instanceOf(parent, "java.awt.Window"))  && !(Clazz_instanceOf(parent, "java.applet.Applet")) ){
 if (Clazz_instanceOf(parent, "javax.swing.JComponent")) {
 if ((parent).processKeyBinding$javax_swing_KeyStroke$java_awt_event_KeyEvent$I$Z(ks, e, 1, pressed)) return true;
-}parent = parent.getParent();
+}parent=parent.getParent();
 }
 if (parent != null ) {
 return C$.processKeyBindingsForAllComponents$java_awt_event_KeyEvent$java_awt_Container$Z(e, parent, pressed);
@@ -27181,7 +27181,7 @@ while (true){
 if ((I$[16]||$incl$(16)).getCurrentManager().fireKeyboardAction$java_awt_event_KeyEvent$Z$java_awt_Container(e, pressed, container)) {
 return true;
 }if ((I$[23]||$incl$(23)).isHeavyWeight$java_awt_Container(container)) {
-container = (container).getOwner();
+container=(container).getOwner();
 } else {
 return false;
 }}
@@ -27217,23 +27217,23 @@ Clazz_newMeth(C$, 'scrollRectToVisible$java_awt_Rectangle', function (aRect) {
 var parent;
 var dx = this.getX();
 var dy = this.getY();
-for (parent = this.getParent(); !(parent == null ) && !(Clazz_instanceOf(parent, "javax.swing.JComponent")) && !(Clazz_instanceOf(parent, "javax.swing.CellRendererPane"))  ; parent = parent.getParent()) {
+for (parent=this.getParent(); !(parent == null ) && !(Clazz_instanceOf(parent, "javax.swing.JComponent")) && !(Clazz_instanceOf(parent, "javax.swing.CellRendererPane"))  ; parent=parent.getParent()) {
 var bounds = parent.getBounds();
-dx = dx+(bounds.x);
-dy = dy+(bounds.y);
+dx+=bounds.x;
+dy+=bounds.y;
 }
 if (!(parent == null ) && !(Clazz_instanceOf(parent, "javax.swing.CellRendererPane")) ) {
-aRect.x = aRect.x+(dx);
-aRect.y = aRect.y+(dy);
+aRect.x+=dx;
+aRect.y+=dy;
 (parent).scrollRectToVisible$java_awt_Rectangle(aRect);
-aRect.x = aRect.x-(dx);
-aRect.y = aRect.y-(dy);
+aRect.x-=dx;
+aRect.y-=dy;
 }});
 
 Clazz_newMeth(C$, 'setAutoscrolls$Z', function (autoscrolls) {
 p$.setFlag$I$Z.apply(this, [25, true]);
 if (this.autoscrolls != autoscrolls ) {
-this.autoscrolls = autoscrolls;
+this.autoscrolls=autoscrolls;
 if (autoscrolls) {
 this.enableEvents$J(16);
 this.enableEvents$J(32);
@@ -27254,7 +27254,7 @@ if (this.autoscrolls && e.getID() == 502 ) {
 Clazz_newMeth(C$, 'processMouseMotionEvent$java_awt_event_MouseEvent', function (e) {
 var dispatch = true;
 if (this.autoscrolls && e.getID() == 506 ) {
-dispatch = !(I$[25]||$incl$(25)).isRunning$javax_swing_JComponent(this);
+dispatch=!(I$[25]||$incl$(25)).isRunning$javax_swing_JComponent(this);
 (I$[25]||$incl$(25)).processMouseDragged$java_awt_event_MouseEvent(e);
 }if (dispatch) {
 C$.superclazz.prototype.processMouseMotionEvent$java_awt_event_MouseEvent.apply(this, [e]);
@@ -27282,7 +27282,7 @@ return null;
 
 Clazz_newMeth(C$, 'getClientProperties', function () {
 if (this.clientProperties == null ) {
-this.clientProperties = Clazz_new_((I$[26]||$incl$(26)));
+this.clientProperties=Clazz_new_((I$[26]||$incl$(26)));
 }return this.clientProperties;
 });
 
@@ -27300,7 +27300,7 @@ return;
 }var clientProperties = p$.getClientProperties.apply(this, []);
 var oldValue;
 {
-oldValue = clientProperties.get$O(key);
+oldValue=clientProperties.get$O(key);
 if (value != null ) {
 clientProperties.put$O$O(key, value);
 } else if (oldValue != null ) {
@@ -27316,7 +27316,7 @@ Clazz_newMeth(C$, 'clientPropertyChanged$O$O$O', function (key, oldValue, newVal
 
 Clazz_newMeth(C$, 'setUI$javax_swing_plaf_ComponentUI', function (newUI) {
 p$.uninstallUIAndProperties.apply(this, []);
-this.ui = newUI;
+this.ui=newUI;
 if (this.ui != null ) {
 this.ui.installJS();
 }this.revalidate();
@@ -27373,10 +27373,10 @@ var cx;
 var cy;
 var cw;
 var ch;
-cx = child.getX();
-cy = child.getY();
-cw = child.getWidth();
-ch = child.getHeight();
+cx=child.getX();
+cy=child.getY();
+cw=child.getWidth();
+ch=child.getHeight();
 if (x >= cx && (x + width) <= (cx + cw)  && y >= cy  && (y + height) <= (cy + ch)  && child.isVisible() ) {
 if (Clazz_instanceOf(child, "javax.swing.JComponent")) {
 return (child).isOpaque();
@@ -27393,8 +27393,8 @@ if (p == null  || Clazz_instanceOf(p, "java.awt.Window")  || Clazz_instanceOf(p,
 visibleRect.setBounds$I$I$I$I(0, 0, bounds.width, bounds.height);
 } else {
 C$.computeVisibleRect$java_awt_Component$java_awt_Rectangle(p, visibleRect);
-visibleRect.x = visibleRect.x-(bounds.x);
-visibleRect.y = visibleRect.y-(bounds.y);
+visibleRect.x-=bounds.x;
+visibleRect.y-=bounds.y;
 (I$[1]||$incl$(1)).computeIntersection$I$I$I$I$java_awt_Rectangle(0, 0, bounds.width, bounds.height, visibleRect);
 }}, 1);
 
@@ -27409,7 +27409,7 @@ return visibleRect;
 });
 
 Clazz_newMeth(C$, 'getTopLevelAncestor', function () {
-for (var p = this; p != null ; p = p.getParent()) {
+for (var p = this; p != null ; p=p.getParent()) {
 if (Clazz_instanceOf(p, "java.awt.Window") || Clazz_instanceOf(p, "java.applet.Applet") ) {
 return p;
 }}
@@ -27423,7 +27423,7 @@ return this.getClientProperty$O((I$[13]||$incl$(13)).JComponent_ANCESTOR_NOTIFIE
 Clazz_newMeth(C$, 'addAncestorListener$javax_swing_event_AncestorListener', function (listener) {
 var ancestorNotifier = p$.getAncestorNotifier.apply(this, []);
 if (ancestorNotifier == null ) {
-ancestorNotifier = Clazz_new_((I$[29]||$incl$(29)).c$$javax_swing_JComponent,[this]);
+ancestorNotifier=Clazz_new_((I$[29]||$incl$(29)).c$$javax_swing_JComponent,[this]);
 this.putClientProperty$O$O((I$[13]||$incl$(13)).JComponent_ANCESTOR_NOTIFIER, ancestorNotifier);
 }ancestorNotifier.addAncestorListener$javax_swing_event_AncestorListener(listener);
 });
@@ -27448,11 +27448,11 @@ return Clazz_array((I$[30]||$incl$(30)), [0]);
 Clazz_newMeth(C$, 'getListeners$Class', function (listenerType) {
 var result;
 if (listenerType === Clazz_getClass((I$[30]||$incl$(30)),['ancestorAdded$javax_swing_event_AncestorEvent','ancestorMoved$javax_swing_event_AncestorEvent','ancestorRemoved$javax_swing_event_AncestorEvent']) ) {
-result = this.getAncestorListeners();
+result=this.getAncestorListeners();
 } else if (listenerType === Clazz_getClass((I$[31]||$incl$(31)),['propertyChange$java_beans_PropertyChangeEvent']) ) {
-result = this.getPropertyChangeListeners();
+result=this.getPropertyChangeListeners();
 } else {
-result = this.listenerList.getListeners$Class(listenerType);
+result=this.listenerList.getListeners$Class(listenerType);
 }if (result.length == 0) {
 return C$.superclazz.prototype.getListeners$Class.apply(this, [listenerType]);
 }return result;
@@ -27534,11 +27534,11 @@ var parent;
 if (!this.isShowing()) {
 return;
 }while (!(c).isOpaque()){
-parent = c.getParent();
+parent=c.getParent();
 if (parent != null ) {
-x = x+(c.getX());
-y = y+(c.getY());
-c = parent;
+x+=c.getX();
+y+=c.getY();
+c=parent;
 } else {
 break;
 }if (!(Clazz_instanceOf(c, "javax.swing.JComponent"))) {
@@ -27559,7 +27559,7 @@ return false;
 });
 
 Clazz_newMeth(C$, 'setPaintingChild$java_awt_Component', function (paintingChild) {
-this.paintingChild = paintingChild;
+this.paintingChild=paintingChild;
 });
 
 Clazz_newMeth(C$, '_paintImmediately$I$I$I$I', function (x, y, w, h) {
@@ -27577,12 +27577,12 @@ var paintingComponent = this;
 var path = Clazz_new_((I$[33]||$incl$(33)).c$$I,[7]);
 var pIndex = -1;
 var pCount = 0;
-tmpX = tmpY = tmpWidth = tmpHeight = 0;
+tmpX=tmpY=tmpWidth=tmpHeight=0;
 var paintImmediatelyClip = C$.fetchRectangle();
-paintImmediatelyClip.x = x;
-paintImmediatelyClip.y = y;
-paintImmediatelyClip.width = w;
-paintImmediatelyClip.height = h;
+paintImmediatelyClip.x=x;
+paintImmediatelyClip.y=y;
+paintImmediatelyClip.width=w;
+paintImmediatelyClip.height=h;
 var ontop = this.alwaysOnTop() && this.isOpaque() ;
 if (ontop) {
 (I$[1]||$incl$(1)).computeIntersection$I$I$I$I$java_awt_Rectangle(0, 0, this.getWidth(), this.getHeight(), paintImmediatelyClip);
@@ -27590,14 +27590,14 @@ if (paintImmediatelyClip.width == 0) {
 C$.recycleRectangle$java_awt_Rectangle(paintImmediatelyClip);
 return;
 }}var child;
-for (c = this, child = null; c != null  && !(Clazz_instanceOf(c, "java.awt.Window"))  && !(Clazz_instanceOf(c, "java.applet.Applet")) ; child = c, c = c.getParent()) {
+for (c=this, child=null; c != null  && !(Clazz_instanceOf(c, "java.awt.Window"))  && !(Clazz_instanceOf(c, "java.applet.Applet")) ; child=c, c=c.getParent()) {
 var jc = (Clazz_instanceOf(c, "javax.swing.JComponent")) ? c : null;
 path.add$TE(c);
 if (!ontop && jc != null   && !jc.isOptimizedDrawingEnabled() ) {
 var resetPC;
 if (c !== this ) {
 if (jc.isPaintingOrigin()) {
-resetPC = true;
+resetPC=true;
 } else {
 var children = c.getComponents();
 var i = 0;
@@ -27606,50 +27606,50 @@ if (children[i] === child ) break;
 }
 switch (jc.getObscuredState$I$I$I$I$I(i, paintImmediatelyClip.x, paintImmediatelyClip.y, paintImmediatelyClip.width, paintImmediatelyClip.height)) {
 case 0:
-resetPC = false;
+resetPC=false;
 break;
 case 2:
 C$.recycleRectangle$java_awt_Rectangle(paintImmediatelyClip);
 return;
 default:
-resetPC = true;
+resetPC=true;
 break;
 }
 }} else {
-resetPC = false;
+resetPC=false;
 }if (resetPC) {
-paintingComponent = jc;
-pIndex = pCount;
-offsetX = offsetY = 0;
-hasBuffer = false;
+paintingComponent=jc;
+pIndex=pCount;
+offsetX=offsetY=0;
+hasBuffer=false;
 }}pCount++;
 if (!ontop) {
 var bx = c.getX();
 var by = c.getY();
-tmpWidth = c.getWidth();
-tmpHeight = c.getHeight();
+tmpWidth=c.getWidth();
+tmpHeight=c.getHeight();
 (I$[1]||$incl$(1)).computeIntersection$I$I$I$I$java_awt_Rectangle(tmpX, tmpY, tmpWidth, tmpHeight, paintImmediatelyClip);
-paintImmediatelyClip.x = paintImmediatelyClip.x+(bx);
-paintImmediatelyClip.y = paintImmediatelyClip.y+(by);
-offsetX = offsetX+(bx);
-offsetY = offsetY+(by);
+paintImmediatelyClip.x+=bx;
+paintImmediatelyClip.y+=by;
+offsetX+=bx;
+offsetY+=by;
 }}
 if (c == null  || paintImmediatelyClip.width <= 0  || paintImmediatelyClip.height <= 0 ) {
 C$.recycleRectangle$java_awt_Rectangle(paintImmediatelyClip);
 return;
 }paintingComponent.setFlag$I$Z(13, true);
-paintImmediatelyClip.x = paintImmediatelyClip.x-(offsetX);
-paintImmediatelyClip.y = paintImmediatelyClip.y-(offsetY);
+paintImmediatelyClip.x-=offsetX;
+paintImmediatelyClip.y-=offsetY;
 if (paintingComponent !== this ) {
 var comp;
 var i = pIndex;
 for (; i > 0; i--) {
-comp = path.get$I(i);
+comp=path.get$I(i);
 if (Clazz_instanceOf(comp, "javax.swing.JComponent")) {
 (comp).setPaintingChild$java_awt_Component(path.get$I(i - 1));
 }}
 }try {
-g = C$.safelyGetGraphics$java_awt_Component$java_awt_Component(paintingComponent, c);
+g=C$.safelyGetGraphics$java_awt_Component$java_awt_Component(paintingComponent, c);
 try {
 if (hasBuffer) {
 var rm = (I$[10]||$incl$(10)).currentManager$javax_swing_JComponent(bufferedComponent);
@@ -27672,7 +27672,7 @@ if (paintingComponent !== this ) {
 var comp;
 var i = pIndex;
 for (; i > 0; i--) {
-comp = path.get$I(i);
+comp=path.get$I(i);
 if (Clazz_instanceOf(comp, "javax.swing.JComponent")) {
 (comp).setPaintingChild$java_awt_Component(null);
 }}
@@ -27709,18 +27709,18 @@ continue;
 }var siblingRect;
 var opaque;
 if (Clazz_instanceOf(sibling, "javax.swing.JComponent")) {
-opaque = (sibling).isOpaque();
+opaque=(sibling).isOpaque();
 if (!opaque) {
 if (retValue == 1) {
 continue;
 }}} else {
-opaque = true;
-}siblingRect = sibling.getBounds$java_awt_Rectangle(tmpRect);
+opaque=true;
+}siblingRect=sibling.getBounds$java_awt_Rectangle(tmpRect);
 if (opaque && x >= siblingRect.x  && (x + width) <= (siblingRect.x + siblingRect.width)  && y >= siblingRect.y  && (y + height) <= (siblingRect.y + siblingRect.height) ) {
 C$.recycleRectangle$java_awt_Rectangle(tmpRect);
 return 2;
 } else if (retValue == 0 && !((x + width <= siblingRect.x) || (y + height <= siblingRect.y) || (x >= siblingRect.x + siblingRect.width) || (y >= siblingRect.y + siblingRect.height)  ) ) {
-retValue = 1;
+retValue=1;
 }}
 C$.recycleRectangle$java_awt_Rectangle(tmpRect);
 return retValue;
@@ -27732,9 +27732,9 @@ return true;
 
 Clazz_newMeth(C$, 'setFlag$I$Z', function (aFlag, aValue) {
 if (aValue) {
-this.flags = this.flags|((1 << aFlag));
+this.flags|=(1 << aFlag);
 } else {
-this.flags = this.flags&(~(1 << aFlag));
+this.flags&=~(1 << aFlag);
 }});
 
 Clazz_newMeth(C$, 'getFlag$I', function (aFlag) {
@@ -27830,12 +27830,12 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$java_awt_event_ActionListener$S', function (actionListener, command) {
 C$.$init$.apply(this);
-this.actionListener = actionListener;
+this.actionListener=actionListener;
 if (Clazz_instanceOf(actionListener, "javax.swing.Action")) {
-this.action = actionListener;
+this.action=actionListener;
 } else {
-this.action = null;
-}this.command = command;
+this.action=null;
+}this.command=command;
 }, 1);
 
 Clazz_newMeth(C$, 'getValue$S', function (key) {
@@ -27904,16 +27904,16 @@ return this.array[index];
 
 Clazz_newMeth(C$, 'addElement$I', function (value) {
 if (this.count == this.capacity) {
-this.capacity = (this.capacity + 2) * 2;
+this.capacity=(this.capacity + 2) * 2;
 var newarray = Clazz_array(Integer.TYPE, [this.capacity]);
 if (this.count > 0) {
 System.arraycopy(this.array, 0, newarray, 0, this.count);
-}this.array = newarray;
-}this.array[this.count++] = value;
+}this.array=newarray;
+}this.array[this.count++]=value;
 });
 
 Clazz_newMeth(C$, 'setElementAt$I$I', function (value, index) {
-this.array[index] = value;
+this.array[index]=value;
 });
 
 Clazz_newMeth(C$);
@@ -27934,7 +27934,7 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'getKeyCodeArray', function () {
 var iv = (I$[1]||$incl$(1)).appContextGet$O(C$.keyCodesKey);
 if (iv == null ) {
-iv = Clazz_new_((I$[2]||$incl$(2)));
+iv=Clazz_new_((I$[2]||$incl$(2)));
 (I$[1]||$incl$(1)).appContextPut$O$O(C$.keyCodesKey, iv);
 }return iv;
 }, 1);
@@ -27943,7 +27943,7 @@ Clazz_newMeth(C$, 'registerKeyPressed$I', function (keyCode) {
 var kca = C$.getKeyCodeArray();
 var count = kca.size();
 var i;
-for (i = 0; i < count; i++) {
+for (i=0; i < count; i++) {
 if (kca.elementAt$I(i) == -1) {
 kca.setElementAt$I$I(keyCode, i);
 return;
@@ -27955,7 +27955,7 @@ Clazz_newMeth(C$, 'registerKeyReleased$I', function (keyCode) {
 var kca = C$.getKeyCodeArray();
 var count = kca.size();
 var i;
-for (i = 0; i < count; i++) {
+for (i=0; i < count; i++) {
 if (kca.elementAt$I(i) == keyCode) {
 kca.setElementAt$I$I(-1, i);
 return;
@@ -27966,7 +27966,7 @@ Clazz_newMeth(C$, 'keyIsPressed$I', function (keyCode) {
 var kca = C$.getKeyCodeArray();
 var count = kca.size();
 var i;
-for (i = 0; i < count; i++) {
+for (i=0; i < count; i++) {
 if (kca.elementAt$I(i) == keyCode) {
 return true;
 }}
@@ -27994,7 +27994,7 @@ return false;
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:27
+//Created 2018-05-24 08:46:14
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.SwingUtilities','javax.swing.UIManager']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JLabel", null, 'javax.swing.JComponent', 'javax.swing.SwingConstants');
 
@@ -28037,7 +28037,7 @@ Clazz_super_(C$, this,1);
 this.setText$S(text);
 this.setIcon$javax_swing_Icon(icon);
 this.setHorizontalAlignment$I(horizontalAlignment);
-this.uiClassID = "LabelUI";
+this.uiClassID="LabelUI";
 this.updateUI();
 this.setAlignmentX$F(0.0);
 }, 1);
@@ -28074,7 +28074,7 @@ return this.text;
 
 Clazz_newMeth(C$, 'setText$S', function (text) {
 var oldValue = this.text;
-this.text = text;
+this.text=text;
 this.firePropertyChange$S$O$O("text", oldValue, text);
 this.setDisplayedMnemonicIndex$I((I$[1]||$incl$(1)).findDisplayedMnemonicIndex$S$I(text, this.getDisplayedMnemonic()));
 if (text == null  || oldValue == null   || !text.equals$O(oldValue) ) {
@@ -28088,9 +28088,9 @@ return this.defaultIcon;
 
 Clazz_newMeth(C$, 'setIcon$javax_swing_Icon', function (icon) {
 var oldValue = this.defaultIcon;
-this.defaultIcon = icon;
+this.defaultIcon=icon;
 if ((this.defaultIcon !== oldValue ) && !this.disabledIconSet ) {
-this.disabledIcon = null;
+this.disabledIcon=null;
 }this.firePropertyChange$S$O$O("icon", oldValue, this.defaultIcon);
 if (this.defaultIcon !== oldValue ) {
 if ((this.defaultIcon == null ) || (oldValue == null ) || (this.defaultIcon.getIconWidth() != oldValue.getIconWidth()) || (this.defaultIcon.getIconHeight() != oldValue.getIconHeight())  ) {
@@ -28100,7 +28100,7 @@ this.revalidate();
 
 Clazz_newMeth(C$, 'getDisabledIcon', function () {
 if (!this.disabledIconSet && this.disabledIcon == null   && this.defaultIcon != null  ) {
-this.disabledIcon = (I$[2]||$incl$(2)).getLookAndFeel().getDisabledIcon$javax_swing_JComponent$javax_swing_Icon(this, this.defaultIcon);
+this.disabledIcon=(I$[2]||$incl$(2)).getLookAndFeel().getDisabledIcon$javax_swing_JComponent$javax_swing_Icon(this, this.defaultIcon);
 if (this.disabledIcon != null ) {
 this.firePropertyChange$S$O$O("disabledIcon", null, this.disabledIcon);
 }}return this.disabledIcon;
@@ -28108,8 +28108,8 @@ this.firePropertyChange$S$O$O("disabledIcon", null, this.disabledIcon);
 
 Clazz_newMeth(C$, 'setDisabledIcon$javax_swing_Icon', function (disabledIcon) {
 var oldValue = this.disabledIcon;
-this.disabledIcon = disabledIcon;
-this.disabledIconSet = (disabledIcon != null );
+this.disabledIcon=disabledIcon;
+this.disabledIconSet=(disabledIcon != null );
 this.firePropertyChange$S$O$O("disabledIcon", oldValue, disabledIcon);
 if (disabledIcon !== oldValue ) {
 if (disabledIcon == null  || oldValue == null   || disabledIcon.getIconWidth() != oldValue.getIconWidth()  || disabledIcon.getIconHeight() != oldValue.getIconHeight() ) {
@@ -28120,7 +28120,7 @@ this.repaint();
 
 Clazz_newMeth(C$, 'setDisplayedMnemonic$I', function (key) {
 var oldKey = this.mnemonic;
-this.mnemonic = key;
+this.mnemonic=key;
 this.firePropertyChange$S$I$I("displayedMnemonic", oldKey, this.mnemonic);
 this.setDisplayedMnemonicIndex$I((I$[1]||$incl$(1)).findDisplayedMnemonicIndex$S$I(this.getText(), this.mnemonic));
 if (key != oldKey) {
@@ -28130,7 +28130,7 @@ this.repaint();
 
 Clazz_newMeth(C$, 'setDisplayedMnemonic$C', function (aChar) {
 var vk = aChar.$c();
-if (vk >= 97  && vk <= 122  ) vk = vk-(32);
+if (vk >= 97  && vk <= 122  ) vk-=32;
 this.setDisplayedMnemonic$I(vk);
 });
 
@@ -28141,13 +28141,13 @@ return this.mnemonic;
 Clazz_newMeth(C$, 'setDisplayedMnemonicIndex$I', function (index) {
 var oldValue = this.mnemonicIndex;
 if (index == -1) {
-this.mnemonicIndex = -1;
+this.mnemonicIndex=-1;
 } else {
 var text = this.getText();
 var textLength = (text == null ) ? 0 : text.length$();
 if (index < -1 || index >= textLength ) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["index == " + index]);
-}}this.mnemonicIndex = index;
+}}this.mnemonicIndex=index;
 this.firePropertyChange$S$I$I("displayedMnemonicIndex", oldValue, index);
 if (index != oldValue) {
 this.revalidate();
@@ -28178,7 +28178,7 @@ return this.iconTextGap;
 
 Clazz_newMeth(C$, 'setIconTextGap$I', function (iconTextGap) {
 var oldValue = this.iconTextGap;
-this.iconTextGap = iconTextGap;
+this.iconTextGap=iconTextGap;
 this.firePropertyChange$S$I$I("iconTextGap", oldValue, iconTextGap);
 if (iconTextGap != oldValue) {
 this.revalidate();
@@ -28192,7 +28192,7 @@ return this.verticalAlignment;
 Clazz_newMeth(C$, 'setVerticalAlignment$I', function (alignment) {
 if (alignment == this.verticalAlignment) return;
 var oldValue = this.verticalAlignment;
-this.verticalAlignment = this.checkVerticalKey$I$S(alignment, "verticalAlignment");
+this.verticalAlignment=this.checkVerticalKey$I$S(alignment, "verticalAlignment");
 this.firePropertyChange$S$I$I("verticalAlignment", oldValue, this.verticalAlignment);
 this.repaint();
 });
@@ -28204,7 +28204,7 @@ return this.horizontalAlignment;
 Clazz_newMeth(C$, 'setHorizontalAlignment$I', function (alignment) {
 if (alignment == this.horizontalAlignment) return;
 var oldValue = this.horizontalAlignment;
-this.horizontalAlignment = this.checkHorizontalKey$I$S(alignment, "horizontalAlignment");
+this.horizontalAlignment=this.checkHorizontalKey$I$S(alignment, "horizontalAlignment");
 this.firePropertyChange$S$I$I("horizontalAlignment", oldValue, this.horizontalAlignment);
 this.repaint();
 });
@@ -28216,7 +28216,7 @@ return this.verticalTextPosition;
 Clazz_newMeth(C$, 'setVerticalTextPosition$I', function (textPosition) {
 if (textPosition == this.verticalTextPosition) return;
 var old = this.verticalTextPosition;
-this.verticalTextPosition = this.checkVerticalKey$I$S(textPosition, "verticalTextPosition");
+this.verticalTextPosition=this.checkVerticalKey$I$S(textPosition, "verticalTextPosition");
 this.firePropertyChange$S$I$I("verticalTextPosition", old, this.verticalTextPosition);
 this.revalidate();
 this.repaint();
@@ -28228,7 +28228,7 @@ return this.horizontalTextPosition;
 
 Clazz_newMeth(C$, 'setHorizontalTextPosition$I', function (textPosition) {
 var old = this.horizontalTextPosition;
-this.horizontalTextPosition = this.checkHorizontalKey$I$S(textPosition, "horizontalTextPosition");
+this.horizontalTextPosition=this.checkHorizontalKey$I$S(textPosition, "horizontalTextPosition");
 this.firePropertyChange$S$I$I("horizontalTextPosition", old, this.horizontalTextPosition);
 this.revalidate();
 this.repaint();
@@ -28247,44 +28247,44 @@ var disabledIconString = ((this.disabledIcon != null ) && (this.disabledIcon !==
 var labelForString = (this.labelFor != null  ? this.labelFor.toString() : "");
 var verticalAlignmentString;
 if (this.verticalAlignment == 1) {
-verticalAlignmentString = "TOP";
+verticalAlignmentString="TOP";
 } else if (this.verticalAlignment == 0) {
-verticalAlignmentString = "CENTER";
+verticalAlignmentString="CENTER";
 } else if (this.verticalAlignment == 3) {
-verticalAlignmentString = "BOTTOM";
-} else verticalAlignmentString = "";
+verticalAlignmentString="BOTTOM";
+} else verticalAlignmentString="";
 var horizontalAlignmentString;
 if (this.horizontalAlignment == 2) {
-horizontalAlignmentString = "LEFT";
+horizontalAlignmentString="LEFT";
 } else if (this.horizontalAlignment == 0) {
-horizontalAlignmentString = "CENTER";
+horizontalAlignmentString="CENTER";
 } else if (this.horizontalAlignment == 4) {
-horizontalAlignmentString = "RIGHT";
+horizontalAlignmentString="RIGHT";
 } else if (this.horizontalAlignment == 10) {
-horizontalAlignmentString = "LEADING";
+horizontalAlignmentString="LEADING";
 } else if (this.horizontalAlignment == 11) {
-horizontalAlignmentString = "TRAILING";
-} else horizontalAlignmentString = "";
+horizontalAlignmentString="TRAILING";
+} else horizontalAlignmentString="";
 var verticalTextPositionString;
 if (this.verticalTextPosition == 1) {
-verticalTextPositionString = "TOP";
+verticalTextPositionString="TOP";
 } else if (this.verticalTextPosition == 0) {
-verticalTextPositionString = "CENTER";
+verticalTextPositionString="CENTER";
 } else if (this.verticalTextPosition == 3) {
-verticalTextPositionString = "BOTTOM";
-} else verticalTextPositionString = "";
+verticalTextPositionString="BOTTOM";
+} else verticalTextPositionString="";
 var horizontalTextPositionString;
 if (this.horizontalTextPosition == 2) {
-horizontalTextPositionString = "LEFT";
+horizontalTextPositionString="LEFT";
 } else if (this.horizontalTextPosition == 0) {
-horizontalTextPositionString = "CENTER";
+horizontalTextPositionString="CENTER";
 } else if (this.horizontalTextPosition == 4) {
-horizontalTextPositionString = "RIGHT";
+horizontalTextPositionString="RIGHT";
 } else if (this.horizontalTextPosition == 10) {
-horizontalTextPositionString = "LEADING";
+horizontalTextPositionString="LEADING";
 } else if (this.horizontalTextPosition == 11) {
-horizontalTextPositionString = "TRAILING";
-} else horizontalTextPositionString = "";
+horizontalTextPositionString="TRAILING";
+} else horizontalTextPositionString="";
 return C$.superclazz.prototype.paramString.apply(this, []) + ",defaultIcon=" + defaultIconString + ",disabledIcon=" + disabledIconString + ",horizontalAlignment=" + horizontalAlignmentString + ",horizontalTextPosition=" + horizontalTextPositionString + ",iconTextGap=" + this.iconTextGap + ",labelFor=" + labelForString + ",text=" + textString + ",verticalAlignment=" + verticalAlignmentString + ",verticalTextPosition=" + verticalTextPositionString ;
 });
 
@@ -28294,7 +28294,7 @@ return this.labelFor;
 
 Clazz_newMeth(C$, 'setLabelFor$java_awt_Component', function (c) {
 var oldC = this.labelFor;
-this.labelFor = c;
+this.labelFor=c;
 this.firePropertyChange$S$O$O("labelFor", oldC, c);
 if (Clazz_instanceOf(oldC, "javax.swing.JComponent")) {
 (oldC).putClientProperty$O$O("labeledBy", null);
@@ -28302,7 +28302,7 @@ if (Clazz_instanceOf(oldC, "javax.swing.JComponent")) {
 (c).putClientProperty$O$O("labeledBy", this);
 }});
 })();
-//Created 2018-05-15 01:02:29
+//Created 2018-05-24 08:46:17
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.awt.Component','java.awt.Color','java.util.Hashtable','java.util.ArrayList']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JLayeredPane", null, 'javax.swing.JComponent');
 C$.DEFAULT_LAYER = null;
@@ -28335,7 +28335,7 @@ this.optimizedDrawingPossible = true;
 Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
 this.setLayout$java_awt_LayoutManager(null);
-this.uiClassID = "LayeredPaneUI";
+this.uiClassID="LayeredPaneUI";
 this.updateUI();
 }, 1);
 
@@ -28344,24 +28344,24 @@ var layeredComponentFound = false;
 {
 var layer = null;
 for (var c, $c = 0, $$c = this.getComponents(); $c<$$c.length&&((c=$$c[$c]),1);$c++) {
-layer = null;
-if ((Clazz_instanceOf(c, "javax.swing.JComponent") && (layer = (c).getClientProperty$O("layeredContainerLayer")) != null  )) {
+layer=null;
+if ((Clazz_instanceOf(c, "javax.swing.JComponent") && (layer=(c).getClientProperty$O("layeredContainerLayer")) != null  )) {
 if (layer != null  && layer.equals(C$.FRAME_CONTENT_LAYER) ) continue;
-layeredComponentFound = true;
+layeredComponentFound=true;
 break;
 }}
-}if (layeredComponentFound) this.optimizedDrawingPossible = false;
- else this.optimizedDrawingPossible = true;
+}if (layeredComponentFound) this.optimizedDrawingPossible=false;
+ else this.optimizedDrawingPossible=true;
 });
 
 Clazz_newMeth(C$, 'addImpl$java_awt_Component$O$I', function (comp, constraints, index) {
 var layer = C$.DEFAULT_LAYER.intValue();
 var pos;
 if (Clazz_instanceOf(constraints, "java.lang.Integer")) {
-layer = (constraints).intValue();
+layer=(constraints).intValue();
 this.setLayer$java_awt_Component$I(comp, layer);
-} else layer = this.getLayer$java_awt_Component(comp);
-pos = this.insertIndexForLayer$I$I(layer, index);
+} else layer=this.getLayer$java_awt_Component(comp);
+pos=this.insertIndexForLayer$I$I(layer, index);
 this.addImplCont$java_awt_Component$O$I(comp, constraints, pos);
 comp.validate();
 comp.repaint();
@@ -28394,20 +28394,20 @@ return this.optimizedDrawingPossible;
 
 Clazz_newMeth(C$, 'putLayer$javax_swing_JComponent$I', function (c, layer) {
 var layerObj;
-layerObj =  new Integer(layer);
+layerObj= new Integer(layer);
 c.putClientProperty$O$O("layeredContainerLayer", layerObj);
 }, 1);
 
 Clazz_newMeth(C$, 'getLayer$javax_swing_JComponent', function (c) {
 var i;
-if ((i = c.getClientProperty$O("layeredContainerLayer")) != null ) return i.intValue();
+if ((i=c.getClientProperty$O("layeredContainerLayer")) != null ) return i.intValue();
 return C$.DEFAULT_LAYER.intValue();
 }, 1);
 
 Clazz_newMeth(C$, 'getLayeredPaneAbove$java_awt_Component', function (c) {
 if (c == null ) return null;
 var parent = c.getParent();
-while (parent != null  && !(Clazz_instanceOf(parent, "javax.swing.JLayeredPane")) )parent = parent.getParent();
+while (parent != null  && !(Clazz_instanceOf(parent, "javax.swing.JLayeredPane")) )parent=parent.getParent();
 
 return parent;
 }, 1);
@@ -28418,7 +28418,7 @@ this.setLayer$java_awt_Component$I$I(c, layer, -1);
 
 Clazz_newMeth(C$, 'setLayer$java_awt_Component$I$I', function (c, layer, position) {
 var layerObj;
-layerObj = this.getObjectForLayer$I(layer);
+layerObj=this.getObjectForLayer$I(layer);
 if (layer == this.getLayer$java_awt_Component(c) && position == this.getPosition$java_awt_Component(c) ) {
 this.repaint$java_awt_Rectangle(c.getBounds());
 return;
@@ -28434,8 +28434,8 @@ this.repaint$java_awt_Rectangle(c.getBounds());
 
 Clazz_newMeth(C$, 'getLayer$java_awt_Component', function (c) {
 var i;
-if (Clazz_instanceOf(c, "javax.swing.JComponent")) i = (c).getClientProperty$O("layeredContainerLayer");
- else i = this.getComponentToLayer().get$O(c);
+if (Clazz_instanceOf(c, "javax.swing.JComponent")) i=(c).getClientProperty$O("layeredContainerLayer");
+ else i=this.getComponentToLayer().get$O(c);
 if (i == null ) return C$.DEFAULT_LAYER.intValue();
 return i.intValue();
 });
@@ -28443,8 +28443,8 @@ return i.intValue();
 Clazz_newMeth(C$, 'getIndexOf$java_awt_Component', function (c) {
 var i;
 var count;
-count = this.getComponentCount();
-for (i = 0; i < count; i++) {
+count=this.getComponentCount();
+for (i=0; i < count; i++) {
 if (c === this.getComponent$I(i) ) return i;
 }
 return -1;
@@ -28469,12 +28469,12 @@ var startLayer;
 var curLayer;
 var startLocation;
 var pos = 0;
-count = this.getComponentCount();
-startLocation = this.getIndexOf$java_awt_Component(c);
+count=this.getComponentCount();
+startLocation=this.getIndexOf$java_awt_Component(c);
 if (startLocation == -1) return -1;
-startLayer = this.getLayer$java_awt_Component(c);
-for (i = startLocation - 1; i >= 0; i--) {
-curLayer = this.getLayer$java_awt_Component(this.getComponent$I(i));
+startLayer=this.getLayer$java_awt_Component(c);
+for (i=startLocation - 1; i >= 0; i--) {
+curLayer=this.getLayer$java_awt_Component(this.getComponent$I(i));
 if (curLayer == startLayer) pos++;
  else return pos;
 }
@@ -28497,9 +28497,9 @@ var i;
 var count;
 var curLayer;
 var layerCount = 0;
-count = this.getComponentCount();
-for (i = 0; i < count; i++) {
-curLayer = this.getLayer$java_awt_Component(this.getComponent$I(i));
+count=this.getComponentCount();
+for (i=0; i < count; i++) {
+curLayer=this.getLayer$java_awt_Component(this.getComponent$I(i));
 if (curLayer == layer) {
 layerCount++;
 } else if (layerCount > 0 || curLayer < layer ) {
@@ -28514,12 +28514,12 @@ var count;
 var curLayer;
 var layerCount = 0;
 var results;
-results = Clazz_array((I$[1]||$incl$(1)), [this.getComponentCountInLayer$I(layer)]);
-count = this.getComponentCount();
-for (i = 0; i < count; i++) {
-curLayer = this.getLayer$java_awt_Component(this.getComponent$I(i));
+results=Clazz_array((I$[1]||$incl$(1)), [this.getComponentCountInLayer$I(layer)]);
+count=this.getComponentCount();
+for (i=0; i < count; i++) {
+curLayer=this.getLayer$java_awt_Component(this.getComponent$I(i));
 if (curLayer == layer) {
-results[layerCount++] = this.getComponent$I(i);
+results[layerCount++]=this.getComponent$I(i);
 } else if (layerCount > 0 || curLayer < layer ) {
 break;
 }}
@@ -28530,7 +28530,7 @@ Clazz_newMeth(C$, 'paint$java_awt_Graphics', function (g) {
 if (this.isOpaque()) {
 var r = g.getClipBounds();
 var c = this.getBackground();
-if (c == null ) c = (I$[2]||$incl$(2)).lightGray;
+if (c == null ) c=(I$[2]||$incl$(2)).lightGray;
 g.setColor$java_awt_Color(c);
 if (r != null ) {
 g.fillRect$I$I$I$I(r.x, r.y, r.width, r.height);
@@ -28540,7 +28540,7 @@ g.fillRect$I$I$I$I(0, 0, this.getWidth(), this.getHeight());
 });
 
 Clazz_newMeth(C$, 'getComponentToLayer', function () {
-if (this.componentToLayer == null ) this.componentToLayer = Clazz_new_((I$[3]||$incl$(3)).c$$I,[4]);
+if (this.componentToLayer == null ) this.componentToLayer=Clazz_new_((I$[3]||$incl$(3)).c$$I,[4]);
 return this.componentToLayer;
 });
 
@@ -28548,22 +28548,22 @@ Clazz_newMeth(C$, 'getObjectForLayer$I', function (layer) {
 var layerObj;
 switch (layer) {
 case 0:
-layerObj = C$.DEFAULT_LAYER;
+layerObj=C$.DEFAULT_LAYER;
 break;
 case 100:
-layerObj = C$.PALETTE_LAYER;
+layerObj=C$.PALETTE_LAYER;
 break;
 case 200:
-layerObj = C$.MODAL_LAYER;
+layerObj=C$.MODAL_LAYER;
 break;
 case 300:
-layerObj = C$.POPUP_LAYER;
+layerObj=C$.POPUP_LAYER;
 break;
 case 400:
-layerObj = C$.DRAG_LAYER;
+layerObj=C$.DRAG_LAYER;
 break;
 default:
-layerObj =  new Integer(layer);
+layerObj= new Integer(layer);
 }
 return layerObj;
 });
@@ -28584,22 +28584,22 @@ for (var index = 0; index < componentCount; index++) {
 if (this.getComponent$I(index) !== comp ) {
 compList.add$TE(this.getComponent$I(index));
 }}
-count = compList.size();
-for (i = 0; i < count; i++) {
-curLayer = this.getLayer$java_awt_Component(compList.get$I(i));
+count=compList.size();
+for (i=0; i < count; i++) {
+curLayer=this.getLayer$java_awt_Component(compList.get$I(i));
 if (layerStart == -1 && curLayer == layer ) {
-layerStart = i;
+layerStart=i;
 }if (curLayer < layer) {
 if (i == 0) {
-layerStart = 0;
-layerEnd = 0;
+layerStart=0;
+layerEnd=0;
 } else {
-layerEnd = i;
+layerEnd=i;
 }break;
 }}
 if (layerStart == -1 && layerEnd == -1 ) return count;
-if (layerStart != -1 && layerEnd == -1 ) layerEnd = count;
-if (layerEnd != -1 && layerStart == -1 ) layerStart = layerEnd;
+if (layerStart != -1 && layerEnd == -1 ) layerEnd=count;
+if (layerEnd != -1 && layerStart == -1 ) layerStart=layerEnd;
 if (position == -1) return layerEnd;
 if (position > -1 && layerStart + position <= layerEnd ) return layerStart + position;
 return layerEnd;
@@ -28610,7 +28610,7 @@ var optimizedDrawingPossibleString = (this.optimizedDrawingPossible ? "true" : "
 return C$.superclazz.prototype.paramString.apply(this, []) + ",optimizedDrawingPossible=" + optimizedDrawingPossibleString ;
 });
 })();
-//Created 2018-05-15 01:02:29
+//Created 2018-05-24 08:46:17
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.lang.Boolean','java.awt.FlowLayout']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JPanel", null, 'javax.swing.JComponent');
 
@@ -28624,7 +28624,7 @@ Clazz_newMeth(C$, 'c$$java_awt_LayoutManager$Z', function (layout, isDoubleBuffe
 Clazz_super_(C$, this,1);
 this.setLayout$java_awt_LayoutManager(layout);
 this.setUIProperty$S$O("opaque", (I$[1]||$incl$(1)).TRUE);
-this.uiClassID = "PanelUI";
+this.uiClassID="PanelUI";
 this.updateUI();
 }, 1);
 
@@ -28640,7 +28640,7 @@ Clazz_newMeth(C$, 'c$', function () {
 C$.c$$Z.apply(this, [true]);
 }, 1);
 })();
-//Created 2018-05-15 01:02:31
+//Created 2018-05-24 08:46:19
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.SwingUtilities','java.awt.Dimension','sun.awt.AppContext','javax.swing.JLayeredPane','javax.swing.JPanel','java.awt.BorderLayout',['javax.swing.JRootPane','.RootLayout']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JRootPane", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -28669,7 +28669,7 @@ this.useTrueDoubleBuffering = true;
 
 Clazz_newMeth(C$, 'c$$S$Z', function (prefix, isApplet) {
 Clazz_super_(C$, this,1);
-this.uiClassID = "RootPaneUI";
+this.uiClassID="RootPaneUI";
 this.setName$S((I$[3]||$incl$(3)).getAppContext().getThreadGroup().getName() + prefix + (++this.paneCount) + ".JRootPane" );
 this.setGlassPane$java_awt_Component(this.createGlassPane());
 this.setLayeredPane$javax_swing_JLayeredPane(this.createLayeredPane());
@@ -28689,7 +28689,7 @@ Clazz_newMeth(C$, 'setWindowDecorationStyle$I', function (windowDecorationStyle)
 if (windowDecorationStyle < 0 || windowDecorationStyle > 8 ) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["Invalid decoration style"]);
 }var oldWindowDecorationStyle = this.getWindowDecorationStyle();
-this.windowDecorationStyle = windowDecorationStyle;
+this.windowDecorationStyle=windowDecorationStyle;
 this.firePropertyChange$S$I$I("windowDecorationStyle", oldWindowDecorationStyle, windowDecorationStyle);
 });
 
@@ -28713,7 +28713,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'addLayoutComponent$java_awt_Component$O', function (comp, constraints) {
 if (constraints == null ) {
-constraints = "Center";
+constraints="Center";
 }C$.superclazz.prototype.addLayoutComponent$java_awt_Component$O.apply(this, [comp, constraints]);
 });
 })()
@@ -28735,13 +28735,13 @@ return Clazz_new_((I$[7]||$incl$(7)), [this, null]);
 
 Clazz_newMeth(C$, 'setJMenuBar$javax_swing_JMenuBar', function (menu) {
 if (this.menuBar != null  && this.menuBar.getParent() === this.layeredPane  ) this.layeredPane.remove$java_awt_Component(this.menuBar);
-this.menuBar = menu;
+this.menuBar=menu;
 if (this.menuBar != null ) this.layeredPane.add$java_awt_Component$O(this.menuBar, (I$[4]||$incl$(4)).FRAME_CONTENT_LAYER);
 });
 
 Clazz_newMeth(C$, 'setMenuBar$javax_swing_JMenuBar', function (menu) {
 if (this.menuBar != null  && this.menuBar.getParent() === this.layeredPane  ) this.layeredPane.remove$java_awt_Component(this.menuBar);
-this.menuBar = menu;
+this.menuBar=menu;
 if (this.menuBar != null ) this.layeredPane.add$java_awt_Component$O(this.menuBar, (I$[4]||$incl$(4)).FRAME_CONTENT_LAYER);
 });
 
@@ -28756,8 +28756,8 @@ return this.menuBar;
 Clazz_newMeth(C$, 'setContentPane$java_awt_Container', function (content) {
 if (content == null ) throw Clazz_new_(Clazz_load('java.awt.IllegalComponentStateException').c$$S,["contentPane cannot be set to null."]);
 if (this.contentPane != null  && this.contentPane.getParent() === this.layeredPane  ) this.layeredPane.remove$java_awt_Component(this.contentPane);
-this.contentPane = content;
-content.isContentPane = true;
+this.contentPane=content;
+content.isContentPane=true;
 this.layeredPane.add$java_awt_Component$O(this.contentPane, (I$[4]||$incl$(4)).FRAME_CONTENT_LAYER);
 });
 
@@ -28768,7 +28768,7 @@ return this.contentPane;
 Clazz_newMeth(C$, 'setLayeredPane$javax_swing_JLayeredPane', function (layered) {
 if (layered == null ) throw Clazz_new_(Clazz_load('java.awt.IllegalComponentStateException').c$$S,["layeredPane cannot be set to null."]);
 if (this.layeredPane != null  && this.layeredPane.getParent() === this  ) this.remove$java_awt_Component(this.layeredPane);
-this.layeredPane = layered;
+this.layeredPane=layered;
 this.add$java_awt_Component$I(this.layeredPane, -1);
 });
 
@@ -28782,9 +28782,9 @@ throw Clazz_new_(Clazz_load('java.lang.NullPointerException').c$$S,["glassPane c
 }var visible = false;
 if (this.glassPane != null  && this.glassPane.getParent() === this  ) {
 this.remove$java_awt_Component(this.glassPane);
-visible = this.glassPane.isVisible();
+visible=this.glassPane.isVisible();
 }glass.setVisible$Z(visible);
-this.glassPane = glass;
+this.glassPane=glass;
 this.add$java_awt_Component$I(this.glassPane, 0);
 if (visible) {
 this.repaint();
@@ -28814,7 +28814,7 @@ C$.superclazz.prototype.removeNotify.apply(this, []);
 Clazz_newMeth(C$, 'setDefaultButton$javax_swing_JButton', function (defaultButton) {
 var oldDefault = this.defaultButton;
 if (oldDefault !== defaultButton ) {
-this.defaultButton = defaultButton;
+this.defaultButton=defaultButton;
 if (oldDefault != null ) {
 oldDefault.repaint();
 }if (defaultButton != null ) {
@@ -28827,7 +28827,7 @@ return this.defaultButton;
 });
 
 Clazz_newMeth(C$, 'setUseTrueDoubleBuffering$Z', function (useTrueDoubleBuffering) {
-this.useTrueDoubleBuffering = useTrueDoubleBuffering;
+this.useTrueDoubleBuffering=useTrueDoubleBuffering;
 });
 
 Clazz_newMeth(C$, 'getUseTrueDoubleBuffering', function () {
@@ -28874,12 +28874,12 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$javax_swing_JRootPane$Z', function (root, press) {
 Clazz_super_(C$, this,1);
-this.root = root;
-this.press = press;
+this.root=root;
+this.press=press;
 }, 1);
 
 Clazz_newMeth(C$, 'setOwner$javax_swing_JButton', function (owner) {
-this.owner = owner;
+this.owner=owner;
 });
 
 Clazz_newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -28914,13 +28914,13 @@ var rd;
 var mbd;
 var i = this.this$0.getInsets();
 if (this.this$0.contentPane != null ) {
-rd = this.this$0.contentPane.getPreferredSize();
+rd=this.this$0.contentPane.getPreferredSize();
 } else {
-rd = parent.getSize();
+rd=parent.getSize();
 }if (this.this$0.menuBar != null  && this.this$0.menuBar.isVisible() ) {
-mbd = this.this$0.menuBar.getPreferredSize();
+mbd=this.this$0.menuBar.getPreferredSize();
 } else {
-mbd = Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[0, 0]);
+mbd=Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[0, 0]);
 }return Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[Math.max(rd.width, mbd.width) + i.left + i.right , rd.height + mbd.height + i.top + i.bottom ]);
 });
 
@@ -28929,13 +28929,13 @@ var rd;
 var mbd;
 var i = this.this$0.getInsets();
 if (this.this$0.contentPane != null ) {
-rd = this.this$0.contentPane.getMinimumSize();
+rd=this.this$0.contentPane.getMinimumSize();
 } else {
-rd = parent.getSize();
+rd=parent.getSize();
 }if (this.this$0.menuBar != null  && this.this$0.menuBar.isVisible() ) {
-mbd = this.this$0.menuBar.getMinimumSize();
+mbd=this.this$0.menuBar.getMinimumSize();
 } else {
-mbd = Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[0, 0]);
+mbd=Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[0, 0]);
 }return Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[Math.max(rd.width, mbd.width) + i.left + i.right , rd.height + mbd.height + i.top + i.bottom ]);
 });
 
@@ -28944,13 +28944,13 @@ var rd;
 var mbd;
 var i = this.this$0.getInsets();
 if (this.this$0.menuBar != null  && this.this$0.menuBar.isVisible() ) {
-mbd = this.this$0.menuBar.getMaximumSize();
+mbd=this.this$0.menuBar.getMaximumSize();
 } else {
-mbd = Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[0, 0]);
+mbd=Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[0, 0]);
 }if (this.this$0.contentPane != null ) {
-rd = this.this$0.contentPane.getMaximumSize();
+rd=this.this$0.contentPane.getMaximumSize();
 } else {
-rd = Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[2147483647, 2147483647 - i.top - i.bottom - mbd.height - 1 ]);
+rd=Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[2147483647, 2147483647 - i.top - i.bottom - mbd.height - 1 ]);
 }return Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[Math.min(rd.width, mbd.width) + i.left + i.right , rd.height + mbd.height + i.top + i.bottom ]);
 });
 
@@ -28967,7 +28967,7 @@ this.this$0.glassPane.setBounds$I$I$I$I(i.left, i.top, w, h);
 }if (this.this$0.menuBar != null  && this.this$0.menuBar.isVisible() ) {
 var mbd = this.this$0.menuBar.getPreferredSize();
 this.this$0.menuBar.setBounds$I$I$I$I(0, 0, w, mbd.height);
-contentY = contentY+(mbd.height);
+contentY+=mbd.height;
 }if (this.this$0.contentPane != null ) {
 this.this$0.contentPane.setBounds$I$I$I$I(0, contentY, w, h - contentY);
 }});
@@ -28997,7 +28997,7 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:32
+//Created 2018-05-24 08:46:21
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.DefaultBoundedRangeModel',['javax.swing.JScrollBar','.ModelListener'],'java.awt.event.AdjustmentListener','java.awt.event.AdjustmentEvent','java.awt.Dimension']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JScrollBar", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -29032,13 +29032,13 @@ throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["orienta
 Clazz_newMeth(C$, 'c$$I$I$I$I$I', function (orientation, value, extent, min, max) {
 Clazz_super_(C$, this,1);
 p$.checkOrientation$I.apply(this, [orientation]);
-this.unitIncrement = 1;
-this.blockIncrement = (extent == 0) ? 1 : extent;
-this.orientation = orientation;
-this.model = Clazz_new_((I$[1]||$incl$(1)).c$$I$I$I$I,[value, extent, min, max]);
-this.model.addChangeListener$javax_swing_event_ChangeListener(this.fwdAdjustmentEvents = Clazz_new_((I$[2]||$incl$(2)), [this, null]));
+this.unitIncrement=1;
+this.blockIncrement=(extent == 0) ? 1 : extent;
+this.orientation=orientation;
+this.model=Clazz_new_((I$[1]||$incl$(1)).c$$I$I$I$I,[value, extent, min, max]);
+this.model.addChangeListener$javax_swing_event_ChangeListener(this.fwdAdjustmentEvents=Clazz_new_((I$[2]||$incl$(2)), [this, null]));
 this.setRequestFocusEnabled$Z(false);
-this.uiClassID = "ScrollBarUI";
+this.uiClassID="ScrollBarUI";
 this.updateUI();
 }, 1);
 
@@ -29065,7 +29065,7 @@ return this.orientation;
 Clazz_newMeth(C$, 'setOrientation$I', function (orientation) {
 p$.checkOrientation$I.apply(this, [orientation]);
 var oldValue = this.orientation;
-this.orientation = orientation;
+this.orientation=orientation;
 this.firePropertyChange$S$I$I("orientation", oldValue, orientation);
 if (orientation != oldValue) {
 this.revalidate();
@@ -29079,7 +29079,7 @@ Clazz_newMeth(C$, 'setModel$javax_swing_BoundedRangeModel', function (newModel) 
 var oldModel = this.model;
 if (this.model != null ) {
 this.model.removeChangeListener$javax_swing_event_ChangeListener(this.fwdAdjustmentEvents);
-}this.model = newModel;
+}this.model=newModel;
 if (this.model != null ) {
 this.model.addChangeListener$javax_swing_event_ChangeListener(this.fwdAdjustmentEvents);
 }this.firePropertyChange$S$O$O("model", oldModel, this.model);
@@ -29091,7 +29091,7 @@ return this.unitIncrement;
 
 Clazz_newMeth(C$, 'setUnitIncrement$I', function (unitIncrement) {
 var oldValue = this.unitIncrement;
-this.unitIncrement = unitIncrement;
+this.unitIncrement=unitIncrement;
 this.firePropertyChange$S$I$I("unitIncrement", oldValue, unitIncrement);
 });
 
@@ -29101,7 +29101,7 @@ return this.blockIncrement;
 
 Clazz_newMeth(C$, 'setBlockIncrement$I', function (blockIncrement) {
 var oldValue = this.blockIncrement;
-this.blockIncrement = blockIncrement;
+this.blockIncrement=blockIncrement;
 this.firePropertyChange$S$I$I("blockIncrement", oldValue, blockIncrement);
 });
 
@@ -29179,10 +29179,10 @@ p$.fireAdjustmentValueChanged$I$I$I$Z.apply(this, [id, type, value, this.getValu
 Clazz_newMeth(C$, 'fireAdjustmentValueChanged$I$I$I$Z', function (id, type, value, isAdjusting) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[3]||$incl$(3)),['adjustmentValueChanged$java_awt_event_AdjustmentEvent']) ) {
 if (e == null ) {
-e = Clazz_new_((I$[4]||$incl$(4)).c$$java_awt_Adjustable$I$I$I$Z,[this, id, type, value, isAdjusting]);
+e=Clazz_new_((I$[4]||$incl$(4)).c$$java_awt_Adjustable$I$I$I$Z,[this, id, type, value, isAdjusting]);
 }(listeners[i + 1]).adjustmentValueChanged$java_awt_event_AdjustmentEvent(e);
 }}
 });
@@ -29240,7 +29240,7 @@ this.this$0.fireAdjustmentValueChanged$I$I$I$Z.apply(this.this$0, [id, type, val
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:32
+//Created 2018-05-24 08:46:22
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.UIManager','swingjs.JSUtil','javax.swing.plaf.InputMapUIResource','javax.swing.plaf.ComponentInputMapUIResource','javax.swing.KeyStroke','sun.swing.DefaultLayoutStyle']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "LookAndFeel");
 
@@ -29353,7 +29353,7 @@ return "[" + this.getDescription() + " - " + this.getClass().getName() + "]" ;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:38
+//Created 2018-05-24 08:46:34
 (function(){var P$=Clazz_newPackage("javax.swing.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "ActionMapUIResource", null, 'javax.swing.ActionMap', 'javax.swing.plaf.UIResource');
 
@@ -29367,7 +29367,7 @@ Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
 }, 1);
 })();
-//Created 2018-05-15 01:02:46
+//Created 2018-05-24 08:46:50
 (function(){var P$=Clazz_newPackage("javax.swing.plaf"),I$=[[['javax.swing.plaf.BorderUIResource','.EtchedBorderUIResource'],['javax.swing.plaf.BorderUIResource','.BevelBorderUIResource'],['javax.swing.plaf.BorderUIResource','.LineBorderUIResource'],'java.awt.Color']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "BorderUIResource", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -29390,25 +29390,25 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'getEtchedBorderUIResource', function () {
 if (C$.etched == null ) {
-C$.etched = Clazz_new_((I$[1]||$incl$(1)));
+C$.etched=Clazz_new_((I$[1]||$incl$(1)));
 }return C$.etched;
 }, 1);
 
 Clazz_newMeth(C$, 'getLoweredBevelBorderUIResource', function () {
 if (C$.loweredBevel == null ) {
-C$.loweredBevel = Clazz_new_((I$[2]||$incl$(2)).c$$I,[1]);
+C$.loweredBevel=Clazz_new_((I$[2]||$incl$(2)).c$$I,[1]);
 }return C$.loweredBevel;
 }, 1);
 
 Clazz_newMeth(C$, 'getRaisedBevelBorderUIResource', function () {
 if (C$.raisedBevel == null ) {
-C$.raisedBevel = Clazz_new_((I$[2]||$incl$(2)).c$$I,[0]);
+C$.raisedBevel=Clazz_new_((I$[2]||$incl$(2)).c$$I,[0]);
 }return C$.raisedBevel;
 }, 1);
 
 Clazz_newMeth(C$, 'getBlackLineBorderUIResource', function () {
 if (C$.blackLine == null ) {
-C$.blackLine = Clazz_new_((I$[3]||$incl$(3)).c$$java_awt_Color,[(I$[4]||$incl$(4)).black]);
+C$.blackLine=Clazz_new_((I$[3]||$incl$(3)).c$$java_awt_Color,[(I$[4]||$incl$(4)).black]);
 }return C$.blackLine;
 }, 1);
 
@@ -29416,7 +29416,7 @@ Clazz_newMeth(C$, 'c$$javax_swing_border_Border', function (delegate) {
 C$.$init$.apply(this);
 if (delegate == null ) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["null border delegate argument"]);
-}this.delegate = delegate;
+}this.delegate=delegate;
 }, 1);
 
 Clazz_newMeth(C$, 'paintBorder$java_awt_Component$java_awt_Graphics$I$I$I$I', function (c, g, x, y, width, height) {
@@ -29627,7 +29627,7 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:46
+//Created 2018-05-24 08:46:51
 (function(){var P$=Clazz_newPackage("javax.swing.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "ColorUIResource", null, 'java.awt.Color', 'javax.swing.plaf.UIResource');
 
@@ -29662,7 +29662,7 @@ C$.superclazz.c$$I$Z.apply(this, [c.getRGB(), (c.getRGB() & -16777216) != -16777
 C$.$init$.apply(this);
 }, 1);
 })();
-//Created 2018-05-15 01:02:47
+//Created 2018-05-24 08:46:51
 (function(){var P$=Clazz_newPackage("javax.swing.plaf"),I$=[['java.lang.Error',['java.awt.Component','.BaselineResizeBehavior']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "ComponentUI", null, null, 'java.awt.peer.ComponentPeer');
 
@@ -29722,7 +29722,7 @@ Clazz_newMeth(C$, 'getBaselineResizeBehavior$javax_swing_JComponent', function (
 return (I$[2]||$incl$(2)).OTHER;
 });
 })();
-//Created 2018-05-15 01:02:47
+//Created 2018-05-24 08:46:52
 (function(){var P$=Clazz_newPackage("javax.swing.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "DimensionUIResource", null, 'java.awt.Dimension', 'javax.swing.plaf.UIResource');
 
@@ -29739,7 +29739,7 @@ C$.$init$.apply(this);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:47
+//Created 2018-05-24 08:46:53
 (function(){var P$=Clazz_newPackage("javax.swing.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "FontUIResource", null, 'java.awt.Font', 'javax.swing.plaf.UIResource');
 
@@ -29761,7 +29761,7 @@ C$.$init$.apply(this);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:47
+//Created 2018-05-24 08:46:53
 (function(){var P$=Clazz_newPackage("javax.swing.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "InsetsUIResource", null, 'java.awt.Insets', 'javax.swing.plaf.UIResource');
 
@@ -29778,11 +29778,11 @@ C$.$init$.apply(this);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:48
+//Created 2018-05-24 08:46:53
 (function(){var P$=Clazz_newPackage("javax.swing.plaf"),I$=[];
 var C$=Clazz_newInterface(P$, "UIResource");
 })();
-//Created 2018-05-15 01:02:50
+//Created 2018-05-24 08:46:56
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.util.HashMap','java.awt.Rectangle','sun.awt.AppContext','javax.swing.SwingUtilities',['javax.swing.RepaintManager','.ProcessingRunnable'],'java.util.IdentityHashMap','javajs.util.Lst','java.awt.Toolkit','java.util.HashSet','sun.awt.AWTAccessor','java.lang.StringBuffer','Thread','sun.awt.SunToolkit','java.awt.event.InvocationEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "RepaintManager", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -29797,11 +29797,11 @@ C$.HANDLE_TOP_LEVEL_PAINT = false;
 C$.repaintManagerKey = Clazz_getClass(C$);
 C$.volatileImageBufferEnabled = true;
 {
-C$.volatileImageBufferEnabled = false;
+C$.volatileImageBufferEnabled=false;
 var headless = false;
 if (C$.volatileImageBufferEnabled && headless ) {
-C$.volatileImageBufferEnabled = false;
-}C$.HANDLE_TOP_LEVEL_PAINT = true;
+C$.volatileImageBufferEnabled=false;
+}C$.HANDLE_TOP_LEVEL_PAINT=true;
 }
 ;
 }
@@ -29836,7 +29836,7 @@ return C$.currentManager$java_awt_Component$sun_awt_AppContext(c, (I$[3]||$incl$
 Clazz_newMeth(C$, 'currentManager$java_awt_Component$sun_awt_AppContext', function (c, appContext) {
 var rm = appContext.get$O(C$.repaintManagerKey);
 if (rm == null ) {
-rm = Clazz_new_(C$);
+rm=Clazz_new_(C$);
 rm.set$java_awt_Component(c);
 appContext.put$O$O(C$.repaintManagerKey, rm);
 }return rm;
@@ -29856,43 +29856,43 @@ if (aRepaintManager != null ) {
 Clazz_newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
 p$.setMaps.apply(this, []);
-this.processingRunnable = Clazz_new_((I$[5]||$incl$(5)), [this, null]);
+this.processingRunnable=Clazz_new_((I$[5]||$incl$(5)), [this, null]);
 }, 1);
 
 Clazz_newMeth(C$, 'set$java_awt_Component', function (c) {
-this.myComponent = c;
+this.myComponent=c;
 p$.setMaps.apply(this, []);
 });
 
 Clazz_newMeth(C$, 'setMaps', function () {
-this.dirtyComponents = Clazz_new_((I$[6]||$incl$(6)));
-this.tmpDirtyComponents = Clazz_new_((I$[6]||$incl$(6)));
-this.hwDirtyComponents = Clazz_new_((I$[6]||$incl$(6)));
+this.dirtyComponents=Clazz_new_((I$[6]||$incl$(6)));
+this.tmpDirtyComponents=Clazz_new_((I$[6]||$incl$(6)));
+this.hwDirtyComponents=Clazz_new_((I$[6]||$incl$(6)));
 });
 
 Clazz_newMeth(C$, 'addInvalidComponent$javax_swing_JComponent', function (invalidComponent) {
 var validateRoot = null;
-for (var c = invalidComponent; c != null ; c = c.getParent()) {
+for (var c = invalidComponent; c != null ; c=c.getParent()) {
 if ((Clazz_instanceOf(c, "javax.swing.CellRendererPane"))) {
 return;
 }if ((Clazz_instanceOf(c, "javax.swing.JComponent")) && ((c).isValidateRoot()) ) {
-validateRoot = c;
+validateRoot=c;
 break;
 }}
 if (validateRoot == null ) {
 return;
 }var root = null;
-for (var c = validateRoot; c != null ; c = c.getParent()) {
+for (var c = validateRoot; c != null ; c=c.getParent()) {
 if (!c.isVisible()) {
 return;
 }if ((Clazz_instanceOf(c, "java.awt.Window")) || (Clazz_instanceOf(c, "java.applet.Applet")) ) {
-root = c;
+root=c;
 break;
 }}
 if (root == null ) {
 return;
 }if (this.invalidComponents == null ) {
-this.invalidComponents = Clazz_new_((I$[7]||$incl$(7)));
+this.invalidComponents=Clazz_new_((I$[7]||$incl$(7)));
 } else {
 var n = this.invalidComponents.size();
 for (var i = 0; i < n; i++) {
@@ -29915,13 +29915,13 @@ if (w <= 0 || h <= 0  || c == null   || c.getWidth() <= 0  || c.getHeight() <= 0
 if (p$.extendDirtyRegion$java_awt_Component$I$I$I$I.apply(this, [c, x, y, w, h])) {
 return;
 }var root = null;
-for (var p = c; p != null ; p = p.getParent()) {
+for (var p = c; p != null ; p=p.getParent()) {
 if (!p.isVisible() || p.getPeer() == null  ) {
 return;
 }if ((Clazz_instanceOf(p, "java.awt.Window")) || (Clazz_instanceOf(p, "java.applet.Applet")) ) {
 if (Clazz_instanceOf(p, "java.awt.Frame") && ((p).getExtendedState() & 1) == 1 ) {
 return;
-}root = p;
+}root=p;
 break;
 }}
 if (root == null ) return;
@@ -29949,8 +29949,8 @@ var hws;
 {
 if (this.hwDirtyComponents.size() == 0) {
 return;
-}hws = this.hwDirtyComponents;
-this.hwDirtyComponents = Clazz_new_((I$[6]||$incl$(6)));
+}hws=this.hwDirtyComponents;
+this.hwDirtyComponents=Clazz_new_((I$[6]||$incl$(6)));
 }for (var hw, $hw = hws.keySet().iterator(); $hw.hasNext()&&((hw=$hw.next()),1);) {
 var dirty = hws.get$O(hw);
 if (Clazz_instanceOf(hw, "java.awt.Window")) {
@@ -29984,7 +29984,7 @@ return true;
 Clazz_newMeth(C$, 'getDirtyRegion$javax_swing_JComponent', function (aComponent) {
 var r = null;
 {
-r = this.dirtyComponents.get$O(aComponent);
+r=this.dirtyComponents.get$O(aComponent);
 }if (r == null ) return Clazz_new_((I$[2]||$incl$(2)).c$$I$I$I$I,[0, 0, 0, 0]);
  else return Clazz_new_((I$[2]||$incl$(2)).c$$java_awt_Rectangle,[r]);
 });
@@ -30000,7 +30000,7 @@ this.dirtyComponents.remove$O(aComponent);
 
 Clazz_newMeth(C$, 'isCompletelyDirty$javax_swing_JComponent', function (aComponent) {
 var r;
-r = this.getDirtyRegion$javax_swing_JComponent(aComponent);
+r=this.getDirtyRegion$javax_swing_JComponent(aComponent);
 if (r.width == 2147483647 && r.height == 2147483647 ) return true;
  else return false;
 });
@@ -30010,8 +30010,8 @@ var ic;
 {
 if (this.invalidComponents == null ) {
 return;
-}ic = this.invalidComponents;
-this.invalidComponents = null;
+}ic=this.invalidComponents;
+this.invalidComponents=null;
 }var n = ic.size();
 for (var i = 0; i < n; i++) {
 var c = ic.get$I(i);
@@ -30023,9 +30023,9 @@ Clazz_newMeth(C$, 'prePaintDirtyRegions', function () {
 var dirtyComponents;
 var runnableList;
 {
-dirtyComponents = this.dirtyComponents;
-runnableList = this.runnableList;
-this.runnableList = null;
+dirtyComponents=this.dirtyComponents;
+runnableList=this.runnableList;
+this.runnableList=null;
 }if (runnableList != null ) {
 for (var runnable, $runnable = runnableList.iterator(); $runnable.hasNext()&&((runnable=$runnable.next()),1);) {
 runnable.run();
@@ -30057,8 +30057,8 @@ return dirtyComponents;
 Clazz_newMeth(C$, 'paintDirtyRegions', function () {
 {
 var tmp = this.tmpDirtyComponents;
-this.tmpDirtyComponents = this.dirtyComponents;
-this.dirtyComponents = tmp;
+this.tmpDirtyComponents=this.dirtyComponents;
+this.dirtyComponents=tmp;
 this.dirtyComponents.clear();
 }p$.paintDirtyRegions1$java_util_Map.apply(this, [this.tmpDirtyComponents]);
 });
@@ -30072,7 +30072,7 @@ for (var dirty, $dirty = tmpDirtyComponents.keySet().iterator(); $dirty.hasNext(
 this.collectDirtyComponents$java_util_Map$java_awt_Component$java_util_List(tmpDirtyComponents, dirty, roots);
 }
 var count = roots.size();
-this.painting = true;
+this.painting=true;
 try {
 for (var j = 0; j < count; j++) {
 var i = j;
@@ -30093,12 +30093,12 @@ g.dispose();
 }
 }}if (this.repaintRoot != null ) {
 p$.adjustRoots$javax_swing_JComponent$javajs_util_Lst$I.apply(this, [this.repaintRoot, roots, i + 1]);
-count = roots.size();
+count=roots.size();
 this.repaintRoot.paintImmediately$I$I$I$I(0, 0, this.repaintRoot.getWidth(), this.repaintRoot.getHeight());
-this.repaintRoot = null;
+this.repaintRoot=null;
 }}
 } finally {
-this.painting = false;
+this.painting=false;
 }
 tmpDirtyComponents.clear();
 });
@@ -30109,7 +30109,7 @@ var c = roots.get$I(i);
 for (; ; ) {
 if (c === root  || c == null   || !(Clazz_instanceOf(c, "javax.swing.JComponent")) ) {
 break;
-}c = c.getParent();
+}c=c.getParent();
 }
 if (c === root ) {
 roots.removeItemAt$I(i);
@@ -30124,43 +30124,43 @@ var rootDy;
 var component;
 var rootDirtyComponent;
 var parent;
-component = rootDirtyComponent = dirtyComponent;
+component=rootDirtyComponent=dirtyComponent;
 var x = dirtyComponent.getX();
 var y = dirtyComponent.getY();
 var w = dirtyComponent.getWidth();
 var h = dirtyComponent.getHeight();
-dx = rootDx = 0;
-dy = rootDy = 0;
+dx=rootDx=0;
+dy=rootDy=0;
 this.tmp.setBounds$java_awt_Rectangle(dirtyComponents.get$O(dirtyComponent));
 (I$[4]||$incl$(4)).computeIntersection$I$I$I$I$java_awt_Rectangle(0, 0, w, h, this.tmp);
 if (this.tmp.isEmpty()) {
 return;
 }for (; ; ) {
 if (!(Clazz_instanceOf(component, "javax.swing.JComponent"))) break;
-parent = component.getParent();
+parent=component.getParent();
 if (parent == null ) break;
-component = parent;
-dx = dx+(x);
-dy = dy+(y);
-this.tmp.x = this.tmp.x+(x);
-this.tmp.y = this.tmp.y+(y);
-x = component.getX();
-y = component.getY();
-w = component.getWidth();
-h = component.getHeight();
-this.tmp = (I$[4]||$incl$(4)).computeIntersection$I$I$I$I$java_awt_Rectangle(0, 0, w, h, this.tmp);
+component=parent;
+dx+=x;
+dy+=y;
+this.tmp.x+=x;
+this.tmp.y+=y;
+x=component.getX();
+y=component.getY();
+w=component.getWidth();
+h=component.getHeight();
+this.tmp=(I$[4]||$incl$(4)).computeIntersection$I$I$I$I$java_awt_Rectangle(0, 0, w, h, this.tmp);
 if (this.tmp.isEmpty()) {
 return;
 }if (dirtyComponents.get$O(component) != null ) {
-rootDirtyComponent = component;
-rootDx = dx;
-rootDy = dy;
+rootDirtyComponent=component;
+rootDx=dx;
+rootDy=dy;
 }}
 if (dirtyComponent !== rootDirtyComponent ) {
 var r;
-this.tmp.x = this.tmp.x+(rootDx - dx);
-this.tmp.y = this.tmp.y+(rootDy - dy);
-r = dirtyComponents.get$O(rootDirtyComponent);
+this.tmp.x+=rootDx - dx;
+this.tmp.y+=rootDy - dy;
+r=dirtyComponents.get$O(rootDirtyComponent);
 (I$[4]||$incl$(4)).computeUnion$I$I$I$I$java_awt_Rectangle(this.tmp.x, this.tmp.y, this.tmp.width, this.tmp.height, r);
 }if (!roots.contains$O(rootDirtyComponent)) roots.add$TE(rootDirtyComponent);
 });
@@ -30184,7 +30184,7 @@ var image = this.volatileMap.get$O(config);
 if (image == null  || image.getWidth() < width  || image.getHeight() < height ) {
 if (image != null ) {
 image.flush();
-}image = config.createCompatibleVolatileImage$I$I(width, height);
+}image=config.createCompatibleVolatileImage$I$I(width, height);
 this.volatileMap.put$TK$TV(config, image);
 }return image;
 });
@@ -30225,12 +30225,12 @@ var multiThreadedPaint = false;
 var paintDepth = 0;
 var currentThread = (I$[12]||$incl$(12)).currentThread();
 {
-paintDepth = this.paintDepth;
+paintDepth=this.paintDepth;
 if (this.paintThread == null  || currentThread === this.paintThread  ) {
-this.paintThread = currentThread;
+this.paintThread=currentThread;
 this.paintDepth++;
 } else {
-multiThreadedPaint = true;
+multiThreadedPaint=true;
 }}});
 
 Clazz_newMeth(C$, 'endPaint', function () {
@@ -30266,14 +30266,14 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'markPending', function () {
 if (!this.pending) {
-this.pending = true;
+this.pending=true;
 return true;
 }return false;
 });
 
 Clazz_newMeth(C$, 'run', function () {
 {
-this.pending = false;
+this.pending=false;
 }this.this$0.scheduleHeavyWeightPaints();
 this.this$0.validateInvalidComponents();
 this.this$0.prePaintDirtyRegions();
@@ -30282,15 +30282,15 @@ this.this$0.prePaintDirtyRegions();
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:39
+//Created 2018-05-24 08:46:38
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "RootPaneContainer");
 })();
-//Created 2018-05-15 01:02:39
+//Created 2018-05-24 08:46:38
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "SwingConstants");
 })();
-//Created 2018-05-15 01:02:41
+//Created 2018-05-24 08:46:41
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newClass(P$, "SwingPaintEventDispatcher", null, 'sun.awt.PaintEventDispatcher');
 C$.ERASE_BACKGROUND = false;
@@ -30298,7 +30298,7 @@ C$.ERASE_BACKGROUND = false;
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 C$.ERASE_BACKGROUND = false;
 {
-C$.ERASE_BACKGROUND = true;
+C$.ERASE_BACKGROUND=true;
 }
 ;
 }
@@ -30322,7 +30322,7 @@ return true;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:41
+//Created 2018-05-24 08:46:41
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.awt.Rectangle','java.awt.Point','java.lang.Error','java.awt.event.MouseWheelEvent','javax.swing.event.MenuDragMouseEvent','java.awt.event.MouseEvent','swingjs.api.Interface','java.awt.EventQueue','javax.swing.JComponent','java.awt.event.ActionEvent','swingjs.JSUtil',['javax.swing.SwingUtilities','.SharedOwnerFrame'],'sun.awt.AppContext','Thread']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "SwingUtilities", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -30346,12 +30346,12 @@ return true;
 
 Clazz_newMeth(C$, 'getLocalBounds$java_awt_Component', function (aComponent) {
 var b = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[aComponent.getBounds()]);
-b.x = b.y = 0;
+b.x=b.y=0;
 return b;
 }, 1);
 
 Clazz_newMeth(C$, 'getWindowAncestor$java_awt_Component', function (c) {
-for (var p = c.getParent(); p != null ; p = p.getParent()) {
+for (var p = c.getParent(); p != null ; p=p.getParent()) {
 if (Clazz_instanceOf(p, "java.awt.Window")) {
 return p;
 }}
@@ -30359,7 +30359,7 @@ return null;
 }, 1);
 
 Clazz_newMeth(C$, 'convertScreenLocationToParent$java_awt_Container$I$I', function (parent, x, y) {
-for (var p = parent; p != null ; p = p.getParent()) {
+for (var p = parent; p != null ; p=p.getParent()) {
 if (Clazz_instanceOf(p, "java.awt.Window")) {
 var point = Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[x, y]);
 C$.convertPointFromScreen$java_awt_Point$java_awt_Component(point, parent);
@@ -30372,12 +30372,12 @@ Clazz_newMeth(C$, 'convertPoint$java_awt_Component$java_awt_Point$java_awt_Compo
 var p;
 if (source == null  && destination == null  ) return aPoint;
 if (source == null ) {
-source = C$.getWindowAncestor$java_awt_Component(destination);
+source=C$.getWindowAncestor$java_awt_Component(destination);
 if (source == null ) throw Clazz_new_((I$[3]||$incl$(3)).c$$S,["Source component not connected to component tree hierarchy"]);
-}p = Clazz_new_((I$[2]||$incl$(2)).c$$java_awt_Point,[aPoint]);
+}p=Clazz_new_((I$[2]||$incl$(2)).c$$java_awt_Point,[aPoint]);
 C$.convertPointToScreen$java_awt_Point$java_awt_Component(p, source);
 if (destination == null ) {
-destination = C$.getWindowAncestor$java_awt_Component(source);
+destination=C$.getWindowAncestor$java_awt_Component(source);
 if (destination == null ) throw Clazz_new_((I$[3]||$incl$(3)).c$$S,["Destination component not connected to component tree hierarchy"]);
 }C$.convertPointFromScreen$java_awt_Point$java_awt_Component(p, destination);
 return p;
@@ -30390,14 +30390,14 @@ return C$.convertPoint$java_awt_Component$java_awt_Point$java_awt_Component(sour
 
 Clazz_newMeth(C$, 'convertRectangle$java_awt_Component$java_awt_Rectangle$java_awt_Component', function (source, aRectangle, destination) {
 var point = Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[aRectangle.x, aRectangle.y]);
-point = C$.convertPoint$java_awt_Component$java_awt_Point$java_awt_Component(source, point, destination);
+point=C$.convertPoint$java_awt_Component$java_awt_Point$java_awt_Component(source, point, destination);
 return Clazz_new_((I$[1]||$incl$(1)).c$$I$I$I$I,[point.x, point.y, aRectangle.width, aRectangle.height]);
 }, 1);
 
 Clazz_newMeth(C$, 'getAncestorOfClass$Class$java_awt_Component', function (c, comp) {
 if (comp == null  || c == null  ) return null;
 var parent = comp.getParent();
-while (parent != null  && !(c.isInstance$O(parent)) )parent = parent.getParent();
+while (parent != null  && !(c.isInstance$O(parent)) )parent=parent.getParent();
 
 return parent;
 }, 1);
@@ -30405,7 +30405,7 @@ return parent;
 Clazz_newMeth(C$, 'getAncestorNamed$S$java_awt_Component', function (name, comp) {
 if (comp == null  || name == null  ) return null;
 var parent = comp.getParent();
-while (parent != null  && !(name.equals$O(parent.getName())) )parent = parent.getParent();
+while (parent != null  && !(name.equals$O(parent.getName())) )parent=parent.getParent();
 
 return parent;
 }, 1);
@@ -30420,9 +30420,9 @@ var comp = components[i];
 if (comp != null  && comp.isVisible() ) {
 var loc = comp.getLocation();
 if (Clazz_instanceOf(comp, "java.awt.Container")) {
-comp = C$.getDeepestComponentAt$java_awt_Component$I$I(comp, x - loc.x, y - loc.y);
+comp=C$.getDeepestComponentAt$java_awt_Component$I$I(comp, x - loc.x, y - loc.y);
 } else {
-comp = comp.getComponentAt$I$I(x - loc.x, y - loc.y);
+comp=comp.getComponentAt$I$I(x - loc.x, y - loc.y);
 }if (comp != null  && comp.isVisible() ) {
 return comp;
 }}}
@@ -30432,17 +30432,17 @@ return comp;
 Clazz_newMeth(C$, 'convertMouseEvent$java_awt_Component$java_awt_event_MouseEvent$java_awt_Component', function (source, sourceEvent, destination) {
 var p = C$.convertPoint$java_awt_Component$java_awt_Point$java_awt_Component(source, Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[sourceEvent.getX(), sourceEvent.getY()]), destination);
 var newSource;
-if (destination != null ) newSource = destination;
- else newSource = source;
+if (destination != null ) newSource=destination;
+ else newSource=source;
 var newEvent;
 if (Clazz_instanceOf(sourceEvent, "java.awt.event.MouseWheelEvent")) {
 var sourceWheelEvent = sourceEvent;
-newEvent = Clazz_new_((I$[4]||$incl$(4)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I$I$I,[newSource, sourceWheelEvent.getID(), sourceWheelEvent.getWhen(), sourceWheelEvent.getModifiers(), p.x, p.y, sourceWheelEvent.getXOnScreen(), sourceWheelEvent.getYOnScreen(), sourceWheelEvent.getClickCount(), sourceWheelEvent.isPopupTrigger(), sourceWheelEvent.getScrollType(), sourceWheelEvent.getScrollAmount(), sourceWheelEvent.getWheelRotation()]);
+newEvent=Clazz_new_((I$[4]||$incl$(4)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I$I$I,[newSource, sourceWheelEvent.getID(), sourceWheelEvent.getWhen(), sourceWheelEvent.getModifiers(), p.x, p.y, sourceWheelEvent.getXOnScreen(), sourceWheelEvent.getYOnScreen(), sourceWheelEvent.getClickCount(), sourceWheelEvent.isPopupTrigger(), sourceWheelEvent.getScrollType(), sourceWheelEvent.getScrollAmount(), sourceWheelEvent.getWheelRotation()]);
 } else if (Clazz_instanceOf(sourceEvent, "javax.swing.event.MenuDragMouseEvent")) {
 var sourceMenuDragEvent = sourceEvent;
-newEvent = Clazz_new_((I$[5]||$incl$(5)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$javax_swing_MenuElementA$javax_swing_MenuSelectionManager,[newSource, sourceMenuDragEvent.getID(), sourceMenuDragEvent.getWhen(), sourceMenuDragEvent.getModifiers(), p.x, p.y, sourceMenuDragEvent.getXOnScreen(), sourceMenuDragEvent.getYOnScreen(), sourceMenuDragEvent.getClickCount(), sourceMenuDragEvent.isPopupTrigger(), sourceMenuDragEvent.getPath(), sourceMenuDragEvent.getMenuSelectionManager()]);
+newEvent=Clazz_new_((I$[5]||$incl$(5)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$javax_swing_MenuElementA$javax_swing_MenuSelectionManager,[newSource, sourceMenuDragEvent.getID(), sourceMenuDragEvent.getWhen(), sourceMenuDragEvent.getModifiers(), p.x, p.y, sourceMenuDragEvent.getXOnScreen(), sourceMenuDragEvent.getYOnScreen(), sourceMenuDragEvent.getClickCount(), sourceMenuDragEvent.isPopupTrigger(), sourceMenuDragEvent.getPath(), sourceMenuDragEvent.getMenuSelectionManager()]);
 } else {
-newEvent = Clazz_new_((I$[6]||$incl$(6)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,[newSource, sourceEvent.getID(), sourceEvent.getWhen(), sourceEvent.getModifiers(), p.x, p.y, sourceEvent.getXOnScreen(), sourceEvent.getYOnScreen(), sourceEvent.getClickCount(), sourceEvent.isPopupTrigger(), 0]);
+newEvent=Clazz_new_((I$[6]||$incl$(6)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,[newSource, sourceEvent.getID(), sourceEvent.getWhen(), sourceEvent.getModifiers(), p.x, p.y, sourceEvent.getXOnScreen(), sourceEvent.getYOnScreen(), sourceEvent.getClickCount(), sourceEvent.isPopupTrigger(), 0]);
 }return newEvent;
 }, 1);
 
@@ -30451,28 +30451,28 @@ var x;
 var y;
 do {
 if (Clazz_instanceOf(c, "javax.swing.JComponent")) {
-x = (c).getX();
-y = (c).getY();
+x=(c).getX();
+y=(c).getY();
 } else if (Clazz_instanceOf(c, "java.applet.Applet") || Clazz_instanceOf(c, "java.awt.Window") ) {
 try {
 var pp = c.getLocationOnScreen();
-x = pp.x;
-y = pp.y;
+x=pp.x;
+y=pp.y;
 } catch (icse) {
 if (Clazz_exceptionOf(icse, "java.awt.IllegalComponentStateException")){
-x = c.getX();
-y = c.getY();
+x=c.getX();
+y=c.getY();
 } else {
 throw icse;
 }
 }
 } else {
-x = c.getX();
-y = c.getY();
-}p.x = p.x+(x);
-p.y = p.y+(y);
+x=c.getX();
+y=c.getY();
+}p.x+=x;
+p.y+=y;
 if (Clazz_instanceOf(c, "java.awt.Window") || Clazz_instanceOf(c, "java.applet.Applet") ) break;
-c = c.getParent();
+c=c.getParent();
 } while (c != null );
 }, 1);
 
@@ -30481,28 +30481,28 @@ var x;
 var y;
 do {
 if (Clazz_instanceOf(c, "javax.swing.JComponent")) {
-x = (c).getX();
-y = (c).getY();
+x=(c).getX();
+y=(c).getY();
 } else if (Clazz_instanceOf(c, "java.applet.Applet") || Clazz_instanceOf(c, "java.awt.Window") ) {
 try {
 var pp = c.getLocationOnScreen();
-x = pp.x;
-y = pp.y;
+x=pp.x;
+y=pp.y;
 } catch (icse) {
 if (Clazz_exceptionOf(icse, "java.awt.IllegalComponentStateException")){
-x = c.getX();
-y = c.getY();
+x=c.getX();
+y=c.getY();
 } else {
 throw icse;
 }
 }
 } else {
-x = c.getX();
-y = c.getY();
-}p.x = p.x-(x);
-p.y = p.y-(y);
+x=c.getX();
+y=c.getY();
+}p.x-=x;
+p.y-=y;
 if (Clazz_instanceOf(c, "java.awt.Window") || Clazz_instanceOf(c, "java.applet.Applet") ) break;
-c = c.getParent();
+c=c.getParent();
 } while (c != null );
 }, 1);
 
@@ -30512,7 +30512,7 @@ return C$.getWindowAncestor$java_awt_Component(c);
 
 Clazz_newMeth(C$, 'isDescendingFrom$java_awt_Component$java_awt_Component', function (a, b) {
 if (a === b ) return true;
-for (var p = a.getParent(); p != null ; p = p.getParent()) if (p === b ) return true;
+for (var p = a.getParent(); p != null ; p=p.getParent()) if (p === b ) return true;
 
 return false;
 }, 1);
@@ -30522,12 +30522,12 @@ var x1 = (x > dest.x) ? x : dest.x;
 var x2 = ((x + width) < (dest.x + dest.width)) ? (x + width) : (dest.x + dest.width);
 var y1 = (y > dest.y) ? y : dest.y;
 var y2 = ((y + height) < (dest.y + dest.height) ? (y + height) : (dest.y + dest.height));
-dest.x = x1;
-dest.y = y1;
-dest.width = x2 - x1;
-dest.height = y2 - y1;
+dest.x=x1;
+dest.y=y1;
+dest.width=x2 - x1;
+dest.height=y2 - y1;
 if (dest.width < 0 || dest.height < 0 ) {
-dest.x = dest.y = dest.width = dest.height = 0;
+dest.x=dest.y=dest.width=dest.height=0;
 }return dest;
 }, 1);
 
@@ -30536,10 +30536,10 @@ var x1 = (x < dest.x) ? x : dest.x;
 var x2 = ((x + width) > (dest.x + dest.width)) ? (x + width) : (dest.x + dest.width);
 var y1 = (y < dest.y) ? y : dest.y;
 var y2 = ((y + height) > (dest.y + dest.height)) ? (y + height) : (dest.y + dest.height);
-dest.x = x1;
-dest.y = y1;
-dest.width = (x2 - x1);
-dest.height = (y2 - y1);
+dest.x=x1;
+dest.y=y1;
+dest.width=(x2 - x1);
+dest.height=(y2 - y1);
 return dest;
 }, 1);
 
@@ -30554,175 +30554,175 @@ var d = null;
 var result;
 var rectCount = 0;
 if (C$.isRectangleContainingRectangle$java_awt_Rectangle$java_awt_Rectangle(rectA, rectB)) {
-t.x = rectA.x;
-t.y = rectA.y;
-t.width = rectB.x - rectA.x;
-t.height = rectA.height;
+t.x=rectA.x;
+t.y=rectA.y;
+t.width=rectB.x - rectA.x;
+t.height=rectA.height;
 if (t.width > 0 && t.height > 0 ) {
-a = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+a=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
-}t.x = rectB.x;
-t.y = rectA.y;
-t.width = rectB.width;
-t.height = rectB.y - rectA.y;
+}t.x=rectB.x;
+t.y=rectA.y;
+t.width=rectB.width;
+t.height=rectB.y - rectA.y;
 if (t.width > 0 && t.height > 0 ) {
-b = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+b=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
-}t.x = rectB.x;
-t.y = rectB.y + rectB.height;
-t.width = rectB.width;
-t.height = rectA.y + rectA.height - (rectB.y + rectB.height);
+}t.x=rectB.x;
+t.y=rectB.y + rectB.height;
+t.width=rectB.width;
+t.height=rectA.y + rectA.height - (rectB.y + rectB.height);
 if (t.width > 0 && t.height > 0 ) {
-c = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+c=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
-}t.x = rectB.x + rectB.width;
-t.y = rectA.y;
-t.width = rectA.x + rectA.width - (rectB.x + rectB.width);
-t.height = rectA.height;
+}t.x=rectB.x + rectB.width;
+t.y=rectA.y;
+t.width=rectA.x + rectA.width - (rectB.x + rectB.width);
+t.height=rectA.height;
 if (t.width > 0 && t.height > 0 ) {
-d = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+d=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }} else {
 if (rectB.x <= rectA.x && rectB.y <= rectA.y ) {
 if ((rectB.x + rectB.width) > (rectA.x + rectA.width)) {
-t.x = rectA.x;
-t.y = rectB.y + rectB.height;
-t.width = rectA.width;
-t.height = rectA.y + rectA.height - (rectB.y + rectB.height);
+t.x=rectA.x;
+t.y=rectB.y + rectB.height;
+t.width=rectA.width;
+t.height=rectA.y + rectA.height - (rectB.y + rectB.height);
 if (t.width > 0 && t.height > 0 ) {
-a = t;
+a=t;
 rectCount++;
 }} else if ((rectB.y + rectB.height) > (rectA.y + rectA.height)) {
 t.setBounds$I$I$I$I((rectB.x + rectB.width), rectA.y, (rectA.x + rectA.width) - (rectB.x + rectB.width), rectA.height);
 if (t.width > 0 && t.height > 0 ) {
-a = t;
+a=t;
 rectCount++;
 }} else {
 t.setBounds$I$I$I$I((rectB.x + rectB.width), rectA.y, (rectA.x + rectA.width) - (rectB.x + rectB.width), (rectB.y + rectB.height) - rectA.y);
 if (t.width > 0 && t.height > 0 ) {
-a = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+a=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.setBounds$I$I$I$I(rectA.x, (rectB.y + rectB.height), rectA.width, (rectA.y + rectA.height) - (rectB.y + rectB.height));
 if (t.width > 0 && t.height > 0 ) {
-b = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+b=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }}} else if (rectB.x <= rectA.x && (rectB.y + rectB.height) >= (rectA.y + rectA.height) ) {
 if ((rectB.x + rectB.width) > (rectA.x + rectA.width)) {
 t.setBounds$I$I$I$I(rectA.x, rectA.y, rectA.width, rectB.y - rectA.y);
 if (t.width > 0 && t.height > 0 ) {
-a = t;
+a=t;
 rectCount++;
 }} else {
 t.setBounds$I$I$I$I(rectA.x, rectA.y, rectA.width, rectB.y - rectA.y);
 if (t.width > 0 && t.height > 0 ) {
-a = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+a=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I((rectB.x + rectB.width), rectB.y, (rectA.x + rectA.width) - (rectB.x + rectB.width), (rectA.y + rectA.height) - rectB.y);
 if (t.width > 0 && t.height > 0 ) {
-b = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+b=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }}} else if (rectB.x <= rectA.x) {
 if ((rectB.x + rectB.width) >= (rectA.x + rectA.width)) {
 t.reshape$I$I$I$I(rectA.x, rectA.y, rectA.width, rectB.y - rectA.y);
 if (t.width > 0 && t.height > 0 ) {
-a = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+a=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I(rectA.x, (rectB.y + rectB.height), rectA.width, (rectA.y + rectA.height) - (rectB.y + rectB.height));
 if (t.width > 0 && t.height > 0 ) {
-b = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+b=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }} else {
 t.reshape$I$I$I$I(rectA.x, rectA.y, rectA.width, rectB.y - rectA.y);
 if (t.width > 0 && t.height > 0 ) {
-a = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+a=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I((rectB.x + rectB.width), rectB.y, (rectA.x + rectA.width) - (rectB.x + rectB.width), rectB.height);
 if (t.width > 0 && t.height > 0 ) {
-b = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+b=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I(rectA.x, (rectB.y + rectB.height), rectA.width, (rectA.y + rectA.height) - (rectB.y + rectB.height));
 if (t.width > 0 && t.height > 0 ) {
-c = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+c=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }}} else if (rectB.x <= (rectA.x + rectA.width) && (rectB.x + rectB.width) > (rectA.x + rectA.width) ) {
 if (rectB.y <= rectA.y && (rectB.y + rectB.height) > (rectA.y + rectA.height) ) {
 t.reshape$I$I$I$I(rectA.x, rectA.y, rectB.x - rectA.x, rectA.height);
 if (t.width > 0 && t.height > 0 ) {
-a = t;
+a=t;
 rectCount++;
 }} else if (rectB.y <= rectA.y) {
 t.reshape$I$I$I$I(rectA.x, rectA.y, rectB.x - rectA.x, (rectB.y + rectB.height) - rectA.y);
 if (t.width > 0 && t.height > 0 ) {
-a = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+a=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I(rectA.x, (rectB.y + rectB.height), rectA.width, (rectA.y + rectA.height) - (rectB.y + rectB.height));
 if (t.width > 0 && t.height > 0 ) {
-b = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+b=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }} else if ((rectB.y + rectB.height) > (rectA.y + rectA.height)) {
 t.reshape$I$I$I$I(rectA.x, rectA.y, rectA.width, rectB.y - rectA.y);
 if (t.width > 0 && t.height > 0 ) {
-a = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+a=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I(rectA.x, rectB.y, rectB.x - rectA.x, (rectA.y + rectA.height) - rectB.y);
 if (t.width > 0 && t.height > 0 ) {
-b = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+b=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }} else {
 t.reshape$I$I$I$I(rectA.x, rectA.y, rectA.width, rectB.y - rectA.y);
 if (t.width > 0 && t.height > 0 ) {
-a = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+a=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I(rectA.x, rectB.y, rectB.x - rectA.x, rectB.height);
 if (t.width > 0 && t.height > 0 ) {
-b = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+b=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I(rectA.x, (rectB.y + rectB.height), rectA.width, (rectA.y + rectA.height) - (rectB.y + rectB.height));
 if (t.width > 0 && t.height > 0 ) {
-c = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+c=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }}} else if (rectB.x >= rectA.x && (rectB.x + rectB.width) <= (rectA.x + rectA.width) ) {
 if (rectB.y <= rectA.y && (rectB.y + rectB.height) > (rectA.y + rectA.height) ) {
 t.reshape$I$I$I$I(rectA.x, rectA.y, rectB.x - rectA.x, rectA.height);
 if (t.width > 0 && t.height > 0 ) {
-a = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+a=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I((rectB.x + rectB.width), rectA.y, (rectA.x + rectA.width) - (rectB.x + rectB.width), rectA.height);
 if (t.width > 0 && t.height > 0 ) {
-b = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+b=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }} else if (rectB.y <= rectA.y) {
 t.reshape$I$I$I$I(rectA.x, rectA.y, rectB.x - rectA.x, rectA.height);
 if (t.width > 0 && t.height > 0 ) {
-a = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+a=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I(rectB.x, (rectB.y + rectB.height), rectB.width, (rectA.y + rectA.height) - (rectB.y + rectB.height));
 if (t.width > 0 && t.height > 0 ) {
-b = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+b=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I((rectB.x + rectB.width), rectA.y, (rectA.x + rectA.width) - (rectB.x + rectB.width), rectA.height);
 if (t.width > 0 && t.height > 0 ) {
-c = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+c=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }} else {
 t.reshape$I$I$I$I(rectA.x, rectA.y, rectB.x - rectA.x, rectA.height);
 if (t.width > 0 && t.height > 0 ) {
-a = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+a=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I(rectB.x, rectA.y, rectB.width, rectB.y - rectA.y);
 if (t.width > 0 && t.height > 0 ) {
-b = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+b=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I((rectB.x + rectB.width), rectA.y, (rectA.x + rectA.width) - (rectB.x + rectB.width), rectA.height);
 if (t.width > 0 && t.height > 0 ) {
-c = Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
+c=Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_Rectangle,[t]);
 rectCount++;
-}}}}result = Clazz_array((I$[1]||$incl$(1)), [rectCount]);
-rectCount = 0;
-if (a != null ) result[rectCount++] = a;
-if (b != null ) result[rectCount++] = b;
-if (c != null ) result[rectCount++] = c;
-if (d != null ) result[rectCount++] = d;
+}}}}result=Clazz_array((I$[1]||$incl$(1)), [rectCount]);
+rectCount=0;
+if (a != null ) result[rectCount++]=a;
+if (b != null ) result[rectCount++]=b;
+if (c != null ) result[rectCount++]=c;
+if (d != null ) result[rectCount++]=d;
 return result;
 }, 1);
 
@@ -30752,7 +30752,7 @@ if (Clazz_instanceOf(shell, "javax.swing.CellRendererPane")) {
 if (shell.getParent() !== p ) {
 p.add$java_awt_Component(shell);
 }} else {
-shell = (I$[7]||$incl$(7)).getInstance$S$Z("javax.swing.CellRendererPane", false);
+shell=(I$[7]||$incl$(7)).getInstance$S$Z("javax.swing.CellRendererPane", false);
 shell.add$java_awt_Component(c);
 p.add$java_awt_Component(shell);
 }return shell;
@@ -30774,9 +30774,9 @@ if (jpm != null ) {
 C$.updateComponentTreeUI$java_awt_Component(jpm);
 }}var children = null;
 if (Clazz_instanceOf(c, "javax.swing.JMenu")) {
-children = (c).getMenuComponents();
+children=(c).getMenuComponents();
 } else if (Clazz_instanceOf(c, "java.awt.Container")) {
-children = (c).getComponents();
+children=(c).getComponents();
 }if (children != null ) {
 for (var i = 0; i < children.length; i++) {
 C$.updateComponentTreeUI0$java_awt_Component(children[i]);
@@ -30798,7 +30798,7 @@ return (I$[8]||$incl$(8)).isDispatchThread();
 Clazz_newMeth(C$, 'getRootPane$java_awt_Component', function (c) {
 if (Clazz_instanceOf(c, "javax.swing.RootPaneContainer")) {
 return (c).getRootPane();
-}for (; c != null ; c = c.getParent()) {
+}for (; c != null ; c=c.getParent()) {
 if (Clazz_instanceOf(c, "javax.swing.JRootPane")) {
 return c;
 }}
@@ -30807,11 +30807,11 @@ return null;
 
 Clazz_newMeth(C$, 'getRoot$java_awt_Component', function (c) {
 var applet = null;
-for (var p = c; p != null ; p = p.getParent()) {
+for (var p = c; p != null ; p=p.getParent()) {
 if (Clazz_instanceOf(p, "java.awt.Window")) {
 return p;
 }if (Clazz_instanceOf(p, "java.applet.Applet")) {
-applet = p;
+applet=p;
 }}
 return applet;
 }, 1);
@@ -30829,7 +30829,7 @@ if (Clazz_instanceOf(component, "javax.swing.JComponent")) {
 return (component).processKeyBindings$java_awt_event_KeyEvent$Z(event, pressed);
 }if ((Clazz_instanceOf(component, "java.applet.Applet")) || (Clazz_instanceOf(component, "java.awt.Window")) ) {
 return (I$[9]||$incl$(9)).processKeyBindingsForAllComponents$java_awt_event_KeyEvent$java_awt_Container$Z(event, component, pressed);
-}component = component.getParent();
+}component=component.getParent();
 }
 }return false;
 }, 1);
@@ -30852,18 +30852,18 @@ return false;
 return false;
 }var commandO;
 var stayNull;
-commandO = action.getValue$S("ActionCommandKey");
+commandO=action.getValue$S("ActionCommandKey");
 if (commandO == null  && (I$[9]||$incl$(9)).isActionStandin$javax_swing_Action(action) ) {
-stayNull = true;
+stayNull=true;
 } else {
-stayNull = false;
+stayNull=false;
 }var command;
 if (commandO != null ) {
-command = commandO.toString();
+command=commandO.toString();
 } else if (!stayNull && event.getKeyChar() != "\uffff" ) {
-command = String.valueOf(event.getKeyChar());
+command=String.valueOf(event.getKeyChar());
 } else {
-command = null;
+command=null;
 }action.actionPerformed$java_awt_event_ActionEvent(Clazz_new_((I$[10]||$incl$(10)).c$$O$I$S$J$I,[sender, 1001, command, event.getWhen(), modifiers]));
 return true;
 }, 1);
@@ -30875,7 +30875,7 @@ var parent = map.getParent();
 if (parent == null  || (Clazz_instanceOf(parent, "javax.swing.plaf.UIResource")) ) {
 map.setParent$javax_swing_InputMap(uiInputMap);
 return;
-}map = parent;
+}map=parent;
 }
 }, 1);
 
@@ -30886,7 +30886,7 @@ var parent = map.getParent();
 if (parent == null  || (Clazz_instanceOf(parent, "javax.swing.plaf.UIResource")) ) {
 map.setParent$javax_swing_ActionMap(uiActionMap);
 return;
-}map = parent;
+}map=parent;
 }
 }, 1);
 
@@ -30896,7 +30896,7 @@ while (map != null ){
 var parent = map.getParent();
 if (Clazz_instanceOf(parent, "javax.swing.plaf.UIResource")) {
 return parent;
-}map = parent;
+}map=parent;
 }
 return null;
 }, 1);
@@ -30907,7 +30907,7 @@ while (map != null ){
 var parent = map.getParent();
 if (Clazz_instanceOf(parent, "javax.swing.plaf.UIResource")) {
 return parent;
-}map = parent;
+}map=parent;
 }
 return null;
 }, 1);
@@ -30915,7 +30915,7 @@ return null;
 Clazz_newMeth(C$, 'getSharedOwnerFrame', function () {
 var p = (I$[11]||$incl$(11)).getAppletViewer();
 var f = p.sharedOwnerFrame;
-return (f == null  ? (p.sharedOwnerFrame = Clazz_new_((I$[12]||$incl$(12)))) : f);
+return (f == null  ? (p.sharedOwnerFrame=Clazz_new_((I$[12]||$incl$(12)))) : f);
 }, 1);
 
 Clazz_newMeth(C$, 'getSharedOwnerFrameShutdownListener', function () {
@@ -30974,11 +30974,11 @@ return null;
 }var rect = r;
 var insets = c.getInsets();
 if (rect == null ) {
-rect = Clazz_new_((I$[1]||$incl$(1)));
-}rect.x = insets.left;
-rect.y = insets.top;
-rect.width = c.getWidth() - insets.left - insets.right ;
-rect.height = c.getHeight() - insets.top - insets.bottom ;
+rect=Clazz_new_((I$[1]||$incl$(1)));
+}rect.x=insets.left;
+rect.y=insets.top;
+rect.width=c.getWidth() - insets.left - insets.right ;
+rect.height=c.getHeight() - insets.top - insets.bottom ;
 return rect;
 }, 1);
 
@@ -30987,9 +30987,9 @@ if (rendererOrEditor == null ) {
 return;
 }var component = null;
 if (Clazz_instanceOf(rendererOrEditor, "java.awt.Component")) {
-component = rendererOrEditor;
+component=rendererOrEditor;
 }if (Clazz_instanceOf(rendererOrEditor, "javax.swing.DefaultCellEditor")) {
-component = (rendererOrEditor).getComponent();
+component=(rendererOrEditor).getComponent();
 }if (component != null ) {
 C$.updateComponentTreeUI$java_awt_Component(component);
 }}, 1);
@@ -31063,7 +31063,7 @@ Clazz_newMeth(C$, 'dispose', function () {
 });
 })()
 })();
-//Created 2018-05-15 01:02:41
+//Created 2018-05-24 08:46:42
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.LookAndFeel','java.util.Locale','java.util.HashMap','javax.swing.SwingUtilities','java.lang.Error','swingjs.JSToolkit','javax.swing.event.SwingPropertyChangeSupport','java.beans.PropertyChangeListener','java.util.Vector']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "UIDefaults", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -31092,13 +31092,13 @@ C$.c$$I$F.apply(this, [700, 0.75]);
 Clazz_newMeth(C$, 'c$$I$F', function (initialCapacity, loadFactor) {
 C$.superclazz.c$$I$F.apply(this, [initialCapacity, loadFactor]);
 C$.$init$.apply(this);
-this.resourceCache = Clazz_new_((I$[3]||$incl$(3)));
+this.resourceCache=Clazz_new_((I$[3]||$incl$(3)));
 }, 1);
 
 Clazz_newMeth(C$, 'c$$OA', function (keyValueList) {
 C$.superclazz.c$$I.apply(this, [(keyValueList.length/2|0)]);
 C$.$init$.apply(this);
-for (var i = 0; i < keyValueList.length; i = i+(2)) {
+for (var i = 0; i < keyValueList.length; i+=2) {
 C$.superclazz.prototype.put$TK$TV.apply(this, [keyValueList[i], keyValueList[i + 1]]);
 }
 }, 1);
@@ -31112,12 +31112,12 @@ Clazz_newMeth(C$, 'getFromHashtable$O', function (key) {
 var value = C$.superclazz.prototype.get$O.apply(this, [key]);
 if (value == null  && (Clazz_instanceOf(key, "java.lang.String")) ) {
 var skey = key;
-if (skey.endsWith$S(".font") || skey.endsWith$S(".background") || skey.endsWith$S(".foreground")  ) value = C$.superclazz.prototype.get$O.apply(this, ["*" + skey.substring(skey.lastIndexOf("."))]);
+if (skey.endsWith$S(".font") || skey.endsWith$S(".background") || skey.endsWith$S(".foreground")  ) value=C$.superclazz.prototype.get$O.apply(this, ["*" + skey.substring(skey.lastIndexOf("."))]);
 }if (!(Clazz_instanceOf(value, "javax.swing.UIDefaults.ActiveValue")) && !(Clazz_instanceOf(value, "javax.swing.UIDefaults.LazyValue")) ) {
 return value;
 }if (Clazz_instanceOf(value, "javax.swing.UIDefaults.LazyValue")) {
 try {
-value = (value).createValue$javax_swing_UIDefaults(this);
+value=(value).createValue$javax_swing_UIDefaults(this);
 } finally {
 if (value == null ) {
 C$.superclazz.prototype.remove$O.apply(this, [key]);
@@ -31125,7 +31125,7 @@ C$.superclazz.prototype.remove$O.apply(this, [key]);
 C$.superclazz.prototype.put$TK$TV.apply(this, [key, value]);
 }}
 } else {
-value = (value).createValue$javax_swing_UIDefaults(this);
+value=(value).createValue$javax_swing_UIDefaults(this);
 }return value;
 });
 
@@ -31139,7 +31139,7 @@ if (this.resourceBundles == null  || this.resourceBundles.isEmpty()  || !(Clazz_
 return null;
 }if (l == null ) {
 if (this.defaultLocale == null ) return null;
- else l = this.defaultLocale;
+ else l=this.defaultLocale;
 }{
 return p$.getResourceCache$java_util_Locale.apply(this, [l]).get$O(key);
 }});
@@ -31156,7 +31156,7 @@ this.firePropertyChange$S$O$O(key, oldValue, value);
 });
 
 Clazz_newMeth(C$, 'putDefaults$OA', function (keyValueList) {
-for (var i = 0, max = keyValueList.length; i < max; i = i+(2)) {
+for (var i = 0, max = keyValueList.length; i < max; i+=2) {
 var value = keyValueList[i + 1];
 if (value == null ) {
 C$.superclazz.prototype.remove$O.apply(this, [keyValueList[i]]);
@@ -31263,9 +31263,9 @@ if (className != null ) {
 var cls = this.get$O(className);
 if (cls == null ) {
 if (uiClassLoader == null ) {
-cls = (I$[4]||$incl$(4)).loadSystemClass$S(className);
+cls=(I$[4]||$incl$(4)).loadSystemClass$S(className);
 } else {
-cls = uiClassLoader.loadClass$S(className);
+cls=uiClassLoader.loadClass$S(className);
 }if (cls != null ) {
 this.put$O$O(className, cls);
 }}return cls;
@@ -31306,7 +31306,7 @@ return (I$[6]||$incl$(6)).getComponentUI$javax_swing_JComponent(target);
 
 Clazz_newMeth(C$, 'addPropertyChangeListener$java_beans_PropertyChangeListener', function (listener) {
 if (this.changeSupport == null ) {
-this.changeSupport = Clazz_new_((I$[7]||$incl$(7)).c$$O,[this]);
+this.changeSupport=Clazz_new_((I$[7]||$incl$(7)).c$$O,[this]);
 }this.changeSupport.addPropertyChangeListener$java_beans_PropertyChangeListener(listener);
 });
 
@@ -31330,7 +31330,7 @@ Clazz_newMeth(C$, 'addResourceBundle$S', function (bundleName) {
 if (bundleName == null ) {
 return;
 }if (this.resourceBundles == null ) {
-this.resourceBundles = Clazz_new_((I$[9]||$incl$(9)).c$$I,[5]);
+this.resourceBundles=Clazz_new_((I$[9]||$incl$(9)).c$$I,[5]);
 }if (!this.resourceBundles.contains$O(bundleName)) {
 this.resourceBundles.add$TE(bundleName);
 this.resourceCache.clear();
@@ -31343,7 +31343,7 @@ this.resourceBundles.remove$O(bundleName);
 });
 
 Clazz_newMeth(C$, 'setDefaultLocale$java_util_Locale', function (l) {
-this.defaultLocale = l;
+this.defaultLocale=l;
 });
 
 Clazz_newMeth(C$, 'getDefaultLocale', function () {
@@ -31375,7 +31375,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$OA', function (bindings) {
 C$.$init$.apply(this);
-this.bindings = bindings;
+this.bindings=bindings;
 }, 1);
 
 Clazz_newMeth(C$, 'createValue$javax_swing_UIDefaults', function (table) {
@@ -31388,7 +31388,7 @@ return km;
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:42
+//Created 2018-05-24 08:46:44
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.util.ArrayList',['javax.swing.UIManager','.LookAndFeelInfo'],'swingjs.JSUtil','javax.swing.SwingUtilities','java.util.Locale','java.beans.PropertyChangeListener','swingjs.JSToolkit','javax.swing.RepaintManager','sun.awt.PaintEventDispatcher','javax.swing.SwingPaintEventDispatcher']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "UIManager", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -31402,7 +31402,7 @@ C$.$clinit$ = function() {Clazz_load(C$, 1);
 {
 var iLAFs = Clazz_new_((I$[1]||$incl$(1)).c$$I,[4]);
 iLAFs.add$TE(Clazz_new_((I$[2]||$incl$(2)).c$$S$S,["HTML5", "swingjs.plaf.HTML5LookAndFeel"]));
-C$.installedLAFs = iLAFs.toArray$TTA(Clazz_array((I$[2]||$incl$(2)), [iLAFs.size()]));
+C$.installedLAFs=iLAFs.toArray$TTA(Clazz_array((I$[2]||$incl$(2)), [iLAFs.size()]));
 }
 ;
 }
@@ -31431,7 +31431,7 @@ Clazz_newMeth(C$, 'installLookAndFeel$S$S', function (name, className) {
 }, 1);
 
 Clazz_newMeth(C$, 'getLookAndFeel', function () {
-return (C$.laf == null  ? (C$.laf = (I$[3]||$incl$(3)).getInstance$S("swingjs.plaf.HTML5LookAndFeel")) : C$.laf);
+return (C$.laf == null  ? (C$.laf=(I$[3]||$incl$(3)).getInstance$S("swingjs.plaf.HTML5LookAndFeel")) : C$.laf);
 }, 1);
 
 Clazz_newMeth(C$, 'setLookAndFeel$javax_swing_LookAndFeel', function (newLookAndFeel) {
@@ -31563,7 +31563,7 @@ return Clazz_array((I$[6]||$incl$(6)), [0]);
 
 Clazz_newMeth(C$, 'maybeInitialize', function () {
 if (C$.uid == null ) {
-C$.uid = (I$[7]||$incl$(7)).getLookAndFeelDefaults();
+C$.uid=(I$[7]||$incl$(7)).getLookAndFeelDefaults();
 C$.initialize();
 }}, 1);
 
@@ -31587,8 +31587,8 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$S$S', function (name, className) {
 C$.$init$.apply(this);
-this.name = name;
-this.className = className;
+this.name=name;
+this.className=className;
 }, 1);
 
 Clazz_newMeth(C$, 'getName', function () {
@@ -31608,7 +31608,7 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:42
+//Created 2018-05-24 08:46:44
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[['java.lang.StringBuffer','java.util.Collections','java.util.IdentityHashMap','java.util.HashMap','java.util.HashSet','Thread','sun.awt.SunToolkit','sun.awt.MostRecentThreadAppContext','sun.awt.MostRecentKeyValue','java.beans.PropertyChangeListener','java.beans.PropertyChangeSupport']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AppContext");
 C$.EVENT_QUEUE_KEY = null;
@@ -31652,7 +31652,7 @@ return this.$isDisposed;
 Clazz_newMeth(C$, 'c$$ThreadGroup', function (threadGroup) {
 C$.$init$.apply(this);
 C$.numAppContexts++;
-this.threadGroup = threadGroup;
+this.threadGroup=threadGroup;
 C$.threadGroup2appContext.put$TK$TV(threadGroup, this);
 
 this.contextClassLoader = this;
@@ -31663,22 +31663,22 @@ var currentThread = (I$[6]||$incl$(6)).currentThread();
 var appContext = null;
 var recent = C$.mostRecentThreadAppContext;
 if ((recent != null ) && (recent.thread === currentThread ) ) {
-appContext = recent.appContext;
+appContext=recent.appContext;
 } else {
 var currentThreadGroup = currentThread.getThreadGroup();
 var threadGroup = currentThreadGroup;
-appContext = C$.threadGroup2appContext.get$O(threadGroup);
+appContext=C$.threadGroup2appContext.get$O(threadGroup);
 while (appContext == null ){
-threadGroup = threadGroup.getParent();
+threadGroup=threadGroup.getParent();
 if (threadGroup == null ) {
-appContext = (I$[7]||$incl$(7)).createNewAppContext();
+appContext=(I$[7]||$incl$(7)).createNewAppContext();
 break;
-}appContext = C$.threadGroup2appContext.get$O(threadGroup);
+}appContext=C$.threadGroup2appContext.get$O(threadGroup);
 }
-for (var tg = currentThreadGroup; tg !== threadGroup ; tg = tg.getParent()) {
+for (var tg = currentThreadGroup; tg !== threadGroup ; tg=tg.getParent()) {
 C$.threadGroup2appContext.put$TK$TV(tg, appContext);
 }
-C$.mostRecentThreadAppContext = Clazz_new_((I$[8]||$incl$(8)).c$$Thread$sun_awt_AppContext,[currentThread, appContext]);
+C$.mostRecentThreadAppContext=Clazz_new_((I$[8]||$incl$(8)).c$$Thread$sun_awt_AppContext,[currentThread, appContext]);
 }return appContext;
 }, 1);
 
@@ -31696,27 +31696,27 @@ if ((recent != null ) && (recent.key === key ) ) {
 return recent.value;
 }var value = this.table.get$O(key);
 if (this.mostRecentKeyValue == null ) {
-this.mostRecentKeyValue = Clazz_new_((I$[9]||$incl$(9)).c$$O$O,[key, value]);
-this.shadowMostRecentKeyValue = Clazz_new_((I$[9]||$incl$(9)).c$$O$O,[key, value]);
+this.mostRecentKeyValue=Clazz_new_((I$[9]||$incl$(9)).c$$O$O,[key, value]);
+this.shadowMostRecentKeyValue=Clazz_new_((I$[9]||$incl$(9)).c$$O$O,[key, value]);
 } else {
 var auxKeyValue = this.mostRecentKeyValue;
 this.shadowMostRecentKeyValue.setPair$O$O(key, value);
-this.mostRecentKeyValue = this.shadowMostRecentKeyValue;
-this.shadowMostRecentKeyValue = auxKeyValue;
+this.mostRecentKeyValue=this.shadowMostRecentKeyValue;
+this.shadowMostRecentKeyValue=auxKeyValue;
 }return value;
 }});
 
 Clazz_newMeth(C$, 'put$O$O', function (key, value) {
 {
 var recent = this.mostRecentKeyValue;
-if ((recent != null ) && (recent.key === key ) ) recent.value = value;
+if ((recent != null ) && (recent.key === key ) ) recent.value=value;
 return this.table.put$TK$TV(key, value);
 }});
 
 Clazz_newMeth(C$, 'remove$O', function (key) {
 {
 var recent = this.mostRecentKeyValue;
-if ((recent != null ) && (recent.key === key ) ) recent.value = null;
+if ((recent != null ) && (recent.key === key ) ) recent.value=null;
 return this.table.remove$O(key);
 }});
 
@@ -31738,7 +31738,7 @@ Clazz_newMeth(C$, 'addPropertyChangeListener$S$java_beans_PropertyChangeListener
 if (listener == null ) {
 return;
 }if (this.changeSupport == null ) {
-this.changeSupport = Clazz_new_((I$[11]||$incl$(11)).c$$O,[this]);
+this.changeSupport=Clazz_new_((I$[11]||$incl$(11)).c$$O,[this]);
 }this.changeSupport.addPropertyChangeListener$S$java_beans_PropertyChangeListener(propertyName, listener);
 });
 
@@ -31756,7 +31756,7 @@ return Clazz_array((I$[10]||$incl$(10)), [0]);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:21
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[['java.util.HashSet','java.util.IdentityHashMap','java.awt.AWTEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AWTAutoShutdown", null, null, 'Runnable');
 C$.theInstance = null;
@@ -31783,7 +31783,7 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz_newMeth(C$, 'getInstance', function () {
-return (C$.theInstance == null  ? (C$.theInstance = Clazz_new_(C$)) : C$.theInstance);
+return (C$.theInstance == null  ? (C$.theInstance=Clazz_new_(C$)) : C$.theInstance);
 }, 1);
 
 Clazz_newMeth(C$, 'notifyToolkitThreadBusy', function () {
@@ -31815,9 +31815,9 @@ Clazz_newMeth(C$, 'setToolkitBusy$Z', function (busy) {
 if (busy != this.toolkitThreadBusy ) {
 if (busy != this.toolkitThreadBusy ) {
 if (busy) {
-this.toolkitThreadBusy = busy;
+this.toolkitThreadBusy=busy;
 } else {
-this.toolkitThreadBusy = busy;
+this.toolkitThreadBusy=busy;
 }}}});
 
 Clazz_newMeth(C$, 'run', function () {
@@ -31860,11 +31860,11 @@ aLog.fine$S(key + "->" + this.peerMap.get$O(key) );
 }
 });
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:21
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "ComponentFactory");
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:21
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[];
 var C$=Clazz_newClass(P$, "MostRecentKeyValue");
 
@@ -31879,18 +31879,18 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$O$O', function (k, v) {
 C$.$init$.apply(this);
-this.key = k;
-this.value = v;
+this.key=k;
+this.value=v;
 }, 1);
 
 Clazz_newMeth(C$, 'setPair$O$O', function (k, v) {
-this.key = k;
-this.value = v;
+this.key=k;
+this.value=v;
 });
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:21
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[];
 var C$=Clazz_newClass(P$, "MostRecentThreadAppContext");
 
@@ -31905,13 +31905,13 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$Thread$sun_awt_AppContext', function (key, value) {
 C$.$init$.apply(this);
-this.thread = key;
-this.appContext = value;
+this.thread=key;
+this.appContext=value;
 }, 1);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:21
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[['java.awt.event.PaintEvent','java.awt.Rectangle']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "PaintEventDispatcher");
 C$.dispatcher = null;
@@ -31921,13 +31921,13 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'setPaintEventDispatcher$sun_awt_PaintEventDispatcher', function (dispatcher) {
 {
-C$.dispatcher = dispatcher;
+C$.dispatcher=dispatcher;
 }}, 1);
 
 Clazz_newMeth(C$, 'getPaintEventDispatcher', function () {
 {
 if (C$.dispatcher == null ) {
-C$.dispatcher = Clazz_new_(C$);
+C$.dispatcher=Clazz_new_(C$);
 }return C$.dispatcher;
 }}, 1);
 
@@ -31945,7 +31945,7 @@ return false;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:22
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[['swingjs.JSUtil','sun.awt.EventQueueItem','sun.awt.SunToolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "PostEventQueue");
 
@@ -31963,7 +31963,7 @@ this.queueTail = null;
 
 Clazz_newMeth(C$, 'c$$java_awt_EventQueue', function (eq) {
 C$.$init$.apply(this);
-this.eventQueue = eq;
+this.eventQueue=eq;
 }, 1);
 
 Clazz_newMeth(C$, 'noEvents', function () {
@@ -31974,12 +31974,12 @@ Clazz_newMeth(C$, 'flush', function () {
 if (this.queueHead != null ) {
 var tempQueue;
 {
-tempQueue = this.queueHead;
-this.queueHead = this.queueTail = null;
+tempQueue=this.queueHead;
+this.queueHead=this.queueTail=null;
 while (tempQueue != null ){
 (I$[1]||$incl$(1)).alert$O("postevent IS NOT IMPLEMENTED " + tempQueue.event);
 this.eventQueue.postEvent$java_awt_AWTEvent(tempQueue.event);
-tempQueue = tempQueue.next;
+tempQueue=tempQueue.next;
 }
 }}});
 
@@ -31987,20 +31987,20 @@ Clazz_newMeth(C$, 'postEvent$java_awt_AWTEvent', function (event) {
 var item = Clazz_new_((I$[2]||$incl$(2)).c$$java_awt_AWTEvent,[event]);
 {
 if (this.queueHead == null ) {
-this.queueHead = this.queueTail = item;
+this.queueHead=this.queueTail=item;
 } else {
-this.queueTail.next = item;
-this.queueTail = item;
+this.queueTail.next=item;
+this.queueTail=item;
 }}(I$[3]||$incl$(3)).wakeupEventQueue$java_awt_EventQueue$Z(this.eventQueue, false);
 });
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:22
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "RequestFocusController");
 })();
-//Created 2018-05-15 01:03:05
+//Created 2018-05-24 08:47:22
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[['java.util.HashMap','java.awt.EventQueue','sun.awt.AppContext','sun.awt.PostEventQueue','Thread','sun.awt.AWTAutoShutdown','sun.awt.AWTAccessor','sun.awt.PeerEvent','java.awt.Toolkit','sun.awt.SunToolkit$1','java.awt.Dimension','sun.font.FontDesignMetrics']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "SunToolkit", null, 'java.awt.Toolkit', ['sun.awt.WindowClosingSupport', 'sun.awt.WindowClosingListener', 'sun.awt.ComponentFactory']);
 C$.appContextMap = null;
@@ -32028,7 +32028,7 @@ this.windowClosingListener = null;
 Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
 var eventQueue;
-eventQueue = Clazz_new_((I$[2]||$incl$(2)));
+eventQueue=Clazz_new_((I$[2]||$incl$(2)));
 var appContext = (I$[3]||$incl$(3)).getAppContext();
 if (appContext != null ) {
 appContext.put$O$O((I$[3]||$incl$(3)).EVENT_QUEUE_KEY, eventQueue);
@@ -32049,11 +32049,11 @@ Clazz_newMeth(C$, 'createNewAppContext$ThreadGroup', function (threadGroup) {
 var eventQueue;
 var eqName = System.getProperty("AWT.EventQueueClass", "java.awt.EventQueue");
 try {
-eventQueue = Clazz_forName(eqName).newInstance();
+eventQueue=Clazz_forName(eqName).newInstance();
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.Exception")){
 System.err.println$S("Failed loading " + eqName + ": " + e );
-eventQueue = Clazz_new_((I$[2]||$incl$(2)));
+eventQueue=Clazz_new_((I$[2]||$incl$(2)));
 } else {
 throw e;
 }
@@ -32107,7 +32107,7 @@ if (target == null ) {
 return null;
 }var context = C$.getAppContext$O(target);
 if (context == null ) {
-context = C$.appContextMap.get$O(target);
+context=C$.appContextMap.get$O(target);
 }return context;
 }, 1);
 
@@ -32197,8 +32197,8 @@ var appContext = C$.targetToAppContext$O(target);
 var eq = appContext.get$O((I$[3]||$incl$(3)).EVENT_QUEUE_KEY);
 var next = (I$[7]||$incl$(7)).getEventQueueAccessor().getNextQueue$java_awt_EventQueue(eq);
 while (next != null ){
-eq = next;
-next = (I$[7]||$incl$(7)).getEventQueueAccessor().getNextQueue$java_awt_EventQueue(eq);
+eq=next;
+next=(I$[7]||$incl$(7)).getEventQueueAccessor().getNextQueue$java_awt_EventQueue(eq);
 }
 return ((I$[5]||$incl$(5)).currentThread() === (I$[7]||$incl$(7)).getEventQueueAccessor().getDispatchThread$java_awt_EventQueue(eq) );
 }, 1);
@@ -32243,7 +32243,7 @@ Clazz_newMeth(C$, 'getImageFromHash$java_awt_Toolkit$java_net_URL', function (tk
 var img = C$.imgCache.get$O(url);
 if (img == null ) {
 try {
-img = tk.createImage$java_net_URL(url);
+img=tk.createImage$java_net_URL(url);
 C$.imgCache.put$TK$TV(url, img);
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.Exception")){
@@ -32321,7 +32321,7 @@ return C$.getStartupLocale();
 });
 
 Clazz_newMeth(C$, 'setDataTransfererClassName$S', function (className) {
-C$.dataTransfererClassName = className;
+C$.dataTransfererClassName=className;
 }, 1);
 
 Clazz_newMeth(C$, 'getDataTransfererClassName', function () {
@@ -32335,7 +32335,7 @@ return this.windowClosingListener;
 });
 
 Clazz_newMeth(C$, 'setWindowClosingListener$sun_awt_WindowClosingListener', function (wcl) {
-this.windowClosingListener = wcl;
+this.windowClosingListener=wcl;
 });
 
 Clazz_newMeth(C$, 'windowClosingNotify$java_awt_event_WindowEvent', function (event) {
@@ -32368,7 +32368,7 @@ return null;
 
 Clazz_newMeth(C$, 'getContainingWindow$java_awt_Component', function (comp) {
 while (comp != null  && !(Clazz_instanceOf(comp, "java.awt.Window")) ){
-comp = comp.getParent();
+comp=comp.getParent();
 }
 return comp;
 }, 1);
@@ -32397,15 +32397,15 @@ Clazz_newMeth(C$, 'needUpdateWindow', function () {
 return false;
 });
 })();
-//Created 2018-05-15 01:03:06
+//Created 2018-05-24 08:47:23
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "WindowClosingListener");
 })();
-//Created 2018-05-15 01:03:06
+//Created 2018-05-24 08:47:23
 (function(){var P$=Clazz_newPackage("sun.awt"),I$=[];
 var C$=Clazz_newInterface(P$, "WindowClosingSupport");
 })();
-//Created 2018-05-15 01:03:06
+//Created 2018-05-24 08:47:23
 (function(){var P$=Clazz_newPackage("sun.swing"),I$=[['java.lang.Boolean','java.awt.Color']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "SwingLazyValue", null, null, [['javax.swing.UIDefaults','javax.swing.UIDefaults.LazyValue']]);
 var p$=C$.prototype;
@@ -32437,10 +32437,10 @@ C$.c$$S$S$OA.apply(this, [c, null, o]);
 
 Clazz_newMeth(C$, 'c$$S$S$OA', function (c, m, o) {
 C$.$init$.apply(this);
-this.className = c;
-this.methodName = m;
+this.className=c;
+this.methodName=m;
 if (o != null ) {
-this.args = o.clone();
+this.args=o.clone();
 }}, 1);
 
 Clazz_newMeth(C$, 'createValue$javax_swing_UIDefaults', function (table) {
@@ -32466,23 +32466,23 @@ return null;
 Clazz_newMeth(C$, 'getClassArray$OA', function (args) {
 var types = null;
 if (args != null ) {
-types = Clazz_array(java.lang.Class, [args.length]);
+types=Clazz_array(java.lang.Class, [args.length]);
 for (var i = 0; i < args.length; i++) {
 if (Clazz_instanceOf(args[i], "java.lang.Integer")) {
-types[i] = Integer.TYPE;
+types[i]=Integer.TYPE;
 } else if (Clazz_instanceOf(args[i], "java.lang.Boolean")) {
-types[i] = (I$[1]||$incl$(1)).TYPE;
+types[i]=(I$[1]||$incl$(1)).TYPE;
 } else if (Clazz_instanceOf(args[i], "javax.swing.plaf.ColorUIResource")) {
-types[i] = Clazz_getClass((I$[2]||$incl$(2)));
+types[i]=Clazz_getClass((I$[2]||$incl$(2)));
 } else {
-types[i] = args[i].getClass();
+types[i]=args[i].getClass();
 }}
 }return types;
 });
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:11
+//Created 2018-05-24 08:47:36
 (function(){var P$=Clazz_newPackage("swingjs.api"),I$=[];
 var C$=Clazz_newClass(P$, "Interface");
 C$.instances = null;
@@ -32517,7 +32517,7 @@ if (!isQuiet && C$.instances.indexOf(name + ";") <= 0 ) {
 System.out.println$S("swingjs.api.Interface creating instance of " + name);
 C$.instances += name + ";";
 }var y = Clazz_forName(name);
-if (y != null ) x = y.newInstance();
+if (y != null ) x=y.newInstance();
 } catch (e) {
 System.out.println$S("Swingjs.api.Interface Error creating instance for " + name + ": \n" + e );
 {
@@ -32533,7 +32533,7 @@ return x;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:17
+//Created 2018-05-24 08:47:47
 (function(){var P$=Clazz_newPackage("swingjs.api.js"),I$=[['swingjs.JSUtil']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "DOMNode");
 
@@ -32694,7 +32694,7 @@ C$.setStyles(node, ["display", visible ? "block" : "none"]);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:17
+//Created 2018-05-24 08:47:47
 (function(){var P$=Clazz_newPackage("swingjs.api.js"),I$=[];
 var C$=Clazz_newClass(P$, "HTML5CanvasContext2D");
 
@@ -32771,11 +32771,11 @@ ctx.fillStyle = s;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:17
+//Created 2018-05-24 08:47:47
 (function(){var P$=Clazz_newPackage("swingjs.api.js"),I$=[];
 var C$=Clazz_newInterface(P$, "JSInterface");
 })();
-//Created 2018-05-15 01:03:17
+//Created 2018-05-24 08:47:47
 (function(){var P$=Clazz_newPackage("swingjs.jquery"),I$=[];
 var C$=Clazz_newClass(P$, "JQueryUI");
 
@@ -32790,9 +32790,7 @@ if (!jQuery.ui) try{ (function(e,t){function i(t,n){var r,i,o,u=t.nodeName.toLow
 }catch (e) { System.out.println("coremenu failed to load jQuery.ui.mouse -- jQuery version conflict?");
 } if (!jQuery.ui.position) try{ (function(e,t){function h(e,t,n){return[parseInt(e[0],10)*(l.test(e[0])?t/100:1),parseInt(e[1],10)*(l.test(e[1])?n/100:1)]}function p(t,n){return parseInt(e.css(t,n),10)||0}e.ui=e.ui||{};var n,r=Math.max,i=Math.abs,s=Math.round,o=/left|center|right/,u=/top|center|bottom/,a=/[\+\-]\d+%?/,f=/^\w+/,l=/%$/,c=e.fn.position;e.position={scrollbarWidth:function(){if(n!==t)return n;var r,i,s=e("<div style='display:block;width:50px;height:50px;overflow:hidden;'><div style='height:100px;width:auto;'></div></div>"),o=s.children()[0];return e("body").append(s),r=o.offsetWidth,s.css("overflow","scroll"),i=o.offsetWidth,r===i&&(i=s[0].clientWidth),s.remove(),n=r-i},getScrollInfo:function(t){var n=t.isWindow?"":t.element.css("overflow-x"),r=t.isWindow?"":t.element.css("overflow-y"),i=n==="scroll"||n==="auto"&&t.width<t.element[0].scrollWidth,s=r==="scroll"||r==="auto"&&t.height<t.element[0].scrollHeight;return{width:i?e.position.scrollbarWidth():0,height:s?e.position.scrollbarWidth():0}},getWithinInfo:function(t){var n=e(t||window),r=e.isWindow(n[0]);return{element:n,isWindow:r,offset:n.offset()||{left:0,top:0},scrollLeft:n.scrollLeft(),scrollTop:n.scrollTop(),width:r?n.width():n.outerWidth(),height:r?n.height():n.outerHeight()}}},e.fn.position=function(t){if(!t||!t.of)return c.apply(this,arguments);t=e.extend({},t);var n,l,d,v,m,g=e(t.of),y=e.position.getWithinInfo(t.within),b=e.position.getScrollInfo(y),w=g[0],E=(t.collision||"flip").split(" "),S={};return w.nodeType===9?(l=g.width(),d=g.height(),v={top:0,left:0}):e.isWindow(w)?(l=g.width(),d=g.height(),v={top:g.scrollTop(),left:g.scrollLeft()}):w.preventDefault?(t.at="left top",l=d=0,v={top:w.pageY,left:w.pageX}):(l=g.outerWidth(),d=g.outerHeight(),v=g.offset()),m=e.extend({},v),e.each(["my","at"],function(){var e=(t[this]||"").split(" "),n,r;e.length===1&&(e=o.test(e[0])?e.concat(["center"]):u.test(e[0])?["center"].concat(e):["center","center"]),e[0]=o.test(e[0])?e[0]:"center",e[1]=u.test(e[1])?e[1]:"center",n=a.exec(e[0]),r=a.exec(e[1]),S[this]=[n?n[0]:0,r?r[0]:0],t[this]=[f.exec(e[0])[0],f.exec(e[1])[0]]}),E.length===1&&(E[1]=E[0]),t.at[0]==="right"?m.left+=l:t.at[0]==="center"&&(m.left+=l/2),t.at[1]==="bottom"?m.top+=d:t.at[1]==="center"&&(m.top+=d/2),n=h(S.at,l,d),m.left+=n[0],m.top+=n[1],this.each(function(){var o,u,a=e(this),f=a.outerWidth(),c=a.outerHeight(),w=p(this,"marginLeft"),x=p(this,"marginTop"),T=f+w+p(this,"marginRight")+b.width,N=c+x+p(this,"marginBottom")+b.height,C=e.extend({},m),k=h(S.my,a.outerWidth(),a.outerHeight());t.my[0]==="right"?C.left-=f:t.my[0]==="center"&&(C.left-=f/2),t.my[1]==="bottom"?C.top-=c:t.my[1]==="center"&&(C.top-=c/2),C.left+=k[0],C.top+=k[1],e.support.offsetFractions||(C.left=s(C.left),C.top=s(C.top)),o={marginLeft:w,marginTop:x},e.each(["left","top"],function(r,i){e.ui.position[E[r]]&&e.ui.position[E[r]][i](C,{targetWidth:l,targetHeight:d,elemWidth:f,elemHeight:c,collisionPosition:o,collisionWidth:T,collisionHeight:N,offset:[n[0]+k[0],n[1]+k[1]],my:t.my,at:t.at,within:y,elem:a})}),e.fn.bgiframe&&a.bgiframe(),t.using&&(u=function(e){var n=v.left-C.left,s=n+l-f,o=v.top-C.top,u=o+d-c,h={target:{element:g,left:v.left,top:v.top,width:l,height:d},element:{element:a,left:C.left,top:C.top,width:f,height:c},horizontal:s<0?"left":n>0?"right":"center",vertical:u<0?"top":o>0?"bottom":"middle"};l<f&&i(n+s)<l&&(h.horizontal="center"),d<c&&i(o+u)<d&&(h.vertical="middle"),r(i(n),i(s))>r(i(o),i(u))?h.important="horizontal":h.important="vertical",t.using.call(this,e,h)}),a.offset(e.extend(C,{using:u}))})},e.ui.position={fit:{left:function(e,t){var n=t.within,i=n.isWindow?n.scrollLeft:n.offset.left,s=n.width,o=e.left-t.collisionPosition.marginLeft,u=i-o,a=o+t.collisionWidth-s-i,f;t.collisionWidth>s?u>0&&a<=0?(f=e.left+u+t.collisionWidth-s-i,e.left+=u-f):a>0&&u<=0?e.left=i:u>a?e.left=i+s-t.collisionWidth:e.left=i:u>0?e.left+=u:a>0?e.left-=a:e.left=r(e.left-o,e.left)},top:function(e,t){var n=t.within,i=n.isWindow?n.scrollTop:n.offset.top,s=t.within.height,o=e.top-t.collisionPosition.marginTop,u=i-o,a=o+t.collisionHeight-s-i,f;t.collisionHeight>s?u>0&&a<=0?(f=e.top+u+t.collisionHeight-s-i,e.top+=u-f):a>0&&u<=0?e.top=i:u>a?e.top=i+s-t.collisionHeight:e.top=i:u>0?e.top+=u:a>0?e.top-=a:e.top=r(e.top-o,e.top)}},flip:{left:function(e,t){var n=t.within,r=n.offset.left+n.scrollLeft,s=n.width,o=n.isWindow?n.scrollLeft:n.offset.left,u=e.left-t.collisionPosition.marginLeft,a=u-o,f=u+t.collisionWidth-s-o,l=t.my[0]==="left"?-t.elemWidth:t.my[0]==="right"?t.elemWidth:0,c=t.at[0]==="left"?t.targetWidth:t.at[0]==="right"?-t.targetWidth:0,h=-2*t.offset[0],p,d;if(a<0){p=e.left+l+c+h+t.collisionWidth-s-r;if(p<0||p<i(a))e.left+=l+c+h}else if(f>0){d=e.left-t.collisionPosition.marginLeft+l+c+h-o;if(d>0||i(d)<f)e.left+=l+c+h}},top:function(e,t){var n=t.within,r=n.offset.top+n.scrollTop,s=n.height,o=n.isWindow?n.scrollTop:n.offset.top,u=e.top-t.collisionPosition.marginTop,a=u-o,f=u+t.collisionHeight-s-o,l=t.my[1]==="top",c=l?-t.elemHeight:t.my[1]==="bottom"?t.elemHeight:0,h=t.at[1]==="top"?t.targetHeight:t.at[1]==="bottom"?-t.targetHeight:0,p=-2*t.offset[1],d,v;a<0?(v=e.top+c+h+p+t.collisionHeight-s-r,e.top+c+h+p>a&&(v<0||v<i(a))&&(e.top+=c+h+p)):f>0&&(d=e.top-t.collisionPosition.marginTop+c+h+p-o,e.top+c+h+p>f&&(d>0||i(d)<f)&&(e.top+=c+h+p))}},flipfit:{left:function(){e.ui.position.flip.left.apply(this,arguments),e.ui.position.fit.left.apply(this,arguments)},top:function(){e.ui.position.flip.top.apply(this,arguments),e.ui.position.fit.top.apply(this,arguments)}}},function(){var t,n,r,i,s,o=document.getElementsByTagName("body")[0],u=document.createElement("div");t=document.createElement(o?"div":"body"),r={visibility:"hidden",width:0,height:0,border:0,margin:0,background:"none"},o&&e.extend(r,{position:"absolute",left:"-1000px",top:"-1000px"});for(s in r)t.style[s]=r[s];t.appendChild(u),n=o||document.documentElement,n.insertBefore(t,n.firstChild),u.style.cssText="position: absolute; left: 10.7432222px;",i=e(u).offset().left,e.support.offsetFractions=i>10&&i<11,t.innerHTML="",n.removeChild(t)}(),e.uiBackCompat!==!1&&function(e){var n=e.fn.position;e.fn.position=function(r){if(!r||!r.offset)return n.call(this,r);var i=r.offset.split(" "),s=r.at.split(" ");return i.length===1&&(i[1]=i[0]),/^\d/.test(i[0])&&(i[0]="+"+i[0]),/^\d/.test(i[1])&&(i[1]="+"+i[1]),s.length===1&&(/left|center|right/.test(s[0])?s[1]="center":(s[1]=s[0],s[0]="center")),n.call(this,e.extend(r,{at:s[0]+i[0]+" "+s[1]+i[1],offset:t}))}}(jQuery) })(jQuery);
 }catch (e) { System.out.println("coremenu failed to load jQuery.ui.position -- jQuery version conflict?");
-}
-}
-}
+} }}
 ;
 }
 
@@ -32803,7 +32801,7 @@ Clazz_newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
 }, 1);
 })();
-//Created 2018-05-15 01:03:18
+//Created 2017-12-22 10:46:43
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['swingjs.JSUtil','java.util.Locale']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSApp");
 var p$=C$.prototype;
@@ -32848,29 +32846,29 @@ return (s == null  ? null : "" + s);
 });
 
 Clazz_newMeth(C$, 'setAppParams$java_util_Hashtable', function (params) {
-this.params = params;
+this.params=params;
 var language = this.getParameter$S("language");
-if (language == null ) language = (I$[1]||$incl$(1)).J2S._getDefaultLanguage(false);
+if (language == null ) language=(I$[1]||$incl$(1)).J2S._getDefaultLanguage(false);
 (I$[2]||$incl$(2)).setDefault$java_util_Locale((I$[1]||$incl$(1)).getDefaultLocale$S(language));
-this.htmlName = p$.extract$S$S.apply(this, ["" + this.getParameter$S("name"), "_object"]);
-this.appletName = p$.extract$S$S.apply(this, [this.htmlName + "_", "_"]);
-this.syncId = this.getParameter$S("syncId");
-this.fullName = this.htmlName + "__" + this.syncId + "__" ;
+this.htmlName=p$.extract$S$S.apply(this, ["" + this.getParameter$S("name"), "_object"]);
+this.appletName=p$.extract$S$S.apply(this, [this.htmlName + "_", "_"]);
+this.syncId=this.getParameter$S("syncId");
+this.fullName=this.htmlName + "__" + this.syncId + "__" ;
 params.put$TK$TV("fullName", this.fullName);
 var o = params.get$O("codePath");
-if (o == null ) o = "../java/";
-this.appletCodeBase = o.toString();
-this.appletIdiomaBase = this.appletCodeBase.substring(0, this.appletCodeBase.lastIndexOf("/", this.appletCodeBase.length$() - 2) + 1) + "idioma";
-o = params.get$O("documentBase");
-this.appletDocumentBase = (o == null  ? "" : o.toString());
+if (o == null ) o="../java/";
+this.appletCodeBase=o.toString();
+this.appletIdiomaBase=this.appletCodeBase.substring(0, this.appletCodeBase.lastIndexOf("/", this.appletCodeBase.length$() - 2) + 1) + "idioma";
+o=params.get$O("documentBase");
+this.appletDocumentBase=(o == null  ? "" : o.toString());
 if (params.containsKey$O("maximumSize")) Math.max((params.get$O("maximumSize")).intValue(), 100);
-this.async = (this.testAsync || params.containsKey$O("async") );
+this.async=(this.testAsync || params.containsKey$O("async") );
 var applet = (I$[1]||$incl$(1)).J2S._findApplet(this.htmlName);
 var javaver = (I$[1]||$incl$(1)).J2S._getJavaVersion();
-this.html5Applet = applet;
-this.strJavaVersion = javaver;
-this.strJavaVendor = "Java2Script/Java 1.6 (HTML5)";
-o = params.get$O("assets");
+this.html5Applet=applet;
+this.strJavaVersion=javaver;
+this.strJavaVendor="Java2Script/Java 1.6 (HTML5)";
+o=params.get$O("assets");
 if (o != null ) (I$[1]||$incl$(1)).loadJavaResourcesFromZip$ClassLoader$S$java_util_Map(this.getClass().getClassLoader(), o, null);
 System.out.println$S("JSApp initialized");
 });
@@ -32882,7 +32880,7 @@ return string.split(key)[0];
 return null;
 });
 })();
-//Created 2018-05-15 01:03:13
+//Created 2018-05-24 08:47:40
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['swingjs.JSUtil']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSApplet", null, 'javax.swing.JApplet');
 
@@ -32895,7 +32893,7 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, ['runMain$S$SA','runMain'], function (className, args) {
 var theClass = null;
 try {
-theClass = Clazz_forName(className);
+theClass=Clazz_forName(className);
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.ClassNotFoundException")){
 System.out.println$S("Running main but cannot find class " + className);
@@ -32915,7 +32913,7 @@ return theClass;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:13
+//Created 2018-05-24 08:47:40
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['javax.swing.SwingUtilities','swingjs.JSAppletThread$1']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSAppletThread", null, 'javajs.util.JSThread');
 
@@ -32933,11 +32931,11 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$$swingjs_JSAppletViewer$ThreadGroup$S', function (ap, group, name) {
 C$.superclazz.c$$ThreadGroup$S.apply(this, [group, name]);
 C$.$init$.apply(this);
-this.appletViewer = ap;
+this.appletViewer=ap;
 }, 1);
 
 Clazz_newMeth(C$, 'run1$I', function (mode) {
-mode = this.appletViewer.run1$I(mode);
+mode=this.appletViewer.run1$I(mode);
 if (mode != 2) this.dispatchAndReturn$Runnable$I(null, mode);
 });
 
@@ -32986,7 +32984,7 @@ Clazz_newMeth(C$, 'doFinally', function () {
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:13
+//Created 2018-05-24 08:47:40
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['java.net.URL','swingjs.api.Interface','java.awt.Dimension','javajs.util.Lst','java.awt.Insets','swingjs.JSThreadGroup','swingjs.JSAppletThread','java.lang.Thread','sun.awt.SunToolkit','java.awt.Toolkit','swingjs.JSGraphicsConfiguration','sun.applet.AppletEventMulticaster','sun.applet.AppletEvent','javax.swing.JFrame','javax.imageio.ImageIO','swingjs.JSUtil','java.awt.Font','javajs.util.PT','swingjs.JSFrameViewer','java.util.ArrayList','swingjs.JSToolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSAppletViewer", null, 'swingjs.JSFrameViewer', ['java.applet.AppletStub', 'java.applet.AppletContext']);
 var p$=C$.prototype;
@@ -33041,22 +33039,22 @@ Clazz_newMeth(C$, 'c$$java_util_Hashtable', function (params) {
 C$.superclazz.c$$java_util_Hashtable.apply(this, [params]);
 C$.$init$.apply(this);
 System.out.println$S("JSAppletViewer initializing2");
-this.isApplet = true;
-this.appletViewer = this;
+this.isApplet=true;
+this.appletViewer=this;
 p$.setDisplayParams$java_util_Hashtable.apply(this, [params]);
 }, 1);
 
 Clazz_newMeth(C$, 'setDisplayParams$java_util_Hashtable', function (params) {
-this.display = params.get$O("display");
+this.display=params.get$O("display");
 var s = "" + params.get$O("isResizable");
-this.$isResizable = "true".equalsIgnoreCase$S(s);
-this.haveResizable = (this.$isResizable || "false".equalsIgnoreCase$S(s) );
-this.addFrame = "true".equalsIgnoreCase$S("" + params.get$O("addFrame"));
-this.insets = Clazz_new_((I$[5]||$incl$(5)).c$$I$I$I$I,[0, 0, 0, 0]);
-this.threadGroup = Clazz_new_((I$[6]||$incl$(6)).c$$S,[this.appletName]);
-this.myThread = Clazz_new_((I$[7]||$incl$(7)).c$$swingjs_JSAppletViewer$ThreadGroup$S,[this, this.threadGroup, this.appletName]);
-(I$[8]||$incl$(8)).thisThread = (this.myThread);
-this.appContext = (I$[9]||$incl$(9)).createNewAppContext();
+this.$isResizable="true".equalsIgnoreCase$S(s);
+this.haveResizable=(this.$isResizable || "false".equalsIgnoreCase$S(s) );
+this.addFrame="true".equalsIgnoreCase$S("" + params.get$O("addFrame"));
+this.insets=Clazz_new_((I$[5]||$incl$(5)).c$$I$I$I$I,[0, 0, 0, 0]);
+this.threadGroup=Clazz_new_((I$[6]||$incl$(6)).c$$S,[this.appletName]);
+this.myThread=Clazz_new_((I$[7]||$incl$(7)).c$$swingjs_JSAppletViewer$ThreadGroup$S,[this, this.threadGroup, this.appletName]);
+(I$[8]||$incl$(8)).thisThread=(this.myThread);
+this.appContext=(I$[9]||$incl$(9)).createNewAppContext();
 (I$[10]||$incl$(10)).getDefaultToolkit();
 Clazz_new_((I$[11]||$incl$(11))).getDevice();
 });
@@ -33067,11 +33065,11 @@ if (this.status == 0) this.myThread.start();
 });
 
 Clazz_newMeth(C$, 'addAppletListener$sun_applet_AppletListener', function (l) {
-this.listeners = (I$[12]||$incl$(12)).add$sun_applet_AppletListener$sun_applet_AppletListener(this.listeners, l);
+this.listeners=(I$[12]||$incl$(12)).add$sun_applet_AppletListener$sun_applet_AppletListener(this.listeners, l);
 });
 
 Clazz_newMeth(C$, 'removeAppletListener$sun_applet_AppletListener', function (l) {
-this.listeners = (I$[12]||$incl$(12)).remove$sun_applet_AppletListener$sun_applet_AppletListener(this.listeners, l);
+this.listeners=(I$[12]||$incl$(12)).remove$sun_applet_AppletListener$sun_applet_AppletListener(this.listeners, l);
 });
 
 Clazz_newMeth(C$, 'dispatchAppletEvent$I$O', function (id, argument) {
@@ -33086,14 +33084,14 @@ return true;
 
 Clazz_newMeth(C$, 'appletResize$I$I', function (width, height) {
 var currentSize = Clazz_new_((I$[3]||$incl$(3)).c$$I$I,[this.currentAppletSize.width, this.currentAppletSize.height]);
-this.currentAppletSize.width = width;
-this.currentAppletSize.height = height;
+this.currentAppletSize.width=width;
+this.currentAppletSize.height=height;
 this.japplet.setBounds$I$I$I$I(0, 0, width, height);
 this.japplet.getRootPane().setBounds$I$I$I$I(0, 0, this.getWidth(), this.getHeight());
 this.japplet.getContentPane().setBounds$I$I$I$I(0, 0, this.getWidth(), this.getHeight());
 (this.japplet.getContentPane()).revalidate();
 if (this.addFrame) {
-this.jAppletFrame = Clazz_new_((I$[14]||$incl$(14)).c$$S,["SwingJS Applet Viewer"]);
+this.jAppletFrame=Clazz_new_((I$[14]||$incl$(14)).c$$S,["SwingJS Applet Viewer"]);
 var pane = this.japplet.getContentPane();
 this.jAppletFrame.setContentPane$java_awt_Container(pane);
 this.japplet.setVisible$Z(false);
@@ -33147,8 +33145,8 @@ return this.html5Applet._getWidth();
 
 Clazz_newMeth(C$, 'setBounds$I$I$I$I', function (x, y, width, height) {
 this.japplet.reshape$I$I$I$I(x, y, width, height);
-this.currentAppletSize.width = width;
-this.currentAppletSize.height = height;
+this.currentAppletSize.width=width;
+this.currentAppletSize.height=height;
 });
 
 Clazz_newMeth(C$, 'getImage$java_net_URL', function (url) {
@@ -33203,22 +33201,22 @@ System.out.println$S("JSAppletViewer thread run1 mode=" + mode + " status=" + th
 var ok = false;
 switch (mode) {
 case 0:
-this.currentAppletSize.width = this.defaultAppletSize.width = this.getWidth();
-this.currentAppletSize.height = this.defaultAppletSize.height = this.getHeight();
-this.nextStatus = 1;
-ok = true;
+this.currentAppletSize.width=this.defaultAppletSize.width=this.getWidth();
+this.currentAppletSize.height=this.defaultAppletSize.height=this.getHeight();
+this.nextStatus=1;
+ok=true;
 break;
 case 1:
 switch (this.nextStatus) {
 case 1:
 if (this.status != 0) {
 p$.showAppletStatus$S.apply(this, ["notdisposed"]);
-this.status = 7;
+this.status=7;
 break;
 }System.out.println$S("JSAppletViewer runloader");
 p$.runLoader.apply(this, []);
-this.nextStatus = (this.main == null  ? 2 : 76);
-ok = true;
+this.nextStatus=(this.main == null  ? 2 : 76);
+ok=true;
 break;
 case 2:
 if (this.status != 1 && this.status != 5 ) {
@@ -33229,24 +33227,24 @@ this.japplet.setFont$java_awt_Font(Clazz_new_((I$[17]||$incl$(17)).c$$S$I$I,["Di
 this.japplet.resizeOriginal$I$I(this.defaultAppletSize.width, this.defaultAppletSize.height);
 this.japplet.init();
 this.japplet.validate();
-this.status = 2;
+this.status=2;
 p$.showAppletStatus$S.apply(this, ["initialized"]);
-this.nextStatus = 3;
-ok = true;
+this.nextStatus=3;
+ok=true;
 break;
 case 3:
 if (this.status != 2 && this.status != 4 ) {
 p$.showAppletStatus$S.apply(this, ["notstarted"]);
-this.status = 7;
+this.status=7;
 break;
 }this.japplet.getRootPane().addNotify();
 System.out.println$S("JSAppletViewer start" + this.currentAppletSize);
 this.japplet.resizeOriginal$I$I(this.currentAppletSize.width, this.currentAppletSize.height);
 this.japplet.start();
-this.status = 3;
+this.status=3;
 p$.showAppletStatus$S.apply(this, ["started"]);
-this.nextStatus = 35;
-ok = true;
+this.nextStatus=35;
+ok=true;
 break;
 case 35:
 this.japplet.getContentPane().setBounds$java_awt_Rectangle(this.japplet.getBounds());
@@ -33255,42 +33253,42 @@ this.japplet.validate();
 p$.showAppletStatus$S.apply(this, ["ready"]);
 (I$[16]||$incl$(16)).readyCallback$S$S$java_awt_Container$swingjs_JSAppletViewer(this.appletName, this.fullName, this.applet, this);
 if (this.$isResizable && !this.addFrame ) {
-this.resizer = ((I$[16]||$incl$(16)).getInstance$S("swingjs.plaf.Resizer")).set$swingjs_JSFrameViewer(this);
+this.resizer=((I$[16]||$incl$(16)).getInstance$S("swingjs.plaf.Resizer")).set$swingjs_JSFrameViewer(this);
 if (this.resizer != null ) this.resizer.show();
 }this.japplet.repaint();
 break;
 case 4:
 if (this.status == 3) {
-this.status = 4;
+this.status=4;
 this.japplet.setVisible$Z(false);
 this.japplet.stop();
 p$.showAppletStatus$S.apply(this, ["stopped"]);
 } else {
 p$.showAppletStatus$S.apply(this, ["notstopped"]);
-this.status = 7;
+this.status=7;
 }break;
 case 5:
 if (this.status == 4 || this.status == 2 ) {
-this.status = 5;
+this.status=5;
 this.japplet.destroy();
 p$.showAppletStatus$S.apply(this, ["destroyed"]);
 } else {
 p$.showAppletStatus$S.apply(this, ["notdestroyed"]);
-this.status = 7;
+this.status=7;
 }break;
 case 75:
 if (this.status == 5 || this.status == 1 ) {
 p$.showAppletStatus$S.apply(this, ["notdisposed"]);
-this.status = 7;
+this.status=7;
 } else {
-this.status = 0;
-this.applet = null;
+this.status=0;
+this.applet=null;
 p$.showAppletStatus$S.apply(this, ["disposed"]);
 }break;
 case 76:
 p$.showAppletStatus$S.apply(this, ["running " + this.main]);
 var args = this.params.get$O("args");
-if (Clazz_instanceOf(args, "java.lang.String")) args = (I$[18]||$incl$(18)).split$S$S(args, " ");
+if (Clazz_instanceOf(args, "java.lang.String")) args=(I$[18]||$incl$(18)).split$S$S(args, " ");
 (this.applet).runMain$S$SA(this.main, args);
 (I$[16]||$incl$(16)).readyCallback$S$S$java_awt_Container$swingjs_JSAppletViewer(this.appletName, this.fullName, this.applet, this);
 break;
@@ -33310,47 +33308,47 @@ return (ok ? 1 : 2);
 
 Clazz_newMeth(C$, 'runLoader', function () {
 this.dispatchAppletEvent$I$O(51235, null);
-this.status = 1;
-this.main = this.getParameter$S("main");
+this.status=1;
+this.main=this.getParameter$S("main");
 var code = (this.main == null  ? this.getParameter$S("code") : null);
 try {
 if (code == null  && this.main == null  ) {
 System.err.println$S("runloader.err-- \"code\" or \"main\" must be specified.");
 throw Clazz_new_(Clazz_load('java.lang.InstantiationException').c$$S,["\"code\" or \"main\" must be specified."]);
-}if (code == null ) code = "swingjs.JSApplet";
-this.top = this.applet = this.japplet = (I$[16]||$incl$(16)).getInstance$S(code);
+}if (code == null ) code="swingjs.JSApplet";
+this.top=this.applet=this.japplet=(I$[16]||$incl$(16)).getInstance$S(code);
 if (this.applet == null ) {
 System.out.println$S(code + " could not be launched");
-this.status = 7;
+this.status=7;
 } else if (!(Clazz_instanceOf(this.applet, "javax.swing.JApplet"))) {
 (I$[16]||$incl$(16)).alert$O(code + " is not a JApplet!?");
-this.status = 7;
+this.status=7;
 }} catch (e$$) {
 if (Clazz_exceptionOf(e$$, "java.lang.InstantiationException")){
 var e = e$$;
 {
-this.status = 7;
+this.status=7;
 p$.showAppletException$Throwable.apply(this, [e]);
 return;
 }
 } else if (Clazz_exceptionOf(e$$, "java.lang.Exception")){
 var e = e$$;
 {
-this.status = 7;
+this.status=7;
 p$.showAppletException$Throwable.apply(this, [e]);
 return;
 }
 } else if (Clazz_exceptionOf(e$$, "java.lang.ThreadDeath")){
 var e = e$$;
 {
-this.status = 7;
+this.status=7;
 p$.showAppletStatus$S.apply(this, ["death"]);
 return;
 }
 } else if (Clazz_exceptionOf(e$$, "java.lang.Error")){
 var e = e$$;
 {
-this.status = 7;
+this.status=7;
 p$.showAppletException$Throwable.apply(this, [e]);
 return;
 }
@@ -33372,7 +33370,7 @@ return (this.haveFrames || forceNew  ? Clazz_new_((I$[19]||$incl$(19))) : null);
 });
 
 Clazz_newMeth(C$, 'getTimerQueue', function () {
-return (this.timerQueue == null  ? (this.timerQueue = Clazz_new_((I$[20]||$incl$(20)))) : this.timerQueue);
+return (this.timerQueue == null  ? (this.timerQueue=Clazz_new_((I$[20]||$incl$(20)))) : this.timerQueue);
 });
 
 Clazz_newMeth(C$, 'exit', function () {
@@ -33389,7 +33387,7 @@ return (I$[21]||$incl$(21)).getAudioClip$java_net_URL(url);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:14
+//Created 2018-05-24 08:47:41
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['swingjs.JSToolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSFontMetrics", null, 'java.awt.FontMetrics');
 
@@ -33413,7 +33411,7 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz_newMeth(C$, 'setFont$java_awt_Font', function (f) {
-this.font = f;
+this.font=f;
 });
 
 Clazz_newMeth(C$, 'getLeading', function () {
@@ -33445,24 +33443,24 @@ return ((I$[1]||$incl$(1)).getStringWidth$swingjs_api_js_HTML5CanvasContext2D$ja
 
 Clazz_newMeth(C$, 'getWidths', function () {
 if (this.iwidths != null ) return this.iwidths;
-this.iwidths = Clazz_array(Integer.TYPE, [256]);
+this.iwidths=Clazz_array(Integer.TYPE, [256]);
 this.getWidthsFloat();
 for (var ch = this.FIRST_PRINTABLE; ch < 256; ch++) {
-this.iwidths[ch] = (this.fwidths[ch]|0);
+this.iwidths[ch]=(this.fwidths[ch]|0);
 }
 return this.iwidths;
 });
 
 Clazz_newMeth(C$, 'getWidthsFloat', function () {
 if (this.fwidths != null ) return this.fwidths;
-this.fwidths = Clazz_array(Float.TYPE, [256]);
+this.fwidths=Clazz_array(Float.TYPE, [256]);
 for (var ch = this.FIRST_PRINTABLE; ch < 256; ch++) {
-this.fwidths[ch] = (I$[1]||$incl$(1)).getStringWidth$swingjs_api_js_HTML5CanvasContext2D$java_awt_Font$S(null, this.font, "" + String.fromCharCode(ch));
+this.fwidths[ch]=(I$[1]||$incl$(1)).getStringWidth$swingjs_api_js_HTML5CanvasContext2D$java_awt_Font$S(null, this.font, "" + String.fromCharCode(ch));
 }
 return this.fwidths;
 });
 })();
-//Created 2018-05-15 01:03:14
+//Created 2018-05-24 08:47:43
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['java.awt.Insets','swingjs.JSMouse','swingjs.JSGraphics2D','swingjs.api.js.DOMNode','swingjs.plaf.Resizer']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSFrameViewer", null, 'swingjs.JSApp', 'swingjs.api.js.JSInterface');
 var p$=C$.prototype;
@@ -33508,14 +33506,14 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz_newMeth(C$, 'setForWindow$java_awt_Container', function (window) {
-this.isFrame = true;
-this.appletViewer = window.appletViewer;
-this.top = window;
-this.applet = window;
-this.fullName = this.appletViewer.fullName;
-this.canvas = null;
-this.jsgraphics = null;
-this.insets = Clazz_new_((I$[1]||$incl$(1)).c$$I$I$I$I,[20, 0, 0, 0]);
+this.isFrame=true;
+this.appletViewer=window.appletViewer;
+this.top=window;
+this.applet=window;
+this.fullName=this.appletViewer.fullName;
+this.canvas=null;
+this.jsgraphics=null;
+this.insets=Clazz_new_((I$[1]||$incl$(1)).c$$I$I$I$I,[20, 0, 0, 0]);
 this.getGraphics$I$I(0, 0);
 return this;
 });
@@ -33547,7 +33545,7 @@ return false;
 });
 
 Clazz_newMeth(C$, 'getMouse', function () {
-return (this.mouse == null  ? this.mouse = Clazz_new_((I$[2]||$incl$(2)).c$$swingjs_JSFrameViewer,[this]) : this.mouse);
+return (this.mouse == null  ? this.mouse=Clazz_new_((I$[2]||$incl$(2)).c$$swingjs_JSFrameViewer,[this]) : this.mouse);
 });
 
 Clazz_newMeth(C$, 'processTwoPointGesture$FAAA', function (touches) {
@@ -33555,12 +33553,12 @@ p$.getMouse.apply(this, []).processTwoPointGesture$FAAA(touches);
 });
 
 Clazz_newMeth(C$, 'setDisplay$swingjs_api_js_HTML5Canvas', function (canvas) {
-this.canvas = canvas;
-this.jsgraphics = null;
+this.canvas=canvas;
+this.jsgraphics=null;
 });
 
 Clazz_newMeth(C$, 'setScreenDimension$I$I', function (width, height) {
-this.setGraphics$java_awt_Graphics$I$I((this.jsgraphics = null), width, height);
+this.setGraphics$java_awt_Graphics$I$I((this.jsgraphics=null), width, height);
 if (this.top != null ) this.top.resizeOriginal$I$I(width, height);
 });
 
@@ -33577,16 +33575,16 @@ Clazz_newMeth(C$, 'startHoverWatcher$Z', function (enable) {
 
 Clazz_newMeth(C$, 'getGraphics$I$I', function (wNew, hNew) {
 if (wNew == 0 && this.top != null  ) {
-if (this.topApp == null ) this.topApp = this.top;
-wNew = Math.max(0, (this.topApp).getContentPane().getWidth());
-hNew = Math.max(0, (this.topApp).getContentPane().getHeight());
+if (this.topApp == null ) this.topApp=this.top;
+wNew=Math.max(0, (this.topApp).getContentPane().getWidth());
+hNew=Math.max(0, (this.topApp).getContentPane().getHeight());
 }var wOld = 0;
 var hOld = 0;
 {
 wOld = (this.canvas == null ? 0 : this.canvas.width); hOld = (this.canvas == null ? 0 : this.canvas.height)
 }
 if (wNew >= 0 && hNew >= 0  && (wOld != wNew || hOld != hNew  || this.canvas == null   || this.jsgraphics == null  ) ) {
-this.jsgraphics = Clazz_new_((I$[3]||$incl$(3)).c$$O,[this.canvas = this.newCanvas$I$I(wNew, hNew)]);
+this.jsgraphics=Clazz_new_((I$[3]||$incl$(3)).c$$O,[this.canvas=this.newCanvas$I$I(wNew, hNew)]);
 }return this.jsgraphics;
 });
 
@@ -33594,28 +33592,28 @@ Clazz_newMeth(C$, 'newCanvas$I$I', function (width, height) {
 if (this.isApplet) {
 var c = this.html5Applet._getHtml5Canvas();
 if (c != null ) {
-return this.canvas = c;
-}}if (this.topApp == null ) this.topApp = this.top;
+return this.canvas=c;
+}}if (this.topApp == null ) this.topApp=this.top;
 var root = (this.topApp.getComponentCount() > 0 ? this.topApp.getComponent$I(0) : null);
 var userFramedApplet = null;
 var app = null;
 if (root != null  && root.getContentPane().getComponentCount() > 0 ) {
 var appletInFrame = false;
-app = root.getContentPane().getComponent$I(0);
+app=root.getContentPane().getComponent$I(0);
 
 appletInFrame = (app.uiClassID == "AppletUI");
 if (appletInFrame) {
-userFramedApplet = app;
-root = userFramedApplet.getComponent$I(0);
+userFramedApplet=app;
+root=userFramedApplet.getComponent$I(0);
 }}var parent = (root == null  ? null : (root.getUI()).domNode);
 if (parent != null ) (I$[4]||$incl$(4)).remove(this.canvas);
-this.display = this.canvasId = this.appletViewer.appletName + "_canvas" + ++C$.canvasCount ;
+this.display=this.canvasId=this.appletViewer.appletName + "_canvas" + ++C$.canvasCount ;
 System.out.println$S("JSFrameViewer creating new canvas " + this.canvasId + ": " + width + "  " + height );
-this.canvas = (I$[4]||$incl$(4)).createElement("canvas", this.canvasId);
+this.canvas=(I$[4]||$incl$(4)).createElement("canvas", this.canvasId);
 if (userFramedApplet != null ) {
 var appViewer = userFramedApplet.getFrameViewer();
 appViewer.setDisplay$swingjs_api_js_HTML5Canvas(this.canvas);
-appViewer.topApp = app;
+appViewer.topApp=app;
 }var iTop = (root == null  ? 0 : root.getContentPane().getY());
 (I$[4]||$incl$(4)).setPositionAbsolute(this.canvas, iTop, 0);
 (I$[4]||$incl$(4)).setStyles(this.canvas, ["width", width + "px", "height", height + "px"]);
@@ -33629,8 +33627,8 @@ return this.canvas;
 });
 
 Clazz_newMeth(C$, 'setResizable$Z', function (tf) {
-this.resizable = tf;
-if (!this.isResizable()) this.resizable = false;
+this.resizable=tf;
+if (!this.isResizable()) this.resizable=false;
 if (this.resizer != null ) this.resizer.setEnabled$Z(this.resizable);
  else if (this.resizable && p$.newResizer.apply(this, []) != null  ) this.resizer.setPosition$I$I(0, 0);
 });
@@ -33644,7 +33642,7 @@ return (this.resizer != null  || !this.isResizable()  ? this.resizer : p$.newRes
 });
 
 Clazz_newMeth(C$, 'newResizer', function () {
-this.resizer = Clazz_new_((I$[5]||$incl$(5))).set$swingjs_JSFrameViewer(this);
+this.resizer=Clazz_new_((I$[5]||$incl$(5))).set$swingjs_JSFrameViewer(this);
 if (this.resizer != null ) this.resizer.show();
 return this.resizer;
 });
@@ -33659,7 +33657,7 @@ Clazz_newMeth(C$, 'paint$java_awt_Graphics', function (g) {
 this.top.paint$java_awt_Graphics(this.setGraphics$java_awt_Graphics$I$I(g, 0, 0));
 });
 })();
-//Created 2018-05-15 01:03:15
+//Created 2018-05-24 08:47:43
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['java.awt.RenderingHints','java.util.Hashtable','java.awt.geom.AffineTransform','java.awt.BasicStroke','swingjs.api.js.HTML5CanvasContext2D','swingjs.JSToolkit','swingjs.api.js.DOMNode','swingjs.JSGraphicsCompositor','swingjs.JSUtil','java.awt.Font','java.awt.Toolkit','java.awt.Rectangle','java.awt.Color','java.awt.AlphaComposite','java.lang.Boolean']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSGraphics2D", null, null, 'Cloneable');
 var p$=C$.prototype;
@@ -33701,10 +33699,10 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$O', function (canvas) {
 C$.$init$.apply(this);
-this.hints = Clazz_new_((I$[1]||$incl$(1)).c$$java_util_Map,[Clazz_new_((I$[2]||$incl$(2)))]);
-this.canvas = canvas;
-this.ctx = this.canvas.getContext("2d");
-this.$transform = Clazz_new_((I$[3]||$incl$(3)));
+this.hints=Clazz_new_((I$[1]||$incl$(1)).c$$java_util_Map,[Clazz_new_((I$[2]||$incl$(2)))]);
+this.canvas=canvas;
+this.ctx=this.canvas.getContext("2d");
+this.$transform=Clazz_new_((I$[3]||$incl$(3)));
 this.setStroke$java_awt_Stroke(Clazz_new_((I$[4]||$incl$(4))));
 {
 this.gc = SwingJS;
@@ -33744,6 +33742,7 @@ p$.doArc$D$D$D$D$D$D$Z.apply(this, [centerX, centerY, width, height, startAngle,
 });
 
 Clazz_newMeth(C$, 'doCirc$I$I$I$Z', function (left, top, diameter, fill) {
+if (diameter <= 0) return;
 var r = diameter / 2.0;
 this.ctx.beginPath();
 this.ctx.arc(left + r, top + r, r, 0, 6.283185307179586, false);
@@ -33753,11 +33752,12 @@ if (fill) this.ctx.fill();
 });
 
 Clazz_newMeth(C$, 'doArc$D$D$D$D$D$D$Z', function (x, y, width, height, startAngle, arcAngle, fill) {
+if (width <= 0  || height <= 0  ) return;
 this.ctx.save();
 {
 if (arcAngle < 0 ) {
 startAngle += arcAngle;
-arcAngle = -arcAngle;
+arcAngle=-arcAngle;
 }this.ctx.translate(x, y);
 this.ctx.scale(width / 2, height / 2);
 this.ctx.beginPath();
@@ -33773,10 +33773,10 @@ return a * 0.017453292519943295;
 });
 
 Clazz_newMeth(C$, 'background$java_awt_Color', function (bgcolor) {
-this.backgroundColor = bgcolor;
+this.backgroundColor=bgcolor;
 if (bgcolor == null ) {
 if (!this.isShifted) this.ctx.translate(-0.5, -0.5);
-this.isShifted = true;
+this.isShifted=true;
 return;
 }this.clearRect$I$I$I$I(0, 0, this.width, this.height);
 });
@@ -33802,6 +33802,7 @@ this.ctx.stroke();
 }});
 
 Clazz_newMeth(C$, 'drawRect$I$I$I$I', function (x, y, width, height) {
+if (width <= 0 || height <= 0 ) return;
 this.ctx.beginPath();
 this.ctx.rect(x, y, width, height);
 this.ctx.stroke();
@@ -33816,11 +33817,13 @@ p$.doPoly$IA$IA$I$Z.apply(this, [axPoints, ayPoints, nPoints, true]);
 });
 
 Clazz_newMeth(C$, 'fillRect$I$I$I$I', function (x, y, width, height) {
-this.backgroundPainted = true;
+if (width <= 0 || height <= 0 ) return;
+this.backgroundPainted=true;
 this.ctx.fillRect(x, y, width, height);
 });
 
 Clazz_newMeth(C$, 'fill3DRect$I$I$I$I$Z', function (x, y, width, height, raised) {
+if (width <= 0 || height <= 0 ) return;
 var p = this.getPaint();
 var c = this.getColor();
 var brighter = c.brighter();
@@ -33841,7 +33844,7 @@ this.setPaint$java_awt_Paint(p);
 
 Clazz_newMeth(C$, 'setFont$java_awt_Font', function (font) {
 if (font === this.font ) return;
-this.font = font;
+this.font=font;
 if (font != null ) (I$[5]||$incl$(5)).setFont(this.ctx, (I$[6]||$incl$(6)).getCanvasFont$java_awt_Font(font));
 });
 
@@ -33858,7 +33861,7 @@ return true;
 });
 
 Clazz_newMeth(C$, 'doStroke$Z', function (isBegin) {
-this.inPath = isBegin;
+this.inPath=isBegin;
 if (isBegin) {
 this.ctx.beginPath();
 } else {
@@ -33871,7 +33874,7 @@ this.ctx.lineTo(x2, y2);
 
 Clazz_newMeth(C$, 'clip$java_awt_Shape', function (s) {
 p$.doShape$java_awt_Shape.apply(this, [s]);
-this.currentClip = s;
+this.currentClip=s;
 this.ctx.clip();
 });
 
@@ -33919,7 +33922,8 @@ return this.drawImagePriv$java_awt_Image$I$I$java_awt_image_ImageObserver(img, x
 });
 
 Clazz_newMeth(C$, 'drawImage$java_awt_Image$I$I$I$I$java_awt_image_ImageObserver', function (img, x, y, width, height, observer) {
-this.backgroundPainted = true;
+if (width <= 0 || height <= 0 ) return true;
+this.backgroundPainted=true;
 if (img != null ) {
 var imgNode = p$.getImageNode$java_awt_Image.apply(this, [img]);
 if (imgNode != null ) this.ctx.drawImage(imgNode, x, y, width, height);
@@ -33928,7 +33932,7 @@ if (observer != null ) p$.observe$java_awt_Image$java_awt_image_ImageObserver$Z.
 });
 
 Clazz_newMeth(C$, 'getImageNode$java_awt_Image', function (img) {
-this.backgroundPainted = true;
+this.backgroundPainted=true;
 var imgNode = (I$[7]||$incl$(7)).getImageNode(img);
 return (imgNode == null  ? (I$[8]||$incl$(8)).createImageNode$java_awt_Image(img) : imgNode);
 });
@@ -33938,19 +33942,20 @@ observer.imageUpdate$java_awt_Image$I$I$I$I$I(img, (isOK ? 0 : 192), -1, -1, -1,
 });
 
 Clazz_newMeth(C$, 'drawImage$java_awt_Image$I$I$java_awt_Color$java_awt_image_ImageObserver', function (img, x, y, bgcolor, observer) {
-this.backgroundPainted = true;
+this.backgroundPainted=true;
 (I$[9]||$incl$(9)).notImplemented$S(null);
 return this.drawImage$java_awt_Image$I$I$java_awt_image_ImageObserver(img, x, y, observer);
 });
 
 Clazz_newMeth(C$, 'drawImage$java_awt_Image$I$I$I$I$java_awt_Color$java_awt_image_ImageObserver', function (img, x, y, width, height, bgcolor, observer) {
-this.backgroundPainted = true;
+if (width <= 0 || height <= 0 ) return false;
+this.backgroundPainted=true;
 (I$[9]||$incl$(9)).notImplemented$S(null);
 return this.drawImage$java_awt_Image$I$I$I$I$java_awt_image_ImageObserver(img, x, y, width, height, observer);
 });
 
 Clazz_newMeth(C$, 'drawImage$java_awt_Image$I$I$I$I$I$I$I$I$java_awt_image_ImageObserver', function (img, dx1, dy1, dx2, dy2, sx1, sy1, sx2, sy2, observer) {
-this.backgroundPainted = true;
+this.backgroundPainted=true;
 if (img != null ) {
 var bytes = null;
 var imgNode = p$.getImageNode$java_awt_Image.apply(this, [img]);
@@ -33985,7 +33990,7 @@ return ret;
 });
 
 Clazz_newMeth(C$, 'drawImagePriv$java_awt_Image$I$I$java_awt_image_ImageObserver', function (img, x, y, observer) {
-this.backgroundPainted = true;
+this.backgroundPainted=true;
 if (img != null ) {
 var pixels = null;
 var isRGB = false;
@@ -33997,21 +34002,21 @@ var imgNode = null;
 var width = (img).getRaster().getWidth();
 var height = (img).getRaster().getHeight();
 if (pixels == null ) {
-if ((imgNode = p$.getImageNode$java_awt_Image.apply(this, [img])) != null ) this.ctx.drawImage(imgNode, x, y, width, height);
+if ((imgNode=p$.getImageNode$java_awt_Image.apply(this, [img])) != null ) this.ctx.drawImage(imgNode, x, y, width, height);
 } else {
 if (this.buf8 == null  || x != this.lastx  || y != this.lasty  || this.nx != width  || this.ny != height ) {
-this.imageData = (I$[5]||$incl$(5)).getImageData(this.ctx, x, y, width, height);
-this.buf8 = (I$[5]||$incl$(5)).getBuf8(this.imageData);
-this.lastx = x;
-this.lasty = y;
-this.nx = width;
-this.ny = height;
+this.imageData=(I$[5]||$incl$(5)).getImageData(this.ctx, x, y, width, height);
+this.buf8=(I$[5]||$incl$(5)).getBuf8(this.imageData);
+this.lastx=x;
+this.lasty=y;
+this.nx=width;
+this.ny=height;
 }for (var pt = 0, i = 0, n = Math.min((this.buf8.length/4|0), pixels.length); i < n; i++) {
 var argb = pixels[i];
-this.buf8[pt++] = (argb >> 16) & 255;
-this.buf8[pt++] = (argb >> 8) & 255;
-this.buf8[pt++] = argb & 255;
-this.buf8[pt++] = (isRGB ? 255 : (argb >> 24) & 255);
+this.buf8[pt++]=(argb >> 16) & 255;
+this.buf8[pt++]=(argb >> 8) & 255;
+this.buf8[pt++]=argb & 255;
+this.buf8[pt++]=(isRGB ? 255 : (argb >> 24) & 255);
 }
 (I$[5]||$incl$(5)).putImageData(this.ctx, this.imageData, x, y);
 }if (observer != null ) p$.observe$java_awt_Image$java_awt_image_ImageObserver$Z.apply(this, [img, observer, imgNode != null ]);
@@ -34029,10 +34034,10 @@ return this.currentStroke;
 
 Clazz_newMeth(C$, 'setStroke$java_awt_Stroke', function (s) {
 if (!(Clazz_instanceOf(s, "java.awt.BasicStroke"))) return;
-var b = this.currentStroke = s;
+var b = this.currentStroke=s;
 var dash = b.getDashArray();
 var idash = Clazz_array(Integer.TYPE, [dash == null  ? 0 : dash.length]);
-for (var i = idash.length; --i >= 0; ) idash[i] = (dash[i]|0);
+for (var i = idash.length; --i >= 0; ) idash[i]=(dash[i]|0);
 
 this.ctx.setLineDash(idash);
 p$.setLineWidth$D.apply(this, [b.getLineWidth()]);
@@ -34041,25 +34046,25 @@ var lineJoin;
 var miterLimit = -1;
 switch (b.getEndCap()) {
 case 0:
-lineCap = "butt";
+lineCap="butt";
 break;
 case 2:
-lineCap = "square";
+lineCap="square";
 break;
 case 1:
 default:
-lineCap = "round";
+lineCap="round";
 }
 switch (b.getLineJoin()) {
 case 2:
-lineJoin = "bevel";
+lineJoin="bevel";
 break;
 case 0:
-lineJoin = "miter";
-miterLimit = b.getMiterLimit();
+lineJoin="miter";
+miterLimit=b.getMiterLimit();
 break;
 case 1:
-lineJoin = "round";
+lineJoin="round";
 }
 {
 this.ctx.lineCap = lineCap; this.ctx.lineJoin = lineJoin; if (miterLimit >= 0) this.ctx.miterLimit = miterLimit;
@@ -34075,7 +34080,7 @@ return this.hints.get$O(hintKey);
 });
 
 Clazz_newMeth(C$, 'setRenderingHints$java_util_Map', function (hints) {
-this.hints = Clazz_new_((I$[1]||$incl$(1)).c$$java_util_Map,[hints]);
+this.hints=Clazz_new_((I$[1]||$incl$(1)).c$$java_util_Map,[hints]);
 });
 
 Clazz_newMeth(C$, 'addRenderingHints$java_util_Map', function (hints) {
@@ -34100,7 +34105,7 @@ return this.foregroundColor;
 });
 
 Clazz_newMeth(C$, 'setColor$java_awt_Color', function (c) {
-this.foregroundColor = c;
+this.foregroundColor=c;
 p$.setGraphicsColor$java_awt_Color.apply(this, [c]);
 });
 
@@ -34109,7 +34114,7 @@ this.setColor$java_awt_Color(paint);
 });
 
 Clazz_newMeth(C$, 'getFont', function () {
-if (this.font == null ) this.font = Clazz_new_((I$[10]||$incl$(10)).c$$S$I$I,["Arial", 0, 12]);
+if (this.font == null ) this.font=Clazz_new_((I$[10]||$incl$(10)).c$$S$I$I,["Arial", 0, 12]);
 return this.font;
 });
 
@@ -34137,11 +34142,11 @@ this.ctx.clip();
 
 Clazz_newMeth(C$, 'setCurrentClip$I$I$I$I', function (x, y, width, height) {
 var r = (Clazz_instanceOf(this.currentClip, "java.awt.Rectangle") ? this.currentClip : null);
-if (r == null  || r.x != x  || r.y != y  || r.width != width  || r.height != height ) this.currentClip = Clazz_new_((I$[12]||$incl$(12)).c$$I$I$I$I,[x, y, width, height]);
+if (r == null  || r.x != x  || r.y != y  || r.width != width  || r.height != height ) this.currentClip=Clazz_new_((I$[12]||$incl$(12)).c$$I$I$I$I,[x, y, width, height]);
 });
 
 Clazz_newMeth(C$, 'setClip$java_awt_Shape', function (clip) {
-this.currentClip = clip;
+this.currentClip=clip;
 this.ctx.beginPath();
 p$.doShape$java_awt_Shape.apply(this, [clip]);
 this.ctx.clip();
@@ -34278,27 +34283,27 @@ return this.getClipBounds$java_awt_Rectangle(null);
 Clazz_newMeth(C$, 'getClipBounds$java_awt_Rectangle', function (r) {
 var clipRect = p$.getClipBoundsImpl.apply(this, []);
 if (r == null ) {
-r = clipRect;
+r=clipRect;
 } else {
-r.x = clipRect.x;
-r.y = clipRect.y;
-r.width = clipRect.width;
-r.height = clipRect.height;
+r.x=clipRect.x;
+r.y=clipRect.y;
+r.width=clipRect.width;
+r.height=clipRect.height;
 }return r;
 });
 
 Clazz_newMeth(C$, 'getClipBoundsImpl', function () {
 if (this.currentClip == null ) {
-this.currentClip = Clazz_new_((I$[12]||$incl$(12)).c$$I$I$I$I,[0, 0, this.width, this.height]);
+this.currentClip=Clazz_new_((I$[12]||$incl$(12)).c$$I$I$I$I,[0, 0, this.width, this.height]);
 }return this.currentClip.getBounds();
 });
 
 Clazz_newMeth(C$, 'setComposite$java_awt_Composite', function (comp) {
 if (comp === this.currentComposite ) return;
 var newRule = 0;
-var isValid = (comp == null  || this.currentComposite == null   || (Clazz_instanceOf(comp, "java.awt.AlphaComposite")) && (newRule = (comp).getRule()) != this.currentComposite.getRule()  );
+var isValid = (comp == null  || this.currentComposite == null   || (Clazz_instanceOf(comp, "java.awt.AlphaComposite")) && (newRule=(comp).getRule()) != this.currentComposite.getRule()  );
 if (isValid && (I$[8]||$incl$(8)).setGraphicsCompositeAlpha$swingjs_JSGraphics2D$I(this, newRule) ) {
-this.currentComposite = comp;
+this.currentComposite=comp;
 }this.setAlpha$F(comp == null  ? 1 : (comp).getAlpha());
 });
 
@@ -34331,19 +34336,19 @@ var alpha = 0;
 {
 alpha = this.ctx.globalAlpha;
 }
-map[0] = Float.$valueOf(alpha);
-map[1] = this.currentComposite;
-map[2] = this.currentStroke;
-map[3] = this.$transform;
-map[4] = this.font;
-map[5] = this.currentClip;
-map[6] = (this.backgroundPainted ? (I$[15]||$incl$(15)).TRUE : (I$[15]||$incl$(15)).FALSE);
-this.backgroundPainted = false;
+map[0]=Float.$valueOf(alpha);
+map[1]=this.currentComposite;
+map[2]=this.currentStroke;
+map[3]=this.$transform;
+map[4]=this.font;
+map[5]=this.currentClip;
+map[6]=(this.backgroundPainted ? (I$[15]||$incl$(15)).TRUE : (I$[15]||$incl$(15)).FALSE);
+this.backgroundPainted=false;
 return (I$[5]||$incl$(5)).push(this.ctx, map);
 });
 
 Clazz_newMeth(C$, 'reset$I', function (n0) {
-if (n0 < 1) n0 = 1;
+if (n0 < 1) n0=1;
 while ((I$[5]||$incl$(5)).getSavedLevel(this.ctx) >= n0){
 var map = (I$[5]||$incl$(5)).pop(this.ctx);
 this.setComposite$java_awt_Composite(map[1]);
@@ -34352,8 +34357,8 @@ if (alpha != null ) this.setAlpha$F(alpha.floatValue());
 this.setStroke$java_awt_Stroke(map[2]);
 this.setTransform$java_awt_geom_AffineTransform(map[3]);
 this.setFont$java_awt_Font(map[4]);
-this.currentClip = map[5];
-this.backgroundPainted = (map[6]).booleanValue();
+this.currentClip=map[5];
+this.backgroundPainted=(map[6]).booleanValue();
 this.ctx.restore();
 }
 });
@@ -34376,11 +34381,11 @@ var g = this;
 {
 g = Clazz_clone(this);
 }
-g.$transform = Clazz_new_((I$[3]||$incl$(3)).c$$java_awt_geom_AffineTransform,[this.$transform]);
+g.$transform=Clazz_new_((I$[3]||$incl$(3)).c$$java_awt_geom_AffineTransform,[this.$transform]);
 if (this.hints != null ) {
-g.hints = this.hints.clone();
+g.hints=this.hints.clone();
 }g.setStroke$java_awt_Stroke(this.currentStroke.clone());
-g.initialState = n;
+g.initialState=n;
 return g;
 });
 
@@ -34390,7 +34395,7 @@ this.reset$I(this.initialState);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:15
+//Created 2018-05-24 08:47:43
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['java.awt.GraphicsEnvironment','swingjs.api.Interface','java.awt.image.ColorModel','java.awt.image.WritableRaster','java.lang.Boolean','java.util.Hashtable','swingjs.JSUtil','java.awt.Rectangle']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSGraphicsConfiguration", null, 'java.awt.GraphicsConfiguration');
 
@@ -34444,7 +34449,7 @@ var d = (I$[7]||$incl$(7)).getJQuery().$(doc);
 return Clazz_new_((I$[8]||$incl$(8)).c$$I$I,[d.width(), d.height()]);
 });
 })();
-//Created 2018-05-15 01:03:15
+//Created 2018-05-24 08:47:44
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['java.awt.Font','java.awt.Toolkit','swingjs.JSUtil','java.awt.Point','java.awt.GraphicsDevice']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSGraphicsEnvironment", null, 'java.awt.GraphicsEnvironment');
 C$.device = null;
@@ -34470,8 +34475,8 @@ return img.getImageGraphic().create();
 Clazz_newMeth(C$, 'getAllFonts', function () {
 if (C$.availableFonts == null ) {
 var names = this.getAvailableFontFamilyNames();
-C$.availableFonts = Clazz_array((I$[1]||$incl$(1)), [names.length]);
-for (var i = names.length; --i >= 0; ) C$.availableFonts[i] = Clazz_new_((I$[1]||$incl$(1)).c$$S$I$I,[names[i], 0, 1]);
+C$.availableFonts=Clazz_array((I$[1]||$incl$(1)), [names.length]);
+for (var i = names.length; --i >= 0; ) C$.availableFonts[i]=Clazz_new_((I$[1]||$incl$(1)).c$$S$I$I,[names[i], 0, 1]);
 
 }return C$.availableFonts;
 });
@@ -34485,7 +34490,7 @@ return (I$[2]||$incl$(2)).getDefaultToolkit().getFontList();
 });
 
 Clazz_newMeth(C$, 'getDefaultScreenDevice', function () {
-if (C$.device == null ) C$.device = (I$[3]||$incl$(3)).getInstance$S("swingjs.JSScreenDevice");
+if (C$.device == null ) C$.device=(I$[3]||$incl$(3)).getInstance$S("swingjs.JSScreenDevice");
 return C$.device;
 });
 
@@ -34498,7 +34503,7 @@ Clazz_newMeth(C$, 'getScreenDevices', function () {
 return Clazz_array((I$[5]||$incl$(5)), -1, [this.getDefaultScreenDevice()]);
 });
 })();
-//Created 2018-05-15 01:03:15
+//Created 2018-05-24 08:47:44
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['swingjs.JSUtil','swingjs.JSToolkit','java.awt.event.MouseWheelEvent','java.awt.event.MouseEvent','java.awt.Toolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSMouse");
 var p$=C$.prototype;
@@ -34524,20 +34529,20 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$swingjs_JSFrameViewer', function (v) {
 C$.$init$.apply(this);
-this.viewer = v;
+this.viewer=v;
 }, 1);
 
 Clazz_newMeth(C$, 'processEvent$I$I$I$I$J$O$I', function (id, x, y, modifiers, time, jqevent, scroll) {
-this.jqevent = jqevent;
-if (id != 507 && id != 503 ) modifiers = C$.applyLeftMouse$I(modifiers);
+this.jqevent=jqevent;
+if (id != 507 && id != 503 ) modifiers=C$.applyLeftMouse$I(modifiers);
 switch (id) {
 case 507:
 this.wheeled$J$I$I$I$I(time, x, y, scroll, modifiers);
 break;
 case 501:
-this.xWhenPressed = x;
-this.yWhenPressed = y;
-this.modifiersWhenPressed10 = modifiers;
+this.xWhenPressed=x;
+this.yWhenPressed=y;
+this.modifiersWhenPressed10=modifiers;
 p$.pressed$J$I$I$I$Z.apply(this, [time, x, y, modifiers, false]);
 break;
 case 506:
@@ -34568,7 +34573,7 @@ p$.getMouse2.apply(this, []).processTwoPointGesture$FAAA(touches);
 });
 
 Clazz_newMeth(C$, 'getMouse2', function () {
-return (this.mouse2 == null  ? (this.mouse2 = (I$[1]||$incl$(1)).getInstance$S("swingjs.JSMouse2")).set$swingjs_JSMouse(this) : this.mouse2);
+return (this.mouse2 == null  ? (this.mouse2=(I$[1]||$incl$(1)).getInstance$S("swingjs.JSMouse2")).set$swingjs_JSMouse(this) : this.mouse2);
 });
 
 Clazz_newMeth(C$, 'translateXYBy$I$I', function (deltaX, deltaY) {
@@ -34596,7 +34601,7 @@ p$.released$J$I$I$I.apply(this, [e.getWhen(), e.getX(), e.getY(), e.getModifiers
 
 Clazz_newMeth(C$, 'mouseDragged$java_awt_event_MouseEvent', function (e) {
 var modifiers = e.getModifiers();
-if ((modifiers & 28) == 0) modifiers = modifiers|(16);
+if ((modifiers & 28) == 0) modifiers|=16;
 p$.dragged$J$I$I$I.apply(this, [e.getWhen(), e.getX(), e.getY(), modifiers]);
 });
 
@@ -34610,7 +34615,7 @@ this.wheeled$J$I$I$I$I(e.getWhen(), 0, 0, e.getWheelRotation(), e.getModifiers()
 });
 
 Clazz_newMeth(C$, 'entry$J$I$I$Z', function (time, x, y, isExit) {
-this.wheeling = false;
+this.wheeling=false;
 p$.mouseEnterExit$J$I$I$Z.apply(this, [time, x, y, isExit]);
 });
 
@@ -34624,25 +34629,25 @@ if (this.isCtrlShiftMouseDown) p$.mouseAction$I$J$I$I$I$I$I.apply(this, [506, ti
 });
 
 Clazz_newMeth(C$, 'wheeled$J$I$I$I$I', function (time, x, y, rotation, modifiers) {
-this.wheeling = true;
+this.wheeling=true;
 p$.mouseAction$I$J$I$I$I$I$I.apply(this, [507, time, x, y, 0, modifiers & -29 | 32, rotation]);
 });
 
 Clazz_newMeth(C$, 'pressed$J$I$I$I$Z', function (time, x, y, modifiers, isPopupTrigger) {
-this.isCtrlShiftMouseDown = ((modifiers & 3) == 3);
-this.wheeling = false;
+this.isCtrlShiftMouseDown=((modifiers & 3) == 3);
+this.wheeling=false;
 p$.mouseAction$I$J$I$I$I$I$I.apply(this, [501, time, x, y, 0, modifiers, 0]);
 });
 
 Clazz_newMeth(C$, 'released$J$I$I$I', function (time, x, y, modifiers) {
-this.isCtrlShiftMouseDown = false;
-this.wheeling = false;
+this.isCtrlShiftMouseDown=false;
+this.wheeling=false;
 p$.mouseAction$I$J$I$I$I$I$I.apply(this, [502, time, x, y, 0, modifiers, 0]);
 });
 
 Clazz_newMeth(C$, 'dragged$J$I$I$I', function (time, x, y, modifiers) {
 if (this.wheeling) return;
-if ((modifiers & 20) == 20) modifiers = modifiers & -5 | 2;
+if ((modifiers & 20) == 20) modifiers=modifiers & -5 | 2;
 p$.mouseAction$I$J$I$I$I$I$I.apply(this, [506, time, x, y, 0, modifiers, 0]);
 });
 
@@ -34674,9 +34679,9 @@ var count = p$.updateClickCount$I$J$I$I.apply(this, [id, time, x, y]);
 var source = this.viewer.top;
 var e;
 if (id == 507) {
-e = Clazz_new_((I$[3]||$incl$(3)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I$I$I,[source, id, time, modifiers, x, y, x, y, count, popupTrigger, 0, 1, dy]);
+e=Clazz_new_((I$[3]||$incl$(3)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I$I$I,[source, id, time, modifiers, x, y, x, y, count, popupTrigger, 0, 1, dy]);
 } else {
-e = Clazz_new_((I$[4]||$incl$(4)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,[source, id, time, modifiers, x, y, x, y, count, popupTrigger, button]);
+e=Clazz_new_((I$[4]||$incl$(4)).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,[source, id, time, modifiers, x, y, x, y, count, popupTrigger, button]);
 }var bdata = Clazz_array(Byte.TYPE, [0]);
 e.setBData$BA(bdata);
 var jqevent = this.jqevent;
@@ -34692,20 +34697,20 @@ if (c == null ) {
 
 Clazz_newMeth(C$, 'updateClickCount$I$J$I$I', function (id, time, x, y) {
 var reset = (time - this.lasttime > 500 || Math.abs(x - this.lastx) > 3  || Math.abs(y - this.lasty) > 3 );
-this.lasttime = time;
-this.lastx = x;
-this.lasty = y;
+this.lasttime=time;
+this.lastx=x;
+this.lasty=y;
 var ret = this.clickCount;
 switch (id) {
 case 501:
-ret = this.clickCount = (reset ? 1 : this.clickCount + 1);
+ret=this.clickCount=(reset ? 1 : this.clickCount + 1);
 break;
 case 504:
 case 505:
-this.clickCount = 0;
+this.clickCount=0;
 break;
 case 503:
-if (reset) this.clickCount = 0;
+if (reset) this.clickCount=0;
 break;
 case 502:
 case 506:
@@ -34717,7 +34722,7 @@ return ret;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:16
+//Created 2018-05-24 08:47:45
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[];
 var C$=Clazz_newClass(P$, "JSNullComponentPeer", null, null, 'java.awt.peer.LightweightPeer');
 
@@ -34736,7 +34741,7 @@ this.isNull = true;
 
 Clazz_newMeth(C$, 'c$$java_awt_Component', function (target) {
 C$.$init$.apply(this);
-this.target = target;
+this.target=target;
 }, 1);
 
 Clazz_newMeth(C$, 'isObscured', function () {
@@ -34889,7 +34894,7 @@ Clazz_newMeth(C$, 'endLayout', function () {
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:16
+//Created 2018-05-24 08:47:45
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['java.awt.GraphicsConfiguration','swingjs.JSToolkit']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSScreenDevice", null, 'java.awt.GraphicsDevice');
 
@@ -34920,7 +34925,7 @@ Clazz_newMeth(C$, 'getDefaultConfiguration', function () {
 return (I$[2]||$incl$(2)).getGraphicsConfiguration();
 });
 })();
-//Created 2018-05-15 01:03:17
+//Created 2018-05-24 08:47:47
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[];
 var C$=Clazz_newClass(P$, "JSThreadGroup", null, 'ThreadGroup');
 
@@ -34952,7 +34957,7 @@ return this.html5Applet;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:17
+//Created 2018-05-24 08:47:47
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['sun.awt.AppContext','swingjs.JSUtil','java.awt.image.ColorModel','javax.swing.UIManager','swingjs.api.Interface','Thread','javajs.util.PT','swingjs.JSNullComponentPeer','java.io.BufferedInputStream','java.io.ByteArrayInputStream','swingjs.JSToolkit$1','swingjs.api.js.DOMNode']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSToolkit", null, 'sun.awt.SunToolkit');
 C$.isMac = false;
@@ -35052,7 +35057,7 @@ return def;
 Clazz_newMeth(C$, 'getGraphicsConfiguration', function () {
 var ap = (I$[2]||$incl$(2)).getAppletViewer();
 var gc = ap.graphicsConfig;
-return (gc == null  ? (gc = ap.graphicsConfig = (I$[2]||$incl$(2)).getInstance$S("swingjs.JSGraphicsConfiguration")) : gc);
+return (gc == null  ? (gc=ap.graphicsConfig=(I$[2]||$incl$(2)).getInstance$S("swingjs.JSGraphicsConfiguration")) : gc);
 }, 1);
 
 Clazz_newMeth(C$, 'isFocused$java_awt_Window', function (window) {
@@ -35071,7 +35076,7 @@ return css;
 Clazz_newMeth(C$, 'getStringWidth$swingjs_api_js_HTML5CanvasContext2D$java_awt_Font$S', function (context, font, text) {
 if (text == null  || text.length$() == 0 ) return 0;
 var fontInfo = C$.getCanvasFont$java_awt_Font(font);
-if (context == null ) context = C$.getDefaultCanvasContext2d();
+if (context == null ) context=C$.getDefaultCanvasContext2d();
 var w = 0;
 {
 context.font = fontInfo;
@@ -35093,7 +35098,7 @@ return "#" + s.substring(s.length$() - 6);
 }, 1);
 
 Clazz_newMeth(C$, 'getLookAndFeelDefaults', function () {
-if (C$.uid == null ) C$.uid = (I$[4]||$incl$(4)).getLookAndFeel().getDefaults();
+if (C$.uid == null ) C$.uid=(I$[4]||$incl$(4)).getLookAndFeel().getDefaults();
 return C$.uid;
 }, 1);
 
@@ -35213,7 +35218,7 @@ ui = c.getUI && c.getUI();
 if (ui == null ) {
 var s = c.getClass().getName();
 if (!(I$[7]||$incl$(7)).isOneOf$S$S(s, ";javax.swing.Box.Filler;")) System.out.println$S("[JSToolkit] Component " + s + " has no corresponding JSComponentUI, class " + c.getClass().getName() );
-ui = Clazz_new_((I$[8]||$incl$(8)).c$$java_awt_Component,[c]);
+ui=Clazz_new_((I$[8]||$incl$(8)).c$$java_awt_Component,[c]);
 }return ui;
 }, 1);
 
@@ -35228,7 +35233,7 @@ return c.__CLASS_NAME__;
 }, 1);
 
 Clazz_newMeth(C$, 'getImagekit', function () {
-return (this.imageKit == null  ? this.imageKit = (I$[5]||$incl$(5)).getInstance$S$Z("swingjs.JSImagekit", false) : this.imageKit);
+return (this.imageKit == null  ? this.imageKit=(I$[5]||$incl$(5)).getInstance$S$Z("swingjs.JSImagekit", false) : this.imageKit);
 });
 
 Clazz_newMeth(C$, 'getImage$S', function (filename) {
@@ -35293,7 +35298,7 @@ return true;
 }, 1);
 
 Clazz_newMeth(C$, 'getAudioPlayer', function () {
-return (C$.audioPlayer == null  ? C$.audioPlayer = (I$[2]||$incl$(2)).getInstance$S("swingjs.JSAudio") : C$.audioPlayer);
+return (C$.audioPlayer == null  ? C$.audioPlayer=(I$[2]||$incl$(2)).getInstance$S("swingjs.JSAudio") : C$.audioPlayer);
 }, 1);
 
 Clazz_newMeth(C$, 'playAudio$BA$javax_sound_sampled_AudioFormat', function (data, audioFormat) {
@@ -35331,7 +35336,7 @@ clearTimeout(html5Id);
 }, 1);
 
 Clazz_newMeth(C$, 'getSystemClipboard', function () {
-if (C$.systemClipboard == null ) C$.systemClipboard = (I$[2]||$incl$(2)).getInstance$S("java.awt.datatransfer.Clipboard");
+if (C$.systemClipboard == null ) C$.systemClipboard=(I$[2]||$incl$(2)).getInstance$S("java.awt.datatransfer.Clipboard");
 return C$.systemClipboard;
 });
 
@@ -35343,46 +35348,46 @@ Clazz_newMeth(C$, 'setCursor$java_awt_Cursor', function (c) {
 var curs = null;
 switch (c == null  ? 0 : c.getType()) {
 case 1:
-curs = "crosshair";
+curs="crosshair";
 break;
 case 3:
-curs = "wait";
+curs="wait";
 break;
 case 2:
-curs = "text";
+curs="text";
 break;
 case 8:
 case 9:
-curs = "ns-resize";
+curs="ns-resize";
 break;
 case 12:
-curs = "grab";
+curs="grab";
 break;
 case 13:
-curs = "move";
+curs="move";
 break;
 case 7:
 case 4:
-curs = "nesw-resize";
+curs="nesw-resize";
 break;
 case 5:
 case 6:
-curs = "nwse-resize";
+curs="nwse-resize";
 break;
 case 11:
 case 10:
-curs = "ew-resize";
+curs="ew-resize";
 break;
 case 0:
 default:
-curs = "default";
+curs="default";
 break;
 }
 (I$[12]||$incl$(12)).setCursor(curs);
 }, 1);
 
 Clazz_newMeth(C$, 'getFontList', function () {
-if (C$.hardwiredFontList == null ) C$.hardwiredFontList = Clazz_array(java.lang.String, -1, ["Dialog", "SansSerif", "Serif", "Monospaced", "DialogInput"]);
+if (C$.hardwiredFontList == null ) C$.hardwiredFontList=Clazz_array(java.lang.String, -1, ["Dialog", "SansSerif", "Serif", "Monospaced", "DialogInput"]);
 return C$.hardwiredFontList;
 });
 
@@ -35399,7 +35404,7 @@ var strStyle = "";
 if (font.isItalic()) strStyle += "italic ";
 if (font.isBold()) strStyle += "bold ";
 var family = font.getFamily();
-if (family.equals$O("SansSerif") || family.equals$O("Dialog") || family.equals$O("DialogInput")  ) family = "Arial";
+if (family.equals$O("SansSerif") || family.equals$O("Dialog") || family.equals$O("DialogInput")  ) family="Arial";
 return strStyle + font.getSize() + "px " + family ;
 }, 1);
 
@@ -35438,7 +35443,7 @@ job.setAttributes$S$java_awt_JobAttributes$java_awt_PageAttributes(jobtitle, job
 return job;
 });
 })();
-//Created 2018-05-15 01:03:17
+//Created 2018-05-24 08:47:47
 (function(){var P$=Clazz_newPackage("swingjs"),I$=[['java.util.Hashtable','javajs.util.Rdr','java.net.URL','javajs.util.AU','java.io.BufferedInputStream','swingjs.api.Interface','javajs.util.PT','java.lang.Boolean','Thread','java.util.Locale','javajs.util.AjaxURLConnection']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSUtil");
 C$.debugging = false;
@@ -35457,8 +35462,8 @@ var j2sself = null;
 j2sself = self.J2S;
 j2sdebug = J2S._checkLoad || J2S._debugCode
 }
-C$.debugging = j2sdebug;
-C$.J2S = j2sself;
+C$.debugging=j2sdebug;
+C$.J2S=j2sself;
 }
 ;
 C$.useCache = true;
@@ -35473,8 +35478,8 @@ System.out.println$S("JSUtil initialized");
 }, 1);
 
 Clazz_newMeth(C$, 'getFileCache', function () {
-if (C$.fileCache == null  && (C$.fileCache = C$.J2S._getSetJavaFileCache(null)) == null  ) {
-C$.fileCache = Clazz_new_((I$[1]||$incl$(1)));
+if (C$.fileCache == null  && (C$.fileCache=C$.J2S._getSetJavaFileCache(null)) == null  ) {
+C$.fileCache=Clazz_new_((I$[1]||$incl$(1)));
 C$.J2S._getSetJavaFileCache(C$.fileCache);
 }return C$.fileCache;
 }, 1);
@@ -35493,14 +35498,14 @@ if (data == null ) {
 
 
 try {
-data = (I$[2]||$incl$(2)).streamToUTF8String$java_io_BufferedInputStream(Clazz_new_((I$[3]||$incl$(3)).c$$S,[uri]).getContent());
+data=(I$[2]||$incl$(2)).streamToUTF8String$java_io_BufferedInputStream(Clazz_new_((I$[3]||$incl$(3)).c$$S,[uri]).getContent());
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.Exception")){
 } else {
 throw e;
 }
 }
-data = C$.J2S._getFileData(uri, null, false, false);
+data=C$.J2S._getFileData(uri, null, false, false);
 }return data;
 }, 1);
 
@@ -35512,11 +35517,11 @@ return C$.ensureString$O(data);
 Clazz_newMeth(C$, 'getFileAsBytes$O', function (file) {
 var data = C$.getFileContents$O(file);
 var b = null;
-if ((I$[4]||$incl$(4)).isAB$O(data)) b = data;
- else if (Clazz_instanceOf(data, "java.lang.String")) b = (data).getBytes();
- else if (Clazz_instanceOf(data, "javajs.util.SB")) b = (I$[2]||$incl$(2)).getBytesFromSB$javajs_util_SB(data);
+if ((I$[4]||$incl$(4)).isAB$O(data)) b=data;
+ else if (Clazz_instanceOf(data, "java.lang.String")) b=(data).getBytes();
+ else if (Clazz_instanceOf(data, "javajs.util.SB")) b=(I$[2]||$incl$(2)).getBytesFromSB$javajs_util_SB(data);
  else if (Clazz_instanceOf(data, "java.io.InputStream")) try {
-b = (I$[2]||$incl$(2)).getLimitedStreamBytes$java_io_InputStream$J(data, -1);
+b=(I$[2]||$incl$(2)).getLimitedStreamBytes$java_io_InputStream$J(data, -1);
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.io.IOException")){
 } else {
@@ -35536,7 +35541,7 @@ System.out.println$S("JSUtil getting Java resource " + resourceName);
 var path = C$.J2S._getResourcePath(resourceName, isJavaPath);
 if (path == null ) return null;
 var data = C$.getCachedFileData$S(path);
-if (data == null  && (data = C$.J2S._getFileData(path, null, false, false)) != null   && C$.useCache  && doCache ) C$.cacheFileData$S$O(path, data);
+if (data == null  && (data=C$.J2S._getFileData(path, null, false, false)) != null   && C$.useCache  && doCache ) C$.cacheFileData$S$O(path, data);
 var sdata = C$.ensureString$O(data);
 var ok = (sdata != null  && sdata.indexOf("[Exception") != 0 );
 System.out.println$S("Processing " + path + " [" + (ok ? "" + sdata.length$() : sdata) + "]" );
@@ -35548,12 +35553,12 @@ C$.getFileCache().put$TK$TV(path, data);
 }, 1);
 
 Clazz_newMeth(C$, 'loadJavaResourcesFromZip$ClassLoader$S$java_util_Map', function (cl, zipFileName, mapByteData) {
-if (mapByteData == null ) mapByteData = C$.getFileCache();
+if (mapByteData == null ) mapByteData=C$.getFileCache();
 var fileList = "";
 try {
 var bis = Clazz_new_((I$[5]||$incl$(5)).c$$java_io_InputStream,[cl.getResourceAsStream$S(zipFileName)]);
 var prefix = C$.J2S._getResourcePath(null, true);
-fileList = C$.getZipTools().cacheZipContentsStatic$java_io_BufferedInputStream$S$java_util_Map$Z(bis, prefix, mapByteData, false);
+fileList=C$.getZipTools().cacheZipContentsStatic$java_io_BufferedInputStream$S$java_util_Map$Z(bis, prefix, mapByteData, false);
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.Exception")){
 System.out.println$S("JSUtil could not cache files from " + zipFileName);
@@ -35566,21 +35571,21 @@ if (C$.debugging) System.out.println$S("JSUtil loaded resources from " + zipFile
 }, 1);
 
 Clazz_newMeth(C$, 'getZipTools', function () {
-return (C$.zipTools == null  ? (C$.zipTools = (I$[6]||$incl$(6)).getInstance$S$Z("javajs.util.ZipTools", true)) : C$.zipTools);
+return (C$.zipTools == null  ? (C$.zipTools=(I$[6]||$incl$(6)).getInstance$S$Z("javajs.util.ZipTools", true)) : C$.zipTools);
 }, 1);
 
 Clazz_newMeth(C$, 'loadStaticResource$S', function (file) {
 var s = "alert('" + file + "' was not found)" ;
 if (!C$.J2S._isResourceLoaded(file, false)) {
-s = C$.getJavaResource$S$Z$Z$Z(file, true, false, true);
+s=C$.getJavaResource$S$Z$Z$Z(file, true, false, true);
 C$.J2S._isResourceLoaded(file, true);
 }return s;
 }, 1);
 
 Clazz_newMeth(C$, 'processCSS$S$S', function (css, path) {
 if (path != null  && css.indexOf("images/") >= 0 ) {
-path = path.substring(0, path.lastIndexOf("/") + 1) + "images/";
-css = (I$[7]||$incl$(7)).rep$S$S$S(css, "images/", path);
+path=path.substring(0, path.lastIndexOf("/") + 1) + "images/";
+css=(I$[7]||$incl$(7)).rep$S$S$S(css, "images/", path);
 }var jq = C$.getJQuery();
 jq.$("head").append(jq.$("<style type='text/css'>" + css + "</style>" ));
 return css;
@@ -35626,7 +35631,7 @@ return Clazz._getStackTrace();
 
 Clazz_newMeth(C$, 'notImplemented$S', function (msg) {
 var s = null;
-if (C$.mapNotImpl == null ) C$.mapNotImpl = Clazz_new_((I$[1]||$incl$(1)));
+if (C$.mapNotImpl == null ) C$.mapNotImpl=Clazz_new_((I$[1]||$incl$(1)));
 {
 s = arguments.callee.caller;
 var cl = s.claxxOwner || s.exClazz;
@@ -35696,23 +35701,23 @@ Clazz_newMeth(C$, 'getDefaultLocale$S', function (language) {
 var region;
 var country;
 var variant;
-if (language == null ) language = C$.J2S._getDefaultLanguage(true);
-language = language.$replace("-", "_");
-if (language == null  || language.length$() == 0  || language.equalsIgnoreCase$S("en") ) language = "en_US";
+if (language == null ) language=C$.J2S._getDefaultLanguage(true);
+language=language.$replace("-", "_");
+if (language == null  || language.length$() == 0  || language.equalsIgnoreCase$S("en") ) language="en_US";
 var i = language.indexOf("_");
 if (i > 0) {
-region = language.substring(i + 1);
-language = language.substring(0, i);
+region=language.substring(i + 1);
+language=language.substring(0, i);
 } else {
-region = "";
-}region = region.toUpperCase();
-i = region.indexOf("_");
+region="";
+}region=region.toUpperCase();
+i=region.indexOf("_");
 if (i > 0) {
-country = region.substring(0, i);
-variant = region.substring(i + 1);
+country=region.substring(0, i);
+variant=region.substring(i + 1);
 } else {
-country = region;
-variant = "";
+country=region;
+variant="";
 }return Clazz_new_((I$[10]||$incl$(10)).c$$S$S$S,[language, country, variant]);
 }, 1);
 
@@ -35758,7 +35763,7 @@ return prompt(msg, defaultRet);
 }
 }, 1);
 })();
-//Created 2018-05-15 01:03:17
+//Created 2018-05-24 08:47:47
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[[['swingjs.plaf.ButtonListener','.Actions'],'swingjs.plaf.LazyActionMap','javax.swing.SwingUtilities','javax.swing.plaf.ComponentInputMapUIResource','javax.swing.KeyStroke']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "ButtonListener", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -35782,7 +35787,7 @@ map.put$javax_swing_Action(Clazz_new_((I$[1]||$incl$(1)).c$$S,["released"]));
 
 Clazz_newMeth(C$, 'c$$swingjs_plaf_JSButtonUI$Z', function (ui, isMenuItem) {
 C$.$init$.apply(this);
-this.ui = ui;
+this.ui=ui;
 }, 1);
 
 Clazz_newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
@@ -35823,7 +35828,7 @@ var m = b.getMnemonic();
 if (m != 0) {
 var map = (I$[3]||$incl$(3)).getUIInputMap$javax_swing_JComponent$I(b, 2);
 if (map == null ) {
-map = Clazz_new_((I$[4]||$incl$(4)).c$$javax_swing_JComponent,[b]);
+map=Clazz_new_((I$[4]||$incl$(4)).c$$javax_swing_JComponent,[b]);
 (I$[3]||$incl$(3)).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(b, 2, map);
 }map.clear();
 map.put$javax_swing_KeyStroke$O((I$[5]||$incl$(5)).getKeyStroke$I$I$Z(m, 8, false), "pressed");
@@ -35942,7 +35947,7 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:19
+//Created 2018-05-24 08:47:50
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['javax.swing.UIDefaults','java.awt.Color','javax.swing.plaf.ColorUIResource','javax.swing.plaf.FontUIResource','javax.swing.plaf.InsetsUIResource',['javax.swing.plaf.BorderUIResource','.EtchedBorderUIResource'],'sun.swing.SwingLazyValue','javax.swing.BorderFactory',['javax.swing.DefaultListCellRenderer','.UIResource'],'swingjs.plaf.HTML5LookAndFeel$1','javax.swing.plaf.DimensionUIResource',['javax.swing.plaf.BorderUIResource','.EmptyBorderUIResource'],'java.awt.Dimension','java.lang.Boolean',['javax.swing.UIDefaults','.LazyInputMap']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "HTML5LookAndFeel", null, 'javax.swing.LookAndFeel');
 var p$=C$.prototype;
@@ -35986,10 +35991,10 @@ this.loadSystemColors$javax_swing_UIDefaults$SA$Z(table, defaultSystemColors, th
 });
 
 Clazz_newMeth(C$, 'loadSystemColors$javax_swing_UIDefaults$SA$Z', function (table, systemColors, useNative) {
-for (var i = 0; i < systemColors.length; i = i+(2)) {
+for (var i = 0; i < systemColors.length; i+=2) {
 var color = (I$[2]||$incl$(2)).black;
 try {
-color = (I$[2]||$incl$(2)).decode$S(systemColors[i + 1]);
+color=(I$[2]||$incl$(2)).decode$S(systemColors[i + 1]);
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.NumberFormatException")){
 e.printStackTrace();
@@ -36088,7 +36093,7 @@ Clazz_newMeth(C$, 'isSupportedLookAndFeel', function () {
 return true;
 });
 })();
-//Created 2018-05-15 01:03:20
+//Created 2018-05-24 08:47:51
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','javax.swing.BorderFactory','swingjs.plaf.JSComponentUI','swingjs.plaf.ButtonListener','javax.swing.UIManager','javax.swing.LookAndFeel','java.awt.Dimension']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSButtonUI", null, 'swingjs.plaf.JSLightweightUI');
 
@@ -36111,13 +36116,13 @@ this.shiftOffset = 0;
 }, 1);
 
 Clazz_newMeth(C$, 'updateDOMNode', function () {
-this.isSimpleButton = true;
-this.allowPaintedBackground = false;
+this.isSimpleButton=true;
+this.allowPaintedBackground=false;
 if (this.domNode == null ) {
-this.domNode = this.$enableNode = this.newDOMObject$S$S$SA("button", this.id, ["type", "button"]);
+this.domNode=this.$enableNode=this.newDOMObject$S$S$SA("button", this.id, ["type", "button"]);
 (I$[1]||$incl$(1)).setStyles(this.domNode, ["lineHeight", "0.8"]);
-this.iconNode = this.newDOMObject$S$S$SA("span", this.id + "_icon", []);
-this.textNode = this.newDOMObject$S$S$SA("span", this.id + "_btn", []);
+this.iconNode=this.newDOMObject$S$S$SA("span", this.id + "_icon", []);
+this.textNode=this.newDOMObject$S$S$SA("span", this.id + "_btn", []);
 this.domNode.appendChild(this.iconNode);
 this.domNode.appendChild(this.textNode);
 this.setDataComponent$swingjs_api_js_DOMNode(this.domNode);
@@ -36134,15 +36139,15 @@ var text = this.button.getText();
 var icon = this.button.getIcon();
 var gap = this.button.getIconTextGap();
 if (("|").equals$O(text) || ("-").equals$O(text) ) {
-text = null;
-}this.itemNode = this.newDOMObject$S$S$SA("li", this.id + type, []);
+text=null;
+}this.itemNode=this.newDOMObject$S$S$SA("li", this.id + type, []);
 if (text == null  && icon == null  ) return this.itemNode;
 var aNode = this.newDOMObject$S$S$SA("a", this.id + type + "_a" , []);
 (I$[1]||$incl$(1)).setStyles(aNode, ["margin", "1px 4px 1px 4px"]);
 this.itemNode.appendChild(aNode);
 if (label == null ) {
-if (this.iconNode == null ) this.iconNode = this.newDOMObject$S$S$SA("span", this.id + "_icon", []);
-if (this.textNode == null ) this.textNode = this.newDOMObject$S$S$SA("span", this.id + "_text", []);
+if (this.iconNode == null ) this.iconNode=this.newDOMObject$S$S$SA("span", this.id + "_icon", []);
+if (this.textNode == null ) this.textNode=this.newDOMObject$S$S$SA("span", this.id + "_text", []);
 this.$$O(this.iconNode).attr("role", "menucloser");
 this.$$O(this.textNode).attr("role", "menucloser");
 this.setDataUI$swingjs_api_js_DOMNode(this.iconNode);
@@ -36150,7 +36155,7 @@ this.setDataUI$swingjs_api_js_DOMNode(this.textNode);
 aNode.appendChild(this.iconNode);
 aNode.appendChild(this.textNode);
 this.setCssFont$swingjs_api_js_DOMNode$java_awt_Font(aNode, this.c.getFont());
-this.$enableNode = aNode;
+this.$enableNode=aNode;
 this.setIconAndText$S$javax_swing_ImageIcon$I$S("btn", icon, gap, text);
 } else {
 aNode.appendChild(label);
@@ -36172,7 +36177,7 @@ return true;
 });
 
 Clazz_newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.button = jc;
+this.button=jc;
 this.installDefaults$javax_swing_AbstractButton(this.button);
 this.installListeners$javax_swing_AbstractButton(this.button);
 this.installKeyboardActions$javax_swing_AbstractButton(this.button);
@@ -36231,7 +36236,7 @@ return "Button.";
 
 Clazz_newMeth(C$, 'installDefaults$javax_swing_AbstractButton', function (b) {
 var pp = this.getPropertyPrefix();
-this.defaultTextShiftOffset = (I$[5]||$incl$(5)).getInt$O(pp + "textShiftOffset");
+this.defaultTextShiftOffset=(I$[5]||$incl$(5)).getInt$O(pp + "textShiftOffset");
 if (b.getMargin() == null  || (Clazz_instanceOf(b.getMargin(), "javax.swing.plaf.UIResource")) ) {
 b.setMargin$java_awt_Insets((I$[5]||$incl$(5)).getInsets$O(pp + "margin"));
 }(I$[6]||$incl$(6)).installColorsAndFont$javax_swing_JComponent$S$S$S(b, pp + "background", pp + "foreground", pp + "font");
@@ -36244,12 +36249,12 @@ return Clazz_new_((I$[7]||$incl$(7)).c$$I$I,[(this.itemNode == null  ? 0 : 10), 
 });
 
 Clazz_newMeth(C$, 'setInnerComponentBounds$I$I', function (width, height) {
-if (this.isSimpleButton && (this.imageNode == null  || this.button.getText() == null  ) ) (I$[1]||$incl$(1)).setSize(this.innerNode = this.domNode, width, height);
+if (this.isSimpleButton && (this.imageNode == null  || this.button.getText() == null  ) ) (I$[1]||$incl$(1)).setSize(this.innerNode=this.domNode, width, height);
 });
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:20
+//Created 2018-05-24 08:47:52
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['java.awt.Color','swingjs.JSUtil','swingjs.api.js.DOMNode','swingjs.JSToolkit','javajs.util.PT','java.awt.Dimension',['java.awt.Component','.BaselineResizeBehavior'],'javax.swing.UIManager','java.awt.Point','java.awt.Toolkit','java.awt.event.FocusEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSComponentUI", null, 'javax.swing.plaf.ComponentUI', ['java.awt.peer.ContainerPeer', 'swingjs.plaf.JSEventHandler', 'java.beans.PropertyChangeListener', 'javax.swing.event.ChangeListener']);
 C$.rootPaneColor = null;
@@ -36349,7 +36354,7 @@ this.dropTarget = this;
 }, 1);
 
 Clazz_newMeth(C$, 'setDraggable$javajs_api_JSFunction', function (f) {
-this.draggable = true;
+this.draggable=true;
 (I$[2]||$incl$(2)).J2S._setDraggable(this.updateDOMNode(), f);
 });
 
@@ -36362,7 +36367,7 @@ Clazz_newMeth(C$, 'setDoc', function () {
 {
 this.document = document; this.body = document.body;
 }
-C$.debugging = (I$[2]||$incl$(2)).debugging;
+C$.debugging=(I$[2]||$incl$(2)).debugging;
 });
 
 Clazz_newMeth(C$, 'installJS', function () {
@@ -36379,7 +36384,7 @@ this.c && this.c.removePropertyChangeListener$java_beans_PropertyChangeListener(
 }
 if (this.outerNode != null ) {
 (I$[3]||$incl$(3)).remove(this.outerNode);
-this.outerNode = null;
+this.outerNode=null;
 }});
 
 Clazz_newMeth(C$, '$$O', function (node) {
@@ -36387,9 +36392,9 @@ return (I$[2]||$incl$(2)).getJQuery().$(node);
 });
 
 Clazz_newMeth(C$, 'set$javax_swing_JComponent', function (target) {
-this.c = target;
-this.jc = this.c;
-this.applet = (I$[4]||$incl$(4)).getHTML5Applet$java_awt_Component(this.c);
+this.c=target;
+this.jc=this.c;
+this.applet=(I$[4]||$incl$(4)).getHTML5Applet$java_awt_Component(this.c);
 this.newID$Z(false);
 this.installUI$javax_swing_JComponent(target);
 this.installJS();
@@ -36398,15 +36403,15 @@ return this;
 });
 
 Clazz_newMeth(C$, 'newID$Z', function (forceNew) {
-this.classID = this.c.getUIClassID();
+this.classID=this.c.getUIClassID();
 if (this.id == null  || forceNew ) {
-this.num = ++C$.incr;
-this.id = this.c.getHTMLName$S(this.classID) + "_" + this.num ;
+this.num=++C$.incr;
+this.id=this.c.getHTMLName$S(this.classID) + "_" + this.num ;
 }});
 
 Clazz_newMeth(C$, 'reInit', function () {
 this.setTainted();
-this.domNode = null;
+this.domNode=null;
 this.newID$Z(true);
 });
 
@@ -36467,7 +36472,7 @@ this.jc.revalidate();
 });
 
 Clazz_newMeth(C$, 'setTainted', function () {
-this.isTainted = true;
+this.isTainted=true;
 });
 
 Clazz_newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
@@ -36476,8 +36481,13 @@ if (C$.debugging) System.out.println$S(this.id + " stateChange " + this.dumpEven
 
 Clazz_newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
 var prop = e.getPropertyName();
-if (this.isDisposed && this.c.visible && prop == "ancestor"   && e.getNewValue() != null  ) this.setVisible$Z(true);
-this.propertyChangedCUI$S(prop);
+if (prop == "ancestor") {
+var parentui = this;
+
+parentui = this.jc.parent && this.jc.parent.getUI && this.jc.parent.getUI();
+if (parentui != null ) parentui.setTainted();
+if (this.isDisposed && this.c.visible && e.getNewValue() != null   ) this.setVisible$Z(true);
+}this.propertyChangedCUI$S(prop);
 });
 
 Clazz_newMeth(C$, 'propertyChangedFromListener$S', function (prop) {
@@ -36487,7 +36497,7 @@ this.propertyChangedCUI$S(prop);
 Clazz_newMeth(C$, 'propertyChangedCUI$S', function (prop) {
 if (!this.isMenu) this.updateDOMNode();
 if (prop == "preferredSize") {
-this.preferredSize = this.c.getPreferredSize();
+this.preferredSize=this.c.getPreferredSize();
 this.getPreferredSize();
 return;
 }if (prop == "background") {
@@ -36523,39 +36533,39 @@ return;
 });
 
 Clazz_newMeth(C$, 'setIconAndText$S$javax_swing_ImageIcon$I$S', function (prop, icon, gap, text) {
-this.actualWidth = this.actualHeight = 0;
-this.currentIcon = icon;
-this.currentText = text;
-this.currentGap = gap;
-this.canAlignText = false;
-this.canAlignIcon = false;
-this.imageNode = null;
+this.actualWidth=this.actualHeight=0;
+this.currentIcon=icon;
+this.currentText=text;
+this.currentGap=gap;
+this.canAlignText=false;
+this.canAlignIcon=false;
+this.imageNode=null;
 if (this.iconNode != null ) {
 (I$[3]||$incl$(3)).setAttr(this.iconNode, "innerHTML", "");
 if (icon != null ) {
-this.imageNode = (I$[3]||$incl$(3)).getImageNode(icon.getImage());
+this.imageNode=(I$[3]||$incl$(3)).getImageNode(icon.getImage());
 (I$[3]||$incl$(3)).setStyles(this.imageNode, ["vertical-align", "middle"]);
 this.iconNode.appendChild(this.imageNode);
-this.iconHeight = icon.getIconHeight();
+this.iconHeight=icon.getIconHeight();
 }}if (text == null  || text.length$() == 0 ) {
-text = "";
-if (icon != null ) this.canAlignIcon = true;
+text="";
+if (icon != null ) this.canAlignIcon=true;
 } else {
 if (icon == null ) {
-this.canAlignText = true;
+this.canAlignText=true;
 } else {
-if (gap == 2147483647) gap = this.getDefaultIconTextGap();
+if (gap == 2147483647) gap=this.getDefaultIconTextGap();
 if (gap != 0 && text != null  ) (I$[3]||$incl$(3)).addHorizontalGap(this.iconNode, gap);
 }if (text.indexOf("<html>") == 0) {
-text = (I$[5]||$incl$(5)).rep$S$S$S(text.substring(6, text.length$() - 7), "</br>", "");
+text=(I$[5]||$incl$(5)).rep$S$S$S(text.substring(6, text.length$() - 7), "</br>", "");
 }}var obj = null;
 if (this.textNode != null ) {
-prop = "innerHTML";
-obj = this.textNode;
-text = (I$[5]||$incl$(5)).rep$S$S$S(text, "<", "&lt;");
+prop="innerHTML";
+obj=this.textNode;
+text=(I$[5]||$incl$(5)).rep$S$S$S(text, "<", "&lt;");
 } else if (this.valueNode != null ) {
-prop = "value";
-obj = this.valueNode;
+prop="value";
+obj=this.valueNode;
 if (this.iconNode != null ) (I$[3]||$incl$(3)).setVisible(obj, text != null );
 }if (obj != null ) this.setProp$swingjs_api_js_DOMNode$S$S(obj, prop, text);
 if (this.centeringNode == null ) {
@@ -36572,7 +36582,7 @@ return 0;
 });
 
 Clazz_newMeth(C$, 'setAllowPaintedBackground$Z', function (TF) {
-this.allowPaintedBackground = TF;
+this.allowPaintedBackground=TF;
 });
 
 Clazz_newMeth(C$, 'getDOMNode', function () {
@@ -36585,16 +36595,16 @@ if (C$.debugging && this.createMsgs.indexOf(msg) < 0 ) {
 this.createMsgs += msg;
 (I$[2]||$incl$(2)).alert$O(msg);
 }System.out.println$S(msg);
-return (this.domNode == null  ? this.domNode = (I$[3]||$incl$(3)).createElement("div", this.id) : this.domNode);
+return (this.domNode == null  ? this.domNode=(I$[3]||$incl$(3)).createElement("div", this.id) : this.domNode);
 });
 
 Clazz_newMeth(C$, 'setCssFont$swingjs_api_js_DOMNode$java_awt_Font', function (obj, font) {
 if (font != null ) {
 var istyle = font.getStyle();
 var name = font.getFamily();
-if (name == "Dialog" || name == "SansSerif" ) name = "Arial";
+if (name == "Dialog" || name == "SansSerif" ) name="Arial";
 (I$[3]||$incl$(3)).setStyles(obj, ["font-family", name, "font-size", font.getSize() + "px", "font-style", ((istyle & 2) == 0 ? "normal" : "italic"), "font-weight", ((istyle & 1) == 0 ? "normal" : "bold")]);
-}this.enabled = !this.c.isEnabled();
+}this.enabled=!this.c.isEnabled();
 this.setEnabled$Z(this.c.isEnabled());
 return obj;
 });
@@ -36629,7 +36639,7 @@ return this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(obj, addCSS, true);
 
 Clazz_newMeth(C$, 'setHTMLSize1$swingjs_api_js_DOMNode$Z$Z', function (node, addCSS, usePreferred) {
 if (node == null ) return null;
-addCSS = (addCSS&!this.isMenuItem);
+addCSS&=!this.isMenuItem;
 var h;
 var w;
 var w0 = null;
@@ -36638,15 +36648,15 @@ var w0i = null;
 var h0i = null;
 var position = null;
 var parentNode = null;
-if (this.centeringNode != null  && node === this.domNode  ) node = this.centeringNode;
+if (this.centeringNode != null  && node === this.domNode  ) node=this.centeringNode;
 if (this.scrollPaneUI != null ) {
-w = this.scrollPaneUI.c.getWidth();
-h = this.scrollPaneUI.c.getHeight();
+w=this.scrollPaneUI.c.getWidth();
+h=this.scrollPaneUI.c.getHeight();
 } else if (usePreferred && this.preferredSize != null  ) {
-w = this.preferredSize.width;
-h = this.preferredSize.height;
+w=this.preferredSize.width;
+h=this.preferredSize.height;
 } else {
-parentNode = (I$[3]||$incl$(3)).remove(node);
+parentNode=(I$[3]||$incl$(3)).remove(node);
 if (!this.isMenuItem) {
 w0 = node.style.width; h0 = node.style.height; position = node.style.position;
 if (node == this.centeringNode && this.innerNode) { w0i = this.innerNode.style.width; h0i = this.innerNode.style.height; }
@@ -36654,20 +36664,20 @@ if (node == this.centeringNode && this.innerNode) { w0i = this.innerNode.style.w
 (I$[3]||$incl$(3)).setStyles(node, ["position", null, "width", null, "height", null]);
 if (this.innerNode != null ) (I$[3]||$incl$(3)).setStyles(this.innerNode, ["width", null, "height", null]);
 var div;
-if ((I$[3]||$incl$(3)).getAttr(node, "tagName") === "DIV" ) div = node;
- else div = this.wrap$S$S$swingjs_api_js_DOMNodeA("div", this.id + "_temp", [node]);
+if ((I$[3]||$incl$(3)).getAttr(node, "tagName") === "DIV" ) div=node;
+ else div=this.wrap$S$S$swingjs_api_js_DOMNodeA("div", this.id + "_temp", [node]);
 (I$[3]||$incl$(3)).setPositionAbsolute(div, -2147483648, 0);
 this.$$O(this.body).after(div);
 var r = div.getBoundingClientRect();
-w = (Math.max(0, Math.ceil(r.width))|0);
-h = (Math.max(0, Math.ceil(r.height))|0);
+w=(Math.max(0, Math.ceil(r.width))|0);
+h=(Math.max(0, Math.ceil(r.height))|0);
 if (!usePreferred) {
-this.actualWidth = w;
-this.actualHeight = h;
+this.actualWidth=w;
+this.actualHeight=h;
 }this.$$O(div).detach();
 }var size = this.getCSSAdjustment$Z(addCSS);
-size.width = size.width+(w);
-size.height = size.height+(h);
+size.width+=w;
+size.height+=h;
 if (addCSS) {
 (I$[3]||$incl$(3)).setPositionAbsolute(node, -2147483648, 0);
 (I$[3]||$incl$(3)).setSize(node, size.width, size.height);
@@ -36694,19 +36704,19 @@ return this.setHTMLElementCUI();
 
 Clazz_newMeth(C$, 'setHTMLElementCUI', function () {
 if (!this.isTainted) return this.outerNode;
-this.domNode = this.updateDOMNode();
+this.domNode=this.updateDOMNode();
 p$.checkTransparent$swingjs_api_js_DOMNode.apply(this, [this.domNode]);
 var children = this.getChildren();
 var n = children.length;
 if (this.isMenuItem) {
-this.outerNode = this.domNode;
+this.outerNode=this.domNode;
 if (n == 0) return this.outerNode;
-}if (this.outerNode == null ) this.outerNode = this.wrap$S$S$swingjs_api_js_DOMNodeA("div", this.id, [this.domNode]);
+}if (this.outerNode == null ) this.outerNode=this.wrap$S$S$swingjs_api_js_DOMNodeA("div", this.id, [this.domNode]);
 {
 this.outerNode.setAttribute("name", this.jc.__CLASS_NAME__);
 }
 p$.setOuterLocationFromComponent.apply(this, []);
-if (n > 0 && this.containerNode == null  ) this.containerNode = this.outerNode;
+if (n > 0 && this.containerNode == null  ) this.containerNode=this.outerNode;
 if (this.isContainer || n > 0 ) {
 if (this.isContainer && !this.isMenuItem ) {
 var w = this.getContainerWidth();
@@ -36722,16 +36732,16 @@ if (cdiv != null ) cdiv.appendChild(this.outerNode);
 if (this.isWindow) {
 (I$[3]||$incl$(3)).remove(this.outerNode);
 this.$$O(this.body).append(this.outerNode);
-}}this.isTainted = false;
+}}this.isTainted=false;
 if (this.jc.getDropTarget() != null ) p$.setDropTarget.apply(this, []);
 return this.outerNode;
 });
 
 Clazz_newMeth(C$, 'setOuterLocationFromComponent', function () {
 if (this.outerNode != null  && !this.isMenuItem ) {
-if (this.parent == null  && this.jc.getParent() != null   && (this.parent = this.jc.getParent().getUI()) != null   && this.parent.outerNode != null  ) this.parent.outerNode.appendChild(this.outerNode);
+if (this.parent == null  && this.jc.getParent() != null   && (this.parent=this.jc.getParent().getUI()) != null   && this.parent.outerNode != null  ) this.parent.outerNode.appendChild(this.outerNode);
 (I$[3]||$incl$(3)).setPositionAbsolute(this.outerNode, -2147483648, 0);
-(I$[3]||$incl$(3)).setStyles(this.outerNode, ["left", (this.x = this.c.getX()) + "px", "top", (this.y = this.c.getY()) + "px"]);
+(I$[3]||$incl$(3)).setStyles(this.outerNode, ["left", (this.x=this.c.getX()) + "px", "top", (this.y=this.c.getY()) + "px"]);
 }});
 
 Clazz_newMeth(C$, 'getChildren', function () {
@@ -36744,7 +36754,7 @@ for (var i = 0; i < n; i++) {
 var ui = (I$[4]||$incl$(4)).getUI$java_awt_Component$Z(children[i], false);
 if (ui == null  || ui.isNull ) {
 continue;
-}ui.parent = this;
+}ui.parent=this;
 if (ui.getOuterNode() == null ) {
 System.out.println$S("JSCUI could not add " + ui.c.getName() + " to " + this.c.getName() );
 } else {
@@ -36754,11 +36764,11 @@ this.containerNode.appendChild(ui.outerNode);
 });
 
 Clazz_newMeth(C$, 'getContainerWidth', function () {
-return this.width = this.c.getWidth();
+return this.width=this.c.getWidth();
 });
 
 Clazz_newMeth(C$, 'getContainerHeight', function () {
-return this.height = this.c.getHeight();
+return this.height=this.c.getHeight();
 });
 
 Clazz_newMeth(C$, 'getPreferredSize', function () {
@@ -36868,7 +36878,7 @@ return false;
 
 Clazz_newMeth(C$, 'setVisible$Z', function (b) {
 var node = this.getOuterNode();
-if (node == null ) node = this.domNode;
+if (node == null ) node=this.domNode;
 (I$[3]||$incl$(3)).setVisible(node, b);
 if (b) {
 if (this.isDisposed) p$.undisposeUI$swingjs_api_js_DOMNode.apply(this, [node]);
@@ -36880,7 +36890,7 @@ Clazz_newMeth(C$, 'toFront', function () {
 
 Clazz_newMeth(C$, 'setEnabled$Z', function (b) {
 if (b == this.enabled ) return;
-this.enabled = b;
+this.enabled=b;
 if (this.$enableNode != null ) p$.enableNode$swingjs_api_js_DOMNode$Z.apply(this, [this.$enableNode, b]);
  else if (this.enableNodes != null ) for (var i = 0; i < this.enableNodes.length; i++) p$.enableNode$swingjs_api_js_DOMNode$Z.apply(this, [this.enableNodes[i], b]);
 
@@ -36903,31 +36913,31 @@ return (this.inactiveForeground == null  ? fg : this.inactiveForeground);
 });
 
 Clazz_newMeth(C$, 'getDisabledColors$S', function (pp) {
-this.inactiveBackground = (I$[8]||$incl$(8)).getColor$O(pp + "inactiveBackground");
-this.inactiveForeground = (I$[8]||$incl$(8)).getColor$O(pp + "inactiveForeground");
+this.inactiveBackground=(I$[8]||$incl$(8)).getColor$O(pp + "inactiveBackground");
+this.inactiveForeground=(I$[8]||$incl$(8)).getColor$O(pp + "inactiveForeground");
 });
 
 Clazz_newMeth(C$, 'setBounds$I$I$I$I$I', function (x, y, width, height, op) {
 var isBounded = (width > 0 && height > 0 );
 if (isBounded && !this.boundsSet ) {
 if (this.c.visible) this.setVisible$Z(true);
-this.boundsSet = true;
+this.boundsSet=true;
 }if (C$.debugging) System.out.println$S("CUI << SetBounds >> [" + x + " " + y + " " + width + " " + height + "] op=" + op + " for " + this.id );
 switch (op) {
 case 3:
 case 1:
-x = this.c.getX();
-y = this.c.getY();
+x=this.c.getX();
+y=this.c.getY();
 if (this.x != x || this.y != y ) {
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 }p$.setOuterLocationFromComponent.apply(this, []);
 if (op == 1) break;
 case 4:
 case 2:
 if (this.scrollPaneUI != null ) {
-width = Math.min(width, this.scrollPaneUI.c.getWidth());
-height = Math.min(height, this.scrollPaneUI.c.getHeight());
+width=Math.min(width, this.scrollPaneUI.c.getWidth());
+height=Math.min(height, this.scrollPaneUI.c.getHeight());
 }if (width > 0 && height > 0 ) p$.setSizeFromComponent$I$I$I.apply(this, [width, height, op]);
 break;
 }
@@ -36935,8 +36945,8 @@ break;
 
 Clazz_newMeth(C$, 'setSizeFromComponent$I$I$I', function (width, height, op) {
 var size = this.getCSSAdjustment$Z(true);
-this.width = width;
-this.height = height;
+this.width=width;
+this.height=height;
 if (C$.debugging) System.out.println$S(this.id + " setBounds " + this.x + " " + this.y + " " + this.width + " " + this.height + " op=" + op + " createDOM?" + (this.domNode == null ) );
 if (this.domNode == null ) this.updateDOMNode();
 this.setJSDimensions$I$I(width + size.width, height + size.height);
@@ -36944,8 +36954,8 @@ this.setInnerComponentBounds$I$I(width, height);
 });
 
 Clazz_newMeth(C$, 'setJSDimensions$I$I', function (width, height) {
-if (this.jsActualWidth > 0) width = this.jsActualWidth;
-if (this.jsActualHeight > 0) height = this.jsActualHeight;
+if (this.jsActualWidth > 0) width=this.jsActualWidth;
+if (this.jsActualHeight > 0) height=this.jsActualHeight;
 (I$[3]||$incl$(3)).setSize(this.domNode, width, height);
 if (this.outerNode != null ) (I$[3]||$incl$(3)).setSize(this.outerNode, width, height);
 });
@@ -36971,34 +36981,34 @@ var prop = null;
 switch (type) {
 case 4:
 case 11:
-prop = "right";
+prop="right";
 break;
 case 2:
 case 10:
-prop = "left";
+prop="left";
 break;
 case 0:
-prop = "center";
+prop="center";
 break;
 default:
 return;
 }
-(I$[3]||$incl$(3)).setStyles(this.domNode, ["width", this.c.getWidth() + "px", "text-align", this.textAlign = prop]);
+(I$[3]||$incl$(3)).setStyles(this.domNode, ["width", this.c.getWidth() + "px", "text-align", this.textAlign=prop]);
 if (this.jc.uiClassID == "LabelUI" && this.centeringNode != null  ) {
 var left = 0;
 var w = this.actualWidth;
-if (w == 0) w = this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(this.centeringNode, false, false).width;
+if (w == 0) w=this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(this.centeringNode, false, false).width;
 switch (type) {
 case 2:
 case 10:
 break;
 case 4:
 case 11:
-prop = "right";
-left = this.c.getWidth() - w;
+prop="right";
+left=this.c.getWidth() - w;
 break;
 case 0:
-left = ((this.c.getWidth() - w)/2|0);
+left=((this.c.getWidth() - w)/2|0);
 break;
 default:
 return;
@@ -37014,18 +37024,18 @@ var h = this.actualHeight;
 if (h == 0) {
 if (isText) {
 if (this.c.getFont() == null ) return;
-h = this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(this.domNode, false, false).height;
-h = h-((this.c.getFont().getFontMetrics().getDescent()));
+h=this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(this.domNode, false, false).height;
+h-=(this.c.getFont().getFontMetrics().getDescent());
 } else {
-h = this.iconHeight;
+h=this.iconHeight;
 }}switch (type) {
 case 1:
 break;
 case 3:
-top = this.c.getHeight() - h;
+top=this.c.getHeight() - h;
 break;
 case 0:
-top = ((this.c.getHeight() - h)/2|0);
+top=((this.c.getHeight() - h)/2|0);
 break;
 default:
 return;
@@ -37062,7 +37072,7 @@ return this.c.getFontMetrics$java_awt_Font(font);
 });
 
 Clazz_newMeth(C$, 'dispose', function () {
-this.isDisposed = true;
+this.isDisposed=true;
 (I$[3]||$incl$(3)).remove(this.domNode);
 if (this.domNode !== this.outerNode ) (I$[3]||$incl$(3)).remove(this.outerNode);
 });
@@ -37072,7 +37082,7 @@ if (this.c.getParent() != null ) {
 var ui = this.c.getParent().getUI();
 if (ui.containerNode != null ) ui.containerNode.appendChild(node);
 }if (this.outerNode != null  && this.domNode !== this.outerNode  ) this.outerNode.appendChild(this.domNode);
-this.isDisposed = false;
+this.isDisposed=false;
 });
 
 Clazz_newMeth(C$, 'setForeground$java_awt_Color', function (color) {
@@ -37110,22 +37120,22 @@ Clazz_newMeth(C$, 'updateCursorImmediately', function () {
 var curs;
 switch (this.c.getCursor().getType()) {
 case 1:
-curs = "crosshair";
+curs="crosshair";
 break;
 case 3:
-curs = "wait";
+curs="wait";
 break;
 case 8:
-curs = "ns-resize";
+curs="ns-resize";
 break;
 case 12:
-curs = "grab";
+curs="grab";
 break;
 case 13:
-curs = "move";
+curs="move";
 break;
 default:
-curs = "default";
+curs="default";
 break;
 }
 (I$[3]||$incl$(3)).setStyles(this.getOuterNode(), ["cursor", curs]);
@@ -37141,7 +37151,7 @@ path = this.applet._j2sPath;
 }
 path += "/img/cursor_wait.gif";
 if (C$.debugging) System.out.println$S("loading wait cursor " + path);
-this.waitImage = this.newDOMObject$S$S$SA("image", this.id + "_waitImage", ["src", path]);
+this.waitImage=this.newDOMObject$S$S$SA("image", this.id + "_waitImage", ["src", path]);
 }if (doShow) this.$$O(this.waitImage).show();
  else this.$$O(this.waitImage).hide();
 });
@@ -37227,10 +37237,10 @@ return this.focusNode != null  && this.focusNode === (I$[3]||$incl$(3)).getAttr(
 Clazz_newMeth(C$, 'notifyFocus$Z', function (focusGained) {
 var e = Clazz_new_((I$[11]||$incl$(11)).c$$java_awt_Component$I,[this.c, focusGained ? 1004 : 1005]);
 if (focusGained) {
-C$.focusedUI = this;
+C$.focusedUI=this;
 (I$[10]||$incl$(10)).getEventQueue().postEvent$java_awt_AWTEvent(e);
 } else {
-C$.focusedUI = null;
+C$.focusedUI=null;
 {
 (I$[10]||$incl$(10)).getEventQueue().dispatchEventAndWait$java_awt_AWTEvent$O(e, this.c);
 }}});
@@ -37258,11 +37268,11 @@ Clazz_newMeth(C$, 'endValidate', function () {
 
 Clazz_newMeth(C$, 'beginLayout', function () {
 if (!this.boundsSet && !this.isContainer ) this.setVisible$Z(false);
-this.layingOut = true;
+this.layingOut=true;
 });
 
 Clazz_newMeth(C$, 'endLayout', function () {
-this.layingOut = false;
+this.layingOut=false;
 });
 
 Clazz_newMeth(C$, 'getId', function () {
@@ -37284,11 +37294,11 @@ Clazz_newMeth(C$, 'toRGBHexString$java_awt_Color', function (c) {
 var rgb = c.getRGB();
 if (rgb == 0) return "000000";
 var r = "00" + Integer.toHexString((rgb >> 16) & 255);
-r = r.substring(r.length$() - 2);
+r=r.substring(r.length$() - 2);
 var g = "00" + Integer.toHexString((rgb >> 8) & 255);
-g = g.substring(g.length$() - 2);
+g=g.substring(g.length$() - 2);
 var b = "00" + Integer.toHexString(rgb & 255);
-b = b.substring(b.length$() - 2);
+b=b.substring(b.length$() - 2);
 return r + g + b ;
 }, 1);
 
@@ -37316,26 +37326,26 @@ Clazz_newMeth(C$, 'setPadding$java_awt_Insets', function (padding) {
 });
 
 Clazz_newMeth(C$, 'addDropTarget$java_awt_dnd_DropTarget', function (t) {
-this.dropTarget = t;
+this.dropTarget=t;
 p$.setDropTarget.apply(this, []);
 });
 
 Clazz_newMeth(C$, 'removeTarget', function () {
 if (this.dropTarget == null ) return;
-this.dropTarget = null;
+this.dropTarget=null;
 p$.setDropTarget.apply(this, []);
 });
 
 Clazz_newMeth(C$, 'setDropTarget', function () {
 var node;
-if (this.dropTarget !== this  && ((node = this.outerNode) != null  || (node = this.domNode) != null  ) ) (I$[3]||$incl$(3)).setAttr(node, "data-dropComponent", this.jc);
+if (this.dropTarget !== this  && ((node=this.outerNode) != null  || (node=this.domNode) != null  ) ) (I$[3]||$incl$(3)).setAttr(node, "data-dropComponent", this.jc);
 });
 })();
-//Created 2018-05-15 01:03:21
+//Created 2018-05-29 23:16:35
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newInterface(P$, "JSEventHandler");
 })();
-//Created 2018-05-15 01:03:22
+//Created 2018-05-24 08:47:53
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','javax.swing.LookAndFeel']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSLabelUI", null, 'swingjs.plaf.JSLightweightUI');
 
@@ -37357,10 +37367,10 @@ this.setDoc();
 
 Clazz_newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.domNode = this.newDOMObject$S$S$SA("label", this.id, []);
-this.textNode = this.newDOMObject$S$S$SA("span", this.id + "_text", []);
-this.iconNode = this.newDOMObject$S$S$SA("span", this.id + "_icon", []);
-this.centeringNode = this.newDOMObject$S$S$SA("span", this.id + "_cntr", []);
+this.domNode=this.newDOMObject$S$S$SA("label", this.id, []);
+this.textNode=this.newDOMObject$S$S$SA("span", this.id + "_text", []);
+this.iconNode=this.newDOMObject$S$S$SA("span", this.id + "_icon", []);
+this.centeringNode=this.newDOMObject$S$S$SA("span", this.id + "_cntr", []);
 this.centeringNode.appendChild(this.iconNode);
 this.centeringNode.appendChild(this.textNode);
 this.domNode.appendChild(this.centeringNode);
@@ -37379,14 +37389,14 @@ return this.outerNode;
 });
 
 Clazz_newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.label = jc;
+this.label=jc;
 (I$[2]||$incl$(2)).installColorsAndFont$javax_swing_JComponent$S$S$S(jc, "Label.background", "Label.foreground", "Label.font");
 });
 
 Clazz_newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (jc) {
 });
 })();
-//Created 2018-05-15 01:03:22
+//Created 2018-05-24 08:47:54
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "JSLayeredPaneUI", null, 'swingjs.plaf.JSLightweightUI');
 
@@ -37398,12 +37408,12 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
-this.isContainer = true;
+this.isContainer=true;
 }, 1);
 
 Clazz_newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.domNode = this.newDOMObject$S$S$SA("div", this.id, []);
+this.domNode=this.newDOMObject$S$S$SA("div", this.id, []);
 }return this.domNode;
 });
 
@@ -37413,7 +37423,7 @@ Clazz_newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
 Clazz_newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (jc) {
 });
 })();
-//Created 2018-05-15 01:03:22
+//Created 2018-05-24 08:47:54
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "JSLightweightUI", null, 'swingjs.plaf.JSComponentUI', 'java.awt.peer.LightweightPeer');
 
@@ -37425,7 +37435,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:22
+//Created 2018-05-24 08:47:55
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','java.awt.Dimension','javax.swing.LookAndFeel']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSPanelUI", null, 'swingjs.plaf.JSLightweightUI');
 
@@ -37443,15 +37453,15 @@ this.$frameZ = 10000;
 
 Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
-this.isContainer = true;
+this.isContainer=true;
 this.setDoc();
 }, 1);
 
 Clazz_newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
 var root = this.jc.getRootPane();
-this.isContentPane = (root != null  && this.jc === root.getContentPane()  );
-this.domNode = this.newDOMObject$S$S$SA("div", this.id, []);
+this.isContentPane=(root != null  && this.jc === root.getContentPane()  );
+this.domNode=this.newDOMObject$S$S$SA("div", this.id, []);
 if (root != null  && root.getGlassPane() === this.c  ) (I$[1]||$incl$(1)).setVisible(this.domNode, false);
 }return this.domNode;
 });
@@ -37471,7 +37481,7 @@ Clazz_newMeth(C$, 'getPreferredSize', function () {
 return null;
 });
 })();
-//Created 2018-05-15 01:03:24
+//Created 2018-05-24 08:47:56
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "JSRootPaneUI", null, 'swingjs.plaf.JSLightweightUI');
 
@@ -37487,18 +37497,18 @@ Clazz_newMeth(C$, '$init$', function () {
 }, 1);
 
 Clazz_newMeth(C$, 'setResizer$swingjs_plaf_Resizer', function (resizer) {
-this.resizer = resizer;
+this.resizer=resizer;
 });
 
 Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
-this.isRootPane = this.isContainer = true;
+this.isRootPane=this.isContainer=true;
 this.setDoc();
 }, 1);
 
 Clazz_newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.domNode = this.newDOMObject$S$S$SA("div", this.id, []);
+this.domNode=this.newDOMObject$S$S$SA("div", this.id, []);
 }return this.domNode;
 });
 
@@ -37517,7 +37527,7 @@ var resizer = this.jc.getFrameViewer().getResizer();
 if (resizer != null ) resizer.setPosition$I$I(0, 0);
 });
 })();
-//Created 2018-05-15 01:03:25
+//Created 2018-05-24 08:47:57
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.plaf.JSComponentUI','java.awt.Dimension','swingjs.api.js.DOMNode']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSScrollBarUI", null, 'swingjs.plaf.JSSliderUI');
 
@@ -37536,7 +37546,7 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.isScrollBar = true;
+this.isScrollBar=true;
 }, 1);
 
 Clazz_newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
@@ -37555,13 +37565,13 @@ return Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[wh, wh]);
 });
 
 Clazz_newMeth(C$, 'setVisible$Z', function (b) {
-this.isInvisible = (this.myScrollPaneUI != null  && this.myScrollPaneUI.scrollBarUIDisabled );
-b = (b&!this.isInvisible);
+this.isInvisible=(this.myScrollPaneUI != null  && this.myScrollPaneUI.scrollBarUIDisabled );
+b&=!this.isInvisible;
 (I$[3]||$incl$(3)).setVisible(this.getOuterNode(), b);
 (I$[3]||$incl$(3)).setVisible(this.jqSlider, b);
 });
 })();
-//Created 2018-05-15 01:03:25
+//Created 2018-05-24 08:47:57
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.jquery.JQueryUI','swingjs.JSUtil','swingjs.api.js.DOMNode','java.awt.Dimension','sun.swing.DefaultLookup']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSSliderUI", null, 'swingjs.plaf.JSLightweightUI', ['java.beans.PropertyChangeListener', 'javax.swing.event.ChangeListener']);
 var p$=C$.prototype;
@@ -37611,42 +37621,42 @@ this.paintTrack = true;
 
 Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
-this.needPreferred = true;
+this.needPreferred=true;
 this.setDoc();
 }, 1);
 
 Clazz_newMeth(C$, 'updateDOMNode', function () {
 var js = this.jc;
-this.min = js.getMinimum();
-this.max = js.getMaximum();
-this.val = js.getValue();
+this.min=js.getMinimum();
+this.max=js.getMaximum();
+this.val=js.getValue();
 if (!this.isScrollBar) {
-this.minorSpacing = js.getMinorTickSpacing();
-this.majorSpacing = js.getMajorTickSpacing();
-this.paintTicks = js.getPaintTicks();
-this.paintLabels = js.getPaintLabels();
-this.paintTrack = js.getPaintTrack();
-this.snapToTicks = js.getSnapToTicks();
-}this.orientation = (js.getOrientation() == 1 ? "vertical" : "horizontal");
-this.model = js.getModel();
+this.minorSpacing=js.getMinorTickSpacing();
+this.majorSpacing=js.getMajorTickSpacing();
+this.paintTicks=js.getPaintTicks();
+this.paintLabels=js.getPaintLabels();
+this.paintTrack=js.getPaintTrack();
+this.snapToTicks=js.getSnapToTicks();
+}this.orientation=(js.getOrientation() == 1 ? "vertical" : "horizontal");
+this.model=js.getModel();
 var isHoriz = (this.jSlider.getOrientation() == 0);
 var isVerticalScrollBar = (this.isScrollBar && !isHoriz );
 var isInverted = isVerticalScrollBar || !this.isScrollBar && this.jSlider.getInverted()  ;
 var isChanged = false;
 if (isHoriz != this.isHoriz  || isVerticalScrollBar != this.isVerticalScrollBar   || isInverted != this.isInverted  ) {
-this.isHoriz = isHoriz;
-this.isVerticalScrollBar = isVerticalScrollBar;
-this.isInverted = isInverted;
-isChanged = true;
+this.isHoriz=isHoriz;
+this.isVerticalScrollBar=isVerticalScrollBar;
+this.isInverted=isInverted;
+isChanged=true;
 }var isNew = (this.domNode == null );
 if (isNew) {
-this.domNode = this.wrap$S$S$swingjs_api_js_DOMNodeA("div", this.id + "_wrap", [this.jqSlider = (I$[3]||$incl$(3)).createElement("div", this.id)]);
+this.domNode=this.wrap$S$S$swingjs_api_js_DOMNodeA("div", this.id + "_wrap", [this.jqSlider=(I$[3]||$incl$(3)).createElement("div", this.id)]);
 this.$$O(this.domNode).addClass("swingjs");
 p$.setJQuerySliderAndEvents.apply(this, []);
 this.setTainted();
 } else if (isChanged) {
 (I$[3]||$incl$(3)).remove(this.jqSlider);
-this.domNode.appendChild(this.jqSlider = (I$[3]||$incl$(3)).createElement("div", this.id));
+this.domNode.appendChild(this.jqSlider=(I$[3]||$incl$(3)).createElement("div", this.id));
 p$.setJQuerySliderAndEvents.apply(this, []);
 this.setTainted();
 this.setInnerComponentBounds$I$I(this.jc.getWidth(), this.jc.getHeight());
@@ -37657,8 +37667,8 @@ return this.domNode;
 });
 
 Clazz_newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.jSlider = jc;
-if (this.isScrollBar) this.jScrollBar = jc;
+this.jSlider=jc;
+if (this.isScrollBar) this.jScrollBar=jc;
 });
 
 Clazz_newMeth(C$, 'setJQuerySliderAndEvents', function () {
@@ -37682,17 +37692,17 @@ var value = 0;
 {
 value = ui.value;
 }
-this.jSlider.setValue$I(this.val = (value));
+this.jSlider.setValue$I(this.val=(value));
 });
 
 Clazz_newMeth(C$, 'setEnabled$Z', function (b) {
 C$.superclazz.prototype.setEnabled$Z.apply(this, [b]);
-p$.setSliderAttr$S$F.apply(this, ["disabled", (this.disabled = (b ? 0 : 1))]);
+p$.setSliderAttr$S$F.apply(this, ["disabled", (this.disabled=(b ? 0 : 1))]);
 });
 
 Clazz_newMeth(C$, 'setup$Z', function (isNew) {
-this.sliderTrack = (I$[3]||$incl$(3)).firstChild(this.domNode);
-this.sliderHandle = (I$[3]||$incl$(3)).firstChild(this.sliderTrack);
+this.sliderTrack=(I$[3]||$incl$(3)).firstChild(this.domNode);
+this.sliderHandle=(I$[3]||$incl$(3)).firstChild(this.sliderTrack);
 if (isNew) {
 this.ignoreAllMouseEvents$swingjs_api_js_DOMNode(this.sliderHandle);
 this.ignoreAllMouseEvents$swingjs_api_js_DOMNode(this.sliderTrack);
@@ -37712,9 +37722,9 @@ Clazz_newMeth(C$, 'setSlider', function () {
 p$.setSliderAttr$S$F.apply(this, ["value", this.val]);
 p$.setSliderAttr$S$F.apply(this, ["min", this.min]);
 p$.setSliderAttr$S$F.apply(this, ["max", this.max]);
-this.myHeight = 10;
+this.myHeight=10;
 var barPlace = 40;
-if (this.isHoriz && this.jSlider.getBorder() != null  ) barPlace = barPlace+(10);
+if (this.isHoriz && this.jSlider.getBorder() != null  ) barPlace+=10;
 var tickClass = "ui-j2sslider-tick-mark" + (this.isHoriz ? "-vert" : "-horiz");
 this.$$O(this.domNode).find("." + tickClass).remove();
 this.$$O(this.domNode).find(".jslider-labels").remove();
@@ -37722,16 +37732,16 @@ this.setHTMLSize$swingjs_api_js_DOMNode$Z(this.jqSlider, false);
 if (this.majorSpacing == 0 && this.minorSpacing == 0  || !this.paintTicks && !this.paintLabels  ) return;
 var margin = 10;
 var length = (this.isHoriz ? this.jSlider.getWidth() : this.jSlider.getHeight());
-if (length <= 0) length = (this.isHoriz ? this.getPreferredHorizontalSize().width : this.getPreferredVerticalSize().height);
-if (this.isHoriz) this.actualWidth = length;
- else this.actualHeight = length;
-length = length-(2 * margin);
+if (length <= 0) length=(this.isHoriz ? this.getPreferredHorizontalSize().width : this.getPreferredVerticalSize().height);
+if (this.isHoriz) this.actualWidth=length;
+ else this.actualHeight=length;
+length-=2 * margin;
 if (this.paintTicks) {
-if (this.minorSpacing == 0) this.minorSpacing = this.majorSpacing;
+if (this.minorSpacing == 0) this.minorSpacing=this.majorSpacing;
 var check = (this.majorSpacing/this.minorSpacing|0);
 var fracSpacing = this.minorSpacing * 1.0 / (this.max - this.min);
 var numTicks = (((this.max - this.min)/this.minorSpacing|0)) + 1;
-this.myHeight = this.myHeight+(10);
+this.myHeight+=10;
 for (var i = 0; i < numTicks; i++) {
 var node = (I$[3]||$incl$(3)).createElement("div", this.id + "_t" + i );
 this.$$O(node).addClass("swingjs");
@@ -37744,8 +37754,8 @@ this.$$O(node).css(this.isHoriz ? "left" : "top", spt).appendTo(this.domNode);
 }
 this.setHTMLSize$swingjs_api_js_DOMNode$Z(this.domNode, false);
 }if (this.paintLabels) {
-this.myHeight = this.myHeight+(20);
-this.labelTable = this.jSlider.getLabelTable();
+this.myHeight+=20;
+this.labelTable=this.jSlider.getLabelTable();
 var keys = this.labelTable.keys();
 while (keys.hasMoreElements()){
 var key = keys.nextElement();
@@ -37753,16 +37763,16 @@ var n = Integer.parseInt(key.toString());
 var label = this.labelTable.get$O(key);
 var labelNode = (label.getUI()).getOuterNode();
 var frac = (n - this.min) * 1.0 / (this.max - this.min);
-if (this.isHoriz == this.isInverted ) frac = 1 - frac;
+if (this.isHoriz == this.isInverted ) frac=1 - frac;
 var px = (frac * length + margin);
 var left;
 var top;
 if (this.isHoriz) {
-top = 20;
-left = ((px - (label.getWidth()/2|0))|0);
+top=20;
+left=((px - (label.getWidth()/2|0))|0);
 } else {
-top = ((px - (label.getHeight()/2|0))|0);
-left = 28;
+top=((px - (label.getHeight()/2|0))|0);
+left=28;
 }(I$[3]||$incl$(3)).setPositionAbsolute(labelNode, top, left);
 this.domNode.appendChild(labelNode);
 }
@@ -37784,8 +37794,8 @@ this.setHTMLSize$swingjs_api_js_DOMNode$Z(this.domNode, false);
 
 Clazz_newMeth(C$, 'setHTMLSize$swingjs_api_js_DOMNode$Z', function (obj, addCSS) {
 var d = 20;
-if (this.paintLabels || this.paintTicks ) d = d+(10);
-if (this.jSlider.getBorder() != null ) d = d+(10);
+if (this.paintLabels || this.paintTicks ) d+=10;
+if (this.jSlider.getBorder() != null ) d+=10;
 return Clazz_new_((I$[4]||$incl$(4)).c$$I$I,[(this.isHoriz ? this.actualWidth : d), (this.isHoriz ? d : this.actualHeight)]);
 });
 
@@ -37797,9 +37807,9 @@ p$.setup$Z.apply(this, [false]);
 
 Clazz_newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
 var v;
-if ((v = this.jSlider.getMinimum()) != this.min) p$.setSliderAttr$S$F.apply(this, ["min", this.min = v]);
-if ((v = this.jSlider.getMaximum()) != this.max) p$.setSliderAttr$S$F.apply(this, ["max", this.max = v]);
-if ((v = this.jSlider.getValue()) != this.val) p$.setSliderAttr$S$F.apply(this, ["value", this.val = v]);
+if ((v=this.jSlider.getMinimum()) != this.min) p$.setSliderAttr$S$F.apply(this, ["min", this.min=v]);
+if ((v=this.jSlider.getMaximum()) != this.max) p$.setSliderAttr$S$F.apply(this, ["max", this.max=v]);
+if ((v=this.jSlider.getValue()) != this.val) p$.setSliderAttr$S$F.apply(this, ["value", this.val=v]);
 p$.setup$Z.apply(this, [false]);
 });
 
@@ -37811,7 +37821,7 @@ if (this.orientation == "vertical") {
 }});
 
 Clazz_newMeth(C$, 'setScrollPaneCSS', function () {
-this.isScrollPaneScrollBar = true;
+this.isScrollPaneScrollBar=true;
 if (this.orientation == "vertical") {
 (I$[3]||$incl$(3)).setStyles(this.sliderTrack, ["left", "0px", "width", "12px"]);
 (I$[3]||$incl$(3)).setStyles(this.sliderHandle, ["left", "-1px"]);
@@ -37823,18 +37833,18 @@ if (this.orientation == "vertical") {
 Clazz_newMeth(C$, 'getPreferredHorizontalSize', function () {
 var horizDim = (I$[5]||$incl$(5)).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.jSlider, this, "Slider.horizontalSize");
 if (horizDim == null ) {
-horizDim = Clazz_new_((I$[4]||$incl$(4)).c$$I$I,[200, 21]);
+horizDim=Clazz_new_((I$[4]||$incl$(4)).c$$I$I,[200, 21]);
 }return horizDim;
 });
 
 Clazz_newMeth(C$, 'getPreferredVerticalSize', function () {
 var vertDim = (I$[5]||$incl$(5)).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.jSlider, this, "Slider.verticalSize");
 if (vertDim == null ) {
-vertDim = Clazz_new_((I$[4]||$incl$(4)).c$$I$I,[21, 200]);
+vertDim=Clazz_new_((I$[4]||$incl$(4)).c$$I$I,[21, 200]);
 }return vertDim;
 });
 })();
-//Created 2018-05-15 01:03:25
+//Created 2018-05-24 08:47:58
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['javax.swing.UIManager','javax.swing.SwingUtilities']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "LazyActionMap", null, 'javax.swing.plaf.ActionMapUIResource');
 var p$=C$.prototype;
@@ -37853,7 +37863,7 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'installLazyActionMap$javax_swing_JComponent$Class$S', function (c, loaderClass, defaultsKey) {
 var map = (I$[1]||$incl$(1)).get$O(defaultsKey);
 if (map == null ) {
-map = Clazz_new_(C$.c$$Class,[loaderClass]);
+map=Clazz_new_(C$.c$$Class,[loaderClass]);
 (I$[1]||$incl$(1)).getLookAndFeelDefaults().put$O$O(defaultsKey, map);
 }(I$[2]||$incl$(2)).replaceUIActionMap$javax_swing_JComponent$javax_swing_ActionMap(c, map);
 }, 1);
@@ -37861,14 +37871,14 @@ map = Clazz_new_(C$.c$$Class,[loaderClass]);
 Clazz_newMeth(C$, 'getActionMap$Class$S', function (loaderClass, defaultsKey) {
 var map = (I$[1]||$incl$(1)).get$O(defaultsKey);
 if (map == null ) {
-map = Clazz_new_(C$.c$$Class,[loaderClass]);
+map=Clazz_new_(C$.c$$Class,[loaderClass]);
 (I$[1]||$incl$(1)).getLookAndFeelDefaults().put$O$O(defaultsKey, map);
 }return map;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$Class', function (loader) {
 Clazz_super_(C$, this,1);
-this._loader = loader;
+this._loader=loader;
 }, 1);
 
 Clazz_newMeth(C$, 'put$javax_swing_Action', function (action) {
@@ -37918,7 +37928,7 @@ C$.superclazz.prototype.setParent$javax_swing_ActionMap.apply(this, [map]);
 Clazz_newMeth(C$, 'loadIfNecessary', function () {
 if (this._loader != null ) {
 var loader = this._loader;
-this._loader = null;
+this._loader=null;
 {
 loader.$clazz$.loadActionMap$swingjs_plaf_LazyActionMap(this);
 }
@@ -37926,7 +37936,7 @@ loader.$clazz$.loadActionMap$swingjs_plaf_LazyActionMap(this);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:28
+//Created 2018-05-24 08:48:02
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','swingjs.JSUtil','javajs.api.JSFunction','java.awt.Rectangle','java.awt.Color','java.awt.Dimension']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Resizer");
 var p$=C$.prototype;
@@ -37958,14 +37968,14 @@ C$.$init$.apply(this);
 }, 1);
 
 Clazz_newMeth(C$, 'set$swingjs_JSFrameViewer', function (viewer) {
-this.rpc = viewer.top;
-this.rootPane = this.rpc.getRootPane();
-this.titleHeight = viewer.getInsets().top;
+this.rpc=viewer.top;
+this.rootPane=this.rpc.getRootPane();
+this.titleHeight=viewer.getInsets().top;
 if (viewer.isApplet) {
-this.rootNode = viewer.getDiv$S("appletdiv");
+this.rootNode=viewer.getDiv$S("appletdiv");
 } else {
-this.jframe = this.rpc;
-this.rootNode = (this.jframe.getUI()).domNode;
+this.jframe=this.rpc;
+this.rootNode=(this.jframe.getUI()).domNode;
 }return (this.rootNode == null  ? null : this);
 });
 
@@ -37980,16 +37990,16 @@ p$.$$swingjs_api_js_DOMNode.apply(this, [this.resizer]).hide();
 });
 
 Clazz_newMeth(C$, 'setMin$I', function (min) {
-this.minSize = min;
+this.minSize=min;
 });
 
 Clazz_newMeth(C$, 'createAndShowResizer', function () {
 var id = this.rootPane.htmlName + "_resizer";
-this.resizer = (I$[1]||$incl$(1)).createElement("div", id);
+this.resizer=(I$[1]||$incl$(1)).createElement("div", id);
 (I$[1]||$incl$(1)).setSize(this.resizer, 10, 10);
 (I$[1]||$incl$(1)).setStyles(this.resizer, ["background-color", "red", "opacity", "0", "cursor", "nwse-resize"]);
 p$.$$swingjs_api_js_DOMNode.apply(this, [this.resizer]).addClass("swingjs-resizer");
-this.rubberBand = (I$[1]||$incl$(1)).createElement("div", id + "_rb");
+this.rubberBand=(I$[1]||$incl$(1)).createElement("div", id + "_rb");
 (I$[1]||$incl$(1)).setStyles(this.rubberBand, ["border", "1px dashed #FF00FF", "z-index", "100000", "position", "absolute", "left", "0px", "top", "0px", "display", "none"]);
 this.rootNode.appendChild(this.resizer);
 this.rootNode.appendChild(this.rubberBand);
@@ -38036,9 +38046,9 @@ Clazz_newMeth(C$, 'fHandleDOMResize$O$I$I', function (event, dw, dh) {
 var r;
 if (!this.enabled) return;
 if (event == null ) {
-r = p$.getFrameOffset$I$I.apply(this, [dw, dh]);
+r=p$.getFrameOffset$I$I.apply(this, [dw, dh]);
 } else {
-(I$[1]||$incl$(1)).getRectangle(this.rootNode, r = Clazz_new_((I$[4]||$incl$(4))));
+(I$[1]||$incl$(1)).getRectangle(this.rootNode, r=Clazz_new_((I$[4]||$incl$(4))));
 }if (this.jframe == null ) {
 this.rootPane.getGraphics().setColor$java_awt_Color((I$[5]||$incl$(5)).WHITE);
 this.rootPane.getGraphics().fillRect$I$I$I$I(0, 0, r.width, r.height);
@@ -38057,16 +38067,16 @@ return (I$[2]||$incl$(2)).getJQuery().$(node);
 
 Clazz_newMeth(C$, 'getFrameOffset$I$I', function (dw, dh) {
 var r = (this.rpc).getBounds();
-if (r.width + dw > this.minSize) r.width = r.width+(dw);
-if (r.height + dh > this.minSize) r.height = r.height+(dh);
+if (r.width + dw > this.minSize) r.width+=dw;
+if (r.height + dh > this.minSize) r.height+=dh;
 return r;
 });
 
 Clazz_newMeth(C$, 'setEnabled$Z', function (b) {
-this.enabled = b;
+this.enabled=b;
 });
 })();
-//Created 2018-05-15 01:03:29
+//Created 2018-05-24 08:48:03
 (function(){var P$=Clazz_newPackage("java.awt.color"),I$=[];
 var C$=Clazz_newClass(P$, "ColorSpace");
 C$.sRGBspace = null;
@@ -38084,8 +38094,8 @@ this.compName = null;
 
 Clazz_newMeth(C$, 'c$$I$I', function (type, numcomponents) {
 C$.$init$.apply(this);
-this.type = type;
-this.numComponents = numcomponents;
+this.type=type;
+this.numComponents=numcomponents;
 }, 1);
 
 Clazz_newMeth(C$, 'getInstance$I', function (colorspace) {
@@ -38094,8 +38104,8 @@ switch (colorspace) {
 default:
 case 1000:
 if (C$.sRGBspace == null ) {
-C$.sRGBspace = Clazz_new_(C$.c$$I$I,[5, 3]);
-}theColorSpace = C$.sRGBspace;
+C$.sRGBspace=Clazz_new_(C$.c$$I$I,[5, 3]);
+}theColorSpace=C$.sRGBspace;
 break;
 }
 return theColorSpace;
@@ -38127,44 +38137,44 @@ throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["Compone
 }if (this.compName == null ) {
 switch (this.type) {
 case 0:
-this.compName = Clazz_array(java.lang.String, -1, ["X", "Y", "Z"]);
+this.compName=Clazz_array(java.lang.String, -1, ["X", "Y", "Z"]);
 break;
 case 1:
-this.compName = Clazz_array(java.lang.String, -1, ["L", "a", "b"]);
+this.compName=Clazz_array(java.lang.String, -1, ["L", "a", "b"]);
 break;
 case 2:
-this.compName = Clazz_array(java.lang.String, -1, ["L", "u", "v"]);
+this.compName=Clazz_array(java.lang.String, -1, ["L", "u", "v"]);
 break;
 case 3:
-this.compName = Clazz_array(java.lang.String, -1, ["Y", "Cb", "Cr"]);
+this.compName=Clazz_array(java.lang.String, -1, ["Y", "Cb", "Cr"]);
 break;
 case 4:
-this.compName = Clazz_array(java.lang.String, -1, ["Y", "x", "y"]);
+this.compName=Clazz_array(java.lang.String, -1, ["Y", "x", "y"]);
 break;
 case 5:
-this.compName = Clazz_array(java.lang.String, -1, ["Red", "Green", "Blue"]);
+this.compName=Clazz_array(java.lang.String, -1, ["Red", "Green", "Blue"]);
 break;
 case 6:
-this.compName = Clazz_array(java.lang.String, -1, ["Gray"]);
+this.compName=Clazz_array(java.lang.String, -1, ["Gray"]);
 break;
 case 7:
-this.compName = Clazz_array(java.lang.String, -1, ["Hue", "Saturation", "Value"]);
+this.compName=Clazz_array(java.lang.String, -1, ["Hue", "Saturation", "Value"]);
 break;
 case 8:
-this.compName = Clazz_array(java.lang.String, -1, ["Hue", "Lightness", "Saturation"]);
+this.compName=Clazz_array(java.lang.String, -1, ["Hue", "Lightness", "Saturation"]);
 break;
 case 9:
-this.compName = Clazz_array(java.lang.String, -1, ["Cyan", "Magenta", "Yellow", "Black"]);
+this.compName=Clazz_array(java.lang.String, -1, ["Cyan", "Magenta", "Yellow", "Black"]);
 break;
 case 11:
-this.compName = Clazz_array(java.lang.String, -1, ["Cyan", "Magenta", "Yellow"]);
+this.compName=Clazz_array(java.lang.String, -1, ["Cyan", "Magenta", "Yellow"]);
 break;
 default:
 var tmp = Clazz_array(java.lang.String, [this.numComponents]);
 for (var i = 0; i < tmp.length; i++) {
-tmp[i] = "Unnamed color component(" + i + ")" ;
+tmp[i]="Unnamed color component(" + i + ")" ;
 }
-this.compName = tmp;
+this.compName=tmp;
 }
 }return this.compName[idx];
 });
@@ -38183,7 +38193,7 @@ throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["Compone
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:54
+//Created 2018-05-24 08:45:14
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newClass(P$, "Cursor");
 C$.predefined = null;
@@ -38211,9 +38221,9 @@ if (type < 0 || type > 13 ) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["illegal cursor type"]);
 }var c = C$.predefinedPrivate[type];
 if (c == null ) {
-C$.predefinedPrivate[type] = c = Clazz_new_(C$.c$$I,[type]);
+C$.predefinedPrivate[type]=c=Clazz_new_(C$.c$$I,[type]);
 }if (C$.predefined[type] == null ) {
-C$.predefined[type] = c;
+C$.predefined[type]=c;
 }return c;
 }, 1);
 
@@ -38229,14 +38239,14 @@ Clazz_newMeth(C$, 'c$$I', function (type) {
 C$.$init$.apply(this);
 if (type < 0 || type > 13 ) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["illegal cursor type"]);
-}this.type = type;
-this.name = "TODO_CURSOR";
+}this.type=type;
+this.name="TODO_CURSOR";
 }, 1);
 
 Clazz_newMeth(C$, 'c$$S', function (name) {
 C$.$init$.apply(this);
-this.type = -1;
-this.name = name;
+this.type=-1;
+this.name=name;
 }, 1);
 
 Clazz_newMeth(C$, 'getType', function () {
@@ -38253,7 +38263,7 @@ return this.getClass().getName() + "[" + this.getName() + "]" ;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:49
+//Created 2018-05-24 08:45:07
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.util.ArrayList',['java.awt.Dialog','.ModalityType'],'java.awt.Toolkit','java.awt.Window','java.awt.event.ComponentEvent',['java.awt.Dialog','.ModalExclusionType']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Dialog", null, 'java.awt.Window');
 C$.modalDialogs = null;
@@ -38343,9 +38353,9 @@ C$.superclazz.c$$java_awt_Window.apply(this, [owner]);
 C$.$init$.apply(this);
 if ((owner != null ) && !(Clazz_instanceOf(owner, "java.awt.Frame")) && !(Clazz_instanceOf(owner, "java.awt.Dialog"))  ) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["Wrong parent window"]);
-}this.title = title;
+}this.title=title;
 this.setModalityType$java_awt_Dialog_ModalityType(modalityType);
-this.initialized = true;
+this.initialized=true;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$java_awt_Window$S$java_awt_Dialog_ModalityType$java_awt_GraphicsConfiguration', function (owner, title, modalityType, gc) {
@@ -38353,9 +38363,9 @@ C$.superclazz.c$$java_awt_Window$java_awt_GraphicsConfiguration.apply(this, [own
 C$.$init$.apply(this);
 if ((owner != null ) && !(Clazz_instanceOf(owner, "java.awt.Frame")) && !(Clazz_instanceOf(owner, "java.awt.Dialog"))  ) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["wrong owner window"]);
-}this.title = title;
+}this.title=title;
 this.setModalityType$java_awt_Dialog_ModalityType(modalityType);
-this.initialized = true;
+this.initialized=true;
 }, 1);
 
 Clazz_newMeth(C$, 'constructComponentName', function () {
@@ -38371,7 +38381,7 @@ this.parent.addNotify();
 }});
 
 Clazz_newMeth(C$, 'getOrCreatePeer', function () {
-return (this.ui == null  ? null : this.peer == null  ? (this.peer = this.getToolkit().createDialog$java_awt_Dialog(this)) : this.peer);
+return (this.ui == null  ? null : this.peer == null  ? (this.peer=this.getToolkit().createDialog$java_awt_Dialog(this)) : this.peer);
 });
 
 Clazz_newMeth(C$, 'isModal', function () {
@@ -38383,7 +38393,7 @@ return this.modalityType !== (I$[2]||$incl$(2)).MODELESS ;
 });
 
 Clazz_newMeth(C$, 'setModal$Z', function (modal) {
-this.modal = modal;
+this.modal=modal;
 this.setModalityType$java_awt_Dialog_ModalityType(modal ? C$.DEFAULT_MODALITY_TYPE : (I$[2]||$incl$(2)).MODELESS);
 });
 
@@ -38393,14 +38403,14 @@ return this.modalityType;
 
 Clazz_newMeth(C$, 'setModalityType$java_awt_Dialog_ModalityType', function (type) {
 if (type == null ) {
-type = (I$[2]||$incl$(2)).MODELESS;
+type=(I$[2]||$incl$(2)).MODELESS;
 }if (!(I$[3]||$incl$(3)).getDefaultToolkit().isModalityTypeSupported$java_awt_Dialog_ModalityType(type)) {
-type = (I$[2]||$incl$(2)).MODELESS;
+type=(I$[2]||$incl$(2)).MODELESS;
 }if (this.modalityType === type ) {
 return;
 }p$.checkModalityPermission$java_awt_Dialog_ModalityType.apply(this, [type]);
-this.modalityType = type;
-this.modal = (this.modalityType !== (I$[2]||$incl$(2)).MODELESS );
+this.modalityType=type;
+this.modal=(this.modalityType !== (I$[2]||$incl$(2)).MODELESS );
 });
 
 Clazz_newMeth(C$, 'getTitle', function () {
@@ -38410,7 +38420,7 @@ return this.title;
 Clazz_newMeth(C$, 'setTitle$S', function (title) {
 var oldTitle = this.title;
 {
-this.title = title;
+this.title=title;
 var peer = this.peer;
 if (peer != null ) {
 peer.setTitle$S(title);
@@ -38423,9 +38433,9 @@ P$.Window.closeSplashScreen();
 this.validate();
 if (this.visible) {
 this.toFront();
-retval = false;
+retval=false;
 } else {
-retval = true;
+retval=true;
 C$.superclazz.prototype.show.apply(this, []);
 if (toFocus != null  && time != null   && this.isFocusable()  && this.isEnabled()  && !this.isModalBlocked() ) {
 }if (this.isModalBlocked()) {
@@ -38434,7 +38444,7 @@ this.modalBlocker.toFront();
 var child = this.ownedWindowList.elementAt$I(i);
 if ((child != null ) && child.showWithParent ) {
 child.show();
-child.showWithParent = false;
+child.showWithParent=false;
 }}
 (I$[4]||$incl$(4)).updateChildFocusableWindowState$java_awt_Window(this);
 this.createHierarchyEvents$I$java_awt_Component$java_awt_Container$J$Z(1400, this, this.parent, 4, (I$[3]||$incl$(3)).enabledOnToolkit$J(32768));
@@ -38443,7 +38453,7 @@ var e = Clazz_new_((I$[5]||$incl$(5)).c$$java_awt_Component$I,[this, 102]);
 (I$[3]||$incl$(3)).getEventQueue().postEvent$java_awt_AWTEvent(e);
 }}if (retval && (this.state & 1) == 0 ) {
 this.postWindowEvent$I(200);
-this.state = this.state|(1);
+this.state|=1;
 }return retval;
 });
 
@@ -38454,7 +38464,7 @@ C$.superclazz.prototype.setVisible$Z.apply(this, [b]);
 Clazz_newMeth(C$, 'show', function () {
 if (!this.initialized) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalStateException').c$$S,["The dialog component has not been initialized properly"]);
-}this.beforeFirstShow = false;
+}this.beforeFirstShow=false;
 if (!this.isModal()) {
 p$.conditionalShow$java_awt_Component$Long.apply(this, [null, null]);
 } else {
@@ -38473,11 +38483,11 @@ this.disposeImpl();
 } else if (this.windowClosingException != null ) {
 this.windowClosingException.fillInStackTrace();
 this.windowClosingException.printStackTrace();
-this.windowClosingException = null;
+this.windowClosingException=null;
 }});
 
 Clazz_newMeth(C$, 'hideAndDisposePreHandler', function () {
-this.isInHide = true;
+this.isInHide=true;
 this.modalHide();
 if (this.modalFilter != null ) {
 this.modalFilter.disable();
@@ -38485,7 +38495,7 @@ this.modalFilter.disable();
 });
 
 Clazz_newMeth(C$, 'hideAndDisposeHandler', function () {
-this.isInHide = false;
+this.isInHide=false;
 });
 
 Clazz_newMeth(C$, 'hide', function () {
@@ -38496,10 +38506,10 @@ p$.hideAndDisposeHandler.apply(this, []);
 }});
 
 Clazz_newMeth(C$, 'doDispose', function () {
-this.isInDispose = true;
+this.isInDispose=true;
 C$.superclazz.prototype.doDispose.apply(this, []);
 p$.hideAndDisposeHandler.apply(this, []);
-this.isInDispose = false;
+this.isInDispose=false;
 });
 
 Clazz_newMeth(C$, 'toBack', function () {
@@ -38513,11 +38523,11 @@ return this.resizable;
 Clazz_newMeth(C$, 'setResizable$Z', function (resizable) {
 var testvalid = false;
 {
-this.resizable = resizable;
+this.resizable=resizable;
 var peer = this.peer;
 if (peer != null ) {
 peer.setResizable$Z(resizable);
-testvalid = true;
+testvalid=true;
 }}if (testvalid) {
 this.invalidateIfValid();
 }});
@@ -38526,7 +38536,7 @@ Clazz_newMeth(C$, 'setUndecorated$Z', function (undecorated) {
 {
 if (this.isDisplayable()) {
 throw Clazz_new_(Clazz_load('java.awt.IllegalComponentStateException').c$$S,["The dialog is displayable."]);
-}this.undecorated = undecorated;
+}this.undecorated=undecorated;
 }});
 
 Clazz_newMeth(C$, 'isUndecorated', function () {
@@ -38570,11 +38580,11 @@ return false;
 while (blockerToCheck != null ){
 var c = w;
 while ((c != null ) && (c !== blockerToCheck ) ){
-c = c.getParent_NoClientCode();
+c=c.getParent_NoClientCode();
 }
 if (c === blockerToCheck ) {
 return false;
-}blockerToCheck = blockerToCheck.getModalBlocker();
+}blockerToCheck=blockerToCheck.getModalBlocker();
 }
 switch (this.modalityType) {
 case (I$[2]||$incl$(2)).MODELESS:
@@ -38583,7 +38593,7 @@ case (I$[2]||$incl$(2)).DOCUMENT_MODAL:
 if (w.isModalExcluded$java_awt_Dialog_ModalExclusionType((I$[6]||$incl$(6)).APPLICATION_EXCLUDE)) {
 var c = this;
 while ((c != null ) && (c !== w ) ){
-c = c.getParent_NoClientCode();
+c=c.getParent_NoClientCode();
 }
 return c === w ;
 } else {
@@ -38674,7 +38684,7 @@ Clazz_newMeth(C$, 'values', function() { return $vals }, 1);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:50
+//Created 2018-05-24 08:45:08
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newClass(P$, "AdjustmentEvent", null, 'java.awt.AWTEvent');
 
@@ -38699,10 +38709,10 @@ C$.c$$java_awt_Adjustable$I$I$I$Z.apply(this, [source, id, type, value, false]);
 Clazz_newMeth(C$, 'c$$java_awt_Adjustable$I$I$I$Z', function (source, id, type, value, isAdjusting) {
 C$.superclazz.c$$O$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.adjustable = source;
-this.adjustmentType = type;
-this.value = value;
-this.isAdjusting = isAdjusting;
+this.adjustable=source;
+this.adjustmentType=type;
+this.value=value;
+this.isAdjusting=isAdjusting;
 }, 1);
 
 Clazz_newMeth(C$, 'getAdjustable', function () {
@@ -38725,37 +38735,37 @@ Clazz_newMeth(C$, 'paramString', function () {
 var typeStr;
 switch (this.id) {
 case 601:
-typeStr = "ADJUSTMENT_VALUE_CHANGED";
+typeStr="ADJUSTMENT_VALUE_CHANGED";
 break;
 default:
-typeStr = "unknown type";
+typeStr="unknown type";
 }
 var adjTypeStr;
 switch (this.adjustmentType) {
 case 1:
-adjTypeStr = "UNIT_INCREMENT";
+adjTypeStr="UNIT_INCREMENT";
 break;
 case 2:
-adjTypeStr = "UNIT_DECREMENT";
+adjTypeStr="UNIT_DECREMENT";
 break;
 case 4:
-adjTypeStr = "BLOCK_INCREMENT";
+adjTypeStr="BLOCK_INCREMENT";
 break;
 case 3:
-adjTypeStr = "BLOCK_DECREMENT";
+adjTypeStr="BLOCK_DECREMENT";
 break;
 case 5:
-adjTypeStr = "TRACK";
+adjTypeStr="TRACK";
 break;
 default:
-adjTypeStr = "unknown type";
+adjTypeStr="unknown type";
 }
 return typeStr + ",adjType=" + adjTypeStr + ",value=" + this.value + ",isAdjusting=" + this.isAdjusting ;
 });
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:56
+//Created 2018-05-24 08:45:17
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[['sun.awt.SunToolkit','sun.awt.AppContext']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "FocusEvent", null, 'java.awt.event.ComponentEvent');
 
@@ -38774,8 +38784,8 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$$java_awt_Component$I$Z$java_awt_Component', function (source, id, temporary, opposite) {
 C$.superclazz.c$$java_awt_Component$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.temporary = temporary;
-this.opposite = opposite;
+this.temporary=temporary;
+this.opposite=opposite;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$java_awt_Component$I$Z', function (source, id, temporary) {
@@ -38800,20 +38810,20 @@ Clazz_newMeth(C$, 'paramString', function () {
 var typeStr;
 switch (this.id) {
 case 1004:
-typeStr = "FOCUS_GAINED";
+typeStr="FOCUS_GAINED";
 break;
 case 1005:
-typeStr = "FOCUS_LOST";
+typeStr="FOCUS_LOST";
 break;
 default:
-typeStr = "unknown type";
+typeStr="unknown type";
 }
 return typeStr + (this.temporary ? ",temporary" : ",permanent") + ",opposite=" + this.getOppositeComponent() ;
 });
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:17
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newClass(P$, "ItemEvent", null, 'java.awt.AWTEvent');
 
@@ -38832,8 +38842,8 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$$java_awt_ItemSelectable$I$O$I', function (source, id, item, stateChange) {
 C$.superclazz.c$$O$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.item = item;
-this.stateChange = stateChange;
+this.item=item;
+this.stateChange=stateChange;
 }, 1);
 
 Clazz_newMeth(C$, 'getItemSelectable', function () {
@@ -38852,28 +38862,28 @@ Clazz_newMeth(C$, 'paramString', function () {
 var typeStr;
 switch (this.id) {
 case 701:
-typeStr = "ITEM_STATE_CHANGED";
+typeStr="ITEM_STATE_CHANGED";
 break;
 default:
-typeStr = "unknown type";
+typeStr="unknown type";
 }
 var stateStr;
 switch (this.stateChange) {
 case 1:
-stateStr = "SELECTED";
+stateStr="SELECTED";
 break;
 case 2:
-stateStr = "DESELECTED";
+stateStr="DESELECTED";
 break;
 default:
-stateStr = "unknown type";
+stateStr="unknown type";
 }
 return typeStr + ",item=" + this.item + ",stateChange=" + stateStr ;
 });
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:57
+//Created 2018-05-24 08:45:18
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[];
 var C$=Clazz_newClass(P$, "WindowAdapter", null, null, ['java.awt.event.WindowListener', 'java.awt.event.WindowStateListener', 'java.awt.event.WindowFocusListener']);
 
@@ -38915,7 +38925,7 @@ Clazz_newMeth(C$, 'windowLostFocus$java_awt_event_WindowEvent', function (e) {
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:19
 (function(){var P$=Clazz_newPackage("java.awt.event"),I$=[['sun.awt.SunToolkit','sun.awt.AppContext']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "WindowEvent", null, 'java.awt.event.ComponentEvent');
 
@@ -38935,9 +38945,9 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$$java_awt_Window$I$java_awt_Window$I$I', function (source, id, opposite, oldState, newState) {
 C$.superclazz.c$$java_awt_Component$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.opposite = opposite;
-this.oldState = oldState;
-this.newState = newState;
+this.opposite=opposite;
+this.oldState=oldState;
+this.newState=newState;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$java_awt_Window$I$java_awt_Window', function (source, id, opposite) {
@@ -38974,37 +38984,37 @@ Clazz_newMeth(C$, 'paramString', function () {
 var typeStr;
 switch (this.id) {
 case 200:
-typeStr = "WINDOW_OPENED";
+typeStr="WINDOW_OPENED";
 break;
 case 201:
-typeStr = "WINDOW_CLOSING";
+typeStr="WINDOW_CLOSING";
 break;
 case 202:
-typeStr = "WINDOW_CLOSED";
+typeStr="WINDOW_CLOSED";
 break;
 case 203:
-typeStr = "WINDOW_ICONIFIED";
+typeStr="WINDOW_ICONIFIED";
 break;
 case 204:
-typeStr = "WINDOW_DEICONIFIED";
+typeStr="WINDOW_DEICONIFIED";
 break;
 case 205:
-typeStr = "WINDOW_ACTIVATED";
+typeStr="WINDOW_ACTIVATED";
 break;
 case 206:
-typeStr = "WINDOW_DEACTIVATED";
+typeStr="WINDOW_DEACTIVATED";
 break;
 case 207:
-typeStr = "WINDOW_GAINED_FOCUS";
+typeStr="WINDOW_GAINED_FOCUS";
 break;
 case 208:
-typeStr = "WINDOW_LOST_FOCUS";
+typeStr="WINDOW_LOST_FOCUS";
 break;
 case 209:
-typeStr = "WINDOW_STATE_CHANGED";
+typeStr="WINDOW_STATE_CHANGED";
 break;
 default:
-typeStr = "unknown type";
+typeStr="unknown type";
 }
 typeStr += ",opposite=" + this.getOppositeWindow() + ",oldState=" + this.oldState + ",newState=" + this.newState ;
 return typeStr;
@@ -39012,7 +39022,7 @@ return typeStr;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:58
+//Created 2018-05-24 08:45:19
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Cursor','java.awt.Window']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Frame", null, 'java.awt.Window');
 C$.$nameCounter = 0;
@@ -39062,7 +39072,7 @@ this.initTitleGC$S$java_awt_GraphicsConfiguration(title, gc);
 }, 1);
 
 Clazz_newMeth(C$, 'initTitleGC$S$java_awt_GraphicsConfiguration', function (title, gc) {
-this.title = (title == null  ? "" : title);
+this.title=(title == null  ? "" : title);
 this.initWinGC$java_awt_Window$java_awt_GraphicsConfiguration(null, gc);
 });
 
@@ -39079,7 +39089,7 @@ C$.superclazz.prototype.addNotify.apply(this, []);
 });
 
 Clazz_newMeth(C$, 'getOrCreatePeer', function () {
-return (this.ui == null  ? null : this.peer == null  ? (this.peer = this.getToolkit().createFrame$java_awt_Frame(this)) : this.peer);
+return (this.ui == null  ? null : this.peer == null  ? (this.peer=this.getToolkit().createFrame$java_awt_Frame(this)) : this.peer);
 });
 
 Clazz_newMeth(C$, 'getTitle', function () {
@@ -39089,9 +39099,9 @@ return this.title;
 Clazz_newMeth(C$, 'setTitle$S', function (title) {
 var oldTitle = this.title;
 if (title == null ) {
-title = "";
+title="";
 }{
-this.title = title;
+this.title=title;
 var peer = this.peer;
 if (peer != null ) {
 peer.setTitle$S(title);
@@ -39117,7 +39127,7 @@ return this.resizable;
 Clazz_newMeth(C$, 'setResizable$Z', function (resizable) {
 var oldResizable = this.resizable;
 {
-this.resizable = resizable;
+this.resizable=resizable;
 }this.firePropertyChange$S$Z$Z("resizable", oldResizable, resizable);
 });
 
@@ -39132,7 +39142,7 @@ this.setExtendedState$I(current & -2);
 Clazz_newMeth(C$, 'setExtendedState$I', function (state) {
 if (!p$.isFrameStateSupported$I.apply(this, [state])) {
 return;
-}this.$state = state;
+}this.$state=state;
 });
 
 Clazz_newMeth(C$, 'isFrameStateSupported$I', function (state) {
@@ -39140,7 +39150,7 @@ if (!this.getToolkit().isFrameStateSupported$I(state)) {
 if (((state & 1) != 0) && !this.getToolkit().isFrameStateSupported$I(1) ) {
 return false;
 } else {
-state = state&(-2);
+state&=-2;
 }return this.getToolkit().isFrameStateSupported$I(state);
 }return true;
 });
@@ -39154,7 +39164,7 @@ return this.$state;
 });
 
 Clazz_newMeth(C$, 'setMaximizedBounds$java_awt_Rectangle', function (bounds) {
-this.maximizedBounds = bounds;
+this.maximizedBounds=bounds;
 });
 
 Clazz_newMeth(C$, 'getMaximizedBounds', function () {
@@ -39165,7 +39175,7 @@ Clazz_newMeth(C$, 'setUndecorated$Z', function (undecorated) {
 {
 if (this.isDisplayable()) {
 throw Clazz_new_(Clazz_load('java.awt.IllegalComponentStateException').c$$S,["The frame is displayable."]);
-}this.undecorated = undecorated;
+}this.undecorated=undecorated;
 }});
 
 Clazz_newMeth(C$, 'isUndecorated', function () {
@@ -39222,12 +39232,12 @@ var frames = Clazz_array(C$, [frameCount]);
 var c = 0;
 for (var w, $w = 0, $$w = allWindows; $w<$$w.length&&((w=$$w[$w]),1);$w++) {
 if (Clazz_instanceOf(w, "java.awt.Frame")) {
-frames[c++] = w;
+frames[c++]=w;
 }}
 return frames;
 }, 1);
 })();
-//Created 2018-05-15 01:01:51
+//Created 2018-05-24 08:45:09
 (function(){var P$=Clazz_newPackage("java.awt.geom"),I$=[['java.lang.InternalError']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Point2D", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -39285,7 +39295,7 @@ return Math.sqrt(px * px + py * py);
 
 Clazz_newMeth(C$, 'hashCode', function () {
 var bits = java.lang.Double.doubleToLongBits(this.getX());
-bits = bits^(java.lang.Double.doubleToLongBits(this.getY()) * 31);
+bits^=java.lang.Double.doubleToLongBits(this.getY()) * 31;
 return (((bits|0)) ^ (((bits >> 32)|0)));
 });
 
@@ -39323,8 +39333,8 @@ Clazz_super_(C$, this,1);
 
 Clazz_newMeth(C$, 'c$$F$F', function (x, y) {
 Clazz_super_(C$, this,1);
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 }, 1);
 
 Clazz_newMeth(C$, 'getX', function () {
@@ -39336,13 +39346,13 @@ return this.y;
 });
 
 Clazz_newMeth(C$, 'setLocation$D$D', function (x, y) {
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 });
 
 Clazz_newMeth(C$, 'setLocation$F$F', function (x, y) {
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 });
 
 Clazz_newMeth(C$, 'toString', function () {
@@ -39372,8 +39382,8 @@ Clazz_super_(C$, this,1);
 
 Clazz_newMeth(C$, 'c$$D$D', function (x, y) {
 Clazz_super_(C$, this,1);
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 }, 1);
 
 Clazz_newMeth(C$, 'getX', function () {
@@ -39385,8 +39395,8 @@ return this.y;
 });
 
 Clazz_newMeth(C$, 'setLocation$D$D', function (x, y) {
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 });
 
 Clazz_newMeth(C$, 'toString', function () {
@@ -39394,7 +39404,7 @@ return "Point2D.Double[" + new Double(this.x).toString() + ", " + new Double(thi
 });
 })()
 })();
-//Created 2018-05-15 01:02:00
+//Created 2018-05-24 08:45:22
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newClass(P$, "GraphicsCallback", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -39489,21 +39499,21 @@ return C$.instance;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:01:51
+//Created 2018-05-24 08:45:09
 (function(){var P$=Clazz_newPackage("java.awt.peer"),I$=[];
 var C$=Clazz_newInterface(P$, "FramePeer", null, null, 'java.awt.peer.WindowPeer');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:02:02
+//Created 2018-05-24 08:45:29
 (function(){var P$=Clazz_newPackage("java.awt.peer"),I$=[];
 var C$=Clazz_newInterface(P$, "WindowPeer", null, null, 'java.awt.peer.ContainerPeer');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:02:03
+//Created 2018-05-24 08:45:29
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[];
 var C$=Clazz_newClass(P$, "Point", null, 'java.awt.geom.Point2D');
 
@@ -39529,8 +39539,8 @@ C$.c$$I$I.apply(this, [p.x, p.y]);
 
 Clazz_newMeth(C$, 'c$$I$I', function (x, y) {
 Clazz_super_(C$, this,1);
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 }, 1);
 
 Clazz_newMeth(C$, 'getX', function () {
@@ -39554,18 +39564,18 @@ this.move$I$I(x, y);
 });
 
 Clazz_newMeth(C$, 'setLocation$D$D', function (x, y) {
-this.x = (Math.floor(x + 0.5)|0);
-this.y = (Math.floor(y + 0.5)|0);
+this.x=(Math.floor(x + 0.5)|0);
+this.y=(Math.floor(y + 0.5)|0);
 });
 
 Clazz_newMeth(C$, 'move$I$I', function (x, y) {
-this.x = x;
-this.y = y;
+this.x=x;
+this.y=y;
 });
 
 Clazz_newMeth(C$, 'translate$I$I', function (dx, dy) {
-this.x = this.x+(dx);
-this.y = this.y+(dy);
+this.x+=dx;
+this.y+=dy;
 });
 
 Clazz_newMeth(C$, 'equals$O', function (obj) {
@@ -39579,7 +39589,7 @@ Clazz_newMeth(C$, 'toString', function () {
 return this.getClass().getName() + "[x=" + this.x + ",y=" + this.y + "]" ;
 });
 })();
-//Created 2018-05-15 01:01:53
+//Created 2018-05-24 08:45:12
 (function(){var P$=Clazz_newPackage("java.awt"),I$=[['java.awt.Color','java.util.Vector','java.awt.Cursor','java.awt.BorderLayout',['java.awt.Dialog','.ModalExclusionType'],'java.util.ArrayList','swingjs.JSUtil','java.awt.Toolkit','java.awt.event.WindowEvent','java.awt.Window$1','java.util.Locale','java.util.Arrays','sun.awt.AppContext','java.awt.AWTEventMulticaster','java.awt.event.WindowListener','java.awt.event.WindowFocusListener','java.awt.event.WindowStateListener','swingjs.JSToolkit','java.awt.ComponentOrientation','java.util.ResourceBundle','java.awt.GraphicsEnvironment','java.awt.Point']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Window", null, 'java.awt.Container');
 C$.systemSyncLWRequests = false;
@@ -39651,14 +39661,14 @@ this.initWinGC$java_awt_Window$java_awt_GraphicsConfiguration(owner, gc);
 
 Clazz_newMeth(C$, 'initWinGC$java_awt_Window$java_awt_GraphicsConfiguration', function (owner, gc) {
 this.setAppContext();
-this.parent = owner;
+this.parent=owner;
 if (owner != null ) owner.addOwnedWindow$java_awt_Window(this);
-this.syncLWRequests = C$.systemSyncLWRequests;
+this.syncLWRequests=C$.systemSyncLWRequests;
 p$.addToWindowList.apply(this, []);
-this.cursor = (I$[3]||$incl$(3)).getPredefinedCursor$I(0);
-this.visible = false;
+this.cursor=(I$[3]||$incl$(3)).getPredefinedCursor$I(0);
+this.visible=false;
 this.setLayout$java_awt_LayoutManager(Clazz_new_((I$[4]||$incl$(4))));
-this.modalExclusionType = (I$[5]||$incl$(5)).NO_EXCLUDE;
+this.modalExclusionType=(I$[5]||$incl$(5)).NO_EXCLUDE;
 });
 
 Clazz_newMeth(C$, 'constructComponentName', function () {
@@ -39674,7 +39684,7 @@ return Clazz_new_((I$[6]||$incl$(6)));
 });
 
 Clazz_newMeth(C$, 'setIconImages$java_util_List', function (icons) {
-this.icons = (icons == null ) ? Clazz_new_((I$[6]||$incl$(6))) : Clazz_new_((I$[6]||$incl$(6)).c$$java_util_Collection,[icons]);
+this.icons=(icons == null ) ? Clazz_new_((I$[6]||$incl$(6))) : Clazz_new_((I$[6]||$incl$(6)).c$$java_util_Collection,[icons]);
 this.firePropertyChange$S$O$O("iconImage", null, null);
 });
 
@@ -39694,7 +39704,7 @@ C$.superclazz.prototype.addNotify.apply(this, []);
 });
 
 Clazz_newMeth(C$, 'getOrCreatePeer', function () {
-return (this.ui == null  ? null : this.peer == null  ? (this.peer = this.getToolkit().createWindow$java_awt_Window(this)) : this.peer);
+return (this.ui == null  ? null : this.peer == null  ? (this.peer=this.getToolkit().createWindow$java_awt_Window(this)) : this.peer);
 });
 
 Clazz_newMeth(C$, 'removeNotify', function () {
@@ -39709,7 +39719,7 @@ parent.addNotify();
 }if (this.peer == null ) {
 this.addNotify();
 }if (this.beforeFirstShow) {
-this.isPacked = true;
+this.isPacked=true;
 }this.repackContainer();
 });
 
@@ -39736,9 +39746,9 @@ Clazz_newMeth(C$, 'reshape$I$I$I$I', function (x, y, width, height) {
 if (this.isMinimumSizeSet()) {
 var minSize = this.getMinimumSize();
 if (width < minSize.width) {
-width = minSize.width;
+width=minSize.width;
 }if (height < minSize.height) {
-height = minSize.height;
+height=minSize.height;
 }}C$.superclazz.prototype.reshape$I$I$I$I.apply(this, [x, y, width, height]);
 });
 
@@ -39752,26 +39762,26 @@ if (b) this.repaint();
 
 Clazz_newMeth(C$, 'show', function () {
 this.validate();
-this.isInShow = true;
+this.isInShow=true;
 if (this.visible) {
 this.toFront();
 } else {
-this.beforeFirstShow = false;
+this.beforeFirstShow=false;
 C$.closeSplashScreen();
 C$.superclazz.prototype.show.apply(this, []);
 for (var i = 0; i < this.ownedWindowList.size(); i++) {
 var child = this.ownedWindowList.elementAt$I(i);
 if ((child != null ) && child.showWithParent ) {
 child.show();
-child.showWithParent = false;
+child.showWithParent=false;
 }}
 if (Clazz_instanceOf(this, "java.awt.Frame") || Clazz_instanceOf(this, "java.awt.Dialog") ) {
 C$.updateChildFocusableWindowState$java_awt_Window(this);
-}}this.isInShow = false;
+}}this.isInShow=false;
 if ((this.state & 1) == 0) {
 this.repaint();
 this.postWindowEvent$I(200);
-this.state = this.state|(1);
+this.state|=1;
 }});
 
 Clazz_newMeth(C$, 'updateChildFocusableWindowState$java_awt_Window', function (w) {
@@ -39794,7 +39804,7 @@ for (var i = 0; i < this.ownedWindowList.size(); i++) {
 var child = this.ownedWindowList.elementAt$I(i);
 if ((child != null ) && child.visible ) {
 child.hide();
-child.showWithParent = true;
+child.showWithParent=true;
 }}
 }C$.superclazz.prototype.hide.apply(this, []);
 });
@@ -39826,14 +39836,14 @@ Clazz_newMeth(C$, 'run', function () {
 (this.$finals.me).getUI().uninstallJS();
 var ownedWindowArray;
 {
-ownedWindowArray = Clazz_array(java.lang.Object, [this.b$['java.awt.Window'].ownedWindowList.size()]);
+ownedWindowArray=Clazz_array(java.lang.Object, [this.b$['java.awt.Window'].ownedWindowList.size()]);
 this.b$['java.awt.Window'].ownedWindowList.copyInto$OA(ownedWindowArray);
 }for (var i = 0; i < ownedWindowArray.length; i++) {
 var child = ownedWindowArray[i];
 if (child != null ) child.disposeImpl();
 }
 this.b$['java.awt.Window'].hide();
-this.b$['java.awt.Window'].beforeFirstShow = true;
+this.b$['java.awt.Window'].beforeFirstShow=true;
 this.b$['java.awt.Window'].removeNotify();
 this.b$['java.awt.Window'].clearCurrentFocusCycleRootOnHide();
 });
@@ -39895,7 +39905,7 @@ return (I$[11]||$incl$(11)).getDefault();
 
 Clazz_newMeth(C$, 'setCursor$java_awt_Cursor', function (cursor) {
 if (cursor == null ) {
-cursor = (I$[3]||$incl$(3)).getPredefinedCursor$I(0);
+cursor=(I$[3]||$incl$(3)).getPredefinedCursor$I(0);
 }C$.superclazz.prototype.setCursor$java_awt_Cursor.apply(this, [cursor]);
 });
 
@@ -39918,14 +39928,14 @@ var fullSize = this.ownedWindowList.size();
 var realSize = 0;
 var fullCopy = Clazz_array(C$, [fullSize]);
 for (var i = 0; i < fullSize; i++) {
-fullCopy[realSize] = this.ownedWindowList.elementAt$I(i);
+fullCopy[realSize]=this.ownedWindowList.elementAt$I(i);
 if (fullCopy[realSize] != null ) {
 realSize++;
 }}
 if (fullSize != realSize) {
-realCopy = (I$[12]||$incl$(12)).copyOf$TTA$I(fullCopy, realSize);
+realCopy=(I$[12]||$incl$(12)).copyOf$TTA$I(fullCopy, realSize);
 } else {
-realCopy = fullCopy;
+realCopy=fullCopy;
 }}return realCopy;
 });
 
@@ -39968,14 +39978,14 @@ var fullCopy = Clazz_array(C$, [fullSize]);
 for (var i = 0; i < fullSize; i++) {
 var w = windowList.get$I(i);
 if (w != null ) {
-fullCopy[realSize++] = w;
+fullCopy[realSize++]=w;
 }}
 if (fullSize != realSize) {
-realCopy = (I$[12]||$incl$(12)).copyOf$TTA$I(fullCopy, realSize);
+realCopy=(I$[12]||$incl$(12)).copyOf$TTA$I(fullCopy, realSize);
 } else {
-realCopy = fullCopy;
+realCopy=fullCopy;
 }} else {
-realCopy = Clazz_array(C$, [0]);
+realCopy=Clazz_array(C$, [0]);
 }return realCopy;
 }}, 1);
 
@@ -39994,7 +40004,7 @@ var ownerless = Clazz_array(C$, [ownerlessCount]);
 var c = 0;
 for (var w, $w = 0, $$w = allWindows; $w<$$w.length&&((w=$$w[$w]),1);$w++) {
 if (w.getOwner() == null ) {
-ownerless[c++] = w;
+ownerless[c++]=w;
 }}
 return ownerless;
 }, 1);
@@ -40003,19 +40013,19 @@ Clazz_newMeth(C$, 'getDocumentRoot', function () {
 {
 var w = this;
 while (w.getOwner() != null ){
-w = w.getOwner();
+w=w.getOwner();
 }
 return w;
 }});
 
 Clazz_newMeth(C$, 'setModalExclusionType$java_awt_Dialog_ModalExclusionType', function (exclusionType) {
 if (exclusionType == null ) {
-exclusionType = (I$[5]||$incl$(5)).NO_EXCLUDE;
+exclusionType=(I$[5]||$incl$(5)).NO_EXCLUDE;
 }if (!(I$[8]||$incl$(8)).getDefaultToolkit().isModalExclusionTypeSupported$java_awt_Dialog_ModalExclusionType(exclusionType)) {
-exclusionType = (I$[5]||$incl$(5)).NO_EXCLUDE;
+exclusionType=(I$[5]||$incl$(5)).NO_EXCLUDE;
 }if (this.modalExclusionType === exclusionType ) {
 return;
-}this.modalExclusionType = exclusionType;
+}this.modalExclusionType=exclusionType;
 });
 
 Clazz_newMeth(C$, 'getModalExclusionType', function () {
@@ -40032,40 +40042,40 @@ return (owner != null ) && owner.isModalExcluded$java_awt_Dialog_ModalExclusionT
 Clazz_newMeth(C$, 'addWindowListener$java_awt_event_WindowListener', function (l) {
 if (l == null ) {
 return;
-}this.newEventsOnly = true;
-this.windowListener = (I$[14]||$incl$(14)).add$java_awt_event_WindowListener$java_awt_event_WindowListener(this.windowListener, l);
+}this.newEventsOnly=true;
+this.windowListener=(I$[14]||$incl$(14)).add$java_awt_event_WindowListener$java_awt_event_WindowListener(this.windowListener, l);
 });
 
 Clazz_newMeth(C$, 'addWindowStateListener$java_awt_event_WindowStateListener', function (l) {
 if (l == null ) {
 return;
-}this.windowStateListener = (I$[14]||$incl$(14)).add$java_awt_event_WindowStateListener$java_awt_event_WindowStateListener(this.windowStateListener, l);
-this.newEventsOnly = true;
+}this.windowStateListener=(I$[14]||$incl$(14)).add$java_awt_event_WindowStateListener$java_awt_event_WindowStateListener(this.windowStateListener, l);
+this.newEventsOnly=true;
 });
 
 Clazz_newMeth(C$, 'addWindowFocusListener$java_awt_event_WindowFocusListener', function (l) {
 if (l == null ) {
 return;
-}this.windowFocusListener = (I$[14]||$incl$(14)).add$java_awt_event_WindowFocusListener$java_awt_event_WindowFocusListener(this.windowFocusListener, l);
-this.newEventsOnly = true;
+}this.windowFocusListener=(I$[14]||$incl$(14)).add$java_awt_event_WindowFocusListener$java_awt_event_WindowFocusListener(this.windowFocusListener, l);
+this.newEventsOnly=true;
 });
 
 Clazz_newMeth(C$, 'removeWindowListener$java_awt_event_WindowListener', function (l) {
 if (l == null ) {
 return;
-}this.windowListener = (I$[14]||$incl$(14)).remove$java_awt_event_WindowListener$java_awt_event_WindowListener(this.windowListener, l);
+}this.windowListener=(I$[14]||$incl$(14)).remove$java_awt_event_WindowListener$java_awt_event_WindowListener(this.windowListener, l);
 });
 
 Clazz_newMeth(C$, 'removeWindowStateListener$java_awt_event_WindowStateListener', function (l) {
 if (l == null ) {
 return;
-}this.windowStateListener = (I$[14]||$incl$(14)).remove$java_awt_event_WindowStateListener$java_awt_event_WindowStateListener(this.windowStateListener, l);
+}this.windowStateListener=(I$[14]||$incl$(14)).remove$java_awt_event_WindowStateListener$java_awt_event_WindowStateListener(this.windowStateListener, l);
 });
 
 Clazz_newMeth(C$, 'removeWindowFocusListener$java_awt_event_WindowFocusListener', function (l) {
 if (l == null ) {
 return;
-}this.windowFocusListener = (I$[14]||$incl$(14)).remove$java_awt_event_WindowFocusListener$java_awt_event_WindowFocusListener(this.windowFocusListener, l);
+}this.windowFocusListener=(I$[14]||$incl$(14)).remove$java_awt_event_WindowFocusListener$java_awt_event_WindowFocusListener(this.windowFocusListener, l);
 });
 
 Clazz_newMeth(C$, 'getWindowListeners', function () {
@@ -40083,11 +40093,11 @@ return (this.getListeners$Class(Clazz_getClass((I$[17]||$incl$(17)),['windowStat
 Clazz_newMeth(C$, 'getListeners$Class', function (listenerType) {
 var l = null;
 if (listenerType === Clazz_getClass((I$[16]||$incl$(16)),['windowGainedFocus$java_awt_event_WindowEvent','windowLostFocus$java_awt_event_WindowEvent']) ) {
-l = this.windowFocusListener;
+l=this.windowFocusListener;
 } else if (listenerType === Clazz_getClass((I$[17]||$incl$(17)),['windowStateChanged$java_awt_event_WindowEvent']) ) {
-l = this.windowStateListener;
+l=this.windowStateListener;
 } else if (listenerType === Clazz_getClass((I$[15]||$incl$(15)),['windowActivated$java_awt_event_WindowEvent','windowClosed$java_awt_event_WindowEvent','windowClosing$java_awt_event_WindowEvent','windowDeactivated$java_awt_event_WindowEvent','windowDeiconified$java_awt_event_WindowEvent','windowIconified$java_awt_event_WindowEvent','windowOpened$java_awt_event_WindowEvent']) ) {
-l = this.windowListener;
+l=this.windowListener;
 } else {
 return C$.superclazz.prototype.getListeners$Class.apply(this, [listenerType]);
 }return (I$[14]||$incl$(14)).getListeners$java_util_EventListener$Class(l, listenerType);
@@ -40211,8 +40221,8 @@ Clazz_newMeth(C$, 'postProcessKeyEvent$java_awt_event_KeyEvent', function (e) {
 Clazz_newMeth(C$, 'setAlwaysOnTop$Z', function (alwaysOnTop) {
 var oldAlwaysOnTop;
 {
-oldAlwaysOnTop = this.alwaysOnTop;
-this.alwaysOnTop = alwaysOnTop;
+oldAlwaysOnTop=this.alwaysOnTop;
+this.alwaysOnTop=alwaysOnTop;
 }if (oldAlwaysOnTop != alwaysOnTop ) {
 if (this.isAlwaysOnTopSupported()) {
 }this.firePropertyChange$S$Z$Z("alwaysOnTop", oldAlwaysOnTop, alwaysOnTop);
@@ -40254,7 +40264,7 @@ if (!this.getFocusableWindowState()) {
 return false;
 }if (Clazz_instanceOf(this, "java.awt.Frame") || Clazz_instanceOf(this, "java.awt.Dialog") ) {
 return true;
-}for (var owner = this.getOwner(); owner != null ; owner = owner.getOwner()) {
+}for (var owner = this.getOwner(); owner != null ; owner=owner.getOwner()) {
 if (Clazz_instanceOf(owner, "java.awt.Frame") || Clazz_instanceOf(owner, "java.awt.Dialog") ) {
 return owner.isShowing();
 }}
@@ -40268,11 +40278,11 @@ return this.focusableWindowState;
 Clazz_newMeth(C$, 'setFocusableWindowState$Z', function (focusableWindowState) {
 var oldFocusableWindowState;
 {
-oldFocusableWindowState = this.focusableWindowState;
-this.focusableWindowState = focusableWindowState;
+oldFocusableWindowState=this.focusableWindowState;
+this.focusableWindowState=focusableWindowState;
 }this.firePropertyChange$S$Z$Z("focusableWindowState", oldFocusableWindowState, focusableWindowState);
 if (oldFocusableWindowState && !focusableWindowState && this.isFocused()  ) {
-for (var owner = this.getOwner(); owner != null ; owner = owner.getOwner()) {
+for (var owner = this.getOwner(); owner != null ; owner=owner.getOwner()) {
 }
 }});
 
@@ -40323,20 +40333,20 @@ this.ownedWindowList.removeElement$O(weakWindow);
 }});
 
 Clazz_newMeth(C$, 'connectOwnedWindow$java_awt_Window', function (child) {
-child.parent = this;
+child.parent=this;
 this.addOwnedWindow$java_awt_Window(child);
 });
 
 Clazz_newMeth(C$, 'addToWindowList', function () {
 var windowList = this.appContext.get$O(Clazz_getClass(C$));
 if (windowList == null ) {
-windowList = Clazz_new_((I$[2]||$incl$(2)));
+windowList=Clazz_new_((I$[2]||$incl$(2)));
 this.appContext.put$O$O(Clazz_getClass(C$), windowList);
 }windowList.add$TE(this);
 });
 
 Clazz_newMeth(C$, 'getGraphicsConfiguration', function () {
-if (this.graphicsConfig == null ) this.graphicsConfig = (I$[18]||$incl$(18)).getGraphicsConfiguration();
+if (this.graphicsConfig == null ) this.graphicsConfig=(I$[18]||$incl$(18)).getGraphicsConfiguration();
 return this.graphicsConfig;
 });
 
@@ -40347,12 +40357,12 @@ Clazz_newMeth(C$, 'setLocationRelativeTo$java_awt_Component', function (c) {
 var root = null;
 if (c != null ) {
 if (Clazz_instanceOf(c, "java.awt.Window") || Clazz_instanceOf(c, "java.applet.Applet") ) {
-root = c;
+root=c;
 } else {
 var parent;
-for (parent = c.getParent(); parent != null ; parent = parent.getParent()) {
+for (parent=c.getParent(); parent != null ; parent=parent.getParent()) {
 if (Clazz_instanceOf(parent, "java.awt.Window") || Clazz_instanceOf(parent, "java.applet.Applet") ) {
-root = parent;
+root=parent;
 break;
 }}
 }}if ((c != null  && !c.isShowing() ) || root == null   || !root.isShowing() ) {
@@ -40367,15 +40377,15 @@ var dx = invokerScreenLocation.x + ((invokerSize.width - windowBounds.width) >> 
 var dy = invokerScreenLocation.y + ((invokerSize.height - windowBounds.height) >> 1);
 var ss = root.getGraphicsConfiguration().getBounds();
 if (dy + windowBounds.height > ss.y + ss.height) {
-dy = ss.y + ss.height - windowBounds.height;
+dy=ss.y + ss.height - windowBounds.height;
 if (invokerScreenLocation.x - ss.x + (invokerSize.width/2|0) < (ss.width/2|0)) {
-dx = invokerScreenLocation.x + invokerSize.width;
+dx=invokerScreenLocation.x + invokerSize.width;
 } else {
-dx = invokerScreenLocation.x - windowBounds.width;
+dx=invokerScreenLocation.x - windowBounds.width;
 }}if (dx + windowBounds.width > ss.x + ss.width) {
-dx = ss.x + ss.width - windowBounds.width;
-}if (dx < ss.x) dx = ss.x;
-if (dy < ss.y) dy = ss.y;
+dx=ss.x + ss.width - windowBounds.width;
+}if (dx < ss.x) dx=ss.x;
+if (dy < ss.y) dy=ss.y;
 this.setLocation$I$I(dx, dy);
 }});
 
@@ -40393,9 +40403,9 @@ return this.temporaryLostComponent;
 Clazz_newMeth(C$, 'setTemporaryLostComponent$java_awt_Component', function (component) {
 var previousComp = this.temporaryLostComponent;
 if (component == null  || component.canBeFocusOwner() ) {
-this.temporaryLostComponent = component;
+this.temporaryLostComponent=component;
 } else {
-this.temporaryLostComponent = null;
+this.temporaryLostComponent=null;
 }return previousComp;
 });
 
@@ -40424,7 +40434,7 @@ Clazz_newMeth(C$, 'setOpacity$F', function (opacity) {
 {
 if (opacity < 0.0  || opacity > 1.0  ) {
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["The value of opacity should be in the range [0.0f .. 1.0f]."]);
-}this.opacity = opacity;
+}this.opacity=opacity;
 }});
 
 Clazz_newMeth(C$, 'getShape', function () {
@@ -40434,13 +40444,13 @@ return this.shape;
 
 Clazz_newMeth(C$, 'setShape$java_awt_Shape', function (shape) {
 {
-this.shape = shape;
+this.shape=shape;
 }});
 
 Clazz_newMeth(C$, 'setOpaque$Z', function (opaque) {
 {
 C$.setLayersOpaque$java_awt_Component$Z(this, opaque);
-this.opaque = opaque;
+this.opaque=opaque;
 var peer = this.getPeer();
 if (peer != null ) {
 peer.setOpaque$Z(opaque);
@@ -40468,18 +40478,18 @@ C$.setLayersOpaque$java_awt_Component$Z(child, isOpaque);
 var hasTransparentBg = C$.TRANSPARENT_BACKGROUND_COLOR.equals$O(bg);
 var container = null;
 if (Clazz_instanceOf(component, "java.awt.Container")) {
-container = component;
+container=component;
 }if (isOpaque) {
 if (hasTransparentBg) {
 var newColor = null;
 if (container != null  && container.preserveBackgroundColor != null  ) {
-newColor = container.preserveBackgroundColor;
+newColor=container.preserveBackgroundColor;
 } else {
-newColor = Clazz_new_((I$[1]||$incl$(1)).c$$I$I$I,[255, 255, 255]);
+newColor=Clazz_new_((I$[1]||$incl$(1)).c$$I$I$I,[255, 255, 255]);
 }component.setBackground$java_awt_Color(newColor);
 }} else {
 if (!hasTransparentBg && container != null  ) {
-container.preserveBackgroundColor = bg;
+container.preserveBackgroundColor=bg;
 }component.setBackground$java_awt_Color(C$.TRANSPARENT_BACKGROUND_COLOR);
 }}, 1);
 
@@ -40494,7 +40504,7 @@ Clazz_newMeth(C$, 'getLocationOnWindow', function () {
 return Clazz_new_((I$[22]||$incl$(22)).c$$I$I,[0, 0]);
 });
 })();
-//Created 2018-05-15 01:01:54
+//Created 2018-05-24 08:45:14
 (function(){var P$=java.util,I$=[];
 var C$=Clazz_newClass(P$, "Random", null, null, 'java.io.Serializable');
 
@@ -40642,7 +40652,7 @@ this.setSeed$J(seed);
 }, 1);
 
 Clazz_newMeth(C$, 'next$I', function (bits) {
-this.seed = (this.seed * 25214903917 + 11) & 281474976710655;
+this.seed=(this.seed * 25214903917 + 11) & 281474976710655;
 return ((this.seed >>> (48 - bits))|0);
 });
 
@@ -40669,19 +40679,19 @@ return Math.random ();
 
 Clazz_newMeth(C$, 'nextGaussian', function () {
 if (this.haveNextNextGaussian) {
-this.haveNextNextGaussian = false;
+this.haveNextNextGaussian=false;
 return this.nextNextGaussian;
 }var v1;
 var v2;
 var s;
 do {
-v1 = 2 * this.nextDouble() - 1;
-v2 = 2 * this.nextDouble() - 1;
-s = v1 * v1 + v2 * v2;
+v1=2 * this.nextDouble() - 1;
+v2=2 * this.nextDouble() - 1;
+s=v1 * v1 + v2 * v2;
 } while (s >= 1 );
 var norm = Math.sqrt(-2 * Math.log(s) / s);
-this.nextNextGaussian = v2 * norm;
-this.haveNextNextGaussian = true;
+this.nextNextGaussian=v2 * norm;
+this.haveNextNextGaussian=true;
 return v1 * norm;
 });
 
@@ -40694,7 +40704,7 @@ Clazz_newMeth(C$, 'nextInt$I', function (n) {
 
 
 if (n > 0) {
-n = Math.min(n, 31);
+n=Math.min(n, 31);
 return (Math.floor((2 << (n - 1)) * Math.random())|0);
 }throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException'));
 });
@@ -40709,7 +40719,7 @@ Clazz_newMeth(C$, 'setSeed$J', function (seed) {
 Math.seedrandom(seed);
 });
 })();
-//Created 2018-05-15 01:02:14
+//Created 2018-05-24 08:45:49
 (function(){var P$=java.util,I$=[['java.util.Vector$1','java.util.Arrays',['java.util.Collections','.SynchronizedRandomAccessList'],'java.lang.reflect.Array','java.lang.StringBuffer']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "Vector", null, 'java.util.AbstractList', ['java.util.List', 'java.util.RandomAccess', 'Cloneable', 'java.io.Serializable']);
 var p$=C$.prototype;
@@ -40737,9 +40747,9 @@ C$.c$$I$I.apply(this, [capacity, 0]);
 
 Clazz_newMeth(C$, 'c$$I$I', function (capacity, capacityIncrement) {
 Clazz_super_(C$, this,1);
-this.elementCount = 0;
+this.elementCount=0;
 try {
-this.elementData = p$.newElementArray$I.apply(this, [capacity]);
+this.elementData=p$.newElementArray$I.apply(this, [capacity]);
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.NegativeArraySizeException")){
 throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException'));
@@ -40747,14 +40757,14 @@ throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException'));
 throw e;
 }
 }
-this.capacityIncrement = capacityIncrement;
+this.capacityIncrement=capacityIncrement;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$java_util_Collection', function (collection) {
 C$.c$$I$I.apply(this, [collection.size(), 0]);
 var it = collection.iterator();
 while (it.hasNext()){
-this.elementData[this.elementCount++] = it.next();
+this.elementData[this.elementCount++]=it.next();
 }
 }, 1);
 
@@ -40784,9 +40794,9 @@ if (count > 0) {
 System.arraycopy(this.elementData, location, this.elementData, location + size, count);
 }var it = collection.iterator();
 while (it.hasNext()){
-this.elementData[location++] = it.next();
+this.elementData[location++]=it.next();
 }
-this.elementCount = this.elementCount+(size);
+this.elementCount+=size;
 this.modCount++;
 return true;
 }throw Clazz_new_(Clazz_load('java.lang.ArrayIndexOutOfBoundsException').c$$I,[location]);
@@ -40799,7 +40809,7 @@ return this.addAll$I$java_util_Collection(this.elementCount, collection);
 Clazz_newMeth(C$, ['addElement$TE'], function (object) {
 if (this.elementCount == this.elementData.length) {
 p$.growByOne.apply(this, []);
-}this.elementData[this.elementCount++] = object;
+}this.elementData[this.elementCount++]=object;
 this.modCount++;
 });
 
@@ -40814,7 +40824,7 @@ this.removeAllElements();
 Clazz_newMeth(C$, 'clone', function () {
 try {
 var vector = Clazz_clone(this);
-vector.elementData = this.elementData.clone();
+vector.elementData=this.elementData.clone();
 return vector;
 } catch (e) {
 if (Clazz_exceptionOf(e, "java.lang.CloneNotSupportedException")){
@@ -40912,42 +40922,42 @@ Clazz_newMeth(C$, 'grow$I', function (newCapacity) {
 var newData = p$.newElementArray$I.apply(this, [newCapacity]);
 Clazz_assert(C$, this, function(){return this.elementCount <= newCapacity});
 System.arraycopy(this.elementData, 0, newData, 0, this.elementCount);
-this.elementData = newData;
+this.elementData=newData;
 });
 
 Clazz_newMeth(C$, 'growByOne', function () {
 var adding = 0;
 if (this.capacityIncrement <= 0) {
-if ((adding = this.elementData.length) == 0) {
-adding = 1;
+if ((adding=this.elementData.length) == 0) {
+adding=1;
 }} else {
-adding = this.capacityIncrement;
+adding=this.capacityIncrement;
 }var newData = p$.newElementArray$I.apply(this, [this.elementData.length + adding]);
 System.arraycopy(this.elementData, 0, newData, 0, this.elementCount);
-this.elementData = newData;
+this.elementData=newData;
 });
 
 Clazz_newMeth(C$, 'growBy$I', function (required) {
 var adding = 0;
 if (this.capacityIncrement <= 0) {
-if ((adding = this.elementData.length) == 0) {
-adding = required;
+if ((adding=this.elementData.length) == 0) {
+adding=required;
 }while (adding < required){
-adding = adding+(adding);
+adding+=adding;
 }
 } else {
-adding = ((required/this.capacityIncrement|0)) * this.capacityIncrement;
+adding=((required/this.capacityIncrement|0)) * this.capacityIncrement;
 if (adding < required) {
-adding = adding+(this.capacityIncrement);
+adding+=this.capacityIncrement;
 }}var newData = p$.newElementArray$I.apply(this, [this.elementData.length + adding]);
 System.arraycopy(this.elementData, 0, newData, 0, this.elementCount);
-this.elementData = newData;
+this.elementData=newData;
 });
 
 Clazz_newMeth(C$, 'hashCode', function () {
 var result = 1;
 for (var i = 0; i < this.elementCount; i++) {
-result = (31 * result) + (this.elementData[i] == null  ? 0 : this.elementData[i].hashCode());
+result=(31 * result) + (this.elementData[i] == null  ? 0 : this.elementData[i].hashCode());
 }
 return result;
 });
@@ -40977,7 +40987,7 @@ p$.growByOne.apply(this, []);
 }var count = this.elementCount - location;
 if (count > 0) {
 System.arraycopy(this.elementData, location, this.elementData, location + 1, count);
-}this.elementData[location] = object;
+}this.elementData[location]=object;
 this.elementCount++;
 this.modCount++;
 } else {
@@ -41027,7 +41037,7 @@ this.elementCount--;
 var size = this.elementCount - location;
 if (size > 0) {
 System.arraycopy(this.elementData, location + 1, this.elementData, location, size);
-}this.elementData[this.elementCount] = null;
+}this.elementData[this.elementCount]=null;
 this.modCount++;
 return result;
 }throw Clazz_new_(Clazz_load('java.lang.ArrayIndexOutOfBoundsException').c$$I,[location]);
@@ -41044,12 +41054,12 @@ return C$.superclazz.prototype.removeAll$java_util_Collection.apply(this, [colle
 Clazz_newMeth(C$, 'removeAllElements', function () {
 (I$[2]||$incl$(2)).fill$OA$I$I$O(this.elementData, 0, this.elementCount, null);
 this.modCount++;
-this.elementCount = 0;
+this.elementCount=0;
 });
 
 Clazz_newMeth(C$, 'removeElement$O', function (object) {
 var index;
-if ((index = this.indexOf$O$I(object, 0)) == -1) {
+if ((index=this.indexOf$O$I(object, 0)) == -1) {
 return false;
 }this.removeElementAt$I(index);
 return true;
@@ -41061,7 +41071,7 @@ this.elementCount--;
 var size = this.elementCount - location;
 if (size > 0) {
 System.arraycopy(this.elementData, location + 1, this.elementData, location, size);
-}this.elementData[this.elementCount] = null;
+}this.elementData[this.elementCount]=null;
 this.modCount++;
 } else {
 throw Clazz_new_(Clazz_load('java.lang.ArrayIndexOutOfBoundsException').c$$I,[location]);
@@ -41075,10 +41085,10 @@ return;
 System.arraycopy(this.elementData, end, this.elementData, start, this.elementCount - end);
 var newCount = this.elementCount - (end - start);
 (I$[2]||$incl$(2)).fill$OA$I$I$O(this.elementData, newCount, this.elementCount, null);
-this.elementCount = newCount;
+this.elementCount=newCount;
 } else {
 (I$[2]||$incl$(2)).fill$OA$I$I$O(this.elementData, start, this.elementCount, null);
-this.elementCount = start;
+this.elementCount=start;
 }this.modCount++;
 } else {
 throw Clazz_new_(Clazz_load('java.lang.IndexOutOfBoundsException'));
@@ -41091,14 +41101,14 @@ return C$.superclazz.prototype.retainAll$java_util_Collection.apply(this, [colle
 Clazz_newMeth(C$, 'set$I$TE', function (location, object) {
 if (location < this.elementCount) {
 var result = this.elementData[location];
-this.elementData[location] = object;
+this.elementData[location]=object;
 return result;
 }throw Clazz_new_(Clazz_load('java.lang.ArrayIndexOutOfBoundsException').c$$I,[location]);
 });
 
 Clazz_newMeth(C$, ['setElementAt$TE$I'], function (object, location) {
 if (location < this.elementCount) {
-this.elementData[location] = object;
+this.elementData[location]=object;
 } else {
 throw Clazz_new_(Clazz_load('java.lang.ArrayIndexOutOfBoundsException').c$$I,[location]);
 }});
@@ -41109,7 +41119,7 @@ return;
 }this.ensureCapacity$I(length);
 if (this.elementCount > length) {
 (I$[2]||$incl$(2)).fill$OA$I$I$O(this.elementData, length, this.elementCount, null);
-}this.elementCount = length;
+}this.elementCount=length;
 this.modCount++;
 });
 
@@ -41130,10 +41140,10 @@ return result;
 Clazz_newMeth(C$, 'toArray$TTA', function (contents) {
 if (this.elementCount > contents.length) {
 var ct = contents.getClass().getComponentType();
-contents = Clazz_array(ct, this.elementCount);
+contents=Clazz_array(ct, this.elementCount);
 }System.arraycopy(this.elementData, 0, contents, 0, this.elementCount);
 if (this.elementCount < contents.length) {
-contents[this.elementCount] = null;
+contents[this.elementCount]=null;
 }return contents;
 });
 
@@ -41168,7 +41178,7 @@ stream.defaultWriteObject();
 });
 C$.$_ASSERT_ENABLED_ = ClassLoader.$getClassAssertionStatus(C$);
 })();
-//Created 2018-05-15 01:02:15
+//Created 2018-05-24 08:45:50
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.event.EventListenerList','javax.swing.event.ListDataListener','javax.swing.event.ListDataEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AbstractListModel", null, null, 'javax.swing.ListModel');
 
@@ -41199,10 +41209,10 @@ return this.listenerList.getListeners$Class(Clazz_getClass((I$[2]||$incl$(2)),['
 Clazz_newMeth(C$, 'fireContentsChanged$O$I$I', function (source, index0, index1) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[2]||$incl$(2)),['contentsChanged$javax_swing_event_ListDataEvent','intervalAdded$javax_swing_event_ListDataEvent','intervalRemoved$javax_swing_event_ListDataEvent']) ) {
 if (e == null ) {
-e = Clazz_new_((I$[3]||$incl$(3)).c$$O$I$I$I,[source, 0, index0, index1]);
+e=Clazz_new_((I$[3]||$incl$(3)).c$$O$I$I$I,[source, 0, index0, index1]);
 }(listeners[i + 1]).contentsChanged$javax_swing_event_ListDataEvent(e);
 }}
 });
@@ -41210,10 +41220,10 @@ e = Clazz_new_((I$[3]||$incl$(3)).c$$O$I$I$I,[source, 0, index0, index1]);
 Clazz_newMeth(C$, 'fireIntervalAdded$O$I$I', function (source, index0, index1) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[2]||$incl$(2)),['contentsChanged$javax_swing_event_ListDataEvent','intervalAdded$javax_swing_event_ListDataEvent','intervalRemoved$javax_swing_event_ListDataEvent']) ) {
 if (e == null ) {
-e = Clazz_new_((I$[3]||$incl$(3)).c$$O$I$I$I,[source, 1, index0, index1]);
+e=Clazz_new_((I$[3]||$incl$(3)).c$$O$I$I$I,[source, 1, index0, index1]);
 }(listeners[i + 1]).intervalAdded$javax_swing_event_ListDataEvent(e);
 }}
 });
@@ -41221,10 +41231,10 @@ e = Clazz_new_((I$[3]||$incl$(3)).c$$O$I$I$I,[source, 1, index0, index1]);
 Clazz_newMeth(C$, 'fireIntervalRemoved$O$I$I', function (source, index0, index1) {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[2]||$incl$(2)),['contentsChanged$javax_swing_event_ListDataEvent','intervalAdded$javax_swing_event_ListDataEvent','intervalRemoved$javax_swing_event_ListDataEvent']) ) {
 if (e == null ) {
-e = Clazz_new_((I$[3]||$incl$(3)).c$$O$I$I$I,[source, 2, index0, index1]);
+e=Clazz_new_((I$[3]||$incl$(3)).c$$O$I$I$I,[source, 2, index0, index1]);
 }(listeners[i + 1]).intervalRemoved$javax_swing_event_ListDataEvent(e);
 }}
 });
@@ -41235,7 +41245,7 @@ return this.listenerList.getListeners$Class(listenerType);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:22
+//Created 2018-05-24 08:46:05
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.event.EventListenerList','javax.swing.event.AncestorListener','javax.swing.event.AncestorEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "AncestorNotifier", null, null, ['java.awt.event.ComponentListener', 'java.beans.PropertyChangeListener']);
 
@@ -41255,7 +41265,7 @@ this.listenerList = Clazz_new_((I$[1]||$incl$(1)));
 
 Clazz_newMeth(C$, 'c$$javax_swing_JComponent', function (root) {
 C$.$init$.apply(this);
-this.root = root;
+this.root=root;
 this.addListeners$java_awt_Component$Z(root, true);
 }, 1);
 
@@ -41273,7 +41283,7 @@ return this.listenerList.getListeners$Class(Clazz_getClass((I$[2]||$incl$(2)),['
 
 Clazz_newMeth(C$, 'fireAncestorAdded$javax_swing_JComponent$I$java_awt_Container$java_awt_Container', function (source, id, ancestor, ancestorParent) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[2]||$incl$(2)),['ancestorAdded$javax_swing_event_AncestorEvent','ancestorMoved$javax_swing_event_AncestorEvent','ancestorRemoved$javax_swing_event_AncestorEvent']) ) {
 var ancestorEvent = Clazz_new_((I$[3]||$incl$(3)).c$$javax_swing_JComponent$I$java_awt_Container$java_awt_Container,[source, id, ancestor, ancestorParent]);
 (listeners[i + 1]).ancestorAdded$javax_swing_event_AncestorEvent(ancestorEvent);
@@ -41282,7 +41292,7 @@ var ancestorEvent = Clazz_new_((I$[3]||$incl$(3)).c$$javax_swing_JComponent$I$ja
 
 Clazz_newMeth(C$, 'fireAncestorRemoved$javax_swing_JComponent$I$java_awt_Container$java_awt_Container', function (source, id, ancestor, ancestorParent) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[2]||$incl$(2)),['ancestorAdded$javax_swing_event_AncestorEvent','ancestorMoved$javax_swing_event_AncestorEvent','ancestorRemoved$javax_swing_event_AncestorEvent']) ) {
 var ancestorEvent = Clazz_new_((I$[3]||$incl$(3)).c$$javax_swing_JComponent$I$java_awt_Container$java_awt_Container,[source, id, ancestor, ancestorParent]);
 (listeners[i + 1]).ancestorRemoved$javax_swing_event_AncestorEvent(ancestorEvent);
@@ -41291,7 +41301,7 @@ var ancestorEvent = Clazz_new_((I$[3]||$incl$(3)).c$$javax_swing_JComponent$I$ja
 
 Clazz_newMeth(C$, 'fireAncestorMoved$javax_swing_JComponent$I$java_awt_Container$java_awt_Container', function (source, id, ancestor, ancestorParent) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[2]||$incl$(2)),['ancestorAdded$javax_swing_event_AncestorEvent','ancestorMoved$javax_swing_event_AncestorEvent','ancestorRemoved$javax_swing_event_AncestorEvent']) ) {
 var ancestorEvent = Clazz_new_((I$[3]||$incl$(3)).c$$javax_swing_JComponent$I$java_awt_Container$java_awt_Container,[source, id, ancestor, ancestorParent]);
 (listeners[i + 1]).ancestorMoved$javax_swing_event_AncestorEvent(ancestorEvent);
@@ -41304,23 +41314,23 @@ this.removeListeners$java_awt_Component(this.root);
 
 Clazz_newMeth(C$, 'addListeners$java_awt_Component$Z', function (ancestor, addToFirst) {
 var a;
-this.firstInvisibleAncestor = null;
-for (a = ancestor; this.firstInvisibleAncestor == null ; a = a.getParent()) {
+this.firstInvisibleAncestor=null;
+for (a=ancestor; this.firstInvisibleAncestor == null ; a=a.getParent()) {
 if (addToFirst || a !== ancestor  ) {
 a.addComponentListener$java_awt_event_ComponentListener(this);
 if (Clazz_instanceOf(a, "javax.swing.JComponent")) {
 var jAncestor = a;
 jAncestor.addPropertyChangeListener$java_beans_PropertyChangeListener(this);
 }}if (!a.isVisible() || a.getParent() == null   || Clazz_instanceOf(a, "java.awt.Window") ) {
-this.firstInvisibleAncestor = a;
+this.firstInvisibleAncestor=a;
 }}
 if (Clazz_instanceOf(this.firstInvisibleAncestor, "java.awt.Window") && this.firstInvisibleAncestor.isVisible() ) {
-this.firstInvisibleAncestor = null;
+this.firstInvisibleAncestor=null;
 }});
 
 Clazz_newMeth(C$, 'removeListeners$java_awt_Component', function (ancestor) {
 var a;
-for (a = ancestor; a != null ; a = a.getParent()) {
+for (a=ancestor; a != null ; a=a.getParent()) {
 a.removeComponentListener$java_awt_event_ComponentListener(this);
 if (Clazz_instanceOf(a, "javax.swing.JComponent")) {
 var jAncestor = a;
@@ -41351,7 +41361,7 @@ var ancestor = e.getComponent();
 var needsNotify = this.firstInvisibleAncestor == null ;
 if (!(Clazz_instanceOf(ancestor, "java.awt.Window"))) {
 this.removeListeners$java_awt_Component(ancestor.getParent());
-}this.firstInvisibleAncestor = ancestor;
+}this.firstInvisibleAncestor=ancestor;
 if (needsNotify) {
 this.fireAncestorRemoved$javax_swing_JComponent$I$java_awt_Container$java_awt_Container(this.root, 2, ancestor, ancestor.getParent());
 }});
@@ -41369,14 +41379,14 @@ this.fireAncestorAdded$javax_swing_JComponent$I$java_awt_Container$java_awt_Cont
 var needsNotify = this.firstInvisibleAncestor == null ;
 var oldParent = evt.getOldValue();
 this.removeListeners$java_awt_Component(oldParent);
-this.firstInvisibleAncestor = component;
+this.firstInvisibleAncestor=component;
 if (needsNotify) {
 this.fireAncestorRemoved$javax_swing_JComponent$I$java_awt_Container$java_awt_Container(this.root, 2, component, oldParent);
 }}}});
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:22
+//Created 2018-05-24 08:46:06
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.awt.AWTError','java.awt.Dimension','javax.swing.SizeRequirements']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "BoxLayout", null, null, 'java.awt.LayoutManager2');
 var p$=C$.prototype;
@@ -41401,8 +41411,8 @@ Clazz_newMeth(C$, 'c$$java_awt_Container$I', function (target, axis) {
 C$.$init$.apply(this);
 if (axis != 0 && axis != 1  && axis != 2  && axis != 3 ) {
 throw Clazz_new_((I$[1]||$incl$(1)).c$$S,["Invalid axis"]);
-}this.axis = axis;
-this.target = target;
+}this.axis=axis;
+this.target=target;
 }, 1);
 
 Clazz_newMeth(C$, 'getTarget', function () {
@@ -41415,10 +41425,10 @@ return this.axis;
 
 Clazz_newMeth(C$, 'invalidateLayout$java_awt_Container', function (target) {
 this.checkContainer$java_awt_Container(target);
-this.xChildren = null;
-this.yChildren = null;
-this.xTotal = null;
-this.yTotal = null;
+this.xChildren=null;
+this.yChildren=null;
+this.xTotal=null;
+this.yTotal=null;
 });
 
 Clazz_newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (name, comp) {
@@ -41438,10 +41448,10 @@ var size;
 {
 this.checkContainer$java_awt_Container(target);
 this.checkRequests();
-size = Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[this.xTotal.preferred, this.yTotal.preferred]);
+size=Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[this.xTotal.preferred, this.yTotal.preferred]);
 }var insets = target.getInsets();
-size.width = (Math.min(size.width + insets.left + insets.right , 2147483647)|0);
-size.height = (Math.min(size.height + insets.top + insets.bottom , 2147483647)|0);
+size.width=(Math.min(size.width + insets.left + insets.right , 2147483647)|0);
+size.height=(Math.min(size.height + insets.top + insets.bottom , 2147483647)|0);
 return size;
 });
 
@@ -41450,10 +41460,10 @@ var size;
 {
 this.checkContainer$java_awt_Container(target);
 this.checkRequests();
-size = Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[this.xTotal.minimum, this.yTotal.minimum]);
+size=Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[this.xTotal.minimum, this.yTotal.minimum]);
 }var insets = target.getInsets();
-size.width = (Math.min(size.width + insets.left + insets.right , 2147483647)|0);
-size.height = (Math.min(size.height + insets.top + insets.bottom , 2147483647)|0);
+size.width=(Math.min(size.width + insets.left + insets.right , 2147483647)|0);
+size.height=(Math.min(size.height + insets.top + insets.bottom , 2147483647)|0);
 return size;
 });
 
@@ -41462,10 +41472,10 @@ var size;
 {
 this.checkContainer$java_awt_Container(target);
 this.checkRequests();
-size = Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[this.xTotal.maximum, this.yTotal.maximum]);
+size=Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[this.xTotal.maximum, this.yTotal.maximum]);
 }var insets = target.getInsets();
-size.width = (Math.min(size.width + insets.left + insets.right , 2147483647)|0);
-size.height = (Math.min(size.height + insets.top + insets.bottom , 2147483647)|0);
+size.width=(Math.min(size.width + insets.left + insets.right , 2147483647)|0);
+size.height=(Math.min(size.height + insets.top + insets.bottom , 2147483647)|0);
 return size;
 });
 
@@ -41490,8 +41500,8 @@ var yOffsets = Clazz_array(Integer.TYPE, [nChildren]);
 var ySpans = Clazz_array(Integer.TYPE, [nChildren]);
 var alloc = target.getSize();
 var $in = target.getInsets();
-alloc.width = alloc.width-($in.left + $in.right);
-alloc.height = alloc.height-($in.top + $in.bottom);
+alloc.width-=$in.left + $in.right;
+alloc.height-=$in.top + $in.bottom;
 var o = target.getComponentOrientation();
 var absoluteAxis = p$.resolveAxis$I$java_awt_ComponentOrientation.apply(this, [this.axis, o]);
 var ltr = (absoluteAxis != this.axis) ? o.isLeftToRight() : true;
@@ -41517,43 +41527,43 @@ throw Clazz_new_((I$[1]||$incl$(1)).c$$S,["BoxLayout can\'t be shared"]);
 Clazz_newMeth(C$, 'checkRequests', function () {
 if (this.xChildren == null  || this.yChildren == null  ) {
 var n = this.target.getComponentCount();
-this.xChildren = Clazz_array((I$[3]||$incl$(3)), [n]);
-this.yChildren = Clazz_array((I$[3]||$incl$(3)), [n]);
+this.xChildren=Clazz_array((I$[3]||$incl$(3)), [n]);
+this.yChildren=Clazz_array((I$[3]||$incl$(3)), [n]);
 for (var i = 0; i < n; i++) {
 var c = this.target.getComponent$I(i);
 if (!c.isVisible()) {
-this.xChildren[i] = Clazz_new_((I$[3]||$incl$(3)).c$$I$I$I$F,[0, 0, 0, c.getAlignmentX()]);
-this.yChildren[i] = Clazz_new_((I$[3]||$incl$(3)).c$$I$I$I$F,[0, 0, 0, c.getAlignmentY()]);
+this.xChildren[i]=Clazz_new_((I$[3]||$incl$(3)).c$$I$I$I$F,[0, 0, 0, c.getAlignmentX()]);
+this.yChildren[i]=Clazz_new_((I$[3]||$incl$(3)).c$$I$I$I$F,[0, 0, 0, c.getAlignmentY()]);
 continue;
 }var min = c.getMinimumSize();
 var typ = c.getPreferredSize();
 var max = c.getMaximumSize();
-this.xChildren[i] = Clazz_new_((I$[3]||$incl$(3)).c$$I$I$I$F,[min.width, typ.width, max.width, c.getAlignmentX()]);
-this.yChildren[i] = Clazz_new_((I$[3]||$incl$(3)).c$$I$I$I$F,[min.height, typ.height, max.height, c.getAlignmentY()]);
+this.xChildren[i]=Clazz_new_((I$[3]||$incl$(3)).c$$I$I$I$F,[min.width, typ.width, max.width, c.getAlignmentX()]);
+this.yChildren[i]=Clazz_new_((I$[3]||$incl$(3)).c$$I$I$I$F,[min.height, typ.height, max.height, c.getAlignmentY()]);
 }
 var absoluteAxis = p$.resolveAxis$I$java_awt_ComponentOrientation.apply(this, [this.axis, this.target.getComponentOrientation()]);
 if (absoluteAxis == 0) {
-this.xTotal = (I$[3]||$incl$(3)).getTiledSizeRequirements$javax_swing_SizeRequirementsA(this.xChildren);
-this.yTotal = (I$[3]||$incl$(3)).getAlignedSizeRequirements$javax_swing_SizeRequirementsA(this.yChildren);
+this.xTotal=(I$[3]||$incl$(3)).getTiledSizeRequirements$javax_swing_SizeRequirementsA(this.xChildren);
+this.yTotal=(I$[3]||$incl$(3)).getAlignedSizeRequirements$javax_swing_SizeRequirementsA(this.yChildren);
 } else {
-this.xTotal = (I$[3]||$incl$(3)).getAlignedSizeRequirements$javax_swing_SizeRequirementsA(this.xChildren);
-this.yTotal = (I$[3]||$incl$(3)).getTiledSizeRequirements$javax_swing_SizeRequirementsA(this.yChildren);
+this.xTotal=(I$[3]||$incl$(3)).getAlignedSizeRequirements$javax_swing_SizeRequirementsA(this.xChildren);
+this.yTotal=(I$[3]||$incl$(3)).getTiledSizeRequirements$javax_swing_SizeRequirementsA(this.yChildren);
 }}});
 
 Clazz_newMeth(C$, 'resolveAxis$I$java_awt_ComponentOrientation', function (axis, o) {
 var absoluteAxis;
 if (axis == 2) {
-absoluteAxis = o.isHorizontal() ? 0 : 1;
+absoluteAxis=o.isHorizontal() ? 0 : 1;
 } else if (axis == 3) {
-absoluteAxis = o.isHorizontal() ? 1 : 0;
+absoluteAxis=o.isHorizontal() ? 1 : 0;
 } else {
-absoluteAxis = axis;
+absoluteAxis=axis;
 }return absoluteAxis;
 });
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:23
+//Created 2018-05-24 08:46:07
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.util.Vector']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "ButtonGroup");
 
@@ -41578,7 +41588,7 @@ return;
 }this.buttons.addElement$TE(b);
 if (b.isSelected()) {
 if (this.selection == null ) {
-this.selection = b.getModel();
+this.selection=b.getModel();
 } else {
 b.setSelected$Z(false);
 }}b.getModel().setGroup$javax_swing_ButtonGroup(this);
@@ -41589,14 +41599,14 @@ if (b == null ) {
 return;
 }this.buttons.removeElement$O(b);
 if (b.getModel() === this.selection ) {
-this.selection = null;
+this.selection=null;
 }b.getModel().setGroup$javax_swing_ButtonGroup(null);
 });
 
 Clazz_newMeth(C$, 'clearSelection', function () {
 if (this.selection != null ) {
 var oldSelection = this.selection;
-this.selection = null;
+this.selection=null;
 oldSelection.setSelected$Z(false);
 }});
 
@@ -41611,7 +41621,7 @@ return this.selection;
 Clazz_newMeth(C$, 'setSelected$javax_swing_ButtonModel$Z', function (m, b) {
 if (b && m != null   && m !== this.selection  ) {
 var oldSelection = this.selection;
-this.selection = m;
+this.selection=m;
 if (oldSelection != null ) {
 oldSelection.setSelected$Z(false);
 }m.setSelected$Z(true);
@@ -41628,7 +41638,7 @@ return 0;
 return this.buttons.size();
 }});
 })();
-//Created 2018-05-15 01:02:23
+//Created 2018-05-24 08:46:07
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newClass(P$, "ClientPropertyKey", null, 'Enum');
 var p$=C$.prototype;
@@ -41654,14 +41664,14 @@ C$.$init$.apply(this);
 var $vals=[];
 Clazz_newMeth(C$, 'values', function() { return $vals }, 1);
 })();
-//Created 2018-05-15 01:02:23
+//Created 2018-05-24 08:46:07
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "ComboBoxModel", null, null, 'javax.swing.ListModel');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:02:23
+//Created 2018-05-24 08:46:07
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.util.Vector']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "DefaultComboBoxModel", null, 'javax.swing.AbstractListModel', 'javax.swing.MutableComboBoxModel');
 
@@ -41679,31 +41689,31 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
-this.objects = Clazz_new_((I$[1]||$incl$(1)));
+this.objects=Clazz_new_((I$[1]||$incl$(1)));
 }, 1);
 
 Clazz_newMeth(C$, 'c$$OA', function (items) {
 Clazz_super_(C$, this,1);
-this.objects = Clazz_new_((I$[1]||$incl$(1)));
+this.objects=Clazz_new_((I$[1]||$incl$(1)));
 this.objects.ensureCapacity$I(items.length);
 var i;
 var c;
-for (i = 0, c = items.length; i < c; i++) this.objects.addElement$TE(items[i]);
+for (i=0, c=items.length; i < c; i++) this.objects.addElement$TE(items[i]);
 
 if (this.getSize() > 0) {
-this.selectedObject = this.getElementAt$I(0);
+this.selectedObject=this.getElementAt$I(0);
 }}, 1);
 
 Clazz_newMeth(C$, 'c$$java_util_Vector', function (v) {
 Clazz_super_(C$, this,1);
-this.objects = v;
+this.objects=v;
 if (this.getSize() > 0) {
-this.selectedObject = this.getElementAt$I(0);
+this.selectedObject=this.getElementAt$I(0);
 }}, 1);
 
 Clazz_newMeth(C$, 'setSelectedItem$O', function (anObject) {
 if ((this.selectedObject != null  && !this.selectedObject.equals$O(anObject) ) || this.selectedObject == null  && anObject != null   ) {
-this.selectedObject = anObject;
+this.selectedObject=anObject;
 this.fireContentsChanged$O$I$I(this, -1, -1);
 }});
 
@@ -41757,13 +41767,13 @@ if (this.objects.size() > 0) {
 var firstIndex = 0;
 var lastIndex = this.objects.size() - 1;
 this.objects.removeAllElements();
-this.selectedObject = null;
+this.selectedObject=null;
 this.fireIntervalRemoved$O$I$I(this, firstIndex, lastIndex);
 } else {
-this.selectedObject = null;
+this.selectedObject=null;
 }});
 })();
-//Created 2018-05-15 01:02:24
+//Created 2018-05-24 08:46:08
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.event.EventListenerList','javax.swing.event.ChangeListener','javax.swing.event.ChangeEvent']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "DefaultSingleSelectionModel", null, null, 'javax.swing.SingleSelectionModel');
 
@@ -41789,7 +41799,7 @@ return this.index;
 
 Clazz_newMeth(C$, 'setSelectedIndex$I', function (index) {
 if (this.index != index) {
-this.index = index;
+this.index=index;
 this.fireStateChanged();
 }});
 
@@ -41800,7 +41810,7 @@ this.setSelectedIndex$I(-1);
 Clazz_newMeth(C$, 'isSelected', function () {
 var ret = false;
 if (this.getSelectedIndex() != -1) {
-ret = true;
+ret=true;
 }return ret;
 });
 
@@ -41818,9 +41828,9 @@ return this.listenerList.getListeners$Class(Clazz_getClass((I$[2]||$incl$(2)),['
 
 Clazz_newMeth(C$, 'fireStateChanged', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[2]||$incl$(2)),['stateChanged$javax_swing_event_ChangeEvent']) ) {
-if (this.changeEvent == null ) this.changeEvent = Clazz_new_((I$[3]||$incl$(3)).c$$O,[this]);
+if (this.changeEvent == null ) this.changeEvent=Clazz_new_((I$[3]||$incl$(3)).c$$O,[this]);
 (listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -41831,7 +41841,7 @@ return this.listenerList.getListeners$Class(listenerType);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:24
+//Created 2018-05-24 08:46:10
 (function(){var P$=Clazz_newPackage("javax.swing.event"),I$=[];
 var C$=Clazz_newClass(P$, "AncestorEvent", null, 'java.awt.AWTEvent');
 
@@ -41850,8 +41860,8 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$$javax_swing_JComponent$I$java_awt_Container$java_awt_Container', function (source, id, ancestor, ancestorParent) {
 C$.superclazz.c$$O$I.apply(this, [source, id]);
 C$.$init$.apply(this);
-this.ancestor = ancestor;
-this.ancestorParent = ancestorParent;
+this.ancestor=ancestor;
+this.ancestorParent=ancestorParent;
 }, 1);
 
 Clazz_newMeth(C$, 'getAncestor', function () {
@@ -41868,7 +41878,7 @@ return this.getSource();
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:45
+//Created 2018-05-24 08:46:48
 (function(){var P$=Clazz_newPackage("javax.swing.event"),I$=[];
 var C$=Clazz_newClass(P$, "ChangeEvent", null, 'java.util.EventObject');
 
@@ -41885,7 +41895,7 @@ C$.$init$.apply(this);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:45
+//Created 2018-05-24 08:46:48
 (function(){var P$=Clazz_newPackage("javax.swing.event"),I$=[];
 var C$=Clazz_newClass(P$, "ListDataEvent", null, 'java.util.EventObject');
 
@@ -41917,9 +41927,9 @@ return this.index1;
 Clazz_newMeth(C$, 'c$$O$I$I$I', function (source, type, index0, index1) {
 C$.superclazz.c$.apply(this, [source]);
 C$.$init$.apply(this);
-this.type = type;
-this.index0 = Math.min(index0, index1);
-this.index1 = Math.max(index0, index1);
+this.type=type;
+this.index0=Math.min(index0, index1);
+this.index1=Math.max(index0, index1);
 }, 1);
 
 Clazz_newMeth(C$, 'toString', function () {
@@ -41928,14 +41938,14 @@ return this.getClass().getName() + "[type=" + this.type + ",index0=" + this.inde
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:45
+//Created 2018-05-24 08:46:48
 (function(){var P$=Clazz_newPackage("javax.swing.event"),I$=[];
 var C$=Clazz_newInterface(P$, "ListDataListener", null, null, 'java.util.EventListener');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:02:45
+//Created 2018-05-24 08:46:48
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.lang.Boolean']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JCheckBox", null, 'javax.swing.JToggleButton');
 
@@ -41989,7 +41999,7 @@ this.setHorizontalAlignment$I(10);
 
 Clazz_newMeth(C$, 'setBorderPaintedFlat$Z', function (b) {
 var oldValue = this.flat;
-this.flat = b;
+this.flat=b;
 this.firePropertyChange$S$Z$Z("borderPaintedFlat", oldValue, this.flat);
 if (b != oldValue ) {
 this.revalidate();
@@ -42007,7 +42017,7 @@ Clazz_newMeth(C$, 'paramString', function () {
 return C$.superclazz.prototype.paramString.apply(this, []);
 });
 })();
-//Created 2018-05-15 01:02:26
+//Created 2018-05-24 08:46:12
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[[['javax.swing.JToggleButton','.ToggleButtonModel']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JCheckBoxMenuItem", null, 'javax.swing.JMenuItem', 'javax.swing.SwingConstants');
 
@@ -42061,7 +42071,7 @@ this.setSelected$Z(b);
 Clazz_newMeth(C$, 'getSelectedObjects', function () {
 if (this.isSelected() == false ) return null;
 var selectedObjects = Clazz_array(java.lang.Object, [1]);
-selectedObjects[0] = this.getText();
+selectedObjects[0]=this.getText();
 return selectedObjects;
 });
 
@@ -42073,7 +42083,7 @@ Clazz_newMeth(C$, 'shouldUpdateSelectedStateFromAction', function () {
 return true;
 });
 })();
-//Created 2018-05-15 01:02:26
+//Created 2018-05-24 08:46:12
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.AbstractAction','javax.swing.JPopupMenu','javax.swing.DefaultComboBoxModel','javax.swing.JComboBox$1','javax.swing.SwingUtilities','java.awt.event.ItemListener','java.awt.event.ActionListener','javax.swing.event.PopupMenuListener','javax.swing.event.PopupMenuEvent',['javax.swing.JComboBox','.ComboBoxActionPropertyChangeListener'],'java.awt.EventQueue','java.awt.event.ActionEvent','java.awt.event.ItemEvent',['javax.swing.JComboBox','.DefaultKeySelectionManager']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JComboBox", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -42150,7 +42160,7 @@ p$.initComboBox.apply(this, []);
 
 Clazz_newMeth(C$, 'initComboBox', function () {
 this.installAncestorListener();
-this.uiClassID = "ComboBoxUI";
+this.uiClassID="ComboBoxUI";
 this.setUIProperty$S$O("opaque", new Boolean(true));
 this.updateUI();
 });
@@ -42191,9 +42201,9 @@ Clazz_newMeth(C$, 'setModel$javax_swing_ComboBoxModel', function (aModel) {
 var oldModel = this.dataModel;
 if (oldModel != null ) {
 oldModel.removeListDataListener$javax_swing_event_ListDataListener(this);
-}this.dataModel = aModel;
+}this.dataModel=aModel;
 this.dataModel.addListDataListener$javax_swing_event_ListDataListener(this);
-this.selectedItemReminder = this.dataModel.getSelectedItem();
+this.selectedItemReminder=this.dataModel.getSelectedItem();
 this.firePropertyChange$S$O$O("model", oldModel, this.dataModel);
 });
 
@@ -42203,7 +42213,7 @@ return this.dataModel;
 
 Clazz_newMeth(C$, 'setLightWeightPopupEnabled$Z', function (aFlag) {
 var oldFlag = this.lightWeightPopupEnabled;
-this.lightWeightPopupEnabled = aFlag;
+this.lightWeightPopupEnabled=aFlag;
 this.firePropertyChange$S$Z$Z("lightWeightPopupEnabled", oldFlag, this.lightWeightPopupEnabled);
 });
 
@@ -42213,7 +42223,7 @@ return this.lightWeightPopupEnabled;
 
 Clazz_newMeth(C$, 'setEditable$Z', function (aFlag) {
 var oldFlag = this.$isEditable;
-this.$isEditable = aFlag;
+this.$isEditable=aFlag;
 this.firePropertyChange$S$Z$Z("editable", oldFlag, this.$isEditable);
 });
 
@@ -42223,7 +42233,7 @@ return this.$isEditable;
 
 Clazz_newMeth(C$, 'setMaximumRowCount$I', function (count) {
 var oldCount = this.maximumRowCount;
-this.maximumRowCount = count;
+this.maximumRowCount=count;
 this.firePropertyChange$S$I$I("maximumRowCount", oldCount, this.maximumRowCount);
 });
 
@@ -42233,7 +42243,7 @@ return this.maximumRowCount;
 
 Clazz_newMeth(C$, 'setRenderer$javax_swing_ListCellRenderer', function (aRenderer) {
 var oldRenderer = this.renderer;
-this.renderer = aRenderer;
+this.renderer=aRenderer;
 this.firePropertyChange$S$O$O("renderer", oldRenderer, this.renderer);
 this.invalidate();
 });
@@ -42246,7 +42256,7 @@ Clazz_newMeth(C$, 'setEditor$javax_swing_ComboBoxEditor', function (anEditor) {
 var oldEditor = this.editor;
 if (this.editor != null ) {
 this.editor.removeActionListener$java_awt_event_ActionListener(this);
-}this.editor = anEditor;
+}this.editor=anEditor;
 if (this.editor != null ) {
 this.editor.addActionListener$java_awt_event_ActionListener(this);
 }this.firePropertyChange$S$O$O("editor", oldEditor, this.editor);
@@ -42265,15 +42275,15 @@ var found = false;
 for (var i = 0; i < this.dataModel.getSize(); i++) {
 var element = this.dataModel.getElementAt$I(i);
 if (anObject.equals$O(element)) {
-found = true;
-objectToSelect = element;
+found=true;
+objectToSelect=element;
 break;
 }}
 if (!found) {
 return;
-}}this.selectingItem = true;
+}}this.selectingItem=true;
 this.dataModel.setSelectedItem$O(objectToSelect);
-this.selectingItem = false;
+this.selectingItem=false;
 if (this.selectedItemReminder !== this.dataModel.getSelectedItem() ) {
 this.selectedItemChanged();
 }}this.fireActionEvent();
@@ -42298,8 +42308,8 @@ var sObject = this.dataModel.getSelectedItem();
 var i;
 var c;
 var obj;
-for (i = 0, c = this.dataModel.getSize(); i < c; i++) {
-obj = this.dataModel.getElementAt$I(i);
+for (i=0, c=this.dataModel.getSize(); i < c; i++) {
+obj=this.dataModel.getElementAt$I(i);
 if (obj != null  && obj.equals$O(sObject) ) return i;
 }
 return -1;
@@ -42311,7 +42321,7 @@ return this.prototypeDisplayValue;
 
 Clazz_newMeth(C$, 'setPrototypeDisplayValue$O', function (prototypeDisplayValue) {
 var oldValue = this.prototypeDisplayValue;
-this.prototypeDisplayValue = prototypeDisplayValue;
+this.prototypeDisplayValue=prototypeDisplayValue;
 this.firePropertyChange$S$O$O("prototypeDisplayValue", oldValue, prototypeDisplayValue);
 });
 
@@ -42346,7 +42356,7 @@ for (var i = 0; i < size; ++i) {
 var element = model.getElementAt$I(0);
 model.removeElement$O(element);
 }
-}this.selectedItemReminder = null;
+}this.selectedItemReminder=null;
 if (this.isEditable()) {
 this.editor.setItem$O(null);
 }});
@@ -42413,9 +42423,9 @@ return this.listenerList.getListeners$Class(Clazz_getClass((I$[8]||$incl$(8)),['
 Clazz_newMeth(C$, 'firePopupMenuWillBecomeVisible', function () {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[8]||$incl$(8)),['popupMenuCanceled$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeInvisible$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeVisible$javax_swing_event_PopupMenuEvent']) ) {
-if (e == null ) e = Clazz_new_((I$[9]||$incl$(9)).c$$O,[this]);
+if (e == null ) e=Clazz_new_((I$[9]||$incl$(9)).c$$O,[this]);
 (listeners[i + 1]).popupMenuWillBecomeVisible$javax_swing_event_PopupMenuEvent(e);
 }}
 });
@@ -42423,9 +42433,9 @@ if (e == null ) e = Clazz_new_((I$[9]||$incl$(9)).c$$O,[this]);
 Clazz_newMeth(C$, 'firePopupMenuWillBecomeInvisible', function () {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[8]||$incl$(8)),['popupMenuCanceled$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeInvisible$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeVisible$javax_swing_event_PopupMenuEvent']) ) {
-if (e == null ) e = Clazz_new_((I$[9]||$incl$(9)).c$$O,[this]);
+if (e == null ) e=Clazz_new_((I$[9]||$incl$(9)).c$$O,[this]);
 (listeners[i + 1]).popupMenuWillBecomeInvisible$javax_swing_event_PopupMenuEvent(e);
 }}
 });
@@ -42433,15 +42443,15 @@ if (e == null ) e = Clazz_new_((I$[9]||$incl$(9)).c$$O,[this]);
 Clazz_newMeth(C$, 'firePopupMenuCanceled', function () {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[8]||$incl$(8)),['popupMenuCanceled$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeInvisible$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeVisible$javax_swing_event_PopupMenuEvent']) ) {
-if (e == null ) e = Clazz_new_((I$[9]||$incl$(9)).c$$O,[this]);
+if (e == null ) e=Clazz_new_((I$[9]||$incl$(9)).c$$O,[this]);
 (listeners[i + 1]).popupMenuCanceled$javax_swing_event_PopupMenuEvent(e);
 }}
 });
 
 Clazz_newMeth(C$, 'setActionCommand$S', function (aCommand) {
-this.actionCommand = aCommand;
+this.actionCommand=aCommand;
 });
 
 Clazz_newMeth(C$, 'getActionCommand', function () {
@@ -42451,16 +42461,16 @@ return this.actionCommand;
 Clazz_newMeth(C$, 'setAction$javax_swing_Action', function (a) {
 var oldValue = this.getAction();
 if (this.$action == null  || !this.$action.equals$O(a) ) {
-this.$action = a;
+this.$action=a;
 if (oldValue != null ) {
 this.removeActionListener$java_awt_event_ActionListener(oldValue);
 oldValue.removePropertyChangeListener$java_beans_PropertyChangeListener(this.actionPropertyChangeListener);
-this.actionPropertyChangeListener = null;
+this.actionPropertyChangeListener=null;
 }this.configurePropertiesFromAction$javax_swing_Action(this.$action);
 if (this.$action != null ) {
 if (!p$.isListener$Class$java_awt_event_ActionListener.apply(this, [Clazz_getClass((I$[7]||$incl$(7)),['actionPerformed$java_awt_event_ActionEvent']), this.$action])) {
 this.addActionListener$java_awt_event_ActionListener(this.$action);
-}this.actionPropertyChangeListener = this.createActionPropertyChangeListener$javax_swing_Action(this.$action);
+}this.actionPropertyChangeListener=this.createActionPropertyChangeListener$javax_swing_Action(this.$action);
 this.$action.addPropertyChangeListener$java_beans_PropertyChangeListener(this.actionPropertyChangeListener);
 }this.firePropertyChange$S$O$O("action", oldValue, this.$action);
 }});
@@ -42468,9 +42478,9 @@ this.$action.addPropertyChangeListener$java_beans_PropertyChangeListener(this.ac
 Clazz_newMeth(C$, 'isListener$Class$java_awt_event_ActionListener', function (c, a) {
 var isListener = false;
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === c  && listeners[i + 1] === a  ) {
-isListener = true;
+isListener=true;
 }}
 return isListener;
 });
@@ -42504,7 +42514,7 @@ this.setActionCommand$S((a != null ) ? a.getValue$S("ActionCommandKey") : null);
 
 Clazz_newMeth(C$, 'fireItemStateChanged$java_awt_event_ItemEvent', function (e) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[6]||$incl$(6)),['itemStateChanged$java_awt_event_ItemEvent']) ) {
 (listeners[i + 1]).itemStateChanged$java_awt_event_ItemEvent(e);
 }}
@@ -42512,28 +42522,28 @@ if (listeners[i] === Clazz_getClass((I$[6]||$incl$(6)),['itemStateChanged$java_a
 
 Clazz_newMeth(C$, 'fireActionEvent', function () {
 if (!this.firingActionEvent) {
-this.firingActionEvent = true;
+this.firingActionEvent=true;
 var e = null;
 var listeners = this.listenerList.getListenerList();
 var mostRecentEventTime = (I$[11]||$incl$(11)).getMostRecentEventTime();
 var modifiers = 0;
 var currentEvent = (I$[11]||$incl$(11)).getCurrentEvent();
 if (Clazz_instanceOf(currentEvent, "java.awt.event.InputEvent")) {
-modifiers = (currentEvent).getModifiers();
+modifiers=(currentEvent).getModifiers();
 } else if (Clazz_instanceOf(currentEvent, "java.awt.event.ActionEvent")) {
-modifiers = (currentEvent).getModifiers();
-}for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+modifiers=(currentEvent).getModifiers();
+}for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[7]||$incl$(7)),['actionPerformed$java_awt_event_ActionEvent']) ) {
-if (e == null ) e = Clazz_new_((I$[12]||$incl$(12)).c$$O$I$S$J$I,[this, 1001, this.getActionCommand(), mostRecentEventTime, modifiers]);
+if (e == null ) e=Clazz_new_((I$[12]||$incl$(12)).c$$O$I$S$J$I,[this, 1001, this.getActionCommand(), mostRecentEventTime, modifiers]);
 (listeners[i + 1]).actionPerformed$java_awt_event_ActionEvent(e);
 }}
-this.firingActionEvent = false;
+this.firingActionEvent=false;
 }});
 
 Clazz_newMeth(C$, 'selectedItemChanged', function () {
 if (this.selectedItemReminder != null ) {
 this.fireItemStateChanged$java_awt_event_ItemEvent(Clazz_new_((I$[13]||$incl$(13)).c$$java_awt_ItemSelectable$I$O$I,[this, 701, this.selectedItemReminder, 2]));
-}this.selectedItemReminder = this.dataModel.getSelectedItem();
+}this.selectedItemReminder=this.dataModel.getSelectedItem();
 if (this.selectedItemReminder != null ) {
 this.fireItemStateChanged$java_awt_event_ItemEvent(Clazz_new_((I$[13]||$incl$(13)).c$$java_awt_ItemSelectable$I$O$I,[this, 701, this.selectedItemReminder, 1]));
 }});
@@ -42543,7 +42553,7 @@ var selectedObject = this.getSelectedItem();
 if (selectedObject == null ) return Clazz_array(java.lang.Object, [0]);
  else {
 var result = Clazz_array(java.lang.Object, [1]);
-result[0] = selectedObject;
+result[0]=selectedObject;
 return result;
 }});
 
@@ -42577,8 +42587,8 @@ this.contentsChanged$javax_swing_event_ListDataEvent(e);
 
 Clazz_newMeth(C$, 'selectWithKeyChar$C', function (keyChar) {
 var index;
-if (this.keySelectionManager == null ) this.keySelectionManager = this.createDefaultKeySelectionManager();
-index = this.keySelectionManager.selectionForKey$C$javax_swing_ComboBoxModel(keyChar, this.getModel());
+if (this.keySelectionManager == null ) this.keySelectionManager=this.createDefaultKeySelectionManager();
+index=this.keySelectionManager.selectionForKey$C$javax_swing_ComboBoxModel(keyChar, this.getModel());
 if (index != -1) {
 this.setSelectedIndex$I(index);
 return true;
@@ -42601,7 +42611,7 @@ this.hidePopup();
 });
 
 Clazz_newMeth(C$, 'setKeySelectionManager$javax_swing_JComboBox_KeySelectionManager', function (aManager) {
-this.keySelectionManager = aManager;
+this.keySelectionManager=aManager;
 });
 
 Clazz_newMeth(C$, 'getKeySelectionManager', function () {
@@ -42674,23 +42684,23 @@ var selectedItem = aModel.getSelectedItem();
 var v;
 var pattern;
 if (selectedItem != null ) {
-for (i = 0, c = aModel.getSize(); i < c; i++) {
+for (i=0, c=aModel.getSize(); i < c; i++) {
 if (selectedItem === aModel.getElementAt$I(i) ) {
-currentSelection = i;
+currentSelection=i;
 break;
 }}
-}pattern = ("" + aKey).toLowerCase();
-aKey = pattern.charAt(0);
-for (i = ++currentSelection, c = aModel.getSize(); i < c; i++) {
+}pattern=("" + aKey).toLowerCase();
+aKey=pattern.charAt(0);
+for (i=++currentSelection, c=aModel.getSize(); i < c; i++) {
 var elem = aModel.getElementAt$I(i);
 if (elem != null  && elem.toString() != null  ) {
-v = elem.toString().toLowerCase();
+v=elem.toString().toLowerCase();
 if (v.length$() > 0 && v.charAt(0) == aKey ) return i;
 }}
-for (i = 0; i < currentSelection; i++) {
+for (i=0; i < currentSelection; i++) {
 var elem = aModel.getElementAt$I(i);
 if (elem != null  && elem.toString() != null  ) {
-v = elem.toString().toLowerCase();
+v=elem.toString().toLowerCase();
 if (v.length$() > 0 && v.charAt(0) == aKey ) return i;
 }}
 return -1;
@@ -42699,7 +42709,7 @@ return -1;
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:26
+//Created 2018-05-24 08:46:13
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.JComponent','javax.swing.UIManager','javax.swing.JRootPane','javax.swing.SwingUtilities','javax.swing.RepaintManager','java.lang.Boolean']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JFrame", null, 'java.awt.Frame', ['javax.swing.WindowConstants', 'javax.swing.RootPaneContainer']);
 C$.defaultLookAndFeelDecoratedKey = null;
@@ -42724,8 +42734,8 @@ this.rootPaneCheckingEnabled = false;
 
 Clazz_newMeth(C$, 'add$java_awt_Component$O', function (comp, constraints) {
 if (Clazz_instanceOf(comp, "javax.swing.JApplet")) {
-this.isAppletFrame = true;
-(comp).getLayeredPane().isFramedApplet = true;
+this.isAppletFrame=true;
+(comp).getLayeredPane().isFramedApplet=true;
 }C$.superclazz.prototype.add$java_awt_Component$O.apply(this, [comp, constraints]);
 });
 
@@ -42746,7 +42756,7 @@ Clazz_super_(C$, this,1);
 this.initTitleGC$S$java_awt_GraphicsConfiguration(title, gc);
 this.enableEvents$J(72);
 this.setLocale$java_util_Locale((I$[1]||$incl$(1)).getDefaultLocale());
-this.uiClassID = "FrameUI";
+this.uiClassID="FrameUI";
 this.setRootPane$javax_swing_JRootPane(this.createRootPane());
 this.rootPane.setFrameViewer$swingjs_JSFrameViewer(this.setFrameViewer$swingjs_JSFrameViewer(null));
 this.setBackground$java_awt_Color((I$[2]||$incl$(2)).getColor$O("control"));
@@ -42795,7 +42805,7 @@ var security = System.getSecurityManager();
 if (security != null ) {
 security.checkExit$I(0);
 }}var oldValue = this.defaultCloseOperation;
-this.defaultCloseOperation = operation;
+this.defaultCloseOperation=operation;
 this.firePropertyChange$S$I$I("defaultCloseOperation", oldValue, operation);
 }});
 
@@ -42805,7 +42815,7 @@ return this.defaultCloseOperation;
 
 Clazz_newMeth(C$, 'setTransferHandler$javax_swing_TransferHandler', function (newHandler) {
 var oldHandler = this.transferHandler;
-this.transferHandler = newHandler;
+this.transferHandler=newHandler;
 (I$[4]||$incl$(4)).installSwingDropTargetAsNecessary$java_awt_Component$javax_swing_TransferHandler(this, this.transferHandler);
 this.firePropertyChange$S$O$O("transferHandler", oldHandler, newHandler);
 });
@@ -42837,7 +42847,7 @@ return this.rootPaneCheckingEnabled;
 });
 
 Clazz_newMeth(C$, 'setRootPaneCheckingEnabled$Z', function (enabled) {
-this.rootPaneCheckingEnabled = enabled;
+this.rootPaneCheckingEnabled=enabled;
 });
 
 Clazz_newMeth(C$, 'addImpl$java_awt_Component$O$I', function (comp, constraints, index) {
@@ -42867,7 +42877,7 @@ return this.rootPane;
 Clazz_newMeth(C$, 'setRootPane$javax_swing_JRootPane', function (root) {
 if (this.rootPane != null ) {
 this.remove$java_awt_Component(this.rootPane);
-}this.rootPane = root;
+}this.rootPane=root;
 if (this.rootPane != null ) {
 var checkingEnabled = this.isRootPaneCheckingEnabled();
 try {
@@ -42928,27 +42938,27 @@ if (defaultLookAndFeelDecorated) {
 Clazz_newMeth(C$, 'isDefaultLookAndFeelDecorated', function () {
 var defaultLookAndFeelDecorated = (I$[4]||$incl$(4)).appContextGet$O(C$.defaultLookAndFeelDecoratedKey);
 if (defaultLookAndFeelDecorated == null ) {
-defaultLookAndFeelDecorated = (I$[6]||$incl$(6)).FALSE;
+defaultLookAndFeelDecorated=(I$[6]||$incl$(6)).FALSE;
 }return defaultLookAndFeelDecorated.booleanValue();
 }, 1);
 
 Clazz_newMeth(C$, 'paramString', function () {
 var defaultCloseOperationString;
 if (this.defaultCloseOperation == 1) {
-defaultCloseOperationString = "HIDE_ON_CLOSE";
+defaultCloseOperationString="HIDE_ON_CLOSE";
 } else if (this.defaultCloseOperation == 2) {
-defaultCloseOperationString = "DISPOSE_ON_CLOSE";
+defaultCloseOperationString="DISPOSE_ON_CLOSE";
 } else if (this.defaultCloseOperation == 0) {
-defaultCloseOperationString = "DO_NOTHING_ON_CLOSE";
+defaultCloseOperationString="DO_NOTHING_ON_CLOSE";
 } else if (this.defaultCloseOperation == 3) {
-defaultCloseOperationString = "EXIT_ON_CLOSE";
-} else defaultCloseOperationString = "";
+defaultCloseOperationString="EXIT_ON_CLOSE";
+} else defaultCloseOperationString="";
 var rootPaneString = (this.rootPane != null  ? this.rootPane.toString() : "");
 var rootPaneCheckingEnabledString = (this.rootPaneCheckingEnabled ? "true" : "false");
 return C$.superclazz.prototype.paramString.apply(this, []) + ",defaultCloseOperation=" + defaultCloseOperationString + ",rootPane=" + rootPaneString + ",rootPaneCheckingEnabled=" + rootPaneCheckingEnabledString ;
 });
 })();
-//Created 2018-05-15 01:02:29
+//Created 2018-05-24 08:46:17
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.UIManager','java.awt.Toolkit','java.awt.Rectangle','javax.swing.SwingUtilities','java.awt.Point','javax.swing.JPopupMenu','javax.swing.JMenuItem',['javax.swing.JPopupMenu','.Separator'],'java.lang.Error','java.awt.Component','javax.swing.event.MenuListener','javax.swing.event.MenuEvent',['javax.swing.JMenu','.MenuChangeListener'],['javax.swing.JMenu','.WinListener'],'javax.swing.MenuElement','javax.swing.MenuSelectionManager','java.util.Vector']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JMenu", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -43009,10 +43019,10 @@ var oldModel = this.getModel();
 C$.superclazz.prototype.setModel$javax_swing_ButtonModel.apply(this, [newModel]);
 if (oldModel != null  && this.menuChangeListener != null  ) {
 oldModel.removeChangeListener$javax_swing_event_ChangeListener(this.menuChangeListener);
-this.menuChangeListener = null;
-}this.model = newModel;
+this.menuChangeListener=null;
+}this.model=newModel;
 if (newModel != null ) {
-this.menuChangeListener = p$.createMenuChangeListener.apply(this, []);
+this.menuChangeListener=p$.createMenuChangeListener.apply(this, []);
 newModel.addChangeListener$javax_swing_event_ChangeListener(this.menuChangeListener);
 }});
 
@@ -43038,7 +43048,7 @@ p$.ensurePopupMenuCreated.apply(this, []);
 if ((b == true ) && this.isShowing() ) {
 var p = p$.getCustomMenuLocation.apply(this, []);
 if (p == null ) {
-p = this.getPopupMenuOrigin();
+p=this.getPopupMenuOrigin();
 }this.getPopupMenu().show$java_awt_Component$I$I(this, p.x, p.y);
 } else {
 this.getPopupMenu().setVisible$Z(false);
@@ -43051,47 +43061,47 @@ var pm = this.getPopupMenu();
 var s = this.getSize();
 var pmSize = pm.getSize();
 if (pmSize.width == 0) {
-pmSize = pm.getPreferredSize();
+pmSize=pm.getPreferredSize();
 }var position = this.getLocationOnScreen();
 var toolkit = (I$[2]||$incl$(2)).getDefaultToolkit();
 var gc = this.getGraphicsConfiguration();
 var screenBounds = Clazz_new_((I$[3]||$incl$(3)).c$$java_awt_Dimension,[toolkit.getScreenSize()]);
 if (gc != null ) {
-screenBounds = gc.getBounds();
+screenBounds=gc.getBounds();
 var screenInsets = toolkit.getScreenInsets$java_awt_GraphicsConfiguration(gc);
-screenBounds.width = screenBounds.width-(Math.abs(screenInsets.left + screenInsets.right));
-screenBounds.height = screenBounds.height-(Math.abs(screenInsets.top + screenInsets.bottom));
-position.x = position.x-(Math.abs(screenInsets.left));
-position.y = position.y-(Math.abs(screenInsets.top));
+screenBounds.width-=Math.abs(screenInsets.left + screenInsets.right);
+screenBounds.height-=Math.abs(screenInsets.top + screenInsets.bottom);
+position.x-=Math.abs(screenInsets.left);
+position.y-=Math.abs(screenInsets.top);
 }var parent = this.getParent();
 if (Clazz_instanceOf(parent, "javax.swing.JPopupMenu")) {
 var xOffset = (I$[1]||$incl$(1)).getInt$O("Menu.submenuPopupOffsetX");
 var yOffset = (I$[1]||$incl$(1)).getInt$O("Menu.submenuPopupOffsetY");
 if ((I$[4]||$incl$(4)).isLeftToRight$java_awt_Component(this)) {
-x = s.width + xOffset;
+x=s.width + xOffset;
 if (position.x + x + pmSize.width  >= screenBounds.width + screenBounds.x && screenBounds.width - s.width < 2 * (position.x - screenBounds.x) ) {
-x = 0 - xOffset - pmSize.width ;
+x=0 - xOffset - pmSize.width ;
 }} else {
-x = 0 - xOffset - pmSize.width ;
+x=0 - xOffset - pmSize.width ;
 if (position.x + x < screenBounds.x && screenBounds.width - s.width > 2 * (position.x - screenBounds.x) ) {
-x = s.width + xOffset;
-}}y = yOffset;
+x=s.width + xOffset;
+}}y=yOffset;
 if (position.y + y + pmSize.height  >= screenBounds.height + screenBounds.y && screenBounds.height - s.height < 2 * (position.y - screenBounds.y) ) {
-y = s.height - yOffset - pmSize.height ;
+y=s.height - yOffset - pmSize.height ;
 }} else {
 var xOffset = (I$[1]||$incl$(1)).getInt$O("Menu.menuPopupOffsetX");
 var yOffset = (I$[1]||$incl$(1)).getInt$O("Menu.menuPopupOffsetY");
 if ((I$[4]||$incl$(4)).isLeftToRight$java_awt_Component(this)) {
-x = xOffset;
+x=xOffset;
 if (position.x + x + pmSize.width  >= screenBounds.width + screenBounds.x && screenBounds.width - s.width < 2 * (position.x - screenBounds.x) ) {
-x = s.width - xOffset - pmSize.width ;
+x=s.width - xOffset - pmSize.width ;
 }} else {
-x = s.width - xOffset - pmSize.width ;
+x=s.width - xOffset - pmSize.width ;
 if (position.x + x < screenBounds.x && screenBounds.width - s.width > 2 * (position.x - screenBounds.x) ) {
-x = xOffset;
-}}y = s.height + yOffset;
+x=xOffset;
+}}y=s.height + yOffset;
 if (position.y + y + pmSize.height  >= screenBounds.height && screenBounds.height - s.height < 2 * (position.y - screenBounds.y) ) {
-y = 0 - yOffset - pmSize.height ;
+y=0 - yOffset - pmSize.height ;
 }}return Clazz_new_((I$[5]||$incl$(5)).c$$I$I,[x, y]);
 });
 
@@ -43101,14 +43111,14 @@ return this.delay;
 
 Clazz_newMeth(C$, 'setDelay$I', function (d) {
 if (d < 0) throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["Delay must be a positive integer"]);
-this.delay = d;
+this.delay=d;
 });
 
 Clazz_newMeth(C$, 'ensurePopupMenuCreated', function () {
 if (this.$popupMenu == null ) {
-this.$popupMenu = Clazz_new_((I$[6]||$incl$(6)));
+this.$popupMenu=Clazz_new_((I$[6]||$incl$(6)));
 this.$popupMenu.setInvoker$java_awt_Component(this);
-this.popupListener = this.createWinListener$javax_swing_JPopupMenu(this.$popupMenu);
+this.popupListener=this.createWinListener$javax_swing_JPopupMenu(this.$popupMenu);
 }});
 
 Clazz_newMeth(C$, 'getCustomMenuLocation', function () {
@@ -43116,7 +43126,7 @@ return this.customMenuLocation;
 });
 
 Clazz_newMeth(C$, 'setMenuLocation$I$I', function (x, y) {
-this.customMenuLocation = Clazz_new_((I$[5]||$incl$(5)).c$$I$I,[x, y]);
+this.customMenuLocation=Clazz_new_((I$[5]||$incl$(5)).c$$I$I,[x, y]);
 if (this.$popupMenu != null ) this.$popupMenu.setLocation$I$I(x, y);
 });
 
@@ -43161,7 +43171,7 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'createActionPropertyChangeListener$javax_swing_Action', function (a) {
 var pcl = this.b$['javax.swing.JMenu'].createActionChangeListener$javax_swing_JMenuItem(this);
 if (pcl == null ) {
-pcl = C$.superclazz.prototype.createActionPropertyChangeListener$javax_swing_Action.apply(this, [a]);
+pcl=C$.superclazz.prototype.createActionPropertyChangeListener$javax_swing_Action.apply(this, [a]);
 }return pcl;
 });
 })()
@@ -43254,7 +43264,7 @@ if (this.$popupMenu != null ) this.$popupMenu.removeAll();
 
 Clazz_newMeth(C$, 'getMenuComponentCount', function () {
 var componentCount = 0;
-if (this.$popupMenu != null ) componentCount = this.$popupMenu.getComponentCount();
+if (this.$popupMenu != null ) componentCount=this.$popupMenu.getComponentCount();
 return componentCount;
 });
 
@@ -43309,36 +43319,36 @@ return this.listenerList.getListeners$Class(Clazz_getClass((I$[11]||$incl$(11)),
 
 Clazz_newMeth(C$, 'fireMenuSelected', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[11]||$incl$(11)),['menuCanceled$javax_swing_event_MenuEvent','menuDeselected$javax_swing_event_MenuEvent','menuSelected$javax_swing_event_MenuEvent']) ) {
 if (listeners[i + 1] == null ) {
 throw Clazz_new_((I$[9]||$incl$(9)).c$$S,[this.getText() + " has a NULL Listener!! " + i ]);
 } else {
-if (this.menuEvent == null ) this.menuEvent = Clazz_new_((I$[12]||$incl$(12)).c$$O,[this]);
+if (this.menuEvent == null ) this.menuEvent=Clazz_new_((I$[12]||$incl$(12)).c$$O,[this]);
 (listeners[i + 1]).menuSelected$javax_swing_event_MenuEvent(this.menuEvent);
 }}}
 });
 
 Clazz_newMeth(C$, 'fireMenuDeselected', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[11]||$incl$(11)),['menuCanceled$javax_swing_event_MenuEvent','menuDeselected$javax_swing_event_MenuEvent','menuSelected$javax_swing_event_MenuEvent']) ) {
 if (listeners[i + 1] == null ) {
 throw Clazz_new_((I$[9]||$incl$(9)).c$$S,[this.getText() + " has a NULL Listener!! " + i ]);
 } else {
-if (this.menuEvent == null ) this.menuEvent = Clazz_new_((I$[12]||$incl$(12)).c$$O,[this]);
+if (this.menuEvent == null ) this.menuEvent=Clazz_new_((I$[12]||$incl$(12)).c$$O,[this]);
 (listeners[i + 1]).menuDeselected$javax_swing_event_MenuEvent(this.menuEvent);
 }}}
 });
 
 Clazz_newMeth(C$, 'fireMenuCanceled', function () {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[11]||$incl$(11)),['menuCanceled$javax_swing_event_MenuEvent','menuDeselected$javax_swing_event_MenuEvent','menuSelected$javax_swing_event_MenuEvent']) ) {
 if (listeners[i + 1] == null ) {
 throw Clazz_new_((I$[9]||$incl$(9)).c$$S,[this.getText() + " has a NULL Listener!! " + i ]);
 } else {
-if (this.menuEvent == null ) this.menuEvent = Clazz_new_((I$[12]||$incl$(12)).c$$O,[this]);
+if (this.menuEvent == null ) this.menuEvent=Clazz_new_((I$[12]||$incl$(12)).c$$O,[this]);
 (listeners[i + 1]).menuCanceled$javax_swing_event_MenuEvent(this.menuEvent);
 }}}
 });
@@ -43362,7 +43372,7 @@ Clazz_newMeth(C$, 'getSubElements', function () {
 if (this.$popupMenu == null ) return Clazz_array((I$[15]||$incl$(15)), [0]);
  else {
 var result = Clazz_array((I$[15]||$incl$(15)), [1]);
-result[0] = this.$popupMenu;
+result[0]=this.$popupMenu;
 return result;
 }});
 
@@ -43410,15 +43420,15 @@ var menu;
 var bar;
 while (true){
 if (Clazz_instanceOf(current, "javax.swing.JPopupMenu")) {
-pop = current;
+pop=current;
 elements.insertElementAt$TE$I(pop, 0);
-current = pop.getInvoker();
+current=pop.getInvoker();
 } else if (Clazz_instanceOf(current, "javax.swing.JMenu")) {
-menu = current;
+menu=current;
 elements.insertElementAt$TE$I(menu, 0);
-current = menu.getParent();
+current=menu.getParent();
 } else if (Clazz_instanceOf(current, "javax.swing.JMenuBar")) {
-bar = current;
+bar=current;
 elements.insertElementAt$TE$I(bar, 0);
 var me = Clazz_array((I$[15]||$incl$(15)), [elements.size()]);
 elements.copyInto$OA(me);
@@ -43456,7 +43466,7 @@ if (modelSelected == true ) {
 this.this$0.fireMenuSelected();
 } else {
 this.this$0.fireMenuDeselected();
-}this.isSelected = modelSelected;
+}this.isSelected=modelSelected;
 }});
 
 Clazz_newMeth(C$);
@@ -43479,7 +43489,7 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$javax_swing_JPopupMenu', function (p) {
 Clazz_super_(C$, this,1);
-this.popupMenu = p;
+this.popupMenu=p;
 }, 1);
 
 Clazz_newMeth(C$, 'windowClosing$java_awt_event_WindowEvent', function (e) {
@@ -43489,7 +43499,7 @@ this.this$0.setSelected$Z(false);
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:30
+//Created 2018-05-24 08:46:18
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.DefaultSingleSelectionModel','java.lang.Error','java.awt.Insets','java.util.Vector','javax.swing.MenuElement','javax.swing.KeyboardManager']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JMenuBar", null, 'javax.swing.JComponent', 'javax.swing.MenuElement');
 
@@ -43512,7 +43522,7 @@ Clazz_newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
 this.setSelectionModel$javax_swing_SingleSelectionModel(Clazz_new_((I$[1]||$incl$(1))));
-this.uiClassID = "MenuBarUI";
+this.uiClassID="MenuBarUI";
 this.updateUI();
 }, 1);
 
@@ -43522,7 +43532,7 @@ return this.selectionModel;
 
 Clazz_newMeth(C$, 'setSelectionModel$javax_swing_SingleSelectionModel', function (model) {
 var oldValue = this.selectionModel;
-this.selectionModel = model;
+this.selectionModel=model;
 this.firePropertyChange$S$O$O("selectionModel", oldValue, this.selectionModel);
 });
 
@@ -43592,7 +43602,7 @@ C$.superclazz.prototype.paintBorder$java_awt_Graphics.apply(this, [g]);
 
 Clazz_newMeth(C$, 'setMargin$java_awt_Insets', function (m) {
 var old = this.margin;
-this.margin = m;
+this.margin=m;
 this.firePropertyChange$S$O$O("margin", old, m);
 if (old == null  || !old.equals$O(m) ) {
 this.revalidate();
@@ -43621,12 +43631,12 @@ var tmp = Clazz_new_((I$[4]||$incl$(4)));
 var c = this.getComponentCount();
 var i;
 var m;
-for (i = 0; i < c; i++) {
-m = this.getComponent$I(i);
+for (i=0; i < c; i++) {
+m=this.getComponent$I(i);
 if (Clazz_instanceOf(m, "javax.swing.MenuElement")) tmp.addElement$TE(m);
 }
-result = Clazz_array((I$[5]||$incl$(5)), [tmp.size()]);
-for (i = 0, c = tmp.size(); i < c; i++) result[i] = tmp.elementAt$I(i);
+result=Clazz_array((I$[5]||$incl$(5)), [tmp.size()]);
+for (i=0, c=tmp.size(); i < c; i++) result[i]=tmp.elementAt$I(i);
 
 return result;
 });
@@ -43678,7 +43688,7 @@ C$.superclazz.prototype.removeNotify.apply(this, []);
 (I$[6]||$incl$(6)).getCurrentManager().unregisterMenuBar$javax_swing_JMenuBar(this);
 });
 })();
-//Created 2018-05-15 01:02:30
+//Created 2018-05-24 08:46:19
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.DefaultButtonModel',['javax.swing.JMenuItem','.MenuItemFocusListener'],'java.lang.Boolean','javax.swing.UIManager','javax.swing.event.MenuDragMouseEvent','javax.swing.event.MenuKeyEvent','javax.swing.event.MenuDragMouseListener','javax.swing.event.MenuKeyListener','javax.swing.MenuElement']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JMenuItem", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -43747,7 +43757,7 @@ this.initFocusability();
 });
 
 Clazz_newMeth(C$, 'init$S$javax_swing_Icon$S', function (text, icon, uid) {
-this.uiClassID = uid;
+this.uiClassID=uid;
 this.updateUI();
 if (text != null ) this.setText$S(text);
 if (icon != null ) this.setIcon$javax_swing_Icon(icon);
@@ -43792,7 +43802,7 @@ return true;
 
 Clazz_newMeth(C$, 'setAccelerator$javax_swing_KeyStroke', function (keyStroke) {
 var oldAccelerator = this.accelerator;
-this.accelerator = keyStroke;
+this.accelerator=keyStroke;
 this.repaint();
 this.revalidate();
 this.firePropertyChange$S$O$O("accelerator", oldAccelerator, this.accelerator);
@@ -43810,7 +43820,7 @@ this.configureAcceleratorFromAction$javax_swing_Action(a);
 Clazz_newMeth(C$, 'setIconFromAction$javax_swing_Action', function (a) {
 var icon = null;
 if (a != null ) {
-icon = a.getValue$S("SmallIcon");
+icon=a.getValue$S("SmallIcon");
 }this.setIcon$javax_swing_Icon(icon);
 });
 
@@ -43847,15 +43857,15 @@ e.consume();
 Clazz_newMeth(C$, 'processMenuDragMouseEvent$javax_swing_event_MenuDragMouseEvent', function (e) {
 switch (e.getID()) {
 case 504:
-this.isMouseDragged = false;
+this.isMouseDragged=false;
 this.fireMenuDragMouseEntered$javax_swing_event_MenuDragMouseEvent(e);
 break;
 case 505:
-this.isMouseDragged = false;
+this.isMouseDragged=false;
 this.fireMenuDragMouseExited$javax_swing_event_MenuDragMouseEvent(e);
 break;
 case 506:
-this.isMouseDragged = true;
+this.isMouseDragged=true;
 this.fireMenuDragMouseDragged$javax_swing_event_MenuDragMouseEvent(e);
 break;
 case 502:
@@ -43884,7 +43894,7 @@ break;
 
 Clazz_newMeth(C$, 'fireMenuDragMouseEntered$javax_swing_event_MenuDragMouseEvent', function (event) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[7]||$incl$(7)),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']) ) {
 (listeners[i + 1]).menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent(event);
 }}
@@ -43892,7 +43902,7 @@ if (listeners[i] === Clazz_getClass((I$[7]||$incl$(7)),['menuDragMouseDragged$ja
 
 Clazz_newMeth(C$, 'fireMenuDragMouseExited$javax_swing_event_MenuDragMouseEvent', function (event) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[7]||$incl$(7)),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']) ) {
 (listeners[i + 1]).menuDragMouseExited$javax_swing_event_MenuDragMouseEvent(event);
 }}
@@ -43900,7 +43910,7 @@ if (listeners[i] === Clazz_getClass((I$[7]||$incl$(7)),['menuDragMouseDragged$ja
 
 Clazz_newMeth(C$, 'fireMenuDragMouseDragged$javax_swing_event_MenuDragMouseEvent', function (event) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[7]||$incl$(7)),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']) ) {
 (listeners[i + 1]).menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent(event);
 }}
@@ -43908,7 +43918,7 @@ if (listeners[i] === Clazz_getClass((I$[7]||$incl$(7)),['menuDragMouseDragged$ja
 
 Clazz_newMeth(C$, 'fireMenuDragMouseReleased$javax_swing_event_MenuDragMouseEvent', function (event) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[7]||$incl$(7)),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']) ) {
 (listeners[i + 1]).menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent(event);
 }}
@@ -43916,7 +43926,7 @@ if (listeners[i] === Clazz_getClass((I$[7]||$incl$(7)),['menuDragMouseDragged$ja
 
 Clazz_newMeth(C$, 'fireMenuKeyPressed$javax_swing_event_MenuKeyEvent', function (event) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[8]||$incl$(8)),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']) ) {
 (listeners[i + 1]).menuKeyPressed$javax_swing_event_MenuKeyEvent(event);
 }}
@@ -43924,7 +43934,7 @@ if (listeners[i] === Clazz_getClass((I$[8]||$incl$(8)),['menuKeyPressed$javax_sw
 
 Clazz_newMeth(C$, 'fireMenuKeyReleased$javax_swing_event_MenuKeyEvent', function (event) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[8]||$incl$(8)),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']) ) {
 (listeners[i + 1]).menuKeyReleased$javax_swing_event_MenuKeyEvent(event);
 }}
@@ -43932,7 +43942,7 @@ if (listeners[i] === Clazz_getClass((I$[8]||$incl$(8)),['menuKeyPressed$javax_sw
 
 Clazz_newMeth(C$, 'fireMenuKeyTyped$javax_swing_event_MenuKeyEvent', function (event) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[8]||$incl$(8)),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']) ) {
 (listeners[i + 1]).menuKeyTyped$javax_swing_event_MenuKeyEvent(event);
 }}
@@ -44000,7 +44010,7 @@ mi.repaint();
 Clazz_newMeth(C$);
 })()
 })();
-//Created 2018-05-15 01:02:30
+//Created 2018-05-24 08:46:19
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['javax.swing.SwingUtilities','Boolean','java.lang.Boolean','javax.swing.DefaultSingleSelectionModel','javax.swing.MenuSelectionManager','javax.swing.JMenuItem','java.awt.Point','java.awt.GraphicsEnvironment',['javax.swing.JPopupMenu','.Separator'],'java.util.Vector','javax.swing.event.PopupMenuListener','javax.swing.event.MenuKeyListener','javax.swing.event.PopupMenuEvent','javax.swing.PopupFactory','java.awt.Dimension','java.awt.Insets','javax.swing.event.MenuKeyEvent','javax.swing.MenuElement']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JPopupMenu", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -44053,12 +44063,12 @@ C$.c$$S.apply(this, [null]);
 
 Clazz_newMeth(C$, 'c$$S', function (label) {
 Clazz_super_(C$, this,1);
-this.label = label;
-this.lightWeightPopup = C$.getDefaultLightWeightPopupEnabled();
+this.label=label;
+this.lightWeightPopup=C$.getDefaultLightWeightPopupEnabled();
 this.setSelectionModel$javax_swing_SingleSelectionModel(Clazz_new_((I$[4]||$incl$(4))));
 this.enableEvents$J(16);
 this.setOpaque$Z(true);
-this.uiClassID = "PopupMenuUI";
+this.uiClassID="PopupMenuUI";
 this.updateUI();
 }, 1);
 
@@ -44078,7 +44088,7 @@ return this.selectionModel;
 });
 
 Clazz_newMeth(C$, 'setSelectionModel$javax_swing_SingleSelectionModel', function (model) {
-this.selectionModel = model;
+this.selectionModel=model;
 });
 
 Clazz_newMeth(C$, 'add$javax_swing_JMenuItem', function (menuItem) {
@@ -44116,7 +44126,7 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'createActionPropertyChangeListener$javax_swing_Action', function (a) {
 var pcl = this.b$['javax.swing.JPopupMenu'].createActionChangeListener$javax_swing_JMenuItem(this);
 if (pcl == null ) {
-pcl = C$.superclazz.prototype.createActionPropertyChangeListener$javax_swing_Action.apply(this, [a]);
+pcl=C$.superclazz.prototype.createActionPropertyChangeListener$javax_swing_Action.apply(this, [a]);
 }return pcl;
 });
 })()
@@ -44139,7 +44149,7 @@ throw Clazz_new_(Clazz_load('java.lang.IllegalArgumentException').c$$S,["index g
 });
 
 Clazz_newMeth(C$, 'setLightWeightPopupEnabled$Z', function (aFlag) {
-this.lightWeightPopup = aFlag;
+this.lightWeightPopup=aFlag;
 });
 
 Clazz_newMeth(C$, 'isLightWeightPopupEnabled', function () {
@@ -44152,7 +44162,7 @@ return this.label;
 
 Clazz_newMeth(C$, 'setLabel$S', function (label) {
 var oldValue = this.label;
-this.label = label;
+this.label=label;
 this.firePropertyChange$S$O$O("label", oldValue, label);
 this.invalidate();
 this.repaint();
@@ -44210,9 +44220,9 @@ return this.listenerList.getListeners$Class(Clazz_getClass((I$[12]||$incl$(12)),
 Clazz_newMeth(C$, 'firePopupMenuWillBecomeVisible', function () {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[11]||$incl$(11)),['popupMenuCanceled$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeInvisible$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeVisible$javax_swing_event_PopupMenuEvent']) ) {
-if (e == null ) e = Clazz_new_((I$[13]||$incl$(13)).c$$O,[this]);
+if (e == null ) e=Clazz_new_((I$[13]||$incl$(13)).c$$O,[this]);
 (listeners[i + 1]).popupMenuWillBecomeVisible$javax_swing_event_PopupMenuEvent(e);
 }}
 });
@@ -44220,9 +44230,9 @@ if (e == null ) e = Clazz_new_((I$[13]||$incl$(13)).c$$O,[this]);
 Clazz_newMeth(C$, 'firePopupMenuWillBecomeInvisible', function () {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[11]||$incl$(11)),['popupMenuCanceled$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeInvisible$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeVisible$javax_swing_event_PopupMenuEvent']) ) {
-if (e == null ) e = Clazz_new_((I$[13]||$incl$(13)).c$$O,[this]);
+if (e == null ) e=Clazz_new_((I$[13]||$incl$(13)).c$$O,[this]);
 (listeners[i + 1]).popupMenuWillBecomeInvisible$javax_swing_event_PopupMenuEvent(e);
 }}
 });
@@ -44230,9 +44240,9 @@ if (e == null ) e = Clazz_new_((I$[13]||$incl$(13)).c$$O,[this]);
 Clazz_newMeth(C$, 'firePopupMenuCanceled', function () {
 var listeners = this.listenerList.getListenerList();
 var e = null;
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[11]||$incl$(11)),['popupMenuCanceled$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeInvisible$javax_swing_event_PopupMenuEvent','popupMenuWillBecomeVisible$javax_swing_event_PopupMenuEvent']) ) {
-if (e == null ) e = Clazz_new_((I$[13]||$incl$(13)).c$$O,[this]);
+if (e == null ) e=Clazz_new_((I$[13]||$incl$(13)).c$$O,[this]);
 (listeners[i + 1]).popupMenuCanceled$javax_swing_event_PopupMenuEvent(e);
 }}
 });
@@ -44245,7 +44255,7 @@ Clazz_newMeth(C$, 'pack', function () {
 if (this.popup != null ) {
 var pref = this.getPreferredSize();
 if (pref == null  || pref.width != this.getWidth()  || pref.height != this.getHeight() ) {
-this.popup = p$.getPopup.apply(this, []);
+this.popup=p$.getPopup.apply(this, []);
 } else {
 this.validate();
 }}});
@@ -44268,8 +44278,8 @@ popupFactory.setPopupType$I(0);
 } else {
 popupFactory.setPopupType$I(1);
 }var p = this.adjustPopupLocationToFitScreen$I$I(this.desiredLocationX, this.desiredLocationY);
-this.desiredLocationX = p.x;
-this.desiredLocationY = p.y;
+this.desiredLocationX=p.x;
+this.desiredLocationY=p.y;
 var newPopup = (this.getUI()).getPopup$javax_swing_JPopupMenu$I$I(this, this.desiredLocationX, this.desiredLocationY);
 popupFactory.setPopupType$I(0);
 newPopup.show();
@@ -44284,10 +44294,10 @@ if (this.popup != null ) return true;
 Clazz_newMeth(C$, 'setLocation$I$I', function (x, y) {
 var oldX = this.desiredLocationX;
 var oldY = this.desiredLocationY;
-this.desiredLocationX = x;
-this.desiredLocationY = y;
+this.desiredLocationX=x;
+this.desiredLocationY=y;
 if (this.popup != null  && (x != oldX || y != oldY ) ) {
-this.popup = p$.getPopup.apply(this, []);
+this.popup=p$.getPopup.apply(this, []);
 }});
 
 Clazz_newMeth(C$, 'isPopupMenu', function () {
@@ -44300,7 +44310,7 @@ return this.invoker;
 
 Clazz_newMeth(C$, 'setInvoker$java_awt_Component', function (invoker) {
 var oldInvoker = this.invoker;
-this.invoker = invoker;
+this.invoker=invoker;
 if ((oldInvoker !== this.invoker ) && (this.ui != null ) ) {
 this.ui.uninstallUI$javax_swing_JComponent(this);
 this.ui.uninstallJS();
@@ -44313,15 +44323,15 @@ Clazz_newMeth(C$, 'show$java_awt_Component$I$I', function (invoker, x, y) {
 this.setInvoker$java_awt_Component(invoker);
 var invokerOrigin;
 if (invoker != null ) {
-invokerOrigin = invoker.getLocationOnScreen();
+invokerOrigin=invoker.getLocationOnScreen();
 var lx;
 var ly;
-lx = (invokerOrigin.x) + (x);
-ly = (invokerOrigin.y) + (y);
-if (lx > 2147483647) lx = 2147483647;
-if (lx < -2147483648) lx = -2147483648;
-if (ly > 2147483647) ly = 2147483647;
-if (ly < -2147483648) ly = -2147483648;
+lx=(invokerOrigin.x) + (x);
+ly=(invokerOrigin.y) + (y);
+if (lx > 2147483647) lx=2147483647;
+if (lx < -2147483648) lx=-2147483648;
+if (ly > 2147483647) ly=2147483647;
+if (ly < -2147483648) ly=-2147483648;
 this.setLocation$I$I((lx|0), (ly|0));
 } else {
 this.setLocation$I$I(x, y);
@@ -44331,7 +44341,7 @@ this.setLocation$I$I(x, y);
 Clazz_newMeth(C$, 'getRootPopupMenu', function () {
 var mp = this;
 while ((mp != null ) && (mp.isPopupMenu() != true ) && (mp.getInvoker() != null ) && (mp.getInvoker().getParent() != null ) && (Clazz_instanceOf(mp.getInvoker().getParent(), "javax.swing.JPopupMenu"))  ){
-mp = mp.getInvoker().getParent();
+mp=mp.getInvoker().getParent();
 }
 return mp;
 });
@@ -44356,7 +44366,7 @@ this.setPreferredSize$java_awt_Dimension(d);
 if (this.popup != null ) {
 var newSize = this.getPreferredSize();
 if (!oldSize.equals$O(newSize)) {
-this.popup = p$.getPopup.apply(this, []);
+this.popup=p$.getPopup.apply(this, []);
 }}});
 
 Clazz_newMeth(C$, 'setPopupSize$I$I', function (width, height) {
@@ -44374,7 +44384,7 @@ return this.$paintBorder;
 });
 
 Clazz_newMeth(C$, 'setBorderPainted$Z', function (b) {
-this.$paintBorder = b;
+this.$paintBorder=b;
 this.repaint();
 });
 
@@ -44440,7 +44450,7 @@ break;
 
 Clazz_newMeth(C$, 'fireMenuKeyPressed$javax_swing_event_MenuKeyEvent', function (event) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[12]||$incl$(12)),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']) ) {
 (listeners[i + 1]).menuKeyPressed$javax_swing_event_MenuKeyEvent(event);
 }}
@@ -44448,7 +44458,7 @@ if (listeners[i] === Clazz_getClass((I$[12]||$incl$(12)),['menuKeyPressed$javax_
 
 Clazz_newMeth(C$, 'fireMenuKeyReleased$javax_swing_event_MenuKeyEvent', function (event) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[12]||$incl$(12)),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']) ) {
 (listeners[i + 1]).menuKeyReleased$javax_swing_event_MenuKeyEvent(event);
 }}
@@ -44456,7 +44466,7 @@ if (listeners[i] === Clazz_getClass((I$[12]||$incl$(12)),['menuKeyPressed$javax_
 
 Clazz_newMeth(C$, 'fireMenuKeyTyped$javax_swing_event_MenuKeyEvent', function (event) {
 var listeners = this.listenerList.getListenerList();
-for (var i = listeners.length - 2; i >= 0; i = i-(2)) {
+for (var i = listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz_getClass((I$[12]||$incl$(12)),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']) ) {
 (listeners[i + 1]).menuKeyTyped$javax_swing_event_MenuKeyEvent(event);
 }}
@@ -44471,12 +44481,12 @@ var tmp = Clazz_new_((I$[10]||$incl$(10)));
 var c = this.getComponentCount();
 var i;
 var m;
-for (i = 0; i < c; i++) {
-m = this.getComponent$I(i);
+for (i=0; i < c; i++) {
+m=this.getComponent$I(i);
 if (Clazz_instanceOf(m, "javax.swing.MenuElement")) tmp.addElement$TE(m);
 }
-result = Clazz_array((I$[18]||$incl$(18)), [tmp.size()]);
-for (i = 0, c = tmp.size(); i < c; i++) result[i] = tmp.elementAt$I(i);
+result=Clazz_array((I$[18]||$incl$(18)), [tmp.size()]);
+for (i=0, c=tmp.size(); i < c; i++) result[i]=tmp.elementAt$I(i);
 
 return result;
 });
@@ -44505,7 +44515,7 @@ C$.$init$.apply(this);
 }, 1);
 })()
 })();
-//Created 2018-05-15 01:02:31
+//Created 2018-05-24 08:46:20
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[[['javax.swing.JToggleButton','.ToggleButtonModel']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JRadioButtonMenuItem", null, 'javax.swing.JMenuItem');
 
@@ -44557,7 +44567,7 @@ Clazz_newMeth(C$, 'shouldUpdateSelectedStateFromAction', function () {
 return true;
 });
 })();
-//Created 2018-05-15 01:02:32
+//Created 2018-05-24 08:46:21
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newClass(P$, "JSeparator", null, 'javax.swing.JComponent', 'javax.swing.SwingConstants');
 var p$=C$.prototype;
@@ -44585,9 +44595,9 @@ C$.c$$I$S.apply(this, [orientation, "SeparatorUI"]);
 Clazz_newMeth(C$, 'c$$I$S', function (orientation, sid) {
 Clazz_super_(C$, this,1);
 p$.checkOrientation$I.apply(this, [orientation]);
-this.orientation = orientation;
+this.orientation=orientation;
 this.setFocusable$Z(false);
-this.uiClassID = sid;
+this.uiClassID=sid;
 this.updateUI();
 }, 1);
 
@@ -44600,7 +44610,7 @@ if (this.orientation == orientation) {
 return;
 }var oldValue = this.orientation;
 p$.checkOrientation$I.apply(this, [orientation]);
-this.orientation = orientation;
+this.orientation=orientation;
 this.firePropertyChange$S$I$I("orientation", oldValue, orientation);
 this.revalidate();
 this.repaint();
@@ -44621,7 +44631,7 @@ var orientationString = (this.orientation == 0 ? "HORIZONTAL" : "VERTICAL");
 return C$.superclazz.prototype.paramString.apply(this, []) + ",orientation=" + orientationString ;
 });
 })();
-//Created 2018-05-15 01:02:33
+//Created 2018-05-24 08:46:22
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.awt.event.ItemEvent','java.awt.EventQueue','java.awt.event.ActionEvent',['javax.swing.JToggleButton','.ToggleButtonModel']]],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JToggleButton", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -44704,13 +44714,13 @@ Clazz_newMeth(C$, 'setSelected$Z', function (b) {
 var group = this.getGroup();
 if (group != null ) {
 group.setSelected$javax_swing_ButtonModel$Z(this, b);
-b = group.isSelected$javax_swing_ButtonModel(this);
+b=group.isSelected$javax_swing_ButtonModel(this);
 }if (this.isSelected() == b ) {
 return;
 }if (b) {
-this.stateMask = this.stateMask|(2);
+this.stateMask|=2;
 } else {
-this.stateMask = this.stateMask&(-3);
+this.stateMask&=-3;
 }this.fireStateChanged();
 this.fireItemStateChanged$java_awt_event_ItemEvent(Clazz_new_((I$[1]||$incl$(1)).c$$java_awt_ItemSelectable$I$O$I,[this, 701, this, this.isSelected() ? 1 : 2]));
 });
@@ -44721,22 +44731,22 @@ return;
 }if (b == false  && this.isArmed() ) {
 this.setSelected$Z(!this.isSelected());
 }if (b) {
-this.stateMask = this.stateMask|(4);
+this.stateMask|=4;
 } else {
-this.stateMask = this.stateMask&(-5);
+this.stateMask&=-5;
 }this.fireStateChanged();
 if (!this.isPressed() && this.isArmed() ) {
 var modifiers = 0;
 var currentEvent = (I$[2]||$incl$(2)).getCurrentEvent();
 if (Clazz_instanceOf(currentEvent, "java.awt.event.InputEvent")) {
-modifiers = (currentEvent).getModifiers();
+modifiers=(currentEvent).getModifiers();
 } else if (Clazz_instanceOf(currentEvent, "java.awt.event.ActionEvent")) {
-modifiers = (currentEvent).getModifiers();
+modifiers=(currentEvent).getModifiers();
 }this.fireActionPerformed$java_awt_event_ActionEvent(Clazz_new_((I$[3]||$incl$(3)).c$$O$I$S$J$I,[this, 1001, this.getActionCommand(), (I$[2]||$incl$(2)).getMostRecentEventTime(), modifiers]));
 }});
 })()
 })();
-//Created 2018-05-15 01:02:35
+//Created 2018-05-24 08:46:28
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[['java.util.Hashtable','java.util.Vector','Thread',['javax.swing.KeyboardManager','.ComponentKeyStrokePair'],'javax.swing.KeyStroke','javax.swing.JMenuBar']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "KeyboardManager", function(){
 Clazz_newInstance(this, arguments,0,C$);
@@ -44764,7 +44774,7 @@ return C$.currentManager;
 }, 1);
 
 Clazz_newMeth(C$, 'setCurrentManager$javax_swing_KeyboardManager', function (km) {
-C$.currentManager = km;
+C$.currentManager=km;
 }, 1);
 
 Clazz_newMeth(C$, 'registerKeyStroke$javax_swing_KeyStroke$javax_swing_JComponent', function (k, c) {
@@ -44773,7 +44783,7 @@ if (topContainer == null ) {
 return;
 }var keyMap = this.containerMap.get$O(topContainer);
 if (keyMap == null ) {
-keyMap = this.registerNewTopContainer$java_awt_Container(topContainer);
+keyMap=this.registerNewTopContainer$java_awt_Container(topContainer);
 }var tmp = keyMap.get$O(k);
 if (tmp == null ) {
 keyMap.put$TK$TV(k, c);
@@ -44794,7 +44804,7 @@ System.out.println$S("Unexpected condition in registerKeyStroke");
 });
 
 Clazz_newMeth(C$, 'getTopAncestor$javax_swing_JComponent', function (c) {
-for (var p = c.getParent(); p != null ; p = p.getParent()) {
+for (var p = c.getParent(); p != null ; p=p.getParent()) {
 if (Clazz_instanceOf(p, "java.awt.Window") && (p).isFocusableWindow()  || Clazz_instanceOf(p, "java.applet.Applet") ) {
 return p;
 }}
@@ -44832,9 +44842,9 @@ System.out.println$S("Aquired pre-used event!");
 (I$[3]||$incl$(3)).dumpStack();
 }var ks;
 if (e.getID() == 400) {
-ks = (I$[5]||$incl$(5)).getKeyStroke$C(e.getKeyChar());
+ks=(I$[5]||$incl$(5)).getKeyStroke$C(e.getKeyChar());
 } else {
-ks = (I$[5]||$incl$(5)).getKeyStroke$I$I$Z(e.getKeyCode(), e.getModifiers(), !pressed);
+ks=(I$[5]||$incl$(5)).getKeyStroke$I$I$Z(e.getKeyCode(), e.getModifiers(), !pressed);
 }var keyMap = this.containerMap.get$O(topAncestor);
 if (keyMap != null ) {
 var tmp = keyMap.get$O(ks);
@@ -44881,10 +44891,10 @@ if (top == null ) {
 return;
 }var keyMap = this.containerMap.get$O(top);
 if (keyMap == null ) {
-keyMap = this.registerNewTopContainer$java_awt_Container(top);
+keyMap=this.registerNewTopContainer$java_awt_Container(top);
 }var menuBars = keyMap.get$O(Clazz_getClass((I$[6]||$incl$(6))));
 if (menuBars == null ) {
-menuBars = Clazz_new_((I$[2]||$incl$(2)));
+menuBars=Clazz_new_((I$[2]||$incl$(2)));
 keyMap.put$TK$TV(Clazz_getClass((I$[6]||$incl$(6))), menuBars);
 }if (!menuBars.contains$O(mb)) {
 menuBars.addElement$TE(mb);
@@ -44926,8 +44936,8 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$$O$O', function (comp, key) {
 C$.$init$.apply(this);
-this.component = comp;
-this.keyStroke = key;
+this.component=comp;
+this.keyStroke=key;
 }, 1);
 
 Clazz_newMeth(C$, 'equals$O', function (o) {
@@ -44946,26 +44956,26 @@ Clazz_newMeth(C$);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:02:37
+//Created 2018-05-24 08:46:32
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "ListModel");
 })();
-//Created 2018-05-15 01:02:37
+//Created 2018-05-24 08:46:32
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "MenuElement");
 })();
-//Created 2018-05-15 01:02:38
+//Created 2018-05-24 08:46:34
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "MutableComboBoxModel", null, null, 'javax.swing.ComboBoxModel');
 
 C$.$clinit$ = function() {Clazz_load(C$, 1);
 }
 })();
-//Created 2018-05-15 01:02:38
+//Created 2018-05-24 08:46:35
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "SingleSelectionModel");
 })();
-//Created 2018-05-15 01:02:40
+//Created 2018-05-24 08:46:39
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newClass(P$, "SizeRequirements");
 var p$=C$.prototype;
@@ -44983,18 +44993,18 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$', function () {
 C$.$init$.apply(this);
-this.minimum = 0;
-this.preferred = 0;
-this.maximum = 0;
-this.alignment = 0.5;
+this.minimum=0;
+this.preferred=0;
+this.maximum=0;
+this.alignment=0.5;
 }, 1);
 
 Clazz_newMeth(C$, 'c$$I$I$I$F', function (min, pref, max, a) {
 C$.$init$.apply(this);
-this.minimum = min;
-this.preferred = pref;
-this.maximum = max;
-this.alignment = a > 1.0  ? 1.0 : a < 0.0  ? 0.0 : a;
+this.minimum=min;
+this.preferred=pref;
+this.maximum=max;
+this.alignment=a > 1.0  ? 1.0 : a < 0.0  ? 0.0 : a;
 }, 1);
 
 Clazz_newMeth(C$, 'toString', function () {
@@ -45005,9 +45015,9 @@ Clazz_newMeth(C$, 'getTiledSizeRequirements$javax_swing_SizeRequirementsA', func
 var total = Clazz_new_(C$);
 for (var i = 0; i < children.length; i++) {
 var req = children[i];
-total.minimum = (Math.min(total.minimum + req.minimum, 2147483647)|0);
-total.preferred = (Math.min(total.preferred + req.preferred, 2147483647)|0);
-total.maximum = (Math.min(total.maximum + req.maximum, 2147483647)|0);
+total.minimum=(Math.min(total.minimum + req.minimum, 2147483647)|0);
+total.preferred=(Math.min(total.preferred + req.preferred, 2147483647)|0);
+total.maximum=(Math.min(total.maximum + req.maximum, 2147483647)|0);
 }
 return total;
 }, 1);
@@ -45019,24 +45029,24 @@ for (var i = 0; i < children.length; i++) {
 var req = children[i];
 var ascent = ((req.alignment * req.minimum)|0);
 var descent = req.minimum - ascent;
-totalAscent.minimum = Math.max(ascent, totalAscent.minimum);
-totalDescent.minimum = Math.max(descent, totalDescent.minimum);
-ascent = ((req.alignment * req.preferred)|0);
-descent = req.preferred - ascent;
-totalAscent.preferred = Math.max(ascent, totalAscent.preferred);
-totalDescent.preferred = Math.max(descent, totalDescent.preferred);
-ascent = ((req.alignment * req.maximum)|0);
-descent = req.maximum - ascent;
-totalAscent.maximum = Math.max(ascent, totalAscent.maximum);
-totalDescent.maximum = Math.max(descent, totalDescent.maximum);
+totalAscent.minimum=Math.max(ascent, totalAscent.minimum);
+totalDescent.minimum=Math.max(descent, totalDescent.minimum);
+ascent=((req.alignment * req.preferred)|0);
+descent=req.preferred - ascent;
+totalAscent.preferred=Math.max(ascent, totalAscent.preferred);
+totalDescent.preferred=Math.max(descent, totalDescent.preferred);
+ascent=((req.alignment * req.maximum)|0);
+descent=req.maximum - ascent;
+totalAscent.maximum=Math.max(ascent, totalAscent.maximum);
+totalDescent.maximum=Math.max(descent, totalDescent.maximum);
 }
 var min = (Math.min(totalAscent.minimum + totalDescent.minimum, 2147483647)|0);
 var pref = (Math.min(totalAscent.preferred + totalDescent.preferred, 2147483647)|0);
 var max = (Math.min(totalAscent.maximum + totalDescent.maximum, 2147483647)|0);
 var alignment = 0.0;
 if (min > 0) {
-alignment = totalAscent.minimum / min;
-alignment = alignment > 1.0  ? 1.0 : alignment < 0.0  ? 0.0 : alignment;
+alignment=totalAscent.minimum / min;
+alignment=alignment > 1.0  ? 1.0 : alignment < 0.0  ? 0.0 : alignment;
 }return Clazz_new_(C$.c$$I$I$I$F,[min, pref, max, alignment]);
 }, 1);
 
@@ -45053,9 +45063,9 @@ var min = 0;
 var pref = 0;
 var max = 0;
 for (var i = 0; i < children.length; i++) {
-min = min+(children[i].minimum);
-pref = pref+(children[i].preferred);
-max = max+(children[i].maximum);
+min+=children[i].minimum;
+pref+=children[i].preferred;
+max+=children[i].maximum;
 }
 if (allocated >= pref) {
 C$.expandedTile$I$J$J$J$javax_swing_SizeRequirementsA$IA$IA$Z(allocated, min, pref, max, children, offsets, spans, forward);
@@ -45068,22 +45078,22 @@ var totalPlay = Math.min(pref - allocated, pref - min);
 var factor = (pref - min == 0) ? 0.0 : totalPlay / (pref - min);
 var totalOffset;
 if (forward) {
-totalOffset = 0;
+totalOffset=0;
 for (var i = 0; i < spans.length; i++) {
-offsets[i] = totalOffset;
+offsets[i]=totalOffset;
 var req = request[i];
 var play = factor * (req.preferred - req.minimum);
-spans[i] = ((req.preferred - play)|0);
-totalOffset = (Math.min(totalOffset + spans[i], 2147483647)|0);
+spans[i]=((req.preferred - play)|0);
+totalOffset=(Math.min(totalOffset + spans[i], 2147483647)|0);
 }
 } else {
-totalOffset = allocated;
+totalOffset=allocated;
 for (var i = 0; i < spans.length; i++) {
 var req = request[i];
 var play = factor * (req.preferred - req.minimum);
-spans[i] = ((req.preferred - play)|0);
-offsets[i] = totalOffset - spans[i];
-totalOffset = (Math.max(totalOffset - spans[i], 0)|0);
+spans[i]=((req.preferred - play)|0);
+offsets[i]=totalOffset - spans[i];
+totalOffset=(Math.max(totalOffset - spans[i], 0)|0);
 }
 }}, 1);
 
@@ -45092,22 +45102,22 @@ var totalPlay = Math.min(allocated - pref, max - pref);
 var factor = (max - pref == 0) ? 0.0 : totalPlay / (max - pref);
 var totalOffset;
 if (forward) {
-totalOffset = 0;
+totalOffset=0;
 for (var i = 0; i < spans.length; i++) {
-offsets[i] = totalOffset;
+offsets[i]=totalOffset;
 var req = request[i];
 var play = ((factor * (req.maximum - req.preferred))|0);
-spans[i] = (Math.min(req.preferred + play, 2147483647)|0);
-totalOffset = (Math.min(totalOffset + spans[i], 2147483647)|0);
+spans[i]=(Math.min(req.preferred + play, 2147483647)|0);
+totalOffset=(Math.min(totalOffset + spans[i], 2147483647)|0);
 }
 } else {
-totalOffset = allocated;
+totalOffset=allocated;
 for (var i = 0; i < spans.length; i++) {
 var req = request[i];
 var play = ((factor * (req.maximum - req.preferred))|0);
-spans[i] = (Math.min(req.preferred + play, 2147483647)|0);
-offsets[i] = totalOffset - spans[i];
-totalOffset = (Math.max(totalOffset - spans[i], 0)|0);
+spans[i]=(Math.min(req.preferred + play, 2147483647)|0);
+offsets[i]=totalOffset - spans[i];
+totalOffset=(Math.max(totalOffset - spans[i], 0)|0);
 }
 }}, 1);
 
@@ -45126,8 +45136,8 @@ var maxAscent = ((req.maximum * alignment)|0);
 var maxDescent = req.maximum - maxAscent;
 var ascent = Math.min(totalAscent, maxAscent);
 var descent = Math.min(totalDescent, maxDescent);
-offsets[i] = totalAscent - ascent;
-spans[i] = (Math.min(ascent + descent, 2147483647)|0);
+offsets[i]=totalAscent - ascent;
+spans[i]=(Math.min(ascent + descent, 2147483647)|0);
 }
 }, 1);
 
@@ -45139,11 +45149,11 @@ Clazz_newMeth(C$, 'adjustSizes$I$javax_swing_SizeRequirementsA', function (delta
 return Clazz_array(Integer.TYPE, [0]);
 }, 1);
 })();
-//Created 2018-05-15 01:02:40
+//Created 2018-05-24 08:46:39
 (function(){var P$=Clazz_newPackage("javax.swing"),I$=[];
 var C$=Clazz_newInterface(P$, "WindowConstants");
 })();
-//Created 2018-05-15 01:02:42
+//Created 2018-05-24 08:46:44
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['java.awt.Dimension']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "DefaultMenuLayout", null, 'javax.swing.BoxLayout', 'javax.swing.plaf.UIResource');
 
@@ -45169,7 +45179,7 @@ return C$.superclazz.prototype.preferredLayoutSize$java_awt_Container.apply(this
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:19
+//Created 2018-05-24 08:47:51
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "JSCheckBoxMenuItemUI", null, 'swingjs.plaf.JSCheckBoxUI');
 
@@ -45182,7 +45192,7 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.isMenuItem = true;
+this.isMenuItem=true;
 }, 1);
 
 Clazz_newMeth(C$, 'getPropertyPrefix', function () {
@@ -45190,11 +45200,11 @@ return "CheckBoxMenuItem.";
 });
 
 Clazz_newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.menuItem = jc;
+this.menuItem=jc;
 C$.superclazz.prototype.installUI$javax_swing_JComponent.apply(this, [jc]);
 });
 })();
-//Created 2018-05-15 01:03:20
+//Created 2018-05-24 08:47:52
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "JSCheckBoxUI", null, 'swingjs.plaf.JSRadioButtonUI');
 
@@ -45214,7 +45224,7 @@ return "CheckBox.";
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:20
+//Created 2018-05-24 08:47:52
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','javajs.util.PT','swingjs.plaf.JSComponentUI','javax.swing.LookAndFeel','javax.swing.UIManager']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSComboBoxUI", null, 'swingjs.plaf.JSLightweightUI', ['java.beans.PropertyChangeListener', 'java.awt.event.ItemListener', 'javax.swing.event.ListDataListener']);
 var p$=C$.prototype;
@@ -45232,14 +45242,14 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
-this.isContainer = true;
-this.allowPaintedBackground = false;
+this.isContainer=true;
+this.allowPaintedBackground=false;
 this.setDoc();
 }, 1);
 
 Clazz_newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.domNode = this.focusNode = (I$[1]||$incl$(1)).setStyles(this.newDOMObject$S$S$SA("select", this.id, []), ["padding", "0px 0px", "lineHeight", "0.8", "box-sizing", "border-box"]);
+this.domNode=this.focusNode=(I$[1]||$incl$(1)).setStyles(this.newDOMObject$S$S$SA("select", this.id, []), ["padding", "0px 0px", "lineHeight", "0.8", "box-sizing", "border-box"]);
 this.ignoreAllMouseEvents$swingjs_api_js_DOMNode(this.domNode);
 (I$[1]||$incl$(1)).addJqueryHandledEvent(this, this.domNode, "change");
 this.addJQueryFocusCallbacks();
@@ -45271,7 +45281,7 @@ this.domNode.appendChild(option);
 });
 
 Clazz_newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.comboBox = jc;
+this.comboBox=jc;
 this.installListeners();
 (I$[4]||$incl$(4)).installColorsAndFont$javax_swing_JComponent$S$S$S(jc, "ComboBox.background", "ComboBox.foreground", "ComboBox.font");
 });
@@ -45281,8 +45291,8 @@ return "ComboBox.";
 });
 
 Clazz_newMeth(C$, 'getDisabledColors$S', function (pp) {
-this.inactiveBackground = (I$[5]||$incl$(5)).getColor$O(pp + "disabledBackground");
-this.inactiveForeground = (I$[5]||$incl$(5)).getColor$O(pp + "disabledForeground");
+this.inactiveBackground=(I$[5]||$incl$(5)).getColor$O(pp + "disabledBackground");
+this.inactiveForeground=(I$[5]||$incl$(5)).getColor$O(pp + "disabledForeground");
 });
 
 Clazz_newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (jc) {
@@ -45334,7 +45344,7 @@ this.revalidate();
 Clazz_newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (e) {
 });
 })();
-//Created 2018-05-15 01:03:21
+//Created 2018-05-24 08:47:53
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.plaf.JSComponentUI','swingjs.api.js.DOMNode','java.awt.Toolkit','java.awt.Color','swingjs.JSUtil','java.awt.event.ComponentEvent','java.awt.event.WindowEvent','javax.swing.LookAndFeel','java.awt.Rectangle']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSFrameUI", null, 'swingjs.plaf.JSWindowUI', 'java.awt.peer.FramePeer');
 
@@ -45358,42 +45368,42 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
-(I$[1]||$incl$(1)).frameZ = (I$[1]||$incl$(1)).frameZ+(1000);
-this.z = (I$[1]||$incl$(1)).frameZ;
-this.isContainer = true;
-this.defaultHeight = 500;
-this.defaultWidth = 500;
+(I$[1]||$incl$(1)).frameZ+=1000;
+this.z=(I$[1]||$incl$(1)).frameZ;
+this.isContainer=true;
+this.defaultHeight=500;
+this.defaultWidth=500;
 this.setDoc();
 }, 1);
 
 Clazz_newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.domNode = this.frameNode = this.newDOMObject$S$S$SA("div", this.id + "_frame", []);
+this.domNode=this.frameNode=this.newDOMObject$S$S$SA("div", this.id + "_frame", []);
 (I$[2]||$incl$(2)).setStyles(this.frameNode, ["box-shadow", "0px 0px 10px gray", "box-sizing", "content-box"]);
 this.setWindowClass$swingjs_api_js_DOMNode(this.frameNode);
 var w = this.c.getWidth();
 var h = this.c.getHeight();
-if (w == 0) w = this.defaultWidth;
-if (h == 0) h = this.defaultHeight;
+if (w == 0) w=this.defaultWidth;
+if (h == 0) h=this.defaultHeight;
 (I$[2]||$incl$(2)).setSize(this.frameNode, w, h);
 (I$[2]||$incl$(2)).setAttr(this.frameNode, "ui", this);
 (I$[2]||$incl$(2)).setPositionAbsolute(this.frameNode, 0, 0);
 this.setJ2sMouseHandler$swingjs_api_js_DOMNode(this.frameNode);
-this.titleBarNode = this.newDOMObject$S$S$SA("div", this.id + "_titlebar", []);
+this.titleBarNode=this.newDOMObject$S$S$SA("div", this.id + "_titlebar", []);
 (I$[2]||$incl$(2)).setPositionAbsolute(this.titleBarNode, 0, 0);
 (I$[2]||$incl$(2)).setStyles(this.titleBarNode, ["background-color", "#E0E0E0", "height", "20px", "font-size", "14px", "font-family", "sans-serif", "font-weight", "bold"]);
-this.titleNode = this.newDOMObject$S$S$SA("label", this.id + "_title", []);
+this.titleNode=this.newDOMObject$S$S$SA("label", this.id + "_title", []);
 (I$[2]||$incl$(2)).setPositionAbsolute(this.titleNode, 2, 4);
 (I$[2]||$incl$(2)).setStyles(this.titleNode, ["height", "20px"]);
-this.closerWrap = this.newDOMObject$S$S$SA("div", this.id + "_closerwrap", []);
+this.closerWrap=this.newDOMObject$S$S$SA("div", this.id + "_closerwrap", []);
 (I$[2]||$incl$(2)).setPositionAbsolute(this.closerWrap, 0, 0);
 (I$[2]||$incl$(2)).setStyles(this.closerWrap, ["text-align", "right"]);
-this.closerNode = this.newDOMObject$S$S$SA("label", this.id + "_closer", ["innerHTML", "X"]);
+this.closerNode=this.newDOMObject$S$S$SA("label", this.id + "_closer", ["innerHTML", "X"]);
 (I$[2]||$incl$(2)).setStyles(this.closerNode, ["width", "20px", "height", "20px", "position", "absolute", "text-align", "center", "right", "0px"]);
 (I$[2]||$incl$(2)).addJqueryHandledEvent(this, this.closerNode, "click mouseenter mouseout");
 this.frameNode.appendChild(this.titleBarNode);
 if (this.isModal) {
-this.modalNode = (I$[2]||$incl$(2)).createElement("div", this.id + "_modaldiv");
+this.modalNode=(I$[2]||$incl$(2)).createElement("div", this.id + "_modaldiv");
 var screen = (I$[3]||$incl$(3)).getDefaultToolkit().getScreenSize();
 (I$[2]||$incl$(2)).setStyles(this.modalNode, ["background", P$.JSComponentUI.toCSSString$java_awt_Color(Clazz_new_((I$[4]||$incl$(4)).c$$I$I$I$I,[100, 100, 100, 100]))]);
 (I$[2]||$incl$(2)).setPositionAbsolute(this.modalNode, 0, 0);
@@ -45410,7 +45420,7 @@ this.closerWrap.appendChild(this.closerNode);
 var s = this.getInsets();
 (I$[2]||$incl$(2)).setPositionAbsolute(this.frameNode, 0, 0);
 (I$[2]||$incl$(2)).setAttrs(this.frameNode, ["width", "" + this.frame.getWidth() + s.left + s.right , "height", "" + this.frame.getHeight() + s.top + s.bottom ]);
-this.containerNode = this.frameNode;
+this.containerNode=this.frameNode;
 }var strColor = P$.JSComponentUI.toCSSString$java_awt_Color(this.c.getBackground());
 (I$[2]||$incl$(2)).setStyles(this.domNode, ["background-color", strColor]);
 (I$[2]||$incl$(2)).setStyles(this.frameNode, ["background", strColor]);
@@ -45461,7 +45471,7 @@ Clazz_newMeth(C$, 'setInnerComponentBounds$I$I', function (width, height) {
 });
 
 Clazz_newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.frame = this.c;
+this.frame=this.c;
 C$.superclazz.prototype.installUI$javax_swing_JComponent.apply(this, [jc]);
 (I$[8]||$incl$(8)).installColors$javax_swing_JComponent$S$S(jc, "Frame.background", "Frame.foreground");
 });
@@ -45471,7 +45481,7 @@ this.closeFrame();
 });
 
 Clazz_newMeth(C$, 'setTitle$S', function (title) {
-this.title = title;
+this.title=title;
 if (this.titleNode != null ) (I$[2]||$incl$(2)).setAttr(this.titleNode, "innerHTML", title);
 });
 
@@ -45479,11 +45489,11 @@ Clazz_newMeth(C$, 'setMenuBar$O', function (mb) {
 });
 
 Clazz_newMeth(C$, 'setResizable$Z', function (resizeable) {
-this.resizeable = resizeable;
+this.resizeable=resizeable;
 });
 
 Clazz_newMeth(C$, 'setState$I', function (state) {
-this.state = state;
+this.state=state;
 });
 
 Clazz_newMeth(C$, 'getState', function () {
@@ -45494,7 +45504,7 @@ Clazz_newMeth(C$, 'setMaximizedBounds$java_awt_Rectangle', function (bounds) {
 });
 
 Clazz_newMeth(C$, 'setBoundsPrivate$I$I$I$I', function (x, y, width, height) {
-this.bounds = Clazz_new_((I$[9]||$incl$(9)).c$$I$I$I$I,[x, y, width, height]);
+this.bounds=Clazz_new_((I$[9]||$incl$(9)).c$$I$I$I$I,[x, y, width, height]);
 });
 
 Clazz_newMeth(C$, 'getBoundsPrivate', function () {
@@ -45523,7 +45533,7 @@ var z = this.getZIndex$S(null) - 1;
 }(I$[2]||$incl$(2)).setVisible(this.modalNode, b);
 }});
 })();
-//Created 2018-05-15 01:03:22
+//Created 2018-05-24 08:47:54
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','swingjs.plaf.DefaultMenuLayout','javax.swing.LookAndFeel','java.awt.Dimension']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSMenuBarUI", null, 'swingjs.plaf.JSPanelUI');
 
@@ -45540,19 +45550,19 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
-this.isContainer = true;
+this.isContainer=true;
 this.setDoc();
 }, 1);
 
 Clazz_newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.containerNode = this.domNode = this.newDOMObject$S$S$SA("div", this.id, []);
+this.containerNode=this.domNode=this.newDOMObject$S$S$SA("div", this.id, []);
 (I$[1]||$incl$(1)).setPositionAbsolute(this.domNode, 0, 0);
 }return this.domNode;
 });
 
 Clazz_newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.menuBar = jc;
+this.menuBar=jc;
 if (this.menuBar.getLayout() == null  || Clazz_instanceOf(this.menuBar.getLayout(), "javax.swing.plaf.UIResource") ) {
 this.menuBar.setLayout$java_awt_LayoutManager(Clazz_new_((I$[2]||$incl$(2)).c$$java_awt_Container$I,[this.menuBar, 2]));
 }(I$[3]||$incl$(3)).installColorsAndFont$javax_swing_JComponent$S$S$S(jc, "MenuBar.background", "MenuBar.foreground", "MenuBar.font");
@@ -45562,7 +45572,7 @@ Clazz_newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (jc) {
 });
 
 Clazz_newMeth(C$, 'getContainerHeight', function () {
-return this.height = 25;
+return this.height=25;
 });
 
 Clazz_newMeth(C$, 'getPreferredSize', function () {
@@ -45570,7 +45580,7 @@ var d = Clazz_new_((I$[4]||$incl$(4)).c$$I$I,[0, 25]);
 return d;
 });
 })();
-//Created 2018-05-15 01:03:23
+//Created 2018-05-24 08:47:55
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','java.awt.Dimension','javax.swing.LookAndFeel']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSMenuItemUI", null, 'swingjs.plaf.JSButtonUI');
 
@@ -45583,19 +45593,19 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.isMenuItem = true;
-this.allowPaintedBackground = false;
+this.isMenuItem=true;
+this.allowPaintedBackground=false;
 }, 1);
 
 Clazz_newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.domNode = this.createItem$S$swingjs_api_js_DOMNode("_item", null);
+this.domNode=this.createItem$S$swingjs_api_js_DOMNode("_item", null);
 }(I$[1]||$incl$(1)).setVisible(this.domNode, this.jc.isVisible());
 return this.domNode;
 });
 
 Clazz_newMeth(C$, 'getContainerHeight', function () {
-return this.height = 25;
+return this.height=25;
 });
 
 Clazz_newMeth(C$, 'getCSSAdjustment$Z', function (addingCSS) {
@@ -45603,12 +45613,12 @@ return Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[5, 0]);
 });
 
 Clazz_newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.menuItem = jc;
+this.menuItem=jc;
 C$.superclazz.prototype.installUI$javax_swing_JComponent.apply(this, [jc]);
 (I$[3]||$incl$(3)).installColorsAndFont$javax_swing_JComponent$S$S$S(jc, "MenuItem.background", "MenuItem.foreground", "MenuItem.font");
 });
 })();
-//Created 2018-05-15 01:03:23
+//Created 2018-05-24 08:47:55
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','java.awt.Component']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSMenuUI", null, 'swingjs.plaf.JSMenuItemUI');
 
@@ -45625,24 +45635,24 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
-this.isMenu = true;
+this.isMenu=true;
 this.setDoc();
 }, 1);
 
 Clazz_newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.isMenuItem = !(this.jc).isTopLevelMenu();
+this.isMenuItem=!(this.jc).isTopLevelMenu();
 if (this.isMenuItem) {
-this.containerNode = this.domNode = this.createItem$S$swingjs_api_js_DOMNode("_menu", null);
+this.containerNode=this.domNode=this.createItem$S$swingjs_api_js_DOMNode("_menu", null);
 } else {
-this.domNode = this.createItem$S$swingjs_api_js_DOMNode("_item", null);
+this.domNode=this.createItem$S$swingjs_api_js_DOMNode("_item", null);
 }}this.setCssFont$swingjs_api_js_DOMNode$java_awt_Font(this.domNode, this.c.getFont());
 (I$[1]||$incl$(1)).setVisible(this.domNode, this.jc.isVisible());
 return this.domNode;
 });
 
 Clazz_newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.jm = jc;
+this.jm=jc;
 C$.superclazz.prototype.installUI$javax_swing_JComponent.apply(this, [jc]);
 });
 
@@ -45654,7 +45664,7 @@ Clazz_newMeth(C$, 'getMaximumSize', function () {
 return this.getPreferredSize();
 });
 })();
-//Created 2018-05-15 01:03:23
+//Created 2018-05-24 08:47:55
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "JSPopupMenuSeparatorUI", null, 'swingjs.plaf.JSSeparatorUI');
 
@@ -45667,11 +45677,11 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.isMenuItem = true;
-this.allowPaintedBackground = false;
+this.isMenuItem=true;
+this.allowPaintedBackground=false;
 }, 1);
 })();
-//Created 2018-05-15 01:03:24
+//Created 2018-05-24 08:47:57
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.jquery.JQueryUI','swingjs.JSUtil','javax.swing.LookAndFeel','swingjs.api.js.DOMNode']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSPopupMenuUI", null, 'swingjs.plaf.JSPanelUI');
 C$.j2sSwingMenu = null;
@@ -45695,15 +45705,15 @@ Clazz_newMeth(C$, 'c$', function () {
 Clazz_super_(C$, this,1);
 if (C$.j2sSwingMenu == null ) {
 (I$[2]||$incl$(2)).loadStaticResource$S("swingjs/jquery/j2sMenu.js");
-C$.j2sSwingMenu = (I$[2]||$incl$(2)).J2S._getSwing();
-}this.isContainer = true;
-this.isMenuItem = true;
+C$.j2sSwingMenu=(I$[2]||$incl$(2)).J2S._getSwing();
+}this.isContainer=true;
+this.isMenuItem=true;
 this.setDoc();
 }, 1);
 
 Clazz_newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.domNode = this.containerNode = this.newDOMObject$S$S$SA("ul", this.id, []);
+this.domNode=this.containerNode=this.newDOMObject$S$S$SA("ul", this.id, []);
 }return this.domNode;
 });
 
@@ -45720,7 +45730,7 @@ return null;
 
 Clazz_newMeth(C$, 'setVisible$Z', function (b) {
 if (this.menu == null ) {
-this.menu = this.jc;
+this.menu=this.jc;
 C$.j2sSwingMenu.setMenu(this.menu);
 }if (b) {
 this.jc.addNotify();
@@ -45746,7 +45756,7 @@ Clazz_newMeth(C$, 'getPreferredSize', function () {
 return null;
 });
 })();
-//Created 2018-05-15 01:03:24
+//Created 2018-05-24 08:47:57
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "JSRadioButtonMenuItemUI", null, 'swingjs.plaf.JSRadioButtonUI');
 
@@ -45759,8 +45769,8 @@ Clazz_newMeth(C$, '$init$', function () {
 Clazz_newMeth(C$, 'c$', function () {
 C$.superclazz.c$.apply(this, []);
 C$.$init$.apply(this);
-this.isMenuItem = true;
-this.allowPaintedBackground = false;
+this.isMenuItem=true;
+this.allowPaintedBackground=false;
 }, 1);
 
 Clazz_newMeth(C$, 'getPropertyPrefix', function () {
@@ -45768,11 +45778,11 @@ return "RadioButtonMenuItem.";
 });
 
 Clazz_newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.menuItem = jc;
+this.menuItem=jc;
 C$.superclazz.prototype.installUI$javax_swing_JComponent.apply(this, [jc]);
 });
 })();
-//Created 2018-05-15 01:03:24
+//Created 2018-05-24 08:47:57
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.api.js.DOMNode','java.awt.Dimension']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSRadioButtonUI", null, 'swingjs.plaf.JSButtonUI');
 
@@ -45795,22 +45805,22 @@ var b = this.jc;
 var isNew = false;
 var doAll = false;
 if (this.domNode == null ) {
-doAll = true;
+doAll=true;
 var name = this.id;
-this.domBtn = this.$enableNode = this.newDOMObject$S$S$SA("input", this.id, ["type", myType, "name", name]);
-this.iconNode = this.newDOMObject$S$S$SA("span", this.id + "_icon", []);
-this.textNode = this.newDOMObject$S$S$SA("label", this.id + "l1", []);
-this.label = this.newDOMObject$S$S$SA("label", this.id + "l2", ["htmlFor", this.id]);
+this.domBtn=this.$enableNode=this.newDOMObject$S$S$SA("input", this.id, ["type", myType, "name", name]);
+this.iconNode=this.newDOMObject$S$S$SA("span", this.id + "_icon", []);
+this.textNode=this.newDOMObject$S$S$SA("label", this.id + "l1", []);
+this.label=this.newDOMObject$S$S$SA("label", this.id + "l2", ["htmlFor", this.id]);
 this.setDataComponent$swingjs_api_js_DOMNode(this.label);
 this.setDataComponent$swingjs_api_js_DOMNode(this.iconNode);
 this.setDataComponent$swingjs_api_js_DOMNode(this.domBtn);
 this.setDataComponent$swingjs_api_js_DOMNode(this.textNode);
 this.setEnabled$Z(this.c.isEnabled());
 if (this.isMenuItem) {
-this.domNode = this.createItem$S$swingjs_api_js_DOMNode("_item", this.label);
+this.domNode=this.createItem$S$swingjs_api_js_DOMNode("_item", this.label);
 } else {
-this.domNode = this.newDOMObject$S$S$SA("div", this.id + "_0", []);
-this.centeringNode = this.newDOMObject$S$S$SA("div", this.id + "_ctr", []);
+this.domNode=this.newDOMObject$S$S$SA("div", this.id + "_0", []);
+this.centeringNode=this.newDOMObject$S$S$SA("div", this.id + "_ctr", []);
 this.centeringNode.appendChild(this.label);
 this.domNode.appendChild(this.centeringNode);
 }}if (b.isSelected() || isNew ) (I$[1]||$incl$(1)).setAttr(this.domBtn, "checked", "true");
@@ -45824,7 +45834,7 @@ var dobj = null;
 if (!this.isMenuItem) {
 var wBtn = this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(this.domBtn, false, false).width - 1;
 var wIcon = Math.max(0, this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(this.iconNode, false, false).width - 1);
-dobj = this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(this.wrap$S$S$swingjs_api_js_DOMNodeA("div", "", [this.iconNode, this.domBtn, this.textNode]), false, false);
+dobj=this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(this.wrap$S$S$swingjs_api_js_DOMNodeA("div", "", [this.iconNode, this.domBtn, this.textNode]), false, false);
 (I$[1]||$incl$(1)).setStyles(this.textNode, ["left", wBtn + wIcon + "px" ]);
 P$.JSComponentUI.vCenter$swingjs_api_js_DOMNode$I(this.domBtn, -75);
 P$.JSComponentUI.vCenter$swingjs_api_js_DOMNode$I(this.iconNode, -15);
@@ -45849,9 +45859,9 @@ Clazz_newMeth(C$, 'setHTMLSize$swingjs_api_js_DOMNode$Z', function (obj, addCSS)
 (I$[1]||$incl$(1)).setStyles(this.textNode, ["position", null, "width", null, "height", null]);
 var d;
 if (this.isMenuItem) {
-d = Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[20, 20]);
+d=Clazz_new_((I$[2]||$incl$(2)).c$$I$I,[20, 20]);
 } else {
-d = this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(obj, addCSS, false);
+d=this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(obj, addCSS, false);
 (I$[1]||$incl$(1)).setPositionAbsolute(this.domBtn, -2147483648, 0);
 (I$[1]||$incl$(1)).setPositionAbsolute(this.textNode, -2147483648, 0);
 (I$[1]||$incl$(1)).setPositionAbsolute(this.label, -2147483648, 0);
@@ -45870,7 +45880,7 @@ return 4;
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:24
+//Created 2018-05-24 08:47:57
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[];
 var C$=Clazz_newClass(P$, "JSSeparatorUI", null, 'swingjs.plaf.JSLightweightUI');
 
@@ -45882,13 +45892,13 @@ Clazz_newMeth(C$, '$init$', function () {
 
 Clazz_newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.domNode = this.newDOMObject$S$S$SA("label", this.id, []);
+this.domNode=this.newDOMObject$S$S$SA("label", this.id, []);
 }return this.domNode;
 });
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:25
+//Created 2018-05-24 08:47:58
 (function(){var P$=Clazz_newPackage("swingjs.plaf"),I$=[['swingjs.JSUtil','swingjs.api.js.DOMNode','java.awt.Toolkit','swingjs.plaf.JSComponentUI','java.awt.Insets']],$incl$=function(i){return I$[i]=Clazz_load(I$[0][i-1])};
 var C$=Clazz_newClass(P$, "JSWindowUI", null, 'swingjs.plaf.JSComponentUI', 'java.awt.peer.WindowPeer');
 
@@ -45920,20 +45930,20 @@ this.defaultHeight = 400;
 }, 1);
 
 Clazz_newMeth(C$, 'setFrame$java_awt_Window$Z', function (target, isFrame) {
-this.window = target;
-this.w = this.window;
-this.isFrame = isFrame;
-this.isContainer = this.isWindow = true;
+this.window=target;
+this.w=this.window;
+this.isFrame=isFrame;
+this.isContainer=this.isWindow=true;
 var jc = this;
 var viewer = (I$[1]||$incl$(1)).getAppletViewer();
-this.applet = viewer.html5Applet;
-this.graphics = jc.getGraphics();
+this.applet=viewer.html5Applet;
+this.graphics=jc.getGraphics();
 return this;
 });
 
 Clazz_newMeth(C$, 'updateDOMNode', function () {
 if (this.domNode == null ) {
-this.containerNode = this.domNode = this.newDOMObject$S$S$SA("div", this.id, []);
+this.containerNode=this.domNode=this.newDOMObject$S$S$SA("div", this.id, []);
 this.setWindowClass$swingjs_api_js_DOMNode(this.domNode);
 }return this.domNode;
 });
@@ -45948,18 +45958,18 @@ return (I$[3]||$incl$(3)).getDefaultToolkit();
 });
 
 Clazz_newMeth(C$, 'getFontMetrics$java_awt_Font', function (font) {
-if (!font.equals$O(this.font)) this.window.setFont$java_awt_Font(this.font = font);
+if (!font.equals$O(this.font)) this.window.setFont$java_awt_Font(this.font=font);
 return this.graphics.getFontMetrics$java_awt_Font(font);
 });
 
 Clazz_newMeth(C$, 'toFront', function () {
 if ((I$[4]||$incl$(4)).debugging) System.out.println$S("window to front for " + this.id);
-this.z = (I$[1]||$incl$(1)).J2S._setWindowZIndex(this.domNode, 2147483647);
+this.z=(I$[1]||$incl$(1)).J2S._setWindowZIndex(this.domNode, 2147483647);
 });
 
 Clazz_newMeth(C$, 'toBack', function () {
 System.out.println$S("window to back for " + this.id);
-this.z = (I$[1]||$incl$(1)).J2S._setWindowZIndex(this.domNode, -2147483648);
+this.z=(I$[1]||$incl$(1)).J2S._setWindowZIndex(this.domNode, -2147483648);
 });
 
 Clazz_newMeth(C$, 'updateAlwaysOnTopState', function () {
@@ -46005,5 +46015,5 @@ return Clazz_new_((I$[5]||$incl$(5)).c$$I$I$I$I,[0, 0, 0, 0]);
 
 Clazz_newMeth(C$);
 })();
-//Created 2018-05-15 01:03:28
+//Created 2018-05-24 08:48:02
 })(Clazz,Clazz.array,Clazz.assert,Clazz.clone,Clazz.exceptionOf,Clazz.forName,Clazz.getClass,Clazz.instanceOf,Clazz.load,Clazz.new_,Clazz.newClass,Clazz.newEnumConst,Clazz.newInstance,Clazz.newInterface,Clazz.newMeth,Clazz.newPackage,Clazz.super_);

@@ -115,7 +115,7 @@ public class PotentialObject extends edu.davidson.display.Thing{
      ds[0][0]=x;  //x
      ds[0][1]=y;  //y
      ds[0][2]=p.calcCharge(this);  //charge
-     ds[0][3]=v;  //volatge
+     ds[0][3]=v;  //voltage
      ds[0][4]=p.calcPotentialEnergy(this);  //potential energy
      return ds;
   }

@@ -720,13 +720,13 @@ public class Poisson extends SApplet {
   /**
    *    Add a rectangular conductor with a fixed voltage. Alternative to addObject method.
    *
-   *    @param x        x postion of center
-   *    @param y        y postion of center
+   *    @param x        x position of center
+   *    @param y        y position of center
    *    @param w        width in pixels
    *    @param h        height in pixels
-   * @param q
+   *    @param q
    *
-   * @return the integer indentifier for the object
+   * @return the integer identifier for the object
    */
   public int addRectangle(double x, double y, int w, int h, double q) {
     RectObject r = poissonPanel.addPotRect(w, h, x, y, q);

@@ -1411,10 +1411,11 @@ public class DataGraph extends SApplet {
 
 /**
    * Changes the display format for mouse actions.  Use UNIX fprint syntax.
+   * Changed to setMouseFormat because of name conflict within swingjs.
    *
-   * @param              str The format for cooridinate display.
+   * @param              str The format for coordinate display.
    */
-  public void setFormat(String str){
+  public void setMouseFormat(String str){
     graph.setFormat(str);
   }
 

@@ -64,7 +64,7 @@ public final class PoissonPanel extends Panel implements Runnable, SScalable, SD
   private boolean showRhoOnDrag=false;
   private int mouseX=0;
   private int mouseY=0;
-  private int maxInterations=200;
+  private int maxInterations=1000;
     // data source variables
   protected String[] varStrings= new String[]{"p","q"};
   protected double[][] ds=new double[1][2];  // the datasource state variables x,y;
@@ -863,6 +863,10 @@ public final class PoissonPanel extends Panel implements Runnable, SScalable, SD
 						break;
 					}
 					counter++;
+					if(counter>=maxInterations){  // display what we have; may need to increase max iterations
+						keepRunning = false;
+						state = STATE_STOP;
+					}
 				}
 				timer = new Timer(sleepTime, new ActionListener() {
 					@Override
@@ -891,67 +895,34 @@ public final class PoissonPanel extends Panel implements Runnable, SScalable, SD
 	}
   
 	@SuppressWarnings("unused")
-	public void run() {
-		while (true) {
-			switch (state) {
-			case STATE_INIT:
-				keepRunning = true;
-				err = 10 * tolerance;
-				counter = 0;
-				setMessage(null);
-				state = STATE_LOOP;
-				continue;
-			case STATE_LOOP:
-				if (keepRunning && 
-						( /** @j2sNative true || */ runThread == Thread.currentThread()) 
-						&& counter < maxInterations) {
-					try {
-						for (int i = 0; i < 20; i++) {
-							if (keepRunning)
-								err = step();
-							if (err < tolerance) {
-								keepRunning = false;
-								break;
-							}
-							//System.out.println("Poisson calculation running counter="+counter + "error =" +err);
-							counter++;
-						}
-						if (keepRunning) {
-							if (/** @j2sNative true || */ false) {
-								timer = new Timer(sleepTime, new ActionListener() {
-									@Override
-									public void actionPerformed(ActionEvent e) {
-										run();
-									}									
-								});
-								timer.setRepeats(false);
-								timer.start();
-							} else {
-								Thread.sleep(sleepTime);
-							}
-						}
-					} catch (InterruptedException e) {
-						keepRunning = false;
-					}
-				}
-				state = STATE_STOP;
-				continue;
-			case STATE_STOP:
-				keepRunning = false;
-				
-				if ((err > tolerance) && (counter >= maxInterations)) {
-					setMessage(owner.label_not_converge);
-				} else
-					setMessage(null);
-				invalidPotential = true;
-				copyToDisplayMatrix();
-				owner.updateDataConnections();
-				runThread = null;
-				repaint();
-				return;
-			}
+	  public void run(){
+		if(isJS) {
+            System.err.println("ERROR: Thread should not run in JavaScript mode.");
+            return;
 		}
-	}
+	      double err=10*tolerance;
+	      int counter=0;
+	      setMessage(null);
+	      while (keepRunning && runThread==Thread.currentThread() && counter<maxInterations ){
+	          try{
+	              for(int i=0; i<10; i++){
+	                  if(keepRunning)err=step();
+	                  if (err< tolerance) keepRunning=false;
+	                  counter++;
+	              }
+	              if( keepRunning )Thread.sleep(sleepTime);
+	          }catch (InterruptedException e){ keepRunning=false;}
+	      }
+	      keepRunning=false;
+	      if( (err >tolerance ) && (counter>=maxInterations) ){
+	          setMessage(owner.label_not_converge);
+	        }else setMessage(null);
+	      invalidPotential=true;
+	      copyToDisplayMatrix();
+	      owner.updateDataConnections();
+	      runThread = null;
+	      repaint();
+	  }
 
   //Start the Poisson calculation
   public synchronized void startThread() {
@@ -1203,7 +1174,7 @@ public final class PoissonPanel extends Panel implements Runnable, SScalable, SD
     return;
   }
 
-  double adjustVoltage(){ // keep q constant on contuctors.  Return true if we did adjust.
+  double adjustVoltage(){ // keep q constant on conductors.  Return true if we did adjust.
       Thing t;
       double err=0;
       double qnew=0, q=0;

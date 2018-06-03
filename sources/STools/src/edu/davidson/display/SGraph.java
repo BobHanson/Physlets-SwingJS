@@ -2410,7 +2410,7 @@ public void clearAllThings(){
 /**
  *    Change the display format for mouse actions.
  *
- *    @param str   The format for cooridinate display.
+ *    @param str   The format for coordinate display.
  *
 */
   public void setFormat(String str){format= new Format(str);}

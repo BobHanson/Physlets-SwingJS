@@ -1,5 +1,7 @@
 package animator4;
-import java.awt.*;
+import a2s.*;
+import java.awt.Graphics;
+
 import edu.davidson.tools.SApplet;
 /**
  * Title:        CollisionDataSource<p>

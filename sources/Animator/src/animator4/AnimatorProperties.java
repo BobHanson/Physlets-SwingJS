@@ -1,7 +1,12 @@
 package animator4;
 
-import java.awt.*;
-import java.util.*;
+import a2s.*;
+
+import java.awt.Color;
+import java.util.Enumeration;
+import java.util.Properties;
+import java.util.StringTokenizer;
+
 
 public class AnimatorProperties extends Properties {
     /**

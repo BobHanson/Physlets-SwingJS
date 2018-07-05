@@ -1,6 +1,8 @@
 package animator4;
 
-import java.awt.*;
+import a2s.*;
+import java.awt.Graphics;
+
 
 public class ConnectorLine extends Connector {
 

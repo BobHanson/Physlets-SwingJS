@@ -443,21 +443,15 @@ private int[] postfix_code_ints;
    *
    * @param definition the function definition
    */
-
   public void define(String definition) {
-    function = definition;
-    /** @j2sNative   
-     * valid = false; 
-     * return;
-     */
-    {
-    function.toLowerCase();
-    function=removeEscapeCharacter(function);
-    function=fixUnaryMinus(function);
-    valid = false;
-    }
-  }
-
+        String msg=""+definition;
+	    msg=msg.toLowerCase();
+	    msg=removeEscapeCharacter(msg);
+	    msg=fixUnaryMinus(msg);
+	    function = msg;
+	    valid = false;
+	  }
+  
 	/**
 	 * Parses defined function.
 	 */

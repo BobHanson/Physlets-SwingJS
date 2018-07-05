@@ -1,6 +1,11 @@
 package animator4;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+
+import a2s.*;
 
 import edu.davidson.numerics.Parser;
 

@@ -9,7 +9,10 @@
  */
 package animator4;
 
-import java.awt.*;
+import a2s.*;
+import java.awt.Graphics;
+import java.awt.Polygon;
+
 import edu.davidson.graph.DataSet;
 
 public class TrailThing extends Thing{

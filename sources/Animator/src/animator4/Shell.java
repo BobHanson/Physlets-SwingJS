@@ -1,8 +1,9 @@
 
 
 package animator4;
+import a2s.*;
+import java.awt.Graphics;
 
-import java.awt.*;
 import edu.davidson.tools.*;
 
 public class Shell extends Thing {

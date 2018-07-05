@@ -1,7 +1,10 @@
 package animator4;
 
+import a2s.*;
+import java.awt.Graphics;
+
 import java.awt.Image;
-import java.awt.*;
+
 
 public class ImageThing extends Thing {
   private Image image;

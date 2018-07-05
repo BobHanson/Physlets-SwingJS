@@ -151,7 +151,7 @@ public class Util {
       tracker.addImage(im,0);
       //tracker.waitForID(0,1000);  // wait one second
     }catch(Exception e){
-      //return null;'
+      //return null;
     }
     //if(tracker.isErrorAny()) return null;
     //if(im.getHeight(applet)<1) return null;

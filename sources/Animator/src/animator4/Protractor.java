@@ -1,6 +1,11 @@
 package animator4;
 
-import java.awt.*;
+import a2s.*;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+
 
 public class Protractor extends Thing {
   private boolean insideTip1=false;  //base tip

@@ -1,6 +1,10 @@
 package animator4;
 
-import java.awt.*;
+import a2s.*;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
 import edu.davidson.tools.SUtil;
 
 public class CursorThing extends Thing {

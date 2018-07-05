@@ -9,7 +9,10 @@
  */
 package ising;
 
-import java.awt.*;
+import java.awt.Graphics;
+import java.awt.Image;
+
+import a2s.*;
 import edu.davidson.tools.*;
 import edu.davidson.display.Format;
 

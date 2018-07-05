@@ -21,7 +21,7 @@ import java.util.Hashtable;
 import java.util.Vector;
 
 /**
- * Indicates that an error occured in parser operation, and the operation
+ * Indicates that an error occurred in parser operation, and the operation
  * could not be completed. Used internally in <code>Parser</code> class.
  *
  * @see Parser
@@ -355,7 +355,7 @@ private int[] postfix_code_ints;
    * Sets the variable names using an array.
    *
    * The size of the arrays are adjust to reflect the number of variables.
-   * Added by W. Chrsitian.
+   * Added by W. Christian.
    *
    * @param newVars  the variable names
    */
@@ -439,17 +439,23 @@ private int[] postfix_code_ints;
 
   /**
    * Defines a function. Current postfix code becomes invalid.
-   * Modifed by W. Christian.
+   * Modified by W. Christian.
    *
    * @param definition the function definition
    */
 
   public void define(String definition) {
     function = definition;
+    /** @j2sNative   
+     * valid = false; 
+     * return;
+     */
+    {
     function.toLowerCase();
     function=removeEscapeCharacter(function);
     function=fixUnaryMinus(function);
     valid = false;
+    }
   }
 
 	/**

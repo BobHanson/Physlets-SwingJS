@@ -143,7 +143,7 @@ public class Util {
       // System.out.println("Failed to load image file from absolute URL.");
     }
     if(im==null){
-      System.out.println("Failed to load image file.");
+      System.out.println("Failed to load image file. file="+file);
       return im;
     }
     MediaTracker tracker=new MediaTracker(applet);

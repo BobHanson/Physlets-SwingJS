@@ -80,7 +80,7 @@ class ParserException extends Exception {
 public final class Parser {
 
   // global variables
-
+  boolean isJS = /** @j2sNative true || */ false;
   private int     var_count;             // number of variables
   private String  var_name[];            // variables' name
   private double  var_value[];           // value of variables
@@ -111,7 +111,8 @@ public final class Parser {
   // changed from 24 to 25 function by W. Christian to add step function
   // changed from 25 to 26 function by W. Christian to add random function
   // changed from 26 to 27 function by W. Christian to add sin function for Spanish version
-  private  static final int NO_FUNCS             = 27;   // no. of built-in functions
+  //changed from 27 to 28 function by W. Christian to add sign function
+  private  static final int NO_FUNCS             = 28;   // no. of built-in functions
 
   private  static final int NO_EXT_FUNCS  = 4;    // no. of extended functions
   private  static final int STACK_SIZE    = 50;   // evaluation stack size
@@ -263,12 +264,12 @@ public final class Parser {
   { "sin",   "cos",   "tan",   "ln",    "log",   "abs",
     "int",   "frac",  "asin",  "acos",  "atan",  "sinh",
     "cosh",  "tanh",  "asinh", "acosh", "atanh", "ceil",
-    "floor", "round", "exp",   "sqr",   "sqrt",  "sign", "step", "random", "sen" };    // step and random added by W. Christian
+    "floor", "round", "exp",   "sqr",   "sqrt",  "sign", "step", "random", "sen", "sign" };    // step and random added by W. Christian
 
   // extended functions
 
   private String extfunc[]  = { "min",   "max",   "mod",   "atan2" };
-private int[] postfix_code_ints;
+  private int[] postfix_code_ints;
 
   /**
    * The constructor of <code>Parser</code>.
@@ -1146,7 +1147,8 @@ public double evaluate(double x, double y)
          return Math.sin(parameter);
        else
          return Math.sin(parameter * DEGTORAD);
-
+      case 27:
+          return (parameter<0d) ? -1: 1; // added by W. Christian for sign function
       default: error = CODE_DAMAGED;
                return Double.NaN;
     }
@@ -1165,7 +1167,15 @@ public double evaluate(double x, double y)
     switch (function) {
       case  0: return Math.min(param1,param2);
       case  1: return Math.max(param1,param2);
-      case  2: return Math.IEEEremainder(param1,param2);
+      //case  2: return Math.IEEEremainder(param1,param2);
+      case  2:{
+    	  /** @j2sNative
+    	   * var ans=param1%param2;
+    	   * return ans;
+    	   */{ 
+    	    return Math.IEEEremainder(param1,param2);
+    	  }
+      }
       case  3: return Math.atan2(param1,param2);
       default: error = CODE_DAMAGED;
                return Double.NaN;

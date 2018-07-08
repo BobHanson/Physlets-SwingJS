@@ -5,11 +5,14 @@ a2s/Applet.js
 a2s/Button.js
 a2s/Canvas.js
 a2s/Checkbox.js
+a2s/Frame.js
 a2s/Label.js
 a2s/Panel.js
 a2s/Scrollbar.js
 a2s/TextField.js
 animator4/Animator.js
+animator4/Arrow.js
+animator4/DrawnRectangle.js
 animator4/AnimatorCanvas.js
 animator4/Animator_mouseAdapter.js
 animator4/Animator_mouseMotionAdapter.js
@@ -267,6 +270,7 @@ java/io/FilterInputStream.js
 java/io/InputStream.js
 java/io/StreamTokenizer.js
 java/net/URLConnection.js
+java/net/MalformedURLException.js
 java/net/URLStreamHandler.js
 java/util/Properties.js
 java/util/Stack.js
@@ -324,6 +328,7 @@ sun/awt/image/DataStealer.js
 sun/awt/image/IntegerComponentRaster.js
 sun/awt/image/IntegerInterleavedRaster.js
 sun/awt/image/OffScreenImageSource.js
+sun/awt/SunGraphicsCallback.js
 sun/awt/image/SunWritableRaster.js
 sun/java2d/StateTrackable.js
 sun/java2d/StateTrackableDelegate.js

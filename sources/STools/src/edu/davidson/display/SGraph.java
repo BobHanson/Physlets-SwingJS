@@ -46,7 +46,8 @@ import edu.davidson.tools.SUtil;
  * @author   Wolfgang Christian
 */
 
-public class SGraph extends Graph2D implements SStepable,Cloneable, SDataListener,Runnable, SScalable{ // implements BlackBox{
+public class SGraph extends Graph2D implements SStepable,Cloneable, SDataListener,Runnable, SScalable{
+	 boolean isJS = /** @j2sNative true || */ false;
   public String label_time = "Time: ";
  // variables for the delayed drawing.
   private static Color[] colors=new Color[91];
@@ -135,7 +136,7 @@ public class SGraph extends Graph2D implements SStepable,Cloneable, SDataListene
       //System.out.println("SGraph Constructor: "+hashCode());
       try{SApplet.addDataListener(this);}catch (Exception e){e.printStackTrace();}
       delayThread = new Thread(this);
-      delayThread.start();
+      if(!isJS)delayThread.start();
       setFont (getFont()); // Francisco Esquembre (March 2000). Yes this changes the font above
 
   }
@@ -1789,7 +1790,7 @@ public synchronized Series createSeries(int sid ){
         while (!interrupted){
           synchronized(delayLock){
               if(!newData)try{
-                  delayLock.wait();
+                  if(!isJS) delayLock.wait();
               }catch(InterruptedException ie){return;}
               newData=false;
               if(!interrupted)paintOffScreen();

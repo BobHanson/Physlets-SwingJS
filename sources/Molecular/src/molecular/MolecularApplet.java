@@ -13,8 +13,12 @@
  *
  */
 package molecular;
+import a2s.*;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.*;
 import edu.davidson.tools.*;
 
@@ -23,7 +27,7 @@ import edu.davidson.tools.*;
  *
  */
 public class MolecularApplet extends SApplet {
-
+public static boolean isJS = /** @j2sNative true || */ false;
   String                             button_reset       = "Reset";
   String                             button_start       = "Start";
   String                             button_stop        = "Pause";

@@ -1,6 +1,8 @@
 package molecular;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+
 import edu.davidson.tools.*;
 
 public class TPEnsemblePanel extends EnsemblePanel implements SStepable {

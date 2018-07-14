@@ -2,9 +2,13 @@
 //*************************************************
 package engine;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Point;
 import java.lang.Math;
 import edu.davidson.tools.*;
+
 //*************************************************
 public class Engine extends SApplet implements SStepable {
 //variables added by W. Christian
@@ -37,7 +41,7 @@ public class Engine extends SApplet implements SStepable {
       //circle point position
       double Ycircle, Xcircle;
 
-      //positon of Piston taken at center pt
+      //position of Piston taken at center pt
       double Ypiston, MiddlePositonPiston, Xpiston=0.0;
 
       //the height of the piston
@@ -105,6 +109,7 @@ public class Engine extends SApplet implements SStepable {
 //*************************************************
    public void openFrames() {
       aWorld_2XcWorld = new XcWorld();
+      aWorld_2XcWorld.setPreferredSize(new Dimension(400,450));  // added by W. Christian
       add(aWorld_2XcWorld);
       aWorld_2XcWorld.reshape(0,0,400,450);
       aWorld_2XcWorld.setForeground(Color.black);

@@ -1,5 +1,10 @@
 package engine;
-import java.awt.*;
+
+import java.awt.Color;
+import java.awt.Event;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+
 //*************************************************************************
 public class XcWorld extends World {
 // this class is used in xdj xdev to java converter

@@ -2,7 +2,8 @@
 
 package molecular;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
 import edu.davidson.tools.*;
           
 public class MFEnsemblePanel extends EnsemblePanel implements SStepable {
@@ -50,7 +51,7 @@ public class MFEnsemblePanel extends EnsemblePanel implements SStepable {
   }
 
   public void update(Graphics g){
-    paint(g);
+	  paintMe(g);
   }
 
   public void step(double dt, double time){
@@ -111,7 +112,7 @@ public class MFEnsemblePanel extends EnsemblePanel implements SStepable {
 
     paintOSI();
     Graphics g = this.getGraphics();
-    paint(g);
+    paintMe(g);
     g.dispose();
 
     this.time=time+dt;
@@ -243,10 +244,11 @@ public class MFEnsemblePanel extends EnsemblePanel implements SStepable {
       else {System.out.println("DEnsemblePanel: findMinColTime");return 10000;}
   }
 
-  public void repaint(){
+  public void repaintMe(){
      paintOSI();
      Graphics g= this.getGraphics();
-     paint(g);
+     if(g==null) return;
+     paintMe(g);
      g.dispose();
   }
 
@@ -564,7 +566,7 @@ public class MFEnsemblePanel extends EnsemblePanel implements SStepable {
   *
   *
   */
-  public void paint(Graphics g){
+  public void paintMe(Graphics g){
     if (osi==null || currentw!=getSize().width || currenth!=getSize().height){
         if(getSize().width>2){
             boolean shouldRun=owner.clock.isRunning();

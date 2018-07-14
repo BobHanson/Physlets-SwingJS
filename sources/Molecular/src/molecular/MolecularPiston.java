@@ -9,7 +9,13 @@
  */
 package molecular;
 
-import java.awt.*;
+import a2s.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.GridLayout;
 import java.awt.event.*;
 import edu.davidson.tools.*;
 

@@ -13,7 +13,12 @@
 
 package molecular;
 
-import java.awt.*;
+import a2s.*;
+
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
 import java.awt.event.*;
 import java.util.Vector;
 import java.util.Enumeration;
@@ -123,7 +128,7 @@ Histogram histogram=null;
     this(); // added by W. Christian to call basic constructor.
     owner = o;
     applet=owner.owner;
-    try{SApplet.addDataSource(this); }catch (Exception e){e.printStackTrace();}
+    //try{SApplet.addDataSource(this); }catch (Exception e){e.printStackTrace();}
   }
 
   public synchronized void start(){
@@ -1272,9 +1277,13 @@ Histogram histogram=null;
         setTemp(currentTemp);
         // setTemp did not update so we need to do this now.
         if(histogram!=null)applet.clearData(histogram.hashCode());
-        if(applet!=null) applet.updateDataConnections();
-        try{Thread.sleep(100);}
-        catch(Exception e){;}
+        if(!MolecularApplet.isJS) {
+        	if(applet!=null) applet.updateDataConnections();
+        	try{Thread.sleep(100);}
+        	catch(Exception e){;}
+        	} else {
+        		if(applet!=null) applet.updateDataConnections();
+        	}
     }
     if (runAgain) forward();
   }

@@ -1,6 +1,12 @@
 package molecular;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+
+import a2s.*;
 import edu.davidson.tools.*;
 
 
@@ -32,8 +38,11 @@ public class EnsemblePanel extends Panel {
   // make an image the size of this panel.
   void makeImage(){
     osi = createImage(currentw , currenth);
-    while( !prepareImage(osi,this))
-               try{ Thread.sleep(20); }catch (Exception e){;}
+    if(!MolecularApplet.isJS) {
+    	while( !prepareImage(osi,this))
+    		try{ Thread.sleep(20); }catch (Exception e){;}
+    }
+               
 
   }
 

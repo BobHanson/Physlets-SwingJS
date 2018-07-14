@@ -1,14 +1,18 @@
 package engine;
 
 //*************************************************
-import java.awt.*;
-import java.applet.Applet;
+
+import java.awt.Event;
+import a2s.*;
+import edu.davidson.tools.SApplet;
+
+//import java.applet.Applet;
 //*************************************************
    public class Xdevshell_1Frame extends Frame { 
-   Applet parent;
+   SApplet parent;
 //*************************************************
    // Constructor
-   public Xdevshell_1Frame(Applet parentApplet) { 
+   public Xdevshell_1Frame(SApplet parentApplet) { 
    parent = parentApplet; 
    }
 //*************************************************

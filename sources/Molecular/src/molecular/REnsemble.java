@@ -2,7 +2,8 @@
 
 package molecular;
 
-import java.awt.*;
+import java.awt.Graphics;
+
 
 public class REnsemble extends Ensemble {
 

@@ -10652,8 +10652,13 @@ return jQuery;
 		};
 	};
 })(jQuery,document,"click mousemove mouseup touchmove touchend", "outjsmol");
-// j2sCore.js (based on JmolCore.js)
+// j2sCore.js (based on JmolCore.js
 
+// BH 7/2/2018 10:00:49 PM fix logic for FileReader for Chrome
+// BH 7/1/2018 7:25:25 AM fixes drag-drop for first call in Firefox/win
+// BH 6/29/2018 9:48:13 AM fixes key info for mouse move
+// BH 6/27/2018 12:45:44 PM adds DND for frames
+// BH 6/20/2018 11:26:09 PM fix for menu bar not closable
 // BH 3/16/2018 5:25:09 AM fixes for dragging on phones
 // BH 2/20/2018 12:08:08 AM adds J2S._getKeyModifiers
 // BH 1/8/2018 10:27:46 PM SwingJS2
@@ -11545,11 +11550,11 @@ J2S._getDefaultLanguage = function(isAll) { return (isAll ? J2S.featureDetection
                     +'<button id="ID_cancel">cancel</button>'
                   +'</div>'
                 +'<div>').replace(/ID/g, id);
-      var parent = (!parentDiv || parentDiv == "body" ? parentDiv 
+      var parent = (!parentDiv | parentDiv == "body" ? "body" 
          : typeof parentDiv == "string" ? "#" + parentDiv 
          : parentDiv);
       if (parent == "body") {
-		  	J2S.$after(body, div);
+		  	J2S.$after(document.body, div);
       } else {
         J2S.$append(parent, div);
         }        
@@ -11977,7 +11982,8 @@ J2S._getDefaultLanguage = function(isAll) { return (isAll ? J2S.featureDetection
         return true;
         
       if (ev.target.getAttribute("role")) { // JSButtonUI adds role=menucloser to icon and text
-        (ev.target._menu || ev.target.parentElement._menu)._hideJSMenu()
+        var m = (ev.target._menu || ev.target.parentElement._menu);
+        m && m._hideJSMenu();
       }
         
 			J2S._setMouseOwner(null);
@@ -12242,7 +12248,7 @@ J2S._getDefaultLanguage = function(isAll) { return (isAll ? J2S.featureDetection
     lastDragy = xym[1];
     
     if (!who.isDragging)
-			xym[2] = 0;
+			xym[2] = J2S._getKeyModifiers(ev);
 
     var ui = ev.target["data-ui"];
     //if (who.isdragging && (!ui || !ui.handleJSEvent(who, 506, ev))) {}
@@ -12301,39 +12307,51 @@ J2S.Cache.get = function(filename) {
 J2S.Cache.put = function(filename, data) {
   J2S.Cache.fileCache[filename] = data;
 }
-  // dnd 
-	J2S.Cache.setDragDrop = function(me) {
-		J2S.$appEvent(me, "appletdiv", "dragover", function(e) {
+  // dnd  _setDragDrop for swingjs.api.J2S called JSComponentUI
+	J2S._setDragDropTarget = J2S.Cache.setDragDrop = function(me, node, adding) {
+    if (adding === false) {
+			node["data-dropComponent"] = null;
+   		J2S.$appEvent(node, null, "dragover", null);
+   		J2S.$appEvent(node, null, "drop", null);
+      return;
+    }
+    if (adding === true) {
+			node["data-dropComponent"] = me;
+      me = node;
+      node = null;
+    }
+    // me can be the node if node is null
+    node || (node = null); 
+		J2S.$appEvent(me, node, "dragover", function(e) {
 			e = e.originalEvent;
 			e.stopPropagation();
 			e.preventDefault();
 			e.dataTransfer.dropEffect = 'copy';
 		});
-		J2S.$appEvent(me, "appletdiv", "drop", function(e) {
+		J2S.$appEvent(me, node, "drop", function(e) {
 			var oe = e.originalEvent;
-			oe.stopPropagation();
-			oe.preventDefault();
+      try {
+      	var file = oe.dataTransfer.files[0];
+      } catch (e){
+        return;
+      } finally {
+  			oe.stopPropagation();
+	   		oe.preventDefault();
+      }      
       var target = oe.target;
       var c = target;
-      while (c && !c["data-dropComponent"])
+      var comp; 
+      while (c && !(comp =  c["data-dropComponent"]))
         c = c.parentElement;
-      if (!c)
+      if (!comp)
        return;
-			var file = oe.dataTransfer.files[0];
+      var d = comp.getLocationOnScreen();
+      var x = oe.pageX - d.x;
+      var y = oe.pageY - d.y;
 			if (file == null) {
 				// FF and Chrome will drop an image here
-				// but it will be only a URL, not an actual file. 
-				try {
-				  file = "" + oe.dataTransfer.getData("text");
-				  if (file.indexOf("file:/") == 0 || file.indexOf("http:/") == 0 || file.indexOf("https:/") == 0) {
-				  	me._scriptLoad(file);
-				  	return;
-			  	}
-				} catch(e) {
-				  return;
-				}
-			  // some other format
-			  return;
+				// but it will be only a URL, not an actual file.
+        Clazz.load("swingjs.JSDnD").drop$javax_swing_JComponent$S$BA$I$I(comp, "" + oe.dataTransfer.getData("text"), null, x, y);
 			}
 			// MSIE will drop an image this way, though, and load it!
 			var reader = new FileReader();
@@ -12341,25 +12359,7 @@ J2S.Cache.put = function(filename, data) {
 				if (evt.target.readyState == FileReader.DONE) {
           var target = oe.target;
 					var bytes = J2S._toBytes(evt.target.result);
-          // what about a frame?? what about x and y?
-          var comp = c["data-dropComponent"];
-          var d = comp.getLocationOnScreen();
-          var x = oe.pageX - d.x;
-          var y = oe.pageY - d.y;
           Clazz.load("swingjs.JSDnD").drop$javax_swing_JComponent$S$BA$I$I(comp, file.name, bytes, x, y);
-/*                    
-					var cacheName = "cache://DROP_" + file.name;
-					if (!cacheName.endsWith(".spt"))
-						me._appletPanel.cacheFileByName$S$Z("cache://DROP_*",false);
-					if (me._viewType == "JSV" || cacheName.endsWith(".jdx")) // shared by Jmol and JSV
-						J2S.Cache.put(cacheName, bytes);
-					else
-						me._appletPanel.cachePut$S$O(cacheName, bytes);
-					var xym = J2S._jsGetXY(me._canvas, e);
-					if(xym && (!me._appletPanel.setStatusDragDropped$I$I$I$S || me._appletPanel.setStatusDragDropped$I$I$I$S(0, xym[0], xym[1], cacheName))) {
-						me._appletPanel.openFileAsyncSpecial$S$I(cacheName, 1);
-					}
-*/
 				}
 			};
 			reader.readAsArrayBuffer(file);
@@ -13083,7 +13083,7 @@ J2S._getResourcePath = function(path, isJavaPath) {
 
 })(J2S);
 
-// j2sSwingJS.js 
+// j2sClazz.js 
 // NOTE: updates to this file should be copies to j2sjmol.js
 
 // latest author: Bob Hanson, St. Olaf College, hansonr@stolaf.edu
@@ -13092,6 +13092,18 @@ J2S._getResourcePath = function(path, isJavaPath) {
 
 // Google closure compiler cannot handle Clazz.new or Clazz.super
 
+// BH 7/6/2018 adds J2S.stack to stack traces
+// BH 7/5/2018 2:57:51 PM array.equals$O, for simple arrays
+// BH 7/2/2018 12:50:55 PM Character.prototype.objectValue() and Character.prototype.intValue(), for enhanced FOR in transpiler
+// BH 6/29/2018 10:13:51 AM array.equals$O, fixes array.clone
+// BH 6/28/2018 7:34:58 AM fix for array.clone not copying array in the case of objects
+// BH 6/27/2018 3:11:50 PM fix for class String not indicating its name 
+// BH 6/25/2018 3:06:30 PM adds String.concat$S
+// BH 6/25/2018 12:10:25 PM Character.toTitleCase, isTitleCase as ...UpperCase
+// BH 6/25/2018 10:23:24 AM really fixing new int[] {'a'} using .$c() see Test_Byte.java
+// BH 6/21/2018 1:08:58 PM missing mysterious Integer.prototype.objectValue() 
+// BH 6/20/2018 6:00:23 AM missing printStackTrace(PrintStream)
+// BH 6/19/2018 8:49:57 AM fix for checkDeclared
 // BH 5/19/2018 8:22:25 PM fix for new int[] {'a'}
 // BH 4/16/2018 6:14:10 PM msie flag in monitor
 // BH 2/22/2018 12:34:07 AM array.clone() fix
@@ -13163,7 +13175,7 @@ Clazz._assertFunction = null;
 
 //////// 16 methods called from code created by the transpiler ////////
 
-Clazz.array = function(baseClass, paramType, ndims, params) {
+Clazz.array = function(baseClass, paramType, ndims, params, isClone) {
   // int[][].class Clazz.array(Integer.TYPE, -2)
   // new int[] {3, 4, 5} Clazz.array(Integer.TYPE, -1, [3, 4, 5])    
   // new int[][]{new int[] {3, 4, 5}, {new int[] {3, 4, 5}} 
@@ -13178,12 +13190,9 @@ Clazz.array = function(baseClass, paramType, ndims, params) {
     // four-parameter option from JU.AU.arrayCopyObject;
     // truncate array using slice
     // Clazz.array(-1, array, ifirst, ilast+1)
-    var b = arguments[1];
-    var a = b.slice(arguments[2], arguments[3]);
-    a.__BYTESIZE = b.__BYTESIZE;
-    a.__ARRAYTYPE = b.__ARRAYTYPE;
-    a.__BASECLASS = b.__BASECLASS;
-    return a;
+    var a = arguments[1];
+    var b = a.slice(arguments[2], arguments[3]);
+    return copyArrayProps(a, b);
   }
   var prim = Clazz._getParamCode(baseClass);
   var dofill = true;
@@ -13272,7 +13281,7 @@ Clazz.array = function(baseClass, paramType, ndims, params) {
       break;
     }  
   }
-  return newTypedA(baseClass, params, nbits, (dofill ? ndims : -ndims));
+  return newTypedA(baseClass, params, nbits, (dofill ? ndims : -ndims), isClone);
 }
 
 Clazz.assert = function(clazz, obj, tf, msg) {
@@ -13300,7 +13309,7 @@ Clazz.assert = function(clazz, obj, tf, msg) {
 
 Clazz.clone = function(me) { 
   // BH allows @j2sNative access without super constructor
-  return appendMap(me.__ARRAYTYPE ? Clazz.array(me.__BASECLASS, me.__ARRAYTYPE, -1, me)
+  return appendMap(me.__ARRAYTYPE ? Clazz.array(me.__BASECLASS, me.__ARRAYTYPE, -1, me, true)
    : new me.constructor(inheritArgs), me); 
 }
 
@@ -13326,6 +13335,7 @@ Clazz.exceptionOf = function(e, clazz) {
   }
   if (!e.printStackTrace) {
     e.printStackTrace = function(){};
+    e.printStackTrace$java_io_PrintStream = function(){};
     //alert(e + " try/catch path:" + Clazz._getStackTrace(-10));
   }
   if(clazz == Error) {
@@ -13684,8 +13694,7 @@ var aas = "AAA";
 /**
  * Create an array class placeholder for reflection
  */
- 
- 
+
 var arrayClass = function(baseClass, ndim) {
   ndim || (ndim = 1);
   var stub = Clazz._getParamCode(baseClass);
@@ -13860,12 +13869,11 @@ var _declared = {};
 
 var checkDeclared = function(name, type) {
   if (J2S._debugName && name.toLowerCase() == J2S._debugName)doDebugger();
-  if (_declared[name] == type) {
-    var s = (type === 0 ? "interface" : "class") +" " + name + " is defined twice. A prior core file has probably needed to load a class that is in the current core file. Check to make sure that package.js declares the first class read in jarClassPath or that BuildCompress has included all necessary files."
-    System.out.println(s);
-    if (J2S._debugCore)
-      doDebugger();
-    }
+//  if (_declared[name] != null && _declared[name] == type) {
+//    var s = (type === 0 ? "interface" : "class") +" " + name + " is defined twice. A prior core file has probably needed to load a class that is in the current core file. Check to make sure that package.js declares the first class read in jarClassPath or that BuildCompress has included all necessary files."
+//    System.out.println(s);
+//    if (J2S._debugCore)    doDebugger();
+//    }
   _declared[name] = type;
 }
 
@@ -13886,9 +13894,38 @@ Clazz.isClassDefined = function(clazzName) {
 
 ///////////////////////// private supporting method creation //////////////////////
 
-var setArray = function(vals, baseClass, paramType, ndims) {
+     
+ var copyArrayProps = function(a, b) {
+    b.__BYTESIZE = a.__BYTESIZE;
+    b.__ARRAYTYPE = a.__ARRAYTYPE;
+    b.__BASECLASS = a.__BASECLASS;
+    b.__NDIMS = a.__NDIMS;
+    b.getClass = a.getClass; 
+    b.equals$O = a.equals$O;
+ }
+ 
+ var setArray = function(vals, baseClass, paramType, ndims) {
   ndims = Math.abs(ndims);
-  vals.getClass = function () { return arrayClass(baseClass, ndims) };
+  vals.getClass = function () { return arrayClass(this.__BASECLASS, this.__NDIMS) };
+  vals.equals$O = function (a) { 
+    if (a.__ARRAYTYPE != this.__ARRAYTYPE || a.length != this.length)
+      return false;
+    if (a.length == 0)
+    	return true;
+    if (typeof a[0] == "object") {
+      for (var i = a.length; --i >= 0;)
+        if ((a[i] == null) != (this[i] == null) || a[i] != null 
+          && (a[i].equals$O && !a[i].equals$O(this[i]) 
+            || a.equals && !a[i].equals(this[i]) || a[i] !== this[i]))
+          return false;
+    } else {
+    	for (var i = a.length; --i >= 0;)
+            if (a[i] !== this[i])
+              return false;
+    }
+    return true;  
+  }; 
+  
   vals.__ARRAYTYPE = paramType; // referenced in java.lang.Class
   vals.__BASECLASS = baseClass;
   vals.__NDIM = ndims;
@@ -13917,7 +13954,7 @@ var getParamCode = Clazz._getParamCode = function(cl) {
   return cl.__PARAMCODE || (cl.__PARAMCODE = cl.__CLASS_NAME__.replace(/java\.lang\./, "").replace(/\./g, '_'));
 }
 
-var newTypedA = function(baseClass, args, nBits, ndims) {
+var newTypedA = function(baseClass, args, nBits, ndims, isClone) {
   var dim = args[0];
   if (typeof dim == "string")
     dim = dim.charCodeAt(0); // int[] a = new int['\3'] ???
@@ -13944,7 +13981,7 @@ var newTypedA = function(baseClass, args, nBits, ndims) {
     } else if (nBits > 0 && dim < 0) {
       // make sure this is not a character
       for (var i = val.length; --i >= 0;)
-        val[i].charAt && (val[i] = val[i].charAt(0));
+        val[i].charAt && (val[i] = val[i].$c());
       dim = val; // because we can initialize an array using new Int32Array([...])
     }
     if (nBits > 0)
@@ -13964,11 +14001,16 @@ var newTypedA = function(baseClass, args, nBits, ndims) {
       var arr = new Float64Array(dim);
       break;
     default:
-      var arr = (dim < 0 ? val : new Array(dim));
       nBits = 0;
-      if (dim > 0 && val != null)
-        for (var i = dim; --i >= 0;)
-           arr[i] = val;
+      var arr;
+      if (isClone) {
+        arr = new Array(dim = val.length);
+      } else {
+        arr = (dim < 0 ? val : new Array(dim));
+        if (dim > 0 && val != null)
+          for (var i = dim; --i >= 0;)
+             arr[i] = val;
+      }
       break;
     }  
     arr.__BYTESIZE = arr.BYTES_PER_ELEMENT || (nBits >> 3);
@@ -14188,7 +14230,7 @@ var minimalObjNames = [ "equals", "equals$O", "hashCode" /*"toString",*/  ];
   addProto(proto, "finalize", function () {});
   addProto(proto, "notify", function () {});
   addProto(proto, "notifyAll", function () {});
-  addProto(proto, "wait", function () {});
+  addProto(proto, "wait", function () {alert("Object.wait was called!" + arguments.callee.caller.toString())});
   addProto(proto, "to$tring", Object.prototype.toString);
   addProto(proto, "toString", function () { return (this.__CLASS_NAME__ ? "[" + this.__CLASS_NAME__ + " object]" : this.to$tring.apply(this, arguments)); });
 
@@ -14427,35 +14469,82 @@ var _isNPEExceptionPredicate;
   };
 })();
 
-/**
- * BH need to limit this, as JavaScript call stack may be recursive
- */ 
+var getArgs = function(c) {
+    var s = "";
+    var args = c.arguments;
+    for (var j = 0; j < args.length; j++) {
+      var sa = (args[j] instanceof Object ? args[j].toString() : "" + args[j]);
+      if (sa.length > 60)
+        sa = sa.substring(0, 60) + "...";
+      s += " args[" + j + "]=" + sa.replace(/\s+/g," ") + "\n";
+    }
+    return s;
+}
+
+var getSig = function(c, withParams) {
+	var sig = (c.toString ? c.toString().substring(0, c.toString().indexOf("{")) : "<native method>");
+    sig = " " + (c.exName ? c.exClazz.__CLASS_NAME__ + "." + c.exName  + sig.replace(/function /,""): sig) + "\n";
+    if (withParams)
+    	sig += getArgs(c);
+    return sig;
+}
+
+Clazz._showStack = function(n) {
+  if (!Clazz._stack)
+	 return;
+  n && n < Clazz.stack.length || (n = Clazz._stack.length);
+  if (!n)
+	return;
+  for (var i = 0; i < n; i++) {
+	console.log("" + i + ":" + getSig(Clazz._stack[i], true));
+  }	
+  return "";
+}
+
+ 
 Clazz._getStackTrace = function(n) {
+	  Clazz._stack = [];
+  //  need to limit this, as JavaScript call stack may be recursive
   n || (n = 25);
-  // updateNode and updateParents cause infinite loop here
-  var s = "\n";
-  var c = arguments.callee;
   var showParams = (n < 0);
   if (showParams)
     n = -n;
+  // updateNode and updateParents cause infinite loop here
+  var estack = [];
+  try {
+	    Clazz.failnow();
+	  } catch (e) {
+		  estack = e.stack.split("\n").reverse();
+		  estack.pop();
+	  }
+  var s = "\n";
+  var c = arguments.callee;
   for (var i = 0; i < n; i++) {
     if (!(c = c.caller))
       break;
-    var sig = (c.toString ? c.toString().substring(0, c.toString().indexOf("{")) : "<native method>");
-    s += i + " " + (c.exName ? (c.overrider ? c.overrider.__CLASS_NAME__ + "."  : "") + c.exName  + sig.replace(/function /,""): sig) + "\n";
+    var sig = getSig(c, false);
+    if (s.indexOf(sig) >= 0) {
+    	s += "...";
+    	break;
+    } else {
+    	Clazz._stack.push(c);
+    	s += "" + i + sig;
+        s += estack.pop() + "\n\n";
+    }
     if (c == c.caller) {
       s += "<recursing>\n";
       break;
     }
     if (showParams) {
-      var args = c.arguments;
-      for (var j = 0; j < args.length; j++) {
-        var sa = (args[j] instanceof Object ? args[j].toString() : "" + args[j]);
-        if (sa.length > 60)
-          sa = sa.substring(0, 60) + "...";
-        s += " args[" + j + "]=" + sa.replace(/\s+/g," ") + "\n";
-      }
+      s += getArgs(c);
     }
+  }
+  
+  s += estack.join("\n");
+  if (Clazz._stack.length) {
+	  s += "\nsee Clazz._stack";
+	  console.log("Clazz._stack = " + Clazz._stack);
+	  console.log("Use Clazz.showStack() or Clazz.showStack(n) to show parameters");
   }
   return s;
 }
@@ -15137,8 +15226,9 @@ Clazz.loadScript = function(file) {
     if (file.indexOf("/j2s/core/") >= 0) {
       System.out.println(s + " loading " + file);
     } else {
+     alert(s + " loading file " + file + "\n\n" + e.stack);
       doDebugger()
-      alert(s + " loading file " + file);
+    
     }
   }
 }
@@ -15511,7 +15601,7 @@ Con.consoleOutput = function (s, color) {
     switch (s.charAt(s.length - 1)) {
     case '\n':
     case '\r':
-      s = (s.length > 1 ? s.substring (0, s.length - (s.charAt (s.length - 2) == '\r' ? 2 : 1)) : "");
+      s = (s.length > 1 ? s.substring (0, s.length - (s.charAt(s.length - 2) == '\r' ? 2 : 1)) : "");
       willMeetLineBreak = true;
       break;
     }
@@ -15851,6 +15941,7 @@ m$(Integer, "c$", function(v){
  this.valueOf=function(){return v;};
 }, 1);
 
+
 Integer.MIN_VALUE=Integer.prototype.MIN_VALUE=-0x80000000;
 Integer.MAX_VALUE=Integer.prototype.MAX_VALUE=0x7fffffff;
 //Integer.TYPE=Integer.prototype.TYPE=Integer;
@@ -15889,24 +15980,26 @@ function(i) {
   return n - ((i << 1) >>> 31);
 });
 
+var radixChar = "0123456789abcdefghijklmnopqrstuvwxyz";
+
 Integer.parseIntRadix=m$(Integer,"parseIntRadix",
 function(s,radix){
-if(s==null){
+if(s==null || s.length == 0){
 throw Clazz.new_(NumberFormatException.c$$S, ["null"]);
 }if(radix<2){
 throw Clazz.new_(NumberFormatException.c$$S, ["radix "+radix+" less than Character.MIN_RADIX (2)"]);
 }if(radix>36){
 throw Clazz.new_(NumberFormatException.c$$S, ["radix "+radix+" greater than Character.MAX_RADIX (16)"]);
 }
-if (radix == 10) {
-  for (var i = s.length; --i >= 0;) {
-    var c = s.charCodeAt(i);
-    if (c >= 48 && c <= 57) 
-      continue;
-    if (i > 0 || c != 43 && c != 45)
-      throw Clazz.new_(NumberFormatException.c$$S, ["Not a Number : "+s]);
-  }
+s = s.toLowerCase();
+var c = s.charAt(0);
+var i0 = (c == '+' || c == '-' ? 1 : 0);
+for (var i = s.length; --i >= i0;) {
+    var n = radixChar.indexOf(s.charAt(i));
+    if (n < 0 || n >= radix)
+     throw Clazz.new_(NumberFormatException.c$$S, ["Not a Number : "+s]);
 }
+
 var i=parseInt(s,radix);
 if(isNaN(i)){
 throw Clazz.new_(NumberFormatException.c$$S, ["Not a Number : "+s]);
@@ -15915,8 +16008,8 @@ return i;
 });
 
 Integer.parseInt=m$(Integer,"parseInt",
-function(s){
-return Integer.parseIntRadix(s,10);
+function(s,radix){
+return Integer.parseIntRadix(s, radix || 10);
 });
 
 Integer.$valueOf=m$(Integer,"$valueOf",
@@ -15964,6 +16057,12 @@ m$(Integer,"hashCode",
 function(){
 return this.valueOf();
 });
+
+m$(Integer,"signum",
+function(){
+return Math.signum(this.valueOf());
+});
+
 
 // Note that Long is problematic in JavaScript 
 
@@ -16191,8 +16290,8 @@ return new Int32Array(a.buffer)[0];
 }
 
 Float.serialVersionUID=Float.prototype.serialVersionUID=-2671257302660747028;
-Float.MIN_VALUE=Float.prototype.MIN_VALUE=3.4028235e+38;
-Float.MAX_VALUE=Float.prototype.MAX_VALUE=1.4e-45;
+Float.MIN_VALUE=Float.prototype.MIN_VALUE=1.4e-45;
+Float.MAX_VALUE=Float.prototype.MAX_VALUE=3.4028235e+38;
 Float.NEGATIVE_INFINITY=Number.NEGATIVE_INFINITY;
 Float.POSITIVE_INFINITY=Number.POSITIVE_INFINITY;
 Float.NaN=Number.NaN;
@@ -16831,7 +16930,7 @@ dst[dstBegin+i]=this.charAt(srcBegin+i);
 };
 
 sp.$concat=sp.concat;
-sp.concat=function(s){
+sp.concat = sp.concat$S = function(s){
 if(s==null){
 throw new NullPointerException();
 }
@@ -17011,6 +17110,7 @@ if (typeof arguments[0] != "object")this.c$(arguments[0]);
 Clazz._setDeclared("java.lang.Character", java.lang.Character); 
 setJ2STypeclass(Character, "char", "C");
 
+
 m$(C$,"getName",
 function(){
 return "?";
@@ -17056,6 +17156,10 @@ return(this.value).charCodeAt(0)-(c.value).charCodeAt(0);
 m$(C$,"toLowerCase",
 function(c){
 return(""+c).toLowerCase().charAt(0);
+}, 1);
+m$(C$,"toTitleCase",
+function(c){
+  return Character.toUpperCase(c);
 }, 1);
 m$(C$,"toUpperCase",
 function(c){
@@ -17104,6 +17208,10 @@ if(i==0x20||i==0xa0||i==0x1680)return true;
 if(i<0x2000)return false;
 return i<=0x200b||i==0x2028||i==0x2029||i==0x202f||i==0x3000;
 }, 1);
+m$(C$,"isTitleCase",
+function(c){
+  return Character.isUpperCase(c);
+}, 1);
 m$(C$,"isUpperCase",
 function(c){
 if (typeof c == "string")
@@ -17149,6 +17257,16 @@ return String.valueOf(c);
 m$(C$,"charCount", function(codePoint){
   return codePoint >= 0x010000 ? 2 : 1;
 }, 1);
+
+
+Integer.prototype.objectValue = 
+Short.prototype.objectValue = 
+Long.prototype.objectValue =  
+Float.prototype.objectValue = 
+Double.prototype.objectValue =  function() {return this.valueOf()};
+Character.prototype.objectValue = function() { return this.value };
+Character.prototype.intValue  = function() { return this.value.codePointAt(0) };
+
 
 // TODO: Only asking for problems declaring Date. This is not necessary
 
@@ -17272,7 +17390,7 @@ if (!this.stackTrace){
 }
 for (var i = 0; i < this.stackTrace.length; i++) {
 var t = this.stackTrace[i];
-var x = t.methodName.indexOf ("(");
+//var x = t.methodName.indexOf ("(");
 //var n = (x < 0 ? t.methodName : t.methodName.substring (0, x)).replace (/\s+/g, "");
 if (t.nativeClazz == null || isInstanceOf(t.nativeClazz, Throwable) < 0) {
 System.err.println (t);
@@ -17280,6 +17398,21 @@ System.err.println (t);
 }
 // from a JavaScript error 
 this.stack && System.err.println(this.stack);
+});
+
+m$(C$, 'printStackTrace$java_io_PrintStream', function (stream) {
+  if (!this.stackTrace){
+    stream.println$S(this.stack);
+    return;
+  }
+  for (var i = 0; i < this.stackTrace.length; i++) {
+    var t = this.stackTrace[i];
+    //var x = t.methodName.indexOf ("(");
+    //var n = (x < 0 ? t.methodName : t.methodName.substring (0, x)).replace (/\s+/g, "");
+    if (t.nativeClazz == null || isInstanceOf(t.nativeClazz, Throwable) < 0) {
+      stream.println$O(t);
+    }
+  }
 });
 
 Clazz.newMeth(C$, 'printStackTrace$java_io_PrintStream', function (s) {
@@ -17543,19 +17676,19 @@ function(){
 return this.target;
 });
 
-C$=Clazz.newClass(java.lang.reflect,"UndeclaredThrowableException",function(){this.undeclaredThrowable=null;},RuntimeException);
+;(function(){
+var C$=Clazz.newClass(java.lang.reflect,"UndeclaredThrowableException",function(){this.undeclaredThrowable=null;},RuntimeException);
 m$(C$, "c$$Throwable", function(exception){
+Clazz.super_(C$, this);
 C$.superclazz.c$$Throwable.apply(this, arguments);
 this.undeclaredThrowable=exception;
 this.initCause(exception);
 },1);
-
 m$(C$, "c$$Throwable$S", function(exception,detailMessage){
 C$.superclazz.c$$S.apply(this,[detailMessage]);
 this.undeclaredThrowable=exception;
 this.initCause(exception);
 },1);
-
 m$(C$,"getUndeclaredThrowable",
 function(){
 return this.undeclaredThrowable;
@@ -17564,6 +17697,7 @@ m$(C$,"getCause",
 function(){
 return this.undeclaredThrowable;
 });
+})();
 
 newEx(java.io,"IOException",Exception);
 newEx(java.io,"CharConversionException",java.io.IOException);
@@ -17629,16 +17763,24 @@ newEx(java.util,"EmptyStackException",RuntimeException);
 newEx(java.util,"NoSuchElementException",RuntimeException);
 newEx(java.util,"TooManyListenersException",Exception);
 
-C$=newEx(java.util,"ConcurrentModificationException",RuntimeException);
+
+;(function(){
+var C$=newEx(java.util,"ConcurrentModificationException",RuntimeException);
 m$(C$, "c$", function(detailMessage, rootCause){
 Clazz.super_(C$, this);
 }, 1);
+})();
 
-C$=Clazz.newClass(java.util,"MissingResourceException",function(){
+;(function(){
+var C$=Clazz.newClass(java.util,"MissingResourceException",function(){
 this.className=null;
 this.key=null;
 },RuntimeException);
+C$.$clinit$ = function() {
+Clazz.load(C$, 1);
+}
 m$(C$, "c$$S$S$S", function(detailMessage,className,resourceName){
+Clazz.super_(C$, this);
 C$.superclazz.c$$S.apply(this,[detailMessage]);
 this.className=className;
 this.key=resourceName;
@@ -17651,6 +17793,7 @@ m$(C$,"getKey",
 function(){
 return this.key;
 });
+})();
 
 declareType(java.lang,"Void");
 setJ2STypeclass(java.lang.Void, "void", "V");
@@ -17802,7 +17945,8 @@ var newMethodNotFoundException = function (clazz, method) {
   throw Clazz.new_(java.lang.NoSuchMethodException.c$$S, [message]);        
 };
 
-C$=Clazz.newClass(java.lang.reflect,"Constructor",function(){
+;(function(){
+var C$=Clazz.newClass(java.lang.reflect,"Constructor",function(){
 this.Class_=null;
 this.parameterTypes=null;
 this.exceptionTypes=null;
@@ -17810,10 +17954,11 @@ this.modifiers=0;
 this.signature="c$";
 this.constr = null;
 },java.lang.reflect.AccessibleObject,[java.lang.reflect.GenericDeclaration,java.lang.reflect.Member]);
-
 m$(C$, "c$$Class$ClassA$ClassA$I", function(declaringClass,parameterTypes,checkedExceptions,modifiers){
 Clazz.super_(C$, this);
 this.Class_=declaringClass;
+if (";Integer;Long;Short;Byte;Float;Double;".indexOf(";" + this.Class_.getName() + ";") >= 0)
+ parameterTypes = null;
 this.parameterTypes=parameterTypes;
 if (parameterTypes != null)
 for (var i = 0; i < parameterTypes.length; i++) {
@@ -17909,6 +18054,7 @@ m$(C$,"toString",
 function(){
 return null;
 });
+})();
 
 C$=declareType(java.lang.reflect,"Field",java.lang.reflect.AccessibleObject,java.lang.reflect.Member);
 m$(C$,"isSynthetic",
@@ -17952,7 +18098,8 @@ function(){
 return null;
 });
 
-C$=Clazz.newClass(java.lang.reflect,"Method",function(){
+;(function(){
+var C$=Clazz.newClass(java.lang.reflect,"Method",function(){
 this.Class_=null;
 this.name=null;
 this.returnType=null;
@@ -18086,6 +18233,7 @@ m$(C$,"toString",
 function(){
 return null;
 });
+})();
 
 //  if (needPackage("core"))
   //  _Loader.loadPackage("core");  

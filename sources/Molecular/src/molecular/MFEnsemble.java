@@ -13,7 +13,9 @@
 
 package molecular;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+
 import edu.davidson.tools.*;
 
 

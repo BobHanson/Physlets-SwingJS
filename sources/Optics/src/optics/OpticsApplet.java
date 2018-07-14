@@ -34,6 +34,7 @@ import edu.davidson.tools.SUtil;
  * @author   Wolfgang Christian and Mike Lee
 */
 public class OpticsApplet extends SApplet {
+  static boolean isJS = /** @j2sNative true || */ false;
   private String button_lens="  Lens  ";
   private String button_source=" Source ";
   private String button_clear="Clear All";

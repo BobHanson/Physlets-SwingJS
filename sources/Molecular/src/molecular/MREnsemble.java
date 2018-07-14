@@ -1,7 +1,9 @@
 
 package molecular;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+
 
 public class MREnsemble extends Ensemble {
   //int lwidth;

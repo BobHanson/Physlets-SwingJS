@@ -12,6 +12,7 @@ import java.util.Vector;
 
 import edu.davidson.display.SScalable;
 import edu.davidson.display.Thing;
+import soundOut.SoundOut;
 
 
 public final class Bench extends Panel implements SScalable {
@@ -924,8 +925,13 @@ public final class Bench extends Panel implements SScalable {
       " , "+df.format(1.0*r.height/2/pixPerUnit-1.0*mouseY/pixPerUnit),10,r.height-5);
    // g.dispose();
   }
+  
   public void drawAngle(int mouseX,int mouseY){
     Graphics g = getGraphics();
+    if(SoundOut.isJS){
+    	osi=null;
+        paint(g);
+    }
     double dx=mouseX-xDown;
     double dy=-mouseY+yDown;
     Rectangle r = getBounds();
@@ -943,8 +949,8 @@ public final class Bench extends Panel implements SScalable {
     xLast=mouseX;
     yLast=mouseY;
     g.setPaintMode();
-
     g.dispose();
+     
   }
 
 }

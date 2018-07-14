@@ -12,7 +12,7 @@ import java.awt.event.TextEvent;
 import java.awt.event.TextListener;
 
 //import java.awt.*;
-import a2s.TextField;
+import a2s.*;
 
 public class SInteger extends TextField implements TextListener
 { /**

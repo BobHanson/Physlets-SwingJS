@@ -2,7 +2,12 @@
 
 package soundOut;
 
-import java.awt.*;
+import a2s.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.*;
 //import java.applet.*;
 import edu.davidson.graphics.EtchedBorder;
@@ -11,6 +16,7 @@ import edu.davidson.tools.*;
 
 
 public class SoundOut extends SApplet implements ActionListener{
+  public static boolean isJS = /** @j2sNative true || */ false;
   Button clearBtn = new Button();
   Button addBtn = new Button();
   Checkbox sndCkBox = new Checkbox();

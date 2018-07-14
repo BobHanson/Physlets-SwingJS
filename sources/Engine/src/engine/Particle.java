@@ -1,6 +1,8 @@
 package engine;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+
 
 //******************************************************************
 // class particle

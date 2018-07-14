@@ -1,6 +1,13 @@
 package soundOut;
 
-import java.awt.*;
+import a2s.*;
+
+import java.awt.AWTEventMulticaster;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.PrintGraphics;
 //import borland.jbcl.control.*;
 //import borland.jbcl.view.BeanPanel;
 import java.awt.event.*;
@@ -206,7 +213,9 @@ public class SoundCanvas extends Panel{
             g.drawLine(c3,0,c3,iheight-1);
         }
         g.dispose();
+        if(SoundOut.isJS)this_mouseReleased( e);  //repaint everything because XORMode painting not supported in JavaScript
     }
+  
   }
 
   void this_mousePressed(MouseEvent e){

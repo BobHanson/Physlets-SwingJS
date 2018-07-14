@@ -34,7 +34,7 @@ public class SoundPlayer {
 
   public synchronized void calcSound() {
     double y=0;
-    if (!mute) AudioPlayer.player.stop(soundStream);
+    if(!SoundOut.isJS && !mute) AudioPlayer.player.stop(soundStream);
     int numPts=yVec.length;
     if ((sound==null) ||(numPts!=sound.length)){
         sound = new  byte[numPts];
@@ -59,7 +59,7 @@ public class SoundPlayer {
   public void setMute(boolean m){
     mute=m;
     if (mute ){
-      AudioPlayer.player.stop(soundStream);
+       if(!SoundOut.isJS)AudioPlayer.player.stop(soundStream);
     }
     else{
       AudioPlayer.player.start(soundStream);

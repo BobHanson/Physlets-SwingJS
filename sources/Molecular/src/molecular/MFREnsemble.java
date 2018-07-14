@@ -1,7 +1,8 @@
 
 package molecular;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
 
 public class MFREnsemble extends MFEnsemble {
   //int lwidth;

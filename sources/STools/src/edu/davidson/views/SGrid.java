@@ -14,6 +14,7 @@ import a2s.*;
 import edu.davidson.display.Format;
 
 public class SGrid extends Panel {
+	public static boolean isJS = /** @j2sNative true || */ false;
     SGridPanel gridpanel=null;
     int nRows=50, nCols = 3;
     int preferredWidth=20;
@@ -458,11 +459,13 @@ public class SGrid extends Panel {
          if (osi==null){
             osi = createImage(w,h);
             if (osi==null) return;
+            if(!isJS) {
             while( !prepareImage(osi,this) && count<10)
                try{
                   count++;
                   Thread.sleep(20);
                }catch (Exception e){;}
+            }
             Graphics osg = osi.getGraphics();// a graphics context for the  off screen image
             if (osg==null) return;
             paintOsi(osg);

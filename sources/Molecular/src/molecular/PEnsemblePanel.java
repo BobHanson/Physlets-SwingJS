@@ -2,7 +2,8 @@
 
 package molecular;
 
-import java.awt.*;
+import java.awt.Graphics;
+
 import edu.davidson.tools.*;
 
 public class PEnsemblePanel extends EnsemblePanel {

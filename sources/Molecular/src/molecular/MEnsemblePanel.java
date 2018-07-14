@@ -2,9 +2,11 @@
 
 package molecular;
 
-import java.awt.*;
-import java.util.Vector;
+import java.awt.Color;
+import java.awt.Graphics;
+
 import java.util.Enumeration;
+import java.util.Vector;
 
 import edu.davidson.tools.*;
 import edu.davidson.numerics.Parser;

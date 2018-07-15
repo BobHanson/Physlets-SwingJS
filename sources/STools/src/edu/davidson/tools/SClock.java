@@ -18,11 +18,11 @@ import javax.swing.Timer;
  * StartClock() will notify the thread to start running.
  *
  * SClock is also a SDataSourceso that other applets can be notified of clock
- * ticks using JavaScript. DataConnections and inter-appletc communication is
- * describted in the book "Teaching with Physlets."
+ * ticks using JavaScript. DataConnections and inter-applet communication is
+ * described in the book "Teaching with Physlets."
  */
 public final class SClock extends Object implements Runnable, SDataSource {
-
+  public static boolean isJS = /** @j2sNative true || */ false;
   Vector<SStepable> clockListeners = new Vector<SStepable>();      // The list of all SStepable objects.
   private String[]   varStrings     = new String[]{"t"};
   private double[][] ds             = new double[1][1];  // the datasource state variable t
@@ -131,7 +131,7 @@ protected Thread     thread         = null;
 		 */
 		if (asDaemon)
 			thread.setDaemon(true);
-		thread.start();
+		if(!isJS) thread.start();  // only start Thread in Java mode
 	}
 
 /**
@@ -523,7 +523,7 @@ protected Thread     thread         = null;
    */
   public void setFPS(double fps) {
     //delay=Math.max(10,(int)(1000/fps) );
-    delay = Math.max(0, (int) (1000 / fps));
+    delay = Math.max(5, (int) (1000 / fps));  // wait at least 5 ms
   }
 
   /**

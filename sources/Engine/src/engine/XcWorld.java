@@ -192,7 +192,7 @@ public class XcWorld extends World {
 	//*******************************************************************************
     public void XcWorldUpdate () {
         Graphics g = this.getGraphics();
-
+        if(g==null) return;
         if(traceOn) draw(g);
         else {
             if(!doubleBuffering){
@@ -217,10 +217,15 @@ public class XcWorld extends World {
            offGraphics = offImage.getGraphics();
         }
           // erase the previous image
+        if(offGraphics==null) return;
         offGraphics.setColor(getBackground());
         offGraphics.fillRect(0, 0, d.width, d.height);
         offGraphics.setColor(Color.black);
-        offGraphics.draw3DRect (0, 0, d.width-1, d.height-1, true);
+        if(Engine.isJS) {
+        	offGraphics.drawRect (0, 0, d.width-1, d.height-1);
+        }else{ 
+        	offGraphics.draw3DRect (0, 0, d.width-1, d.height-1, true);
+        }    
    }
  //**************************************************************
    public void finishUpdate (Graphics g) {
@@ -229,12 +234,17 @@ public class XcWorld extends World {
    }
 	//********************************************************************
 
-	public void paint (Graphics g) {
+	public void paintMe (Graphics g) {
 	    draw (g);
+	}
+	
+	public void update(Graphics g) {
+		draw (g);
 	}
     //********************************************************************
 
 	public void draw (Graphics g) {
+
 	    Point3D p;
 	    Particle p1;
 	    Segment s;
@@ -242,6 +252,8 @@ public class XcWorld extends World {
 	    double x0 = 0.0;  // used in mode 1 to remember position of previous point
 	    double y0 = 0.0;
 	    double xRange, yRange, particleHeight;
+        g.setColor(Color.black);
+        g.fillRect(0, 0, w.width, w.height);
 	    {
 	       ///// if(xorMode) g.setXORMode(Color.black); else g.setPaintMode();
 	        xRange = w.width /(xmax - xmin);

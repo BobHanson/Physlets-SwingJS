@@ -12,6 +12,7 @@ import edu.davidson.tools.*;
 //*************************************************
 public class Engine extends SApplet implements SStepable {
 //variables added by W. Christian
+	public static boolean isJS = /** @j2sNative true || */ false;
     static  final int BURNMODE=0;
     static  final int EXHAUSTMODE=1;
     static  final int INTAKEMODE=2;
@@ -94,7 +95,7 @@ public class Engine extends SApplet implements SStepable {
       clock.setDt(0.05);
       clock.setFPS(20);
       //LoopOn=1;
-      clock.startClock();  // start clock for debugging
+      //clock.startClock();  // start clock for debugging
    }
    
    /**
@@ -342,7 +343,6 @@ public class Engine extends SApplet implements SStepable {
    } //end program
 //*************************************************
    public void step(double dt,double time){
-
             int i=8;  //changes the color of the spark plug
             int sparkangle=90;
             int sparkduration=10;
@@ -388,7 +388,7 @@ public class Engine extends SApplet implements SStepable {
             //changes the color of the spark plug and air color
             if (currentangle==sparkangle) {
                 mode=BURNMODE;
-                play(getCodeBase(), "beep.au"); //###     XBell 100;
+                if(!isJS) play(getCodeBase(), "beep.au"); //###     XBell 100;  
                 while (i<=15) {
                     aWorld_2XcWorld.XcWorldChangeParticleColor(i, "yellow");
                     i=i+1;
@@ -483,8 +483,9 @@ public class Engine extends SApplet implements SStepable {
                 aWorld_2XcWorld.msgColor = Color.orange;
                 aWorld_2XcWorld.msgString = label_compressing;
             }
-            // visualise the engin on screen
-            aWorld_2XcWorld.XcWorldUpdate( );
+            // visualize the engine on screen
+            if(isJS) repaint();
+            else aWorld_2XcWorld.XcWorldUpdate( );
 
             volume=(CylPtTop-Ypiston)/(double)(CylPtTop - MiddlePositonPiston + radius);   // Volume is 1 at the bottom of the stroke.
             switch(mode){

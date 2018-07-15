@@ -76,6 +76,12 @@ eField4/TestCharge.js
 eField4/TextThing.js
 eField4/Thing.js
 eField4/VectorField.js
+engine/Engine.js
+engine/Particle.js
+engine/Point3D.js
+engine/Segment.js
+engine/World.js
+engine/XcWorld.js
 edu/clarku/tools/DataTable.js
 edu/clarku/tools/InvalidTableIndex.js
 edu/clarku/tools/MalformedVariableList.js

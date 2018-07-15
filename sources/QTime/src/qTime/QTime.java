@@ -11,7 +11,7 @@ import java.awt.GridLayout;
 import java.awt.LayoutManager;
 
 import a2s.*;
-
+//import java.awt.*;
 
 /**
  * Class QTime

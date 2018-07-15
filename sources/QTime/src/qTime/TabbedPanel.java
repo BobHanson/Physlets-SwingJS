@@ -17,6 +17,7 @@ import java.awt.Graphics;
 import java.awt.Insets;
 
 import a2s.*;
+//import java.awt.*;
 
 
 public class TabbedPanel extends Panel

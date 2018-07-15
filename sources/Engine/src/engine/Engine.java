@@ -94,6 +94,7 @@ public class Engine extends SApplet implements SStepable {
       clock.setDt(0.05);
       clock.setFPS(20);
       //LoopOn=1;
+      clock.startClock();  // start clock for debugging
    }
    
    /**

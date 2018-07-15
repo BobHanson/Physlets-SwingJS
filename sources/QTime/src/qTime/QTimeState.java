@@ -1,6 +1,4 @@
 package qTime;
-import a2s.*;
-//import java.awt.*;
 import edu.davidson.numerics.Parser;
 import edu.davidson.tools.*;
 

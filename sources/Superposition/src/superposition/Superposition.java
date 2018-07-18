@@ -4,12 +4,17 @@ package superposition;
 
 import edu.davidson.graphics.*;
 import edu.davidson.tools.*;
-import java.awt.*;
+
+import java.awt.BorderLayout;
+import java.awt.Event;
+import java.awt.GridLayout;
+
+import a2s.*;
 
 /**
  * Class Superposition
  */
-public class Superposition extends SApplet implements Runnable {
+public class Superposition extends SApplet implements SStepable {
 
   String                      button_reset       = "Reset";
   String                      button_start       = "Forward";
@@ -18,7 +23,7 @@ public class Superposition extends SApplet implements Runnable {
   String                      button_forward     = "Step>>";
   String                      button_back        = "<<Step";
   String                      label_time         = "Time:";
-  Thread                      m_Superposition    = null;
+  //Thread                      m_Superposition    = null;
   // STANDALONE APPLICATION SUPPORT:
   //              m_fStandAlone will be set to true if applet is run standalone
   //--------------------------------------------------------------------------
@@ -31,7 +36,7 @@ public class Superposition extends SApplet implements Runnable {
   private double              m_gridY            = 1;
   private String              m_func1            = "sin(x-t)";
   private String              m_func2            = "sin(x+t)";
-  private int                 m_FPS              = 10;
+  //private int                 m_FPS              = 10;
   private boolean             m_showControls     = true;
   private double              m_dt               = 0.1;
   private int                 m_numGraphs        = 3;
@@ -47,16 +52,16 @@ public class Superposition extends SApplet implements Runnable {
   private final String        PARAM_gridY        = "gridY";
   private final String        PARAM_func1        = "func1";
   private final String        PARAM_func2        = "func2";
-  private final String        PARAM_showControls = "showControls";
+  private final String        PARAM_showControls = "ShowControls";
   private final String        PARAM_FPS          = "FPS";
   private final String        PARAM_helpFile     = "helpFile";
   private SuperpositionCanvas sc1, sc2, sc3;
   //private boolean             noRun     = false;
-  private int                 sleepTime = 100;
+  //private int                 sleepTime = 100;
   private boolean             interval  = false;
   private double              startTime = -1;
   private double              endTime   = 1;
-  private double              t         = 0;  // time
+ // private double              t         = 0;  // time
   Button                      forwardBtn;
   Button                      stopBtn;
   Button                      reverseBtn;
@@ -110,6 +115,7 @@ public class Superposition extends SApplet implements Runnable {
     param = GetParameter(PARAM_dt, args);
     if(param!=null) {
       m_dt = Double.valueOf(param).doubleValue();
+      clock.setDt(m_dt);
     }
     param = GetParameter(PARAM_pixPerX, args);
     if(param!=null) {
@@ -137,7 +143,8 @@ public class Superposition extends SApplet implements Runnable {
     }
     param = GetParameter(PARAM_FPS, args);
     if(param!=null) {
-      m_FPS = Integer.parseInt(param);
+      int m_FPS = Integer.parseInt(param);
+      clock.setFPS(m_FPS);
     }
     param = GetParameter(PARAM_showControls, args);
     if(param!=null) {
@@ -273,17 +280,8 @@ public class Superposition extends SApplet implements Runnable {
       }
       sc3.setCaption("f(x,t)+g(x,t)");
     }
-    sleepTime = (int) Math.round(1000/m_FPS);
-  }
-
-  /**
-   * Method destroy
-   * @y.exclude
-   */
-  public void destroy() {
-    destroyed       = true;
-    m_Superposition = null;
-    super.destroy();
+    //sleepTime = (int) Math.round(1000/m_FPS);
+    clock.addClockListener(this);
   }
 
   /**
@@ -306,56 +304,31 @@ public class Superposition extends SApplet implements Runnable {
   public void start() {
     if(firstTime) {
       firstTime = false;
-      startThread();
     }
-    super.start();
+    clock.startClock();
   }
-
-  private void startThread() {
-    this.setRunningID(this);
-    if(m_Superposition==null) {
-      m_Superposition = new Thread(this);
-      m_Superposition.start();
-    }
-  }
-
+  
   /**
    * Method stop
    * @y.exclude
    */
-  public void stop() {
-    m_Superposition = null;
-    super.stop();
-  }
-
-  /**
-   * Method run
-   * @y.exclude
-   */
-  public void run() {
-    while(runOnStart&&(m_Superposition!=null)&&(this.getRunningID()==this)) {
-      try {
-        t = t+m_dt;
-        if(interval&&(t>endTime)) {
-          t = startTime;
-        }
-        if(m_Superposition!=null) {
-          sc1.setTime(t);
-        }
-        if((m_numGraphs>1)&&(m_Superposition!=null)) {
-          sc2.setTime(t);
-        }
-        if((m_numGraphs>2)&&(m_Superposition!=null)) {
-          sc3.setTime(t);
-        }
-        if(m_Superposition!=null) {
-          Thread.sleep(sleepTime);
-        }
-      } catch(InterruptedException e) {
-        stop();
+  public void stopClock() {
+      if (clock.isRunning()) {
+          clock.stopClock();
       }
-    }
-    m_Superposition = null;
+  }
+ 
+  
+  @Override
+  public void step(double dt, double time) {
+      if(interval&&(time>endTime)) {
+        time = startTime;
+      }
+      if(sc1!=null) sc1.setTime(time);
+      if(sc2!=null) sc2.setTime(time);
+      if(m_numGraphs>2) {
+    	  if(sc3!=null) sc3.setTime(time);
+      }
   }
 
   /**
@@ -364,7 +337,7 @@ public class Superposition extends SApplet implements Runnable {
    * @param s
    */
   public void setCaption(String s) {
-    sc1.setCaption(s);
+	  if(sc1!=null)sc1.setCaption(s);
   }
 
   /**
@@ -375,11 +348,11 @@ public class Superposition extends SApplet implements Runnable {
    */
   public void setCaption(int n, String s) {
     if(n==1) {
-      sc1.setCaption(s);
+    	if(sc1!=null) sc1.setCaption(s);
     } else if((n==2)&&(m_numGraphs>1)) {
-      sc2.setCaption(s);
+    	if(sc2!=null)sc2.setCaption(s);
     } else if((n==3)&&(m_numGraphs>2)) {
-      sc3.setCaption(s);
+    	if(sc3!=null)sc3.setCaption(s);
     }
   }
 
@@ -391,12 +364,12 @@ public class Superposition extends SApplet implements Runnable {
    * @param b
    */
   public void setRGB(int r, int g, int b) {
-    sc1.setRGB(r, g, b);
+	  if(sc1!=null) sc1.setRGB(r, g, b);
     if(m_numGraphs>1) {
-      sc2.setRGB(r, g, b);
+    	if(sc2!=null)sc2.setRGB(r, g, b);
     }
     if(m_numGraphs>2) {
-      sc3.setRGB(r, g, b);
+    	if(sc3!=null)sc3.setRGB(r, g, b);
     }
   }
 
@@ -410,11 +383,11 @@ public class Superposition extends SApplet implements Runnable {
    */
   public void setRGB(int n, int r, int g, int b) {
     if(n==1) {
-      sc1.setRGB(r, g, b);
+    	if(sc1!=null) sc1.setRGB(r, g, b);
     } else if((n==2)&&(m_numGraphs>1)) {
-      sc2.setRGB(r, g, b);
+    	if(sc2!=null) sc2.setRGB(r, g, b);
     } else if((n==3)&&(m_numGraphs>2)) {
-      sc3.setRGB(r, g, b);
+    	if(sc3!=null) sc3.setRGB(r, g, b);
     }
   }
 
@@ -443,15 +416,16 @@ public class Superposition extends SApplet implements Runnable {
    *
    * @param t_
    */
-  public void reset(double t_) {
-    t    = t_;
+  public void reset(double t) {
     m_dt = Math.abs(m_dt);
-    sc1.setTime(t);
+    clock.setTime(t);
+    clock.setDt(m_dt);
+    if(sc1!=null)sc1.setTime(t);
     if(m_numGraphs>1) {
-      sc2.setTime(t);
+    	if(sc2!=null) sc2.setTime(t);
     }
     if(m_numGraphs>2) {
-      sc3.setTime(t);
+    	if(sc3!=null) sc3.setTime(t);
     }
   }
 
@@ -459,14 +433,15 @@ public class Superposition extends SApplet implements Runnable {
    * Sets the default state.
    */
   public void setDefault() {
-    t    = 0;
+    clock.setTime(0);                    // will stop clock and then set time.
     m_dt = Math.abs(m_dt);
-    sc1.setTime(t);
+    clock.setDt(m_dt);
+    if(sc1!=null) sc1.setTime(0);
     if(m_numGraphs>1) {
-      sc2.setTime(t);
+    	if(sc2!=null) sc2.setTime(0);
     }
     if(m_numGraphs>2) {
-      sc3.setTime(t);
+    	if(sc3!=null) sc3.setTime(0);
     }
   }
 
@@ -475,7 +450,7 @@ public class Superposition extends SApplet implements Runnable {
    */
   public void pause() {
     runOnStart = false;
-    stop();
+    stopClock();
   }
 
   /**
@@ -485,7 +460,8 @@ public class Superposition extends SApplet implements Runnable {
     this.setRunningID(this);
     runOnStart = true;
     m_dt       = Math.abs(m_dt);
-    startThread();
+    clock.setDt(m_dt);
+    clock.startClock();
   }
 
   /**
@@ -495,7 +471,8 @@ public class Superposition extends SApplet implements Runnable {
     this.setRunningID(this);
     runOnStart = true;
     m_dt       = -Math.abs(m_dt);
-    startThread();
+    clock.setDt(m_dt);
+    clock.startClock();
   }
 
   /**
@@ -503,8 +480,19 @@ public class Superposition extends SApplet implements Runnable {
    *
    */
   public void stepForward() {
-    stop();
-    t += Math.abs(m_dt);
+	  
+      if (clock.isRunning()) {
+          pause();
+          return;
+      }
+      boolean isNegative = (clock.getDt() < 0);
+      clock.setDt(Math.abs(clock.getDt()));
+      clock.doStep();
+      if (isNegative) {
+          clock.setDt(-Math.abs(clock.getDt()));              // make dt negative since it started out that way.
+      }
+      
+    double t=clock.getTime();
     sc1.setTime(t);
     if(m_numGraphs>1) {
       sc2.setTime(t);
@@ -512,6 +500,7 @@ public class Superposition extends SApplet implements Runnable {
     if(m_numGraphs>2) {
       sc3.setTime(t);
     }
+    repaint();
   }
 
   /**
@@ -519,8 +508,17 @@ public class Superposition extends SApplet implements Runnable {
    *
    */
   public void stepBack() {
-    stop();
-    t -= Math.abs(m_dt);
+      if (clock.isRunning()) {
+          pause();
+          return;
+      }
+      boolean isNegative = (clock.getDt() < 0);
+      clock.setDt(-Math.abs(clock.getDt()));
+      clock.doStep();
+      if (!isNegative) {
+          clock.setDt(Math.abs(clock.getDt()));               // make dt positive since it started out that way.
+      }
+     double t=clock.getTime();
     sc1.setTime(t);
     if(m_numGraphs>1) {
       sc2.setTime(t);
@@ -528,6 +526,7 @@ public class Superposition extends SApplet implements Runnable {
     if(m_numGraphs>2) {
       sc3.setTime(t);
     }
+    repaint();
   }
 
   /**
@@ -536,7 +535,7 @@ public class Superposition extends SApplet implements Runnable {
    * @param evt
    * @param arg
    *
-   * @return tre if successful
+   * @return true if successful
    * @y.exclude
    */
   public boolean action(Event evt, Object arg) {
@@ -573,9 +572,9 @@ public class Superposition extends SApplet implements Runnable {
     sc1.setFuncStr(s);
     if((m_numGraphs>2)&&(m_func2.length()>0)) {
       if((m_func2.charAt(0)=='+')||(m_func2.charAt(0)=='-')) {
-        sc3.setFuncStr(m_func1+m_func2);
+    	  if(sc3!=null) sc3.setFuncStr(m_func1+m_func2);
       } else {
-        sc3.setFuncStr(m_func1+'+'+m_func2);
+    	  if(sc3!=null) sc3.setFuncStr(m_func1+'+'+m_func2);
       }
     }
     reset();
@@ -593,9 +592,9 @@ public class Superposition extends SApplet implements Runnable {
     }
     if((m_numGraphs>2)&&(m_func2.length()>0)) {
       if((m_func2.charAt(0)=='+')||(m_func2.charAt(0)=='-')) {
-        sc3.setFuncStr(m_func1+m_func2);
+    	  if(sc3!=null) sc3.setFuncStr(m_func1+m_func2);
       } else {
-        sc3.setFuncStr(m_func1+'+'+m_func2);
+    	  if(sc3!=null) sc3.setFuncStr(m_func1+'+'+m_func2);
       }
     }
     reset();

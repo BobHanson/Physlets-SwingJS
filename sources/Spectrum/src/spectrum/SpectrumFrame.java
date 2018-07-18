@@ -7,7 +7,12 @@
 */
 package spectrum;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+
+import a2s.*;
 import java.awt.event.*;
 
 public class SpectrumFrame extends Frame {

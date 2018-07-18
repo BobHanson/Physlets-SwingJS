@@ -416,7 +416,7 @@ protected Thread     thread         = null;
     if(owner != null) {
       SApplet.runningID = owner;
     }
-    if(running && (thread != null)) {
+    if(running && (thread != null) || ( swingTimer!=null && swingTimer.isRunning())) {  // clock is already running
       return;
     }
     if(oneShot && (dt > 0) && (time + 0.49 * dt >= maxTime)) {

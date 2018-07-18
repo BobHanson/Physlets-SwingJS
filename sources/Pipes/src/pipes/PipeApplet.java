@@ -167,9 +167,9 @@ String label_wait = "Please wait . . .";
     });
     flowLayout1.setHgap(0);
     panel3.setLayout(borderLayout2);
-    modeMenu.addItemListener(new java.awt.event.ItemListener() {
+    modeMenu.addItemListener(new ItemListener() {
       public void itemStateChanged(ItemEvent e) {
-        modeMenu_itemStateChanged(e);
+        //modeMenu_itemStateChanged(e);   XXX Bug in swingJS Library XXX
       }
     });
     stringfield.addTextListener(new java.awt.event.TextListener() {

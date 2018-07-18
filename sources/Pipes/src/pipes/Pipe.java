@@ -13,6 +13,7 @@
 *************************************************************************/
 package pipes;
 
+import a2s.*;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -244,7 +245,7 @@ public class Pipe extends EtchedBorder implements SDataSource, SStepable{
 
   /**
   *
-  *Calculates presures in pipe.
+  *Calculates pressure in pipe.
   *
   *@param width  int  width of pipe in pixels
   *@param height int  height of pipe in pixels

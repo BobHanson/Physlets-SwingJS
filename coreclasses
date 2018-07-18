@@ -49,6 +49,9 @@ dataGraph/Bar.js
 dataGraph/DataGraph.js
 dataTable/DataTable.js
 dataGraph/SLabel.js
+diatomic/Diatomic.js
+diatomic/EnsemblePanel.js
+diatomic/PhysletPanel.js
 eField4/Charge.js
 eField4/CaptionThing.js
 eField4/DrawRectangle.js
@@ -354,6 +357,10 @@ soundOut/SoundOut_addBtn_actionAdapter.js
 soundOut/SoundOut_clearBtn_actionAdapter.js
 soundOut/SoundOut_sndCKBox_itemAdapter.js
 soundOut/SoundOut_volSlider_adjustmentAdapter.js
+spectrum/ELine.js
+spectrum/Spectrum.js
+spectrum/SpectrumPanel.js
+spectrum/SpectrumThing.js
 splotter/SPlotter.js
 sun/audio/AudioDataStream.js
 sun/audio/AudioData.js
@@ -367,6 +374,8 @@ sun/awt/SunGraphicsCallback.js
 sun/awt/image/SunWritableRaster.js
 sun/java2d/StateTrackable.js
 sun/java2d/StateTrackableDelegate.js
+superposition/Superposition.js
+superposition/SuperpositionCanvas.js
 swingjs/api/JSMinimalAbstractDocument.js
 swingjs/JSAbstractDocument.js
 swingjs/JSAudio.js

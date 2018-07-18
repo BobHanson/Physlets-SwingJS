@@ -3,8 +3,15 @@
 //	Authors: Jim Nolen  and Wolfgang Christian
 
 package spectrum;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
 
-import java.awt.*;
+import a2s.*;
+
 import java.awt.event.*;
 import java.util.Vector;
 import java.util.Enumeration;

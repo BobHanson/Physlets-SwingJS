@@ -3,7 +3,10 @@
 //      Wolfgang Christian
 package diatomic;
 
-import java.awt.*;
+import a2s.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.*;
 import edu.davidson.graphics.*;
 import edu.davidson.tools.*;

@@ -3,8 +3,9 @@
 //      Wolfgang Christian
 package diatomic;
 
-import java.awt.*;
+import java.awt.Color;
 
+import a2s.*;
 /**
  * The class <code>EnsemblePanel</code> models a mixture or monatomic and diatomic hard disks.
  * This model was developed by Ernesto Martin.  The code was adapted from the Easy Java Simulations model

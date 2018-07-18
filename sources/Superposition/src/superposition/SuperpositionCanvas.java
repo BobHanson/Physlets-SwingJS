@@ -1,5 +1,12 @@
 package superposition;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Event;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+
+import a2s.*;
 import edu.davidson.display.Format;
 import edu.davidson.numerics.Parser;
 import edu.davidson.tools.SApplet;
@@ -60,7 +67,7 @@ public final class SuperpositionCanvas extends Canvas
         }
 
   public void update(Graphics g){
-    paint(g); //update usually does a rect fill with a background color.  We don't need this.
+    paintMe(g); //update usually does a rect fill with a background color.  We don't need this.
   }
 
   public void setTime(double t)
@@ -83,6 +90,7 @@ public final class SuperpositionCanvas extends Canvas
          }
     funcStr=s;
     this.parser=parser;
+    //osi=null;
     repaint();
   }
 
@@ -224,8 +232,10 @@ public final class SuperpositionCanvas extends Canvas
         g.dispose();
   }
 
-  public void paint(Graphics g){
+  public void paintMe(Graphics g){
     if(applet.destroyed==true) return;
+       osi=null;
+       osiGrid=null;
        try{
        if (getSize().width==0||getSize().height==0)return;
        if( invalidGrid || osiGrid == null || osi== null || iwidth != this.getSize().width || iheight != this.getSize().height){

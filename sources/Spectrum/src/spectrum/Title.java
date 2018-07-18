@@ -2,7 +2,11 @@
 
 package spectrum;
 
-import java.awt.*;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+
+import a2s.*;
 
 public class Title extends TextThing{
 

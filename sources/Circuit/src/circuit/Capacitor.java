@@ -1,5 +1,10 @@
 package circuit;
-import java.awt.*;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+
+
 import edu.davidson.tools.SApplet;
 
 public class Capacitor extends Part {

@@ -406,13 +406,27 @@ protected Thread     thread         = null;
       owner.updateDataConnection(hashCode());
     }
   }
+  
+  public void startClock() {
+    if(isJS){
+		Timer timer = new Timer(5, new ActionListener() {  // delay start of clock to give calling function time to finish
+			public void actionPerformed(ActionEvent e) {
+				startClockLater();
+			}
+		});
+		timer.setRepeats(false);
+		timer.start();
+    }else{
+    	startClockLater();
+    }
+  }
 
   /**
    *       Notify the thread to start running in order to produce clock ticks.
    *
    * @see                SClock#stopClock()
    */
-  synchronized public void startClock() {
+  synchronized public void startClockLater() {
     if(owner != null) {
       SApplet.runningID = owner;
     }

@@ -13,8 +13,15 @@
 *************************************************************************/
 package circuit;
 
-import java.awt.*;
+import a2s.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.event.*;
+
 import java.net.*;
 import edu.davidson.tools.SApplet;
 import edu.davidson.tools.SStepable;

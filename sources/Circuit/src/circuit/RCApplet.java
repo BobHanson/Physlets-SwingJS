@@ -1,7 +1,14 @@
 package circuit;
 
-import java.awt.*;
+import a2s.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.event.*;
+
 import java.net.*;
 
 import edu.davidson.graphics.*;
@@ -322,6 +329,7 @@ final public class RCApplet extends SApplet implements SStepable {
   }
 
   private void setCircuitValues(){
+	  if(bat==null || cap==null || res==null) return;
       double irms=volt/zMag(freqVal)/sqrt2;
       bat.setF(freqVal);
       bat.setCurrentRMS(irms);

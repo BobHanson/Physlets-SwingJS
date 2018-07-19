@@ -1,5 +1,7 @@
 package circuit;
-import java.awt.*;
+
+import java.awt.Graphics;
+
 import edu.davidson.tools.SApplet;
 
 public class Wire extends Part {

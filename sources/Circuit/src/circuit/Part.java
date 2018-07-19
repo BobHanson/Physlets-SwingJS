@@ -1,5 +1,9 @@
 package circuit;
-import java.awt.*;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+
 import edu.davidson.display.*;
 import edu.davidson.tools.*;
 
@@ -219,6 +223,7 @@ public class Part implements SDataSource{
   final void setSwitchOn(boolean on){switchOn=on;}
 
   static public boolean isMicrosoft() {
+	if(SClock.isJS) return false;
     String vendor=System.getProperty("java.vendor").toLowerCase();
     return(vendor.startsWith("microsoft"));
 	}

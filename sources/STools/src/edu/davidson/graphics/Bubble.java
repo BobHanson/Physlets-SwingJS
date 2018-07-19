@@ -6,6 +6,8 @@ import java.awt.Dimension;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import a2s.*;
+import edu.davidson.tools.SClock;
+
 import java.awt.Window;
 
 public class Bubble extends Window {
@@ -44,8 +46,11 @@ class BubblePanel extends Panel {
 		g.drawString(text,2,fm.getAscent()+2);
 	}
 	public Dimension getPreferredSize() {
-    String vendor=System.getProperty("java.vendor");
-		Graphics    g  = getGraphics();
+    String vendor="unknown";
+    if(!SClock.isJS) {
+        vendor=System.getProperty("java.vendor");
+    }
+	Graphics    g  = getGraphics();
     if(g==null) return new Dimension(10,10);
 		FontMetrics fm = g.getFontMetrics();
     int width=fm.stringWidth(text)+4;

@@ -1,6 +1,8 @@
 package edu.davidson.graphics;
 
 import a2s.*;
+import edu.davidson.tools.SClock;
+
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -90,6 +92,9 @@ public class Util {
   // Methods added by W. Christian
 
   static public boolean isMicrosoft() {
+	if(SClock.isJS) {
+	        return false;
+	}
     String vendor=System.getProperty("java.vendor").toLowerCase();
     return(vendor.startsWith("microsoft"));
   }

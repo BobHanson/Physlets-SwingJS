@@ -1,6 +1,12 @@
 package circuit;
 
-import java.awt.*;
+import a2s.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.event.*;
 import java.net.*;
 
@@ -123,6 +129,7 @@ public class LoadApplet extends SApplet {
   }
 
   private void setCircuitValues(){
+	  if(bat==null || unknown==null || load==null || meter==null) return;
       bat.setVoltRMS(batVolt);
       unknown.setR(unknownRes);
       load.setR(loadRes);
@@ -327,6 +334,7 @@ public class LoadApplet extends SApplet {
       int xpix=graph.pixFromX(r);
       int ypix=graph.pixFromY(v);
       Graphics g=graph.getGraphics();
+      if(g==null) return;
       g.setColor(Color.green);
       g.setXORMode(Color.red);
       g.fillOval(xold-5,yold-5,10,10);

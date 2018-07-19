@@ -1,6 +1,6 @@
 package circuit;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.*;
 
 public class Resources extends Properties {

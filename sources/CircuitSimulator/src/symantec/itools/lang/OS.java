@@ -1,5 +1,7 @@
 package symantec.itools.lang;
 
+import edu.davidson.tools.SClock;
+
 // 	02/15/97	RKM	Added isSolaris
 //  10/16/97    DS  Added isCaseSensitive
 
@@ -22,9 +24,10 @@ public final class OS
 
     static
     {
-        String s;
-
-        s = System.getProperty("os.name");
+        String s="unknown";
+        if(!SClock.isJS) {  // cannot read System in JavaScript
+        	s = System.getProperty("os.name");
+        }
 
         if(s.equals("Windows NT"))
         {

@@ -1,6 +1,7 @@
 package circuit;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import edu.davidson.tools.*;
 import edu.davidson.graphics.*;
 

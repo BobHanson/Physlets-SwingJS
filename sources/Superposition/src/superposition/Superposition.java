@@ -305,7 +305,7 @@ public class Superposition extends SApplet implements SStepable {
     if(firstTime) {
       firstTime = false;
     }
-    clock.startClock();
+    //clock.startClock();
   }
   
   /**

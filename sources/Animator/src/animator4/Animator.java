@@ -320,7 +320,7 @@ public class Animator extends SApplet {
      *
      */
     public void start () {
-    	addObject("image","file=assets/red_truck.gif,x=5,y=5");
+    	// addObject("image","file=assets/red_truck.gif,x=5,y=5");  for debugging
         if (firstTime) {
             firstTime = false;
             animatorCanvas.clearTrails();

@@ -1070,7 +1070,7 @@ public final class AnimatorCanvas extends Canvas
         g.fillRect(0, r.height - 20, boxWidth, 20);
         g.setColor(Color.black);
         g.drawString(msg, 10, r.height - 5);
-        g.drawRect(0, r.height - 20, boxWidth - 1, 20);
+        g.drawRect(0, r.height - 19, boxWidth - 1, 20);
     }
 
     double xFromPix(int x) {

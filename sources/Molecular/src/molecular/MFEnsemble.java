@@ -969,6 +969,7 @@ public class MFEnsemble extends Ensemble {
    initializeArrays();
    //setAutoRefresh(true);   removed by W. Christian
    removeDataSources();  // added by W. Christian
+   try{SApplet.addDataSource(this); }catch (Exception e){e.printStackTrace();}
    paintOSI();
    if (autoRefresh)owner.repaint();
   }

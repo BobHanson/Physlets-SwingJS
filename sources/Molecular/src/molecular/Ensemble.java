@@ -1725,6 +1725,7 @@ Histogram histogram=null;
    initializeArrays();
    //setAutoRefresh(true);   removed by W. Christian
    removeDataSources();  // added by W. Christian
+   try{SApplet.addDataSource(this); }catch (Exception e){e.printStackTrace();}
    paintOSI();
    if (autoRefresh)owner.repaint();
   }
@@ -1737,7 +1738,7 @@ Histogram histogram=null;
   }
 
   public synchronized int addParticleDataSource(int i){
-    DataSource ds=new DataSource(i);
+    ParticleDataSource ds=new ParticleDataSource(i);
     ensembleDataSources.addElement(ds);
     return ds.hashCode();
   }
@@ -1936,12 +1937,12 @@ Histogram histogram=null;
     public SApplet getOwner(){return applet;}    //usually owner is an SApplet. Here, this ensemble is owned by EnsemblePanel called "owner"
   }
   // inner class used for data connection to particles.
-  public class DataSource extends Object   implements edu.davidson.tools.SDataSource{  // inner class to access the particles as SDataSources.
+  public class ParticleDataSource extends Object   implements edu.davidson.tools.SDataSource{  // inner class to access the particles as SDataSources.
     String[] varStrings= new String[]{"t","x","y","vx","vy","m"};
     double[][] ds=new double[1][6];  // the datasource state variables t,x,y,vx,vy,ax,ay,p;
     int index=0;
 
-    DataSource(int i){ // Constructor
+    ParticleDataSource(int i){ // Constructor
        index=i;
        try{SApplet.addDataSource(this); }catch (Exception e){e.printStackTrace();}
     }

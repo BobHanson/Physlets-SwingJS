@@ -21,6 +21,7 @@ import java.awt.Graphics;
 
 import java.awt.event.*;
 import edu.davidson.numerics.Parser;
+import edu.davidson.tools.SApplet;
 
 
 public class PistonEnsemble extends Ensemble {
@@ -817,6 +818,8 @@ public class PistonEnsemble extends Ensemble {
    setBounds();
    initializeArrays();
    recalculateColTimes();
+   removeDataSources();  // added by W. Christian
+   try{SApplet.addDataSource(this); }catch (Exception e){e.printStackTrace();}
    //setAutoRefresh(true);
    paintOSI();
    owner.repaint();

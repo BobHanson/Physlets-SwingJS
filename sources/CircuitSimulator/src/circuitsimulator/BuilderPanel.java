@@ -13,6 +13,7 @@ import symantec.itools.awt.BorderPanel;
  * 
  * @author Toon Van Hoecke
  */
+//public class BuilderPanel extends symantec.itools.awt.BorderPanel
 public class BuilderPanel extends symantec.itools.awt.BorderPanel
 {   
     CircuitBuilder circuitBuilder=null;

@@ -222,7 +222,8 @@ public class MFREnsemble extends MFEnsemble {
            nCollidingW=0;                     //next colliding wall=0 if next collision is a particle collision
            nColliding1=i;                     //nColliding2  and  nColliding2  are next colliding particles
            nColliding2=x;
-           if (min<=0) {System.out.println("Right: PartColTime <= 0"); pause();}
+           //if (min<=0) {System.out.println("Right: PartColTime <= 0"); pause();}
+           if (min<=0) {min=1.0E-8;}
          }
         }
       }

@@ -117,7 +117,7 @@ final public class LRCApplet extends SApplet implements SStepable {
     try { resVal = Double.valueOf(this.getParameter("Resistor", "25")).doubleValue(); } catch (Exception e) { e.printStackTrace(); }
     try { capVal = Double.valueOf(this.getParameter("Capacitor", "10")).doubleValue(); } catch (Exception e) { e.printStackTrace(); }
     try { indVal = Double.valueOf(this.getParameter("Inductor", "98")).doubleValue(); } catch (Exception e) { e.printStackTrace(); }
-    try { fmin = Double.valueOf(this.getParameter("Fmin", "10")).doubleValue(); } catch (Exception e) { e.printStackTrace(); }
+    try { fmin = Double.valueOf(this.getParameter("FMin", "10")).doubleValue(); } catch (Exception e) { e.printStackTrace(); }
     try { fmax = Double.valueOf(this.getParameter("FMax", "500")).doubleValue(); } catch (Exception e) { e.printStackTrace(); }
     try { showControls = Boolean.valueOf(this.getParameter("ShowControls", "true")).booleanValue(); } catch (Exception e) { e.printStackTrace(); }
     try { showCheckBox = Boolean.valueOf(this.getParameter("ShowCheckBox", "true")).booleanValue(); } catch (Exception e) { e.printStackTrace(); }
@@ -538,6 +538,7 @@ final public class LRCApplet extends SApplet implements SStepable {
       xold=xpix; yold=ypix;
       g.setPaintMode();
       g.dispose();
+      repaint();
   }
 
   void fSlider_adjustmentValueChanged(AdjustmentEvent e) {

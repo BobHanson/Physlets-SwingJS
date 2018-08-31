@@ -719,46 +719,41 @@ public class DataGraph extends SApplet {
    *
    */
   private Image getImage(String file){
-      Image im;
-      // java.io.File f=new java.io.File(file);
-      try{
-          //if(f.canRead())
-              im=getImage(getCodeBase(),file);
-
-         // else id=0;
-        } catch(Exception e){
-            im=null;
-            //System.out.println("Failed to load image file from code base.");
-      }
-      if(im==null)try{
-          //if(f.canRead())
-              im=getImage(getDocumentBase(),file);
-          //else id=0;
-        } catch(Exception e){
-            im=null;
-            //System.out.println("Failed to load image file from document base.");
-        }
-      if(im==null)try{
-          java.net.URL url= new java.net.URL(file);
-          im =getImage(url);
-        } catch(Exception e){
-            im=null;
-            //System.out.println("Failed to load image file from absolute URL.");
-        }
-      if(im==null){
-          System.out.println("Failed to load image file.");
-          return im;
-      }
-      MediaTracker tracker=new MediaTracker(this);
-      try{
-            tracker.addImage(im,0);
-            tracker.waitForID(0,1000);  // wait one second
-      }catch(Exception e){
-       //return null;
-      }
-      //if(tracker.isErrorAny()) return null;
-      //if(im.getHeight(this)<1) return null;
-      return im;
+		  Image im=null;
+		  // java.io.File f=new java.io.File(file);
+		try{
+		      im=getImage(getDocumentBase(),file);
+		} catch(Exception e){
+		    im=null;
+		    //System.out.println("Failed to load image file from document base.");
+		}      
+		if(im==null) try{
+		          im=getImage(getCodeBase(),file);
+		    } catch(Exception e){
+		        im=null;
+		        //System.out.println("Failed to load image file from code base.");
+		  }
+		if(im==null)try{
+		      java.net.URL url= new java.net.URL(file);
+		      im =getImage(url);
+		    } catch(Exception e){
+		        im=null;
+		        //System.out.println("Failed to load image file from absolute URL.");
+		    }
+		if(im==null){
+		      System.out.println("Failed to load image file.");
+		      return im;
+		  }
+		  MediaTracker tracker=new MediaTracker(this);
+		  try{
+		        tracker.addImage(im,0);
+		        tracker.waitForID(0,1000);  // wait one second
+		  }catch(Exception e){
+		   //return null;
+		  }
+		  //if(tracker.isErrorAny()) return null;
+		  //if(im.getHeight(this)<1) return null;
+		  return im;
    }
 
   /**

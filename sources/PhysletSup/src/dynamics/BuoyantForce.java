@@ -31,7 +31,7 @@ public class BuoyantForce extends Applet
     double rho;
     Color bgColor;
     Color fgColor;
-    buoyantBlock block;
+    BuoyantBlock block;
     String rts;
     int yb;
     //Thread animThread;
@@ -67,7 +67,7 @@ public class BuoyantForce extends Applet
         this.rho = 0.4;
         this.bgColor = Color.white;
         this.fgColor = Color.lightGray;
-        this.block = new buoyantBlock();
+        this.block = new BuoyantBlock();
         this.startTime = 0L;
         this.delay = 50L;
         this.size = 2;
@@ -273,11 +273,12 @@ public class BuoyantForce extends Applet
         this.repaint();
     }
     
-    public void paintMe(final Graphics graphics) {
-        this.update(graphics);
+    protected void paintComponent_(Graphics g) {
+    	super.paintComponent_(g);
+    	updateScreen(g);
     }
     
-    public void update(Graphics graphics) {
+    public void updateScreen(Graphics graphics) {
         this.g.drawImage(this.blockImage, this.x1, this.yb, this);
         this.g.setColor(this.bgColor);
         this.g.drawLine(this.x1, this.yb - 1, this.x1 + this.w, this.yb - 1);

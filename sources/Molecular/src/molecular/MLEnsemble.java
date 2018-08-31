@@ -89,7 +89,8 @@ public class MLEnsemble extends Ensemble {
            nCollidingW=0;                     //next colliding wall=0 if next collision is a particle collision
            nColliding1=i;                     //nColliding2  and  nColliding2  are next colliding particles
            nColliding2=x;
-         if (min<=0) {System.out.println("PartColTime <= 0: Left"); pause();}
+           //if (min<=0) {System.out.println("PartColTime <= 0: Left"); pause();}
+           if (min<=0) {min=1.0E-8;}
          }
       }
     if (min<0) {System.out.println("negative Collide Time: Left"); pause(); min= 10000;}

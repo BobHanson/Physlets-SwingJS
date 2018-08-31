@@ -7,6 +7,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Event;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import a2s.*;
 
@@ -38,6 +40,7 @@ class Grafiek extends Canvas {
     netwerk = n;
     repaint();
   }
+  
 
   /**
    * Method paint
@@ -121,6 +124,7 @@ class Grafiek extends Canvas {
       xp1 = xp2;
       yp1 = yp2;
     }
+    g.fillRect(0, 0, 1, 1);
   }
 
   private int     wlm = 80;  // width left margin
@@ -188,6 +192,18 @@ public class ImpAppl extends SApplet {
       add("South", status);
     }
   }
+  
+  public void start() {
+	  tf.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			 String s=tf.getText();
+			 setNetwork(s);	
+		}
+      });
+	  repaint();
+  }
+  
 
   /**
    * @y.exclude
@@ -195,7 +211,7 @@ public class ImpAppl extends SApplet {
    * @param o
    *
    * @return true if successful
-   */
+
   public boolean action(Event e, Object o) {
     if(e.target instanceof TextField) {
       String s = (String) o;
@@ -203,7 +219,7 @@ public class ImpAppl extends SApplet {
       return true;
     }
     return false;
-  }
+  } */
 
   /**
    * Sets the network.
@@ -220,6 +236,7 @@ public class ImpAppl extends SApplet {
       status.errorText("Error: "+parser.getErrorText()+" on position "+parser.getErrorPos());
     }
     tf.setText(s);
+    repaint();
   }
 
   /**

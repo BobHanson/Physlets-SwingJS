@@ -8,12 +8,13 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Dimension;
 import a2s.*;
+import edu.davidson.tools.SApplet;
 
 //
 // Decompiled by Procyon v0.5.30
 //
 
-public class CornerReflector extends Applet implements Runnable
+public class CornerReflector extends Applet
 {
     Dimension area;
     Image bgImage;
@@ -27,8 +28,6 @@ public class CornerReflector extends Applet implements Runnable
     int yy;
     int xs2;
     int ys2;
-    boolean running;
-    Thread animThread;
     long startTime;
     long lastTime;
     long delay;
@@ -105,38 +104,13 @@ public class CornerReflector extends Applet implements Runnable
         this.clear();
         this.setupRay();
     }
-
+    
     public void start() {
-        if (this.animThread == null) {
-            (this.animThread = new Thread(this)).start();
-        }
-        final long currentTimeMillis = System.currentTimeMillis();
-        this.startTime = currentTimeMillis;
-        this.lastTime = currentTimeMillis;
+    	clear();
+    	repaint();
+    	//System.out.println("start");
     }
 
-    public void stop() {
-        this.animThread = null;
-        this.running = false;
-    }
-
-    public void run() {
-        Thread.currentThread().setPriority(1);
-        while (Thread.currentThread() == this.animThread) {
-            this.delta = System.currentTimeMillis() - this.lastTime;
-            this.lastTime += this.delta;
-            if (this.running) {
-                this.advanced(this.delta / 1000.0);
-            }
-            this.startTime += this.delay;
-            try {
-                Thread.sleep(Math.max(0L, this.startTime - System.currentTimeMillis()));
-            }
-            catch (InterruptedException ex) {
-                break;
-            }
-        }
-    }
 
     void advanced(final double n) {
         this.gb.setColor(Color.yellow);
@@ -225,9 +199,6 @@ public class CornerReflector extends Applet implements Runnable
                 this.gb.drawLine(this.xx = (int)this.X[j], this.yy = (int)this.Y[j], this.xx, this.yy);
             }
         }
-        else {
-            this.running = false;
-        }
         this.repaint();
     }
 
@@ -249,9 +220,6 @@ public class CornerReflector extends Applet implements Runnable
         else if (Math.sqrt((n - this.xs2) * (n - this.xs2) + (n2 - this.ys2) * (n2 - this.ys2)) < this.size2) {
             this.dragd2 = true;
             this.clear();
-        }
-        if (this.dragd || this.dragd2 || this.dragm) {
-            this.running = false;
         }
         this.repaint();
         return true;
@@ -339,9 +307,6 @@ public class CornerReflector extends Applet implements Runnable
             this.clear();
             this.setupRay();
         }
-        if (event.clickCount == 2) {
-            this.running = true;
-        }
         this.dragm = false;
         this.dragd = false;
         this.dragd2 = false;
@@ -382,9 +347,10 @@ public class CornerReflector extends Applet implements Runnable
         this.gb.drawString(this.STR[0] + " =" + (int)(this.cta * 2.0 * this.cst + 0.5), this.xc + 5, this.yc + this.chy / 3);
         this.repaint();
     }
-
-    public void paint(final Graphics graphics) {
-        this.update(graphics);
+    
+    protected void paintComponent_(Graphics g) {
+    	super.paintComponent_(g);
+    	updateScreen(g);
     }
 
     void imgs(final double n, final double n2, final double[] array, final double[] array2, final Point point) {
@@ -415,11 +381,11 @@ public class CornerReflector extends Applet implements Runnable
             n6 = sqrt * Math.sin(n7);
             array[point.x] = this.xc - (int)n5;
             array2[point.x] = this.yc - (int)n6;
-            ++point.x;
+            if(point.x<this.NI-1)++point.x;
         } while (n7 < n3 && n7 > n4);
         double n8 = n;
         double n9 = n2;
-        point.y = point.x;
+        point.y = Math.abs(point.x);
         double n10;
         do {
             double atan2 = Math.atan(n9 / n8);
@@ -441,11 +407,11 @@ public class CornerReflector extends Applet implements Runnable
             n9 = sqrt * Math.sin(n10);
             array[point.y] = this.xc - (int)n8;
             array2[point.y] = this.yc - (int)n9;
-            ++point.y;
+            if(point.y<this.NI-1)++point.y;
         } while (n10 < n3 && n10 > n4);
     }
 
-    public void update(final Graphics graphics) {
+    public void updateScreen(final Graphics graphics) {
         this.g.drawImage(this.bgImage, 0, 0, this);
         this.g.setColor(Color.yellow);
         this.g.fillOval(this.xs - this.size, this.ys - this.size, this.size2, this.size2);
@@ -481,7 +447,7 @@ public class CornerReflector extends Applet implements Runnable
             }
         }
         this.g.setColor(Color.white);
-        if (this.running && this.cnt < this.n) {
+        if (this.cnt < this.n) {
             for (int l = 0; l < this.n; ++l) {
                 this.g.drawOval(this.xx = (int)this.X[l] - 1, this.yy = (int)this.Y[l] - 1, 2, 2);
             }
@@ -509,7 +475,6 @@ public class CornerReflector extends Applet implements Runnable
     public CornerReflector() {
         this.bgColor = Color.lightGray;
         this.STR = new String[] { "angle", "Start", "Time" };
-        this.running = false;
         this.startTime = 0L;
         this.delay = 50L;
         this.rightClick = false;
@@ -533,7 +498,7 @@ public class CornerReflector extends Applet implements Runnable
         this.VX = new double[this.Nmax];
         this.VY = new double[this.Nmax];
         this.cst = 57.29577951308232;
-        this.NI = 20;
+        this.NI = 60;
         this.PXA = new double[this.NI];
         this.PYA = new double[this.NI];
         this.PXB = new double[this.NI];

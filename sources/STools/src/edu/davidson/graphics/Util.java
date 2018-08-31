@@ -111,8 +111,13 @@ public class Util {
     Image im=null;
     URL url;
     if(applet==null)System.out.println("Applet not found in getImage method.");
-    // java.io.File f=new java.io.File(file);
-    try{  // look for images in jar files first!
+    try{ // first look for image relative to html document;  works best for JavaScript Physlets
+        im=applet.getImage(applet.getDocumentBase(),file);
+      } catch(Exception e){
+        im=null;
+        //System.out.println("Failed to load image file from document base.");
+    }
+    if(im==null) try{  // look for images in jar files first!
       String resourcePath=file;
       if (!file.startsWith("/")) resourcePath="/"+file;
       //System.out.println("file="+resourcePath);
@@ -124,21 +129,10 @@ public class Util {
       im=null;
     }
     if(im==null) try{ // look for the image in the codebase directory
-      //if(f.canRead())
       im=applet.getImage(applet.getCodeBase(),file);
-
-      // else id=0;
     } catch(Exception e){
       im=null;
       //System.out.println("Failed to load image file from code base.");
-    }
-    if(im==null)try{
-      //if(f.canRead())
-      im=applet.getImage(applet.getDocumentBase(),file);
-      //else id=0;
-    } catch(Exception e){
-      im=null;
-      //System.out.println("Failed to load image file from document base.");
     }
     if(im==null)try{
       url= new java.net.URL(file);

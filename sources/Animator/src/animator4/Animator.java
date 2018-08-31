@@ -2400,34 +2400,29 @@ public class Animator extends SApplet {
         Image im;
         // java.io.File f=new java.io.File(file);
         try {
-            //if(f.canRead())
+        	//System.out.println("url file ="+ file);
+            java.net.URL url = new java.net.URL(file);
+            im = getImage(url);
+            id = animatorCanvas.addImage(im, xStr, yStr);
+        } catch (Exception e) {
+            id = 0;
+            //System.out.println("Failed to load image file from absolute URL.");
+        }
+        if(id==0) try {
+            //System.out.println("Doc base ="+getDocumentBase() +" file ="+ file);
+            im = getImage(getDocumentBase(), file);
+            id = animatorCanvas.addImage(im, xStr, yStr);
+        } catch (Exception e) {
+            id = 0;
+            //System.out.println("Failed to load image file from document base.");
+        }
+        if(id==0) try {
+            //System.out.println("Code base ="+getCodeBase() +" file ="+ file);
             im = getImage(getCodeBase(), file);
             id = animatorCanvas.addImage(im, xStr, yStr);
-            // else id=0;
         } catch (Exception e) {
             id = 0;
             //System.out.println("Failed to load image file from code base.");
-        }
-        if (id == 0) {
-            try {
-                //if(f.canRead())
-                im = getImage(getDocumentBase(), file);
-                id = animatorCanvas.addImage(im, xStr, yStr);
-                //else id=0;
-            } catch (Exception e) {
-                id = 0;
-                //System.out.println("Failed to load image file from document base.");
-            }
-        }
-        if (id == 0) {
-            try {
-                java.net.URL url = new java.net.URL(file);
-                im = getImage(url);
-                id = animatorCanvas.addImage(im, xStr, yStr);
-            } catch (Exception e) {
-                id = 0;
-                //System.out.println("Failed to load image file from absolute URL.");
-            }
         }
         if (id == 0) {
             System.out.println("Failed to load image file.");

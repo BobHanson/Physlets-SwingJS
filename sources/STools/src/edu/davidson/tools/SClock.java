@@ -42,6 +42,8 @@ public final class SClock extends Object implements Runnable, SDataSource {
   
 protected Timer      swingTimer;
 protected Thread     thread         = null;
+long t0 = System.currentTimeMillis();  
+
 
 	/**
 	 * Create a new SClock. A clock thread is created but it immediately enters
@@ -415,6 +417,7 @@ protected Thread     thread         = null;
 			}
 		});
 		timer.setRepeats(false);
+		t0 = System.currentTimeMillis();
 		timer.start();
     }else{
     	startClockLater();
@@ -653,9 +656,14 @@ protected Thread     thread         = null;
 	 * Pre-create the timer so there is no file loading before the first tick
 	 */
 	private void createSwingTimer() {
-		if (thread == null)
-			thread = new Thread(this);
-		swingTimer = new Timer(delay, new ActionListener() {
+		if (thread == null) thread = new Thread(this);
+		long t1=System.currentTimeMillis();
+		int myDelay=(int)(t1 -t0); 
+		myDelay=Math.min(delay, myDelay);  // do not wait longer than requested delay
+		myDelay=Math.max(10,myDelay);      // wait a minimum of 10 ms.
+		t0=t1;  
+		System.out.println("my delay ="+myDelay);
+		swingTimer = new Timer(myDelay, new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {

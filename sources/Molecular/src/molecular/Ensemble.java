@@ -234,12 +234,12 @@ Histogram histogram=null;
     //pt,pr,pb,pl    //divide at end by dt
     //subtract vol of spheres.
     double tl=dt;                             //tl = time left until a paint step
+    int counter=0;
     do {
       if (tl<mint){
         mint-=tl;
         tl-=advanceDT(tl);
       }                                              //setTime 0 t
-
       else {
         tl-=advanceDT(mint);
         for (i=0; i<lastpartnum+1; i++)
@@ -265,9 +265,11 @@ Histogram histogram=null;
         //temptime=mint;
 
       }
-
-    } while (tl>0);
-
+      counter++;
+    } while (tl>0 && counter<1000);
+    if(counter>=1000) 
+    	System.out.println(" counter ="+counter + "  tl= "+tl + " mint ="+mint + "  dt="+dt + "temptime="+temptime);
+    tl=0;
     paintOSI();
     Graphics g = owner.getGraphics();
     owner.paint(g);
@@ -992,13 +994,13 @@ Histogram histogram=null;
         }
 
         for (int x=0; x<i; x++){
-
          if (colTimes[i][x]<min){
            min=colTimes[i][x];
            nCollidingW=0;                     //next colliding wall=0 if next collision is a particle collision
            nColliding1=i;                     //nColliding2  and  nColliding2  are next colliding particles
            nColliding2=x;
-           //if (min<=0) {System.out.println("PartColTime <= 0"); pause();}
+           //if (min<=0) {System.out.println("PartColTime <= 0  min="+min); min=1.0E-6;}// pause();}
+           if (min<=0) {min=1.0E-8;}
          }
         }
       }

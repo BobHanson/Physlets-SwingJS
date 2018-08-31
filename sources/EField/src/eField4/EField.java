@@ -929,25 +929,21 @@ private String button_start="Play";
   public int addImage(String file,double x,double y){
       int id=0;
       Image im=null;
-      // java.io.File f=new java.io.File(file);
-      try{
-          //if(f.canRead())
+
+	  try{
+	          im=getImage(getDocumentBase(),file);
+	          id=odeCanvas.addImage(im,x,y);
+	    } catch(Exception e){
+	        id=0;
+	        //System.out.println("Failed to load image file from document base.");
+	  }
+      if(id==0) try{
               im=getImage(getCodeBase(),file);
               id=odeCanvas.addImage(im,x,y);
-         // else id=0;
         } catch(Exception e){
             id=0;
             //System.out.println("Failed to load image file from code base.");
       }
-      if(id==0)try{
-          //if(f.canRead())
-              im=getImage(getDocumentBase(),file);
-              id=odeCanvas.addImage(im,x,y);
-          //else id=0;
-        } catch(Exception e){
-            id=0;
-            //System.out.println("Failed to load image file from document base.");
-        }
       if(id==0)try{
           java.net.URL url= new java.net.URL(file);
           im =getImage(url);

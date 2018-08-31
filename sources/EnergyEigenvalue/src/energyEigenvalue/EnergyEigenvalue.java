@@ -1,6 +1,12 @@
 package energyEigenvalue;
 
-import java.awt.*;
+import a2s.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.SystemColor;
 import java.awt.event.*;
 import edu.davidson.display.*;
 import edu.davidson.graphics.*;

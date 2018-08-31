@@ -298,7 +298,7 @@ final public class IVApplet extends SApplet implements SStepable {
  * Gets the ID for the unknown part.
  * The ID can be used to make a connection to a SDataSource.
  *
- * @return int the indentifier
+ * @return int the identifier
 */
   final public int getUnknownID(){
       return part.getID();
@@ -308,7 +308,7 @@ final public class IVApplet extends SApplet implements SStepable {
  * Gets the ID for the ammeter.
  * The ID can be used to make a connection to a SDataSource.
  *
- * @return int the indentifier
+ * @return int the identifier
 */
   final public int getAmmeterID(){
       return this.ammeter.getID();
@@ -318,7 +318,7 @@ final public class IVApplet extends SApplet implements SStepable {
    * Gets the ID for the voltmeter.
    * The ID can be used to make a connection to a SDataSource.
    *
-   * @return int the indentifier
+   * @return int the identifier
   */
     final public int getVoltmeterID(){
         return voltmeter.getID();
@@ -666,7 +666,7 @@ final public class IVApplet extends SApplet implements SStepable {
       showIV=iv;
       if(autoRefresh) setShowIV(showIV);
   }
-  void setShowIV(boolean siv){
+  public void setShowIV(boolean siv){
       showIV=siv;
       graph.setAutoRefresh(false);
       graph.deleteSeries(1);

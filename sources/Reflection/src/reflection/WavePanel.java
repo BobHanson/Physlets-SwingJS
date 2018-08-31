@@ -491,7 +491,7 @@ public class WavePanel extends Panel
     return arrayOfDouble;
   }
 
-  public void paint(Graphics paramGraphics)
+  public void paintMe(Graphics paramGraphics)
   {
     if ((this.osi == null) || (this.currentw != getSize().width) || (this.currenth != getSize().height))
       setArrayBounds();
@@ -1025,8 +1025,10 @@ public class WavePanel extends Panel
       ReflectionThing localReflectionThing = (ReflectionThing)localEnumeration.nextElement();
       localReflectionThing.setPotential(localReflectionThing.potential);
     }
-    if (this.autoRefresh)
-      recalc();
+    if (this.autoRefresh) {
+    	if(this.fixedPts)setArray(this.currentw );
+        recalc();
+    }
     if (bool)
       this.owner.clock.startClock();
     this.sendData = true;
@@ -1221,7 +1223,7 @@ public class WavePanel extends Panel
 
   public void update(Graphics paramGraphics)
   {
-    paint(paramGraphics);
+    paintMe(paramGraphics);
   }
 
   public double xFromPix(int paramInt)

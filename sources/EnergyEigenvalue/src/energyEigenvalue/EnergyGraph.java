@@ -1,8 +1,15 @@
 package energyEigenvalue;
-import java.awt.*;
+import a2s.*;
+
 import java.util.Vector;
 import java.util.Hashtable;
 import java.util.Enumeration;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+import java.awt.SystemColor;
 import java.awt.event.*;
 
 import edu.davidson.display.*;
@@ -722,10 +729,10 @@ public final class EnergyGraph extends SGraph{
 
   /**
   * This method determines a location so that the amplitude of the wave function at a specific x value when
-  * the right mouse is clicked can be foud.
+  * the right mouse is clicked can be found.
   *
   *@param int xPix             pixel on horizontal axis where mouse event occurred
-  *@returns int location       location at which to find amplitude of wave fucntion
+  *@returns int location       location at which to find amplitude of wave function
   */
   private int amplitude(int xPix){
       double location=0;

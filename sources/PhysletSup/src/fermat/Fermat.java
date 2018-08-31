@@ -166,8 +166,10 @@ public class Fermat extends Applet implements Runnable {
                 this.gb.setColor(Color.white);
                 this.gb.drawLine(this.xs, this.ys, this.xx = (int)this.xc2, this.yc);
                 this.gb.drawLine(this.xx, this.yc, this.xr, this.yr);
-                this.gb.setColor(this.clr2);
-                this.gb.drawLine(this.xx, this.ys, this.xx, this.yr);
+                //this.gb.setColor(this.clr2);
+                this.gb.setColor(Color.DARK_GRAY);
+                //this.gb.drawLine(this.xx, this.ys, this.xx, this.yr);
+                this.gb.drawLine(this.xx, this.getHeight()/2, this.xx, this.yr);
             }
         }
         this.repaint();
@@ -296,7 +298,8 @@ public class Fermat extends Applet implements Runnable {
         this.gb.drawRect(0, 0, this.area.width - 1, this.area.height - 1);
         if (this.type) {
             this.gb.drawString(this.STR[4], 5, this.chy);
-            this.clr2 = new Color(170, 170, 170);
+            if(running)this.clr2 = new Color(255, 64, 64);
+            else this.clr2 = new Color(170, 170, 170);
         }
         else {
             this.gb.drawString(this.STR[5], 5, this.chy);
@@ -324,11 +327,12 @@ public class Fermat extends Applet implements Runnable {
         }
     }
     
-    public void paint(final Graphics graphics) {
-        this.update(graphics);
+    protected void paintComponent_(Graphics g) {
+    	super.paintComponent_(g);
+    	updateScreen(g);
     }
     
-    public void update(final Graphics graphics) {
+    public void updateScreen(final Graphics graphics) {
         this.gb.setColor(this.clr2);
         for (int i = 0; i < this.N; i += this.dN) {
             this.gb.drawLine(this.xx = (int)this.r[i].x, this.yy = (int)this.r[i].y, this.xx, this.yy);

@@ -6,7 +6,7 @@ import java.awt.event.*;
 
 import a2s.*;
 
-public class ThreadButtonOLD extends Button implements Runnable{
+public class ThreadButtonOld extends Button implements Runnable{
     ActionEvent evt=new ActionEvent(this, ActionEvent.ACTION_PERFORMED,"THREAD");
     Color backgroundColor=Color.lightGray;
     Color downColor=Color.green;
@@ -19,7 +19,7 @@ public class ThreadButtonOLD extends Button implements Runnable{
     //private boolean keepRunning=true;
     private Object runLock = new Object();
 
-    public ThreadButton() {
+    public ThreadButtonOld() {
         try  {
             jbInit();
         }

@@ -157,7 +157,7 @@ public class Animator extends SApplet {
         	/**
         	 * @j2sNative
         	 * 
-        	 * fps *= 2;
+        	 * //this.fps *= 2;  //  not needed.  WC
         	 */
 
         } catch (Exception e) {

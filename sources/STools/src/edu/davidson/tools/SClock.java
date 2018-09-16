@@ -62,18 +62,7 @@ long t0 = System.currentTimeMillis();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		/**
-		 * @j2sNative
-		 * 
-		 */
-		{
-			if (true)
-				return;
-		}
-		// JavaScript only -- preload needed classes
-		// so that there is no delay for the first tick
-		new ActionEvent(null, 0, null);
-		createSwingTimer();
+		if(isJS)createSwingTimer();
 	}
 
   /**
@@ -125,15 +114,13 @@ long t0 = System.currentTimeMillis();
 		shouldRun = true;
 		running = !startWaiting;
 		thread = new Thread(this);
-		/**
-		 * @j2sNative
-		 * 
-		 * 			return this.run();
-		 * 
-		 */
-		if (asDaemon)
-			thread.setDaemon(true);
-		if(!isJS) thread.start();  // only start Thread in Java mode
+        if (isJS) {
+            run();
+            return;
+        }
+        if (asDaemon)
+            thread.setDaemon(true);
+        thread.start();
 	}
 
 /**
@@ -240,7 +227,7 @@ long t0 = System.currentTimeMillis();
 				|| (oneShot && (dt < 0) && (time + 0.49 * dt <= minTime))
 				|| (oneShot && (dt > 0) && (time + 0.49 * dt >= maxTime))) {
 			running = false; // pause the thread if another applet is running or
-								// we are past.
+							 // we are past end of one shot.
 			owner.stoppingClock();
 		}
 		if ((owner != null) && didCycle) {
@@ -618,9 +605,7 @@ long t0 = System.currentTimeMillis();
   
 	private void notified() {
 		if (shouldRun) {
-			//long t0 = System.currentTimeMillis();
 			runningStep();
-			//System.out.println("creaetime " + (System.currentTimeMillis() - t0) + " " + delay);
 		}
 	}
 
@@ -629,28 +614,21 @@ long t0 = System.currentTimeMillis();
 	 * @return true to continue
 	 */
 	@SuppressWarnings("unused")
-	private boolean doDelay() {
-		if (!shouldRun)
-			return true;
-		/**
-		 * @j2sNative
-		 * 
-		 */
-		{
-			// Java only
-			try {
-				Thread.sleep(delay);
-				if (true) 
-					return true;
-			} catch (InterruptedException ie) {
-				return false;
-			}
-		}
-		// JavaScript only
-		createSwingTimer();
-		swingTimer.start();
-		return true;
-	}
+    private boolean doDelay() {
+        if (!shouldRun)
+            return true;
+        if (isJS) {
+            createSwingTimer();
+            swingTimer.start();
+        } else {
+            try {
+                Thread.sleep(delay);
+            } catch (InterruptedException ie) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 	/**
 	 * Pre-create the timer so there is no file loading before the first tick
@@ -658,11 +636,11 @@ long t0 = System.currentTimeMillis();
 	private void createSwingTimer() {
 		if (thread == null) thread = new Thread(this);
 		long t1=System.currentTimeMillis();
-		int myDelay=(int)(t1 -t0); 
+		int myDelay=(int)(t1 -t0);         // optimal delay based on last execution time 
 		myDelay=Math.min(delay, myDelay);  // do not wait longer than requested delay
-		myDelay=Math.max(10,myDelay);      // wait a minimum of 10 ms.
-		t0=t1;  
-		System.out.println("my delay ="+myDelay);
+		myDelay=Math.max(5,myDelay);      // but wait a minimum of 5 ms.
+		t0=t1;                             //save current time
+		//System.out.println("my delay ="+myDelay);  // debugging code
 		swingTimer = new Timer(myDelay, new ActionListener() {
 
 			@Override

@@ -433,13 +433,9 @@ long t0 = System.currentTimeMillis();
       owner.stoppingClock();
       return;
     }
-    if (thread != null) {
-			/**
-			 * @j2sNative
-			 * 
-			 * 			this.thread.stop(); this.thread = null;
-			 * 
-			 */
+    if (thread != null && isJS) {
+    	thread.stop();
+    	thread = null;
     }
     if(thread == null) {
     	newThread(false, false);
@@ -464,15 +460,11 @@ long t0 = System.currentTimeMillis();
     
     if (swingTimer == null && thread == null)
     	return;
-    /**
-     * @j2sNative
-     * 
-     * this.swingTimer.stop();
-     * this.thread = null;
-     * return;
-     * 
-     */
-    
+    if (isJS) {
+    	swingTimer.stop();
+    	thread = null;
+    	return;
+    }
     startClock();
     Thread tempThread = thread;
     if(tempThread != null) {

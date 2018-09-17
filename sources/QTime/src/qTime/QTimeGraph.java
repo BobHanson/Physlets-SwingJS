@@ -1,16 +1,15 @@
 package qTime;
 
-//import java.awt.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import edu.davidson.numerics.Parser;
 import edu.davidson.graph.*;
 import edu.davidson.display.Format;
-import java.awt.Color;
-import java.awt.Event;
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Polygon;
+
+
+// BH added MouseAdapter
 
 
 /**
@@ -59,6 +58,22 @@ public final class QTimeGraph extends Graph2D {
    */
   public QTimeGraph(QTime applet, int numPts_)                              // constructor for TimeGraph
   {
+	  
+	  addMouseListener(new MouseAdapter() {
+		    public void mousePressed(MouseEvent e) {
+		    	mouseDown(e, e.getX(), e.getY());
+		    }
+
+		    public void mouseReleased(MouseEvent e) {
+		    	mouseUp(e, e.getX(), e.getY());
+		    }
+		   
+		    public void mouseDragged(MouseEvent e){
+		    	mouseDrag(e, e.getX(), e.getY());
+		    }
+
+	  });
+	  
     owner  = applet;
     caption = owner.label_qtime;
     parser = new Parser(1);
@@ -110,8 +125,10 @@ public final class QTimeGraph extends Graph2D {
     osg.fillRect(0, 0, iwidth, iheight);
     osg.setColor(g.getColor());
     osg.clipRect(0, 0, iwidth, iheight);
-    //update(osg);                           // draw the graph onto the off screen image context
-    super.paint(osg);
+    //update(osg);                        // draw the graph onto the off screen image context
+
+    super.paint(osg);    
+    
     osg.setColor(Color.black);
     osg.setFont(f);
     FontMetrics fm = osg.getFontMetrics(f);
@@ -137,6 +154,23 @@ public final class QTimeGraph extends Graph2D {
     }
     paintPsi(g);
     g.setColor(Color.black);
+    // BH appended below
+    // BH but then removed as duplicate?
+    
+//      if(polyline.npoints == 0) {
+//        return;
+//      }
+      // BH using g1 here to differentiate from g
+      // BH but then removed, as it is a duplicate?
+//      Graphics g1 = osi2.getGraphics();
+//      g1.drawImage(osi, 0, 0, this);  // draw the off screen image onto the visible graph from osg
+//      g1.setColor(Color.black);
+//      //String tStr = format.form(state.time);
+//      paintPsi(g1);
+//      g1.drawString(owner.label_time+" " + tStr, 10, iheight - 15);
+//      g1.dispose();
+//      g.drawImage(osi2, 0, 0, this);  // draw the off screen image onto the visible graph from osg
+//      g.setColor(Color.black);
   }
 
   /**
@@ -146,27 +180,11 @@ public final class QTimeGraph extends Graph2D {
    */
   public void stepState(double dt) {
     state.step(dt);
-    if(osi == null) {
-      return;
-    }
-    if(polyline.npoints == 0) {
-      return;
-    }
-    Graphics g = osi2.getGraphics();
-    g.drawImage(osi, 0, 0, this);  // draw the off screen image onto the visible graph from osg
-    g.setColor(Color.black);
-    //String tStr = format.form(state.time);
-    String tStr = format.form(owner.clock.getTime());
-    g.drawString(owner.label_time+" " + tStr, 10, iheight - 15);
-    paintPsi(g);
-    g.dispose();
-    g = getGraphics();
-    g.drawImage(osi2, 0, 0, this);  // draw the off screen image onto the visible graph from osg
-    g.setColor(Color.black);
-    g.dispose();
-    //repaint();
+    // painting code removed -- just use repaint() from QTime
+    // never use getGraphics();
+    // redundant code was here?
   }
-
+  
   protected void paintPsi(Graphics g) {
     if(polyline.npoints == 0) {
       return;
@@ -197,14 +215,15 @@ public final class QTimeGraph extends Graph2D {
     }
   }
 
-  /**
-   * Method update
-   *
-   * @param g
-   */
-  public void update(Graphics g) {
-    paint(g);  //update usually does a rect fill with a background color.  We don't need this.
-  }
+// BH removed this -- never called
+//  /**
+//   * Method update
+//   *
+//   * @param g
+//   */
+//  public void update(Graphics g) {
+//    paint(g);  //update usually does a rect fill with a background color.  We don't need this.
+//  }
 
   /**
    *    Set the gutters.
@@ -466,11 +485,11 @@ public final class QTimeGraph extends Graph2D {
    *
    * @return
    */
-  public boolean mouseDown(Event e, int x, int y) {
+  public boolean mouseDown(MouseEvent e, int x, int y) {
     if(osi == null) {
       return false;
     }
-    if(((e.modifiers & Event.META_MASK) != 0) || ((e.modifiers & Event.ALT_MASK) != 0)) {
+    if(((e.getModifiers() & Event.META_MASK) != 0) || ((e.getModifiers() & Event.ALT_MASK) != 0)) {
       return false;
     }
     if((xaxis == null) || (yaxis == null)) {
@@ -506,11 +525,11 @@ public final class QTimeGraph extends Graph2D {
    *
    * @return
    */
-  public boolean mouseUp(Event e, int x, int y) {
+  public boolean mouseUp(MouseEvent e, int x, int y) {
     if(osi == null) {
       return false;
     }
-    if(((e.modifiers & Event.META_MASK) != 0) || ((e.modifiers & Event.ALT_MASK) != 0)) {
+    if(((e.getModifiers() & Event.META_MASK) != 0) || ((e.getModifiers() & Event.ALT_MASK) != 0)) {
       return false;
     }
     // owner.stopped=tempStopped;
@@ -535,8 +554,8 @@ public final class QTimeGraph extends Graph2D {
    *
    * @return
    */
-  public boolean mouseDrag(Event e, int x, int y) {
-    if(((e.modifiers & Event.META_MASK) != 0) || ((e.modifiers & Event.ALT_MASK) != 0)) {
+  public boolean mouseDrag(MouseEvent e, int x, int y) {
+    if(((e.getModifiers() & Event.META_MASK) != 0) || ((e.getModifiers() & Event.ALT_MASK) != 0)) {
       return false;
     }
     if(osi == null) {

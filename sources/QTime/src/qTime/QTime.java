@@ -1,18 +1,26 @@
 package qTime;
 
-//import java.awt.*;
-import edu.davidson.graphics.*;
-import edu.davidson.tools.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Event;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import a2s.*;
-//import java.awt.*;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
+import edu.davidson.graphics.Box;
+import edu.davidson.tools.SApplet;
+import edu.davidson.tools.SStepable;
+
+// BH changed to Swing components
+// BH added ActionListeners
+// BH added graph.repaint() after stepState
 /**
  * Class QTime
  */
@@ -39,12 +47,12 @@ public class QTime extends SApplet implements SStepable {
   //private double  endTime=1;
   //private double       m_dt               = 0.1;
   //private int     sleepTime=50;
-  Button               runBtn             = new Button("Run");               // Button to plot it.
-  Button               resetBtn           = new Button("Reset");             // Button to plot it.
-  Button               parseBtn           = new Button("Submit Functions");  // Button to parse analytic functions.
-  TextField            potInput           = new TextField(30);               // Input for the potential
-  TextField            reInput            = new TextField(30);               // Input for the real part of psi
-  TextField            imInput            = new TextField(30);               // Input for the imaginary part of psi
+  JButton               runBtn             = new JButton("Run");               // JButton to plot it.
+  JButton               resetBtn           = new JButton("Reset");             // JButton to plot it.
+  JButton               parseBtn           = new JButton("Submit Functions");  // JButton to parse analytic functions.
+  JTextField            potInput           = new JTextField(30);               // Input for the potential
+  JTextField            reInput            = new JTextField(30);               // Input for the real part of psi
+  JTextField            imInput            = new JTextField(30);               // Input for the imaginary part of psi
   QTimeGraph           graph;                                                // Graph class to do the plotting
   // STANDALONE APPLICATION SUPPORT:
   //            m_fStandAlone will be set to true if applet is run standalone
@@ -202,6 +210,7 @@ public class QTime extends SApplet implements SStepable {
     label_phase        = localProperties.getProperty("label.phase", label_phase);
   }
 
+
   /**
    * Method init
    * @y.exclude
@@ -211,16 +220,42 @@ public class QTime extends SApplet implements SStepable {
     runBtn.setLabel(button_start+" ");
     resetBtn.setLabel(button_reset);
     parseBtn.setLabel(button_submit);
+    
+	runBtn.addActionListener(new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			run();
+		}
+
+	});
+
+	resetBtn.addActionListener(new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			reset();
+		}
+
+	});
+
+	parseBtn.addActionListener(new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			parse();
+		}
+
+	});
+
     //runOnStart=false;
     if(!m_fStandAlone) {
       GetParameters(null);
     }
     //sleepTime=(int)Math.round(1000/m_FPS);
-    /** j2sNative */{
-    	  resize(400, 400);
-    }
+    resize(400, 400);
     setLayout(new BorderLayout());
-    Panel p = new Panel();
+    JPanel p = new JPanel();
     p.setLayout(new BorderLayout());
     graph = new QTimeGraph(this, m_numPts);
     if(!graph.setPotential(m_potential)) {
@@ -240,13 +275,13 @@ public class QTime extends SApplet implements SStepable {
     if(m_showControls) {
       TabbedPanel t = new TabbedPanel();
       add("Center", t);
-      Panel p11 = new Panel();
+      JPanel p11 = new JPanel();
       p11.setLayout(new GridLayout(1, 2));
       p11.add(runBtn);
       p11.add(resetBtn);
       p.add("South", p11);
       t.addItem(label_wavefunction, p);
-      Panel p2 = new Panel();
+      JPanel p2 = new JPanel();
       p2.setBackground(Color.lightGray);
       p2.setLayout(new GridLayout(4, 1, 10, 30));
       p2.add(new Box(reInput, label_real));
@@ -327,6 +362,7 @@ public class QTime extends SApplet implements SStepable {
   public void step(double dt, double time) {
     t = t+dt;
     graph.stepState(dt);
+    graph.repaint(); // BH added
     updateDataConnections();
   }
 
@@ -382,46 +418,54 @@ public class QTime extends SApplet implements SStepable {
     }
   }
 
-  /**
-   * Method action
-   *
-   * @param ev
-   * @param a
-   *
-   * @return if successful
-   * @y.exclude
-   */
-  public boolean action(Event ev, Object a) {
-    if(ev.target.equals(runBtn)) {
-      if(clock.isRunning()) {
-        runBtn.setLabel(button_start+" ");
-        clock.stopClock();
-      } else {
-        runBtn.setLabel(button_stop);
-        clock.startClock();
-      }
-      return true;
-    }
-    if(ev.target.equals(resetBtn)) {
-      reset();
-      // System.out.println("in Reset");
-      return true;
-    }
-    if(ev.target.equals(parseBtn)) {
-      String str;
-      str = potInput.getText();
-      setPotential(str);
-      str = reInput.getText();
-      setReal(str);
-      str = imInput.getText();
-      setImaginary(str);
-      reset();
-      return true;
-    }
-    return false;
-  }
+	/**
+	 * Method action
+	 *
+	 * @param ev
+	 * @param a
+	 *
+	 * @return if successful
+	 * @y.exclude
+	 */
+	public boolean action(Event ev, Object a) {
+		if (ev.target.equals(runBtn)) {
+			run();
+			return true;
+		}
+		if (ev.target.equals(resetBtn)) {
+			reset();
+			// System.out.println("in Reset");
+			return true;
+		}
+		if (ev.target.equals(parseBtn)) {
+			parse();
+			return true;
+		}
+		return false;
+	}
 
-  /**
+	void parse() {
+		String str;
+		str = potInput.getText();
+		setPotential(str);
+		str = reInput.getText();
+		setReal(str);
+		str = imInput.getText();
+		setImaginary(str);
+		reset();
+	}
+ 
+	void run() {
+		if (clock.isRunning()) {
+			runBtn.setLabel(button_start + " ");
+			clock.stopClock();
+		} else {
+			runBtn.setLabel(button_stop);
+			clock.startClock();
+		}
+	}
+
+/**
    * Resets the animation.
    * @deprecated
    * @y.exclude
@@ -630,7 +674,7 @@ public class QTime extends SApplet implements SStepable {
 /**
  * Class QTimeHelp
  */
-class QTimeHelp extends Panel {
+class QTimeHelp extends JPanel {
 
   QTime                applet;
   static LayoutManager dcLayout = new FlowLayout(FlowLayout.CENTER, 10, 5);
@@ -644,11 +688,11 @@ class QTimeHelp extends Panel {
     applet = app;
     setLayout(dcLayout);
     setBackground(Color.lightGray);
-    Panel p = new Panel();
+    JPanel p = new JPanel();
     p.setLayout(new GridLayout(3, 1));
-    p.add(new Label("by W. Christian.", Label.LEFT));
-    p.add(new Label("Davidson College", Label.LEFT));
-    p.add(new Label("email: wochristian@davidson.edu", Label.LEFT));
+    p.add(new JLabel("by W. Christian.", JLabel.LEFT));
+    p.add(new JLabel("Davidson College", JLabel.LEFT));
+    p.add(new JLabel("email: wochristian@davidson.edu", JLabel.LEFT));
     Box helpBox = new Box(p, "QTime Ver 1.3");  // put into an eteched box
     add(helpBox);
   }

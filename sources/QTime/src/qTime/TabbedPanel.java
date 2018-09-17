@@ -3,9 +3,6 @@
 // component to display is chosen by a row of tab buttons.
 package qTime;
 
-//import java.awt.*;
-import java.util.Vector;
-
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -15,12 +12,22 @@ import java.awt.Event;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Insets;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.Vector;
 
-import a2s.*;
-//import java.awt.*;
+import javax.swing.JPanel;
 
+// BH switch to JPanel
+// BH add MouseAdapter
+// BH switch paint(getGraphics()) to repaint()
 
-public class TabbedPanel extends Panel
+//BH switch to JPanel
+//BH add MouseAdapter
+//BH switch paint(getGraphics()) to repaint()
+//BH switch paint(g) to paintComponent(g)
+
+public class TabbedPanel extends JPanel
 {
 	TabSelector tab;		// component for choosing panel
 	TabbedDisplayPanel disp;	// where other panels are displayed
@@ -59,7 +66,7 @@ public class TabbedPanel extends Panel
 	}
 }
 
-class TabSelector extends Canvas
+class TabSelector extends JPanel
 {
 	Color hi, lo;
 	Vector name = new Vector();
@@ -69,13 +76,21 @@ class TabSelector extends Canvas
 
 	TabSelector(Color h, Color l)
 	{
-	hi = h; lo = l;
+		hi = h; lo = l;
+		
+		addMouseListener(new MouseAdapter() {
+				@Override
+				public void mousePressed(MouseEvent e) {
+					mouseDown(null, e.getX(), e.getY());
+				}
+		});
+		
 	}
 
 	void addItem(String n)
 	{
 	name.addElement(n);
-	paint(getGraphics());
+	repaint();
 	}
 
 	void choose(String n)
@@ -83,12 +98,14 @@ class TabSelector extends Canvas
 	for(int i=0; i<name.size(); i++)
 		if (((String)name.elementAt(i)).equals(n)) {
 			chosen = i;
-			paint(getGraphics());
+			repaint();
 			}
 	}
 
-	public void paint(Graphics g)
+	public void paintComponent(Graphics g)
 	{
+//BH super.paintComponent is not necessary, as there are no children here, but well advised
+		super.paintComponent(g);
 	if (g == null || name.size() == 0)
 		return;
 	g.setColor(Color.lightGray);
@@ -136,7 +153,7 @@ class TabSelector extends Canvas
 	{
 	if (name.size() == 0) return false;
 	chosen = x / (getSize().width / name.size());
-	paint(getGraphics());
+	repaint();
 	((TabbedPanel)getParent()).chose((String)name.elementAt(chosen));
 	return true;
 	}
@@ -150,9 +167,10 @@ class TabSelector extends Canvas
 	{
 	return minimumSize();
 	}
+
 }
 
-class TabbedDisplayPanel extends Panel
+class TabbedDisplayPanel extends JPanel
 {
 	Color hi, lo;
 	CardLayout card;
@@ -182,8 +200,9 @@ class TabbedDisplayPanel extends Panel
 	return new Insets(5,5,5,5);
 	}
 
-	public void paint(Graphics g)
+	public void paintComponent(Graphics g)
 	{
+		super.paintComponent(g);
 	g.setColor(hi);
 	g.drawLine(0, 0, 0, getSize().height-1);
 	g.drawLine(1, 0, 1, getSize().height-1);

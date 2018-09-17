@@ -1,13 +1,10 @@
 package qTime;
+//import graph.*;
+import java.awt.*;
 import edu.davidson.numerics.Parser;
 import edu.davidson.tools.*;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Polygon;
-
-
-
+// BH no changes
 
 public final class QTimeState implements  edu.davidson.tools.SDataSource{
     String[] varStrings= new String[]{"x","v","re","im","dre","dim"};

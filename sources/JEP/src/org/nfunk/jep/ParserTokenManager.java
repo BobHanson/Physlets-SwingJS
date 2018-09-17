@@ -468,6 +468,7 @@ public final Token getNextToken()
          continue EOFLoop;
       }
    }
+   System.out.println("Exiting infinite loop");  // debug statement added by WC
    int error_line = input_stream.getEndLine();
    int error_column = input_stream.getEndColumn();
    String error_after = null;

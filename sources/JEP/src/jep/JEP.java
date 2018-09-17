@@ -86,6 +86,8 @@ public class JEP extends SApplet implements SDataSource, SStepable {
         try {jbInit();
             }catch(Exception e) { e.printStackTrace(); }
         this.buttonPanel.setVisible(showControls);
+        
+        functionStr="1"; // debug with a simple function F(x) = 1 added by WC
 
         funcField.setText(functionStr);
         setFunction(functionStr,variableStr);

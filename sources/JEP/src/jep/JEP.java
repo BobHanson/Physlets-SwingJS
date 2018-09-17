@@ -231,7 +231,7 @@ public class JEP extends SApplet implements SDataSource, SStepable {
         }
         numPts=Math.max(1,n);
         dx=(max-min)/(numPts-1);
-        ds=new double[numPts][4];  // the datasource state variables
+        ds=new double[numPts][4];  // the data source state variables
         this.setMinMax(min,max);   // this will update the data connections
         if(showControls && this.getBounds().width>50 ){
             numField.setValue(numPts);
@@ -282,7 +282,7 @@ public class JEP extends SApplet implements SDataSource, SStepable {
 /**
  *  Evaluate the parser at x and return the real part.
  *
- * @param x the indpendent variable
+ * @param x the independent variable
  */
     public double getReValue(double x) {
       if (parser==null) return 0;
@@ -498,7 +498,7 @@ public class JEP extends SApplet implements SDataSource, SStepable {
         max=maxField.getValue();
         setFunctionStr(funcField.getText());
         setNumPts(numField.getValue() );  // this will set min, max, and update data connections
-        //System.out.println("re="+getReValue(0));
+        System.out.println("re="+getReValue(0));
         //System.out.println("im="+getImValue(0));
     }
 }

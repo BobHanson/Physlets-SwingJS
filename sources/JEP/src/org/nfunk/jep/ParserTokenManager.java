@@ -431,7 +431,7 @@ public final Token getNextToken()
   Token specialToken = null;
   Token matchedToken;
   int curPos = 0;
-
+  System.out.println("Begin infinite loop");
   EOFLoop :
   for (;;)
   {   
@@ -443,6 +443,8 @@ public final Token getNextToken()
    {        
       jjmatchedKind = 0;
       matchedToken = jjFillToken();
+      System.out.println("IOException ="+e.toString());
+      System.out.println("Return with IOException matched token ="+matchedToken);  // debug statement added by WC
       return matchedToken;
    }
 
@@ -461,6 +463,7 @@ public final Token getNextToken()
       if ((jjtoToken[jjmatchedKind >> 6] & (1L << (jjmatchedKind & 077))) != 0L)
       {
          matchedToken = jjFillToken();
+         System.out.println("Return from loop matched token ="+matchedToken);  // debug statement added by WC
          return matchedToken;
       }
       else

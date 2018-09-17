@@ -392,10 +392,10 @@ public class JEP extends SApplet implements SDataSource, SStepable {
    * @param func
    * @param vars
    *
-   * @return true if fuction is valid; false otherwise
+   * @return true if function is valid; false otherwise
    */
   public boolean isValidCFunction(String string, String variableStr) {
-        // return true if fuction is valid
+        // return true if function is valid
         JEParser func = new JEParser (string, variableStr,"t", JEParser.MAKE_COMPLEX);
         if(func.hasError ()){
             return false; // function is not valid

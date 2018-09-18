@@ -500,7 +500,12 @@ public class JEP extends SApplet implements SDataSource, SStepable {
         max=maxField.getValue();
         setFunctionStr(funcField.getText());
         setNumPts(numField.getValue() );  // this will set min, max, and update data connections
+<<<<<<< HEAD
         //System.out.println("re="+getReValue(0));
         //System.out.println("im="+getImValue(0));
+=======
+        System.out.println("re="+getReValue(0));
+        System.out.println("im="+getImValue(0));
+>>>>>>> fc68415e841fbdb4cc4e8606e55d10913b1beafb
     }
 }

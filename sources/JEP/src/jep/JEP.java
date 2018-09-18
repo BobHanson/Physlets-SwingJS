@@ -353,7 +353,7 @@ public class JEP extends SApplet implements SDataSource, SStepable {
  * @return true if the string is a function of two variables.
  */
     private boolean parseTwoVariables(String string){
-        // return true if fuction is valid
+        // return true if function is valid
         JEParser twoFunc = new JEParser (string, variableStr,"t", JEParser.MAKE_COMPLEX);
 
         //Parser twoFunc = new Parser(2);
@@ -500,7 +500,7 @@ public class JEP extends SApplet implements SDataSource, SStepable {
         max=maxField.getValue();
         setFunctionStr(funcField.getText());
         setNumPts(numField.getValue() );  // this will set min, max, and update data connections
-        System.out.println("re="+getReValue(0));
+        //System.out.println("re="+getReValue(0));
         //System.out.println("im="+getImValue(0));
     }
 }

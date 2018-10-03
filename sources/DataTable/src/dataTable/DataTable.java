@@ -105,7 +105,7 @@ public class DataTable extends SApplet{
     boolean showColHeader;
     boolean showScrollBars=true;
     boolean lastOnTop;
-    boolean sizeToFit;
+    boolean sizeToFitFlag;
     SGridPanel grid;
     BorderLayout borderLayout1 = new BorderLayout();
 
@@ -128,7 +128,7 @@ public class DataTable extends SApplet{
         try { showColHeader = Boolean.valueOf(this.getParameter("ShowColHeader", "true")).booleanValue(); } catch (Exception e) { e.printStackTrace(); }
         try { lastOnTop = Boolean.valueOf(this.getParameter("LastOnTop", "false")).booleanValue(); } catch (Exception e) { e.printStackTrace(); }
         try { showScrollBars = Boolean.valueOf(this.getParameter("ShowScrollBars", "true")).booleanValue(); } catch (Exception e) { e.printStackTrace(); }
-        try { sizeToFit = Boolean.valueOf(this.getParameter("SizeToFit", "false")).booleanValue(); } catch (Exception e) { e.printStackTrace(); }
+        try { sizeToFitFlag = Boolean.valueOf(this.getParameter("SizeToFit", "false")).booleanValue(); } catch (Exception e) { e.printStackTrace(); }
         try { dataFile = this.getParameter("DataFile", ""); } catch (Exception e) { e.printStackTrace(); }
         grid = new SGridPanel(this, showScrollBars);
         try {
@@ -173,7 +173,7 @@ public class DataTable extends SApplet{
   public void start(){
         //super.start();
         validate();
-        if(sizeToFit)sizeToFit(true);
+        if(sizeToFitFlag)sizeToFit(true);
         if(firstTime){
             firstTime=false;
             if(dataFile!=null && !dataFile.equals(""))grid.loadFile(1,dataFile);

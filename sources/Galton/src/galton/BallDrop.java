@@ -14,7 +14,12 @@ package galton;
 
 
 import java.util.*;
-import java.awt.*;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Event;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.image.*;
 
 import edu.davidson.graphics.Util;
@@ -207,13 +212,14 @@ class Ball implements ImageObserver {
  * to do the same thing, and that this isn't one of them.
  */
 
-public class BallDrop extends SApplet implements Runnable, SDataSource {
+public class BallDrop extends SApplet implements SStepable, SDataSource {
   String[] varStrings= new String[]{"t","mean","std","n"};
   double[][] ds=new double[1][4];
   double time=0;
   int totalBalls=0;
 
-  Thread itsThread = null;
+  //Thread itsThread = null;  // replace Thread with Clock for JS implementation
+  boolean isRunning=false;
   //MediaTracker itsTracker = null;
   Vector itsBalls = null;
   double mean=0,stdev=0;
@@ -291,19 +297,6 @@ public class BallDrop extends SApplet implements Runnable, SDataSource {
     if(param != null) preLab=Boolean.valueOf(param).booleanValue();
     param=getParameter("ShowFunc");
     if(param != null) showFunc=Boolean.valueOf(param).booleanValue();
-
-/*
-    itsTracker.addImage(ball,0);
-    itsTracker.addImage(pin,0);
-
-    try {
-      itsTracker.waitForAll();
-    }
-    catch (InterruptedException e) {
-      System.out.println("Ball or pin images not found.");
-      return;
-    }
-*/
     if(pin==null) System.out.println("Pin image not found.");
     if(ball==null) System.out.println("Ball image not found.");
 
@@ -313,6 +306,9 @@ public class BallDrop extends SApplet implements Runnable, SDataSource {
     ballw = ball.getWidth(this);
     ballh = ball.getHeight(this);
     addDataSource(this);
+    clock.setDt(50);
+    clock.setFPS(20);
+    clock.addClockListener(this);  // have the clock call the step function in this applet at every tick.
   }
 
   public void reset(){resetBoard();}
@@ -365,8 +361,9 @@ public class BallDrop extends SApplet implements Runnable, SDataSource {
         Dimension d = getSize();
         Ball aBall;
         numracks=getSize().width/ballw;
-        System.out.println("ball=" + ballw);
-        System.out.println("numracks=" + numracks);
+        numracks=Math.max(numracks, 0);
+        //System.out.println("ball=" + ballw);
+        //System.out.println("numracks=" + numracks);
         rackheight=new int[numracks];
         rackdel=new int[numracks];
         for(int i=0;i<numracks;++i) {
@@ -388,76 +385,54 @@ public class BallDrop extends SApplet implements Runnable, SDataSource {
           itsBalls.addElement(aBall);
         }
     }
-    if (itsThread == null) {
-      this.setRunningID(this);
-      itsThread = new Thread(this);
-      itsThread.start();
-    }
-
+    isRunning=true;
+    clock.startClock();
   }
+	
+	  /**
+	   * Advance the time by dt and then update data connections. Do not script.
+	   *
+	   * @param dt the time increment.
+	   * @param t
+	   * @y.exclude
+	   */
+	  public void step(double dt, double t) {
+	      UpdateBalls();
+	      // Delay depending on how far we are behind.
+	      time+= dt;
+	    updateDataConnections();
+	    repaint();
+	    //System.out.println("stepping t="+time/1000);
+	  }
 
   /**
    * Stop the tread
    */
 
   public void stop() {
-    Thread myThread=itsThread;
-    itsThread = null;
-    if(myThread==null) return;
-    try{myThread.join();}catch (InterruptedException e){}  // wait for the thread to die
+	isRunning=false;
+	clock.stopClock();
     offImage = null;
     backImage = null;
   }
 
   /**
-   * Stop the animation when the user clicks on the applet.
+   * Stop and start the animation when the user clicks on the applet.
    */
 
   public boolean mouseDown(Event e, int x, int y) {
-    if (itsThread == null) {
+    if (!isRunning ) {
       start();
     }else {
-      Thread myThread=itsThread;
-      itsThread = null;
-      if(myThread!=null)
-        try{myThread.join();}catch (InterruptedException ex){}  // wait for the thread to die
+  	  stop();
     }
     return false;
   }
 
   public void destroy() {
-      Thread myThread=itsThread;
-      itsThread = null;
-      if(myThread!=null)
-        try{myThread.join();}catch (InterruptedException e){}  // wait for the thread to die
+	  isRunning=false;
+	  clock.stopClock();
       super.destroy();
-  }
-
-  /**
-   * The thread has begun to run
-   */
-  public void run() {
-    // Remember the starting time
-    long startTime = System.currentTimeMillis();
-
-    while (Thread.currentThread() == itsThread && this.getRunningID()==this ) {
-      UpdateBalls();
-
-      repaint();
-
-      // Delay depending on how far we are behind.
-      time+= delay/1000.0;
-      try {
-        startTime += delay;
-        Thread.sleep(Math.max(10,
-                              startTime-System.currentTimeMillis()));
-      }
-      catch (InterruptedException e) {
-        break;
-      }
-      startTime=System.currentTimeMillis();
-    }
-    itsThread=null;
   }
 
   /**
@@ -531,10 +506,11 @@ public class BallDrop extends SApplet implements Runnable, SDataSource {
   /**
    * Just call paint() so that the background color isn't painted also
    */
-
+/*
   public void update(Graphics g) {
     paint(g);
   }
+  */
 
   /**
    * Paint the image that will serve as the background.  This includes the

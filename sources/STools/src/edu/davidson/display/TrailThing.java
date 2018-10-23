@@ -1,6 +1,6 @@
 package edu.davidson.display;
 
-//import java.awt.*;
+
 import edu.davidson.tools.SApplet;
 
 import java.awt.Graphics;

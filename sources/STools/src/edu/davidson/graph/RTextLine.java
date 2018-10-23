@@ -11,7 +11,7 @@ import java.awt.image.FilteredImageSource;
 import java.awt.image.ImageConsumer;
 import java.awt.image.ImageFilter;
 import java.awt.image.ImageProducer;
-//import java.awt.*;
+
 import java.util.Hashtable;
 
 /*

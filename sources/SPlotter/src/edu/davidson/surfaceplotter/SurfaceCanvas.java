@@ -15,7 +15,7 @@
  * Yanto Suryono <d0771@cranesv.egg.kushiro-ct.ac.jp>                                     *
  *----------------------------------------------------------------------------------------*/
 package edu.davidson.surfaceplotter;
-//import java.awt.*;
+
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -32,7 +32,7 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.Timer;
 
-import a2s.*;
+import java.awt.*;
 
 /**
  * The class <code>SurfaceCanvas</code> is responsible

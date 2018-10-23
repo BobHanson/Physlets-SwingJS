@@ -2,7 +2,7 @@ package eField4;
 
 import java.awt.Color;
 
-//import java.awt.*;
+
 
 
 public class Pole extends Charge{  // fixed charge that is used to calculate the potential

@@ -6,7 +6,7 @@ import java.awt.Event;
 import java.awt.Graphics;
 import java.awt.Image;
 
-import a2s.*;
+import java.awt.*;
 
 
 // 

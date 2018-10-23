@@ -5,12 +5,12 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-//import java.awt.*;
+
 import java.awt.event.*;
 import edu.davidson.tools.*;
 import edu.davidson.graphics.*;
 import edu.davidson.display.*;
-import a2s.*;
+import java.awt.*;
 
 /**
  * This applet solves Poisson's equation.  Both conductors and charge distributions

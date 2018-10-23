@@ -2,7 +2,7 @@ package eField4;
 
 import java.awt.Graphics;
 
-//import java.awt.*;
+
 
 public class SpringAnchor extends LineAnchor {
 

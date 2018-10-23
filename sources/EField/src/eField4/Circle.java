@@ -2,7 +2,7 @@ package eField4;
 
 import java.awt.Color;
 import java.awt.Graphics;
-//import java.awt.*;
+
 
 public class Circle extends Thing {
 

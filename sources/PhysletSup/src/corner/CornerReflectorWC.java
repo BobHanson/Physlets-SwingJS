@@ -7,8 +7,9 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Dimension;
-import a2s.*;
+import java.awt.*;
 import edu.davidson.tools.SApplet;
+import java.applet.Applet;
 
 //
 // Decompiled by Procyon v0.5.30
@@ -348,8 +349,8 @@ public class CornerReflectorWC extends Applet
         this.repaint();
     }
     
-    protected void paintComponent_(Graphics g) {
-    	super.paintComponent_(g);
+    public void paint(Graphics g) {
+    	super.paint(g);
     	updateScreen(g);
     }
 

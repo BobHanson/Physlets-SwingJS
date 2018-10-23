@@ -1,6 +1,6 @@
 package jacob;
 
-import a2s.*;
+import java.awt.*;
 import java.awt.Container;
 import edu.davidson.graphics.EtchedBorder;
 import edu.davidson.tools.SUtil;
@@ -17,6 +17,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.Vector;
 //import netscape.security.PrivilegeManager;
+import java.applet.Applet;
 
 public class Jacob extends Applet {
 	boolean isStandalone = false;

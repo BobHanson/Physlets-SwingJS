@@ -1,5 +1,5 @@
 package energyEigenvalue;
-import a2s.*;
+import java.awt.*;
 
 import java.util.Vector;
 import java.util.Hashtable;

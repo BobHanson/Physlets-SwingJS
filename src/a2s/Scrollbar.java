@@ -1,23 +1,22 @@
 package a2s;
 
+import java.awt.A2SEvent;
 import java.awt.event.AdjustmentEvent;
 
 import javax.swing.JScrollBar;
 
 public class Scrollbar extends JScrollBar implements A2SContainer {
 
-	public Scrollbar(int direction) {
-		super(direction);
-		A2SEvent.addListener(null, this);
-	}
-
 	public Scrollbar() {
-		super();
-		A2SEvent.addListener(null, this);
+		this(java.awt.Scrollbar.VERTICAL);
 	}
 
+	public Scrollbar(int direction) {
+		this(direction, 0, 10, 0, 100);
+	}
 	public Scrollbar(int orientation, int value, int extent, int min, int max) {
 		super(orientation, value, extent, min, max);
+		setOpaque(true);
 		A2SEvent.addListener(null, this);
 	}
 

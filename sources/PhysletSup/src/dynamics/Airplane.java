@@ -1,6 +1,7 @@
 package dynamics;
 
 import java.awt.Color;
+
 import java.awt.Dimension;
 import java.awt.Event;
 import java.awt.FontMetrics;
@@ -8,12 +9,12 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.applet.Applet;
 import javax.swing.Timer;
 
 import dynamics.SFront;
 
-import a2s.*;
+import java.awt.*;
 // 
 // Decompiled by Procyon v0.5.30
 // 
@@ -278,8 +279,8 @@ public class Airplane extends Applet implements Runnable
         this.repaint();
     }
     
-    protected void paintComponent_(Graphics g) {
-    	super.paintComponent_(g);
+    public void paint(Graphics g) {
+    	super.paint(g);
     	updateScreen(g);
     }
     

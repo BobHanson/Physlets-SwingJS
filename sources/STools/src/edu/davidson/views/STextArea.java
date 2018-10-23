@@ -1,6 +1,6 @@
 package edu.davidson.views;
 
-//import java.awt.*;
+
 import java.util.StringTokenizer;
 import java.util.Vector;
 import java.awt.Font;
@@ -8,7 +8,7 @@ import java.util.Enumeration;
 
 import edu.davidson.display.Format;
 
-import a2s.*;
+import java.awt.*;
 
 /**
  * Title:        STextArea

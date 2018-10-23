@@ -3,11 +3,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 
-//import java.awt.*;
+
 import edu.davidson.display.*;
 import edu.davidson.tools.*;
 import edu.davidson.graph.SpecialFunction;
-import a2s.*;
+import java.awt.*;
 
 public class Dlamodel extends Panel implements Runnable {
 

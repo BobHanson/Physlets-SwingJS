@@ -2,7 +2,7 @@ package dataTable;
 
 import java.awt.BorderLayout;
 
-import a2s.*;
+import java.awt.*;
 import edu.davidson.tools.*;
 import edu.davidson.views.SGridPanel;
 

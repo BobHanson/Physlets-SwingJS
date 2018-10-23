@@ -13,8 +13,8 @@ import java.awt.BorderLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-//import java.awt.*;
-import a2s.Frame;
+
+import java.awt.Frame;
 
 public class MandelFrame extends Frame {
 

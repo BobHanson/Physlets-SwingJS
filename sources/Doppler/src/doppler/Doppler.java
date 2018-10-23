@@ -7,9 +7,9 @@
 package doppler;
 
 import java.awt.BorderLayout;
-import a2s.Canvas;
-import a2s.Checkbox;
-import a2s.CheckboxGroup;
+import java.awt.Canvas;
+import java.awt.Checkbox;
+import java.awt.CheckboxGroup;
 import java.awt.Color;
 import java.awt.Event;
 import java.awt.Font;
@@ -20,7 +20,7 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import a2s.Panel;
+import java.awt.Panel;
 import java.net.URL;
 import java.util.Vector;
 

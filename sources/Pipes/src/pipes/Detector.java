@@ -6,7 +6,7 @@ package pipes;
 import java.awt.Color;
 import java.awt.Graphics;
 
-//import java.awt.*;
+
 import edu.davidson.tools.*;
 
 public class Detector extends Thing implements SDataSource{

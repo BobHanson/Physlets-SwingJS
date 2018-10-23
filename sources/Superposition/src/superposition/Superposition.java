@@ -9,7 +9,7 @@ import java.awt.BorderLayout;
 import java.awt.Event;
 import java.awt.GridLayout;
 
-import a2s.*;
+import java.awt.*;
 
 /**
  * Class Superposition

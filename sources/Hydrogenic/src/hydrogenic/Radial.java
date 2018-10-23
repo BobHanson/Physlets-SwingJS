@@ -17,12 +17,12 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.SystemColor;
-//import java.awt.*;
+
 import java.awt.event.*;
 import edu.davidson.graphics.*;
 import edu.davidson.tools.*;
 import edu.davidson.display.*;
-import a2s.*;
+import java.awt.*;
 
 /**
  *  Radial Class plots the radial wavefunction

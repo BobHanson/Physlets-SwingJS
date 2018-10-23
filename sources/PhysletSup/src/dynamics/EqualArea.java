@@ -10,7 +10,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.Timer;
 
-import a2s.*;
+import java.awt.*;
+import java.applet.Applet;
+import java.applet.Applet;
 
 public class EqualArea extends Applet
 {
@@ -242,8 +244,8 @@ public class EqualArea extends Applet
         this.gb.drawLine(this.X2[n] + this.xfill, this.yfill, this.X2[n] + this.xfill - xfill, this.yfill);
     }
     
-    protected void paintComponent_(Graphics g) {
-    	super.paintComponent_(g);
+    public void paint(Graphics g) {
+    	super.paint(g);
     	 g.drawImage(this.bgImage, 0, this.yOffset, this);
     }
     

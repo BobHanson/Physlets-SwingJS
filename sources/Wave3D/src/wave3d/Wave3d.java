@@ -5,7 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 
-import a2s.*;
+import java.awt.*;
 
 
 import java.awt.event.*;

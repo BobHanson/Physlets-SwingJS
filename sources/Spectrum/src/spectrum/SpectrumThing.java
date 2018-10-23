@@ -7,7 +7,7 @@ package spectrum;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import a2s.*;
+import java.awt.*;
 
 import edu.davidson.tools.*;
 

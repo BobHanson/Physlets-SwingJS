@@ -2,7 +2,7 @@ package eField4;
 
 import java.awt.Graphics;
 
-//import java.awt.*;
+
 
 /**
  * Title:        CollisionThing<p>

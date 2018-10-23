@@ -8,7 +8,7 @@ package spectrum;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import a2s.*;
+import java.awt.*;
 
 /**
  * Absorption.class inherits from Thing.class but is specialized to ABSORB at a desired

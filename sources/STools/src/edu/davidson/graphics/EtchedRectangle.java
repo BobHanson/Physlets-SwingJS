@@ -4,9 +4,9 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
 
-//import java.awt.*;
 
-import a2s.*;
+
+import java.awt.*;
 
 /**
  * A DrawnRectangle that draws an etched border.<p>

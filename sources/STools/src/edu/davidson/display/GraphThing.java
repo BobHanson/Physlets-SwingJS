@@ -3,7 +3,7 @@ package edu.davidson.display;
 
 import java.awt.Graphics;
 
-//import java.awt.*;
+
 import edu.davidson.tools.SApplet;
 
 public class GraphThing extends Thing {

@@ -1,6 +1,6 @@
 package symantec.itools.awt;
 
-import a2s.*;
+import java.awt.*;
 
 import java.applet.AppletContext;
 import java.awt.AWTEventMulticaster;
@@ -31,6 +31,7 @@ import symantec.itools.awt.util.ColorUtils;
 import symantec.itools.util.Timer;
 import symantec.itools.util.GeneralUtils;
 import java.util.ResourceBundle;
+import java.applet.Applet;
 
 //	05/30/97	LAB	Updated to support Java 1.1
 //	06/24/97	LAB	Made the button behave like a button. i.e. When you press the

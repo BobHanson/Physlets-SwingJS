@@ -11,9 +11,9 @@ import java.awt.BorderLayout;
  * @version 1.0
  */
 
-//import java.awt.*;
+
 import java.awt.event.*;
-import a2s.*;
+import java.awt.*;
 
 
 public class SGridFrame extends Frame {

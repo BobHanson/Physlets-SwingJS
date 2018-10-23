@@ -5,7 +5,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
-import a2s.*;
+import java.awt.*;
 import edu.davidson.tools.SClock;
 
 import java.awt.Window;

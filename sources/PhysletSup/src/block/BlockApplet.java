@@ -6,7 +6,9 @@ import java.awt.Event;
 import java.awt.Graphics;
 import java.awt.Image;
 
-import a2s.*;
+import java.awt.*;
+import java.applet.Applet;
+import java.applet.Applet;
 
 // 
 // Decompiled by Procyon v0.5.30
@@ -167,8 +169,8 @@ public class BlockApplet extends Applet
         this.repaint();
     }
     
-    protected void paintComponent_(Graphics g) {
-    	super.paintComponent_(g);
+    public void paint(Graphics g) {
+    	super.paint(g);
     	updateScreen(g);
     }
     

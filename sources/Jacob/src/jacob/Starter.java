@@ -1,11 +1,12 @@
 package jacob;
 
-import a2s.*;
+import java.awt.*;
 //import exp.Data;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.applet.Applet;
 
 public class Starter
   extends Applet

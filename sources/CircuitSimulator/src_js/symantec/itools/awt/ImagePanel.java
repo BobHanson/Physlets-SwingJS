@@ -1,6 +1,6 @@
 package symantec.itools.awt;
 
-import a2s.*;
+import java.awt.*;
 
 import java.awt.Dimension;
 import java.awt.Graphics;

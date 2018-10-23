@@ -11,8 +11,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.TextEvent;
 import java.awt.event.TextListener;
 
-//import java.awt.*;
-import a2s.*;
+
+import java.awt.*;
 
 public class SInteger extends TextField implements TextListener
 { /**

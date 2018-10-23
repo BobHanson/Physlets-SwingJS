@@ -9,12 +9,12 @@ import java.awt.Color;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
-//import java.awt.*;
+
 import java.awt.event.*;
 
 import javax.swing.JFrame;
 
-import a2s.*;
+import java.awt.*;
 
 
 public class DensityFrame extends JFrame {

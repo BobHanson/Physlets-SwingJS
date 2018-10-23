@@ -1,9 +1,9 @@
 package impedance;
-//import java.awt.*;
+
 import java.awt.Color;
 import java.awt.Event;
 
-import a2s.*;
+import java.awt.*;
 
 
 /*	Nog doen ...

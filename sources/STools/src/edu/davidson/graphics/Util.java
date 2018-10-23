@@ -1,17 +1,18 @@
 package edu.davidson.graphics;
 
-import a2s.*;
+import java.awt.*;
 import edu.davidson.tools.SClock;
 
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Dimension;
 //import java.applet.Applet;
-//import java.awt.*;
+
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.MediaTracker;
 import java.net.URL;
+import java.applet.Applet;
 
 /**
  * A handy collection of methods for getting a component's
@@ -107,7 +108,7 @@ public class Util {
    * @return             the image
    *
    */
-  static public Image getImage(String file, a2s.Applet applet){
+  static public Image getImage(String file, Applet applet){
     Image im=null;
     URL url;
     if(applet==null)System.out.println("Applet not found in getImage method.");

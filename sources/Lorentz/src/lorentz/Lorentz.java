@@ -10,8 +10,8 @@ import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Image;
 
-//import java.awt.*;
-import a2s.*;
+
+import java.awt.*;
 import edu.davidson.graphics.*;
 import edu.davidson.tools.*;
 

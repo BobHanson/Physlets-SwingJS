@@ -2,8 +2,8 @@ package edu.davidson.graphics;
 
 import java.awt.Component;
 
-//import java.awt.*;
-import a2s.*;
+
+import java.awt.*;
 
 /**
  * Extension of Border that draws a 3D border.

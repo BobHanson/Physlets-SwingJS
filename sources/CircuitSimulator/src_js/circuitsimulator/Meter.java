@@ -1,6 +1,6 @@
 package circuitsimulator;
 
-import a2s.*;
+import java.awt.*;
 
 import java.awt.Component;
 import java.awt.Dimension;
@@ -33,14 +33,14 @@ public class Meter extends java.awt.Dialog
 		setSize(192,77);
 		setVisible(false);
 		numeric.setText("0.0");
-		numeric.setAlignment(a2s.Label.RIGHT);
+		numeric.setAlignment(java.awt.Label.RIGHT);
 		add(numeric);
 		numeric.setBackground(java.awt.Color.black);
 		numeric.setForeground(java.awt.Color.yellow);
 		numeric.setFont(new Font("MonoSpaced", Font.BOLD, 12));
 		numeric.setBounds(12,12,144,24);
 		scale.setText("V");
-		scale.setAlignment(a2s.Label.RIGHT);
+		scale.setAlignment(java.awt.Label.RIGHT);
 		add(scale);
 		scale.setBackground(java.awt.Color.black);
 		scale.setForeground(java.awt.Color.yellow);
@@ -148,8 +148,8 @@ public class Meter extends java.awt.Dialog
 		
 	}
 	//{{DECLARE_CONTROLS
-	Label numeric = new a2s.Label();
-	Label scale = new a2s.Label();
+	Label numeric = new java.awt.Label();
+	Label scale = new java.awt.Label();
 	symantec.itools.awt.util.spinner.ListSpinner mode = new symantec.itools.awt.util.spinner.ListSpinner();
 	//}}
 

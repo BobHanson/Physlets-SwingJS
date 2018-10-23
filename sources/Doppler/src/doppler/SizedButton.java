@@ -1,10 +1,10 @@
 package doppler;
 
 import java.awt.BorderLayout;
-import a2s.Button;
+import java.awt.Button;
 import java.awt.Event;
 import java.awt.Insets;
-import a2s.Panel;
+import java.awt.Panel;
 
 public class SizedButton extends Panel
 {

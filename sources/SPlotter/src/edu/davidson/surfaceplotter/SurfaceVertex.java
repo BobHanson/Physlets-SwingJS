@@ -18,7 +18,7 @@ package edu.davidson.surfaceplotter;
 
 import java.awt.Point;
 
-//import java.awt.*;
+
 
 /**
  * The class <code>SurfaceVertex</code> represents a vertex in 3D space.

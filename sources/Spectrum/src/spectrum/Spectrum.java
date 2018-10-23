@@ -5,7 +5,8 @@
 
 package spectrum;
 
-import a2s.*;
+import java.awt.*;
+import java.applet.Applet;
 
 import java.awt.AWTEvent;
 import java.awt.BorderLayout;
@@ -15,6 +16,7 @@ import java.awt.Toolkit;
 import java.awt.event.*;
 import edu.davidson.tools.*;
 import edu.davidson.graphics.*;
+import java.applet.Applet;
 
 /**
  * SpectrumApplet.class inherits from SApplet which inherits from Applet.

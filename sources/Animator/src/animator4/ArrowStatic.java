@@ -5,7 +5,7 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 
-import a2s.*;
+import java.awt.*;
 
 public class ArrowStatic extends Thing {
   //private double[] arrowVars= new double[12];

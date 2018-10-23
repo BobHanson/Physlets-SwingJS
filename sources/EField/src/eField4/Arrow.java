@@ -2,7 +2,7 @@ package eField4;
 
 import java.awt.Graphics;
 
-//import java.awt.*;
+
 import edu.davidson.numerics.Parser;
 
 public class Arrow extends Thing {

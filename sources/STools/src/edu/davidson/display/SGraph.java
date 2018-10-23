@@ -9,7 +9,7 @@ import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.Toolkit;
-//import java.awt.*;
+
 import java.awt.event.InputEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -23,7 +23,7 @@ import java.util.Enumeration;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
-import a2s.Applet;
+import java.applet.Applet;
 import edu.davidson.graph.Axis;
 import edu.davidson.graph.DataSet;
 import edu.davidson.graph.Graph2D;

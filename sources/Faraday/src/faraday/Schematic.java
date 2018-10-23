@@ -1,6 +1,6 @@
 package faraday;
 
-//import java.awt.*;
+
 //import java.applet.*;
 import java.awt.event.*;
 import java.util.Vector;
@@ -8,7 +8,7 @@ import java.util.Enumeration;
 import edu.davidson.numerics.*;
 import edu.davidson.display.*;
 
-import a2s.*;
+import java.awt.*;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -17,6 +17,7 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Rectangle;
+import java.applet.Applet;
 
 
 public class Schematic extends Panel implements SScalable{

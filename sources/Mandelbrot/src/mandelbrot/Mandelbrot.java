@@ -13,13 +13,13 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 
-//import java.awt.*;
-import a2s.Applet;
-import a2s.Button;
-import a2s.Label;
-import a2s.Panel;
+
+import java.awt.Button;
+import java.awt.Label;
+import java.awt.Panel;
 import edu.davidson.display.SNumber;
 import edu.davidson.graphics.ColumnLayout;
+import java.applet.Applet;
 
 public class Mandelbrot extends Applet {
 	MandelbrotObject mbObject;

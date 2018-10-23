@@ -1,6 +1,6 @@
 package reflection;
 
-import a2s.*;
+import java.awt.*;
 import edu.davidson.display.ArrowThing;
 import edu.davidson.display.BoxThing;
 import edu.davidson.display.CaptionThing;

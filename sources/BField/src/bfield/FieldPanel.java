@@ -1,5 +1,5 @@
 package bfield;
-import a2s.*;
+import java.awt.*;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
@@ -15,6 +15,7 @@ import edu.davidson.display.*;
 import edu.davidson.numerics.*;
 import edu.davidson.graph.DataSet;
 import java.util.Enumeration;
+import java.applet.Applet;
 
 public class FieldPanel extends Panel  implements SScalable {
   /**

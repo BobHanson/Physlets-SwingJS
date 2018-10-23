@@ -1,6 +1,6 @@
 package circuitsimulator;
 
-import a2s.*;
+import java.awt.*;
 
 import java.awt.Component;
 import java.awt.Dimension;
@@ -89,7 +89,7 @@ public class ListOutput extends java.awt.Dialog
 	}
 
 	//{{DECLARE_CONTROLS
-	TextArea addobjectList = new a2s.TextArea();
+	TextArea addobjectList = new java.awt.TextArea();
 	//}}
 
 	class SymWindow extends java.awt.event.WindowAdapter

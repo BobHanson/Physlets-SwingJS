@@ -6,8 +6,8 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.SystemColor;
 
-//import java.awt.*;
-import a2s.*;
+
+import java.awt.*;
 
 /**
  * A Rectangle which draws itself inside of a Component.<p>

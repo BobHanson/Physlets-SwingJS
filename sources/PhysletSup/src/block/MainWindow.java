@@ -4,7 +4,7 @@ package block;
 import java.awt.Event;
 import java.awt.Graphics;
 
-import a2s.*;
+import java.awt.*;
 
 // 
 // Decompiled by Procyon v0.5.30

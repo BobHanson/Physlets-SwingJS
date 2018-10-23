@@ -1,7 +1,7 @@
 
 
 package animator4;
-import a2s.*;
+import java.awt.*;
 import java.awt.Graphics;
 
 import edu.davidson.tools.*;

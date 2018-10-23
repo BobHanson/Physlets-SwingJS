@@ -2,7 +2,7 @@
 package edu.davidson.tools;
 
 //import java.applet.Applet; // BH
-import a2s.*;
+import java.awt.*;
 import java.awt.Font;
 import java.net.URL;
 import java.util.Enumeration;
@@ -12,6 +12,7 @@ import java.util.StringTokenizer;
 import java.util.Vector;
 
 import edu.davidson.display.Format;
+import java.applet.Applet;
 
 
 

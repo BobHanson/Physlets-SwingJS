@@ -4,7 +4,7 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 
-//import java.awt.*;
+
 import edu.davidson.tools.SApplet;
 
 public class CaptionThing extends Thing {

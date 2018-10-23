@@ -1,5 +1,5 @@
 package bfield;
-//import java.awt.*;
+
 import edu.davidson.tools.SApplet;
 import java.awt.Color;
 import java.awt.Graphics;

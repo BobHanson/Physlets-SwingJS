@@ -8,7 +8,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 
-//import java.awt.*;
+
 import edu.davidson.graphics.*;
 
 public class Pipescale extends EtchedBorder{

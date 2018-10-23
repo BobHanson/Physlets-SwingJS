@@ -8,7 +8,7 @@ package spectrum;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import a2s.*;
+import java.awt.*;
 
 /**
  * Named for "Emission Line," ELine.class inherits from Thing.class but is specialized to Emit at a desired

@@ -1,6 +1,6 @@
 package circuitsimulator;
 
-import a2s.*;
+import java.awt.*;
 
 import java.awt.Component;
 import java.awt.Dimension;
@@ -503,10 +503,10 @@ public class OscilloDialog extends Dialog
 	symantec.itools.awt.BorderPanel borderCanvas = new symantec.itools.awt.BorderPanel();
 	circuitsimulator.ScopeCanvas scopeCanvas = new circuitsimulator.ScopeCanvas();
 	symantec.itools.awt.BorderPanel borderVoltageScale = new symantec.itools.awt.BorderPanel();
-	Label labelVoltageScale = new a2s.Label();
+	Label labelVoltageScale = new java.awt.Label();
 	symantec.itools.awt.BorderPanel borderTimeBase = new symantec.itools.awt.BorderPanel();
-	Label labelTimeBase = new a2s.Label();
-	Label coords = new a2s.Label();
+	Label labelTimeBase = new java.awt.Label();
+	Label coords = new java.awt.Label();
 	//}}
 
 	class SymWindow extends java.awt.event.WindowAdapter

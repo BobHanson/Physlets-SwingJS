@@ -12,7 +12,7 @@ public class Frame extends JFrame implements A2SContainer {
 	@Override
 	public A2SListener getA2SListener() {
 		// TODO Auto-generated method stub
-		return null;
+		return listener;
 	}
 
 		

@@ -1,7 +1,7 @@
 package symantec.itools.awt.util.spinner;
 
 
-import a2s.*;
+import java.awt.*;
 
 import java.awt.AWTEventMulticaster;
 import java.awt.Dimension;

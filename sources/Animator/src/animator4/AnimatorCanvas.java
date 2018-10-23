@@ -1,6 +1,6 @@
 package animator4;
 
-import a2s.*;
+import java.awt.*;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;

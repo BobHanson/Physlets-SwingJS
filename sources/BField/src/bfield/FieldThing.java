@@ -1,7 +1,7 @@
 package bfield;
 import java.awt.Graphics;
 
-//import java.awt.*;
+
 import edu.davidson.display.Thing;
 
 public class FieldThing extends Thing {

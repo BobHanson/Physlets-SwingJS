@@ -5,10 +5,10 @@
 package sync;
 
 //import java.applet.*;
-//import java.awt.*;
+
 //import java.awt.event.*;
-//import java.awt.*;
-import a2s.*;
+
+import java.awt.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

@@ -1,7 +1,7 @@
 package bfield;
 
 
-//import java.awt.*;
+
 import edu.davidson.numerics.Parser;
 import edu.davidson.tools.SApplet;
 //import edu.davidson.display.Format;

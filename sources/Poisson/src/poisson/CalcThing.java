@@ -1,6 +1,6 @@
 package poisson;
 
-//import java.awt.*;
+
 import edu.davidson.numerics.Parser;
 //import edu.davidson.display.Format;
 import edu.davidson.tools.SUtil;

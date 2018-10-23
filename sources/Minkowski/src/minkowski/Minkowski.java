@@ -1,8 +1,8 @@
 package minkowski;
 
-import a2s.Button;
-import a2s.Label;
-import a2s.Panel;
+import java.awt.Button;
+import java.awt.Label;
+import java.awt.Panel;
 import java.awt.SystemColor;
 import java.awt.Dimension;
 import java.awt.BorderLayout;

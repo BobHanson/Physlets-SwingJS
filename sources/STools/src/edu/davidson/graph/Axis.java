@@ -1,6 +1,6 @@
 package edu.davidson.graph;
 
-//import java.awt.*;
+
 import java.util.Vector;
 import java.awt.Color;
 import java.awt.Dimension;

@@ -2,7 +2,7 @@ package edu.davidson.display;
 
 import java.awt.Image;
 import java.awt.Component;
-//import java.awt.*;
+
 import java.awt.Graphics;
 import edu.davidson.tools.SApplet;
 

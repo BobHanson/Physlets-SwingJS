@@ -12,8 +12,20 @@
  */
 package blackbody;
 
-import java.awt.*;
+import a2s.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.event.*;
+
+import javax.swing.Timer;
+
 import edu.davidson.tools.*;
 import edu.davidson.display.*;
 import edu.davidson.graphics.*;
@@ -46,7 +58,9 @@ private String label_wavelength = "Wavelength [m]";
   static int     halfWidth   = 160;
   static int[]   saturation  = new int[halfWidth * 2];
   Object         lock        = new Object();
-  private Thread paintThread = null;
+  //private Thread paintThread = null;
+  Timer timer;  
+  int sleepTime=50;
   String[]       varStrings  = new String[]{"t", "lambda"};
   double[][]     ds          = new double[1][2];             // the datasource state variables r, t;
   BBGraph        graph       = new BBGraph(this);
@@ -168,8 +182,18 @@ private String label_wavelength = "Wavelength [m]";
     //timer.setClient(this);
     tempNumber.setFormat("%+6.2f");
     // graph.setBorders("0,10,0,0");
-    paintThread = new Thread(this);
-    paintThread.start();
+    //paintThread = new Thread(this);
+    //paintThread.start();
+	timer = new Timer(sleepTime, new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			run();
+		}
+
+	});
+	timer.setRepeats(false);
+	timer.start();
     try {
       SApplet.addDataSource(this);
     } catch(Exception e) {
@@ -287,8 +311,9 @@ private String label_wavelength = "Wavelength [m]";
   public void destroy() {
     destroyed   = true;
     autoRefresh = false;
+    timer.stop();
     graph.destroy();
-    paintThread = null;
+    timer = null;
     synchronized(lock) {
       newData = true;
       lock.notify();
@@ -538,25 +563,8 @@ private String label_wavelength = "Wavelength [m]";
    * @y.exclude
    */
   public void run() {
-    //System.out.println("Paintthread start");
-    while(paintThread != null) {
-      synchronized(lock) {
-        if(!newData) {
-          try {
-            lock.wait();
-          } catch(InterruptedException ie) {}
-        }
         newData = false;
-        if(paintThread != null) {
           graph.paintImage();
-        }
-      }
-      if(paintThread != null) {
-        try {
-          Thread.sleep(50);
-        } catch(InterruptedException ie) {}
-      }
-    }
   }
 
   /**

@@ -48,6 +48,15 @@ bfield/FieldShell.js
 bfield/FieldThing.js
 bfield/Wire.js
 bfield/VectorField.js
+blackbody/BlackBody.js
+blackbody/BlackBody_autox_itemAdapter.js
+blackbody/BlackBody_autoy_itemAdapter.js
+blackbody/BlackBody_graph_mouseAdapter.js
+blackbody/BlackBody_graph_mouseMotionAdapter.js
+blackbody/BlackBody_redNumber_actionAdapter.js
+blackbody/BlackBody_slider_adjustmentAdapter.js
+blackbody/BlackBody_slider_mouseAdapter.js
+blackbody/BlackBody_tempNumber_actionAdapter.js
 block/Block.js
 block/BlockApplet.js
 circuit/Battery.js

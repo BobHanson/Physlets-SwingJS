@@ -252,7 +252,7 @@ private String label_wavelength = "Wavelength [m]";
     //this.add(swatch, BorderLayout.WEST);
     // swatch.add(label6, BorderLayout.SOUTH);
     swatch.setBackground(Color.black);
-    graph.setBackground(new Color(230, 230, 230));
+    //graph.setBackground(new Color(230, 230, 230));
     graph.setLabelX(label_wavelength);
     if(showControls) {
       this.add(bevelPanel2, BorderLayout.SOUTH);
@@ -564,7 +564,7 @@ private String label_wavelength = "Wavelength [m]";
    */
   public void run() {
         newData = false;
-          graph.paintImage();
+        graph.paintImage();
   }
 
   /**
@@ -805,6 +805,8 @@ private String label_wavelength = "Wavelength [m]";
      * @param g
      */
     public void paint(Graphics g) {
+      g.setColor(Color.BLACK);
+      g.fillRect(0, 0, this.getWidth(), this.getHeight());
       //Set PyroPanel background to black--in the jbinit()
       g.setColor(new Color(r, 0, 0));
       g.fillOval(getBounds().width / 2 - 15, 15, 30, 30);
@@ -867,6 +869,7 @@ private String label_wavelength = "Wavelength [m]";
       temperature = 2.9E-3 / lambda;
       g.dispose();  //added by wc
       updateDataConnections();
+      graph.repaint();  // added for JS implementation
     }
   }
 
@@ -900,11 +903,16 @@ private String label_wavelength = "Wavelength [m]";
       g.drawLine(xPos2, 12, xPos2 + 3, 9);
       lambda = graph.xFromPix(xPos2);
       g.drawString(label_lambdamax+" " + mouseFormat.form(lambda * 1E9) + " nm", 30, graph.pixFromY(0) + 40);
+      double valT=Math.min(2.0E5, 2.9E-3 / lambda);
       slider.setDValue(((2.9E-3 / lambda)) / 10000);
-      tempNumber.setValue(((2.9E-3 / lambda)));
-      temperature = 2.9E-3 / lambda;
+      //tempNumber.setValue(((2.9E-3 / lambda)));
+      //temperature = 2.9E-3 / lambda;
+      tempNumber.setValue(valT);
+      temperature = valT;
       g.dispose();
       updateDataConnections();
+      graph.repaint();  // added for JS implementation
+      
     }
   }
 
@@ -924,10 +932,11 @@ private String label_wavelength = "Wavelength [m]";
         xPos2 = graph.pixFromX(1000E-9);
       }
       lambda = graph.xFromPix(xPos2);
-      setT(2.9E-3 / lambda);
+      double valT=Math.min(2.0E5, 2.9E-3 / lambda);
+      setT(valT);
       // System.out.println(""+2.9E-3/lambda);
-      slider.setDValue(((2.9E-3 / lambda)) / 10000);
-      tempNumber.setValue(((2.9E-3 / lambda)));
+      slider.setDValue(valT / 10000);
+      tempNumber.setValue(valT);
     }
   }
 

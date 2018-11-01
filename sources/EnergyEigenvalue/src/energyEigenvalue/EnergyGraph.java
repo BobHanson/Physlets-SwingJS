@@ -714,6 +714,7 @@ public final class EnergyGraph extends SGraph{
        lines=true;
        int w = getSize().width;
        Graphics lg = getGraphics();
+       if(lg==null)return;
        lg.setColor(Color.red);
        lg.drawLine(w-(borderRight-9),yPix,w-9,yPix);
        lg.dispose();

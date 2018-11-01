@@ -289,14 +289,14 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 		state = STATE_WAITING;
 		Create temp = createThread;
 		Dispatcher temp2 = dispatcherThread;
-		if (temp != null) { // stop the old threads if they exisit
+		if (temp != null) { // stop the old threads if they exist
 			temp.shouldRun = false;
 		}
-		if (temp2 != null) { // stop the old threads if they exisit
+		if (temp2 != null) { // stop the old threads if they exist
 			temp2.shouldRun = false;
 		}
 		deleteDataConnections(); // we are going to delete all the things so we
-									// might as well kill the conections too.
+									// might as well kill the connections too.
 		setEnabled(true);
 	}
 

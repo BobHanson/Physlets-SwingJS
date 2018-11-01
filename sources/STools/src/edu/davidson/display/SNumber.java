@@ -69,6 +69,7 @@ public class SNumber extends TextField implements PropertyChangeListener {
 
 	public void setValue(double d) {
 	  validData = true;
+	  System.out.println("setting val="+d);
       if (d==value){return;}
 		double oldVal = value;
 		value = d;
@@ -127,13 +128,14 @@ public class SNumber extends TextField implements PropertyChangeListener {
 	}
 
 	/**
-	 * called from4 text input action event
+	 * called from text input action event
 	 */
 	public void updateValueFromText() {
 		double oldValue = value;
-		String str = this.getText().trim();
-        //System.out.println("TextValueChanged getText:"+this.getText()+ " oldValue:"+value );
 		try {
+			String str = this.getText().trim();
+	        //System.out.println("TextValueChanged getText:"+this.getText()+ " oldValue:"+value );
+	        if(str==null || str.equals("")) return;
 			validData = true; // assume the string will give us valid data.
 			if (str != null && str != "") {
 				value = Double.valueOf(str).doubleValue();

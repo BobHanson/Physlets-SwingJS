@@ -1,11 +1,13 @@
 package slider;
-import a2s.*;
-
+//import a2s.*;
+import java.awt.Label;
+import java.awt.SystemColor;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.AdjustmentEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
@@ -34,8 +36,8 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	double max;
 	double value;
 	String text;
-	SSlider slider = new SSlider();
-	SNumber number = new SNumber();
+	MySlider slider = new MySlider();
+	SliderNumberField number = new SliderNumberField();
 	Label label = new Label();
 	BorderLayout borderLayout1 = new BorderLayout();
 	Object lock = new Object();
@@ -101,7 +103,7 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 		
 		slider.addPropertyChangeListener(this);
 		number.addPropertyChangeListener(this);
-		slider.addPropertyChangeListener(number);
+		slider.addPropertyChangeListener(number);  // remove?
 		number.addPropertyChangeListener(slider);
 		
 		if (text.equals("")) {
@@ -281,6 +283,17 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	public void setFormat(int id, String fstr) {
 		this.number.setFormat(fstr);
 	}
+	
+	/**
+	 * Change the object's width for the display of numeric data.
+	 *
+	 * @param w
+	 *            The width of the numerical display 
+	 */
+	public void setFormatWdith(int w) {
+		this.number.setPreferredSize(new Dimension(w, 25));
+	}
+	
 
 	/**
 	 * Sets default values and deletes all data connections.
@@ -328,8 +341,11 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	public void propertyChange(PropertyChangeEvent evt) {
 		if (evt.getSource() instanceof SSlider) {
 			value = slider.getDValue();
-		} else if (evt.getSource() instanceof SNumber) {
+			number.oldValue=number.value=value;
+			number.setExactDValue(value);
+		} else if (evt.getSource() instanceof SliderNumberField) {
 			value = number.getValue();
+			slider.setExactDValue(value);
 		}
 		this.updateDataConnections();
 		synchronized (lock) {
@@ -500,5 +516,84 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 			if (appletRunning && shouldRun)
 				dispatcherThread = new Dispatcher(jsFunction, jso);
 		}
+	}
+	
+	class MySlider extends SSlider {
+		
+		protected void processAdjustmentEvent(AdjustmentEvent evt){
+			number.setBackground(Color.WHITE);
+			super.processAdjustmentEvent(evt);
+		}
+	}
+	
+	class SliderNumberField extends SNumber {
+		double oldValue = value;
+		public SliderNumberField() {
+			super(0.0, null);
+		    this.addActionListener(new java.awt.event.ActionListener() {
+		        public void actionPerformed(ActionEvent e) {
+		          number.setBackground(Color.white);
+		          try {
+		        	  value = Double.valueOf(SliderNumberField.this.getText()).doubleValue();
+		          }catch(NumberFormatException ex){
+			        	number.setBackground(Color.red);
+						validData = false;
+						value = oldValue;
+						return;
+					}
+		          number.setExactDValue(value);
+		          number.setBackground(Color.white);
+		          boundSupport.firePropertyChange("DValue", new Double(oldValue), new Double(value));
+		        }
+		      });
+		}
+		
+		
+	    // Sets slider value without firing property change. 
+	    public void setExactDValue(double d) {
+	    	SliderNumberField.this.value=d;
+	    	SliderNumberField.this.setText(valFormat.form(d).trim());
+	    }
+	    
+	    public void setValue(double d) {
+	  	  validData = true;
+	        //if (d==value){return;}
+	  		double oldVal = value;
+	  		value = d;
+	  		this.setText(valFormat.form(value));
+	  		SliderApplet.this.slider.textFieldAdjustment=true;
+	  		boundSupport.firePropertyChange("DValue", new Double(oldVal), new Double(value));
+	        if(isEditable())setBackground(Color.white);
+	            else setBackground(SystemColor.control);
+	  	}
+		
+		/**
+		 * called from text input action event
+		 */
+		public void updateValueFromText() {
+		    //oldValue = value;
+		    this.setBackground(Color.yellow);
+			try {
+				String str = this.getText().trim();
+		        if(str==null || str.equals("")) return;
+				validData = true; // assume the string will give us valid data.
+				if (str != null && str != "") {
+					value = Double.valueOf(str).doubleValue();
+	              if(!noColor) this.setBackground(Color.yellow);// number seems to be OK
+	              if (value==oldValue) return;
+					//boundSupport.firePropertyChange("DValue", new Double(oldValue), new Double(value));
+				} else {
+	              if(!noColor) this.setBackground(Color.red);
+					validData = false;
+					value = oldValue;
+				}
+	      }catch(NumberFormatException e){    // internet explorer does not throw a number format exception!
+	          //if(!noColor) 
+	        	this.setBackground(Color.red);
+				validData = false;
+				value = oldValue;
+			}
+		}
+		
 	}
 }

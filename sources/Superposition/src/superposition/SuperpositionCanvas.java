@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.MouseEvent;
 
 import a2s.*;
 import edu.davidson.display.Format;
@@ -30,6 +31,7 @@ public final class SuperpositionCanvas extends Canvas
   double    pixPerY=10;
   double    gridX=1;
   double    gridY=1;
+  boolean   isRunning=false;
 
   int[] xpix=null;
   int[] ypix=null;
@@ -40,7 +42,8 @@ public final class SuperpositionCanvas extends Canvas
   boolean showTime=false;
 
 
-  Font f=new Font("Helvetica",Font.BOLD,14);
+  //Font f=new Font("Helvetica",Font.BOLD,14);
+  Font f=new Font("Helvetica",Font.PLAIN,14);
 
 
   public void setRGB(int r, int g, int b)
@@ -57,14 +60,33 @@ public final class SuperpositionCanvas extends Canvas
           parser.defineVariable(2,"t"); // define the variable
           parser.define(funcStr);
           parser.parse();
-      if(parser.getErrorCode() != Parser.NO_ERROR)
-        {
+      if(parser.getErrorCode() != Parser.NO_ERROR){
            System.out.println("Parse error: " + parser.getErrorString() +
                    " at function 1, position " + parser.getErrorPosition());
            System.out.println("Function: "+funcStr);
-        }
-          setBackground(Color.white);
-        }
+       }
+       setBackground(Color.white);
+       
+       this.addMouseListener(new java.awt.event.MouseAdapter() {
+    	      public void mousePressed(MouseEvent e) {
+                startDrawCoord(e.getX(),e.getY());
+                isRunning=app.clock.isRunning();
+                app.clock.stopClock();
+    	      }
+    	      public void mouseReleased(MouseEvent e) {
+    	         endDrawCoord(e.getX(),e.getY());
+    	         if(isRunning) app.clock.startClock();
+    	      }
+    	    });
+    	    this.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+    	      public void mouseMoved(MouseEvent e) {
+    	    	//drawCoord(e.getX(),e.getY());
+    	      }
+    	      public void mouseDragged(MouseEvent e) {
+    	    	drawCoord(e.getX(),e.getY());
+    	      }
+    	    });
+  }
 
   public void update(Graphics g){
     paintMe(g); //update usually does a rect fill with a background color.  We don't need this.
@@ -219,12 +241,16 @@ public final class SuperpositionCanvas extends Canvas
        g.setColor(Color.black);
        if (showTime){
                    String tStr= new Format("%7.4g").form(time);
+                   g.setFont(f);
                    g.drawString(label_time+" " + tStr,15, 15);
-                }
-       if (showCoord){
+       }
+       //not needed for JS implementation
+       if(showCoord && running) {
                     Format format= new Format("%-+6.3g");
                     String xStr=format.form(pixToX(xCoord));
                     String yStr=format.form(pixToY(yCoord));
+                    g.setFont(f);
+                    g.setColor(Color.black);
                     g.drawString("X: " + xStr+"  F: " + yStr, 10, iheight-15);
                     g.drawLine(xCoord-10,yCoord,xCoord+10,yCoord);
                     g.drawLine(xCoord,yCoord-10,xCoord,yCoord+10);
@@ -233,7 +259,7 @@ public final class SuperpositionCanvas extends Canvas
   }
 
   public void paintMe(Graphics g){
-    if(applet.destroyed==true) return;
+       if(applet.destroyed==true) return;
        osi=null;
        osiGrid=null;
        try{
@@ -262,18 +288,18 @@ public final class SuperpositionCanvas extends Canvas
    public void startDrawCoord(int x,int y)
     {
         xCoord=x; yCoord=y;
-        if(!running)
-        {
+        if(!running){
             Graphics g=getGraphics();
             if(g==null) return;
             //if (osi!=null) g.drawImage(osi,0,0,this);
-            paint(g);// draw the image onto the visible graph
+            paintMe(g);// draw the image onto the visible graph
             Format format= new Format("%-+6.3g");
             String xStr=format.form(pixToX(xCoord));
             String yStr=format.form(pixToY(yCoord));
+            g.setFont(f);
             g.drawString("X: " + xStr+"  F: " + yStr, 10, iheight-15);
-                    g.drawLine(xCoord-10,yCoord,xCoord+10,yCoord);
-                    g.drawLine(xCoord,yCoord-10,xCoord,yCoord+10);
+            g.drawLine(xCoord-10,yCoord,xCoord+10,yCoord);
+            g.drawLine(xCoord,yCoord-10,xCoord,yCoord+10);
             g.dispose();
         }
         showCoord=true;
@@ -281,33 +307,33 @@ public final class SuperpositionCanvas extends Canvas
     public void endDrawCoord(int x,int y)
     {
         showCoord=false;
-        if(!running)
-        {
+        if(!running){
             Graphics g=getGraphics();
             if(g==null) return;
-            paint(g);
+            paintMe(g);
             g.dispose();
         }
     }
+    
     public void drawCoord(int x,int y)
     {
         xCoord=x; yCoord=y;
-        if(!running)
-        {
+        if(!running){
             Graphics g=getGraphics();
             if(g==null) return;
-            //if (osi!=null) g.drawImage(osi,0,0,this);                                   // draw the image onto the visible graph
-            paint(g);
+            //if (osi!=null) g.drawImage(osi,0,0,this);
+            paintMe(g);// draw the image onto the visible graph
             Format format= new Format("%-+6.3g");
             String xStr=format.form(pixToX(xCoord));
             String yStr=format.form(pixToY(yCoord));
+            g.setFont(f);
             g.drawString("X: " + xStr+"  F: " + yStr, 10, iheight-15);
             g.drawLine(xCoord-10,yCoord,xCoord+10,yCoord);
             g.drawLine(xCoord,yCoord-10,xCoord,yCoord+10);
             g.dispose();
         }
     }
-
+   /**  use MouseAdapter and MouseMotionAdapter rather than Applet events
     public boolean mouseDown(Event evt, int x, int y)
         {
             if(((evt.modifiers & Event.META_MASK)!=0)||
@@ -331,4 +357,5 @@ public final class SuperpositionCanvas extends Canvas
                 drawCoord(x,y);
                 return true;
         }
+     **/
 }

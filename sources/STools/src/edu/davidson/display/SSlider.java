@@ -7,8 +7,10 @@
 
 package edu.davidson.display;
 import java.awt.AWTEvent;
+import java.awt.Color;
 
 import a2s.*;
+
 import java.awt.event.AdjustmentEvent;
 //import borland.jbcl.util.BlackBox;
 import java.beans.PropertyChangeEvent;
@@ -22,6 +24,7 @@ public class SSlider extends Scrollbar implements PropertyChangeListener {
         private double    dValue;
         private double    dMin;
         private double    dMax;
+        public boolean textFieldAdjustment=false;
 
     public SSlider() {this(0.0d,0.0d,1.0);}
 
@@ -37,13 +40,26 @@ public class SSlider extends Scrollbar implements PropertyChangeListener {
 
     protected void processAdjustmentEvent(AdjustmentEvent evt){
         double oldVal=dValue;
-        int val=evt.getValue();
-        dValue=dMin+(dMax-dMin)*(val-this.getMinimum())/(this.getMaximum()-this.getMinimum()-this.getVisibleAmount());
-        if(!evt.getValueIsAdjusting()) dValue=oldVal;
-        if(dValue>dMax) dValue=dMax;
-        if(dValue<dMin) dValue=dMin;
+        if (textFieldAdjustment) {//text has already correct dValue
+          textFieldAdjustment=false;
+        }else {
+        	int val=evt.getValue();
+            dValue=dMin+(dMax-dMin)*(val-this.getMinimum())/(this.getMaximum()-this.getMinimum()-this.getVisibleAmount());
+            if(!evt.getValueIsAdjusting()) dValue=oldVal;
+            if(dValue>dMax) dValue=dMax;
+            if(dValue<dMin) dValue=dMin;
+        }
+        //System.out.println("SSlider process adjustment oldVal="+oldVal+ " new val="+dValue);
         boundSupport.firePropertyChange("DValue",new Double(oldVal),new Double(dValue));
         super.processAdjustmentEvent(evt);
+    }
+    
+    // Sets slider value without firing property change. 
+    public void setExactDValue(double d) {
+        dValue=d;
+        textFieldAdjustment=true;
+        double val=this.getMinimum()+(this.getMaximum()-this.getMinimum()-this.getVisibleAmount())*(d-dMin)/(dMax-dMin);
+        this.setValue((int)val);
     }
     
     public void setDValue(double d) {

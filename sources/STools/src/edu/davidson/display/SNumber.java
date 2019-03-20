@@ -18,11 +18,11 @@ import java.beans.PropertyChangeSupport;
 
 public class SNumber extends TextField implements PropertyChangeListener {
 	protected PropertyChangeSupport boundSupport;
-	private double value = 0.0; // the value of the double
-	private String formStr = "%-+6.3g";
-	private Format valFormat = new Format("%-+6.3g");
-	private boolean validData = true;
-	private boolean noColor = false;
+	public double value = 0.0; // the value of the double
+	String formStr = "%-+6.3g";
+	protected Format valFormat = new Format("%-+6.3g");
+	public boolean validData = true;
+	protected boolean noColor = false;
 
 	public SNumber(double d) {
 		this(d, null);
@@ -67,9 +67,9 @@ public class SNumber extends TextField implements PropertyChangeListener {
 	}
   public String getFormat(){return formStr;}
 
-	public void setValue(double d) {
+
+  public void setValue(double d) {
 	  validData = true;
-	  System.out.println("setting val="+d);
       if (d==value){return;}
 		double oldVal = value;
 		value = d;
@@ -105,7 +105,6 @@ public class SNumber extends TextField implements PropertyChangeListener {
 
 	public void propertyChange(PropertyChangeEvent evt) {
 		// make changes to this object if it is bound to another object
-		// System.out.println("PropertyValueChanged DValue:"+evt.getNewValue());
       if(!isEditable())setBackground(SystemColor.control);
         else setBackground(Color.white);
 		if (evt.getPropertyName().equals("DValue")) {
@@ -134,7 +133,6 @@ public class SNumber extends TextField implements PropertyChangeListener {
 		double oldValue = value;
 		try {
 			String str = this.getText().trim();
-	        //System.out.println("TextValueChanged getText:"+this.getText()+ " oldValue:"+value );
 	        if(str==null || str.equals("")) return;
 			validData = true; // assume the string will give us valid data.
 			if (str != null && str != "") {

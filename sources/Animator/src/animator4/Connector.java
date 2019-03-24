@@ -1,5 +1,3 @@
-
-
 package animator4;
 
 public class Connector extends Thing {

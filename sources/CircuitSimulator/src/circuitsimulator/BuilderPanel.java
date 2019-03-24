@@ -1,6 +1,7 @@
 package circuitsimulator;
 
-import a2s.*;
+//import a2s.*;
+import java.awt.*;
 
 import java.awt.Component;
 import java.awt.Font;
@@ -772,22 +773,23 @@ public class BuilderPanel extends symantec.itools.awt.BorderPanel
 	}
 
 	//{{DECLARE_CONTROLS
-	Button setGridButton = new a2s.Button();
+	//Button setGridButton = new a2s.Button();
+	Button setGridButton = new Button();
 	symantec.itools.awt.util.spinner.NumericSpinner rowSpin = new symantec.itools.awt.util.spinner.NumericSpinner();
 	symantec.itools.awt.util.spinner.NumericSpinner colSpin = new symantec.itools.awt.util.spinner.NumericSpinner();
-	Label label1 = new a2s.Label();
-	Label label3 = new a2s.Label();
-	Button listButton = new a2s.Button();
-	Button calculateButton = new a2s.Button();
-	TextField numberInput = new a2s.TextField();
-	TextField dtInput = new a2s.TextField();
-	Label label9 = new a2s.Label();
-	Label label10 = new a2s.Label();
-	Button arrows = new a2s.Button();
-	Button loadButton = new a2s.Button();
-	TextField inputfile = new a2s.TextField();
-	Button forwarding = new a2s.Button();
-	Button resetting = new a2s.Button();
+	Label label1 = new Label();
+	Label label3 = new Label();
+	Button listButton = new Button();
+	Button calculateButton = new Button();
+	TextField numberInput = new TextField();
+	TextField dtInput = new TextField();
+	Label label9 = new Label();
+	Label label10 = new Label();
+	Button arrows = new Button();
+	Button loadButton = new Button();
+	TextField inputfile = new TextField();
+	Button forwarding = new Button();
+	Button resetting = new Button();
 	symantec.itools.awt.BorderPanel resistorBorder = new symantec.itools.awt.BorderPanel();
 	symantec.itools.awt.BorderPanel capacitorBorder = new symantec.itools.awt.BorderPanel();
 	symantec.itools.awt.BorderPanel inductorBorder = new symantec.itools.awt.BorderPanel();

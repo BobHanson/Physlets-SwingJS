@@ -1,6 +1,7 @@
 package soundOut;
 
-import a2s.*;
+//import a2s.*;
+import java.awt.*;
 
 import java.awt.AWTEventMulticaster;
 import java.awt.Color;

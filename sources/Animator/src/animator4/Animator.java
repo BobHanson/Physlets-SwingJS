@@ -1,6 +1,7 @@
 package  animator4;
 
-import a2s.*;
+//import a2s.*;
+import java.awt.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;

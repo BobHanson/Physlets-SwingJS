@@ -1,6 +1,7 @@
 package circuitsimulator;
 
-import a2s.*;
+//import a2s.*;
+import java.awt.*;
 
 import java.awt.Component;
 import java.awt.Dimension;
@@ -148,8 +149,8 @@ public class Meter extends java.awt.Dialog
 		
 	}
 	//{{DECLARE_CONTROLS
-	Label numeric = new a2s.Label();
-	Label scale = new a2s.Label();
+	Label numeric = new Label();
+	Label scale = new Label();
 	symantec.itools.awt.util.spinner.ListSpinner mode = new symantec.itools.awt.util.spinner.ListSpinner();
 	//}}
 

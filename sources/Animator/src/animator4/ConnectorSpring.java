@@ -1,7 +1,7 @@
 
 package animator4;
 
-import a2s.*;
+//import a2s.*;
 import java.awt.Graphics;
 
 

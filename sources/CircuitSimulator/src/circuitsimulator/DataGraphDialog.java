@@ -1,6 +1,7 @@
 package circuitsimulator;
 
-import a2s.*;
+//import a2s.*;
+import java.awt.*;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -19,7 +20,7 @@ import edu.davidson.display.*;
  * 
  * @author Toon Van Hoecke
  */
-public class DataGraphDialog extends a2s.Dialog
+public class DataGraphDialog extends Dialog
 {
     public String type;
     CircuitBuilder cb;
@@ -150,9 +151,9 @@ public class DataGraphDialog extends a2s.Dialog
 
 	//{{DECLARE_CONTROLS
 	symantec.itools.awt.BorderPanel borderCanvas = new symantec.itools.awt.BorderPanel();
-	Button stripChart = new a2s.Button();
-	TextField periodInput = new a2s.TextField();
-	Label label1 = new a2s.Label();
+	Button stripChart = new Button();
+	TextField periodInput = new TextField();
+	Label label1 = new Label();
 	//}}
 	SGraph dataGraph = new SGraph();
 

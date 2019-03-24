@@ -5,10 +5,11 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Event;
 import java.awt.Insets;
-import a2s.Label;
-import a2s.Panel;
-import a2s.Scrollbar;
-import a2s.TextField;
+//import a2s.Label;
+//import a2s.Panel;
+//import a2s.Scrollbar;
+//import a2s.TextField;
+import java.awt.*;
 
 import edu.davidson.display.Format;
 

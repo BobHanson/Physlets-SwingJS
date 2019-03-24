@@ -1,6 +1,7 @@
 package circuitsimulator;
 
-import a2s.*;
+//import a2s.*;
+import java.awt.*;
 
 import java.awt.Component;
 

@@ -1,7 +1,8 @@
 package doppler;
 
 import java.awt.Event;
-import a2s.Frame;
+//import a2s.Frame;
+import java.awt.Frame;
 
 class DopplerFrame extends Frame
 {

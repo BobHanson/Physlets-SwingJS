@@ -1,6 +1,7 @@
 package circuitsimulator;
 
-import a2s.*;
+//import a2s.*;
+import java.awt.*;
 
 import java.awt.Component;
 import java.awt.Dimension;
@@ -154,10 +155,10 @@ public class ValueKnob extends java.awt.Dialog
 		
 	}
 	//{{DECLARE_CONTROLS
-	Label numeric = new a2s.Label();
-	Label scale = new a2s.Label();
+	Label numeric = new Label();
+	Label scale = new Label();
 	symantec.itools.awt.util.spinner.ListSpinner mode = new symantec.itools.awt.util.spinner.ListSpinner();
-	Scrollbar scrollbar = new a2s.Scrollbar(Scrollbar.HORIZONTAL,50,1,1,101);
+	Scrollbar scrollbar = new Scrollbar(Scrollbar.HORIZONTAL,50,1,1,101);
 	//}}
 
     public void setDisplay(double v) {

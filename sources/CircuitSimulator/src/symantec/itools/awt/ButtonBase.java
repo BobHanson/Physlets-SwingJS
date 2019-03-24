@@ -1,7 +1,8 @@
 package symantec.itools.awt;
 
-import a2s.*;
-
+//import a2s.*;
+import java.awt.*;
+import java.applet.Applet;
 import java.applet.AppletContext;
 import java.awt.AWTEventMulticaster;
 import java.awt.Color;

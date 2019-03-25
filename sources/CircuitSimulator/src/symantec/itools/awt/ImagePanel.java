@@ -61,8 +61,6 @@ public class ImagePanel extends Panel
 		image = null;
 		imageStyle = IMAGE_TILED;
 
-		vetos = new symantec.itools.beans.VetoableChangeSupport(this);
-		changes = new symantec.itools.beans.PropertyChangeSupport(this);
 	}
 
 	// Properties
@@ -162,7 +160,7 @@ public class ImagePanel extends Panel
 		super.paint(g);
 	}
 
-    /**
+	/**
      * Sets the URL of the image to display in this panel.
      * @param url the URL of the image to display
      * @see #getImageURL
@@ -174,7 +172,7 @@ public class ImagePanel extends Panel
 	{
 		if (!symantec.itools.util.GeneralUtils.objectsEqual(imageURL,url))
 		{
-			vetos.fireVetoableChange("imageURL", imageURL, url);
+			getVetos().fireVetoableChange("imageURL", imageURL, url);
 
 			imageURL = url;
 			if (imageURL != null)
@@ -208,7 +206,7 @@ public class ImagePanel extends Panel
 
 			}
 
-			changes.firePropertyChange("imageURL", imageURL, url);
+			getChanges().firePropertyChange("imageURL", imageURL, url);
 
 	        repaint();
 		}
@@ -242,11 +240,11 @@ public class ImagePanel extends Panel
 			Integer oldStyleInt = new Integer(imageStyle);
 			Integer newStyleInt = new Integer(newStyle);
 
-			vetos.fireVetoableChange("style", oldStyleInt, newStyleInt);
+			getVetos().fireVetoableChange("style", oldStyleInt, newStyleInt);
 
 			imageStyle = newStyle;
 
-	        changes.firePropertyChange("style", oldStyleInt, newStyleInt);
+	        getChanges().firePropertyChange("style", oldStyleInt, newStyleInt);
 
 	        repaint();
 		}
@@ -279,47 +277,47 @@ public class ImagePanel extends Panel
 	}
 
     /**
-     * Adds a listener for all event changes.
+     * Adds a listener for all event getChanges().
      * @param listener the listener to add.
      * @see #removePropertyChangeListener
      */
     public synchronized void addPropertyChangeListener(PropertyChangeListener listener)
     {
     	//super.addPropertyChangeListener(listener);
-    	changes.addPropertyChangeListener(listener);
+    	getChanges().addPropertyChangeListener(listener);
     }
 
     /**
-     * Removes a listener for all event changes.
+     * Removes a listener for all event getChanges().
      * @param listener the listener to remove.
      * @see #addPropertyChangeListener
      */
     public synchronized void removePropertyChangeListener(PropertyChangeListener listener)
     {
     	//super.removePropertyChangeListener(listener);
-    	changes.removePropertyChangeListener(listener);
+    	getChanges().removePropertyChangeListener(listener);
     }
 
     /**
-     * Adds a vetoable listener for all event changes.
+     * Adds a vetoable listener for all event getChanges().
      * @param listener the listener to add.
      * @see #removeVetoableChangeListener
      */
     public synchronized void addVetoableChangeListener(VetoableChangeListener listener)
     {
      	//super.addVetoableChangeListener(listener);
-		vetos.addVetoableChangeListener(listener);
+		getVetos().addVetoableChangeListener(listener);
     }
 
     /**
-     * Removes a vetoable listener for all event changes.
+     * Removes a vetoable listener for all event getChanges().
      * @param listener the listener to remove.
      * @see #addVetoableChangeListener
      */
     public synchronized void removeVetoableChangeListener(VetoableChangeListener listener)
     {
     	//super.removeVetoableChangeListener(listener);
-    	vetos.removeVetoableChangeListener(listener);
+    	getVetos().removeVetoableChangeListener(listener);
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
@@ -349,5 +347,14 @@ public class ImagePanel extends Panel
 	private URL imageURL;
     private symantec.itools.beans.VetoableChangeSupport vetos;
     private symantec.itools.beans.PropertyChangeSupport changes;
+	private symantec.itools.beans.PropertyChangeSupport getChanges() {
+		return (changes == null ? (changes = new symantec.itools.beans.PropertyChangeSupport(this)) : changes);
+	}
+
+	private symantec.itools.beans.VetoableChangeSupport getVetos() {
+		return (vetos == null ? (vetos = new symantec.itools.beans.VetoableChangeSupport(this)) : vetos);
+	}
+
+
 }
 

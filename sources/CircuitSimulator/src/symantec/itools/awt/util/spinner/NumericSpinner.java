@@ -106,9 +106,9 @@ public class NumericSpinner
         	Integer oldValue = new Integer( increment );
         	Integer newValue = new Integer( i );
 
-        	vetos.fireVetoableChange("increment", oldValue, newValue);
+        	getVetos().fireVetoableChange("increment", oldValue, newValue);
             increment = i;
-            changes.firePropertyChange("increment", oldValue, newValue);
+            getChanges().firePropertyChange("increment", oldValue, newValue);
         }
     }
 
@@ -157,7 +157,7 @@ public class NumericSpinner
     public synchronized void addPropertyChangeListener(PropertyChangeListener listener)
     {
     	super.addPropertyChangeListener(listener);
-    	changes.addPropertyChangeListener(listener);
+    	getChanges().addPropertyChangeListener(listener);
     }
 
     /**
@@ -168,7 +168,7 @@ public class NumericSpinner
     public synchronized void removePropertyChangeListener(PropertyChangeListener listener)
     {
     	super.removePropertyChangeListener(listener);
-    	changes.removePropertyChangeListener(listener);
+    	getChanges().removePropertyChangeListener(listener);
     }
 
     /**
@@ -179,7 +179,7 @@ public class NumericSpinner
     public synchronized void addVetoableChangeListener(VetoableChangeListener listener)
     {
      	super.addVetoableChangeListener(listener);
-		vetos.addVetoableChangeListener(listener);
+		getVetos().addVetoableChangeListener(listener);
     }
 
     /**
@@ -190,7 +190,7 @@ public class NumericSpinner
     public synchronized void removeVetoableChangeListener(VetoableChangeListener listener)
     {
     	super.removeVetoableChangeListener(listener);
-    	vetos.removeVetoableChangeListener(listener);
+    	getVetos().removeVetoableChangeListener(listener);
     }
 
     /**
@@ -215,7 +215,20 @@ public class NumericSpinner
         return result;
     }
 
-    private symantec.itools.beans.VetoableChangeSupport vetos = new symantec.itools.beans.VetoableChangeSupport(this);
-    private symantec.itools.beans.PropertyChangeSupport changes = new symantec.itools.beans.PropertyChangeSupport(this);
+	protected symantec.itools.beans.VetoableChangeSupport vetos;
+	/**
+	 * Handles tracking non-vetoable change listeners and notifying them of each change
+	 * to this component's properties.
+	 */
+    protected symantec.itools.beans.PropertyChangeSupport changes;
+
+	private symantec.itools.beans.PropertyChangeSupport getChanges() {
+		return (changes == null ? (changes = new symantec.itools.beans.PropertyChangeSupport(this)) : changes);
+	}
+
+	private symantec.itools.beans.VetoableChangeSupport getVetos() {
+		return (vetos == null ? (vetos = new symantec.itools.beans.VetoableChangeSupport(this)) : vetos);
+	}
+
 
 }

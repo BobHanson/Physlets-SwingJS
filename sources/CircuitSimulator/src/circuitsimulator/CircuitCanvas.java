@@ -1,5 +1,6 @@
 package circuitsimulator;
 
+import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -11,7 +12,7 @@ import java.net.*;
  *
  * @author Toon Van Hoecke
  */
-public class CircuitCanvas extends a2s.Canvas {
+public class CircuitCanvas extends Canvas {
 
   int             d                = 54, b = 27;
   Color           parsedbgColor    = new Color(255, 255, 185);

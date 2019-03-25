@@ -164,15 +164,23 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 			Integer oldPadTopInt = new Integer(padtop);
 			Integer newPadTopInt = new Integer(newPadTop);
 
-			vetos.fireVetoableChange("paddingTop", oldPadTopInt, newPadTopInt);
+			getVetos().fireVetoableChange("paddingTop", oldPadTopInt, newPadTopInt);
 
 		    padtop = newPadTop;
 		    sizepanel(true);
 		    invalidate();
    			repaint();
 
-			changes.firePropertyChange("paddingTop", oldPadTopInt, newPadTopInt);
+			getChanges().firePropertyChange("paddingTop", oldPadTopInt, newPadTopInt);
 	    }
+	}
+	
+	private symantec.itools.beans.PropertyChangeSupport getChanges() {
+		return (changes == null ? (changes = new symantec.itools.beans.PropertyChangeSupport(this)) : changes);
+	}
+
+	private symantec.itools.beans.VetoableChangeSupport getVetos() {
+		return (vetos == null ? (vetos = new symantec.itools.beans.VetoableChangeSupport(this)) : vetos);
 	}
 
     /**
@@ -203,14 +211,14 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 			Integer oldPadBottomInt = new Integer(padbottom);
 			Integer newPadBottomInt = new Integer(newPadBottom);
 
-			vetos.fireVetoableChange("paddingBottom", oldPadBottomInt, newPadBottomInt);
+			getVetos().fireVetoableChange("paddingBottom", oldPadBottomInt, newPadBottomInt);
 
 		    padbottom = newPadBottom;
 		    sizepanel(true);
 		    invalidate();
 			repaint();
 
-			changes.firePropertyChange("paddingBottom", oldPadBottomInt, newPadBottomInt);
+			getChanges().firePropertyChange("paddingBottom", oldPadBottomInt, newPadBottomInt);
 	    }
 	}
 
@@ -242,14 +250,14 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 			Integer oldPadLeftInt = new Integer(padleft);
 			Integer newPadLeftInt = new Integer(newPadLeft);
 
-			vetos.fireVetoableChange("paddingLeft", oldPadLeftInt, newPadLeftInt);
+			getVetos().fireVetoableChange("paddingLeft", oldPadLeftInt, newPadLeftInt);
 
 			padleft = newPadLeft;
 			sizepanel(true);
 			invalidate();
 			repaint();
 
-			changes.firePropertyChange("paddingLeft", oldPadLeftInt, newPadLeftInt);
+			getChanges().firePropertyChange("paddingLeft", oldPadLeftInt, newPadLeftInt);
 	    }
 	}
 
@@ -281,14 +289,14 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 			Integer oldPadRightInt = new Integer(padright);
 			Integer newPadRightInt = new Integer(newPadRight);
 
-			vetos.fireVetoableChange("paddingRight", oldPadRightInt, newPadRightInt);
+			getVetos().fireVetoableChange("paddingRight", oldPadRightInt, newPadRightInt);
 
 		    padright = newPadRight;
 			sizepanel(true);
 			invalidate();
 			repaint();
 
-			changes.firePropertyChange("paddingRight", oldPadRightInt, newPadRightInt);
+			getChanges().firePropertyChange("paddingRight", oldPadRightInt, newPadRightInt);
 	    }
 	}
 
@@ -322,11 +330,11 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 			Integer oldPadTopInt = new Integer(iyPadTop);
 			Integer newPadTopInt = new Integer(t);
 
-			vetos.fireVetoableChange("iPadTop", oldPadTopInt, newPadTopInt);
+			getVetos().fireVetoableChange("iPadTop", oldPadTopInt, newPadTopInt);
 
 		    iyPadTop = t;
 
-			changes.firePropertyChange("iPadTop", oldPadTopInt, newPadTopInt);
+		    getChanges().firePropertyChange("iPadTop", oldPadTopInt, newPadTopInt);
 
 		    sizepanel(true);
 		    invalidate();
@@ -365,11 +373,11 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 			Integer oldPadBottomInt = new Integer(iyPadBottom);
 			Integer newPadBottomInt = new Integer(b);
 
-			vetos.fireVetoableChange("iPadBottom", oldPadBottomInt, newPadBottomInt);
+			getVetos().fireVetoableChange("iPadBottom", oldPadBottomInt, newPadBottomInt);
 
 		    iyPadBottom = b;
 
-			changes.firePropertyChange("iPadBottom", oldPadBottomInt, newPadBottomInt);
+		    getChanges().firePropertyChange("iPadBottom", oldPadBottomInt, newPadBottomInt);
 
 		    sizepanel(true);
 		    invalidate();
@@ -408,11 +416,11 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 			Integer oldIPadSidesInt = new Integer(ixPad);
 			Integer newIPadSidesInt = new Integer(s);
 
-			vetos.fireVetoableChange("iPadSides", oldIPadSidesInt, newIPadSidesInt);
+			getVetos().fireVetoableChange("iPadSides", oldIPadSidesInt, newIPadSidesInt);
 
 		    ixPad = s;
 
-			changes.firePropertyChange("iPadSides", oldIPadSidesInt, newIPadSidesInt);
+		    getChanges().firePropertyChange("iPadSides", oldIPadSidesInt, newIPadSidesInt);
 
 		    sizepanel(true);
 		    invalidate();
@@ -450,11 +458,11 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 		{
 			String oldLabel = label;
 
-			vetos.fireVetoableChange("label", oldLabel, newLabel);
+			getVetos().fireVetoableChange("label", oldLabel, newLabel);
 
 		    label = newLabel;
 
-			changes.firePropertyChange("label", oldLabel, newLabel);
+		    getChanges().firePropertyChange("label", oldLabel, newLabel);
 
 		    sizepanel(true);
 		    //invalidate();
@@ -484,11 +492,11 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 		{
 			Color oldBorderColor = borderColor;
 
-			vetos.fireVetoableChange("borderColor",oldBorderColor,newBorderColor);
+			getVetos().fireVetoableChange("borderColor",oldBorderColor,newBorderColor);
 
 			borderColor			= newBorderColor;
 
-			changes.firePropertyChange("borderColor",oldBorderColor,newBorderColor);
+			getChanges().firePropertyChange("borderColor",oldBorderColor,newBorderColor);
 
 			repaint();
 		}
@@ -517,11 +525,11 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 		{
 			Color oldLabelColor = labelColor;
 
-			vetos.fireVetoableChange("labelColor",oldLabelColor,newLabelBorderColor);
+			getVetos().fireVetoableChange("labelColor",oldLabelColor,newLabelBorderColor);
 
 		    labelColor = newLabelBorderColor;
 
-			changes.firePropertyChange("labelColor",oldLabelColor,newLabelBorderColor);
+			getChanges().firePropertyChange("labelColor",oldLabelColor,newLabelBorderColor);
 
 			repaint();
 		}
@@ -554,11 +562,11 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 			Integer oldLabelAlignmentInteger = new Integer(labelAlignment);
 			Integer newLabelAlignmentInteger = new Integer(newLabelAlignment);
 
-			vetos.fireVetoableChange("alignStyle",oldLabelAlignmentInteger,newLabelAlignmentInteger);
+			getVetos().fireVetoableChange("alignStyle",oldLabelAlignmentInteger,newLabelAlignmentInteger);
 
 		    labelAlignment = newLabelAlignment;
 
-			changes.firePropertyChange("alignStyle",oldLabelAlignmentInteger,newLabelAlignmentInteger);
+			getChanges().firePropertyChange("alignStyle",oldLabelAlignmentInteger,newLabelAlignmentInteger);
 
 		    sizepanel(true);
 		    //invalidate();
@@ -599,11 +607,11 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 			Integer oldBevelStyleInteger = new Integer(style);
 			Integer newBevelStyleInteger = new Integer(newBevelStyle);
 
-			vetos.fireVetoableChange("bevelStyle",oldBevelStyleInteger,newBevelStyleInteger);
+			getVetos().fireVetoableChange("bevelStyle",oldBevelStyleInteger,newBevelStyleInteger);
 
 		    style = newBevelStyle;
 
-			changes.firePropertyChange("bevelStyle",oldBevelStyleInteger,newBevelStyleInteger);
+			getChanges().firePropertyChange("bevelStyle",oldBevelStyleInteger,newBevelStyleInteger);
 
 		    repaint();
 		}
@@ -640,11 +648,11 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 		{
 			Insets oldInsets = internalInsets;
 
-			vetos.fireVetoableChange("internalInsets",oldInsets,newInsets);
+			getVetos().fireVetoableChange("internalInsets",oldInsets,newInsets);
 
 		    internalInsets = newInsets;
 
-			changes.firePropertyChange("internalInsets",oldInsets,newInsets);
+			getChanges().firePropertyChange("internalInsets",oldInsets,newInsets);
 
 		    sizepanel(true);
 		    invalidate();
@@ -1151,87 +1159,87 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 	}
 
 	/**
-	 * Adds a listener for all event changes.
+	 * Adds a listener for all event getChanges().
 	 * @param listener the listener to add.
 	 * @see #removePropertyChangeListener
 	 */
 	public synchronized void addPropertyChangeListener(PropertyChangeListener listener)
 	{
 		//super.addPropertyChangeListener(listener);
-		changes.addPropertyChangeListener(listener);
+		getChanges().addPropertyChangeListener(listener);
 	}
 
 	/**
-	 * Removes a listener for all event changes.
+	 * Removes a listener for all event getChanges().
 	 * @param listener the listener to remove.
 	 * @see #addPropertyChangeListener
 	 */
 	public synchronized void removePropertyChangeListener(PropertyChangeListener listener)
 	{
 		//super.removePropertyChangeListener(listener);
-		changes.removePropertyChangeListener(listener);
+		getChanges().removePropertyChangeListener(listener);
 	}
 
 	/**
-	 * Adds a vetoable listener for all event changes.
+	 * Adds a vetoable listener for all event getChanges().
 	 * @param listener the listener to add.
 	 * @see #removeVetoableChangeListener
 	 */
 	public synchronized void addVetoableChangeListener(VetoableChangeListener listener)
 	{
 		 //super.addVetoableChangeListener(listener);
-		vetos.addVetoableChangeListener(listener);
+		getVetos().addVetoableChangeListener(listener);
 	}
 
 	/**
-	 * Removes a vetoable listener for all event changes.
+	 * Removes a vetoable listener for all event getChanges().
 	 * @param listener the listener to remove.
 	 * @see #addVetoableChangeListener
 	 */
 	public synchronized void removeVetoableChangeListener(VetoableChangeListener listener)
 	{
 		//super.removeVetoableChangeListener(listener);
-		vetos.removeVetoableChangeListener(listener);
+		getVetos().removeVetoableChangeListener(listener);
 	}
 
     /**
-     * Adds a listener for Orienation changes.
+     * Adds a listener for Orienation getChanges().
      * @param listener the listener to add.
      * @see #removeBevelStyleListener
      */
     public synchronized void addBevelStyleListener(PropertyChangeListener listener)
     {
-    	changes.addPropertyChangeListener("bevelStyle", listener);
+    	getChanges().addPropertyChangeListener("bevelStyle", listener);
     }
 
     /**
-     * Removes a listener for Orienation changes.
+     * Removes a listener for Orienation getChanges().
      * @param listener the listener to remove.
      * @see #addBevelStyleListener
      */
     public synchronized void removeBevelStyleListener(PropertyChangeListener listener)
     {
-    	changes.removePropertyChangeListener("bevelStyle", listener);
+    	getChanges().removePropertyChangeListener("bevelStyle", listener);
     }
 
     /**
-     * Adds a vetoable listener for BevelStyle changes.
+     * Adds a vetoable listener for BevelStyle getChanges().
      * @param listener the listener to add.
      * @see #removeBevelStyleListener
      */
     public synchronized void addBevelStyleListener(VetoableChangeListener listener)
     {
-		vetos.addVetoableChangeListener("bevelStyle", listener);
+		getVetos().addVetoableChangeListener("bevelStyle", listener);
     }
 
     /**
-     * Removes a vetoable listener for BevelStyle changes.
+     * Removes a vetoable listener for BevelStyle getChanges().
      * @param listener the listener to remove.
      * @see #addBevelStyleListener
      */
     public synchronized void removeBevelStyleListener(VetoableChangeListener listener)
     {
-    	vetos.removeVetoableChangeListener("bevelStyle", listener);
+    	getVetos().removeVetoableChangeListener("bevelStyle", listener);
     }
 
 	/**
@@ -1616,6 +1624,6 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 
 	private Vector cListeners = null;
 	private Veto veto = null;
-	private symantec.itools.beans.VetoableChangeSupport vetos = new symantec.itools.beans.VetoableChangeSupport(this);
-	private symantec.itools.beans.PropertyChangeSupport changes = new symantec.itools.beans.PropertyChangeSupport(this);
+	private symantec.itools.beans.VetoableChangeSupport vetos;
+	private symantec.itools.beans.PropertyChangeSupport changes;
 }

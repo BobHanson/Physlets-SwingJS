@@ -113,9 +113,9 @@ public class InvisibleButton extends Component
     {
     	String oldValue = actionCommand;
 
-		vetos.fireVetoableChange("ActionCommand", oldValue, command);
+		getVetos().fireVetoableChange("ActionCommand", oldValue, command);
         actionCommand = command;
-		changes.firePropertyChange("ActionCommand", oldValue, command);
+		getChanges().firePropertyChange("ActionCommand", oldValue, command);
     }
 
     /**
@@ -147,43 +147,43 @@ public class InvisibleButton extends Component
 	}
 
     /**
-     * Adds a listener for all event changes.
+     * Adds a listener for all event getChanges().
      * @param PropertyChangeListener listener the listener to add.
      * @see #removePropertyChangeListener
      */
     public synchronized void addPropertyChangeListener(PropertyChangeListener listener)
     {
-    	changes.addPropertyChangeListener(listener);
+    	getChanges().addPropertyChangeListener(listener);
     }
 
     /**
-     * Removes a listener for all event changes.
+     * Removes a listener for all event getChanges().
      * @param PropertyChangeListener listener the listener to remove.
      * @see #addPropertyChangeListener
      */
     public synchronized void removePropertyChangeListener(PropertyChangeListener listener)
     {
-    	changes.removePropertyChangeListener(listener);
+    	getChanges().removePropertyChangeListener(listener);
     }
 
     /**
-     * Adds a vetoable listener for all event changes.
+     * Adds a vetoable listener for all event getChanges().
      * @param VetoableChangeListener listener the listener to add.
      * @see #removeVetoableChangeListener
      */
     public synchronized void addVetoableChangeListener(VetoableChangeListener listener)
     {
-		vetos.addVetoableChangeListener(listener);
+		getVetos().addVetoableChangeListener(listener);
     }
 
     /**
-     * Removes a vetoable listener for all event changes.
+     * Removes a vetoable listener for all event getChanges().
      * @param VetoableChangeListener listener the listener to remove.
      * @see #addVetoableChangeListener
      */
     public synchronized void removeVetoableChangeListener(VetoableChangeListener listener)
     {
-    	vetos.removeVetoableChangeListener(listener);
+    	getVetos().removeVetoableChangeListener(listener);
     }
 
 	/**
@@ -230,7 +230,20 @@ public class InvisibleButton extends Component
 	 */
 	transient protected boolean pressed;
 	private Mouse mouse = null;
-	private symantec.itools.beans.VetoableChangeSupport vetos = new symantec.itools.beans.VetoableChangeSupport(this);
-    private symantec.itools.beans.PropertyChangeSupport changes = new symantec.itools.beans.PropertyChangeSupport(this);
+	protected symantec.itools.beans.VetoableChangeSupport vetos;
+	/**
+	 * Handles tracking non-vetoable change listeners and notifying them of each change
+	 * to this component's properties.
+	 */
+    protected symantec.itools.beans.PropertyChangeSupport changes;
+
+	private symantec.itools.beans.PropertyChangeSupport getChanges() {
+		return (changes == null ? (changes = new symantec.itools.beans.PropertyChangeSupport(this)) : changes);
+	}
+
+	private symantec.itools.beans.VetoableChangeSupport getVetos() {
+		return (vetos == null ? (vetos = new symantec.itools.beans.VetoableChangeSupport(this)) : vetos);
+	}
+
 }
 

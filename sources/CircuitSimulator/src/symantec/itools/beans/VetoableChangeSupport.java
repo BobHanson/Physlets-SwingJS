@@ -22,7 +22,7 @@ import java.beans.PropertyChangeEvent;
  * various work to it.
  * <p>
  * This extension of the java.beans.VetoableChangeSupport class adds
- * functionality to handle individual property changes.
+ * functionality to handle individual property getChanges().
  *
  * @author Symantec
  */

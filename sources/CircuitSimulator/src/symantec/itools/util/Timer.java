@@ -161,11 +161,11 @@ public class Timer implements Runnable, java.io.Serializable
     	Integer newValue = new Integer(d);
     	Integer oldValue = new Integer(delay);
 
-		vetos.fireVetoableChange("delay", oldValue, newValue);
+		getVetos().fireVetoableChange("delay", oldValue, newValue);
 
         delay = d;
 
-		changes.firePropertyChange("delay", oldValue, newValue);
+		getChanges().firePropertyChange("delay", oldValue, newValue);
     }
 
     /**
@@ -194,11 +194,11 @@ public class Timer implements Runnable, java.io.Serializable
     	Boolean newValue = new Boolean(f);
     	Boolean oldValue = new Boolean(repeat);
 
-		vetos.fireVetoableChange("repeat", oldValue, newValue);
+		getVetos().fireVetoableChange("repeat", oldValue, newValue);
 
 		repeat = f;
 
-		changes.firePropertyChange("repeat", oldValue, newValue);
+		getChanges().firePropertyChange("repeat", oldValue, newValue);
     }
 
     /**
@@ -441,9 +441,9 @@ public class Timer implements Runnable, java.io.Serializable
     {
     	String oldValue = actionCommand;
 
-		vetos.fireVetoableChange("actionCommand", oldValue, command);
+		getVetos().fireVetoableChange("actionCommand", oldValue, command);
         actionCommand = command;
-		changes.firePropertyChange("actionCommand", oldValue, command);
+		getChanges().firePropertyChange("actionCommand", oldValue, command);
     }
 
     /**
@@ -492,7 +492,7 @@ public class Timer implements Runnable, java.io.Serializable
      */
     public void addPropertyChangeListener(PropertyChangeListener listener)
     {
-    	changes.addPropertyChangeListener(listener);
+    	getChanges().addPropertyChangeListener(listener);
     }
 
     /**
@@ -502,7 +502,7 @@ public class Timer implements Runnable, java.io.Serializable
      */
     public void removePropertyChangeListener(PropertyChangeListener listener)
     {
-    	changes.removePropertyChangeListener(listener);
+    	getChanges().removePropertyChangeListener(listener);
     }
 
     /**
@@ -512,7 +512,7 @@ public class Timer implements Runnable, java.io.Serializable
      */
     public void addVetoableChangeListener(VetoableChangeListener listener)
     {
-		vetos.addVetoableChangeListener(listener);
+		getVetos().addVetoableChangeListener(listener);
     }
 
     /**
@@ -522,7 +522,7 @@ public class Timer implements Runnable, java.io.Serializable
      */
     public void removeVetoableChangeListener(VetoableChangeListener listener)
     {
-    	vetos.removeVetoableChangeListener(listener);
+    	getVetos().removeVetoableChangeListener(listener);
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
@@ -576,6 +576,19 @@ public class Timer implements Runnable, java.io.Serializable
      * The timer's thread.
      */
     transient protected Thread	thread;
-	private symantec.itools.beans.VetoableChangeSupport vetos = new symantec.itools.beans.VetoableChangeSupport(this);
-    private symantec.itools.beans.PropertyChangeSupport changes = new symantec.itools.beans.PropertyChangeSupport(this);
+	protected symantec.itools.beans.VetoableChangeSupport vetos;
+	/**
+	 * Handles tracking non-vetoable change listeners and notifying them of each change
+	 * to this component's properties.
+	 */
+    protected symantec.itools.beans.PropertyChangeSupport changes;
+
+	private symantec.itools.beans.PropertyChangeSupport getChanges() {
+		return (changes == null ? (changes = new symantec.itools.beans.PropertyChangeSupport(this)) : changes);
+	}
+
+	private symantec.itools.beans.VetoableChangeSupport getVetos() {
+		return (vetos == null ? (vetos = new symantec.itools.beans.VetoableChangeSupport(this)) : vetos);
+	}
+
 }

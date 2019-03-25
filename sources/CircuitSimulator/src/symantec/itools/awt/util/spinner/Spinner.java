@@ -1,8 +1,6 @@
 package symantec.itools.awt.util.spinner;
 
 //import a2s.*;
-import java.awt.*;
-
 import java.awt.AWTEventMulticaster;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -10,14 +8,17 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.LayoutManager;
-
-import java.awt.event.*;
+import java.awt.Panel;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyVetoException;
 import java.beans.VetoableChangeListener;
 import java.io.Serializable;
 import java.util.ResourceBundle;
+
 import symantec.itools.awt.Orientation;
 
 
@@ -400,14 +401,21 @@ public abstract class Spinner
 
 	    	oldValue = new Boolean(editable);
 	    	newValue = new Boolean(f);
-	    	vetos.fireVetoableChange("editable", oldValue, newValue);
+	    	getVetos().fireVetoableChange("editable", oldValue, newValue);
 	        editable = f;
             textFld.setEditable(editable);
 
-            changes.firePropertyChange("editable", oldValue, newValue);
+            getChanges().firePropertyChange("editable", oldValue, newValue);
 		}
     }
 
+	private symantec.itools.beans.PropertyChangeSupport getChanges() {
+		return (changes == null ? (changes = new symantec.itools.beans.PropertyChangeSupport(this)) : changes);
+	}
+
+	private symantec.itools.beans.VetoableChangeSupport getVetos() {
+		return (vetos == null ? (vetos = new symantec.itools.beans.VetoableChangeSupport(this)) : vetos);
+	}
     /**
      * @deprecated
      * @see #isEditable
@@ -448,10 +456,10 @@ public abstract class Spinner
 
     		oldValue = new Integer(orientation);
 	    	newValue = new Integer(o);
-		    vetos.fireVetoableChange("orientation", oldValue, newValue);
+		    getVetos().fireVetoableChange("orientation", oldValue, newValue);
 		    orientation = o;
     	    buttons.setOrientation(orientation);
-    		changes.firePropertyChange("orientation", oldValue, newValue);
+    		getChanges().firePropertyChange("orientation", oldValue, newValue);
 		}
 	}
 
@@ -485,10 +493,10 @@ public abstract class Spinner
 
 	    	oldValue = new Boolean(wrappable);
 	    	newValue = new Boolean(f);
-	    	vetos.fireVetoableChange("wrappable", oldValue, newValue);
+	    	getVetos().fireVetoableChange("wrappable", oldValue, newValue);
 	        wrappable = f;
 	        updateButtonStatus();
-	        changes.firePropertyChange("wrappable", oldValue, newValue);
+	        getChanges().firePropertyChange("wrappable", oldValue, newValue);
 		}
 	}
 
@@ -545,7 +553,7 @@ public abstract class Spinner
 
 			oldValue = new Integer(min);
 			newValue = new Integer(i);
-		    vetos.fireVetoableChange("min", oldValue, newValue);
+		    getVetos().fireVetoableChange("min", oldValue, newValue);
 		    min = i;
 
 		    if(getCurrent() < min)
@@ -557,7 +565,7 @@ public abstract class Spinner
 			    updateButtonStatus();
             }
 
-			changes.firePropertyChange("min", oldValue, newValue);
+			getChanges().firePropertyChange("min", oldValue, newValue);
 	    }
     }
 
@@ -588,7 +596,7 @@ public abstract class Spinner
 
 	    	oldValue = new Integer(max);
 	    	newValue = new Integer(i);
-	    	vetos.fireVetoableChange("max", oldValue, newValue);
+	    	getVetos().fireVetoableChange("max", oldValue, newValue);
 	        max = i;
 
 	        if(getCurrent() > max)
@@ -600,7 +608,7 @@ public abstract class Spinner
 		        updateButtonStatus();
             }
 
-	        changes.firePropertyChange("max", oldValue, newValue);
+	        getChanges().firePropertyChange("max", oldValue, newValue);
 		}
     }
 
@@ -631,11 +639,11 @@ public abstract class Spinner
 
 		   	oldValue = new Integer(current);
 	    	newValue = new Integer(i);
-	    	vetos.fireVetoableChange("current", oldValue, newValue);
+	    	getVetos().fireVetoableChange("current", oldValue, newValue);
 	        current = i;
 	        updateText(false);
 	        updateButtonStatus();
-	        changes.firePropertyChange("current", oldValue, newValue);
+	        getChanges().firePropertyChange("current", oldValue, newValue);
 		}
     }
 
@@ -675,9 +683,9 @@ public abstract class Spinner
 
     	    oldValue = new Boolean(getNotifyWhilePressed());
         	newValue = new Boolean(f);
-        	vetos.fireVetoableChange("notifyWhilePressed", oldValue, newValue);
+        	getVetos().fireVetoableChange("notifyWhilePressed", oldValue, newValue);
             buttons.setNotifyWhilePressed(f);
-            changes.firePropertyChange("notifyWhilePressed", oldValue, newValue);
+            getChanges().firePropertyChange("notifyWhilePressed", oldValue, newValue);
         }
     }
 
@@ -721,9 +729,9 @@ public abstract class Spinner
     	    oldValue = new Integer(buttons.getDelay());
         	newValue = new Integer(d);
 
-        	vetos.fireVetoableChange("delay", oldValue, newValue);
+        	getVetos().fireVetoableChange("delay", oldValue, newValue);
             buttons.setDelay(d);
-            changes.firePropertyChange("delay", oldValue, newValue);
+            getChanges().firePropertyChange("delay", oldValue, newValue);
         }
     }
 
@@ -879,7 +887,7 @@ public abstract class Spinner
      */
     public synchronized void addPropertyChangeListener(PropertyChangeListener listener)
     {
-    	changes.addPropertyChangeListener(listener);
+    	getChanges().addPropertyChangeListener(listener);
     }
 
     /**
@@ -889,7 +897,7 @@ public abstract class Spinner
      */
     public synchronized void removePropertyChangeListener(PropertyChangeListener listener)
     {
-    	changes.removePropertyChangeListener(listener);
+    	getChanges().removePropertyChangeListener(listener);
     }
 
     /**
@@ -899,7 +907,7 @@ public abstract class Spinner
      */
     public synchronized void addVetoableChangeListener(VetoableChangeListener listener)
     {
-		vetos.addVetoableChangeListener(listener);
+		getVetos().addVetoableChangeListener(listener);
     }
 
     /**
@@ -909,127 +917,127 @@ public abstract class Spinner
      */
     public synchronized void removeVetoableChangeListener(VetoableChangeListener listener)
     {
-    	vetos.removeVetoableChangeListener(listener);
+    	getVetos().removeVetoableChangeListener(listener);
     }
 
     /**
-     * Adds a listener for the current property changes.
+     * Adds a listener for the current property getChanges().
      * @param listener the listener to add.
      * @see #removeCurrentListener(java.beans.PropertyChangeListener)
      */
     public synchronized void addCurrentListener(PropertyChangeListener listener)
     {
-    	changes.addPropertyChangeListener("current", listener);
+    	getChanges().addPropertyChangeListener("current", listener);
     }
 
     /**
-     * Removes a listener for the current property changes.
+     * Removes a listener for the current property getChanges().
      * @param listener the listener to remove.
      * @see #addCurrentListener(java.beans.PropertyChangeListener)
      */
     public synchronized void removeCurrentListener(PropertyChangeListener listener)
     {
-    	changes.removePropertyChangeListener("current", listener);
+    	getChanges().removePropertyChangeListener("current", listener);
     }
 
     /**
-     * Adds a vetoable listener for the current property changes.
+     * Adds a vetoable listener for the current property getChanges().
      * @param listener the listener to add.
      * @see #removeCurrentListener(java.beans.VetoableChangeListener)
      */
     public synchronized void addCurrentListener(VetoableChangeListener listener)
     {
-    	vetos.addVetoableChangeListener("current", listener);
+    	getVetos().addVetoableChangeListener("current", listener);
     }
 
     /**
-     * Removes a vetoable listener for the current property changes.
+     * Removes a vetoable listener for the current property getChanges().
      * @param listener the listener to remove.
      * @see #addCurrentListener(java.beans.VetoableChangeListener)
      */
     public synchronized void removeCurrentListener(VetoableChangeListener listener)
     {
-    	vetos.removeVetoableChangeListener("current", listener);
+    	getVetos().removeVetoableChangeListener("current", listener);
     }
 
     /**
-     * Adds a listener for the max property changes.
+     * Adds a listener for the max property getChanges().
      * @param listener the listener to add.
      * @see #removeMaxListener(java.beans.PropertyChangeListener)
      */
     public synchronized void addMaxListener(PropertyChangeListener listener)
     {
-    	changes.addPropertyChangeListener("max", listener);
+    	getChanges().addPropertyChangeListener("max", listener);
     }
 
     /**
-     * Removes a listener for the max property changes.
+     * Removes a listener for the max property getChanges().
      * @param listener the listener to remove.
      * @see #addMaxListener(java.beans.PropertyChangeListener)
      */
     public synchronized void removeMaxListener(PropertyChangeListener listener)
     {
-    	changes.removePropertyChangeListener("max", listener);
+    	getChanges().removePropertyChangeListener("max", listener);
     }
 
     /**
-     * Adds a vetoable listener for the max property changes.
+     * Adds a vetoable listener for the max property getChanges().
      * @param listener the listener to add.
      * @see #removeMaxListener(java.beans.VetoableChangeListener)
      */
     public synchronized void addMaxListener(VetoableChangeListener listener)
     {
-    	vetos.addVetoableChangeListener("max", listener);
+    	getVetos().addVetoableChangeListener("max", listener);
     }
 
     /**
-     * Removes a vetoable listener for the max property changes.
+     * Removes a vetoable listener for the max property getChanges().
      * @param listener the listener to remove.
      * @see #addMaxListener(java.beans.VetoableChangeListener)
      */
     public synchronized void removeMaxListener(VetoableChangeListener listener)
     {
-    	vetos.removeVetoableChangeListener("max", listener);
+    	getVetos().removeVetoableChangeListener("max", listener);
     }
 
     /**
-     * Adds a listener for the min property changes.
+     * Adds a listener for the min property getChanges().
      * @param listener the listener to add.
      * @see #removeMinListener(java.beans.PropertyChangeListener)
      */
     public synchronized void addMinListener(PropertyChangeListener listener)
     {
-    	changes.addPropertyChangeListener("min", listener);
+    	getChanges().addPropertyChangeListener("min", listener);
     }
 
     /**
-     * Removes a listener for the min property changes.
+     * Removes a listener for the min property getChanges().
      * @param listener the listener to remove.
      * @see #addMinListener(java.beans.PropertyChangeListener)
      */
     public synchronized void removeMinListener(PropertyChangeListener listener)
     {
-    	changes.removePropertyChangeListener("min", listener);
+    	getChanges().removePropertyChangeListener("min", listener);
     }
 
     /**
-     * Adds a vetoable listener for the min property changes.
+     * Adds a vetoable listener for the min property getChanges().
      * @param listener the listener to add.
      * @see #removeMinListener(java.beans.VetoableChangeListener)
      */
     public synchronized void addMinListener(VetoableChangeListener listener)
     {
-    	vetos.addVetoableChangeListener("min", listener);
+    	getVetos().addVetoableChangeListener("min", listener);
     }
 
     /**
-     * Removes a vetoable listener for the min property changes.
+     * Removes a vetoable listener for the min property getChanges().
      * @param listener the listener to remove.
      * @see #addMinListener(java.beans.VetoableChangeListener)
      */
     public synchronized void removeMinListener(VetoableChangeListener listener)
     {
-    	vetos.removeVetoableChangeListener("min", listener);
+    	getVetos().removeVetoableChangeListener("min", listener);
     }
 
     /**

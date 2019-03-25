@@ -126,12 +126,12 @@ public class DirectionButton extends ButtonBase implements java.io.Serializable
 			Integer oldValue = new Integer(direction);
 			Integer newValue = new Integer(d);
 
-			vetos.fireVetoableChange("direction", oldValue, newValue);
+			getVetos().fireVetoableChange("direction", oldValue, newValue);
 
 			direction = d;
 			repaint();
 
-			changes.firePropertyChange("direction", oldValue, newValue);
+			getChanges().firePropertyChange("direction", oldValue, newValue);
 		}
 	}
 
@@ -165,7 +165,7 @@ public class DirectionButton extends ButtonBase implements java.io.Serializable
 				Integer oldValue = new Integer(indent);
 				Integer newValue = new Integer(ai);
 
-				vetos.fireVetoableChange("arrowIndent", oldValue, newValue);
+				getVetos().fireVetoableChange("arrowIndent", oldValue, newValue);
 
 		        indent = ai;
 		        tempIndent = ai;
@@ -174,7 +174,7 @@ public class DirectionButton extends ButtonBase implements java.io.Serializable
 		        shrinkTriangle(left, right, top, bottom);
 		        repaint();
 
-			    changes.firePropertyChange("arrowIndent", oldValue, newValue);
+			    getChanges().firePropertyChange("arrowIndent", oldValue, newValue);
 			}
 		}
 		//We store the value until we are added then set the value to avoid code-gen order dependencies.
@@ -197,7 +197,7 @@ public class DirectionButton extends ButtonBase implements java.io.Serializable
 		{
 			Color oldValue = arrowColor;
 
-			vetos.fireVetoableChange("arrowColor", oldValue, newValue);
+			getVetos().fireVetoableChange("arrowColor", oldValue, newValue);
 
 			arrowColor = newValue;
 			try
@@ -208,7 +208,7 @@ public class DirectionButton extends ButtonBase implements java.io.Serializable
 
 			repaint();
 
-			changes.firePropertyChange("arrowColor", oldValue, newValue);
+			getChanges().firePropertyChange("arrowColor", oldValue, newValue);
 		}
 	}
 
@@ -362,127 +362,127 @@ public class DirectionButton extends ButtonBase implements java.io.Serializable
 	}
 
     /**
-     * Adds a listener for all event changes.
+     * Adds a listener for all event getChanges().
      * @param listener the listener to add.
      * @see #removePropertyChangeListener
      */
     public synchronized void addPropertyChangeListener(PropertyChangeListener listener)
     {
     	super.addPropertyChangeListener(listener);
-    	changes.addPropertyChangeListener(listener);
+    	getChanges().addPropertyChangeListener(listener);
     }
 
     /**
-     * Removes a listener for all event changes.
+     * Removes a listener for all event getChanges().
      * @param listener the listener to remove.
      * @see #addPropertyChangeListener
      */
     public synchronized void removePropertyChangeListener(PropertyChangeListener listener)
     {
     	super.removePropertyChangeListener(listener);
-    	changes.removePropertyChangeListener(listener);
+    	getChanges().removePropertyChangeListener(listener);
     }
 
     /**
-     * Adds a vetoable listener for all event changes.
+     * Adds a vetoable listener for all event getChanges().
      * @param listener the listener to add.
      * @see #removeVetoableChangeListener
      */
     public synchronized void addVetoableChangeListener(VetoableChangeListener listener)
     {
      	super.addVetoableChangeListener(listener);
-		vetos.addVetoableChangeListener(listener);
+		getVetos().addVetoableChangeListener(listener);
     }
 
     /**
-     * Removes a vetoable listener for all event changes.
+     * Removes a vetoable listener for all event getChanges().
      * @param listener the listener to remove.
      * @see #addVetoableChangeListener
      */
     public synchronized void removeVetoableChangeListener(VetoableChangeListener listener)
     {
     	super.removeVetoableChangeListener(listener);
-    	vetos.removeVetoableChangeListener(listener);
+    	getVetos().removeVetoableChangeListener(listener);
     }
 
     /**
-     * Adds a listener for the Direction property changes.
+     * Adds a listener for the Direction property getChanges().
      * @param listener the listener to add.
      * @see #removeDirectionListener
      */
     public synchronized void addDirectionListener(PropertyChangeListener listener)
     {
-    	changes.addPropertyChangeListener("direction", listener);
+    	getChanges().addPropertyChangeListener("direction", listener);
     }
 
     /**
-     * Removes a listener for the Direction property changes.
+     * Removes a listener for the Direction property getChanges().
      * @param listener the listener to remove.
      * @see #addDirectionListener
      */
     public synchronized void removeDirectionListener(PropertyChangeListener listener)
     {
-    	changes.removePropertyChangeListener("direction", listener);
+    	getChanges().removePropertyChangeListener("direction", listener);
     }
 
     /**
-     * Adds a vetoable listener for the Direction property changes.
+     * Adds a vetoable listener for the Direction property getChanges().
      * @param listener the listener to add.
      * @see #removeDirectionListener
      */
     public synchronized void addDirectionListener(VetoableChangeListener listener)
     {
-    	vetos.addVetoableChangeListener("direction", listener);
+    	getVetos().addVetoableChangeListener("direction", listener);
     }
 
     /**
-     * Removes a vetoable listener for the Direction property changes.
+     * Removes a vetoable listener for the Direction property getChanges().
      * @param listener the listener to remove.
      * @see #addDirectionListener
      */
     public synchronized void removeDirectionListener(VetoableChangeListener listener)
     {
-    	vetos.removeVetoableChangeListener("direction", listener);
+    	getVetos().removeVetoableChangeListener("direction", listener);
     }
 
     /**
-     * Adds a listener for the ArrowIndent property changes.
+     * Adds a listener for the ArrowIndent property getChanges().
      * @param listener the listener to add.
      * @see #removeArrowIndentListener
      */
     public synchronized void addArrowIndentListener(PropertyChangeListener listener)
     {
-    	changes.addPropertyChangeListener("arrowIndent", listener);
+    	getChanges().addPropertyChangeListener("arrowIndent", listener);
     }
 
     /**
-     * Removes a listener for the ArrowIndent property changes.
+     * Removes a listener for the ArrowIndent property getChanges().
      * @param listener the listener to remove.
      * @see #addArrowIndentListener
      */
     public synchronized void removeArrowIndentListener(PropertyChangeListener listener)
     {
-    	changes.removePropertyChangeListener("arrowIndent", listener);
+    	getChanges().removePropertyChangeListener("arrowIndent", listener);
     }
 
     /**
-     * Adds a vetoable listener for the ArrowIndent property changes.
+     * Adds a vetoable listener for the ArrowIndent property getChanges().
      * @param listener the listener to add.
      * @see #removeArrowIndentListener
      */
     public synchronized void addArrowIndentListener(VetoableChangeListener listener)
     {
-    	vetos.addVetoableChangeListener("arrowIndent", listener);
+    	getVetos().addVetoableChangeListener("arrowIndent", listener);
     }
 
     /**
-     * Removes a vetoable listener for the ArrowIndent property changes.
+     * Removes a vetoable listener for the ArrowIndent property getChanges().
      * @param listener the listener to remove.
      * @see #addArrowIndentListener
      */
     public synchronized void removeArrowIndentListener(VetoableChangeListener listener)
     {
-    	vetos.removeVetoableChangeListener("arrowIndent", listener);
+    	getVetos().removeVetoableChangeListener("arrowIndent", listener);
     }
 
 	/**
@@ -771,6 +771,19 @@ public class DirectionButton extends ButtonBase implements java.io.Serializable
 
     private SizeVeto	sizeVeto	= null;
     private IndntVeto	indentVeto	= null;
-    private symantec.itools.beans.VetoableChangeSupport vetos = new symantec.itools.beans.VetoableChangeSupport(this);
-    private symantec.itools.beans.PropertyChangeSupport changes = new symantec.itools.beans.PropertyChangeSupport(this);
+	protected symantec.itools.beans.VetoableChangeSupport vetos;
+	/**
+	 * Handles tracking non-vetoable change listeners and notifying them of each change
+	 * to this component's properties.
+	 */
+    protected symantec.itools.beans.PropertyChangeSupport changes;
+
+	private symantec.itools.beans.PropertyChangeSupport getChanges() {
+		return (changes == null ? (changes = new symantec.itools.beans.PropertyChangeSupport(this)) : changes);
+	}
+
+	private symantec.itools.beans.VetoableChangeSupport getVetos() {
+		return (vetos == null ? (vetos = new symantec.itools.beans.VetoableChangeSupport(this)) : vetos);
+	}
+
 }

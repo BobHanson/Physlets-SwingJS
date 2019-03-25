@@ -34,14 +34,14 @@ public class Meter extends java.awt.Dialog
 		setSize(192,77);
 		setVisible(false);
 		numeric.setText("0.0");
-		numeric.setAlignment(a2s.Label.RIGHT);
+		numeric.setAlignment(Label.RIGHT);
 		add(numeric);
 		numeric.setBackground(java.awt.Color.black);
 		numeric.setForeground(java.awt.Color.yellow);
 		numeric.setFont(new Font("MonoSpaced", Font.BOLD, 12));
 		numeric.setBounds(12,12,144,24);
 		scale.setText("V");
-		scale.setAlignment(a2s.Label.RIGHT);
+		scale.setAlignment(Label.RIGHT);
 		add(scale);
 		scale.setBackground(java.awt.Color.black);
 		scale.setForeground(java.awt.Color.yellow);

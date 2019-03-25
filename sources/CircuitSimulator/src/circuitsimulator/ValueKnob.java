@@ -35,7 +35,7 @@ public class ValueKnob extends java.awt.Dialog
 		setSize(180,57);
 		setVisible(false);
 		numeric.setText("0.0");
-		numeric.setAlignment(a2s.Label.RIGHT);
+		numeric.setAlignment(Label.RIGHT);
 		add(numeric);
 		numeric.setBackground(java.awt.Color.black);
 		numeric.setForeground(java.awt.Color.yellow);

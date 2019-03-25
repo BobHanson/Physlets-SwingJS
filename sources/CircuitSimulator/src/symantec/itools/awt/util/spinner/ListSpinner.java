@@ -85,7 +85,7 @@ public class ListSpinner
 
     	if(!symantec.itools.util.GeneralUtils.objectsEqual(oldValue, items))
     	{
-   			vetos.fireVetoableChange("listItems", oldValue, items);
+   			getVetos().fireVetoableChange("listItems", oldValue, items);
 
 			list = new Vector();
 	        for (int i = 0; i < items.length; ++i)
@@ -99,7 +99,7 @@ public class ListSpinner
 	        updateButtonStatus();
 	        updateText(false);
 
-			changes.firePropertyChange("listItems", oldValue, items);
+			getChanges().firePropertyChange("listItems", oldValue, items);
 		}
     }
 
@@ -134,11 +134,11 @@ public class ListSpinner
 	    	Boolean oldValue = new Boolean( dynamicResizing );
 	    	Boolean newValue = new Boolean( f );
 
-	    	vetos.fireVetoableChange("allowDynamicResizing", oldValue, newValue);
+	    	getVetos().fireVetoableChange("allowDynamicResizing", oldValue, newValue);
 
 	        dynamicResizing = f;
 
-	        changes.firePropertyChange("allowDynamicResizing", oldValue, newValue);
+	        getChanges().firePropertyChange("allowDynamicResizing", oldValue, newValue);
 		}
     }
 
@@ -177,7 +177,7 @@ public class ListSpinner
 	    	Integer oldValue = new Integer( max );
 	    	Integer newValue = new Integer( i );
 
-	    	vetos.fireVetoableChange("max", oldValue, newValue);
+	    	getVetos().fireVetoableChange("max", oldValue, newValue);
 
 	        max = i;
 
@@ -189,7 +189,7 @@ public class ListSpinner
 		        updateButtonStatus();
 			}
 
-	        changes.firePropertyChange("max", oldValue, newValue);
+	        getChanges().firePropertyChange("max", oldValue, newValue);
 		}
     }
 
@@ -270,7 +270,7 @@ public class ListSpinner
     public synchronized void addPropertyChangeListener(PropertyChangeListener listener)
     {
     	super.addPropertyChangeListener(listener);
-    	changes.addPropertyChangeListener(listener);
+    	getChanges().addPropertyChangeListener(listener);
     }
 
     /**
@@ -281,7 +281,7 @@ public class ListSpinner
     public synchronized void removePropertyChangeListener(PropertyChangeListener listener)
     {
     	super.removePropertyChangeListener(listener);
-    	changes.removePropertyChangeListener(listener);
+    	getChanges().removePropertyChangeListener(listener);
     }
 
     /**
@@ -292,7 +292,7 @@ public class ListSpinner
     public synchronized void addVetoableChangeListener(VetoableChangeListener listener)
     {
 		super.addVetoableChangeListener(listener);
-		vetos.addVetoableChangeListener(listener);
+		getVetos().addVetoableChangeListener(listener);
     }
 
     /**
@@ -303,47 +303,47 @@ public class ListSpinner
     public synchronized void removeVetoableChangeListener(VetoableChangeListener listener)
     {
     	super.removeVetoableChangeListener(listener);
-    	vetos.removeVetoableChangeListener(listener);
+    	getVetos().removeVetoableChangeListener(listener);
     }
 
     /**
-     * Adds a listener for the max property changes.
+     * Adds a listener for the max property getChanges().
      * @param listener the listener to add.
      * @see #removeMaxListener(java.beans.PropertyChangeListener)
      */
     public synchronized void addMaxListener(PropertyChangeListener listener)
     {
-    	changes.addPropertyChangeListener("max", listener);
+    	getChanges().addPropertyChangeListener("max", listener);
     }
 
     /**
-     * Removes a listener for the max property changes.
+     * Removes a listener for the max property getChanges().
      * @param listener the listener to remove.
      * @see #addMaxListener(java.beans.PropertyChangeListener)
      */
     public synchronized void removeMaxListener(PropertyChangeListener listener)
     {
-    	changes.removePropertyChangeListener("max", listener);
+    	getChanges().removePropertyChangeListener("max", listener);
     }
 
     /**
-     * Adds a vetoable listener for the max property changes.
+     * Adds a vetoable listener for the max property getChanges().
      * @param listener the listener to add.
      * @see #removeMaxListener(java.beans.VetoableChangeListener)
      */
     public synchronized void addMaxListener(VetoableChangeListener listener)
     {
-    	vetos.addVetoableChangeListener("max", listener);
+    	getVetos().addVetoableChangeListener("max", listener);
     }
 
     /**
-     * Removes a vetoable listener for the max property changes.
+     * Removes a vetoable listener for the max property getChanges().
      * @param listener the listener to remove.
      * @see #addMaxListener(java.beans.VetoableChangeListener)
      */
     public synchronized void removeMaxListener(VetoableChangeListener listener)
     {
-    	vetos.removeVetoableChangeListener("max", listener);
+    	getVetos().removeVetoableChangeListener("max", listener);
     }
 
 	/**
@@ -622,6 +622,19 @@ public class ListSpinner
 
     private Focus focus = null;
 
-	private symantec.itools.beans.VetoableChangeSupport vetos = new symantec.itools.beans.VetoableChangeSupport(this);
-    private symantec.itools.beans.PropertyChangeSupport changes = new symantec.itools.beans.PropertyChangeSupport(this);
+	protected symantec.itools.beans.VetoableChangeSupport vetos;
+	/**
+	 * Handles tracking non-vetoable change listeners and notifying them of each change
+	 * to this component's properties.
+	 */
+    protected symantec.itools.beans.PropertyChangeSupport changes;
+
+	private symantec.itools.beans.PropertyChangeSupport getChanges() {
+		return (changes == null ? (changes = new symantec.itools.beans.PropertyChangeSupport(this)) : changes);
+	}
+
+	private symantec.itools.beans.VetoableChangeSupport getVetos() {
+		return (vetos == null ? (vetos = new symantec.itools.beans.VetoableChangeSupport(this)) : vetos);
+	}
+
 }

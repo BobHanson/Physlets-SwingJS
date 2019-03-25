@@ -58,12 +58,12 @@ public abstract class Shape extends Component implements BevelStyle
 	    	Integer oldValue = new Integer(style);
 	    	Integer newValue = new Integer(s);
 
-			vetos.fireVetoableChange("BevelStyle", oldValue, newValue);
+			getVetos().fireVetoableChange("BevelStyle", oldValue, newValue);
 
 	        style = s;
 	        repaint();
 
-			changes.firePropertyChange("BevelStyle", oldValue, newValue);
+			getChanges().firePropertyChange("BevelStyle", oldValue, newValue);
 		}
     }
 
@@ -91,12 +91,12 @@ public abstract class Shape extends Component implements BevelStyle
 	    	Boolean oldValue = new Boolean(fill);
 	    	Boolean newValue = new Boolean(f);
 
-			vetos.fireVetoableChange("FillMode", oldValue, newValue);
+			getVetos().fireVetoableChange("FillMode", oldValue, newValue);
 
 	        fill = f;
 	        repaint();
 
-			changes.firePropertyChange("FillMode", oldValue, newValue);
+			getChanges().firePropertyChange("FillMode", oldValue, newValue);
 		}
     }
 
@@ -131,12 +131,12 @@ public abstract class Shape extends Component implements BevelStyle
     	{
 	    	Boolean oldValue = new Boolean(fill);
 
-			vetos.fireVetoableChange("FillColor", oldValue, color);
+			getVetos().fireVetoableChange("FillColor", oldValue, color);
 
 	        fillColor = color;
 	        repaint();
 
-			changes.firePropertyChange("FillColor", oldValue, color);
+			getChanges().firePropertyChange("FillColor", oldValue, color);
 		}
     }
 
@@ -232,7 +232,7 @@ public abstract class Shape extends Component implements BevelStyle
      */
     public synchronized void addPropertyChangeListener(PropertyChangeListener listener)
     {
-    	changes.addPropertyChangeListener(listener);
+    	getChanges().addPropertyChangeListener(listener);
     }
 
     /**
@@ -242,7 +242,7 @@ public abstract class Shape extends Component implements BevelStyle
      */
     public synchronized void removePropertyChangeListener(PropertyChangeListener listener)
     {
-    	changes.removePropertyChangeListener(listener);
+    	getChanges().removePropertyChangeListener(listener);
     }
 
     /**
@@ -252,7 +252,7 @@ public abstract class Shape extends Component implements BevelStyle
      */
     public synchronized void addVetoableChangeListener(VetoableChangeListener listener)
     {
-		vetos.addVetoableChangeListener(listener);
+		getVetos().addVetoableChangeListener(listener);
     }
 
     /**
@@ -262,7 +262,7 @@ public abstract class Shape extends Component implements BevelStyle
      */
     public synchronized void removeVetoableChangeListener(VetoableChangeListener listener)
     {
-    	vetos.removeVetoableChangeListener(listener);
+    	getVetos().removeVetoableChangeListener(listener);
     }
 
 	/**
@@ -319,10 +319,19 @@ public abstract class Shape extends Component implements BevelStyle
 	 * Handles tracking vetoable change listeners and notifying them of each change
 	 * to this component's properties.
 	 */
-	protected symantec.itools.beans.VetoableChangeSupport vetos = new symantec.itools.beans.VetoableChangeSupport(this);
+	protected symantec.itools.beans.VetoableChangeSupport vetos;
 	/**
 	 * Handles tracking non-vetoable change listeners and notifying them of each change
 	 * to this component's properties.
 	 */
-    protected symantec.itools.beans.PropertyChangeSupport changes = new symantec.itools.beans.PropertyChangeSupport(this);
+    protected symantec.itools.beans.PropertyChangeSupport changes;
+
+	private symantec.itools.beans.PropertyChangeSupport getChanges() {
+		return (changes == null ? (changes = new symantec.itools.beans.PropertyChangeSupport(this)) : changes);
+	}
+
+	private symantec.itools.beans.VetoableChangeSupport getVetos() {
+		return (vetos == null ? (vetos = new symantec.itools.beans.VetoableChangeSupport(this)) : vetos);
+	}
+
 }

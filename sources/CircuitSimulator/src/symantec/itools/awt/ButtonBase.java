@@ -152,14 +152,14 @@ public abstract class ButtonBase extends Canvas
 				Integer oldValue = new Integer(bevel);
 				Integer newValue = new Integer(height);
 
-				vetos.fireVetoableChange("bevelHeight", oldValue, newValue);
+				getVetos().fireVetoableChange("bevelHeight", oldValue, newValue);
 
 			    bevel = height;
 			    tempBevelHeight = height;
 
 			    repaint();
 
-			    changes.firePropertyChange("bevelHeight", oldValue, newValue);
+			    getChanges().firePropertyChange("bevelHeight", oldValue, newValue);
 			}
 		}
 		//We store the value until we are added then set the value to avoid code-gen order dependencies.
@@ -195,7 +195,7 @@ public abstract class ButtonBase extends Canvas
 			Boolean oldValue = new Boolean(notifyWhilePressed);
 			Boolean newValue = new Boolean(flag);
 
-			vetos.fireVetoableChange("notifyWhilePressed", oldValue, newValue);
+			getVetos().fireVetoableChange("notifyWhilePressed", oldValue, newValue);
 
 	        notifyWhilePressed = flag;
 
@@ -209,7 +209,7 @@ public abstract class ButtonBase extends Canvas
 	            notifyTimer = null;
 	        }
 
-		    changes.firePropertyChange("notifyWhilePressed", oldValue, newValue);
+		    getChanges().firePropertyChange("notifyWhilePressed", oldValue, newValue);
 		}
     }
 
@@ -250,11 +250,11 @@ public abstract class ButtonBase extends Canvas
 			Integer oldValue = new Integer(notifyDelay);
 			Integer newValue = new Integer(delay);
 
-			vetos.fireVetoableChange("notifyDelay", oldValue, newValue);
+			getVetos().fireVetoableChange("notifyDelay", oldValue, newValue);
 	        notifyDelay = delay;
 	        if(notifyTimer != null)
 	        	notifyTimer.setDelay(notifyDelay);
-			changes.firePropertyChange("notifyDelay", oldValue, newValue);
+			getChanges().firePropertyChange("notifyDelay", oldValue, newValue);
 		}
     }
 
@@ -285,12 +285,12 @@ public abstract class ButtonBase extends Canvas
 		{
 			Boolean oldValue = new Boolean(useOffset);
 			Boolean newValue = new Boolean(flag);
-			vetos.fireVetoableChange("useOffset", oldValue, newValue);
+			getVetos().fireVetoableChange("useOffset", oldValue, newValue);
 
 	        useOffset = flag;
 	        repaint();
 
-			changes.firePropertyChange("useOffset", oldValue, newValue);
+			getChanges().firePropertyChange("useOffset", oldValue, newValue);
 		}
     }
 
@@ -321,11 +321,11 @@ public abstract class ButtonBase extends Canvas
     	{
 			Boolean oldValue = new Boolean(showFocus);
 			Boolean newValue = new Boolean(flag);
-			vetos.fireVetoableChange("showFocus", oldValue, newValue);
+			getVetos().fireVetoableChange("showFocus", oldValue, newValue);
 
 	        showFocus = flag;
 
-			changes.firePropertyChange("showFocus", oldValue, newValue);
+			getChanges().firePropertyChange("showFocus", oldValue, newValue);
 		}
     }
 
@@ -366,11 +366,11 @@ public abstract class ButtonBase extends Canvas
     	{
 			Boolean oldValue = new Boolean(showURLStatus);
 			Boolean newValue = new Boolean(flag);
-			vetos.fireVetoableChange("showURLStatus", oldValue, newValue);
+			getVetos().fireVetoableChange("showURLStatus", oldValue, newValue);
 
 	        showURLStatus = flag;
 
-			changes.firePropertyChange("showURLStatus", oldValue, newValue);
+			getChanges().firePropertyChange("showURLStatus", oldValue, newValue);
 		}
     }
 
@@ -400,7 +400,7 @@ public abstract class ButtonBase extends Canvas
 		{
 			Color oldValue = borderColor;
 
-			vetos.fireVetoableChange("borderColor", oldValue, color);
+			getVetos().fireVetoableChange("borderColor", oldValue, color);
 
 			borderColor = color;
 			try
@@ -410,7 +410,7 @@ public abstract class ButtonBase extends Canvas
 			catch (IllegalArgumentException exc) {}
 			repaint();
 
-			changes.firePropertyChange("borderColor", oldValue, color);
+			getChanges().firePropertyChange("borderColor", oldValue, color);
 		}
 	}
 
@@ -438,7 +438,7 @@ public abstract class ButtonBase extends Canvas
 		{
 			Color oldValue = buttonColor;
 
-			vetos.fireVetoableChange("buttonColor", oldValue, color);
+			getVetos().fireVetoableChange("buttonColor", oldValue, color);
 			buttonColor = color;
 			try
 			{
@@ -454,7 +454,7 @@ public abstract class ButtonBase extends Canvas
 			catch (IllegalArgumentException exc) {}
 			repaint();
 
-			changes.firePropertyChange("buttonColor", oldValue, color);
+			getChanges().firePropertyChange("buttonColor", oldValue, color);
 		}
 	}
 
@@ -481,9 +481,9 @@ public abstract class ButtonBase extends Canvas
     	{
     		URL oldValue = linkURL;
 
-			vetos.fireVetoableChange("linkURL", oldValue, url);
+			getVetos().fireVetoableChange("linkURL", oldValue, url);
 	        linkURL = url;
-			changes.firePropertyChange("linkURL", oldValue, url);
+			getChanges().firePropertyChange("linkURL", oldValue, url);
 		}
     }
 
@@ -519,11 +519,11 @@ public abstract class ButtonBase extends Canvas
     {
     	String oldValue = frame;
 
-		vetos.fireVetoableChange("frame", oldValue, newFrame);
+		getVetos().fireVetoableChange("frame", oldValue, newFrame);
 
         frame = newFrame;
 
-		changes.firePropertyChange("frame", oldValue, newFrame);
+		getChanges().firePropertyChange("frame", oldValue, newFrame);
     }
 
 	/**
@@ -871,123 +871,123 @@ public abstract class ButtonBase extends Canvas
 	}
 
     /**
-     * Adds a listener for all event changes.
+     * Adds a listener for all event getChanges().
      * @param listener the listener to add.
      * @see #removePropertyChangeListener
      */
     public synchronized void addPropertyChangeListener(PropertyChangeListener listener)
     {
-    	changes.addPropertyChangeListener(listener);
+    	getChanges().addPropertyChangeListener(listener);
     }
 
     /**
-     * Removes a listener for all event changes.
+     * Removes a listener for all event getChanges().
      * @param listener the listener to remove.
      * @see #addPropertyChangeListener
      */
     public synchronized void removePropertyChangeListener(PropertyChangeListener listener)
     {
-    	changes.removePropertyChangeListener(listener);
+    	getChanges().removePropertyChangeListener(listener);
     }
 
     /**
-     * Adds a vetoable listener for all event changes.
+     * Adds a vetoable listener for all event getChanges().
      * @param listener the listener to add.
      * @see #removeVetoableChangeListener
      */
     public synchronized void addVetoableChangeListener(VetoableChangeListener listener)
     {
-		vetos.addVetoableChangeListener(listener);
+		getVetos().addVetoableChangeListener(listener);
     }
 
     /**
-     * Removes a vetoable listener for all event changes.
+     * Removes a vetoable listener for all event getChanges().
      * @param listener the listener to remove.
      * @see #addVetoableChangeListener
      */
     public synchronized void removeVetoableChangeListener(VetoableChangeListener listener)
     {
-    	vetos.removeVetoableChangeListener(listener);
+    	getVetos().removeVetoableChangeListener(listener);
     }
 
     /**
-     * Adds a listener for the BevelHeight property changes.
+     * Adds a listener for the BevelHeight property getChanges().
      * @param listener the listener to add.
      * @see #removeBevelHeightListener(java.beans.PropertyChangeListener)
      */
     public synchronized void addBevelHeightListener(PropertyChangeListener listener)
     {
-    	changes.addPropertyChangeListener("bevelHeight", listener);
+    	getChanges().addPropertyChangeListener("bevelHeight", listener);
     }
 
     /**
-     * Removes a listener for the BevelHeight property changes.
+     * Removes a listener for the BevelHeight property getChanges().
      * @param listener the listener to remove.
      * @see #addBevelHeightListener(java.beans.PropertyChangeListener)
      */
     public synchronized void removeBevelHeightListener(PropertyChangeListener listener)
     {
-    	changes.removePropertyChangeListener("bevelHeight", listener);
+    	getChanges().removePropertyChangeListener("bevelHeight", listener);
     }
 
     /**
-     * Adds a vetoable listener for the BevelHeight property changes.
+     * Adds a vetoable listener for the BevelHeight property getChanges().
      * @param listener the listener to add.
      * @see #removeBevelHeightListener(java.beans.VetoableChangeListener)
      */
     public synchronized void addBevelHeightListener(VetoableChangeListener listener)
     {
-    	vetos.addVetoableChangeListener("bevelHeight", listener);
+    	getVetos().addVetoableChangeListener("bevelHeight", listener);
     }
 
     /**
-     * Removes a vetoable listener for the BevelHeight property changes.
+     * Removes a vetoable listener for the BevelHeight property getChanges().
      * @param listener the listener to remove.
      * @see #addBevelHeightListener(java.beans.VetoableChangeListener)
      */
     public synchronized void removeBevelHeightListener(VetoableChangeListener listener)
     {
-    	vetos.removeVetoableChangeListener("bevelHeight", listener);
+    	getVetos().removeVetoableChangeListener("bevelHeight", listener);
     }
 
     /**
-     * Adds a listener for the Frame property changes.
+     * Adds a listener for the Frame property getChanges().
      * @param listener the listener to add.
      * @see #removeFrameListener(java.beans.PropertyChangeListener)
      */
     public synchronized void addFrameListener(PropertyChangeListener listener)
     {
-    	changes.addPropertyChangeListener("frame", listener);
+    	getChanges().addPropertyChangeListener("frame", listener);
     }
 
     /**
-     * Removes a listener for the Frame property changes.
+     * Removes a listener for the Frame property getChanges().
      * @param listener the listener to remove.
      * @see #addFrameListener(java.beans.PropertyChangeListener)
      */
     public synchronized void removeFrameListener(PropertyChangeListener listener)
     {
-    	changes.removePropertyChangeListener("frame", listener);
+    	getChanges().removePropertyChangeListener("frame", listener);
     }
 
     /**
-     * Adds a vetoable listener for the Frame property changes.
+     * Adds a vetoable listener for the Frame property getChanges().
      * @param listener the listener to add.
      * @see #removeFrameListener(java.beans.VetoableChangeListener)
      */
     public synchronized void addFrameListener(VetoableChangeListener listener)
     {
-    	vetos.addVetoableChangeListener("frame", listener);
+    	getVetos().addVetoableChangeListener("frame", listener);
     }
 
     /**
-     * Removes a vetoable listener for the Frame property changes.
+     * Removes a vetoable listener for the Frame property getChanges().
      * @param listener the listener to remove.
      * @see #addFrameListener(java.beans.VetoableChangeListener)
      */
     public synchronized void removeFrameListener(VetoableChangeListener listener)
     {
-    	vetos.removeVetoableChangeListener("frame", listener);
+    	getVetos().removeVetoableChangeListener("frame", listener);
     }
 
     /**
@@ -1000,9 +1000,9 @@ public abstract class ButtonBase extends Canvas
     {
     	String oldValue = actionCommand;
 
-		vetos.fireVetoableChange("actionCommand", oldValue, command);
+		getVetos().fireVetoableChange("actionCommand", oldValue, command);
         actionCommand = command;
-		changes.firePropertyChange("actionCommand", oldValue, command);
+		getChanges().firePropertyChange("actionCommand", oldValue, command);
     }
 
     /**
@@ -1646,6 +1646,19 @@ public abstract class ButtonBase extends Canvas
     private Mouse		mouse		= null;
     private BevelVeto	bevelVeto	= null;
     private FrameVeto	frameVeto	= null;
-	private symantec.itools.beans.VetoableChangeSupport vetos = new symantec.itools.beans.VetoableChangeSupport(this);
-    private symantec.itools.beans.PropertyChangeSupport changes = new symantec.itools.beans.PropertyChangeSupport(this);
+	protected symantec.itools.beans.VetoableChangeSupport vetos;
+	/**
+	 * Handles tracking non-vetoable change listeners and notifying them of each change
+	 * to this component's properties.
+	 */
+    protected symantec.itools.beans.PropertyChangeSupport changes;
+
+	private symantec.itools.beans.PropertyChangeSupport getChanges() {
+		return (changes == null ? (changes = new symantec.itools.beans.PropertyChangeSupport(this)) : changes);
+	}
+
+	private symantec.itools.beans.VetoableChangeSupport getVetos() {
+		return (vetos == null ? (vetos = new symantec.itools.beans.VetoableChangeSupport(this)) : vetos);
+	}
+
 }

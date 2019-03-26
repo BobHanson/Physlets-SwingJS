@@ -70,7 +70,7 @@ public class Circuit extends edu.davidson.tools.SApplet implements SStepable, Ru
   private URL       imagebase;
 
   /** Field imagedir           */
-  public String     imagedir    = "";
+  public static String     imagedir    = "";
   boolean           parsed      = false;
   boolean           showCurrent = false;
   static boolean    DEBUG       = false;

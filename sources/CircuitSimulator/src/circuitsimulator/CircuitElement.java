@@ -160,6 +160,7 @@ public class CircuitElement extends Canvas implements SDataSource
         format = new Format("%.3g");
         //if(!Circuit.isJS) imagename += this.getMyName();
         imagename += getMyName();
+        loadImage(null);
         canvasElement =false;
         this.setValueVisible(false);
 		setBounds(0,2,52,22);
@@ -190,6 +191,7 @@ public class CircuitElement extends Canvas implements SDataSource
         font = new Font("TimesRoman", Font.PLAIN,10);
         format = new Format("%.3g");
         cirim = null;
+        loadImage(null);
         try{SApplet.addDataSource(this); }catch (Exception e){e.printStackTrace();}
     }
 
@@ -209,6 +211,7 @@ public class CircuitElement extends Canvas implements SDataSource
 
     public void setCircuit(Circuit circ) {
         circuit = circ;
+        loadImage(null);
         repaint();
     }
 
@@ -469,9 +472,11 @@ public class CircuitElement extends Canvas implements SDataSource
             	cirim = null;
             }else {
             	//System.out.println("imagedir ="+ circuit.imagedir+ "  imagename="+ imagename+" to="+ to);
-            	cirim = edu.davidson.graphics.Util.getImage(circuit.imagedir+imagename+to+".gif",circuit);
+            	cirim = edu.davidson.graphics.Util.getImage(Circuit.imagedir+imagename+to+".gif",circuit);
             }
         }
+        if (g == null)
+        	return;
         if (cirim != null) {
             if (to.equals("h")) {
                 g.drawLine(x+3, y, x+circuit.interGrid/2-24, y);

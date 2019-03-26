@@ -24,6 +24,8 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
      */
   public void init() {
     super.init();
+	  borderPanel  = new symantec.itools.awt.BorderPanel();
+	  builderPanel = new circuitsimulator.BuilderPanel();
     /*
      * String s = getParameter("startlist");
      *  if (s == null) startlist = "/" ;
@@ -98,8 +100,8 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
   }
 
   //{{DECLARE_CONTROLS
-  symantec.itools.awt.BorderPanel borderPanel  = new symantec.itools.awt.BorderPanel();
-  circuitsimulator.BuilderPanel   builderPanel = new circuitsimulator.BuilderPanel();
+  symantec.itools.awt.BorderPanel borderPanel;
+  circuitsimulator.BuilderPanel   builderPanel;
   //}}
   PopupOnElement                  popupOnElement;
   CircuitElement                  currentElement = null;

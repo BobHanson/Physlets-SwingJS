@@ -1097,6 +1097,7 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 		}
 	    g.setColor(curBackground);
 	    draw(g);
+	    super.paint(g);
 	}
 
 	/**

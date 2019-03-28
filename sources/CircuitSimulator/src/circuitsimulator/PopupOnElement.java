@@ -1,9 +1,8 @@
 package circuitsimulator;
 
+import java.applet.Applet;
 //import a2s.*;
 import java.awt.*;
-
-import java.awt.Component;
 
 /**
  * Used by circuitbuilder. Popupmenu with the options for the pointed element.
@@ -168,28 +167,19 @@ public class PopupOnElement extends PopupMenu
 
 	void changevalue_ActionPerformed(java.awt.event.ActionEvent event)
 	{
-	    Object anchorpoint = getParent();
-	    while (!(anchorpoint instanceof Frame))
-	        anchorpoint = ((Component)anchorpoint).getParent();
-	    ValueInput valueInput = new ValueInput(cb.cirProp.getProperty("changevalue_title"),cb,(Frame)anchorpoint);
+		new ValueInput(cb.cirProp.getProperty("changevalue_title"),cb,getAnchorPoint());
 	}
 
 	void knobvalue_ActionPerformed(java.awt.event.ActionEvent event)
 	{
-	    String s = ""+cb.currentElement.getvalue();
-	    Object anchorpoint = getParent();
-	    while (!(anchorpoint instanceof Frame))
-	        anchorpoint = ((Component)anchorpoint).getParent();
-	    ValueKnob valueKnob = new ValueKnob("",cb,(Frame)anchorpoint);
+	    //String s = ""+cb.currentElement.getvalue();
+	    new ValueKnob("",cb,getAnchorPoint());
 	}
 
 	void knobfrequency_ActionPerformed(java.awt.event.ActionEvent event)
 	{
-	    String s = ""+cb.currentElement.getvalue();
-	    Object anchorpoint = getParent();
-	    while (!(anchorpoint instanceof Frame))
-	        anchorpoint = ((Component)anchorpoint).getParent();
-	    ValueKnob valueKnob = new ValueKnob("Hz",cb,(Frame)anchorpoint);
+//	    String s = ""+cb.currentElement.getvalue();
+	    new ValueKnob("Hz",cb,getAnchorPoint());
 	}
 
 	void showvalue_ActionPerformed(java.awt.event.ActionEvent event)
@@ -198,12 +188,15 @@ public class PopupOnElement extends PopupMenu
 	    cb.circanvas.redraw();
 	}
 
-	void elemlabel_ActionPerformed(java.awt.event.ActionEvent event)
-	{
-	    Object anchorpoint = getParent();
-	    while (!(anchorpoint instanceof Frame))
-	        anchorpoint = ((Component)anchorpoint).getParent();
-	    ValueInput valueInput = new ValueInput(cb.cirProp.getProperty("elemlabel_title"),cb,(Frame)anchorpoint);
+	void elemlabel_ActionPerformed(java.awt.event.ActionEvent event) {
+		new ValueInput(cb.cirProp.getProperty("elemlabel_title"), cb, getAnchorPoint());
+	}
+
+	protected Component getAnchorPoint() {
+		Component c = (Component) getParent();
+	    while (c != null && !(c instanceof Frame) && !(c instanceof Applet))
+	        c = ((Component)c).getParent();
+	    return c;
 	}
 
 	void getvoltage_ActionPerformed(java.awt.event.ActionEvent event)

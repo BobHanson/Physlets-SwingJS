@@ -132,6 +132,7 @@ public class CircuitCanvas extends Canvas {
         cirgrid.cirElemList.elementAt(i).repaintImage(osGr);
       }
       osGr.dispose();
+      //System.out.println("circuitCanvas painting " + getSize());
       g.drawImage(osIm, 0, 0, this);
     }
     return;

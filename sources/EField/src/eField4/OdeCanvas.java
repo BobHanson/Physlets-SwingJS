@@ -1,7 +1,8 @@
 package eField4;
 
-//import java.awt.*;
-import a2s.*;
+import java.applet.Applet;
+import java.awt.*;
+//import a2s.*;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -464,7 +465,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
    * @return  int the id of the mouse data source
    */
   public int setSketchMode(boolean sm) {
-    a2s.Applet applet = edu.davidson.graphics.Util.getApplet(this);
+    Applet applet = edu.davidson.graphics.Util.getApplet(this);
     sketchImage = edu.davidson.graphics.Util.getImage("pencil.gif", applet);
    // int xoff = 0;
     // int yoff = 29;

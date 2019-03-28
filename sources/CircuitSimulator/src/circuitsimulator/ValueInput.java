@@ -21,13 +21,14 @@ public class ValueInput extends Dialog
     CircuitElement ce = null;
     String mode = "Properties";
 
-	public ValueInput(Frame parent)
+	public ValueInput(Component parent)
 	{
-		super(parent, "", false);
+		super((Frame) null, "", false);
 		//{{INIT_CONTROLS
 		setLayout(null);
-		setSize(306,120);
+		setSize(306,130);
 		setVisible(false);
+		setLocationRelativeTo(parent);
 		add(buttonOK);
 		buttonOK.setBackground(java.awt.Color.lightGray);
 		buttonOK.setBounds(68,85,68,24);
@@ -50,7 +51,7 @@ public class ValueInput extends Dialog
 		this((Frame)null);
 	}
 
-	public ValueInput(String sTitle, CircuitBuilder cirbuilder, Frame parent)
+	public ValueInput(String sTitle, CircuitBuilder cirbuilder, Component parent)
 	{
 		this(parent);
 		cb = cirbuilder;
@@ -95,18 +96,18 @@ public class ValueInput extends Dialog
 	// Used for addNotify check.
 	boolean fComponentsAdjusted = false;
 
-	public void setVisible(boolean b)
-	{
-		if (b)
-		{
-			Rectangle bounds = getParent().getBounds();
-			Rectangle abounds = getBounds();
-
-			setLocation(bounds.x + (bounds.width - abounds.width)/ 2,
-				bounds.y + (bounds.height - abounds.height)/2);
-		}
-		super.setVisible(b);
-	}
+//	public void setVisible(boolean b)
+//	{
+//		if (b)
+//		{
+//			Rectangle bounds = getParent().getBounds();
+//			Rectangle abounds = getBounds();
+//
+//			setLocation(bounds.x + (bounds.width - abounds.width)/ 2,
+//				bounds.y + (bounds.height - abounds.height)/2);
+//		}
+//		super.setVisible(b);
+//	}
 
 	//{{DECLARE_CONTROLS
 	Button buttonOK = new Button();

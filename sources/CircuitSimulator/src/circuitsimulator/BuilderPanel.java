@@ -1,5 +1,6 @@
 package circuitsimulator;
 
+import java.applet.Applet;
 //import a2s.*;
 import java.awt.Button;
 import java.awt.Color;
@@ -55,6 +56,9 @@ public class BuilderPanel extends BorderPanel {
 	
 		circuitBuilder = (CircuitBuilder) circuit;
 
+		
+		
+		
 		try {
 			rowSpin.setMin(2);
 		} catch (java.beans.PropertyVetoException e) {
@@ -435,11 +439,15 @@ public class BuilderPanel extends BorderPanel {
 	}
 
 	void changeProperties() {
-		Object anchorpoint = getParent();
-		while (!(anchorpoint instanceof Frame))
-			anchorpoint = ((Component) anchorpoint).getParent();
 		String title = "" + circuitBuilder.cirProp.getProperty("changevalue_title");
-		ValueInput valueInput = new ValueInput(title, circuitBuilder, (Frame) anchorpoint);
+		new ValueInput(title, circuitBuilder, getAnchorPoint());
+	}
+
+	private Component getAnchorPoint() {
+		Component anchorpoint = getParent();
+		while (anchorpoint != null && !(anchorpoint instanceof Frame) && !(anchorpoint instanceof Applet))
+			anchorpoint = ((Component) anchorpoint).getParent();
+		return anchorpoint;
 	}
 
 	void listButton_ActionPerformed(ActionEvent event) {

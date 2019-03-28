@@ -18,7 +18,7 @@ import edu.davidson.display.Format;
  * 
  * @author Toon Van Hoecke
  */
-public class ValueKnob extends java.awt.Dialog
+public class ValueKnob extends Dialog
 {
     CircuitBuilder cb = null;
     int elementID;
@@ -27,13 +27,14 @@ public class ValueKnob extends java.awt.Dialog
     String type="";
     double initialv = 1.0;
         
-	public ValueKnob(Frame parent)
+	public ValueKnob(Component parent)
 	{
-		super(parent);
+		super((Frame) null);
 		//{{INIT_CONTROLS
 		setLayout(null);
 		setSize(180,57);
 		setVisible(false);
+		setLocationRelativeTo(parent);
 		numeric.setText("0.0");
 		numeric.setAlignment(Label.RIGHT);
 		add(numeric);
@@ -73,19 +74,19 @@ public class ValueKnob extends java.awt.Dialog
 		//}}
 	}
 
-	public ValueKnob(Frame parent, boolean modal)
+	public ValueKnob(Component parent, boolean modal)
 	{
 		this(parent);
 		setModal(modal);
 	}
 
-	public ValueKnob(Frame parent, String title, boolean modal)
+	public ValueKnob(Component parent, String title, boolean modal)
 	{
 		this(parent, modal);
 		setTitle(title);
 	}
 
-	public ValueKnob(String t, CircuitBuilder cirbuilder, Frame parent)
+	public ValueKnob(String t, CircuitBuilder cirbuilder, Component parent)
 	{
 		this(parent);
 		cb = cirbuilder;
@@ -126,18 +127,18 @@ public class ValueKnob extends java.awt.Dialog
 	// Used for addNotify check.
 	boolean fComponentsAdjusted = false;
 
-	public void setVisible(boolean b)
-	{
-		if (b)
-		{
-			Rectangle bounds = getParent().getBounds();
-			Rectangle abounds = getBounds();
-
-			setLocation(bounds.x + (bounds.width - abounds.width)/ 2,
-				bounds.y + (bounds.height - abounds.height)/2);
-		}
-		super.setVisible(b);
-	}
+//	public void setVisible(boolean b)
+//	{
+//		if (b)
+//		{
+//			Rectangle bounds = getParent().getBounds();
+//			Rectangle abounds = getBounds();
+//
+//			setLocation(bounds.x + (bounds.width - abounds.width)/ 2,
+//				bounds.y + (bounds.height - abounds.height)/2);
+//		}
+//		super.setVisible(b);
+//	}
 
 	class SymWindow extends java.awt.event.WindowAdapter
 	{

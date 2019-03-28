@@ -1,11 +1,13 @@
 package edu.davidson.graphics;
 
-import a2s.*;
 import edu.davidson.tools.SClock;
 
+import java.applet.Applet;
 import java.awt.Component;
 import java.awt.Cursor;
+import java.awt.Dialog;
 import java.awt.Dimension;
+import java.awt.Frame;
 //import java.applet.Applet;
 //import java.awt.*;
 import java.awt.Graphics;
@@ -107,7 +109,7 @@ public class Util {
 	 * @return the image
 	 *
 	 */
-	static public Image getImage(String file, a2s.Applet applet) {
+	static public Image getImage(String file, Applet applet) {
 		Image im = null;
 		URL url = null;
 		if (applet == null)

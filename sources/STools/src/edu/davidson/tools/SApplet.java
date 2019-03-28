@@ -2,9 +2,10 @@
 package edu.davidson.tools;
 
 //import java.applet.Applet; // BH
-import a2s.*;
+//import a2s.*;
 import circuitsimulator.Circuit;
 
+import java.applet.Applet;
 import java.awt.Font;
 import java.net.URL;
 import java.util.Enumeration;

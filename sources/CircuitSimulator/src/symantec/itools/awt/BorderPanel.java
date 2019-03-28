@@ -20,6 +20,9 @@ import symantec.itools.awt.util.ColorUtils;
 import java.awt.event.ContainerListener;
 import java.awt.event.ContainerEvent;
 import java.util.Vector;
+
+import javax.swing.JComponent;
+
 import java.util.ResourceBundle;
 
 
@@ -141,7 +144,22 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 	    internalInsets = new Insets(10, 10, 10, 10);
 	    this.style     = style;
 	    super.setLayout(null);
-	    super.add(panel = new Panel());
+	    /**
+	     * @j2sNative   this.setOpaque$Z(false);
+	     */
+	    panel = new Panel() {
+	    	public void paint(Graphics g) {
+	    		System.out.println("paint panel1 " + panel.getSize());
+	    		super.paint(g);
+	    		System.out.println("paint panel2 " + panel.getSize());
+	    	}
+	    };
+	    
+	    /**
+	     * @j2sNative   this.panel.setOpaque$Z(false);
+	     */
+
+	    super.add(panel);
 	    if (panel != null)
 	        panel.setLayout(null);
 	    sizepanel(true);
@@ -997,55 +1015,55 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 	    sizepanel(false);
 	}
 
-    /**
-     * Handles redrawing of this component on the screen.
-     * This is a standard Java AWT method which gets called by the Java
-     * AWT (repaint()) to handle repainting this component on the screen.
-     * The graphics context clipping region is set to the bounding rectangle
-     * of this component and its [0,0] coordinate is this component's
-     * top-left corner.
-     * Typically this method paints the background color to clear the
-     * component's drawing space, sets graphics context to be the foreground
-     * color, and then calls paint() to draw the component.
-     *
-     * @param g the graphics context
-     * @see java.awt.Component#repaint
-     * @see #paint
-     */
-	public void update(Graphics g)
-	{
-	    Dimension s;
-	    Insets insets;
-
-	    s      = size();
-	    insets = insets();
-
-		//??? LAB ??? What is all this doing?  Doesn't seem to apply.
-	    g.setColor(getBackground());
-
-	    if (insets.left > 0)
-	    {
-	        g.fillRect(0, 0, insets.left, s.height);
-	    }
-
-	    if (insets.top > 0)
-	    {
-	        g.fillRect(0, 0, s.width, insets.top);
-	    }
-
-	    if (insets.bottom > 0)
-	    {
-	        g.fillRect(0, s.height-insets.bottom, s.width, insets.bottom);
-	    }
-
-	    if (insets.right > 0)
-	    {
-	        g.fillRect(s.width-insets.right, 0, insets.right, s.height);
-	    }
-
-	    paint(g);
-	    panel.repaint();
-	}
+//    /**
+//     * Handles redrawing of this component on the screen.
+//     * This is a standard Java AWT method which gets called by the Java
+//     * AWT (repaint()) to handle repainting this component on the screen.
+//     * The graphics context clipping region is set to the bounding rectangle
+//     * of this component and its [0,0] coordinate is this component's
+//     * top-left corner.
+//     * Typically this method paints the background color to clear the
+//     * component's drawing space, sets graphics context to be the foreground
+//     * color, and then calls paint() to draw the component.
+//     *
+//     * @param g the graphics context
+//     * @see java.awt.Component#repaint
+//     * @see #paint
+//     */
+//	public void update(Graphics g)
+//	{
+//	    Dimension s;
+//	    Insets insets;
+//
+//	    s      = size();
+//	    insets = insets();
+//
+//		//??? LAB ??? What is all this doing?  Doesn't seem to apply.
+//	    g.setColor(getBackground());
+//
+//	    if (insets.left > 0)
+//	    {
+//	        g.fillRect(0, 0, insets.left, s.height);
+//	    }
+//
+//	    if (insets.top > 0)
+//	    {
+//	        g.fillRect(0, 0, s.width, insets.top);
+//	    }
+//
+//	    if (insets.bottom > 0)
+//	    {
+//	        g.fillRect(0, s.height-insets.bottom, s.width, insets.bottom);
+//	    }
+//
+//	    if (insets.right > 0)
+//	    {
+//	        g.fillRect(s.width-insets.right, 0, insets.right, s.height);
+//	    }
+//
+////	    paint(g);
+//	    panel.repaint();
+//	}
 
 	/**
 	 * Returns the number of components in this container.
@@ -1088,6 +1106,7 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 	 */
 	public void paint(Graphics g)
 	{
+//	    super.paint(g);
 	    sizepanel(false);
 		Color curBackground = getBackground();
 		if (!symantec.itools.util.GeneralUtils.objectsEqual(curBackground, cachedBackground))
@@ -1097,6 +1116,7 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 		}
 	    g.setColor(curBackground);
 	    draw(g);
+	    // this is critical
 	    super.paint(g);
 	}
 
@@ -1111,8 +1131,14 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 	public void setBackground(Color c)
 	{
 	    super.setBackground(c);
+	    JComponent t;
+	    //we have to do this, because these are just painting their backgrounds a bit
+	    if (/** @j2sNative ! */false)
+	    ((JComponent) (Object) this).setOpaque(false);
 	    if(panel==null) return;
 	    panel.setBackground(c);
+	    if (/** @j2sNative ! */false)
+	    ((JComponent) (Object) panel).setOpaque(false);
 	}
 
     /**

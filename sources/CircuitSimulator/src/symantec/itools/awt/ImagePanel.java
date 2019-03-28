@@ -82,7 +82,7 @@ public class ImagePanel extends Panel
 		Dimension dim = size();
 		if (image != null)
 		{
-
+System.out.println("ImagePanel paint " + image.getWidth(this) + " " + image.getHeight(this));
 			int imageWidth = image.getWidth(this);
 			int imageHeight = image.getHeight(this);
 

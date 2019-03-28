@@ -72,11 +72,7 @@ public class Bulb extends CircuitElement
         }
     }
     
-    public void update(Graphics g){
-        paint(g);
-    }
-    
-    public void paint(Graphics g){
+   public void paint(Graphics g){
         super.paint(g);
         g.setColor(java.awt.Color.red);
         int cig = circuit.interGrid/2;

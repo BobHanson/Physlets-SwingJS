@@ -1,9 +1,13 @@
 package circuitsimulator;
 
+import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.Enumeration;
 import java.util.Vector;
@@ -12,6 +16,7 @@ import javax.swing.Timer;
 
 import edu.davidson.tools.SUtil;
 import edu.davidson.tools.SwingJSUtils;
+import symantec.itools.awt.BorderPanel;
 
 
 /**
@@ -26,85 +31,105 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
 	// or a predefined size. It's important for testing in JavaScript, especially.
   static Dimension dim  = SwingJSUtils.setDim(514, 445);
 
-  /**
-   * Exclude the javadoc because this method should not be scripted.
-   * @y.exclude
-     */
-  public void init() {
-    super.init();
-	  borderPanel  = new symantec.itools.awt.BorderPanel();
-	  builderPanel = new circuitsimulator.BuilderPanel(this);
-    /*
-     * String s = getParameter("startlist");
-     *  if (s == null) startlist = "/" ;
-     *  else imagedir += s+"/";
-     */
-    //{{INIT_CONTROLS
-    setLayout(null);
-    if(!Circuit.isJS)setBackground(new java.awt.Color(0, 143, 213));
-    if (dim != null)
-    	setSize(dim);
-    try {
-      borderPanel.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
-    } catch(java.beans.PropertyVetoException e) {}
-    try {
-      borderPanel.setIPadBottom(0);
-    } catch(java.beans.PropertyVetoException e) {}
-    try {
-      borderPanel.setIPadSides(0);
-    } catch(java.beans.PropertyVetoException e) {}
-    try {
-      borderPanel.setPaddingRight(0);
-    } catch(java.beans.PropertyVetoException e) {}
-    try {
-      borderPanel.setPaddingBottom(0);
-    } catch(java.beans.PropertyVetoException e) {}
-    try {
-      borderPanel.setPaddingTop(0);
-    } catch(java.beans.PropertyVetoException e) {}
-    try {
-      borderPanel.setIPadTop(0);
-    } catch(java.beans.PropertyVetoException e) {}
-    try {
-      borderPanel.setPaddingLeft(0);
-    } catch(java.beans.PropertyVetoException e) {}
-    borderPanel.setLayout(null);
-    add(borderPanel);
-    borderPanel.setBounds(0, 0, 514, 444);
-    try {
-      builderPanel.setPaddingRight(0);
-    } catch(java.beans.PropertyVetoException e) {}
-    try {
-      builderPanel.setBevelStyle(circuitsimulator.BuilderPanel.BEVEL_LOWERED);
-    } catch(java.beans.PropertyVetoException e) {}
-    try {
-      builderPanel.setPaddingLeft(0);
-    } catch(java.beans.PropertyVetoException e) {}
-    try {
-      builderPanel.setIPadBottom(1);
-    } catch(java.beans.PropertyVetoException e) {}
-    try {
-      builderPanel.setPaddingBottom(0);
-    } catch(java.beans.PropertyVetoException e) {}
-    try {
-      builderPanel.setPaddingTop(0);
-    } catch(java.beans.PropertyVetoException e) {}
-    try {
-      builderPanel.setIPadSides(1);
-    } catch(java.beans.PropertyVetoException e) {}
-    try {
-      builderPanel.setIPadTop(1);
-    } catch(java.beans.PropertyVetoException e) {}
-    builderPanel.setLayout(null);
-    borderPanel.add(builderPanel);
-    if(!Circuit.isJS)builderPanel.setBackground(new java.awt.Color(0, 143, 213));
-    builderPanel.setBounds(313, 17, 195, 401);
-    //}}
-    //{{REGISTER_LISTENERS
-    SymMouse aSymMouse = new SymMouse();
-    //}}
-    circanvas.addMouseListener(aSymMouse);
-  }
+	/**
+	 * Exclude the javadoc because this method should not be scripted.
+	 * 
+	 * @y.exclude
+	 */
+	public void init() {
+		super.init();
+		if (dim != null)
+			setSize(dim);
+		borderPanel = new BorderPanel();
+		builderPanel = new BuilderPanel(this);
+		/*
+		 * String s = getParameter("startlist"); if (s == null) startlist = "/" ; else
+		 * imagedir += s+"/";
+		 */
+		// {{INIT_CONTROLS
+
+		setLayout(null);
+		setBackground(new Color(0, 143, 213));
+		try {
+			borderPanel.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+		try {
+			borderPanel.setIPadBottom(0);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+		try {
+			borderPanel.setIPadSides(0);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+		try {
+			borderPanel.setPaddingRight(0);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+		try {
+			borderPanel.setPaddingBottom(0);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+		try {
+			borderPanel.setPaddingTop(0);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+		try {
+			borderPanel.setIPadTop(0);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+		try {
+			borderPanel.setPaddingLeft(0);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+		borderPanel.setLayout(null);
+		add(borderPanel);
+		borderPanel.setBounds(0, 0, 514, 444);
+
+		try {
+			builderPanel.setPaddingRight(0);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+		try {
+			builderPanel.setBevelStyle(circuitsimulator.BuilderPanel.BEVEL_LOWERED);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+		try {
+			builderPanel.setPaddingLeft(0);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+		try {
+			builderPanel.setIPadBottom(1);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+		try {
+			builderPanel.setPaddingBottom(0);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+		try {
+			builderPanel.setPaddingTop(0);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+		try {
+			builderPanel.setIPadSides(1);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+		try {
+			builderPanel.setIPadTop(1);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+		builderPanel.setLayout(null);
+		builderPanel.setBackground(new Color(0, 143, 213));
+		builderPanel.setBounds(313, 17, 195, 401);
+
+		borderPanel.add(builderPanel);
+		// }}
+		
+		// {{REGISTER_LISTENERS
+		SymMouse aSymMouse = new SymMouse();
+		// }}
+		circanvas.addMouseListener(aSymMouse);
+	}
 
   //{{DECLARE_CONTROLS
   symantec.itools.awt.BorderPanel borderPanel;
@@ -178,14 +203,14 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
    * @author
    * @version %I%, %G%
    */
-  class SymMouse extends java.awt.event.MouseAdapter {
+  class SymMouse extends MouseAdapter {
 
     /**
      * Method mouseReleased
      *
      * @param event
      */
-    public void mouseReleased(java.awt.event.MouseEvent event) {
+    public void mouseReleased(MouseEvent event) {
       Object object = event.getSource();
       if(object == circanvas) {
         circanvas_mouseReleased(event);
@@ -197,7 +222,7 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
      *
      * @param event
      */
-    public void mousePressed(java.awt.event.MouseEvent event) {
+    public void mousePressed(MouseEvent event) {
       Object object = event.getSource();
       if(object == circanvas) {
         circanvas_MousePressed(event);
@@ -210,14 +235,14 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
    *
    * @param event
    */
-  void circanvas_MousePressed(java.awt.event.MouseEvent event) {
+  void circanvas_MousePressed(MouseEvent event) {
     currentElement = getComponent(coordString(event.getPoint(), false));
     if((event.isMetaDown() == true) | (event.isControlDown() == true)) {
       popupOnElement.selectItems();
       add(popupOnElement);
       popupOnElement.show(event.getComponent(), event.getX(), event.getY());
     } else {
-      circanvas.setCursor(java.awt.Cursor.getPredefinedCursor(java.awt.Cursor.HAND_CURSOR));
+      circanvas.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }
     if((debugLevel & DEBUG_IO) > 0) {
       System.out.println(currentElement.getMyName());
@@ -229,10 +254,10 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
    *
    * @param event
    */
-  void circanvas_mouseReleased(java.awt.event.MouseEvent event) {
+  void circanvas_mouseReleased(MouseEvent event) {
     if((event.isMetaDown() == false) & (event.isControlDown() == false)) {
       moveComponent(currentElement, coordString(event.getPoint(), false));
-      circanvas.setCursor(java.awt.Cursor.getDefaultCursor());
+      circanvas.setCursor(Cursor.getDefaultCursor());
       parse();
       repaintMeters();
     }

@@ -21,14 +21,14 @@ public class VGeneral extends Resistor
         parsefunction();
     }
     
-    VGeneral() {super();}
+    VGeneral(Circuit circuit) {super(circuit);}
     
     public void parsefunction() {
         parser.defineVariable(1,"v");
         parser.defineVariable(2,"i");
         parser.define(function.toLowerCase());
         parser.parse();
-        if (parser.getErrorCode() != parser.NO_ERROR){
+        if (parser.getErrorCode() != Parser.NO_ERROR){
             System.out.println("Failed to parse function: "+function);
             System.out.println("Parse error: "+parser.getErrorString()+
                 " function position "+parser.getErrorPosition());
@@ -36,7 +36,7 @@ public class VGeneral extends Resistor
     }
     
     public void setvalue(String s) {
-        function = ""+s;
+        function = s;
         parsefunction();
     }
     

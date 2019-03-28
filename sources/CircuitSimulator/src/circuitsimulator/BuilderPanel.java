@@ -6,6 +6,12 @@ import java.awt.*;
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.TextEvent;
+import java.awt.event.TextListener;
 
 import symantec.itools.awt.BorderPanel;
 
@@ -15,10 +21,9 @@ import symantec.itools.awt.BorderPanel;
  * @author Toon Van Hoecke
  */
 //public class BuilderPanel extends symantec.itools.awt.BorderPanel
-public class BuilderPanel extends symantec.itools.awt.BorderPanel
-{   
-    CircuitBuilder circuitBuilder=null;
-    String selectedComponent ="";
+public class BuilderPanel extends symantec.itools.awt.BorderPanel {
+	CircuitBuilder circuitBuilder = null;
+	String selectedComponent = "";
 
 	circuitsimulator.Wire wire;
 	circuitsimulator.Resistor resistor;
@@ -39,7 +44,6 @@ public class BuilderPanel extends symantec.itools.awt.BorderPanel
 
 	public BuilderPanel(Circuit circuit) {
 		// {{INIT_CONTROLS
-		setComponents(circuit);
 		try {
 			setPaddingRight(0);
 		} catch (java.beans.PropertyVetoException e) {
@@ -739,27 +743,18 @@ public class BuilderPanel extends symantec.itools.awt.BorderPanel
 		diodeBorder.setBackground(new java.awt.Color(0, 169, 251));
 		diodeBorder.setBounds(5, 191, 56, 28);
 		// }}
-		wireBorder.add(wire);
-		resistorBorder.add(resistor);
-		inductorBorder.add(inductor);
-		capacitorBorder.add(capacitor);
-		switchBorder.add(switch1);
-		bulbBorder.add(bulb);
-		transformerBorder.add(transformercoil);
-		diodeBorder.add(diode);
-		sourceBorder.add(source);
-		batteryBorder.add(battery);
-		currentsourceBorder.add(currentsource);
-		sinwaveBorder.add(sinwave);
-		squarewaveBorder.add(squarewave);
-		scopeBorder.add(scope);
-		vmeterBorder.add(vmeter);
-		ameterBorder.add(ameter);
+
+		addComponents(circuit);
+		addListeners();
+		setCircuitBuilder((CircuitBuilder) circuit);
+	}
+
+	private void addListeners() {
 
 		// {{REGISTER_LISTENERS
 		SymAction lSymAction = new SymAction();
-		setGridButton.addActionListener(lSymAction);
 		SymMouse aSymMouse = new SymMouse();
+		setGridButton.addActionListener(lSymAction);
 		listButton.addActionListener(lSymAction);
 		calculateButton.addActionListener(lSymAction);
 		SymText lSymText = new SymText();
@@ -787,10 +782,9 @@ public class BuilderPanel extends symantec.itools.awt.BorderPanel
 		scope.addMouseListener(aSymMouse);
 		vmeter.addMouseListener(aSymMouse);
 		ameter.addMouseListener(aSymMouse);
-		setCircuitBuilder((CircuitBuilder) circuit);
 	}
 
-	void setComponents(Circuit circuit) {
+	private void addComponents(Circuit circuit) {
 		wire = new circuitsimulator.Wire(circuit);
 		resistor = new circuitsimulator.Resistor(circuit);
 		capacitor = new circuitsimulator.Capacitor(circuit);
@@ -807,9 +801,27 @@ public class BuilderPanel extends symantec.itools.awt.BorderPanel
 		vmeter = new circuitsimulator.Vmeter(circuit);
 		ameter = new circuitsimulator.Ameter(circuit);
 		scope = new circuitsimulator.Scope(circuit);
+
+		wireBorder.add(wire);
+		resistorBorder.add(resistor);
+		inductorBorder.add(inductor);
+		capacitorBorder.add(capacitor);
+		switchBorder.add(switch1);
+		bulbBorder.add(bulb);
+		transformerBorder.add(transformercoil);
+		diodeBorder.add(diode);
+		sourceBorder.add(source);
+		batteryBorder.add(battery);
+		currentsourceBorder.add(currentsource);
+		sinwaveBorder.add(sinwave);
+		squarewaveBorder.add(squarewave);
+		scopeBorder.add(scope);
+		vmeterBorder.add(vmeter);
+		ameterBorder.add(ameter);
 	}
-	//{{DECLARE_CONTROLS
-	//Button setGridButton = new a2s.Button();
+
+	// {{DECLARE_CONTROLS
+	// Button setGridButton = new a2s.Button();
 	Button setGridButton = new Button();
 	symantec.itools.awt.util.spinner.NumericSpinner rowSpin = new symantec.itools.awt.util.spinner.NumericSpinner();
 	symantec.itools.awt.util.spinner.NumericSpinner colSpin = new symantec.itools.awt.util.spinner.NumericSpinner();
@@ -842,22 +854,22 @@ public class BuilderPanel extends symantec.itools.awt.BorderPanel
 	symantec.itools.awt.BorderPanel sinwaveBorder = new symantec.itools.awt.BorderPanel();
 	symantec.itools.awt.BorderPanel squarewaveBorder = new symantec.itools.awt.BorderPanel();
 	symantec.itools.awt.BorderPanel diodeBorder = new symantec.itools.awt.BorderPanel();
-	//}}
+	// }}
 	String coordStr;
-	
-	private void setCircuitBuilder (CircuitBuilder cb) {
-	    circuitBuilder=cb;
-        label1.setText(cb.cirProp.getProperty("rows"));
-        label3.setText(cb.cirProp.getProperty("cols"));
-	    loadButton.setLabel(cb.cirProp.getProperty("Load"));
-        setGridButton.setLabel(cb.cirProp.getProperty("setgrid"));
-        listButton.setLabel(cb.cirProp.getProperty("List"));
-        arrows.setLabel(cb.cirProp.getProperty("arrows"));
-        calculateButton.setLabel(cb.cirProp.getProperty("Calculate"));
-        forwarding.setLabel(cb.cirProp.getProperty("Start"));
-        resetting.setLabel(cb.cirProp.getProperty("Reset"));
-        dtInput.setText(Double.toString(circuitBuilder.dt));
-	    numberInput.setText(Integer.toString(circuitBuilder.numberofdt));
+
+	private void setCircuitBuilder(CircuitBuilder cb) {
+		circuitBuilder = cb;
+		label1.setText(cb.cirProp.getProperty("rows"));
+		label3.setText(cb.cirProp.getProperty("cols"));
+		loadButton.setLabel(cb.cirProp.getProperty("Load"));
+		setGridButton.setLabel(cb.cirProp.getProperty("setgrid"));
+		listButton.setLabel(cb.cirProp.getProperty("List"));
+		arrows.setLabel(cb.cirProp.getProperty("arrows"));
+		calculateButton.setLabel(cb.cirProp.getProperty("Calculate"));
+		forwarding.setLabel(cb.cirProp.getProperty("Start"));
+		resetting.setLabel(cb.cirProp.getProperty("Reset"));
+		dtInput.setText(Double.toString(circuitBuilder.dt));
+		numberInput.setText(Integer.toString(circuitBuilder.numberofdt));
 	}
 
 //	public void loadImages() {
@@ -879,162 +891,175 @@ public class BuilderPanel extends symantec.itools.awt.BorderPanel
 //		ameter.setCircuit(circuitBuilder);
 //	}
 //
-	class SymAction implements java.awt.event.ActionListener
-	{
-		public void actionPerformed(java.awt.event.ActionEvent event)
-		{
+	class SymAction implements ActionListener {
+		public void actionPerformed(ActionEvent event) {
 			Object object = event.getSource();
-			if (object == setGridButton) setGridButton_ActionPerformed(event);
-			else if (object == listButton) listButton_ActionPerformed(event);
-			else if (object == calculateButton)	calculateButton_ActionPerformed(event);
-			else if (object == arrows) arrows_ActionPerformed(event);
-			else if (object == loadButton) loadButton_ActionPerformed(event);
-			else if (object == forwarding) forwarding_ActionPerformed(event);
-			else if (object == resetting) resetting_ActionPerformed(event);
+			if (object == setGridButton)
+				setGridButton_ActionPerformed(event);
+			else if (object == listButton)
+				listButton_ActionPerformed(event);
+			else if (object == calculateButton)
+				calculateButton_ActionPerformed(event);
+			else if (object == arrows)
+				arrows_ActionPerformed(event);
+			else if (object == loadButton)
+				loadButton_ActionPerformed(event);
+			else if (object == forwarding)
+				forwarding_ActionPerformed(event);
+			else if (object == resetting)
+				resetting_ActionPerformed(event);
 		}
 	}
 
- 	class SymMouse extends java.awt.event.MouseAdapter 
- 	{
-		public void mousePressed(java.awt.event.MouseEvent event) {
+	class SymMouse extends MouseAdapter {
+		public void mousePressed(MouseEvent event) {
 			Object object = event.getSource();
 			try {
-            if (object == resistor) resistorBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
-            else if (object == capacitor) capacitorBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
-			else if (object == inductor) inductorBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
-			else if (object == wire) wireBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
-			else if (object == switch1) switchBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
-			else if (object == bulb) bulbBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
-			else if (object == transformercoil) transformerBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
-			else if (object == diode) diodeBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
-			else if (object == source) sourceBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
-			else if (object == battery) batteryBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
-			else if (object == currentsource) currentsourceBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
-			else if (object == sinwave) sinwaveBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
-			else if (object == squarewave) squarewaveBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
-			else if (object == scope) scopeBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
-			else if (object == vmeter) vmeterBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
-			else if (object == ameter) ameterBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
-    		} catch(java.beans.PropertyVetoException e) { }
+				if (object == resistor)
+					resistorBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
+				else if (object == capacitor)
+					capacitorBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
+				else if (object == inductor)
+					inductorBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
+				else if (object == wire)
+					wireBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
+				else if (object == switch1)
+					switchBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
+				else if (object == bulb)
+					bulbBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
+				else if (object == transformercoil)
+					transformerBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
+				else if (object == diode)
+					diodeBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
+				else if (object == source)
+					sourceBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
+				else if (object == battery)
+					batteryBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
+				else if (object == currentsource)
+					currentsourceBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
+				else if (object == sinwave)
+					sinwaveBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
+				else if (object == squarewave)
+					squarewaveBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
+				else if (object == scope)
+					scopeBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
+				else if (object == vmeter)
+					vmeterBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
+				else if (object == ameter)
+					ameterBorder.setBevelStyle(BorderPanel.BEVEL_LOWERED);
+			} catch (java.beans.PropertyVetoException e) {
+			}
 		}
-		
-		public void mouseReleased(java.awt.event.MouseEvent event) {
+
+		public void mouseReleased(MouseEvent event) {
 			Object object = event.getSource();
-			int stat=-1;
-		    coordStr = circuitBuilder.coordString(absoluteP(event.getPoint(),(Component)object),true);
-		    String name = ""+((CircuitElement)object).getMyName();
-            if (name.equals("transformercoil"))
-                stat=circuitBuilder.addObject("transformer",coordStr); 
-    	    else stat=circuitBuilder.addObject(name,coordStr);
-    	    if (stat != -1) {
-    	        circuitBuilder.currentElement=circuitBuilder.getComponent(coordStr);
-	            if (!name.equals("wire") && !name.equals("scope")
-	                && !name.equals("ameter") && !name.equals("vmeter")) 
-	                changeProperties();
-    	        circuitBuilder.reset();
-	            forwarding.setLabel(circuitBuilder.cirProp.getProperty("Start"));
-                circuitBuilder.parse();
-                circuitBuilder.repaintMeters();
-	        }
+			int stat = -1;
+			coordStr = circuitBuilder.coordString(absoluteP(event.getPoint(), (Component) object), true);
+			String name = "" + ((CircuitElement) object).getMyName();
+			if (name.equals("transformercoil"))
+				stat = circuitBuilder.addObject("transformer", coordStr);
+			else
+				stat = circuitBuilder.addObject(name, coordStr);
+			if (stat != -1) {
+				circuitBuilder.currentElement = circuitBuilder.getComponent(coordStr);
+				if (!name.equals("wire") && !name.equals("scope") && !name.equals("ameter") && !name.equals("vmeter"))
+					changeProperties();
+				circuitBuilder.reset();
+				forwarding.setLabel(circuitBuilder.cirProp.getProperty("Start"));
+				circuitBuilder.parse();
+				circuitBuilder.repaintMeters();
+			}
 			resetButtons();
 		}
 	}
 
-	void setGridButton_ActionPerformed(java.awt.event.ActionEvent event)
-	{
-	    int r = rowSpin.getCurrent();
-	    int c = colSpin.getCurrent();
-		circuitBuilder.setGrid(r,c);
+	void setGridButton_ActionPerformed(ActionEvent event) {
+		int r = rowSpin.getCurrent();
+		int c = colSpin.getCurrent();
+		circuitBuilder.setGrid(r, c);
 	}
 
-	void resetButtons()
-	{
+	void resetButtons() {
 		try {
-		    resistorBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
-		    capacitorBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
-		    inductorBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
-		    wireBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
-		    switchBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
-		    bulbBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
-		    transformerBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
-		    diodeBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
-		    sourceBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
-		    batteryBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
-		    currentsourceBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
-		    sinwaveBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
-		    squarewaveBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
-		    scopeBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
-		    vmeterBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
-		    ameterBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
-		    dtInput.setText(Double.toString(circuitBuilder.dt));
-		} catch(java.beans.PropertyVetoException e) { }
+			resistorBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
+			capacitorBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
+			inductorBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
+			wireBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
+			switchBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
+			bulbBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
+			transformerBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
+			diodeBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
+			sourceBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
+			batteryBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
+			currentsourceBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
+			sinwaveBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
+			squarewaveBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
+			scopeBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
+			vmeterBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
+			ameterBorder.setBevelStyle(BorderPanel.BEVEL_RAISED);
+			dtInput.setText(Double.toString(circuitBuilder.dt));
+		} catch (java.beans.PropertyVetoException e) {
+		}
 	}
 
-	void changeProperties()
-	{
-	    Object anchorpoint = getParent();
-	    while (!(anchorpoint instanceof Frame))
-	        anchorpoint = ((Component)anchorpoint).getParent();
-	    String title = ""+circuitBuilder.cirProp.getProperty("changevalue_title");
-	    ValueInput valueInput = new ValueInput(title,circuitBuilder,(Frame)anchorpoint);
+	void changeProperties() {
+		Object anchorpoint = getParent();
+		while (!(anchorpoint instanceof Frame))
+			anchorpoint = ((Component) anchorpoint).getParent();
+		String title = "" + circuitBuilder.cirProp.getProperty("changevalue_title");
+		ValueInput valueInput = new ValueInput(title, circuitBuilder, (Frame) anchorpoint);
 	}
-	
-	void listButton_ActionPerformed(java.awt.event.ActionEvent event)
-	{
-	    String s = circuitBuilder.cirgrid.getcomponentList();
-	    String title = circuitBuilder.cirProp.getProperty("circuitlist");
-	    Object anchorpoint = getParent();
-	    while (!(anchorpoint instanceof Frame))
-	        anchorpoint = ((Component)anchorpoint).getParent();
-	    ListOutput listOutput = new ListOutput(title,s,(Frame)anchorpoint,circuitBuilder);
-    }
 
-	void parseButton_ActionPerformed(java.awt.event.ActionEvent event)
-	{
-        circuitBuilder.parse();
-        circuitBuilder.repaintMeters();
-    }
+	void listButton_ActionPerformed(ActionEvent event) {
+		String s = circuitBuilder.cirgrid.getcomponentList();
+		String title = circuitBuilder.cirProp.getProperty("circuitlist");
+		Object anchorpoint = getParent();
+		while (!(anchorpoint instanceof Frame))
+			anchorpoint = ((Component) anchorpoint).getParent();
+		ListOutput listOutput = new ListOutput(title, s, (Frame) anchorpoint, circuitBuilder);
+	}
 
-	void calculateButton_ActionPerformed(java.awt.event.ActionEvent event)
-	{
-        circuitBuilder.repaintMeters();
-        if ((circuitBuilder.debugLevel&circuitBuilder.DEBUG_IO)>0) 
-            System.out.println("Next period calculated");
-    }
-	
-	void arrows_ActionPerformed(java.awt.event.ActionEvent event)
-	{
-		if (circuitBuilder.showCurrent) circuitBuilder.setShowCurrent(0);
-		else circuitBuilder.setShowCurrent(1);
+	void parseButton_ActionPerformed(ActionEvent event) {
+		circuitBuilder.parse();
+		circuitBuilder.repaintMeters();
+	}
+
+	void calculateButton_ActionPerformed(ActionEvent event) {
+		circuitBuilder.repaintMeters();
+		if ((circuitBuilder.debugLevel & CircuitBuilder.DEBUG_IO) > 0)
+			System.out.println("Next period calculated");
+	}
+
+	void arrows_ActionPerformed(ActionEvent event) {
+		if (circuitBuilder.showCurrent)
+			circuitBuilder.setShowCurrent(0);
+		else
+			circuitBuilder.setShowCurrent(1);
 		circuitBuilder.circanvas.redraw();
 	}
-    
-    public Point absoluteP(Point relativeP, Component anchor)    
-    {
-        Point returnP = new Point(relativeP);
-	    Point p1;
-	    Object anchorpoint = anchor;
-	    while (anchorpoint != this) {
-            p1 = ((Component)anchorpoint).getLocation();
-	        returnP.setLocation(returnP.x+p1.x, returnP.y+p1.y);
-	        anchorpoint = ((Component)anchorpoint).getParent();
-	    } 
-	    returnP.setLocation(returnP.x+this.getLocation().x, returnP.y+this.getLocation().y);
-        if ((circuitBuilder.debugLevel&circuitBuilder.DEBUG_IO)>0) 
-            System.out.println("coords : "+returnP.toString());
-	    return returnP;
-    }
 
-    public void updateTextFields() 
-    {
-	    dtInput.setText(Double.toString(circuitBuilder.dt));
-	    numberInput.setText(Integer.toString(circuitBuilder.numberofdt));
-    }
+	public Point absoluteP(Point relativeP, Component anchor) {
+		Point returnP = new Point(relativeP);
+		Point p1;
+		Object anchorpoint = anchor;
+		while (anchorpoint != this) {
+			p1 = ((Component) anchorpoint).getLocation();
+			returnP.setLocation(returnP.x + p1.x, returnP.y + p1.y);
+			anchorpoint = ((Component) anchorpoint).getParent();
+		}
+		returnP.setLocation(returnP.x + this.getLocation().x, returnP.y + this.getLocation().y);
+		if ((circuitBuilder.debugLevel & CircuitBuilder.DEBUG_IO) > 0)
+			System.out.println("coords : " + returnP.toString());
+		return returnP;
+	}
 
-	class SymText implements java.awt.event.TextListener
-	{
-		public void textValueChanged(java.awt.event.TextEvent event)
-		{
+	public void updateTextFields() {
+		dtInput.setText(Double.toString(circuitBuilder.dt));
+		numberInput.setText(Integer.toString(circuitBuilder.numberofdt));
+	}
+
+	class SymText implements TextListener {
+		public void textValueChanged(TextEvent event) {
 			Object object = event.getSource();
 			if (object == numberInput)
 				numberInput_TextValueChanged(event);
@@ -1043,44 +1068,39 @@ public class BuilderPanel extends symantec.itools.awt.BorderPanel
 		}
 	}
 
-	void numberInput_TextValueChanged(java.awt.event.TextEvent event)
-	{
-	    circuitBuilder.setNumberOfDT(Integer.parseInt(numberInput.getText()));
-	    circuitBuilder.repaintMeters();
+	void numberInput_TextValueChanged(TextEvent event) {
+		circuitBuilder.setNumberOfDT(Integer.parseInt(numberInput.getText()));
+		circuitBuilder.repaintMeters();
 	}
 
-	void dtInput_TextValueChanged(java.awt.event.TextEvent event)
-	{
-	    circuitBuilder.setDT((Double.valueOf(dtInput.getText())).doubleValue());
-	    circuitBuilder.setFPS(1.0/(circuitBuilder.noc*circuitBuilder.dt));
-	    circuitBuilder.repaintMeters();
+	void dtInput_TextValueChanged(TextEvent event) {
+		circuitBuilder.setDT((Double.valueOf(dtInput.getText())).doubleValue());
+		circuitBuilder.setFPS(1.0 / (circuitBuilder.noc * circuitBuilder.dt));
+		circuitBuilder.repaintMeters();
 	}
 
-	void loadButton_ActionPerformed(java.awt.event.ActionEvent event)
-	{
-	    circuitBuilder.reset();
-	    forwarding.setLabel(circuitBuilder.cirProp.getProperty("Start"));
-        circuitBuilder.loadList(inputfile.getText());
-	    updateTextFields();
-	    circuitBuilder.parse();
-        circuitBuilder.calculateCircuit();
-    }
-
-	void forwarding_ActionPerformed(java.awt.event.ActionEvent event)
-	{
-	    if (forwarding.getLabel().equals(circuitBuilder.cirProp.getProperty("Start"))) {
-	        circuitBuilder.forward();
-	        forwarding.setLabel(circuitBuilder.cirProp.getProperty("Pause"));
-	    } else {
-	        circuitBuilder.pause();
-	        forwarding.setLabel(circuitBuilder.cirProp.getProperty("Start"));
-	    }
+	void loadButton_ActionPerformed(ActionEvent event) {
+		circuitBuilder.reset();
+		forwarding.setLabel(circuitBuilder.cirProp.getProperty("Start"));
+		circuitBuilder.loadList(inputfile.getText());
+		updateTextFields();
+		circuitBuilder.parse();
+		circuitBuilder.calculateCircuit();
 	}
 
-	void resetting_ActionPerformed(java.awt.event.ActionEvent event)
-	{
-	    circuitBuilder.pause();
-	    circuitBuilder.reset();
-	    forwarding.setLabel(circuitBuilder.cirProp.getProperty("Start"));
+	void forwarding_ActionPerformed(ActionEvent event) {
+		if (forwarding.getLabel().equals(circuitBuilder.cirProp.getProperty("Start"))) {
+			circuitBuilder.forward();
+			forwarding.setLabel(circuitBuilder.cirProp.getProperty("Pause"));
+		} else {
+			circuitBuilder.pause();
+			forwarding.setLabel(circuitBuilder.cirProp.getProperty("Start"));
+		}
+	}
+
+	void resetting_ActionPerformed(ActionEvent event) {
+		circuitBuilder.pause();
+		circuitBuilder.reset();
+		forwarding.setLabel(circuitBuilder.cirProp.getProperty("Start"));
 	}
 }

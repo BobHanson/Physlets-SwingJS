@@ -20,8 +20,6 @@ public class Resistor extends CircuitElement
         unity = "Ohm";
     }
 
-    Resistor() {super();}
-    
     Resistor(Circuit circuit) {super(circuit);}
     
     public double impedance() {return value;}

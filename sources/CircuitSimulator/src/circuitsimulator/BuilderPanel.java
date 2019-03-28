@@ -1,11 +1,14 @@
 package circuitsimulator;
 
 //import a2s.*;
-import java.awt.*;
-
+import java.awt.Button;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
+import java.awt.Frame;
+import java.awt.Label;
 import java.awt.Point;
+import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -14,14 +17,15 @@ import java.awt.event.TextEvent;
 import java.awt.event.TextListener;
 
 import symantec.itools.awt.BorderPanel;
+import symantec.itools.awt.util.spinner.NumericSpinner;
 
 /**
  * Used by circuitbuilder. Representation of the tools panel.
  * 
  * @author Toon Van Hoecke
  */
-//public class BuilderPanel extends symantec.itools.awt.BorderPanel
-public class BuilderPanel extends symantec.itools.awt.BorderPanel {
+//public class BuilderPanel extends BorderPanel
+public class BuilderPanel extends BorderPanel {
 	CircuitBuilder circuitBuilder = null;
 	String selectedComponent = "";
 
@@ -43,46 +47,14 @@ public class BuilderPanel extends symantec.itools.awt.BorderPanel {
 	circuitsimulator.Scope scope;
 
 	public BuilderPanel(Circuit circuit) {
-		// {{INIT_CONTROLS
-		try {
-			setPaddingRight(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			setBevelStyle(circuitsimulator.BuilderPanel.BEVEL_LOWERED);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			setPaddingLeft(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			setIPadBottom(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			setPaddingBottom(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			setPaddingTop(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			setIPadSides(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			setIPadTop(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		setLayout(null);
-		setBackground(new java.awt.Color(0, 143, 213));
+		set(this, false, 0, 0, 0, 0);
+
+		
+		setBackground(new Color(0, 143, 213));
 		setSize(195, 401);
-		setGridButton.setLabel("Set grid");
-		add(setGridButton);
-		setGridButton.setBackground(new java.awt.Color(0, 169, 251));
-		setGridButton.setBounds(5, 32, 59, 48);
+	
+		circuitBuilder = (CircuitBuilder) circuit;
+
 		try {
 			rowSpin.setMin(2);
 		} catch (java.beans.PropertyVetoException e) {
@@ -96,9 +68,10 @@ public class BuilderPanel extends symantec.itools.awt.BorderPanel {
 		} catch (java.beans.PropertyVetoException e) {
 		}
 		add(rowSpin);
-		rowSpin.setBackground(java.awt.Color.yellow);
-		rowSpin.setForeground(java.awt.Color.black);
+		rowSpin.setBackground(Color.yellow);
+		rowSpin.setForeground(Color.black);
 		rowSpin.setBounds(64, 32, 28, 24);
+		
 		try {
 			colSpin.setMin(2);
 		} catch (java.beans.PropertyVetoException e) {
@@ -112,641 +85,119 @@ public class BuilderPanel extends symantec.itools.awt.BorderPanel {
 		} catch (java.beans.PropertyVetoException e) {
 		}
 		add(colSpin);
-		colSpin.setBackground(java.awt.Color.yellow);
+		colSpin.setBackground(Color.yellow);
 		colSpin.setBounds(64, 56, 28, 24);
+		
 		label1.setText("rows");
 		add(label1);
 		label1.setFont(new Font("Dialog", Font.PLAIN, 10));
 		label1.setBounds(93, 32, 44, 24);
+		
 		label3.setText("cols");
 		add(label3);
 		label3.setFont(new Font("Dialog", Font.PLAIN, 10));
 		label3.setBounds(93, 56, 44, 22);
-		try {
-			resistorBorder.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			resistorBorder.setIPadBottom(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			resistorBorder.setIPadSides(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			resistorBorder.setPaddingRight(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			resistorBorder.setPaddingBottom(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			resistorBorder.setPaddingTop(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			resistorBorder.setIPadTop(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			resistorBorder.setPaddingLeft(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		resistorBorder.setLayout(null);
-		add(resistorBorder);
-		resistorBorder.setBackground(new java.awt.Color(0, 169, 251));
-		resistorBorder.setBounds(5, 99, 56, 28);
-		try {
-			capacitorBorder.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			capacitorBorder.setIPadBottom(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			capacitorBorder.setIPadSides(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			capacitorBorder.setPaddingRight(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			capacitorBorder.setPaddingBottom(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			capacitorBorder.setPaddingTop(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			capacitorBorder.setIPadTop(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			capacitorBorder.setPaddingLeft(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		capacitorBorder.setLayout(null);
-		add(capacitorBorder);
-		capacitorBorder.setBackground(new java.awt.Color(0, 169, 251));
-		capacitorBorder.setBounds(5, 127, 56, 28);
-		try {
-			inductorBorder.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			inductorBorder.setIPadBottom(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			inductorBorder.setIPadSides(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			inductorBorder.setPaddingRight(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			inductorBorder.setPaddingBottom(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			inductorBorder.setPaddingTop(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			inductorBorder.setIPadTop(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			inductorBorder.setPaddingLeft(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		inductorBorder.setLayout(null);
-		add(inductorBorder);
-		inductorBorder.setBackground(new java.awt.Color(0, 169, 251));
-		inductorBorder.setBounds(5, 155, 56, 28);
-		try {
-			wireBorder.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			wireBorder.setIPadBottom(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			wireBorder.setIPadSides(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			wireBorder.setPaddingRight(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			wireBorder.setPaddingBottom(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			wireBorder.setPaddingTop(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			wireBorder.setIPadTop(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			wireBorder.setPaddingLeft(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		wireBorder.setLayout(null);
-		add(wireBorder);
-		wireBorder.setBackground(new java.awt.Color(0, 169, 251));
-		wireBorder.setBounds(69, 127, 56, 28);
-		try {
-			sourceBorder.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			sourceBorder.setIPadBottom(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			sourceBorder.setIPadSides(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			sourceBorder.setPaddingRight(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			sourceBorder.setPaddingBottom(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			sourceBorder.setPaddingTop(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			sourceBorder.setIPadTop(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			sourceBorder.setPaddingLeft(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		sourceBorder.setLayout(null);
-		add(sourceBorder);
-		sourceBorder.setBackground(new java.awt.Color(0, 169, 251));
-		sourceBorder.setBounds(5, 226, 56, 28);
-		listButton.setLabel("List");
-		add(listButton);
-		listButton.setBackground(new java.awt.Color(0, 169, 251));
-		listButton.setBounds(138, 32, 51, 23);
-		calculateButton.setLabel("Calculate");
-		add(calculateButton);
-		calculateButton.setBackground(new java.awt.Color(0, 169, 251));
-		calculateButton.setBounds(6, 372, 67, 24);
-		try {
-			scopeBorder.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			scopeBorder.setIPadBottom(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			scopeBorder.setIPadSides(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			scopeBorder.setPaddingRight(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			scopeBorder.setPaddingBottom(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			scopeBorder.setPaddingTop(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			scopeBorder.setIPadTop(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			scopeBorder.setPaddingLeft(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		scopeBorder.setLayout(null);
-		add(scopeBorder);
-		scopeBorder.setBackground(new java.awt.Color(0, 169, 251));
-		scopeBorder.setBounds(133, 226, 56, 28);
-		try {
-			vmeterBorder.setPaddingRight(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			vmeterBorder.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			vmeterBorder.setPaddingLeft(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			vmeterBorder.setIPadBottom(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			vmeterBorder.setPaddingBottom(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			vmeterBorder.setPaddingTop(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			vmeterBorder.setIPadSides(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			vmeterBorder.setIPadTop(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		vmeterBorder.setLayout(null);
-		add(vmeterBorder);
-		vmeterBorder.setBackground(new java.awt.Color(0, 169, 251));
-		vmeterBorder.setBounds(133, 254, 56, 28);
-		try {
-			ameterBorder.setPaddingRight(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			ameterBorder.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			ameterBorder.setPaddingLeft(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			ameterBorder.setIPadBottom(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			ameterBorder.setPaddingBottom(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			ameterBorder.setPaddingTop(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			ameterBorder.setIPadSides(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			ameterBorder.setIPadTop(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		ameterBorder.setLayout(null);
-		add(ameterBorder);
-		ameterBorder.setBackground(new java.awt.Color(0, 169, 251));
-		ameterBorder.setBounds(133, 282, 56, 28);
-		try {
-			switchBorder.setPaddingRight(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			switchBorder.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			switchBorder.setPaddingLeft(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			switchBorder.setIPadBottom(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			switchBorder.setPaddingBottom(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			switchBorder.setPaddingTop(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			switchBorder.setIPadSides(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			switchBorder.setIPadTop(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		switchBorder.setLayout(null);
-		add(switchBorder);
-		switchBorder.setBackground(new java.awt.Color(0, 169, 251));
-		switchBorder.setBounds(69, 155, 56, 28);
-		try {
-			batteryBorder.setPaddingRight(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			batteryBorder.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			batteryBorder.setPaddingLeft(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			batteryBorder.setIPadBottom(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			batteryBorder.setPaddingBottom(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			batteryBorder.setPaddingTop(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			batteryBorder.setIPadSides(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			batteryBorder.setIPadTop(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		batteryBorder.setLayout(null);
-		add(batteryBorder);
-		batteryBorder.setBackground(new java.awt.Color(0, 169, 251));
-		batteryBorder.setBounds(5, 254, 56, 28);
+		
 		numberInput.setText("1e3");
 		add(numberInput);
-		numberInput.setBackground(java.awt.Color.white);
+		numberInput.setBackground(Color.white);
 		numberInput.setFont(new Font("Dialog", Font.PLAIN, 10));
 		numberInput.setBounds(141, 346, 47, 20);
+		
 		dtInput.setText("1e-6");
 		add(dtInput);
-		dtInput.setBackground(java.awt.Color.white);
+		dtInput.setBackground(Color.white);
 		dtInput.setFont(new Font("Dialog", Font.PLAIN, 10));
 		dtInput.setBounds(40, 347, 72, 19);
+		
 		label9.setText("#:");
 		add(label9);
 		label9.setBounds(126, 343, 16, 23);
+
 		label10.setText("dt (s):");
 		add(label10);
 		label10.setBounds(5, 344, 34, 24);
-		arrows.setLabel("Show ->");
-		add(arrows);
-		arrows.setBackground(new java.awt.Color(0, 169, 251));
-		arrows.setBounds(139, 58, 50, 23);
-		loadButton.setLabel("Load");
-		add(loadButton);
-		loadButton.setBackground(new java.awt.Color(0, 169, 251));
-		loadButton.setBounds(6, 5, 52, 25);
+		
 		inputfile.setText("lists/default.txt");
 		add(inputfile);
-		inputfile.setBackground(java.awt.Color.white);
+		inputfile.setBackground(Color.white);
 		inputfile.setBounds(59, 5, 129, 24);
-		try {
-			bulbBorder.setPaddingRight(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			bulbBorder.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			bulbBorder.setPaddingLeft(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			bulbBorder.setIPadBottom(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			bulbBorder.setPaddingBottom(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			bulbBorder.setPaddingTop(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			bulbBorder.setIPadSides(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			bulbBorder.setIPadTop(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		bulbBorder.setLayout(null);
-		add(bulbBorder);
-		bulbBorder.setBackground(new java.awt.Color(0, 169, 251));
-		bulbBorder.setBounds(69, 99, 56, 28);
-		forwarding.setLabel("Start");
-		add(forwarding);
-		forwarding.setBackground(new java.awt.Color(0, 169, 251));
-		forwarding.setBounds(75, 371, 56, 25);
-		resetting.setLabel("Reset");
-		add(resetting);
-		resetting.setBackground(new java.awt.Color(0, 169, 251));
-		resetting.setBounds(132, 371, 58, 25);
-		try {
-			currentsourceBorder.setPaddingRight(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			currentsourceBorder.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			currentsourceBorder.setPaddingLeft(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			currentsourceBorder.setIPadBottom(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			currentsourceBorder.setPaddingBottom(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			currentsourceBorder.setPaddingTop(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			currentsourceBorder.setIPadSides(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			currentsourceBorder.setIPadTop(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		currentsourceBorder.setLayout(null);
-		add(currentsourceBorder);
-		currentsourceBorder.setBackground(new java.awt.Color(0, 169, 251));
-		currentsourceBorder.setBounds(5, 282, 56, 28);
-		try {
-			transformerBorder.setPaddingRight(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			transformerBorder.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			transformerBorder.setPaddingLeft(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			transformerBorder.setIPadBottom(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			transformerBorder.setPaddingBottom(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			transformerBorder.setPaddingTop(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			transformerBorder.setIPadSides(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			transformerBorder.setIPadTop(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		transformerBorder.setLayout(null);
-		add(transformerBorder);
-		transformerBorder.setBackground(new java.awt.Color(0, 169, 251));
-		transformerBorder.setBounds(134, 99, 56, 42);
-		try {
-			sinwaveBorder.setPaddingRight(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			sinwaveBorder.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			sinwaveBorder.setPaddingLeft(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			sinwaveBorder.setIPadBottom(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			sinwaveBorder.setPaddingBottom(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			sinwaveBorder.setPaddingTop(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			sinwaveBorder.setIPadSides(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			sinwaveBorder.setIPadTop(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		sinwaveBorder.setLayout(null);
-		add(sinwaveBorder);
-		sinwaveBorder.setBackground(new java.awt.Color(0, 169, 251));
-		sinwaveBorder.setBounds(69, 226, 56, 28);
-		try {
-			squarewaveBorder.setPaddingRight(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			squarewaveBorder.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			squarewaveBorder.setPaddingLeft(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			squarewaveBorder.setIPadBottom(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			squarewaveBorder.setPaddingBottom(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			squarewaveBorder.setPaddingTop(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			squarewaveBorder.setIPadSides(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			squarewaveBorder.setIPadTop(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		squarewaveBorder.setLayout(null);
-		add(squarewaveBorder);
-		squarewaveBorder.setBackground(new java.awt.Color(0, 169, 251));
-		squarewaveBorder.setBounds(69, 254, 56, 28);
-		try {
-			diodeBorder.setPaddingRight(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			diodeBorder.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			diodeBorder.setPaddingLeft(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			diodeBorder.setIPadBottom(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			diodeBorder.setPaddingBottom(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			diodeBorder.setPaddingTop(0);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			diodeBorder.setIPadSides(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		try {
-			diodeBorder.setIPadTop(1);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-		diodeBorder.setLayout(null);
-		add(diodeBorder);
-		diodeBorder.setBackground(new java.awt.Color(0, 169, 251));
-		diodeBorder.setBounds(5, 191, 56, 28);
-		// }}
+
+		addBtn(setGridButton, "Set grid", 5, 32, 59, 48);
+		addBtn(loadButton, "Load",      6, 5, 52, 25);
+		addBtn(arrows, "Show ->",     139, 58, 50, 23);
+		addBtn(listButton, "List",    138, 32, 51, 23);
+		
+		addBtn(calculateButton, "Calculate", 6, 371, 67, 25);
+		addBtn(forwarding, "Start",         75, 371, 56, 25);
+		addBtn(resetting,"Reset",          132, 371, 58, 25);
+
+
+		// column 1 //
+		
+		set(resistorBorder,      true, 5, 99, 56, 28);
+		set(capacitorBorder,     true, 5, 127, 56, 28);		
+		set(inductorBorder,      true, 5, 155, 56, 28);
+
+		set(diodeBorder,         true, 5, 191, 56, 28);
+
+		set(sourceBorder,        true, 5, 226, 56, 28);
+		set(batteryBorder,       true, 5, 254, 56, 28);
+		set(currentsourceBorder, true, 5, 282, 56, 28);
+
+		
+		// column 2 //
+
+		set(bulbBorder,          true, 69, 99, 56, 28);
+		set(wireBorder,          true, 69, 127, 56, 28);
+		set(switchBorder,        true, 69, 155, 56, 28);
+
+		//
+		
+		set(sinwaveBorder,       true, 69, 226, 56, 28);		 
+		set(squarewaveBorder,    true, 69, 254, 56, 28);
+		//
+		
+		
+		// column 3 //
+		
+		set(transformerBorder,   true, 133, 99, 56, 42);
+		//
+		//
+		
+		//
+
+		set(scopeBorder,         true, 133, 226, 56, 28);
+		set(vmeterBorder,        true, 133, 254, 56, 28);
+		set(ameterBorder,        true, 133, 282, 56, 28);
 
 		addComponents(circuit);
 		addListeners();
-		setCircuitBuilder((CircuitBuilder) circuit);
+		setText(circuitBuilder);
+	}
+
+	private void addBtn(Button b, String label, int x, int y, int w, int h) {
+		b.setLabel(label);
+		b.setBackground(new Color(0, 169, 251));
+		b.setBounds(x, y, w, h);
+		add(b);
+	}
+
+	private void set(BorderPanel bp, boolean andAdd, int x, int y, int w, int h) {
+		bp.setBackground(new Color(0, 169, 251));
+		try {
+			bp.setBevelStyle(BorderPanel.BEVEL_RAISED);
+			bp.setPadding(0, 0, 0, 0);
+			bp.setIPadBottom(1);
+			bp.setIPadSides(1);
+			bp.setIPadTop(1);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+		bp.setLayout(null);
+		if (bp != this) {
+			add(bp);
+			bp.setBounds(x,y, w, h);
+		}
 	}
 
 	private void addListeners() {
@@ -823,8 +274,8 @@ public class BuilderPanel extends symantec.itools.awt.BorderPanel {
 	// {{DECLARE_CONTROLS
 	// Button setGridButton = new a2s.Button();
 	Button setGridButton = new Button();
-	symantec.itools.awt.util.spinner.NumericSpinner rowSpin = new symantec.itools.awt.util.spinner.NumericSpinner();
-	symantec.itools.awt.util.spinner.NumericSpinner colSpin = new symantec.itools.awt.util.spinner.NumericSpinner();
+	NumericSpinner rowSpin = new NumericSpinner();
+	NumericSpinner colSpin = new NumericSpinner();
 	Label label1 = new Label();
 	Label label3 = new Label();
 	Button listButton = new Button();
@@ -838,27 +289,27 @@ public class BuilderPanel extends symantec.itools.awt.BorderPanel {
 	TextField inputfile = new TextField();
 	Button forwarding = new Button();
 	Button resetting = new Button();
-	symantec.itools.awt.BorderPanel resistorBorder = new symantec.itools.awt.BorderPanel();
-	symantec.itools.awt.BorderPanel capacitorBorder = new symantec.itools.awt.BorderPanel();
-	symantec.itools.awt.BorderPanel inductorBorder = new symantec.itools.awt.BorderPanel();
-	symantec.itools.awt.BorderPanel wireBorder = new symantec.itools.awt.BorderPanel();
-	symantec.itools.awt.BorderPanel sourceBorder = new symantec.itools.awt.BorderPanel();
-	symantec.itools.awt.BorderPanel scopeBorder = new symantec.itools.awt.BorderPanel();
-	symantec.itools.awt.BorderPanel vmeterBorder = new symantec.itools.awt.BorderPanel();
-	symantec.itools.awt.BorderPanel ameterBorder = new symantec.itools.awt.BorderPanel();
-	symantec.itools.awt.BorderPanel switchBorder = new symantec.itools.awt.BorderPanel();
-	symantec.itools.awt.BorderPanel batteryBorder = new symantec.itools.awt.BorderPanel();
-	symantec.itools.awt.BorderPanel bulbBorder = new symantec.itools.awt.BorderPanel();
-	symantec.itools.awt.BorderPanel currentsourceBorder = new symantec.itools.awt.BorderPanel();
-	symantec.itools.awt.BorderPanel transformerBorder = new symantec.itools.awt.BorderPanel();
-	symantec.itools.awt.BorderPanel sinwaveBorder = new symantec.itools.awt.BorderPanel();
-	symantec.itools.awt.BorderPanel squarewaveBorder = new symantec.itools.awt.BorderPanel();
-	symantec.itools.awt.BorderPanel diodeBorder = new symantec.itools.awt.BorderPanel();
+	
+	BorderPanel resistorBorder = new BorderPanel();
+	BorderPanel capacitorBorder = new BorderPanel();
+	BorderPanel inductorBorder = new BorderPanel();
+	BorderPanel wireBorder = new BorderPanel();
+	BorderPanel sourceBorder = new BorderPanel();
+	BorderPanel scopeBorder = new BorderPanel();
+	BorderPanel vmeterBorder = new BorderPanel();
+	BorderPanel ameterBorder = new BorderPanel();
+	BorderPanel switchBorder = new BorderPanel();
+	BorderPanel batteryBorder = new BorderPanel();
+	BorderPanel bulbBorder = new BorderPanel();
+	BorderPanel currentsourceBorder = new BorderPanel();
+	BorderPanel transformerBorder = new BorderPanel();
+	BorderPanel sinwaveBorder = new BorderPanel();
+	BorderPanel squarewaveBorder = new BorderPanel();
+	BorderPanel diodeBorder = new BorderPanel();
 	// }}
 	String coordStr;
 
-	private void setCircuitBuilder(CircuitBuilder cb) {
-		circuitBuilder = cb;
+	private void setText(CircuitBuilder cb) {
 		label1.setText(cb.cirProp.getProperty("rows"));
 		label3.setText(cb.cirProp.getProperty("cols"));
 		loadButton.setLabel(cb.cirProp.getProperty("Load"));
@@ -872,25 +323,6 @@ public class BuilderPanel extends symantec.itools.awt.BorderPanel {
 		numberInput.setText(Integer.toString(circuitBuilder.numberofdt));
 	}
 
-//	public void loadImages() {
-//		resistor.setCircuit(circuitBuilder);
-//		wire.setCircuit(circuitBuilder);
-//		capacitor.setCircuit(circuitBuilder);
-//		inductor.setCircuit(circuitBuilder);
-//		switch1.setCircuit(circuitBuilder);
-//		bulb.setCircuit(circuitBuilder);
-//		transformercoil.setCircuit(circuitBuilder);
-//		diode.setCircuit(circuitBuilder);
-//		source.setCircuit(circuitBuilder);
-//		battery.setCircuit(circuitBuilder);
-//		currentsource.setCircuit(circuitBuilder);
-//		sinwave.setCircuit(circuitBuilder);
-//		squarewave.setCircuit(circuitBuilder);
-//		scope.setCircuit(circuitBuilder);
-//		vmeter.setCircuit(circuitBuilder);
-//		ameter.setCircuit(circuitBuilder);
-//	}
-//
 	class SymAction implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			Object object = event.getSource();

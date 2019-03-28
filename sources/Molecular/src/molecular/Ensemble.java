@@ -1732,7 +1732,9 @@ Histogram histogram=null;
    if (autoRefresh)owner.repaint();
   }
 
-  public void pause(){applet.clock.stopClock();}
+  public void pause(){
+	  //applet.clock.stopClock();
+  }
 
   public void forward(){
      // preRun();

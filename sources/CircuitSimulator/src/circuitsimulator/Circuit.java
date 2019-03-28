@@ -63,16 +63,23 @@ public class Circuit extends edu.davidson.tools.SApplet implements SStepable, Ru
 
   private static Map<String, Image> htImages = new Hashtable<>();
   private void loadImage(String name) {
+	  String filename="";
 	  try {
 		Image i = htImages.get(name);
-		if (i != null)
-			return;
-		String filename = imagedir + name + ".gif";
-		System.out.println("loading image " + filename);
+		if (i != null) return;
+	    filename = imagedir + name + ".gif";
+		//System.out.println("loading image " + filename);
 		i = SwingJSUtils.getImage(this, filename);
 		htImages.put(name,  i);
 	  } catch (Throwable t) {
-		  t.printStackTrace();
+		  try {
+				filename = imagedir + name + ".gif";
+				Image i = getImage(getDocumentBase(), filename);
+				htImages.put(name,  i);
+			  } catch (Throwable tt) {
+				  System.out.println("Error getting image.  Filename= "+filename);
+				  tt.printStackTrace();
+			  }
 	  }
 	}
   
@@ -315,6 +322,8 @@ public class Circuit extends edu.davidson.tools.SApplet implements SStepable, Ru
 //    } catch(MalformedURLException e) {
 //      System.out.println("Bad URL");
 //    }
+    System.out.println("code base: "+getCodeBase().toString() );
+    System.out.println("doc base: "+getDocumentBase().toString() );
     loadImages();
     circanvas = new CircuitCanvas(this);
     circanvas.setBounds(1, 1, 1, 1);

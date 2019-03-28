@@ -39,8 +39,7 @@ public class MEnsemblePanel extends EnsemblePanel implements SStepable {
     paint(g);
   }
 
-  public void step(double dt, double time){
-
+  public void step(double dt, double time){ 
     int i;
     double tl=dt;                             //tl = time left until a paint step
     ensemble1.clearPressureCounters();
@@ -48,9 +47,8 @@ public class MEnsemblePanel extends EnsemblePanel implements SStepable {
     do {
       if (tl<mint){
         mint-=tl;
-        tl-=advanceDT(tl);
-      }                                              //setTime 0 t
-
+        tl-=advanceDT(tl);;
+      }                                          
       else {
         tl-=advanceDT(mint);
         updateTimes(temptime);
@@ -63,9 +61,7 @@ public class MEnsemblePanel extends EnsemblePanel implements SStepable {
         }
         findMinColTime();
       }
-
     } while (tl>0);
-
 
 
     paintOSI();
@@ -80,7 +76,6 @@ public class MEnsemblePanel extends EnsemblePanel implements SStepable {
     if(ensemble1.histogram!=null)owner.clearData(ensemble1.histogram.hashCode());
     if(ensemble2.histogram!=null)owner.clearData(ensemble2.histogram.hashCode());
     if(owner!=null) owner.updateDataConnections();
-
   }
 
   public void collideParticles(){

@@ -13,5 +13,5 @@ public class Scope extends Resistor
         setValueVisible(false);
     }
 
-    Scope() {super();}
+    Scope(Circuit circuit) {super(circuit);}
 }

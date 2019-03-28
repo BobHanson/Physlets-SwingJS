@@ -95,7 +95,7 @@ public class CircuitElement extends Canvas implements SDataSource
     String function=""; //used by sources and general elements
     int direction; //only necessary for direction sensitive elements like sources and meters
     int inputIndex; //index necessary for matrix building, only necessary for sources
-    Image cirim; //image on the canvas
+    //Image cirim; //image on the canvas
     Font font; // the value and label font on the circuit grid
     Format format; // the value format on the circuit grid
     Circuit circuit; // the calling applet
@@ -110,7 +110,7 @@ public class CircuitElement extends Canvas implements SDataSource
     VEquation vequation; //connection to the corresponding VEquation after parsing
     int numberOfNodes=2;
     int row, col; //anchor point in the grid
-    String to; //anchor direction
+    String to = ""; //anchor direction
     String polarity; //if polarized, polarity
     boolean polarized = false; // if the polarity of an element is essential
     boolean leftlinear = true; // if the element is linear in the left side of the equation
@@ -133,12 +133,10 @@ public class CircuitElement extends Canvas implements SDataSource
         inputIndex = 0;
         row = col = 0;
         to = "h";
-        cirim = null;
         vequation = null;
         font = new Font("TimesRoman", Font.PLAIN,10);
         format = new Format("%.3g");
-        //if(!Circuit.isJS) imagename += this.getMyName();
-        imagename += getMyName();
+        imagename = getMyName();
         canvasElement =false;
         this.setValueVisible(false);
 		setBounds(0,2,52,22);
@@ -153,14 +151,11 @@ public class CircuitElement extends Canvas implements SDataSource
         direction = 0;
         inputIndex = 0;
         row = col = 0;
-        to = "";
-        cirim = null;
+        to = "h";
         vequation = null;
         font = new Font("TimesRoman", Font.PLAIN,10);
         format = new Format("%.3g");
-        //if(!Circuit.isJS) imagename += this.getMyName();
-        imagename += getMyName();
-        loadImage(null);
+        imagename = getMyName();
         canvasElement =false;
         this.setValueVisible(false);
 		setBounds(0,2,52,22);
@@ -186,12 +181,9 @@ public class CircuitElement extends Canvas implements SDataSource
         row = r; col = c;
         to = ""+t;
         vequation = null;
-        //if(!Circuit.isJS) imagename += this.getMyName();
-        imagename += getMyName();
+        imagename = getMyName();
         font = new Font("TimesRoman", Font.PLAIN,10);
         format = new Format("%.3g");
-        cirim = null;
-        loadImage(null);
         try{SApplet.addDataSource(this); }catch (Exception e){e.printStackTrace();}
     }
 
@@ -209,12 +201,12 @@ public class CircuitElement extends Canvas implements SDataSource
         }
     }
 
-    public void setCircuit(Circuit circ) {
-        circuit = circ;
-        loadImage(null);
-        repaint();
-    }
-
+//    public void setCircuit(Circuit circ) {
+//        circuit = circ;
+//        loadImage(null);
+//        repaint();
+//    }
+//
     public boolean set(String list) {
         list=list.toLowerCase().trim();
         list=SUtil.removeWhitespace(list);
@@ -299,8 +291,7 @@ public class CircuitElement extends Canvas implements SDataSource
     public void setMaxCurrentValue(String s){maxCurrentValue = (Double.valueOf(s)).doubleValue();}
 
     public void move(int r, int c, String t){
-        if (!t.equals(to)) cirim = null;
-        row = r; col = c; to = ""+t;
+        row = r; col = c; to = t;
     };
 
     /**
@@ -456,78 +447,74 @@ public class CircuitElement extends Canvas implements SDataSource
 
 // ************************* Painting methods ***************************
 
-    /**
-     * <p>Creates an image of the specific element by loading a gif file with the same name.<br>
-     * Create two gif files : ****h.gif for horizontal representation (48x13 pixels)
-     * and ****v.gif for vertical representation (13x48 pixels). Put them in the imagedir directory.</p>
-     * <p>If the image can not be found, "?" is displayed</p>
-     * <p>Create an empty paint()-function if you want to avoid this default image loading.</p>
-     *
-     * @param g Graphics
-     */
-    public void loadImage(Graphics g) {
-        if (cirim == null || overloaded) {
-            overloaded = false;
-            if(imagename== null || imagename.trim().equals("")) {
-            	cirim = null;
-            }else {
-            	//System.out.println("imagedir ="+ circuit.imagedir+ "  imagename="+ imagename+" to="+ to);
-            	cirim = edu.davidson.graphics.Util.getImage(Circuit.imagedir+imagename+to+".gif",circuit);
-            }
-        }
-        if (g == null)
-        	return;
-        if (cirim != null) {
-            if (to.equals("h")) {
-                g.drawLine(x+3, y, x+circuit.interGrid/2-24, y);
-                g.drawLine(x+circuit.interGrid/2+24, y, x+circuit.interGrid-4, y);
-            } else {
-                g.drawLine(x, y+3, x, y+circuit.interGrid/2-24);
-                g.drawLine(x, y+circuit.interGrid/2+24, x, y+circuit.interGrid-4);
-            }
-            int ox = to.equals("h")?(circuit.interGrid/2)-24:-6;
-            int oy = to.equals("h")?-6:(circuit.interGrid/2)-24;
-            //waits while the whole image is drawn
-           while(!(g.drawImage(cirim,x+ox,y+oy,circuitCanvas)))
-        	   if(!Circuit.isJS)try{Thread.sleep(100);} catch (InterruptedException e){}
-        } else {
-            g.setColor(java.awt.Color.red);
-            g.setFont(new Font("TimesRoman", Font.BOLD,22));
-            if (to.equals("h")) {
-                g.drawLine(x+3, y, x+circuit.interGrid/2-6, y);
-                g.drawLine(x+circuit.interGrid/2+6, y, x+circuit.interGrid-4, y);
-                g.setColor(java.awt.Color.black);
-                g.drawString("?", x-6+circuit.interGrid/2, y+6);
-            } else {
-                g.drawLine(x, y+3, x, y+circuit.interGrid/2-10);
-                g.drawLine(x, y+circuit.interGrid/2+10, x, y+circuit.interGrid-4);
-                g.setColor(java.awt.Color.black);
-                g.drawString("?", x-4, y+8+circuit.interGrid/2);
-            }
-            g.setColor(java.awt.Color.red);
-            g.setFont(font);
-        }
-    }
+	/**
+	 * <p>
+	 * Creates an image of the specific element by loading a gif file with the same
+	 * name.<br>
+	 * Create two gif files : ****h.gif for horizontal representation (48x13 pixels)
+	 * and ****v.gif for vertical representation (13x48 pixels). Put them in the
+	 * imagedir directory.
+	 * </p>
+	 * <p>
+	 * If the image can not be found, "?" is displayed
+	 * </p>
+	 * <p>
+	 * Create an empty paint()-function if you want to avoid this default image
+	 * loading.
+	 * </p>
+	 *
+	 * @param g Graphics
+	 */
+	public void paintImage(Graphics g) {
+		Image cirim = circuit.getCachedImage(imagename + to);
+		if (cirim == null) {
+			g.setColor(java.awt.Color.red);
+			g.setFont(new Font("TimesRoman", Font.BOLD, 22));
+			if (to.equals("h")) {
+				g.drawLine(x + 3, y, x + circuit.interGrid / 2 - 6, y);
+				g.drawLine(x + circuit.interGrid / 2 + 6, y, x + circuit.interGrid - 4, y);
+				g.setColor(java.awt.Color.black);
+				g.drawString("?", x - 6 + circuit.interGrid / 2, y + 6);
+			} else {
+				g.drawLine(x, y + 3, x, y + circuit.interGrid / 2 - 10);
+				g.drawLine(x, y + circuit.interGrid / 2 + 10, x, y + circuit.interGrid - 4);
+				g.setColor(java.awt.Color.black);
+				g.drawString("?", x - 4, y + 8 + circuit.interGrid / 2);
+			}
+			g.setColor(java.awt.Color.red);
+			g.setFont(font);
+		} else {
+			if (to.equals("h")) {
+				g.drawLine(x + 3, y, x + circuit.interGrid / 2 - 24, y);
+				g.drawLine(x + circuit.interGrid / 2 + 24, y, x + circuit.interGrid - 4, y);
+			} else {
+				g.drawLine(x, y + 3, x, y + circuit.interGrid / 2 - 24);
+				g.drawLine(x, y + circuit.interGrid / 2 + 24, x, y + circuit.interGrid - 4);
+			}
+			int ox = to.equals("h") ? (circuit.interGrid / 2) - 24 : -6;
+			int oy = to.equals("h") ? -6 : (circuit.interGrid / 2) - 24;
+			g.drawImage(cirim, x + ox, y + oy, circuitCanvas);
+		}
+	}
 
-    /**
-     * <p>Displays the fire-icon if the element's current is bigger the maxCurrentValue</p>
-     *
-     * @param g Graphics
-     * @param ix x-position
-     * @param iy y-position
-     */
-    public void overload(Graphics g) {
-        int ox = to.equals("h")?(circuit.interGrid/2)-24:-24;
-        int oy = to.equals("h")?-24:(circuit.interGrid/2)-24;
-        cirim = edu.davidson.graphics.Util.getImage(circuit.imagedir+"fire.gif",circuit);
-        //waits while the whole image is drawn
-        if (cirim != null)
-        	while(!(g.drawImage(cirim,x+ox,y+oy,circuitCanvas))){
-        		if(!Circuit.isJS) try{Thread.sleep(100);}
-                catch (InterruptedException e){}
-            }
-        overloaded = true;
-    }
+	/**
+	 * <p>
+	 * Displays the fire-icon if the element's current is bigger the maxCurrentValue
+	 * </p>
+	 *
+	 * @param g  Graphics
+	 * @param ix x-position
+	 * @param iy y-position
+	 */
+	public void overload(Graphics g) {
+		int ox = to.equals("h") ? (circuit.interGrid / 2) - 24 : -24;
+		int oy = to.equals("h") ? -24 : (circuit.interGrid / 2) - 24;
+		// waits while the whole image is drawn
+		Image cirim = circuit.getCachedImage("fire");
+		if (cirim != null && cirim.getWidth(this) > 0)
+			g.drawImage(cirim, x + ox, y + oy, circuitCanvas);
+		overloaded = true;
+	}
 
     /**
      * <p>If the imageVisible is set to false, a rectangle with a "Z" is displayed</p>
@@ -640,7 +627,7 @@ public class CircuitElement extends Canvas implements SDataSource
             x = (int)(circuit.interGrid*(col+0.5)); y = (int)(circuit.interGrid*(row+0.5));
             int cig = circuit.interGrid/2;
             g.setFont(font);
-            if (imageVisible) loadImage(g); else unknownImage(g); // display image
+            if (imageVisible) paintImage(g); else unknownImage(g); // display image
             if (valueVisible) showValue(g); // display value
             g.setColor(java.awt.Color.black);
             if (to.equals("h")) g.drawString(label, x+cig-4, y-14); // draw label
@@ -653,7 +640,7 @@ public class CircuitElement extends Canvas implements SDataSource
             if (polarized) showSigns(g); // if polarized, draw + and -
         } else {
             x=0; y=10;
-            loadImage(g);
+            paintImage(g);
         }
     }
 

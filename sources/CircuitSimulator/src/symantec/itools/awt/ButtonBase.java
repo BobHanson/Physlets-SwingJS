@@ -855,7 +855,7 @@ public abstract class ButtonBase extends Canvas
 	    released	= false;
 	    if(useOffset)
 		    pressedAdjustment = bevel;
-		paint(getGraphics());
+		repaint();
 
 		//Wait for a bit
 		if(circuitsimulator.Circuit.isJS) try { Thread.sleep(120); } catch (java.lang.InterruptedException exc) {}
@@ -1413,10 +1413,10 @@ public abstract class ButtonBase extends Canvas
             catch(InterruptedException e){}
         }
 
-        buttonImageGraphics = buttonImage.getGraphics();
-        if ( buttonImageGraphics.getClip() == null )
-            buttonImageGraphics.clipRect( 0, 0, width, height );
-        Color oldColor = buttonImageGraphics.getColor();
+        Graphics bg = buttonImage.getGraphics();
+        if ( bg.getClip() == null )
+            bg.clipRect( 0, 0, width, height );
+        Color oldColor = bg.getColor();
 
 		if(isEnabled())	//Enabled
 		{
@@ -1448,65 +1448,66 @@ public abstract class ButtonBase extends Canvas
 		if(!raised && useOffset)
 		{
 			//Fill the button content
-			buttonImageGraphics.setColor(fillColor);
-			buttonImageGraphics.fillRect(x, y, w - x, h - y);
+			bg.setColor(fillColor);
+			bg.fillRect(x, y, w - x, h - y);
 
 			//Draw the bevels
-			buttonImageGraphics.setColor(highlight1);
+			bg.setColor(highlight1);
 			for(i = 1; i <= bevel; i++)
 			{
-			    buttonImageGraphics.drawLine(i, i, i, h);
-			    buttonImageGraphics.drawLine(i, i, w, i);
+			    bg.drawLine(i, i, i, h);
+			    bg.drawLine(i, i, w, i);
 			}
 		}
 
 		if(raised || !useOffset)
 		{
 			//Fill the button content
-			buttonImageGraphics.setColor(fillColor);
-			buttonImageGraphics.fillRect(x, y, w - x, h - y);
+			bg.setColor(fillColor);
+			bg.fillRect(x, y, w - x, h - y);
 
 		    //Draw the bevels
-			buttonImageGraphics.setColor(highlight1);
+			bg.setColor(highlight1);
 		    for(i = 1; i <= bevel; i++)
 		    {
-		        buttonImageGraphics.drawLine(i, i, i, h - i);
-		        buttonImageGraphics.drawLine(i, i, w - i, i);
+		        bg.drawLine(i, i, i, h - i);
+		        bg.drawLine(i, i, w - i, i);
 		    }
-			buttonImageGraphics.setColor(highlight2);
+			bg.setColor(highlight2);
 		    for(i = 1; i <= bevel; ++i)
 		    {
-		        buttonImageGraphics.drawLine(i, h - i, w - i, h - i);
-		        buttonImageGraphics.drawLine(w - i, i, w - i, h - i);
+		        bg.drawLine(i, h - i, w - i, h - i);
+		        bg.drawLine(w - i, i, w - i, h - i);
 		    }
 		}
 
 		//Draw the border
-		buttonImageGraphics.setColor(tempBorderColor);
-        buttonImageGraphics.drawLine(1, 0, w - 1, 0);
-        buttonImageGraphics.drawLine(0, 1, 0, h - 1);
-        buttonImageGraphics.drawLine(1, h, w - 1, h);
-        buttonImageGraphics.drawLine(w, h - 1, w, 1);
+		bg.setColor(tempBorderColor);
+        bg.drawLine(1, 0, w - 1, 0);
+        bg.drawLine(0, 1, 0, h - 1);
+        bg.drawLine(1, h, w - 1, h);
+        bg.drawLine(w, h - 1, w, 1);
 
         if (hasFocus && showFocus) {
-		    buttonImageGraphics.setColor(java.awt.Color.darkGray);
+		    bg.setColor(java.awt.Color.darkGray);
             for(x = 3; x <= w - 3; x += 3)
-                buttonImageGraphics.drawLine(x, 3, x+1, 3);
+                bg.drawLine(x, 3, x+1, 3);
             for(y = 3; y <= h - 3; y += 3)
-                buttonImageGraphics.drawLine(3, y, 3, y+1);
+                bg.drawLine(3, y, 3, y+1);
             for(x = 3; x <= w - 3; x += 3)
-                buttonImageGraphics.drawLine(x, h-3, x+1, h-3);
+                bg.drawLine(x, h-3, x+1, h-3);
             for(y = 3; y <= h - 3; y += 3)
-                buttonImageGraphics.drawLine(w-3, y, w-3, y+1);
+                bg.drawLine(w-3, y, w-3, y+1);
         }
 
 
 		//!!! LAB !!! This should be changed to setClip when it works.
 		//Set the clipping area to be the inside of the button.
-		buttonImageGraphics.clipRect(bevel + 1, bevel + 1, width - bevel - bevel - 2, height - bevel - bevel - 2);
+		bg.clipRect(bevel + 1, bevel + 1, width - bevel - bevel - 2, height - bevel - bevel - 2);
 
         //Restore the original color
-		buttonImageGraphics.setColor(oldColor);
+		bg.setColor(oldColor);
+		bg.dispose();
 	}
 
 	/**
@@ -1610,10 +1611,6 @@ public abstract class ButtonBase extends Canvas
      *	The offscreen buffer to draw the button in.
      */
     transient protected Image	buttonImage = null;
-    /**
-     *	The Graphics of the offscreen buffer to draw the button in.
-     */
-    transient protected Graphics	buttonImageGraphics = null;
     /**
      * The URL of the document to show when the button is clicked.
      */

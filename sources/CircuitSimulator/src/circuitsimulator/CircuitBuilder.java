@@ -1,14 +1,17 @@
 package circuitsimulator;
 
+import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
+import java.util.Enumeration;
 import java.util.Vector;
 
 import javax.swing.Timer;
 
-import java.util.Enumeration;
-import edu.davidson.tools.*;
+import edu.davidson.tools.SUtil;
+import edu.davidson.tools.SwingJSUtils;
 
 
 /**
@@ -18,6 +21,11 @@ import edu.davidson.tools.*;
  */
 public class CircuitBuilder extends circuitsimulator.Circuit {
 
+	// BH note: This utility allows us to set the 
+	// dimensions either using the width/height applet parameters
+	// or a predefined size. It's important for testing in JavaScript, especially.
+  static Dimension dim  = SwingJSUtils.setDim(514, 445);
+
   /**
    * Exclude the javadoc because this method should not be scripted.
    * @y.exclude
@@ -25,7 +33,7 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
   public void init() {
     super.init();
 	  borderPanel  = new symantec.itools.awt.BorderPanel();
-	  builderPanel = new circuitsimulator.BuilderPanel();
+	  builderPanel = new circuitsimulator.BuilderPanel(this);
     /*
      * String s = getParameter("startlist");
      *  if (s == null) startlist = "/" ;
@@ -34,7 +42,8 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
     //{{INIT_CONTROLS
     setLayout(null);
     if(!Circuit.isJS)setBackground(new java.awt.Color(0, 143, 213));
-    setSize(514, 445);
+    if (dim != null)
+    	setSize(dim);
     try {
       borderPanel.setBevelStyle(symantec.itools.awt.BorderPanel.BEVEL_RAISED);
     } catch(java.beans.PropertyVetoException e) {}
@@ -95,8 +104,6 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
     SymMouse aSymMouse = new SymMouse();
     //}}
     circanvas.addMouseListener(aSymMouse);
-    builderPanel.setcircuitBuilder(this);
-    builderPanel.loadImages();
   }
 
   //{{DECLARE_CONTROLS
@@ -105,13 +112,10 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
   //}}
   PopupOnElement                  popupOnElement;
   CircuitElement                  currentElement = null;
-  Vector                          scopeList      = new Vector();  //vector of scopes
-  Vector                          meterList      = new Vector();  //vector of meters
-  Vector                          graphList      = new Vector();  //vector of graphs
+  Vector<OscilloDialog>           scopeList      = new Vector<>();
+  Vector<Meter>                   meterList      = new Vector<>();
+  Vector<DataGraphDialog>         graphList      = new Vector<>();
   String                          componentList  = "";
-  OscilloDialog                   oscdiag        = null;
-  Meter                           meter          = null;
-  DataGraphDialog                 graph          = null;
 
   /**
    * Method start
@@ -120,6 +124,7 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
    */
   public void start() {
     super.start();
+    gridZone = getSize();
     gridZone.width = builderPanel.getBounds().x;
     popupOnElement = new PopupOnElement(this);
     loadList("/lists/default.txt");
@@ -131,8 +136,8 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
 		timer = new Timer(sleepTime, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-		      for(Enumeration enu = meterList.elements(); enu.hasMoreElements(); ) {
-		          meter = (Meter) enu.nextElement();
+		      for(Enumeration<Meter> enu = meterList.elements(); enu.hasMoreElements(); ) {
+		          Meter meter = enu.nextElement();
 		          meter.recalc();
 		        }
 				circanvas.repaint();
@@ -156,8 +161,8 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
       if(parsed /*&& imageRepainting*/) {
         circanvas.repaint();
       }
-      for(Enumeration enu = meterList.elements(); enu.hasMoreElements(); ) {
-        meter = (Meter) enu.nextElement();
+      for(Enumeration<Meter> enu = meterList.elements(); enu.hasMoreElements(); ) {
+        Meter meter = enu.nextElement();
         meter.recalc();
       }
       try {
@@ -245,8 +250,8 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
   public void step(double dt, double time) {
     super.step(dt, time);
     if((parsed) &&!graphList.isEmpty()) {
-      for(Enumeration e = graphList.elements(); e.hasMoreElements(); ) {
-        graph = (DataGraphDialog) e.nextElement();
+      for(Enumeration<DataGraphDialog> e = graphList.elements(); e.hasMoreElements(); ) {
+        DataGraphDialog graph = e.nextElement();
         graph.addData();
       }
     }
@@ -259,8 +264,8 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
   public void reset() {
     super.reset();
     if((parsed) &&!graphList.isEmpty()) {
-      for(Enumeration e = graphList.elements(); e.hasMoreElements(); ) {
-        graph = (DataGraphDialog) e.nextElement();
+      for(Enumeration<DataGraphDialog> e = graphList.elements(); e.hasMoreElements(); ) {
+        DataGraphDialog graph = e.nextElement();
         graph.clearGraph();
       }
     }
@@ -315,12 +320,12 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
   public void repaintMeters() {
     if(parsed) {
       calculateCircuit();
-      for(Enumeration e = scopeList.elements(); e.hasMoreElements(); ) {
-        oscdiag = (OscilloDialog) e.nextElement();
+      for(Enumeration<OscilloDialog> e = scopeList.elements(); e.hasMoreElements(); ) {
+        OscilloDialog oscdiag = e.nextElement();
         oscdiag.scopeCanvas.repaint();
       }
-      for(Enumeration e = meterList.elements(); e.hasMoreElements(); ) {
-        meter = (Meter) e.nextElement();
+      for(Enumeration<Meter> e = meterList.elements(); e.hasMoreElements(); ) {
+        Meter meter = e.nextElement();
         meter.recalc();
       }
     }
@@ -363,18 +368,27 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
    * @param inputfile
    */
   void loadList(String inputfile) {
+	  //BH note: 
+	  // We need to use getDocumentBase().getPath(), not toString()
+	  // because we are looing for the end the path, not the end of 
+	  // the url, to be ".html". Some URLs for whatever reason might include ? or #. 
     boolean trydoc = false;
-    String  s      = "";
+//    String  s      = "";
     try {
       if(Circuit.DEBUG) {
-        System.out.println("loading from codebase:" + getCodeBase().toString() + inputfile);
+        System.out.println("loading from codebase:" + getCodeBase().getPath() + inputfile);
       }
-      java.net.URL           url = new java.net.URL(getCodeBase().toString() + inputfile);
+      URL url = new java.net.URL(getCodeBase() + inputfile);
+//      url = new URL("https://stolaf.edu/adjfaljfafd");
+//      HttpsURLConnection c = (HttpsURLConnection) url.openConnection();
+//      c.connect();
+//      System.out.println(c.getContentLength() + " " + c.getResponseCode());
+//
       java.io.InputStream    in  = url.openStream();
       java.io.BufferedReader br  = new java.io.BufferedReader(new java.io.InputStreamReader(in));
       String                 line;
       while((line = br.readLine()) != null) {
-        s += line + "\n";
+//        s += line + "\n";
         parseCommand(line);
       }
     } catch(Exception e) {
@@ -384,19 +398,19 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
       }
     }
     if(trydoc) {
-      s = "";
+//      s = "";
       try {
-        String pathName = getDocumentBase().toString();
+        String pathName = getDocumentBase().getPath();
         if(pathName.endsWith(".html") || pathName.endsWith(".htm")) {
           int index = pathName.lastIndexOf("/");
           pathName = pathName.substring(0, index + 1);  // drop the html file name
         }
-        java.net.URL           url = new java.net.URL(pathName + inputfile);
+        java.net.URL           url = new java.net.URL(getDocumentBase().getProtocol() + "://" + pathName + inputfile);
         java.io.InputStream    in  = url.openStream();
         java.io.BufferedReader br  = new java.io.BufferedReader(new java.io.InputStreamReader(in));
         String                 line;
         while((line = br.readLine()) != null) {
-          s += line + "\n";
+//          s += line + "\n";
           parseCommand(line);
         }
       } catch(Exception e) {

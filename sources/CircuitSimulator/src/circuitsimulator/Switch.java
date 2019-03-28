@@ -18,9 +18,9 @@ public class Switch extends CircuitElement
         value = open ? 1e10 : 0.0;
     }
 
-    Switch() {super();}
+    Switch(Circuit circuit) {super(circuit);}
 
-    public void loadImage(Graphics g) {}//overriding
+    public void paintImage(Graphics g) {}//overriding
 
     public void paint(Graphics g){
         super.paint(g);

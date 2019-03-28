@@ -12,7 +12,7 @@ public class Ameter extends Resistor
         if (value == 0.0) value = 1.0e-1;
     }
     
-    Ameter() {super();}
+    Ameter(Circuit circuit) {super(circuit);}
     
     public String valueStr(){
         return "";

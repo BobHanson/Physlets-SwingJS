@@ -14,7 +14,7 @@ public class Capacitor extends CircuitElement
         unity = "F";
     }
     
-    Capacitor() {super();}
+    Capacitor(Circuit c) {super(c);}
     
     public double impedance(){return circuit.dt/value;}
     

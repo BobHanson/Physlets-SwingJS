@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Physlet Physics by Christian and Belloni: Illustration 31.4</title>
+    <link rel="stylesheet" type="text/css" href="../../resources/physletsJS.css" />
+    <script src="swingjs/swingjs2.js"></script>
+    <script>
+    if (!self.SwingJS) alert('swingjs2.js was not found.')
+    var id = new Array();
+    var gidV = 0;
+
+    function initApplet() {
+      if (!circuitApp || !circuitApp._applet) return; // circuitApp or applet not found.
+      Circuit = circuitApp._applet;
+      if (!dataGraphApp || !dataGraphApp._applet) return; // dataGraphApp or applet not found.
+      DataGraph = dataGraphApp._applet;
+      if (!sliderApp || !sliderApp._applet) return; // sliderApp or applet not found.
+      Slider = sliderApp._applet;
+
+      id[0] = 0;
+      id[6] = 0;
+      noc = 10;
+      dt = 5.0e-6;
+      fps = 10;
+      Slider.setDefault();
+      Slider.setValue(1000);
+      Slider.setFormat(1, "%4.1f");
+
+      Circuit.pause();
+      Circuit.setDefault();
+      //Circuit.setGrid(2, 2);
+      Circuit.setGrid("rows=2,cols=2");
+      id[0] = Circuit.addObject("wire", "row=0,col=0,to=v");
+      id[3] = Circuit.addObject("wire", "row=0,col=0,to=h");
+      id[4] = Circuit.addObject("wire", "row=0,col=1,to=v");
+      id[5] = Circuit.addObject("wire", "row=1,col=0,to=h");
+      Circuit.parse();
+      DataGraph.setDefault();
+      DataGraph.addObject("caption", "text=Animation Disabled");
+      build2();
+    }
+
+    function build2() {
+      id[0] = 0;
+      id[6] = 0;
+      noc = 10;
+      dt = 5.0e-6;
+      fps = 10;
+      Slider.setDefault();
+      Slider.setValue(1000);
+      Slider.setFormat(1, "%4.1f");
+
+      Circuit.pause();
+      Circuit.setDefault();
+      Circuit.setDT(dt);
+      Circuit.setNOC(noc);
+      Circuit.setFPS(fps);
+
+      //Circuit.setGrid(2, 2);
+      Circuit.setGrid("rows=2,cols=2");
+      id[0] = Circuit.addObject("sinwave",
+        "row=0,col=0,to=v,d=1,freq=1000,amp=5,phase=0, r=10");
+      id[3] = Circuit.addObject("wire", "row=0,col=0,to=h");
+      id[4] = Circuit.addObject("resistor", "row=0,col=1,to=v,r=500");
+      Circuit.setValueVisible(id[4], false);
+      id[5] = Circuit.addObject("wire", "row=1,col=0,to=h");
+      DataGraph.setLabelY("Voltage (V) &#38; Current (mA)");
+
+      Circuit.parse();
+      resetCircuit();
+      DataGraph.addObject("caption", "text=Resistor");
+      Circuit.deleteDataConnections();
+      Circuit.makeDataConnection(id[4], gidV, 1, "t", "v");
+      Circuit.makeDataConnection(id[0], gidV, 2, "t", "-i*1000");
+      Circuit.updateDataConnections();
+      Slider.setJSFunction("sliderMoved()");
+    }
+
+    function build3() {
+      noc = 10;
+      dt = 5.0e-6;
+      fps = 10;
+      Slider.setDefault();
+      Slider.setValue(1000);
+      Slider.setFormat(1, "%4.1f");
+
+      Circuit.pause();
+      Circuit.setDefault();
+      Circuit.setDT(dt);
+      Circuit.setNOC(noc);
+      Circuit.setFPS(fps);
+
+      //Circuit.setGrid(2, 2);
+      Circuit.setGrid("rows=2,cols=2");
+      id[0] = Circuit.addObject("sinwave",
+        "row=0,col=0,to=v,d=1,freq=1000,amp=5,phase=0, r=10");
+      id[3] = Circuit.addObject("wire", "row=0,col=0,to=h");
+      id[4] = Circuit.addObject("capacitor", "row=0,col=1,to=v,c=1e-6");
+      Circuit.setValueVisible(id[4], false);
+      id[5] = Circuit.addObject("wire", "row=1,col=0,to=h");
+      DataGraph.setLabelY("Voltage (V) &#38; Current (mA)");
+
+      Circuit.parse();
+      resetCircuit();
+      DataGraph.addObject("caption", "text=Capacitor");
+      Circuit.deleteDataConnections();
+      Circuit.makeDataConnection(id[4], gidV, 1, "t", "v");
+      Circuit.makeDataConnection(id[4], gidV, 2, "t", "-i*1000");
+      Circuit.updateDataConnections();
+      Slider.setJSFunction("sliderMoved()");
+    }
+
+    function build4() {
+      noc = 10;
+      dt = 5.0e-6;
+      fps = 10;
+      Slider.setDefault();
+      Slider.setValue(1000);
+      Slider.setFormat(1, "%4.1f");
+
+      Circuit.pause();
+      Circuit.setDefault();
+      Circuit.setDT(dt);
+      Circuit.setNOC(noc);
+      Circuit.setFPS(fps);
+
+      //Circuit.setGrid(2, 2);
+      Circuit.setGrid("rows=2,cols=2");
+      id[0] = Circuit.addObject("sinwave",
+        "row=0,col=0,to=v,d=1,freq=1000,amp=5,phase=0, r=100");
+      id[3] = Circuit.addObject("wire", "row=0,col=0,to=h");
+      id[4] = Circuit.addObject("inductor", "row=0,col=1,to=v,l=1e-1");
+      Circuit.setValueVisible(id[4], false);
+      id[5] = Circuit.addObject("wire", "row=1,col=0,to=h");
+      DataGraph.setLabelY("Voltage (V) &#38; Current (mA)");
+
+      Circuit.parse();
+      resetCircuit();
+      DataGraph.addObject("caption", "text=Inductor");
+      Circuit.deleteDataConnections();
+      Circuit.makeDataConnection(id[4], gidV, 1, "t", "v");
+      Circuit.makeDataConnection(id[0], gidV, 2, "t", "-i*1000");
+      Circuit.updateDataConnections();
+      Slider.setJSFunction("sliderMoved()");
+    }
+
+    function resetCircuit() {
+      isRunning = Circuit.isClockRunning();
+      Circuit.reset();
+      DataGraph.setDefault();
+      DataGraph.setAutoscaleY(true);
+      DataGraph.clearSeries(1);
+      DataGraph.clearSeries(2);
+      DataGraph.setStripChart(1, 200, true);
+      DataGraph.setStripChart(2, 200, true);
+      DataGraph.setSeriesRGB(1, 255, 0, 0);
+      DataGraph.setSeriesStyle(1, true, 3);
+      DataGraph.setSeriesRGB(2, 0, 0, 255);
+      DataGraph.setSeriesStyle(2, true, 3);
+      DataGraph.setLastPointMarker(1, true);
+      DataGraph.setMarkerSize(1, 0.6);
+      DataGraph.setLastPointMarker(2, true);
+      DataGraph.setMarkerSize(2, 0.6);
+      DataGraph.setLabelX("Time (s)");
+      DataGraph.setLabelY("Voltage &#38; Current");
+      DataGraph.setMouseFormat("%3.1e");
+      gidV = DataGraph.getGraphID();
+      if (isRunning) Circuit.forward();
+    }
+
+    function sliderMoved() {
+      fr = parseFloat(Slider.getValue());
+      running = Circuit.isClockRunning();
+      Circuit.pause();
+      Circuit.set(id[0], "freq=" + fr + ",phase=continuous");
+      Circuit.updateDataConnections();
+      if (running) Circuit.forward();
+
+    }
+
+    function change() {
+      Circuit.setValue(id[6], 0);
+    }
+
+    circuitInfo = {
+      code: "circuitsimulator.Circuit",
+      core: "none",
+      main: null,
+      readyFunction: initApplet,
+      j2sPath: 'swingjs/j2s',
+//      console: 'none',
+console:'sysoutdiv',
+      allowjavascript: true,
+
+      height: 200,
+      width: 250,
+      numberofdt: "10",
+      dt: "1e-6",
+      fps: "10",
+      noc: "10"
+      //,
+      //imagedir: "images31",
+    }
+    dataGraphInfo = {
+      code: "dataGraph.DataGraph",
+      core: "none",
+      main: null,
+      readyFunction: initApplet,
+      j2sPath: 'swingjs/j2s',
+//      console: 'none',
+console:'sysoutdiv',
+      allowjavascript: true,
+
+      height: 200,
+      width: 300,
+      XMin: "0",
+      XMax: "2",
+      YMin: "-1",
+      YMax: "1",
+      AutoScaleX: "true",
+      AutoScaleY: "true",
+      ShowControls: "false",
+    }
+    sliderInfo = {
+      code: "slider.SliderApplet",
+      core: "none",//"_physlets",
+      main: null,
+      readyFunction: initApplet,
+      j2sPath: 'swingjs/j2s',
+//      console: 'none',
+console:'sysoutdiv',
+      allowjavascript: true,
+
+      height: 25,
+      width: 557,
+      min: "100",
+      max: "2000",
+      value: "1000",
+      label: "freq (Hz)",
+    }
+  </script>
+  </head>
+
+  <body>
+    <h2>Illustration 31.4: Phase Shifts</h2>
+    <!-- App Container -->
+    <div class="centered">
+      <table border="1" style="background-color:#C0C0C0">
+        <tr>
+          <td>
+            <script>
+            SwingJS.getApplet('circuitApp', circuitInfo);
+          </script>
+          </td>
+          <td>
+            <script>
+            SwingJS.getApplet('dataGraphApp', dataGraphInfo);
+          </script>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <script>
+            SwingJS.getApplet('sliderApp', sliderInfo);
+          </script>
+          </td>
+        </tr>
+      </table>
+      <!--- Controls -->
+      <form>
+        <p>
+          <input type="button" value="play" onclick="Circuit.forward()" name="continue" />
+          <input type="button" value="pause" onclick="Circuit.pause()" name="pause" />
+          <input type="button" value="reset" onclick="JavaScript:resetCircuit()" name="resetb" />
+        </p>
+      </form>
+    </div>
+    <!-- Load Warning -->
+    <p class="error"> Please wait for the animation to completely load. 
+   
+    </p>
+    <!-- Explanation -->
+    <p> Assume an ideal power supply. The graph shows the voltage <strong>
+        <span style="color:#FF0000">(red)</span>
+      </strong>across and current <strong>
+        <span style="color:#0000FF">(blue)</span>
+      </strong>from the power supply as a function of time <strong>(voltage is given in volts,
+        current is given in milliamperes, and time is given in seconds)</strong>.&#8194; <a
+        href="JavaScript:initApplet()">Restart</a>.&#8194; </p>
+    <p> We start by reviewing the current and voltage relationship for a <a
+        href="JavaScript:build2()">resistive load</a>. As you change the frequency in the animation,
+      what happens (if anything) to the ratio of voltage to current? Notice that the voltage and
+      current are in phase with each other in this circuit. </p>
+    <p> Try a <a href="JavaScript:build3()">capacitive load</a>. What happens to the amplitude of
+      the current as you increase the frequency? The ratio of V/I is not called a resistance for
+      this type of load; it is called the reactance (or impedance, but impedance includes
+      information about the phase shift between voltage and current). This means that the reactance
+      of a capacitive load changes with frequency. Since the current increases as the frequency
+      increases, the reactance must decrease as the frequency increases. </p>
+    <p> Notice the phase shift between the current and the voltage. Pause the graph. Which plot (the
+      voltage or the current) is in the "lead?" In other words, if you look at a time in which the
+      current reaches its maximum value, has the voltage already reached its maximum value or will
+      it reach its maximum value at a slightly later time? If the current reaches its maximum first,
+      we describe this as the "current leading the voltage," but if the voltage reaches its maximum
+      first, we call it "current lagging the voltage." Which is the case with a capacitor? </p>
+    <p> Try an <a href="JavaScript:build4()">inductive load</a>. What happens to the amplitude of
+      the current as you increase the frequency? Does the current lead or lag the voltage in this
+      case? Notice that with a capacitive load the current leads the voltage, while with an
+      inductive load the current lags the voltage. </p>
+    <p> Because the current and voltage are out of phase when there are capacitive and inductive
+      loads, and the reactance is a function of frequency, the mathematics to calculate the voltage
+      and current is a bit more involved, but Kirchhoff's laws still hold at any instant in time. </p>
+    <p> </p>
+    <!-- Credits -->
+    <br />
+    <hr style="width:40%" />
+    <p> Illustration authored by Anne J. Cox. <br /> Script authored by Wolfgang Christian and Anne
+      J. Cox. <br /> HTML updated for JavaScript by Ricky Davidson. <br /> Physlets were developed
+      at Davidson College and converted from Java to JavaScript using the <a target="SwingJS"
+        href="https://chemapps.stolaf.edu/swingjs/site/swingjs/examples/about.html">SwingJS</a>
+      system developed at St. Olaf College. </p>
+<div style="position:absolute;left:700px;top:30px;width:500px;height:300px;">
+<div contentEditable="true" id=sysoutdiv style="border:1px solid green;width:100%;height:95%;overflow:auto"></div>
+This is System.out. <a href="javascript:testApplet._clearConsole()">clear it</a> 
+</div>  </body>
+
+</html>

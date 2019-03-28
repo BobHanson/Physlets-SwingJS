@@ -4,8 +4,7 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
-
-import java.net.*;
+import java.util.Vector;
 
 /**
  * Used by circuit and circuitbuilder. Canvas representing the circuit.
@@ -18,12 +17,11 @@ public class CircuitCanvas extends Canvas {
   Color           parsedbgColor    = new Color(255, 255, 185);
   Color           notparsedbgColor = new Color(192, 192, 192);
   Color           bgColor;
-  URL             imagebase;
   CircuitGrid     cirgrid;
   Circuit         circuit;
-  private boolean imagePainting = false;
+//  private boolean imagePainting = false;
   Image           osIm          = null;
-  Graphics        osGr          = null;
+  //Graphics        osGr          = null;
 
   /**
    * Constructor CircuitCanvas
@@ -43,7 +41,7 @@ public class CircuitCanvas extends Canvas {
     int insetx = (int) ((circuit.gridZone.width - (int) ((cirgrid.cols + 0.5) * d)) / 2);
     int insety = (int) ((circuit.gridZone.height - cirgrid.rows * d) / 2);
     setBounds(insetx, insety, (int) ((cirgrid.cols + 0.5) * d), cirgrid.rows * d);
-    if((circuit.debugLevel & circuit.DEBUG_IO) > 0) {
+    if((circuit.debugLevel & Circuit.DEBUG_IO) > 0) {
       System.out.println("canvas construction completed...");
     }
     //{{INIT_CONTROLS
@@ -62,17 +60,17 @@ public class CircuitCanvas extends Canvas {
     int insetx = (int) ((circuit.gridZone.width - (int) ((cirgrid.cols + 0.5) * d)) / 2);
     int insety = (int) ((circuit.gridZone.height - cirgrid.rows * d) / 2);
     setBounds(insetx, insety, (int) ((cirgrid.cols + 0.5) * d), cirgrid.rows * d);
+    
     bgColor = circuit.parsed
               ? parsedbgColor
               : notparsedbgColor;
     setBackground(bgColor);
     if((getSize().width >= 1) && (getSize().height >= 1)) {
       osIm = createImage(getSize().width, getSize().height);
-      osGr = osIm.getGraphics();
       redraw();
     }
-    if((circuit.debugLevel & circuit.DEBUG_IO) > 0) {
-      System.out.println("canvas construction completed...");
+    if((circuit.debugLevel & Circuit.DEBUG_IO) > 0) {
+      System.out.println("canvas construction completed..." + getSize());
     }
   }
 
@@ -81,13 +79,17 @@ public class CircuitCanvas extends Canvas {
    *
    */
   public synchronized void redraw() {
-    imagePainting = false;
-    if(osGr == null || getSize().width<4 || getSize().height<4 ) {
+//    imagePainting = false;
+    if(osIm == null || getSize().width<4 || getSize().height<4 ) {
       return;
     }
     bgColor = circuit.parsed
               ? parsedbgColor
               : notparsedbgColor;
+    Graphics osGr = osIm.getGraphics();
+    
+    /** @j2sNative xxi = this.osIm */
+
     osGr.setColor(bgColor);
     osGr.fillRect(1, 1, getSize().width - 2, getSize().height - 2);
     osGr.setColor(java.awt.Color.black);
@@ -97,13 +99,15 @@ public class CircuitCanvas extends Canvas {
         osGr.fillOval(b + j * d - 2, b + i * d - 2, 4, 4);
       }
     }
-    java.util.Vector list=(java.util.Vector)cirgrid.cirElemList.clone();
+    @SuppressWarnings("unchecked")
+	Vector<CircuitElement> list=(Vector<CircuitElement>)cirgrid.cirElemList.clone();
     for(int i = 0,n=list.size(); i < n; i++) {
-      ((CircuitElement) list.elementAt(i)).paint(osGr);
-      ((CircuitElement) list.elementAt(i)).repaintImage(osGr);
+      list.elementAt(i).paint(osGr);
+      list.elementAt(i).repaintImage(osGr);
     }
+    osGr.dispose();
     repaint();
-    imagePainting = true;
+//    imagePainting = true;
   }
 
   /**
@@ -122,14 +126,14 @@ public class CircuitCanvas extends Canvas {
    */
   public synchronized void paint(Graphics g) {
     //        if (imagePainting) {
-    Image temp=osIm;
-    if(temp != null && g!=null) {
-      g.drawImage(temp, 0, 0, this);
-    }
-    if( osGr!=null)
+    if( osIm!=null) {
+      Graphics osGr = osIm.getGraphics();
       for(int i = 0; i < cirgrid.cirElemList.size(); i++) {
-        ((CircuitElement) cirgrid.cirElemList.elementAt(i)).repaintImage(osGr);
+        cirgrid.cirElemList.elementAt(i).repaintImage(osGr);
       }
+      osGr.dispose();
+      g.drawImage(osIm, 0, 0, this);
+    }
     return;
     /*
     *       } else {

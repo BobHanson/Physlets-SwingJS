@@ -48,7 +48,7 @@ public class Probe extends CircuitElement
         return s;
     }
     
-    public void loadImage(Graphics g) {}//overriding
+    public void paintImage(Graphics g) {}//overriding
     
     public void paint(Graphics g){
 		int d=circuit.interGrid;

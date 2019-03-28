@@ -29,7 +29,7 @@ public class Bulb extends CircuitElement
         colorB = colorG = colorR = 0;
     }
 
-    Bulb() {super();}
+    Bulb(Circuit circuit) {super(circuit);}
 
     public double impedance() {return value;}
     
@@ -46,7 +46,7 @@ public class Bulb extends CircuitElement
         return ret;
     }
     
-    public void loadImage(Graphics g) {}//overriding
+    public void paintImage(Graphics g) {}//overriding
     
     public String valueStr(){return Double.toString(volt)+"V,"+Double.toString(watt)+"W";}
 

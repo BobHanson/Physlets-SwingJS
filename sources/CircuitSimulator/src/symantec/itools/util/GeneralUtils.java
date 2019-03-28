@@ -2,6 +2,7 @@ package symantec.itools.util;
 
 import java.lang.IllegalArgumentException;
 import java.util.ResourceBundle;
+import java.util.ResourceBundle.Control;
 import java.text.MessageFormat;
 
 //???RKM??? I would have called this Util.java, but for the bug in the project manager
@@ -115,6 +116,6 @@ public final class GeneralUtils
     /**
      * Error strings.
      */
-    static protected ResourceBundle errors = ResourceBundle.getBundle("symantec.itools.resources.ErrorsBundle");
+    static protected ResourceBundle errors = ResourceBundle.getBundle("symantec.itools.resources.ErrorsBundle", Control.getControl(Control.FORMAT_CLASS));
 
 }

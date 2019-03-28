@@ -14,7 +14,7 @@ public class Inductor extends CircuitElement
         unity = "H";
 	}
     
-    Inductor() {super();}
+    Inductor(Circuit circuit) {super(circuit);}
     
     public double impedance(){return value/circuit.dt;}
     

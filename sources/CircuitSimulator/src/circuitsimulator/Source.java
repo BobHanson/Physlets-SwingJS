@@ -24,7 +24,7 @@ public class Source extends CircuitElement
         unity = "V";
     }
     
-    Source() {super();}
+    Source(Circuit circuit) {super(circuit);}
         
     Source(Circuit circ, int pol, int r, int c, String to, String func){
         this(circ,pol,r,c,to);

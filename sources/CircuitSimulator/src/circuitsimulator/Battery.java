@@ -19,12 +19,12 @@ public class Battery extends Source
         setValueVisible(true);
     }
     
-    Battery() {
-        super();
+    Battery(Circuit circuit) {
+        super(circuit);
         polarity = "p";
     }
     
-    public void loadImage(Graphics g) {}//overriding
+    public void paintImage(Graphics g) {}//overriding
     
     public void paint(Graphics g){
         super.paint(g);

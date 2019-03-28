@@ -18,7 +18,7 @@ public class SinWave extends Source
                         +"*(t+"+Double.toString(phase)+"))";
     }
     
-    SinWave() {super();}
+    SinWave(Circuit circuit) {super(circuit);}
     
     public String getStringAdditions() {
         return ",amp="+amplitude+",phase="+phase+",freq="+frequency;

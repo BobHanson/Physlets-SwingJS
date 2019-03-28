@@ -19,7 +19,7 @@ public class Diode extends CircuitElement
         leftlinear=false;
     }
 
-    Diode() {super();}
+    Diode(Circuit circuit) {super(circuit);}
 
     public double impedance() {
         nv = ov;

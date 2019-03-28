@@ -12,7 +12,7 @@ public class Vmeter extends Resistor
         if (value == 0.0) value = 1.0e6;
     }
     
-    Vmeter() {super();}
+    Vmeter(Circuit circuit) {super(circuit);}
     
     public String valueStr(){
         return "";

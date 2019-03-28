@@ -2,9 +2,14 @@ package circuitsimulator;
 
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.InputStream;
 import java.net.*;
+import java.util.Enumeration;
+import java.util.Hashtable;
+import java.util.Map;
 
 import javax.swing.Timer;
 
@@ -18,7 +23,64 @@ import edu.davidson.tools.*;
  */
 public class Circuit extends edu.davidson.tools.SApplet implements SStepable, Runnable {
 	
-  //static boolean isJS = /** @j2sNative true || */ false;
+
+	  final private static String[] components = {
+			  "ameter_"
+			  ,"batteryh"
+			  ,"btbt"
+			  ,"btsv"
+			  ,"btmode"
+			  ,"bulbh"
+			  ,"capacitor_"
+			  ,"currentsource_"
+			  ,"diode_"
+			  ,"fire"
+			  ,"igeneral_"
+			  ,"inductor_"
+			  ,"inductor_1"
+			  ,"pot_"
+			  ,"resistor_"
+			  ,"scope_"
+			  ,"sinwave_"
+			  ,"source_"
+			  ,"source_1"
+			  ,"squarewave_"
+			  ,"switchh"
+			  ,"vgeneral_"
+			  ,"vmeter_"
+			  ,"wireh"
+	 
+	  };
+
+	private void loadImages() {
+		for (int i = 0; i < components.length; i++) {
+			String c = components[i];
+			loadImage(c.replace('_','h'));
+			if (c.indexOf("_") >= 0)
+				loadImage(c.replace('_','v'));
+		}
+	}
+
+  private static Map<String, Image> htImages = new Hashtable<>();
+  private void loadImage(String name) {
+	  try {
+		Image i = htImages.get(name);
+		if (i != null)
+			return;
+		String filename = imagedir + name + ".gif";
+		System.out.println("loading image " + filename);
+		i = SwingJSUtils.getImage(this, filename);
+		htImages.put(name,  i);
+	  } catch (Throwable t) {
+		  t.printStackTrace();
+	  }
+	}
+  
+  public Image getCachedImage(String name) {
+		return htImages.get(name);
+  }
+
+//static boolean isJS = /** @j2sNative true || */ false;
   static public  boolean isJS = true; // for debugging
   Timer timer;
   int sleepTime=100;
@@ -67,7 +129,7 @@ public class Circuit extends edu.davidson.tools.SApplet implements SStepable, Ru
    * Circuit visualization object
    */
   CircuitCanvas     circanvas;
-  private URL       imagebase;
+//  private URL       imagebase; BH unused
 
   /** Field imagedir           */
   public static String     imagedir    = "";
@@ -190,6 +252,8 @@ public class Circuit extends edu.davidson.tools.SApplet implements SStepable, Ru
      */
   public void init() {
     initResources(null);
+    // BH note: This is not the final size of the applet,
+    // as it has not been packed yet.
     gridZone = new Dimension(getSize());
     String s = getParameter("debugLevel");
     if(s != null) {
@@ -242,17 +306,16 @@ public class Circuit extends edu.davidson.tools.SApplet implements SStepable, Ru
       localization = "" + s;
       readCircuitProperties();
     }
-    s = getParameter("imagedir");
-    if(s == null) {
-      imagedir = "circuitimages/";
-    } else {
-      imagedir += s + "/";
-    }
-    try {
-      imagebase = new URL(getCodeBase().toString() + imagedir);
-    } catch(MalformedURLException e) {
-      System.out.println("Bad URL");
-    }
+    s = getParameter("imagedir", "../circuit/circuitimages");
+    if (!s.endsWith("/"))
+    	s += "/";
+    imagedir = s;
+//    try {
+//      imagebase = new URL(getCodeBase().toString() + imagedir);
+//    } catch(MalformedURLException e) {
+//      System.out.println("Bad URL");
+//    }
+    loadImages();
     circanvas = new CircuitCanvas(this);
     circanvas.setBounds(1, 1, 1, 1);
     add(circanvas);
@@ -264,7 +327,8 @@ public class Circuit extends edu.davidson.tools.SApplet implements SStepable, Ru
    */
   void readCircuitProperties() {
     try {
-      java.io.InputStream is = new java.net.URL(getCodeBase(), localization).openStream();
+      URL url = new URL(getCodeBase(), localization);
+      InputStream is = url.openStream();
       cirProp.load(is);
       if((debugLevel & DEBUG_IO) > 0) {
         System.out.println(cirProp.toString());
@@ -338,8 +402,8 @@ public class Circuit extends edu.davidson.tools.SApplet implements SStepable, Ru
     }
     // added by W. Christian to check for overload!
     boolean change=false;
-    for (java.util.Enumeration e=cirgrid.cirElemList.elements();e.hasMoreElements();) {
-      CircuitElement cirelem = (CircuitElement) e.nextElement();
+    for (Enumeration<CircuitElement> e=cirgrid.cirElemList.elements();e.hasMoreElements();) {
+      CircuitElement cirelem = e.nextElement();
       if (cirelem.maxCurrentValue <= Math.abs(cirelem.getI()) && !cirelem.overloaded) {
         change=true;
         //System.out.println("overloaded");
@@ -364,15 +428,16 @@ public class Circuit extends edu.davidson.tools.SApplet implements SStepable, Ru
     circanvas.reconnect();
   }
 
-  /**
-   * Sets the image base for the circuit element images.
-   *
-   *
-   * @return
-   */
-  public URL base() {
-    return imagebase;
-  }
+// BH unused
+//  /**
+//   * Gets the image base for the circuit element images.
+//   *
+//   *
+//   * @return
+//   */
+//  public URL getImageBase() {
+//    return imagebase;
+//  }
 
   /**
    * Interprets the whole circuit and translates this into a set of equations.
@@ -776,10 +841,11 @@ public class Circuit extends edu.davidson.tools.SApplet implements SStepable, Ru
    * @return object identifier: the hashCode() or -1 if 'Out of Bounds'
    */
   public int addObject(String name, String list) {
-    int            type = 0, r = 0, c = 0, d = 0, st = 0;
+    int      //      type = 0,
+    		r = 0, c = 0, d = 0, st = 0;
     String         to, func = "", label = "";
     double         value     = 0.0, amp = 1.0, phase = 0.0, freq = 1.0, duty = 0.5;
-    String         imageName = "";
+//    String         imageName = "";
     CircuitElement cirelem   = null;
     parsed = false;
     name   = name.toLowerCase().trim();
@@ -810,7 +876,7 @@ public class Circuit extends edu.davidson.tools.SApplet implements SStepable, Ru
     if(SUtil.parameterExist(list, "freq=")) {
       freq = SUtil.getParam(list, "freq=");
     }
-    imageName += name + to;
+//    imageName += name + to;
     if(name.equals("nothing")) {
       cirelem = new Nothing(this, r, c, to);
     } else if(name.equals("wire")) {
@@ -1106,41 +1172,42 @@ public class Circuit extends edu.davidson.tools.SApplet implements SStepable, Ru
     return true;
   }
 
-  /**
-   * Changes the visibility of the element's default image
-   *
-   * @param id the object identifier
-   * @param status the default image is visible if status = true
-   *
-   * @return
-   */
-  public boolean setImageVisible(int id, boolean status) {
-    CircuitElement t = cirgrid.getCircuitElement(id);
-    if(t == null) {
-      return false;
-    }
-    t.setImageVisible(status);
-    circanvas.redraw();
-    return true;
-  }
-
-  /**
-   * Changes the element's default image. If gifname is empty then the default image is not visible.
-   *
-   * @param id the object identifier
-   * @param gifname the name of the image new gif file
-   *
-   * @return
-   */
-  public boolean setImage(int id, String gifname) {
-    CircuitElement t = cirgrid.getCircuitElement(id);
-    if(t == null) {
-      return false;
-    }
-    t.setImage(gifname);
-    circanvas.redraw();
-    return true;
-  }
+//BH not used
+///**
+//* Changes the visibility of the element's default image
+//*
+//* @param id the object identifier
+//* @param status the default image is visible if status = true
+//*
+//* @return
+//*/
+//public boolean setImageVisible(int id, boolean status) {
+// CircuitElement t = cirgrid.getCircuitElement(id);
+// if(t == null) {
+//   return false;
+// }
+// t.setImageVisible(status);
+// circanvas.redraw();
+// return true;
+//}
+//
+//  /**
+//   * Changes the element's default image. If gifname is empty then the default image is not visible.
+//   *
+//   * @param id the object identifier
+//   * @param gifname the name of the image new gif file
+//   *
+//   * @return
+//   */
+//  public boolean setImage(int id, String gifname) {
+//    CircuitElement t = cirgrid.getCircuitElement(id);
+//    if(t == null) {
+//      return false;
+//    }
+//    t.setImage(gifname);
+//    circanvas.redraw();
+//    return true;
+//  }
 
   /**
    * Changes the numeric format of an element. Use the C-style printf formatting (e.g. "%6.2g")

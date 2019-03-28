@@ -3,6 +3,8 @@ package edu.davidson.tools;
 
 //import java.applet.Applet; // BH
 import a2s.*;
+import circuitsimulator.Circuit;
+
 import java.awt.Font;
 import java.net.URL;
 import java.util.Enumeration;
@@ -112,61 +114,71 @@ public class SApplet extends Applet {
     } else scriptHasRun=true;  // set to true because there is no script!
   }
 
-  /**
- * @y.exclude
- */
-  public boolean initResources(String resourceFile){
-    boolean loaded=false;
-    try {
-      debugLevel = Integer.parseInt(this.getParameter("Debug", "0"));
-      staticDebugLevel = debugLevel;
-    }
-    catch (Exception e) {e.printStackTrace();}
-    try {
-      String cryptokey = getParameter("Key", "");
-      if (!cryptokey.equals("")) crypt.setKey(cryptokey);
-    }
-    catch (Exception e) {e.printStackTrace();}
-    if(resourceFile==null || resourceFile.equals("") ){
-      try { resourceFile = getParameter("Resources", ""); } catch (Exception e) { e.printStackTrace(); }
-    }
-    if(resourceFile!=null && !resourceFile.equals("")){
-      try { // load resources from code base.
-        loaded=true;
-        localProperties.load(new URL(getCodeBase(), resourceFile).openStream());
-      } catch (Exception ex) {
-        loaded=false;
-      }
-      if(!loaded){ // look for resources in document base
-        try { // load resources from code base.
-          loaded=true;
-          localProperties.load(new URL(getDocumentBase(), resourceFile).openStream());
-        } catch (Exception ex) {
-          loaded=false;
-        }
-      }
-      if(!loaded){ // look for resources in jar file
-        try{
-          loaded=true;
-          String resourcePath=resourceFile;
-          if (!resourceFile.startsWith("/")) resourcePath="/"+resourceFile;
-          localProperties.load(SApplet.class.getResource(resourcePath).openStream());
-        } catch(Exception e){
-          loaded=false;
-        }
-      }
-      if(!loaded){
-        System.out.println("Can't load resource: "+resourceFile);
-      }else{
-        setResources();
-        String cryptokey=localProperties.getProperty("key","");
-        if (!cryptokey.equals("")) crypt.setKey(cryptokey);
-      }
-      return loaded;
-        } else return false;
-  }
+	/**
+	 * @y.exclude
+	 */
+	public boolean initResources(String resourceFile) {
+		boolean loaded = false;
+		try {
+			debugLevel = Integer.parseInt(this.getParameter("Debug", "0"));
+			staticDebugLevel = debugLevel;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			String cryptokey = getParameter("Key", "");
+			if (!cryptokey.equals(""))
+				crypt.setKey(cryptokey);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if (resourceFile == null || resourceFile.equals("")) {
+			try {
+				resourceFile = getParameter("Resources", "");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		if (resourceFile != null && !resourceFile.equals("")) {
+			try { // load resources from code base.
+				loaded = true;
+				localProperties.load(new URL(getCodeBase(), resourceFile).openStream());
+			} catch (Exception ex) {
+				loaded = false;
+			}
+			if (!loaded) { // look for resources in document base
+				try { // load resources from code base.
+					loaded = true;
+					localProperties.load(new URL(getDocumentBase(), resourceFile).openStream());
+				} catch (Exception ex) {
+					loaded = false;
+				}
+			}
+			if (!loaded) { // look for resources in jar file
+				try {
+					loaded = true;
+					String resourcePath = resourceFile;
+					if (!resourceFile.startsWith("/"))
+						resourcePath = "/" + resourceFile;
+					localProperties.load(SApplet.class.getResource(resourcePath).openStream());
+				} catch (Exception e) {
+					loaded = false;
+				}
+			}
+			if (!loaded) {
+				System.out.println("Can't load resource: " + resourceFile);
+			} else {
+				setResources();
+				String cryptokey = localProperties.getProperty("key", "");
+				if (!cryptokey.equals(""))
+					crypt.setKey(cryptokey);
+			}
+			loaded = true;
+		}
+		return loaded;
+	}
 
-  /**
+/**
    * @y.exclude
    */
   protected void setResources(){

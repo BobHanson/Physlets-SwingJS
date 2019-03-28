@@ -15,9 +15,11 @@ public class Wire extends CircuitElement
         maxCurrentValue=100;
     }
     
+    Wire(Circuit c) {super(c);}
+
     Wire() {super();}
     
-    public void loadImage(Graphics g) {}//overriding
+    public void paintImage(Graphics g) {}//overriding
     
     public void paint(Graphics g){
         super.paint(g);

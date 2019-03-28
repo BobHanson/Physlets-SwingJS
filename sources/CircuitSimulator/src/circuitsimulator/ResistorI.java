@@ -9,8 +9,6 @@ public class ResistorI extends Resistor
 {
     ResistorI(Circuit circuit, double v, int r, int c, String t) {
         super(circuit,v,r,c,t);
-        cirim = circuit.getImage(circuit.base(),"resistor"+to+".gif");
-        cirim = edu.davidson.graphics.Util.getImage(circuit.imagedir+this.getMyName()+to+".gif",circuit);
         leftlinear=false;
     }
     

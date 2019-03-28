@@ -15,7 +15,7 @@ public class CurrentSource extends CircuitElement
         unity = "A";
     }
 
-    CurrentSource() {super();}
+    CurrentSource(Circuit circuit) {super(circuit);}
     
     public double rightFunction(double sign){return value*sign;}
     

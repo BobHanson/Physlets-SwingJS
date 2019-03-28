@@ -19,7 +19,7 @@ public class SquareWave extends Source
         function="(t%(1/"+frequency+")<("+dutyfactor+"/"+frequency+") ? "+amplitude+":0";
     }
     
-    SquareWave() {super();}
+    SquareWave(Circuit circuit) {super(circuit);}
     
     public double getV(double t) {return (t%(1/frequency)<(dutyfactor/frequency))?amplitude:0;}
     

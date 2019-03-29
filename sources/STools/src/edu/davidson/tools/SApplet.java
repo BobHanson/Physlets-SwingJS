@@ -1,10 +1,6 @@
 //Physlets are small scriptable applets with physics content.
 package edu.davidson.tools;
 
-//import java.applet.Applet; // BH
-//import a2s.*;
-import circuitsimulator.Circuit;
-
 import java.applet.Applet;
 import java.awt.Font;
 import java.net.URL;

@@ -323,7 +323,8 @@ public class BuilderPanel extends BorderPanel {
 		calculateButton.setLabel(cb.cirProp.getProperty("Calculate"));
 		forwarding.setLabel(cb.cirProp.getProperty("Start"));
 		resetting.setLabel(cb.cirProp.getProperty("Reset"));
-		dtInput.setText(Double.toString(circuitBuilder.dt));
+		//dtInput.setText(Double.toString(circuitBuilder.dt));
+		dtInput.setText(String.format ("%.6f", circuitBuilder.dt));
 		numberInput.setText(Integer.toString(circuitBuilder.numberofdt));
 	}
 

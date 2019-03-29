@@ -425,12 +425,7 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
     if(trydoc) {
 //      s = "";
       try {
-        String pathName = getDocumentBase().getPath();
-        if(pathName.endsWith(".html") || pathName.endsWith(".htm")) {
-          int index = pathName.lastIndexOf("/");
-          pathName = pathName.substring(0, index + 1);  // drop the html file name
-        }
-        java.net.URL           url = new java.net.URL(getDocumentBase().getProtocol() + "://" + pathName + inputfile);
+        java.net.URL           url = new java.net.URL(getDocumentPath() + inputfile);
         java.io.InputStream    in  = url.openStream();
         java.io.BufferedReader br  = new java.io.BufferedReader(new java.io.InputStreamReader(in));
         String                 line;
@@ -444,4 +439,5 @@ public class CircuitBuilder extends circuitsimulator.Circuit {
       }
     }
   }
+
 }

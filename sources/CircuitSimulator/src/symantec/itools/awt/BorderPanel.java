@@ -147,13 +147,7 @@ public class BorderPanel extends Panel implements AlignStyle, BevelStyle, Contai
 	    /**
 	     * @j2sNative   this.setOpaque$Z(false);
 	     */
-	    panel = new Panel() {
-	    	public void paint(Graphics g) {
-	    		System.out.println("paint panel1 " + panel.getSize());
-	    		super.paint(g);
-	    		System.out.println("paint panel2 " + panel.getSize());
-	    	}
-	    };
+	    panel = new Panel();
 	    
 	    /**
 	     * @j2sNative   this.panel.setOpaque$Z(false);

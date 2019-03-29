@@ -1403,4 +1403,14 @@ public class SApplet extends Applet {
   static public final SDataListener getDataListener(int id) {
     return (SDataListener) dataListeners.get(Integer.toString(id));
   }
+  
+	protected String getDocumentPath() {
+	    String pathName = getDocumentBase().getPath();
+	    if(pathName.endsWith(".html") || pathName.endsWith(".htm")) {
+	      int index = pathName.lastIndexOf("/");
+	      pathName = pathName.substring(0, index + 1);  // drop the html file name
+	    }
+		return getDocumentBase().getProtocol() + "://" + pathName;
+	}
+
 }

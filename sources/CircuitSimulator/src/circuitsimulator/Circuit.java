@@ -56,8 +56,7 @@ public class Circuit extends edu.davidson.tools.SApplet implements SStepable, Ru
 		for (int i = 0; i < components.length; i++) {
 			String c = components[i];
 			loadImage(c.replace('_','h'));
-			if (c.indexOf("_") >= 0)
-				loadImage(c.replace('_','v'));
+			loadImage(c.replace('_','v'));
 		}
 	}
 
@@ -306,10 +305,8 @@ public class Circuit extends edu.davidson.tools.SApplet implements SStepable, Ru
       localization = "" + s;
       readCircuitProperties();
     }
-    s = getParameter("imagedir", "../circuit/circuitimages");
-    if (!s.endsWith("/"))
-    	s += "/";
-    imagedir = s;
+    s = getParameter("imagedir", "circuitimages");
+	imagedir = getDocumentPath() + s + (s.endsWith("/") ? "" : "/");
 //    try {
 //      imagebase = new URL(getCodeBase().toString() + imagedir);
 //    } catch(MalformedURLException e) {

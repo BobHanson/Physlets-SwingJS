@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.stream.Collectors;
 
 import javax.imageio.ImageIO;
@@ -76,7 +77,14 @@ public class SwingJSUtils {
 	 * @author hansonr
 	 */
 	public static Object getResource(Class<?> baseClass, String filename, Class<?> cl) {
-		InputStream is = baseClass.getResourceAsStream(filename);
+		InputStream is;
+		try {
+			is = (filename.indexOf(":/") >= 0 ? new URL(filename).openStream() 
+					: baseClass.getResourceAsStream(filename));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+			return null;
+		}
 		if (cl == Image.class) {
 			try {
 				return ImageIO.read(is);

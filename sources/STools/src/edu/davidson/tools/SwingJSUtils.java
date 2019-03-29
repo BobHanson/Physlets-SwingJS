@@ -65,7 +65,8 @@ public class SwingJSUtils {
 	}
 
 	/**
-	 * Reliably load a resource of a specific type from the code directory
+	 * Reliably load a resource of a specific type from the code directory or
+	 * from anywhere if the filename starts with a protocol and '/:'.
 	 * 
 	 * adaptable - here we are returning an image or a string
 	 * 

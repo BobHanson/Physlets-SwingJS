@@ -46,6 +46,26 @@
       </classpath>
     </taskdef>
 
+  	
+  	<echo> Copying images files into ${site.dir} </echo>
+  	<copy todir="${site.dir}/circuitimages">
+      <fileset dir="bin/circuitimages">
+      	<include name="**"/>
+  	</fileset>
+    </copy>
+  	<copy todir="${site.dir}/galtonimages">
+      <fileset dir="bin/galtonimages">
+      	<include name="**"/>
+  	</fileset>
+    </copy>
+  	  	<copy todir="${site.dir}/opticsimages">
+  	      <fileset dir="bin/opticsimages">
+  	      	<include name="**"/>
+  	  	</fileset>
+  	    </copy>
+
+
+
 	<!-- unzip all libjs zip files into site
 	
 	   all zip files placed in libjs will be processed
@@ -84,7 +104,6 @@
       	<include name="**"/>
   	</fileset>
     </copy>
-      		
 
 </target>
 	

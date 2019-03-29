@@ -1400,6 +1400,14 @@ public class SApplet extends Applet {
     return (SDataListener) dataListeners.get(Integer.toString(id));
   }
   
+  /**
+   * 
+   * Retrieve the directory path to where the HTML document, without ? query or # reference.
+   * 
+   * @return path ending in /
+   * 
+   * @author Bob Hanson
+   */
 	protected String getDocumentPath() {
 	    String pathName = getDocumentBase().getPath();
 	    if(pathName.endsWith(".html") || pathName.endsWith(".htm")) {

@@ -102,7 +102,8 @@ public class Util {
   }
 
 	/**
-	 * Get an image from the code base, the document base, or the absolute URL.
+	 * Get an image from (a) the document base, (b) a jar file, the code base, the
+	 * document base, or the absolute URL.
 	 *
 	 * @param file Location of image relative to the document containing the HTML
 	 *             page.
@@ -118,60 +119,47 @@ public class Util {
 				// Physlets
 			url = new URL(applet.getDocumentBase(), file);
 			im = applet.getImage(url);
-			System.out.println("Util getImage OK " + url);
 		} catch (Exception e) {
-			im = null;
-			// System.out.println("Failed to load image file from document base.");
 		}
 		if (im == null)
 			try { // look for images in jar files first!
 				String resourcePath = file;
 				if (!file.startsWith("/"))
 					resourcePath = "/" + file;
-				// System.out.println("file="+resourcePath);
 				url = Util.class.getResource(resourcePath);
-				// System.out.println("url="+url);
 				im = applet.getImage(url);
-				System.out.println("Util getImage OK " + url);
-				// System.out.println("image loaded file="+file);
 			} catch (Exception e) {
-				im = null;
 			}
 		if (im == null)
 			try { // look for the image in the codebase directory
 				url = new URL(applet.getCodeBase(), file);
 				im = applet.getImage(url);
-				System.out.println("Util getImage OK " + url);
 			} catch (Exception e) {
-				im = null;
-				// System.out.println("Failed to load image file from code base.");
 			}
 		if (im == null)
 			try {
 				url = new java.net.URL(file);
 				im = applet.getImage(url);
-				System.out.println("Util getImage OK " + url);
+			} catch (Exception e) {
+			}
+		if (im != null) {
+			MediaTracker tracker = new MediaTracker(applet);
+			try {
+				tracker.addImage(im, 0);
+				tracker.waitForID(0, 1000); // wait one second
+				if (tracker.isErrorAny()) {
+					System.out.println("Util tracker error " + url);
+					im = null;
+				}
 			} catch (Exception e) {
 				im = null;
-				// System.out.println("Failed to load image file from absolute URL.");
 			}
+		}
 		if (im == null) {
 			System.out.println("Failed to load image file. file=");
-			return null;
+		} else {
+			System.out.println("Util getImage OK " + url);
 		}
-		MediaTracker tracker = new MediaTracker(applet);
-		try {
-			tracker.addImage(im, 0);
-			tracker.waitForID(0, 1000); // wait one second
-			if (tracker.isErrorAny()) {
-				System.out.println("Util tracker error " + url);
-				return null;
-			}
-		} catch (Exception e) {
-			return null;
-		}
-		// if(tracker.isErrorAny()) return null;
-		// if(im.getHeight(applet)<1) return null;
 		return im;
 	}
 }

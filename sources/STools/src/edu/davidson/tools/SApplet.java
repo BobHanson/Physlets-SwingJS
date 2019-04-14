@@ -3,6 +3,7 @@ package edu.davidson.tools;
 
 import java.applet.Applet;
 import java.awt.Font;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Enumeration;
 import java.util.Hashtable;
@@ -1409,12 +1410,11 @@ public class SApplet extends Applet {
    * @author Bob Hanson
    */
 	protected String getDocumentPath() {
-	    String pathName = getDocumentBase().getPath();
-	    if(pathName.endsWith(".html") || pathName.endsWith(".htm")) {
-	      int index = pathName.lastIndexOf("/");
-	      pathName = pathName.substring(0, index + 1);  // drop the html file name
-	    }
-		return getDocumentBase().getProtocol() + "://" + pathName;
+	    try {
+			return new URL(getDocumentBase(), ".").toString();
+		} catch (MalformedURLException e) {
+			return null;
+		}
 	}
 
 }

@@ -3,7 +3,6 @@ package edu.davidson.tools;
 
 import java.applet.Applet;
 import java.awt.Font;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Enumeration;
 import java.util.Hashtable;
@@ -799,7 +798,7 @@ public class SApplet extends Applet {
    */
   public void setFont(Font f){
     // bug fix for Mozilla and Java 1.4 plug-in
-    if(started && debugLevel>64 && !Font.class.isInstance(f)){
+    if(started && debugLevel>0 && !Font.class.isInstance(f)){
       f=super.getFont();
       System.out.println("SCRIPT ERROR: Java 1.4 plug-in does not support method overloading.");
       System.out.println("Method: setFont");
@@ -815,7 +814,7 @@ public class SApplet extends Applet {
    */
   public int getX(){
     // bug fix for Mozilla and Java 1.4 plug-in
-    if(started && debugLevel>64){
+    if(started && debugLevel>0){
       System.out.println("SCRIPT ERROR: Java 1.4 plug-in does not support method overloading.");
       System.out.println("Method: getX");
       System.out.println("Alternate method: getXPos.");
@@ -830,7 +829,7 @@ public class SApplet extends Applet {
    */
   public int getY(){
     // bug fix for Mozilla and Java 1.4 plug-in
-    if(started && debugLevel>64){
+    if(started && debugLevel>0){
       System.out.println("SCRIPT ERROR: Java 1.4 plug-in does not support method overloading.");
       System.out.println("Method: getY");
       System.out.println("Alternate method: getYPos.");
@@ -1409,14 +1408,6 @@ public class SApplet extends Applet {
    * 
    * @author Bob Hanson
    */
-  protected String getDocumentPath() {
-      try {
-          return new URL(getDocumentBase(), ".").toString();
-      } catch (MalformedURLException e) {
-          return null;
-      }
-  }
-  /*
 	protected String getDocumentPath() {
 	    String pathName = getDocumentBase().getPath();
 	    if(pathName.endsWith(".html") || pathName.endsWith(".htm")) {
@@ -1424,6 +1415,6 @@ public class SApplet extends Applet {
 	      pathName = pathName.substring(0, index + 1);  // drop the html file name
 	    }
 		return getDocumentBase().getProtocol() + "://" + pathName;
-	} */
+	}
 
 }

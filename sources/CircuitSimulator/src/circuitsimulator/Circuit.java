@@ -319,8 +319,10 @@ public class Circuit extends edu.davidson.tools.SApplet implements SStepable, Ru
 //    } catch(MalformedURLException e) {
 //      System.out.println("Bad URL");
 //    }
-    System.out.println("code base: "+getCodeBase().toString() );
-    System.out.println("doc base: "+getDocumentBase().toString() );
+	if((debugLevel & DEBUG_IO) > 0) {
+      System.out.println("code base: "+getCodeBase().toString() );
+      System.out.println("doc base: "+getDocumentBase().toString() );
+	}
     loadImages();
     circanvas = new CircuitCanvas(this);
     circanvas.setBounds(1, 1, 1, 1);

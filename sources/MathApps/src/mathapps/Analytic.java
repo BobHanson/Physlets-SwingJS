@@ -1,7 +1,6 @@
 package mathapps;
 
-//import java.awt.*;
-import a2s.*;
+import java.awt.*;
 
 import java.awt.AWTEvent;
 import java.awt.BorderLayout;

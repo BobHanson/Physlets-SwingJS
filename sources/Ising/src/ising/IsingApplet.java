@@ -18,8 +18,8 @@
 
 package ising;
 
-//import java.awt.*;
-import a2s.*;
+import java.applet.Applet;
+import java.awt.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

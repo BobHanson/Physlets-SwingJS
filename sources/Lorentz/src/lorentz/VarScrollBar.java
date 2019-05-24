@@ -6,8 +6,7 @@ import java.awt.Dimension;
 import java.awt.Event;
 import java.awt.Insets;
 
-//import java.awt.*;
-import a2s.*;
+import java.awt.*;
 import edu.davidson.display.*;
 
 

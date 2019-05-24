@@ -10,8 +10,6 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
 
-import a2s.*;
-
 import java.awt.event.*;
 import java.util.Vector;
 import java.util.Enumeration;

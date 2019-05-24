@@ -1,7 +1,6 @@
 package edu.davidson.graphics;
 
-//import java.awt.*;
-import a2s.*;
+import java.awt.*;
 
 import java.awt.Color;
 import java.awt.event.*;

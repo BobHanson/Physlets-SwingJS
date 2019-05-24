@@ -13,7 +13,8 @@ import javax.swing.Timer;
 
 import dynamics.SFront;
 
-import a2s.*;
+import java.applet.Applet;
+import java.awt.*;
 
 public class ProjectileOrbit extends Applet
 {
@@ -290,7 +291,7 @@ public class ProjectileOrbit extends Applet
     }
     
     protected void paintComponent_(Graphics g) {
-    	super.paintComponent_(g);
+    	//super.paintComponent_(g);
     	updateScreen(g);
     }
     

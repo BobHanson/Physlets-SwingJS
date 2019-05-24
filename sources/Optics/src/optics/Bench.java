@@ -1,10 +1,9 @@
 package optics;
-
+import java.awt.*;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Graphics;
 import java.awt.Image;
-import a2s.Panel;
 import java.awt.Rectangle;
 import java.text.DecimalFormat;
 import java.util.Enumeration;

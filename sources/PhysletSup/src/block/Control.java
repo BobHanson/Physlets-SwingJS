@@ -2,7 +2,7 @@ package block;
 
 import java.awt.Event;
 
-import a2s.*;
+import java.awt.*;
 
 class Control extends Panel
 {

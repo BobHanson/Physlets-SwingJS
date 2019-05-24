@@ -2,15 +2,6 @@ a2s/A2SContainer.js
 a2s/A2SEvent.js
 a2s/A2SListener.js
 a2s/Applet.js
-a2s/Button.js
-a2s/Canvas.js
-a2s/Checkbox.js
-a2s/Choice.js
-a2s/Frame.js
-a2s/Label.js
-a2s/Panel.js
-a2s/Scrollbar.js
-a2s/TextField.js
 animator4/Animator.js
 animator4/Arrow.js
 animator4/AnimatorCanvas.js

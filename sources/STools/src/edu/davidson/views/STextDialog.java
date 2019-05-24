@@ -11,12 +11,11 @@ package edu.davidson.views;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-//import java.awt.*;
+import java.awt.*;
 import java.awt.event.*;
-import a2s.*;
 
 
-public class STextDialog extends a2s.Dialog {
+public class STextDialog extends Dialog {
     BorderLayout borderLayout1 = new BorderLayout();
     STextArea textArea = new STextArea();
 

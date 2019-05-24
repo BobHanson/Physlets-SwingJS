@@ -3,8 +3,7 @@ package impedance;
 
 import java.awt.Color;
 import java.awt.Graphics;
-
-import a2s.*;
+import java.awt.*;
 
 
 public class Status extends Canvas {

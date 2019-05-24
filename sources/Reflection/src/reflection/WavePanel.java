@@ -1,6 +1,6 @@
 package reflection;
 
-import a2s.*;
+import java.awt.*;
 import edu.davidson.display.Format;
 import edu.davidson.display.SScalable;
 import edu.davidson.display.Thing;
@@ -1179,7 +1179,7 @@ public class WavePanel extends Panel
       if (this.osi == null)
         return;
       localObject = new WaveFrame(this.osi);
-      ((a2s.Frame)localObject).show();
+      ((Frame)localObject).show();
     }
     else
     {

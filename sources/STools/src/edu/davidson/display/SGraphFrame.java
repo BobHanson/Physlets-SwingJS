@@ -1,8 +1,7 @@
 package edu.davidson.display;
 
 import java.awt.BorderLayout;
-//import java.awt.*;
-import a2s.*;
+import java.awt.*;
 import java.awt.event.*;
 
 

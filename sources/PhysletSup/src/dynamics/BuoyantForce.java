@@ -1,6 +1,7 @@
 package dynamics;
+import java.applet.Applet;
 // Adapted for Physlet Physics 
-import a2s.*;
+import java.awt.*;
 //import edu.davidson.tools.SApplet;
 
 import javax.swing.Timer;
@@ -274,7 +275,7 @@ public class BuoyantForce extends Applet
     }
     
     protected void paintComponent_(Graphics g) {
-    	super.paintComponent_(g);
+    	//super.paintComponent_(g);
     	updateScreen(g);
     }
     

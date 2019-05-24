@@ -10,8 +10,7 @@ import java.awt.event.MouseEvent;
 import java.util.Enumeration;
 import java.util.Vector;
 
-//import java.awt.*;
-import a2s.Canvas;
+import java.awt.*;
 import edu.davidson.display.Format;
 import edu.davidson.tools.SApplet;
 import edu.davidson.tools.SDataSource;

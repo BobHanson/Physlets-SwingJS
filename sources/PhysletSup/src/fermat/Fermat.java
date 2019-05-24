@@ -4,8 +4,6 @@ import java.awt.Polygon;
 import javax.swing.Timer;
 import java.awt.event.*;
 
-import a2s.*;
-
 import java.awt.FontMetrics;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -17,7 +15,7 @@ import java.awt.Event;
 // Decompiled by Procyon v0.5.30
 // 
 
-public class Fermat extends Applet implements Runnable {
+public class Fermat extends a2s.Applet implements Runnable {
     double time;
     double ts;
     Dimension area;
@@ -328,7 +326,7 @@ public class Fermat extends Applet implements Runnable {
     }
     
     protected void paintComponent_(Graphics g) {
-    	super.paintComponent_(g);
+    	//super.paintComponent_(g);
     	updateScreen(g);
     }
     

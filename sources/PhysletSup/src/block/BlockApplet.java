@@ -6,13 +6,14 @@ import java.awt.Event;
 import java.awt.Graphics;
 import java.awt.Image;
 
-import a2s.*;
+import java.awt.*;
 
 // 
 // Decompiled by Procyon v0.5.30
 // 
 
-public class BlockApplet extends Applet
+//public class BlockApplet extends a2s.Applet
+public class BlockApplet extends  a2s.Applet
 {
     TextField mouseP;
     Animation anim;
@@ -168,7 +169,7 @@ public class BlockApplet extends Applet
     }
     
     protected void paintComponent_(Graphics g) {
-    	super.paintComponent_(g);
+    	//super.paintComponent(g);
     	updateScreen(g);
     }
     

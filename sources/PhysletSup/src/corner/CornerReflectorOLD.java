@@ -7,7 +7,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Dimension;
-import a2s.*;
+import java.applet.Applet;
+import java.awt.*;
 
 //
 // Decompiled by Procyon v0.5.30

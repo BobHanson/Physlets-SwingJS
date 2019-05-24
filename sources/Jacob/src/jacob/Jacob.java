@@ -1,6 +1,7 @@
 package jacob;
 
-import a2s.*;
+import java.applet.Applet;
+import java.awt.*;
 import java.awt.Container;
 import edu.davidson.graphics.EtchedBorder;
 import edu.davidson.tools.SUtil;

@@ -2,9 +2,9 @@ package jacob;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.*;
 
-class PlotterCanvas
-  extends DoubleBufferCanvas
+class PlotterCanvas extends DoubleBufferCanvas
 {
   double[] plotdata = new double[1];
   int plotindex = 0;

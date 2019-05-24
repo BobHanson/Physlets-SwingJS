@@ -5,8 +5,7 @@ import java.awt.Dimension;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 
-//import java.awt.*;
-import a2s.*;
+import java.awt.*;
 import edu.davidson.display.Format;
 
 

@@ -13,8 +13,7 @@
  *
  */
 package molecular;
-import a2s.*;
-
+import java.awt.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;

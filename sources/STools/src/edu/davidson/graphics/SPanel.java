@@ -2,7 +2,7 @@ package edu.davidson.graphics;
 
 import java.awt.Dimension;
 import java.awt.Insets;
-import a2s.*;
+import java.awt.*;
 
 public class SPanel extends Panel {
   Dimension ms=new Dimension(10,10);

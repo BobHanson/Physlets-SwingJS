@@ -11,7 +11,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.Timer;
 
-import a2s.*;
+import java.applet.Applet;
+import java.awt.*;
 
 public class RelativeVelocity extends Applet
 {
@@ -407,7 +408,7 @@ public class RelativeVelocity extends Applet
     }
     
     protected void paintComponent_(Graphics g) {
-    	super.paintComponent_(g);
+    	//super.paintComponent_(g);
     	updateScreen(g);
     }
     

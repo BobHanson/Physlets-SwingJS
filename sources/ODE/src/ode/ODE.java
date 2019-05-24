@@ -3,11 +3,11 @@ import java.awt.AWTEvent;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-//import java.awt.*;
+import java.awt.*;
 import java.awt.event.*;
 import edu.davidson.tools.SApplet;
 import edu.davidson.tools.*;
-import a2s.*;
+
 
 /**
  * The class <code>ODE</code> solves systems of first order ordinary differential equation, ODEs,

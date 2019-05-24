@@ -18,7 +18,7 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
 
-import a2s.*;
+import java.awt.*;
 
 import java.awt.event.*;
 

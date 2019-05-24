@@ -6,8 +6,7 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.MouseEvent;
-
-import a2s.*;
+import java.awt.*;
 import edu.davidson.display.Format;
 import edu.davidson.numerics.Parser;
 import edu.davidson.tools.SApplet;

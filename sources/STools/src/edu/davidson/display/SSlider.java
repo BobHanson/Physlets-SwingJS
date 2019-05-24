@@ -9,7 +9,7 @@ package edu.davidson.display;
 import java.awt.AWTEvent;
 import java.awt.Color;
 
-import a2s.*;
+import java.awt.*;
 
 import java.awt.event.AdjustmentEvent;
 //import borland.jbcl.util.BlackBox;

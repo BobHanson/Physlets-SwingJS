@@ -11,13 +11,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
-
-//import java.awt.*;
-import a2s.Applet;
-import a2s.Button;
-import a2s.Label;
-import a2s.Panel;
+import java.applet.Applet;
+import java.awt.*;
 import edu.davidson.display.SNumber;
 import edu.davidson.graphics.ColumnLayout;
 

@@ -23,10 +23,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 import java.util.StringTokenizer;
 
-//import java.awt.*;
-import a2s.Button;
-import a2s.Checkbox;
-import a2s.TextField;
+import java.awt.*;
 import edu.davidson.display.Format;
 import edu.davidson.tools.SApplet;
 import edu.davidson.tools.SUtil;

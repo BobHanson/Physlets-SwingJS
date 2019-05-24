@@ -1,7 +1,6 @@
 package ising;
 
-//import java.awt.*;
-import a2s.*;
+import java.awt.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

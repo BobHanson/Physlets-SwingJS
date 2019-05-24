@@ -5,7 +5,8 @@ package diatomic;
 
 import java.awt.Color;
 
-import a2s.*;
+import java.awt.*;
+
 /**
  * The class <code>EnsemblePanel</code> models a mixture or monatomic and diatomic hard disks.
  * This model was developed by Ernesto Martin.  The code was adapted from the Easy Java Simulations model
@@ -14,7 +15,9 @@ import a2s.*;
  * @author  Wolfgang Chrsitian and Ernesto Martin
  * @version 1.1, 15 Nov 2000
  */
+
 public class EnsemblePanel extends Panel {
+	static 	int maxN=100;
 
     // added by Wolfgang Christian
     int    iwidth =0, iheight=0;     // the size of the current image
@@ -202,9 +205,9 @@ public class EnsemblePanel extends Panel {
      * @param num
      */
     public void setAtomNum(int num) {
-        if(num>99){
-          num=99;
-          System.out.println("Number of atoms cannot be greater than 99");
+        if(num>maxN){
+          num=maxN;
+          System.out.println("Number of atoms cannot be greater than maxN");
         }
         mn   =1;
         an   =1;
@@ -254,9 +257,9 @@ public class EnsemblePanel extends Panel {
      * @param num
      */
     void setMolNum(int num) {
-        if(num>99){
-          num=99;
-          System.out.println("Number of diatomics cannot be greater than 99");
+        if(num>maxN){
+          num=maxN;
+          System.out.println("Number of diatomics cannot be greater than maxN");
         }
         mn   =1;
         an   =1;
@@ -314,35 +317,35 @@ public class EnsemblePanel extends Panel {
         //dt2    =new double[3];         //  > Time_related:4
         theTime=0;                     //  > Time_related:5
         dt     =0.1;                 //  > Time_related:6
-        x      =new double[220][3];    //  > Diatomic:1
-        y      =new double[220][3];    //  > Diatomic:2
-        vx     =new double[220][3];    //  > Diatomic:3
-        vy     =new double[220][3];    //  > Diatomic:4
-        xcm    =new double[110];       //  > Diatomic:5
-        ycm    =new double[110];       //  > Diatomic:6
-        vxcm   =new double[110];       //  > Diatomic:7
-        vycm   =new double[110];       //  > Diatomic:8
-        teta   =new double[110];       //  > Diatomic:9
-        w      =new double[110];       //  > Diatomic:10
-        xcm0   =new double[110];       //  > Diatomic:11
-        ycm0   =new double[110];       //  > Diatomic:12
-        vxcm0  =new double[110];       //  > Diatomic:13
-        vycm0  =new double[110];       //  > Diatomic:14
-        w0     =new double[110];       //  > Diatomic:15
-        teta0  =new double[110];       //  > Diatomic:16
-        molColor = new Color[110];  //  > Monatomic:11
+        x      =new double[maxN+20][3];    //  > Diatomic:1
+        y      =new double[maxN+20][3];    //  > Diatomic:2
+        vx     =new double[maxN+20][3];    //  > Diatomic:3
+        vy     =new double[maxN+20][3];    //  > Diatomic:4
+        xcm    =new double[maxN+10];       //  > Diatomic:5
+        ycm    =new double[maxN+10];       //  > Diatomic:6
+        vxcm   =new double[maxN+10];       //  > Diatomic:7
+        vycm   =new double[maxN+10];       //  > Diatomic:8
+        teta   =new double[maxN+10];       //  > Diatomic:9
+        w      =new double[maxN+10];       //  > Diatomic:10
+        xcm0   =new double[maxN+10];       //  > Diatomic:11
+        ycm0   =new double[maxN+10];       //  > Diatomic:12
+        vxcm0  =new double[maxN+10];       //  > Diatomic:13
+        vycm0  =new double[maxN+10];       //  > Diatomic:14
+        w0     =new double[maxN+10];       //  > Diatomic:15
+        teta0  =new double[maxN+10];       //  > Diatomic:16
+        molColor = new Color[maxN+10];  //  > Monatomic:11
         radiusD=10;                    //  radius of balls in diatomic molecule
 
-        atomFixed = new boolean[100];  //  > Monatomic:11
-        atomColor = new Color[100];  //  > Monatomic:11
-        ax     =new double[100];       //  > Monoatomic:1
-        ay     =new double[100];       //  > Monoatomic:2
-        avx    =new double[100];       //  > Monoatomic:3
-        avy    =new double[100];       //  > Monoatomic:4
-        ax0    =new double[100];       //  > Monoatomic:5
-        ay0    =new double[100];       //  > Monoatomic:6
-        avx0   =new double[100];       //  > Monoatomic:7
-        avy0   =new double[100];       //  > Monoatomic:8
+        atomFixed = new boolean[maxN+1];  //  > Monatomic:11
+        atomColor = new Color[maxN+1];  //  > Monatomic:11
+        ax     =new double[maxN+1];       //  > Monoatomic:1
+        ay     =new double[maxN+1];       //  > Monoatomic:2
+        avx    =new double[maxN+1];       //  > Monoatomic:3
+        avy    =new double[maxN+1];       //  > Monoatomic:4
+        ax0    =new double[maxN+1];       //  > Monoatomic:5
+        ay0    =new double[maxN+1];       //  > Monoatomic:6
+        avx0   =new double[maxN+1];       //  > Monoatomic:7
+        avy0   =new double[maxN+1];       //  > Monoatomic:8
         radiusM=10;                    //  radius of balls in atom
         //mass = new double[220][3];              //  mass
         mD     =2.0;                   //mass of Diatomics

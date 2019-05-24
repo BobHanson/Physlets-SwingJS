@@ -1,5 +1,5 @@
 package hydrogenic;
-//import java.awt.*;
+import java.awt.*;
 import java.awt.image.MemoryImageSource;
 import java.awt.image.ColorModel;
 import java.awt.Color;
@@ -11,7 +11,6 @@ import java.awt.Rectangle;
 import java.awt.event.*;
 import edu.davidson.display.Format;
 
-import a2s.*;
 
 public final class DensityCanvas extends Canvas implements Runnable{
   Image img=null;

@@ -1,6 +1,6 @@
 package jacob;
 
-import a2s.*;
+import java.awt.*;
 import java.awt.Event;
 import java.awt.FileDialog;
 import java.io.FileInputStream;

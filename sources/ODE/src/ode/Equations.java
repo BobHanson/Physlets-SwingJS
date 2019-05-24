@@ -4,7 +4,7 @@ package ode;
 //import java.awt.TextArea;
 //import java.awt.*;
 
-import a2s.*;
+import java.awt.*;
 
 import edu.davidson.tools.*;
 import edu.davidson.numerics.*;

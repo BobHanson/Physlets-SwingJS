@@ -5,8 +5,7 @@ import java.awt.Dimension;
 import java.awt.Insets;
 import java.awt.LayoutManager;
 
-//import java.awt.*;
-import a2s.*;
+import java.awt.*;
 
 public class RowLayout implements LayoutManager {
     static private int _defaultGap = 5;

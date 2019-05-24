@@ -1,6 +1,5 @@
 package jacob;
-
-import a2s.*;
+import java.awt.*;
 import java.awt.Color;
 import java.awt.Event;
 import java.awt.Graphics;

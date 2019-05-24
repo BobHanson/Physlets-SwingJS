@@ -1,12 +1,11 @@
 package edu.davidson.surfaceplotter;
-//import java.awt.*;
+import java.awt.*;
 import edu.davidson.tools.*;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
 
-import a2s.*;
 
 public class SurfacePanel extends Panel implements SDataListener{
   BorderLayout borderLayout1 = new BorderLayout();

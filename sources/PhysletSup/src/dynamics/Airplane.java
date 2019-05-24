@@ -13,7 +13,8 @@ import javax.swing.Timer;
 
 import dynamics.SFront;
 
-import a2s.*;
+import java.applet.Applet;
+import java.awt.*;
 // 
 // Decompiled by Procyon v0.5.30
 // 
@@ -279,7 +280,7 @@ public class Airplane extends Applet implements Runnable
     }
     
     protected void paintComponent_(Graphics g) {
-    	super.paintComponent_(g);
+    	//super.paintComponent_(g);
     	updateScreen(g);
     }
     

@@ -2,8 +2,7 @@ package edu.davidson.graphics;
 
 import java.awt.Component;
 
-//import java.awt.*;
-import a2s.*;
+import java.awt.*;
 
 /**
  * An extension of Border that draws an etched border.

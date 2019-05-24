@@ -7,8 +7,7 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Rectangle;
-
-import a2s.*;
+import java.awt.*;
 
 import java.util.*;
 

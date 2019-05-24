@@ -7,7 +7,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Dimension;
-import a2s.*;
+import java.applet.Applet;
+import java.awt.*;
 import edu.davidson.tools.SApplet;
 
 //
@@ -349,7 +350,7 @@ public class CornerReflectorWC extends Applet
     }
     
     protected void paintComponent_(Graphics g) {
-    	super.paintComponent_(g);
+    	//super.paintComponent_(g);
     	updateScreen(g);
     }
 

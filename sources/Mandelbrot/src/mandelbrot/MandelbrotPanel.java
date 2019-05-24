@@ -4,14 +4,13 @@ import java.awt.Color;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
-//import java.awt.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
 import javax.swing.Timer;
 
-import a2s.Panel;
 import edu.davidson.display.Format;
 
 public class MandelbrotPanel extends Panel implements Runnable {

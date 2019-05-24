@@ -1,11 +1,10 @@
 package edu.davidson.display;
 
 import java.awt.Color;
-//import java.awt.*;
+import java.awt.*;
 import java.awt.Graphics;
 import java.awt.Polygon;
 
-import a2s.*;
 import edu.davidson.tools.*;
 
 public class ComplexThing extends Thing {

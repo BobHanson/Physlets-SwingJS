@@ -11,11 +11,9 @@ package edu.davidson.views;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-//import java.awt.*;
+import java.awt.*;
 import java.awt.event.*;
 //import edu.davidson.tools.SApplet;
-
-import a2s.*;
 
 public class STextFrame extends Frame {
     BorderLayout borderLayout1 = new BorderLayout();

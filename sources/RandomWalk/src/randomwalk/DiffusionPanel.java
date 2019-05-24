@@ -1,10 +1,9 @@
 package randomwalk;
 
-//import java.awt.*;
+import java.awt.*;
 import java.util.Random;
 import edu.davidson.tools.*;
 import edu.davidson.display.*;
-import a2s.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;

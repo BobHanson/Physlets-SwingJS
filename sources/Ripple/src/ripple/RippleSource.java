@@ -3,8 +3,7 @@ package ripple;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Vector;
-import a2s.*;
-//import java.awt.*;
+import java.awt.*;
 
 
 class RippleSource extends Vector

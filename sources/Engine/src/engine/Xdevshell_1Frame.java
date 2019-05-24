@@ -3,7 +3,7 @@ package engine;
 //*************************************************
 
 import java.awt.Event;
-import a2s.*;
+import java.awt.*;
 import edu.davidson.tools.SApplet;
 
 //import java.applet.Applet;

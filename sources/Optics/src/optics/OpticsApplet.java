@@ -1,7 +1,6 @@
 package optics;
-
+import java.awt.*;
 import java.awt.BorderLayout;
-import a2s.Button;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;

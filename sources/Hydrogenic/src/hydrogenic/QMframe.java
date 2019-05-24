@@ -10,9 +10,8 @@ package hydrogenic;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-//import java.awt.*;
+import java.awt.*;
 import java.awt.event.*;
-import a2s.*;
 
 public class QMframe extends Frame {
   Label label1 = new Label();

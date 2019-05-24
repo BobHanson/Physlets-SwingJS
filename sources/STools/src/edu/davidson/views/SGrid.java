@@ -8,8 +8,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.event.*;
-
-import a2s.*;
+import java.awt.*;
 
 import edu.davidson.display.Format;
 

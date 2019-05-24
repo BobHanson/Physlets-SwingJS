@@ -3,7 +3,7 @@
 //      Wolfgang Christian
 package diatomic;
 
-import a2s.*;
+import java.awt.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -71,7 +71,7 @@ public class Diatomic extends SApplet {
       e.printStackTrace();
     }
     try {
-      fps = Integer.parseInt(this.getParameter("FPS", "10"));
+      fps = Integer.parseInt(this.getParameter("FPS", "20"));
     } catch(Exception e) {
       e.printStackTrace();
     }
@@ -154,6 +154,7 @@ public class Diatomic extends SApplet {
       clock.stopClock();
     } else {
       runBtn.setLabel(button_stop);
+      clock.setTime(0);
       clock.startClock();
     }
   }
@@ -228,7 +229,7 @@ public class Diatomic extends SApplet {
         n = (int) SUtil.getParam(parList, "n=");
       }
       n = Math.max(0, n);
-      n = Math.min(n, 99);
+      n = Math.min(n, EnsemblePanel.maxN);
       createAtoms(n);
       if(SUtil.parameterExist(parList, "m=")) {
         physletPanel.mM = SUtil.getParam(parList, "m=");
@@ -243,7 +244,7 @@ public class Diatomic extends SApplet {
         n = (int) SUtil.getParam(parList, "n=");
       }
       n = Math.max(0, n);
-      n = Math.min(n, 99);
+      n = Math.min(n, EnsemblePanel.maxN);
       createDiatomics(n);
       if(SUtil.parameterExist(parList, "m=")) {
         physletPanel.mD = SUtil.getParam(parList, "m=");

@@ -1,12 +1,8 @@
 package dynamics;
-import java.applet.Applet;
+import a2s.*;
 // Adapted for Physlet Physics 
-import java.awt.*;
-//import edu.davidson.tools.SApplet;
 
 import javax.swing.Timer;
-
-import java.awt.Event;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -14,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Dimension;
 
-public class BuoyantForce extends Applet
+public class BuoyantForce extends a2s.Applet
 {
     int yOffset=0;
     boolean running;
@@ -97,17 +93,27 @@ public class BuoyantForce extends Applet
     
     public void setDensity(double density) {
   	  stop();
-    	if(this.rho!=density) {
-    	  this.rho=density;
-    	}
+      this.rho=density;
     }
     
     public void reset(final boolean b) {
         this.yb = this.y0;
-        this.clear();
+        this.clearApplet();
         if (b) {
             this.running = false;
         }
+        state = LOOP0;
+        this.area = new Dimension(400,400);  // for debugging
+        final Dimension area = this.area;
+        area.height -= this.yOffset;
+        this.offDimension = this.area;
+        this.offImage = this.createImage(this.area.width, this.area.height);
+        this.g = this.offImage.getGraphics();
+        this.blockImage = this.createImage(this.w, this.h);
+        this.gb = this.blockImage.getGraphics();
+        this.yc = (int)(this.area.height * 0.6);
+        this.redraw();
+        start();
     }
     
     String d2String(final double n) {
@@ -232,7 +238,7 @@ public class BuoyantForce extends Applet
 	}
     
     
-    void clear() {
+    public void clearApplet() {
         if (this.g != null) {
             this.g.clearRect(0, 0, this.area.width, this.area.height);
             this.g.setColor(this.fgColor);
@@ -270,7 +276,7 @@ public class BuoyantForce extends Applet
     }
     
     void redraw() {
-        this.clear();
+        this.clearApplet();
         this.repaint();
     }
     

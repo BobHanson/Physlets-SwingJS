@@ -6,15 +6,16 @@ import java.awt.Event;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Label;
+import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.Timer;
+import a2s.*;
 
-import java.applet.Applet;
-import java.awt.*;
 
-public class RelativeVelocity extends Applet
+public class RelativeVelocity extends a2s.Applet
 {
     int yOffset;
     double time;

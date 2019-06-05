@@ -197,7 +197,7 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 		number.setValue(v);
 		value = slider.getDValue();
 		return;
-	}
+	}	
 
 	/**
 	 * Gets the slider's maxumum value.
@@ -217,6 +217,7 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	public void setMax(double v) {
 		slider.setDMax(v);
 		value = slider.getDValue();
+		max=v;
 		return;
 	}
 
@@ -238,6 +239,7 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 	public void setMin(double v) {
 		slider.setDMin(v);
 		value = slider.getDValue();
+		min=v;
 		return;
 	}
 
@@ -264,7 +266,7 @@ public class SliderApplet extends SApplet implements SDataSource, PropertyChange
 			label.setVisible(true);
 		}
 		this.invalidate();
-		this.validate();
+		if(!isJS)this.validate();
 		return;
 	}
 

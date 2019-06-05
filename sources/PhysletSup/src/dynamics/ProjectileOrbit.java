@@ -6,15 +6,13 @@ import java.awt.Event;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.Timer;
 
-import dynamics.SFront;
-
-import java.applet.Applet;
-import java.awt.*;
+import a2s.*;
 
 public class ProjectileOrbit extends Applet
 {

@@ -64,8 +64,10 @@ class RippleCanvas extends Canvas implements Runnable, SScalable {
      */
     public synchronized void stop () {
         Thread myThread = movieThread;
-        if (movieThread == null)
+        if (movieThread == null || Ripple.isJS) {
+        	movieThread = null;
             return;
+        }
         if (myThread != null) {
             //myThread.stop();
             movieThread = null;                 // no need to call stop.  This should kill the thread.

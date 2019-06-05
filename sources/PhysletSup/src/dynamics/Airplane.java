@@ -1,11 +1,14 @@
 package dynamics;
 
+import java.awt.Choice;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Event;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Label;
+import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,13 +16,12 @@ import javax.swing.Timer;
 
 import dynamics.SFront;
 
-import java.applet.Applet;
-import java.awt.*;
+import a2s.*;
 // 
 // Decompiled by Procyon v0.5.30
 // 
 
-public class Airplane extends Applet implements Runnable
+public class Airplane extends a2s.Applet implements Runnable
 {
     int yOffset;
     double time;
@@ -88,7 +90,7 @@ public class Airplane extends Applet implements Runnable
         for (int j = 0; j < this.label.length; ++j) {
             this.cb.addItem(this.label[j]);
         }
-        panel.add(new Button(this.Reset = this.STR[1]));
+        panel.add(new a2s.Button(this.Reset = this.STR[1]));
         panel.add(new Button(this.Start = this.STR[2]));
         this.cb.select(4);
         this.add("North", panel);

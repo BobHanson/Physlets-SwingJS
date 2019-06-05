@@ -24,7 +24,7 @@ import javax.swing.JFrame;
  * Class Ripple
  */
 public class Ripple extends SApplet implements Runnable {
-
+  static boolean isJS = /** @j2sNative true || */ false;
   String               button_start        = "Forward";
   String               button_stop         = "Stop";
   String               button_forward      = "Step>>";
@@ -241,11 +241,15 @@ public class Ripple extends SApplet implements Runnable {
    */
   public String[][] getParameterInfo() {
     String[][] info = {
-      {PARAM_numOfSources, "int", "Number of sources."}, {PARAM_pixPerUnit, "int", "Pixels per unit."},
-      {PARAM_wavelength, "double", "Wavelength"}, {PARAM_showControls, "boolean", "Show controls on the screen."},
+      {PARAM_numOfSources, "int", "Number of sources."}, 
+      {PARAM_pixPerUnit, "int", "Pixels per unit."},
+      {PARAM_wavelength, "double", "Wavelength"}, 
+      {PARAM_wavelength, "boolean", "Wavelength."},
       {PARAM_showIntensity, "boolean", "Show intensity instead of amplitude."},
-      {PARAM_animate, "boolean", "Animate pattern."}, {PARAM_fps, "int", "Frames per second for during animation."},
-      {PARAM_caption, "String", "Applet caption"}, {PARAM_helpFile, "String", "Applet help file URL"},
+      {PARAM_animate, "boolean", "Animate pattern."},
+      {PARAM_fps, "int", "Frames per second for during animation."},
+      {PARAM_caption, "String", "Applet caption"},
+      {PARAM_helpFile, "String", "Applet help file URL"},
     };
     return info;
   }
@@ -454,7 +458,7 @@ public class Ripple extends SApplet implements Runnable {
    *
    */
   public void stopAnimate() {
-    m_animate = false;  // we want to stop the anmimation if it is going on.
+    m_animate = false;  // we want to stop the animation if it is going on.
     if(calcThread!=null) {
       return;  // frames have not been calculated so we do not have a movie
     }
@@ -644,7 +648,6 @@ public class Ripple extends SApplet implements Runnable {
    * @y.exclude
    */
   public void run() {
-    boolean isJS = /** @j2sNative true || */ false;
 	System.out.println("run");
     Thread me = Thread.currentThread();
     if(calcThread!=me && !isJS) {

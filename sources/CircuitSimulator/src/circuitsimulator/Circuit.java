@@ -1,7 +1,9 @@
 package circuitsimulator;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -354,10 +356,16 @@ public class Circuit extends edu.davidson.tools.SApplet implements SStepable, Ru
    * @param c number of columns
    */
   public void setGrid(int r, int c) {
-    parsed = false;
-    circanvas.setBounds(1, 1, 1, 1);
-    cirgrid = new CircuitGrid(r, c, this);
-    circanvas.reconnect();
+	circanvas.setBounds(0, 0, this.getWidth(),this.getHeight());
+	Graphics g=circanvas.getGraphics();
+	g.setColor(Color.WHITE);
+	g.fillRect(0,0,1000,1000);	
+	g.dispose();
+	  
+	parsed = false;
+	circanvas.setBounds(1, 1, 1, 1);
+	cirgrid = new CircuitGrid(r, c, this);
+	circanvas.reconnect();
   }
 
   /**

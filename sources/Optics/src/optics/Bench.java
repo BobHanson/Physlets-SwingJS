@@ -439,7 +439,7 @@ public final class Bench extends Panel implements SScalable {
           v.removeElementAt(i);
             //System.out.println("removing "+e.getType()+" element at "+i);
           v.insertElementAt(e,i+1);
-          //  System.out.println("inserting "+e.getType()+" element at "+(i+1));
+            //System.out.println("inserting "+e.getType()+" element at "+(i+1));
         }
       }
     }
@@ -738,7 +738,7 @@ public final class Bench extends Panel implements SScalable {
         OpticElement e = (OpticElement)sv.elementAt(i);
         if ((!e.isNoDrag() ||e.isResizable() )&&(e.isInside(mouseX,mouseY,r)==1 || e.isInside(mouseX,mouseY,r)==2)){
           activeElement = e;
-        // System.out.println("hi II, i'm element number "+i+", a "+e.getType());
+        //System.out.println("hi II, i'm element number "+i+", a "+e.getType());
           break;
         }
         else activeElement = null;
@@ -749,7 +749,7 @@ public final class Bench extends Panel implements SScalable {
         Thing e = (Thing)things.elementAt(i);
         if ((!e.isNoDrag() ||e.isResizable() )&& e.isInsideThing(mouseX,mouseY)){
           dragThing = e;
-         // System.out.println("hi III, i'm element number "+i);
+         //System.out.println("hi III, i'm element number "+i);
           break;
         }
         else dragThing = null;
@@ -766,7 +766,7 @@ public final class Bench extends Panel implements SScalable {
 
  public void mouseDragged(int mouseX, int mouseY){
   Rectangle r = getBounds();
-  //System.out.println("Moving Active Element ="+activeElement);
+  //System.out.println("bench drag " + this.activeElement);
   if (activeElement!=null){
    if (activeElement.getDrag() || activeElement.isResizable()){
      if (isInsideOpticElement == 1 && !isControlDown &&
@@ -822,7 +822,7 @@ public final class Bench extends Panel implements SScalable {
      }
      if ((isInsideOpticElement == 3 && activeElement.getType()=="dielectric")){      //right side of dielectric
        activeElement.setRadius(-(mouseX-activeElement.getPixX()),r);
-      // System.out.println("right side of dielectric, 3 , "+activeElement.getR());
+      //System.out.println("right side of dielectric, 3 , "+activeElement.getR());
        ((Dielectric)activeElement).setDelN(-(mouseY-r.height/2.0)/50);
        //if (mouseY-r.height/2<0) ((Dielectric)activeElement).setDelN(-(mouseY-r.height/2.0)/50);
        //if (mouseY-r.height/2>0) ((Dielectric)activeElement).setDelN((mouseY-r.height/2.0)/50);
@@ -925,9 +925,11 @@ public final class Bench extends Panel implements SScalable {
    // g.dispose();
   }
   
+  public static boolean isJS = /** @j2sNative true || */ false;
+
   public void drawAngle(int mouseX,int mouseY){
     Graphics g = getGraphics();
-    if(SoundOut.isJS){
+    if(isJS){
     	osi=null;
         paint(g);
     }

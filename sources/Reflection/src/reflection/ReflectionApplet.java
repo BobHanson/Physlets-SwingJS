@@ -298,6 +298,7 @@ public class ReflectionApplet extends SApplet
 
   public void init()
   {
+	  setSize(600,500); // for Eclipse
     initResources(null);
     try
     {
@@ -450,7 +451,9 @@ public class ReflectionApplet extends SApplet
       }
     });
     this.controlPanel.setBackground(Color.lightGray);
-    setBackground(Color.lightGray);
+//    setBackground(Color.lightGray);
+	  setBackground(Color.BLACK);
+
     this.flowLayout2.setAlignment(2);
     this.flowLayout2.setHgap(2);
     add(this.wavePanel, "Center");

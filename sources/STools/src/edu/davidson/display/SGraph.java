@@ -564,7 +564,7 @@ public class SGraph extends Graph2D implements SStepable,Cloneable, SDataListene
   }
 
 /**
- *    Show or hide the the X and Y axes on the graph. May need to set the gutters to zero seliminate white space.
+ *    Show or hide the the X and Y axes on the graph. May need to set the gutters to zero to eliminate white space.
  *
  *    @param sa       Show the axis?
 */
@@ -1904,7 +1904,8 @@ public synchronized Series createSeries(int sid ){
         Font f=g.getFont();
         g.setFont(boldFont);
         String tStr= new Format("%7.4g").form(SUtil.chop(parentSApplet.clock.getTime(),1.0e-12));
-        g.drawString(label_time + tStr, 10, getBounds().height-5);
+        //g.drawString(label_time + tStr, 10, getBounds().height-5);
+        g.drawString(label_time + tStr, r.x+ 10, r.height);
         g.setFont(f);
     }
 

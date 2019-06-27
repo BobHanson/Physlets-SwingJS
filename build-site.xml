@@ -104,6 +104,12 @@
       	<include name="**"/>
   	</fileset>
     </copy>
+  	
+  	<copy todir="${j2s.dir}">
+      <fileset dir="bin/images">
+      	<include name="pencil*"/>
+  	</fileset>
+    </copy>	
 
 </target>
 	

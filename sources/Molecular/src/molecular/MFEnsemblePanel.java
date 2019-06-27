@@ -51,7 +51,7 @@ public class MFEnsemblePanel extends EnsemblePanel implements SStepable {
   }
 
   public void update(Graphics g){
-	  paintMe(g);
+	  paint(g);
   }
 
   public void step(double dt, double time){
@@ -112,7 +112,7 @@ public class MFEnsemblePanel extends EnsemblePanel implements SStepable {
 
     paintOSI();
     Graphics g = this.getGraphics();
-    paintMe(g);
+    paint(g);
     g.dispose();
 
     this.time=time+dt;
@@ -248,7 +248,7 @@ public class MFEnsemblePanel extends EnsemblePanel implements SStepable {
      paintOSI();
      Graphics g= this.getGraphics();
      if(g==null) return;
-     paintMe(g);
+     paint(g);
      g.dispose();
   }
 
@@ -566,7 +566,7 @@ public class MFEnsemblePanel extends EnsemblePanel implements SStepable {
   *
   *
   */
-  public void paintMe(Graphics g){
+  public void paint(Graphics g){
     if (osi==null || currentw!=getSize().width || currenth!=getSize().height){
         if(getSize().width>2){
             boolean shouldRun=owner.clock.isRunning();

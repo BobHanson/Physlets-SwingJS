@@ -88,7 +88,7 @@ public final class SuperpositionCanvas extends Canvas
   }
 
   public void update(Graphics g){
-    paintMe(g); //update usually does a rect fill with a background color.  We don't need this.
+    paint(g); //update usually does a rect fill with a background color.  We don't need this.
   }
 
   public void setTime(double t)
@@ -257,7 +257,7 @@ public final class SuperpositionCanvas extends Canvas
         g.dispose();
   }
 
-  public void paintMe(Graphics g){
+  public void paint(Graphics g){
        if(applet.destroyed==true) return;
        osi=null;
        osiGrid=null;
@@ -291,7 +291,7 @@ public final class SuperpositionCanvas extends Canvas
             Graphics g=getGraphics();
             if(g==null) return;
             //if (osi!=null) g.drawImage(osi,0,0,this);
-            paintMe(g);// draw the image onto the visible graph
+            paint(g);// draw the image onto the visible graph
             Format format= new Format("%-+6.3g");
             String xStr=format.form(pixToX(xCoord));
             String yStr=format.form(pixToY(yCoord));
@@ -309,7 +309,7 @@ public final class SuperpositionCanvas extends Canvas
         if(!running){
             Graphics g=getGraphics();
             if(g==null) return;
-            paintMe(g);
+            paint(g);
             g.dispose();
         }
     }
@@ -321,7 +321,7 @@ public final class SuperpositionCanvas extends Canvas
             Graphics g=getGraphics();
             if(g==null) return;
             //if (osi!=null) g.drawImage(osi,0,0,this);
-            paintMe(g);// draw the image onto the visible graph
+            paint(g);// draw the image onto the visible graph
             Format format= new Format("%-+6.3g");
             String xStr=format.form(pixToX(xCoord));
             String yStr=format.form(pixToY(yCoord));

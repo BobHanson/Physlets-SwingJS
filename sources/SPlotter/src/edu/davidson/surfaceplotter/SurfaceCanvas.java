@@ -472,7 +472,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
    * @see   #setDataAvailability
    */
 
-  public void paintMe(Graphics g) {
+  public void paint(Graphics g) {
     if ((getBounds().width <= 0) || (getBounds().height <= 0)) return;
 
     // backing buffer creation
@@ -533,7 +533,7 @@ public final class SurfaceCanvas extends Canvas implements Runnable {
    */
 
   public void update(Graphics g) {
-    paintMe(g);                        // do not erase, just paint
+    paint(g);                        // do not erase, just paint
   }
 
   public void setFont(Font df){

@@ -369,18 +369,18 @@ class PPDCanvas extends Canvas implements Runnable {
 			}
 			this.backGC.setColor(getBackground());
 			this.backGC.fillRect(localRectangle.x, localRectangle.y, localRectangle.width, localRectangle.height);
-			paintMe(this.backGC);
+			paint(this.backGC);
 			paramGraphics.drawImage(this.backBuffer, 0, 0, this);
 		} else if (PPD.draw_field) {
 			paramGraphics.drawImage(this.backBuffer, 0, 0, this);
 		} else {
 			paramGraphics.clearRect(localRectangle.x, localRectangle.y, localRectangle.width, localRectangle.height);
-			paintMe(paramGraphics);
+			paint(paramGraphics);
 		}
 		setPainted();
 	}
 
-	public void paintMe(Graphics paramGraphics) {
+	public void paint(Graphics paramGraphics) {
 		if (this.update_hack) {
 			repaint();
 			return;

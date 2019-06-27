@@ -491,7 +491,7 @@ public class WavePanel extends Panel
     return arrayOfDouble;
   }
 
-  public void paintMe(Graphics paramGraphics)
+  public void paint(Graphics paramGraphics)
   {
     if ((this.osi == null) || (this.currentw != getSize().width) || (this.currenth != getSize().height))
       setArrayBounds();
@@ -595,7 +595,7 @@ public class WavePanel extends Panel
     paramGraphics.drawString(str3, 10, 44);
   }
 
-  void paintMessage(Graphics paramGraphics)
+  void paintssage(Graphics paramGraphics)
   {
     FontMetrics localFontMetrics = paramGraphics.getFontMetrics(paramGraphics.getFont());
     int i = Math.max(110, 10 + localFontMetrics.stringWidth(this.message));
@@ -627,7 +627,7 @@ public class WavePanel extends Panel
       paintDrawingThings(localGraphics);
       localGraphics.setColor(Color.black);
       if (this.showMessage)
-        paintMessage(localGraphics);
+        paintssage(localGraphics);
       if ((this.mode == QM_MODE) && (this.showEnergy))
         paintQMEnergy(localGraphics);
       paintTime(localGraphics);
@@ -1223,7 +1223,7 @@ public class WavePanel extends Panel
 
   public void update(Graphics paramGraphics)
   {
-    paintMe(paramGraphics);
+    paint(paramGraphics);
   }
 
   public double xFromPix(int paramInt)

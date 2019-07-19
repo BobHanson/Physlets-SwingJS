@@ -966,7 +966,9 @@ public class Thing extends Object implements SDataSource, SDataListener    {
     }
     updateDynamics();
     updateMySlaves();
-    if(this.canvas instanceof Canvas) ((Canvas)canvas).repaint();
+    if(canvas!=null && canvas.owner!=null && !this.canvas.owner.clock.isRunning()) { // clock will force repaint if running
+       if(this.canvas instanceof Canvas) ((Canvas)canvas).repaint();
+    }
   }
   public void addData(SDataSource ds, int sid, double x[], double y[] ){
     int last=x.length-1;
@@ -983,6 +985,8 @@ public class Thing extends Object implements SDataSource, SDataListener    {
     }
     updateDynamics();
     updateMySlaves();
-    if(this.canvas instanceof Canvas) ((Canvas)canvas).repaint();
+    if(canvas!=null && canvas.owner!=null && !this.canvas.owner.clock.isRunning()) { // clock will force repaint if running
+        if(this.canvas instanceof Canvas) ((Canvas)canvas).repaint();
+     }
   }
 }

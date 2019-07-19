@@ -234,7 +234,7 @@ public class XcWorld extends World {
    }
 	//********************************************************************
 
-	public void paintMe (Graphics g) {
+	public void paint(Graphics g) {
 	    draw (g);
 	}
 	

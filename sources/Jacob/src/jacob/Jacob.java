@@ -48,7 +48,7 @@ public class Jacob extends Applet {
 			}
 			this.firstTime = false;
 			this.ppdCanvas.currentAction = 0;
-			//this.loadFile("efelt03.ppd");  //load example for debugging
+			this.loadFile("efelt03.ppd");  //load example for debugging
 		}
 	}
 

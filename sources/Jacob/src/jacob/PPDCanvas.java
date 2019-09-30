@@ -1,5 +1,5 @@
 package jacob;
-import java.awt.*;
+import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Event;
 import java.awt.Graphics;
@@ -351,40 +351,15 @@ class PPDCanvas extends Canvas implements Runnable {
 			repaint();
 		}
 	}
-
-	public void update(Graphics paramGraphics) {
-		Rectangle localRectangle = paramGraphics.getClipBounds();
-		this.update_hack = false;
-		if ((PPD.CANVAS_DOUBLEBUFFER) && (!PPD.draw_field)) {
-			if ((this.backBuffer == null) || (this.buffWidth != size().width) || (this.buffHeight != size().height)) {
-				this.buffWidth = size().width;
-				this.buffHeight = size().height;
-				if (this.backBuffer != null) {
-					this.backBuffer.flush();
-				}
-				this.backBuffer = createImage(this.buffWidth, this.buffHeight);
-				this.backGC = this.backBuffer.getGraphics();
-				((ERectangle) PPD.nullElement).width = this.buffWidth;
-				((ERectangle) PPD.nullElement).height = this.buffHeight;
-			}
-			this.backGC.setColor(getBackground());
-			this.backGC.fillRect(localRectangle.x, localRectangle.y, localRectangle.width, localRectangle.height);
-			paint(this.backGC);
-			paramGraphics.drawImage(this.backBuffer, 0, 0, this);
-		} else if (PPD.draw_field) {
-			paramGraphics.drawImage(this.backBuffer, 0, 0, this);
-		} else {
-			paramGraphics.clearRect(localRectangle.x, localRectangle.y, localRectangle.width, localRectangle.height);
-			paint(paramGraphics);
-		}
-		setPainted();
+	
+	public void update(Graphics g) {
+		paint(g);
 	}
 
-	public void paint(Graphics paramGraphics) {
-		if (this.update_hack) {
-			repaint();
-			return;
-		}
+	
+	public void paint(Graphics paramGraphics) {  // called once on start
+		paramGraphics.setColor(getBackground());
+		paramGraphics.fillRect(0,0,this.getWidth(),this.getHeight());
 		Draw.drawElements(paramGraphics, PPD.elementBox, paramGraphics.getClipBounds());
 		Draw.drawParticles(paramGraphics, PPD.particleBox, PPD.animate);
 		if ((this.lintPlotter != null) && (PPD.particleArray != null)) {
@@ -393,7 +368,8 @@ class PPDCanvas extends Canvas implements Runnable {
 		paramGraphics.setColor(Color.black);
 		paramGraphics.drawLine(PPD.PPDZero.x - 3, PPD.PPDZero.y - 3, PPD.PPDZero.x + 3, PPD.PPDZero.y + 3);
 		paramGraphics.drawLine(PPD.PPDZero.x - 3, PPD.PPDZero.y + 3, PPD.PPDZero.x + 3, PPD.PPDZero.y - 3);
-		this.update_hack = true;
+		setPainted();
+		
 	}
 
 	public void loadFile(String paramString) {
@@ -444,7 +420,7 @@ class PPDCanvas extends Canvas implements Runnable {
 			this.interactive = false;
 			while (PPD.draw_field) {
 				if (j < n) {
-					Calculus.drawField(this.backGC, i, j, k, m);
+					//Calculus.drawField(this.backGC, i, j, k, m);
 					i += 25;
 					if (i > n) {
 						i = 0;
@@ -460,7 +436,7 @@ class PPDCanvas extends Canvas implements Runnable {
 					}
 				}
 				repaint();
-				// waitPainted();
+				waitPainted();
 			}
 			this.interactive = true;
 		} else if ((PPD.animate) && (PPD.particleArray != null)) {
@@ -469,7 +445,7 @@ class PPDCanvas extends Canvas implements Runnable {
 				PPD.energyPlotter.addData(Calculus.energy());
 			}
 			repaint();
-			// waitPainted();
+			waitPainted();
 		}
 	}
 
@@ -550,7 +526,8 @@ class PPDCanvas extends Canvas implements Runnable {
 	}
 
 	private synchronized void waitPainted() {
-		while (!this.painted) {
+		
+		while (!isJS && !this.painted) {
 			try {
 				wait();
 			} catch (InterruptedException localInterruptedException) {

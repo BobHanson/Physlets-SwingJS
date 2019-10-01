@@ -118,13 +118,10 @@ public class SApplet extends Applet {
 	public boolean initResources(String resourceFile) {
 		boolean loaded = false;
 		try {
-			String parVal=this.getParameter("Debug", "0");
-			if(parVal.equals("false"))debugLevel=0;  // SwingJS returns false if parameter is not defined.
-			else debugLevel = Integer.parseInt(this.getParameter("Debug", "0"));
+			debugLevel = Integer.parseInt(this.getParameter("Debug", "0"));
 			staticDebugLevel = debugLevel;
 		} catch (Exception e) {
 			e.printStackTrace();
-			debugLevel=0;  
 		}
 		try {
 			String cryptokey = getParameter("Key", "");

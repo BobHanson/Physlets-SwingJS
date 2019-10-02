@@ -118,10 +118,17 @@ public class SApplet extends Applet {
 	public boolean initResources(String resourceFile) {
 		boolean loaded = false;
 		try {
-			debugLevel = Integer.parseInt(this.getParameter("Debug", "0"));
+			String param=this.getParameter("Debug", "0");
+			if("false".equals(param)) {
+			  debugLevel=0;
+			}else {
+			  debugLevel = Integer.parseInt(this.getParameter("Debug", "0"));
+			}
 			staticDebugLevel = debugLevel;
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
+			debugLevel=0;  
+			staticDebugLevel=0;
 		}
 		try {
 			String cryptokey = getParameter("Key", "");

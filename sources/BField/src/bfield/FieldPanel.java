@@ -9,6 +9,9 @@ import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.event.*;
 import java.util.Vector;
+
+import javax.swing.Timer;
+
 import java.util.StringTokenizer;
 import edu.davidson.tools.*;
 import edu.davidson.display.*;
@@ -1088,18 +1091,36 @@ double tolerance=1.0e-5;
     this_mouseMoved( e);  // reset the cursor
     repaint();
   }
+  
+  /*
+  void this_mouseClicked(MouseEvent e) {
+	    int xpt=e.getX();
+	    int ypt=e.getY();
+	    double x=xFromPix(xpt);
+	    double y=yFromPix(ypt);
+	    if(showFieldLineOnClick ||
+	       (e.getClickCount()==2  && showFieldLineOnDoubleClick ) ) {
+	        new FieldSolver(x,y, true);
+	        //if(parserBx!=null || parserBy!=null)new FieldSolver(x,y, false);
+	        return;
+	    }
+  }*/
 
   void this_mousePressed(MouseEvent e) {
     int xpt=e.getX();
     int ypt=e.getY();
     double x=xFromPix(xpt);
     double y=yFromPix(ypt);
+    
+    // could also use mouseClicked event handler
     if(showFieldLineOnClick ||
        (e.getClickCount()==2  && showFieldLineOnDoubleClick ) ) {
         new FieldSolver(x,y, true);
+        new FieldSolver(x,y, false);
         //if(parserBx!=null || parserBy!=null)new FieldSolver(x,y, false);
         return;
     }
+    
     //Wire wire;
     isDrag=true;
     dragWire=null;
@@ -1295,10 +1316,11 @@ double tolerance=1.0e-5;
 
   // FieldSolver Inner class
 
-    class FieldSolver implements Runnable, SDifferentiable{   // inner class to solve and plot the Electric field.
+    public class FieldSolver implements Runnable, SDifferentiable{   // inner class to solve and plot the Electric field.
       Color fieldColor=Color.black; //new Color(128,128,255);
       SRK45      odeSolver=new SRK45();
-      Thread     fieldThread = null;
+      //Thread     fieldThread = null;
+  	  private Timer bfieldTimer;
       double[]   fieldLine = new double[2];
       boolean    plus=true;
       boolean    keepRunning=true;
@@ -1306,7 +1328,7 @@ double tolerance=1.0e-5;
       boolean    interrupted=false;
       DataSet    data;
       int        np=0;
-      int        maxPts=150;
+      int        maxPts=400;  // increased max from 200 to 400 and lowered step size
       double[]   points=new double[2*maxPts];  // data points
       int        scale=1;
       private double[] dydx=new double[2];
@@ -1321,9 +1343,21 @@ double tolerance=1.0e-5;
          np=np+2;
          odeSolver.setDifferentials(this);
          odeSolver.setTol(tolerance);
+         /*
          if (fieldThread == null){
              fieldThread = new Thread( this);
              fieldThread.start();
+         }*/
+         if (bfieldTimer == null){
+				bfieldTimer = new Timer(50, new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						runTimer();
+					}
+					
+				});
+				bfieldTimer.setRepeats(true);
+				bfieldTimer.start();
          }
          fieldSolvers.addElement(this);
          res=graph.xFromPix(3)-graph.xFromPix(0);
@@ -1360,7 +1394,8 @@ double tolerance=1.0e-5;
               return;
           }
       */
-          double ds=(xmax-xmin)/25.0;  //step size
+          //double ds=(xmax-xmin)/25.0;  //step size
+          double ds=(xmax-xmin)/50.0;  // try smaller step size
       //    int x0=pixFromX(fieldLine[0]);
       //   int y0=pixFromY(fieldLine[1]);
 
@@ -1421,26 +1456,33 @@ double tolerance=1.0e-5;
           if( x>=x0-res && x<=x1+res && y>=y0-res && y<=y1+res) return true;
           else return false;
       }
+      
+      public void runTimer(){
 
-      public void run(){
           int count=0;
           keepRunning=true;
           while (keepRunning && !interrupted  ){
             try{
-              while(osi==null){ Thread.sleep(50);}
+              //while(osi==null){ Thread.sleep(50);}
               if(!interrupted) keepRunning=stepField();
-              if(!interrupted) Thread.sleep(20);
+              //if(!interrupted) Thread.sleep(20);
               count++;
               if(count>=maxPts){
                   keepRunning=false;
                   outOfBounds=true;
-              }
-            }catch (InterruptedException e){}
+              } //xxx
+            }catch (Exception e){}
           }
          fieldSolvers.removeElement(this);
+         /*
          if(interrupted){   // don't draw if this thread is interrupted.
              fieldThread.stop(); // this fixes a bug in the Java VM
              fieldThread=null;
+             return;
+         }*/
+         if(interrupted){   // don't draw if this thread is interrupted.
+        	 bfieldTimer.stop(); // this fixes a bug in the Java VM
+             bfieldTimer=null;
              return;
          }
          owner.lock.getBusyFlag();
@@ -1479,8 +1521,85 @@ double tolerance=1.0e-5;
          if(plus && outOfBounds && points!=null) new FieldSolver(points[0],points[1], false);
         // if(fieldSolvers.size()==0) repaint();
          points=null;  // help the system to garbage collect
+         /*
          fieldThread.stop(); // this fixes a bug in the Java VM
          fieldThread=null;
+         */
+    	 bfieldTimer.stop(); // this fixes a bug in the Java VM
+         bfieldTimer=null;
+         interrupted=true;
+         
+      
+      }
+
+      public void run(){
+          int count=0;
+          keepRunning=true;
+          while (keepRunning && !interrupted  ){
+            try{
+              while(osi==null){ Thread.sleep(50);}
+              if(!interrupted) keepRunning=stepField();
+              if(!interrupted) Thread.sleep(20);
+              count++;
+              if(count>=maxPts){
+                  keepRunning=false;
+                  outOfBounds=true;
+              }
+            }catch (InterruptedException e){}
+          }
+         fieldSolvers.removeElement(this);
+         if(interrupted){   // don't draw if this thread is interrupted.
+        	 /*
+             fieldThread.stop(); // this fixes a bug in the Java VM
+             fieldThread=null;
+             */
+        	 bfieldTimer.stop(); // this fixes a bug in the Java VM
+             bfieldTimer=null;
+             return;
+         }
+         owner.lock.getBusyFlag();
+         data = graph.addDataSet(points,count);   // this constructs dataset
+         data.linecolor = fieldColor;
+         owner.lock.freeBusyFlag();
+        int index=0;
+        double x=points[index*2];
+        double y=points[index*2+1];
+        double[] bvec=getB(x,y,null);
+        double bx=bvec[0];
+        double by=bvec[1];
+        //double bx=getBx(x,y,null);
+        //double by=getBy(x,y,null);
+        double b=Math.sqrt(bx*bx+by*by);
+        arrowHeads.addElement(new ArrowHead(FieldPanel.this,x,y,bx/b,by/b,fieldColor));
+
+        index=count/2;
+        if(index>20){
+            x=points[index*2];
+            y=points[index*2+1];
+            if(x>xmin && x<xmax && y>ymin && y<ymax){
+                bvec=getB(x,y,null);
+                bx=bvec[0];
+                by=bvec[1];
+                //bx=getBx(x,y,null);
+                //by=getBy(x,y,null);
+                b=Math.sqrt(bx*bx+by*by);
+                arrowHeads.addElement(new ArrowHead(FieldPanel.this,x,y,bx/b,by/b,fieldColor));
+            }
+        }
+
+         //System.out.println("registered:"+ count+ "size:"+fieldSolvers.size());
+         osiInvalid=true;
+         repaint();
+         if(plus && outOfBounds && points!=null) new FieldSolver(points[0],points[1], false);
+        // if(fieldSolvers.size()==0) repaint();
+         points=null;  // help the system to garbage collect
+         /*
+         fieldThread.stop(); // this fixes a bug in the Java VM
+         fieldThread=null;
+         */
+    	 bfieldTimer.stop(); // this fixes a bug in the Java VM
+         bfieldTimer=null;
+         interrupted=true;
       }
 
   }
@@ -1497,8 +1616,15 @@ class FieldPanel_mouseAdapter extends java.awt.event.MouseAdapter {
   public void mouseReleased(MouseEvent e) {
     adaptee.this_mouseReleased(e);
   }
+  
+  /*
+  public void mouseClicked(MouseEvent e) {
+	  //System.out.println("mopuse clicked");
+	  adaptee.this_mouseClicked(e);
+  }*/
 
   public void mousePressed(MouseEvent e) {
+	  //System.out.println("mouse pressed");
     adaptee.this_mousePressed(e);
   }
 }

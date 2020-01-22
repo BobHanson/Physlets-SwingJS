@@ -108,40 +108,7 @@ public class Airplane extends a2s.Applet implements Runnable
         } else {
           imagedir += s + "/";
         }
-        this.loadImage();
         this.reset(true);
-    }
-  /* 
-    void loadImage() {
-        final URL codeBase = this.getCodeBase();
-        this.ear = this.getImage(codeBase, "ear.jpg");
-        this.plane = this.getImage(codeBase, "airplane.jpg");
-        final MediaTracker mediaTracker = new MediaTracker(this);
-        mediaTracker.addImage(this.ear, 0);
-        mediaTracker.addImage(this.plane, 1);
-        try {
-            mediaTracker.waitForAll();
-        }
-        catch (InterruptedException ex) {}
-        this.earw = this.ear.getWidth(this) / 2;
-        this.earh = this.ear.getHeight(this) / 2;
-        this.planew = this.plane.getWidth(this);
-        this.planeh = this.plane.getHeight(this) / 2 + 5;
-    }
-    */
-    
-    void loadImage() {
-    	this.plane=edu.davidson.graphics.Util.getImage(imagedir+"airplane.jpg",this);
-        this.ear=edu.davidson.graphics.Util.getImage(imagedir+"ear.jpg",this);   
-        if(plane!=null) {
-          this.planew = this.plane.getWidth(this);
-          this.planeh = this.plane.getHeight(this) / 2 + 5;
-        }
-        if(ear!=null) {
-          this.earw = this.ear.getWidth(this) / 2;
-          this.earh = this.ear.getHeight(this) / 2;
-        }
-       
     }
     
     public boolean action(final Event event, final Object o) {
@@ -271,6 +238,16 @@ public class Airplane extends a2s.Applet implements Runnable
             this.chy = this.fm.getHeight();
             this.xm = this.area.width / 2;
             this.ym = this.area.height - this.y1;
+        	this.plane=edu.davidson.graphics.Util.getImage(imagedir+"airplane.jpg",this);
+            this.ear=edu.davidson.graphics.Util.getImage(imagedir+"ear.jpg",this);   
+            if(plane!=null) {
+              this.planew = this.plane.getWidth(this);
+              this.planeh = this.plane.getHeight(this) / 2 + 5;
+            }
+            if(ear!=null) {
+              this.earw = this.ear.getWidth(this) / 2;
+              this.earh = this.ear.getHeight(this) / 2;
+            }
         }
         this.gb.setColor(this.bgColor);
         this.gb.fillRect(0, 0, this.area.width, this.area.height);

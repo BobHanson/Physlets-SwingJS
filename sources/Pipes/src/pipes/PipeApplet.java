@@ -387,12 +387,16 @@ String label_wait = "Please wait . . .";
     stepForward();
 
   }
-
+  
   void stringfield_textValueChanged(TextEvent e) {
-    pause();
-    pipe.setParse(stringfield.getText());
-
-  }
+	    String str=stringfield.getText();
+		if(str==null||str.equals("")) {
+			//System.out.println("Don't parse empty string");
+			return;
+		}
+	    pause();
+	    pipe.setParse(str);
+	  }
 
   void this_componentResized(ComponentEvent e) {
     pipe.change=true;

@@ -198,7 +198,7 @@ public abstract class Element
       } else {
         paramGraphics.setColor(PPD.ELEMENT_ARROW);
       }
-      this.arrow.draw(paramGraphics);
+      //this.arrow.draw(paramGraphics);
     }
     if ((this.posCount != 0.0D) || (this.negCount != 0.0D))
     {

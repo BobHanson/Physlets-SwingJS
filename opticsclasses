@@ -15,6 +15,7 @@ edu/davidson/tools/SClock.js
 edu/davidson/tools/SDataListener.js
 edu/davidson/tools/SDataSource.js
 edu/davidson/tools/SStepable.js
+edu/davidson/tools/SUtil.js
 java/applet/Applet.js
 java/applet/AppletContext.js
 java/applet/AppletStub.js
@@ -66,11 +67,13 @@ java/awt/Polygon.js
 java/awt/Queue.js
 java/awt/Rectangle.js
 java/awt/RenderingHints.js
+java/awt/SentEvent.js
 java/awt/Shape.js
 java/awt/Stroke.js
 java/awt/SystemColor.js
 java/awt/Toolkit.js
 java/awt/Transparency.js
+java/awt/VKCollection.js
 java/awt/color/ColorSpace.js
 java/awt/dnd/peer/DropTargetPeer.js
 java/awt/event/AWTEventListener.js
@@ -168,6 +171,7 @@ java/util/Iterator.js
 java/util/LinkedHashMap.js
 java/util/LinkedList.js
 java/util/List.js
+java/util/ListIterator.js
 java/util/ListResourceBundle.js
 java/util/Locale.js
 java/util/Map.js
@@ -177,6 +181,7 @@ java/util/Queue.js
 java/util/RandomAccess.js
 java/util/ResourceBundle.js
 java/util/Set.js
+java/util/StringTokenizer.js
 java/util/Vector.js
 java/util/concurrent/atomic/AtomicBoolean.js
 javajs/api/JSFunction.js
@@ -245,10 +250,10 @@ optics/OpticsApplet_sourceBtn_actionAdapter.js
 optics/PSource.js
 optics/Screen.js
 optics/Source.js
-sun/awt/AWTAccessor.js
 sun/awt/AWTAutoShutdown.js
 sun/awt/AppContext.js
 sun/awt/ComponentFactory.js
+sun/awt/EventQueueItem.js
 sun/awt/KeyboardFocusManagerPeerProvider.js
 sun/awt/MostRecentKeyValue.js
 sun/awt/MostRecentThreadAppContext.js

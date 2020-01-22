@@ -2836,6 +2836,23 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
     }
   }
 
+	void this_mouseClicked(MouseEvent e) {
+		double x = xFromPix(e.getX());
+		double y = yFromPix(e.getY());
+		if (showFieldLineOnClick || (e.getClickCount() == 2 && showFieldLineOnDoubleClick)) {
+			new FieldSolver(x, y, true);
+			new FieldSolver(x, y, false);
+			return;
+		}
+
+		if (showEquipotentialOnClick || ((e.getClickCount() == 2) && showEquipotentialOnDoubleClick)) {
+			contour.calculateCurve(getPotential(x, y));
+			osiInvalid = true;
+			repaint();
+			return;
+		}
+	}
+
   /**
    * Method this_mousePressed
    *
@@ -2844,6 +2861,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
   void this_mousePressed(MouseEvent e) {
     double x = xFromPix(e.getX());
     double y = yFromPix(e.getY());
+    /*  replace with mouseClicked event handler
     if((e.isShiftDown() && showFieldLines) || showFieldLineOnClick
         || ((e.getClickCount() == 2) && showFieldLineOnDoubleClick)) {
       //calcFieldPoles();
@@ -2856,7 +2874,7 @@ public final class OdeCanvas extends Canvas implements SStepable, Runnable {
       osiInvalid = true;
       repaint();
       return;
-    }
+    }*/
     Thing shape;
     isDrag    = true;
     dragShape = null;

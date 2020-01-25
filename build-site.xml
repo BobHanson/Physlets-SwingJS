@@ -47,6 +47,7 @@
     </taskdef>
 
   	
+    <!-- these are in site-resources 
   	<echo> Copying images files into ${site.dir} </echo>
   	<copy todir="${site.dir}/circuitimages">
       <fileset dir="bin/circuitimages">
@@ -63,6 +64,13 @@
   	      	<include name="**"/>
   	  	</fileset>
   	    </copy>
+  -->
+	
+  	<copy todir="${j2s.dir}">
+      <fileset dir="${site-resource.dir}/images">
+      	<include name="pencil*"/>
+  	</fileset>
+    </copy>	
 
 
 
@@ -105,12 +113,6 @@
   	</fileset>
     </copy>
   	
-  	<copy todir="${j2s.dir}">
-      <fileset dir="bin/images">
-      	<include name="pencil*"/>
-  	</fileset>
-    </copy>	
-
 </target>
 	
 

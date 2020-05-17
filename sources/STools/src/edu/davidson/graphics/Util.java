@@ -1,6 +1,7 @@
 package edu.davidson.graphics;
 
 import edu.davidson.tools.SClock;
+import javajs.async.Assets;
 
 import java.applet.Applet;
 import java.awt.Component;
@@ -25,6 +26,16 @@ import java.net.URL;
  * @author  David Geary & Wolfgang Christian
  */
 public class Util {
+	
+	public static boolean isJS = /** @j2sNative true || */ false;
+
+	static {
+
+		Assets.add(new Assets.Asset("physlets", "physlet-assets.zip",
+				new String[] { "opticsimages", "images", "circuitimages", "galtonimages" }));
+		Assets.add(isJS ? Assets.jsutil.getAppletInfo("assets") : null);
+
+	}
 	public static Dialog getDialog(Component c) {
         if(c instanceof Dialog)
             return (Dialog)c;
@@ -94,7 +105,7 @@ public class Util {
   // Methods added by W. Christian
 
   static public boolean isMicrosoft() {
-	if(SClock.isJS) {
+	if(isJS) {
 	        return false;
 	}
     String vendor=System.getProperty("java.vendor").toLowerCase();
@@ -113,38 +124,55 @@ public class Util {
 	static public Image getImage(String file, Applet applet) {
 		Image im = null;
 		URL url = null;
-		if (applet == null)
-			System.out.println("Applet not found in getImage method.");
-		try { // first look for image relative to html document; works best for JavaScript
+		while (true) {
+			if (applet == null)
+				System.out.println("Applet not found in getImage method.");
+			try {
+				url = Assets.getURLFromPath(file);
+				if (url != null)
+					im = applet.getImage(url);
+			} catch (Exception e) {
+			}
+			if (im != null)
+				break;
+			try {
+				// first look for image relative to html document; works best for JavaScript
 				// Physlets
-			url = new URL(applet.getDocumentBase(), file);
-			im = applet.getImage(url);
-		} catch (Exception e) {
-		}
-		if (im == null)
+				url = new URL(applet.getDocumentBase(), file);
+				im = applet.getImage(url);
+				if (im != null)
+					break;
+			} catch (Exception e) {
+			}
 			try { // look for images in jar files first!
 				String resourcePath = file;
 				if (!file.startsWith("/"))
 					resourcePath = "/" + file;
 				url = Util.class.getResource(resourcePath);
 				im = applet.getImage(url);
+				if (im != null)
+					break;
 			} catch (Exception e) {
 			}
-		if (im == null)
 			try { // look for the image in the codebase directory
 				url = new URL(applet.getCodeBase(), file);
 				im = applet.getImage(url);
+				if (im != null)
+					break;
 			} catch (Exception e) {
 			}
-		if (im == null)
 			try {
 				url = new java.net.URL(file);
 				im = applet.getImage(url);
+				if (im != null)
+					break;
 			} catch (Exception e) {
 			}
+			break;
+		}
 		if (im != null) {
-			MediaTracker tracker = new MediaTracker(applet);
 			try {
+				MediaTracker tracker = new MediaTracker(applet);
 				tracker.addImage(im, 0);
 				tracker.waitForID(0, 1000); // wait one second
 				if (tracker.isErrorAny()) {

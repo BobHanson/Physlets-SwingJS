@@ -80,7 +80,6 @@ class ParserException extends Exception {
 public final class Parser {
 
   // global variables
-  boolean isJS = /** @j2sNative true || */ false;
   private int     var_count;             // number of variables
   private String  var_name[];            // variables' name
   private double  var_value[];           // value of variables

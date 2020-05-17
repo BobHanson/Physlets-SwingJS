@@ -47,7 +47,7 @@ class BubblePanel extends Panel {
 	}
 	public Dimension getPreferredSize() {
     String vendor="unknown";
-    if(!SClock.isJS) {
+    if(!Util.isJS) {
         vendor=System.getProperty("java.vendor");
     }
 	Graphics    g  = getGraphics();

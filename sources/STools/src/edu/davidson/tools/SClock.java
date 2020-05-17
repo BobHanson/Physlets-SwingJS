@@ -10,6 +10,8 @@ import java.util.Vector;
 
 import javax.swing.Timer;
 
+import edu.davidson.graphics.Util;
+
 /**
  * A runnable class designed to provide animation for Physlets.  Objects wishing
  * to receive notification of clock ticks must implement the SStepable interface.
@@ -22,7 +24,7 @@ import javax.swing.Timer;
  * described in the book "Teaching with Physlets."
  */
 public final class SClock extends Object implements Runnable, SDataSource {
-  public static boolean isJS = /** @j2sNative true || */ false;
+  public static boolean isJS = Util.isJS;
   Vector<SStepable> clockListeners = new Vector<SStepable>();      // The list of all SStepable objects.
   private String[]   varStrings     = new String[]{"t"};
   private double[][] ds             = new double[1][1];  // the datasource state variable t

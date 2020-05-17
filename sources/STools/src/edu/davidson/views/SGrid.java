@@ -11,9 +11,9 @@ import java.awt.event.*;
 import java.awt.*;
 
 import edu.davidson.display.Format;
+import edu.davidson.graphics.Util;
 
 public class SGrid extends Panel {
-	public static boolean isJS = /** @j2sNative true || */ false;
     SGridPanel gridpanel=null;
     int nRows=50, nCols = 3;
     int preferredWidth=20;
@@ -458,7 +458,7 @@ public class SGrid extends Panel {
          if (osi==null){
             osi = createImage(w,h);
             if (osi==null) return;
-            if(!isJS) {
+            if(!Util.isJS) {
             while( !prepareImage(osi,this) && count<10)
                try{
                   count++;

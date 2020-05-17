@@ -128,8 +128,8 @@ public class Util {
 			if (applet == null)
 				System.out.println("Applet not found in getImage method.");
 			try {
-				url = Assets.getURLFromPath(file);
-				if (url != null)
+				url = Assets.getURLFromPath(file, true);
+				if (url.getProtocol().equals("jar"))
 					im = applet.getImage(url);
 			} catch (Exception e) {
 			}
@@ -139,21 +139,24 @@ public class Util {
 				// first look for image relative to html document; works best for JavaScript
 				// Physlets
 				url = new URL(applet.getDocumentBase(), file);
-				im = applet.getImage(url);
+				// BH curious thing here is that Java will not fail on getImage(url) even if that
+				// image does not exist.
+				if (Assets.getURLContents(url) != null)
+					im = applet.getImage(url);
 				if (im != null)
 					break;
 			} catch (Exception e) {
 			}
-			try { // look for images in jar files first!
-				String resourcePath = file;
-				if (!file.startsWith("/"))
-					resourcePath = "/" + file;
-				url = Util.class.getResource(resourcePath);
-				im = applet.getImage(url);
-				if (im != null)
-					break;
-			} catch (Exception e) {
-			}
+//			try { // look for images in jar files first!
+//				String resourcePath = file;
+//				if (!file.startsWith("/"))
+//					resourcePath = "/" + file;
+//				url = Util.class.getResource(resourcePath);
+//				im = applet.getImage(url);
+//				if (im != null)
+//					break;
+//			} catch (Exception e) {
+//			}
 			try { // look for the image in the codebase directory
 				url = new URL(applet.getCodeBase(), file);
 				im = applet.getImage(url);
@@ -176,7 +179,7 @@ public class Util {
 				tracker.addImage(im, 0);
 				tracker.waitForID(0, 1000); // wait one second
 				if (tracker.isErrorAny()) {
-					System.out.println("Util tracker error " + url);
+					System.out.println("Util tracker error " + url + " " + tracker.getErrorsAny()[0]);
 					im = null;
 				}
 			} catch (Exception e) {

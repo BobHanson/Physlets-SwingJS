@@ -14,6 +14,7 @@ import java.util.StringTokenizer;
 
 import edu.davidson.display.Format;
 import edu.davidson.graphics.SFrame;
+import edu.davidson.graphics.Util;
 import edu.davidson.tools.SApplet;
 import edu.davidson.tools.SUtil;
 
@@ -321,7 +322,7 @@ public class Animator extends SApplet {
      *
      */
     public void start () {
-    	// addObject("image","file=assets/red_truck.gif,x=5,y=5");  for debugging
+    	addObject("image","file=images/red_truck.gif,x=5,y=5");  //for debugging
         if (firstTime) {
             firstTime = false;
             animatorCanvas.clearTrails();
@@ -2402,8 +2403,9 @@ public class Animator extends SApplet {
         // java.io.File f=new java.io.File(file);
         try {
         	//System.out.println("url file ="+ file);
-            java.net.URL url = new java.net.URL(file);
-            im = getImage(url);
+            //java.net.URL url = new java.net.URL(file);
+            im = Util.getImage(file, this);
+            //im = getImage(url);
             id = animatorCanvas.addImage(im, xStr, yStr);
         } catch (Exception e) {
             id = 0;

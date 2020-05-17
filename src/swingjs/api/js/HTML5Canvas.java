@@ -1,6 +1,9 @@
 package swingjs.api.js;
 
 import java.awt.image.BufferedImage;
+import java.awt.image.Raster;
+
+import swingjs.api.JSUtilI;
 
 public interface HTML5Canvas extends DOMNode {
 
@@ -31,14 +34,10 @@ public interface HTML5Canvas extends DOMNode {
 	 * @param image
 	 */
 	static void setImageNode(DOMNode sourceNode, BufferedImage image) {
-		/**
-		 * @j2sNative
-		 * 
-		 * 			image.秘setImageNode$O$Z(sourceNode);
-		 * 
-		 */		{
-			 //image.秘setImageNode(sourceNode, false);
-		 }
+
+		// Using Raster here just to access setData in this way.
+		image.setData((Raster) (Object) sourceNode);
+
 	}
 
 	static HTML5Canvas createCanvas(int width, int height, String id) {

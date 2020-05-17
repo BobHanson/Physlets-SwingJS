@@ -128,8 +128,9 @@ public class Util {
 			if (applet == null)
 				System.out.println("Applet not found in getImage method.");
 			try {
+				// do check the ZIP file, and if it is not there, return null
 				url = Assets.getURLFromPath(file, true);
-				if (url.getProtocol().equals("jar"))
+				if (url != null)
 					im = applet.getImage(url);
 			} catch (Exception e) {
 			}
